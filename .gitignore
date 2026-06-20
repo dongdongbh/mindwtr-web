@@ -19,5 +19,9 @@ docs/.vitepress/cache/
 wrangler.local.toml
 wrangler.*.local.toml
 
+# Local agent guidance
+AGENTS.md
+CLAUDE.md
+
 # OS/editor noise
 .DS_Store

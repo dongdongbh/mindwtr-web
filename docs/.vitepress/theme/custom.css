@@ -1,48 +1,60 @@
 :root {
-  --vp-c-brand-1: #177866;
-  --vp-c-brand-2: #2f8b76;
-  --vp-c-brand-3: #9bd9c3;
-  --vp-c-bg: #fffaf3;
-  --vp-c-bg-soft: #fffdf8;
-  --vp-c-bg-alt: #fffaf3;
-  --vp-c-gutter: #e8e0d2;
-  --vp-c-divider: #e8e0d2;
-  --vp-c-text-1: #1e272e;
-  --vp-c-text-2: #5d6872;
-  --vp-sidebar-bg-color: #fffaf3;
-  --vp-nav-bg-color: rgba(255, 250, 243, 0.92);
-  --vp-nav-screen-bg-color: #fffaf3;
-  --vp-local-search-bg: #fffaf3;
+  /* Clear water palette (matches the landing site) */
+  --vp-c-brand-1: #1f58cf;
+  --vp-c-brand-2: #1b4fbe;
+  --vp-c-brand-3: #9dbef6;
+  --vp-c-brand-soft: rgba(46, 107, 230, 0.14);
+
+  --vp-c-bg: #eef5f6;
+  --vp-c-bg-soft: #f7fbfb;
+  --vp-c-bg-alt: #e4eff0;
+  --vp-c-gutter: #d2e2e3;
+  --vp-c-divider: #d2e2e3;
+  --vp-c-text-1: #0d2b30;
+  --vp-c-text-2: #4c6a72;
+
+  --vp-sidebar-bg-color: #eef5f6;
+  --vp-nav-bg-color: rgba(238, 245, 246, 0.92);
+  --vp-nav-screen-bg-color: #eef5f6;
+  --vp-local-search-bg: #eef5f6;
   --vp-local-search-result-bg: #ffffff;
-  --vp-local-search-result-selected-bg: #e6f3ee;
-  --vp-local-search-result-border: #e8e0d2;
-  --vp-local-search-result-selected-border: #9bd9c3;
-  --vp-font-family-base: "Avenir Next", Avenir, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --vp-local-search-result-selected-bg: #e4ecfd;
+  --vp-local-search-result-border: #d2e2e3;
+  --vp-local-search-result-selected-border: #9dbef6;
+
+  --vp-font-family-base: "Avenir Next", Avenir, ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --vp-font-family-mono: ui-monospace, "SF Mono", "JetBrains Mono",
+    "Cascadia Code", Menlo, Consolas, monospace;
 }
 
 .dark {
-  --vp-c-brand-1: #8ed7bd;
-  --vp-c-brand-2: #57bd99;
-  --vp-c-brand-3: #1e7f63;
-  --vp-c-bg: #111b17;
-  --vp-c-bg-soft: #17241f;
-  --vp-c-bg-alt: #111b17;
-  --vp-c-gutter: #294239;
-  --vp-c-divider: #294239;
-  --vp-c-text-1: #ecf6f1;
-  --vp-c-text-2: #b5c9bf;
-  --vp-sidebar-bg-color: #111b17;
-  --vp-nav-bg-color: rgba(17, 27, 23, 0.92);
-  --vp-nav-screen-bg-color: #111b17;
-  --vp-local-search-bg: #111b17;
-  --vp-local-search-result-bg: #17241f;
-  --vp-local-search-result-selected-bg: #20372f;
-  --vp-local-search-result-border: #294239;
-  --vp-local-search-result-selected-border: #57bd99;
+  /* Deep still water */
+  --vp-c-brand-1: #7fb0ff;
+  --vp-c-brand-2: #5e97f2;
+  --vp-c-brand-3: #234c8a;
+  --vp-c-brand-soft: rgba(127, 176, 255, 0.16);
+
+  --vp-c-bg: #0b1f22;
+  --vp-c-bg-soft: #102a2e;
+  --vp-c-bg-alt: #0b1f22;
+  --vp-c-gutter: #224247;
+  --vp-c-divider: #224247;
+  --vp-c-text-1: #e7f2f1;
+  --vp-c-text-2: #a7c3c2;
+
+  --vp-sidebar-bg-color: #0b1f22;
+  --vp-nav-bg-color: rgba(11, 31, 34, 0.92);
+  --vp-nav-screen-bg-color: #0b1f22;
+  --vp-local-search-bg: #0b1f22;
+  --vp-local-search-result-bg: #102a2e;
+  --vp-local-search-result-selected-bg: #16323a;
+  --vp-local-search-result-border: #224247;
+  --vp-local-search-result-selected-border: #5e97f2;
 }
 
 .VPNav {
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px) saturate(1.1);
 }
 
 html,
@@ -82,6 +94,11 @@ body,
   background: var(--vp-c-bg);
 }
 
+/* Eyebrow-style section labels echo the landing page's mono utility type */
+.vp-doc h2 {
+  letter-spacing: -0.015em;
+}
+
 .vp-doc table {
   overflow: hidden;
   border-radius: 10px;
@@ -92,18 +109,35 @@ body,
   border-color: var(--vp-c-divider);
 }
 
+.vp-doc th {
+  background-color: var(--vp-c-bg-alt);
+}
+
 .vp-doc tr:nth-child(2n) {
   background-color: var(--vp-c-bg-soft);
 }
 
+/* Calm, cool callout instead of the warm gold block */
+.custom-block.tip,
+.custom-block.info {
+  border-color: rgba(46, 107, 230, 0.32);
+  background-color: #e7eefe;
+}
+
+.dark .custom-block.tip,
+.dark .custom-block.info {
+  border-color: rgba(127, 176, 255, 0.3);
+  background-color: #122636;
+}
+
 .custom-block {
-  border-color: rgba(229, 183, 90, 0.35);
-  background-color: #fff4d8;
+  border-color: rgba(14, 140, 124, 0.32);
+  background-color: #e1f0ec;
 }
 
 .dark .custom-block {
-  border-color: rgba(229, 183, 90, 0.32);
-  background-color: #2a2518;
+  border-color: rgba(127, 176, 255, 0.26);
+  background-color: #122a2c;
 }
 
 .VPHomeHero .name {
@@ -116,4 +150,5 @@ body,
 
 .VPFeature {
   border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
 }

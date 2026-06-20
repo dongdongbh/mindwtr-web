@@ -35,8 +35,15 @@
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-ambient" aria-hidden="true">
+          <svg class="ripple" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+            <circle cx="100" cy="100" r="34" stroke-opacity="0.55" />
+            <circle cx="100" cy="100" r="62" stroke-opacity="0.34" />
+            <circle cx="100" cy="100" r="92" stroke-opacity="0.18" />
+          </svg>
+        </div>
         <div class="hero-copy">
-          <p class="eyebrow">Free, local-first GTD for every device</p>
+          <p class="eyebrow">Free · Local-first · No account</p>
           <h1 id="hero-title">Mind like water.</h1>
           <p class="hero-subhead">
             A calm GTD system that brings clarity to your day. Capture everything,
@@ -63,28 +70,51 @@
 
       <section class="hero-features" aria-label="Mindwtr essentials">
         <article>
-          <span class="feature-mark capture-mark" aria-hidden="true"></span>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 13h2.6a2 2 0 0 1 1.8 1.1l.3.6a2 2 0 0 0 1.8 1.1h2.4a2 2 0 0 0 1.8-1.1l.3-.6a2 2 0 0 1 1.8-1.1h2.4" />
+              <path d="M6 6.5h12l1.5 6.5v3.5a1.5 1.5 0 0 1-1.5 1.5H6a1.5 1.5 0 0 1-1.5-1.5V13z" />
+            </svg>
+          </span>
           <div>
             <h2>Capture everything</h2>
             <p>Inbox for effortless capture. Get it out of your head.</p>
           </div>
         </article>
         <article>
-          <span class="feature-mark focus-mark" aria-hidden="true"></span>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="8.5" />
+              <circle cx="12" cy="12" r="4.4" />
+              <circle cx="12" cy="12" r="1.1" fill="currentColor" stroke="none" />
+            </svg>
+          </span>
           <div>
             <h2>Focus with intention</h2>
             <p>See what matters today. Take action with calm.</p>
           </div>
         </article>
         <article>
-          <span class="feature-mark organize-mark" aria-hidden="true"></span>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3.5" y="4.5" width="17" height="15" rx="2.2" />
+              <path d="M9.2 4.5v15M14.8 4.5v15" />
+            </svg>
+          </span>
           <div>
             <h2>Organize your way</h2>
             <p>Projects, contexts, calendar, and board view.</p>
           </div>
         </article>
         <article>
-          <span class="feature-mark review-mark" aria-hidden="true"></span>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.8 12a7.2 7.2 0 0 1 12.2-5.2L19.5 9" />
+              <path d="M19.5 4.6V9H15" />
+              <path d="M19.2 12a7.2 7.2 0 0 1-12.2 5.2L4.5 15" />
+              <path d="M4.5 19.4V15H9" />
+            </svg>
+          </span>
           <div>
             <h2>Review and reflect</h2>
             <p>Weekly review keeps you aligned and moving forward.</p>
@@ -101,28 +131,28 @@
             stay connected instead of becoming separate chores.
           </p>
         </div>
-        <div class="workflow-grid">
-          <article>
-            <span>Capture</span>
+        <ol class="workflow-grid">
+          <li>
+            <span class="step-tag"><i>01</i>Capture</span>
             <h3>Get it out of your head, fast.</h3>
-          </article>
-          <article>
-            <span>Clarify</span>
+          </li>
+          <li>
+            <span class="step-tag"><i>02</i>Clarify</span>
             <h3>Turn vague items into clear next actions.</h3>
-          </article>
-          <article>
-            <span>Organize</span>
+          </li>
+          <li>
+            <span class="step-tag"><i>03</i>Organize</span>
             <h3>Keep projects, contexts, and waiting items where they belong.</h3>
-          </article>
-          <article>
-            <span>Reflect</span>
+          </li>
+          <li>
+            <span class="step-tag"><i>04</i>Reflect</span>
             <h3>Review the system before it gets stale.</h3>
-          </article>
-          <article>
-            <span>Engage</span>
+          </li>
+          <li>
+            <span class="step-tag"><i>05</i>Engage</span>
             <h3>Choose the next action with confidence.</h3>
-          </article>
-        </div>
+          </li>
+        </ol>
       </section>
 
       <section class="platforms" aria-labelledby="platforms-title">

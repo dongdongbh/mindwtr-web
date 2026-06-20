@@ -1,0 +1,23 @@
+# Dependencies and build output
+node_modules/
+dist/
+landing/dist/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+.bun/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+
+# Local Cloudflare/Wrangler state
+.wrangler/
+.cloudflare/
+wrangler.local.toml
+wrangler.*.local.toml
+
+# OS/editor noise
+.DS_Store

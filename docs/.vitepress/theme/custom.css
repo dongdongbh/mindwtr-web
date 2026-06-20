@@ -45,6 +45,16 @@
   backdrop-filter: blur(18px);
 }
 
+html,
+body,
+#app,
+.Layout,
+.VPContent,
+.VPDoc,
+.VPHome {
+  background: var(--vp-c-bg);
+}
+
 .VPNavBar .divider-line,
 .VPLocalNav,
 .VPFooter {

@@ -380,8 +380,7 @@ h2 {
   gap: 14px;
 }
 
-.trust-grid article,
-.download-grid a {
+.trust-grid article {
   border: 1px solid var(--line);
   border-radius: var(--radius-medium);
   background: rgba(255, 255, 255, 0.74);
@@ -434,25 +433,72 @@ h2 {
 
 .download-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px 22px;
+  align-items: center;
 }
 
-.download-grid a {
-  min-height: 74px;
-  padding: 22px;
-  color: var(--green-dark);
-  font-weight: 780;
+.store-badge,
+.github-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 82px;
   transition:
-    border-color 180ms ease,
-    background 180ms ease,
+    opacity 180ms ease,
     transform 180ms ease;
 }
 
-.download-grid a:hover {
-  border-color: rgba(30, 127, 99, 0.32);
-  background: var(--mint);
+.store-badge:hover,
+.github-download:hover {
+  opacity: 0.9;
   transform: translateY(-1px);
+}
+
+.store-badge img {
+  width: auto;
+  max-width: min(100%, 210px);
+  max-height: 56px;
+  height: auto;
+}
+
+.github-download {
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 210px);
+  min-height: 62px;
+  border: 1px solid rgba(22, 52, 43, 0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #202020;
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(28, 57, 44, 0.12);
+}
+
+.github-download img {
+  width: 28px;
+  height: 28px;
+  filter: invert(1);
+}
+
+.github-download span {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.github-download strong {
+  font-size: 1rem;
+  font-weight: 820;
+}
+
+.github-download small {
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.72rem;
+  font-weight: 620;
+  line-height: 1.25;
 }
 
 .site-footer {
@@ -538,8 +584,28 @@ h2 {
     padding-top: 28px;
   }
 
+  .section-band,
+  .platforms,
+  .power {
+    padding: 56px 0;
+  }
+
   h1 {
     font-size: clamp(3.5rem, 18vw, 5.2rem);
+  }
+
+  h2 {
+    font-size: clamp(2.05rem, 11vw, 3.1rem);
+    line-height: 1.05;
+  }
+
+  .section-copy {
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .eyebrow {
+    margin-bottom: 12px;
   }
 
   .hero-actions {
@@ -558,9 +624,28 @@ h2 {
     border-radius: 18px;
   }
 
-  .platform-gallery,
-  .download-grid {
+  .platform-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .download-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .store-badge,
+  .github-download {
+    justify-content: center;
+    min-height: 70px;
+  }
+
+  .store-badge img {
+    max-width: min(100%, 176px);
+    max-height: 52px;
+  }
+
+  .github-download {
+    width: min(100%, 176px);
   }
 
   .platform-gallery img:first-child {

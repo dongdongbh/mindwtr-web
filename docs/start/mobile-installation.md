@@ -11,7 +11,21 @@ Detailed installation instructions for Android and iOS.
 Mindwtr is available on Google Play:
 https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr
 
-### Download APK (Alternative)
+### F-Droid
+
+Install from F-Droid:
+
+1. Install the F-Droid client.
+2. Open [Mindwtr on F-Droid](https://f-droid.org/en/packages/tech.dongdongbh.mindwtr/) and install.
+
+### IzzyOnDroid
+
+Install from IzzyOnDroid if you use an F-Droid-compatible client such as Droid-ify, Neo Store, or F-Droid:
+
+1. Add the IzzyOnDroid repository: `https://apt.izzysoft.de/fdroid/repo`.
+2. Open [Mindwtr on IzzyOnDroid](https://apt.izzysoft.de/fdroid/index/apk/tech.dongdongbh.mindwtr) and install.
+
+### Download APK
 
 1. Go to [GitHub Releases](https://github.com/dongdongbh/Mindwtr/releases)
 2. Download the latest APK (e.g., `mindwtr-<version>.apk`)
@@ -51,9 +65,9 @@ https://testflight.apple.com/join/7SMJCTSR
 3. **Simulator builds** — Available in the source code for development
 4. **Self-build** — Build and sign the app yourself with Xcode (Apple Developer account required for device signing)
 
-However, maintaining the iOS version on the App Store requires a substantial annual fee (see the Apple Developer Program), which I currently cover out of pocket.
+However, maintaining the iOS version on the App Store requires a substantial annual fee (see the [Apple Developer Program](https://developer.apple.com/support/enrollment/)), which I currently cover out of pocket.
 
-To ensure Mindwtr's continued existence and future development, your support is greatly appreciated! If you find value in the app, please consider supporting the project via GitHub Sponsors or Ko-fi.
+To ensure Mindwtr's continued existence and future development, your support is greatly appreciated. If you find value in the app, please consider supporting the project via [GitHub Sponsors](https://github.com/sponsors/dongdongbh) or [Ko-fi](https://ko-fi.com/D1D01T20WK).
 
 ### Building for iOS (Developers)
 

@@ -6,9 +6,9 @@ Detailed installation instructions for all desktop platforms.
 
 ## Linux
 
-### Arch Linux (AUR)
+### Arch Linux (AUR, Prebuilt)
 
-The easiest way to install on Arch-based distributions:
+The easiest way to install on Arch-based distributions is the prebuilt AUR package:
 
 ```bash
 # Using yay
@@ -21,7 +21,21 @@ paru -S mindwtr-bin
 pamac install mindwtr-bin
 ```
 
-📦 [AUR Package](https://aur.archlinux.org/packages/mindwtr-bin)
+[AUR package: mindwtr-bin](https://aur.archlinux.org/packages/mindwtr-bin)
+
+### Arch Linux (AUR, Build from Source)
+
+Use the source-built AUR package if you prefer to build locally:
+
+```bash
+# Using yay
+yay -S mindwtr
+
+# Using paru
+paru -S mindwtr
+```
+
+[AUR package: mindwtr](https://aur.archlinux.org/packages/mindwtr)
 
 ### Debian / Ubuntu
 
@@ -68,7 +82,7 @@ Run it with:
 flatpak run tech.dongdongbh.mindwtr
 ```
 
-📦 [Flathub Listing](https://flathub.org/apps/tech.dongdongbh.mindwtr)
+[Flathub listing](https://flathub.org/apps/tech.dongdongbh.mindwtr)
 
 ### AppImage (Universal)
 
@@ -108,6 +122,16 @@ Winget is built into Windows 10 and 11. Install Mindwtr with:
 winget install dongdongbh.Mindwtr
 ```
 
+### Chocolatey
+
+If you use Chocolatey:
+
+```powershell
+choco install mindwtr
+```
+
+[Chocolatey package](https://community.chocolatey.org/packages/mindwtr)
+
 ### Scoop
 
 If you use Scoop:
@@ -141,7 +165,21 @@ Windows WebView2 is still required.
 
 ## macOS
 
-### Homebrew (Recommended)
+### Mac App Store (Recommended)
+
+Install from the Mac App Store:
+
+[Mindwtr on the Mac App Store](https://apps.apple.com/app/mindwtr/id6758597144)
+
+Use this option if you want store-managed updates and the signed App Store build.
+
+### TestFlight Beta
+
+Join the macOS beta through TestFlight:
+
+[Mindwtr TestFlight beta](https://testflight.apple.com/join/7SMJCTSR)
+
+### Homebrew
 
 Install using [Homebrew](https://brew.sh/):
 

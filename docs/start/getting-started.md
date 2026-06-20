@@ -8,12 +8,13 @@ Welcome to Mindwtr! This guide will help you get up and running quickly.
 
 | Platform          | Installation                                                                                        |
 | ----------------- | --------------------------------------------------------------------------------------------------- |
-| **Arch Linux**    | `yay -S mindwtr-bin` or `paru -S mindwtr-bin`                                                       |
+| **Arch Linux**    | `mindwtr-bin` prebuilt AUR package, or `mindwtr` source-built AUR package                           |
 | **Debian/Ubuntu** | Add the APT repo (recommended) or download `.deb` from [Releases](https://github.com/dongdongbh/Mindwtr/releases) |
 | **Fedora/RHEL**   | Add the DNF repo (recommended) or download `.rpm` from [Releases](https://github.com/dongdongbh/Mindwtr/releases) |
+| **Flatpak**       | Install from [Flathub](https://flathub.org/apps/tech.dongdongbh.mindwtr)                            |
 | **AppImage**      | Download `.AppImage`, `chmod +x`, and run                                                           |
-| **Windows**       | Microsoft Store or `winget install dongdongbh.Mindwtr` (or `.msi`/`.exe` from [Releases](https://github.com/dongdongbh/Mindwtr/releases)) |
-| **macOS**         | `brew install --cask mindwtr` (or `.dmg` from [Releases](https://github.com/dongdongbh/Mindwtr/releases)) |
+| **Windows**       | Microsoft Store, Winget, Chocolatey, Scoop, portable ZIP, or installer from [Releases](https://github.com/dongdongbh/Mindwtr/releases) |
+| **macOS**         | [Mac App Store](https://apps.apple.com/app/mindwtr/id6758597144), TestFlight beta, Homebrew, or `.dmg` from [Releases](https://github.com/dongdongbh/Mindwtr/releases) |
 
 See [Desktop Installation](/start/desktop-installation) for detailed instructions.
 
@@ -21,10 +22,17 @@ See [Desktop Installation](/start/desktop-installation) for detailed instruction
 
 | Platform    | Installation                                                                 |
 | ----------- | ---------------------------------------------------------------------------- |
-| **Android** | Google Play or APK from [Releases](https://github.com/dongdongbh/Mindwtr/releases) |
+| **Android** | Google Play, F-Droid, IzzyOnDroid, or APK from [Releases](https://github.com/dongdongbh/Mindwtr/releases) |
 | **iOS**     | App Store, TestFlight beta, or simulator/self-build for development          |
 
 See [Mobile Installation](/start/mobile-installation) for detailed instructions.
+
+### Docker and web app
+
+Run the web app (PWA) and self-hosted sync server with Docker when you want a browser-accessible deployment:
+
+- [Docker Deployment](/power-users/docker-deployment)
+- [Web App (PWA)](/power-users/web-app-pwa)
 
 ---
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mindwtr.app/sitemap.xml

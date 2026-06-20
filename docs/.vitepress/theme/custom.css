@@ -65,6 +65,17 @@ body,
   border-right: 1px solid var(--vp-c-gutter);
 }
 
+@media (min-width: 960px) {
+  .Layout .VPSidebar {
+    top: calc(var(--vp-layout-top-height, 0px) + var(--vp-nav-height));
+    padding-top: 32px;
+  }
+
+  .VPSidebar .curtain {
+    display: none;
+  }
+}
+
 .VPDoc .container > .content {
   background: var(--vp-c-bg);
 }

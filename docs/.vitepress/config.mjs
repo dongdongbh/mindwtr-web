@@ -5,6 +5,7 @@ export default defineConfig({
   description: "Searchable documentation for Mindwtr, the free, local-first GTD app.",
   base: "/",
   cleanUrls: true,
+  head: [["link", { rel: "icon", href: "/assets/brand/icon.png" }]],
   vite: {
     esbuild: {
       tsconfigRaw: {

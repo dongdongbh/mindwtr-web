@@ -21,7 +21,7 @@
 - `shared-assets/screenshots/`: current Mindwtr screenshots copied from `/home/dd/code/Mindwtr`.
 - `landing/package.json`: landing app dependencies and build scripts.
 - `landing/index.html`: static Vite entry HTML.
-- `landing/src/main.ts`: platform-aware primary download CTA and small progressive enhancement only.
+- `landing/src/main.ts`: Vite entry point that imports the landing CSS.
 - `landing/src/styles.css`: complete visual system and responsive layout for Direction A.
 - `landing/public/assets/`: generated copy of shared assets for the landing Pages root.
 - `docs/package.json`: docs app dependencies and explicit docs scripts.
@@ -422,9 +422,9 @@ Create `landing/index.html` with semantic sections:
 
       <section class="platforms" aria-labelledby="platforms-title">
         <div>
-          <p class="eyebrow">Desktop, mobile, web</p>
+          <p class="eyebrow">Desktop, mobile, PWA</p>
           <h2 id="platforms-title">Native where you work. Private where it counts.</h2>
-          <p>Use Mindwtr on macOS, Windows, Linux, iOS, Android, and the browser, with sync choices that stay under your control.</p>
+          <p>Use Mindwtr on macOS, Windows, Linux, iOS, Android, or as a self-hosted browser app, with sync choices that stay under your control.</p>
         </div>
         <div class="platform-gallery">
           <img src="/assets/screenshots/desktop-projects.png" alt="Mindwtr desktop Projects view" />
@@ -475,64 +475,12 @@ Create `landing/index.html` with semantic sections:
 </html>
 ```
 
-- [ ] **Step 4: Add platform-aware CTA script**
+- [ ] **Step 4: Add landing entry point**
 
 Create `landing/src/main.ts`:
 
 ```ts
 import "./styles.css";
-
-type DownloadTarget = {
-  label: string;
-  href: string;
-};
-
-const downloads: Record<string, DownloadTarget> = {
-  android: {
-    label: "Get Mindwtr on Google Play",
-    href: "https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr"
-  },
-  ios: {
-    label: "Download on the App Store",
-    href: "https://apps.apple.com/app/mindwtr/id6758597144"
-  },
-  mac: {
-    label: "Download for macOS",
-    href: "https://apps.apple.com/app/mindwtr/id6758597144"
-  },
-  windows: {
-    label: "Get Mindwtr from Microsoft Store",
-    href: "https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare"
-  },
-  linux: {
-    label: "Install from Flathub",
-    href: "https://flathub.org/apps/tech.dongdongbh.mindwtr"
-  },
-  fallback: {
-    label: "Download Mindwtr",
-    href: "#download"
-  }
-};
-
-function detectPlatform(userAgent: string, platform: string): keyof typeof downloads {
-  const source = `${userAgent} ${platform}`.toLowerCase();
-
-  if (source.includes("android")) return "android";
-  if (/iphone|ipad|ipod/.test(source)) return "ios";
-  if (source.includes("mac")) return "mac";
-  if (source.includes("win")) return "windows";
-  if (/linux|x11|wayland/.test(source)) return "linux";
-
-  return "fallback";
-}
-
-const primaryDownload = document.querySelector<HTMLAnchorElement>("#primary-download");
-
-if (primaryDownload) {
-  const target = downloads[detectPlatform(navigator.userAgent, navigator.platform)];
-  primaryDownload.href = target.href;
-  primaryDownload.textContent = target.label;
-}
 ```
 
 - [ ] **Step 5: Add landing CSS**

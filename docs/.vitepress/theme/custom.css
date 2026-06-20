@@ -3,11 +3,84 @@
   --vp-c-brand-2: #2c9a78;
   --vp-c-brand-3: #8ed7bd;
   --vp-c-bg: #fbfaf5;
-  --vp-c-bg-soft: #f0f6ef;
-  --vp-c-bg-alt: #ffffff;
+  --vp-c-bg-soft: #f3f7f0;
+  --vp-c-bg-alt: #fbfaf5;
+  --vp-c-gutter: #dce5dc;
+  --vp-c-divider: #dce5dc;
   --vp-c-text-1: #16342b;
   --vp-c-text-2: #5b6b63;
+  --vp-sidebar-bg-color: #fbfaf5;
+  --vp-nav-bg-color: rgba(251, 250, 245, 0.9);
+  --vp-nav-screen-bg-color: #fbfaf5;
+  --vp-local-search-bg: #fbfaf5;
+  --vp-local-search-result-bg: #ffffff;
+  --vp-local-search-result-selected-bg: #f0f6ef;
+  --vp-local-search-result-border: #dce5dc;
+  --vp-local-search-result-selected-border: #8ed7bd;
   --vp-font-family-base: "Avenir Next", Avenir, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.dark {
+  --vp-c-brand-1: #8ed7bd;
+  --vp-c-brand-2: #57bd99;
+  --vp-c-brand-3: #1e7f63;
+  --vp-c-bg: #111b17;
+  --vp-c-bg-soft: #17241f;
+  --vp-c-bg-alt: #111b17;
+  --vp-c-gutter: #294239;
+  --vp-c-divider: #294239;
+  --vp-c-text-1: #ecf6f1;
+  --vp-c-text-2: #b5c9bf;
+  --vp-sidebar-bg-color: #111b17;
+  --vp-nav-bg-color: rgba(17, 27, 23, 0.92);
+  --vp-nav-screen-bg-color: #111b17;
+  --vp-local-search-bg: #111b17;
+  --vp-local-search-result-bg: #17241f;
+  --vp-local-search-result-selected-bg: #20372f;
+  --vp-local-search-result-border: #294239;
+  --vp-local-search-result-selected-border: #57bd99;
+}
+
+.VPNav {
+  backdrop-filter: blur(18px);
+}
+
+.VPNavBar .divider-line,
+.VPLocalNav,
+.VPFooter {
+  border-color: var(--vp-c-gutter);
+}
+
+.VPSidebar {
+  border-right: 1px solid var(--vp-c-gutter);
+}
+
+.VPDoc .container > .content {
+  background: var(--vp-c-bg);
+}
+
+.vp-doc table {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.vp-doc th,
+.vp-doc td {
+  border-color: var(--vp-c-divider);
+}
+
+.vp-doc tr:nth-child(2n) {
+  background-color: var(--vp-c-bg-soft);
+}
+
+.custom-block {
+  border-color: rgba(229, 183, 90, 0.35);
+  background-color: #fff4d8;
+}
+
+.dark .custom-block {
+  border-color: rgba(229, 183, 90, 0.32);
+  background-color: #2a2518;
 }
 
 .VPHomeHero .name {

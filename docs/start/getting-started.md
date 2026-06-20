@@ -13,7 +13,7 @@ Choose the most natural install path for your device.
 | macOS | Mac App Store or Homebrew |
 | Windows | Microsoft Store or winget |
 | Linux | Flathub, AUR, AppImage, deb, or rpm |
-| Web | Hosted web app or self-hosted web build |
+| Web | Self-hosted PWA via Docker or a local web build |
 
 ## First launch
 
@@ -45,4 +45,3 @@ Use Review to process Inbox, check Waiting For, review projects, and decide what
 - Learn the [GTD workflow](/use/gtd-workflow).
 - Set up [data and sync](/data-sync/).
 - Read the [desktop guide](/use/desktop) or [mobile guide](/use/mobile).
-

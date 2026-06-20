@@ -914,9 +914,10 @@ h2 {
 }
 
 .compare-table td.no::before {
-  content: "\2013";
-  color: #b4c2c0;
-  font-size: 1.05rem;
+  content: "\2715";
+  color: #b25c5c;
+  font-weight: 700;
+  font-size: 0.98rem;
 }
 
 .compare-legend {
@@ -947,8 +948,9 @@ h2 {
 }
 
 .compare-legend .lg-no::before {
-  content: "\2013";
-  color: #b4c2c0;
+  content: "\2715";
+  color: #b25c5c;
+  font-weight: 700;
 }
 
 .sr-only {

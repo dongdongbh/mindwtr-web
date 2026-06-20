@@ -1,11 +1,11 @@
 :root {
   color-scheme: light;
-  --ink: #16342b;
-  --muted: #58695f;
-  --paper: #fbfaf5;
-  --paper-strong: #f3f7f0;
+  --ink: #1e272e;
+  --muted: #5d6872;
+  --paper: #fff9ef;
+  --paper-strong: #fffdf8;
   --surface: #ffffff;
-  --line: #dce5dc;
+  --line: #e5ded1;
   --green: #1e7f63;
   --green-dark: #12533f;
   --mint: #e8f5ee;
@@ -28,7 +28,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84) 0%, rgba(255, 249, 239, 0.96) 38%, #f9f1db 100%),
+    var(--paper);
   color: var(--ink);
   line-height: 1.5;
 }
@@ -38,11 +40,7 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background:
-    linear-gradient(90deg, rgba(30, 127, 99, 0.04) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(30, 127, 99, 0.04) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 74%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(238, 218, 180, 0.2));
   pointer-events: none;
 }
 
@@ -70,11 +68,11 @@ button:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  width: min(1180px, calc(100% - 40px));
+  width: min(1480px, calc(100% - 48px));
   min-height: 72px;
   margin: 0 auto;
   padding: 14px 0;
-  background: rgba(251, 250, 245, 0.86);
+  background: rgba(255, 249, 239, 0.82);
   backdrop-filter: blur(18px);
 }
 
@@ -110,19 +108,27 @@ button:focus-visible {
   color: var(--green-dark);
 }
 
+.site-header nav .nav-download {
+  border-radius: 999px;
+  padding: 11px 20px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow:
+    inset 0 0 0 1px rgba(229, 222, 209, 0.72),
+    0 10px 24px rgba(80, 66, 42, 0.06);
+}
+
 main {
   overflow: hidden;
 }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(520px, 1.22fr);
+  grid-template-columns: minmax(340px, 0.6fr) minmax(620px, 1.2fr);
   align-items: center;
-  gap: clamp(28px, 4vw, 64px);
-  width: min(1240px, calc(100% - 40px));
-  min-height: calc(100dvh - 92px);
+  gap: clamp(30px, 5vw, 78px);
+  width: min(1480px, calc(100% - 48px));
   margin: 0 auto;
-  padding: clamp(36px, 6vw, 72px) 0 clamp(54px, 7vw, 86px);
+  padding: clamp(70px, 7vw, 108px) 0 30px;
 }
 
 .hero-copy {
@@ -193,9 +199,9 @@ h1 {
 }
 
 .button.primary {
-  background: var(--green-dark);
+  background: #202a31;
   color: #ffffff;
-  box-shadow: 0 14px 34px rgba(18, 83, 63, 0.22);
+  box-shadow: 0 14px 34px rgba(32, 42, 49, 0.22);
 }
 
 .button.secondary {
@@ -226,20 +232,17 @@ h1 {
 .hero-media {
   display: flex;
   align-items: center;
-  min-height: clamp(340px, 46vw, 560px);
+  min-height: clamp(360px, 45vw, 690px);
 }
 
 .desktop-frame {
   margin: 0;
   overflow: hidden;
-  border: 1px solid rgba(22, 52, 43, 0.12);
-  background: var(--surface);
-  box-shadow: 0 28px 80px rgba(28, 57, 44, 0.18);
-}
-
-.desktop-frame {
   width: 100%;
-  border-radius: var(--radius-large);
+  border: 0;
+  border-radius: 24px;
+  background: transparent;
+  box-shadow: 0 34px 94px rgba(92, 64, 27, 0.12);
 }
 
 .desktop-frame img {
@@ -247,6 +250,125 @@ h1 {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: center;
+  border-radius: inherit;
+}
+
+.hero-features {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  width: min(1320px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 18px 0 clamp(74px, 8vw, 104px);
+}
+
+.hero-features article {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  min-height: 108px;
+  border: 1px solid rgba(229, 222, 209, 0.9);
+  border-radius: 18px;
+  padding: 22px 24px;
+  background: rgba(255, 255, 255, 0.66);
+  box-shadow: 0 18px 54px rgba(92, 64, 27, 0.08);
+}
+
+.feature-mark {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.44);
+}
+
+.feature-mark::before,
+.feature-mark::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+
+.capture-mark {
+  background: linear-gradient(135deg, #2f97ed, #2e72e5);
+}
+
+.capture-mark::before {
+  inset: 13px 10px 11px;
+  border: 2px solid rgba(255, 255, 255, 0.86);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.focus-mark {
+  background: linear-gradient(135deg, #ff922d, #f06519);
+}
+
+.focus-mark::before {
+  inset: 12px;
+  border: 3px solid rgba(255, 255, 255, 0.84);
+  border-radius: 999px;
+}
+
+.focus-mark::after {
+  inset: 19px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+}
+
+.organize-mark {
+  background: linear-gradient(135deg, #8864d9, #6246bd);
+}
+
+.organize-mark::before {
+  inset: 13px 11px 10px;
+  border: 2px solid rgba(255, 255, 255, 0.86);
+  border-radius: 5px;
+}
+
+.organize-mark::after {
+  right: 12px;
+  bottom: 11px;
+  left: 12px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.86);
+  border-radius: 999px;
+  box-shadow: 0 -7px 0 rgba(255, 255, 255, 0.86);
+}
+
+.review-mark {
+  background: linear-gradient(135deg, #4eb265, #2d9b55);
+}
+
+.review-mark::before {
+  inset: 12px;
+  border: 3px solid rgba(255, 255, 255, 0.86);
+  border-radius: 999px;
+}
+
+.review-mark::after {
+  width: 14px;
+  height: 8px;
+  top: 17px;
+  left: 15px;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.9);
+  border-left: 3px solid rgba(255, 255, 255, 0.9);
+  border-radius: 0;
+  transform: rotate(-45deg);
+}
+
+.hero-features h2 {
+  margin-bottom: 4px;
+  font-size: 1.04rem;
+  line-height: 1.25;
+}
+
+.hero-features p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.45;
 }
 
 .section-band,
@@ -434,8 +556,8 @@ h2 {
 .download-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 22px 24px;
-  align-items: stretch;
+  gap: 30px 34px;
+  align-items: center;
 }
 
 .store-badge,
@@ -444,16 +566,15 @@ h2 {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 280px;
-  height: 84px;
+  max-width: 260px;
+  height: 78px;
   min-height: 0;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 14px;
-  padding: 0 18px;
-  background: #101211;
-  box-shadow: 0 16px 34px rgba(28, 57, 44, 0.16);
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
   justify-self: center;
-  overflow: hidden;
   transition:
     opacity 180ms ease,
     transform 180ms ease;
@@ -466,16 +587,49 @@ h2 {
 }
 
 .store-badge img {
-  width: auto;
-  max-width: 100%;
-  max-height: 64px;
+  width: min(var(--badge-width), 100%);
+  max-height: 74px;
   height: auto;
   object-fit: contain;
 }
 
+.store-badge.apple {
+  --badge-width: 198px;
+}
+
+.store-badge.google {
+  --badge-width: 188px;
+}
+
+.store-badge.microsoft {
+  --badge-width: 226px;
+}
+
+.store-badge.flathub {
+  --badge-width: 214px;
+}
+
+.store-badge.snap {
+  --badge-width: 214px;
+}
+
+.store-badge.fdroid {
+  --badge-width: 188px;
+}
+
+.store-badge.izzy {
+  --badge-width: 230px;
+}
+
 .github-download {
   gap: 10px;
+  width: min(236px, 100%);
+  height: 68px;
+  border-radius: 10px;
+  padding: 0 18px;
+  background: #24292f;
   color: #ffffff;
+  box-shadow: 0 14px 34px rgba(36, 41, 47, 0.16);
 }
 
 .github-download img {
@@ -491,7 +645,7 @@ h2 {
 }
 
 .github-download strong {
-  font-size: 1rem;
+  font-size: 1.02rem;
   font-weight: 820;
 }
 
@@ -545,6 +699,7 @@ h2 {
   }
 
   .workflow-grid,
+  .hero-features,
   .trust-grid {
     grid-template-columns: 1fr;
   }
@@ -562,7 +717,7 @@ h2 {
 
 @media (max-width: 720px) {
   .site-header {
-    width: min(100% - 28px, 1180px);
+    width: min(100% - 28px, 1480px);
   }
 
   .site-header nav {
@@ -575,6 +730,7 @@ h2 {
   }
 
   .hero,
+  .hero-features,
   .section-band,
   .platforms,
   .power,
@@ -584,6 +740,10 @@ h2 {
 
   .hero {
     padding-top: 28px;
+  }
+
+  .hero-features {
+    padding-bottom: 56px;
   }
 
   .section-band,
@@ -632,17 +792,17 @@ h2 {
 
   .download-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px 12px;
+    gap: 18px 14px;
   }
 
   .store-badge,
   .github-download {
+    max-width: 100%;
     height: 72px;
-    padding: 0 10px;
   }
 
   .store-badge img {
-    max-height: 54px;
+    max-height: 64px;
   }
 
   .github-download {

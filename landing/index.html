@@ -363,34 +363,128 @@
         <div class="section-copy">
           <p class="eyebrow">Install</p>
           <h2 id="download-title">Download Mindwtr</h2>
-          <p>Pick the channel that fits your device and distribution preference.</p>
+          <p>Pick the channel that fits your device. Stores for one-click installs, package managers and direct files for everyone else.</p>
         </div>
-        <div class="download-grid" aria-label="Download Mindwtr">
-          <a class="store-badge apple" href="https://apps.apple.com/app/mindwtr/id6758597144">
-            <img src="/assets/badges/app-store.svg" alt="Download on the App Store" />
-          </a>
-          <a class="store-badge google" href="https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr">
-            <img src="/assets/badges/google-play.png" alt="Get it on Google Play" />
-          </a>
-          <a class="store-badge microsoft" href="https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare">
-            <img src="/assets/badges/microsoft-store.svg" alt="Get it from Microsoft" />
-          </a>
-          <a class="store-badge flathub" href="https://flathub.org/apps/tech.dongdongbh.mindwtr">
-            <img src="/assets/badges/flathub.png" alt="Get it on Flathub" />
-          </a>
-          <a class="store-badge snap" href="https://snapcraft.io/mindwtr">
-            <img src="/assets/badges/snap-store.svg" alt="Get it from the Snap Store" />
-          </a>
-          <a class="store-badge fdroid" href="https://f-droid.org/en/packages/tech.dongdongbh.mindwtr/">
-            <img src="/assets/badges/f-droid.svg" alt="Get it on F-Droid" />
-          </a>
-          <a class="store-badge izzy" href="https://apt.izzysoft.de/packages/tech.dongdongbh.mindwtr">
-            <img src="/assets/badges/izzyondroid.png" alt="Get it at IzzyOnDroid" />
-          </a>
-          <a class="github-download" href="https://github.com/dongdongbh/Mindwtr/releases">
-            <img src="/assets/badges/github-mark.png" alt="" />
-            <strong>GitHub Releases</strong>
-          </a>
+        <div class="download-platforms" aria-label="Download Mindwtr by platform">
+          <article class="dl-platform" data-platform="mac">
+            <header class="dl-platform-head">
+              <h3>macOS</h3>
+              <span class="dl-recommended" hidden>Recommended for you</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge apple" href="https://apps.apple.com/app/mindwtr/id6758597144">
+                <img src="/assets/badges/app-store.svg" alt="Download on the Mac App Store" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li class="dl-cmd-row">
+                <code class="dl-cmd">brew install --cask mindwtr</code>
+                <button type="button" class="dl-copy" data-copy="brew install --cask mindwtr" aria-label="Copy Homebrew command" hidden>Copy</button>
+              </li>
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">Direct <code>.dmg</code> <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="dl-platform" data-platform="windows">
+            <header class="dl-platform-head">
+              <h3>Windows</h3>
+              <span class="dl-recommended" hidden>Recommended for you</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge microsoft" href="https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare">
+                <img src="/assets/badges/microsoft-store.svg" alt="Get it from the Microsoft Store" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li class="dl-cmd-row">
+                <code class="dl-cmd">winget install dongdongbh.Mindwtr</code>
+                <button type="button" class="dl-copy" data-copy="winget install dongdongbh.Mindwtr" aria-label="Copy winget command" hidden>Copy</button>
+              </li>
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">Direct <code>.exe</code> / <code>.msi</code> <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="dl-platform" data-platform="linux">
+            <header class="dl-platform-head">
+              <h3>Linux</h3>
+              <span class="dl-recommended" hidden>Recommended for you</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge flathub" href="https://flathub.org/apps/tech.dongdongbh.mindwtr">
+                <img src="/assets/badges/flathub.png" alt="Get it on Flathub" />
+              </a>
+              <a class="store-badge snap" href="https://snapcraft.io/mindwtr">
+                <img src="/assets/badges/snap-store.svg" alt="Get it from the Snap Store" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li class="dl-cmd-row">
+                <code class="dl-cmd">yay -S mindwtr-bin</code>
+                <button type="button" class="dl-copy" data-copy="yay -S mindwtr-bin" aria-label="Copy AUR command" hidden>Copy</button>
+              </li>
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">Direct <code>AppImage</code> · <code>.deb</code> · <code>.rpm</code> <span aria-hidden="true">→</span></a>
+              </li>
+              <li>
+                <a class="dl-aside" href="https://docs.mindwtr.app/start/desktop-installation">APT &amp; DNF repos, build from source <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="dl-platform" data-platform="ios">
+            <header class="dl-platform-head">
+              <h3>iOS &amp; iPadOS</h3>
+              <span class="dl-recommended" hidden>Recommended for you</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge apple" href="https://apps.apple.com/app/mindwtr/id6758597144">
+                <img src="/assets/badges/app-store.svg" alt="Download on the App Store" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li>
+                <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">Join the TestFlight beta <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="dl-platform" data-platform="android">
+            <header class="dl-platform-head">
+              <h3>Android</h3>
+              <span class="dl-recommended" hidden>Recommended for you</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge google" href="https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr">
+                <img src="/assets/badges/google-play.png" alt="Get it on Google Play" />
+              </a>
+              <a class="store-badge fdroid" href="https://f-droid.org/en/packages/tech.dongdongbh.mindwtr/">
+                <img src="/assets/badges/f-droid.svg" alt="Get it on F-Droid" />
+              </a>
+              <a class="store-badge izzy" href="https://apt.izzysoft.de/packages/tech.dongdongbh.mindwtr">
+                <img src="/assets/badges/izzyondroid.png" alt="Get it at IzzyOnDroid" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">Direct <code>.apk</code> <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="dl-platform dl-platform-all" data-platform="all">
+            <header class="dl-platform-head">
+              <h3>All platforms</h3>
+            </header>
+            <p class="dl-all-copy">Every installer, package, AppImage, and APK for every release lives here.</p>
+            <a class="github-download" href="https://github.com/dongdongbh/Mindwtr/releases">
+              <img src="/assets/badges/github-mark.png" alt="" />
+              <strong>GitHub Releases</strong>
+            </a>
+          </article>
         </div>
       </section>
     </main>

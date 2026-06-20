@@ -618,12 +618,184 @@ h2 {
 }
 
 /* Download ---------------------------------------------------------------- */
-.download-grid {
+.download-platforms {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 26px 30px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.dl-platform {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-large);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.dl-platform.is-detected {
+  border-color: var(--blue);
+  box-shadow: 0 22px 48px rgba(46, 107, 230, 0.18);
+}
+
+.dl-platform-head {
+  display: flex;
   align-items: center;
-  justify-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dl-platform-head h3 {
+  margin: 0;
+  font-size: 1.16rem;
+  font-weight: 760;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.dl-recommended[hidden] {
+  display: none;
+}
+
+.dl-recommended {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 5px 11px;
+  background: var(--blue-soft);
+  color: var(--blue-deep);
+  font-size: 0.74rem;
+  font-weight: 720;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.dl-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+}
+
+.dl-badges .store-badge {
+  width: auto;
+  max-width: 190px;
+  height: auto;
+  justify-content: flex-start;
+}
+
+.dl-badges .store-badge img {
+  height: auto;
+  max-height: calc(var(--badge-h, 52px) - 12px);
+  max-width: 100%;
+}
+
+.dl-options {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dl-cmd-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dl-cmd {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  color: var(--teal-ink);
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 8px 11px;
+  white-space: nowrap;
+}
+
+.dl-copy {
+  flex: 0 0 auto;
+  border: 1px solid var(--line-strong);
+  border-radius: 9px;
+  padding: 7px 11px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.dl-copy:hover {
+  border-color: var(--blue);
+  color: var(--blue-deep);
+}
+
+.dl-copy.is-copied {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+  color: var(--teal-ink);
+}
+
+.dl-direct {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.94rem;
+  font-weight: 660;
+  color: var(--blue-deep);
+}
+
+.dl-direct code {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.dl-direct:hover {
+  text-decoration: underline;
+}
+
+.dl-aside {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.dl-aside:hover {
+  color: var(--blue-deep);
+}
+
+.dl-platform-all {
+  justify-content: space-between;
+}
+
+.dl-all-copy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.dl-platform-all .github-download {
+  align-self: flex-start;
+  margin-top: auto;
 }
 
 .store-badge,
@@ -995,6 +1167,10 @@ h2 {
     grid-template-columns: 1fr;
   }
 
+  .download-platforms {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .workflow-grid,
   .hero-features,
   .trust-grid {
@@ -1091,9 +1267,9 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  .download-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px 14px;
+  .download-platforms {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .store-badge,

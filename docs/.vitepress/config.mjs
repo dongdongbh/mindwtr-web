@@ -24,7 +24,7 @@ export default defineConfig({
       provider: "local"
     },
     nav: [
-      { text: "Mindwtr", link: "https://mindwtr.app/" },
+      { text: "Main site", link: "https://mindwtr.app/" },
       { text: "Start", link: "/start/getting-started" },
       { text: "Use Mindwtr", link: "/use/desktop" },
       { text: "Data & Sync", link: "/data-sync/" },

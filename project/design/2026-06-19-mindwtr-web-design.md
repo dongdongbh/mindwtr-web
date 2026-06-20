@@ -149,7 +149,7 @@ Docs home:
 
 Migration rules:
 
-- Use `/home/dd/code/Mindwtr/wiki` as source material, but rewrite high-traffic pages into web docs first.
+- Use https://github.com/dongdongbh/Mindwtr/tree/main/wiki as source material, but rewrite high-traffic pages into web docs first.
 - First rewrite pass:
   - Getting Started
   - Data and Sync

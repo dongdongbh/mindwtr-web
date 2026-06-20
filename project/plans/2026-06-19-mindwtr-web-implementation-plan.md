@@ -13,12 +13,12 @@
 - `package.json`: root convenience scripts for local development, verification, asset sync, and secret scanning.
 - `.bun-version`: pins Bun for local and Cloudflare build parity.
 - `.gitignore`: keeps env files, Wrangler/Cloudflare local state, dependency folders, and build outputs out of git.
-- `LICENSE`: AGPL-3.0 license, reconciled from the GitHub-created remote license or copied from `/home/dd/code/Mindwtr/LICENSE` if needed.
+- `LICENSE`: AGPL-3.0 license, reconciled from the GitHub-created remote license or copied from https://github.com/dongdongbh/Mindwtr/blob/main/LICENSE if needed.
 - `README.md`: repo-specific deployment notes for the two Cloudflare Pages projects.
 - `scripts/sync-assets.mjs`: copies selected files from `/shared-assets` into `landing/public/assets` and `docs/public/assets`.
 - `scripts/check-secrets.mjs`: scans committed text files for known sensitive identifiers and token-like assignments.
 - `shared-assets/brand/`: Mindwtr icon and app identity assets.
-- `shared-assets/screenshots/`: current Mindwtr screenshots copied from `/home/dd/code/Mindwtr`.
+- `shared-assets/screenshots/`: current Mindwtr screenshots copied from the Mindwtr app repository at https://github.com/dongdongbh/Mindwtr.
 - `landing/package.json`: landing app dependencies and build scripts.
 - `landing/index.html`: static Vite entry HTML.
 - `landing/src/main.ts`: Vite entry point that imports the landing CSS.
@@ -236,14 +236,15 @@ Run:
 
 ```bash
 rtk mkdir -p shared-assets/brand shared-assets/screenshots
-rtk cp /home/dd/code/Mindwtr/apps/mobile/assets/images/icon.png shared-assets/brand/icon.png
-rtk cp /home/dd/code/Mindwtr/apps/desktop/screenshots/flathub/focus_light.png shared-assets/screenshots/desktop-focus.png
-rtk cp /home/dd/code/Mindwtr/apps/desktop/screenshots/flathub/inbox_light.png shared-assets/screenshots/desktop-inbox.png
-rtk cp /home/dd/code/Mindwtr/apps/desktop/screenshots/flathub/projects_workspace_light.png shared-assets/screenshots/desktop-projects.png
-rtk cp /home/dd/code/Mindwtr/apps/mobile/screenshots/android/playstore/phone/focus.png shared-assets/screenshots/mobile-focus.png
-rtk cp /home/dd/code/Mindwtr/apps/mobile/screenshots/android/playstore/phone/capture.png shared-assets/screenshots/mobile-capture.png
-rtk cp /home/dd/code/Mindwtr/apps/mobile/screenshots/android/playstore/phone/project.png shared-assets/screenshots/mobile-project.png
-rtk cp /home/dd/code/Mindwtr/apps/mobile/screenshots/ipad/project.png shared-assets/screenshots/tablet-project.png
+# Replace <Mindwtr-repo> with a local checkout of https://github.com/dongdongbh/Mindwtr.
+rtk cp <Mindwtr-repo>/apps/mobile/assets/images/icon.png shared-assets/brand/icon.png
+rtk cp <Mindwtr-repo>/apps/desktop/screenshots/flathub/focus_light.png shared-assets/screenshots/desktop-focus.png
+rtk cp <Mindwtr-repo>/apps/desktop/screenshots/flathub/inbox_light.png shared-assets/screenshots/desktop-inbox.png
+rtk cp <Mindwtr-repo>/apps/desktop/screenshots/flathub/projects_workspace_light.png shared-assets/screenshots/desktop-projects.png
+rtk cp <Mindwtr-repo>/apps/mobile/screenshots/android/playstore/phone/focus.png shared-assets/screenshots/mobile-focus.png
+rtk cp <Mindwtr-repo>/apps/mobile/screenshots/android/playstore/phone/capture.png shared-assets/screenshots/mobile-capture.png
+rtk cp <Mindwtr-repo>/apps/mobile/screenshots/android/playstore/phone/project.png shared-assets/screenshots/mobile-project.png
+rtk cp <Mindwtr-repo>/apps/mobile/screenshots/ipad/project.png shared-assets/screenshots/tablet-project.png
 ```
 
 Expected: every copied file exists under `shared-assets/` and is a real screenshot or icon from the app repo.
@@ -799,7 +800,7 @@ Expected: all listed directories exist.
 
 - [ ] **Step 2: Rewrite Getting Started**
 
-Use `/home/dd/code/Mindwtr/wiki/Getting-Started.md` as source material and create `docs/start/getting-started.md` with this structure:
+Use https://github.com/dongdongbh/Mindwtr/blob/main/wiki/Getting-Started.md as source material and create `docs/start/getting-started.md` with this structure:
 
 ```markdown
 # Getting started
@@ -847,7 +848,7 @@ Use Review to process Inbox, check Waiting For, review projects, and decide what
 
 - [ ] **Step 3: Rewrite Data and Sync**
 
-Use `/home/dd/code/Mindwtr/wiki/Data-and-Sync.md` as source material and create `docs/data-sync/index.md` with sections in this order:
+Use https://github.com/dongdongbh/Mindwtr/blob/main/wiki/Data-and-Sync.md as source material and create `docs/data-sync/index.md` with sections in this order:
 
 ```markdown
 # Data and sync
@@ -903,12 +904,12 @@ For each target page, rewrite the wiki source into shorter web-doc sections with
 Use these source-to-target pairs:
 
 ```text
-/home/dd/code/Mindwtr/wiki/FAQ.md -> docs/start/faq.md
-/home/dd/code/Mindwtr/wiki/User-Guide-Desktop.md -> docs/use/desktop.md
-/home/dd/code/Mindwtr/wiki/User-Guide-Mobile.md -> docs/use/mobile.md
-/home/dd/code/Mindwtr/wiki/GTD-Workflow-in-Mindwtr.md -> docs/use/gtd-workflow.md
-/home/dd/code/Mindwtr/wiki/AI-Assistant.md -> docs/power-users/ai-assistant.md
-/home/dd/code/Mindwtr/wiki/MCP-Server.md -> docs/power-users/mcp.md
+https://github.com/dongdongbh/Mindwtr/blob/main/wiki/FAQ.md -> docs/start/faq.md
+https://github.com/dongdongbh/Mindwtr/blob/main/wiki/User-Guide-Desktop.md -> docs/use/desktop.md
+https://github.com/dongdongbh/Mindwtr/blob/main/wiki/User-Guide-Mobile.md -> docs/use/mobile.md
+https://github.com/dongdongbh/Mindwtr/blob/main/wiki/GTD-Workflow-in-Mindwtr.md -> docs/use/gtd-workflow.md
+https://github.com/dongdongbh/Mindwtr/blob/main/wiki/AI-Assistant.md -> docs/power-users/ai-assistant.md
+https://github.com/dongdongbh/Mindwtr/blob/main/wiki/MCP-Server.md -> docs/power-users/mcp.md
 ```
 
 - [ ] **Step 5: Create focused import pages**
@@ -938,9 +939,9 @@ Imported tasks land in Mindwtr so you can clarify and organize them into your GT
 Use the same shape for Todoist and OmniFocus, replacing source-specific details from:
 
 ```text
-/home/dd/code/Mindwtr/wiki/TickTick-Import.md
-/home/dd/code/Mindwtr/wiki/Todoist-Import.md
-/home/dd/code/Mindwtr/wiki/OmniFocus-Import.md
+https://github.com/dongdongbh/Mindwtr/blob/main/wiki/TickTick-Import.md
+https://github.com/dongdongbh/Mindwtr/blob/main/wiki/Todoist-Import.md
+https://github.com/dongdongbh/Mindwtr/blob/main/wiki/OmniFocus-Import.md
 ```
 
 - [ ] **Step 6: Create developer starter pages**
@@ -948,8 +949,8 @@ Use the same shape for Todoist and OmniFocus, replacing source-specific details 
 Create `docs/developers/architecture.md` and `docs/developers/contributing.md` using:
 
 ```text
-/home/dd/code/Mindwtr/wiki/Architecture.md
-/home/dd/code/Mindwtr/docs/CONTRIBUTING.md
+https://github.com/dongdongbh/Mindwtr/blob/main/wiki/Architecture.md
+https://github.com/dongdongbh/Mindwtr/blob/main/docs/CONTRIBUTING.md
 ```
 
 Keep these closer to markdown in the first pass, but update links and headings for VitePress.
@@ -1215,7 +1216,7 @@ Expected: GitHub branch `main` receives the local web repo history without force
 ### Task 9: Post-Launch Link Updates
 
 **Files:**
-- Modify later in `/home/dd/code/Mindwtr`: README, in-app docs links, store metadata/support URLs where applicable
+- Modify later in the Mindwtr app repository (https://github.com/dongdongbh/Mindwtr): README, in-app docs links, store metadata/support URLs where applicable
 - Modify later in GitHub wiki: migrated page stubs
 
 - [ ] **Step 1: Open a follow-up checklist**

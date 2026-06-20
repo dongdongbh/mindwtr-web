@@ -100,7 +100,7 @@ Mindwtr/
 └── package.json           # Monorepo root
 ```
 
-Public user and developer documentation is maintained in `/home/dd/code/mindwtr-web/docs` and published at https://docs.mindwtr.app/. Prefer that docs repo for new or migrated guide pages.
+Public user and developer documentation is maintained in this repo's `docs/` directory and published at https://docs.mindwtr.app/. The public source is https://github.com/dongdongbh/mindwtr-web/tree/main/docs. Prefer that docs repo for new or migrated guide pages.
 
 ---
 
@@ -190,7 +190,7 @@ Contributors should treat the snapshot transport as a deliberate product choice,
 6. Commit with descriptive message
 7. Open a pull request
 
-When adding a new top-level entity type, update the full persistence and sync surface in the same change: core `AppData` types and normalization, desktop SQLite schema/storage round-trip tests, mobile SQLite schema/backup restore, cloud validation/normalization, MCP tools if exposed, and the Core API docs in `/home/dd/code/mindwtr-web/docs`.
+When adding a new top-level entity type, update the full persistence and sync surface in the same change: core `AppData` types and normalization, desktop SQLite schema/storage round-trip tests, mobile SQLite schema/backup restore, cloud validation/normalization, MCP tools if exposed, and the Core API docs source at https://github.com/dongdongbh/mindwtr-web/tree/main/docs.
 
 ### Code Style
 

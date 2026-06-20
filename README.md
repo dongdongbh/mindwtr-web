@@ -19,7 +19,7 @@ Docs project:
 
 - Root directory: `docs`
 - Build command: `bun run docs:build`
-- Output directory: verify with the local build and keep it in `docs/deploy.md`
+- Output directory: `.vitepress/dist`
 - Domain: `docs.mindwtr.app`
 
 Set `BUN_VERSION` to `1.3.3` in both Pages projects unless `.bun-version` changes.

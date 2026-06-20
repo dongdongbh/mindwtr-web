@@ -5,6 +5,15 @@ export default defineConfig({
   description: "Searchable documentation for Mindwtr, the free, local-first GTD app.",
   base: "/",
   cleanUrls: true,
+  vite: {
+    esbuild: {
+      tsconfigRaw: {
+        compilerOptions: {
+          target: "ES2022"
+        }
+      }
+    }
+  },
   sitemap: {
     hostname: "https://docs.mindwtr.app"
   },

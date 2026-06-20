@@ -1,0 +1,14 @@
+{
+  "name": "mindwtr-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "assets:sync": "bun scripts/sync-assets.mjs",
+    "landing:dev": "bun --cwd landing run dev",
+    "landing:build": "bun --cwd landing run build",
+    "docs:dev": "bun --cwd docs run dev",
+    "docs:build": "bun --cwd docs run docs:build",
+    "check:secrets": "bun scripts/check-secrets.mjs",
+    "check": "bun run check:secrets && bun run landing:build && bun run docs:build"
+  }
+}

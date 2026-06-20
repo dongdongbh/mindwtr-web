@@ -1,0 +1,15 @@
+{
+  "name": "mindwtr-docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev --host 0.0.0.0",
+    "docs:build": "bun ../scripts/sync-assets.mjs && vitepress build",
+    "build": "bun run docs:build",
+    "preview": "vitepress preview --host 0.0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitepress": "^1.6.4"
+  }
+}

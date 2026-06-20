@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "landing"
+    "landing",
+    "docs"
   ],
   "scripts": {
     "assets:sync": "bun scripts/sync-assets.mjs",

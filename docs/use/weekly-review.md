@@ -1,30 +1,216 @@
-# Weekly review
+# Weekly Review
 
-Weekly review is where Mindwtr becomes trustworthy. The goal is not to make every list empty. The goal is to know what each list means.
+The Weekly Review is the **secret weapon** of GTD. It keeps your system trusted and current.
 
-## Review flow
+> "If you don't have a Weekly Review discipline, you simply won't trust your system past a couple of days." — David Allen
 
-1. Clear obvious inbox noise.
-2. Clarify captured items.
-3. Review Waiting For.
-4. Review active projects.
-5. Review someday and deferred items.
-6. Choose what belongs in Focus or Next Actions.
+---
 
-## What to look for
+## Why Weekly Review?
 
-- Projects with no concrete next action.
-- Next actions that are too vague to do.
-- Waiting items that need a follow-up.
-- Someday items that should become active or be deleted.
-- Recurring tasks that are creating noise.
+Without regular review:
+- Lists get stale
+- Trust erodes
+- Captured items pile up
+- Projects stall
+- Stress returns
 
-## Keep it calm
+With weekly review:
+- System stays current
+- Mind stays clear
+- Nothing falls through cracks
+- You engage with confidence
 
-Do not turn review into a productivity audit. Review is maintenance. If a list feels stale, clarify a few items and keep moving.
+---
 
-## See also
+## When to Review
 
-- [GTD workflow](/use/gtd-workflow)
-- [Daily review](/use/daily-review)
-- [Contexts and tags](/use/contexts-tags)
+**Schedule:** Same time, same day each week
+**Popular times:**
+- Friday afternoon (end the work week clean)
+- Saturday/Sunday morning (start fresh)
+
+**Duration:** 30-90 minutes
+
+> **Tip:** You can set a recurring reminder for your Weekly Review in **Settings → Notifications**. Use this to protect your review time.
+
+---
+
+## The Mindwtr Review Wizard
+
+Mindwtr provides a guided weekly review. Access it from:
+- **Desktop:** Weekly Review in sidebar
+- **Mobile:** Review tab or drawer
+
+### Step 1: Process Inbox
+
+**Goal:** Inbox Zero
+
+Review each inbox item:
+1. Is it actionable?
+2. What's the next action?
+3. Clarify and organize
+
+**In Mindwtr:**
+- See your inbox count
+- Process items using the clarify workflow
+- Use the **Process Inbox** action from the review step, then return to the review when the inbox is clear
+- If your inbox is empty but your head is not, use **Mind Sweep** from the review to capture loose thoughts before moving on
+- Mobile weekly review also shows a Mind Sweep nudge in the review flow, so you can start a guided capture pass before leaving the Get Clear step
+- Empty the inbox completely
+
+### Step 2: Review Calendar
+
+**Look back 14 days:**
+- Did you miss anything?
+- Any completed appointments need follow-up?
+- Capture new actions that arose
+
+**Look ahead 14 days:**
+- What's coming up?
+- What preparation is needed?
+- Capture any new tasks
+
+**In Mindwtr:**
+- Review the Calendar view
+- Check past and upcoming events
+- Add any needed actions
+
+### Step 3: Waiting For
+
+**Review delegated items:**
+- Have you received what you're waiting for?
+- Do you need to send a reminder?
+- Update notes with latest status
+
+**In Mindwtr:**
+- View all waiting tasks
+- Follow up on stale items
+- Move completed items to Done
+
+### Step 4: Review Projects
+
+**For each active project:**
+- Does it have at least one next action?
+- Is it still relevant?
+- Has it been completed?
+
+**In Mindwtr:**
+- See projects with/without next actions
+- Add next actions where missing
+- Mark completed projects as Done
+
+### Step 5: Someday/Maybe
+
+**Review incubated items:**
+- Do you want to activate any?
+- Should any be deleted?
+- Are any still relevant?
+
+**In Mindwtr:**
+- Browse Someday/Maybe list
+- Promote items to Next Actions
+- Archive or delete stale items
+
+### Complete
+
+**You're ready for the week ahead:**
+- All inboxes empty
+- Calendar reviewed
+- Projects have next actions
+- Lists are current
+
+---
+
+## Optional AI Review
+
+If enabled, Mindwtr can analyze stale tasks during review and suggest:
+- Move to Someday/Maybe
+- Archive
+- Break down
+- Keep
+
+You always choose which suggestions to apply.
+
+---
+
+## Detailed Review Checklist
+
+### Get Clear
+
+- [ ] Collect loose papers and materials
+- [ ] Process physical inbox
+- [ ] Process email inbox
+- [ ] Process notes and voicemails
+- [ ] Empty your head (capture any lingering thoughts)
+
+### Get Current
+
+- [ ] Review action lists (mark completed, add new)
+- [ ] Review previous calendar (capture follow-ups)
+- [ ] Review upcoming calendar (prepare, capture actions)
+- [ ] Review waiting-for list (follow up, update)
+- [ ] Review projects (ensure each has next action)
+- [ ] Review someday/maybe (activate or delete)
+
+### Get Creative
+
+- [ ] Review goals and vision
+- [ ] Any new ideas or initiatives?
+- [ ] What would make next week great?
+
+---
+
+## Splitting the Review
+
+If 90 minutes feels too long, split into two sessions:
+
+### Session 1: Get Clear (Friday, 45-60 min)
+- Collect everything
+- Process inboxes to zero
+
+### Session 2: Get Current & Creative (Weekend, 45-60 min)
+- Review all lists
+- Update projects
+- Look ahead
+
+---
+
+## Tips for Consistent Reviews
+
+### Environment
+
+- Same time each week
+- Same location
+- Minimize distractions
+- Consider background music
+
+### Make It Ritual
+
+- Start with tea or coffee
+- Use a checklist
+- Celebrate completion
+
+### When You Skip
+
+If you miss a week:
+- Don't beat yourself up
+- Do a shorter review to catch up
+- Get back on schedule
+
+---
+
+## Common Review Mistakes
+
+1. **Skipping the review** — Systems fail quickly without it
+2. **Just scanning lists** — Actually process and update
+3. **Rushing through** — Give it proper time
+4. **Not capturing** — Write down new items discovered
+5. **Ignoring stuck items** — Address or delete stale tasks
+
+---
+
+## See Also
+
+- [GTD Overview](/use/gtd-overview)
+- [GTD Workflow in Mindwtr](/use/gtd-workflow)

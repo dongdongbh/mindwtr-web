@@ -1,25 +1,49 @@
-# Daily review
+# Daily Review
 
-Daily review is a lightweight check-in for today's work. It is not a full weekly review.
+Daily Review is the lightweight reset flow for staying current between Weekly Reviews. It appears in the Review view on desktop and as the daily review route on mobile.
 
 ## Flow
 
-1. Check Inbox for anything that must be clarified today.
-2. Review Focus and today's calendar-aware items.
-3. Look at Waiting For if delegated work may unblock.
-4. Pick a small number of next actions that fit the day.
-5. Leave the rest in the trusted system.
+The default order is:
+
+1. Today and Calendar
+2. Inbox, only when live inbox tasks exist
+3. Today's Focus, when enabled
+4. Waiting For
+5. Complete
+
+The inbox step is intentionally before focus so new captures are clarified before choosing what should stay visible today. If the inbox is empty, the step is skipped.
 
 ## Settings
 
-Daily review behavior depends on your Focus and GTD settings, including Focus limits, review surfaces, and reminder preferences.
+The focus step is controlled by:
 
-## Desktop and mobile behavior
+```typescript
+settings.gtd.dailyReview.includeFocusStep
+```
 
-Desktop gives more room for scanning and keyboard flow. Mobile is optimized for quick checks, capture, and action while away from the desk. Both should preserve the same GTD meaning.
+Desktop and mobile expose this as the "Include Focus step" setting in GTD settings. The step is shown by default. Set the value to `false` to use the shorter Today/Inbox/Waiting flow.
 
-## See also
+Related settings:
 
-- [Weekly review](/use/weekly-review)
-- [Focus in the desktop guide](/use/desktop#focus)
-- [Mobile guide](/use/mobile)
+| Setting | Purpose |
+| --- | --- |
+| `settings.gtd.defaultScheduleTime` | Prefills manual scheduling fields. |
+| `settings.weekStart` | Controls calendar week layout. |
+| `settings.calendar.viewMode` | Stores the calendar view mode used elsewhere in the app. |
+
+## Desktop Behavior
+
+Desktop persists the current review step in local storage while the modal is in progress. Closing and reopening the modal resumes the same step; finishing the review clears the stored step.
+
+Task rows inside the review use the normal quick actions and task detail affordances, including area and project actions where available.
+
+## Mobile Behavior
+
+Mobile uses the same GTD setting for the focus step and presents the review as a route-level screen. It shares the same step intent with the desktop flow, with mobile-specific navigation controls.
+
+## Related Pages
+
+- [Weekly Review](/use/weekly-review)
+- [GTD Workflow in Mindwtr](/use/gtd-workflow)
+- [Calendar Integration](/use/calendar-integration)

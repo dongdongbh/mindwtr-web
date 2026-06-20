@@ -1,31 +1,78 @@
-# Attachments
+# Attachments (Files, Links, Audio)
 
-Mindwtr supports file, link, and audio attachments on tasks and projects. Attachments are optional, and large files can affect sync time.
+Mindwtr lets you attach files and links to **tasks** and **projects**. Attachments are optional and sync across devices when sync is enabled.
+
+---
 
 ## What you can attach
 
-- Files such as PDFs, images, and documents.
-- Links to websites or local references.
-- Audio notes when audio capture is enabled.
+- **Files** (PDFs, images, docs, etc.)
+- **Links** (URLs, web pages, reference links)
+- **Audio notes** (when "Save audio attachments" is enabled)
+
+---
 
 ## Add attachments
 
-On desktop, open a task or project and use the Attachments area. On mobile, open a task and use the attachment action. Voice capture can keep the original recording when saving audio attachments is enabled.
+### Desktop
+
+- Open a task or project.
+- In **Attachments**, click **Add file** or **Add link**.
+- For links, paste a URL or local file path.
+
+### Mobile
+
+- Open a task.
+- Use **Add attachment** to pick a file or add a link.
+- Audio notes are added automatically if you record voice capture and **Save audio attachments** is enabled.
+
+---
+
+## Audio attachments
+
+When you enable **Save audio attachments** (Settings → General), Mindwtr keeps the original voice note alongside the transcript. This is useful if you want to replay or share the recording later.
+
+### Linux audio playback dependencies
+
+Audio playback on Linux uses **GStreamer**. If you see errors like `autoaudiosink not found`, install the GStreamer plugins:
+
+**Arch / Manjaro**
+```bash
+sudo pacman -S gstreamer gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav
+```
+
+**Debian / Ubuntu / Mint**
+```bash
+sudo apt install gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav
+```
+
+**Fedora** (RPM Fusion required for some codecs)
+```bash
+sudo dnf install gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad-free gstreamer1-plugins-ugly gstreamer1-libav
+```
 
 ## Sync behavior
 
-Attachment metadata syncs with task and project data. File bytes sync after metadata. If an attachment file is not present locally, the attachment can still remain visible until the file is available from the sync backend.
+- Attachment metadata syncs with tasks/projects.
+- Actual files sync after metadata.
+- If a file is missing locally, the attachment stays visible and can be re-downloaded when available.
+- Cleanup checks references known to the current device. If another device has not synced yet, shared remote attachment files are not globally reference-counted.
+
+> Tip: Large files can slow sync. Prefer smaller attachments or links when possible.
+
+---
 
 ## Cleanup
 
-Mindwtr cleans up orphaned attachment files when they are no longer referenced. Desktop also exposes manual cleanup from Settings.
+Mindwtr automatically cleans up **orphaned attachments** (files no longer referenced by any task/project).
 
-::: tip Prefer links for large references
-If a reference already lives in a stable location, a link is often lighter than syncing the file itself.
-:::
+- Desktop: You can also run cleanup manually in **Settings → Data → Attachment cleanup**.
+- Mobile: Cleanup runs automatically during sync.
 
-## See also
+---
 
-- [Data and sync](/data-sync/)
-- [Backup and restore](/data-sync/backup-restore)
-- [Diagnostics and logs](/data-sync/diagnostics-logs)
+## Related
+
+- [Data and Sync](/data-sync/)
+- [User Guide Desktop](/use/desktop)
+- [User Guide Mobile](/use/mobile)

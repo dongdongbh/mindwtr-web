@@ -1,37 +1,74 @@
-# Markdown links
+# Markdown Links
 
 Mindwtr supports internal Markdown links for cross-referencing tasks and projects inside notes.
 
-## Syntax
+## Supported Syntax
 
-Use stable Mindwtr IDs instead of title-only references:
+Use stable Mindwtr IDs instead of plain text titles:
 
 ```md
 [[task:task-id|Quarterly review]]
 [[project:project-id|Website launch]]
 ```
 
-Mindwtr can render these as app links:
+- `task:` links point to a task by ID.
+- `project:` links point to a project by ID.
+- The text after `|` is the label shown in the editor and preview.
+
+Mindwtr also normalizes those tokens into regular Markdown links during rendering:
 
 ```md
 [Quarterly review](mindwtr://task/task-id)
 [Website launch](mindwtr://project/project-id)
 ```
 
-## Where it works
+## Creating Links
 
-- Task descriptions.
-- Project notes.
-- Desktop previews and expanded task details.
-- Mobile editor previews where supported.
+When editing a supported Markdown field, type `[[` and start searching.
 
-## Behavior
+- Search matches task and project titles.
+- Desktop shows a floating suggestion popup near the cursor and flips it above the caret when space is tight.
+- Mobile shows the same suggestions in a bottom sheet above the keyboard.
+- Task editors exclude the task you are currently editing, so you do not link a task to itself by accident.
+- Inserted links always use the stable `[[task:...|label]]` or `[[project:...|label]]` token.
+- Code spans and fenced code blocks are left untouched.
 
-Task links open the task. Project links open the project. Deleted items render as deleted references when enough tombstone data is still available locally.
+## Where It Works
 
-Markdown links are references. They do not create dependencies, auto-complete linked tasks, or bind checklist state.
+- Task descriptions on desktop and mobile
+- Project notes on desktop and mobile
+- Read-only previews, expanded task details, and Focus/List "Details on" rendering on desktop
+- Preview rendering inside the mobile task/project editors
 
-## See also
+## What It Does Not Do
 
-- [Obsidian integration](/power-users/obsidian)
+- Markdown links are navigational references only.
+- They do not create dependency graphs, auto-complete linked tasks, or bind checklist state across tasks.
+
+## Navigation Behavior
+
+- Live task links open the right Mindwtr view and highlight the task.
+- Live project links open the Projects view and select the project.
+- External links still support `http`, `https`, `mailto`, and `tel`.
+
+## Deleted Items
+
+If the linked task or project has been deleted:
+
+- Mindwtr renders the label with strike-through styling.
+- Desktop shows a **Restore** action when the deleted item still exists as a tombstone in local data.
+- If the tombstone is gone, the link stays as a non-interactive deleted label.
+
+## Example
+
+```md
+Prepare launch notes for [[project:project-123|Website launch]]
+
+- [ ] Draft intro copy
+- [ ] Review [[task:task-456|homepage checklist]]
+```
+
+## Related Docs
+
+- [Obsidian Integration](/power-users/obsidian)
 - [Core API](/developers/core-api)

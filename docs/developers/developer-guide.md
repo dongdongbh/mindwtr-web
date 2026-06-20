@@ -1,42 +1,410 @@
-# Developer guide
+# Developer Guide
 
-This page orients contributors who want to run, test, or change Mindwtr locally.
+This guide covers development setup and contribution guidelines for Mindwtr.
 
-## Repository shape
+---
 
-Mindwtr is a monorepo with shared core logic and platform-specific apps.
+## Quick Start
 
-| Area | Purpose |
-| --- | --- |
-| `packages/core` | Shared task model, parser, store, sync, and i18n behavior. |
-| `apps/desktop` | Tauri desktop app. |
-| `apps/mobile` | React Native / Expo mobile app. |
-| `apps/cloud` | Self-hosted sync service. |
-| `apps/mcp-server` | MCP integration surface. |
+```bash
+# Clone repository
+git clone https://github.com/dongdongbh/Mindwtr.git
+cd Mindwtr
 
-## Setup
+# Install dependencies
+bun install
 
-Use the package manager and commands documented in the app repository. Install dependencies from the repo root so workspace packages link correctly.
+# Run desktop app (dev mode)
+bun desktop:dev
 
-## Development loop
+# Run mobile app
+bun mobile:start
+```
 
-1. Pick the smallest package or app that owns the behavior.
-2. Run the package-local test or dev command.
-3. Change shared behavior in core when both desktop and mobile need it.
-4. Validate the affected platform surface.
-5. Run broader checks before opening a pull request.
+---
 
-## Before contributing
+## Prerequisites
 
-- Keep changes scoped.
-- Add or update tests for shared behavior.
-- Avoid hard-coded user-facing strings.
-- Preserve local-first and no-account-needed behavior.
-- Do not commit secrets or local config files.
+### All Platforms
 
-## See also
+- [Bun](https://bun.sh/) — Package manager and runtime
+- [Node.js](https://nodejs.org/) — JavaScript runtime (for some tools)
+- [Git](https://git-scm.com/) — Version control
 
-- [Contributing](/developers/contributing)
+### Desktop Development
+
+- [Rust](https://rustup.rs/) — Required for Tauri
+
+**Linux (Arch):**
+```bash
+sudo pacman -S rust webkit2gtk-4.1 base-devel
+```
+
+**Linux (Debian/Ubuntu):**
+```bash
+sudo apt install libwebkit2gtk-4.1-dev build-essential libssl-dev libgtk-3-dev
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+**macOS:**
+```bash
+xcode-select --install
+brew install rust
+```
+
+**Windows:**
+Install [Rust](https://rustup.rs/) and [Visual Studio Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/).
+
+### Mobile Development
+
+- [Expo Go](https://expo.dev/client) app (for testing)
+- Android Studio (for emulator/device builds)
+- Xcode (for iOS development)
+
+---
+
+## Project Structure
+
+```
+Mindwtr/
+├── apps/
+│   ├── cloud/             # Sync server (Bun)
+│   ├── desktop/           # Tauri v2 + React + Vite
+│   │   ├── src/           # React source
+│   │   │   ├── components/
+│   │   │   ├── contexts/
+│   │   │   ├── lib/
+│   │   │   └── App.tsx
+│   │   ├── src-tauri/     # Rust backend
+│   │   └── package.json
+│   │
+│   └── mobile/            # Expo + React Native
+│       ├── app/           # Expo Router pages
+│       ├── components/
+│       ├── contexts/
+│       ├── lib/
+│       └── package.json
+│
+├── packages/
+│   └── core/              # Shared business logic
+│       └── src/
+│           ├── store.ts   # Zustand store
+│           ├── types.ts   # TypeScript types
+│           ├── i18n.ts    # Translations
+│           └── ...
+│
+├── scripts/               # Utility scripts (CLI, API, release)
+├── docs/                  # Documentation
+├── wiki/                  # Wiki source
+├── .github/               # CI/CD workflows
+└── package.json           # Monorepo root
+```
+
+---
+
+## Available Scripts
+
+### Root Level
+
+| Command              | Description              |
+| -------------------- | ------------------------ |
+| `bun install`        | Install all dependencies |
+| `bun desktop:dev`    | Run desktop in dev mode  |
+| `bun mobile:start`   | Start Expo dev server    |
+| `bun mobile:android` | Run on Android           |
+| `bun mobile:ios`     | Run on iOS               |
+| `bun test`           | Run all tests            |
+| `bun mindwtr:cli`    | Run CLI tool             |
+| `bun mindwtr:api`    | Run local API server     |
+
+### Desktop (`apps/desktop`)
+
+| Command     | Description              |
+| ----------- | ------------------------ |
+| `bun dev`   | Dev mode with hot reload |
+| `bun build` | Build for production     |
+| `bun test`  | Run tests                |
+
+### Mobile (`apps/mobile`)
+
+| Command         | Description       |
+| --------------- | ----------------- |
+| `bun start`     | Start Expo server |
+| `bun android`   | Run on Android    |
+| `bun ios`       | Run on iOS        |
+| `ARCHS=arm64-v8a bash ./scripts/android_build.sh` | Build Android APK |
+
+### Cloud (`apps/cloud`)
+
+| Command   | Description     |
+| --------- | --------------- |
+| `bun dev` | Run sync server |
+
+### Core (`packages/core`)
+
+| Command     | Description    |
+| ----------- | -------------- |
+| `bun test`  | Run unit tests |
+| `bun build` | Build package  |
+
+---
+
+## Tech Stack
+
+| Layer         | Desktop          | Mobile                | Cloud            |
+| ------------- | ---------------- | --------------------- | ---------------- |
+| **Framework** | React + Vite     | React Native + Expo   | Bun (Native HTTP)|
+| **Styling**   | Tailwind CSS     | NativeWind (Tailwind) | N/A              |
+| **State**     | Zustand (shared) | Zustand (shared)      | N/A              |
+| **Platform**  | Tauri v2 (Rust)  | Expo (iOS/Android)    | Bun              |
+| **Router**    | React Router     | Expo Router           | N/A              |
+| **Language**  | TypeScript       | TypeScript            | TypeScript       |
+
+---
+
+## Architecture Decisions
+
+We track key technical decisions as ADRs under `docs/adr/`. See:
+- `docs/adr/README.md`
+
+Current sync ADRs to know before changing merge or transport behavior:
+- ADR 0003 defines revision-aware sync metadata (`rev`, `revBy`) and deterministic tombstone-aware merge.
+- ADR 0007 defines the shipped live-wins rule for ambiguous delete-vs-live conflicts.
+- ADR 0008 records that Mindwtr intentionally stays on snapshot-based sync for now instead of adding a delta log.
+
+Contributors should treat the snapshot transport as a deliberate product choice, not missing infrastructure. Revisit ADR 0008 only if snapshot files regularly exceed 5 MB, sync round-trips exceed 5 seconds on typical networks, or Mindwtr needs real-time multi-device streaming.
+
+---
+
+## Development Workflow
+
+### Making Changes
+
+1. Create a feature branch
+2. Make changes in the relevant package
+3. Run tests: `bun test`
+4. Test on desktop: `bun desktop:dev`
+5. Test on mobile: `bun mobile:start`
+6. Commit with descriptive message
+7. Open a pull request
+
+When adding a new top-level entity type, update the full persistence and sync surface in the same change: core `AppData` types and normalization, desktop SQLite schema/storage round-trip tests, mobile SQLite schema/backup restore, cloud validation/normalization, MCP tools if exposed, and the wiki/Core API docs.
+
+### Code Style
+
+- TypeScript for all code
+- Functional React components
+- Named exports preferred
+- JSDoc comments for public APIs
+
+### Testing
+
+```bash
+# Run all tests
+bun test
+
+# Run desktop tests
+cd apps/desktop && bun test
+
+# Run core tests
+cd packages/core && bun test
+```
+
+---
+
+## Building for Production
+
+### Desktop
+
+```bash
+cd apps/desktop
+bun run build
+# Output: src-tauri/target/release/
+```
+
+### Desktop (diagnostics build)
+
+Release builds disable devtools by default. To enable diagnostics/devtools, build with the
+`diagnostics` feature and opt-in at runtime:
+
+```bash
+cd apps/desktop
+cargo tauri build --features diagnostics
+MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
+```
+
+### Mobile (Android APK)
+
+```bash
+cd apps/mobile
+ARCHS=arm64-v8a bash ./scripts/android_build.sh
+```
+
+See [Mobile Installation](/start/mobile-installation) for detailed build instructions.
+
+---
+
+## Architecture Overview
+
+See [Architecture](/developers/architecture) for detailed technical design.
+
+### Key Concepts
+
+- **Monorepo:** Single repo with shared dependencies
+- **Shared Core:** Business logic in `@mindwtr/core`
+- **Platform Apps:** Desktop and Mobile use the shared core
+- **Local Storage:** Data persisted locally
+- **Multiple Sync:** File, WebDAV, or Cloud sync
+
+---
+
+## CLI Tool
+
+Command-line interface for scripting and automation:
+
+```bash
+# Add a task
+bun mindwtr:cli -- add "Call mom @phone #family"
+
+# List active tasks
+bun mindwtr:cli -- list
+
+# List with filters
+bun mindwtr:cli -- list --status next --query "due:<=7d"
+
+# Read or update a task
+bun mindwtr:cli -- get <taskId>
+bun mindwtr:cli -- update <taskId> '{"status":"next"}'
+
+# Complete a task
+bun mindwtr:cli -- complete <taskId>
+
+# Archive, delete, or restore
+bun mindwtr:cli -- archive <taskId>
+bun mindwtr:cli -- delete <taskId>
+bun mindwtr:cli -- restore <taskId>
+
+# Search
+bun mindwtr:cli -- search "@work"
+
+# List projects
+bun mindwtr:cli -- projects
+```
+
+**Options:**
+- `--data <path>` — Override data.json location
+- `--db <path>` — Override mindwtr.db location
+- `MINDWTR_DATA` — Environment variable for data path
+- `MINDWTR_DB_PATH` — Environment variable for DB path
+
+On desktop-compatible paths, the CLI keeps `mindwtr.db` and `data.json` aligned so changes remain visible before and after the app starts.
+
+---
+
+## Local REST API
+
+Run a local API server for scripting and integrations:
+
+```bash
+# Start API server
+bun mindwtr:api -- --port 4317
+
+# With auth token
+MINDWTR_API_TOKEN=secret bun mindwtr:api -- --port 4317
+```
+
+The local API uses the same storage contract as the CLI, keeping `mindwtr.db` and `data.json` in sync on desktop-compatible paths.
+
+### Endpoints
+
+| Method   | Endpoint              | Description           |
+| -------- | --------------------- | --------------------- |
+| `GET`    | `/health`             | Health check          |
+| `GET`    | `/tasks`              | List tasks            |
+| `GET`    | `/tasks?status=next`  | Filter by status      |
+| `GET`    | `/tasks?query=@work`  | Search tasks          |
+| `POST`   | `/tasks`              | Create task           |
+| `PATCH`  | `/tasks/:id`          | Update task           |
+| `DELETE` | `/tasks/:id`          | Soft delete task      |
+| `POST`   | `/tasks/:id/complete` | Mark task done        |
+| `POST`   | `/tasks/:id/archive`  | Mark task archived    |
+| `POST`   | `/tasks/:id/restore`  | Restore deleted task  |
+| `GET`    | `/projects`           | List projects         |
+| `GET`    | `/search?query=...`   | Search tasks+projects |
+
+**Example:**
+```bash
+# Add task via API
+curl -X POST http://localhost:4317/tasks \
+  -H "Content-Type: application/json" \
+  -d '{"input": "Review PR @work /due:tomorrow"}'
+
+# Complete task
+curl -X POST http://localhost:4317/tasks/<id>/complete
+```
+
+---
+
+## Cloud Server
+
+Self-hosted cloud sync backend:
+
+```bash
+# From monorepo root
+bun run --filter mindwtr-cloud dev -- --port 8787
+```
+
+### Endpoints
+
+| Method | Endpoint   | Description    |
+| ------ | ---------- | -------------- |
+| `GET`  | `/health`  | Health check   |
+| `HEAD` | `/v1/data` | Get snapshot metadata |
+| `GET`  | `/v1/data` | Get user data  |
+| `PUT`  | `/v1/data` | Merge and save user data; returns merge stats |
+| `GET`, `POST` | `/v1/tasks` | List or create tasks |
+| `GET`, `PATCH`, `DELETE` | `/v1/tasks/:id` | Read, update, or soft-delete a task |
+| `POST` | `/v1/tasks/:id/complete` | Mark a task done |
+| `POST` | `/v1/tasks/:id/archive` | Archive a task |
+| `GET`, `POST` | `/v1/projects` | List or create projects |
+| `GET`, `PATCH`, `DELETE` | `/v1/projects/:id` | Read, update, or soft-delete a project |
+| `GET`, `POST` | `/v1/sections` | List or create sections |
+| `GET`, `PATCH`, `DELETE` | `/v1/sections/:id` | Read, update, or soft-delete a section |
+| `GET`, `POST` | `/v1/areas` | List or create areas |
+| `GET`, `PATCH`, `DELETE` | `/v1/areas/:id` | Read, update, or soft-delete an area |
+| `GET` | `/v1/search` | Search tasks and projects |
+| `GET`, `PUT`, `DELETE` | `/v1/attachments/*` | Download, upload, or delete attachment files |
+| `POST`, `DELETE` | `/v1/attachments/orphans` | Scan or remove orphan attachment files |
+
+**Authentication:** `Authorization: Bearer <token>`
+
+Each token gets its own data file (SHA-256 hashed filename).
+
+**Environment:**
+- `PORT` — Server port (default 8787)
+- `HOST` — Bind address (default 0.0.0.0)
+- `MINDWTR_CLOUD_DATA_DIR` — Data directory
+
+---
+
+## Web App (PWA)
+
+Run the desktop UI in a browser with PWA support:
+
+```bash
+# Development
+bun desktop:web
+
+# Production build
+bun desktop:web:build
+```
+
+Uses localStorage for data storage and includes offline support via service worker.
+
+---
+
+## See Also
+
 - [Architecture](/developers/architecture)
-- [Testing strategy](/developers/testing-strategy)
-- [Developer troubleshooting](/developers/troubleshooting)
+- [Core API](/developers/core-api)
+- [Contributing (Repository Guide)](https://github.com/dongdongbh/Mindwtr/blob/main/docs/CONTRIBUTING.md)

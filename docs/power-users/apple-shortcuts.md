@@ -1,51 +1,120 @@
 # Apple Shortcuts
 
-Mindwtr supports Apple Shortcuts through native App Intents on iPhone and iPad. The first scope focuses on reliable capture and navigation.
+Mindwtr supports Apple Shortcuts through native App Intents on iPhone and iPad. The first version focuses on the GTD capture loop: get open loops into Mindwtr quickly, then review and process them inside the app.
+
+This is intentionally smaller than Things' mature Shortcuts system. Things exposes create, find, edit, show, and custom item/list actions. Mindwtr v1 starts with capture and navigation so it stays reliable and does not bypass Mindwtr's normal task creation, revision, and sync paths.
 
 ## Availability
+
+Apple Shortcuts support is available in iOS builds that include the Mindwtr App Intents integration.
+
+Supported surfaces:
 
 | Surface | Supported |
 | --- | --- |
 | Shortcuts app | Yes |
 | Siri | Yes |
-| Spotlight suggestions | Yes |
+| Spotlight / suggested shortcuts | Yes |
 | Action Button running a shortcut | Yes |
-| Apple Watch direct actions | No |
-| CarPlay | No |
+| Apple Watch direct actions | No, not in v1 |
+| CarPlay | No, not in v1 |
 
-## Capture to Mindwtr
+## Actions
 
-Use Capture to Mindwtr to send a task into Mindwtr's Inbox capture flow.
+### Capture to Mindwtr
+
+Use **Capture to Mindwtr** to send a task into Mindwtr's Inbox capture confirmation flow.
+
+Parameters:
 
 | Parameter | Required | Notes |
 | --- | --- | --- |
-| Task | Yes | Empty titles are rejected. |
-| Note | No | Added as task description. |
-| Tags | No | Comma-separated tags are normalized when saving. |
-| Project | No | Matches an active project by title, or creates one when saved. |
+| Task | Yes | The task title. Empty titles are rejected. |
+| Note | No | Added as the task description. |
+| Tags | No | Comma-separated tags. Mindwtr normalizes them to `#tag` when saving. |
+| Project | No | Matches an active project by title, or creates the project when the capture is saved. |
 
-The shortcut opens Mindwtr and shows the capture screen. The app writes the task through its normal local store, revision, and sync path.
+What happens when it runs:
 
-## Open a list
+1. Shortcuts opens Mindwtr.
+2. Mindwtr shows the capture screen with the title and optional metadata filled in.
+3. You review the capture and save it through the normal Mindwtr flow.
 
-Open Mindwtr List can jump to Inbox, Focus, Waiting For, Someday, Projects, Review, or Calendar.
+The task is not written directly from Swift. This keeps task creation inside Mindwtr's existing store, SQLite, revision, and sync logic.
+
+### Open Mindwtr List
+
+Use **Open Mindwtr List** to jump to a GTD view.
+
+Supported destinations:
+
+| List | Opens |
+| --- | --- |
+| Inbox | Inbox |
+| Focus | Focus / Next Actions |
+| Waiting | Waiting For |
+| Someday | Someday/Maybe |
+| Projects | Projects |
+| Review | Review |
+| Calendar | Calendar |
+
+The shortcut defaults to Inbox if no list is configured.
+
+## Example shortcuts
+
+### Capture from voice
+
+1. Open Apple's **Shortcuts** app.
+2. Create a new shortcut.
+3. Add **Dictate Text** or **Ask for Input**.
+4. Add Mindwtr's **Capture to Mindwtr** action.
+5. Pass the dictated text into **Task**.
+6. Optionally set **Tags** to something like `phone,errands`.
+
+This is useful for quick capture while walking, commuting, or moving between apps. Siri voice recognition can still miss words in some environments, so review the capture before saving.
+
+### Open Focus from the Action Button
+
+1. Create a shortcut using **Open Mindwtr List**.
+2. Set **List** to **Focus**.
+3. In iOS Settings, assign that shortcut to the Action Button.
 
 ## URL scheme fallback
 
-Use URL schemes when another automation tool cannot see native App Intents:
+Mindwtr also supports URL-scheme automation. Use this when another automation tool cannot see native App Intents.
 
-```txt
-mindwtr://capture?title=Buy%20groceries
-mindwtr://capture?title=Buy%20groceries&note=From%20store
-mindwtr://open-feature?feature=focus
-mindwtr://open-feature?feature=review
-```
+| URL | Action |
+| --- | --- |
+| `mindwtr://capture?title=Buy%20groceries` | Open capture with a title |
+| `mindwtr://capture?title=Buy%20groceries&note=From%20store` | Open capture with title and note |
+| `mindwtr://capture?title=Buy%20groceries&project=Shopping&tags=errands,home` | Open capture with project and tags |
+| `mindwtr://open-feature?feature=focus` | Open Focus |
+| `mindwtr://open-feature?feature=review` | Open Review |
 
-## Limits
+Supported capture aliases:
 
-Shortcuts do not currently provide background task creation, find/edit/delete actions, batch operations, Apple Watch direct actions, or CarPlay support.
+| Field | Aliases |
+| --- | --- |
+| Title | `title`, `text`, `name`, `thingName`, `itemListElementName`, `itemListName` |
+| Note | `note`, `description`, `body`, `thingDescription`, `itemListDescription` |
 
-## See also
+## v1 limits
 
-- [Mobile guide](/use/mobile)
-- [GTD workflow](/use/gtd-workflow)
+Mindwtr v1 does not include:
+
+- Background task creation without opening Mindwtr.
+- Custom AppEntity task or list types.
+- Find, edit, duplicate, delete, or batch actions.
+- Direct recurring-task, reminder, or date scheduling from Shortcuts.
+- Apple Watch or CarPlay support.
+
+These are good future candidates, but they need careful design because edits and background writes must preserve Mindwtr's local-first sync and GTD workflow rules.
+
+## Related links
+
+- [User Guide Mobile](/use/mobile)
+- [GTD Workflow in Mindwtr](/use/gtd-workflow)
+- [Data and Sync](/data-sync/)
+- [Things: Using Apple Shortcuts](https://culturedcode.com/things/support/articles/2955145/)
+- [Things: Shortcuts Actions](https://culturedcode.com/things/support/articles/9596775/)
+- [Apple: App Intents overview](https://developer.apple.com/videos/play/wwdc2024/10210/)

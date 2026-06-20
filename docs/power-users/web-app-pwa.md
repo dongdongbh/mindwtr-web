@@ -1,24 +1,67 @@
-# Web app and PWA
+# Web App (PWA)
 
-Mindwtr includes a web build for people who want browser access or a self-hosted PWA-style deployment.
+Mindwtr's desktop app can run as a browser app using the Vite build. When running in a browser (non-Tauri), it uses `localStorage` for persistence and registers a service worker for offline/PWA support.
 
-## Run locally
+---
 
-Use the current repository instructions for the web app. Typical options are Docker for a packaged local deployment or Bun for development.
+## Run Locally
 
-## Build for hosting
+You can run the PWA locally using Bun, or use **Docker**.
 
-The web build is static or app-server hosted depending on the current package target. Put it behind HTTPS for installability and for APIs that require a secure context.
+### Using Docker (Recommended)
+See [Docker Deployment](/power-users/docker-deployment) for instructions on running the PWA container.
 
-## PWA behavior
+### Using Bun
+From the repo root:
 
-PWA behavior depends on browser support. Offline behavior, install prompts, file access, and notifications differ across desktop and mobile browsers.
+```bash
+bun install
+bun desktop:web
+```
+
+This starts Vite on `http://localhost:5173/`.
+
+---
+
+## Build for Hosting
+
+```bash
+bun desktop:web:build
+```
+
+Build output is in `apps/desktop/dist/` and can be hosted as a static site.
+
+---
+
+## PWA Behavior
+
+- The app registers `apps/desktop/public/sw.js` when running in a browser
+- `sw.js` precaches `/`, `/index.html`, `/manifest.webmanifest`, `/icon.png`, `/logo.png` and caches other same-origin GET requests on demand
+- Navigation requests fall back to `/index.html` when offline (so deep links still load)
+
+---
+
+## Hosting Requirements
+
+Host `apps/desktop/dist/` at the site root (`/`). The service worker is registered from `/sw.js` and the manifest references root paths.
+
+Ensure your static host serves:
+- `manifest.webmanifest` as `application/manifest+json` (recommended)
+- `sw.js` as `application/javascript`
+
+If you need to host under a subpath (e.g. `/mindwtr/`), the service worker registration and manifest paths must be adjusted to match the base path.
+
+---
 
 ## Limitations
 
-The native desktop and mobile apps are the primary install targets. Use the web app when browser access or self-hosting matters more than native integration.
+- Browser builds store data in `localStorage` (clearing site data clears Mindwtr data)
+- Some desktop-only features may be unavailable in the browser, such as file attachments that require native file access
+- No native system tray or global hotkey support
 
-## See also
+---
 
-- [Docker deployment](/power-users/docker-deployment)
-- [Self-hosted cloud](/data-sync/self-hosted-cloud)
+## See Also
+
+- [Developer Guide](/developers/developer-guide)
+- [Data and Sync](/data-sync/)

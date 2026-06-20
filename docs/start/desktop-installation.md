@@ -1,31 +1,262 @@
-# Desktop installation
+# Desktop Installation
 
-Install Mindwtr from the channel that best matches your operating system and update workflow.
+Detailed installation instructions for all desktop platforms.
 
-## Recommended channels
+---
 
-| Platform | Recommended path | Notes |
-| --- | --- | --- |
-| macOS | Mac App Store or Homebrew | App Store is easiest; Homebrew is useful for scripted installs. |
-| Windows | Microsoft Store or winget | Microsoft Store handles updates automatically. |
-| Linux | Flathub, Snap, AUR, AppImage, deb, or rpm | Prefer your distribution's normal app/update flow. |
+## Linux
 
-## Linux notes
+### Arch Linux (AUR)
 
-Use Flathub or Snap when you want sandboxed installation and automatic updates. Use AUR, AppImage, deb, or rpm when you prefer distribution packaging or a portable artifact from GitHub Releases.
+The easiest way to install on Arch-based distributions:
 
-If audio playback fails on Linux, install the GStreamer plugin set for your distribution. This only affects audio attachment playback, not normal task management.
+```bash
+# Using yay
+yay -S mindwtr-bin
 
-## First launch
+# Using paru
+paru -S mindwtr-bin
 
-Mindwtr starts with local data. Before enabling sync or importing from another app, export a backup from Settings so you have a recovery point.
+# Using pamac (Manjaro)
+pamac install mindwtr-bin
+```
+
+📦 [AUR Package](https://aur.archlinux.org/packages/mindwtr-bin)
+
+### Debian / Ubuntu
+
+Add the APT repo (recommended):
+
+```bash
+curl -fsSL https://dongdongbh.github.io/Mindwtr/mindwtr.gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/mindwtr-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/mindwtr-archive-keyring.gpg] https://dongdongbh.github.io/Mindwtr/deb ./" | sudo tee /etc/apt/sources.list.d/mindwtr.list
+sudo apt update
+sudo apt install mindwtr
+```
+
+Manual install: download the `.deb` from [GitHub Releases](https://github.com/dongdongbh/Mindwtr/releases) and run `sudo dpkg -i mindwtr_*.deb`.
+
+### Fedora / RHEL / openSUSE
+
+Add the DNF/YUM repo (recommended):
+
+```bash
+cat <<'EOF' | sudo tee /etc/yum.repos.d/mindwtr.repo
+[mindwtr]
+name=Mindwtr Repository
+baseurl=https://dongdongbh.github.io/Mindwtr/rpm
+enabled=1
+gpgcheck=0
+EOF
+
+sudo dnf install mindwtr
+```
+
+Manual install: download the `.rpm` from [GitHub Releases](https://github.com/dongdongbh/Mindwtr/releases) and run `sudo rpm -i mindwtr-*.rpm`.
+
+### Flatpak (Flathub)
+
+Install from Flathub:
+
+```bash
+flatpak install flathub tech.dongdongbh.mindwtr
+```
+
+Run it with:
+
+```bash
+flatpak run tech.dongdongbh.mindwtr
+```
+
+📦 [Flathub Listing](https://flathub.org/apps/tech.dongdongbh.mindwtr)
+
+### AppImage (Universal)
+
+Works on most Linux distributions:
+
+```bash
+# Download the versioned AppImage from:
+# https://github.com/dongdongbh/Mindwtr/releases/latest
+
+# Make executable
+chmod +x Mindwtr-*.AppImage
+
+# Run
+./Mindwtr-*.AppImage
+```
+
+> **Tip:** Use [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) for better desktop integration.
+
+### Other Distributions
+
+For other distributions, use the AppImage or build from source (see [Developer Guide](/developers/developer-guide)).
+
+---
+
+## Windows
+
+### Microsoft Store (Recommended)
+
+Install from the Microsoft Store:
+https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare
+
+### Winget
+
+Winget is built into Windows 10 and 11. Install Mindwtr with:
+
+```powershell
+winget install dongdongbh.Mindwtr
+```
+
+### Scoop
+
+If you use Scoop:
+
+```powershell
+scoop bucket add mindwtr https://github.com/dongdongbh/homebrew-mindwtr
+scoop install mindwtr
+```
+
+### Installer (.msi or .exe)
+
+1. Download the installer from [GitHub Releases](https://github.com/dongdongbh/Mindwtr/releases)
+2. Run the installer
+3. Follow the installation wizard
+4. Launch Mindwtr from the Start menu
+
+### Portable
+
+1. Download `mindwtr_<version>_windows_x64_portable.zip` from [GitHub Releases](https://github.com/dongdongbh/Mindwtr/releases).
+2. Extract it to any writable folder.
+3. Keep `portable.txt` next to `mindwtr.exe`.
+
+Portable mode stores local state beside the executable:
+
+- `profile/data/` for the SQLite DB, sync JSON, logs, snapshots, and audio captures
+- `profile/config/` for `config.toml` and `secrets.toml`
+
+Windows WebView2 is still required.
+
+---
+
+## macOS
+
+### Homebrew (Recommended)
+
+Install using [Homebrew](https://brew.sh/):
+
+```bash
+brew install --cask mindwtr
+```
+
+### Disk Image (.dmg)
+
+1. Download the `.dmg` from [GitHub Releases](https://github.com/dongdongbh/Mindwtr/releases)
+2. Open the disk image
+3. Drag Mindwtr to your Applications folder
+4. Launch from Applications or Spotlight
+
+---
+
+## Data Location
+
+After installation, your data is stored at:
+
+| Platform    | SQLite DB                                     | Sync JSON                                    |
+| ----------- | --------------------------------------------- | -------------------------------------------- |
+| **Linux**   | `~/.local/share/mindwtr/mindwtr.db`            | `~/.local/share/mindwtr/data.json`           |
+| **Windows** | `%APPDATA%/mindwtr/mindwtr.db`                 | `%APPDATA%/mindwtr/data.json`                |
+| **macOS**   | `~/Library/Application Support/mindwtr/mindwtr.db` | `~/Library/Application Support/mindwtr/data.json` |
+
+Flatpak installs use sandboxed XDG paths under `~/.var/app/tech.dongdongbh.mindwtr/`. You can always check the exact active paths in **Settings → Sync → Local Data**.
+
+Config is stored separately:
+
+| Platform    | Location                                       |
+| ----------- | ---------------------------------------------- |
+| **Linux**   | `~/.config/mindwtr/config.toml`                |
+| **Windows** | `%APPDATA%/mindwtr/config.toml`                |
+| **macOS**   | `~/Library/Application Support/mindwtr/config.toml` |
+
+---
 
 ## Updating
 
-Store-based installs update through the store. GitHub release artifacts update when you replace the app with a newer release. Before major sync or import changes, export a backup.
+1. Check for updates in Settings → About → Check for Updates
+2. Download the new version from [Releases](https://github.com/dongdongbh/Mindwtr/releases)
+3. Install over your existing installation
 
-## See also
+Your data is preserved between updates.
 
-- [Getting started](/start/getting-started)
-- [Data and sync](/data-sync/)
-- [Diagnostics and logs](/data-sync/diagnostics-logs)
+---
+
+## Uninstalling
+
+### Linux (Package Manager)
+```bash
+# AUR
+yay -R mindwtr-bin
+
+# Debian/Ubuntu
+sudo dpkg -r mindwtr
+
+# Flatpak
+flatpak uninstall tech.dongdongbh.mindwtr
+```
+
+### Windows
+Use "Add or Remove Programs" in Windows Settings.
+
+### macOS
+Drag Mindwtr from Applications to Trash.
+
+### Data Cleanup
+To remove all data, delete both the config and data directories:
+```bash
+# Linux
+rm -rf ~/.config/mindwtr
+rm -rf ~/.local/share/mindwtr
+
+# macOS
+rm -rf ~/Library/Application\ Support/mindwtr
+
+# Windows (PowerShell)
+Remove-Item -Recurse -Force "$env:APPDATA\\mindwtr"
+```
+
+---
+
+## Troubleshooting
+
+### App Won't Start (Linux)
+
+Ensure WebKitGTK is installed:
+```bash
+# Arch
+sudo pacman -S webkit2gtk-4.1
+
+# Debian/Ubuntu
+sudo apt install libwebkit2gtk-4.1-0
+```
+
+### Missing Icons
+
+Install a complete icon theme:
+```bash
+sudo pacman -S papirus-icon-theme
+```
+
+### Blank Window
+
+Try running with GPU disabled:
+```bash
+WEBKIT_DISABLE_DMABUF_RENDERER=1 mindwtr
+```
+
+---
+
+## See Also
+
+- [Getting Started](/start/getting-started)
+- [User Guide Desktop](/use/desktop)
+- [Data and Sync](/data-sync/)

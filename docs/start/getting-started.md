@@ -1,47 +1,112 @@
-# Getting started
+# Getting Started
 
-Mindwtr is a free, open-source GTD app for desktop and mobile. It stores your work locally first and does not require an account.
+Welcome to Mindwtr! This guide will help you get up and running quickly.
 
-## Install Mindwtr
+## Installation
 
-Choose the most natural install path for your device.
+### Desktop
 
-| Platform | Recommended install |
-| --- | --- |
-| iPhone and iPad | App Store |
-| Android | Google Play, F-Droid, IzzyOnDroid, or APK from GitHub Releases |
-| macOS | Mac App Store or Homebrew |
-| Windows | Microsoft Store or winget |
-| Linux | Flathub, AUR, AppImage, deb, or rpm |
-| Web | Self-hosted PWA via Docker or a local web build |
+| Platform          | Installation                                                                                        |
+| ----------------- | --------------------------------------------------------------------------------------------------- |
+| **Arch Linux**    | `yay -S mindwtr-bin` or `paru -S mindwtr-bin`                                                       |
+| **Debian/Ubuntu** | Add the APT repo (recommended) or download `.deb` from [Releases](https://github.com/dongdongbh/Mindwtr/releases) |
+| **Fedora/RHEL**   | Add the DNF repo (recommended) or download `.rpm` from [Releases](https://github.com/dongdongbh/Mindwtr/releases) |
+| **AppImage**      | Download `.AppImage`, `chmod +x`, and run                                                           |
+| **Windows**       | Microsoft Store or `winget install dongdongbh.Mindwtr` (or `.msi`/`.exe` from [Releases](https://github.com/dongdongbh/Mindwtr/releases)) |
+| **macOS**         | `brew install --cask mindwtr` (or `.dmg` from [Releases](https://github.com/dongdongbh/Mindwtr/releases)) |
 
-## First launch
+See [Desktop Installation](/start/desktop-installation) for detailed instructions.
 
-On a fresh install, start with local data, restore a backup, or connect a sync backend. Mindwtr opens Focus by default so your calendar items and next actions are visible before the rest of the system.
+### Mobile
 
-::: tip Local first
-You can use Mindwtr without creating an account. Sync is optional and uses the backend you choose.
-:::
+| Platform    | Installation                                                                 |
+| ----------- | ---------------------------------------------------------------------------- |
+| **Android** | Google Play or APK from [Releases](https://github.com/dongdongbh/Mindwtr/releases) |
+| **iOS**     | App Store, TestFlight beta, or simulator/self-build for development          |
 
-## First capture
+See [Mobile Installation](/start/mobile-installation) for detailed instructions.
 
-Put new work in Inbox. Capture should stay fast and low-friction. You can type plain text, or add quick syntax when it helps.
+---
 
-| Syntax | Example | Result |
-| --- | --- | --- |
-| `@context` | `Buy milk @errands` | Adds a context |
-| `#tag` | `Research trip #planning` | Adds a tag |
-| `+Project` | `Call vendor +HomeReno` | Assigns a project |
-| `/due:date` | `Report /due:friday` | Sets a due date |
-| `/next` | `Email Sam /next` | Moves to Next Actions |
-| `/note:text` | `Book tickets /note:check train times` | Adds a note |
+## First Launch
 
-## First review
+On a fresh install, Mindwtr asks whether you want to start fresh, import a backup, or connect sync. After setup, it opens the **Focus** view by default so today's calendar items and next actions are visible first. Capture new work into the **Inbox** whenever you need to park an idea quickly.
 
-Use Review to process Inbox, check Waiting For, review projects, and decide what belongs in Focus. The goal is not to make every list empty. The goal is to trust the system.
+### The Basic Workflow
 
-## Next steps
+1. **Capture** everything to the Inbox
+2. **Clarify** each item using the processing wizard
+3. **Organize** into Next Actions, Projects, or Someday/Maybe
+4. **Reflect** during your Weekly Review
+5. **Engage** with confidence
 
-- Learn the [GTD workflow](/use/gtd-workflow).
-- Set up [data and sync](/data-sync/).
-- Read the [desktop guide](/use/desktop) or [mobile guide](/use/mobile).
+---
+
+## Quick Add Syntax
+
+Mindwtr supports natural language quick-add. Type directly in the task input:
+
+| Syntax             | Example                    | Result                |
+| ------------------ | -------------------------- | --------------------- |
+| `@context`         | `Buy milk @errands`        | Adds @errands context |
+| `#tag`             | `Research topic #creative` | Adds #creative tag    |
+| `+Project`         | `Call vendor +HomeReno`    | Assigns to project    |
+| `+Multi Word`      | `+New Project Name`        | Assigns to "New Project Name" |
+| `!Area`            | `Plan roadmap !Work`       | Assigns to area       |
+| `/area:<name>`     | `/area:Personal`           | Assigns to area (no spaces) |
+| `/start:date`      | `Task /start:monday`       | Sets start date       |
+| `/due:date`        | `Report /due:friday`       | Sets due date         |
+| `/review:date`     | `Task /review:next week`   | Sets review date      |
+| `/note:text`       | `Task /note:remember X`    | Adds description      |
+| `/status`          | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | Sets status |
+
+**Date examples:**
+- `/due:today`, `/due:tomorrow`
+- `/due:friday`, `/due:next week`
+- `/due:in 3 days`, `/due:2025-01-15`
+- `/start:tomorrow`, `/review:next week`
+
+Absolute dates use fixed ISO format `YYYY-MM-DD` (for example, `/due:2026-03-15`), regardless of your UI locale/date display format.
+
+**Escaping**
+- Use a backslash to keep symbols as plain text: `\\@`, `\\#`, `\\+`, `\\/`
+- Example: `Call \\@support /due:tomorrow` → title becomes `Call @support`
+
+**Unicode support**
+- Context and tag names accept Unicode letters and numbers (e.g., CJK and accented characters).
+
+> **Tip:** You can also use **Audio Capture** to speak your tasks. Enable it in **Settings → AI Assistant** to use voice-to-text with smart parsing.
+
+---
+
+## Organizing Model
+
+Mindwtr uses four different grouping tools. Use each for what it is good at:
+
+- **Projects**: Multi-step outcomes you want to complete (for example, "Launch v2 website").
+- **Areas**: Ongoing responsibility domains with no finish line (for example, "Health", "Family", "Career").
+- **Contexts**: Where/how a task can be done (for example, `@home`, `@phone`, `@errands`).
+- **Tags**: Flexible labels for energy, theme, or custom grouping (for example, `#focused`, `#lowenergy`).
+
+Practical rule:
+- If it has an end state, use a **Project**.
+- If it is a long-term life/work domain, use an **Area**.
+- If it depends on place/tool/person, use a **Context**.
+- If you want optional filtering, use a **Tag**.
+
+---
+
+## Next Steps
+
+- Learn about [GTD Overview](/use/gtd-overview)
+- Explore the [User Guide Desktop](/use/desktop) or [User Guide Mobile](/use/mobile)
+- Set up [Data and Sync](/data-sync/)
+- Enable [AI Assistant](/power-users/ai-assistant) (optional)
+
+---
+
+## Need Help?
+
+- Check the [FAQ](/start/faq)
+- [Report an issue](https://github.com/dongdongbh/Mindwtr/issues)
+- Read the full [GTD Workflow in Mindwtr](/use/gtd-workflow) guide

@@ -1,27 +1,100 @@
-# Dropbox sync
+# Dropbox Sync
 
-Dropbox sync is a convenient cross-platform option for users who want cloud sync without running their own server.
+Mindwtr supports direct Dropbox sync in supported desktop/mobile builds.
 
-## When to use it
+This uses Dropbox OAuth with **App Folder** access, so Mindwtr only reads/writes data under:
 
-Use Dropbox sync if:
+- `/Apps/Mindwtr/data.json`
+- `/Apps/Mindwtr/attachments/*`
 
-- You work across desktop and mobile platforms
-- You already trust Dropbox for file storage
-- You want OAuth setup instead of manually configuring a server URL
+---
 
-## Setup checklist
+## Availability
 
-1. Export a backup.
-2. Sign in through the Dropbox authorization flow in Mindwtr.
-3. Let the first upload complete.
-4. Connect each additional device to the same Dropbox account.
-5. Run manual sync once on each device.
+- **Desktop (official builds):** Supported
+- **Mobile (official builds):** Supported
+- **Expo Go:** Not supported for Dropbox OAuth
+- **FOSS builds:** Dropbox sync may be disabled
+- **Docker/PWA web build:** not supported; use a native desktop/mobile build, self-hosted sync, or WebDAV instead
+
+If Dropbox is disabled in your build, or you are using the Docker-served PWA, use [Data and Sync](/data-sync/) (File Sync), [Cloud Deployment](/data-sync/cloud-deployment) (self-hosted), or WebDAV instead.
+
+---
+
+## User Setup (Official Builds)
+
+1. Open **Settings → Sync**.
+2. In the **Sync backend** selector, choose **Dropbox**. Mindwtr shows the selected path as **Cloud Sync**.
+3. Click/Tap **Connect Dropbox** and complete OAuth in your browser.
+4. Back in Mindwtr, use **Test connection**.
+5. Run **Sync**.
+
+After first sync, verify the app folder exists in Dropbox:
+
+- `/Apps/Mindwtr/data.json`
+- `/Apps/Mindwtr/attachments/`
+
+---
+
+## Self-Build Setup
+
+If you build Mindwtr yourself, you must provide a Dropbox app key at build time.
+
+### 1. Create Dropbox App
+
+In Dropbox App Console:
+
+- App type: **Scoped access**
+- Access type: **App folder**
+- Scopes: `files.content.read`, `files.content.write`, `files.metadata.read`
+- Enable public client / PKCE flow
+
+### 2. Add Redirect URIs
+
+- Mobile: `mindwtr://redirect`
+- Desktop: `http://127.0.0.1:53682/oauth/dropbox/callback`
+
+### 3. Inject app key during build
+
+- Desktop: `VITE_DROPBOX_APP_KEY=<your_app_key>`
+- Mobile: `DROPBOX_APP_KEY=<your_app_key>`
+
+For macOS App Store builds, the desktop OAuth callback uses a local loopback listener on `127.0.0.1:53682`, so the app entitlement set must include `com.apple.security.network.server`.
+
+In CI/release workflows, set repository variables or secrets:
+
+- `VITE_DROPBOX_APP_KEY`
+- `DROPBOX_APP_KEY`
+
+---
 
 ## Troubleshooting
 
-- Confirm every device is connected to the same Dropbox account.
-- Check that Dropbox authorization has not expired.
-- Avoid editing the generated sync files directly.
-- If you see conflicts, export a backup before resolving them.
+### `Invalid redirect_uri`
 
+Make sure the URI shown in Mindwtr matches Dropbox app settings exactly.
+
+### HTTP 401 / token invalid
+
+Token is expired/revoked or was issued for another app key. Reconnect Dropbox.
+
+### No Dropbox option in settings
+
+Your build likely has Dropbox disabled (common in FOSS builds) or missing build-time app key.
+
+### App appears connected but sync does not run
+
+Use **Test connection** first. If successful, run **Sync** and check logs in [Diagnostics and Logs](/data-sync/diagnostics-logs).
+
+---
+
+## Security & Privacy
+
+- Mindwtr requests only App Folder access, not full Dropbox account access.
+- OAuth tokens are stored locally on device.
+- Mindwtr developer does not proxy Dropbox requests or receive your Dropbox token.
+
+See:
+
+- [Data and Sync](/data-sync/)
+- `docs/PRIVACY.md` in the repository

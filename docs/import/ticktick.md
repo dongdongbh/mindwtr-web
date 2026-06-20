@@ -1,27 +1,75 @@
-# Import from TickTick
+# TickTick Import
 
-Move a TickTick export into Mindwtr without losing the chance to rebuild a clean GTD workflow.
+Mindwtr can import TickTick backups so you can migrate without rebuilding your system by hand.
 
-## Supported input
+Supported sources:
 
-Mindwtr supports TickTick exports when the current app build includes the importer for the export format you choose, commonly CSV or ZIP export files.
+- a TickTick **CSV** backup
+- a TickTick **ZIP** backup containing the CSV export
 
-## What imports preserve
+Import is available on desktop and mobile from **Settings -> Data -> Import from TickTick**.
 
-- Task title and notes
-- Dates where the export provides them
-- List or project grouping where it maps cleanly to Mindwtr
-- Completion state when available
+## Export From TickTick
 
-## After import
+TickTick creates backups from the web app:
 
-Imported tasks should be reviewed before you trust the system. Process Inbox, confirm projects, and decide which imported tasks are true next actions.
+1. Open TickTick in a browser and sign in.
+2. Click your avatar in the top-left corner.
+3. Open **Settings -> Account -> Backup & Import**.
+4. Choose **Generate Backup**.
+5. Save the CSV or ZIP file that TickTick downloads.
 
-## Good migration workflow
+Then open **Import from TickTick** in Mindwtr and choose that file.
 
-1. Export from TickTick.
-2. Export a Mindwtr backup.
-3. Run the import.
-4. Review imported projects and contexts.
-5. Archive or delete noise before setting up sync.
+## What Gets Imported
 
+Mindwtr maps TickTick backups into Mindwtr's model with a GTD-first bias:
+
+- TickTick folders become **Mindwtr areas**
+- TickTick lists become **Mindwtr projects**
+- parent tasks and child rows can become **checklist tasks**
+- checklist content is preserved as checklist items
+- TickTick tags become **Mindwtr tags**
+- priorities are mapped when present
+- due dates, start dates, all-day dates, and time zones are preserved when they can be read safely
+- supported repeat rules are imported as Mindwtr recurrence
+- completed and archived status is preserved when present
+- task notes/content are preserved in the description
+
+Imported active tasks stay available for GTD processing instead of being forced into a status Mindwtr cannot infer from the backup.
+
+## Import Flow
+
+1. Open **Import from TickTick**
+2. Choose a TickTick CSV or ZIP backup
+3. Review the preview summary
+4. Confirm the import
+
+Before import, Mindwtr saves a recovery snapshot of your current local data when supported.
+
+After import:
+
+- new areas and projects are created as needed
+- tasks, checklists, tags, dates, and recurrence are added from the backup
+- warnings are shown for skipped rows, unsupported archive entries, or fields Mindwtr could not map safely
+
+## Notes on TickTick Backups
+
+TickTick backups include metadata rows before the actual CSV header. Mindwtr detects the real header automatically, so you should not need to edit the file first.
+
+Mindwtr skips:
+
+- nested ZIP files
+- non-CSV files inside the archive
+- malformed rows it cannot parse safely
+
+TickTick backups do not provide every piece of app state. Attachments and some app-specific presentation details may need to be moved manually.
+
+## Tips
+
+- Keep the original TickTick backup until you verify the import
+- Start with the full backup, but use the preview to check whether the mapping looks right
+- If you import the same backup twice, you may duplicate tasks
+- Use [Importing Data From Other Apps](/import/) if you need a fallback path for another app
+
+See also [Data and Sync](/data-sync/) and [Backup and Restore](/data-sync/backup-restore).

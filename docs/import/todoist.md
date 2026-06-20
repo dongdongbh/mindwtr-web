@@ -1,28 +1,77 @@
-# Import from Todoist
+# Todoist Import
 
-Move a Todoist export into Mindwtr and reorganize it into a GTD system.
+Mindwtr can import Todoist exports so you can migrate without rebuilding your system by hand.
 
-## Supported input
+Supported sources:
 
-Mindwtr supports Todoist exports when the current app build includes the importer for the format you select, commonly CSV exports.
+- a single Todoist **CSV** export
+- a Todoist **ZIP** backup containing multiple project CSV files
 
-## What imports preserve
+Import is available on desktop and mobile from **Settings → Data → Import from Todoist**.
 
-- Task title
-- Description or notes when available
-- Dates where the export provides them
-- Project grouping where it maps cleanly to Mindwtr
-- Labels where they can become tags or contexts
+---
 
-## After import
+## What Gets Imported
 
-Todoist projects and labels may not map one-to-one to GTD projects and contexts. Use Review to clarify what each imported item means.
+Mindwtr maps Todoist exports into Mindwtr’s model with a GTD-first bias:
 
-## Good migration workflow
+- Todoist projects become **Mindwtr projects**
+- Todoist sections become **Mindwtr sections**
+- Todoist subtasks become **checklist items**
+- Todoist labels become **tags**
+- Imported tasks are placed in **Inbox**
 
-1. Export from Todoist.
-2. Export a Mindwtr backup.
-3. Run the import.
-4. Check projects, dates, and labels.
-5. Move only trusted actions into Focus.
+Keeping imported tasks in Inbox is intentional. It lets you process them in your own GTD flow instead of guessing organization rules during import.
 
+---
+
+## Supported Todoist Data
+
+- task titles
+- descriptions
+- priorities
+- due dates when they can be resolved safely
+- sections
+- notes/comments attached to tasks
+- labels written in Todoist content (for example `@work`)
+
+Todoist recurring schedules are not recreated as Mindwtr recurrences automatically. The task is imported once and the original Todoist recurrence text is preserved in the description so you can decide how to model it in Mindwtr.
+
+---
+
+## Import Flow
+
+1. Open **Import from Todoist**
+2. Choose a Todoist CSV or ZIP file
+3. Review the preview summary
+4. Confirm the import
+
+Before import, Mindwtr saves a recovery snapshot of your current local data when supported.
+
+After import:
+
+- new projects are created as needed
+- imported tasks appear in **Inbox**
+- warnings are shown for recurring tasks, skipped rows, or unsupported archive entries
+
+---
+
+## Notes on ZIP Backups
+
+Todoist ZIP backups usually contain one CSV per project. Mindwtr reads each CSV and imports each project separately.
+
+Mindwtr skips:
+
+- nested ZIP files
+- non-CSV files inside the archive
+- malformed Todoist rows it cannot parse safely
+
+---
+
+## Tips
+
+- Start with a smaller Todoist project if you want to test the mapping first
+- Keep the recovery snapshot until you verify the import looks right
+- If you import the same export twice, you may duplicate tasks
+
+See also [Data and Sync](/data-sync/) and [Backup and Restore](/data-sync/backup-restore).

@@ -1,28 +1,51 @@
-# iCloud sync
+# iCloud Sync
 
-iCloud sync is the easiest option when you use Apple devices and want the operating system to handle the sync transport.
+Mindwtr supports a native **iCloud / CloudKit** sync backend for Apple devices where the native module is available.
 
-## When to use it
+## Availability
 
-Use iCloud sync if:
+- **iPhone / iPad:** supported through the native `iCloud` sync backend in **Settings → Sync**
+- **Android:** not supported
+- **Windows / Linux:** not supported
+- **macOS desktop:** supported through the native `iCloud` sync backend in **Settings → Sync**
 
-- Your active devices are mostly iPhone, iPad, and macOS
-- You already use the same Apple ID on those devices
-- You want a native Apple sync path with little configuration
+## What It Syncs
 
-## Setup checklist
+The native iCloud backend syncs the same core GTD data as the other structured backends:
 
-1. Sign in to iCloud on each Apple device.
-2. Enable iCloud Drive and app data sync in system settings.
-3. Open Mindwtr on the first device and enable iCloud sync.
-4. Let the first sync finish before enabling it on the next device.
-5. Open Mindwtr on each device and confirm the same projects and next actions appear.
+- tasks
+- projects
+- sections
+- areas
+- attachment metadata
+- attachment files through CloudKit assets
+- synced settings groups
 
-## Troubleshooting
+It uses CloudKit records and assets in your Apple account rather than a user-selected `data.json` and `attachments/` folder.
 
-- Confirm the same Apple ID is used on each device.
-- Confirm iCloud Drive is enabled.
-- Keep Mindwtr open long enough for the first sync to complete.
-- Use manual sync after making a test task.
-- Export a backup before resetting local data.
+## Setup
 
+1. Sign in to the same Apple ID on the devices you want to sync.
+2. Make sure iCloud is enabled for Mindwtr on those devices.
+3. In Mindwtr on your Apple device, open **Settings → Sync**.
+4. Choose **iCloud** as the sync backend.
+5. Run a sync once to seed or pull your data.
+
+After setup, Mindwtr keeps using the normal local-first merge flow and can react to CloudKit change notifications when available.
+
+## Platform Notes
+
+- If a non-Apple build sees an old `cloudkit` backend value, Mindwtr falls back to `Off` instead of showing a broken iCloud option.
+- macOS users can still use **iCloud Drive + File Sync** if they prefer a folder-based workflow over the native CloudKit backend.
+- Native iCloud attachment sync is also Apple-only. Mixed-platform setups should use a cross-platform backend if attachments need to move between Apple and non-Apple devices.
+- If you need a cross-platform backend between Apple and non-Apple devices, use **WebDAV**, **Mindwtr Cloud**, **Dropbox** (supported builds), or **File Sync**.
+
+## When To Use It
+
+Use native iCloud sync when:
+
+- all participating devices are in the Apple ecosystem
+- you want a simpler setup than picking and maintaining a shared folder
+- you do not need Android / Windows / Linux clients in the same sync mesh
+
+If you need mixed-platform sync, see [Data and Sync](/data-sync/).

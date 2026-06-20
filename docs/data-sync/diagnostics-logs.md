@@ -1,22 +1,18 @@
-# Diagnostics and logs
+# Diagnostics and Logs
 
-Mindwtr includes local diagnostics logging for troubleshooting sync, storage, and runtime issues.
+Mindwtr includes built-in diagnostics logging to help troubleshoot sync and crash issues. Logs are **local only**, and sensitive values are **redacted** before writing.
+
+---
 
 ## Enable debug logging
 
-On desktop and mobile, open Settings, go to Data, and enable debug logging. Reproduce the issue, then export or inspect the log.
+### Desktop
+1. Open **Settings → Data**
+2. Toggle **Debug logging**
+3. Reproduce the issue
 
-## Desktop log locations
-
-| Platform | Default path |
-| --- | --- |
-| Linux | `~/.local/share/mindwtr/logs/mindwtr.log` |
-| Windows | `%APPDATA%/mindwtr/logs/mindwtr.log` |
-| macOS | `~/Library/Application Support/mindwtr/logs/mindwtr.log` |
-
-## Diagnostics builds
-
-Desktop release diagnostics require a build with the diagnostics feature:
+**Release diagnostics builds:** Devtools and extra logging are only available if the
+desktop app was built with the `diagnostics` feature.
 
 ```bash
 cd apps/desktop
@@ -24,16 +20,46 @@ cargo tauri build --features diagnostics
 MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 ```
 
-## Redaction
+### Mobile
+1. Open **Settings → Data**
+2. Toggle **Debug logging**
+3. Reproduce the issue
 
-Logs are local. Sensitive values such as API keys, tokens, passwords, and credential-bearing URLs are redacted before writing.
+---
 
-## Bug reports
+## Share or clear logs
 
-When reporting a sync or crash bug, include the platform, version, install channel, sync backend, steps to reproduce, and the relevant redacted log excerpt.
+### Desktop
+- The log file path is shown in **Settings → Data**
+- You can clear logs from the same screen
 
-## See also
+### Mobile
+- Use **Share log** to export a log file
+- Use **Clear log** to remove old entries
+
+---
+
+## Default log locations (desktop)
+
+| Platform | Log file |
+| --- | --- |
+| Linux | `~/.local/share/mindwtr/logs/mindwtr.log` |
+| Windows | `%APPDATA%/mindwtr/logs/mindwtr.log` |
+| macOS | `~/Library/Application Support/mindwtr/logs/mindwtr.log` |
+
+---
+
+## What gets logged
+
+- Sync errors and steps
+- Conflict summaries (when diagnostics are enabled)
+- Unexpected runtime errors
+
+Sensitive values (API keys, tokens, passwords, URLs with credentials) are redacted automatically.
+
+---
+
+## Related
 
 - [FAQ](/start/faq)
-- [Data and sync](/data-sync/)
-- [Developer troubleshooting](/developers/troubleshooting)
+- [Data and Sync](/data-sync/)

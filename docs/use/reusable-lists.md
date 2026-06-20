@@ -1,25 +1,53 @@
-# Reusable lists
+# Reusable Lists (Templates)
 
-Reusable lists help with repeated checklists and project templates.
+Mindwtr supports reusable checklists for tasks you repeat without strict schedules (packing, groceries, travel prep).
 
-## Duplicate
+## Two Patterns
 
-Duplicate a project when you want a fresh copy of the same structure. This is useful for trip planning, release checklists, maintenance routines, and recurring client workflows.
+### Duplicate (Templates)
+Use when each run is a fresh copy.
 
-## Reset checklist
+Example: **Packing List**
 
-Reset a checklist when the same list should be reused in place. This is useful for routines where the project or task remains the same but the checklist state should start over.
+1. Keep a master task in Someday/Maybe
+2. Duplicate it when you plan a trip
+3. Edit the copy without affecting the master
 
-## Which one to choose
+What duplication resets:
 
-| Need | Use |
-| --- | --- |
-| A new project instance | Duplicate |
-| The same item with unchecked steps | Reset checklist |
-| Historical copies | Duplicate |
-| A standing routine | Reset checklist |
+- checklist items start unchecked
+- schedule and review dates are cleared
+- recurrence is cleared
+- the copy becomes a fresh task with new checklist and attachment IDs
 
-## See also
+### Reset Checklist
+Use when you want the same list again.
 
-- [Projects in the desktop guide](/use/desktop)
-- [Weekly review](/use/weekly-review)
+Example: **Groceries**
+
+1. Check items while shopping
+2. Tap **Reset Checklist**
+3. Reuse next time
+
+What reset does:
+
+- unchecks every checklist item
+- updates the task in place instead of creating a second copy
+- reopens the task if it had already been marked done
+
+## Where to Find
+
+- **Mobile:** Task editor → **Duplicate task** or **Reset checklist**
+- **Desktop:** Task actions menu
+
+## Which One To Choose
+
+- Use **Duplicate task** for trip prep, onboarding checklists, or anything where each run should have its own notes and timing.
+- Use **Reset checklist** for shopping, recurring maintenance, or other lists where the same task stays useful over time.
+- If the list also has dates, recurrence, or project-specific notes, duplication is usually the safer pattern.
+
+## Tips
+
+- Keep the master version in **Someday/Maybe** or a low-noise project so it does not clutter daily lists.
+- Give template-style tasks obvious names like `Packing List (Template)` if you duplicate them often.
+- If a checklist starts needing due dates or recurring rules on each item, split it into separate tasks instead of overloading one reusable list.

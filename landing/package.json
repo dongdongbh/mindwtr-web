@@ -1,0 +1,14 @@
+{
+  "name": "mindwtr-landing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "bun ../scripts/sync-assets.mjs && tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^7.2.7"
+  }
+}

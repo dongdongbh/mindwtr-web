@@ -2,12 +2,15 @@
   "name": "mindwtr-web",
   "private": true,
   "type": "module",
+  "workspaces": [
+    "landing"
+  ],
   "scripts": {
     "assets:sync": "bun scripts/sync-assets.mjs",
-    "landing:dev": "bun --cwd landing run dev",
-    "landing:build": "bun --cwd landing run build",
-    "docs:dev": "bun --cwd docs run dev",
-    "docs:build": "bun --cwd docs run docs:build",
+    "landing:dev": "bun run --cwd landing dev",
+    "landing:build": "bun run --cwd landing build",
+    "docs:dev": "bun run --cwd docs dev",
+    "docs:build": "bun run --cwd docs docs:build",
     "check:secrets": "bun scripts/check-secrets.mjs",
     "check": "bun run check:secrets && bun run landing:build && bun run docs:build"
   }

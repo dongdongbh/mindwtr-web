@@ -564,12 +564,12 @@ h2 {
 
 .platform-gallery img:nth-child(2) {
   aspect-ratio: 4 / 5;
-  object-position: 70% center;
+  object-position: center top;
 }
 
 .platform-gallery img:nth-child(3) {
   aspect-ratio: 4 / 3;
-  object-position: center;
+  object-position: left center;
 }
 
 /* Trust ------------------------------------------------------------------- */
@@ -638,8 +638,9 @@ h2 {
 .download-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 30px 34px;
+  gap: 26px 30px;
   align-items: center;
+  justify-items: center;
 }
 
 .store-badge,
@@ -648,15 +649,14 @@ h2 {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 260px;
-  height: 78px;
+  max-width: 232px;
+  height: 72px;
   min-height: 0;
   border: 0;
   border-radius: 0;
   padding: 0;
   background: transparent;
   box-shadow: none;
-  justify-self: center;
   transition:
     opacity 180ms ease,
     transform 180ms ease;
@@ -668,39 +668,42 @@ h2 {
   transform: translateY(-2px);
 }
 
+/* Normalize on the visible logo height. Each store's official badge bakes in
+   a different amount of transparent padding, so per-badge heights compensate
+   to make the logos read at one consistent size. */
 .store-badge img {
-  width: min(var(--badge-width), 100%);
-  max-height: 74px;
-  height: auto;
+  height: var(--badge-h, 52px);
+  width: auto;
+  max-width: 100%;
   object-fit: contain;
 }
 
 .store-badge.apple {
-  --badge-width: 198px;
+  --badge-h: 54px;
 }
 
 .store-badge.google {
-  --badge-width: 188px;
+  --badge-h: 66px;
 }
 
 .store-badge.microsoft {
-  --badge-width: 226px;
+  --badge-h: 50px;
 }
 
 .store-badge.flathub {
-  --badge-width: 214px;
+  --badge-h: 54px;
 }
 
 .store-badge.snap {
-  --badge-width: 214px;
+  --badge-h: 56px;
 }
 
 .store-badge.fdroid {
-  --badge-width: 188px;
+  --badge-h: 66px;
 }
 
 .store-badge.izzy {
-  --badge-width: 230px;
+  --badge-h: 54px;
 }
 
 .github-download {
@@ -896,11 +899,7 @@ h2 {
   .store-badge,
   .github-download {
     max-width: 100%;
-    height: 72px;
-  }
-
-  .store-badge img {
-    max-height: 64px;
+    height: 68px;
   }
 
   .github-download {

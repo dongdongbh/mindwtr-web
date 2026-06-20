@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev --host 0.0.0.0",
-    "docs:build": "bun ../scripts/sync-assets.mjs && vitepress build",
+    "docs:build": "bun install && bun ../scripts/sync-assets.mjs && vitepress build",
     "build": "bun run docs:build",
     "preview": "vitepress preview --host 0.0.0.0"
   },

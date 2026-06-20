@@ -434,8 +434,8 @@ h2 {
 .download-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 26px 30px;
-  align-items: center;
+  gap: 22px 24px;
+  align-items: stretch;
 }
 
 .store-badge,
@@ -444,9 +444,16 @@ h2 {
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 88px;
-  padding: 0 12px;
+  max-width: 280px;
+  height: 84px;
+  min-height: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 0 18px;
+  background: #101211;
+  box-shadow: 0 16px 34px rgba(28, 57, 44, 0.16);
   justify-self: center;
+  overflow: hidden;
   transition:
     opacity 180ms ease,
     transform 180ms ease;
@@ -461,20 +468,14 @@ h2 {
 .store-badge img {
   width: auto;
   max-width: 100%;
-  height: 58px;
+  max-height: 64px;
+  height: auto;
   object-fit: contain;
 }
 
 .github-download {
   gap: 10px;
-  width: min(100%, 250px);
-  min-height: 64px;
-  border: 1px solid rgba(22, 52, 43, 0.2);
-  border-radius: 8px;
-  padding: 0 16px;
-  background: #202020;
   color: #ffffff;
-  box-shadow: 0 12px 28px rgba(28, 57, 44, 0.12);
 }
 
 .github-download img {
@@ -636,16 +637,16 @@ h2 {
 
   .store-badge,
   .github-download {
-    min-height: 74px;
-    padding: 0 6px;
+    height: 72px;
+    padding: 0 10px;
   }
 
   .store-badge img {
-    height: 50px;
+    max-height: 54px;
   }
 
   .github-download {
-    width: min(100%, 210px);
+    max-width: 100%;
   }
 
   .platform-gallery img:first-child {

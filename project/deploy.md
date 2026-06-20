@@ -26,4 +26,3 @@ This repo deploys to two separate Cloudflare Pages projects.
 ## Local note
 
 If this repo is nested under another JavaScript workspace, VitePress may warn about that parent workspace's `tsconfig.json`. The Cloudflare Pages projects should use the scoped project roots above, so the build runs from `landing` or `docs` rather than from a parent workspace.
-

@@ -116,10 +116,10 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(420px, 1.14fr);
+  grid-template-columns: minmax(0, 0.78fr) minmax(520px, 1.22fr);
   align-items: center;
-  gap: clamp(36px, 6vw, 84px);
-  width: min(1180px, calc(100% - 40px));
+  gap: clamp(28px, 4vw, 64px);
+  width: min(1240px, calc(100% - 40px));
   min-height: calc(100dvh - 92px);
   margin: 0 auto;
   padding: clamp(36px, 6vw, 72px) 0 clamp(54px, 7vw, 86px);
@@ -224,12 +224,12 @@ h1 {
 }
 
 .hero-media {
-  position: relative;
-  min-height: clamp(420px, 58vw, 660px);
+  display: flex;
+  align-items: center;
+  min-height: clamp(340px, 46vw, 560px);
 }
 
-.desktop-frame,
-.phone-frame {
+.desktop-frame {
   margin: 0;
   overflow: hidden;
   border: 1px solid rgba(22, 52, 43, 0.12);
@@ -238,10 +238,7 @@ h1 {
 }
 
 .desktop-frame {
-  position: absolute;
-  top: 2%;
-  right: 0;
-  width: min(100%, 780px);
+  width: 100%;
   border-radius: var(--radius-large);
 }
 
@@ -250,23 +247,6 @@ h1 {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: left top;
-}
-
-.phone-frame {
-  position: absolute;
-  right: 3%;
-  bottom: 0;
-  width: clamp(176px, 22vw, 276px);
-  aspect-ratio: 9 / 16;
-  border-radius: 32px;
-}
-
-.phone-frame img {
-  width: 215%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: 70% 56%;
 }
 
 .section-band,
@@ -504,16 +484,11 @@ h2 {
   }
 
   .hero-media {
-    min-height: clamp(360px, 72vw, 560px);
+    min-height: auto;
   }
 
   .desktop-frame {
     width: 100%;
-  }
-
-  .phone-frame {
-    right: 2%;
-    width: clamp(150px, 32vw, 240px);
   }
 
   .section-copy,
@@ -581,11 +556,6 @@ h2 {
 
   .desktop-frame {
     border-radius: 18px;
-  }
-
-  .phone-frame {
-    width: 152px;
-    border-radius: 24px;
   }
 
   .platform-gallery,

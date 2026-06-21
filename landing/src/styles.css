@@ -1424,6 +1424,26 @@ h2 {
   display: block;
 }
 
+/* GitHub Sponsors button: GitHub-black with the pink Sponsors heart, so it
+   reads as the real GitHub Sponsors button (not a generic blue one) and pairs
+   with the official Ko-fi badge beside it. */
+.github-cta {
+  gap: 9px;
+  background: #1f2328;
+  color: #ffffff;
+  box-shadow: 0 16px 34px rgba(31, 35, 40, 0.26);
+}
+
+.github-cta:hover {
+  background: #32383f;
+  color: #ffffff;
+}
+
+.github-cta .gh-heart {
+  flex: none;
+  fill: #db61a2;
+}
+
 .community-actions {
   display: flex;
   flex-wrap: wrap;

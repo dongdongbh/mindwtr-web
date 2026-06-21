@@ -62,6 +62,10 @@ function applyPlatform(platform: Platform | null): void {
   const cta = document.getElementById("primary-download");
   if (cta instanceof HTMLAnchorElement) {
     cta.textContent = `Download for ${PLATFORM_LABEL[platform]}`;
+    // Anchor at the detected card, not the section wrapper, so a stacked
+    // mobile layout scrolls to the visitor's card (e.g. Android, far down the
+    // stack) rather than the section top (macOS, first card).
+    if (card) cta.setAttribute("href", `#download-${platform}`);
   }
 }
 

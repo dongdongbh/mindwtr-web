@@ -229,10 +229,31 @@
             self-host the web build when that fits your setup.
           </p>
         </div>
-        <div class="platform-gallery" aria-label="Mindwtr across devices">
-          <img src="/assets/screenshots/showcase-focus.jpg" alt="Mindwtr Focus view on desktop" />
-          <img src="/assets/screenshots/showcase-projects.jpg" alt="Mindwtr Projects view on desktop" />
-          <img src="/assets/screenshots/showcase-calendar.jpg" alt="Mindwtr Calendar view on desktop" />
+        <div class="coverflow" aria-roledescription="carousel" aria-label="Mindwtr views">
+          <div class="coverflow-stage">
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Show the Focus view">
+              <img src="/assets/screenshots/showcase-focus.jpg" alt="Mindwtr Focus view on desktop" />
+            </button>
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Show the Projects view">
+              <img src="/assets/screenshots/showcase-projects.jpg" alt="Mindwtr Projects view on desktop" />
+            </button>
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Show the Calendar view">
+              <img src="/assets/screenshots/showcase-calendar.jpg" alt="Mindwtr Calendar view on desktop" />
+            </button>
+          </div>
+          <div class="coverflow-controls">
+            <button type="button" class="coverflow-arrow" data-dir="-1" aria-label="Previous view">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+            </button>
+            <div class="coverflow-dots" role="group" aria-label="Choose a view">
+              <button type="button" class="coverflow-dot is-active" aria-label="Focus view" aria-current="true"></button>
+              <button type="button" class="coverflow-dot" aria-label="Projects view"></button>
+              <button type="button" class="coverflow-dot" aria-label="Calendar view"></button>
+            </div>
+            <button type="button" class="coverflow-arrow" data-dir="1" aria-label="Next view">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -491,10 +512,17 @@
     </main>
 
     <footer class="site-footer">
-      <span>Mindwtr</span>
-      <a href="https://docs.mindwtr.app/">Docs</a>
-      <a href="https://github.com/dongdongbh/Mindwtr">GitHub</a>
-      <a href="/support">Support</a>
+      <nav class="footer-nav" aria-label="Footer">
+        <span>Mindwtr</span>
+        <a href="https://docs.mindwtr.app/">Docs</a>
+        <a href="https://github.com/dongdongbh/Mindwtr">GitHub</a>
+        <a href="/support">Support</a>
+      </nav>
+      <p class="footer-legal">
+        Getting Things Done and GTD are registered trademarks of the David Allen
+        Company. Mindwtr is not affiliated with, endorsed by, or sponsored by the
+        David Allen Company.
+      </p>
     </footer>
 
     <script type="module" src="/src/main.ts"></script>

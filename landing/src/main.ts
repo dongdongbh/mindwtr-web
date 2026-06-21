@@ -1,4 +1,5 @@
 import "./styles.css";
+import { initCoverflow } from "./coverflow";
 
 type Platform = "mac" | "windows" | "linux" | "ios" | "android";
 
@@ -100,6 +101,7 @@ function wireCopyButtons(): void {
 function init(): void {
   applyPlatform(detectPlatform());
   wireCopyButtons();
+  initCoverflow();
 }
 
 if (document.readyState === "loading") {

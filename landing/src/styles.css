@@ -541,22 +541,129 @@ h2 {
   margin-top: 24px;
 }
 
-.platform-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(16px, 2vw, 24px);
-  align-items: stretch;
+/* Coverflow: featured screenshot centered + large, others scaled and dimmed
+   peeking behind. Transforms are class-driven; JS only toggles the classes. */
+.coverflow {
+  margin-top: clamp(28px, 4vw, 52px);
 }
 
-.platform-gallery img {
+.coverflow-stage {
+  position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  border: 1px solid var(--line);
+  aspect-ratio: 2.18 / 1;
+}
+
+.coverflow-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 76%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
   border-radius: var(--radius-large);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  transition:
+    transform 460ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 460ms ease,
+    filter 460ms ease;
+}
+
+.coverflow-slide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: center top;
+  border-radius: inherit;
+}
+
+.coverflow-slide.is-active {
+  z-index: 3;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  cursor: default;
+}
+
+.coverflow-slide.is-prev {
+  z-index: 2;
+  opacity: 0.5;
+  filter: saturate(0.85) brightness(0.95);
+  transform: translate(-92%, -50%) scale(0.78);
+}
+
+.coverflow-slide.is-next {
+  z-index: 2;
+  opacity: 0.5;
+  filter: saturate(0.85) brightness(0.95);
+  transform: translate(-8%, -50%) scale(0.78);
+}
+
+.coverflow-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: clamp(18px, 2.5vw, 28px);
+}
+
+.coverflow-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.coverflow-arrow:hover {
+  border-color: var(--blue);
+  color: var(--blue-deep);
+}
+
+.coverflow-arrow:active {
+  transform: scale(0.94);
+}
+
+.coverflow-dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.coverflow-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--line-strong);
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.coverflow-dot:hover {
+  background: var(--muted);
+}
+
+.coverflow-dot.is-active {
+  background: var(--blue);
+  transform: scale(1.25);
 }
 
 /* Trust ------------------------------------------------------------------- */
@@ -891,15 +998,33 @@ h2 {
 /* Footer ------------------------------------------------------------------ */
 .site-footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 22px;
+  gap: 14px;
   width: min(var(--page-max), calc(100% - var(--page-gutter)));
   margin: 0 auto;
   padding: 34px 0 44px;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.94rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+.footer-legal {
+  max-width: 70ch;
+  margin: 0;
+  text-align: center;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--muted);
+  opacity: 0.85;
 }
 
 .site-footer a {
@@ -1263,8 +1388,21 @@ h2 {
     border-radius: 18px;
   }
 
-  .platform-gallery {
-    grid-template-columns: 1fr;
+  /* Coverflow collapses to a single full-width screenshot; the side previews
+     are hidden and switching happens via the dots, arrows, or a swipe. */
+  .coverflow-stage {
+    aspect-ratio: 16 / 9;
+  }
+
+  .coverflow-slide {
+    width: 100%;
+  }
+
+  .coverflow-slide.is-prev,
+  .coverflow-slide.is-next {
+    transform: translate(-50%, -50%) scale(0.96);
+    opacity: 0;
+    pointer-events: none;
   }
 
   .feature-grid {
@@ -1284,10 +1422,6 @@ h2 {
 
   .github-download {
     max-width: 100%;
-  }
-
-  .platform-gallery img:first-child {
-    grid-row: auto;
   }
 
   .site-footer {

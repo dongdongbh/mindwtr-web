@@ -1584,3 +1584,32 @@ h2 {
   gap: 12px;
   margin-top: 18px;
 }
+
+/* ---- Features page ---- */
+.features-compare-link {
+  margin-top: 14px;
+}
+
+.feature-see-all {
+  margin: 16px 0 0;
+}
+
+.features-cta {
+  width: min(var(--page-max), calc(100% - var(--page-gutter)));
+  margin: 0 auto;
+  padding: clamp(64px, 9vw, 110px) 0;
+  text-align: center;
+}
+
+.features-cta h2 {
+  max-width: 20ch;
+  margin: 10px auto 0;
+}
+
+.features-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 26px;
+}

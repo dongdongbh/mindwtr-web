@@ -11,6 +11,7 @@ export default defineConfig({
       input: {
         main: resolve(import.meta.dirname, "index.html"),
         support: resolve(import.meta.dirname, "support.html"),
+        features: resolve(import.meta.dirname, "features.html"),
       },
     },
   },

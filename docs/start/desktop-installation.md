@@ -8,6 +8,8 @@ Detailed installation instructions for all desktop platforms.
 
 ### Arch Linux (AUR, Prebuilt)
 
+[![AUR mindwtr-bin Version](https://img.shields.io/aur/version/mindwtr-bin?logo=arch-linux&logoColor=white&color=1793d1&label=mindwtr-bin)](https://aur.archlinux.org/packages/mindwtr-bin)
+
 The easiest way to install on Arch-based distributions is the prebuilt AUR package:
 
 ```bash
@@ -25,6 +27,8 @@ pamac install mindwtr-bin
 
 ### Arch Linux (AUR, Build from Source)
 
+[![AUR mindwtr Version](https://img.shields.io/aur/version/mindwtr?logo=arch-linux&logoColor=white&color=1793d1&label=mindwtr)](https://aur.archlinux.org/packages/mindwtr)
+
 Use the source-built AUR package if you prefer to build locally:
 
 ```bash
@@ -39,6 +43,8 @@ paru -S mindwtr
 
 ### Debian / Ubuntu
 
+[![APT repo](https://img.shields.io/badge/APT_repo-Install-1f6feb?logo=debian&logoColor=white)](https://dongdongbh.github.io/Mindwtr/deb)
+
 Add the APT repo (recommended):
 
 ```bash
@@ -51,6 +57,8 @@ sudo apt install mindwtr
 Manual install: download the `.deb` from [GitHub Releases](https://github.com/dongdongbh/Mindwtr/releases) and run `sudo dpkg -i mindwtr_*.deb`.
 
 ### Fedora / RHEL / openSUSE
+
+[![RPM repo](https://img.shields.io/badge/RPM_repo-Install-ee0000?logo=redhat&logoColor=white)](https://dongdongbh.github.io/Mindwtr/rpm)
 
 Add the DNF/YUM repo (recommended):
 
@@ -70,6 +78,8 @@ Manual install: download the `.rpm` from [GitHub Releases](https://github.com/do
 
 ### Flatpak (Flathub)
 
+[![Flathub](https://img.shields.io/badge/Flathub-Install-000000?logo=flathub&logoColor=white)](https://flathub.org/apps/tech.dongdongbh.mindwtr)
+
 Install from Flathub:
 
 ```bash
@@ -83,6 +93,18 @@ flatpak run tech.dongdongbh.mindwtr
 ```
 
 [Flathub listing](https://flathub.org/apps/tech.dongdongbh.mindwtr)
+
+### Snap Store
+
+[![Snap Store](https://img.shields.io/badge/Snap_Store-Install-82BEA0?logo=snapcraft&logoColor=white)](https://snapcraft.io/mindwtr)
+
+Install from the Snap Store:
+
+```bash
+sudo snap install mindwtr
+```
+
+[Snap Store listing](https://snapcraft.io/mindwtr)
 
 ### AppImage (Universal)
 
@@ -111,10 +133,13 @@ For other distributions, use the AppImage or build from source (see [Developer G
 
 ### Microsoft Store (Recommended)
 
-Install from the Microsoft Store:
-https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare
+[![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Install-0078D6?logo=microsoft&logoColor=white)](https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare)
+
+Install from the [Microsoft Store](https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare).
 
 ### Winget
+
+[![Winget Version](https://img.shields.io/winget/v/dongdongbh.Mindwtr?label=Winget&logo=windows&logoColor=white&color=00D2FF)](https://winstall.app/apps/dongdongbh.Mindwtr)
 
 Winget is built into Windows 10 and 11. Install Mindwtr with:
 
@@ -123,6 +148,8 @@ winget install dongdongbh.Mindwtr
 ```
 
 ### Chocolatey
+
+[![Chocolatey Version](https://img.shields.io/chocolatey/v/mindwtr?label=Chocolatey&logo=chocolatey&logoColor=white&color=80B5E3)](https://community.chocolatey.org/packages/mindwtr)
 
 If you use Chocolatey:
 
@@ -133,6 +160,8 @@ choco install mindwtr
 [Chocolatey package](https://community.chocolatey.org/packages/mindwtr)
 
 ### Scoop
+
+[![Scoop Version](https://img.shields.io/scoop/v/mindwtr?bucket=https://github.com/dongdongbh/homebrew-mindwtr&label=Scoop&logo=scoop&logoColor=white&color=E6E6E6)](https://github.com/dongdongbh/homebrew-mindwtr)
 
 If you use Scoop:
 
@@ -167,6 +196,8 @@ Windows WebView2 is still required.
 
 ### Mac App Store (Recommended)
 
+[![Mac App Store](https://img.shields.io/badge/Mac_App_Store-Install-0A84FF?logo=apple&logoColor=white)](https://apps.apple.com/app/mindwtr/id6758597144)
+
 Install from the Mac App Store:
 
 [Mindwtr on the Mac App Store](https://apps.apple.com/app/mindwtr/id6758597144)
@@ -175,11 +206,15 @@ Use this option if you want store-managed updates and the signed App Store build
 
 ### TestFlight Beta
 
+[![TestFlight beta](https://img.shields.io/badge/TestFlight-Beta-0A84FF?logo=apple&logoColor=white)](https://testflight.apple.com/join/7SMJCTSR)
+
 Join the macOS beta through TestFlight:
 
 [Mindwtr TestFlight beta](https://testflight.apple.com/join/7SMJCTSR)
 
 ### Homebrew
+
+[![Homebrew Cask Version](https://img.shields.io/homebrew/cask/v/mindwtr?label=Homebrew&logo=homebrew&logoColor=white)](https://formulae.brew.sh/cask/mindwtr)
 
 Install using [Homebrew](https://brew.sh/):
 

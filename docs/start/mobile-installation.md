@@ -8,10 +8,13 @@ Detailed installation instructions for Android and iOS.
 
 ### Google Play (Recommended)
 
-Mindwtr is available on Google Play:
-https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr
+[![Google Play](https://img.shields.io/badge/Google_Play-Install-414141?logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr)
+
+Mindwtr is available on [Google Play](https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr).
 
 ### F-Droid
+
+[![F-Droid Version](https://img.shields.io/f-droid/v/tech.dongdongbh.mindwtr?label=F-Droid&logo=fdroid&logoColor=white&color=1976D2)](https://f-droid.org/en/packages/tech.dongdongbh.mindwtr/)
 
 Install from F-Droid:
 
@@ -19,6 +22,8 @@ Install from F-Droid:
 2. Open [Mindwtr on F-Droid](https://f-droid.org/en/packages/tech.dongdongbh.mindwtr/) and install.
 
 ### IzzyOnDroid
+
+[![IzzyOnDroid](https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/tech.dongdongbh.mindwtr&label=IzzyOnDroid)](https://apt.izzysoft.de/packages/tech.dongdongbh.mindwtr)
 
 Install from IzzyOnDroid if you use an F-Droid-compatible client such as Droid-ify, Neo Store, or F-Droid:
 
@@ -53,10 +58,12 @@ After installation:
 ### Current Status
 
 iOS is now available on the App Store:
-https://apps.apple.com/app/mindwtr/id6758597144
+
+[![App Store](https://img.shields.io/badge/App_Store-iOS-0A84FF?logo=apple&logoColor=white)](https://apps.apple.com/app/mindwtr/id6758597144)
 
 TestFlight beta is also available:
-https://testflight.apple.com/join/7SMJCTSR
+
+[![TestFlight beta](https://img.shields.io/badge/TestFlight-Beta-0A84FF?logo=apple&logoColor=white)](https://testflight.apple.com/join/7SMJCTSR)
 
 ### Options
 

@@ -2,22 +2,13 @@ import "./styles.css";
 
 type Platform = "mac" | "windows" | "linux" | "ios" | "android";
 
-/**
- * Recommended one-click channel per platform. Detection sets the hero CTA to
- * these; it never hides the full grid, so a wrong guess is never a dead end.
- */
-const RECOMMENDED: Record<Platform, { href: string; label: string }> = {
-  mac: { href: "https://apps.apple.com/app/mindwtr/id6758597144", label: "macOS" },
-  windows: {
-    href: "https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare",
-    label: "Windows",
-  },
-  linux: { href: "https://flathub.org/apps/tech.dongdongbh.mindwtr", label: "Linux" },
-  ios: { href: "https://apps.apple.com/app/mindwtr/id6758597144", label: "iOS" },
-  android: {
-    href: "https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr",
-    label: "Android",
-  },
+/** Display label per platform, used to personalize the hero CTA. */
+const PLATFORM_LABEL: Record<Platform, string> = {
+  mac: "macOS",
+  windows: "Windows",
+  linux: "Linux",
+  ios: "iOS",
+  android: "Android",
 };
 
 /**
@@ -50,7 +41,12 @@ function detectPlatform(): Platform | null {
   return null;
 }
 
-/** Highlight the visitor's platform card and point the hero CTA at its store. */
+/**
+ * Highlight the visitor's platform card and personalize the hero CTA label.
+ * The CTA keeps its in-page "#download" target (detect-to-surface, never gate):
+ * it scrolls to the grid with the right card already highlighted, so a wrong
+ * guess is harmless — every channel stays visible and one click away.
+ */
 function applyPlatform(platform: Platform | null): void {
   if (!platform) return;
 
@@ -64,11 +60,8 @@ function applyPlatform(platform: Platform | null): void {
   }
 
   const cta = document.getElementById("primary-download");
-  const rec = RECOMMENDED[platform];
-  if (cta instanceof HTMLAnchorElement && rec) {
-    cta.href = rec.href;
-    cta.textContent = `Download for ${rec.label}`;
-    cta.rel = "noopener";
+  if (cta instanceof HTMLAnchorElement) {
+    cta.textContent = `Download for ${PLATFORM_LABEL[platform]}`;
   }
 }
 

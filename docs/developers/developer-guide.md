@@ -102,6 +102,8 @@ Mindwtr/
 
 Public user and developer documentation is maintained in this repo's `docs/` directory and published at https://docs.mindwtr.app/. The public source is https://github.com/dongdongbh/mindwtr-web/tree/main/docs. Prefer that docs repo for new or migrated guide pages.
 
+Public docs source: https://github.com/dongdongbh/mindwtr-web/tree/main/docs
+
 ---
 
 ## Available Scripts

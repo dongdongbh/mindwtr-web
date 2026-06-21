@@ -56,7 +56,7 @@ Publish RC builds only to channels that can support testers without creating hig
 | All direct downloads | GitHub prerelease | Final GitHub release becomes the stable download source. |
 | iOS | TestFlight | App Store remains the stable channel. |
 | macOS App Store build | TestFlight | Mac App Store remains the stable channel. |
-| Android Play build | Google Play internal testing by default; closed/open/custom track when configured | Production receives a later stable upload, and the internal test track is refreshed by the stable workflow. |
+| Android Play build | Google Play internal testing and open testing (`beta`) by default; closed/custom tracks when configured | Production receives a later stable upload, and the internal test track is refreshed by the stable workflow. |
 | Linux Flatpak | Flathub beta branch | Future automation: publish stable to both stable and beta branches so beta users are not stranded. |
 | Arch Linux | `mindwtr-beta` or equivalent AUR package | Future automation: update the beta package to the final stable version when no newer RC exists. |
 | Windows direct download | GitHub prerelease installer/portable | Microsoft Store remains stable-only unless package flights are later automated. |
@@ -82,7 +82,7 @@ It runs on `v*-rc.*` tags and can also be started manually with an RC tag. It re
 
 It also publishes tester builds to the store-backed channels that are already wired:
 
-- Android AAB to Google Play `internal` by default; manual runs can choose another Play track or `none`.
+- Android AAB to Google Play `internal` and open testing (`beta`) by default; manual runs can choose comma-separated Play testing tracks or `none`.
 - iOS App Store build to TestFlight with App Store review submission disabled.
 - macOS App Store build to TestFlight with App Store review submission disabled.
 - Flathub beta branch update PRs through the shared Flathub workflow; manual runs can disable this when channel setup is not ready.
@@ -92,7 +92,7 @@ The stable `release.yml` remains the stable-release workflow. It is guarded so p
 
 Flathub beta requires the beta branch and permissions in `flathub/tech.dongdongbh.mindwtr`. AUR beta requires the `mindwtr-bin-beta` package and `AUR_SSH_PRIVATE_KEY`, `AUR_USERNAME`, and `AUR_EMAIL` secrets. If either channel is not ready, disable that RC workflow input instead of treating the whole RC as failed.
 
-Because a Play testing upload consumes an Android `versionCode`, every RC that uploads to Play needs a fresh `versionCode`. The current final stable flow should also use a fresh production upload with a higher `versionCode`, or a future stable-promotion workflow should promote the already-tested Play build. Do not tag a final stable release with an Android `versionCode` that has already been uploaded to Play unless the stable workflow has been taught to promote that existing build.
+Because a Play testing upload consumes an Android `versionCode`, every RC that uploads to Play needs a fresh `versionCode`. The RC workflow uploads one AAB and assigns the same versionCode to every configured testing track. The current final stable flow should also use a fresh production upload with a higher `versionCode`, or a future stable-promotion workflow should promote the already-tested Play build. Do not tag a final stable release with an Android `versionCode` that has already been uploaded to Play unless the stable workflow has been taught to promote that existing build.
 
 
 ### Timeline

@@ -343,7 +343,9 @@ h1 {
   border: 0;
   border-radius: 24px;
   background: transparent;
-  box-shadow: 0 38px 96px rgba(13, 43, 48, 0.16);
+  /* Hero art is a transparent PNG of device mockups with their own baked
+     shadow, so the devices float on the water gradient — no card shadow. */
+  box-shadow: none;
 }
 
 .desktop-frame img {

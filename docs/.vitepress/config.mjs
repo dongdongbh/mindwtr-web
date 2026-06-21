@@ -20,17 +20,18 @@ export default defineConfig({
   },
   themeConfig: {
     logo: "/assets/brand/icon.png",
+    // The logo/title links back to the main marketing site; the nav row below
+    // is doc sections only, and the source repo lives in socialLinks (icon).
+    logoLink: "https://mindwtr.app/",
     search: {
       provider: "local"
     },
     nav: [
-      { text: "Main site", link: "https://mindwtr.app/" },
       { text: "Start", link: "/start/getting-started" },
       { text: "Use Mindwtr", link: "/use/desktop" },
       { text: "Data & Sync", link: "/data-sync/" },
       { text: "Import", link: "/import/" },
-      { text: "Power Users", link: "/power-users/ai-assistant" },
-      { text: "GitHub", link: "https://github.com/dongdongbh/Mindwtr" }
+      { text: "Power Users", link: "/power-users/ai-assistant" }
     ],
     sidebar: [
       {
@@ -117,7 +118,8 @@ export default defineConfig({
       { icon: "github", link: "https://github.com/dongdongbh/Mindwtr" }
     ],
     footer: {
-      message: "Mindwtr is free, open source, and local-first.",
+      message:
+        "Mindwtr is free, open source, and local-first.<br>Getting Things Done and GTD are registered trademarks of the David Allen Company. Mindwtr is not affiliated with, endorsed by, or sponsored by the David Allen Company.",
       copyright: "Released under AGPL-3.0."
     }
   }

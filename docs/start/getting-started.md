@@ -27,6 +27,8 @@ See [Desktop Installation](/start/desktop-installation) for detailed instruction
 
 See [Mobile Installation](/start/mobile-installation) for detailed instructions.
 
+Want to test new builds early? See [Join the Beta Channels](/start/beta-channels).
+
 ### Docker and web app
 
 Run the web app (PWA) and self-hosted sync server with Docker when you want a browser-accessible deployment:

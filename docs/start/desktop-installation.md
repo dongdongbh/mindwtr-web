@@ -2,6 +2,8 @@
 
 Detailed installation instructions for all desktop platforms.
 
+For release-candidate and beta builds, see [Join the Beta Channels](/start/beta-channels).
+
 ---
 
 ## Linux
@@ -211,6 +213,8 @@ Use this option if you want store-managed updates and the signed App Store build
 Join the macOS beta through TestFlight:
 
 [Mindwtr TestFlight beta](https://testflight.apple.com/join/7SMJCTSR)
+
+More beta channels and leave-beta instructions are covered in [Join the Beta Channels](/start/beta-channels).
 
 ### Homebrew
 

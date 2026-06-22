@@ -2,6 +2,8 @@
 
 Detailed installation instructions for Android and iOS.
 
+For release-candidate and beta builds, see [Join the Beta Channels](/start/beta-channels).
+
 ---
 
 ## Android
@@ -61,7 +63,7 @@ iOS is now available on the App Store:
 
 [![App Store](https://img.shields.io/badge/App_Store-iOS-0A84FF?logo=apple&logoColor=white)](https://apps.apple.com/app/mindwtr/id6758597144)
 
-TestFlight beta is also available at https://testflight.apple.com/join/7SMJCTSR.
+TestFlight beta is also available at https://testflight.apple.com/join/7SMJCTSR. See [Join the Beta Channels](/start/beta-channels) for leave-beta instructions and other beta platforms.
 
 [![TestFlight beta](https://img.shields.io/badge/TestFlight-Beta-0A84FF?logo=apple&logoColor=white)](https://testflight.apple.com/join/7SMJCTSR)
 

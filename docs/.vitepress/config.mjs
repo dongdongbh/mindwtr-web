@@ -40,6 +40,7 @@ export default defineConfig({
           { text: "Getting started", link: "/start/getting-started" },
           { text: "Desktop installation", link: "/start/desktop-installation" },
           { text: "Mobile installation", link: "/start/mobile-installation" },
+          { text: "Beta channels", link: "/start/beta-channels" },
           { text: "FAQ", link: "/start/faq" }
         ]
       },

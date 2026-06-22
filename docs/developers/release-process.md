@@ -76,9 +76,9 @@ APT/RPM beta repos and Microsoft Store package flights are valid future addition
 
 ### Current RC Automation
 
-The first automated RC workflow is `.github/workflows/release-rc.yml`.
+The RC workflow is `.github/workflows/release-rc.yml`.
 
-It runs on `v*-rc.*` tags and can also be started manually with an RC tag. It reuses the same channel build jobs as stable where practical, then creates a GitHub prerelease from the exact Linux, macOS, Windows, Android, and Android FOSS artifacts.
+It is started manually with `workflow_dispatch` after the `vX.Y.Z-rc.N` tag exists and verifies that the tag points at the commit being built. Tag pushes may still start ancillary tag workflows such as Docker, but RC publication is manually controlled so recovery retags can choose skip flags before any Play or TestFlight upload starts. The workflow reuses the same channel build jobs as stable where practical, then creates a GitHub prerelease from the exact Linux, macOS, Windows, Android, and Android FOSS artifacts.
 
 It also publishes tester builds to the store-backed channels that are already wired:
 
@@ -102,7 +102,7 @@ The review-latency channels need a head start. Use this default schedule:
 | Day | Action |
 | --- | --- |
 | T-7 to T-5 | Feature freeze. Only bug fixes, release notes, metadata, and release blockers are allowed. |
-| T-5 | Create the release branch, bump app/package versions to `X.Y.Z`, generate release notes, tag `vX.Y.Z-rc.1`, and let `release-rc.yml` upload TestFlight, Google Play testing, Flathub beta, and AUR beta builds where those channels are enabled. |
+| T-5 | Create the release branch, bump app/package versions to `X.Y.Z`, generate RC-specific release notes such as `docs/release-notes/X.Y.Z-rc.1.md`, tag `vX.Y.Z-rc.1`, and manually dispatch `release-rc.yml` with the intended TestFlight, Google Play testing, Flathub beta, and AUR beta inputs. |
 | T-4 | Run channel artifact smoke checks as reviewed builds become available. Fix only blockers. |
 | T-3 | Confirm the GitHub prerelease from `release-rc.yml`, verify the Flathub beta PR and `mindwtr-bin-beta` update when those workflow inputs were enabled, and announce the RC to testers. |
 | T-2 to T-1 | Triage feedback. Cut `rc.2` only for blockers. Non-blockers move to the next cycle. |
@@ -245,6 +245,7 @@ Guidelines:
 - keep the top summary user-facing
 - include the important fixes/features first
 - list notable commits when helpful
+- for RCs, use `docs/release-notes/X.Y.Z-rc.N.md` or `docs/release-notes/vX.Y.Z-rc.N.md` and include the full RC version in the first heading; reserve `docs/release-notes/X.Y.Z.md` for the final stable release
 - keep Google Play snippets in `docs/release-notes/google-play/` aligned when needed
 - update `metadata/*/release_notes.txt` for App Store release notes
 - add the new Android changelog file under `metadata/*/changelogs/<versionCode>.txt`

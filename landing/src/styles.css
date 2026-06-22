@@ -19,6 +19,9 @@
   --teal-ink: #0b6e62;
   --teal-soft: #dcefeb;
 
+  /* Heading color: as dark/legible as near-black, but clearly cool-toned. */
+  --heading: #14365f;
+
   --shadow: 0 28px 64px rgba(13, 43, 48, 0.12);
   --shadow-sm: 0 14px 34px rgba(13, 43, 48, 0.08);
 
@@ -246,16 +249,12 @@ h1 {
   font-size: clamp(4.1rem, 12vw, 8.6rem);
   line-height: 0.9;
   letter-spacing: -0.03em;
-  color: var(--ink);
-  background: linear-gradient(
-    116deg,
-    var(--ink) 0%,
-    var(--teal-ink) 48%,
-    var(--blue-deep) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--heading);
+}
+
+/* Hero focal accent: only the "water" word picks up the brand blue. */
+h1 .accent {
+  color: var(--blue);
 }
 
 .hero-subhead {
@@ -476,16 +475,7 @@ h2 {
   font-size: clamp(2.4rem, 5vw, 4.4rem);
   line-height: 1.02;
   letter-spacing: -0.025em;
-  color: var(--ink);
-  background: linear-gradient(
-    114deg,
-    var(--ink) 0%,
-    var(--ink-soft) 38%,
-    var(--blue-deep) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--heading);
 }
 
 .section-copy p,

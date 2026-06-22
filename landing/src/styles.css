@@ -117,6 +117,7 @@ p {
 }
 
 .brand img {
+  flex-shrink: 0;
   width: 34px;
   height: 34px;
   border-radius: 9px;
@@ -246,6 +247,15 @@ h1 {
   line-height: 0.9;
   letter-spacing: -0.03em;
   color: var(--ink);
+  background: linear-gradient(
+    116deg,
+    var(--ink) 0%,
+    var(--teal-ink) 48%,
+    var(--blue-deep) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-subhead {
@@ -467,6 +477,15 @@ h2 {
   line-height: 1.02;
   letter-spacing: -0.025em;
   color: var(--ink);
+  background: linear-gradient(
+    114deg,
+    var(--ink) 0%,
+    var(--ink-soft) 38%,
+    var(--blue-deep) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .section-copy p,
@@ -1277,10 +1296,16 @@ h2 {
     max-width: 10ch;
   }
 
+  /* Single-column hero: sink the ripple down behind the screenshot instead of
+     letting it sit over the headline copy. Sized a touch wider than the image
+     so the outer rings still peek around it, like the desktop layout. */
   .ripple {
+    top: auto;
+    bottom: 3%;
     right: 50%;
-    transform: translate(50%, -50%);
-    opacity: 0.7;
+    width: clamp(380px, 106vw, 560px);
+    transform: translate(50%, 0);
+    opacity: 0.5;
   }
 
   .hero-media {
@@ -1319,12 +1344,22 @@ h2 {
 
 @media (max-width: 720px) {
   .site-header {
-    padding-inline: 14px;
+    gap: 8px;
+    padding-inline: 12px;
   }
 
   .site-header nav {
-    gap: 12px;
-    font-size: 0.86rem;
+    gap: clamp(7px, 2.4vw, 10px);
+    font-size: 0.8rem;
+  }
+
+  .site-header nav .nav-download {
+    padding: 8px 12px;
+  }
+
+  .brand img {
+    width: 30px;
+    height: 30px;
   }
 
   .brand span {
@@ -1355,12 +1390,12 @@ h2 {
   }
 
   h1 {
-    font-size: clamp(3.5rem, 18vw, 5.2rem);
+    font-size: clamp(2.8rem, 13.5vw, 4rem);
   }
 
   h2 {
-    font-size: clamp(2.05rem, 11vw, 3.1rem);
-    line-height: 1.05;
+    font-size: clamp(1.75rem, 8vw, 2.45rem);
+    line-height: 1.1;
   }
 
   .section-copy {
@@ -1426,6 +1461,63 @@ h2 {
 
   .site-footer {
     flex-wrap: wrap;
+  }
+
+  /* Comparison table: fit all six columns to the screen instead of forcing a
+     horizontal scroll. Fixed layout gives the capability label the room it
+     needs and splits the rest evenly across the five product columns. */
+  .compare-wrap {
+    overflow-x: visible;
+  }
+
+  .compare-table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .compare-table th,
+  .compare-table td {
+    padding: 12px 3px;
+  }
+
+  .compare-table th:first-child,
+  .compare-table td:first-child {
+    width: 35%;
+    padding-left: 12px;
+    padding-right: 6px;
+    text-align: left;
+  }
+
+  .compare-table thead th {
+    font-size: clamp(0.56rem, 2.7vw, 0.66rem);
+    line-height: 1.15;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  /* The Mindwtr header is extra-bold on desktop; trim the weight so the name
+     stays on one line in its narrow mobile column. */
+  .compare-table thead .col-me {
+    font-weight: 760;
+  }
+
+  .compare-table tbody th[scope="row"] {
+    font-size: 0.82rem;
+    line-height: 1.22;
+  }
+
+  .compare-table td.yes::before,
+  .compare-table td.no::before,
+  .compare-table td.partial::before {
+    font-size: 0.92rem;
+  }
+
+  .compare-legend {
+    gap: 16px;
+    font-size: 0.84rem;
   }
 }
 

@@ -61,26 +61,26 @@ Yes — GitHub Sponsors: https://github.com/sponsors/dongdongbh
 
 ### What languages are supported?
 
-Mindwtr currently supports:
+Mindwtr currently supports these language options, listed roughly by total speakers worldwide:
 
 - English
-- Tiếng Việt
 - 中文（简体）
 - 中文（繁體）
-- Español
 - हिन्दी
+- Español
 - العربية
-- Deutsch
-- Русский
-- 日本語
 - Français
 - Português
-- Polski
-- 한국어
-- Čeština
-- Italiano
+- Русский
+- Deutsch
+- 日本語
+- Tiếng Việt
 - Türkçe
+- 한국어
+- Italiano
+- Polski
 - Nederlands
+- Čeština
 
 ### Where is my data stored?
 

@@ -117,6 +117,7 @@ Practical rule:
 
 ## Need Help?
 
-- Check the [FAQ](/start/faq)
-- [Report an issue](https://github.com/dongdongbh/Mindwtr/issues)
-- Read the full [GTD Workflow in Mindwtr](/use/gtd-workflow) guide
+- The best place to report a bug or ask for help is a [GitHub issue](https://github.com/dongdongbh/Mindwtr/issues) — it keeps everything trackable.
+- Already in the app? Use **Send feedback** on the **Settings → About** page.
+- For a private question, email [support@mindwtr.app](mailto:support@mindwtr.app).
+- Browse the [FAQ](/start/faq) or read the full [GTD Workflow in Mindwtr](/use/gtd-workflow) guide.

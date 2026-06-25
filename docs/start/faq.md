@@ -43,13 +43,17 @@ If you have a feature request, please open an issue and describe the workflow yo
 
 ### Where should I report bugs or request features?
 
-Use **Send feedback** from **Settings → About** when it is available in your build. It can send a bug report, feature request, or other note without needing a GitHub account, and the reply email field is optional.
-
-For public tracking, longer discussions, or reports with files/logs, please use GitHub Issues instead of email so reports stay trackable and searchable:
+The best place is a **GitHub issue** — it keeps logs, device details, and follow-up together in one trackable, searchable place, so nothing gets lost:
 https://github.com/dongdongbh/Mindwtr/issues
 
-If Mindwtr is useful to you, support options are listed here:
-https://github.com/dongdongbh/Mindwtr?tab=readme-ov-file#hearts-contributing--support
+Other ways to reach out:
+
+- **In-app feedback** — use **Send feedback** from **Settings → About** when it is available in your build. It sends a bug report, feature request, or other note without needing a GitHub account, and the reply email field is optional.
+- **Email** — for anything that doesn't fit a public issue (a private or account question), write to [support@mindwtr.app](mailto:support@mindwtr.app).
+
+If you're reporting a bug, please include your **platform** and **app version** (Settings → About) so it's easier to help.
+
+If Mindwtr is useful to you, support options are listed on the [Support page](https://mindwtr.app/support).
 
 ### Can I open multiple windows?
 

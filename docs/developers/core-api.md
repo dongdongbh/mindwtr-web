@@ -24,6 +24,13 @@ import {
 ### Task
 
 ```typescript
+type RelativeStartOffsetUnit = 'minute' | 'hour' | 'day' | 'week';
+
+interface RelativeStartOffset {
+    amount: number;                  // Negative offset, e.g. -3 days before due
+    unit: RelativeStartOffsetUnit;
+}
+
 interface Task {
     id: string;                    // UUID
     title: string;                 // Task title
@@ -33,6 +40,7 @@ interface Task {
     energyLevel?: TaskEnergyLevel; // 'low' | 'medium' | 'high'
     assignedTo?: string;           // Waiting-for person
     startTime?: string;            // ISO date string
+    relativeStartOffset?: RelativeStartOffset; // Recomputes startTime from dueDate
     dueDate?: string;              // ISO date string
     recurrence?: Recurrence | RecurrenceRule;
     showFutureRecurrence?: boolean; // Calendar-only preview of the next recurring occurrence
@@ -47,6 +55,7 @@ interface Task {
     areaId?: string;               // Parent area ID (optional direct grouping)
     isFocusedToday?: boolean;      // Today's priority
     pushCount?: number;            // Number of times due date was pushed later
+    repeatReminderMinutes?: number; // Due-time repeat reminder preset: 5, 10, 15, 30, or 60
     textDirection?: 'auto' | 'ltr' | 'rtl';
     timeEstimate?: TimeEstimate;   // '5min' | '10min' | '15min' | '30min' | '1hr' | '2hr' | '3hr' | '4hr' | '4hr+'
     reviewAt?: string;             // Tickler date

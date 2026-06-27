@@ -16,6 +16,7 @@ Mindwtr has first-class importers for a small set of apps where the export forma
 - [Todoist Import](/import/todoist) - CSV exports or ZIP backups
 - [DGT GTD Import](/import/dgt-gtd) - JSON exports or ZIP backups
 - [OmniFocus Import](/import/omnifocus) - CSV, JSON, or ZIP exports
+- [Apple Reminders Import](/data-sync/#apple-reminders-import-ios) - iOS-only import for incomplete reminders from a selected Reminders list
 
 Open **Settings -> Data** and choose the matching import action. Mindwtr shows a preview before it adds anything.
 

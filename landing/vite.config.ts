@@ -13,6 +13,7 @@ export default defineConfig({
         support: resolve(import.meta.dirname, "support.html"),
         features: resolve(import.meta.dirname, "features.html"),
         brand: resolve(import.meta.dirname, "brand.html"),
+        privacy: resolve(import.meta.dirname, "privacy.html"),
       },
     },
   },

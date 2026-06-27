@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mindwtr is local-first and minimizes data collection by design. What stays on your device, the few things that touch the network when you opt in (sync, anonymous analytics, BYOK AI), and your choices."
+    />
+    <meta property="og:title" content="Mindwtr Privacy Policy" />
+    <meta
+      property="og:description"
+      content="Local-first by design. Your tasks stay on your device. Here's exactly what little data touches the network, and only when you opt in."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://mindwtr.app/assets/screenshots/social-preview.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://mindwtr.app/assets/screenshots/social-preview.jpg" />
+    <link rel="icon" href="/assets/brand/icon.png" />
+    <title>Privacy Policy — Mindwtr</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Mindwtr home">
+        <img src="/assets/brand/icon.png" alt="" />
+        <span>Mindwtr</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="/features">Features</a>
+        <a href="https://docs.mindwtr.app/">Docs</a>
+        <a href="https://github.com/dongdongbh/Mindwtr">GitHub</a>
+        <a href="/support">Support</a>
+        <a class="nav-download" href="/#download">Download</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="support-hero" aria-labelledby="privacy-title">
+        <p class="eyebrow">Privacy</p>
+        <h1 id="privacy-title">Privacy Policy</h1>
+        <p class="support-lead">
+          Mindwtr is local-first and built to minimize data collection. Your
+          tasks, notes, and projects stay on your device. Here's exactly what
+          that means — and the few places data touches the network, only when
+          you opt in.
+        </p>
+      </section>
+
+      <section class="legal section-band" aria-labelledby="privacy-title">
+        <div class="legal-body">
+          <p class="legal-updated">Last updated 27 June 2026</p>
+
+          <p>
+            Mindwtr ("we", "our", or "us") is designed as a local-first
+            application. We respect your privacy and aim to minimize data
+            collection by design.
+          </p>
+
+          <h2>1. Data storage</h2>
+          <p>
+            All data created within the app (tasks, projects, notes) is stored
+            locally on your device.
+          </p>
+
+          <h2>2. Data sync</h2>
+          <p>
+            If you choose to use sync features (for example File Sync, WebDAV,
+            self-hosted sync, or Dropbox OAuth in supported builds), your data is
+            transmitted directly between your device and your chosen
+            storage/sync provider. We (the developer) do not have access to this
+            data.
+          </p>
+          <ul>
+            <li><strong>Dropbox OAuth sync (supported builds):</strong> Mindwtr requests Dropbox App Folder access and syncs only app data files under <code>/Apps/Mindwtr/</code> (for example <code>data.json</code> and <code>attachments/*</code>).</li>
+            <li><strong>Token handling:</strong> OAuth access/refresh tokens are stored locally on your device and used only to call Dropbox APIs for your account.</li>
+            <li><strong>FOSS builds:</strong> Dropbox OAuth may be disabled in FOSS distributions.</li>
+            <li><strong>Other providers via File Sync:</strong> iCloud Drive, Google Drive, OneDrive, Syncthing, and similar tools can still be used indirectly through File Sync.</li>
+          </ul>
+
+          <h2>3. Anonymous usage analytics (heartbeat)</h2>
+          <p>
+            In builds configured with the heartbeat endpoint, Mindwtr may send a
+            small heartbeat event at most once per day to help us measure app
+            health and adoption (for example DAU/MAU and distribution-channel
+            usage).
+          </p>
+          <ul>
+            <li><strong>What may be sent:</strong> platform (for example iOS/Android/macOS/Windows/Linux), app version, distribution channel (for example App Store/Play Store/F-Droid/IzzyOnDroid/winget/Homebrew), coarse device class (for example phone/tablet/desktop), coarse OS major version (for example iOS 18 or Android 15), locale (for example en-US), and an app-generated random identifier.</li>
+            <li><strong>Country data:</strong> country may be derived server-side from edge network metadata during request handling.</li>
+            <li><strong>What is not sent in the heartbeat payload:</strong> user task data, project data, note content, files, AI prompt content, email address, name, contacts, account data, or other personal content.</li>
+            <li><strong>Opt-out:</strong> supported builds include a Settings toggle to disable future heartbeat analytics. When this is turned off, Mindwtr sends one final anonymous <code>opt_out</code> heartbeat with the same app-generated identifier so the server can stop counting that install as active.</li>
+          </ul>
+
+          <h2>4. In-app feedback</h2>
+          <p>
+            If you send feedback from within the app (Settings &rarr; feedback),
+            what you submit is sent directly to us at our feedback endpoint. It
+            is only sent when you choose to submit feedback.
+          </p>
+          <ul>
+            <li><strong>What is sent:</strong> the category you pick (bug, feature, or other), your message, and basic context about your install &mdash; app version, platform, operating system, distribution channel, locale, and build.</li>
+            <li><strong>Email (optional):</strong> an email address is included only if you choose to enter one, so we can reply.</li>
+            <li><strong>Diagnostic logs (optional):</strong> recent app logs are attached only if you have diagnostic logging enabled; otherwise no logs are sent.</li>
+            <li><strong>Unlike the heartbeat,</strong> feedback can contain information that identifies you, because you write it &mdash; your message, and any email or logs you choose to include. We use it only to understand and respond to your report.</li>
+          </ul>
+
+          <h2>5. Third-party services (AI)</h2>
+          <p>If you use optional AI features with your own API key (BYOK):</p>
+          <ul>
+            <li><strong>What data is sent:</strong> the text you submit for AI processing (for example task title/notes/prompt content).</li>
+            <li><strong>Who receives it:</strong> your selected provider (for example OpenAI, Google Gemini, or Anthropic).</li>
+            <li><strong>When it is sent:</strong> only after you enable AI and accept the in-app consent prompt.</li>
+            <li><strong>How it is sent:</strong> directly from your device to that provider.</li>
+            <li><strong>Mindwtr developer access:</strong> we do not proxy these requests and do not collect or store this AI request content.</li>
+          </ul>
+
+          <h2>6. Contact us</h2>
+          <p>
+            If you have any questions about this Privacy Policy, email
+            <a href="mailto:support@mindwtr.app?subject=Privacy%20Policy">support@mindwtr.app</a>
+            or reach us via our
+            <a href="https://github.com/dongdongbh/Mindwtr">GitHub repository</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <nav class="footer-nav" aria-label="Footer">
+        <span>Mindwtr</span>
+        <a href="/features">Features</a>
+        <a href="https://docs.mindwtr.app/">Docs</a>
+        <a href="https://github.com/dongdongbh/Mindwtr">GitHub</a>
+        <a href="/support">Support</a>
+        <a href="/brand">Brand</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+      <p class="footer-copyright">
+        &copy; 2025&ndash;2026 Dongda Li &middot; Free and open source (AGPL-3.0)
+      </p>
+      <p class="footer-legal">
+        Mindwtr and the Mindwtr logo are trademarks of the Mindwtr project.
+        Getting Things Done and GTD are registered trademarks of the David Allen
+        Company. Mindwtr is not affiliated with, endorsed by, or sponsored by the
+        David Allen Company.
+      </p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -434,7 +434,7 @@ h1 .accent {
   position: relative;
   width: min(var(--page-max), calc(100% - var(--page-gutter)));
   margin: 0 auto;
-  padding: clamp(54px, 7vw, 96px) 0;
+  padding: clamp(38px, 4vw, 62px) 0;
 }
 
 .section-band::before {

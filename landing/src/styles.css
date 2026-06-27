@@ -434,7 +434,7 @@ h1 .accent {
   position: relative;
   width: min(var(--page-max), calc(100% - var(--page-gutter)));
   margin: 0 auto;
-  padding: clamp(70px, 10vw, 128px) 0;
+  padding: clamp(54px, 7vw, 96px) 0;
 }
 
 .section-band::before {
@@ -1106,14 +1106,20 @@ h2 {
 }
 
 /* Footer ------------------------------------------------------------------ */
+/* Pull the footer up toward the final section instead of leaving a canyon —
+   especially on short pages where the section padding dominates. */
+main > section:last-child {
+  padding-bottom: clamp(32px, 4vw, 52px);
+}
+
 .site-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 13px;
   width: min(var(--page-max), calc(100% - var(--page-gutter)));
   margin: 0 auto;
-  padding: 34px 0 44px;
+  padding: 30px 0 40px;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.94rem;
@@ -1135,13 +1141,13 @@ h2 {
 }
 
 .footer-legal {
-  max-width: 70ch;
-  margin: 0;
+  max-width: 64ch;
+  margin: 3px 0 0;
   text-align: center;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   line-height: 1.5;
   color: var(--muted);
-  opacity: 0.85;
+  opacity: 0.7;
 }
 
 .site-footer a {
@@ -1787,7 +1793,7 @@ h2 {
 .features-cta {
   width: min(var(--page-max), calc(100% - var(--page-gutter)));
   margin: 0 auto;
-  padding: clamp(64px, 9vw, 110px) 0;
+  padding: clamp(40px, 6vw, 72px) 0;
   text-align: center;
 }
 

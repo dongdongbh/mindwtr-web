@@ -913,9 +913,12 @@ h2 {
   justify-content: flex-start;
 }
 
+/* Explicit height (not max-height) so small badges scale UP to match, not just
+   large ones scale down. Per-badge --badge-h compensates for each official
+   badge's baked-in padding so the visible logos land at one height. */
 .dl-badges .store-badge img {
-  height: auto;
-  max-height: calc((var(--badge-h, 52px) - 12px) * var(--badge-scale, 1));
+  height: calc((var(--badge-h, 52px) - 12px) * var(--badge-scale, 1));
+  width: auto;
   max-width: 100%;
 }
 
@@ -1055,11 +1058,11 @@ h2 {
 }
 
 .store-badge.google {
-  --badge-h: 66px;
+  --badge-h: 74px;
 }
 
 .store-badge.microsoft {
-  --badge-h: 50px;
+  --badge-h: 54px;
 }
 
 .store-badge.flathub {
@@ -1067,15 +1070,15 @@ h2 {
 }
 
 .store-badge.snap {
-  --badge-h: 56px;
+  --badge-h: 54px;
 }
 
 .store-badge.fdroid {
-  --badge-h: 66px;
+  --badge-h: 74px;
 }
 
 .store-badge.izzy {
-  --badge-h: 66px;
+  --badge-h: 74px;
 }
 
 .github-download {

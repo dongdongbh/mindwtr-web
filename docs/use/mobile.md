@@ -30,7 +30,7 @@ The mobile app uses bottom tabs for core flows and a Menu page for additional vi
  
 Tap the **Menu** tab to access additional views:
  
- - 📋 **Board** — Kanban board view with manual drag ordering inside each status column
+ - 📋 **Board** — Kanban board view with manual drag ordering, search, and context/tag/date/project filters
  - 🗓️ **Calendar** — Time-based view
  - 📁 **Projects** — Multi-step outcomes
  - 🏷️ **Contexts** — Filter by context

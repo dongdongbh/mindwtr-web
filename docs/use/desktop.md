@@ -119,6 +119,8 @@ Kanban-style drag-and-drop board with columns:
 
 Drag cards within a column to set manual board order. Moving a task to another status clears its old column order so it can be ordered in the new column.
 
+Use the Board search field to narrow visible cards by title, notes, project, context, or tag. The filter button opens quick filters for contexts, tags, due dates, and projects; **Clear filters** removes both search text and active filters.
+
 ### ✅ Done
 
 Recently completed tasks. Use this as your short-term completion log for daily or weekly review.

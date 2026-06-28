@@ -178,6 +178,14 @@ Mindwtr keeps task status and task dates separate. Status is the GTD state you c
 
 Some processing actions set status and dates together. For example, choosing **Later** while processing the Inbox moves the item to `next` and sets a start date. That action changes the status; the start date does not promote the task later on its own.
 
+### Relative Start Lead Time
+
+Use **Start lead time** when the start date should stay tied to the due date. For example, a task due Friday can start two days before due, or a task due at 5:00 PM can start three hours before due.
+
+When a task has a due date and a start lead time, Mindwtr treats the offset as the source of truth. Moving the due date recalculates the start date from the same offset, and recurring tasks keep the same lead time when the next instance is generated.
+
+Use a fixed start date instead when the work should begin on a specific calendar date regardless of when the deadline moves.
+
 ---
 
 ## 4. Reflect (Weekly Review)

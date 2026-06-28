@@ -381,13 +381,23 @@ There’s no single-task undelete UI yet, but you can restore your local data fr
 
 See [Backup and Restore](/data-sync/backup-restore).
 
+### Can I import from TickTick?
+
+Yes. Mindwtr can import TickTick CSV and ZIP backups from **Settings → Data → Import from TickTick**.
+
+- TickTick folders become Mindwtr areas
+- TickTick lists become Mindwtr projects
+- Checklist content, tags, dates, priorities, and supported repeat rules are preserved when possible
+
+See [TickTick Import](/import/ticktick).
+
 ### Can I import from Todoist?
 
 Yes. Mindwtr can import Todoist CSV exports and ZIP backups from **Settings → Data → Import from Todoist**.
 
 - Todoist projects become Mindwtr projects
 - Subtasks become checklist items
-- Imported tasks land in **Inbox**
+- Project-assigned active tasks stay with their projects; unassigned active tasks stay available for Inbox processing
 
 See [Todoist Import](/import/todoist).
 
@@ -417,6 +427,16 @@ Yes. Mindwtr can import OmniFocus CSV exports and Omni Automation JSON / ZIP exp
 If recurrence matters, use the Omni Automation JSON / ZIP export instead of CSV. Planned dates and duration text are kept in the description when Mindwtr does not have a direct field for them.
 
 See [OmniFocus Import](/import/omnifocus).
+
+### Can I import from Apple Reminders?
+
+Yes, on iPhone and iPad. Mindwtr can import incomplete Apple Reminders from **Settings → Data → Import from Apple Reminders**.
+
+- Choose the Reminders list to import from
+- Imported reminders become Mindwtr tasks
+- You can optionally delete reminders from Apple Reminders after Mindwtr confirms the import
+
+Apple Reminders import is one-way import, not sync. See [Apple Reminders Import](/data-sync/#apple-reminders-import-ios).
 
 ---
 

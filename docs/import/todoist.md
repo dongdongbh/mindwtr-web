@@ -19,9 +19,10 @@ Mindwtr maps Todoist exports into Mindwtr’s model with a GTD-first bias:
 - Todoist sections become **Mindwtr sections**
 - Todoist subtasks become **checklist items**
 - Todoist labels become **tags**
-- Imported tasks are placed in **Inbox**
+- project-assigned active tasks become **Next Actions** in their Mindwtr projects
+- unassigned active tasks remain available for **Inbox** processing
 
-Keeping imported tasks in Inbox is intentional. It lets you process them in your own GTD flow instead of guessing organization rules during import.
+Mindwtr avoids dumping already organized project work into Inbox, while still leaving loose tasks ready for GTD processing.
 
 ---
 
@@ -51,7 +52,8 @@ Before import, Mindwtr saves a recovery snapshot of your current local data when
 After import:
 
 - new projects are created as needed
-- imported tasks appear in **Inbox**
+- project-assigned active tasks appear in their projects as **Next Actions**
+- unassigned active tasks remain available for **Inbox** processing
 - warnings are shown for recurring tasks, skipped rows, or unsupported archive entries
 
 ---

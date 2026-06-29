@@ -800,8 +800,6 @@ h2 {
   flex: none;
   width: 15px;
   height: 15px;
-  fill: currentColor;
-  opacity: 0.65;
 }
 
 .review-note {

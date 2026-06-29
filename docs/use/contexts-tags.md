@@ -115,6 +115,12 @@ Context and tag names accept Unicode letters and numbers (including CJK and acce
 1. Go to **Next Actions** tab or **Contexts** from drawer
 2. Tap a context to filter
 
+### Grouping by Contexts or Tags
+
+Task list toolbars also include a **Group** control. Use it to group lists by context, area, project, or tag when scanning a larger Inbox, Waiting, Someday/Maybe, Reference, Done, or Next Actions list.
+
+Grouping by tag is useful when you prefer a tag-centric workflow and use tags as your main classification layer.
+
 ---
 
 ## Custom Contexts

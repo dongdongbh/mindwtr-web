@@ -9,6 +9,7 @@ Mindwtr lets you attach files and links to **tasks** and **projects**. Attachmen
 - **Files** (PDFs, images, docs, etc.)
 - **Links** (URLs, web pages, reference links)
 - **Audio notes** (when "Save audio attachments" is enabled)
+- **Obsidian notes** on desktop, when the Obsidian integration is enabled
 
 ---
 
@@ -19,6 +20,7 @@ Mindwtr lets you attach files and links to **tasks** and **projects**. Attachmen
 - Open a task or project.
 - In **Attachments**, click **Add file** or **Add link**.
 - For links, paste a URL or local file path.
+- In task attachments, **Attach Obsidian Note** appears only after you enable the Obsidian integration.
 
 ### Mobile
 

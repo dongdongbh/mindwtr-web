@@ -15,6 +15,8 @@ The desktop app features a sidebar navigation with all GTD views and a main cont
 - **Right click** opens context menus (projects, tasks).
 - **Keyboard first**: global shortcuts and Vim/Emacs modes are optimized for desktop workflows.
 
+Most task lists share the same control row for selecting tasks, filtering, sorting, grouping, showing details, and switching compact density. Use **Group** to organize Inbox, Next, Waiting, Someday/Maybe, Reference, Done, and other list views by metadata such as context, area, project, or tag.
+
 ## Focus Mode
 
 Use Focus Mode to hide the sidebar and keep the list centered (800px max width).
@@ -38,6 +40,7 @@ Your capture zone. All new tasks land here before processing.
 
 - **Add tasks** using the input field at the bottom
 - **Quick-add syntax** is supported (see [Getting Started](/start/getting-started))
+- Use the star in Quick Add when a new task should go straight into **Today's Focus**.
 - **Process Inbox** using the clarify workflow
 - **Mind Sweep** prompts you through common life/work areas when you want a guided capture session instead of a blank input.
 

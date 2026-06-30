@@ -169,6 +169,14 @@ The RC announcement should be short and actionable:
 
 This updates workspace package versions and bumps the Android `versionCode`.
 
+If Google Play already has a higher `versionCode` from RC or tester uploads, pass that maximum into the bump script before tagging:
+
+```bash
+ANDROID_REMOTE_MAX_VERSION_CODE=85 ./scripts/bump-version.sh 0.x.y
+```
+
+The script writes a tracked `apps/mobile/app.json` value above the Play max, so the release tag, GitHub APK, and downstream reproducible-build recipes all see the same Android metadata. Stable release CI still rejects CI-only `versionCode` overrides; fix the source metadata before tagging instead of relying on an untracked workflow mutation.
+
 3. Run the release hard gates before tagging:
    - Type/test gate:
      - `bun run test`

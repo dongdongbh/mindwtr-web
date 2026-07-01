@@ -1149,8 +1149,8 @@ main > section:last-child {
 
 /* Legal / policy prose (privacy) ------------------------------------------ */
 .legal-body {
-  max-width: 80ch;
-  margin: 0;
+  max-width: 84ch;
+  margin: 0 auto;
   color: var(--ink-soft);
   font-size: 1.02rem;
   line-height: 1.62;

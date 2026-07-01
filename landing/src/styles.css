@@ -1786,21 +1786,24 @@ main > section:last-child {
   flex: 1;
 }
 
-.sponsor-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+/* Ko-fi button: the official Ko-fi blue with the cup mark, so it reads as the
+   real Ko-fi button while letting us set the label ("Support Mindwtr on Ko-fi")
+   instead of the badge's baked-in "me" — and without loading Ko-fi's
+   third-party widget script. Pairs with the GitHub Sponsors button beside it. */
+.kofi-cta {
+  gap: 9px;
+  background: #72a4f2;
+  color: #ffffff;
+  box-shadow: 0 16px 34px rgba(114, 164, 242, 0.3);
 }
 
-.sponsor-cta img {
-  width: 18px;
-  height: 18px;
+.kofi-cta:hover {
+  background: #5b93ef;
+  color: #ffffff;
 }
 
-.kofi-cta img {
-  height: 40px;
-  width: auto;
-  display: block;
+.kofi-cta .kofi-cup {
+  flex: none;
 }
 
 /* GitHub Sponsors button: GitHub-black with the pink Sponsors heart, so it

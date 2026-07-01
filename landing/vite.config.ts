@@ -11,6 +11,7 @@ export default defineConfig({
       input: {
         main: resolve(import.meta.dirname, "index.html"),
         support: resolve(import.meta.dirname, "support.html"),
+        donate: resolve(import.meta.dirname, "donate.html"),
         features: resolve(import.meta.dirname, "features.html"),
         brand: resolve(import.meta.dirname, "brand.html"),
         privacy: resolve(import.meta.dirname, "privacy.html"),

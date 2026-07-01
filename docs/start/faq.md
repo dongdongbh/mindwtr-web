@@ -247,6 +247,7 @@ Yes! Mindwtr supports quick-add syntax:
 - `#tag` — Add a tag
 - `!Area` or `/area:<name>` — Assign to an area
 - `/due:date` — Set due date (today, tomorrow, friday, next week, etc.)
+- `/energy:low`, `/energy:medium`, or `/energy:high` — Set energy level
 - `/note:text` — Add description
 - `/status` — Set status (`/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox`)
 - `+ProjectName` — Assign to project

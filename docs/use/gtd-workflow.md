@@ -51,6 +51,7 @@ Capture with context immediately:
 Call plumber @phone @home
 Buy groceries @errands /due:saturday
 Research topic #focused +WorkProject
+Sort receipts /energy:low
 ```
 
 ### The Rule

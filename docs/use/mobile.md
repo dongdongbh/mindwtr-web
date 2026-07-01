@@ -213,6 +213,7 @@ Mindwtr parses natural language when adding tasks:
 | `!Area`       | `Plan roadmap !Work` | Assigns to area       |
 | `/area:<name>` | `/area:Personal` | Assigns to area (no spaces) |
 | `/due:date`  | `/due:friday`     | Sets due date      |
+| `/energy:<level>` | `/energy:medium` | Sets energy level (`low`, `medium`, `high`) |
 | `/note:text` | `/note:call back` | Adds description   |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | Sets status |
 

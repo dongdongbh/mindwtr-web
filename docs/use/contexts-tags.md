@@ -38,6 +38,8 @@ That lets you answer two different questions:
 - Filter by **Area** when you want to see everything related to one client.
 - Filter by **Context** when you want to see what you can do right now, regardless of client.
 
+To create or edit Areas directly, see [Areas and People](/use/areas-people).
+
 ---
 
 ## Location Contexts (@)
@@ -146,8 +148,10 @@ The context will be added and available for filtering.
 When you want to clean up or rename reusable metadata:
 
 - Open **Settings → Manage**
-- Edit **Contexts**, **Tags**, and **Areas** from one place
+- Edit **Contexts**, **Tags**, **Areas**, and **People** from one place
 - Use this to merge duplicates, standardize naming, or remove values you no longer use
+
+Areas and People can also be created while assigning them. Type in the **Area** picker or **Assigned to** field, then choose **Create** or **New Person** when there is no exact match.
 
 ### Bulk Editing Contexts
 
@@ -272,6 +276,6 @@ In Mindwtr, both `@contexts` and `#tags` can filter tasks, but they answer diffe
 ## See Also
 
 - [GTD Workflow in Mindwtr](/use/gtd-workflow)
-- [GTD Workflow in Mindwtr](/use/gtd-workflow)
+- [Areas and People](/use/areas-people)
 - [User Guide Desktop](/use/desktop)
 - [User Guide Mobile](/use/mobile)

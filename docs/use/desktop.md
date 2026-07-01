@@ -492,6 +492,7 @@ Access Settings from the sidebar.
 - **Manage** — Maintain your reusable metadata from one place
   - Edit **Areas**, **People**, **Contexts**, and **Tags** without hunting through individual tasks
   - People keep reusable assignee names, notes, and reference links for delegated work and suggestions
+  - See [Areas and People](/use/areas-people) for where to create Areas and People while assigning them
 
 ### Data & Sync
 

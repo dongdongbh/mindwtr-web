@@ -606,6 +606,7 @@ Customize how Mindwtr works for your GTD workflow:
 **Manage:**
 - Use **Settings → Manage** to edit saved **Areas**, **People**, **Contexts**, and **Tags**
 - This is the fastest place to clean up duplicates or rename reusable metadata
+- See [Areas and People](/use/areas-people) for where to create Areas and People while assigning them
 
 ### Data & Sync
 

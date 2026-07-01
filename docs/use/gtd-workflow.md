@@ -40,7 +40,7 @@ Use these patterns to keep the system light:
 
 ### Quick Capture
 
-- **Desktop:** Type in the bottom input field or use keyboard shortcut `o`
+- **Desktop:** Type in the bottom input field or use the app-focused `a` shortcut. `o` also opens add task.
 - **Mobile:** Tap the input field on the Inbox tab
 - **Mind Sweep:** Use guided prompts when you need to collect open loops across work, home, people, errands, and someday ideas.
 
@@ -138,6 +138,8 @@ Add contexts to filter by where you can do tasks:
 ### People
 
 Use People for delegated or person-centered work. A task's assignee powers Waiting For lists, suggestions, and `assigned:` search; the People manager lets you keep reusable names, notes, and reference links without turning every person into a context tag. Deleting a person keeps their tasks and clears the assignee instead of deleting the work.
+
+Create People from the **Assigned to** field or in **Settings -> Manage -> People**. Create Areas from the **Area** picker or **Settings -> Manage -> Areas**. See [Areas and People](/use/areas-people) for the exact paths.
 
 ### Projects
 
@@ -292,21 +294,16 @@ Star tasks as today's priorities up to your configured Focus limit:
 
 ## Recurring Tasks
 
-Set up recurring tasks for habits and repeating responsibilities:
+Set up recurring tasks from the task editor's **Recurrence** field. Choose daily, weekly, monthly, or yearly recurrence, then choose whether the task stays on a fixed schedule or repeats after completion.
 
-1. Edit a task
-2. Set recurrence (daily, weekly, monthly, yearly)
-3. Choose strategy:
-   - **Strict** for fixed schedules, such as a monthly review that should stay on the planned day
-   - **Repeat after completion** for habits based on when you actually finish
-4. When completed, a new instance is created automatically
-
-Mindwtr keeps one active instance of a recurring task. Future occurrences are not pre-populated in the Calendar; the next instance appears only after you complete the current one. This keeps overdue work visible instead of quietly creating a chain of future copies.
+Mindwtr keeps one active instance of a recurring task. Future occurrences are not pre-populated as real tasks; the next task appears when you complete the current one. You can turn on **Show next occurrence in Calendar** when you want a planning preview.
 
 **Example recurring tasks:**
 - Weekly: "Review project status"
 - Daily: "Check email @computer"
 - Monthly: "Review subscriptions"
+
+For setup steps and option details, see [Recurring Tasks](/use/recurring-tasks).
 
 ---
 

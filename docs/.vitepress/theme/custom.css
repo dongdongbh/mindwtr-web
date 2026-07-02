@@ -135,7 +135,8 @@ body,
 }
 
 .vp-doc table {
-  overflow: hidden;
+  /* Keep VitePress's horizontal scroll for wide tables; hidden clips cells */
+  overflow-x: auto;
   border-radius: 10px;
 }
 

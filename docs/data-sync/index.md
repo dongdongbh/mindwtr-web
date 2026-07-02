@@ -55,6 +55,18 @@ Mindwtr directly supports five sync backends:
 - **WebDAV**: any compatible WebDAV endpoint
 - **Mindwtr Cloud (Self-Hosted)**: your own `apps/cloud` endpoint
 
+### At a glance
+
+| Backend | Platforms | Setup effort | Relative speed | Conflict handling | Best for |
+| --- | --- | --- | --- | --- | --- |
+| **File Sync** (folder) | All | Low — pick a folder | Fastest (plain filesystem) | File-level; the folder provider sees one file | Syncthing, existing cloud-drive clients, LAN |
+| **WebDAV** | All | Medium — server URL + credentials | Slower — HTTP round-trip per request | App-controlled, per-item merge | Nextcloud/ownCloud/Fastmail, remote BYOS |
+| **Mindwtr Cloud (self-hosted)** | All | Higher — deploy `apps/cloud` + token | Fast — single endpoint, server merges on write | App + server-side merge | Several devices editing concurrently |
+| **Dropbox** | Supported builds | Low — OAuth sign-in | Moderate — provider API | App-controlled, per-item merge | Easiest cloud option without your own server |
+| **iCloud / CloudKit** | Apple builds | Low — toggle in Settings | Fast — per-record sync | Per-record CloudKit merge | Apple-only device sets |
+
+Speed differences matter most with large attachments, which WebDAV and Dropbox transfer as individual uploads/downloads. See [Data lifecycle](/data-sync/data-lifecycle) for what actually moves during a sync.
+
 In **Settings → Sync**, supported builds show these as one backend selector, then explain the selected setup path:
 
 - **Cloud Sync**: **Dropbox** and **iCloud** on Apple platforms

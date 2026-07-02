@@ -100,6 +100,10 @@ See [Data and Sync](/data-sync/) for details.
 
 Mindwtr supports File Sync, WebDAV, self-hosted Cloud Sync, and Dropbox sync (supported builds). See [Data and Sync](/data-sync/).
 
+### Which sync method is fastest — local folder or WebDAV?
+
+For similar hardware and network distance, **local folder sync is usually faster** than WebDAV. Folder sync reads and writes the snapshot with plain filesystem calls, while WebDAV adds HTTP round-trips, authentication, and server processing per request — the gap is most visible with large attachments, which transfer as individual uploads/downloads over WebDAV. That said, the bottleneck is usually the storage provider behind the folder (for example a Syncthing or cloud-drive client syncing in the background), not Mindwtr itself. Pick the backend that fits your setup; see [Data lifecycle](/data-sync/data-lifecycle) for what actually moves during a sync.
+
 ### Does Mindwtr support iCloud sync directly?
 
 Yes, on supported Apple builds.

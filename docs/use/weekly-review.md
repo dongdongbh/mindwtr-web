@@ -59,7 +59,19 @@ Review each inbox item:
 - Mobile weekly review also shows a Mind Sweep nudge in the review flow, so you can start a guided capture pass before leaving the Get Clear step
 - Empty the inbox completely
 
-### Step 2: Review Calendar
+### Step 2: Stale Items
+
+**Catch what's drifting:**
+- Next actions and waiting-for items untouched for 14+ days
+- Active projects with no recent activity
+
+**In Mindwtr:**
+- The review lists these automatically — no review dates required
+- Update, complete, or let each one go (move to Someday, archive, or delete)
+- The step is skipped when nothing has gone stale
+- If AI review is enabled, AI suggestions appear in this step (see below)
+
+### Step 3: Review Calendar
 
 **Look back 14 days:**
 - Did you miss anything?
@@ -76,7 +88,7 @@ Review each inbox item:
 - Check past and upcoming events
 - Add any needed actions
 
-### Step 3: Waiting For
+### Step 4: Waiting For
 
 **Review delegated items:**
 - Have you received what you're waiting for?
@@ -88,7 +100,7 @@ Review each inbox item:
 - Follow up on stale items
 - Move completed items to Done
 
-### Step 4: Review Projects
+### Step 5: Review Projects
 
 **For each active project:**
 - Does it have at least one next action?
@@ -100,7 +112,7 @@ Review each inbox item:
 - Add next actions where missing
 - Mark completed projects as Done
 
-### Step 5: Someday/Maybe
+### Step 6: Someday/Maybe
 
 **Review incubated items:**
 - Do you want to activate any?
@@ -124,7 +136,7 @@ Review each inbox item:
 
 ## Optional AI Review
 
-If enabled, Mindwtr can analyze stale tasks during review and suggest:
+If enabled, Mindwtr can analyze the stale items from Step 2 and suggest:
 - Move to Someday/Maybe
 - Archive
 - Break down

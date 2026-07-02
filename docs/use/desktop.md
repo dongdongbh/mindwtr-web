@@ -345,6 +345,7 @@ Configure notifications in Settings:
 - Set: due date, start date, review date, time estimate, recurrence
 - Manage checklist items
 - Description markdown supports unordered lists and task checkboxes (`- item`, `[ ] item`, `[x] item`)
+- With the list **Details** toggle on, task rows show the first description line rendered as Markdown; expand a row to read the full description
 - Type `[[` in task descriptions or project notes to link another task or project from a floating picker
 - Those links are navigational only; they do not sync completion state between tasks
 - Markdown checkbox lines can populate checklist items when you save

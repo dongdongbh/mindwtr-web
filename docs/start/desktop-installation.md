@@ -129,6 +129,8 @@ chmod +x Mindwtr-*.AppImage
 
 For other distributions, use the AppImage or build from source (see [Developer Guide](/developers/developer-guide)).
 
+Community-maintained packages (for example nixpkgs for NixOS) are welcome — the desktop build vendors its TLS dependency, so packaging does not need a system OpenSSL match. If you maintain one, open a discussion so it can be linked here.
+
 ---
 
 ## Windows

@@ -92,7 +92,7 @@ The stable `release.yml` remains the stable-release workflow. It is guarded so p
 
 Flathub beta requires the beta branch and permissions in `flathub/tech.dongdongbh.mindwtr`. AUR beta requires the `mindwtr-bin-beta` package and `AUR_SSH_PRIVATE_KEY`, `AUR_USERNAME`, and `AUR_EMAIL` secrets. If either channel is not ready, disable that RC workflow input instead of treating the whole RC as failed.
 
-Because a Play testing upload consumes an Android `versionCode`, every RC that uploads to Play needs a fresh `versionCode`. The RC workflow uploads one AAB and assigns the same versionCode to every configured testing track. The current final stable flow should also use a fresh production upload with a higher `versionCode`, or a future stable-promotion workflow should promote the already-tested Play build. Do not tag a final stable release with an Android `versionCode` that has already been uploaded to Play unless the stable workflow has been taught to promote that existing build.
+Because a Play testing upload consumes an Android `versionCode`, every RC that uploads to Play needs a fresh `versionCode`. The RC workflow resolves that code once before Android builds start, then the Play build and Android FOSS build consume the same preflight output and run in parallel. The workflow uploads one AAB and assigns the same versionCode to every configured testing track. The current final stable flow should also use a fresh production upload with a higher `versionCode`, or a future stable-promotion workflow should promote the already-tested Play build. Do not tag a final stable release with an Android `versionCode` that has already been uploaded to Play unless the stable workflow has been taught to promote that existing build.
 
 
 ### Timeline

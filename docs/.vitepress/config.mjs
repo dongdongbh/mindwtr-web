@@ -69,6 +69,7 @@ export default defineConfig({
         items: [
           { text: "Overview", link: "/data-sync/" },
           { text: "Backup and restore", link: "/data-sync/backup-restore" },
+          { text: "Data lifecycle", link: "/data-sync/data-lifecycle" },
           { text: "Sync algorithm", link: "/data-sync/sync-algorithm" },
           { text: "iCloud sync", link: "/data-sync/icloud" },
           { text: "Dropbox sync", link: "/data-sync/dropbox" },

@@ -31,7 +31,8 @@ export default defineConfig({
       { text: "Use Mindwtr", link: "/use/desktop" },
       { text: "Data & Sync", link: "/data-sync/" },
       { text: "Import", link: "/import/" },
-      { text: "Power Users", link: "/power-users/ai-assistant" }
+      { text: "Power Users", link: "/power-users/ai-assistant" },
+      { text: "Developers", link: "/developers/developer-guide" }
     ],
     sidebar: [
       {
@@ -118,6 +119,10 @@ export default defineConfig({
         ]
       }
     ],
+    editLink: {
+      pattern: "https://github.com/dongdongbh/mindwtr-web/edit/main/docs/:path",
+      text: "Edit this page on GitHub"
+    },
     socialLinks: [
       { icon: "github", link: "https://github.com/dongdongbh/Mindwtr" }
     ],

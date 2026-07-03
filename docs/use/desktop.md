@@ -15,6 +15,8 @@ The desktop app features a sidebar navigation with all GTD views and a main cont
 - **Right click** opens context menus (projects, tasks).
 - **Keyboard first**: global shortcuts and Vim/Emacs modes are optimized for desktop workflows.
 
+If you keep pushing a task's due date later, its row shows a small hourglass badge with the number of postponements (after the third push) next to the due date — a nudge that the task may need re-clarifying, delegating, or dropping instead of another deferral.
+
 Most task lists share the same control row for selecting tasks, filtering, sorting, grouping, showing details, and switching compact density. Use **Group** to organize Inbox, Next, Waiting, Someday/Maybe, Reference, Done, and other list views by metadata such as context, area, project, or tag.
 
 ## Focus Mode

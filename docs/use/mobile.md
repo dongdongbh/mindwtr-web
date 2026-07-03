@@ -539,7 +539,7 @@ Incubate ideas for the future.
 
 ## Notifications & Reminders
 
-Mindwtr sends push notifications to keep you on track.
+Mindwtr sends notifications to keep you on track.
 
 ### Types of Notifications
 
@@ -548,6 +548,8 @@ Mindwtr sends push notifications to keep you on track.
 - **Recurring task reminders** — Notifications for recurring items
 
 Tap the notification body to jump directly to the **Review** screen.
+
+Reminders are scheduled on the phone itself — there is no push server. If you complete or reschedule a task on another device (for example, checking off a daily recurring task on desktop), the phone updates its alarms as soon as that change syncs over, so let the phone sync before the next reminder time (opening the app once is enough).
 
 ### Permissions
 

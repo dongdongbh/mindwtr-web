@@ -16,7 +16,7 @@ Release automation and version metadata are centered in:
 - `metadata/metadata.json`
 - `apps/desktop/src-tauri/linux/Mindwtr.metainfo.xml`
 - `https://github.com/dongdongbh/mindwtr-web/tree/main/docs` for public docs changes
-- `wiki/` only for legacy GitHub Wiki pages that still need mirroring
+- `wiki/` is retired — it holds only a landing page pointing to the docs site; never add content pages
 - `.github/workflows/`
 - `.github/workflows/release-rc.yml` for release-candidate automation
 
@@ -196,7 +196,7 @@ The script writes a tracked `apps/mobile/app.json` value above the Play max, so 
    - `metadata/*/changelogs/<androidVersionCode>.txt`
    - `metadata/metadata.json`
    - `apps/desktop/src-tauri/linux/Mindwtr.metainfo.xml`
-5. Update public docs in the [Mindwtr web docs source](https://github.com/dongdongbh/mindwtr-web/tree/main/docs) when release/docs process details changed. Update `wiki/` only for legacy GitHub Wiki pages that still need mirroring. Do not run git in a separate `.wiki` checkout.
+5. Update public docs in the [Mindwtr web docs source](https://github.com/dongdongbh/mindwtr-web/tree/main/docs) when release/docs process details changed. The GitHub Wiki is retired; do not add or update `wiki/` content pages, and do not run git in a separate `.wiki` checkout.
 6. Review the resulting version and metadata changes carefully.
 7. Commit the release prep:
 

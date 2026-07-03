@@ -32,7 +32,7 @@ Before proposing a change, check it against these constraints:
 
 Docs should be written for user intent, not as a raw feature list. Prefer clear pages like "Import from TickTick" or "WebDAV sync" over dumping every related detail into one long page.
 
-Public user and developer docs live in this repo under `docs/` and publish to https://docs.mindwtr.app/. The public source is https://github.com/dongdongbh/mindwtr-web/tree/main/docs. Keep repository-local process docs, ADRs, and release notes in the Mindwtr app repo docs source at https://github.com/dongdongbh/Mindwtr/tree/main/docs. Treat https://github.com/dongdongbh/Mindwtr/tree/main/wiki as legacy GitHub Wiki source while the migration continues.
+Public user and developer docs live in this repo under `docs/` and publish to https://docs.mindwtr.app/. The public source is https://github.com/dongdongbh/mindwtr-web/tree/main/docs. Keep repository-local process docs, ADRs, and release notes in the Mindwtr app repo docs source at https://github.com/dongdongbh/Mindwtr/tree/main/docs. The GitHub Wiki is retired: `wiki/` in the app repo holds only a landing page that points readers to this docs site. Do not add wiki content pages — documentation changes go to the two locations above.
 
 ## License
 

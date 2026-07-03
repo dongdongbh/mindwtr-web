@@ -95,7 +95,7 @@ Mindwtr/
 │
 ├── scripts/               # Utility scripts (CLI, API, release)
 ├── docs/                  # Repository-local docs: ADRs, release notes, contribution docs
-├── wiki/                  # Legacy GitHub Wiki mirror during docs migration
+├── wiki/                  # Retired GitHub Wiki landing page (points to the docs site)
 ├── .github/               # CI/CD workflows
 └── package.json           # Monorepo root
 ```

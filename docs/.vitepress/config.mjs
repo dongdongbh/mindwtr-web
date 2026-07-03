@@ -18,6 +18,15 @@ export default defineConfig({
   sitemap: {
     hostname: "https://docs.mindwtr.app"
   },
+  // With cleanUrls each page is reachable at /path and /path.html; the
+  // canonical tag tells crawlers which one to index.
+  transformPageData(pageData) {
+    const canonicalUrl = `https://docs.mindwtr.app/${pageData.relativePath}`
+      .replace(/index\.md$/, "")
+      .replace(/\.md$/, "");
+    pageData.frontmatter.head ??= [];
+    pageData.frontmatter.head.push(["link", { rel: "canonical", href: canonicalUrl }]);
+  },
   themeConfig: {
     logo: "/assets/brand/icon.png",
     // The logo/title links back to the main marketing site; the nav row below

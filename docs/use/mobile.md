@@ -336,6 +336,7 @@ Description markdown supports unordered lists and task checkboxes (`- item`, `[ 
 Type `[[` in task descriptions or project notes to link another task or project from the link picker sheet.
 Those links are navigational only; they do not sync completion state between tasks.
 Markdown checkbox lines can populate checklist items when you save.
+Pasting multi-line text into a checklist item creates one item per line (bullets, numbering, and `[x]` markers are recognized).
 The **Assignee / Person** field stores delegated people for Waiting For, suggestions, and `assigned:` search. Manage saved people, notes, and reference links from **Settings → Manage**.
 
 Recurring tasks support two strategies:

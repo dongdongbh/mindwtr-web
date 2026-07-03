@@ -349,6 +349,7 @@ Configure notifications in Settings:
 - Type `[[` in task descriptions or project notes to link another task or project from a floating picker
 - Those links are navigational only; they do not sync completion state between tasks
 - Markdown checkbox lines can populate checklist items when you save
+- Paste multi-line text into a checklist item to create one item per line (bullets, numbering, and `[x]` markers are recognized)
 - Assign to a project
 
 ### Task Properties

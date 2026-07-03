@@ -8,11 +8,11 @@ The default order is:
 
 1. Today and Calendar
 2. Inbox, only when live inbox tasks exist
-3. Today's Focus, when enabled
-4. Waiting For
+3. Waiting For
+4. Today's Focus, when enabled
 5. Complete
 
-The inbox step is intentionally before focus so new captures are clarified before choosing what should stay visible today. If the inbox is empty, the step is skipped.
+The inbox and Waiting For steps are intentionally before focus: new captures are clarified first, and items you were waiting on can be switched to Next when they unblock — so they are available as candidates when you choose today's focus. Empty steps are skipped.
 
 ## Settings
 

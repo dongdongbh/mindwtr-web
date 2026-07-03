@@ -10,9 +10,19 @@ Frequently asked questions about Mindwtr.
 
 Mindwtr is a cross-platform Getting Things Done (GTD) productivity app that helps you capture, clarify, organize, and engage with your tasks. Available for desktop (Windows, macOS, Linux) and mobile (Android, iOS).
 
-### Is Mindwtr free?
+### Is Mindwtr free? Will it stay free?
 
-Yes! Mindwtr is open source and free to use under the AGPL-3.0 license.
+Yes. Mindwtr is open source (AGPL-3.0) and free to use — no paywalls, no subscriptions, no premium tiers for sync or anything else. The plan is for it to stay that way: good software should be accessible to everyone regardless of their financial situation, and support should come from people who choose to give it, not from a paywall.
+
+There are real ongoing costs — the annual Apple developer fee, hosting, development tools, and the time that goes into features, fixes, and community support — so [donations](https://github.com/sponsors/dongdongbh) are what keep the project sustainable.
+
+One honest caveat: if those costs ever grew beyond what donations cover, an optional paid service (for example, a hosted sync server for people who don't want to self-host) could be added to cover them. The app itself stays free and open source either way — nothing you can do today would move behind a paywall.
+
+### How long will Mindwtr be maintained?
+
+Mindwtr is a passion project, and it is also the tool the maintainer runs his own life with — it gets maintained because he needs it maintained. The commit history is the honest picture of what that looks like in practice.
+
+No solo project can promise "forever", so Mindwtr is designed to make the worst case safe instead: it is local-first, your data lives in open formats in files you control, and the code is AGPL with reproducible builds on independent channels. Even if development stopped, the app keeps working offline, your data stays readable, and anyone can fork the code. You can commit your workflow to it — or leave — with your data intact at any time.
 
 ### Is Mindwtr AI-generated? What is the project's stance on AI?
 

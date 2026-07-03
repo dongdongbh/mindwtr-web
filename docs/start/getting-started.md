@@ -62,6 +62,7 @@ Mindwtr supports natural language quick-add. Type directly in the task input:
 | `#tag`             | `Research topic #creative` | Adds #creative tag    |
 | `+Project`         | `Call vendor +HomeReno`    | Assigns to project    |
 | `+Multi Word`      | `+New Project Name`        | Assigns to "New Project Name" |
+| `+"Quoted Name"`   | `+"New Project" call Bob`  | Quotes delimit a multi-word name mid-sentence (also `!"Area Name"`) |
 | `!Area`            | `Plan roadmap !Work`       | Assigns to area       |
 | `/area:<name>`     | `/area:Personal`           | Assigns to area (no spaces) |
 | `/start:date`      | `Task /start:monday`       | Sets start date       |

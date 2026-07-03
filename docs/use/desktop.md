@@ -73,7 +73,7 @@ Multi-step outcomes containing related tasks.
 - **Parallel mode** — All available project tasks can appear in Focus
 - **Sequential scope** — Sequential projects can advance project-wide or section-by-section; section scope shows the first available task in each section.
 - **Status** — Active, Waiting, Someday, Archived
-- **Areas of Focus** — Group projects by higher-level areas (e.g., Work, Health) to keep your sidebar organized.
+- **Areas of Focus** — Group projects by higher-level areas (e.g., Work, Health) to keep your sidebar organized. Drag a project onto an area to move it there; while dragging, collapsed and empty areas (and **No area**) show up as drop targets too.
 - **Project tags** — Tag projects and filter by tag
 - **Support notes** — Add planning notes and reference material
 - **Sections** — Optional task groupings inside a project (phases, milestones, sub-workstreams). Sections are headings inside one project, not subtasks or separate projects.

@@ -335,7 +335,7 @@ The editor starts minimal. Tap **More options** to reveal advanced fields; any f
 Description markdown supports unordered lists and task checkboxes (`- item`, `[ ] item`, `[x] item`).
 Type `[[` in task descriptions or project notes to link another task or project from the link picker sheet.
 Those links are navigational only; they do not sync completion state between tasks.
-Markdown checkbox lines can populate checklist items when you save.
+Markdown checkboxes in the description are notes-only; they do not affect the task checklist.
 Pasting multi-line text into a checklist item creates one item per line (bullets, numbering, and `[x]` markers are recognized).
 The **Assignee / Person** field stores delegated people for Waiting For, suggestions, and `assigned:` search. Manage saved people, notes, and reference links from **Settings → Manage**.
 

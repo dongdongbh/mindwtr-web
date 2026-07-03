@@ -348,7 +348,7 @@ Configure notifications in Settings:
 - With the list **Details** toggle on, task rows show the first description line rendered as Markdown; expand a row to read the full description
 - Type `[[` in task descriptions or project notes to link another task or project from a floating picker
 - Those links are navigational only; they do not sync completion state between tasks
-- Markdown checkbox lines can populate checklist items when you save
+- Markdown checkboxes in the description are notes-only; they do not affect the task checklist
 - Paste multi-line text into a checklist item to create one item per line (bullets, numbering, and `[x]` markers are recognized)
 - Assign to a project
 

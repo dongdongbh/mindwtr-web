@@ -14,7 +14,7 @@ Mindwtr is a cross-platform Getting Things Done (GTD) productivity app that help
 
 Yes. Mindwtr is open source (AGPL-3.0) and free to use — no paywalls, no subscriptions, no premium tiers for sync or anything else. The plan is for it to stay that way: good software should be accessible to everyone regardless of their financial situation, and support should come from people who choose to give it, not from a paywall.
 
-There are real ongoing costs — the annual Apple developer fee, hosting, development tools, and the time that goes into features, fixes, and community support — so [donations](https://github.com/sponsors/dongdongbh) are what keep the project sustainable.
+There are real ongoing costs — the annual Apple developer fee, hosting, development tools, and the time that goes into features, fixes, and community support — so [donations](https://mindwtr.app/donate) are what keep the project sustainable.
 
 One honest caveat: donations do not currently cover the costs — the maintainer absorbs the difference. If that gap ever grew too large to sustain, an optional paid service (for example, a hosted sync server for people who don't want to self-host) could be added to cover it. The app itself stays free and open source either way — nothing you can do today would move behind a paywall.
 
@@ -71,7 +71,7 @@ Not currently. The desktop app is single-window to keep the local-first SQLite d
 
 ### Is there a donation page?
 
-Yes — GitHub Sponsors: https://github.com/sponsors/dongdongbh
+Yes — see the [donation page](https://mindwtr.app/donate) for all the ways to support the project.
 
 ### What languages are supported?
 

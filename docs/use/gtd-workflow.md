@@ -146,7 +146,7 @@ Create People from the **Assigned to** field or in **Settings -> Manage -> Peopl
 Create projects for multi-step outcomes:
 
 1. Go to Projects view
-2. Add a new project with name and color
+2. Add a new project with a name, and optionally pick its Area right in the create form (it defaults to the Area you are filtering by)
 3. Add tasks to the project
 4. (Optional) Create **Sections** to group tasks by phase or sub‑outcome
 5. Toggle Sequential/Parallel mode:

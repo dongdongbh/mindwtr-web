@@ -48,6 +48,8 @@ Tap the **Menu** tab to access additional views:
 
 Tap the **search icon** in the header to open Global Search.
 
+Search hides Done and Archived items by default. When hidden items match your query, a tappable "N more in Done and Archived" hint appears — tap it to include them, or enable **Include Done and Archived tasks** in the search filters.
+
 ### Search Operators
 
 Use operators for powerful filtering:

@@ -11,7 +11,7 @@ The desktop app features a sidebar navigation with all GTD views and a main cont
 ## Interaction Patterns
 
 - **Single click** toggles task details.
-- **Double click** opens full edit mode.
+- **Double click** on a task title renames it in place (Enter saves, Esc cancels); double click elsewhere on the row opens full edit mode.
 - **Right click** opens context menus (projects, tasks).
 - **Keyboard first**: global shortcuts and Vim/Emacs modes are optimized for desktop workflows.
 

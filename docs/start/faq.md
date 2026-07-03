@@ -316,7 +316,7 @@ You can snooze notifications for later.
 ### Why does editing feel different on desktop and mobile?
 
 Mindwtr follows platform conventions:
-- **Desktop:** single click toggles details, double click opens edit mode, and right click opens context menus.
+- **Desktop:** single click toggles details, double click renames the title in place (or opens full edit mode elsewhere on the row), and right click opens context menus.
 - **Mobile:** single tap opens edit mode and swipe actions handle quick changes.
 
 These patterns keep the app fast and familiar on each platform.

@@ -20,7 +20,7 @@ On desktop, the app shows the exact local data path in **Settings -> Sync -> Loc
 
 ## Requirements
 
-- **Node.js 18+** (for the MCP client that spawns the server)
+- **Node.js 20+** (for the MCP client that spawns the server; no C++ compiler needed — the SQLite dependency installs as a prebuilt binary)
 - **npm** or another Node package runner for the published `mindwtr-mcp` package
 - A local Mindwtr database (`mindwtr.db`) for local mode, or a self-hosted Mindwtr Cloud URL and bearer token for read-only Cloud mode
 - **Bun** only if you are running the helper from the source tree

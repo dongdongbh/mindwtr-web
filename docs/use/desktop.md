@@ -76,6 +76,7 @@ Multi-step outcomes containing related tasks.
 - **Sequential scope** — Sequential projects can advance project-wide or section-by-section; section scope shows the first available task in each section.
 - **Status** — Active, Waiting, Someday, Archived
 - **Areas of Focus** — Group projects by higher-level areas (e.g., Work, Health) to keep your sidebar organized. Drag a project onto an area to move it there; while dragging, collapsed and empty areas (and **No area**) show up as drop targets too.
+- **Move tasks by drag** — Drag a task from the open project's list onto another project in the sidebar to move it there (it lands after the target's existing tasks), or onto an area header to make it a direct area task. Works in every sort mode; a **Moved to …** toast offers one-click Undo, and archived projects don't accept drops.
 - **Project tags** — Tag projects and filter by tag
 - **Support notes** — Add planning notes and reference material
 - **Sections** — Optional task groupings inside a project (phases, milestones, sub-workstreams). Sections are headings inside one project, not subtasks or separate projects.

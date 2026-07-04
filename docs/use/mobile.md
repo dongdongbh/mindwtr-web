@@ -126,6 +126,16 @@ On Android, add the Mindwtr capture tile to Quick Settings for one-swipe Inbox c
 2. Add the **Mindwtr** tile.
 3. Tap the tile to open Quick Capture.
 
+### Android Notification Bar Quick Add
+
+For the fastest capture — one swipe, and available from the lock screen — pin a persistent **Quick add** notification:
+
+1. Open **Settings → Notifications**.
+2. Turn on **Quick add in notification bar**.
+3. Tap the notification any time to open Quick Capture.
+
+The notification is silent and stays out of the way at the bottom of the shade. Turn the toggle off to remove it. (Android only — iOS doesn't support persistent notifications; use the widget or Shortcuts there.)
+
 ### Android Voice App Actions
 
 Android builds expose a capture action to supported assistants, including Gemini/Assistant surfaces that route through Android App Actions. Voice-created captures open Mindwtr's confirmation flow so you can review the title and note before saving.

@@ -183,7 +183,7 @@ Some processing actions set status and dates together. For example, choosing **L
 
 ### Relative Start Lead Time
 
-Use **Start lead time** when the start date should stay tied to the due date. For example, a task due Friday can start two days before due, or a task due at 5:00 PM can start three hours before due.
+Use **Start lead time** when the start date should stay tied to the due date. For example, a task due Friday can start two days before due, or a task due at 5:00 PM can start three hours before due. A lead time of **0** means the task starts on the due date itself — useful for recurring chores that shouldn't appear until the day they're due.
 
 When a task has a due date and a start lead time, Mindwtr treats the offset as the source of truth. Moving the due date recalculates the start date from the same offset, and recurring tasks keep the same lead time when the next instance is generated.
 

@@ -27,7 +27,7 @@ import {
 type RelativeStartOffsetUnit = 'minute' | 'hour' | 'day' | 'week';
 
 interface RelativeStartOffset {
-    amount: number;                  // Negative offset, e.g. -3 days before due
+    amount: number;                  // Offset <= 0, e.g. -3 days before due; 0 = on the due date
     unit: RelativeStartOffsetUnit;
 }
 

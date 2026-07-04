@@ -118,6 +118,16 @@ Add the Mindwtr widget to your home screen for quick access:
 3. Find and add the **Mindwtr** widget
 4. Tap the widget to open quick capture or view focus items
 
+### iOS Lock Screen Widget
+
+On iOS 16 and later, Mindwtr offers lock screen widgets that show your current focused task without unlocking the phone:
+
+1. Long-press the lock screen and tap **Customize**
+2. Select the widget area and add a **Mindwtr Focus** widget
+3. Choose the rectangular widget (top focused task with a Focus caption), the inline one-line widget above the clock, or the circular focused-task counter
+
+Tapping any of them opens the Focus screen. Lock screen widgets follow the system's monochrome lock screen style.
+
 ### Android Quick Settings Tile
 
 On Android, add the Mindwtr capture tile to Quick Settings for one-swipe Inbox capture:

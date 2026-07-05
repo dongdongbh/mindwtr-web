@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- chrome: shared head meta, header, and footer are injected at build time by chrome.ts -->
     <meta
       name="description"
       content="Support Mindwtr with a donation. No ads, no tracking, no paywalls — just an app kept free and independent by the people who find it useful. Give via Ko-fi (no account needed) or GitHub Sponsors."
@@ -12,32 +11,9 @@
       property="og:description"
       content="Help keep Mindwtr free and independent. Give a one-off tip on Ko-fi (no account needed) or sponsor ongoing development on GitHub."
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mindwtr.app/donate" />
-    <meta property="og:image" content="https://mindwtr.app/assets/screenshots/social-preview.jpg" />
-    <meta property="og:image:width" content="1280" />
-    <meta property="og:image:height" content="640" />
-    <meta property="og:image:alt" content="Mindwtr — Get Things Done. Local &amp; Open Source." />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://mindwtr.app/assets/screenshots/social-preview.jpg" />
-    <link rel="icon" href="/assets/brand/icon.png" />
-    <link rel="canonical" href="https://mindwtr.app/donate" />
     <title>Donate to Mindwtr</title>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="Mindwtr home">
-        <img src="/assets/brand/icon.png" alt="" />
-        <span>Mindwtr</span>
-      </a>
-      <nav aria-label="Primary navigation">
-        <a href="/features">Features</a>
-        <a href="https://docs.mindwtr.app/">Docs</a>
-        <a href="https://github.com/dongdongbh/Mindwtr">GitHub</a>
-        <a href="/support">Support</a>
-        <a class="nav-download" href="/#download">Download</a>
-      </nav>
-    </header>
 
     <main>
       <section class="support-hero" aria-labelledby="donate-title">
@@ -119,28 +95,5 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <nav class="footer-nav" aria-label="Footer">
-        <span>Mindwtr</span>
-        <a href="/features">Features</a>
-        <a href="https://docs.mindwtr.app/">Docs</a>
-        <a href="https://github.com/dongdongbh/Mindwtr">GitHub</a>
-        <a href="/support">Support</a>
-        <a href="/donate" aria-current="page">Donate</a>
-        <a href="/brand">Brand</a>
-        <a href="/privacy">Privacy</a>
-      </nav>
-      <p class="footer-copyright">
-        &copy; 2025&ndash;2026 Dongda Li &middot; Free and open source (AGPL-3.0)
-      </p>
-      <p class="footer-legal">
-        Mindwtr and the Mindwtr logo are trademarks of the Mindwtr project.
-        Getting Things Done and GTD are registered trademarks of the David Allen
-        Company. Mindwtr is not affiliated with, endorsed by, or sponsored by the
-        David Allen Company.
-      </p>
-    </footer>
-
-    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

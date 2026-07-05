@@ -6,6 +6,11 @@ docs/.vitepress/dist/
 docs/.vitepress/cache/
 .bun/
 
+# Generated copies of shared-assets/ — the committed source of truth.
+# dev/build scripts regenerate them via scripts/sync-assets.mjs.
+landing/public/assets/
+docs/public/assets/
+
 # Local environment and secrets
 .env
 .env.*

@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
+    "dev": "bun ../scripts/sync-assets.mjs && vite --host 0.0.0.0",
     "build": "bun install && bun ../scripts/sync-assets.mjs && tsc --noEmit && vite build",
     "preview": "vite preview --host 0.0.0.0"
   },

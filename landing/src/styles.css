@@ -1751,11 +1751,15 @@ main > section:last-child {
 .help-links a {
   color: var(--blue);
   font-weight: 600;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: rgba(46, 107, 230, 0.32);
+  text-underline-offset: 5px;
+  transition: text-decoration-color 180ms ease;
 }
 
 .help-links a:hover {
   color: var(--blue-deep);
+  text-decoration-color: var(--blue);
 }
 
 .sponsor-grid {

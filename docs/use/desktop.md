@@ -11,7 +11,8 @@ The desktop app features a sidebar navigation with all GTD views and a main cont
 ## Interaction Patterns
 
 - **Single click** toggles task details.
-- **Double click** on a task title renames it in place (Enter saves, Esc cancels); double click elsewhere on the row opens full edit mode.
+- **Double click** on a task opens full edit mode. To rename just the title in place, pick **Rename task** from the task's `⋯` menu (Enter saves, Esc cancels).
+- **Click outside** an open task editor to close it while nothing was changed; once a field was edited, closing requires Save, Cancel, or Esc.
 - **Right click** opens context menus (projects, tasks).
 - **Keyboard first**: global shortcuts and Vim/Emacs modes are optimized for desktop workflows.
 
@@ -42,7 +43,7 @@ Your capture zone. All new tasks land here before processing.
 
 - **Add tasks** using the input field at the bottom
 - **Quick-add syntax** is supported (see [Getting Started](/start/getting-started))
-- Use the star in Quick Add when a new task should go straight into **Today's Focus**.
+- Use the star beside the Quick Add input when a new task should go straight into **Today's Focus** — the same star also sits in the task editor's header. Starring counts as clarifying: a starred capture is created as a **Next Action**, not an Inbox item — and moving a starred task back to Inbox removes its star.
 - **Process Inbox** using the clarify workflow
 - **Mind Sweep** prompts you through common life/work areas when you want a guided capture session instead of a blank input.
 

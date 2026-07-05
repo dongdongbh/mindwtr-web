@@ -5,7 +5,17 @@ export default defineConfig({
   description: "Searchable documentation for Mindwtr, the free, local-first GTD app.",
   base: "/",
   cleanUrls: true,
-  head: [["link", { rel: "icon", href: "/assets/brand/icon.png" }]],
+  head: [
+    ["link", { rel: "icon", href: "/assets/brand/icon.png" }],
+    ["meta", { property: "og:site_name", content: "Mindwtr Docs" }],
+    ["meta", { property: "og:type", content: "website" }],
+    ["meta", { property: "og:image", content: "https://docs.mindwtr.app/assets/screenshots/social-preview.jpg" }],
+    ["meta", { property: "og:image:width", content: "1280" }],
+    ["meta", { property: "og:image:height", content: "640" }],
+    ["meta", { property: "og:image:alt", content: "Mindwtr — Get Things Done. Local & Open Source." }],
+    ["meta", { name: "twitter:card", content: "summary_large_image" }],
+    ["meta", { name: "twitter:image", content: "https://docs.mindwtr.app/assets/screenshots/social-preview.jpg" }]
+  ],
   vite: {
     esbuild: {
       tsconfigRaw: {

@@ -1090,10 +1090,10 @@ h2 {
   box-shadow: 0 12px 26px rgba(24, 23, 23, 0.22);
 }
 
-.github-download img {
+.github-download svg {
   width: 20px;
   height: 20px;
-  filter: invert(1);
+  flex-shrink: 0;
 }
 
 .github-download strong {

@@ -89,6 +89,10 @@ flowchart TD
 - No → Delete, move to Someday/Maybe, or add as reference
 - Yes → Continue
 
+**More than one step?**
+- Yes → Turn the capture into a project: name it, then type its next actions — add as many as you need and they are created inside the new project
+- No → Continue as a single action
+
 **Will it take less than 2 minutes?**
 - Yes → Do it immediately, mark Done
 - No → Continue

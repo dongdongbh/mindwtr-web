@@ -302,6 +302,7 @@ Tap **Process Inbox** to start the clarify workflow:
 
 5. **Assign to a project?** (Optional)
    - Select a project or skip
+   - Or choose **Yes, make it a project** when the capture holds several actions: name the project, then type its next actions (add as many as you need) and they are created inside it
 
 ---
 

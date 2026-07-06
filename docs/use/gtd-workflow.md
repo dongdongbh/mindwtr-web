@@ -90,7 +90,7 @@ flowchart TD
 - Yes → Continue
 
 **More than one step?**
-- Yes → Turn the capture into a project: name it, then type its next actions — add as many as you need and they are created inside the new project
+- Yes → Turn the capture into a project: name it and define its next action. Add as many further actions as you need — they land back in the Inbox with the project already attached, so each gets its own clarify pass
 - No → Continue as a single action
 
 **Will it take less than 2 minutes?**

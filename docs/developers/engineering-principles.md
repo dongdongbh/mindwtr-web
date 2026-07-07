@@ -6,6 +6,21 @@ The single biggest lesson across the history: **almost every critical (P0/P1) bu
 
 ---
 
+## 0. Product philosophy (checked before any engineering decision)
+
+Mindwtr is **simple by default and powerful when you need it**: progressive disclosure (advanced options stay hidden until they matter), less by default (fewer fields, fewer knobs, fewer distractions), and no feature creep (clarity over clutter). *Don't show me a cockpit when I just want to ride a bike.*
+
+### Automatic beats a setting — infer, don't ask
+If the right behavior can be determined automatically — from the platform, the install channel, existing data, or context — implement the inference and do not add a setting. A setting is usually the app failing to answer its own question, and every knob moves cognitive load from us (once) onto every user (forever).
+
+- **#829:** a user asked for a "disable update checks" toggle because the app kept offering GitHub downloads to a Scoop install. The fix was not the toggle: the app now detects its install channel and behaves correctly per channel — reminders pinned to channels with a canonical feed, fully quiet for channels that manage their own updates. No setting shipped.
+- **#832:** the global quick-add shortcut default follows each platform's conventions (enabled with a safe combo on macOS/Linux, off on Windows where global hotkeys silently steal keys) instead of asking users to figure it out.
+- **#833:** when a behavior genuinely cannot be inferred and demand is real, gate it behind an *existing* switch before minting a new one — task time tracking appears only while the existing Pomodoro timer and its task linking are enabled; no new setting was added.
+
+**Guardrails:** before proposing a setting, prove the behavior cannot be inferred. Before minting a new setting, prove no existing switch already expresses the same intent. Defaults follow platform best practice, not neutrality.
+
+---
+
 ## 1. Writes and persistence
 
 ### P1 — Every write is revision-guarded; arrival order is never trusted

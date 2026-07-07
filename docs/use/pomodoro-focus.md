@@ -42,6 +42,8 @@ The task picker controls which task, if any, the Pomodoro panel is attached to. 
 
 Tasks have an optional **Time Spent** value next to the Time Estimate in the task editor.
 
+Time Spent is opt-in and off by default: the editor field, the task-row badge, and the quick-start button only appear while both the **Pomodoro timer** feature and **Link timer to task** are enabled. Turn them off and nothing time-related shows anywhere (recorded values are kept and reappear if you re-enable it). Hiding the Time Estimate field in the task editor layout hides Time Spent with it.
+
 - Every completed focus session with a linked Timer task adds the session's focus minutes to that task's total.
 - You can also set or correct the total by hand in the editor.
 - Tasks with recorded time show a small badge in task lists, and the total syncs across your devices like any other task field.

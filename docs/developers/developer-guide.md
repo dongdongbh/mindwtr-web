@@ -11,7 +11,7 @@ Mindwtr is built to be **simple by default and powerful when you need it**. We f
 - **Progressive disclosure**: advanced options stay hidden until they matter.
 - **Less by default**: fewer fields, fewer knobs, fewer distractions.
 - **Avoid feature creep**: we prioritize clarity over clutter.
-- **Automatic beats a setting**: if the right behavior can be inferred — from the platform, the install channel, existing data, or context — implement the inference and skip the setting. Every knob moves cognitive load from us (once) onto every user (forever). [#829](https://github.com/dongdongbh/Mindwtr/issues/829) is the model: instead of a "disable update checks" toggle, the app detects how it was installed and behaves correctly per channel — package-manager installs go quiet on their own, with no setting shipped. When behavior genuinely can't be inferred and demand is real, gate the feature behind an existing switch before minting a new one.
+- **Automatic beats a setting**: if the right behavior can be inferred — from the platform, the install channel, existing data, or context — implement the inference and skip the setting. Every knob moves cognitive load from us (once) onto every user (forever). The update checker is the model: instead of a "disable update checks" toggle, the app detects how it was installed and behaves correctly per channel — package-manager installs go quiet on their own, with no setting shipped. When behavior genuinely can't be inferred and demand is real, gate the feature behind an existing switch before minting a new one.
 
 _Don't show me a cockpit when I just want to ride a bike._
 

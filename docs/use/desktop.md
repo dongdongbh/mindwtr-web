@@ -249,10 +249,11 @@ Capture tasks from anywhere on your desktop without switching windows:
 4. Continue what you were doing
 
 You can change or disable this shortcut in **Settings → General → Input → Global quick add shortcut**.
-Available options follow platform conventions:
+Defaults follow platform conventions:
 - macOS: `Ctrl+Option+M` (default), `Ctrl+Option+N`, `Ctrl+Option+Q`, or legacy `Cmd+Shift+A`
-- Windows/Linux: `Ctrl+Alt+M` (default), `Ctrl+Alt+N`, `Ctrl+Alt+Q`, or legacy `Ctrl+Shift+A`
-- Disabled (no system-wide Quick Add shortcut)
+- Linux: `Ctrl+Alt+M` (default), `Ctrl+Alt+N`, `Ctrl+Alt+Q`, or legacy `Ctrl+Shift+A`
+- Windows: disabled by default so Mindwtr never silently takes a key combination away from other apps; `Ctrl+Alt+M` is the recommended choice when you enable one
+- The legacy `Ctrl+Shift+A` option is not recommended — Chrome, Word, and Excel all use it, and a global hotkey overrides them system-wide
 
 **Flatpak/Wayland note:** Some compositors do not allow app-registered global shortcuts. In that case, bind your desktop shortcut to `flatpak run tech.dongdongbh.mindwtr --quick-add` instead.
 

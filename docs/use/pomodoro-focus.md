@@ -38,6 +38,23 @@ Controls:
 
 The task picker controls which task, if any, the Pomodoro panel is attached to. Timer controls affect the timer. **Mark task done** is only available when a Timer task is linked, and mutates that selected task by moving it to Done and removing it from today's focus.
 
+## Time Spent
+
+Tasks have an optional **Time Spent** value next to the Time Estimate in the task editor.
+
+- Every completed focus session with a linked Timer task adds the session's focus minutes to that task's total.
+- You can also set or correct the total by hand in the editor.
+- Tasks with recorded time show a small badge in task lists, and the total syncs across your devices like any other task field.
+
+There is deliberately no per-session log, reporting screen, or free-running stopwatch — the total is a single number per task. For external reports, read `timeSpentMinutes` through the Cloud API or MCP server.
+
+## Start a session from a task (desktop)
+
+When both the Pomodoro feature and **Link timer to task** are enabled, hovering a task row shows a play button:
+
+- Click it to link that task and start a focus session immediately — no hunting through the Timer task dropdown.
+- The button also shows how many focus sessions you have completed on that task.
+
 ---
 
 ## Focus vs Next Actions

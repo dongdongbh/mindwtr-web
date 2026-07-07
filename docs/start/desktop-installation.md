@@ -261,9 +261,11 @@ Config is stored separately:
 
 ## Updating
 
-1. Check for updates in Settings → About → Check for Updates
-2. Download the new version from [Releases](https://github.com/dongdongbh/Mindwtr/releases)
-3. Install over your existing installation
+Update checks are channel-aware: Mindwtr detects how it was installed, compares against the version published for that channel, and points you to that channel's update path.
+
+- **Microsoft Store, Winget, Scoop, Chocolatey, Homebrew, AUR** — the update reminder only appears once your channel has the new version; update with your package manager as usual (for example `winget upgrade dongdongbh.Mindwtr`, `scoop update mindwtr`, `choco upgrade mindwtr`, `brew upgrade --cask mindwtr`).
+- **Flatpak, Snap, and the app stores' auto-update** — updates arrive automatically, so Mindwtr stays quiet.
+- **Direct download, portable, AppImage, .deb/.rpm** — check in Settings → About → Check for Updates, then download the new version from [Releases](https://github.com/dongdongbh/Mindwtr/releases) and install over your existing installation.
 
 Your data is preserved between updates.
 

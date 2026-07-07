@@ -94,6 +94,8 @@ Mindwtr offers multiple ways to capture tasks quickly on mobile.
 
 The capture screen is input-first. The syntax help is tucked behind a small “?” toggle to keep the interface clean.
 
+For capture bursts, turn on the **Add another** switch in the capture sheet: each Enter saves the task and keeps the sheet open with the keyboard up, ready for the next one. The switch stays on across captures until you turn it off.
+
 ### Share Sheet
 
 Capture tasks from any app using the share sheet:

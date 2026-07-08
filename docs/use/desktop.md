@@ -132,9 +132,11 @@ Use the Board search field to narrow visible cards by title, notes, project, con
 
 Recently completed tasks. Use this as your short-term completion log for daily or weekly review.
 
+If you finished a task earlier than you marked it Done, click its **Completed** timestamp to correct it. You can also right-click the complete button on any open task to mark it Done as of an earlier time — useful when the completion time matters for your records or for "repeat after completion" scheduling.
+
 ### 📦 Archived
 
-Completed tasks that have been filed away. Archived tasks are hidden from normal task lists, but you can search, restore, or permanently delete them here.
+Completed tasks that have been filed away. Archived tasks are hidden from normal task lists, but you can search, restore, or permanently delete them here. Click a task's **Completed** timestamp to correct it.
 
 ### 📝 Weekly Review
 

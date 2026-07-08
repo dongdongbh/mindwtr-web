@@ -512,6 +512,8 @@ Quickly manage tasks with swipe gestures:
 | **Inbox**        | Done        | Marks task as done |
 | **Focus**        | Focus       | Toggles focus status |
 
+Completing a task stamps the current time. If you actually finished earlier, long-press **Done** in the status badge menu to pick the real completion time, or tap the **Completed** timestamp on a done or archived task to correct it afterwards.
+
 ---
 
 ## Contexts

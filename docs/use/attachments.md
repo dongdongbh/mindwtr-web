@@ -28,6 +28,12 @@ Mindwtr lets you attach files and links to **tasks** and **projects**. Attachmen
 - Use **Add attachment** to pick a file or add a link.
 - Audio notes are added automatically if you record voice capture and **Save audio attachments** is enabled.
 
+### Copies vs. links
+
+- **Add file** stores a copy of the file inside Mindwtr's own storage. The attachment keeps working even if the original file is later moved, renamed, or deleted. Removing the attachment deletes Mindwtr's copy — never your original file.
+- **Add link** stores a pointer. Paste a URL, or a local file path if you want to reference a file without copying it. A path link breaks if the file moves — that is expected of a link.
+- File attachments added on desktop before v1.1.0 reference the original path instead of holding a copy; re-attach a file to convert it into a copy.
+
 ---
 
 ## Audio attachments

@@ -114,6 +114,7 @@ export default defineConfig({
         items: [
           { text: "AI assistant", link: "/power-users/ai-assistant" },
           { text: "Apple Shortcuts", link: "/power-users/apple-shortcuts" },
+          { text: "Email capture", link: "/power-users/email-capture" },
           { text: "Local API", link: "/power-users/local-api" },
           { text: "MCP server", link: "/power-users/mcp" },
           { text: "Obsidian integration", link: "/power-users/obsidian" },

@@ -60,6 +60,33 @@ Supported destinations:
 
 The shortcut defaults to Inbox if no list is configured.
 
+### Add to Mindwtr Inbox
+
+Use **Add to Mindwtr Inbox** to create a task silently, without opening Mindwtr. This is the action to use inside Shortcuts Automations — a time, calendar, or location trigger can add a task with no one touching the phone.
+
+Parameters:
+
+| Parameter | Required | Notes |
+| --- | --- | --- |
+| Task | Yes | The task title. Empty titles fail the shortcut. |
+| Note | No | Added as the task description. |
+| Tags | No | Comma-separated tags. Mindwtr normalizes them to `#tag`. |
+| Project | No | Matches an active project by title. Unknown or archived projects are ignored — the task still lands in the Inbox. |
+
+What happens when it runs:
+
+1. The action queues the capture on the device and finishes immediately. Mindwtr stays in the background.
+2. The next time Mindwtr opens (or returns to the foreground), the queued task is created in the Inbox through the normal store and sync path.
+
+Because the task is created on next open, it does not appear on other synced devices, and no reminder fires, until Mindwtr runs again on that iPhone or iPad. Unlike **Capture to Mindwtr**, this action never creates new projects.
+
+### Example: calendar-triggered task
+
+1. In the **Shortcuts** app, open **Automation** and create a new automation.
+2. Choose a trigger, for example a calendar event whose title contains "garbage collection".
+3. Add Mindwtr's **Add to Mindwtr Inbox** action and set **Task** to "Take out the trash".
+4. Set the automation to **Run Immediately** so it needs no confirmation.
+
 ## Example shortcuts
 
 ### Capture from voice
@@ -102,7 +129,6 @@ Supported capture aliases:
 
 Mindwtr v1 does not include:
 
-- Background task creation without opening Mindwtr.
 - Custom AppEntity task or list types.
 - Find, edit, duplicate, delete, or batch actions.
 - Direct recurring-task, reminder, or date scheduling from Shortcuts.

@@ -70,7 +70,7 @@ When you complete a recurring task, Mindwtr creates the next task with the same 
 
 If the task has a due date, start date, or review date, Mindwtr advances those fields according to the recurrence rule. Date-only values stay date-only.
 
-The next task stays out of Focus and Next actions until its date arrives — a future start date defers it as usual, and a recurring task with only a due date is deferred until that due date. This keeps the freshly created next occurrence from reappearing in the list right after you complete the current one. Deferred occurrences are still counted by the "hidden (future start)" notice, and you can reveal them with its **Show** toggle or find them in **Projects** and **Search**.
+The next task stays out of Focus and Next actions until its date arrives — a future start date defers it as usual, and a recurring task without a start date is deferred until its next date (the earlier of its due and review dates). This keeps the freshly created next occurrence from reappearing in the list right after you complete the current one. Deferred occurrences are still counted by the "hidden (future start)" notice, and you can reveal them with its **Show** toggle or find them in **Projects** and **Search**.
 
 ## Related Pages
 

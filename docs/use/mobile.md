@@ -236,6 +236,7 @@ Mindwtr parses natural language when adding tasks:
 | `+Multi Word` | `+New Project`    | Assigns to "New Project" |
 | `+"Quoted Name"` | `+"New Project" call Bob` | Quotes delimit a multi-word name mid-sentence (also `!"Area Name"`) |
 | `!Area`       | `Plan roadmap !Work` | Assigns to area       |
+| `%Person`     | `Ask %Jim for budget` | Sets Assigned to (delegated / waiting-for owner); `%"Full Name"` for new multi-word names |
 | `/area:<name>` | `/area:Personal` | Assigns to area (no spaces) |
 | `/due:date`  | `/due:friday`     | Sets due date      |
 | `/energy:<level>` | `/energy:medium` | Sets energy level (`low`, `medium`, `high`) |

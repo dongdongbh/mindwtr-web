@@ -47,6 +47,10 @@ Use People when you want to answer: "Who owns this, who am I waiting on, or who 
 
 Typing a name without creating the saved Person still works as a task assignee. Choosing **New Person** makes the name reusable in future suggestions and Settings.
 
+### Assign a Person at Capture Time
+
+Type `%` followed by the name in Quick Add: `Ask %Jim for the budget /waiting`. Known names match unquoted (including multi-word names); quote a new multi-word name as `%"Jim Smith"`. On desktop, typing `%` opens the same person suggestions as the Assigned to field.
+
 ### Create or Edit People in Settings
 
 1. Open **Settings**.
@@ -61,7 +65,7 @@ Deleting a Person keeps the tasks. Mindwtr clears that saved person record inste
 | Field | Use it for | Where to create |
 | --- | --- | --- |
 | **Area** | Responsibility buckets for projects and tasks | Area picker, Settings -> Manage -> Areas |
-| **Person** | Delegated assignee or waiting-for owner | Assigned to field, Settings -> Manage -> People |
+| **Person** | Delegated assignee or waiting-for owner | Type `%person` in Quick Add, Assigned to field, Settings -> Manage -> People |
 | **Context** | Where, with what tool, or with whom you can do the task | Type `@context` in Quick Add or task edit |
 | **Tag** | Topic, energy, mode, or grouping label | Type `#tag` in Quick Add or task edit |
 

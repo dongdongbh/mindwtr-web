@@ -260,6 +260,7 @@ Yes! Mindwtr supports quick-add syntax:
 - `@context` — Add a context
 - `#tag` — Add a tag
 - `!Area` or `/area:<name>` — Assign to an area
+- `%Person` — Set the Assigned to person (`%"Full Name"` for new multi-word names)
 - `/due:date` — Set due date (today, tomorrow, friday, next week, etc.)
 - `/energy:low`, `/energy:medium`, or `/energy:high` — Set energy level
 - `/note:text` — Add description

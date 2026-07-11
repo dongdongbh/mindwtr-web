@@ -64,6 +64,8 @@ Mindwtr supports natural language quick-add. Type directly in the task input:
 | `+Multi Word`      | `+New Project Name`        | Assigns to "New Project Name" |
 | `+"Quoted Name"`   | `+"New Project" call Bob`  | Quotes delimit a multi-word name mid-sentence (also `!"Area Name"`) |
 | `!Area`            | `Plan roadmap !Work`       | Assigns to area       |
+| `%Person`          | `Ask %Jim for the budget /waiting` | Sets Assigned to (delegated / waiting-for owner) |
+| `%"Full Name"`     | `%"Jim Smith" send report` | Quotes delimit a multi-word person name (known names also match unquoted) |
 | `/area:<name>`     | `/area:Personal`           | Assigns to area (no spaces) |
 | `/start:date`      | `Task /start:monday`       | Sets start date       |
 | `/due:date`        | `Report /due:friday`       | Sets due date         |
@@ -81,7 +83,7 @@ Mindwtr supports natural language quick-add. Type directly in the task input:
 Absolute dates use fixed ISO format `YYYY-MM-DD` (for example, `/due:2026-03-15`), regardless of your UI locale/date display format.
 
 **Escaping**
-- Use a backslash to keep symbols as plain text: `\\@`, `\\#`, `\\+`, `\\/`
+- Use a backslash to keep symbols as plain text: `\\@`, `\\#`, `\\+`, `\\!`, `\\%`, `\\/`
 - Example: `Call \\@support /due:tomorrow` → title becomes `Call @support`
 
 **Unicode support**

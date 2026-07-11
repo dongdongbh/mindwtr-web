@@ -453,6 +453,7 @@ const result = parseQuickAdd(input: string, projects?: Project[]);
 | `+Project`   | `+HomeReno`        | `projectId: 'matching-id'`  |
 | `!Area`      | `!Work`            | `areaId: 'matching-id'`     |
 | `/area:<name>` | `/area:Personal` | `areaId: 'matching-id'`     |
+| `%Person`    | `%Jim` or `%"Jim Smith"` | `assignedTo: 'Jim'` (known names match unquoted multi-word via `knownPeople`) |
 | `/due:date`  | `/due:friday`      | `dueDate: 'ISO string'`     |
 | `/energy:<level>` | `/energy:high` | `energyLevel: 'high'` (supports `low`, `medium`, `high`) |
 | `/note:text` | `/note:remember X` | `description: 'remember X'` |

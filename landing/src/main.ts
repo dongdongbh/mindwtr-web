@@ -12,6 +12,28 @@ const PLATFORM_LABEL: Record<Platform, string> = {
   android: "Android",
 };
 
+type Locale = "en" | "de" | "es" | "fr" | "zh";
+
+/**
+ * The few strings this script writes into the page. Everything else is
+ * translated in the HTML itself; the page's <html lang> attribute tells us
+ * which language the visitor is reading.
+ */
+const JS_STRINGS: Record<Locale, { downloadFor: (platform: string) => string; copied: string }> = {
+  en: { downloadFor: (p) => `Download for ${p}`, copied: "Copied" },
+  de: { downloadFor: (p) => `Für ${p} herunterladen`, copied: "Kopiert" },
+  es: { downloadFor: (p) => `Descargar para ${p}`, copied: "Copiado" },
+  fr: { downloadFor: (p) => `Télécharger pour ${p}`, copied: "Copié" },
+  zh: { downloadFor: (p) => `下载 ${p} 版`, copied: "已复制" },
+};
+
+function pageLocale(): Locale {
+  const lang = (document.documentElement.lang || "en").toLowerCase();
+  if (lang.startsWith("zh")) return "zh";
+  const short = lang.slice(0, 2);
+  return short in JS_STRINGS ? (short as Locale) : "en";
+}
+
 /**
  * Best-effort client-side platform sniffing. Order matters: iOS and Android
  * user-agents also contain "Mac" / "Linux", so they must be checked first.
@@ -62,7 +84,7 @@ function applyPlatform(platform: Platform | null): void {
 
   const cta = document.getElementById("primary-download");
   if (cta instanceof HTMLAnchorElement) {
-    cta.textContent = `Download for ${PLATFORM_LABEL[platform]}`;
+    cta.textContent = JS_STRINGS[pageLocale()].downloadFor(PLATFORM_LABEL[platform]);
     // Anchor at the detected card, not the section wrapper, so a stacked
     // mobile layout scrolls to the visitor's card (e.g. Android, far down the
     // stack) rather than the section top (macOS, first card).
@@ -85,7 +107,7 @@ function wireCopyButtons(): void {
       try {
         await navigator.clipboard.writeText(command);
         button.classList.add("is-copied");
-        button.textContent = "Copied";
+        button.textContent = JS_STRINGS[pageLocale()].copied;
         window.setTimeout(() => {
           button.classList.remove("is-copied");
           button.textContent = idleLabel;
@@ -98,9 +120,27 @@ function wireCopyButtons(): void {
   });
 }
 
+/**
+ * Remember an explicit language choice from the footer switcher. The inline
+ * detect script in the page head (see chrome.ts) never redirects once this
+ * key is set, so a visitor who picks a language keeps it.
+ */
+function wireLanguageSwitch(): void {
+  document.querySelectorAll<HTMLAnchorElement>("a[data-lang-switch]").forEach((link) => {
+    link.addEventListener("click", () => {
+      try {
+        localStorage.setItem("mindwtr-lang", link.dataset.langSwitch || "en");
+      } catch {
+        // Storage can be unavailable (private mode); the link still navigates.
+      }
+    });
+  });
+}
+
 function init(): void {
   applyPlatform(detectPlatform());
   wireCopyButtons();
+  wireLanguageSwitch();
   initCoverflow();
 }
 

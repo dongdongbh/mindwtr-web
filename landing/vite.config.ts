@@ -1,19 +1,33 @@
-import { readdirSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 import { basename, resolve } from "node:path";
 import { defineConfig, type Plugin } from "vite";
-import { chrome } from "./chrome";
+import { chrome, LOCALES } from "./chrome";
 
-// The page registry: every *.html file under landing/ is a page. Rollup
-// inputs and sitemap.xml are both derived from this list, so adding a page
-// means creating one file — Vite emits it (multi-page builds only include
-// declared inputs) and the sitemap picks it up automatically. Cloudflare
-// Pages serves dist/<name>.html at the clean URL /<name>.
-const pages = readdirSync(import.meta.dirname)
-  .filter((file) => file.endsWith(".html"))
-  .sort();
+// The page registry: every *.html file under landing/ is an English page, and
+// every landing/<locale>/*.html file is its translation. Rollup inputs and
+// sitemap.xml are both derived from this list, so adding a page means creating
+// one file — Vite emits it (multi-page builds only include declared inputs)
+// and the sitemap picks it up automatically. Cloudflare Pages serves
+// dist/<name>.html at the clean URL /<name> and dist/<locale>/index.html at
+// /<locale>/.
+const htmlIn = (dir: string) =>
+  existsSync(dir) ? readdirSync(dir).filter((file) => file.endsWith(".html")) : [];
+
+const pages = [
+  ...htmlIn(import.meta.dirname),
+  ...LOCALES.filter((locale) => locale !== "en").flatMap((locale) =>
+    htmlIn(resolve(import.meta.dirname, locale)).map((file) => `${locale}/${file}`)
+  )
+].sort();
 
 const pagePaths = pages
-  .map((page) => (page === "index.html" ? "/" : `/${basename(page, ".html")}`))
+  .map((page) =>
+    page === "index.html"
+      ? "/"
+      : page.endsWith("/index.html")
+        ? `/${page.slice(0, -"index.html".length)}`
+        : `/${page.replace(/\.html$/, "")}`
+  )
   .sort((a, b) => (a === "/" ? -1 : b === "/" ? 1 : a.localeCompare(b)));
 
 function sitemap(): Plugin {
@@ -37,7 +51,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: Object.fromEntries(
-        pages.map((page) => [basename(page, ".html"), resolve(import.meta.dirname, page)])
+        pages.map((page) => [
+          page.replace(/\.html$/, "").replaceAll("/", "-"),
+          resolve(import.meta.dirname, page)
+        ])
       )
     }
   }

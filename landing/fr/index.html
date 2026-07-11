@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- chrome: shared head meta, header, and footer are injected at build time by chrome.ts -->
+    <meta
+      name="description"
+      content="Une appli de tâches gratuite et open source qui vide votre tête et vous montre la prochaine étape. Fonctionne hors ligne, sans compte, vos données restent à vous."
+    />
+    <meta property="og:title" content="Mindwtr - L'esprit comme l'eau" />
+    <meta
+      property="og:description"
+      content="Videz-vous la tête. Capturez vos tâches en quelques secondes, voyez la prochaine étape. Gratuit, sans compte, fonctionne hors ligne."
+    />
+    <link rel="preload" as="image" href="/assets/screenshots/landing_image.png" />
+    <title>Mindwtr - L'esprit comme l'eau</title>
+  </head>
+  <body>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-ambient" aria-hidden="true">
+          <svg class="ripple" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+            <circle cx="100" cy="100" r="34" stroke-opacity="0.55" />
+            <circle cx="100" cy="100" r="62" stroke-opacity="0.34" />
+            <circle cx="100" cy="100" r="92" stroke-opacity="0.18" />
+          </svg>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Gratuit · Fonctionne hors ligne · Sans compte</p>
+          <h1 id="hero-title">L'esprit comme <span class="accent">l'eau.</span></h1>
+          <p class="hero-subhead">
+            L'appli de tâches qui vide votre tête : capturez n'importe quelle
+            tâche en quelques secondes, puis voyez la seule chose à faire
+            ensuite. Sans compte, et vos données restent sur votre appareil.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" id="primary-download" href="#download">Télécharger Mindwtr</a>
+            <a class="button secondary" href="https://docs.mindwtr.app/">Lire la documentation</a>
+          </div>
+          <ul class="proof-list" aria-label="Mindwtr en bref">
+            <li>Gratuit pour toujours</li>
+            <li>Fonctionne hors ligne</li>
+            <li>Sans compte</li>
+            <li>Toutes les plateformes</li>
+          </ul>
+        </div>
+
+        <div class="hero-media" aria-label="Captures d'écran de Mindwtr">
+          <figure class="desktop-frame">
+            <img src="/assets/screenshots/landing_image.png" alt="Mindwtr sur ordinateur et mobile avec les vues Priorités et Revue" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="hero-features" aria-label="L'essentiel de Mindwtr">
+        <article>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 13h2.6a2 2 0 0 1 1.8 1.1l.3.6a2 2 0 0 0 1.8 1.1h2.4a2 2 0 0 0 1.8-1.1l.3-.6a2 2 0 0 1 1.8-1.1h2.4" />
+              <path d="M6 6.5h12l1.5 6.5v3.5a1.5 1.5 0 0 1-1.5 1.5H6a1.5 1.5 0 0 1-1.5-1.5V13z" />
+            </svg>
+          </span>
+          <div>
+            <h2>Notez-le</h2>
+            <p>Chaque tâche ou idée rejoint votre boîte de réception en un geste. Arrêtez d'essayer de tout retenir.</p>
+          </div>
+        </article>
+        <article>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="8.5" />
+              <circle cx="12" cy="12" r="4.4" />
+              <circle cx="12" cy="12" r="1.1" fill="currentColor" stroke="none" />
+            </svg>
+          </span>
+          <div>
+            <h2>Ne voyez que la suite</h2>
+            <p>La vue Priorités montre les quelques choses faisables maintenant, pas un mur de tâches.</p>
+          </div>
+        </article>
+        <article>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3.5" y="4.5" width="17" height="15" rx="2.2" />
+              <path d="M9.2 4.5v15M14.8 4.5v15" />
+            </svg>
+          </span>
+          <div>
+            <h2>Classez en quelques secondes</h2>
+            <p>Donnez-lui une date, un projet, ou mettez-la de côté pour un jour. Guidé, sans prise de tête.</p>
+          </div>
+        </article>
+        <article>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.8 12a7.2 7.2 0 0 1 12.2-5.2L19.5 9" />
+              <path d="M19.5 4.6V9H15" />
+              <path d="M19.2 12a7.2 7.2 0 0 1-12.2 5.2L4.5 15" />
+              <path d="M4.5 19.4V15H9" />
+            </svg>
+          </span>
+          <div>
+            <h2>Repartez à zéro chaque semaine</h2>
+            <p>Une courte revue guidée règle ce qui traîne, pour que vous continuiez à faire confiance à votre liste.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="philosophy section-band" aria-labelledby="philosophy-title">
+        <p class="eyebrow">Philosophie</p>
+        <h2 id="philosophy-title">Simple par défaut. Puissant quand il le faut.</h2>
+        <p class="philosophy-lead">
+          Moins de champs, moins de réglages, pas de fouillis. Les options
+          avancées restent cachées jusqu'à ce que vous en ayez besoin.
+        </p>
+        <blockquote class="philosophy-quote">
+          Ne me montrez pas un cockpit quand je veux juste faire du vélo.
+        </blockquote>
+      </section>
+
+      <section class="workflow section-band" aria-labelledby="workflow-title">
+        <div class="section-copy">
+          <p class="eyebrow">La méthode GTD, intégrée</p>
+          <h2 id="workflow-title">Un système de confiance, pas une énième liste de tâches bruyante.</h2>
+          <p>
+            Getting Things Done (GTD) en une ligne : votre tête sert à avoir
+            des idées, pas à les stocker. Mindwtr vous accompagne dans toute la
+            boucle, de la capture au terminé.
+          </p>
+        </div>
+        <ol class="workflow-grid">
+          <li>
+            <span class="step-tag"><i>01</i>Capturer</span>
+            <h3>Sortez-le de votre tête, vite.</h3>
+          </li>
+          <li>
+            <span class="step-tag"><i>02</i>Clarifier</span>
+            <h3>Transformez le flou en prochaines actions claires.</h3>
+          </li>
+          <li>
+            <span class="step-tag"><i>03</i>Organiser</span>
+            <h3>Projets, contextes et tâches en attente, chaque chose à sa place.</h3>
+          </li>
+          <li>
+            <span class="step-tag"><i>04</i>Réfléchir</span>
+            <h3>Passez le système en revue avant qu'il ne se périme.</h3>
+          </li>
+          <li>
+            <span class="step-tag"><i>05</i>Agir</span>
+            <h3>Choisissez la prochaine action en toute confiance.</h3>
+          </li>
+        </ol>
+      </section>
+
+      <section class="features section-band" aria-labelledby="features-title">
+        <div class="section-copy">
+          <p class="eyebrow">Tout au même endroit</p>
+          <h2 id="features-title">Un système complet, pas un tas de fonctionnalités.</h2>
+          <p>
+            Chaque vue est conçue pour la méthode GTD, avec une profondeur qui
+            reste discrète jusqu'à ce que vous alliez la chercher.
+          </p>
+        </div>
+        <ul class="feature-grid">
+          <li>
+            <h3>Priorités</h3>
+            <p>Votre agenda du jour et vos prochaines actions, réunis dans une seule vue.</p>
+          </li>
+          <li>
+            <h3>Tableau</h3>
+            <p>Façon kanban : glissez vos tâches entre Boîte de réception, Prochaines actions, En attente et Un jour.</p>
+          </li>
+          <li>
+            <h3>Calendrier</h3>
+            <p>Planifiez le travail daté et abonnez-vous à des calendriers externes et flux ICS.</p>
+          </li>
+          <li>
+            <h3>Contextes &amp; tags</h3>
+            <p>Classez les tâches selon l'endroit : @maison, @courses ou @travail/réunions.</p>
+          </li>
+          <li>
+            <h3>Recherche globale</h3>
+            <p>Des opérateurs comme status:, context: et due:&lt;=7d sur tout votre système.</p>
+          </li>
+          <li>
+            <h3>Capture vocale</h3>
+            <p>Dictez une tâche ; elle est transcrite et rangée automatiquement dans votre boîte de réception.</p>
+          </li>
+          <li>
+            <h3>Pomodoro intégré</h3>
+            <p>Des minuteurs 15/3, 25/5 et 50/10, plus un réglage personnalisé, dans la vue Priorités.</p>
+          </li>
+          <li>
+            <h3>Listes réutilisables</h3>
+            <p>Dupliquez des tâches ou réinitialisez des checklists pour vos routines récurrentes.</p>
+          </li>
+          <li>
+            <h3>Récurrence fluide</h3>
+            <p>La prochaine date se calcule quand vous terminez, pas selon un calendrier figé.</p>
+          </li>
+        </ul>
+        <p class="feature-foot">
+          18 langues · Clair &amp; sombre · Raccourcis Vim &amp; Emacs · Widget Android · Appli web &amp; hors ligne
+        </p>
+        <p class="feature-see-all">
+          <a class="text-link" href="/fr/features">Voir toutes les fonctionnalités <span aria-hidden="true">→</span></a>
+        </p>
+      </section>
+
+      <section class="platforms" aria-labelledby="platforms-title">
+        <div class="platform-copy">
+          <p class="eyebrow">Ordinateur, mobile, web</p>
+          <h2 id="platforms-title">Natif là où vous travaillez. Privé là où ça compte.</h2>
+          <p>
+            Utilisez Mindwtr sur macOS, Windows, Linux, iOS et Android, plus
+            une version web à héberger sur votre propre serveur.
+          </p>
+        </div>
+        <div class="coverflow" aria-roledescription="carousel" aria-label="Vues de Mindwtr">
+          <div class="coverflow-stage">
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Afficher la vue Priorités">
+              <img src="/assets/screenshots/showcase-focus.jpg" alt="Vue Priorités de Mindwtr sur ordinateur" />
+            </button>
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Afficher la vue Projets">
+              <img src="/assets/screenshots/showcase-projects.jpg" alt="Vue Projets de Mindwtr sur ordinateur" />
+            </button>
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Afficher la vue Calendrier">
+              <img src="/assets/screenshots/showcase-calendar.jpg" alt="Vue Calendrier de Mindwtr sur ordinateur" />
+            </button>
+          </div>
+          <div class="coverflow-controls">
+            <button type="button" class="coverflow-arrow" data-dir="-1" aria-label="Vue précédente">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+            </button>
+            <div class="coverflow-dots" role="group" aria-label="Choisir une vue">
+              <button type="button" class="coverflow-dot is-active" aria-label="Vue Priorités" aria-current="true"></button>
+              <button type="button" class="coverflow-dot" aria-label="Vue Projets"></button>
+              <button type="button" class="coverflow-dot" aria-label="Vue Calendrier"></button>
+            </div>
+            <button type="button" class="coverflow-arrow" data-dir="1" aria-label="Vue suivante">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust section-band" aria-labelledby="trust-title">
+        <div class="section-copy">
+          <p class="eyebrow">La confiance par défaut</p>
+          <h2 id="trust-title">Aucun compte requis. Aucune pression d'abonnement.</h2>
+          <p>
+            Vos tâches démarrent sur votre appareil et le code est ouvert. La
+            synchronisation ne se fait que si vous l'activez, et vous
+            choisissez où.
+          </p>
+        </div>
+        <div class="trust-grid">
+          <article>
+            <h3>Open source</h3>
+            <p>Un code sous licence AGPL que vous pouvez inspecter, exécuter et améliorer.</p>
+          </article>
+          <article>
+            <h3>Vos données, sur votre appareil</h3>
+            <p>Tâches, notes, projets et pièces jointes restent chez vous, pas sur nos serveurs.</p>
+          </article>
+          <article>
+            <h3>La synchro à votre façon</h3>
+            <p>iCloud, Dropbox, un dossier partagé, WebDAV ou votre propre serveur.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="compare section-band" id="compare" aria-labelledby="compare-title">
+        <div class="section-copy">
+          <p class="eyebrow">Pourquoi Mindwtr</p>
+          <h2 id="compare-title">Un système GTD complet, sans verrouillage.</h2>
+          <p>
+            Une comparaison brève et respectueuse, fondée sur les capacités
+            publiques actuelles de chaque produit.
+          </p>
+        </div>
+        <div class="compare-wrap">
+          <table class="compare-table">
+            <caption class="sr-only">Les capacités de Mindwtr comparées à Todoist, TickTick, Everdo et NirvanaHQ</caption>
+            <thead>
+              <tr>
+                <th scope="col">Capacité</th>
+                <th scope="col" class="col-me">Mindwtr</th>
+                <th scope="col">Todoist</th>
+                <th scope="col">TickTick</th>
+                <th scope="col">Everdo</th>
+                <th scope="col">Nirvana</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Open source</th>
+                <td class="col-me yes" aria-label="Oui"></td>
+                <td class="no" aria-label="Non"></td>
+                <td class="no" aria-label="Non"></td>
+                <td class="no" aria-label="Non"></td>
+                <td class="no" aria-label="Non"></td>
+              </tr>
+              <tr>
+                <th scope="row">Méthode GTD complète d'origine</th>
+                <td class="col-me yes" aria-label="Oui"></td>
+                <td class="partial" aria-label="Partiel"></td>
+                <td class="partial" aria-label="Partiel"></td>
+                <td class="yes" aria-label="Oui"></td>
+                <td class="yes" aria-label="Oui"></td>
+              </tr>
+              <tr>
+                <th scope="row">Toutes les plateformes, y compris Linux</th>
+                <td class="col-me yes" aria-label="Oui"></td>
+                <td class="yes" aria-label="Oui"></td>
+                <td class="yes" aria-label="Oui"></td>
+                <td class="partial" aria-label="Partiel"></td>
+                <td class="partial" aria-label="Partiel"></td>
+              </tr>
+              <tr>
+                <th scope="row">Fonctionne hors ligne, sans compte</th>
+                <td class="col-me yes" aria-label="Oui"></td>
+                <td class="no" aria-label="Non"></td>
+                <td class="no" aria-label="Non"></td>
+                <td class="yes" aria-label="Oui"></td>
+                <td class="no" aria-label="Non"></td>
+              </tr>
+              <tr>
+                <th scope="row">IA optionnelle : votre compte ou en local</th>
+                <td class="col-me yes" aria-label="Oui"></td>
+                <td class="no" aria-label="Non"></td>
+                <td class="no" aria-label="Non"></td>
+                <td class="no" aria-label="Non"></td>
+                <td class="no" aria-label="Non"></td>
+              </tr>
+              <tr>
+                <th scope="row">Vous choisissez où vos données se synchronisent (Dropbox, WebDAV, votre serveur)</th>
+                <td class="col-me yes" aria-label="Oui"></td>
+                <td class="no" aria-label="Non"></td>
+                <td class="no" aria-label="Non"></td>
+                <td class="partial" aria-label="Partiel"></td>
+                <td class="no" aria-label="Non"></td>
+              </tr>
+              <tr>
+                <th scope="row">Entièrement gratuit</th>
+                <td class="col-me yes" aria-label="Oui"></td>
+                <td class="no" aria-label="Non"></td>
+                <td class="no" aria-label="Non"></td>
+                <td class="no" aria-label="Non"></td>
+                <td class="no" aria-label="Non"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="compare-legend">
+          <span><i class="lg-yes"></i> Oui</span>
+          <span><i class="lg-partial"></i> Partiel</span>
+          <span><i class="lg-no"></i> Non</span>
+        </p>
+      </section>
+
+      <section class="power" aria-labelledby="power-title">
+        <p class="eyebrow">De la puissance à la demande</p>
+        <h2 id="power-title">L'automatisation et l'IA restent optionnelles.</h2>
+        <p>
+          Connectez votre propre compte d'IA ou un modèle local, scriptez l'API
+          de bureau, branchez MCP ou hébergez vous-même le serveur de
+          synchronisation.
+        </p>
+        <a class="text-link" href="https://docs.mindwtr.app/power-users/mcp">Documentation pour utilisateurs avancés</a>
+      </section>
+
+      <section class="reviews section-band" aria-labelledby="reviews-title">
+        <svg class="reviews-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <symbol id="rv-github" viewBox="0 0 24 24"><path fill="#181717" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+          <symbol id="rv-reddit" viewBox="0 0 24 24"><path fill="#ff4500" d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12c-.69 0-1.25.561-1.25 1.249 0 .688.561 1.249 1.25 1.249.688 0 1.249-.561 1.249-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.249 0 .688.561 1.249 1.248 1.249.688 0 1.249-.561 1.249-1.249 0-.688-.561-1.249-1.249-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></symbol>
+          <symbol id="rv-discord" viewBox="0 0 24 24"><path fill="#5865f2" d="M20.317 4.3698a19.7913 19.7913 0 0 0-4.8851-1.5152.0741.0741 0 0 0-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 0 0-.0785-.037 19.7363 19.7363 0 0 0-4.8852 1.515.0699.0699 0 0 0-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 0 0 .0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 0 0 .0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 0 0-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 0 1-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 0 1 .0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 0 1 .0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 0 1-.0066.1276 12.2986 12.2986 0 0 1-1.873.8914.0766.0766 0 0 0-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 0 0 .0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 0 0 .0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 0 0-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></symbol>
+          <symbol id="rv-apple" viewBox="0 0 24 24"><path fill="#000000" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></symbol>
+          <symbol id="rv-googleplay" viewBox="0 0 24 24"><path fill="#00d3ff" d="M4 3 12.5 12 4 12Z"/><path fill="#00e676" d="M4 12 12.5 12 4 21Z"/><path fill="#ffce00" d="M4 3 21 12 12.5 12Z"/><path fill="#ff3d47" d="M12.5 12 21 12 4 21Z"/></symbol>
+        </svg>
+        <div class="section-copy">
+          <p class="eyebrow">Ce qu'on en dit</p>
+          <h2 id="reviews-title">Adoré par celles et ceux qui terminent vraiment leurs tâches.</h2>
+          <p>
+            De vrais avis venus de GitHub, Reddit, l'App Store, Google Play et
+            Discord &mdash; raccourcis, jamais reformulés, dans leur anglais
+            d'origine.
+          </p>
+        </div>
+        <div class="reviews-masonry">
+          <figure class="review">
+            <blockquote lang="en">This is by far the best GTD software I've used including two paid subscription ones. Cannot emphasize that enough.</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">James</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-discord"/></svg>Discord</span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <p class="review-stars" role="img" aria-label="Noté 5 étoiles sur 5">&starf;&starf;&starf;&starf;&starf;</p>
+            <blockquote lang="en">By default this app only shows the task being worked on instead of everything at once! This is amazing for not getting distracted by massive todo lists. &hellip; Also, this is local-only by default, with option to turn on iCloud and other syncs. Simple without all the extra junk no one actually uses. And no garbage AI!</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">Hamstercannon</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-apple"/></svg>App Store</span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <p class="review-stars" role="img" aria-label="Noté 5 étoiles sur 5">&starf;&starf;&starf;&starf;&starf;</p>
+            <blockquote lang="en">Just what I have been looking for: GTD at its best, local first, no cloud, no costs.</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">Philip</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-googleplay"/></svg>Google Play</span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote lang="en">Exactly the kind of to-do app I've been looking for for so long. For Android, Linux, and macOS. Excellent data protection. Offline. Clear, minimalist design without looking ugly. And then it's also free and open source&hellip;</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">Dads-finest</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-reddit"/></svg>Reddit</span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <p class="review-stars" role="img" aria-label="Noté 5 étoiles sur 5">&starf;&starf;&starf;&starf;&starf;</p>
+            <blockquote lang="en">Pretty solid cross-platform GTD app with various sync options. Not perfect, but very close to it, and the developer is super responsive.</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">Srijan</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-googleplay"/></svg>Google Play</span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote lang="en">I yearned for GTD again and just cannot go back to Notion &hellip; I looked for 'Todoist open source' alternative and found this recent post. So grateful I did. I added a few tasks and &hellip; this feels fantastic!</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">NicoLargi</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-reddit"/></svg>Reddit</span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <p class="review-stars" role="img" aria-label="Noté 5 étoiles sur 5">&starf;&starf;&starf;&starf;&starf;</p>
+            <blockquote lang="en">The best digital fast-capture GTD-oriented app I've ever used and rapidly improving all the time, and will always be free thanks to the creator's licensing philosophy.</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">Jonathan</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-googleplay"/></svg>Google Play</span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <p class="review-stars" role="img" aria-label="Noté 5 étoiles sur 5">&starf;&starf;&starf;&starf;&starf;</p>
+            <blockquote lang="en">A revolutionary task manager application, I can note down anything, and process it later, encouraging me to think freely&hellip;</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">Richardo</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-googleplay"/></svg>Google Play<span class="review-note">traduit</span></span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote lang="en">I have used several TODO/Task apps in the past and have not much success with them i.e. I never Got Things Done! I have used Mindwtr for a few weeks now and I am very impressed and have actually managed to get a few things done.</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">gum-leaf</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-github"/></svg>GitHub</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="download section-band" id="download" aria-labelledby="download-title">
+        <div class="section-copy">
+          <p class="eyebrow">Installer</p>
+          <h2 id="download-title">Télécharger Mindwtr</h2>
+          <p>Choisissez le canal qui correspond à votre appareil. Les boutiques pour installer en un clic, les gestionnaires de paquets et les fichiers directs pour le reste.</p>
+        </div>
+        <div class="download-platforms" aria-label="Télécharger Mindwtr par plateforme">
+          <article class="dl-platform" id="download-mac" data-platform="mac">
+            <header class="dl-platform-head">
+              <h3>macOS</h3>
+              <span class="dl-recommended" hidden>Recommandé pour vous</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge apple" href="https://apps.apple.com/app/mindwtr/id6758597144">
+                <img src="/assets/badges/app-store.svg" alt="Télécharger dans le Mac App Store" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li class="dl-cmd-row">
+                <code class="dl-cmd">brew install --cask mindwtr</code>
+                <button type="button" class="dl-copy" data-copy="brew install --cask mindwtr" aria-label="Copier la commande Homebrew" hidden>Copier</button>
+              </li>
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">Fichier <code>.dmg</code> direct <span aria-hidden="true">→</span></a>
+              </li>
+              <li>
+                <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">Rejoindre la bêta TestFlight <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="dl-platform" id="download-windows" data-platform="windows">
+            <header class="dl-platform-head">
+              <h3>Windows</h3>
+              <span class="dl-recommended" hidden>Recommandé pour vous</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge microsoft" href="https://apps.microsoft.com/detail/9n0v5b0b6frx">
+                <img src="/assets/badges/microsoft-store.svg" alt="Obtenir sur le Microsoft Store" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li class="dl-cmd-row">
+                <code class="dl-cmd">winget install dongdongbh.Mindwtr</code>
+                <button type="button" class="dl-copy" data-copy="winget install dongdongbh.Mindwtr" aria-label="Copier la commande winget" hidden>Copier</button>
+              </li>
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">Fichier <code>.exe</code> / <code>.msi</code> direct <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="dl-platform" id="download-linux" data-platform="linux">
+            <header class="dl-platform-head">
+              <h3>Linux</h3>
+              <span class="dl-recommended" hidden>Recommandé pour vous</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge flathub" href="https://flathub.org/apps/tech.dongdongbh.mindwtr">
+                <img src="/assets/badges/flathub.png" alt="Obtenir sur Flathub" />
+              </a>
+              <a class="store-badge snap" href="https://snapcraft.io/mindwtr">
+                <img src="/assets/badges/snap-store.svg" alt="Obtenir sur le Snap Store" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li class="dl-cmd-row">
+                <code class="dl-cmd">flatpak install flathub tech.dongdongbh.mindwtr</code>
+                <button type="button" class="dl-copy" data-copy="flatpak install flathub tech.dongdongbh.mindwtr" aria-label="Copier la commande Flatpak" hidden>Copier</button>
+              </li>
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">Fichiers <code>AppImage</code> · <code>.deb</code> · <code>.rpm</code> directs <span aria-hidden="true">→</span></a>
+              </li>
+              <li>
+                <a class="dl-aside" href="https://docs.mindwtr.app/start/desktop-installation">AUR, dépôts APT &amp; DNF, compiler depuis les sources <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="dl-platform" id="download-ios" data-platform="ios">
+            <header class="dl-platform-head">
+              <h3>iOS &amp; iPadOS</h3>
+              <span class="dl-recommended" hidden>Recommandé pour vous</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge apple" href="https://apps.apple.com/app/mindwtr/id6758597144">
+                <img src="/assets/badges/app-store.svg" alt="Télécharger dans l'App Store" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li>
+                <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">Rejoindre la bêta TestFlight <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="dl-platform" id="download-android" data-platform="android">
+            <header class="dl-platform-head">
+              <h3>Android</h3>
+              <span class="dl-recommended" hidden>Recommandé pour vous</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge google" href="https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr">
+                <img src="/assets/badges/google-play.png" alt="Disponible sur Google Play" />
+              </a>
+              <a class="store-badge fdroid" href="https://f-droid.org/en/packages/tech.dongdongbh.mindwtr/">
+                <img src="/assets/badges/f-droid.svg" alt="Disponible sur F-Droid" />
+              </a>
+              <a class="store-badge izzy" href="https://apt.izzysoft.de/packages/tech.dongdongbh.mindwtr">
+                <img src="/assets/badges/izzyondroid.png" alt="Disponible sur IzzyOnDroid" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">Fichier <code>.apk</code> direct <span aria-hidden="true">→</span></a>
+              </li>
+              <li>
+                <a class="dl-aside" href="https://play.google.com/apps/testing/tech.dongdongbh.mindwtr">Rejoindre la bêta Google Play <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="dl-platform dl-platform-all" data-platform="all">
+            <header class="dl-platform-head">
+              <h3>Toutes les plateformes</h3>
+            </header>
+            <p class="dl-all-copy">Tous les installateurs, paquets, AppImage et APK de chaque version sont ici.</p>
+            <a class="github-download" href="https://github.com/dongdongbh/Mindwtr/releases">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              <strong>GitHub Releases</strong>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>

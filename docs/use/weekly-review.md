@@ -67,6 +67,7 @@ Review each inbox item:
 
 **In Mindwtr:**
 - The review lists these automatically — no review dates required
+- Items you deferred on purpose don't count as stale: a task or project with a future review date (or a task with a future start date) is left alone until that date arrives
 - Update, complete, or let each one go (move to Someday, archive, or delete)
 - The step is skipped when nothing has gone stale
 - If AI review is enabled, AI suggestions appear in this step (see below)
@@ -99,6 +100,7 @@ Review each inbox item:
 - View all waiting tasks
 - Follow up on stale items
 - Move completed items to Done
+- Items with a future review date sit in a collapsed "Not due yet" group — set a review date on a long wait (bookings that open in the fall, a reply due next quarter) and it stays out of the way until then; if everything is deferred, the step is skipped
 
 ### Step 5: Review Projects
 
@@ -123,6 +125,7 @@ Review each inbox item:
 - Browse Someday/Maybe list
 - Promote items to Next Actions
 - Archive or delete stale items
+- Like Waiting For, items with a future review date wait in a collapsed "Not due yet" group until their date arrives
 
 ### Complete
 

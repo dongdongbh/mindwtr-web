@@ -35,6 +35,15 @@ const LANGUAGE_NAMES: Record<Locale, string> = {
   zh: "简体中文"
 };
 
+// Short label shown on the closed header dropdown.
+const LANGUAGE_SHORT: Record<Locale, string> = {
+  en: "EN",
+  de: "DE",
+  es: "ES",
+  fr: "FR",
+  zh: "中文"
+};
+
 interface ChromeStrings {
   features: string;
   docs: string;
@@ -158,9 +167,13 @@ function localePath(locale: Locale, page: string): string {
   return page === "index" ? `${prefix}/` : `${prefix}/${page}`;
 }
 
-function anchor(link: { href: string; label: string }, pagePath: string): string {
+function anchor(
+  link: { href: string; label: string; className?: string },
+  pagePath: string
+): string {
+  const cls = link.className ? ` class="${link.className}"` : "";
   const current = link.href === pagePath ? ' aria-current="page"' : "";
-  return `<a href="${link.href}"${current}>${link.label}</a>`;
+  return `<a${cls} href="${link.href}"${current}>${link.label}</a>`;
 }
 
 // First-visit language detection, injected only into English pages that have
@@ -215,15 +228,17 @@ function sharedHeadMeta(locale: Locale, pageName: string, pagePath: string): str
 ${alternates}${detect}`;
 }
 
-function header(locale: Locale, pagePath: string): string {
+function header(locale: Locale, pageName: string, pagePath: string): string {
   const t = STRINGS[locale];
   const home = localePath(locale, "index");
   // The homepage scrolls to its own download grid; other pages link back.
   const download = pagePath === home ? "#download" : `${home}#download`;
+  // GitHub is the one header link narrow phones can live without (it stays
+  // in the footer); nav-secondary hides it below 480px.
   const links = [
     { href: localePath(locale, "features"), label: t.features },
     { href: "https://docs.mindwtr.app/", label: t.docs },
-    { href: "https://github.com/dongdongbh/Mindwtr", label: "GitHub" },
+    { href: "https://github.com/dongdongbh/Mindwtr", label: "GitHub", className: "nav-secondary" },
     { href: localePath(locale, "support"), label: t.support }
   ]
     .map((link) => `        ${anchor(link, pagePath)}`)
@@ -235,33 +250,40 @@ function header(locale: Locale, pagePath: string): string {
       </a>
       <nav aria-label="${t.primaryNavAria}">
 ${links}
-        <a class="nav-download" href="${download}">${t.download}</a>
+${languageMenu(locale, pageName, t)}        <a class="nav-download" href="${download}">${t.download}</a>
       </nav>
     </header>
 
 `;
 }
 
-// The switcher links to the current page in every language it exists in.
-// main.ts stores the clicked language so auto-detection never overrides an
-// explicit choice.
-function languageSwitcher(locale: Locale, pageName: string, t: ChromeStrings): string {
+// The header language dropdown: a native <details> menu (works without JS,
+// keyboard accessible) linking to the current page in every language it
+// exists in. main.ts stores the clicked language so auto-detection never
+// overrides an explicit choice, and closes the menu on outside clicks.
+function languageMenu(locale: Locale, pageName: string, t: ChromeStrings): string {
   if (!LOCALIZED_PAGES.has(pageName)) return "";
+  const check = `<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.6 4.6L19 7.5" /></svg>`;
   const links = LOCALES.map((l) => {
     const current = l === locale ? ' aria-current="true"' : "";
-    return `        <a href="${localePath(l, pageName)}" hreflang="${HREFLANG[l]}" lang="${HREFLANG[l]}" data-lang-switch="${l}"${current}>${LANGUAGE_NAMES[l]}</a>`;
+    return `            <li><a href="${localePath(l, pageName)}" hreflang="${HREFLANG[l]}" lang="${HREFLANG[l]}" data-lang-switch="${l}"${current}>${LANGUAGE_NAMES[l]}${l === locale ? check : ""}</a></li>`;
   }).join("\n");
-  return `      <nav class="footer-lang" aria-label="${t.languageAria}">
-        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="9" />
-          <path d="M3.6 9h16.8M3.6 15h16.8M12 3a13.5 13.5 0 0 1 0 18M12 3a13.5 13.5 0 0 0 0 18" />
-        </svg>
+  return `        <details class="lang-menu">
+          <summary aria-label="${t.languageAria}">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3.6 9h16.8M3.6 15h16.8M12 3a13.5 13.5 0 0 1 0 18M12 3a13.5 13.5 0 0 0 0 18" />
+            </svg>
+            <span class="lang-current" aria-hidden="true">${LANGUAGE_SHORT[locale]}</span>
+          </summary>
+          <ul class="lang-menu-list">
 ${links}
-      </nav>
+          </ul>
+        </details>
 `;
 }
 
-function footer(locale: Locale, pageName: string, pagePath: string): string {
+function footer(locale: Locale, pagePath: string): string {
   const t = STRINGS[locale];
   const links = [
     { href: localePath(locale, "features"), label: t.features },
@@ -279,7 +301,7 @@ function footer(locale: Locale, pageName: string, pagePath: string): string {
         <span>Mindwtr</span>
 ${links}
       </nav>
-${languageSwitcher(locale, pageName, t)}      <p class="footer-copyright">
+      <p class="footer-copyright">
         &copy; 2025&ndash;2026 Dongda Li &middot; ${t.copyright}
       </p>
       <p class="footer-legal">
@@ -317,8 +339,8 @@ export function chrome(): Plugin {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />`
           )
           .replace(/[ \t]*<\/head>/, `${sharedHeadMeta(locale, pageName, pagePath)}  </head>`)
-          .replace("<body>", `<body>\n${header(locale, pagePath)}`)
-          .replace(/[ \t]*<\/body>/, `${footer(locale, pageName, pagePath)}  </body>`);
+          .replace("<body>", `<body>\n${header(locale, pageName, pagePath)}`)
+          .replace(/[ \t]*<\/body>/, `${footer(locale, pagePath)}  </body>`);
       }
     }
   };

@@ -160,6 +160,85 @@ p {
   box-shadow: 0 12px 26px rgba(46, 107, 230, 0.28);
 }
 
+/* Language dropdown: a quiet globe pill in the header that opens a small
+   menu. Built on <details> so it works without JavaScript. */
+.lang-menu {
+  position: relative;
+}
+
+.lang-menu summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--muted);
+  cursor: pointer;
+  list-style: none;
+  transition:
+    color 180ms ease,
+    background 180ms ease;
+}
+
+.lang-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.lang-menu summary:hover,
+.lang-menu[open] summary {
+  color: var(--blue-deep);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.lang-current {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.lang-menu-list {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  z-index: 30;
+  min-width: 172px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 18px 44px rgba(13, 43, 48, 0.14);
+}
+
+.lang-menu-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 9px 12px;
+  border-radius: 9px;
+  color: var(--ink-soft);
+  font-weight: 550;
+  white-space: nowrap;
+}
+
+.lang-menu-list a:hover {
+  background: var(--surface-soft);
+  color: var(--blue-deep);
+}
+
+.lang-menu-list a[aria-current="true"] {
+  color: var(--heading);
+  font-weight: 700;
+}
+
+.lang-menu-list a[aria-current="true"] svg {
+  color: var(--blue-deep);
+}
+
 main {
   overflow: hidden;
 }
@@ -1130,42 +1209,6 @@ main > section:last-child {
   gap: 22px;
 }
 
-/* Language switcher: a quiet pill row so switching never competes with the
-   page content. The current language is filled in; the rest stay ghosted. */
-.footer-lang {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 5px 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface-soft);
-  font-size: 0.84rem;
-}
-
-.footer-lang svg {
-  margin-right: 4px;
-  opacity: 0.65;
-}
-
-.footer-lang a {
-  padding: 3px 10px;
-  border-radius: 999px;
-  color: var(--muted);
-}
-
-.footer-lang a:hover {
-  color: var(--blue-deep);
-}
-
-.footer-lang a[aria-current="true"] {
-  background: var(--blue-deep);
-  color: #fff;
-  font-weight: 650;
-}
-
 .footer-copyright {
   margin: 0;
   text-align: center;
@@ -1555,6 +1598,10 @@ main > section:last-child {
     display: none;
   }
 
+  .lang-menu summary {
+    padding: 7px 10px;
+  }
+
   /* Translated nav labels run longer than the English ones; tighten the nav
      further on narrow phones so every locale fits on one line. */
   @media (max-width: 480px) {
@@ -1565,6 +1612,20 @@ main > section:last-child {
 
     .site-header nav .nav-download {
       padding: 7px 10px;
+    }
+
+    /* Globe only: the menu itself spells the languages out. */
+    .lang-menu summary {
+      padding: 6px 8px;
+    }
+
+    .lang-current {
+      display: none;
+    }
+
+    /* The GitHub link stays reachable from the footer. */
+    .site-header nav .nav-secondary {
+      display: none;
     }
   }
 

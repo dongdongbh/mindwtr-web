@@ -121,9 +121,11 @@ function wireCopyButtons(): void {
 }
 
 /**
- * Remember an explicit language choice from the footer switcher. The inline
+ * Remember an explicit language choice from the header dropdown. The inline
  * detect script in the page head (see chrome.ts) never redirects once this
- * key is set, so a visitor who picks a language keeps it.
+ * key is set, so a visitor who picks a language keeps it. The dropdown is a
+ * native <details>, so it opens and closes without JS; this only adds the
+ * expected light-dismiss on outside clicks.
  */
 function wireLanguageSwitch(): void {
   document.querySelectorAll<HTMLAnchorElement>("a[data-lang-switch]").forEach((link) => {
@@ -135,6 +137,15 @@ function wireLanguageSwitch(): void {
       }
     });
   });
+
+  const menu = document.querySelector<HTMLElement>("details.lang-menu");
+  if (menu instanceof HTMLDetailsElement) {
+    document.addEventListener("click", (event) => {
+      if (menu.open && event.target instanceof Node && !menu.contains(event.target)) {
+        menu.open = false;
+      }
+    });
+  }
 }
 
 function init(): void {

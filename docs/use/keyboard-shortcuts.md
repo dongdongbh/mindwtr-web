@@ -15,6 +15,7 @@ Mindwtr desktop supports keyboard-first use with Standard (Gmail/Todoist-style),
 - Use `Ctrl+Z` / `Cmd+Z` to undo the last task completion or deletion in any preset.
 - Use `A1` through `A9` to switch to an Area by sidebar order, and `A0` to clear the Area filter.
 - Use `Ctrl+Alt+S` to run manual sync on desktop.
+- In the right-click / Shift+F10 context menu: ↑/↓ move between items, → opens a submenu panel and ← comes back, Enter activates, Esc closes and returns focus to the task.
 
 Shortcuts are ignored while typing in editable fields when the shortcut would conflict with text entry.
 

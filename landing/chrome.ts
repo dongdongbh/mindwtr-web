@@ -110,7 +110,9 @@ const STRINGS: Record<Locale, ChromeStrings> = {
       "su respaldo o patrocinio."
   },
   fr: {
-    features: "Fonctionnalités",
+    // "Fonctionnalités" overflows the sticky header on phones; the page
+    // itself still uses the full word.
+    features: "Fonctions",
     docs: "Docs",
     support: "Support",
     download: "Télécharger",

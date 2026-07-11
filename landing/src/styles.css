@@ -1555,6 +1555,19 @@ main > section:last-child {
     display: none;
   }
 
+  /* Translated nav labels run longer than the English ones; tighten the nav
+     further on narrow phones so every locale fits on one line. */
+  @media (max-width: 480px) {
+    .site-header nav {
+      gap: 6px;
+      font-size: 0.75rem;
+    }
+
+    .site-header nav .nav-download {
+      padding: 7px 10px;
+    }
+  }
+
   .hero,
   .hero-features,
   .section-band,

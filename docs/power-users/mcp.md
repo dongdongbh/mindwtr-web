@@ -1,6 +1,6 @@
 # MCP Server
 
-Mindwtr provides an optional **MCP (Model Context Protocol)** server. This allows you to connect AI agents (like **Claude Desktop**, **Claude Code**, **OpenAI Codex**, or **Gemini CLI**) to your local Mindwtr database, or to a self-hosted Mindwtr Cloud endpoint in read-only mode.
+Mindwtr provides an optional **MCP (Model Context Protocol)** server. This allows you to connect AI agents (like **Claude Desktop**, **Claude Code**, **OpenAI Codex**, or **Gemini CLI**) to your local Mindwtr database, or to a self-hosted Mindwtr Cloud endpoint.
 
 This is a **stdio** server (no hosted HTTP endpoint). MCP clients launch it as a subprocess and talk over JSON-RPC on stdin/stdout.
 
@@ -22,7 +22,7 @@ On desktop, the app shows the exact local data path in **Settings -> Sync -> Loc
 
 - **Node.js 22+** for compiler-free installs — the SQLite dependency ships prebuilt binaries for Node 22 and newer. Node 20 still runs the server but installs need C++ build tools
 - **npm** or another Node package runner for the published `mindwtr-mcp` package
-- A local Mindwtr database (`mindwtr.db`) for local mode, or a self-hosted Mindwtr Cloud URL and bearer token for read-only Cloud mode
+- A local Mindwtr database (`mindwtr.db`) for local mode, or a self-hosted Mindwtr Cloud URL and bearer token for Cloud mode
 - **Bun** only if you are running the helper from the source tree
 
 ### Default Database Locations
@@ -66,11 +66,11 @@ Recommended install-free command for MCP clients:
 }
 ```
 
-The package is read-only by default. Add `--write` only when you explicitly want an AI client to add, update, complete, or delete local Mindwtr data.
+The package is read-only by default. Add `--write` only when you explicitly want an AI client to add, update, complete, or delete Mindwtr data.
 
-### Read-only Self-hosted Cloud Mode
+### Self-hosted Cloud Mode
 
-Use Cloud mode when you run your own Mindwtr Cloud server and want MCP read tools without exposing a local SQLite file:
+Use Cloud mode when you run your own Mindwtr Cloud server and want MCP tools without exposing a local SQLite file:
 
 ```bash
 npx -y mindwtr-mcp \
@@ -91,7 +91,7 @@ Or use environment variables in an MCP client configuration:
 }
 ```
 
-Cloud mode reads the current `/v1/data` snapshot from your self-hosted Cloud server and exposes read tools for tasks, projects, sections, areas, and people. It is always read-only; `--write` is rejected in Cloud mode and write tools return `read_only`.
+Cloud mode reads the current `/v1/data` snapshot from your self-hosted Cloud server and exposes read tools for tasks, projects, sections, areas, and people. With `--write`, task, project, section, and area writes go through the Cloud server's per-resource [REST endpoints](../developers/cloud-api.md) (`POST /v1/tasks`, `PATCH /v1/tasks/:id`, and so on), so every edit gets the same validation and revision tracking as edits from your apps. Without `--write`, write tools return `read_only`. Person edits and restoring deleted tasks are not available in Cloud mode yet — use the local database backend for those.
 
 This is not the blocked hosted multi-tenant connector. You still run the Cloud server and the MCP helper yourself; Mindwtr is not operating a service that stores everyone's task data.
 
@@ -105,7 +105,7 @@ mindwtr-mcp --db "/path/to/mindwtr.db"
 ### Key Arguments
 
 - `--db "/path/to/mindwtr.db"`: Path to your SQLite database for local mode.
-- `--write`: Enable local SQLite write operations (add, update, complete, delete). **Without this flag, the server is read-only.**
+- `--write`: Enable write operations (add, update, complete, delete) in local or Cloud mode. **Without this flag, the server is read-only.**
 - `--cloud-url "https://mindwtr.example.com"`: Use a self-hosted Mindwtr Cloud endpoint instead of a local database.
 - `--cloud-token "<token>"`: Bearer token for the self-hosted Cloud endpoint.
 - `--cloud-allow-insecure-http=true`: Allow trusted private HTTP Cloud URLs when you intentionally run without HTTPS.
@@ -318,6 +318,8 @@ Only `--write` is supported for write access (no alternate aliases).
 
 ### Write Tools (Requires `--write`)
 
+Write tools work against both the local database and a self-hosted Cloud backend, with two Cloud-mode exceptions: person write tools and `mindwtr_restore_task` return a clear error in Cloud mode because the Cloud API has no endpoints for them yet.
+
 - **`mindwtr_add_task`**: Create a new task. Supports natural language `quickAdd` (e.g., "Buy milk @errands /due:tomorrow").
 - **`mindwtr_update_task`**: Update an existing task, including scheduling fields like `dueDate`, `startTime`, `reviewAt`, and `isFocusedToday` (supports clearing fields with `null`).
 - **`mindwtr_complete_task`**: Mark a task as done.
@@ -380,7 +382,7 @@ Use this matrix when deciding whether to run the server in read-only mode or wit
 Practical guidance:
 
 - Default to read-only for exploration and reporting.
-- Enable `--write` only in trusted local environments.
+- Enable `--write` only for backends you trust the AI client to edit — a local database or your own Cloud server.
 - For agent workflows, prefer explicit confirmation before delete/complete operations.
 
 ## Advanced Usage Examples

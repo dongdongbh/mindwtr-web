@@ -115,9 +115,9 @@ The orphan cleanup endpoint scans the namespace for files no longer referenced b
 
 ## MCP Adapter
 
-The published `mindwtr-mcp` helper can use a self-hosted Cloud endpoint as a read-only backend. Configure it with `--cloud-url` and `--cloud-token` or the `MINDWTR_MCP_CLOUD_URL` / `MINDWTR_MCP_CLOUD_TOKEN` environment variables.
+The published `mindwtr-mcp` helper can use a self-hosted Cloud endpoint as a backend. Configure it with `--cloud-url` and `--cloud-token` or the `MINDWTR_MCP_CLOUD_URL` / `MINDWTR_MCP_CLOUD_TOKEN` environment variables.
 
-Cloud-backed MCP mode reads `/v1/data` and exposes read tools for tasks, projects, sections, areas, and people. It does not enable MCP writes and does not turn Mindwtr Cloud itself into a hosted MCP service.
+Cloud-backed MCP mode reads `/v1/data` and exposes read tools for tasks, projects, sections, areas, and people. With `--write`, it routes task, project, section, and area mutations through the per-resource REST endpoints above; it stays read-only by default and does not turn Mindwtr Cloud itself into a hosted MCP service.
 
 ## Related Pages
 

@@ -447,20 +447,32 @@ Filtering by a parent context includes all children.
 
 ## Keyboard Shortcuts
 
-Mindwtr supports **Vim** and **Emacs** keybinding presets. Change in Settings.
+Mindwtr supports **Standard** (Gmail/Todoist-style), **Vim**, and **Emacs** keybinding presets. Change in Settings.
 
 See [Desktop Keyboard Shortcuts](/use/keyboard-shortcuts) for the complete list.
 
-**Quick reference (Vim):**
+**Quick reference (Standard):**
 - `/` — Open search
 - `?` — Show shortcuts help
 - `gi` — Go to Inbox
 - `gn` — Go to Next
 - `gf` — Go to Focus
 - `j/k` — Move selection down/up
+- `Enter` — Open selected task
+- `Shift+Enter` — Edit selected task
+- `e` — Mark done / not done
+- `x` — Select / deselect task for batch actions
+- `#` — Delete task
+- `z` — Undo last complete/delete
+
+**Quick reference (Vim):**
+- `j/k` — Move selection down/up
+- `Enter` — Open selected task
 - `e` — Edit selected task
 - `x` — Toggle done
 - `dd` — Delete task
+
+`Ctrl+Z` / `Cmd+Z` undoes the last task completion or deletion in every preset.
 
 ---
 
@@ -471,7 +483,7 @@ Access Settings from the sidebar.
 ### General
 - **Appearance**: Light, Dark, or System
 - **Language**: English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese, Russian, German, Japanese, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech
-- **Keyboard Shortcuts**: Vim or Emacs preset
+- **Keyboard Shortcuts**: Standard, Vim, or Emacs preset
 - **Launch at Startup**: Start Mindwtr automatically when you sign in
 
 ### Notifications

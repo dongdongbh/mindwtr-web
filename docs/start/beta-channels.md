@@ -92,7 +92,7 @@ EOF
 sudo dnf install mindwtr
 ```
 
-Stable releases are published to the beta repos too. One APT quirk: `apt` sorts a release candidate like `1.2.0-rc.3` as newer than the matching `1.2.0` stable, so after a stable release you stay on the final release candidate (usually the same build) until the next version bump — `sudo apt install mindwtr=<version>` forces the stable build sooner. DNF is not affected.
+Stable releases are published to the beta repos too. Release candidates are versioned as `1.2.0~rc.3` in the package metadata, which both APT and DNF sort below the final `1.2.0`, so regular upgrades move you from a release candidate to the matching stable build automatically.
 
 To leave the beta repo, remove `/etc/apt/sources.list.d/mindwtr-beta.list` (or `/etc/yum.repos.d/mindwtr-beta.repo`) and reinstall from the stable repo.
 

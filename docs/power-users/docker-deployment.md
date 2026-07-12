@@ -216,6 +216,8 @@ The project includes a GitHub Actions workflow that automatically builds and pus
 - `ghcr.io/dongdongbh/mindwtr-app:latest`
 - `ghcr.io/dongdongbh/mindwtr-cloud:latest`
 
+Pre-release builds are available under the floating `beta` tag, which always points at the newest release (release candidate or stable), or pinned by version, e.g. `ghcr.io/dongdongbh/mindwtr-app:1.2.0-rc.1`. `latest` always stays on stable. See [Join the Beta Channels](/start/beta-channels) for the other platforms.
+
 The `docker/compose.yaml` file is configured to use these images by default, making it easy to pull the latest version without building locally.
 
 ---

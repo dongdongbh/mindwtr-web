@@ -67,6 +67,46 @@ To switch the launcher back to stable later:
 flatpak make-current tech.dongdongbh.mindwtr stable
 ```
 
+## Linux - APT and RPM Beta Repos
+
+Debian and Ubuntu users can add the beta APT repo (the signing key is shared with the stable repo):
+
+```bash
+curl -fsSL https://dongdongbh.github.io/Mindwtr/mindwtr.gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/mindwtr-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/mindwtr-archive-keyring.gpg] https://dongdongbh.github.io/Mindwtr/deb-beta ./" | sudo tee /etc/apt/sources.list.d/mindwtr-beta.list
+sudo apt update
+sudo apt install mindwtr
+```
+
+Fedora, RHEL, and openSUSE users can add the beta DNF/YUM repo:
+
+```bash
+cat <<'EOF' | sudo tee /etc/yum.repos.d/mindwtr-beta.repo
+[mindwtr-beta]
+name=Mindwtr Beta Repository
+baseurl=https://dongdongbh.github.io/Mindwtr/rpm-beta
+enabled=1
+gpgcheck=0
+EOF
+
+sudo dnf install mindwtr
+```
+
+Stable releases are published to the beta repos too. One APT quirk: `apt` sorts a release candidate like `1.2.0-rc.3` as newer than the matching `1.2.0` stable, so after a stable release you stay on the final release candidate (usually the same build) until the next version bump — `sudo apt install mindwtr=<version>` forces the stable build sooner. DNF is not affected.
+
+To leave the beta repo, remove `/etc/apt/sources.list.d/mindwtr-beta.list` (or `/etc/yum.repos.d/mindwtr-beta.repo`) and reinstall from the stable repo.
+
+## Docker - Beta Tag
+
+Every release lands on GHCR with its version tag, and the floating `beta` tag always points at the newest release — release candidate or stable — so `beta` users never switch tags. `latest` stays on the newest stable release:
+
+```bash
+docker pull ghcr.io/dongdongbh/mindwtr-app:beta
+docker pull ghcr.io/dongdongbh/mindwtr-cloud:beta
+```
+
+A specific pre-release can be pinned by version, for example `ghcr.io/dongdongbh/mindwtr-app:1.2.0-rc.1`. See [Docker Deployment](/power-users/docker-deployment) for compose setup.
+
 ## Windows, AppImage, FOSS APK, and Other Direct Downloads
 
 Pre-release builds are published on GitHub Releases and marked as pre-release:

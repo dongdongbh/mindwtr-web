@@ -25,6 +25,10 @@ curl -X POST https://your-server.example/v1/tasks \
   -d '{"title": "Reply to Dana about the contract", "props": {"description": "From: dana@example.com"}}'
 ```
 
+These recipes carry text only: the subject becomes the `title`, the sender or a snippet goes into `props.description`. To capture an attachment such as a PDF, use the phone share sheet instead.
+
+Point the automation at your cloud server, not at a personal machine. The server is the always-on sync source, so capture keeps working while your workstation and phone are off; devices pick the task up on their next sync.
+
 ### Outlook and Microsoft 365: Power Automate
 
 Microsoft accounts work best through Power Automate, since Microsoft no longer allows password-based IMAP access:
@@ -35,11 +39,41 @@ Microsoft accounts work best through Power Automate, since Microsoft no longer a
 
 The flow runs in Microsoft's cloud, so capture works even while your computer is off. Only the fields you map leave your mailbox.
 
-### Gmail and everything else: n8n, scripts, rules
+### A dedicated capture address: Cloudflare Email Workers
 
-The same pattern works from any automation tool that can read your mailbox and make an HTTP request:
+If your domain uses [Cloudflare Email Routing](https://developers.cloudflare.com/email-routing/), you can create an address like `todo@your-domain.example` and route it to an Email Worker that posts straight to your server:
+
+```js
+export default {
+  async email(message, env) {
+    const response = await fetch("https://your-server.example/v1/tasks", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.MINDWTR_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title: message.headers.get("subject") || "Captured email",
+        props: { description: `From: ${message.from}` },
+      }),
+    });
+    if (!response.ok) {
+      throw new Error(`Mindwtr returned ${response.status}`);
+    }
+  },
+};
+```
+
+Store the token as a Worker secret (`wrangler secret put MINDWTR_TOKEN`), never in the script. Throwing on a failed response makes delivery fail visibly so the sending server can retry, instead of the mail vanishing. To include the message body in the description, parse the raw MIME with a library such as [postal-mime](https://github.com/postalsys/postal-mime); the subject-only version above needs no parsing.
+
+Anything you forward to that address becomes an Inbox task. Keep the address private, or add a sender allowlist in the worker, since anyone who discovers it can create tasks.
+
+### Gmail and everything else: n8n, Zapier, scripts, rules
+
+The same pattern works from any automation tool that can read your mailbox (or receive mail directly) and make an HTTP request:
 
 - **n8n / Node-RED**: an IMAP or Gmail trigger node feeding an HTTP request node
+- **Zapier**: an *Email by Zapier* inbound address (or Gmail trigger) feeding a *Webhooks by Zapier* POST step
 - **A script on any always-on machine**: poll a mailbox folder and post each new message
 - **Sieve/procmail on your mail server**: pipe matching mail to a small script
 

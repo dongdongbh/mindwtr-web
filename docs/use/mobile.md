@@ -106,10 +106,13 @@ Capture tasks from any app using the share sheet:
 4. Mindwtr opens the capture screen with the shared content attached as notes
 5. Add a title, adjust any fields, and save it to your Inbox
 
+Sharing a file — a PDF, image, video, or audio recording — copies it into Mindwtr as an attachment on the new task, with the filename as the starting title. Up to six files can be shared at once.
+
 Great for:
 - Saving articles to read later
 - Capturing emails as tasks
 - Adding links from web browsing
+- Filing a PDF or photo as an Inbox task to process later
 
 ### Home Widget
 

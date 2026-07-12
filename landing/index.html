@@ -128,28 +128,57 @@
             to done.
           </p>
         </div>
-        <ol class="workflow-grid">
-          <li>
-            <span class="step-tag"><i>01</i>Capture</span>
-            <h3>Get it out of your head, fast.</h3>
-          </li>
-          <li>
-            <span class="step-tag"><i>02</i>Clarify</span>
-            <h3>Turn vague items into clear next actions.</h3>
-          </li>
-          <li>
-            <span class="step-tag"><i>03</i>Organize</span>
-            <h3>Keep projects, contexts, and waiting items where they belong.</h3>
-          </li>
-          <li>
-            <span class="step-tag"><i>04</i>Reflect</span>
-            <h3>Review the system before it gets stale.</h3>
-          </li>
-          <li>
-            <span class="step-tag"><i>05</i>Engage</span>
-            <h3>Choose the next action with confidence.</h3>
-          </li>
-        </ol>
+        <div class="loop-tour" data-tour>
+          <ol class="loop-rail" role="tablist" aria-label="The five GTD steps, shown in the app">
+            <li role="presentation">
+              <button type="button" class="loop-step is-active" id="loop-tab-capture" role="tab" aria-selected="true" aria-controls="loop-shot-capture">
+                <span class="step-tag"><i>01</i>Capture</span>
+                <span class="loop-line">Get it out of your head, fast.</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-clarify" role="tab" aria-selected="false" aria-controls="loop-shot-clarify" tabindex="-1">
+                <span class="step-tag"><i>02</i>Clarify</span>
+                <span class="loop-line">Turn vague items into clear next actions.</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-organize" role="tab" aria-selected="false" aria-controls="loop-shot-organize" tabindex="-1">
+                <span class="step-tag"><i>03</i>Organize</span>
+                <span class="loop-line">Keep projects, contexts, and waiting items where they belong.</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-reflect" role="tab" aria-selected="false" aria-controls="loop-shot-reflect" tabindex="-1">
+                <span class="step-tag"><i>04</i>Reflect</span>
+                <span class="loop-line">Review the system before it gets stale.</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-engage" role="tab" aria-selected="false" aria-controls="loop-shot-engage" tabindex="-1">
+                <span class="step-tag"><i>05</i>Engage</span>
+                <span class="loop-line">Choose the next action with confidence.</span>
+              </button>
+            </li>
+          </ol>
+          <div class="loop-stage">
+            <figure class="loop-shot is-active" id="loop-shot-capture" role="tabpanel" aria-labelledby="loop-tab-capture">
+              <img src="/assets/screenshots/tour-capture.webp" alt="Quick add parsing “Call the plumber @calls #home /due:tomorrow 9am” into a filed task" width="1920" height="1200" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-clarify" role="tabpanel" aria-labelledby="loop-tab-clarify" aria-hidden="true">
+              <img src="/assets/screenshots/tour-clarify.webp" alt="Guided inbox processing asking whether an item is actionable, one question at a time" width="1920" height="1080" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-organize" role="tabpanel" aria-labelledby="loop-tab-organize" aria-hidden="true">
+              <img src="/assets/screenshots/tour-organize.webp" alt="A project with Design, Build, and Launch sections, next actions, and a waiting item" width="1920" height="1080" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-reflect" role="tabpanel" aria-labelledby="loop-tab-reflect" aria-hidden="true">
+              <img src="/assets/screenshots/tour-reflect.webp" alt="The weekly review wizard on step 3 of 8, walking through the calendar" width="1920" height="1080" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-engage" role="tabpanel" aria-labelledby="loop-tab-engage" aria-hidden="true">
+              <img src="/assets/screenshots/tour-engage.webp" alt="The Focus view with Today's Focus starred and the next actions below" width="1920" height="1080" loading="lazy" />
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section class="features section-band" aria-labelledby="features-title">
@@ -218,14 +247,17 @@
         </div>
         <div class="coverflow" aria-roledescription="carousel" aria-label="Mindwtr views">
           <div class="coverflow-stage">
-            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Show the Focus view">
-              <img src="/assets/screenshots/showcase-focus.jpg" alt="Mindwtr Focus view on desktop" />
-            </button>
-            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Show the Projects view">
-              <img src="/assets/screenshots/showcase-projects.jpg" alt="Mindwtr Projects view on desktop" />
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Show the Board view">
+              <img src="/assets/screenshots/showcase-board.webp" alt="Mindwtr Board view with Inbox, Next Actions, Waiting For, and Someday columns" loading="lazy" />
             </button>
             <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Show the Calendar view">
-              <img src="/assets/screenshots/showcase-calendar.jpg" alt="Mindwtr Calendar view on desktop" />
+              <img src="/assets/screenshots/showcase-calendar-plan.webp" alt="Mindwtr Calendar with the plan-next-actions rail on desktop" loading="lazy" />
+            </button>
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Show dark mode">
+              <img src="/assets/screenshots/showcase-dark.webp" alt="Mindwtr Focus view in dark mode" loading="lazy" />
+            </button>
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Show the mobile app">
+              <img src="/assets/screenshots/showcase-mobile.webp" alt="Mindwtr on Android: quick task capture and a project with sections" loading="lazy" />
             </button>
           </div>
           <div class="coverflow-controls">
@@ -233,9 +265,10 @@
               <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
             </button>
             <div class="coverflow-dots" role="group" aria-label="Choose a view">
-              <button type="button" class="coverflow-dot is-active" aria-label="Focus view" aria-current="true"></button>
-              <button type="button" class="coverflow-dot" aria-label="Projects view"></button>
+              <button type="button" class="coverflow-dot is-active" aria-label="Board view" aria-current="true"></button>
               <button type="button" class="coverflow-dot" aria-label="Calendar view"></button>
+              <button type="button" class="coverflow-dot" aria-label="Dark mode"></button>
+              <button type="button" class="coverflow-dot" aria-label="Mobile app"></button>
             </div>
             <button type="button" class="coverflow-arrow" data-dir="1" aria-label="Next view">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>

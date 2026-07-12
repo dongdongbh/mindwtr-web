@@ -128,28 +128,57 @@
             de capturar a terminar.
           </p>
         </div>
-        <ol class="workflow-grid">
-          <li>
-            <span class="step-tag"><i>01</i>Capturar</span>
-            <h3>Sácalo de tu cabeza, rápido.</h3>
-          </li>
-          <li>
-            <span class="step-tag"><i>02</i>Aclarar</span>
-            <h3>Convierte notas vagas en siguientes acciones claras.</h3>
-          </li>
-          <li>
-            <span class="step-tag"><i>03</i>Organizar</span>
-            <h3>Proyectos, contextos y tareas en espera, cada cosa en su sitio.</h3>
-          </li>
-          <li>
-            <span class="step-tag"><i>04</i>Reflexionar</span>
-            <h3>Revisa el sistema antes de que se quede anticuado.</h3>
-          </li>
-          <li>
-            <span class="step-tag"><i>05</i>Actuar</span>
-            <h3>Elige la siguiente acción con confianza.</h3>
-          </li>
-        </ol>
+        <div class="loop-tour" data-tour>
+          <ol class="loop-rail" role="tablist" aria-label="Los cinco pasos GTD, mostrados en la app">
+            <li role="presentation">
+              <button type="button" class="loop-step is-active" id="loop-tab-capture" role="tab" aria-selected="true" aria-controls="loop-shot-capture">
+                <span class="step-tag"><i>01</i>Capturar</span>
+                <span class="loop-line">Sácalo de tu cabeza, rápido.</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-clarify" role="tab" aria-selected="false" aria-controls="loop-shot-clarify" tabindex="-1">
+                <span class="step-tag"><i>02</i>Aclarar</span>
+                <span class="loop-line">Convierte notas vagas en siguientes acciones claras.</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-organize" role="tab" aria-selected="false" aria-controls="loop-shot-organize" tabindex="-1">
+                <span class="step-tag"><i>03</i>Organizar</span>
+                <span class="loop-line">Proyectos, contextos y tareas en espera, cada cosa en su sitio.</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-reflect" role="tab" aria-selected="false" aria-controls="loop-shot-reflect" tabindex="-1">
+                <span class="step-tag"><i>04</i>Reflexionar</span>
+                <span class="loop-line">Revisa el sistema antes de que se quede anticuado.</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-engage" role="tab" aria-selected="false" aria-controls="loop-shot-engage" tabindex="-1">
+                <span class="step-tag"><i>05</i>Actuar</span>
+                <span class="loop-line">Elige la siguiente acción con confianza.</span>
+              </button>
+            </li>
+          </ol>
+          <div class="loop-stage">
+            <figure class="loop-shot is-active" id="loop-shot-capture" role="tabpanel" aria-labelledby="loop-tab-capture">
+              <img src="/assets/screenshots/tour-capture.webp" alt="La captura rápida reconoce el contexto y la fecha mientras escribes" width="1920" height="1200" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-clarify" role="tabpanel" aria-labelledby="loop-tab-clarify" aria-hidden="true">
+              <img src="/assets/screenshots/tour-clarify.webp" alt="El procesado guiado de la bandeja pregunta si un elemento es accionable, una pregunta cada vez" width="1920" height="1080" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-organize" role="tabpanel" aria-labelledby="loop-tab-organize" aria-hidden="true">
+              <img src="/assets/screenshots/tour-organize.webp" alt="Un proyecto con secciones, siguientes acciones y un elemento en espera" width="1920" height="1080" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-reflect" role="tabpanel" aria-labelledby="loop-tab-reflect" aria-hidden="true">
+              <img src="/assets/screenshots/tour-reflect.webp" alt="El asistente de la revisión semanal en el paso 3 de 8, repasando el calendario" width="1920" height="1080" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-engage" role="tabpanel" aria-labelledby="loop-tab-engage" aria-hidden="true">
+              <img src="/assets/screenshots/tour-engage.webp" alt="La vista Enfoque con el foco de hoy y las siguientes acciones debajo" width="1920" height="1080" loading="lazy" />
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section class="features section-band" aria-labelledby="features-title">
@@ -218,14 +247,17 @@
         </div>
         <div class="coverflow" aria-roledescription="carousel" aria-label="Vistas de Mindwtr">
           <div class="coverflow-stage">
-            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Mostrar la vista Enfoque">
-              <img src="/assets/screenshots/showcase-focus.jpg" alt="Vista Enfoque de Mindwtr en escritorio" />
-            </button>
-            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Mostrar la vista Proyectos">
-              <img src="/assets/screenshots/showcase-projects.jpg" alt="Vista Proyectos de Mindwtr en escritorio" />
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Mostrar la vista de tablero">
+              <img src="/assets/screenshots/showcase-board.webp" alt="Vista de tablero de Mindwtr con columnas de Bandeja de entrada, Siguientes acciones, En espera y Algún día" loading="lazy" />
             </button>
             <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Mostrar la vista Calendario">
-              <img src="/assets/screenshots/showcase-calendar.jpg" alt="Vista Calendario de Mindwtr en escritorio" />
+              <img src="/assets/screenshots/showcase-calendar-plan.webp" alt="Calendario de Mindwtr con el panel para planificar siguientes acciones" loading="lazy" />
+            </button>
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Mostrar el modo oscuro">
+              <img src="/assets/screenshots/showcase-dark.webp" alt="Vista Enfoque de Mindwtr en modo oscuro" loading="lazy" />
+            </button>
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Mostrar la app móvil">
+              <img src="/assets/screenshots/showcase-mobile.webp" alt="Mindwtr en Android: captura rápida de tareas y un proyecto con secciones" loading="lazy" />
             </button>
           </div>
           <div class="coverflow-controls">
@@ -233,9 +265,10 @@
               <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
             </button>
             <div class="coverflow-dots" role="group" aria-label="Elegir una vista">
-              <button type="button" class="coverflow-dot is-active" aria-label="Vista Enfoque" aria-current="true"></button>
-              <button type="button" class="coverflow-dot" aria-label="Vista Proyectos"></button>
+              <button type="button" class="coverflow-dot is-active" aria-label="Vista de tablero" aria-current="true"></button>
               <button type="button" class="coverflow-dot" aria-label="Vista Calendario"></button>
+              <button type="button" class="coverflow-dot" aria-label="Modo oscuro"></button>
+              <button type="button" class="coverflow-dot" aria-label="App móvil"></button>
             </div>
             <button type="button" class="coverflow-arrow" data-dir="1" aria-label="Vista siguiente">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>

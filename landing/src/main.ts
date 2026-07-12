@@ -1,5 +1,6 @@
 import "./styles.css";
 import { initCoverflow } from "./coverflow";
+import { initLoopTour } from "./tour";
 
 type Platform = "mac" | "windows" | "linux" | "ios" | "android";
 
@@ -153,6 +154,7 @@ function init(): void {
   wireCopyButtons();
   wireLanguageSwitch();
   initCoverflow();
+  initLoopTour();
 }
 
 if (document.readyState === "loading") {

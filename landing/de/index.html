@@ -128,28 +128,57 @@
             vom Festhalten bis zum Erledigen.
           </p>
         </div>
-        <ol class="workflow-grid">
-          <li>
-            <span class="step-tag"><i>01</i>Erfassen</span>
-            <h3>Raus aus dem Kopf – schnell.</h3>
-          </li>
-          <li>
-            <span class="step-tag"><i>02</i>Klären</span>
-            <h3>Mach aus vagen Notizen klare nächste Schritte.</h3>
-          </li>
-          <li>
-            <span class="step-tag"><i>03</i>Organisieren</span>
-            <h3>Projekte, Kontexte und Wartendes – alles an seinem Platz.</h3>
-          </li>
-          <li>
-            <span class="step-tag"><i>04</i>Reflektieren</span>
-            <h3>Geh das System regelmäßig durch, bevor es veraltet.</h3>
-          </li>
-          <li>
-            <span class="step-tag"><i>05</i>Handeln</span>
-            <h3>Wähle den nächsten Schritt mit gutem Gefühl.</h3>
-          </li>
-        </ol>
+        <div class="loop-tour" data-tour>
+          <ol class="loop-rail" role="tablist" aria-label="Die fünf GTD-Schritte, gezeigt in der App">
+            <li role="presentation">
+              <button type="button" class="loop-step is-active" id="loop-tab-capture" role="tab" aria-selected="true" aria-controls="loop-shot-capture">
+                <span class="step-tag"><i>01</i>Erfassen</span>
+                <span class="loop-line">Raus aus dem Kopf – schnell.</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-clarify" role="tab" aria-selected="false" aria-controls="loop-shot-clarify" tabindex="-1">
+                <span class="step-tag"><i>02</i>Klären</span>
+                <span class="loop-line">Mach aus vagen Notizen klare nächste Schritte.</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-organize" role="tab" aria-selected="false" aria-controls="loop-shot-organize" tabindex="-1">
+                <span class="step-tag"><i>03</i>Organisieren</span>
+                <span class="loop-line">Projekte, Kontexte und Wartendes – alles an seinem Platz.</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-reflect" role="tab" aria-selected="false" aria-controls="loop-shot-reflect" tabindex="-1">
+                <span class="step-tag"><i>04</i>Reflektieren</span>
+                <span class="loop-line">Geh das System regelmäßig durch, bevor es veraltet.</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-engage" role="tab" aria-selected="false" aria-controls="loop-shot-engage" tabindex="-1">
+                <span class="step-tag"><i>05</i>Handeln</span>
+                <span class="loop-line">Wähle den nächsten Schritt mit gutem Gefühl.</span>
+              </button>
+            </li>
+          </ol>
+          <div class="loop-stage">
+            <figure class="loop-shot is-active" id="loop-shot-capture" role="tabpanel" aria-labelledby="loop-tab-capture">
+              <img src="/assets/screenshots/tour-capture.webp" alt="Die Schnelleingabe erkennt Kontext und Fälligkeit schon beim Tippen" width="1920" height="1200" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-clarify" role="tabpanel" aria-labelledby="loop-tab-clarify" aria-hidden="true">
+              <img src="/assets/screenshots/tour-clarify.webp" alt="Die geführte Inbox-Verarbeitung fragt eine Frage nach der anderen, ob ein Eintrag umsetzbar ist" width="1920" height="1080" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-organize" role="tabpanel" aria-labelledby="loop-tab-organize" aria-hidden="true">
+              <img src="/assets/screenshots/tour-organize.webp" alt="Ein Projekt mit Abschnitten, nächsten Aktionen und einem wartenden Eintrag" width="1920" height="1080" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-reflect" role="tabpanel" aria-labelledby="loop-tab-reflect" aria-hidden="true">
+              <img src="/assets/screenshots/tour-reflect.webp" alt="Der Assistent der wöchentlichen Revision bei Schritt 3 von 8, dem Kalender" width="1920" height="1080" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-engage" role="tabpanel" aria-labelledby="loop-tab-engage" aria-hidden="true">
+              <img src="/assets/screenshots/tour-engage.webp" alt="Die Fokus-Ansicht mit dem heutigen Fokus und den nächsten Aktionen darunter" width="1920" height="1080" loading="lazy" />
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section class="features section-band" aria-labelledby="features-title">
@@ -218,14 +247,17 @@
         </div>
         <div class="coverflow" aria-roledescription="carousel" aria-label="Mindwtr Ansichten">
           <div class="coverflow-stage">
-            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Fokus-Ansicht zeigen">
-              <img src="/assets/screenshots/showcase-focus.jpg" alt="Mindwtr Fokus-Ansicht auf dem Desktop" />
-            </button>
-            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Projekte-Ansicht zeigen">
-              <img src="/assets/screenshots/showcase-projects.jpg" alt="Mindwtr Projekte-Ansicht auf dem Desktop" />
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Tafelansicht zeigen">
+              <img src="/assets/screenshots/showcase-board.webp" alt="Mindwtr Tafelansicht mit Spalten für Posteingang, Nächste Aktionen, Warten auf und Irgendwann" loading="lazy" />
             </button>
             <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Kalender-Ansicht zeigen">
-              <img src="/assets/screenshots/showcase-calendar.jpg" alt="Mindwtr Kalender-Ansicht auf dem Desktop" />
+              <img src="/assets/screenshots/showcase-calendar-plan.webp" alt="Mindwtr Kalender mit der Leiste zum Planen nächster Aktionen" loading="lazy" />
+            </button>
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Dunklen Modus zeigen">
+              <img src="/assets/screenshots/showcase-dark.webp" alt="Mindwtr Fokus-Ansicht im dunklen Modus" loading="lazy" />
+            </button>
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="Mobile App zeigen">
+              <img src="/assets/screenshots/showcase-mobile.webp" alt="Mindwtr auf Android: schnelle Aufgabenerfassung und ein Projekt mit Abschnitten" loading="lazy" />
             </button>
           </div>
           <div class="coverflow-controls">
@@ -233,9 +265,10 @@
               <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
             </button>
             <div class="coverflow-dots" role="group" aria-label="Ansicht wählen">
-              <button type="button" class="coverflow-dot is-active" aria-label="Fokus-Ansicht" aria-current="true"></button>
-              <button type="button" class="coverflow-dot" aria-label="Projekte-Ansicht"></button>
+              <button type="button" class="coverflow-dot is-active" aria-label="Tafelansicht" aria-current="true"></button>
               <button type="button" class="coverflow-dot" aria-label="Kalender-Ansicht"></button>
+              <button type="button" class="coverflow-dot" aria-label="Dunkler Modus"></button>
+              <button type="button" class="coverflow-dot" aria-label="Mobile App"></button>
             </div>
             <button type="button" class="coverflow-arrow" data-dir="1" aria-label="Nächste Ansicht">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>

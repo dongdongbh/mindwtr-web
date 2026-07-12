@@ -182,6 +182,8 @@ Operationally, a device that has been offline longer than the retention window c
 - Future timestamp clamp counts and IDs
 - `syncConflictDiscarded` entries for delete-vs-live conflicts where the live side was discarded
 - Last sync status/history in Settings
+- Per-conflict detail in Settings → Sync: the affected item's name, which fields differed, and which device's version won (bounded to the most recent samples)
+- Conflict summaries in `mindwtr.log`, written even when debug logging is off (IDs and field names only, never record content)
 
 ## Related docs
 

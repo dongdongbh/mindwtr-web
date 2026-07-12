@@ -30,3 +30,4 @@ CLAUDE.md
 
 # OS/editor noise
 .DS_Store
+.claude/

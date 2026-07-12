@@ -189,10 +189,11 @@ scoop install mindwtr
 
 Portable mode stores local state beside the executable:
 
-- `profile/data/` for the SQLite DB, sync JSON, logs, snapshots, and audio captures
+- `profile/data/` for the SQLite DB, sync JSON, attachments, logs, snapshots, audio captures, and speech models
 - `profile/config/` for `config.toml` and `secrets.toml`
+- `profile/webview/` for the WebView2 browser profile (cache, local storage)
 
-Windows WebView2 is still required.
+Windows WebView2 is still required. Attachment files that a portable build older than v1.1.0 stored under `AppData\Roaming\mindwtr` are moved into the portable profile on first launch; when an installed Mindwtr shares the machine they are copied instead, so both installs keep working.
 
 ---
 

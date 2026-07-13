@@ -104,7 +104,7 @@ The core package contains all shared business logic:
 | `sqlite-adapter.ts` | Local storage adapter interface               |
 | `webdav.ts`         | WebDAV sync client                            |
 
-Current sync sub-modules split the protocol by responsibility: `sync-orchestrator.ts` runs cycles, `sync-normalization.ts` repairs payload shape, `sync-signatures.ts` computes comparable content signatures, `sync-merge-settings.ts` merges settings groups, `sync-tombstones.ts` handles retention cleanup, `sync-revision.ts` stamps revisions, and `sync-client-helpers.ts` / `sync-service-utils.ts` hold platform service helpers.
+Current sync sub-modules split the protocol by responsibility: `sync-run.ts` is the shared sync cycle state machine (phase sequencing, unchanged-skip checks, attachment phases, error/requeue handling) behind the ports in `sync-run-ports.ts` — desktop and mobile provide transport, storage, and notification adapters (ADR 0014); `sync-orchestrator.ts` serializes cycles and queues follow-ups, `sync-normalization.ts` repairs payload shape, `sync-signatures.ts` computes comparable content signatures, `sync-merge-settings.ts` merges settings groups, `sync-tombstones.ts` handles retention cleanup, `sync-revision.ts` stamps revisions, and `sync-client-helpers.ts` / `sync-service-utils.ts` hold platform service helpers.
 
 ### Design Principles
 

@@ -64,7 +64,7 @@ interface ChromeStrings {
 const STRINGS: Record<Locale, ChromeStrings> = {
   en: {
     features: "Features",
-    gtd: "What is GTD?",
+    gtd: "What is GTD",
     docs: "Docs",
     support: "Support",
     download: "Download",
@@ -84,7 +84,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
   },
   de: {
     features: "Funktionen",
-    gtd: "Was ist GTD?",
+    gtd: "Was ist GTD",
     docs: "Doku",
     support: "Support",
     download: "Download",
@@ -104,7 +104,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
   },
   es: {
     features: "Funciones",
-    gtd: "¿Qué es GTD?",
+    gtd: "Qué es GTD",
     docs: "Docs",
     support: "Soporte",
     download: "Descargar",
@@ -126,7 +126,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
     // "Fonctionnalités" overflows the sticky header on phones; the page
     // itself still uses the full word.
     features: "Fonctions",
-    gtd: "C'est quoi, GTD ?",
+    gtd: "C'est quoi, GTD",
     docs: "Docs",
     support: "Support",
     download: "Télécharger",
@@ -146,7 +146,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
   },
   zh: {
     features: "功能",
-    gtd: "什么是 GTD？",
+    gtd: "什么是 GTD",
     docs: "文档",
     support: "支持",
     download: "下载",

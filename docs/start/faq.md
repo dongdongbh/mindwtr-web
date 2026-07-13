@@ -201,6 +201,35 @@ Project type controls what gets surfaced:
 
 Later steps in a sequential project are not **Reference**. Reference is for non-actionable support material, notes, and documents.
 
+### How do I mark a project as done?
+
+Open the project and use its **Complete** action (next to **Archive**). On desktop it is in the project view's toolbar/menu; on mobile it is in the project's action menu. Completing a project is separate from completing its tasks — a project with all tasks done still waits for you to close the outcome itself, which is a useful prompt during the weekly review.
+
+### Can I turn a task into a project?
+
+Yes. The easiest place is while processing the Inbox: when the guided flow asks whether an item needs more than one step, answer yes and the capture becomes a project — you name it and define its first next action. Any further actions you add land back in the Inbox with the project already attached, so each gets its own clarify pass. See [GTD Workflow](/use/gtd-workflow).
+
+### Why doesn't a task show up in Focus?
+
+Focus deliberately shows only what you can act on right now, so a task can be hidden for a few reasons:
+
+- It has a **future start date** — it reappears when the date arrives.
+- It is a **later task in a sequential project** — only the first available task is surfaced.
+- An active **context filter** excludes it.
+- Its status is not actionable (Inbox, Someday, Waiting).
+
+Use **Projects**, **Contexts**, or **Search** to inspect the full task inventory. See [How Focus sorts available actions](/use/gtd-workflow#how-focus-sorts-available-actions).
+
+### Does Mindwtr support start dates or ticklers?
+
+Yes, both:
+
+- **Start date** defers a task: a future start hides it from Focus, and it reappears with its existing status when the date arrives.
+- **Review date** is a tickler: when it arrives, Mindwtr surfaces the task for you to reconsider — nothing changes until you decide.
+- **Start lead time** ties the start to the due date (e.g., become visible two days before due).
+
+See [Dates vs. Status](/use/gtd-workflow#dates-vs-status).
+
 ### How do I enable Priority or Estimated Time?
 
 Mindwtr uses progressive disclosure, so optional fields are hidden by default.
@@ -233,6 +262,19 @@ Mindwtr supports two recurrence strategies:
 Set recurrence in the task editor (daily/weekly/monthly/yearly), then enable **Repeat after completion** if you want fluid behavior.
 
 Mindwtr keeps one active instance of a recurring task. It does not pre-populate future Calendar entries for the series; the next task instance is created only when the current one is completed.
+
+### Can I see my Mindwtr tasks in Google Calendar or Apple Calendar?
+
+Yes, one-way push is supported:
+
+- **Android/iOS:** push dated tasks to a device calendar. Android is verified with Google Calendar; on iOS, use calendars already available to Apple Calendar. A dedicated calendar named `Mindwtr` in that account works best.
+- **macOS desktop:** push to Apple Calendar via EventKit.
+
+Recurring task *rules* are not exported as native recurring calendar events — only concrete instances are pushed. See [Calendar Integration](/use/calendar-integration).
+
+### Does Mindwtr integrate with Obsidian?
+
+Yes, on desktop: import a vault and Mindwtr keeps deep links back to the original notes, so a task can jump straight to its source note in Obsidian. See [Obsidian](/power-users/obsidian).
 
 ### How do I collect logs for a bug report?
 
@@ -272,6 +314,15 @@ Example: `Call client /due:friday @phone`
 ### What are contexts?
 
 Contexts are tags that indicate where or with what you can complete a task. Examples: `@home`, `@work`, `@phone`, `@computer`. Filter by context to see only tasks you can do right now. See [Contexts and Tags](/use/contexts-tags).
+
+### What is the difference between a context and an area?
+
+They answer different questions:
+
+- An **Area** answers: *"What part of my life or work is this responsibility connected to?"* (Work, Home, Health, a client…)
+- A **Context** answers: *"What can I do right now, given where I am and what I have?"* (`@computer`, `@errands`…)
+
+A task can have both — e.g., **Area: Client A**, **Project: Website refresh**, **Context: @computer**. See [GTD Overview](/use/gtd-overview).
 
 ### How do I capture tasks quickly?
 

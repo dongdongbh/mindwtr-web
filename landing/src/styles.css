@@ -1271,13 +1271,13 @@ main > section:last-child {
 }
 
 .footer-legal {
-  max-width: 112ch;
+  align-self: stretch;
   margin: 3px 0 0;
-  text-align: center;
-  font-size: 0.76rem;
+  text-align: left;
+  font-size: 0.68rem;
   line-height: 1.5;
   color: var(--muted);
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 /* Legal / policy prose (privacy) ------------------------------------------ */

@@ -54,7 +54,7 @@ On a fresh install, Mindwtr asks whether you want to start fresh, import a backu
 
 ## Quick Add Syntax
 
-Mindwtr supports natural language quick-add. Type directly in the task input:
+Mindwtr supports natural language quick-add. Type directly in the task input — the same syntax also works in the "What's the next action?" prompt that appears when you finish a project's last action (for example, end on `/waiting` to park the follow-up as Waiting For):
 
 | Syntax             | Example                    | Result                |
 | ------------------ | -------------------------- | --------------------- |

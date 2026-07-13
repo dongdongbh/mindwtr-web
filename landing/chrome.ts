@@ -17,7 +17,7 @@ export type Locale = (typeof LOCALES)[number];
 
 // Pages that exist in every locale. Legal pages (privacy, brand) stay
 // English-only so the canonical legal wording cannot drift in translation.
-const LOCALIZED_PAGES = new Set(["index", "features", "donate", "support"]);
+const LOCALIZED_PAGES = new Set(["index", "features", "gtd", "donate", "support"]);
 
 const HREFLANG: Record<Locale, string> = {
   en: "en",
@@ -46,6 +46,7 @@ const LANGUAGE_SHORT: Record<Locale, string> = {
 
 interface ChromeStrings {
   features: string;
+  gtd: string;
   docs: string;
   support: string;
   download: string;
@@ -63,6 +64,7 @@ interface ChromeStrings {
 const STRINGS: Record<Locale, ChromeStrings> = {
   en: {
     features: "Features",
+    gtd: "What is GTD?",
     docs: "Docs",
     support: "Support",
     download: "Download",
@@ -82,6 +84,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
   },
   de: {
     features: "Funktionen",
+    gtd: "Was ist GTD?",
     docs: "Doku",
     support: "Support",
     download: "Download",
@@ -101,6 +104,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
   },
   es: {
     features: "Funciones",
+    gtd: "¿Qué es GTD?",
     docs: "Docs",
     support: "Soporte",
     download: "Descargar",
@@ -122,6 +126,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
     // "Fonctionnalités" overflows the sticky header on phones; the page
     // itself still uses the full word.
     features: "Fonctions",
+    gtd: "C'est quoi, GTD ?",
     docs: "Docs",
     support: "Support",
     download: "Télécharger",
@@ -141,6 +146,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
   },
   zh: {
     features: "功能",
+    gtd: "什么是 GTD？",
     docs: "文档",
     support: "支持",
     download: "下载",
@@ -186,7 +192,7 @@ const DETECT_SCRIPT = `    <script>
       (function () {
         try {
           if (localStorage.getItem("mindwtr-lang")) return;
-          var page = location.pathname.match(/^\\/(features|donate|support)?\\/?$/);
+          var page = location.pathname.match(/^\\/(features|gtd|donate|support)?\\/?$/);
           if (!page) return;
           var offered = ["de", "es", "fr"];
           var langs = navigator.languages || [navigator.language || ""];
@@ -287,6 +293,7 @@ function footer(locale: Locale, pagePath: string): string {
   const t = STRINGS[locale];
   const links = [
     { href: localePath(locale, "features"), label: t.features },
+    { href: localePath(locale, "gtd"), label: t.gtd },
     { href: "https://docs.mindwtr.app/", label: t.docs },
     { href: "https://github.com/dongdongbh/Mindwtr", label: "GitHub" },
     { href: localePath(locale, "support"), label: t.support },
@@ -313,9 +320,41 @@ ${links}
 `;
 }
 
+// Star count baked in at build time from the public GitHub API — no token and
+// no client-side request, so visitors never talk to GitHub. Rounded down to
+// the nearest hundred (shown as "1,200+"); offline builds keep the fallback.
+const STARS_FALLBACK = 1200;
+let starsRounded = STARS_FALLBACK;
+
+async function fetchStars(): Promise<void> {
+  try {
+    const res = await fetch("https://api.github.com/repos/dongdongbh/Mindwtr", {
+      signal: AbortSignal.timeout(5000)
+    });
+    if (!res.ok) return;
+    const data = (await res.json()) as { stargazers_count?: number };
+    if (typeof data.stargazers_count === "number" && data.stargazers_count > 0) {
+      starsRounded = Math.floor(data.stargazers_count / 100) * 100;
+    }
+  } catch {
+    // keep the fallback
+  }
+}
+
+const STAR_LOCALE: Record<Locale, string> = {
+  en: "en-US",
+  de: "de-DE",
+  es: "es-ES",
+  fr: "fr-FR",
+  zh: "zh-Hans-CN"
+};
+
 export function chrome(): Plugin {
   return {
     name: "mindwtr:chrome",
+    async buildStart() {
+      await fetchStars();
+    },
     transformIndexHtml: {
       // "pre" so the injected main.ts script tag goes through Vite's own HTML
       // processing and gets bundled like a hand-written one.
@@ -332,6 +371,7 @@ export function chrome(): Plugin {
         const pagePath = localePath(locale, pageName);
         return html
           .replace(/[ \t]*<!-- chrome:.*?-->\n/gs, "")
+          .replaceAll("__GITHUB_STARS__", `${starsRounded.toLocaleString(STAR_LOCALE[locale])}+`)
           .replace(
             "<head>",
             `<head>

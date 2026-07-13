@@ -1389,6 +1389,16 @@ main > section:last-child {
   color: var(--blue);
 }
 
+.quote-attrib {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.philosophy-link {
+  margin: 26px 0 0;
+}
+
 /* Feature grid ------------------------------------------------------------ */
 .feature-grid {
   display: grid;
@@ -1446,6 +1456,16 @@ main > section:last-child {
 .feature-foot {
   margin: 0;
   text-align: center;
+  color: var(--teal-ink);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+/* Verifiable-numbers strip under a section intro (reviews). */
+.proof-strip {
+  grid-column: 1 / -1;
+  margin: 6px 0 0;
   color: var(--teal-ink);
   font-family: var(--font-mono);
   font-size: 0.82rem;

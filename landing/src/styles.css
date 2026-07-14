@@ -1,3 +1,36 @@
+/* Hallmark · audit-fix pass (2026-07-14) — structure unchanged, no macrostructure claimed.
+ * theme: Clear Water (project-owned) · paper: light · display: classical-serif · accent: cool-blue
+ * type: Instrument Serif (display) + Avenir Next/system-ui (body) + system mono
+ * contrast: focus ring 4.36:1 · legal line 5.27:1 · table glyphs 4.46/4.49:1
+ * responsive: verified 320/375/414/768 across en/de/es/fr/zh — no h-scroll, no clipped CTA
+ */
+
+/* Instrument Serif (SIL OFL 1.1) — self-hosted from our own origin so no
+   visitor's browser ever calls fonts.gstatic.com. See shared-assets/fonts/.
+   The unicode-range keeps it off the Chinese pages entirely: CJK headings fall
+   straight through to the system stack, same as they do today. */
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/instrument-serif-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/instrument-serif-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 :root {
   color-scheme: light;
 
@@ -6,9 +39,16 @@
   --ink-soft: #1c3b40;
   --muted: #4c6a72;
   --paper: #eef5f6;
+  --paper-lift: #f7fbfc;
   --paper-deep: #e4eff0;
-  --surface: #ffffff;
+
+  /* Surfaces are tinted toward the water, never pure white — #ffffff on a
+     tinted paper reads as a flat cut-out. --surface-raised is the one true
+     white, reserved for the lifted/active state so it actually means something. */
+  --surface: #fbfdfd;
+  --surface-raised: #ffffff;
   --surface-soft: #f7fbfb;
+
   --line: #d2e2e3;
   --line-strong: #c3d8d9;
 
@@ -19,19 +59,62 @@
   --teal-ink: #0b6e62;
   --teal-soft: #dcefeb;
 
+  /* Every translucent blue on the page resolves here instead of being
+     re-spelled as a raw rgba(46, 107, 230, …) at each call site. */
+  --blue-a08: rgba(46, 107, 230, 0.08);
+  --blue-a20: rgba(46, 107, 230, 0.2);
+  --blue-a30: rgba(46, 107, 230, 0.3);
+  --blue-a55: rgba(46, 107, 230, 0.55);
+  --teal-a34: rgba(14, 140, 124, 0.34);
+
+  /* Translucent surfaces: the glass of the floating nav, and the white bloom
+     at the top of the page. */
+  --surface-glass: rgba(251, 253, 253, 0.82);
+  --sheen: rgba(255, 255, 255, 0.75);
+
+  /* Comparison-table verdict glyphs. The glyph *is* the data, so it owes the
+     3:1 that any meaningful graphic does — the old #93a3a0 managed 2.6:1. */
+  --tone-partial: #667a77;
+  --tone-no: #b25c5c;
+
   /* Heading color: as dark/legible as near-black, but clearly cool-toned. */
   --heading: #14365f;
 
+  --shadow-ink: rgba(13, 43, 48, 0.08);
+  --shadow-ink-strong: rgba(13, 43, 48, 0.14);
   --shadow: 0 28px 64px rgba(13, 43, 48, 0.12);
   --shadow-sm: 0 14px 34px rgba(13, 43, 48, 0.08);
 
   --radius-large: 22px;
   --radius-medium: 14px;
+  --radius-small: 9px;
   --page-max: 1480px;
   --page-gutter: 48px;
 
+  /* Three named easings and a duration scale. Nothing reaches for the
+     browser-default `ease` keyword. */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-instant: 120ms;
+  --dur-short: 180ms;
+  --dur-medium: 260ms;
+  --dur-long: 440ms;
+
+  /* 4pt spacing scale. */
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 32px;
+  --space-xl: 52px;
+
+  /* Display face carries the headlines; the system sans carries everything a
+     reader actually has to read. Instrument Serif ships a single 400 weight —
+     headings are sized, not bolded. Falls back to the sans stack, which is what
+     keeps the Chinese headings identical to today. */
   --font-sans: "Avenir Next", Avenir, ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Instrument Serif", var(--font-sans);
   --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code", Menlo,
     Consolas, monospace;
 
@@ -49,9 +132,21 @@ html {
   scroll-padding-top: 92px;
 }
 
+/* Backstop against horizontal scroll. `clip`, not `hidden` — hidden would make
+   the root a scroll container and kill the sticky header. */
+html,
+body {
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
-  background: linear-gradient(180deg, #f7fbfc 0%, var(--paper) 44%, #e3eff0 100%),
+  background: linear-gradient(
+      180deg,
+      var(--paper-lift) 0%,
+      var(--paper) 44%,
+      var(--paper-deep) 100%
+    ),
     var(--paper);
   color: var(--ink);
   line-height: 1.5;
@@ -65,8 +160,8 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(120% 62% at 50% -12%, rgba(255, 255, 255, 0.75), transparent 60%),
-    radial-gradient(70% 48% at 82% 2%, rgba(46, 107, 230, 0.07), transparent 62%);
+    radial-gradient(120% 62% at 50% -12%, var(--sheen), transparent 60%),
+    radial-gradient(70% 48% at 82% 2%, var(--blue-a08), transparent 62%);
 }
 
 img {
@@ -79,9 +174,12 @@ a {
   text-decoration: none;
 }
 
+/* Solid, not 50%-alpha. The old ring composited to 2.0:1 against the paper —
+   below the 3:1 a focus indicator owes. Solid --blue measures 4.3:1. */
 a:focus-visible,
-button:focus-visible {
-  outline: 3px solid rgba(46, 107, 230, 0.5);
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--blue);
   outline-offset: 4px;
   border-radius: 4px;
 }
@@ -93,28 +191,50 @@ p {
   margin-top: 0;
 }
 
+/* The display face is for the two levels people look at, not the ones they read.
+   h3 and below stay on the sans — they're UI labels, not headlines. */
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Header ------------------------------------------------------------------ */
+/* A centred floating pill rather than a full-bleed sticky bar with a hairline
+   rule — that bar (wordmark left, links right, CTA hard-right, 1px bottom
+   border) is the single most-recognised generated-nav shape on the web.
+   The inner row is width-matched to the page grid, so the wordmark sits on the
+   same optical line as the hero copy. */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
+  padding: 12px 0 0;
+  background: transparent;
+}
+
+.site-header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  width: 100%;
-  min-height: 72px;
-  padding: 14px max(24px, calc((100vw - var(--page-max)) / 2));
-  background: rgba(238, 245, 246, 0.82);
+  width: min(var(--page-max), calc(100% - var(--page-gutter)));
+  margin: 0 auto;
+  min-height: 60px;
+  padding: 8px 10px 8px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-glass);
   backdrop-filter: blur(18px) saturate(1.1);
-  box-shadow: 0 1px 0 rgba(195, 216, 217, 0.9);
+  box-shadow: 0 10px 30px var(--shadow-ink);
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-weight: 780;
+  font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--ink);
 }
@@ -132,32 +252,35 @@ p {
   gap: clamp(14px, 3vw, 28px);
   color: var(--muted);
   font-size: 0.94rem;
-  font-weight: 650;
+  font-weight: 600;
   white-space: nowrap;
 }
 
 .site-header nav a {
-  transition: color 180ms ease;
+  transition: color var(--dur-short) var(--ease-out);
 }
 
 .site-header nav a:hover {
   color: var(--blue-deep);
 }
 
+/* The CTA is the pill's one solid element — inside a floating pill a second
+   ghost-button would just be a pill in a pill. */
 .site-header nav .nav-download {
   border-radius: 999px;
   padding: 11px 20px;
-  color: var(--blue-deep);
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow:
-    inset 0 0 0 1px rgba(46, 107, 230, 0.22),
-    0 10px 24px rgba(13, 43, 48, 0.06);
+  color: var(--surface-raised);
+  background: var(--blue);
+  box-shadow: 0 8px 20px var(--blue-a30);
+  transition:
+    background var(--dur-short) var(--ease-out),
+    box-shadow var(--dur-short) var(--ease-out);
 }
 
 .site-header nav .nav-download:hover {
-  color: #fff;
-  background: var(--blue);
-  box-shadow: 0 12px 26px rgba(46, 107, 230, 0.28);
+  color: var(--surface-raised);
+  background: var(--blue-deep);
+  box-shadow: 0 10px 24px var(--blue-a30);
 }
 
 /* Language dropdown: a quiet globe pill in the header that opens a small
@@ -173,13 +296,13 @@ p {
   padding: 8px 12px;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--surface-soft);
   color: var(--muted);
   cursor: pointer;
   list-style: none;
   transition:
-    color 180ms ease,
-    background 180ms ease;
+    color var(--dur-short) var(--ease-out),
+    background var(--dur-short) var(--ease-out);
 }
 
 .lang-menu summary::-webkit-details-marker {
@@ -189,7 +312,7 @@ p {
 .lang-menu summary:hover,
 .lang-menu[open] summary {
   color: var(--blue-deep);
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--surface-raised);
 }
 
 .lang-current {
@@ -207,10 +330,10 @@ p {
   margin: 0;
   padding: 6px;
   list-style: none;
-  background: #fff;
+  background: var(--surface-raised);
   border: 1px solid var(--line);
   border-radius: 14px;
-  box-shadow: 0 18px 44px rgba(13, 43, 48, 0.14);
+  box-shadow: 0 18px 44px var(--shadow-ink-strong);
 }
 
 .lang-menu-list a {
@@ -219,9 +342,9 @@ p {
   justify-content: space-between;
   gap: 14px;
   padding: 9px 12px;
-  border-radius: 9px;
+  border-radius: var(--radius-small);
   color: var(--ink-soft);
-  font-weight: 550;
+  font-weight: 500;
   white-space: nowrap;
 }
 
@@ -239,8 +362,12 @@ p {
   color: var(--blue-deep);
 }
 
+/* `clip` rather than `hidden`: overflow:hidden makes main a scroll container,
+   which silently breaks position:sticky for anything inside it. Clip contains
+   the hero ripple without that side effect. */
 main {
   overflow: hidden;
+  overflow: clip;
 }
 
 /* Hero -------------------------------------------------------------------- */
@@ -283,7 +410,7 @@ main {
   stroke: currentColor;
   stroke-width: 0.8;
   transform-origin: 100px 100px;
-  animation: ripple-settle 2.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: ripple-settle 2.6s var(--ease-out) both;
 }
 
 .ripple circle:nth-child(2) {
@@ -322,12 +449,14 @@ main {
   text-transform: uppercase;
 }
 
+/* Tracking and leading are retuned for the serif: -0.03em/0.9 was set for a
+   tight geometric sans and collides the descenders on Instrument Serif. */
 h1 {
-  max-width: 9ch;
+  max-width: 10ch;
   margin-bottom: 22px;
   font-size: clamp(4.1rem, 12vw, 8.6rem);
-  line-height: 0.9;
-  letter-spacing: -0.03em;
+  line-height: 0.98;
+  letter-spacing: -0.015em;
   color: var(--heading);
 }
 
@@ -358,39 +487,35 @@ h1 .accent {
   min-height: 50px;
   border-radius: 999px;
   padding: 0 24px;
-  font-weight: 740;
+  font-weight: 700;
   letter-spacing: -0.01em;
   transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    border-color 180ms ease,
-    background 180ms ease,
-    color 180ms ease;
+    background var(--dur-short) var(--ease-out),
+    border-color var(--dur-short) var(--ease-out),
+    color var(--dur-short) var(--ease-out);
   white-space: nowrap;
 }
 
-.button:hover {
-  transform: translateY(-1px);
-}
-
+/* Press is a real physical response and stays. Hover is a colour shift only —
+   a lift *and* a shadow swap *and* a colour change is three signals for one
+   intent. */
 .button:active {
   transform: translateY(1px);
 }
 
 .button.primary {
   background: var(--blue);
-  color: #ffffff;
-  box-shadow: 0 16px 34px rgba(46, 107, 230, 0.3);
+  color: var(--surface-raised);
+  box-shadow: 0 16px 34px var(--blue-a30);
 }
 
 .button.primary:hover {
   background: var(--blue-deep);
-  box-shadow: 0 18px 38px rgba(27, 79, 190, 0.32);
 }
 
 .button.secondary {
   border: 1px solid var(--line-strong);
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--surface);
   color: var(--ink);
 }
 
@@ -409,13 +534,13 @@ h1 .accent {
 }
 
 .proof-list li {
-  border: 1px solid rgba(46, 107, 230, 0.2);
+  border: 1px solid var(--blue-a20);
   border-radius: 999px;
   padding: 8px 14px;
-  background: rgba(228, 236, 253, 0.6);
+  background: var(--blue-soft);
   color: var(--blue-deep);
   font-size: 0.92rem;
-  font-weight: 680;
+  font-weight: 600;
 }
 
 .hero-media {
@@ -445,10 +570,14 @@ h1 .accent {
 }
 
 /* Feature row ------------------------------------------------------------- */
+/* No cards. Four columns under a shared rule — the hairline does the grouping
+   that a rounded box with a drop shadow was doing, without competing with the
+   real cards further down the page. The icon sits inline in the accent, not in
+   a coloured tile: the tile was the universal icon-card template. */
 .hero-features {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 22px;
+  gap: 0 clamp(24px, 3vw, 42px);
   width: min(var(--page-max), calc(100% - var(--page-gutter)));
   margin: 0 auto;
   padding: 18px 0 clamp(74px, 8vw, 104px);
@@ -457,34 +586,18 @@ h1 .accent {
 .hero-features article {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: 18px;
+  gap: 13px;
   align-items: start;
-  min-height: 108px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 24px;
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
-  transition:
-    transform 200ms ease,
-    box-shadow 200ms ease,
-    border-color 200ms ease;
-}
-
-.hero-features article:hover {
-  transform: translateY(-3px);
-  border-color: var(--line-strong);
-  box-shadow: var(--shadow);
+  padding-top: var(--space-md);
+  border-top: 2px solid var(--line-strong);
 }
 
 .feature-icon {
   display: grid;
   place-items: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 13px;
-  background: var(--blue-soft);
-  color: var(--blue-deep);
+  width: 24px;
+  height: 24px;
+  color: var(--blue);
 }
 
 .feature-icon svg {
@@ -492,8 +605,13 @@ h1 .accent {
   height: 24px;
 }
 
+/* These are section-level headings in the outline but card-sized labels on the
+   page — they stay on the sans. The display serif is for the two headline
+   levels a reader looks at, not the ones they scan. */
 .hero-features h2 {
   margin-bottom: 5px;
+  font-family: var(--font-sans);
+  font-weight: 700;
   font-size: 1.06rem;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -516,6 +634,25 @@ h1 .accent {
   padding: clamp(38px, 4vw, 62px) 0;
 }
 
+/* Sections don't all breathe the same. The philosophy beat is the page's pause
+   and earns the most air (and no divider rule — a pause shouldn't be fenced);
+   download is a utility block and needs the least. */
+.philosophy {
+  padding: clamp(60px, 7vw, 106px) 0;
+}
+
+.philosophy::before {
+  display: none;
+}
+
+.workflow {
+  padding-bottom: clamp(48px, 5vw, 80px);
+}
+
+.download {
+  padding-top: clamp(28px, 3vw, 42px);
+}
+
 .section-band::before {
   content: "";
   position: absolute;
@@ -526,9 +663,9 @@ h1 .accent {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(46, 107, 230, 0.28) 18%,
-    rgba(14, 140, 124, 0.34) 50%,
-    rgba(46, 107, 230, 0.28) 82%,
+    var(--blue-a30) 18%,
+    var(--teal-a34) 50%,
+    var(--blue-a30) 82%,
     transparent
   );
 }
@@ -552,8 +689,8 @@ h2 {
   max-width: 740px;
   margin-bottom: 0;
   font-size: clamp(2.4rem, 5vw, 4.4rem);
-  line-height: 1.02;
-  letter-spacing: -0.025em;
+  line-height: 1.08;
+  letter-spacing: -0.012em;
   color: var(--heading);
 }
 
@@ -605,15 +742,15 @@ h2 {
   padding: 18px 18px 16px;
   border: 1px solid var(--line);
   border-radius: var(--radius-medium);
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--surface-soft);
   font: inherit;
   color: inherit;
   text-align: left;
   cursor: pointer;
   transition:
-    border-color 180ms ease,
-    background 180ms ease,
-    box-shadow 180ms ease;
+    border-color var(--dur-short) var(--ease-out),
+    background var(--dur-short) var(--ease-out),
+    box-shadow var(--dur-short) var(--ease-out);
 }
 
 .loop-step:hover {
@@ -623,7 +760,7 @@ h2 {
 
 .loop-step.is-active {
   background: var(--surface);
-  border-color: rgba(46, 107, 230, 0.55);
+  border-color: var(--blue-a55);
   box-shadow: var(--shadow-sm);
 }
 
@@ -654,7 +791,7 @@ h2 {
   inset: 0;
   margin: 0;
   opacity: 0;
-  transition: opacity 420ms ease;
+  transition: opacity var(--dur-long) var(--ease-in-out);
 }
 
 .loop-shot.is-active {
@@ -711,9 +848,9 @@ h2 {
   transform: translate(-50%, -50%) scale(0.8);
   opacity: 0;
   transition:
-    transform 460ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 460ms ease,
-    filter 460ms ease;
+    transform var(--dur-long) var(--ease-in-out),
+    opacity var(--dur-long) var(--ease-in-out),
+    filter var(--dur-long) var(--ease-in-out);
 }
 
 .coverflow-slide img {
@@ -766,9 +903,9 @@ h2 {
   color: var(--ink);
   cursor: pointer;
   transition:
-    border-color 180ms ease,
-    color 180ms ease,
-    transform 180ms ease;
+    border-color var(--dur-short) var(--ease-out),
+    color var(--dur-short) var(--ease-out),
+    transform var(--dur-short) var(--ease-out);
 }
 
 .coverflow-arrow:hover {
@@ -795,8 +932,8 @@ h2 {
   background: var(--line-strong);
   cursor: pointer;
   transition:
-    background 180ms ease,
-    transform 180ms ease;
+    background var(--dur-short) var(--ease-out),
+    transform var(--dur-short) var(--ease-out);
 }
 
 .coverflow-dot:hover {
@@ -809,24 +946,29 @@ h2 {
 }
 
 /* Trust ------------------------------------------------------------------- */
+/* Three equal bordered cards in a row is the most-generated section on the web.
+   Same three claims, carried typographically: an asymmetric span, a rule, and
+   room to breathe. Nothing here needed a box. */
 .trust-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: clamp(24px, 4vw, 56px);
 }
 
 .trust-grid article {
-  min-height: 184px;
-  padding: 26px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-medium);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
+  padding-top: var(--space-md);
+  border-top: 2px solid var(--blue);
+}
+
+.trust-grid article:nth-child(2),
+.trust-grid article:nth-child(3) {
+  border-top-color: var(--line-strong);
 }
 
 .trust-grid h3 {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-size: 1.24rem;
+  font-weight: 700;
   letter-spacing: -0.01em;
 }
 
@@ -836,23 +978,27 @@ h2 {
 }
 
 /* Power ------------------------------------------------------------------- */
+/* Left-aligned, not a second centred slab. The philosophy beat is the page's
+   one deliberate centred pause — breaking symmetry once is the point, twice is
+   just a habit. */
 .power {
   display: grid;
-  text-align: center;
-}
-
-.power .eyebrow {
-  justify-self: center;
+  justify-items: start;
+  text-align: left;
 }
 
 .power h2 {
-  justify-self: center;
-  margin-bottom: 22px;
+  max-width: 16ch;
+  margin-bottom: 18px;
 }
 
 .power p {
-  justify-self: center;
-  max-width: 640px;
+  max-width: 620px;
+}
+
+.power .text-link {
+  justify-self: start;
+  margin-top: 18px;
 }
 
 /* Reviews ----------------------------------------------------------------- */
@@ -868,14 +1014,16 @@ h2 {
   column-gap: 16px;
 }
 
+/* Flat, hairline-only. A wall of quotes doesn't need to float — dropping the
+   shadow here leaves the download platforms as the page's one real card, which
+   is the point of a card. */
 .review {
   break-inside: avoid;
   margin: 0 0 16px;
-  padding: 26px;
+  padding: 24px;
   border: 1px solid var(--line);
   border-radius: var(--radius-medium);
   background: var(--surface);
-  box-shadow: var(--shadow-sm);
 }
 
 .review-stars {
@@ -958,11 +1106,11 @@ h2 {
   justify-self: center;
   margin-top: 12px;
   color: var(--blue-deep);
-  font-weight: 760;
+  font-weight: 700;
   text-decoration: underline;
-  text-decoration-color: rgba(46, 107, 230, 0.32);
+  text-decoration-color: var(--blue-a30);
   text-underline-offset: 5px;
-  transition: text-decoration-color 180ms ease;
+  transition: text-decoration-color var(--dur-short) var(--ease-out);
 }
 
 .text-link:hover {
@@ -987,14 +1135,14 @@ h2 {
   background: var(--surface);
   box-shadow: var(--shadow-sm);
   transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease;
+    transform var(--dur-short) var(--ease-out),
+    border-color var(--dur-short) var(--ease-out),
+    box-shadow var(--dur-short) var(--ease-out);
 }
 
 .dl-platform.is-detected {
   border-color: var(--blue);
-  box-shadow: 0 22px 48px rgba(46, 107, 230, 0.18);
+  box-shadow: 0 22px 48px var(--blue-a20);
 }
 
 .dl-platform-head {
@@ -1007,7 +1155,7 @@ h2 {
 .dl-platform-head h3 {
   margin: 0;
   font-size: 1.16rem;
-  font-weight: 760;
+  font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--ink);
 }
@@ -1024,7 +1172,7 @@ h2 {
   background: var(--blue-soft);
   color: var(--blue-deep);
   font-size: 0.74rem;
-  font-weight: 720;
+  font-weight: 700;
   letter-spacing: -0.01em;
   white-space: nowrap;
 }
@@ -1088,16 +1236,16 @@ h2 {
   border: 1px solid var(--line-strong);
   border-radius: 9px;
   padding: 7px 11px;
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--surface);
   color: var(--muted);
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   cursor: pointer;
   transition:
-    color 160ms ease,
-    border-color 160ms ease,
-    background 160ms ease;
+    color var(--dur-instant) var(--ease-out),
+    border-color var(--dur-instant) var(--ease-out),
+    background var(--dur-instant) var(--ease-out);
 }
 
 .dl-copy:hover {
@@ -1116,7 +1264,7 @@ h2 {
   align-items: center;
   gap: 5px;
   font-size: 0.94rem;
-  font-weight: 660;
+  font-weight: 600;
   color: var(--blue-deep);
 }
 
@@ -1164,8 +1312,8 @@ h2 {
   background: transparent;
   box-shadow: none;
   transition:
-    opacity 180ms ease,
-    transform 180ms ease;
+    opacity var(--dur-short) var(--ease-out),
+    transform var(--dur-short) var(--ease-out);
 }
 
 .store-badge:hover,
@@ -1219,7 +1367,7 @@ h2 {
   border-radius: 11px;
   padding: 0 18px;
   background: #181717;
-  color: #ffffff;
+  color: var(--surface-raised);
   box-shadow: 0 12px 26px rgba(24, 23, 23, 0.22);
 }
 
@@ -1231,7 +1379,7 @@ h2 {
 
 .github-download strong {
   font-size: 0.92rem;
-  font-weight: 760;
+  font-weight: 700;
   letter-spacing: -0.01em;
 }
 
@@ -1270,14 +1418,16 @@ main > section:last-child {
   color: var(--muted);
 }
 
+/* The trademark and licence line — the one text on the page you most need to
+   be readable. At 0.68rem and 65% opacity it measured 2.66:1, well under AA.
+   Full-strength --muted is 5.2:1. */
 .footer-legal {
   align-self: stretch;
   margin: 3px 0 0;
   text-align: left;
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   line-height: 1.5;
   color: var(--muted);
-  opacity: 0.65;
 }
 
 /* Legal / policy prose (privacy) ------------------------------------------ */
@@ -1295,9 +1445,14 @@ main > section:last-child {
   font-size: 0.86rem;
 }
 
+/* Policy subheads are running-document structure, not display type — they stay
+   on the sans at a real weight. Instrument Serif's single 400 would read as
+   limp here. */
 .legal-body h2 {
   max-width: none;
   margin: 32px 0 10px;
+  font-family: var(--font-sans);
+  font-weight: 700;
   font-size: 1.35rem;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -1333,7 +1488,7 @@ main > section:last-child {
 }
 
 .site-footer a {
-  transition: color 180ms ease;
+  transition: color var(--dur-short) var(--ease-out);
 }
 
 .site-footer a:hover {
@@ -1400,31 +1555,17 @@ main > section:last-child {
 }
 
 /* Feature grid ------------------------------------------------------------ */
+/* Nine cards in a 3x3 was the page's densest block of identical boxes. The
+   accent square beside each heading was already doing the marking; the box
+   around it was redundant. This is now a list with a hanging marker, in three
+   columns, and it reads faster than the cards did. */
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin: 0 0 30px;
+  gap: var(--space-lg) clamp(24px, 4vw, 56px);
+  margin: 0 0 34px;
   padding: 0;
   list-style: none;
-}
-
-.feature-grid li {
-  padding: 22px 24px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-medium);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
-  transition:
-    transform 200ms ease,
-    box-shadow 200ms ease,
-    border-color 200ms ease;
-}
-
-.feature-grid li:hover {
-  transform: translateY(-3px);
-  border-color: var(--line-strong);
-  box-shadow: var(--shadow);
 }
 
 .feature-grid h3 {
@@ -1432,6 +1573,7 @@ main > section:last-child {
   margin: 0 0 8px;
   padding-left: 18px;
   font-size: 1.1rem;
+  font-weight: 700;
   letter-spacing: -0.01em;
 }
 
@@ -1448,6 +1590,7 @@ main > section:last-child {
 
 .feature-grid p {
   margin: 0;
+  padding-left: 18px;
   color: var(--muted);
   font-size: 0.96rem;
   line-height: 1.5;
@@ -1497,7 +1640,7 @@ main > section:last-child {
 
 .compare-table thead th {
   font-size: 0.88rem;
-  font-weight: 760;
+  font-weight: 700;
   color: var(--ink);
   white-space: nowrap;
 }
@@ -1519,7 +1662,7 @@ main > section:last-child {
 
 .compare-table thead .col-me {
   color: var(--blue-deep);
-  font-weight: 820;
+  font-weight: 800;
 }
 
 .compare-table td.yes::before {
@@ -1535,13 +1678,13 @@ main > section:last-child {
 
 .compare-table td.partial::before {
   content: "\25D0";
-  color: #93a3a0;
+  color: var(--tone-partial);
   font-size: 1rem;
 }
 
 .compare-table td.no::before {
   content: "\2715";
-  color: #b25c5c;
+  color: var(--tone-no);
   font-weight: 700;
   font-size: 0.98rem;
 }
@@ -1570,12 +1713,12 @@ main > section:last-child {
 
 .compare-legend .lg-partial::before {
   content: "\25D0";
-  color: #93a3a0;
+  color: var(--tone-partial);
 }
 
 .compare-legend .lg-no::before {
   content: "\2715";
-  color: #b25c5c;
+  color: var(--tone-no);
   font-weight: 700;
 }
 
@@ -1631,9 +1774,12 @@ main > section:last-child {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /* Stacked, the hairline-ruled columns read as a list — they need a row gap
+     back, since the desktop grid deliberately runs at row-gap 0. */
   .hero-features,
   .trust-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
   /* Loop tour: the step rail turns into a horizontal, snappable strip so the
@@ -1666,8 +1812,13 @@ main > section:last-child {
 
 @media (max-width: 720px) {
   .site-header {
+    padding-top: 8px;
+  }
+
+  .site-header-inner {
     gap: 8px;
-    padding-inline: 12px;
+    min-height: 52px;
+    padding: 6px 8px 6px 12px;
   }
 
   .site-header nav {
@@ -1692,16 +1843,22 @@ main > section:last-child {
     padding: 7px 10px;
   }
 
-  /* Translated nav labels run longer than the English ones; tighten the nav
-     further on narrow phones so every locale fits on one line. */
-  @media (max-width: 480px) {
+  /* Translated nav labels run longer than the English ones (fr "Fonctionnalités"
+     is double the width of "Features"), so the pill has to give ground on narrow
+     phones. Everything dropped here is still one tap away in the footer. */
+  @media (max-width: 560px) {
+    .site-header-inner {
+      width: min(100% - 16px, var(--page-max));
+      padding: 5px 6px 5px 10px;
+    }
+
     .site-header nav {
-      gap: 6px;
-      font-size: 0.75rem;
+      gap: 8px;
+      font-size: 0.78rem;
     }
 
     .site-header nav .nav-download {
-      padding: 7px 10px;
+      padding: 8px 12px;
     }
 
     /* Globe only: the menu itself spells the languages out. */
@@ -1713,8 +1870,21 @@ main > section:last-child {
       display: none;
     }
 
-    /* The GitHub link stays reachable from the footer. */
-    .site-header nav .nav-secondary {
+    /* Docs and GitHub stay reachable from the footer. Dropping them is what
+       keeps the CTA on one line instead of clipping it off the pill. */
+    .site-header nav .nav-secondary,
+    .site-header nav .nav-tertiary {
+      display: none;
+    }
+  }
+
+  /* 320px is the last width where the CTA still doesn't fit — measured at
+     286px of room against 286px of content, so the Download pill clipped its
+     own edge (en/fr/de; zh's labels are short enough to survive). Below 360,
+     the header keeps only what a phone actually needs: identity, language, and
+     the one action. Every dropped link is in the footer. */
+  @media (max-width: 360px) {
+    .site-header nav a:not(.nav-download) {
       display: none;
     }
   }
@@ -1724,6 +1894,7 @@ main > section:last-child {
   .section-band,
   .platforms,
   .power,
+  .site-header-inner,
   .site-footer {
     width: min(100% - 28px, var(--page-max));
   }
@@ -1854,7 +2025,7 @@ main > section:last-child {
   /* The Mindwtr header is extra-bold on desktop; trim the weight so the name
      stays on one line in its narrow mobile column. */
   .compare-table thead .col-me {
-    font-weight: 760;
+    font-weight: 700;
   }
 
   .compare-table tbody th[scope="row"] {
@@ -1952,9 +2123,9 @@ main > section:last-child {
   color: var(--blue);
   font-weight: 600;
   text-decoration: underline;
-  text-decoration-color: rgba(46, 107, 230, 0.32);
+  text-decoration-color: var(--blue-a30);
   text-underline-offset: 5px;
-  transition: text-decoration-color 180ms ease;
+  transition: text-decoration-color var(--dur-short) var(--ease-out);
 }
 
 .help-links a:hover {
@@ -1997,13 +2168,13 @@ main > section:last-child {
 .kofi-cta {
   gap: 9px;
   background: #72a4f2;
-  color: #ffffff;
+  color: var(--surface-raised);
   box-shadow: 0 16px 34px rgba(114, 164, 242, 0.3);
 }
 
 .kofi-cta:hover {
   background: #5b93ef;
-  color: #ffffff;
+  color: var(--surface-raised);
 }
 
 .kofi-cta .kofi-cup {
@@ -2016,13 +2187,13 @@ main > section:last-child {
 .github-cta {
   gap: 9px;
   background: #1f2328;
-  color: #ffffff;
+  color: var(--surface-raised);
   box-shadow: 0 16px 34px rgba(31, 35, 40, 0.26);
 }
 
 .github-cta:hover {
   background: #32383f;
-  color: #ffffff;
+  color: var(--surface-raised);
 }
 
 .github-cta .gh-heart {

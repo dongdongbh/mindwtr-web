@@ -221,6 +221,13 @@ function sharedHeadMeta(locale: Locale, pageName: string, pagePath: string): str
       `    <link rel="alternate" hreflang="x-default" href="${ORIGIN}${localePath("en", pageName)}" />\n`
     : "";
   const detect = locale === "en" && LOCALIZED_PAGES.has(pageName) ? DETECT_SCRIPT : "";
+  // The headline is the LCP element, so the display face is on the critical
+  // path — preload it. Skipped on zh: its unicode-range excludes CJK, so the
+  // Chinese pages never fetch the font and preloading it would be dead weight.
+  const displayFont =
+    locale === "zh"
+      ? ""
+      : `    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/instrument-serif-latin.woff2" crossorigin />\n`;
   return `    <meta property="og:type" content="website" />
     <meta property="og:url" content="${url}" />
     <meta property="og:image" content="${ORIGIN}/assets/screenshots/social-preview.jpg" />
@@ -231,7 +238,7 @@ function sharedHeadMeta(locale: Locale, pageName: string, pagePath: string): str
     <meta name="twitter:image" content="${ORIGIN}/assets/screenshots/social-preview.jpg" />
     <link rel="icon" href="/assets/brand/icon.png" />
     <link rel="canonical" href="${url}" />
-${alternates}${detect}`;
+${displayFont}${alternates}${detect}`;
 }
 
 function header(locale: Locale, pageName: string, pagePath: string): string {
@@ -243,21 +250,25 @@ function header(locale: Locale, pageName: string, pagePath: string): string {
   // in the footer); nav-secondary hides it below 480px.
   const links = [
     { href: localePath(locale, "features"), label: t.features },
-    { href: "https://docs.mindwtr.app/", label: t.docs },
+    // Docs and GitHub drop out on narrow phones — both are one tap away in the
+    // footer, and a nav CTA that wraps or clips is worse than a shorter nav.
+    { href: "https://docs.mindwtr.app/", label: t.docs, className: "nav-tertiary" },
     { href: "https://github.com/dongdongbh/Mindwtr", label: "GitHub", className: "nav-secondary" },
     { href: localePath(locale, "support"), label: t.support }
   ]
     .map((link) => `        ${anchor(link, pagePath)}`)
     .join("\n");
   return `    <header class="site-header">
-      <a class="brand" href="${home}" aria-label="${t.homeAria}">
-        <img src="/assets/brand/icon.png" alt="" />
-        <span>Mindwtr</span>
-      </a>
-      <nav aria-label="${t.primaryNavAria}">
+      <div class="site-header-inner">
+        <a class="brand" href="${home}" aria-label="${t.homeAria}">
+          <img src="/assets/brand/icon.png" alt="" />
+          <span>Mindwtr</span>
+        </a>
+        <nav aria-label="${t.primaryNavAria}">
 ${links}
-${languageMenu(locale, pageName, t)}        <a class="nav-download" href="${download}">${t.download}</a>
-      </nav>
+${languageMenu(locale, pageName, t)}          <a class="nav-download" href="${download}">${t.download}</a>
+        </nav>
+      </div>
     </header>
 
 `;

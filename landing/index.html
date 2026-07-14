@@ -11,7 +11,7 @@
       property="og:description"
       content="Get everything out of your head. Capture tasks in seconds, see the next step. Free, no account, works offline."
     />
-    <link rel="preload" as="image" href="/assets/screenshots/landing_image.png" />
+    <link rel="preload" as="image" href="/assets/screenshots/landing_image.png" fetchpriority="high" />
     <title>Mindwtr - Mind like water</title>
   </head>
   <body>
@@ -26,7 +26,6 @@
           </svg>
         </div>
         <div class="hero-copy">
-          <p class="eyebrow">Free · Works offline · No account</p>
           <h1 id="hero-title">Mind like <span class="accent">water.</span></h1>
           <p class="hero-subhead">
             The to-do app that gets everything out of your head: capture any task
@@ -47,7 +46,7 @@
 
         <div class="hero-media" aria-label="Mindwtr app screenshots">
           <figure class="desktop-frame">
-            <img src="/assets/screenshots/landing_image.png" alt="Mindwtr shown on desktop and mobile with focus and review views" />
+            <img src="/assets/screenshots/landing_image.png" alt="Mindwtr shown on desktop and mobile with focus and review views" fetchpriority="high" decoding="async" />
           </figure>
         </div>
       </section>
@@ -74,7 +73,7 @@
             </svg>
           </span>
           <div>
-            <h2>See only what's next</h2>
+            <h2>See only what’s next</h2>
             <p>Focus shows the few things you can do right now, not a wall of tasks.</p>
           </div>
         </article>
@@ -107,7 +106,6 @@
       </section>
 
       <section class="philosophy section-band" aria-labelledby="problem-title">
-        <p class="eyebrow">Sound familiar?</p>
         <h2 id="problem-title">Most to-do lists quietly become another chore.</h2>
         <p class="philosophy-lead">
           You write everything down; a month later half of it is stale and
@@ -115,7 +113,7 @@
           answers the one question that matters: what should I do <em>next</em>?
         </p>
         <blockquote class="philosophy-quote">
-          Don't show me a cockpit when I just want to ride a bike.
+          Don’t show me a cockpit when I just want to ride a bike.
         </blockquote>
         <p class="philosophy-link">
           <a class="text-link" href="/gtd">Mindwtr fixes this with a simple method — what is GTD? <span aria-hidden="true">→</span></a>
@@ -124,7 +122,6 @@
 
       <section class="workflow section-band" aria-labelledby="workflow-title">
         <div class="section-copy">
-          <p class="eyebrow">The GTD method, built in</p>
           <h2 id="workflow-title">A trusted system, not another noisy task list.</h2>
           <p>
             Getting Things Done (GTD) in one line: your head is for having ideas,
@@ -187,7 +184,6 @@
 
       <section class="features section-band" aria-labelledby="features-title">
         <div class="section-copy">
-          <p class="eyebrow">Everything in one place</p>
           <h2 id="features-title">A complete system, not a pile of features.</h2>
           <p>
             Every view is built for the GTD method, with depth that stays out of the way
@@ -217,7 +213,7 @@
           </li>
           <li>
             <h3>Audio capture</h3>
-            <p>Speak a task; it's transcribed and filed into your inbox automatically.</p>
+            <p>Speak a task; it’s transcribed and filed into your inbox automatically.</p>
           </li>
           <li>
             <h3>Pomodoro Focus</h3>
@@ -242,7 +238,6 @@
 
       <section class="platforms" aria-labelledby="platforms-title">
         <div class="platform-copy">
-          <p class="eyebrow">Desktop, mobile, web</p>
           <h2 id="platforms-title">Native where you work. Private where it counts.</h2>
           <p>
             Use Mindwtr on macOS, Windows, Linux, iOS, and Android, plus a web
@@ -283,7 +278,6 @@
 
       <section class="trust section-band" aria-labelledby="trust-title">
         <div class="section-copy">
-          <p class="eyebrow">Trust by default</p>
           <h2 id="trust-title">No account required. No subscription pressure.</h2>
           <p>
             Your tasks live on your device, so nothing disappears when the
@@ -309,10 +303,9 @@
 
       <section class="compare section-band" id="compare" aria-labelledby="compare-title">
         <div class="section-copy">
-          <p class="eyebrow">Why Mindwtr</p>
           <h2 id="compare-title">A complete GTD system, without the lock-in.</h2>
           <p>
-            A brief, respectful comparison based on each product's current public
+            A brief, respectful comparison based on each product’s current public
             capabilities.
           </p>
         </div>
@@ -397,7 +390,6 @@
       </section>
 
       <section class="power" aria-labelledby="power-title">
-        <p class="eyebrow">Power when you ask for it</p>
         <h2 id="power-title">Automation and AI stay optional.</h2>
         <p>
           Connect your own AI account or a local model, script the desktop API,
@@ -415,7 +407,6 @@
           <symbol id="rv-googleplay" viewBox="0 0 24 24"><path fill="#00d3ff" d="M4 3 12.5 12 4 12Z"/><path fill="#00e676" d="M4 12 12.5 12 4 21Z"/><path fill="#ffce00" d="M4 3 21 12 12.5 12Z"/><path fill="#ff3d47" d="M12.5 12 21 12 4 21Z"/></symbol>
         </svg>
         <div class="section-copy">
-          <p class="eyebrow">What people are saying</p>
           <h2 id="reviews-title">Loved by people who actually get things done.</h2>
           <p>
             Real reviews from across GitHub, Reddit, the App Store, Google Play and
@@ -425,7 +416,7 @@
         </div>
         <div class="reviews-masonry">
           <figure class="review">
-            <blockquote>This is by far the best GTD software I've used including two paid subscription ones. Cannot emphasize that enough.</blockquote>
+            <blockquote>This is by far the best GTD software I’ve used including two paid subscription ones. Cannot emphasize that enough.</blockquote>
             <figcaption class="review-by">
               <span class="review-name">James</span>
               <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-discord"/></svg>Discord</span>
@@ -448,7 +439,7 @@
             </figcaption>
           </figure>
           <figure class="review">
-            <blockquote>Exactly the kind of to-do app I've been looking for for so long. For Android, Linux, and macOS. Excellent data protection. Offline. Clear, minimalist design without looking ugly. And then it's also free and open source&hellip;</blockquote>
+            <blockquote>Exactly the kind of to-do app I’ve been looking for for so long. For Android, Linux, and macOS. Excellent data protection. Offline. Clear, minimalist design without looking ugly. And then it’s also free and open source&hellip;</blockquote>
             <figcaption class="review-by">
               <span class="review-name">Dads-finest</span>
               <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-reddit"/></svg>Reddit</span>
@@ -471,7 +462,7 @@
           </figure>
           <figure class="review">
             <p class="review-stars" role="img" aria-label="Rated 5 out of 5 stars">&starf;&starf;&starf;&starf;&starf;</p>
-            <blockquote>The best digital fast-capture GTD-oriented app I've ever used and rapidly improving all the time, and will always be free thanks to the creator's licensing philosophy.</blockquote>
+            <blockquote>The best digital fast-capture GTD-oriented app I’ve ever used and rapidly improving all the time, and will always be free thanks to the creator’s licensing philosophy.</blockquote>
             <figcaption class="review-by">
               <span class="review-name">Jonathan</span>
               <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-googleplay"/></svg>Google Play</span>
@@ -497,7 +488,6 @@
 
       <section class="download section-band" id="download" aria-labelledby="download-title">
         <div class="section-copy">
-          <p class="eyebrow">Install</p>
           <h2 id="download-title">Download Mindwtr</h2>
           <p>Pick the channel that fits your device. Stores for one-click installs, package managers and direct files for everyone else.</p>
         </div>

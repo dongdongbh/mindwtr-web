@@ -46,6 +46,8 @@ Examples:
 - Clean filters 2 weeks after completion.
 - Follow up 1 month after the previous follow-up.
 
+When an after-completion repeat also picks weekdays or a day of the month, the next task lands on the first matching day in the last week (or month) of the interval. Completing "every 2 weeks on Sunday" on a Tuesday brings it back the Sunday after next, not the coming Sunday.
+
 If you finished a task earlier but only mark it Done later, complete it with the actual time instead — right-click the complete button on desktop, or long-press **Done** in the mobile status menu — and the next occurrence is scheduled from when you really finished.
 
 ## Ending a Recurrence

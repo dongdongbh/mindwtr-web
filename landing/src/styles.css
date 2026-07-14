@@ -201,17 +201,30 @@ h2 {
 }
 
 /* Header ------------------------------------------------------------------ */
-/* A centred floating pill rather than a full-bleed sticky bar with a hairline
-   rule — that bar (wordmark left, links right, CTA hard-right, 1px bottom
-   border) is the single most-recognised generated-nav shape on the web.
-   The inner row is width-matched to the page grid, so the wordmark sits on the
-   same optical line as the hero copy. */
+/* Scroll-morph. At the top of the page the header has NO chrome at all — the
+   wordmark and nav sit directly on the paper, on the same grid line as the hero
+   copy. Once the page scrolls, a blurred bar fades in beneath them.
+   This kills two shapes at once: a permanent full-bleed bar with a hairline rule
+   is the most-recognised generated-nav on the web, and a floating pill leaves
+   transparent gutters that page content slices through as it scrolls past, which
+   reads as a rendering bug. No edge at rest means neither can happen.
+   Only paint properties transition — the height is fixed, so the morph can never
+   thrash layout. */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
-  padding: 12px 0 0;
   background: transparent;
+  transition:
+    background var(--dur-medium) var(--ease-out),
+    box-shadow var(--dur-medium) var(--ease-out);
+}
+
+.site-header.is-stuck {
+  background: var(--surface-glass);
+  backdrop-filter: blur(18px) saturate(1.1);
+  /* A soft lift, not a 1px rule — the hairline border-bottom is the tell. */
+  box-shadow: 0 10px 30px var(--shadow-ink);
 }
 
 .site-header-inner {
@@ -221,13 +234,7 @@ h2 {
   gap: 24px;
   width: min(var(--page-max), calc(100% - var(--page-gutter)));
   margin: 0 auto;
-  min-height: 60px;
-  padding: 8px 10px 8px 18px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface-glass);
-  backdrop-filter: blur(18px) saturate(1.1);
-  box-shadow: 0 10px 30px var(--shadow-ink);
+  min-height: 72px;
 }
 
 .brand {
@@ -1507,6 +1514,23 @@ main > section:last-child {
   text-align: center;
 }
 
+/* A centred section earns its symmetry by carrying the pull quote. The
+   prose-only variant on /gtd doesn't — and stacked under an already-centred
+   page title it made three centred blocks in a row, which is a habit rather
+   than a decision. It aligns left. */
+.philosophy:not(:has(.philosophy-quote)) {
+  justify-items: start;
+  text-align: left;
+}
+
+.philosophy:not(:has(.philosophy-quote)) h2 {
+  max-width: 22ch;
+}
+
+.philosophy:not(:has(.philosophy-quote)) .philosophy-lead {
+  max-width: 68ch;
+}
+
 .philosophy .eyebrow {
   margin-bottom: 0;
 }
@@ -1532,15 +1556,13 @@ main > section:last-child {
   letter-spacing: -0.02em;
 }
 
+/* Opening mark only. The closing ::after was its own inline box, so when the
+   last line filled the measure it wrapped and left a quote mark stranded alone
+   on a line (visible on /gtd). An opening-only mark can't orphan, and it matches
+   how the review quotes on the landing page already read. */
 .philosophy-quote::before {
   content: "\201C";
   margin-right: 0.04em;
-  color: var(--blue);
-}
-
-.philosophy-quote::after {
-  content: "\201D";
-  margin-left: 0.04em;
   color: var(--blue);
 }
 
@@ -1811,14 +1833,9 @@ main > section:last-child {
 }
 
 @media (max-width: 720px) {
-  .site-header {
-    padding-top: 8px;
-  }
-
   .site-header-inner {
     gap: 8px;
-    min-height: 52px;
-    padding: 6px 8px 6px 12px;
+    min-height: 60px;
   }
 
   .site-header nav {
@@ -1844,14 +1861,9 @@ main > section:last-child {
   }
 
   /* Translated nav labels run longer than the English ones (fr "Fonctionnalités"
-     is double the width of "Features"), so the pill has to give ground on narrow
-     phones. Everything dropped here is still one tap away in the footer. */
+     is double the width of "Features"), so the header has to give ground on
+     narrow phones. Everything dropped here is one tap away in the footer. */
   @media (max-width: 560px) {
-    .site-header-inner {
-      width: min(100% - 16px, var(--page-max));
-      padding: 5px 6px 5px 10px;
-    }
-
     .site-header nav {
       gap: 8px;
       font-size: 0.78rem;
@@ -2090,21 +2102,45 @@ main > section:last-child {
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
+  gap: var(--space-lg) clamp(24px, 3vw, 48px);
 }
 
+/* No cards. This one rule is shared by /features, /gtd, /support and /donate —
+   on /features it was 34 identical bordered boxes in six grids, which read as a
+   spreadsheet of features rather than an argument for them. Hairline-ruled
+   columns, matching the landing page, so the whole site is one system. */
 .help-grid li {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-medium);
-  padding: 22px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding-top: var(--space-md);
+  border-top: 2px solid var(--line-strong);
 }
 
 .help-grid h3 {
   margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* The card heading IS the link. Every one of those 34 cards used to end in an
+   identical "Docs →", which told a reader (and a screen reader) nothing about
+   where it went. Now the link text is the topic. */
+.help-grid h3 a.card-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  color: var(--heading);
+  transition: color var(--dur-short) var(--ease-out);
+}
+
+.help-grid h3 a.card-link span {
+  color: var(--blue);
+  transition: transform var(--dur-short) var(--ease-out);
+}
+
+.help-grid h3 a.card-link:hover {
+  color: var(--blue-deep);
 }
 
 .help-grid p {

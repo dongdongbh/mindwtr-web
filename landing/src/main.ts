@@ -149,10 +149,38 @@ function wireLanguageSwitch(): void {
   }
 }
 
+/**
+ * Scroll-morph the header. At the top of the page it has no chrome at all and
+ * sits directly on the paper; once the page scrolls it grows a blurred bar.
+ * A zero-height sentinel at the top of the document does the detection, so
+ * there's no scroll handler running on every frame — the observer only fires
+ * when the sentinel crosses the viewport edge. All the morphing is CSS.
+ */
+function wireHeaderMorph(): void {
+  const header = document.querySelector<HTMLElement>(".site-header");
+  if (!header) return;
+
+  const sentinel = document.createElement("div");
+  sentinel.setAttribute("aria-hidden", "true");
+  sentinel.style.cssText = "position:absolute;top:0;height:1px;width:1px;pointer-events:none;";
+  document.body.prepend(sentinel);
+
+  if (!("IntersectionObserver" in window)) {
+    header.classList.add("is-stuck");
+    return;
+  }
+
+  new IntersectionObserver(
+    ([entry]) => header.classList.toggle("is-stuck", !entry.isIntersecting),
+    { threshold: 0 },
+  ).observe(sentinel);
+}
+
 function init(): void {
   applyPlatform(detectPlatform());
   wireCopyButtons();
   wireLanguageSwitch();
+  wireHeaderMorph();
   initCoverflow();
   initLoopTour();
 }

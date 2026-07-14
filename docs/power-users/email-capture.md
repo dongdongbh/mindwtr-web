@@ -1,8 +1,30 @@
 # Email Capture
 
-Turn emails into Inbox tasks. Two paths work today: the phone share sheet for any mail provider, and the Cloud API for self-hosted deployments. A built-in IMAP folder watch is planned but not shipped yet.
+Turn emails into Inbox tasks. Three paths: the built-in IMAP folder capture on desktop, the phone share sheet for any mail provider, and the Cloud API for self-hosted deployments.
 
 Related: [Cloud API](/developers/cloud-api), [Docker deployment](/power-users/docker-deployment)
+
+## Built-in: watch a mail folder from the desktop app
+
+Point Mindwtr Desktop at a folder in your own mailbox, move or forward mail into it from any client, and each message becomes an Inbox task. Your mail never touches a third-party server — the desktop app talks IMAP directly to your mail provider.
+
+Setup, in **Settings → Integrations → Email capture**:
+
+1. Enter your IMAP server (for example `imap.gmail.com`), username, and an **app password** — regular account passwords usually will not work, and the password is stored in your system keyring
+2. Keep the default folder `Mindwtr` or pick your own; it is created in your mailbox if it does not exist
+3. Enable the switch and save — saving verifies the connection and reports any problem immediately
+4. In your mail client or webmail, add a rule (or drag manually) that moves capture-worthy mail into that folder
+
+While the desktop app is running it checks the folder every few minutes. The subject becomes the task title and the sender plus message body become the description. Capture is read-only: Mindwtr never modifies, moves, or deletes your mail, and it remembers what it already imported so nothing shows up twice — archive or clean the folder whenever you like.
+
+The mailbox is the queue: mail dropped into the folder while your computer is off simply waits there, and the next time Mindwtr opens it catches up. If you need capture with the desktop off entirely, use the [self-hosted recipes](#forward-email-to-a-self-hosted-server) below.
+
+Provider notes:
+
+- **Gmail**: enable 2-step verification, then create an [app password](https://myaccount.google.com/apppasswords); server `imap.gmail.com`
+- **iCloud Mail**: create an [app-specific password](https://support.apple.com/102654); server `imap.mail.me.com`
+- **Fastmail and standard IMAP servers**: create an app password; use your provider's IMAP host
+- **Outlook.com and Microsoft 365**: Microsoft has switched off password-based IMAP, so use the [Power Automate recipe](#outlook-and-microsoft-365-power-automate) instead
 
 ## Share an email from your phone
 
@@ -79,13 +101,6 @@ The same pattern works from any automation tool that can read your mailbox (or r
 
 Keep the token secret: anyone holding it can read and write the tasks in that namespace.
 
-## Planned: built-in IMAP folder watch
+## Why there is no forwarding address
 
-[Issue #35](https://github.com/dongdongbh/Mindwtr/issues/35) tracks first-party email capture: you point Mindwtr Desktop at a folder in your own mailbox (for example `Mindwtr`), move or forward mail into it from any client, and the app turns each message into an Inbox task. Your mail never touches a third-party server.
-
-Provider notes for when it ships:
-
-- Gmail, iCloud Mail, Fastmail, and standard IMAP servers support app passwords, which is what the first version will target
-- Outlook.com and Microsoft 365 have password-based IMAP switched off; use the Power Automate recipe above instead
-
-There is deliberately no Mindwtr-hosted forwarding address: a hosted relay would mean routing your private email through project infrastructure, which does not fit a local-first app.
+There is deliberately no Mindwtr-hosted forwarding address: a hosted relay would mean routing your private email through project infrastructure, which does not fit a local-first app. The built-in folder watch keeps your mail between your mail server and your own device.

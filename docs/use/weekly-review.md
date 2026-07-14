@@ -111,7 +111,7 @@ Review each inbox item:
 
 **In Mindwtr:**
 - See projects with/without next actions
-- Add next actions where missing
+- Add next actions where missing — the Add task prompt accepts the full [quick-add syntax](/use/desktop#quick-add-syntax) (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …), and **Save & edit** creates the task and opens it in the editor without leaving the review
 - Mark completed projects as Done
 
 ### Step 6: Someday/Maybe

@@ -136,7 +136,9 @@ If you finished a task earlier than you marked it Done, click its **Completed** 
 
 ### 📦 Archived
 
-Completed tasks that have been filed away. Archived tasks are hidden from normal task lists, but you can search, restore, or permanently delete them here. Click a task's **Completed** timestamp to correct it.
+Completed tasks that have been filed away. Archived tasks are hidden from normal task lists, but you can search or restore them here. Click a task's **Completed** timestamp to correct it.
+
+Choose **Select** to pick tasks or **Select All**. You can restore the selection to Inbox or move it to Trash. Mindwtr permanently deletes tasks only from Trash.
 
 ### 📝 Weekly Review
 

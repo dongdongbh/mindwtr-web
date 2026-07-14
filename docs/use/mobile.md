@@ -42,6 +42,8 @@ Tap the **Menu** tab to access additional views:
  - 🗑️ **Trash** — Deleted tasks and projects
  - ⚙️ **Settings** — App preferences
 
+Open **Archived** and tap **Select** to manage more than one task. Tap **Select All** or choose tasks, then restore them to Inbox or move them to Trash. Mindwtr permanently deletes tasks only from Trash.
+
 ---
 
 ## Global Search

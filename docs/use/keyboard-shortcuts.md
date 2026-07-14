@@ -13,6 +13,8 @@ Mindwtr desktop supports keyboard-first use with Standard (Gmail/Todoist-style),
 - In Standard mode, use `e` to mark done, `x` to select tasks for batch actions, `Shift+Enter` to edit, `#` to delete, and `z` to undo.
 - In Vim mode, use `e` to edit, `x` to toggle done, and `dd` to delete.
 - Use `Ctrl+Z` / `Cmd+Z` to undo the last task completion or deletion in any preset.
+- Use `s` followed by a letter to set the selected task's status in any preset: `si` Inbox, `sn` Next, `sw` Waiting, `ss` Someday, `sd` Done, `sa` Archived. A toast confirms the change with an undo button.
+- Use `Insert` to jump to the add-task input (it opens quick add in views without one).
 - Use `A1` through `A9` to switch to an Area by sidebar order, and `A0` to clear the Area filter.
 - Use `Ctrl+Alt+S` to run manual sync on desktop.
 - In the right-click / Shift+F10 context menu: ↑/↓ move between items, → opens a submenu panel and ← comes back, Enter activates, Esc closes and returns focus to the task.

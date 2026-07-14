@@ -477,6 +477,8 @@ See [Desktop Keyboard Shortcuts](/use/keyboard-shortcuts) for the complete list.
 
 `Ctrl+Z` / `Cmd+Z` undoes the last task completion or deletion in every preset.
 
+In every preset, `s` followed by a letter sets the selected task's status directly — `si` Inbox, `sn` Next, `sw` Waiting, `ss` Someday, `sd` Done, `sa` Archived — and shows an undo toast. `Insert` jumps to the add-task input (or opens quick add where a list has none).
+
 ---
 
 ## Settings

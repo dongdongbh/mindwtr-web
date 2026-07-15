@@ -269,6 +269,16 @@ Click the system tray icon for instant capture:
 - Use natural language syntax
 - Task goes directly to Inbox
 
+### Add Task Dialog Shortcuts
+
+The Add Task dialog is fully keyboard-driven:
+
+- `Enter` — save and close
+- `Shift+Enter` — save and keep the dialog open for the next task (batch capture)
+- `Ctrl+Enter` (`⌘Enter` on macOS) — save and open the task in the full editor
+- `Esc` — close without saving
+- While a suggestion popup is open (`@`, `#`, `+`, `%`, `!`, `/`), `↑`/`↓` move through the suggestions and `Enter` or `Tab` inserts the highlighted one
+
 ### Quick-Add Syntax
 
 Mindwtr parses natural language when adding tasks:

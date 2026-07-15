@@ -249,7 +249,7 @@ Focus is not a full inventory view. It hides future-start tasks and later tasks 
 
 Focus first decides whether a task is available, then sorts the visible actions:
 
-1. **Today's Focus** shows tasks you explicitly focused for today.
+1. **Today's Focus** shows tasks you explicitly focused for today. You can arrange them by hand into the order you plan to work them — drag the grip handle on desktop, or use the reorder toggle on the section header on mobile. The manual order applies while the Focus sort is at its default, syncs across devices, and a task keeps its place until it leaves Focus.
 2. **Today / Schedule** shows available `next` tasks that are overdue, due today, or start today. These are ordered by the earliest due/start time, then priority when priorities are enabled, then oldest creation date.
 3. **Next Actions** shows the remaining available `next` tasks. The default order is:
    - due soon first, earliest due date first (currently due within the next 30 days)

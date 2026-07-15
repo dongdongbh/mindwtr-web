@@ -4,6 +4,8 @@ The Weekly Review is the **secret weapon** of GTD. It keeps your system trusted 
 
 > "If you don't have a Weekly Review discipline, you simply won't trust your system past a couple of days." — David Allen
 
+Between reviews, your lists and reality drift apart: work finishes, priorities move, new commitments arrive. The Weekly Review is where you close that gap, and it is what lets you stop rescanning everything in your head. Done well, it leaves you knowing both what to do next and what you can safely ignore.
+
 ---
 
 ## Why Weekly Review?
@@ -66,7 +68,7 @@ Review each inbox item:
 - Active projects with no recent activity
 
 **In Mindwtr:**
-- The review lists these automatically — no review dates required
+- The review surfaces these for you, with no review dates required
 - Items you deferred on purpose don't count as stale: a task or project with a future review date (or a task with a future start date) is left alone until that date arrives
 - Update, complete, or let each one go (move to Someday, archive, or delete)
 - The step is skipped when nothing has gone stale
@@ -100,7 +102,7 @@ Review each inbox item:
 - View all waiting tasks
 - Follow up on stale items
 - Move completed items to Done
-- Items with a future review date sit in a collapsed "Not due yet" group — set a review date on a long wait (bookings that open in the fall, a reply due next quarter) and it stays out of the way until then; if everything is deferred, the step is skipped
+- Items with a future review date sit in a collapsed "Not due yet" group. Set a review date on a long wait (bookings that open in the fall, a reply due next quarter) and it stays out of the way until then; if everything is deferred, the step is skipped
 
 ### Step 5: Review Projects
 
@@ -111,7 +113,7 @@ Review each inbox item:
 
 **In Mindwtr:**
 - See projects with/without next actions
-- Add next actions where missing — the Add task prompt accepts the full [quick-add syntax](/use/desktop#quick-add-syntax) (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …), and **Save & edit** creates the task and opens it in the editor without leaving the review
+- Add next actions where missing. The Add task prompt accepts the full [quick-add syntax](/use/desktop#quick-add-syntax) (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …), and **Save & edit** creates the task and opens it in the editor without leaving the review
 - Mark completed projects as Done
 
 ### Step 6: Someday/Maybe
@@ -217,11 +219,11 @@ If you miss a week:
 
 ## Common Review Mistakes
 
-1. **Skipping the review** — Systems fail quickly without it
-2. **Just scanning lists** — Actually process and update
-3. **Rushing through** — Give it proper time
-4. **Not capturing** — Write down new items discovered
-5. **Ignoring stuck items** — Address or delete stale tasks
+1. **Skipping the review**: Systems fail quickly without it
+2. **Just scanning lists**: Actually process and update
+3. **Rushing through**: Give it proper time
+4. **Not capturing**: Write down new items discovered
+5. **Ignoring stuck items**: Address or delete stale tasks
 
 ---
 

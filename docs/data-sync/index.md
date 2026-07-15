@@ -2,7 +2,7 @@
 
 Mindwtr stores data locally and supports multiple synchronization options between devices.
 
-Mindwtr does **not** run a hosted cloud service. Sync is local‑first and user‑configured: you choose how the `data.json` file (and `attachments/`) moves between devices. It won’t happen automatically until you set up one of the options below—but once configured, it works smoothly.
+Mindwtr does **not** run a hosted cloud service. Sync is local‑first and user‑configured: you choose how the `data.json` file (and `attachments/`) moves between devices. Nothing moves until you set up one of the options below. Once configured, it keeps working on its own.
 
 Current desktop and mobile builds split settings into two pages:
 - **Settings → Sync** for backend setup, sync options, history, and recovery snapshots
@@ -59,11 +59,11 @@ Mindwtr directly supports five sync backends:
 
 | Backend | Platforms | Setup effort | Relative speed | Conflict handling | Best for |
 | --- | --- | --- | --- | --- | --- |
-| **File Sync** (folder) | All | Low — pick a folder | Fastest (plain filesystem) | File-level; the folder provider sees one file | Syncthing, existing cloud-drive clients, LAN |
-| **WebDAV** | All | Medium — server URL + credentials | Slower — HTTP round-trip per request | App-controlled, per-item merge | Nextcloud/ownCloud/Fastmail, remote BYOS |
-| **Mindwtr Cloud (self-hosted)** | All | Higher — deploy `apps/cloud` + token | Fast — single endpoint, server merges on write | App + server-side merge | Several devices editing concurrently |
-| **Dropbox** | Supported builds | Low — OAuth sign-in | Moderate — provider API | App-controlled, per-item merge | Easiest cloud option without your own server |
-| **iCloud / CloudKit** | Apple builds | Low — toggle in Settings | Fast — per-record sync | Per-record CloudKit merge | Apple-only device sets |
+| **File Sync** (folder) | All | Low, pick a folder | Fastest (plain filesystem) | File-level; the folder provider sees one file | Syncthing, existing cloud-drive clients, LAN |
+| **WebDAV** | All | Medium, server URL + credentials | Slower, HTTP round-trip per request | App-controlled, per-item merge | Nextcloud/ownCloud/Fastmail, remote BYOS |
+| **Mindwtr Cloud (self-hosted)** | All | Higher, deploy `apps/cloud` + token | Fast, single endpoint, server merges on write | App + server-side merge | Several devices editing concurrently |
+| **Dropbox** | Supported builds | Low, OAuth sign-in | Moderate, provider API | App-controlled, per-item merge | Easiest cloud option without your own server |
+| **iCloud / CloudKit** | Apple builds | Low, toggle in Settings | Fast, per-record sync | Per-record CloudKit merge | Apple-only device sets |
 
 Speed differences matter most with large attachments, which WebDAV and Dropbox transfer as individual uploads/downloads. See [Data lifecycle](/data-sync/data-lifecycle) for what actually moves during a sync.
 
@@ -254,11 +254,11 @@ Mindwtr also supports direct Dropbox sync in supported desktop/mobile builds.
 
 Mindwtr automatically syncs in the following situations:
 
-- **On startup** — shortly after the app launches.
-- **On data changes** — shortly after task/project changes, with a short debounce so rapid edits sync together.
-- **On app focus** — when the desktop app regains focus, throttled to every 30 seconds; this still runs without local edits so remote changes can be pulled promptly.
-- **On app blur/background** — when you switch away from the desktop app, but only if there are pending local changes to push.
-- **Periodic desktop heartbeat** — every 15 minutes while Mindwtr is running.
+- **On startup**: shortly after the app launches.
+- **On data changes**: shortly after task/project changes, with a short debounce so rapid edits sync together.
+- **On app focus**: when the desktop app regains focus, throttled to every 30 seconds; this still runs without local edits so remote changes can be pulled promptly.
+- **On app blur/background**: when you switch away from the desktop app, but only if there are pending local changes to push.
+- **Periodic desktop heartbeat**: every 15 minutes while Mindwtr is running.
 
 If an automatic sync fails, Mindwtr pauses automatic retry attempts for about 60 seconds. Manual sync remains available during that cooldown.
 
@@ -330,9 +330,9 @@ Mindwtr will automatically sync on startup and when data changes.
 1. Open **Settings → Sync**
 2. Set **Sync Backend** to **WebDAV**
 3. Enter your WebDAV server details:
-   - **URL** — Folder URL; Mindwtr will store `data.json` inside (e.g., `https://nextcloud.example.com/remote.php/dav/files/user/Mindwtr`)
-   - **Username** — Your WebDAV username
-   - **Password** — Your WebDAV password
+   - **URL**: Folder URL; Mindwtr will store `data.json` inside (e.g., `https://nextcloud.example.com/remote.php/dav/files/user/Mindwtr`)
+   - **Username**: Your WebDAV username
+   - **Password**: Your WebDAV password
 4. Click **Save WebDAV**
 
 If the target folder path does not exist yet, Mindwtr will try to create the missing parent collections automatically before uploading `data.json`.

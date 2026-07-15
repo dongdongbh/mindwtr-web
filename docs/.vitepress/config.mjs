@@ -50,7 +50,7 @@ export default defineConfig({
       { text: "Use Mindwtr", link: "/use/desktop" },
       { text: "Data & Sync", link: "/data-sync/" },
       { text: "Import", link: "/import/" },
-      { text: "Power Users", link: "/power-users/ai-assistant" },
+      { text: "Power Users", link: "/power-users/" },
       { text: "Developers", link: "/developers/developer-guide" }
     ],
     sidebar: [
@@ -58,6 +58,8 @@ export default defineConfig({
         text: "Start here",
         items: [
           { text: "Getting started", link: "/start/getting-started" },
+          { text: "What Mindwtr is", link: "/start/what-mindwtr-is" },
+          { text: "What you can count on", link: "/start/commitments" },
           { text: "Desktop installation", link: "/start/desktop-installation" },
           { text: "Mobile installation", link: "/start/mobile-installation" },
           { text: "Beta channels", link: "/start/beta-channels" },
@@ -112,6 +114,7 @@ export default defineConfig({
       {
         text: "Power users",
         items: [
+          { text: "Overview", link: "/power-users/" },
           { text: "AI assistant", link: "/power-users/ai-assistant" },
           { text: "Apple Shortcuts", link: "/power-users/apple-shortcuts" },
           { text: "Email capture", link: "/power-users/email-capture" },

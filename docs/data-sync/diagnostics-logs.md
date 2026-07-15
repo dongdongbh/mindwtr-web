@@ -52,7 +52,7 @@ MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 ## What gets logged
 
 - Sync errors and steps
-- Conflict summaries — merges that resolved conflicts are always written to `mindwtr.log`, even with debug logging off, so resolutions stay auditable after the fact. These always-on entries carry record IDs, changed field names, and which side won; record content (titles, notes) is never written.
+- Conflict summaries: merges that resolved conflicts are always written to `mindwtr.log`, even with debug logging off, so resolutions stay auditable after the fact. These always-on entries carry record IDs, changed field names, and which side won; record content (titles, notes) is never written.
 - Unexpected runtime errors
 
 Sensitive values (API keys, tokens, passwords, URLs with credentials) are redacted automatically.

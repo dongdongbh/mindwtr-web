@@ -62,7 +62,7 @@ The shortcut defaults to Inbox if no list is configured.
 
 ### Add to Mindwtr Inbox
 
-Use **Add to Mindwtr Inbox** to create a task silently, without opening Mindwtr. This is the action to use inside Shortcuts Automations — a time, calendar, or location trigger can add a task with no one touching the phone.
+Use **Add to Mindwtr Inbox** to create a task silently, without opening Mindwtr. This is the action to use inside Shortcuts Automations. A time, calendar, or location trigger can add a task with no one touching the phone.
 
 Parameters:
 
@@ -71,7 +71,7 @@ Parameters:
 | Task | Yes | The task title. Empty titles fail the shortcut. |
 | Note | No | Added as the task description. |
 | Tags | No | Comma-separated tags. Mindwtr normalizes them to `#tag`. |
-| Project | No | Matches an active project by title. Unknown or archived projects are ignored — the task still lands in the Inbox. |
+| Project | No | Matches an active project by title. Unknown or archived projects are ignored, and the task still lands in the Inbox. |
 
 What happens when it runs:
 

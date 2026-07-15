@@ -42,19 +42,19 @@ The task picker controls which task, if any, the Pomodoro panel is attached to. 
 
 Tasks have an optional **Time Spent** value next to the Time Estimate in the task editor. Time Spent requires v1.1.0 or later; earlier versions such as v1.0.5 do not have it.
 
-Time Spent is opt-in and off by default: its surfaces only appear while both the **Pomodoro timer** feature and **Link timer to task** are enabled — the editor field on desktop and mobile, plus the task-row badge and quick-start button on desktop. Turn them off and nothing time-related shows anywhere (recorded values are kept and reappear if you re-enable it). Hiding the Time Estimate field in the task editor layout hides Time Spent with it.
+Time Spent is opt-in and off by default: its surfaces only appear while both the **Pomodoro timer** feature and **Link timer to task** are enabled: the editor field on desktop and mobile, plus the task-row badge and quick-start button on desktop. Turn them off and nothing time-related shows anywhere (recorded values are kept and reappear if you re-enable it). Hiding the Time Estimate field in the task editor layout hides Time Spent with it.
 
 - Every completed focus session with a linked Timer task adds the session's focus minutes to that task's total.
 - You can also set or correct the total by hand in the editor.
 - Tasks with recorded time show a small badge in desktop task lists, and the total syncs across your devices like any other task field.
 
-There is deliberately no per-session log, reporting screen, or free-running stopwatch — the total is a single number per task. For external reports, read `timeSpentMinutes` through the Cloud API or MCP server.
+By design there is no per-session log, reporting screen, or free-running stopwatch. The total is a single number per task. For external reports, read `timeSpentMinutes` through the Cloud API or MCP server.
 
 ## Start a session from a task (desktop)
 
 When both the Pomodoro feature and **Link timer to task** are enabled, hovering a task row shows a play button:
 
-- Click it to link that task and start a focus session immediately — no hunting through the Timer task dropdown.
+- Click it to link that task and start a focus session at once, with no hunting through the Timer task dropdown.
 - The button also shows how many focus sessions you have completed on that task.
 
 ---

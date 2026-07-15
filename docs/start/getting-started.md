@@ -54,7 +54,7 @@ On a fresh install, Mindwtr asks whether you want to start fresh, import a backu
 
 ## Quick Add Syntax
 
-Mindwtr supports natural language quick-add. Type directly in the task input — the same syntax also works in the "What's the next action?" prompt that appears when you finish a project's last action (for example, end on `/waiting` to park the follow-up as Waiting For):
+Mindwtr supports natural language quick-add. Type directly in the task input. The same syntax also works in the "What's the next action?" prompt that appears when you finish a project's last action (for example, end on `/waiting` to park the follow-up as Waiting For):
 
 | Syntax             | Example                    | Result                |
 | ------------------ | -------------------------- | --------------------- |
@@ -121,7 +121,7 @@ Practical rule:
 
 ## Need Help?
 
-- The best place to report a bug or ask for help is a [GitHub issue](https://github.com/dongdongbh/Mindwtr/issues) — it keeps everything trackable.
+- The best place to report a bug or ask for help is a [GitHub issue](https://github.com/dongdongbh/Mindwtr/issues). It keeps everything trackable.
 - Already in the app? Use **Send feedback** on the **Settings → About** page.
 - For a private question, email [support@mindwtr.app](mailto:support@mindwtr.app).
 - Browse the [FAQ](/start/faq) or read the full [GTD Workflow in Mindwtr](/use/gtd-workflow) guide.

@@ -129,7 +129,7 @@ chmod +x Mindwtr-*.AppImage
 
 For other distributions, use the AppImage or build from source (see [Developer Guide](/developers/developer-guide)).
 
-Community-maintained packages (for example nixpkgs for NixOS) are welcome — the desktop build vendors its TLS dependency, so packaging does not need a system OpenSSL match. If you maintain one, open a discussion so it can be linked here.
+Community-maintained packages (for example nixpkgs for NixOS) are welcome. The desktop build vendors its TLS dependency, so packaging does not need a system OpenSSL match. If you maintain one, open a discussion so it can be linked here.
 
 ---
 
@@ -264,10 +264,10 @@ Config is stored separately:
 
 Update checks are channel-aware: Mindwtr detects how it was installed, compares against the version published for that channel, and points you to that channel's update path.
 
-- **Microsoft Store, Winget, Chocolatey, Homebrew, AUR** — the update reminder only appears once your channel has the new version; update with your package manager as usual (for example `winget upgrade dongdongbh.Mindwtr`, `choco upgrade mindwtr`, `brew upgrade --cask mindwtr`).
-- **Scoop** — Mindwtr makes no automatic update checks at all, since any bucket can carry the manifest and Scoop owns updates (`scoop update mindwtr`). The manual check in Settings → About still works.
-- **Flatpak, Snap, and the app stores' auto-update** — updates arrive automatically, so Mindwtr stays quiet.
-- **Direct download, portable, AppImage, .deb/.rpm** — check in Settings → About → Check for Updates, then download the new version from [Releases](https://github.com/dongdongbh/Mindwtr/releases) and install over your existing installation.
+- **Microsoft Store, Winget, Chocolatey, Homebrew, AUR**: the update reminder only appears once your channel has the new version; update with your package manager as usual (for example `winget upgrade dongdongbh.Mindwtr`, `choco upgrade mindwtr`, `brew upgrade --cask mindwtr`).
+- **Scoop**: Mindwtr makes no automatic update checks at all, since any bucket can carry the manifest and Scoop owns updates (`scoop update mindwtr`). The manual check in Settings → About still works.
+- **Flatpak, Snap, and the app stores' auto-update**: updates arrive automatically, so Mindwtr stays quiet.
+- **Direct download, portable, AppImage, .deb/.rpm**: check in Settings → About → Check for Updates, then download the new version from [Releases](https://github.com/dongdongbh/Mindwtr/releases) and install over your existing installation.
 
 Your data is preserved between updates.
 

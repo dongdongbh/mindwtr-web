@@ -56,7 +56,7 @@ Sort receipts /energy:low
 
 ### The Rule
 
-Capture everything. Don't filter, judge, or organize—just get it out of your head.
+Capture everything. Don't filter, judge, or organize. Get it out of your head.
 
 ---
 
@@ -90,7 +90,7 @@ flowchart TD
 - Yes → Continue
 
 **More than one step?**
-- Yes → Turn the capture into a project: name it and define its next action. Add as many further actions as you need — they land back in the Inbox with the project already attached, so each gets its own clarify pass
+- Yes → Turn the capture into a project: name it and define its next action. Add as many further actions as you need. They land back in the Inbox with the project already attached, so each gets its own clarify pass
 - No → Continue as a single action
 
 **Will it take less than 2 minutes?**
@@ -134,10 +134,10 @@ Add contexts to filter by where you can do tasks:
 - `@computer`, `@phone`, `@agendas`
 
 **Tags (#):**
-- `#focused` — Deep work
-- `#lowenergy` — Simple tasks
-- `#creative` — Brainstorming
-- `#routine` — Repetitive tasks
+- `#focused`: Deep work
+- `#lowenergy`: Simple tasks
+- `#creative`: Brainstorming
+- `#routine`: Repetitive tasks
 
 ### People
 
@@ -187,7 +187,7 @@ Some processing actions set status and dates together. For example, choosing **L
 
 ### Relative Start Lead Time
 
-Use **Start lead time** when the start date should stay tied to the due date. For example, a task due Friday can start two days before due, or a task due at 5:00 PM can start three hours before due. A lead time of **0** means the task starts on the due date itself — useful for recurring chores that shouldn't appear until the day they're due.
+Use **Start lead time** when the start date should stay tied to the due date. For example, a task due Friday can start two days before due, or a task due at 5:00 PM can start three hours before due. A lead time of **0** means the task starts on the due date itself, which suits recurring chores that shouldn't appear until the day they're due.
 
 When a task has a due date and a start lead time, Mindwtr treats the offset as the source of truth. Moving the due date recalculates the start date from the same offset, and recurring tasks keep the same lead time when the next instance is generated.
 
@@ -254,7 +254,7 @@ Focus first decides whether a task is available, then sorts the visible actions:
    - undated actions next
    - far-future due actions last, earliest due date first
    - within the same bucket: priority when enabled, then start time, oldest creation date, title, and id
-4. **Review Due** shows tasks whose review date is due. After looking an item over, you can clear its review date (**Mark reviewed**) or push it out with **Review in 1 week** — on desktop from the task's quick-action menu, on mobile by long-pressing the row.
+4. **Review Due** shows tasks whose review date is due. After looking an item over, you can clear its review date (**Mark reviewed**) or push it out with **Review in 1 week**, on desktop from the task's quick-action menu, on mobile by long-pressing the row.
 
 Start date is Mindwtr's defer/planned-date field. Future-start tasks are hidden from Focus by default unless you enable future-start visibility. Sequential projects also limit Focus to the first available action for that project or section, so later actions stay out of Focus until the previous step is no longer blocking them.
 

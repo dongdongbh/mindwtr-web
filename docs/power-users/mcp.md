@@ -20,7 +20,7 @@ On desktop, the app shows the exact local data path in **Settings -> Sync -> Loc
 
 ## Requirements
 
-- **Node.js 22+** for compiler-free installs — the SQLite dependency ships prebuilt binaries for Node 22 and newer. Node 20 still runs the server but installs need C++ build tools
+- **Node.js 22+** for compiler-free installs: the SQLite dependency ships prebuilt binaries for Node 22 and newer. Node 20 still runs the server but installs need C++ build tools
 - **npm** or another Node package runner for the published `mindwtr-mcp` package
 - A local Mindwtr database (`mindwtr.db`) for local mode, or a self-hosted Mindwtr Cloud URL and bearer token for Cloud mode
 - **Bun** only if you are running the helper from the source tree
@@ -91,7 +91,7 @@ Or use environment variables in an MCP client configuration:
 }
 ```
 
-Cloud mode reads the current `/v1/data` snapshot from your self-hosted Cloud server and exposes read tools for tasks, projects, sections, areas, and people. With `--write`, task, project, section, and area writes go through the Cloud server's per-resource [REST endpoints](../developers/cloud-api.md) (`POST /v1/tasks`, `PATCH /v1/tasks/:id`, and so on), so every edit gets the same validation and revision tracking as edits from your apps. Without `--write`, write tools return `read_only`. Person edits and restoring deleted tasks are not available in Cloud mode yet — use the local database backend for those.
+Cloud mode reads the current `/v1/data` snapshot from your self-hosted Cloud server and exposes read tools for tasks, projects, sections, areas, and people. With `--write`, task, project, section, and area writes go through the Cloud server's per-resource [REST endpoints](../developers/cloud-api.md) (`POST /v1/tasks`, `PATCH /v1/tasks/:id`, and so on), so every edit gets the same validation and revision tracking as edits from your apps. Without `--write`, write tools return `read_only`. Person edits and restoring deleted tasks are not available in Cloud mode yet. Use the local database backend for those.
 
 This is not the blocked hosted multi-tenant connector. You still run the Cloud server and the MCP helper yourself; Mindwtr is not operating a service that stores everyone's task data.
 
@@ -382,7 +382,7 @@ Use this matrix when deciding whether to run the server in read-only mode or wit
 Practical guidance:
 
 - Default to read-only for exploration and reporting.
-- Enable `--write` only for backends you trust the AI client to edit — a local database or your own Cloud server.
+- Enable `--write` only for backends you trust the AI client to edit: a local database or your own Cloud server.
 - For agent workflows, prefer explicit confirmation before delete/complete operations.
 
 ## Advanced Usage Examples

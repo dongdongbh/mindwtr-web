@@ -95,7 +95,7 @@ Transcribe voice notes into tasks.
 
 ## Notes
 
-- AI is **optional** — Mindwtr works fully without it.
+- AI is **optional**. Mindwtr works without it.
 - Responses are parsed as structured JSON; if parsing fails, no changes are applied.
 ## Whisper language codes
 

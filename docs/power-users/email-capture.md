@@ -6,16 +6,16 @@ Related: [Cloud API](/developers/cloud-api), [Docker deployment](/power-users/do
 
 ## Built-in: watch a mail folder from the desktop app
 
-Point Mindwtr Desktop at a folder in your own mailbox, move or forward mail into it from any client, and each message becomes an Inbox task. Your mail never touches a third-party server — the desktop app talks IMAP directly to your mail provider.
+Point Mindwtr Desktop at a folder in your own mailbox, move or forward mail into it from any client, and each message becomes an Inbox task. Your mail never touches a third-party server; the desktop app talks IMAP straight to your mail provider.
 
 Setup, in **Settings → Integrations → Email capture**:
 
-1. Enter your IMAP server (for example `imap.gmail.com`), username, and an **app password** — regular account passwords usually will not work, and the password is stored in your system keyring
+1. Enter your IMAP server (for example `imap.gmail.com`), username, and an **app password**. Regular account passwords usually will not work, and the password is stored in your system keyring
 2. Keep the default folder `Mindwtr` or pick your own; it is created in your mailbox if it does not exist
-3. Enable the switch and save — saving verifies the connection and reports any problem immediately
+3. Enable the switch and save. Saving verifies the connection and reports any problem right away
 4. In your mail client or webmail, add a rule (or drag manually) that moves capture-worthy mail into that folder
 
-While the desktop app is running it checks the folder every few minutes. The subject becomes the task title and the sender plus message body become the description. Capture is read-only: Mindwtr never modifies, moves, or deletes your mail, and it remembers what it already imported so nothing shows up twice — archive or clean the folder whenever you like.
+While the desktop app is running it checks the folder every few minutes. The subject becomes the task title and the sender plus message body become the description. Capture is read-only: Mindwtr never modifies, moves, or deletes your mail, and it remembers what it already imported so nothing shows up twice. Archive or clean the folder whenever you like.
 
 The mailbox is the queue: mail dropped into the folder while your computer is off simply waits there, and the next time Mindwtr opens it catches up. If you need capture with the desktop off entirely, use the [self-hosted recipes](#forward-email-to-a-self-hosted-server) below.
 

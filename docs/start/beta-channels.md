@@ -98,7 +98,7 @@ To leave the beta repo, remove `/etc/apt/sources.list.d/mindwtr-beta.list` (or `
 
 ## Docker - Beta Tag
 
-Every release lands on GHCR with its version tag, and the floating `beta` tag always points at the newest release — release candidate or stable — so `beta` users never switch tags. `latest` stays on the newest stable release:
+Every release lands on GHCR with its version tag, and the floating `beta` tag always points at the newest release (release candidate or stable), so `beta` users never switch tags. `latest` stays on the newest stable release:
 
 ```bash
 docker pull ghcr.io/dongdongbh/mindwtr-app:beta

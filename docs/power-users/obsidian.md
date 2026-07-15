@@ -37,7 +37,7 @@ On desktop:
 
 1. Open **Settings -> Integrations**
 2. Find **Obsidian Vault**
-3. Select your vault folder — vaults registered in Obsidian are detected automatically and offered one-click; browsing manually stays available for anything else
+3. Select your vault folder. Vaults registered in Obsidian are detected for you and offered one-click; manual browsing stays available for anything else
 4. Enable the integration
 5. Optionally limit scanning to specific folders
 6. Optionally set the inline inbox file, defaulting to `Mindwtr/Inbox.md`

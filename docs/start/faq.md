@@ -12,17 +12,17 @@ Mindwtr is a cross-platform Getting Things Done (GTD) productivity app that help
 
 ### Is Mindwtr free? Will it stay free?
 
-Yes. Mindwtr is open source (AGPL-3.0) and free to use — no paywalls, no subscriptions, no premium tiers for sync or anything else. The plan is for it to stay that way: good software should be accessible to everyone regardless of their financial situation, and support should come from people who choose to give it, not from a paywall.
+Yes. Mindwtr is open source (AGPL-3.0) and free to use. There are no paywalls, no subscriptions, and no premium tiers for sync or anything else. The plan is for it to stay that way: good software should be accessible to everyone regardless of their financial situation, and support should come from people who choose to give it, not from a paywall.
 
-There are real ongoing costs — the annual Apple developer fee, hosting, development tools, and the time that goes into features, fixes, and community support — so [donations](https://mindwtr.app/donate) are what keep the project sustainable.
+The project carries real ongoing costs: the annual Apple developer fee, hosting, development tools, and the time that goes into features, fixes, and community support. [Donations](https://mindwtr.app/donate) are what keep it sustainable.
 
-One honest caveat: donations do not currently cover the costs — the maintainer absorbs the difference. If that gap ever grew too large to sustain, an optional paid service (for example, a hosted sync server for people who don't want to self-host) could be added to cover it. The app itself stays free and open source either way — nothing you can do today would move behind a paywall.
+One honest caveat: donations do not cover the costs today, and the maintainer absorbs the difference. If that gap ever grew too large to sustain, an optional paid service (for example, a hosted sync server for people who don't want to self-host) could be added to cover it. The app itself stays free and open source either way. Nothing you can do today would move behind a paywall.
 
 ### How long will Mindwtr be maintained?
 
-Mindwtr is a passion project, and it is also the tool the maintainer runs his own life with — it gets maintained because he needs it maintained. The commit history is the honest picture of what that looks like in practice.
+Mindwtr is a passion project, and it is also the tool the maintainer runs his own life with, so it gets maintained because he needs it maintained. The commit history is the honest picture of what that looks like in practice.
 
-No solo project can promise "forever", so Mindwtr is designed to make the worst case safe instead: it is local-first, your data lives in open formats in files you control, and the code is AGPL with reproducible builds on independent channels. Even if development stopped, the app keeps working offline, your data stays readable, and anyone can fork the code. You can commit your workflow to it — or leave — with your data intact at any time.
+No solo project can promise "forever", so Mindwtr is designed to make the worst case safe instead: it is local-first, your data lives in open formats in files you control, and the code is AGPL with reproducible builds on independent channels. Even if development stopped, the app keeps working offline, your data stays readable, and anyone can fork the code. You can commit your workflow to it, or leave, with your data intact at any time.
 
 ### Is Mindwtr AI-generated? What is the project's stance on AI?
 
@@ -53,13 +53,13 @@ If you have a feature request, please open an issue and describe the workflow yo
 
 ### Where should I report bugs or request features?
 
-The best place is a **GitHub issue** — it keeps logs, device details, and follow-up together in one trackable, searchable place, so nothing gets lost:
+The best place is a **GitHub issue**. It keeps logs, device details, and follow-up together in one trackable, searchable place, so nothing gets lost:
 https://github.com/dongdongbh/Mindwtr/issues
 
 Other ways to reach out:
 
-- **In-app feedback** — use **Send feedback** from **Settings → About** when it is available in your build. It sends a bug report, feature request, or other note without needing a GitHub account, and the reply email field is optional.
-- **Email** — for anything that doesn't fit a public issue (a private or account question), write to [support@mindwtr.app](mailto:support@mindwtr.app).
+- **In-app feedback**: use **Send feedback** from **Settings → About** when it is available in your build. It sends a bug report, feature request, or other note without needing a GitHub account, and the reply email field is optional.
+- **Email**: for anything that doesn't fit a public issue (a private or account question), write to [support@mindwtr.app](mailto:support@mindwtr.app).
 
 If you're reporting a bug, please include your **platform** and **app version** (Settings → About) so it's easier to help.
 
@@ -71,7 +71,7 @@ Not currently. The desktop app is single-window to keep the local-first SQLite d
 
 ### Is there a donation page?
 
-Yes — see the [donation page](https://mindwtr.app/donate) for all the ways to support the project.
+Yes. See the [donation page](https://mindwtr.app/donate) for all the ways to support the project.
 
 ### What languages are supported?
 
@@ -110,9 +110,9 @@ See [Data and Sync](/data-sync/) for details.
 
 Mindwtr supports File Sync, WebDAV, self-hosted Cloud Sync, and Dropbox sync (supported builds). See [Data and Sync](/data-sync/).
 
-### Which sync method is fastest — local folder or WebDAV?
+### Which sync method is fastest: local folder or WebDAV?
 
-For similar hardware and network distance, **local folder sync is usually faster** than WebDAV. Folder sync reads and writes the snapshot with plain filesystem calls, while WebDAV adds HTTP round-trips, authentication, and server processing per request — the gap is most visible with large attachments, which transfer as individual uploads/downloads over WebDAV. That said, the bottleneck is usually the storage provider behind the folder (for example a Syncthing or cloud-drive client syncing in the background), not Mindwtr itself. Pick the backend that fits your setup; see [Data lifecycle](/data-sync/data-lifecycle) for what actually moves during a sync.
+For similar hardware and network distance, **local folder sync is usually faster** than WebDAV. Folder sync reads and writes the snapshot with plain filesystem calls, while WebDAV adds HTTP round-trips, authentication, and server processing per request. The gap is most visible with large attachments, which transfer as individual uploads and downloads over WebDAV. That said, the bottleneck is usually the storage provider behind the folder (for example a Syncthing or cloud-drive client syncing in the background), not Mindwtr itself. Pick the backend that fits your setup; see [Data lifecycle](/data-sync/data-lifecycle) for what actually moves during a sync.
 
 ### Does Mindwtr support iCloud sync directly?
 
@@ -203,18 +203,18 @@ Later steps in a sequential project are not **Reference**. Reference is for non-
 
 ### How do I mark a project as done?
 
-Open the project and use its **Complete** action (next to **Archive**). On desktop it is in the project view's toolbar/menu; on mobile it is in the project's action menu. Completing a project is separate from completing its tasks — a project with all tasks done still waits for you to close the outcome itself, which is a useful prompt during the weekly review.
+Open the project and use its **Complete** action (next to **Archive**). On desktop it is in the project view's toolbar/menu; on mobile it is in the project's action menu. Completing a project is separate from completing its tasks. A project with all tasks done still waits for you to close the outcome itself, which is a useful prompt during the weekly review.
 
 ### Can I turn a task into a project?
 
-Yes. The easiest place is while processing the Inbox: when the guided flow asks whether an item needs more than one step, answer yes and the capture becomes a project — you name it and define its first next action. Any further actions you add land back in the Inbox with the project already attached, so each gets its own clarify pass. See [GTD Workflow](/use/gtd-workflow).
+Yes. The easiest place is while processing the Inbox: when the guided flow asks whether an item needs more than one step, answer yes and the capture becomes a project, where you name it and define its first next action. Any further actions you add land back in the Inbox with the project already attached, so each gets its own clarify pass. See [GTD Workflow](/use/gtd-workflow).
 
 ### Why doesn't a task show up in Focus?
 
 Focus deliberately shows only what you can act on right now, so a task can be hidden for a few reasons:
 
-- It has a **future start date** — it reappears when the date arrives.
-- It is a **later task in a sequential project** — only the first available task is surfaced.
+- It has a **future start date**, so it reappears when the date arrives.
+- It is a **later task in a sequential project**, so only the first available task is surfaced.
 - An active **context filter** excludes it.
 - Its status is not actionable (Inbox, Someday, Waiting).
 
@@ -225,7 +225,7 @@ Use **Projects**, **Contexts**, or **Search** to inspect the full task inventory
 Yes, both:
 
 - **Start date** defers a task: a future start hides it from Focus and Next actions, and it reappears with its existing status when the date arrives. Deferred tasks are counted by the "hidden (future start)" notice, which has a **Show** toggle.
-- **Review date** is a tickler: when it arrives, Mindwtr surfaces the task for you to reconsider — nothing changes until you decide.
+- **Review date** is a tickler: when it arrives, Mindwtr surfaces the task for you to reconsider. Nothing changes until you decide.
 - **Start lead time** ties the start to the due date (e.g., become visible two days before due).
 
 See [Dates vs. Status](/use/gtd-workflow#dates-vs-status).
@@ -270,7 +270,7 @@ Yes, one-way push is supported:
 - **Android/iOS:** push dated tasks to a device calendar. Android is verified with Google Calendar; on iOS, use calendars already available to Apple Calendar. A dedicated calendar named `Mindwtr` in that account works best.
 - **macOS desktop:** push to Apple Calendar via EventKit.
 
-Recurring task *rules* are not exported as native recurring calendar events — only concrete instances are pushed. See [Calendar Integration](/use/calendar-integration).
+Recurring task *rules* are not exported as native recurring calendar events. Only concrete instances are pushed. See [Calendar Integration](/use/calendar-integration).
 
 ### Does Mindwtr integrate with Obsidian?
 
@@ -299,15 +299,15 @@ Logs are local-only and redact common credentials (passwords/tokens) before writ
 ### Can I use natural language to add tasks?
 
 Yes! Mindwtr supports quick-add syntax:
-- `@context` — Add a context
-- `#tag` — Add a tag
-- `!Area` or `/area:<name>` — Assign to an area
-- `%Person` — Set the Assigned to person (`%"Full Name"` for new multi-word names)
-- `/due:date` — Set due date (today, tomorrow, friday, next week, etc.)
-- `/energy:low`, `/energy:medium`, or `/energy:high` — Set energy level
-- `/note:text` — Add description
-- `/status` — Set status (`/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox`)
-- `+ProjectName` — Assign to project
+- `@context`: Add a context
+- `#tag`: Add a tag
+- `!Area` or `/area:<name>`: Assign to an area
+- `%Person`: Set the Assigned to person (`%"Full Name"` for new multi-word names)
+- `/due:date`: Set due date (today, tomorrow, friday, next week, etc.)
+- `/energy:low`, `/energy:medium`, or `/energy:high`: Set energy level
+- `/note:text`: Add description
+- `/status`: Set status (`/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox`)
+- `+ProjectName`: Assign to project
 
 Example: `Call client /due:friday @phone`
 
@@ -322,7 +322,7 @@ They answer different questions:
 - An **Area** answers: *"What part of my life or work is this responsibility connected to?"* (Work, Home, Health, a client…)
 - A **Context** answers: *"What can I do right now, given where I am and what I have?"* (`@computer`, `@errands`…)
 
-A task can have both — e.g., **Area: Client A**, **Project: Website refresh**, **Context: @computer**. See [GTD Overview](/use/gtd-overview).
+A task can have all three: **Area: Client A**, **Project: Website refresh**, **Context: @computer**. See [GTD Overview](/use/gtd-overview).
 
 ### How do I capture tasks quickly?
 

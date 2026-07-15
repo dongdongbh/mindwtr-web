@@ -30,8 +30,8 @@ Mindwtr lets you attach files and links to **tasks** and **projects**. Attachmen
 
 ### Copies vs. links
 
-- **Add file** stores a copy of the file inside Mindwtr's own storage. The attachment keeps working even if the original file is later moved, renamed, or deleted. Removing the attachment deletes Mindwtr's copy — never your original file.
-- **Add link** stores a pointer. Paste a URL or a local file path — or use **Link to file…** on desktop to browse for one — when you want to reference a file without copying it. A path link breaks if the file moves — that is expected of a link.
+- **Add file** stores a copy of the file inside Mindwtr's own storage. The attachment keeps working even if the original file is later moved, renamed, or deleted. Removing the attachment deletes Mindwtr's copy, not your original file.
+- **Add link** stores a pointer. Paste a URL or a local file path (or use **Link to file…** on desktop to browse for one) when you want to reference a file without copying it. A path link breaks if the file moves, which is expected of a link.
 - Each attachment row shows which one it is: a paperclip means Mindwtr holds a copy of the file, a link icon means it is a pointer (the tooltip shows the full target).
 - File attachments added on desktop before v1.1.0 reference the original path instead of holding a copy (they show the link icon); re-attach a file to convert it into a copy.
 

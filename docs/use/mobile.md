@@ -30,17 +30,17 @@ The mobile app uses bottom tabs for core flows and a Menu page for additional vi
  
 Tap the **Menu** tab to access additional views:
  
- - 📋 **Board** — Kanban board view with manual drag ordering, search, and context/tag/date/project filters
- - 🗓️ **Calendar** — Time-based view
- - 📁 **Projects** — Multi-step outcomes
- - 🏷️ **Contexts** — Filter by context
- - ⏳ **Waiting For** — Delegated items
- - 💭 **Someday/Maybe** — Future ideas
- - 📚 **Reference** — Reference material
- - ✅ **Done** — Recently completed tasks
- - 📦 **Archived** — Completed tasks filed away from normal lists
- - 🗑️ **Trash** — Deleted tasks and projects
- - ⚙️ **Settings** — App preferences
+ - 📋 **Board**: Kanban board view with manual drag ordering, search, and context/tag/date/project filters
+ - 🗓️ **Calendar**: Time-based view
+ - 📁 **Projects**: Multi-step outcomes
+ - 🏷️ **Contexts**: Filter by context
+ - ⏳ **Waiting For**: Delegated items
+ - 💭 **Someday/Maybe**: Future ideas
+ - 📚 **Reference**: Reference material
+ - ✅ **Done**: Recently completed tasks
+ - 📦 **Archived**: Completed tasks filed away from normal lists
+ - 🗑️ **Trash**: Deleted tasks and projects
+ - ⚙️ **Settings**: App preferences
 
 Open **Archived** and tap **Select** to manage more than one task. Tap **Select All** or choose tasks, then restore them to Inbox or move them to Trash. Mindwtr permanently deletes tasks only from Trash.
 
@@ -52,7 +52,7 @@ Open **Trash** and tap **Select** to manage several deleted tasks and projects. 
 
 Tap the **search icon** in the header to open Global Search.
 
-Search hides Done and Archived items by default. When hidden items match your query, a tappable "N more in Done and Archived" hint appears — tap it to include them, or enable **Include Done and Archived tasks** in the search filters.
+Search hides Done and Archived items by default. When hidden items match your query, a tappable "N more in Done and Archived" hint appears. Tap it to include them, or enable **Include Done and Archived tasks** in the search filters.
 
 ### Search Operators
 
@@ -110,7 +110,7 @@ Capture tasks from any app using the share sheet:
 4. Mindwtr opens the capture screen with the shared content attached as notes
 5. Add a title, adjust any fields, and save it to your Inbox
 
-Sharing a file — a PDF, image, video, or audio recording — copies it into Mindwtr as an attachment on the new task, with the filename as the starting title. Up to six files can be shared at once.
+Sharing a file (a PDF, image, video, or audio recording) copies it into Mindwtr as an attachment on the new task, with the filename as the starting title. Up to six files can be shared at once.
 
 Great for:
 - Saving articles to read later
@@ -147,13 +147,13 @@ On Android, add the Mindwtr capture tile to Quick Settings for one-swipe Inbox c
 
 ### Android Notification Bar Quick Capture
 
-For the fastest capture — one swipe, and available from the lock screen — pin a persistent **Quick capture** notification:
+For the fastest capture, one swipe and available from the lock screen, pin a persistent **Quick capture** notification:
 
 1. Open **Settings → Notifications**.
 2. Turn on **Quick capture in notification bar**.
 3. Tap the notification any time to open Quick Capture.
 
-The notification is silent and stays out of the way at the bottom of the shade. Turn the toggle off to remove it. (Android only — iOS doesn't support persistent notifications; use the widget or Shortcuts there.)
+The notification is silent and stays out of the way at the bottom of the shade. Turn the toggle off to remove it. (Android only; iOS doesn't support persistent notifications, so use the widget or Shortcuts there.)
 
 ### Android Voice App Actions
 
@@ -333,11 +333,11 @@ Default Next Actions order is due-soon actions first, undated actions next, and 
 
 ### Features
 
-- **Context filter** — Tap a context chip to filter the Next list.
-- **Saved Filters** — Save reusable Focus criteria such as projects, contexts, tags, priority, energy level, and time estimates.
-- **Swipe to Focus** — Swipe a task right to toggle "Focus" status (moves it to Today).
-- **Quick Status** — Tap the status badge to change status.
-- **Pomodoro (Optional)** — Enable in **Settings → GTD → Features → Pomodoro timer** to show a compact focus/break timer. Leave it as **Timer only**, or turn on **Link timer to task** to show the Timer task picker and **Mark task done** action.
+- **Context filter**: Tap a context chip to filter the Next list.
+- **Saved Filters**: Save reusable Focus criteria such as projects, contexts, tags, priority, energy level, and time estimates.
+- **Swipe to Focus**: Swipe a task right to toggle "Focus" status (moves it to Today).
+- **Quick Status**: Tap the status badge to change status.
+- **Pomodoro (Optional)**: Enable in **Settings → GTD → Features → Pomodoro timer** to show a compact focus/break timer. Leave it as **Timer only**, or turn on **Link timer to task** to show the Timer task picker and **Mark task done** action.
 
 ---
 
@@ -357,8 +357,8 @@ Review your tasks and update their status.
 
 The task editor has two modes:
 
-- **Task** — edit fields, checklists, dates, tags, contexts
-- **View** — clean read-only summary with tappable checklist
+- **Task**: edit fields, checklists, dates, tags, contexts
+- **View**: clean read-only summary with tappable checklist
 
 Swipe left/right to switch between **Task** and **View**.
 
@@ -395,10 +395,10 @@ See [Attachments](/use/attachments) for details on syncing and cleanup.
 
 Enable in **Settings → Advanced → AI assistant**:
 
-- **Clarify** — turn vague tasks into concrete next actions
-- **Break down** — generate checklist steps for big tasks
-- **Review analysis** — highlight stale tasks during review
-- **Copilot** — context/tag/time suggestions while typing
+- **Clarify**: turn vague tasks into concrete next actions
+- **Break down**: generate checklist steps for big tasks
+- **Review analysis**: highlight stale tasks during review
+- **Copilot**: context/tag/time suggestions while typing
 
 AI is optional and only runs when you request it.
 
@@ -408,8 +408,8 @@ AI is optional and only runs when you request it.
 
 Use checklists as templates:
 
-- **Duplicate task** — copy a master list (packing, travel prep)
-- **Reset checklist** — uncheck everything for reuse (groceries)
+- **Duplicate task**: copy a master list (packing, travel prep)
+- **Reset checklist**: uncheck everything for reuse (groceries)
 
 ---
 
@@ -443,8 +443,8 @@ Time-based view with scheduling capabilities.
 
 ### Views
 
-- **Month View** — Overview of tasks with due dates
-- **Day View** — Detailed timeline with scheduled tasks and external events
+- **Month View**: Overview of tasks with due dates
+- **Day View**: Detailed timeline with scheduled tasks and external events
 
 ### Scheduling Tasks
 
@@ -495,7 +495,7 @@ Open Projects from **Menu → Projects**.
 - Add **Project tags** for filtering
 - Set sequential or parallel mode
 - Set review date
-- Reorder project tasks with the drag handle when custom ordering is enabled — dropping a task under a different section header moves it into that section, and dropping it above the first header clears its section
+- Reorder project tasks with the drag handle when custom ordering is enabled. Dropping a task under a different section header moves it into that section, and dropping it above the first header clears its section
 - Complete or archive the project
 
 The **Project Section** field in the task editor assigns a task to one of the sections in its current project. It only matters after the task belongs to a project that has sections; otherwise, leave it blank.
@@ -530,22 +530,22 @@ Browse and filter tasks by context.
 
 ### Location Contexts
 
-- `@home` — Tasks to do at home
-- `@work` — Tasks for the office
-- `@errands` — Out and about
-- `@agendas` — Discussion items
-- `@computer` — Need a computer
-- `@phone` — Need a phone
-- `@anywhere` — Can do anywhere
+- `@home`: Tasks to do at home
+- `@work`: Tasks for the office
+- `@errands`: Out and about
+- `@agendas`: Discussion items
+- `@computer`: Need a computer
+- `@phone`: Need a phone
+- `@anywhere`: Can do anywhere
 
 ### Tags
 
 Filter tasks by energy level, mode, or topic:
 
-- `#focused` — Deep work requiring concentration
-- `#lowenergy` — Simple tasks for tired moments
-- `#creative` — Brainstorming and ideation
-- `#routine` — Repetitive/mechanical tasks
+- `#focused`: Deep work requiring concentration
+- `#lowenergy`: Simple tasks for tired moments
+- `#creative`: Brainstorming and ideation
+- `#routine`: Repetitive/mechanical tasks
 
 ---
 
@@ -576,13 +576,13 @@ Mindwtr sends notifications to keep you on track.
 
 ### Types of Notifications
 
-- **Due date reminders** — Alerts when tasks are due
-- **Start time alerts** — Reminds you when it's time to begin
-- **Recurring task reminders** — Notifications for recurring items
+- **Due date reminders**: Alerts when tasks are due
+- **Start time alerts**: Reminds you when it's time to begin
+- **Recurring task reminders**: Notifications for recurring items
 
 Tap the notification body to jump directly to the **Review** screen.
 
-Reminders are scheduled on the phone itself — there is no push server. If you complete or reschedule a task on another device (for example, checking off a daily recurring task on desktop), the phone updates its alarms as soon as that change syncs over, so let the phone sync before the next reminder time (opening the app once is enough).
+Reminders are scheduled on the phone itself. There is no push server. If you complete or reschedule a task on another device (for example, checking off a daily recurring task on desktop), the phone updates its alarms as soon as that change syncs over, so let the phone sync before the next reminder time (opening the app once is enough).
 
 ### Permissions
 
@@ -597,8 +597,8 @@ Make sure notifications are enabled:
 
 ### General
 
-- **Appearance** — System, Light, or Dark
-- **Language** — English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese, Russian, German, Japanese, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech
+- **Appearance**: System, Light, or Dark
+- **Language**: English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese, Russian, German, Japanese, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech
 
 ### Notifications
 
@@ -606,21 +606,21 @@ Make sure notifications are enabled:
 - Enable/disable notifications for due dates and start times
 
 **Daily Digest:**
-- **Morning Briefing** — Summary of due today, overdue, and focus tasks
-- **Evening Review** — Prompt to review and wrap up the day
+- **Morning Briefing**: Summary of due today, overdue, and focus tasks
+- **Evening Review**: Prompt to review and wrap up the day
 - Configure times for each
 
 **Weekly Review:**
-- **Reminders** — Get a weekly notification to start your review
-- **Time/Day** — Customize when you want to review (e.g., Friday at 4 PM)
+- **Reminders**: Get a weekly notification to start your review
+- **Time/Day**: Customize when you want to review (e.g., Friday at 4 PM)
 
 ### GTD
 
 Customize how Mindwtr works for your GTD workflow:
 
 **Features (Optional):**
-- **Priorities** — Show a priority flag on tasks
-- **Time Estimates** — Add a duration field for time blocking
+- **Priorities**: Show a priority flag on tasks
+- **Time Estimates**: Add a duration field for time blocking
 
 **Time Estimate Presets:**
 - Choose which time estimates appear in the task editor
@@ -652,20 +652,20 @@ Customize how Mindwtr works for your GTD workflow:
 See [Data and Sync](/data-sync/) for sync setup.
 
 **Sync Backend:**
-- **Cloud Sync** — Dropbox in supported builds, plus iCloud on iOS where available
-- **Folder / File Sync** — File sync via a shared JSON file/folder (Google Drive, Syncthing, OneDrive, etc.)
-- **Advanced / Custom Server** — WebDAV or Self-Hosted Mindwtr Cloud
+- **Cloud Sync**: Dropbox in supported builds, plus iCloud on iOS where available
+- **Folder / File Sync**: File sync via a shared JSON file/folder (Google Drive, Syncthing, OneDrive, etc.)
+- **Advanced / Custom Server**: WebDAV or Self-Hosted Mindwtr Cloud
 
 **Other Options:**
-- **Sync** — Manually trigger sync
-- **Last sync status** — View when data was last synced
-- **Sync history** — Collapsed by default; tap to expand recent entries
-- **Export Backup** — Save data to a file
-- **Apple Reminders import** — Choose a Reminders list and import incomplete reminders into Inbox. Imported reminders remain in Apple Reminders, and already imported, completed, or untitled reminders are skipped.
-- **Settings sync options** — Choose which preferences sync across devices (theme, language/date format, GTD defaults, external calendar URLs, AI settings, and Saved Filters). API keys and local model paths are never synced.
+- **Sync**: Manually trigger sync
+- **Last sync status**: View when data was last synced
+- **Sync history**: Collapsed by default; tap to expand recent entries
+- **Export Backup**: Save data to a file
+- **Apple Reminders import**: Choose a Reminders list and import incomplete reminders into Inbox. Imported reminders remain in Apple Reminders, and already imported, completed, or untitled reminders are skipped.
+- **Settings sync options**: Choose which preferences sync across devices (theme, language/date format, GTD defaults, external calendar URLs, AI settings, and Saved Filters). API keys and local model paths are never synced.
 
 **GTD Options:**
-- **Focus task limit** — Choose how many tasks can be marked for Today's Focus.
+- **Focus task limit**: Choose how many tasks can be marked for Today's Focus.
 
 ### Advanced
 
@@ -673,10 +673,10 @@ See [Data and Sync](/data-sync/) for sync setup.
 - Optional BYOK assistant for clarifying and breaking down tasks
 
 **Calendar (ICS/iCal):**
-- **Add Calendar** — Enter a name and URL
-- **Enable/Disable** — Toggle visibility of each calendar
-- **Remove** — Delete a subscription
-- **Test** — Verify the calendar loads correctly
+- **Add Calendar**: Enter a name and URL
+- **Enable/Disable**: Toggle visibility of each calendar
+- **Remove**: Delete a subscription
+- **Test**: Verify the calendar loads correctly
 
 ### About
 

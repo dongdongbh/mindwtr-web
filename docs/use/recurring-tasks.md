@@ -48,7 +48,7 @@ Examples:
 
 When an after-completion repeat also picks weekdays or a day of the month, the next task lands on the first matching day in the last week (or month) of the interval. Completing "every 2 weeks on Sunday" on a Tuesday brings it back the Sunday after next, not the coming Sunday.
 
-If you finished a task earlier but only mark it Done later, complete it with the actual time instead — right-click the complete button on desktop, or long-press **Done** in the mobile status menu — and the next occurrence is scheduled from when you really finished.
+If you finished a task earlier but only mark it Done later, complete it with the actual time instead (right-click the complete button on desktop, or long-press **Done** in the mobile status menu), and the next occurrence is scheduled from when you finished.
 
 ## Ending a Recurrence
 
@@ -72,7 +72,7 @@ When you complete a recurring task, Mindwtr creates the next task with the same 
 
 If the task has a due date, start date, or review date, Mindwtr advances those fields according to the recurrence rule. Date-only values stay date-only.
 
-The next task stays out of Focus and Next actions until its date arrives — a future start date defers it as usual, and a recurring task without a start date is deferred until its next date (the earlier of its due and review dates). This keeps the freshly created next occurrence from reappearing in the list right after you complete the current one. Deferred occurrences are still counted by the "hidden (future start)" notice, and you can reveal them with its **Show** toggle or find them in **Projects** and **Search**.
+The next task stays out of Focus and Next actions until its date arrives. A future start date defers it as usual, and a recurring task without a start date is deferred until its next date (the earlier of its due and review dates). This keeps the freshly created next occurrence from reappearing in the list right after you complete the current one. Deferred occurrences are still counted by the "hidden (future start)" notice, and you can reveal them with its **Show** toggle or find them in **Projects** and **Search**.
 
 ## Related Pages
 

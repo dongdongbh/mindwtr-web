@@ -2,6 +2,8 @@
 
 Daily Review is the lightweight reset flow for staying current between Weekly Reviews. It appears in the Review view on desktop and as the daily review route on mobile.
 
+The point is not tidiness. A few minutes here closes the gap between what your lists say and what is actually true right now, so you can trust the lists through the rest of the day instead of holding the open loops in your head.
+
 ## Flow
 
 The default order is:
@@ -12,7 +14,7 @@ The default order is:
 4. Today's Focus, when enabled
 5. Complete
 
-The inbox and Waiting For steps are intentionally before focus: new captures are clarified first, and items you were waiting on can be switched to Next when they unblock — so they are available as candidates when you choose today's focus. Empty steps are skipped.
+The inbox and Waiting For steps are intentionally before focus: new captures are clarified first, and items you were waiting on can be switched to Next when they unblock, so they are available as candidates when you choose today's focus. Empty steps are skipped.
 
 ## Settings
 

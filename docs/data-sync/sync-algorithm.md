@@ -46,7 +46,7 @@ Revisit ADR 0008 only if snapshot files regularly exceed 5 MB, sync round-trips 
    - This metadata is ignored by comparable and deterministic sync signatures, so archive bookkeeping alone does not create a content conflict or deterministic winner.
    - Unarchive restores only records that still match the archive-generated change. Tasks that were deleted, manually changed, or moved to a different project are preserved as-is and may retain the opaque metadata until the record is next rewritten by a real user or sync change.
 8. Areas use tombstones:
-   - Deleting an area tombstones only the area itself. Live projects and tasks in that area are detached (their `areaId` is cleared with a fresh revision) and stay live — an area delete never deletes its children.
+   - Deleting an area tombstones only the area itself. Live projects and tasks in that area are detached (their `areaId` is cleared with a fresh revision) and stay live. An area delete never deletes its children.
    - Restoring an area does not re-attach previously detached children; they remain live without an area.
    - If an incoming snapshot references a missing or deleted area, sync repair clears the stale `areaId` reference and stamps a repair revision.
    - Sync repair also runs on tombstones, so deleted projects/tasks do not keep stale area links if they are later restored.

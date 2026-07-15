@@ -69,10 +69,10 @@ TestFlight beta is also available at https://testflight.apple.com/join/7SMJCTSR.
 
 ### Options
 
-1. **App Store (Recommended)** — Install the stable release
-2. **TestFlight** — Install the latest iOS beta build
-3. **Simulator builds** — Available in the source code for development
-4. **Self-build** — Build and sign the app yourself with Xcode (Apple Developer account required for device signing)
+1. **App Store (Recommended)**: Install the stable release
+2. **TestFlight**: Install the latest iOS beta build
+3. **Simulator builds**: Available in the source code for development
+4. **Self-build**: Build and sign the app yourself with Xcode (Apple Developer account required for device signing)
 
 However, maintaining the iOS version on the App Store requires a substantial annual fee (see the [Apple Developer Program](https://developer.apple.com/support/enrollment/)), which I currently cover out of pocket.
 

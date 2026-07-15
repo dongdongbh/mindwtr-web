@@ -6,7 +6,7 @@ Contexts help you see what you can do **right now** based on where you are, what
 
 ## What Are Contexts?
 
-In GTD, a context is a condition required to complete a task—typically a location, tool, or person.
+In GTD, a context is a condition required to complete a task: a location, tool, or person.
 
 When you filter by context, you see only tasks you can actually do in your current situation.
 
@@ -129,10 +129,10 @@ Grouping by tag is useful when you prefer a tag-centric workflow and use tags as
 
 You can create your own contexts:
 
-- `@Bob` — Items to discuss with Bob
-- `@waiting-on-vendor` — Waiting for vendor response
-- `@car` — Things to do in the car
-- `@morning` — Morning routine items
+- `@Bob`: Items to discuss with Bob
+- `@waiting-on-vendor`: Waiting for vendor response
+- `@car`: Things to do in the car
+- `@morning`: Morning routine items
 
 ### Creating Custom Contexts
 
@@ -216,9 +216,9 @@ Use the same spelling and format:
 ### Combine Contexts
 
 Tasks can have multiple contexts:
-- `@computer @work` — Need computer at work
-- `@phone @anywhere` — Phone call from anywhere
-- `#focused @home` — Deep work at home
+- `@computer @work`: Need computer at work
+- `@phone @anywhere`: Phone call from anywhere
+- `#focused @home`: Deep work at home
 
 ### Person Contexts
 

@@ -16,7 +16,7 @@ The desktop app features a sidebar navigation with all GTD views and a main cont
 - **Right click** opens context menus (projects, tasks).
 - **Keyboard first**: global shortcuts and Vim/Emacs modes are optimized for desktop workflows.
 
-If you keep pushing a task's due date later, its row shows a small hourglass badge with the number of postponements (after the third push) next to the due date — a nudge that the task may need re-clarifying, delegating, or dropping instead of another deferral.
+If you keep pushing a task's due date later, its row shows a small hourglass badge with the number of postponements (after the third push) next to the due date. The badge is a nudge that the task may need re-clarifying, delegating, or dropping instead of another deferral.
 
 Most task lists share the same control row for selecting tasks, filtering, sorting, grouping, showing details, and switching compact density. Use **Group** to organize Inbox, Next, Waiting, Someday/Maybe, Reference, Done, and other list views by metadata such as context, area, project, or tag.
 
@@ -43,7 +43,7 @@ Your capture zone. All new tasks land here before processing.
 
 - **Add tasks** using the input field at the bottom
 - **Quick-add syntax** is supported (see [Getting Started](/start/getting-started))
-- Use the star beside the Quick Add input when a new task should go straight into **Today's Focus** — the same star also sits in the task editor's header. Starring counts as clarifying: a starred capture is created as a **Next Action**, not an Inbox item — and moving a starred task back to Inbox removes its star.
+- Use the star beside the Quick Add input when a new task should go straight into **Today's Focus**. The same star also sits in the task editor's header. Starring counts as clarifying: a starred capture is created as a **Next Action** rather than an Inbox item, and moving a starred task back to Inbox removes its star.
 - **Process Inbox** using the clarify workflow
 - **Mind Sweep** prompts you through common life/work areas when you want a guided capture session instead of a blank input.
 
@@ -51,11 +51,11 @@ Your capture zone. All new tasks land here before processing.
 
 Your unified dashboard for daily engagement. Focus is not a full inventory of every task with status `next`; it narrows the list to work that is available now.
 
-- **Today's Focus** — Starred priority tasks for deep work, up to your configured Focus limit.
-- **Overdue** — Past due items.
-- **Due Today** — Tasks due today.
-- **Next Actions** — Ready tasks without due dates, filtered by context.
-- **Review Due** — Items with tickler dates.
+- **Today's Focus**: Starred priority tasks for deep work, up to your configured Focus limit.
+- **Overdue**: Past due items.
+- **Due Today**: Tasks due today.
+- **Next Actions**: Ready tasks without due dates, filtered by context.
+- **Review Due**: Items with tickler dates.
 
 Focus hides future-start tasks and later tasks in sequential projects. Use **Contexts**, **Projects**, or **Search** when you need to inspect broader task inventory.
 
@@ -72,17 +72,17 @@ Focus hides future-start tasks and later tasks in sequential projects. Use **Con
 
 Multi-step outcomes containing related tasks.
 
-- **Sequential mode** — Only the first available project task appears in Focus
-- **Parallel mode** — All available project tasks can appear in Focus
-- **Sequential scope** — Sequential projects can advance project-wide or section-by-section; section scope shows the first available task in each section.
-- **Status** — Active, Waiting, Someday, Archived
-- **Areas of Focus** — Group projects by higher-level areas (e.g., Work, Health) to keep your sidebar organized. Drag a project onto an area to move it there; while dragging, collapsed and empty areas (and **No area**) show up as drop targets too.
-- **Move tasks by drag** — Drag a task from the open project's list onto another project in the sidebar to move it there (it lands after the target's existing tasks), or onto an area header to make it a direct area task. Works in every sort mode; a **Moved to …** toast offers one-click Undo, and archived projects don't accept drops.
-- **Project tags** — Tag projects and filter by tag
-- **Support notes** — Add planning notes and reference material
-- **Sections** — Optional task groupings inside a project (phases, milestones, sub-workstreams). Sections are headings inside one project, not subtasks or separate projects.
-- **Review date** — Set tickler dates for project review
-- **Complete/Archive** — Mark projects as done or archive them
+- **Sequential mode**: Only the first available project task appears in Focus
+- **Parallel mode**: All available project tasks can appear in Focus
+- **Sequential scope**: Sequential projects can advance project-wide or section-by-section; section scope shows the first available task in each section.
+- **Status**: Active, Waiting, Someday, Archived
+- **Areas of Focus**: Group projects by higher-level areas (e.g., Work, Health) to keep your sidebar organized. Drag a project onto an area to move it there; while dragging, collapsed and empty areas (and **No area**) show up as drop targets too.
+- **Move tasks by drag**: Drag a task from the open project's list onto another project in the sidebar to move it there (it lands after the target's existing tasks), or onto an area header to make it a direct area task. Works in every sort mode; a **Moved to …** toast offers one-click Undo, and archived projects don't accept drops.
+- **Project tags**: Tag projects and filter by tag
+- **Support notes**: Add planning notes and reference material
+- **Sections**: Optional task groupings inside a project (phases, milestones, sub-workstreams). Sections are headings inside one project, not subtasks or separate projects.
+- **Review date**: Set tickler dates for project review
+- **Complete/Archive**: Mark projects as done or archive them
 
 The **Project Section** field in the task editor assigns a task to one of the sections in its current project. It only has a useful value after the task belongs to a project that has sections.
 
@@ -118,11 +118,11 @@ On wide layouts, the Calendar includes a **Plan next actions** panel for the sel
 
 Kanban-style drag-and-drop board with columns:
 
-- **Inbox** — Unprocessed items
-- **Next Actions** — Ready to work on
-- **Waiting For** — Delegated items
-- **Someday/Maybe** — Deferred items
-- **Done** — Completed tasks
+- **Inbox**: Unprocessed items
+- **Next Actions**: Ready to work on
+- **Waiting For**: Delegated items
+- **Someday/Maybe**: Deferred items
+- **Done**: Completed tasks
 
 Drag cards within a column to set manual board order. Moving a task to another status clears its old column order so it can be ordered in the new column.
 
@@ -132,7 +132,7 @@ Use the Board search field to narrow visible cards by title, notes, project, con
 
 Recently completed tasks. Use this as your short-term completion log for daily or weekly review.
 
-If you finished a task earlier than you marked it Done, click its **Completed** timestamp to correct it. You can also right-click the complete button on any open task to mark it Done as of an earlier time — useful when the completion time matters for your records or for "repeat after completion" scheduling.
+If you finished a task earlier than you marked it Done, click its **Completed** timestamp to correct it. You can also right-click the complete button on any open task to mark it Done as of an earlier time. This helps when the completion time matters for your records or for "repeat after completion" scheduling.
 
 ### 📦 Archived
 
@@ -142,7 +142,7 @@ Choose **Select** to pick tasks or **Select All**. You can restore the selection
 
 ### 🗑️ Trash
 
-Deleted tasks and projects, newest first. Restore items, delete them permanently, or use **Clear Trash** to empty everything at once. Choose **Select** to pick several tasks and projects (or **Select All**) and restore or permanently delete them in one step — permanent deletion always asks for confirmation.
+Deleted tasks and projects, newest first. Restore items, delete them permanently, or use **Clear Trash** to empty everything at once. Choose **Select** to pick several tasks and projects (or **Select All**) and restore or permanently delete them in one step. Permanent deletion always asks for confirmation.
 
 ### 📝 Weekly Review
 
@@ -164,10 +164,10 @@ See [Weekly Review](/use/weekly-review) for detailed guidance.
 
 Enable in **Settings → AI assistant**:
 
-- **Clarify** — turn vague tasks into concrete next actions
-- **Break down** — generate checklist steps for big tasks
-- **Review analysis** — highlight stale tasks during review
-- **Copilot** — context/tag/time suggestions while typing
+- **Clarify**: turn vague tasks into concrete next actions
+- **Break down**: generate checklist steps for big tasks
+- **Review analysis**: highlight stale tasks during review
+- **Copilot**: context/tag/time suggestions while typing
 
 AI is optional and only runs when you request it.
 
@@ -177,8 +177,8 @@ AI is optional and only runs when you request it.
 
 Use checklists as templates:
 
-- **Duplicate task** — copy a master list (packing, travel prep)
-- **Reset checklist** — uncheck everything for reuse (groceries)
+- **Duplicate task**: copy a master list (packing, travel prep)
+- **Reset checklist**: uncheck everything for reuse (groceries)
 
 ---
 
@@ -261,7 +261,7 @@ Defaults follow platform conventions:
 - macOS: `Ctrl+Option+M` (default), `Ctrl+Option+N`, `Ctrl+Option+Q`, or legacy `Cmd+Shift+A`
 - Linux: `Ctrl+Alt+M` (default), `Ctrl+Alt+N`, `Ctrl+Alt+Q`, or legacy `Ctrl+Shift+A`
 - Windows: disabled by default so Mindwtr never silently takes a key combination away from other apps; `Ctrl+Alt+M` is the recommended choice when you enable one
-- The legacy `Ctrl+Shift+A` option is not recommended — Chrome, Word, and Excel all use it, and a global hotkey overrides them system-wide
+- Avoid the legacy `Ctrl+Shift+A` option: Chrome, Word, and Excel all use it, and a global hotkey overrides them system-wide
 
 **Flatpak/Wayland note:** Some compositors do not allow app-registered global shortcuts. In that case, bind your desktop shortcut to `flatpak run tech.dongdongbh.mindwtr --quick-add` instead.
 
@@ -277,10 +277,10 @@ Click the system tray icon for instant capture:
 
 The Add Task dialog is fully keyboard-driven:
 
-- `Enter` — save and close
-- `Shift+Enter` — save and keep the dialog open for the next task (batch capture)
-- `Ctrl+Enter` (`⌘Enter` on macOS) — save and open the task in the full editor
-- `Esc` — close without saving
+- `Enter`: save and close
+- `Shift+Enter`: save and keep the dialog open for the next task (batch capture)
+- `Ctrl+Enter` (`⌘Enter` on macOS): save and open the task in the full editor
+- `Esc`: close without saving
 - While a suggestion popup is open (`@`, `#`, `+`, `%`, `!`, `/`), `↑`/`↓` move through the suggestions and `Enter` or `Tab` inserts the highlighted one
 
 ### Quick-Add Syntax
@@ -336,9 +336,9 @@ Mindwtr sends desktop notifications to keep you on track:
 
 ### Types of Notifications
 
-- **Due date reminders** — Alerts when tasks are due
-- **Start time alerts** — Reminds you when it's time to begin
-- **Recurring task reminders** — Notifications for recurring items
+- **Due date reminders**: Alerts when tasks are due
+- **Start time alerts**: Reminds you when it's time to begin
+- **Recurring task reminders**: Notifications for recurring items
 
 ### Settings
 
@@ -427,13 +427,13 @@ Select multiple tasks to perform batch operations:
 1. Click **"Select"** button in the list header
 2. Click tasks to select/deselect them
 3. Use the action bar to:
-   - **Move** — Change status for all selected
-   - **Assign Area** — Move all selected tasks under a specific area (or clear the area)
-   - **Add Tag** — Add a tag to all selected
-   - **Remove Tag** — Remove a tag from all selected tasks
-   - **Add Context** — Add a context to all selected tasks
-   - **Remove Context** — Remove a context from all selected tasks
-   - **Delete** — Delete all selected
+   - **Move**: Change status for all selected
+   - **Assign Area**: Move all selected tasks under a specific area (or clear the area)
+   - **Add Tag**: Add a tag to all selected
+   - **Remove Tag**: Remove a tag from all selected tasks
+   - **Add Context**: Add a context to all selected tasks
+   - **Remove Context**: Remove a context from all selected tasks
+   - **Delete**: Delete all selected
 4. Click **"Done"** to exit selection mode
 
 ### Sorting
@@ -469,29 +469,29 @@ Mindwtr supports **Standard** (Gmail/Todoist-style), **Vim**, and **Emacs** keyb
 See [Desktop Keyboard Shortcuts](/use/keyboard-shortcuts) for the complete list.
 
 **Quick reference (Standard):**
-- `/` — Open search
-- `?` — Show shortcuts help
-- `gi` — Go to Inbox
-- `gn` — Go to Next
-- `gf` — Go to Focus
-- `j/k` — Move selection down/up
-- `Enter` — Open selected task
-- `Shift+Enter` — Edit selected task
-- `e` — Mark done / not done
-- `x` — Select / deselect task for batch actions
-- `#` — Delete task
-- `z` — Undo last complete/delete
+- `/`: Open search
+- `?`: Show shortcuts help
+- `gi`: Go to Inbox
+- `gn`: Go to Next
+- `gf`: Go to Focus
+- `j/k`: Move selection down/up
+- `Enter`: Open selected task
+- `Shift+Enter`: Edit selected task
+- `e`: Mark done / not done
+- `x`: Select / deselect task for batch actions
+- `#`: Delete task
+- `z`: Undo last complete/delete
 
 **Quick reference (Vim):**
-- `j/k` — Move selection down/up
-- `Enter` — Open selected task
-- `e` — Edit selected task
-- `x` — Toggle done
-- `dd` — Delete task
+- `j/k`: Move selection down/up
+- `Enter`: Open selected task
+- `e`: Edit selected task
+- `x`: Toggle done
+- `dd`: Delete task
 
 `Ctrl+Z` / `Cmd+Z` undoes the last task completion or deletion in every preset.
 
-In every preset, `s` followed by a letter sets the selected task's status directly — `si` Inbox, `sn` Next, `sw` Waiting, `ss` Someday, `sd` Done, `sa` Archived — and shows an undo toast. `Insert` jumps to the add-task input (or opens quick add where a list has none).
+In every preset, `s` followed by a letter sets the selected task's status directly (`si` Inbox, `sn` Next, `sw` Waiting, `ss` Someday, `sd` Done, `sa` Archived) and shows an undo toast. `Insert` jumps to the add-task input (or opens quick add where a list has none).
 
 ---
 
@@ -511,26 +511,26 @@ Access Settings from the sidebar.
 - Enable/disable task notifications for due dates and start times
 
 **Daily Digest:**
-- **Morning Briefing** — Summary of due today, overdue, and focus tasks
-- **Evening Review** — Prompt to review and wrap up the day
+- **Morning Briefing**: Summary of due today, overdue, and focus tasks
+- **Evening Review**: Prompt to review and wrap up the day
 - Configure times (e.g., 9:00 AM, 8:00 PM)
 
 **Weekly Review:**
-- **Reminders** — Get a weekly notification to start your review
-- **Review Day/Time** — Customize when you want to be reminded
+- **Reminders**: Get a weekly notification to start your review
+- **Review Day/Time**: Customize when you want to be reminded
 
 ### GTD
-- **Auto-Archive** — Automatically move Done tasks to Archived after a set number of days (default: 7 days), or choose **Never** to keep completed tasks in Done
-- **Focus task limit** — Choose how many tasks can be marked for Today's Focus
-- **Features** — Optional signals you can enable when needed:
-  - **Priorities** — Show a priority flag on tasks
-  - **Time Estimates** — Add a duration field for time blocking
-- **Inbox Processing** — Keep guided inbox processing for teaching GTD, or switch the default to **Quick** mode for a compact one-screen flow
+- **Auto-Archive**: Automatically move Done tasks to Archived after a set number of days (default: 7 days), or choose **Never** to keep completed tasks in Done
+- **Focus task limit**: Choose how many tasks can be marked for Today's Focus
+- **Features**: Optional signals you can enable when needed:
+  - **Priorities**: Show a priority flag on tasks
+  - **Time Estimates**: Add a duration field for time blocking
+- **Inbox Processing**: Keep guided inbox processing for teaching GTD, or switch the default to **Quick** mode for a compact one-screen flow
   - Choose whether to show the 2-minute shortcut, ask for project early, include contexts/tags, allow scheduling, and offer reference during processing
-- **Task Editor Layout** — Choose which fields are shown by default, move fields between sections, and reorder them
+- **Task Editor Layout**: Choose which fields are shown by default, move fields between sections, and reorder them
   - Choose the editor opening style: **Side peek** for inline edits or **Pop-up** for focused editing
   - You can move fields like **Due Date** into **Scheduling** and choose which sections expand by default
-- **Manage** — Maintain your reusable metadata from one place
+- **Manage**: Maintain your reusable metadata from one place
   - Edit **Areas**, **People**, **Contexts**, and **Tags** without hunting through individual tasks
   - People keep reusable assignee names, notes, and reference links for delegated work and suggestions
   - See [Areas and People](/use/areas-people) for where to create Areas and People while assigning them
@@ -538,9 +538,9 @@ Access Settings from the sidebar.
 ### Data & Sync
 
 **Sync Backend:**
-- **Cloud Sync** — Dropbox in supported builds, plus iCloud on macOS where available
-- **Folder / File Sync** — File sync via a shared JSON file/folder (Google Drive, Syncthing, OneDrive, etc.)
-- **Advanced / Custom Server** — WebDAV or Self-Hosted Mindwtr Cloud
+- **Cloud Sync**: Dropbox in supported builds, plus iCloud on macOS where available
+- **Folder / File Sync**: File sync via a shared JSON file/folder (Google Drive, Syncthing, OneDrive, etc.)
+- **Advanced / Custom Server**: WebDAV or Self-Hosted Mindwtr Cloud
 
 **Settings sync options:**
 - Choose which preferences sync across devices (theme, language/date format, GTD defaults, external calendar URLs, AI settings, Saved Filters)

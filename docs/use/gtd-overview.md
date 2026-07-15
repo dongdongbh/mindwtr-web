@@ -23,7 +23,7 @@ GTD consists of five interconnected steps:
 Get everything out of your head into a trusted system.
 
 - Write down every task, idea, commitment, or reminder
-- Don't filter or organize yet—just capture
+- Don't filter or organize yet. Capture first
 - Use the **Inbox** as your landing zone
 
 ### 2. Clarify
@@ -54,18 +54,18 @@ Put things where they belong:
 
 Review your system regularly.
 
-- **Daily review** — Scan your lists, calendar, and inbox
-- **Weekly review** — Comprehensive review of all lists, clear inboxes, update projects
+- **Daily review**: Scan your lists, calendar, and inbox
+- **Weekly review**: Comprehensive review of all lists, clear inboxes, update projects
 
 ### 5. Engage
 
 Take action with confidence.
 
 Choose what to work on based on:
-- **Context** — Where are you? What tools do you have?
-- **Time** — How much time do you have?
-- **Energy** — What's your mental/physical state?
-- **Priority** — What matters most?
+- **Context**: Where are you? What tools do you have?
+- **Time**: How much time do you have?
+- **Energy**: What's your mental/physical state?
+- **Priority**: What matters most?
 
 ---
 
@@ -124,26 +124,26 @@ See also: [Contexts and Tags](/use/contexts-tags)
 
 ## Why GTD Works
 
-1. **External trusted system** — Your brain stops trying to remember
-2. **Clear next actions** — No ambiguity about what to do
-3. **Regular reviews** — System stays current and trusted
-4. **Context-based lists** — See only what's relevant right now
+1. **External trusted system**: Your brain stops trying to remember
+2. **Clear next actions**: No ambiguity about what to do
+3. **Regular reviews**: System stays current and trusted
+4. **Context-based lists**: See only what's relevant right now
 
 ---
 
 ## Learning GTD
 
-- **6 months** — Stop feeling clumsy with the system
-- **1-2 years** — Truly internalize the principles
-- **Ongoing** — Re-reading reveals new insights
+- **6 months**: Stop feeling clumsy with the system
+- **1-2 years**: Truly internalize the principles
+- **Ongoing**: Re-reading reveals new insights
 
 ---
 
 ## Resources
 
-- [GTD in 15 Minutes](https://hamberg.no/gtd) — Quick introduction
+- [GTD in 15 Minutes](https://hamberg.no/gtd): Quick introduction
 - [Getting Things Done (book)](https://gettingthingsdone.com/) — David Allen's original book
-- [r/gtd](https://reddit.com/r/gtd) — GTD community on Reddit
+- [r/gtd](https://reddit.com/r/gtd): GTD community on Reddit
 
 ---
 

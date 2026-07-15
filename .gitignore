@@ -24,7 +24,11 @@ docs/public/assets/
 wrangler.local.toml
 wrangler.*.local.toml
 
-# Local agent guidance
+# Local planning and agent guidance
+project/
+.agents/
+.hallmark/
+skills-lock.json
 AGENTS.md
 CLAUDE.md
 

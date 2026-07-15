@@ -24,6 +24,4 @@ Docs project:
 
 Set `BUN_VERSION` to `1.3.3` in both Pages projects unless `.bun-version` changes.
 
-See `project/deploy.md` for the verified deploy notes.
-
 Deploy authentication lives in the Cloudflare/GitHub integration. Do not commit Cloudflare tokens, account IDs, local `.dev.vars`, or Wrangler state.

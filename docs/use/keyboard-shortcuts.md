@@ -5,7 +5,7 @@ Mindwtr desktop supports keyboard-first use with Standard (Gmail/Todoist-style),
 ## Quick start
 
 - Choose your preset in **Settings -> General -> Keyboard Shortcuts**.
-- Press `?` in the app to open the current shortcut sheet for the preset you are using.
+- Press `?` in the app to open the current shortcut sheet for the preset you are using. The sheet ends with a quick-add syntax table listing every token (`/start:`, `/note:`, `@context`, `+Project`, …).
 - Use `/` to search.
 - Use `gi` for Inbox, `gn` for Next Actions, and `gf` for Focus (Standard and Vim modes).
 - Use `a` to add a task when Mindwtr is focused. `o` still works for the same app-scoped add-task action.

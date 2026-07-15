@@ -137,6 +137,8 @@ Review each inbox item:
 - Projects have next actions
 - Lists are current
 
+The final screen shows a short summary of where the system stands: whether your Inbox is empty, whether every active project has a next action, and how many Waiting For items have sat untouched for more than two weeks. Each line reflects the same rules the review steps use, and lines with nothing to report stay hidden.
+
 ---
 
 ## Optional AI Review

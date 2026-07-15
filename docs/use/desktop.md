@@ -82,7 +82,7 @@ Multi-step outcomes containing related tasks.
 - **Support notes**: Add planning notes and reference material
 - **Sections**: Optional task groupings inside a project (phases, milestones, sub-workstreams). Sections are headings inside one project, not subtasks or separate projects.
 - **Review date**: Set tickler dates for project review
-- **Complete/Archive**: Mark projects as done or archive them
+- **Archive**: Completing a project means archiving it — remaining tasks are completed with it, and **Reactivate** undoes it
 
 The **Project Section** field in the task editor assigns a task to one of the sections in its current project. It only has a useful value after the task belongs to a project that has sections.
 

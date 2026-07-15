@@ -496,7 +496,7 @@ Open Projects from **Menu → Projects**.
 - Set sequential or parallel mode
 - Set review date
 - Reorder project tasks with the drag handle when custom ordering is enabled. Dropping a task under a different section header moves it into that section, and dropping it above the first header clears its section
-- Complete or archive the project
+- Archive the project (this is how a project is completed — remaining tasks are completed with it, and **Reactivate** undoes it)
 
 The **Project Section** field in the task editor assigns a task to one of the sections in its current project. It only matters after the task belongs to a project that has sections; otherwise, leave it blank.
 

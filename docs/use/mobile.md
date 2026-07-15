@@ -44,6 +44,8 @@ Tap the **Menu** tab to access additional views:
 
 Open **Archived** and tap **Select** to manage more than one task. Tap **Select All** or choose tasks, then restore them to Inbox or move them to Trash. Mindwtr permanently deletes tasks only from Trash.
 
+Open **Trash** and tap **Select** to manage several deleted tasks and projects. Tap **Select All** or choose items, then restore or permanently delete them in one step. Permanent deletion always asks for confirmation.
+
 ---
 
 ## Global Search

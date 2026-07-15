@@ -142,7 +142,7 @@ Choose **Select** to pick tasks or **Select All**. You can restore the selection
 
 ### 🗑️ Trash
 
-Deleted tasks and projects, newest first. Restore items back to the Inbox, delete them permanently, or use **Clear Trash** to empty everything at once. Choose **Select** to pick several tasks and projects (or **Select all**) and restore or permanently delete them in one step — permanent deletion always asks for confirmation.
+Deleted tasks and projects, newest first. Restore items, delete them permanently, or use **Clear Trash** to empty everything at once. Choose **Select** to pick several tasks and projects (or **Select All**) and restore or permanently delete them in one step — permanent deletion always asks for confirmation.
 
 ### 📝 Weekly Review
 

@@ -7,7 +7,7 @@ import { resolve, join, posix } from "node:path";
 // titles/descriptions/social metadata and schema are complete and consistent,
 // canonical/og:url match each page's served URL, social images exist, and each
 // sitemap lists exactly the public pages that were emitted. It also protects
-// the landing 404, optional llms.txt links, and the localized LCP image budget.
+// the landing 404 and optional llms.txt links.
 // Run after both builds: `bun run check` does this automatically.
 
 const root = resolve(import.meta.dirname, "..");
@@ -253,33 +253,23 @@ if (findings.length === 0) {
       const isLandingHome =
         page.site.name === "landing" && /^(?:\/(?:de|es|fr|zh))?\/$/.test(page.path);
       if (isLandingHome) {
-        const preload = page.html.match(
-          /<link\b(?=[^>]*\brel="preload")(?=[^>]*\bas="image")(?=[^>]*\bfetchpriority="high")[^>]*\bhref="([^"]+)"[^>]*>/i
+        const approvedHero = "/assets/screenshots/landing_image.png";
+        const image = [...page.html.matchAll(/<img\b[^>]*>/gi)].find((match) =>
+          match[0].includes(`src="${approvedHero}"`)
         );
-        if (!preload) {
-          findings.push(`${page.site.name}${page.path}: missing high-priority LCP image preload`);
-        } else {
-          const image = [...page.html.matchAll(/<img\b[^>]*>/gi)].find((match) =>
-            match[0].includes(`src="${preload[1]}"`)
-          )?.[0];
-          if (
-            !image ||
-            !/\bfetchpriority="high"/.test(image) ||
-            !/\bwidth="\d+"/.test(image) ||
-            !/\bheight="\d+"/.test(image)
-          ) {
-            findings.push(
-              `${page.site.name}${page.path}: LCP image needs high priority and intrinsic dimensions`
-            );
-          }
-          const asset = resolvePath(page.site, preload[1]);
-          if (asset && statSync(asset).size > 300 * 1024) {
-            findings.push(
-              `${page.site.name}${page.path}: LCP image is ${statSync(asset).size} bytes (budget 307200)`
-            );
-          }
+        const preload = [...page.html.matchAll(/<link\b[^>]*>/gi)].find(
+          (match) =>
+            /\brel="preload"/.test(match[0]) &&
+            /\bas="image"/.test(match[0]) &&
+            match[0].includes(`href="${approvedHero}"`)
+        );
+        if (!image || !preload) {
+          findings.push(
+            `${page.site.name}${page.path}: homepage must render and preload the approved PNG hero`
+          );
         }
       }
+
     }
 
     for (const key of ["og:image", "twitter:image"]) {

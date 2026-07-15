@@ -32,6 +32,8 @@ By default, this feature is **off** to keep Focus minimal and distraction-free.
 
 Task linking is optional and off by default. Turn on **Settings → GTD → Pomodoro timer → Link timer to task** when you want the Timer task picker and **Mark task done** action in Focus.
 
+On desktop the panel can be folded away: the chevron in its header collapses it to a slim row showing just the remaining time and phase, and the timer keeps running. The fold state is remembered, and pressing a task's play button reopens the panel.
+
 Controls:
 - **Timer**: Start/Pause, Reset, and Switch phase
 - **Task update**: Mark task done, which completes the selected Timer task

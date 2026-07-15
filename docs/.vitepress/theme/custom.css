@@ -53,7 +53,9 @@
   --vp-local-search-result-selected-border: #5e97f2;
 }
 
-.VPNav {
+/* Keep the filter off .VPNav: a filtered ancestor becomes the containing
+   block for VitePress's fixed mobile screen and collapses it to the nav bar. */
+.VPNavBar {
   backdrop-filter: blur(18px) saturate(1.1);
 }
 
@@ -66,6 +68,12 @@
 
   .VPNavBarHamburger {
     display: flex !important;
+  }
+
+  /* VitePress normally hides the nav screen from 768px. Our full menu starts
+     at 960px, so the hamburger's screen must follow that same breakpoint. */
+  .VPNavScreen {
+    display: block !important;
   }
 }
 

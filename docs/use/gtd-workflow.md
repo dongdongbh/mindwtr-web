@@ -177,13 +177,15 @@ Sequential projects can use a project-wide scope or a section scope. Use section
 
 ### Dates vs. Status
 
-Mindwtr keeps task status and task dates separate. Status is the GTD state you choose, such as `inbox`, `next`, `waiting`, or `someday`. Dates control when and why a task appears; they do not automatically promote a task to `next`.
+Mindwtr keeps task status and task dates separate. Status is the GTD state you choose, such as `inbox`, `next`, `waiting`, or `someday`. Dates control when and why a task appears; a date arriving never changes a task's status on its own.
 
-- **Start date** is a defer/availability gate. A future start hides the task from Focus by default. When the date arrives, the task appears again with whatever status it already had; it is not promoted.
+There is one deliberate shortcut at edit time: giving an **Inbox** item a start date counts as clarifying it — you have decided when you can act on it — so Mindwtr moves it to `next` the moment you set the date, the same way starring an Inbox item does. If you pick a status in the same edit, your choice wins, and `someday` or `waiting` tasks always keep their status when you date them: a dated someday is a tickler, a dated waiting-for is a follow-up reminder.
+
+- **Start date** is a defer/availability gate. A future start hides the task from Focus by default. When the date arrives, the task appears again with whatever status it already has.
 - **Review date** is a tickler. When the date arrives, Mindwtr surfaces the task where that view supports review-due items so you can reconsider it; nothing changes until you decide.
 - **Due date** is a deadline. As it approaches or passes, Mindwtr gives the task deadline emphasis through display, reminders, and sorting pressure; status stays unchanged.
 
-Some processing actions set status and dates together. For example, choosing **Later** while processing the Inbox moves the item to `next` and sets a start date. That action changes the status; the start date does not promote the task later on its own.
+Some processing actions set status and dates together — choosing **Later** while processing the Inbox moves the item to `next` and sets a start date, and setting a start date on an Inbox item directly does the same. After that, dates only control visibility; they never change status again.
 
 ### Relative Start Lead Time
 

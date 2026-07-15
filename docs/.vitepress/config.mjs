@@ -1,14 +1,17 @@
 import { defineConfig } from "vitepress";
+import { descriptionForPage, docsUrl, pageSeoHead } from "./seo.mjs";
 
 export default defineConfig({
   title: "Mindwtr Docs",
   description: "Searchable documentation for Mindwtr, the free, local-first GTD app.",
   base: "/",
+  // Public assets are copied beneath docs/ during the build. Keep any
+  // accompanying Markdown notes out of VitePress's page registry.
+  srcExclude: ["public/**/*.md"],
   cleanUrls: true,
   head: [
     ["link", { rel: "icon", href: "/assets/brand/icon.png" }],
     ["meta", { property: "og:site_name", content: "Mindwtr Docs" }],
-    ["meta", { property: "og:type", content: "website" }],
     ["meta", { property: "og:image", content: "https://docs.mindwtr.app/assets/screenshots/social-preview.jpg" }],
     ["meta", { property: "og:image:width", content: "1280" }],
     ["meta", { property: "og:image:height", content: "640" }],
@@ -16,6 +19,9 @@ export default defineConfig({
     ["meta", { name: "twitter:card", content: "summary_large_image" }],
     ["meta", { name: "twitter:image", content: "https://docs.mindwtr.app/assets/screenshots/social-preview.jpg" }]
   ],
+  transformHead(context) {
+    return pageSeoHead(context);
+  },
   vite: {
     esbuild: {
       tsconfigRaw: {
@@ -31,9 +37,8 @@ export default defineConfig({
   // With cleanUrls each page is reachable at /path and /path.html; the
   // canonical tag tells crawlers which one to index.
   transformPageData(pageData) {
-    const canonicalUrl = `https://docs.mindwtr.app/${pageData.relativePath}`
-      .replace(/index\.md$/, "")
-      .replace(/\.md$/, "");
+    const canonicalUrl = docsUrl(pageData.relativePath);
+    pageData.description = descriptionForPage(pageData);
     pageData.frontmatter.head ??= [];
     pageData.frontmatter.head.push(["link", { rel: "canonical", href: canonicalUrl }]);
   },

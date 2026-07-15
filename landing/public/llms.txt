@@ -1,0 +1,30 @@
+# Mindwtr
+
+> Official product and documentation links for Mindwtr, a free, open-source, local-first GTD and to-do app.
+
+Mindwtr works offline, requires no account, and keeps primary task data on the user's device. Optional sync is user-controlled. The application is licensed under AGPL-3.0 and is available for desktop, mobile, and web.
+
+## Product
+
+- [Mindwtr home](https://mindwtr.app/): Product summary, screenshots, platform downloads, and comparison table.
+- [Features](https://mindwtr.app/features): GTD workflow, views, sync, automation, integrations, and supported platforms.
+- [What is GTD?](https://mindwtr.app/gtd): Plain-language introduction to Getting Things Done and its five-step workflow.
+- [Support](https://mindwtr.app/support): Help routes, bug reporting, feature requests, and community links.
+- [Privacy policy](https://mindwtr.app/privacy): Data handling for the website and applications.
+- [Brand and trademark](https://mindwtr.app/brand): Official name, logo, and trademark guidance.
+
+## Documentation
+
+- [Documentation home](https://docs.mindwtr.app/): Canonical user and developer documentation.
+- [Getting started](https://docs.mindwtr.app/start/getting-started): Install Mindwtr, capture a first task, and learn the basic workflow.
+- [What Mindwtr is](https://docs.mindwtr.app/start/what-mindwtr-is): Product scope, intended audience, and deliberate boundaries.
+- [Data and sync](https://docs.mindwtr.app/data-sync/): Local storage, backup, file sync, cloud providers, and conflict behavior.
+- [Import guides](https://docs.mindwtr.app/import/): Migration from other task managers.
+- [Developer guide](https://docs.mindwtr.app/developers/developer-guide): Repository setup, architecture, APIs, testing, and contribution paths.
+
+## Source and releases
+
+- [Source code](https://github.com/dongdongbh/Mindwtr): Official AGPL-3.0 repository.
+- [Releases](https://github.com/dongdongbh/Mindwtr/releases): Official release artifacts and changelogs.
+
+This file is a navigation aid. The HTML pages and XML sitemaps remain the canonical public sources.

@@ -7,7 +7,8 @@ import { chrome, LOCALES } from "./chrome";
 // every landing/<locale>/*.html file is its translation. Rollup inputs and
 // sitemap.xml are both derived from this list, so adding a page means creating
 // one file — Vite emits it (multi-page builds only include declared inputs)
-// and the sitemap picks it up automatically. Cloudflare Pages serves
+// and the sitemap picks it up automatically unless it is explicitly excluded
+// as non-indexable, like 404.html below. Cloudflare Pages serves
 // dist/<name>.html at the clean URL /<name> and dist/<locale>/index.html at
 // /<locale>/.
 const htmlIn = (dir: string) =>
@@ -30,11 +31,13 @@ const pagePaths = pages
   )
   .sort((a, b) => (a === "/" ? -1 : b === "/" ? 1 : a.localeCompare(b)));
 
+const sitemapPaths = pagePaths.filter((path) => path !== "/404");
+
 function sitemap(): Plugin {
   return {
     name: "mindwtr:sitemap",
     generateBundle() {
-      const urls = pagePaths
+      const urls = sitemapPaths
         .map((path) => `  <url>\n    <loc>https://mindwtr.app${path}</loc>\n  </url>`)
         .join("\n");
       this.emitFile({

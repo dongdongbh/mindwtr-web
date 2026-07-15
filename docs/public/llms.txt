@@ -1,0 +1,48 @@
+# Mindwtr documentation
+
+> Canonical guides for installing, using, syncing, extending, and contributing to Mindwtr.
+
+Mindwtr is a free, open-source, local-first GTD and to-do app. These docs describe current user workflows and public developer interfaces. Follow the linked pages for limitations and platform-specific details.
+
+## Start here
+
+- [Documentation home](https://docs.mindwtr.app/): Topic map for all user and developer guides.
+- [Getting started](https://docs.mindwtr.app/start/getting-started): Install Mindwtr and complete the first capture and review loop.
+- [What Mindwtr is](https://docs.mindwtr.app/start/what-mindwtr-is): Product scope and boundaries.
+- [What you can count on](https://docs.mindwtr.app/start/commitments): Local-first, no-account, open-source, and portability commitments.
+- [FAQ](https://docs.mindwtr.app/start/faq): Answers to common setup, feature, platform, and troubleshooting questions.
+
+## Use Mindwtr
+
+- [Desktop guide](https://docs.mindwtr.app/use/desktop): Desktop views, capture, task editing, search, and settings.
+- [Mobile guide](https://docs.mindwtr.app/use/mobile): Mobile capture, views, widgets, and platform behavior.
+- [GTD workflow](https://docs.mindwtr.app/use/gtd-workflow): Capture, clarify, organize, reflect, and engage in the app.
+- [Calendar integration](https://docs.mindwtr.app/use/calendar-integration): Calendar views, external calendars, ICS, and task events.
+- [Attachments](https://docs.mindwtr.app/use/attachments): Files, storage, sync, limits, and recovery.
+- [Recurring tasks](https://docs.mindwtr.app/use/recurring-tasks): Fixed and completion-based recurrence behavior.
+
+## Data, sync, and migration
+
+- [Data and sync overview](https://docs.mindwtr.app/data-sync/): On-disk data, available providers, setup, and conflict expectations.
+- [Backup and restore](https://docs.mindwtr.app/data-sync/backup-restore): Export, validate, restore, and recover data.
+- [Sync algorithm](https://docs.mindwtr.app/data-sync/sync-algorithm): Merge rules, timestamps, deletion semantics, and conflict handling.
+- [Sync diagnostics](https://docs.mindwtr.app/data-sync/diagnostics-logs): Logs, common failures, and safe troubleshooting steps.
+- [Import overview](https://docs.mindwtr.app/import/): Supported task-manager imports and migration limitations.
+
+## Automation and development
+
+- [Power-user guides](https://docs.mindwtr.app/power-users/): Optional AI, Shortcuts, APIs, MCP, Obsidian, PWA, and Docker features.
+- [Local API](https://docs.mindwtr.app/power-users/local-api): Token-authenticated desktop API.
+- [MCP server](https://docs.mindwtr.app/power-users/mcp): Model Context Protocol tools and setup.
+- [Developer guide](https://docs.mindwtr.app/developers/developer-guide): Build, test, architecture, and contribution overview.
+- [Architecture](https://docs.mindwtr.app/developers/architecture): Package boundaries, stores, persistence, sync, and clients.
+- [Core API](https://docs.mindwtr.app/developers/core-api): Shared types, store actions, parser, and exported interfaces.
+- [Cloud API](https://docs.mindwtr.app/developers/cloud-api): Self-hosted sync server endpoints and authentication.
+
+## Complete indexes
+
+- [Documentation sitemap](https://docs.mindwtr.app/sitemap.xml): Complete canonical URL inventory.
+- [Official product site](https://mindwtr.app/): Product overview and downloads.
+- [Official source](https://github.com/dongdongbh/Mindwtr): Source code, releases, and issue tracker.
+
+This file is a navigation aid. The HTML documentation and XML sitemap remain canonical.

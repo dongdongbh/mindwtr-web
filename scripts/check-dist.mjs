@@ -4,8 +4,10 @@ import { resolve, join, posix } from "node:path";
 // Verifies the built output of both sites — the same files Cloudflare serves.
 // Checks: internal links and asset references resolve (including cross-site
 // links between mindwtr.app and docs.mindwtr.app), fragment targets exist,
-// canonical/og:url match each page's served URL, social images exist, and the
-// landing sitemap lists exactly the pages that were emitted.
+// titles/descriptions/social metadata and schema are complete and consistent,
+// canonical/og:url match each page's served URL, social images exist, and each
+// sitemap lists exactly the public pages that were emitted. It also protects
+// the landing 404, optional llms.txt links, and the localized LCP image budget.
 // Run after both builds: `bun run check` does this automatically.
 
 const root = resolve(import.meta.dirname, "..");
@@ -75,6 +77,8 @@ for (const site of Object.values(sites)) {
 
 if (findings.length === 0) {
   const pages = new Map(); // file -> { site, path, html, ids }
+  const pageTitles = new Map(); // site + title -> served page paths
+  const descriptions = new Map(); // site + description -> served page paths
 
   for (const [origin, site] of Object.entries(sites)) {
     site.origin = origin;
@@ -83,7 +87,11 @@ if (findings.length === 0) {
     for (const file of site.files.filter((f) => f.endsWith(".html"))) {
       const html = readFileSync(file, "utf8");
       const ids = new Set([...html.matchAll(/\sid="([^"]*)"/g)].map((m) => m[1]));
-      pages.set(file, { site, path: pagePath(site, file), html, ids });
+      const path = pagePath(site, file);
+      if (site.name === "docs" && path.startsWith("/public/")) {
+        findings.push(`docs${path}: public asset was compiled as an HTML page`);
+      }
+      pages.set(file, { site, path, html, ids });
     }
   }
 
@@ -154,13 +162,131 @@ if (findings.length === 0) {
     const metaValue = (key) =>
       metas.find((m) => m.property === key || m.name === key)?.content;
 
+    const is404 = page.path.endsWith("/404");
+    const expected = `${page.site.origin}${page.path}`;
+    if (!is404) {
+      const titleMatches = [...page.html.matchAll(/<title(?:\s[^>]*)?>([\s\S]*?)<\/title>/g)];
+      const title = decodeEntities(titleMatches[0]?.[1] ?? "").trim();
+      if (titleMatches.length !== 1 || title === "") {
+        findings.push(`${page.site.name}${page.path}: expected one non-empty title`);
+      } else {
+        const key = `${page.site.name}\n${title}`;
+        const paths = pageTitles.get(key) ?? [];
+        paths.push(page.path);
+        pageTitles.set(key, paths);
+      }
+
+      const lang = page.html.match(/<html\b[^>]*\slang="([^"]+)"/i)?.[1];
+      if (!lang) findings.push(`${page.site.name}${page.path}: missing html lang`);
+
+      const h1Count = [...page.html.matchAll(/<h1\b/gi)].length;
+      if (h1Count !== 1) {
+        findings.push(`${page.site.name}${page.path}: expected one h1, found ${h1Count}`);
+      }
+
+      const requiredMeta = [
+        "description",
+        "og:site_name",
+        "og:type",
+        "og:title",
+        "og:description",
+        "og:url",
+        "og:image",
+        "twitter:card",
+        "twitter:title",
+        "twitter:description",
+        "twitter:image"
+      ];
+      for (const key of requiredMeta) {
+        if (!metaValue(key)?.trim()) {
+          findings.push(`${page.site.name}${page.path}: missing ${key} metadata`);
+        }
+      }
+
+      const description = decodeEntities(metaValue("description") ?? "").trim();
+      if (description) {
+        const key = `${page.site.name}\n${description}`;
+        const paths = descriptions.get(key) ?? [];
+        paths.push(page.path);
+        descriptions.set(key, paths);
+      }
+
+      const jsonLd = [...page.html.matchAll(
+        /<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi
+      )];
+      if (jsonLd.length === 0) {
+        findings.push(`${page.site.name}${page.path}: missing JSON-LD`);
+      }
+      let pageNodeFound = false;
+      for (const [, value] of jsonLd) {
+        try {
+          const data = JSON.parse(value);
+          if (data["@context"] !== "https://schema.org") {
+            findings.push(`${page.site.name}${page.path}: JSON-LD must use schema.org context`);
+            continue;
+          }
+          const nodes = Array.isArray(data["@graph"]) ? data["@graph"] : [data];
+          const pageNode = nodes.find(
+            (node) => node?.["@id"] === `${expected}#webpage`
+          );
+          if (!pageNode) continue;
+          pageNodeFound = true;
+          for (const [key, actual, wanted] of [
+            ["url", pageNode.url, expected],
+            ["name", pageNode.name, title],
+            ["description", pageNode.description, description]
+          ]) {
+            if (actual !== wanted) {
+              findings.push(
+                `${page.site.name}${page.path}: JSON-LD ${key} is ${JSON.stringify(actual)}, expected ${JSON.stringify(wanted)}`
+              );
+            }
+          }
+        } catch (error) {
+          findings.push(`${page.site.name}${page.path}: invalid JSON-LD (${error.message})`);
+        }
+      }
+      if (jsonLd.length > 0 && !pageNodeFound) {
+        findings.push(`${page.site.name}${page.path}: JSON-LD missing its WebPage node`);
+      }
+
+      const isLandingHome =
+        page.site.name === "landing" && /^(?:\/(?:de|es|fr|zh))?\/$/.test(page.path);
+      if (isLandingHome) {
+        const preload = page.html.match(
+          /<link\b(?=[^>]*\brel="preload")(?=[^>]*\bas="image")(?=[^>]*\bfetchpriority="high")[^>]*\bhref="([^"]+)"[^>]*>/i
+        );
+        if (!preload) {
+          findings.push(`${page.site.name}${page.path}: missing high-priority LCP image preload`);
+        } else {
+          const image = [...page.html.matchAll(/<img\b[^>]*>/gi)].find((match) =>
+            match[0].includes(`src="${preload[1]}"`)
+          )?.[0];
+          if (
+            !image ||
+            !/\bfetchpriority="high"/.test(image) ||
+            !/\bwidth="\d+"/.test(image) ||
+            !/\bheight="\d+"/.test(image)
+          ) {
+            findings.push(
+              `${page.site.name}${page.path}: LCP image needs high priority and intrinsic dimensions`
+            );
+          }
+          const asset = resolvePath(page.site, preload[1]);
+          if (asset && statSync(asset).size > 300 * 1024) {
+            findings.push(
+              `${page.site.name}${page.path}: LCP image is ${statSync(asset).size} bytes (budget 307200)`
+            );
+          }
+        }
+      }
+    }
+
     for (const key of ["og:image", "twitter:image"]) {
       const value = metaValue(key);
       if (value) checkTarget(page, value, key);
     }
 
-    const expected = `${page.site.origin}${page.path}`;
-    const is404 = page.path.endsWith("/404");
     for (const [key, value] of [
       ["canonical", page.html.match(/<link rel="canonical" href="([^"]*)"/)?.[1]],
       ["og:url", metaValue("og:url")]
@@ -176,8 +302,20 @@ if (findings.length === 0) {
     }
   }
 
-  // Sitemaps: every listed URL must resolve; the landing sitemap must also
-  // list every emitted page (docs pages are curated by VitePress itself).
+  for (const [label, values] of [
+    ["title", pageTitles],
+    ["description", descriptions]
+  ]) {
+    for (const [key, paths] of values) {
+      if (paths.length < 2) continue;
+      const [siteName] = key.split("\n", 1);
+      findings.push(`${siteName}: duplicate ${label} on ${paths.join(", ")}`);
+    }
+  }
+
+  // Sitemaps: every listed URL must resolve and every emitted public page must
+  // appear exactly once. This catches both orphaned pages and accidental
+  // Markdown compilation from public asset directories.
   for (const site of Object.values(sites)) {
     const sitemapFile = join(site.dist, "sitemap.xml");
     if (!existsSync(sitemapFile)) {
@@ -194,14 +332,45 @@ if (findings.length === 0) {
         findings.push(`${site.name}: sitemap URL "${loc}" does not resolve`);
       }
     }
-    if (site.name === "landing") {
-      const listed = new Set(locs);
-      for (const page of pages.values()) {
-        if (page.site !== site || page.path.endsWith("/404")) continue;
-        const url = `${site.origin}${page.path}`;
-        if (!listed.has(url)) findings.push(`landing: page ${url} missing from sitemap`);
-      }
+    const listed = new Set(locs);
+    if (listed.size !== locs.length) {
+      findings.push(`${site.name}: sitemap contains duplicate URLs`);
     }
+    const expectedUrls = new Set();
+    for (const page of pages.values()) {
+      if (page.site !== site || page.path.endsWith("/404")) continue;
+      const url = `${site.origin}${page.path}`;
+      expectedUrls.add(url);
+      if (!listed.has(url)) findings.push(`${site.name}: page ${url} missing from sitemap`);
+    }
+    for (const url of listed) {
+      if (!expectedUrls.has(url)) findings.push(`${site.name}: unexpected sitemap URL ${url}`);
+    }
+  }
+
+  const landing404 = [...pages.values()].find(
+    (page) => page.site.name === "landing" && page.path === "/404"
+  );
+  if (!landing404) {
+    findings.push("landing: missing 404.html (unknown paths will soft-404 to the homepage)");
+  } else if (!/<meta\b[^>]*name="robots"[^>]*content="[^"]*noindex/i.test(landing404.html)) {
+    findings.push("landing/404: missing noindex robots metadata");
+  }
+
+  // llms.txt is an experimental navigation aid, not an indexing directive.
+  // If we publish it, keep its canonical links inside the same link contract
+  // as the human-facing pages so it cannot silently drift.
+  for (const site of Object.values(sites)) {
+    const llmsFile = join(site.dist, "llms.txt");
+    if (!existsSync(llmsFile)) continue;
+    const content = readFileSync(llmsFile, "utf8");
+    if (!content.startsWith("# ") || !/^>\s+\S/m.test(content)) {
+      findings.push(`${site.name}: llms.txt must start with an h1 and include a summary blockquote`);
+    }
+    const links = [...content.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)].map(([, url]) => url);
+    if (links.length === 0) findings.push(`${site.name}: llms.txt contains no links`);
+    const page = { site, path: "/llms.txt", html: "", ids: new Set() };
+    for (const link of links) checkTarget(page, link, "llms.txt link");
   }
 }
 
@@ -210,4 +379,4 @@ if (findings.length > 0) {
   process.exit(1);
 }
 
-console.log("Built output verified: links, fragments, canonicals, social images, and sitemaps.");
+console.log("Built output verified: URLs, links, metadata, schema, assets, and sitemaps.");

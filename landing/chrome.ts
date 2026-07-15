@@ -59,6 +59,7 @@ interface ChromeStrings {
   languageAria: string;
   copyright: string;
   legal: string;
+  socialImageAlt: string;
 }
 
 const STRINGS: Record<Locale, ChromeStrings> = {
@@ -76,6 +77,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
     footerAria: "Footer",
     languageAria: "Language",
     copyright: "Free and open source (AGPL-3.0)",
+    socialImageAlt: "Mindwtr — Get Things Done. Local and open source.",
     legal:
       "Mindwtr and the Mindwtr logo are trademarks of the Mindwtr project. " +
       "Getting Things Done and GTD are registered trademarks of the David Allen " +
@@ -96,6 +98,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
     footerAria: "Fußzeile",
     languageAria: "Sprache",
     copyright: "Frei und Open Source (AGPL-3.0)",
+    socialImageAlt: "Mindwtr — Getting Things Done. Lokal und Open Source.",
     legal:
       "Mindwtr und das Mindwtr-Logo sind Marken des Mindwtr-Projekts. " +
       "Getting Things Done und GTD sind eingetragene Marken der David Allen " +
@@ -116,6 +119,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
     footerAria: "Pie de página",
     languageAria: "Idioma",
     copyright: "Libre y de código abierto (AGPL-3.0)",
+    socialImageAlt: "Mindwtr — Getting Things Done. Local y de código abierto.",
     legal:
       "Mindwtr y el logotipo de Mindwtr son marcas del proyecto Mindwtr. " +
       "Getting Things Done y GTD son marcas registradas de David Allen " +
@@ -138,6 +142,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
     footerAria: "Pied de page",
     languageAria: "Langue",
     copyright: "Libre et open source (AGPL-3.0)",
+    socialImageAlt: "Mindwtr — Getting Things Done. Local et open source.",
     legal:
       "Mindwtr et le logo Mindwtr sont des marques du projet Mindwtr. " +
       "Getting Things Done et GTD sont des marques déposées de la David Allen " +
@@ -158,6 +163,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
     footerAria: "页脚",
     languageAria: "语言",
     copyright: "自由开源（AGPL-3.0）",
+    socialImageAlt: "Mindwtr — 践行 GTD，本地优先且开源。",
     legal:
       "Mindwtr 及 Mindwtr 标志是 Mindwtr 项目的商标。Getting Things Done 和 " +
       "GTD 是 David Allen Company 的注册商标。Mindwtr 与 David Allen Company " +
@@ -211,8 +217,102 @@ const DETECT_SCRIPT = `    <script>
     </script>
 `;
 
-function sharedHeadMeta(locale: Locale, pageName: string, pagePath: string): string {
+const OG_LOCALE: Record<Locale, string> = {
+  en: "en_US",
+  de: "de_DE",
+  es: "es_ES",
+  fr: "fr_FR",
+  zh: "zh_CN"
+};
+
+interface PageMeta {
+  title: string;
+  description: string;
+  socialTitle: string;
+  socialDescription: string;
+}
+
+function decodeHtml(value: string): string {
+  const named: Record<string, string> = {
+    amp: "&",
+    apos: "'",
+    gt: ">",
+    lt: "<",
+    quot: '"'
+  };
+  return value.replace(/&(#x[\da-f]+|#\d+|[a-z]+);/gi, (entity, code: string) => {
+    if (code.startsWith("#x")) return String.fromCodePoint(Number.parseInt(code.slice(2), 16));
+    if (code.startsWith("#")) return String.fromCodePoint(Number.parseInt(code.slice(1), 10));
+    return named[code.toLowerCase()] ?? entity;
+  });
+}
+
+function jsonLd(value: unknown): string {
+  return JSON.stringify(value).replaceAll("<", "\\u003c");
+}
+
+function structuredData(locale: Locale, pagePath: string, meta: PageMeta): string {
   const url = `${ORIGIN}${pagePath}`;
+  return jsonLd({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${ORIGIN}/#organization`,
+        name: "Mindwtr project",
+        url: ORIGIN,
+        logo: `${ORIGIN}/assets/brand/icon.png`,
+        sameAs: ["https://github.com/dongdongbh/Mindwtr"]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${ORIGIN}/#software`,
+        name: "Mindwtr",
+        url: ORIGIN,
+        description:
+          "A free, open-source, local-first GTD and to-do application for desktop, mobile, and web.",
+        applicationCategory: "ProductivityApplication",
+        operatingSystem: "Windows, macOS, Linux, iOS, Android, Web",
+        isAccessibleForFree: true,
+        license: "https://www.gnu.org/licenses/agpl-3.0.html",
+        publisher: { "@id": `${ORIGIN}/#organization` },
+        sameAs: ["https://github.com/dongdongbh/Mindwtr"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${ORIGIN}/#website`,
+        name: "Mindwtr",
+        url: ORIGIN,
+        inLanguage: LOCALES.map((item) => HREFLANG[item]),
+        publisher: { "@id": `${ORIGIN}/#organization` },
+        about: { "@id": `${ORIGIN}/#software` }
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: decodeHtml(meta.title),
+        description: decodeHtml(meta.description),
+        inLanguage: HREFLANG[locale],
+        isPartOf: { "@id": `${ORIGIN}/#website` },
+        about: { "@id": `${ORIGIN}/#software` },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: `${ORIGIN}/assets/screenshots/social-preview.jpg`
+        }
+      }
+    ]
+  });
+}
+
+function sharedHeadMeta(
+  locale: Locale,
+  pageName: string,
+  pagePath: string,
+  meta: PageMeta
+): string {
+  const url = `${ORIGIN}${pagePath}`;
+  const t = STRINGS[locale];
   const alternates = LOCALIZED_PAGES.has(pageName)
     ? LOCALES.map(
         (l) =>
@@ -228,17 +328,32 @@ function sharedHeadMeta(locale: Locale, pageName: string, pagePath: string): str
     locale === "zh"
       ? ""
       : `    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/instrument-serif-latin.woff2" crossorigin />\n`;
-  return `    <meta property="og:type" content="website" />
-    <meta property="og:url" content="${url}" />
+  const alternateLocales = LOCALIZED_PAGES.has(pageName)
+    ? LOCALES.filter((item) => item !== locale)
+        .map((item) => `    <meta property="og:locale:alternate" content="${OG_LOCALE[item]}" />`)
+        .join("\n") + "\n"
+    : "";
+  const canonical =
+    pageName === "404" ? "" : `    <link rel="canonical" href="${url}" />\n`;
+  const schema =
+    pageName === "404"
+      ? ""
+      : `    <script type="application/ld+json">${structuredData(locale, pagePath, meta)}</script>\n`;
+  return `    <meta property="og:site_name" content="Mindwtr" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="${OG_LOCALE[locale]}" />
+${alternateLocales}    <meta property="og:url" content="${url}" />
     <meta property="og:image" content="${ORIGIN}/assets/screenshots/social-preview.jpg" />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="640" />
-    <meta property="og:image:alt" content="Mindwtr — Get Things Done. Local &amp; Open Source." />
+    <meta property="og:image:alt" content="${t.socialImageAlt}" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${meta.socialTitle}" />
+    <meta name="twitter:description" content="${meta.socialDescription}" />
     <meta name="twitter:image" content="${ORIGIN}/assets/screenshots/social-preview.jpg" />
+    <meta name="twitter:image:alt" content="${t.socialImageAlt}" />
     <link rel="icon" href="/assets/brand/icon.png" />
-    <link rel="canonical" href="${url}" />
-${displayFont}${alternates}${detect}`;
+${canonical}${schema}${displayFont}${alternates}${detect}`;
 }
 
 function header(locale: Locale, pageName: string, pagePath: string): string {
@@ -380,6 +495,15 @@ export function chrome(): Plugin {
         ) as Locale;
         const pageName = basename(rel, ".html");
         const pagePath = localePath(locale, pageName);
+        const title = html.match(/<title(?:\s[^>]*)?>([\s\S]*?)<\/title>/i)?.[1]?.trim() ?? "Mindwtr";
+        const description =
+          html.match(/<meta\s+name="description"\s+content="([^"]*)"\s*\/?>/i)?.[1] ?? "";
+        const socialTitle =
+          html.match(/<meta\s+property="og:title"\s+content="([^"]*)"\s*\/?>/i)?.[1] ?? title;
+        const socialDescription =
+          html.match(/<meta\s+property="og:description"\s+content="([^"]*)"\s*\/?>/i)?.[1] ??
+          description;
+        const meta = { title, description, socialTitle, socialDescription };
         return html
           .replace(/[ \t]*<!-- chrome:.*?-->\n/gs, "")
           .replaceAll("__GITHUB_STARS__", `${starsRounded.toLocaleString(STAR_LOCALE[locale])}+`)
@@ -389,7 +513,10 @@ export function chrome(): Plugin {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />`
           )
-          .replace(/[ \t]*<\/head>/, `${sharedHeadMeta(locale, pageName, pagePath)}  </head>`)
+          .replace(
+            /[ \t]*<\/head>/,
+            `${sharedHeadMeta(locale, pageName, pagePath, meta)}  </head>`
+          )
           .replace("<body>", `<body>\n${header(locale, pageName, pagePath)}`)
           .replace(/[ \t]*<\/body>/, `${footer(locale, pagePath)}  </body>`);
       }

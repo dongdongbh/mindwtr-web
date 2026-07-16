@@ -210,6 +210,8 @@ Powerful search with operators to find anything instantly.
 
 **Open:** Press `/` or `Ctrl/Cmd + K` or click the search icon.
 
+Search text is optional. Open **Filters** to list matching items by status, scope, area, due date, location, context, or tag; choose **Done** and **Archived** (or **Include Done and Archived tasks**) when you want completed items.
+
 #### Search Operators
 
 | Operator    | Example            | Description                   |

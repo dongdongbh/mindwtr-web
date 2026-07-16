@@ -42,7 +42,7 @@ Tap the **Menu** tab to access additional views:
  - 🗑️ **Trash**: Deleted tasks and projects
  - ⚙️ **Settings**: App preferences
 
-Open **Archived** and tap **Select** to manage more than one task. Tap **Select All** or choose tasks, then restore them to Inbox or move them to Trash. Mindwtr permanently deletes tasks only from Trash.
+Open **Done** and tap **Select** to choose tasks, then use **Move → Archived** to file them away early. In **Archived**, tap **Select** or **Select All** to move tasks back to Done without changing their completion time, restore them to Inbox, or move them to Trash. Mindwtr permanently deletes tasks only from Trash.
 
 Open **Trash** and tap **Select** to manage several deleted tasks and projects. Tap **Select All** or choose items, then restore or permanently delete them in one step. Permanent deletion always asks for confirmation.
 
@@ -628,7 +628,7 @@ Customize how Mindwtr works for your GTD workflow:
 - Default: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
 
 **Auto-Archive:**
-- Automatically move Done tasks to Archived after a set number of days (default: 7 days)
+- Automatically move Done tasks to Archived after a set number of days (default: 7 days). Reducing the delay immediately archives existing Done tasks that are now older than the new limit.
 - Set to "Never" to keep completions in the Done list indefinitely
 
 **Inbox Processing:**

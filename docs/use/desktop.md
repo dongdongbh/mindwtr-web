@@ -134,11 +134,13 @@ Recently completed tasks. Use this as your short-term completion log for daily o
 
 If you finished a task earlier than you marked it Done, click its **Completed** timestamp to correct it. You can also right-click the complete button on any open task to mark it Done as of an earlier time. This helps when the completion time matters for your records or for "repeat after completion" scheduling.
 
+Choose **Select** to pick tasks or **Select All**, then use **Move → Archived** to file the selection away early.
+
 ### 📦 Archived
 
 Completed tasks that have been filed away. Archived tasks are hidden from normal task lists, but you can search or restore them here. Click a task's **Completed** timestamp to correct it.
 
-Choose **Select** to pick tasks or **Select All**. You can restore the selection to Inbox or move it to Trash. Mindwtr permanently deletes tasks only from Trash.
+Choose **Select** to pick tasks or **Select All**. You can move the selection back to Done without changing its completion time, restore it to Inbox, or move it to Trash. Mindwtr permanently deletes tasks only from Trash.
 
 ### 🗑️ Trash
 
@@ -520,7 +522,7 @@ Access Settings from the sidebar.
 - **Review Day/Time**: Customize when you want to be reminded
 
 ### GTD
-- **Auto-Archive**: Automatically move Done tasks to Archived after a set number of days (default: 7 days), or choose **Never** to keep completed tasks in Done
+- **Auto-Archive**: Automatically move Done tasks to Archived after a set number of days (default: 7 days), or choose **Never** to keep completed tasks in Done. Reducing the delay immediately archives existing Done tasks that are now older than the new limit.
 - **Focus task limit**: Choose how many tasks can be marked for Today's Focus
 - **Features**: Optional signals you can enable when needed:
   - **Priorities**: Show a priority flag on tasks

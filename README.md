@@ -1,5 +1,9 @@
 # Mindwtr Web
 
+[![GEO Score](https://geoready.dev/badge?url=https%3A%2F%2Fmindwtr.app)](https://geoready.dev?utm_source=badge)
+
+Automated technical and content readiness score from [GEO Optimizer](https://github.com/Auriti-Labs/geo-optimizer-skill); it is not a Google ranking or verified evidence of AI citations.
+
 Public website and documentation for [Mindwtr](https://github.com/dongdongbh/Mindwtr).
 
 - `landing/` builds `mindwtr.app`.

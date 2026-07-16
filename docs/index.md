@@ -40,10 +40,4 @@ features:
 
 Mindwtr is a free, open-source task manager built around Getting Things Done (GTD). It works offline, requires no account, and keeps its primary data on your device. Optional sync remains under your control through iCloud, files, Dropbox, WebDAV, or a self-hosted server.
 
-## Find the right guide
-
-- New to the app? [Install Mindwtr and capture your first task](/start/getting-started).
-- Deciding whether it fits? Read [what Mindwtr is](/start/what-mindwtr-is) and [what you can count on](/start/commitments).
-- Choosing where your data lives? Start with [data and sync](/data-sync/).
-- Moving from another task manager? See the [import guides](/import/).
-- Building an integration? Use the [developer guide](/developers/developer-guide), [local API](/power-users/local-api), or [MCP server](/power-users/mcp).
+Learn more about [Mindwtr's scope](/start/what-mindwtr-is) and [commitments](/start/commitments), or build with the [local API](/power-users/local-api) and [MCP server](/power-users/mcp).

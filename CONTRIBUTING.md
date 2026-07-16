@@ -203,11 +203,6 @@ Use Conventional Commits when possible, such as:
 - `docs: clarify backup and restore`
 - `fix(docs): correct localized canonical URLs`
 
-Mindwtr uses a
-[Contributor License Agreement](https://gist.github.com/dongdongbh/0446c35e1d5c1a73c344b16cba4aeeaa).
-CLA Assistant will prompt you on your first pull request if a signature is
-needed.
-
 ## Need help?
 
 Open a GitHub issue before a large documentation or translation contribution.

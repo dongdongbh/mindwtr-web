@@ -1,5 +1,12 @@
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import {
+  DOCS_LOCALE_MESSAGES,
+  DOCS_LOCALE_ORDER,
+  docsLocaleForPath,
+  localizedDocsPath,
+  stripDocsLocale
+} from "./locales/index.mjs";
 
 const DOCS_ORIGIN = "https://docs.mindwtr.app";
 const SITE_ORIGIN = "https://mindwtr.app";
@@ -37,6 +44,12 @@ function markdownToText(value) {
   );
 }
 
+function minimumDescriptionLength(text) {
+  return /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u.test(text)
+    ? 20
+    : 40;
+}
+
 export function descriptionFromMarkdown(source, fallback = DEFAULT_DESCRIPTION) {
   const withoutFrontmatter = source.replace(/^---\s*\n[\s\S]*?\n---\s*(?:\n|$)/, "");
   const withoutCode = withoutFrontmatter
@@ -53,7 +66,7 @@ export function descriptionFromMarkdown(source, fallback = DEFAULT_DESCRIPTION) 
       continue;
     }
     const text = markdownToText(candidate.replace(/\n/g, " "));
-    if (text.length >= 40) return text;
+    if (text.length >= minimumDescriptionLength(text)) return text;
   }
 
   return trimDescription(fallback);
@@ -68,7 +81,9 @@ export function descriptionForPage(pageData) {
   const explicit = pageData.frontmatter.description;
   if (typeof explicit === "string" && explicit.trim()) return trimDescription(explicit);
 
-  const fallback = pageData.frontmatter.hero?.tagline ?? DEFAULT_DESCRIPTION;
+  const localeKey = docsLocaleForPath(pageData.relativePath);
+  const fallback =
+    pageData.frontmatter.hero?.tagline ?? DOCS_LOCALE_MESSAGES[localeKey].description;
   if (!pageData.filePath) return trimDescription(fallback);
 
   const sourcePath = resolve(import.meta.dirname, "..", pageData.filePath);
@@ -77,6 +92,12 @@ export function descriptionForPage(pageData) {
 }
 
 function structuredData(pageData, title, description, url) {
+  const localeKey = docsLocaleForPath(pageData.relativePath);
+  const messages = DOCS_LOCALE_MESSAGES[localeKey];
+  const baseRelativePath = stripDocsLocale(pageData.relativePath);
+  const siteUrl = `${DOCS_ORIGIN}${localizedDocsPath(localeKey, "index.md")}`;
+  const websiteId = `${siteUrl}#website`;
+
   return JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
@@ -92,6 +113,7 @@ function structuredData(pageData, title, description, url) {
         "@type": "SoftwareApplication",
         "@id": `${SITE_ORIGIN}/#software`,
         name: "Mindwtr",
+        alternateName: "如水",
         url: SITE_ORIGIN,
         description:
           "A free, open-source, local-first GTD and to-do application for desktop, mobile, and web.",
@@ -104,21 +126,21 @@ function structuredData(pageData, title, description, url) {
       },
       {
         "@type": "WebSite",
-        "@id": `${DOCS_ORIGIN}/#website`,
-        name: "Mindwtr Docs",
-        url: `${DOCS_ORIGIN}/`,
-        inLanguage: "en-US",
+        "@id": websiteId,
+        name: messages.siteTitle,
+        url: siteUrl,
+        inLanguage: messages.lang,
         publisher: { "@id": `${SITE_ORIGIN}/#organization` },
         about: { "@id": `${SITE_ORIGIN}/#software` }
       },
       {
-        "@type": pageData.relativePath === "index.md" ? "CollectionPage" : "WebPage",
+        "@type": baseRelativePath === "index.md" ? "CollectionPage" : "WebPage",
         "@id": `${url}#webpage`,
         url,
         name: title,
         description,
-        inLanguage: "en-US",
-        isPartOf: { "@id": `${DOCS_ORIGIN}/#website` },
+        inLanguage: messages.lang,
+        isPartOf: { "@id": websiteId },
         about: { "@id": `${SITE_ORIGIN}/#software` },
         primaryImageOfPage: { "@type": "ImageObject", url: SOCIAL_IMAGE }
       }
@@ -127,16 +149,49 @@ function structuredData(pageData, title, description, url) {
 }
 
 export function pageSeoHead({ pageData, title, description }) {
+  const localeKey = docsLocaleForPath(pageData.relativePath);
+  const messages = DOCS_LOCALE_MESSAGES[localeKey];
+  const baseRelativePath = stripDocsLocale(pageData.relativePath);
   const url = docsUrl(pageData.relativePath);
+  const alternates = DOCS_LOCALE_ORDER.map((alternateLocale) => [
+    "link",
+    {
+      rel: "alternate",
+      hreflang: DOCS_LOCALE_MESSAGES[alternateLocale].hreflang,
+      href: `${DOCS_ORIGIN}${localizedDocsPath(alternateLocale, baseRelativePath)}`
+    }
+  ]);
+  const alternateOgLocales = DOCS_LOCALE_ORDER.filter(
+    (alternateLocale) => alternateLocale !== localeKey
+  ).map((alternateLocale) => [
+    "meta",
+    {
+      property: "og:locale:alternate",
+      content: DOCS_LOCALE_MESSAGES[alternateLocale].ogLocale
+    }
+  ]);
+
   return [
+    ["meta", { property: "og:site_name", content: messages.siteTitle }],
     ["meta", { property: "og:type", content: "website" }],
-    ["meta", { property: "og:locale", content: "en_US" }],
+    ["meta", { property: "og:locale", content: messages.ogLocale }],
     ["meta", { property: "og:title", content: title }],
     ["meta", { property: "og:description", content: description }],
     ["meta", { property: "og:url", content: url }],
+    ["meta", { property: "og:image:alt", content: messages.socialImageAlt }],
     ["meta", { name: "twitter:title", content: title }],
     ["meta", { name: "twitter:description", content: description }],
-    ["meta", { name: "twitter:image:alt", content: "Mindwtr — local-first GTD documentation." }],
+    ["meta", { name: "twitter:image:alt", content: messages.socialImageAlt }],
+    ...alternates,
+    [
+      "link",
+      {
+        rel: "alternate",
+        hreflang: "x-default",
+        href: `${DOCS_ORIGIN}${localizedDocsPath("root", baseRelativePath)}`
+      }
+    ],
+    ...alternateOgLocales,
     [
       "script",
       { type: "application/ld+json" },

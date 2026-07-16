@@ -1,14 +1,19 @@
 # Contributing
 
-Mindwtr welcomes focused contributions that preserve the product's local-first GTD direction.
+Mindwtr welcomes focused contributions that preserve the product's local-first
+GTD direction.
+
+Use the guide for the repository you plan to change:
+
+- [Website and documentation contribution guide](https://github.com/dongdongbh/mindwtr-web/blob/main/CONTRIBUTING.md)
+- [App and interface contribution guide](https://github.com/dongdongbh/Mindwtr/blob/main/docs/CONTRIBUTING.md)
 
 ## Good first contributions
 
-- Fix a small bug with a clear reproduction
 - Improve a confusing doc page
-- Add a test for an existing behavior
-- Polish copy or accessibility in an existing flow
-- Improve an importer for a real exported file format
+- Fix an inaccurate or broken instruction
+- Translate a coherent documentation section
+- Add a tested example for an existing workflow
 
 ## Product constraints
 
@@ -20,19 +25,34 @@ Before proposing a change, check it against these constraints:
 - AI and automation remain optional
 - Sync choices stay user-controlled
 
-## Development workflow
+## Documentation workflow
 
-1. Open an issue or discussion for behavior changes.
-2. Keep the first pull request narrow.
-3. Add tests for shared logic or regressions.
-4. Verify the platform you changed.
-5. Explain user-visible behavior in the pull request.
+1. Open an issue before starting a new locale or reorganizing a section.
+2. Edit the source under `docs/` in the
+   [mindwtr-web repository](https://github.com/dongdongbh/mindwtr-web).
+3. Keep each pull request focused on one guide, section, or locale.
+4. Run `bun run check` from the repository root.
+5. Explain which pages and locales changed in the pull request.
 
 ## Documentation changes
 
-Docs should be written for user intent, not as a raw feature list. Prefer clear pages like "Import from TickTick" or "WebDAV sync" over dumping every related detail into one long page.
+Write docs for user intent. Prefer pages such as "Import from TickTick" or
+"WebDAV sync" over one long feature inventory.
 
-Public user and developer docs live in this repo under `docs/` and publish to https://docs.mindwtr.app/. The public source is https://github.com/dongdongbh/mindwtr-web/tree/main/docs. Keep repository-local process docs, ADRs, and release notes in the Mindwtr app repo docs source at https://github.com/dongdongbh/Mindwtr/tree/main/docs. The GitHub Wiki is retired: `wiki/` in the app repo holds only a landing page that points readers to this docs site. Do not add wiki content pages — documentation changes go to the two locations above.
+Public user and developer docs live under `docs/` and publish to
+https://docs.mindwtr.app/. Keep process docs, ADRs, and release notes in the
+[app repository docs](https://github.com/dongdongbh/Mindwtr/tree/main/docs).
+The GitHub Wiki is retired and does not accept new content pages.
+
+The web contribution guide defines the supported documentation locales,
+translation rollout, terminology sources, link fallback rules, and pull
+request checks.
+
+English is the source for the complete German, Spanish, French, Simplified
+Chinese, and Traditional Chinese docs. Maintainers use language-focused coding
+agents to update each static Markdown set, then run the shared build and link
+checks. If translated wording sounds wrong, use the page's edit link or open an
+issue with the corrected wording.
 
 ## License
 

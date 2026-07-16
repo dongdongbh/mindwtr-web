@@ -1,5 +1,11 @@
 import { readdirSync, readFileSync, existsSync, statSync } from "node:fs";
 import { resolve, join, posix } from "node:path";
+import {
+  DOCS_LOCALE_MESSAGES,
+  DOCS_LOCALE_ORDER,
+  docsLocaleForPath,
+  localizedDocsPath
+} from "../docs/.vitepress/locales/index.mjs";
 
 // Verifies the built output of both sites — the same files Cloudflare serves.
 // Checks: internal links and asset references resolve (including cross-site
@@ -16,6 +22,14 @@ const sites = {
   "https://mindwtr.app": { name: "landing", dist: resolve(root, "landing/dist") },
   "https://docs.mindwtr.app": { name: "docs", dist: resolve(root, "docs/.vitepress/dist") }
 };
+
+const docsLocales = DOCS_LOCALE_ORDER.map((key) => ({
+  key,
+  prefix: key === "root" ? "" : `/${key}`,
+  lang: DOCS_LOCALE_MESSAGES[key].lang,
+  hreflang: DOCS_LOCALE_MESSAGES[key].hreflang
+}));
+const docsLocaleByKey = new Map(docsLocales.map((locale) => [locale.key, locale]));
 
 const findings = [];
 
@@ -34,6 +48,25 @@ function decodeEntities(value) {
     .replaceAll("&#38;", "&")
     .replaceAll("&quot;", '"')
     .replaceAll("&#39;", "'");
+}
+
+function tagAttributes(html, tagName) {
+  const tagPattern = new RegExp(
+    `<${tagName}\\b((?:[^>"']|"[^"]*"|'[^']*')*)>`,
+    "gi"
+  );
+  return [...html.matchAll(tagPattern)].map(([, attributes]) =>
+    Object.fromEntries(
+      [...attributes.matchAll(/([\w:.-]+)="([^"]*)"/g)].map(([, key, value]) => [
+        key,
+        value
+      ])
+    )
+  );
+}
+
+function docsLocaleForPagePath(path) {
+  return docsLocaleByKey.get(docsLocaleForPath(path.replace(/^\//, "")));
 }
 
 // Served URL for an emitted html file: index.html files map to their
@@ -98,7 +131,23 @@ if (findings.length === 0) {
   const siteByOrigin = (url) =>
     Object.entries(sites).find(([origin]) => url === origin || url.startsWith(`${origin}/`));
 
+  function isLocalizedDocs404Fallback(page, raw) {
+    if (page.site.name !== "docs" || page.path !== "/404") return false;
+    const value = decodeEntities(raw).trim();
+    return docsLocales
+      .filter(({ key }) => key !== "root")
+      .some(
+        ({ prefix }) =>
+          value === `${page.site.origin}${prefix}/404` || value === `${prefix}/404`
+      );
+  }
+
   function checkTarget(page, raw, label) {
+    // VitePress's single 404 artifact chooses its locale from the requested
+    // path at runtime. Locale-menu links therefore intentionally target
+    // /<locale>/404 even though those routes do not have separate HTML files.
+    if (isLocalizedDocs404Fallback(page, raw)) return;
+
     let url = decodeEntities(raw).trim();
     if (
       url === "" ||
@@ -156,28 +205,26 @@ if (findings.length === 0) {
     }
 
     // Social/canonical URLs must exist and point at this page's served URL.
-    const metas = [...page.html.matchAll(/<meta\s+([^>]*?)\/?>/g)].map(([, attrs]) =>
-      Object.fromEntries([...attrs.matchAll(/([\w:.-]+)="([^"]*)"/g)].map(([, k, v]) => [k, v]))
-    );
+    const metas = tagAttributes(page.html, "meta");
     const metaValue = (key) =>
       metas.find((m) => m.property === key || m.name === key)?.content;
 
     const is404 = page.path.endsWith("/404");
     const expected = `${page.site.origin}${page.path}`;
     if (!is404) {
+      const lang = page.html.match(/<html\b[^>]*\slang="([^"]+)"/i)?.[1];
+      if (!lang) findings.push(`${page.site.name}${page.path}: missing html lang`);
+
       const titleMatches = [...page.html.matchAll(/<title(?:\s[^>]*)?>([\s\S]*?)<\/title>/g)];
       const title = decodeEntities(titleMatches[0]?.[1] ?? "").trim();
       if (titleMatches.length !== 1 || title === "") {
         findings.push(`${page.site.name}${page.path}: expected one non-empty title`);
       } else {
-        const key = `${page.site.name}\n${title}`;
+        const key = `${page.site.name}\n${lang ?? ""}\n${title}`;
         const paths = pageTitles.get(key) ?? [];
         paths.push(page.path);
         pageTitles.set(key, paths);
       }
-
-      const lang = page.html.match(/<html\b[^>]*\slang="([^"]+)"/i)?.[1];
-      if (!lang) findings.push(`${page.site.name}${page.path}: missing html lang`);
 
       const h1Count = [...page.html.matchAll(/<h1\b/gi)].length;
       if (h1Count !== 1) {
@@ -205,7 +252,7 @@ if (findings.length === 0) {
 
       const description = decodeEntities(metaValue("description") ?? "").trim();
       if (description) {
-        const key = `${page.site.name}\n${description}`;
+        const key = `${page.site.name}\n${lang ?? ""}\n${description}`;
         const paths = descriptions.get(key) ?? [];
         paths.push(page.path);
         descriptions.set(key, paths);
@@ -218,6 +265,7 @@ if (findings.length === 0) {
         findings.push(`${page.site.name}${page.path}: missing JSON-LD`);
       }
       let pageNodeFound = false;
+      let softwareNodeFound = false;
       for (const [, value] of jsonLd) {
         try {
           const data = JSON.parse(value);
@@ -226,6 +274,20 @@ if (findings.length === 0) {
             continue;
           }
           const nodes = Array.isArray(data["@graph"]) ? data["@graph"] : [data];
+          const softwareNode = nodes.find(
+            (node) => node?.["@id"] === "https://mindwtr.app/#software"
+          );
+          if (softwareNode) {
+            softwareNodeFound = true;
+            if (
+              softwareNode.name !== "Mindwtr" ||
+              softwareNode.alternateName !== "如水"
+            ) {
+              findings.push(
+                `${page.site.name}${page.path}: SoftwareApplication must identify Mindwtr with alternate name 如水`
+              );
+            }
+          }
           const pageNode = nodes.find(
             (node) => node?.["@id"] === `${expected}#webpage`
           );
@@ -234,7 +296,8 @@ if (findings.length === 0) {
           for (const [key, actual, wanted] of [
             ["url", pageNode.url, expected],
             ["name", pageNode.name, title],
-            ["description", pageNode.description, description]
+            ["description", pageNode.description, description],
+            ["inLanguage", pageNode.inLanguage, lang]
           ]) {
             if (actual !== wanted) {
               findings.push(
@@ -248,6 +311,9 @@ if (findings.length === 0) {
       }
       if (jsonLd.length > 0 && !pageNodeFound) {
         findings.push(`${page.site.name}${page.path}: JSON-LD missing its WebPage node`);
+      }
+      if (jsonLd.length > 0 && !softwareNodeFound) {
+        findings.push(`${page.site.name}${page.path}: JSON-LD missing its SoftwareApplication node`);
       }
 
       const isLandingHome =
@@ -288,6 +354,39 @@ if (findings.length === 0) {
       }
       if (decodeEntities(value) !== expected) {
         findings.push(`${page.site.name}${page.path}: ${key} is "${value}", expected "${expected}"`);
+      }
+    }
+
+    if (page.site.name === "docs" && !is404) {
+      const locale = docsLocaleForPagePath(page.path);
+      if (page.html.match(/<html\b[^>]*\slang="([^"]+)"/i)?.[1] !== locale.lang) {
+        findings.push(`${page.site.name}${page.path}: html lang must be "${locale.lang}"`);
+      }
+
+      const basePath = locale.key === "root" ? page.path : page.path.slice(locale.prefix.length);
+      const linkTags = tagAttributes(page.html, "link");
+      const alternates = linkTags.filter(
+        (link) => link.rel === "alternate" && typeof link.hreflang === "string"
+      );
+      const alternateMap = new Map(alternates.map((link) => [link.hreflang, decodeEntities(link.href ?? "")]));
+
+      for (const alternateLocale of docsLocales) {
+        const wanted = `${page.site.origin}${localizedDocsPath(alternateLocale.key, basePath)}`;
+        if (alternateMap.get(alternateLocale.hreflang) !== wanted) {
+          findings.push(
+            `${page.site.name}${page.path}: hreflang ${alternateLocale.hreflang} must point to ${wanted}`
+          );
+        }
+      }
+
+      const xDefault = `${page.site.origin}${localizedDocsPath("root", basePath)}`;
+      if (alternateMap.get("x-default") !== xDefault) {
+        findings.push(`${page.site.name}${page.path}: hreflang x-default must point to ${xDefault}`);
+      }
+      if (alternateMap.size !== docsLocales.length + 1) {
+        findings.push(
+          `${page.site.name}${page.path}: expected ${docsLocales.length + 1} unique hreflang alternates`
+        );
       }
     }
   }

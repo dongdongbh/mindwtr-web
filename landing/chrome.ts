@@ -44,6 +44,14 @@ const LANGUAGE_SHORT: Record<Locale, string> = {
   zh: "中文"
 };
 
+const DOCS_PATH: Record<Locale, string> = {
+  en: "https://docs.mindwtr.app/",
+  de: "https://docs.mindwtr.app/de/",
+  es: "https://docs.mindwtr.app/es/",
+  fr: "https://docs.mindwtr.app/fr/",
+  zh: "https://docs.mindwtr.app/zh-Hans/"
+};
+
 interface ChromeStrings {
   features: string;
   gtd: string;
@@ -268,6 +276,7 @@ function structuredData(locale: Locale, pagePath: string, meta: PageMeta): strin
         "@type": "SoftwareApplication",
         "@id": `${ORIGIN}/#software`,
         name: "Mindwtr",
+        alternateName: "如水",
         url: ORIGIN,
         description:
           "A free, open-source, local-first GTD and to-do application for desktop, mobile, and web.",
@@ -367,7 +376,7 @@ function header(locale: Locale, pageName: string, pagePath: string): string {
     { href: localePath(locale, "features"), label: t.features },
     // Docs and GitHub drop out on narrow phones — both are one tap away in the
     // footer, and a nav CTA that wraps or clips is worse than a shorter nav.
-    { href: "https://docs.mindwtr.app/", label: t.docs, className: "nav-tertiary" },
+    { href: DOCS_PATH[locale], label: t.docs, className: "nav-tertiary" },
     { href: "https://github.com/dongdongbh/Mindwtr", label: "GitHub", className: "nav-secondary" },
     { href: localePath(locale, "support"), label: t.support }
   ]
@@ -420,7 +429,7 @@ function footer(locale: Locale, pagePath: string): string {
   const links = [
     { href: localePath(locale, "features"), label: t.features },
     { href: localePath(locale, "gtd"), label: t.gtd },
-    { href: "https://docs.mindwtr.app/", label: t.docs },
+    { href: DOCS_PATH[locale], label: t.docs },
     { href: "https://github.com/dongdongbh/Mindwtr", label: "GitHub" },
     { href: localePath(locale, "support"), label: t.support },
     { href: localePath(locale, "donate"), label: t.donate },

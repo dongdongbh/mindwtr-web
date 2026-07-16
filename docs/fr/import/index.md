@@ -1,0 +1,150 @@
+# Importer des données depuis d’autres applications
+
+Ce guide explique comment transférer des tâches dans Mindwtr depuis un autre gestionnaire de tâches. Il concerne les migrations complètes, et non les captures ponctuelles.
+
+## Avant l’import
+
+Une migration est l’occasion de laisser derrière vous ce qui n’est plus utile. Si votre ancienne application contient des centaines de tâches obsolètes, envisagez de ne migrer que vos projets en cours, vos prochaines actions actives et vos éléments de référence fiables.
+
+Mindwtr peut importer des exports complets depuis les applications prises en charge. Toutefois, une migration plus réduite et réfléchie correspond généralement mieux à GTD que la copie de toutes les anciennes tâches dans un nouveau système.
+
+## Outils d’import disponibles
+
+Mindwtr propose des outils dédiés pour quelques applications dont le format d’export est suffisamment structuré pour garantir une correspondance fiable :
+
+- [Import TickTick](/fr/import/ticktick) — sauvegardes CSV ou ZIP de TickTick
+- [Import Todoist](/fr/import/todoist) — exports CSV ou sauvegardes ZIP
+- [Import DGT GTD](/fr/import/dgt-gtd) — exports JSON ou sauvegardes ZIP
+- [Import OmniFocus](/fr/import/omnifocus) — exports CSV, JSON ou ZIP
+- [Import depuis Rappels Apple](/fr/data-sync/#importation-depuis-rappels-apple-ios) — import réservé à iOS des rappels non terminés d’une liste Rappels sélectionnée
+
+Ouvrez **Paramètres -> Données**, puis choisissez l’action d’import correspondante. Mindwtr affiche un aperçu avant d’ajouter quoi que ce soit.
+
+Les outils natifs sont la meilleure solution lorsque votre ancienne application figure dans la liste. Ils préservent davantage de structure que le texte brut et prennent en charge les particularités de chaque application : dossiers, listes, tags, dates, listes de contrôle et récurrence, lorsque l’export source les fournit.
+
+## Autres méthodes de migration
+
+Si votre application n’est pas répertoriée, utilisez l’une des solutions ci-dessous. Elles sont volontairement plus simples que les outils natifs et conviennent aux nombreuses applications qui exportent du texte brut, du CSV ou du JSON.
+
+### Copier-coller
+
+La solution de repli la plus rapide consiste à copier une liste de tâches et à la coller dans Ajout rapide ou Capture rapide.
+
+Sur ordinateur :
+
+1. Ouvrez Ajout rapide.
+2. Collez plusieurs lignes dans le champ de tâche.
+3. Confirmez avec **Créer les tâches**.
+
+Sur mobile :
+
+1. Ouvrez Capture rapide.
+2. Collez plusieurs lignes dans le champ de tâche.
+3. Touchez Enregistrer, puis confirmez la création groupée.
+
+Chaque ligne non vide devient une tâche. Mindwtr analyse chaque ligne avec la syntaxe d’ajout rapide ; vous pouvez donc y inclure des métadonnées :
+
+```text
+Email Bob about Q3 report +Work @computer #followup /due:friday
+Book dentist appointment @phone
+Outline conference talk +Speaking #ideas /note:Draft the rough structure first
+```
+
+Cette méthode ne reconstitue ni les hiérarchies profondes ni les récurrences, mais elle reste souvent la façon la plus propre de récupérer les tâches qui comptent encore.
+
+### Texte brut
+
+Si votre ancienne application peut exporter un fichier `.txt`, utilisez l’import de texte de Mindwtr depuis l’interface de capture.
+
+Sur ordinateur :
+
+1. Ouvrez Ajout rapide.
+2. Cliquez sur **Importer un .txt**.
+3. Choisissez un fichier texte brut.
+4. Confirmez la création groupée.
+
+Sur mobile :
+
+1. Ouvrez Capture rapide.
+2. Touchez **Plus**.
+3. Touchez **Importer un .txt**.
+4. Choisissez un fichier texte brut.
+5. Confirmez la création groupée.
+
+Placez une tâche par ligne. Ajoutez les jetons d’ajout rapide sur la même ligne si vous voulez que Mindwtr définisse les métadonnées pendant l’import :
+
+```text
+Pay water bill +Home /due:2026-07-01
+Renew passport +Personal @errands #admin
+Send slides to Ana +Work /note:Use the final deck from the shared folder
+```
+
+Mindwtr utilise des commandes d’ajout rapide explicites comme `/note:` plutôt qu’un format de note masqué par une tabulation. Le fichier texte reste ainsi lisible avant l’import et emploie le même analyseur que la capture habituelle.
+
+### Script de conversion CSV vers du texte d’ajout rapide
+
+Pour les applications qui exportent du CSV sans disposer d’un outil Mindwtr dédié, convertissez le CSV en fichier texte d’ajout rapide, puis importez ce fichier `.txt`.
+
+Mindwtr fournit un petit script sans dépendance :
+
+```bash
+node scripts/migration/csv-to-quickadd-text.mjs export.csv \
+  --output mindwtr-import.txt \
+  --title "Title" \
+  --project "Project" \
+  --tags "Tags" \
+  --contexts "Contexts" \
+  --due "Due" \
+  --note "Note"
+```
+
+Le script écrit une ligne d’ajout rapide par ligne CSV. Il peut convertir :
+
+- une colonne de titre en titre de tâche ;
+- une colonne de projet ou de liste en `+Project` ;
+- des tags séparés par des virgules ou des points-virgules en `#tag` ;
+- des contextes séparés par des virgules ou des points-virgules en `@context` ;
+- une colonne d’échéance en `/due:...` ;
+- une colonne de note en `/note:...`.
+
+Si votre CSV emploie d’autres noms de colonnes, transmettez-les avec les options ci-dessus. Par exemple :
+
+```bash
+node scripts/migration/csv-to-quickadd-text.mjs tasks.csv \
+  --output mindwtr-import.txt \
+  --title "Task" \
+  --project "List" \
+  --tags "Categories" \
+  --due "Due Date" \
+  --note "Notes"
+```
+
+Ce script sert de point de départ ; ce n’est pas un outil d’import officiellement pris en charge pour une application donnée. Il ne conservera pas les tâches imbriquées, pièces jointes, récurrences ou champs propres à l’application, sauf si vous l’adaptez.
+
+### CLI, API locale et MCP
+
+Les utilisateurs techniques peuvent écrire leur propre outil d’import à partir des interfaces d’automatisation de Mindwtr :
+
+- [API locale](/fr/power-users/local-api)
+- [Serveur MCP](/fr/power-users/mcp)
+- `bun run mindwtr:cli -- --help` depuis une copie du dépôt
+
+Choisissez cette méthode si votre ancienne application exporte du JSON ou du CSV structuré et que le texte brut ne vous donne pas assez de contrôle. Ces outils passent par le modèle de données normal de Mindwtr, mais les scripts de migration personnalisés restent sous votre responsabilité.
+
+## Si votre application n’est pas répertoriée
+
+Procédez dans cet ordre :
+
+1. Vérifiez si votre application peut exporter vers un format déjà importé par Mindwtr.
+2. Essayez le copier-coller ou le texte brut pour les tâches actives dont vous avez encore besoin.
+3. Utilisez le script CSV si votre application exporte une simple feuille de calcul.
+4. Utilisez l’API locale, la CLI ou MCP si vous avez besoin d’une migration structurée personnalisée.
+
+Pour demander un outil natif pour une application précise, ouvrez une discussion ou un ticket GitHub en indiquant :
+
+- le nom de l’application ;
+- le format d’export proposé ;
+- un petit exemple d’export anonymisé ;
+- les champs qu’il est le plus important de préserver.
+
+La priorité accordée aux outils natifs dépend de la demande et de la facilité avec laquelle le format source se transpose dans le modèle GTD de Mindwtr.

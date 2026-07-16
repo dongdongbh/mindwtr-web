@@ -13,7 +13,8 @@
     "docs:dev": "bun run --cwd docs dev",
     "docs:build": "bun run --cwd docs docs:build",
     "check:secrets": "bun scripts/check-secrets.mjs",
+    "check:docs-sources": "bun scripts/check-docs-sources.mjs",
     "check:dist": "bun scripts/check-dist.mjs",
-    "check": "bun run check:secrets && bun run landing:build && bun run docs:build && bun run check:dist"
+    "check": "bun run check:secrets && bun run check:docs-sources && bun run landing:build && bun run docs:build && bun run check:dist"
   }
 }

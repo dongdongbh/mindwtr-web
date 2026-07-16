@@ -10,6 +10,13 @@ Public website and documentation for [Mindwtr](https://github.com/dongdongbh/Min
 - `docs/` builds `docs.mindwtr.app`.
 - `shared-assets/` stores brand assets and screenshots copied into each deploy root.
 
+The docs publish complete English, German, Spanish, French, Simplified Chinese,
+and Traditional Chinese page sets. English is the source language; each
+translated page links to GitHub so readers can improve wording.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for documentation, translation, and
+website contribution guidelines.
+
 ## Cloudflare Pages
 
 Landing project:

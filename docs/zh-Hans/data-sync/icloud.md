@@ -1,6 +1,6 @@
 # iCloud 同步
 
-在原生模块可用的 Apple 设备上，如水支持原生 **iCloud / CloudKit** 同步后端。
+在原生模块可用的 Apple 设备上，Mindwtr 支持原生 **iCloud / CloudKit** 同步后端。
 
 ## 可用平台
 
@@ -26,16 +26,16 @@
 ## 设置
 
 1. 在要同步的设备上登录同一个 Apple ID。
-2. 确保这些设备已为如水启用 iCloud。
-3. 在 Apple 设备上的如水中打开**设置 → 同步**。
+2. 确保这些设备已为 Mindwtr 启用 iCloud。
+3. 在 Apple 设备上的 Mindwtr 中打开**设置 → 同步**。
 4. 选择 **iCloud** 作为同步后端。
 5. 执行一次同步，以写入或拉取数据。
 
-设置完成后，如水会继续采用常规的本地优先合并流程，并在可用时响应 CloudKit 更改通知。
+设置完成后，Mindwtr 会继续采用常规的本地优先合并流程，并在可用时响应 CloudKit 更改通知。
 
 ## 平台说明
 
-- 如果非 Apple 构建发现旧的 `cloudkit` 后端值，如水会回退到 `Off`，而不会显示无法使用的 iCloud 选项。
+- 如果非 Apple 构建发现旧的 `cloudkit` 后端值，Mindwtr 会回退到 `Off`，而不会显示无法使用的 iCloud 选项。
 - 如果 macOS 用户偏好基于文件夹的流程，而不是原生 CloudKit 后端，仍可使用 **iCloud Drive + 文件同步**。
 - 原生 iCloud 附件同步也仅适用于 Apple 设备。混合平台环境若需要在 Apple 与非 Apple 设备间传输附件，应使用跨平台后端。
 - 如需在 Apple 与非 Apple 设备之间同步，请使用 **WebDAV**、**Mindwtr Cloud**、**Dropbox**（受支持的构建）或**文件同步**。

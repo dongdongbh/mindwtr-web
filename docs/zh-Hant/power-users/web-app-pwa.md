@@ -1,6 +1,6 @@
 # 網頁版（PWA）
 
-如水桌面版可透過 Vite 組建，在瀏覽器中作為網頁應用程式執行。在瀏覽器（非 Tauri）中執行時，它使用 `localStorage` 保存資料，並註冊 service worker 以支援離線／PWA 功能。
+Mindwtr 桌面版可透過 Vite 組建，在瀏覽器中作為網頁應用程式執行。在瀏覽器（非 Tauri）中執行時，它使用 `localStorage` 保存資料，並註冊 service worker 以支援離線／PWA 功能。
 
 ---
 
@@ -55,7 +55,7 @@ bun desktop:web:build
 
 ## 限制
 
-- 瀏覽器組建將資料儲存在 `localStorage`（清除網站資料也會清除如水資料）
+- 瀏覽器組建將資料儲存在 `localStorage`（清除網站資料也會清除 Mindwtr 資料）
 - 瀏覽器中可能無法使用部分桌面版專用功能，例如需要原生檔案存取權的檔案附件
 - 不支援原生系統匣或全域快速鍵
 

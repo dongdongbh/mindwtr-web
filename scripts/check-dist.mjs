@@ -30,6 +30,22 @@ const docsLocales = DOCS_LOCALE_ORDER.map((key) => ({
   hreflang: DOCS_LOCALE_MESSAGES[key].hreflang
 }));
 const docsLocaleByKey = new Map(docsLocales.map((locale) => [locale.key, locale]));
+const landingLocales = [
+  { key: "en", hreflang: "en", lang: "en" },
+  { key: "de", hreflang: "de", lang: "de" },
+  { key: "es", hreflang: "es", lang: "es" },
+  { key: "fr", hreflang: "fr", lang: "fr" },
+  { key: "zh", hreflang: "zh-Hans", lang: "zh-Hans" }
+];
+const landingLocalizedPages = [
+  "index",
+  "features",
+  "gtd",
+  "donate",
+  "support",
+  "brand",
+  "privacy"
+];
 
 const findings = [];
 
@@ -67,6 +83,22 @@ function tagAttributes(html, tagName) {
 
 function docsLocaleForPagePath(path) {
   return docsLocaleByKey.get(docsLocaleForPath(path.replace(/^\//, "")));
+}
+
+function localizedLandingPath(locale, pageName) {
+  const prefix = locale.key === "en" ? "" : `/${locale.key}`;
+  return pageName === "index" ? `${prefix}/` : `${prefix}/${pageName}`;
+}
+
+function localizedLandingPageForPath(path) {
+  for (const locale of landingLocales) {
+    for (const pageName of landingLocalizedPages) {
+      if (path === localizedLandingPath(locale, pageName)) {
+        return { locale, pageName };
+      }
+    }
+  }
+  return null;
 }
 
 // Served URL for an emitted html file: index.html files map to their
@@ -387,6 +419,73 @@ if (findings.length === 0) {
         findings.push(
           `${page.site.name}${page.path}: expected ${docsLocales.length + 1} unique hreflang alternates`
         );
+      }
+    }
+
+    const landingPage =
+      page.site.name === "landing" && !is404
+        ? localizedLandingPageForPath(page.path)
+        : null;
+    if (landingPage) {
+      const { locale, pageName } = landingPage;
+      const lang = page.html.match(/<html\b[^>]*\slang="([^"]+)"/i)?.[1];
+      if (lang !== locale.lang) {
+        findings.push(`${page.site.name}${page.path}: html lang must be "${locale.lang}"`);
+      }
+
+      const links = tagAttributes(page.html, "link");
+      const alternates = links.filter(
+        (link) => link.rel === "alternate" && typeof link.hreflang === "string"
+      );
+      const alternateMap = new Map(
+        alternates.map((link) => [link.hreflang, decodeEntities(link.href ?? "")])
+      );
+      for (const alternateLocale of landingLocales) {
+        const wanted = `${page.site.origin}${localizedLandingPath(alternateLocale, pageName)}`;
+        if (alternateMap.get(alternateLocale.hreflang) !== wanted) {
+          findings.push(
+            `${page.site.name}${page.path}: hreflang ${alternateLocale.hreflang} must point to ${wanted}`
+          );
+        }
+      }
+      const xDefault = `${page.site.origin}${localizedLandingPath(landingLocales[0], pageName)}`;
+      if (alternateMap.get("x-default") !== xDefault) {
+        findings.push(`${page.site.name}${page.path}: hreflang x-default must point to ${xDefault}`);
+      }
+      if (alternateMap.size !== landingLocales.length + 1) {
+        findings.push(
+          `${page.site.name}${page.path}: expected ${landingLocales.length + 1} unique hreflang alternates`
+        );
+      }
+
+      const hrefs = new Set(
+        tagAttributes(page.html, "a").map((anchor) => decodeEntities(anchor.href ?? ""))
+      );
+      for (const target of ["features", "gtd", "support", "donate", "brand", "privacy"]) {
+        const wanted = localizedLandingPath(locale, target);
+        if (!hrefs.has(wanted)) {
+          findings.push(
+            `${page.site.name}${page.path}: localized shared navigation must link to ${wanted}`
+          );
+        }
+      }
+
+      if (pageName === "privacy" && locale.key !== "en") {
+        if (!hrefs.has("/privacy")) {
+          findings.push(
+            `${page.site.name}${page.path}: translated privacy policy must link to the English source`
+          );
+        }
+        if (!hrefs.has("https://github.com/dongdongbh/mindwtr-web/issues")) {
+          findings.push(
+            `${page.site.name}${page.path}: translated privacy policy must invite translation reports`
+          );
+        }
+        if (!page.html.includes("mailto:support@mindwtr.app")) {
+          findings.push(
+            `${page.site.name}${page.path}: translated privacy policy must provide the support email`
+          );
+        }
       }
     }
   }

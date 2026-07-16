@@ -1,6 +1,6 @@
 # 雲端 API
 
-如水雲端提供一套精簡的 bearer token API，用於同步、任務自動化與附件傳輸。它是為自行託管部署而設計，並使用與自行託管雲端後端相同的 token 命名空間。
+Mindwtr Cloud 提供一套精簡的 bearer token API，用於同步、任務自動化與附件傳輸。它是為自行託管部署而設計，並使用與自行託管雲端後端相同的 token 命名空間。
 
 ## 驗證身分
 
@@ -117,7 +117,7 @@ DELETE /v1/attachments/orphans
 
 已發布的 `mindwtr-mcp` 輔助工具可使用自行託管的雲端端點作為後端。請透過 `--cloud-url` 與 `--cloud-token`，或 `MINDWTR_MCP_CLOUD_URL`／`MINDWTR_MCP_CLOUD_TOKEN` 環境變數進行設定。
 
-以雲端為後端的 MCP 模式會讀取 `/v1/data`，並提供任務、專案、區段、領域與人物的讀取工具。加上 `--write` 後，任務、專案、區段與領域的變更會經由上述各資源的 REST 端點；此模式預設維持唯讀，也不會將如水雲端本身變成託管式 MCP 服務。
+以雲端為後端的 MCP 模式會讀取 `/v1/data`，並提供任務、專案、區段、領域與人物的讀取工具。加上 `--write` 後，任務、專案、區段與領域的變更會經由上述各資源的 REST 端點；此模式預設維持唯讀，也不會將 Mindwtr Cloud 本身變成託管式 MCP 服務。
 
 ## 相關頁面
 

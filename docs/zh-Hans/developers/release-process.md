@@ -1,6 +1,6 @@
 # 发布流程
 
-本页从实践层面记录如水的常规发布流程，供在仓库中工作的维护者使用。
+本页从实践层面记录 Mindwtr 的常规发布流程，供在仓库中工作的维护者使用。
 
 ---
 
@@ -200,7 +200,7 @@ ANDROID_REMOTE_MAX_VERSION_CODE=85 ./scripts/bump-version.sh 0.x.y
    - `metadata/*/changelogs/<androidVersionCode>.txt`
    - `metadata/metadata.json`
    - `apps/desktop/src-tauri/linux/Mindwtr.metainfo.xml`
-5. 当发布/文档流程细节发生变化时，更新[如水 Web 公共文档源](https://github.com/dongdongbh/mindwtr-web/tree/main/docs)中的公共文档。GitHub Wiki 已停用；不要添加或更新 `wiki/` 内容页面，也不要在单独的 `.wiki` 检出中运行 git。
+5. 当发布/文档流程细节发生变化时，更新[Mindwtr Web 公共文档源](https://github.com/dongdongbh/mindwtr-web/tree/main/docs)中的公共文档。GitHub Wiki 已停用；不要添加或更新 `wiki/` 内容页面，也不要在单独的 `.wiki` 检出中运行 git。
 6. 仔细审查最终产生的版本和元数据更改。
 7. 提交发布准备工作：
 
@@ -244,7 +244,7 @@ git push origin main --tags
 
 - 桌面端更新程序元数据
 - 移动应用商店元数据/Fastlane 输入
-- 面向用户的功能在[如水 Web 公共文档源](https://github.com/dongdongbh/mindwtr-web/tree/main/docs)中的文档站点更改
+- 面向用户的功能在[Mindwtr Web 公共文档源](https://github.com/dongdongbh/mindwtr-web/tree/main/docs)中的文档站点更改
 - 使用小型种子数据集进行跨后端同步冒烟测试：添加、更新、删除和附件传输应在云同步、WebDAV/文件同步以及发布测试人员可用的任何平台原生后端之间收敛；第二次同步应报告没有新的冲突
 
 ---

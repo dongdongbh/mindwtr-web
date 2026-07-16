@@ -1,6 +1,6 @@
 # Docker 部署
 
-如水为运行以下服务提供官方 Docker 支持：
+Mindwtr 为运行以下服务提供官方 Docker 支持：
 - **mindwtr-app**：由 Nginx 提供服务的桌面 Web/PWA 构建。
 - **mindwtr-cloud**：轻量级同步服务器和任务自动化 REST API。
 
@@ -35,7 +35,7 @@
    - **用于本地测试的自托管 URL：**`http://localhost:8787`
    - **REST API 基础 URL：**`http://localhost:8787/v1`
 
-这个默认 compose 文件仅使用 HTTP，适用于本地/私有测试。如水桌面端和移动端客户端仅会为已识别的本地/私有目标接受 HTTP，例如 `localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、环回/私有 IPv6 地址、`*.local` 和 `*.home.arpa`。
+这个默认 compose 文件仅使用 HTTP，适用于本地/私有测试。Mindwtr 桌面端和移动端客户端仅会为已识别的本地/私有目标接受 HTTP，例如 `localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、环回/私有 IPv6 地址、`*.local` 和 `*.home.arpa`。
 
 对于公共 URL、自定义 DNS 名称、VPN 主机名、Tailscale、ZeroTier，或任何未被识别为本地/私有的名称，请使用 HTTPS。**允许不安全连接（HTTP）**设置是面向可信本地/私有端点的兼容性设置；它不是允许公共 HTTP 的开关。
 
@@ -70,13 +70,13 @@ docker compose --env-file docker/.env.https.local -f docker/compose.https.yaml u
 curl https://mindwtr.example.com/health
 ```
 
-在如水的“设置 -> 同步 -> 自托管”中，将自托管 URL 设为：
+在 Mindwtr 的“设置 -> 同步 -> 自托管”中，将自托管 URL 设为：
 
 ```text
 https://mindwtr.example.com
 ```
 
-如水会自动附加 `/v1/data`。
+Mindwtr 会自动附加 `/v1/data`。
 
 ### 公共 HTTPS
 
@@ -92,7 +92,7 @@ MINDWTR_CLOUD_CORS_ORIGIN=https://mindwtr.home.arpa
 MINDWTR_CADDYFILE=Caddyfile.local-https
 ```
 
-这会使用 Caddy 的内部证书颁发机构。每台客户端设备都必须信任 Caddy 的本地根证书，如水才会接受 HTTPS 连接。对移动端客户端来说，公共 Let's Encrypt 证书是更可靠的选择。
+这会使用 Caddy 的内部证书颁发机构。每台客户端设备都必须信任 Caddy 的本地根证书，Mindwtr 才会接受 HTTPS 连接。对移动端客户端来说，公共 Let's Encrypt 证书是更可靠的选择。
 
 仅限局域网的服务栈启动后，导出 Caddy 的本地根证书：
 
@@ -130,7 +130,7 @@ cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w 50 | head -n 1
 ```
 
 ### 客户端配置
-要将如水客户端（桌面端或移动端）连接到这个自托管云端：
+要将 Mindwtr 客户端（桌面端或移动端）连接到这个自托管云端：
 
 1. 前往**设置 → 同步**。
 2. 选择**自托管**（或云端）。
@@ -138,7 +138,7 @@ cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w 50 | head -n 1
    ```
    http://localhost:8787
    ```
-   *如水会自动在此 URL 后附加 `/v1/data`。*
+   *Mindwtr 会自动在此 URL 后附加 `/v1/data`。*
 4. 输入你在 `MINDWTR_CLOUD_AUTH_TOKENS` 中配置的**同一个令牌**。
 
 对于私有局域网 HTTP，请使用本地/私有地址，例如 `http://192.168.1.20:8787`。对于公共 URL，请使用上面的 Caddy HTTPS 设置。
@@ -147,7 +147,7 @@ cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w 50 | head -n 1
 
 Docker `mindwtr-app` 镜像提供浏览器/PWA 构建。此运行环境不支持原生 Dropbox OAuth 同步，因为 Dropbox 连接由原生桌面端和移动端应用实现。通过 `.env`、`env_file`、compose 运行时环境或 Docker 构建参数添加 `VITE_DROPBOX_APP_KEY` 或 `DROPBOX_APP_KEY`，都无法在 Docker 中启用 Dropbox。
 
-对于 Docker 托管的同步，请使用随附的自托管云端服务器或 WebDAV。如果自托管端点位于 Authelia 或其他交互式 SSO 代理之后，请配置代理，让如水同步/API 路径直接使用如水的 bearer token；移动端应用无法在 `/v1/data` 前完成 Authelia 浏览器登录。
+对于 Docker 托管的同步，请使用随附的自托管云端服务器或 WebDAV。如果自托管端点位于 Authelia 或其他交互式 SSO 代理之后，请配置代理，让 Mindwtr 同步/API 路径直接使用 Mindwtr 的 bearer token；移动端应用无法在 `/v1/data` 前完成 Authelia 浏览器登录。
 
 ### 任务自动化 API
 

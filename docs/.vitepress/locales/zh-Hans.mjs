@@ -3,13 +3,13 @@ export default {
   lang: "zh-Hans",
   hreflang: "zh-Hans",
   ogLocale: "zh_CN",
-  title: "如水文档",
-  description: "如水的可搜索文档：一款免费、本地优先的 GTD 应用。",
-  siteTitle: "如水文档",
-  socialImageAlt: "如水——本地优先的 GTD 文档。",
+  title: "Mindwtr 文档",
+  description: "Mindwtr 的可搜索文档：一款免费、本地优先的 GTD 应用。",
+  siteTitle: "Mindwtr 文档",
+  socialImageAlt: "Mindwtr——本地优先的 GTD 文档。",
   nav: {
     start: "开始",
-    use: "使用如水",
+    use: "使用 Mindwtr",
     dataSync: "数据与同步",
     import: "导入",
     powerUsers: "高级用户",
@@ -17,7 +17,7 @@ export default {
   },
   groups: {
     start: "从这里开始",
-    use: "使用如水",
+    use: "使用 Mindwtr",
     dataSync: "数据与同步",
     import: "导入与迁移",
     powerUsers: "高级用户",
@@ -26,7 +26,7 @@ export default {
   pages: {
     start: {
       gettingStarted: "开始使用",
-      whatMindwtrIs: "如水是什么",
+      whatMindwtrIs: "Mindwtr 是什么",
       commitments: "你可以信赖什么",
       desktopInstallation: "桌面端安装",
       mobileInstallation: "移动端安装",
@@ -129,6 +129,6 @@ export default {
     linkText: "返回首页"
   },
   footerMessage:
-    "如水免费、开源且本地优先。<br>Getting Things Done 和 GTD 是 David Allen Company 的注册商标。如水与 David Allen Company 不存在关联，亦未获得其认可或赞助。",
+    "Mindwtr 免费、开源且本地优先。<br>Getting Things Done 和 GTD 是 David Allen Company 的注册商标。Mindwtr 与 David Allen Company 不存在关联，亦未获得其认可或赞助。",
   copyright: "基于 AGPL-3.0 发布。"
 };

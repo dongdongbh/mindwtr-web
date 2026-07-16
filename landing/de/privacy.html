@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <!-- chrome: shared head meta, header, and footer are injected at build time by chrome.ts -->
+    <meta
+      name="description"
+      content="Mindwtr ist lokal-first und minimiert die Datenerhebung von Grund auf. Erfahre, was auf deinem Gerät bleibt, welche Funktionen das Netzwerk nutzen können und wie du sie steuerst."
+    />
+    <meta property="og:title" content="Mindwtr Datenschutzrichtlinie" />
+    <meta
+      property="og:description"
+      content="Lokal-first von Grund auf. Deine Aufgaben bleiben auf deinem Gerät. Diese Richtlinie erläutert optionale Synchronisierung, Feedback, BYOK-KI und das Deaktivieren der Analyse."
+    />
+    <title>Datenschutzrichtlinie — Mindwtr</title>
+  </head>
+  <body>
+
+    <main>
+      <section class="support-hero" aria-labelledby="privacy-title">
+        <h1 id="privacy-title">Datenschutzrichtlinie</h1>
+        <p class="support-lead">
+          Mindwtr ist lokal-first und darauf ausgelegt, die Datenerhebung zu
+          minimieren. Deine Aufgaben, Notizen und Projekte bleiben auf deinem
+          Gerät. Hier erfährst du genau, was das bedeutet, welche Funktionen
+          das Netzwerk nutzen und wie du sie steuerst.
+        </p>
+      </section>
+
+      <section class="legal section-band" aria-labelledby="privacy-title">
+        <div class="legal-body">
+          <p class="legal-updated">Zuletzt aktualisiert am 16. Juli 2026</p>
+
+          <p>
+            Diese Seite ist eine Übersetzung der <a href="/privacy">englischen Datenschutzrichtlinie</a>. Wenn dir etwas unklar oder fehlerhaft erscheint, schreib uns bitte an <a href="mailto:support@mindwtr.app">support@mindwtr.app</a> oder eröffne ein Issue unter <a href="https://github.com/dongdongbh/mindwtr-web/issues">GitHub</a>.
+          </p>
+
+          <p>
+            Mindwtr („wir“, „unser“ oder „uns“) ist als lokal-first-Anwendung
+            konzipiert. Wir respektieren deine Privatsphäre und verfolgen das
+            Ziel, die Datenerhebung von Grund auf zu minimieren.
+          </p>
+
+          <h2>1. Datenspeicherung</h2>
+          <p>
+            Alle in der App erstellten Daten (Aufgaben, Projekte, Notizen)
+            werden lokal auf deinem Gerät gespeichert.
+          </p>
+
+          <h2>2. Datensynchronisierung</h2>
+          <p>
+            Wenn du Synchronisierungsfunktionen verwendest (zum Beispiel
+            Dateisynchronisierung, WebDAV, selbst gehostete Synchronisierung
+            oder Dropbox OAuth in unterstützten Builds), werden deine Daten
+            direkt zwischen deinem Gerät und dem von dir gewählten Speicher-
+            bzw. Synchronisierungsanbieter übertragen. Wir (der Entwickler)
+            haben keinen Zugriff auf diese Daten.
+          </p>
+          <ul>
+            <li><strong>Dropbox OAuth-Synchronisierung (unterstützte Builds):</strong> Mindwtr fordert Zugriff auf den Dropbox-App-Ordner an und synchronisiert ausschließlich App-Datendateien unter <code>/Apps/Mindwtr/</code> (zum Beispiel <code>data.json</code> und <code>attachments/*</code>).</li>
+            <li><strong>Token-Verarbeitung:</strong> OAuth-Zugriffs- und Aktualisierungs-Token werden lokal auf deinem Gerät gespeichert und ausschließlich verwendet, um die Dropbox-APIs für dein Konto aufzurufen.</li>
+            <li><strong>FOSS-Builds:</strong> Dropbox OAuth kann in FOSS-Distributionen deaktiviert sein.</li>
+            <li><strong>Andere Anbieter über die Dateisynchronisierung:</strong> iCloud Drive, Google Drive, OneDrive, Syncthing und ähnliche Werkzeuge können weiterhin indirekt über die Dateisynchronisierung verwendet werden.</li>
+          </ul>
+
+          <h2>3. Anonyme Nutzungsanalyse (Heartbeat)</h2>
+          <p>
+            In Builds, die mit dem Heartbeat-Endpunkt konfiguriert sind, kann
+            Mindwtr höchstens einmal täglich ein kleines Heartbeat-Ereignis
+            senden, damit wir Funktionsfähigkeit und Verbreitung der App messen können
+            (zum Beispiel DAU/MAU und Nutzung nach Distributionskanal).
+          </p>
+          <ul>
+            <li><strong>Was gesendet werden kann:</strong> Plattform (zum Beispiel iOS/Android/macOS/Windows/Linux), App-Version, Distributionskanal (zum Beispiel App Store/Play Store/F-Droid/IzzyOnDroid/winget/Homebrew), grobe Geräteklasse (zum Beispiel Smartphone/Tablet/Desktop), grobe Hauptversion des Betriebssystems (zum Beispiel iOS 18 oder Android 15), Gebietsschema (zum Beispiel en-US) und eine von der App erzeugte zufällige Kennung.</li>
+            <li><strong>Länderangabe:</strong> Das Land kann während der Anfrageverarbeitung serverseitig aus Metadaten des Edge-Netzwerks abgeleitet werden.</li>
+            <li><strong>Was nicht in der Heartbeat-Nutzlast gesendet wird:</strong> Aufgabendaten der Nutzer, Projektdaten, Inhalte von Notizen, Dateien, Inhalte von KI-Prompts, E-Mail-Adresse, Name, Kontakte, Kontodaten oder andere persönliche Inhalte.</li>
+            <li><strong>Deaktivierung:</strong> Unterstützte Builds enthalten in den Einstellungen einen Schalter, mit dem du zukünftige Heartbeat-Analysen deaktivieren kannst. Wenn du ihn ausschaltest, sendet Mindwtr einen letzten anonymen <code>opt_out</code>-Heartbeat mit derselben von der App erzeugten Kennung, damit der Server diese Installation nicht länger als aktiv zählt.</li>
+          </ul>
+
+          <h2>4. Feedback in der App</h2>
+          <p>
+            Wenn du Feedback aus der App sendest (Einstellungen &rarr; Über &rarr; Feedback senden),
+            wird deine Eingabe direkt an unseren Feedback-Endpunkt gesendet. Sie
+            wird nur gesendet, wenn du dich entscheidest, Feedback zu übermitteln.
+          </p>
+          <ul>
+            <li><strong>Was gesendet wird:</strong> die von dir gewählte Kategorie (Fehler, Feature oder Sonstiges), deine Nachricht und grundlegende Informationen zu deiner Installation &mdash; App-Version, Plattform, Betriebssystem, Distributionskanal, Gebietsschema und Build.</li>
+            <li><strong>E-Mail (optional):</strong> Eine E-Mail-Adresse wird nur aufgenommen, wenn du dich entscheidest, eine einzugeben, damit wir antworten können.</li>
+            <li><strong>Aktuelle Diagnosedaten (optional):</strong> Wenn du <em>Aktuelle Diagnosedaten einschließen</em> auswählst, hängt Mindwtr eine begrenzte Momentaufnahme der zuletzt in der App aufgerufenen Ansichten und ausgeführten Aktionen an sowie die Angabe, ob die ausführliche Diagnoseprotokollierung aktiviert war, und alle verfügbaren aktuellen Diagnoseprotokolleinträge. Die Momentaufnahme wird nur für diesen Bericht zusammengestellt und bei deaktivierter ausführlicher Protokollierung nicht als Protokoll gespeichert. Sie enthält keine Aufgabentitel, Beschreibungen, Notizen, Sicherungen oder Bildschirmfotos.</li>
+            <li><strong>Anders als der Heartbeat</strong> kann Feedback Informationen enthalten, die dich identifizieren, weil du sie selbst eingibst &mdash; deine Nachricht sowie eine E-Mail-Adresse oder Protokolle, die du freiwillig beifügst. Wir verwenden diese Informationen ausschließlich, um deinen Bericht zu verstehen und darauf zu antworten.</li>
+          </ul>
+
+          <h2>5. Dienste von Drittanbietern (KI)</h2>
+          <p>Wenn du optionale KI-Funktionen mit deinem eigenen API-Schlüssel (BYOK) verwendest:</p>
+          <ul>
+            <li><strong>Welche Daten gesendet werden:</strong> der Text, den du zur KI-Verarbeitung übermittelst (zum Beispiel Aufgabentitel, Notizen oder Prompt-Inhalte). Wenn du einen Remote-Anbieter für Sprache zu Text auswählst, sendet Mindwtr außerdem die Sprachaufnahme, die du transkribieren lassen möchtest.</li>
+            <li><strong>Wer sie erhält:</strong> der von dir ausgewählte Anbieter (zum Beispiel OpenAI, Google Gemini oder Anthropic).</li>
+            <li><strong>Wann sie gesendet werden:</strong> erst nachdem du die KI aktiviert und der Einwilligungsabfrage in der App zugestimmt hast.</li>
+            <li><strong>Wie sie gesendet werden:</strong> direkt von deinem Gerät an diesen Anbieter.</li>
+            <li><strong>Zugriff durch den Mindwtr-Entwickler:</strong> Wir leiten diese Anfragen nicht über einen Proxy weiter und erheben oder speichern die Inhalte dieser KI-Anfragen nicht.</li>
+          </ul>
+
+          <h2>6. Sicherheit, Aufbewahrung und Löschung</h2>
+          <ul>
+            <li><strong>Sicherheit:</strong> Unsere Analyse- und Feedback-Endpunkte verwenden HTTPS, und der Zugriff auf gespeicherte Einsendungen ist beschränkt. Bei Synchronisierungs- und KI-Funktionen unterliegen Transport und Speicherung außerdem dem von dir gewählten Anbieter und Endpunkt; verwende HTTPS-Endpunkte und prüfe die Datenschutzeinstellungen dieses Anbieters.</li>
+            <li><strong>Daten auf dem Gerät:</strong> Aufgaben, Projekte, Notizen, Einstellungen und lokale Anhänge bleiben erhalten, bis du sie löschst, die App-Daten von Mindwtr löschst oder die App deinstallierst. Kopien in Gerätesicherungen, freigegebenen Ordnern oder bei Synchronisierungsanbietern bleiben erhalten, bis du sie über diese Dienste entfernst.</li>
+            <li><strong>Anonyme Nutzungsanalyse:</strong> Wir bewahren diese Datensätze nur so lange auf, wie es vernünftigerweise erforderlich ist, um die Funktionsfähigkeit der App, aktive Installationen und die Nutzung neuer Releases nachzuvollziehen. Das Ausschalten der Analyseeinstellung stoppt zukünftige tägliche Ereignisse und erfasst die Deaktivierung, löscht jedoch frühere anonyme Datensätze nicht automatisch. Diese Datensätze verwenden eine zufällige, von der App erzeugte Kennung und sind weder mit einem Mindwtr-Konto noch mit einem Namen oder einer E-Mail-Adresse verknüpft.</li>
+            <li><strong>Feedback:</strong> Wir bewahren eingereichtes Feedback und alle optionalen Kontakt- oder Diagnoseinformationen so lange auf, wie es vernünftigerweise erforderlich ist, um den Sachverhalt zu untersuchen, zu antworten und die Projekthistorie zu pflegen. Anschließend löschen wir sie, sobald sie nicht mehr benötigt werden.</li>
+            <li><strong>KI- und Synchronisierungsanbieter:</strong> Wir bewahren keine Inhalte auf, die direkt an den von dir gewählten KI- oder Synchronisierungsanbieter gesendet werden. Es gelten die Aufbewahrungs- und Löschrichtlinien des Anbieters.</li>
+            <li><strong>Löschanfragen:</strong> Du kannst uns per E-Mail an <a href="mailto:support@mindwtr.app?subject=Data%20Deletion%20Request">support@mindwtr.app</a> bitten, Feedback oder andere Informationen unter unserer Kontrolle zu löschen, die wir identifizieren können. Gib, sofern verfügbar, die ID des Feedback-Berichts oder die im Bericht verwendete E-Mail-Adresse an. Da anonyme Analysedatensätze nicht mit einem Konto oder Kontaktinformationen verbunden sind, können wir einen bestimmten Datensatz möglicherweise nicht allein anhand deines Namens oder deiner E-Mail-Adresse identifizieren. Wir können begrenzte Informationen aufbewahren, wenn dies aus Gründen der Sicherheit, Betrugsprävention oder Einhaltung gesetzlicher Vorschriften erforderlich ist.</li>
+          </ul>
+
+          <h2>7. Kontakt</h2>
+          <p>
+            Wenn du Fragen zu dieser Datenschutzrichtlinie hast, schreib an
+            <a href="mailto:support@mindwtr.app?subject=Privacy%20Policy">support@mindwtr.app</a>
+            oder kontaktiere uns über unser
+            <a href="https://github.com/dongdongbh/Mindwtr">GitHub-Repository</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>

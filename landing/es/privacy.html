@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- chrome: shared head meta, header, and footer are injected at build time by chrome.ts -->
+    <meta
+      name="description"
+      content="Mindwtr prioriza el almacenamiento local y minimiza la recopilación de datos desde el diseño. Descubre qué permanece en tu dispositivo, qué puede usar la red y cómo controlar cada función."
+    />
+    <meta property="og:title" content="Política de privacidad de Mindwtr" />
+    <meta
+      property="og:description"
+      content="Almacenamiento local desde el diseño. Tus tareas permanecen en tu dispositivo. La política explica la sincronización opcional, los comentarios, la IA con BYOK y cómo desactivar las analíticas."
+    />
+    <title>Política de privacidad — Mindwtr</title>
+  </head>
+  <body>
+
+    <main>
+      <section class="support-hero" aria-labelledby="privacy-title">
+        <h1 id="privacy-title">Política de privacidad</h1>
+        <p class="support-lead">
+          Mindwtr prioriza el almacenamiento local y está diseñada para minimizar
+          la recopilación de datos. Tus tareas, notas y proyectos permanecen en
+          tu dispositivo. A continuación se explica exactamente qué significa,
+          qué funciones usan la red y cómo puedes controlarlas.
+        </p>
+      </section>
+
+      <section class="legal section-band" aria-labelledby="privacy-title">
+        <div class="legal-body">
+          <p class="legal-updated">Última actualización: 16 de julio de 2026</p>
+
+          <p>
+            Esta es una traducción de la <a href="/privacy">política de privacidad en inglés</a>.
+            Si algo parece poco claro o incorrecto, escribe a <a href="mailto:support@mindwtr.app">support@mindwtr.app</a>
+            o abre un issue en <a href="https://github.com/dongdongbh/mindwtr-web/issues">GitHub</a>.
+          </p>
+
+          <p>
+            Mindwtr («nosotros», «nuestro» o «nos») está diseñada como una
+            aplicación que prioriza el almacenamiento local. Respetamos tu
+            privacidad y procuramos minimizar la recopilación de datos desde el
+            diseño.
+          </p>
+
+          <h2>1. Almacenamiento de datos</h2>
+          <p>
+            Todos los datos creados en la app (tareas, proyectos y notas) se
+            almacenan localmente en tu dispositivo.
+          </p>
+
+          <h2>2. Sincronización de datos</h2>
+          <p>
+            Si decides usar las funciones de sincronización (por ejemplo,
+            Sincronización de archivos, WebDAV, sincronización autoalojada o
+            Dropbox OAuth en las compilaciones compatibles), tus datos se
+            transmiten directamente entre tu dispositivo y el proveedor de
+            almacenamiento o sincronización que elijas. Nosotros (el
+            desarrollador) no tenemos acceso a estos datos.
+          </p>
+          <ul>
+            <li><strong>Sincronización con Dropbox OAuth (compilaciones compatibles):</strong> Mindwtr solicita acceso de tipo Dropbox App Folder y sincroniza únicamente los archivos de datos de la app situados en <code>/Apps/Mindwtr/</code> (por ejemplo, <code>data.json</code> y <code>attachments/*</code>).</li>
+            <li><strong>Gestión de tokens:</strong> los tokens de acceso y actualización de OAuth se almacenan localmente en tu dispositivo y se usan únicamente para llamar a las API de Dropbox con tu cuenta.</li>
+            <li><strong>Compilaciones FOSS:</strong> Dropbox OAuth puede estar desactivado en las distribuciones FOSS.</li>
+            <li><strong>Otros proveedores mediante Sincronización de archivos:</strong> iCloud Drive, Google Drive, OneDrive, Syncthing y herramientas similares también pueden usarse indirectamente mediante Sincronización de archivos.</li>
+          </ul>
+
+          <h2>3. Analíticas de uso anónimas (señal de actividad)</h2>
+          <p>
+            En las compilaciones configuradas con el endpoint de la señal de
+            actividad, Mindwtr puede enviar un pequeño evento de actividad como
+            máximo una vez al día para ayudarnos a medir el estado y la adopción
+            de la app (por ejemplo, DAU/MAU y el uso por canal de distribución).
+          </p>
+          <ul>
+            <li><strong>Qué puede enviarse:</strong> plataforma (por ejemplo, iOS/Android/macOS/Windows/Linux), versión de la app, canal de distribución (por ejemplo, App Store/Play Store/F-Droid/IzzyOnDroid/winget/Homebrew), tipo general de dispositivo (por ejemplo, teléfono/tableta/escritorio), versión principal general del sistema operativo (por ejemplo, iOS 18 o Android 15), configuración regional (por ejemplo, en-US) y un identificador aleatorio generado por la app.</li>
+            <li><strong>Datos del país:</strong> el país puede obtenerse en el servidor a partir de los metadatos de la red perimetral durante el procesamiento de la solicitud.</li>
+            <li><strong>Qué no se envía en la carga útil de la señal de actividad:</strong> datos de las tareas del usuario, datos de proyectos, contenido de notas, archivos, contenido de solicitudes de IA, dirección de correo electrónico, nombre, contactos, datos de cuentas ni otro contenido personal.</li>
+            <li><strong>Desactivación:</strong> las compilaciones compatibles incluyen un control en Ajustes para desactivar las futuras analíticas de actividad. Al desactivarlo, Mindwtr envía una última señal de actividad anónima <code>opt_out</code> con el mismo identificador generado por la app para que el servidor deje de contar esa instalación como activa.</li>
+          </ul>
+
+          <h2>4. Comentarios desde la app</h2>
+          <p>
+            Si envías comentarios desde la app (Ajustes &rarr; Acerca de &rarr; Enviar comentarios),
+            lo que remitas se nos envía directamente a nuestro endpoint de
+            comentarios. Solo se envía cuando decides remitir comentarios.
+          </p>
+          <ul>
+            <li><strong>Qué se envía:</strong> la categoría que elijas (error, función u otro), tu mensaje y datos básicos sobre tu instalación &mdash; versión de la app, plataforma, sistema operativo, canal de distribución, configuración regional y compilación.</li>
+            <li><strong>Correo electrónico (opcional):</strong> solo se incluye una dirección de correo electrónico si decides introducirla, para que podamos responderte.</li>
+            <li><strong>Diagnósticos recientes (opcionales):</strong> si seleccionas <em>Incluir diagnósticos recientes</em>, Mindwtr adjunta una instantánea limitada de las vistas y acciones recientes en la app, indica si estaba activado el registro de diagnóstico detallado e incluye las entradas de registro de diagnóstico recientes disponibles. La instantánea se crea únicamente para ese informe y no se guarda como registro cuando el registro detallado está desactivado. No incluye títulos de tareas, descripciones, notas, copias de seguridad ni capturas de pantalla.</li>
+            <li><strong>A diferencia de la señal de actividad,</strong> los comentarios pueden contener información que te identifique, porque tú la escribes &mdash; tu mensaje y cualquier dirección de correo electrónico o registro que decidas incluir. Solo la usamos para entender tu informe y responder a él.</li>
+          </ul>
+
+          <h2>5. Servicios de terceros (IA)</h2>
+          <p>Si usas las funciones opcionales de IA con tu propia clave de API (BYOK):</p>
+          <ul>
+            <li><strong>Qué datos se envían:</strong> el texto que remites para que lo procese la IA (por ejemplo, el título de una tarea, notas o el contenido de una solicitud). Si eliges un proveedor remoto de conversión de voz a texto, Mindwtr también envía la grabación de voz que solicitas transcribir.</li>
+            <li><strong>Quién los recibe:</strong> el proveedor que hayas elegido (por ejemplo, OpenAI, Google Gemini o Anthropic).</li>
+            <li><strong>Cuándo se envían:</strong> solo después de activar la IA y aceptar la solicitud de consentimiento en la app.</li>
+            <li><strong>Cómo se envían:</strong> directamente desde tu dispositivo a ese proveedor.</li>
+            <li><strong>Acceso del desarrollador de Mindwtr:</strong> no canalizamos estas solicitudes mediante un proxy ni recopilamos o almacenamos el contenido de estas solicitudes de IA.</li>
+          </ul>
+
+          <h2>6. Seguridad, conservación y eliminación</h2>
+          <ul>
+            <li><strong>Seguridad:</strong> nuestros endpoints de analíticas y comentarios usan HTTPS, y el acceso a los envíos almacenados está restringido. En el caso de las funciones de sincronización e IA, el transporte y el almacenamiento también se rigen por el proveedor y el endpoint que elijas; usa endpoints HTTPS y revisa los controles de privacidad de ese proveedor.</li>
+            <li><strong>Datos en el dispositivo:</strong> las tareas, los proyectos, las notas, los ajustes y los archivos adjuntos locales permanecen hasta que los elimines, borres los datos de la app Mindwtr o desinstales la app. Las copias que haya en las copias de seguridad del dispositivo, las carpetas compartidas o los proveedores de sincronización permanecen hasta que las elimines mediante esos servicios.</li>
+            <li><strong>Analíticas de uso anónimas:</strong> conservamos estos registros únicamente durante el tiempo razonablemente necesario para comprender el estado de la app, las instalaciones activas y la adopción de las versiones. Desactivar el ajuste de analíticas detiene los futuros eventos diarios y registra la desactivación, pero no borra automáticamente los registros anónimos anteriores. Estos registros usan un identificador aleatorio generado por la app y no están vinculados a una cuenta de Mindwtr, un nombre ni una dirección de correo electrónico.</li>
+            <li><strong>Comentarios:</strong> conservamos los comentarios enviados y cualquier información opcional de contacto o diagnóstico durante el tiempo razonablemente necesario para investigar, responder y mantener el historial del proyecto; después, los eliminamos cuando dejan de ser necesarios.</li>
+            <li><strong>Proveedores de IA y sincronización:</strong> no conservamos el contenido enviado directamente al proveedor de IA o sincronización que elijas. Se aplica la política de conservación y eliminación del propio proveedor.</li>
+            <li><strong>Solicitudes de eliminación:</strong> puedes pedirnos que eliminemos los comentarios bajo el control del desarrollador u otra información que podamos identificar escribiendo a <a href="mailto:support@mindwtr.app?subject=Data%20Deletion%20Request">support@mindwtr.app</a>. Incluye el identificador del informe de comentarios o la dirección de correo electrónico utilizada en el informe cuando estén disponibles. Como los registros de analíticas anónimas no están conectados a una cuenta ni a información de contacto, es posible que no podamos identificar un registro concreto únicamente a partir de tu nombre o correo electrónico. Podemos conservar información limitada cuando sea necesario por motivos de seguridad, prevención del fraude o cumplimiento legal.</li>
+          </ul>
+
+          <h2>7. Contacto</h2>
+          <p>
+            Si tienes alguna pregunta sobre esta Política de privacidad, escribe a
+            <a href="mailto:support@mindwtr.app?subject=Privacy%20Policy">support@mindwtr.app</a>
+            o ponte en contacto con nosotros mediante nuestro
+            <a href="https://github.com/dongdongbh/Mindwtr">repositorio de GitHub</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>

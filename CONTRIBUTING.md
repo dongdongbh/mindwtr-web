@@ -142,9 +142,9 @@ review.
   and other locale files.
 - Translate Simplified and Traditional Chinese as separate locales. Do not use
   script conversion to create the Traditional Chinese version.
-- Use **如水** as the reader-facing app name in both Chinese locales. Keep
-  `Mindwtr` where it is part of a URL, repository name, package, command,
-  protocol payload, code sample, or another technical identifier.
+- Use **Mindwtr** as the product name throughout both Chinese locales. The
+  Chinese documentation homepages may note once that its Chinese name is
+  **如水**; do not substitute that name throughout the documentation.
 - Preserve Markdown structure, frontmatter keys, code, commands, URLs,
   placeholders, product names, protocol names, and file paths.
 - Keep command tokens in English when parser behavior depends on them.
@@ -167,8 +167,10 @@ The landing site currently publishes English, German, Spanish, French, and
 Simplified Chinese. When changing an English marketing page, update its `de`,
 `es`, `fr`, and `zh` copies in the same pull request.
 
-Keep review quotes verbatim in English and mark them with `lang="en"`. Privacy
-and brand pages remain English-only so the legal wording does not drift.
+Keep review quotes verbatim in English and mark them with `lang="en"`. The
+brand and privacy pages are translated for accessibility, with English kept as
+their maintained source text. Each translated privacy page should identify the
+English source and invite readers to report unclear or inaccurate wording.
 
 Edit `landing/chrome.ts` for shared navigation, footer, canonical, social, or
 language-menu behavior. Do not copy shared chrome into individual pages.

@@ -47,5 +47,5 @@ settings.gtd.dailyReview.includeFocusStep
 ## 相关页面
 
 - [每周回顾](/zh-Hans/use/weekly-review)
-- [如水中的 GTD 工作流程](/zh-Hans/use/gtd-workflow)
+- [Mindwtr 中的 GTD 工作流](/zh-Hans/use/gtd-workflow)
 - [日历集成](/zh-Hans/use/calendar-integration)

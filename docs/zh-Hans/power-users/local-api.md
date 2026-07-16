@@ -1,6 +1,6 @@
 # 本地 API 服务器
 
-如水提供可选的本地 REST API 服务器，用于脚本和集成。在桌面端，它运行于应用二进制文件内部，并使用与应用相同的本地存储路径。仓库还包含一个 Bun 辅助程序，可用于开发和高级脚本编写。
+Mindwtr 提供可选的本地 REST API 服务器，用于脚本和集成。在桌面端，它运行于应用二进制文件内部，并使用与应用相同的本地存储路径。仓库还包含一个 Bun 辅助程序，可用于开发和高级脚本编写。
 
 ---
 
@@ -59,7 +59,7 @@ bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 | `MINDWTR_DB_PATH`   | 覆盖 mindwtr.db 的位置（如果省略 `--db`）              |
 | `MINDWTR_API_TOKEN` | 仅限 Bun 辅助程序：如果已设置，则要求 `Authorization: Bearer <token>` |
 
-默认情况下，API 会使用如水的平台路径解析 `data.json` 和 `mindwtr.db`（在 Linux 上优先使用 XDG 数据路径）。
+默认情况下，API 会使用 Mindwtr 的平台路径解析 `data.json` 和 `mindwtr.db`（在 Linux 上优先使用 XDG 数据路径）。
 
 ---
 

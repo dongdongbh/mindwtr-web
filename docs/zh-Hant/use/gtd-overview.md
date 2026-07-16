@@ -92,7 +92,7 @@ GTD 由五個彼此連結的步驟組成：
 
 ### 領域、專案與任務
 
-如水採用靈活的「容器」模型，讓你能順暢整理：
+Mindwtr 採用靈活的「容器」模型，讓你能順暢整理：
 
 - **領域**是持續承擔的責任（例如工作、家庭、健康）。
 - **專案**是有終點的成果。它可以位於某個領域內，也可以獨立存在。
@@ -149,6 +149,6 @@ GTD 由五個彼此連結的步驟組成：
 
 ## 另請參閱
 
-- [如水的 GTD 工作流程](/zh-Hant/use/gtd-workflow)
-- [如水的 GTD 工作流程](/zh-Hant/use/gtd-workflow)
+- [Mindwtr 的 GTD 工作流程](/zh-Hant/use/gtd-workflow)
+- [Mindwtr 的 GTD 工作流程](/zh-Hant/use/gtd-workflow)
 - [每週回顧](/zh-Hant/use/weekly-review)

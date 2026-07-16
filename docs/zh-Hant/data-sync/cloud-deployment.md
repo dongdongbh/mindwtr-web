@@ -29,7 +29,7 @@
 - `/v1/data` 下的同步流量
 - `/v1/tasks`、`/v1/projects`、`/v1/areas`、`/v1/sections` 與 `/v1/search` 等任務自動化端點
 
-`PUT /v1/data` 採用合併，不會盲目取代。伺服器會讀取目前命名空間快照，使用如水一般的修訂版本感知同步規則與上傳的快照合併、驗證合併資料，再寫回。用戶端上傳較舊或不完整的檢視時，不應預期只靠傳送完整 JSON 承載資料就能抹除較新的遠端記錄。
+`PUT /v1/data` 採用合併，不會盲目取代。伺服器會讀取目前命名空間快照，使用 Mindwtr 的一般修訂版本感知同步規則與上傳的快照合併、驗證合併資料，再寫回。用戶端上傳較舊或不完整的檢視時，不應預期只靠傳送完整 JSON 承載資料就能抹除較新的遠端記錄。
 
 REST 參考欄位必須指向使用中記錄。例如，建立或修補專案時若 `areaId` 指向已軟刪除的領域，會回傳 `404 Area not found`，而不會將專案連結至刪除標記。請使用 `areaId: null` 清除專案領域；空字串會遭拒絕。
 
@@ -135,7 +135,7 @@ MINDWTR_CADDYFILE=Caddyfile.https
 docker compose --env-file docker/.env.https.local -f docker/compose.https.yaml up -d
 ```
 
-將如水的「自行託管 URL」設為基礎 URL，例如 `https://mindwtr.example.com`。如水會自動附加 `/v1/data`。
+將 Mindwtr 的「自行託管 URL」設為基礎 URL，例如 `https://mindwtr.example.com`。Mindwtr 會自動附加 `/v1/data`。
 
 對於採用 Caddy 內部 CA 的區域網路專用主機名稱，請使用 `Caddyfile.local-https`：
 

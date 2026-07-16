@@ -1,8 +1,8 @@
 # Dropbox 同步
 
-在受支持的桌面端和移动端构建中，如水支持直接通过 Dropbox 同步。
+在受支持的桌面端和移动端构建中，Mindwtr 支持直接通过 Dropbox 同步。
 
-该功能使用具有**应用文件夹**访问权限的 Dropbox OAuth，因此如水只会读写以下路径的数据：
+该功能使用具有**应用文件夹**访问权限的 Dropbox OAuth，因此 Mindwtr 只会读写以下路径的数据：
 
 - `/Apps/Mindwtr/data.json`
 - `/Apps/Mindwtr/attachments/*`
@@ -24,9 +24,9 @@
 ## 用户设置（官方构建）
 
 1. 打开**设置 → 同步**。
-2. 在**同步后端**选择器中选择 **Dropbox**。如水会把所选路径显示为**云端同步**。
+2. 在**同步后端**选择器中选择 **Dropbox**。Mindwtr 会把所选路径显示为**云端同步**。
 3. 点击/点按**连接 Dropbox**，并在浏览器中完成 OAuth。
-4. 返回如水，使用**测试连接**。
+4. 返回 Mindwtr，使用**测试连接**。
 5. 执行**同步**。
 
 首次同步后，确认 Dropbox 中存在应用文件夹：
@@ -38,7 +38,7 @@
 
 ## 自行构建时的设置
 
-如果自行构建如水，必须在构建时提供 Dropbox app key。
+如果自行构建 Mindwtr，必须在构建时提供 Dropbox app key。
 
 ### 1. 创建 Dropbox App
 
@@ -72,7 +72,7 @@
 
 ### `Invalid redirect_uri`
 
-确保如水显示的 URI 与 Dropbox app 设置完全一致。
+确保 Mindwtr 显示的 URI 与 Dropbox app 设置完全一致。
 
 ### HTTP 401 / token 无效
 
@@ -90,9 +90,9 @@
 
 ## 安全与隐私
 
-- 如水只申请应用文件夹访问权限，而非完整 Dropbox 账户访问权限。
+- Mindwtr 只申请应用文件夹访问权限，而非完整 Dropbox 账户访问权限。
 - OAuth 令牌仅存储在设备本地。
-- 如水开发者不会代理 Dropbox 请求，也不会接收你的 Dropbox 令牌。
+- Mindwtr 的开发者不会代理 Dropbox 请求，也不会接收你的 Dropbox 令牌。
 
 另请参阅：
 

@@ -1,6 +1,6 @@
 # 匯入 OmniFocus
 
-如水可匯入 OmniFocus 匯出資料，讓你無須手動重建系統即可遷移。
+Mindwtr 可匯入 OmniFocus 匯出資料，讓你無須手動重建系統即可遷移。
 
 ## 支援的來源檔案
 
@@ -22,26 +22,26 @@
 - `OmniFocus.json`
 - `metadata.json`
 
-如水可透過同一個匯入動作自動偵測 CSV、JSON 與 ZIP 檔案。
+Mindwtr 可透過同一個匯入動作自動偵測 CSV、JSON 與 ZIP 檔案。
 
-## 如水如何對應 OmniFocus 資料
+## Mindwtr 如何對應 OmniFocus 資料
 
-如水以 GTD 優先的原則，將 OmniFocus 匯出資料對應至如水的模型：
+Mindwtr 以 GTD 優先的原則，將 OmniFocus 匯出資料對應至 Mindwtr 的模型：
 
-- 有中繼資料時，OmniFocus 資料夾會成為**如水領域**
-- OmniFocus 專案會成為**如水專案**
+- 有中繼資料時，OmniFocus 資料夾會成為 Mindwtr 中的**領域**
+- OmniFocus 專案會成為 Mindwtr 中的**專案**
 - OmniFocus 獨立行動會保留在專案之外，讓你稍後處理
-- OmniFocus 標籤會成為**如水標籤**
-- 當來源格式包含情境時，OmniFocus 情境會成為**如水情境**
+- OmniFocus 標籤會成為 Mindwtr 中的**標籤**
+- 當來源格式包含情境時，OmniFocus 情境會成為 Mindwtr 中的**情境**
 - OmniFocus 筆記會保留在匯入後的描述中
 - OmniFocus 延後日期會成為**開始日期**
 - 受支援的截止日期與完成狀態會予以保留
 - OmniFocus 旗標會成為**高優先順序提示**
 - 簡單的單層巢狀任務可成為**檢查清單項目**
 - 較複雜或更深層的巢狀任務會攤平成一般任務，並在標題與描述中保留原始階層
-- 受支援時，Omni Automation 重複規則會對應至**如水重複規則**
+- 受支援時，Omni Automation 重複規則會對應至 Mindwtr 的**重複規則**
 
-如水目前沒有獨立的 OmniFocus 式預定日期欄位。當 OmniFocus 包含預定日期或工期文字時，如水會將該資訊保留在匯入後的描述中，而不會捨棄。
+Mindwtr 目前沒有獨立的 OmniFocus 式預定日期欄位。當 OmniFocus 包含預定日期或工期文字時，Mindwtr 會將該資訊保留在匯入後的描述中，而不會捨棄。
 
 ## 支援的 OmniFocus 資料
 
@@ -65,11 +65,11 @@
    - 如果只需要內建匯出，請使用 **CSV**
    - 如果需要重複規則、資料夾與更完整的階層保真度，請使用 **Omni Automation / Shortcuts JSON**
 3. 如果你的捷徑分別產生 `OmniFocus.json` 與 `metadata.json`，請將兩個檔案放入同一個 ZIP 封存檔
-4. 在如水中選擇 CSV、JSON 或 ZIP 檔案
+4. 在 Mindwtr 中選擇 CSV、JSON 或 ZIP 檔案
 5. 檢查預覽摘要
 6. 確認匯入
 
-如水會在匯入前儲存復原快照，讓你可在需要時回復。
+Mindwtr 會在匯入前儲存復原快照，讓你可在需要時回復。
 
 ## 目前限制
 
@@ -84,7 +84,7 @@
 
 - 如果想先驗證對應結果，請從較小的 OmniFocus 匯出檔開始
 - 如果使用以捷徑為基礎的匯出方式，請將 `OmniFocus.json` 與 `metadata.json` 一併放在同一個 ZIP 中，以獲得最完整的匯入結果
-- 如果同時有專案行動與獨立收集箱行動，如水會保留這項區分
+- 如果同時有專案行動與獨立收集箱行動，Mindwtr 會保留這項區分
 - 如果重複規則很重要，請優先使用 Omni Automation JSON / ZIP 路徑，而非 CSV
 - 如果大量使用 OmniFocus 旗標，請檢查匯入後的高優先順序任務
 - 確認匯入結果符合預期前，請保留復原快照

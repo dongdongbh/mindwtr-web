@@ -15,9 +15,17 @@ const ORIGIN = "https://mindwtr.app";
 export const LOCALES = ["en", "de", "es", "fr", "zh"] as const;
 export type Locale = (typeof LOCALES)[number];
 
-// Pages that exist in every locale. Legal pages (privacy, brand) stay
-// English-only so the canonical legal wording cannot drift in translation.
-const LOCALIZED_PAGES = new Set(["index", "features", "gtd", "donate", "support"]);
+// Pages that exist in every locale. English remains the source text for the
+// translated brand and privacy pages.
+const LOCALIZED_PAGES = new Set([
+  "index",
+  "features",
+  "gtd",
+  "donate",
+  "support",
+  "brand",
+  "privacy"
+]);
 
 const HREFLANG: Record<Locale, string> = {
   en: "en",
@@ -206,7 +214,7 @@ const DETECT_SCRIPT = `    <script>
       (function () {
         try {
           if (localStorage.getItem("mindwtr-lang")) return;
-          var page = location.pathname.match(/^\\/(features|gtd|donate|support)?\\/?$/);
+          var page = location.pathname.match(/^\\/(features|gtd|donate|support|brand|privacy)?\\/?$/);
           if (!page) return;
           var offered = ["de", "es", "fr"];
           var langs = navigator.languages || [navigator.language || ""];
@@ -433,8 +441,8 @@ function footer(locale: Locale, pagePath: string): string {
     { href: "https://github.com/dongdongbh/Mindwtr", label: "GitHub" },
     { href: localePath(locale, "support"), label: t.support },
     { href: localePath(locale, "donate"), label: t.donate },
-    { href: "/brand", label: t.brand },
-    { href: "/privacy", label: t.privacy }
+    { href: localePath(locale, "brand"), label: t.brand },
+    { href: localePath(locale, "privacy"), label: t.privacy }
   ]
     .map((link) => `        ${anchor(link, pagePath)}`)
     .join("\n");

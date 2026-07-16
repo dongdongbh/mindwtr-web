@@ -1,6 +1,6 @@
 # Web 应用（PWA）
 
-如水桌面应用可以通过 Vite 构建以浏览器应用方式运行。在浏览器（非 Tauri）中运行时，它使用 `localStorage` 持久保存数据，并注册 service worker 以支持离线使用和 PWA。
+Mindwtr 桌面应用可以通过 Vite 构建以浏览器应用方式运行。在浏览器（非 Tauri）中运行时，它使用 `localStorage` 持久保存数据，并注册 service worker 以支持离线使用和 PWA。
 
 ---
 
@@ -58,7 +58,7 @@ bun desktop:web:build
 
 ## 限制
 
-- 浏览器构建把数据存储在 `localStorage` 中（清除站点数据也会清除如水数据）
+- 浏览器构建把数据存储在 `localStorage` 中（清除站点数据也会清除 Mindwtr 数据）
 - 某些仅限桌面端的功能在浏览器中可能不可用，例如需要原生文件访问的文件附件
 - 不支持原生系统托盘或全局快捷键
 

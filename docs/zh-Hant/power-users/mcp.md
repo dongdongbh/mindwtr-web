@@ -1,6 +1,6 @@
 # MCP 伺服器
 
-如水提供選用的 **MCP（Model Context Protocol）**伺服器。你可以將 AI agent（例如 **Claude Desktop**、**Claude Code**、**OpenAI Codex** 或 **Gemini CLI**）連接至本機如水資料庫，或自行託管的 Mindwtr Cloud 端點。
+Mindwtr 提供選用的 **MCP（Model Context Protocol）**伺服器。你可以將 AI agent（例如 **Claude Desktop**、**Claude Code**、**OpenAI Codex** 或 **Gemini CLI**）連接至本機 Mindwtr 資料庫，或自行託管的 Mindwtr Cloud 端點。
 
 這是 **stdio** 伺服器（沒有託管的 HTTP 端點）。MCP 用戶端會將它啟動為子程序，並透過 stdin/stdout 使用 JSON-RPC 通訊。
 
@@ -10,7 +10,7 @@
 
 ## 應用程式 Binary 與 MCP 輔助工具
 
-桌面版與行動版 binary 包含如水應用程式，但目前**不包含**桌面版啟動／停止開關。獨立的 MCP 輔助工具以 [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) 發佈，並已列入公開的 [MCP Registry](https://registry.modelcontextprotocol.io/)。
+桌面版與行動版 binary 包含 Mindwtr 應用程式，但目前**不包含**桌面版啟動／停止開關。獨立的 MCP 輔助工具以 [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) 發佈，並已列入公開的 [MCP Registry](https://registry.modelcontextprotocol.io/)。
 
 使用 MCP **不需要**從原始碼執行整個應用程式。你可以使用一般桌面版處理任務，再讓 MCP 用戶端透過 `npx` 啟動 `mindwtr-mcp`，或使用 npm 全域安裝。請將輔助工具指向桌面版的本機 `mindwtr.db`。
 
@@ -22,7 +22,7 @@
 
 - **Node.js 22+**，可免編譯安裝：SQLite 相依套件提供 Node 22 以上版本的預先組建 binary。Node 20 仍可執行伺服器，但安裝時需要 C++ build tools
 - **npm** 或其他 Node package runner，用來執行已發佈的 `mindwtr-mcp` package
-- 本機模式需要本機如水資料庫（`mindwtr.db`）；Cloud 模式則需要自行託管的 Mindwtr Cloud URL 及 bearer token
+- 本機模式需要本機 Mindwtr 資料庫（`mindwtr.db`）；Cloud 模式則需要自行託管的 Mindwtr Cloud URL 及 bearer token
 - 只有從原始碼樹執行輔助工具時才需要 **Bun**
 
 ### 預設資料庫位置
@@ -66,7 +66,7 @@ MCP 用戶端會將伺服器當成子程序執行。請指定**命令**並傳入
 }
 ```
 
-此 package 預設為唯讀。只有明確希望 AI 用戶端新增、更新、完成或刪除如水資料時，才加入 `--write`。
+此 package 預設為唯讀。只有明確希望 AI 用戶端新增、更新、完成或刪除 Mindwtr 資料時，才加入 `--write`。
 
 ### 自行託管 Cloud 模式
 
@@ -93,7 +93,7 @@ npx -y mindwtr-mcp \
 
 Cloud 模式會從自行託管的 Cloud 伺服器讀取目前的 `/v1/data` 快照，並提供任務、專案、分區、領域及人員的讀取工具。使用 `--write` 時，任務、專案、分區及領域的寫入會經過 Cloud 伺服器各項資源的 [REST 端點](/zh-Hant/developers/cloud-api)（`POST /v1/tasks`、`PATCH /v1/tasks/:id` 等），因此每項編輯都會獲得與應用程式編輯相同的驗證及修訂追蹤。若沒有 `--write`，寫入工具會回傳 `read_only`。Cloud 模式目前無法編輯人員或還原已刪除的任務；這些操作請使用本機資料庫後端。
 
-這並不是目前受阻的託管式多租戶 connector。Cloud 伺服器及 MCP 輔助工具仍由你自行執行；如水不會營運儲存所有人任務資料的服務。
+這並不是目前受阻的託管式多租戶 connector。Cloud 伺服器及 MCP 輔助工具仍由你自行執行；Mindwtr 不會營運儲存所有人任務資料的服務。
 
 若要改用全域安裝：
 
@@ -134,7 +134,7 @@ mindwtr-mcp --db "/path/to/mindwtr.db"
 }
 ```
 
-_注意：請將 DB 路徑換成實際的本機如水資料庫路徑。_
+_注意：請將 DB 路徑換成實際的本機 Mindwtr 資料庫路徑。_
 
 ### 2. Claude Code（CLI）
 
@@ -157,7 +157,7 @@ codex mcp add mindwtr -- \
   --db "/path/to/mindwtr.db"
 ```
 
-只有希望 Codex 修改本機如水資料時，才加入 `--write`：
+只有希望 Codex 修改本機 Mindwtr 資料時，才加入 `--write`：
 
 ```bash
 codex mcp add mindwtr -- \
@@ -428,7 +428,7 @@ Schema 注意事項：
 
 ## 操作限制
 
-將如水接入 agent 工作流程時，請留意下列限制：
+將 Mindwtr 接入 agent 工作流程時，請留意下列限制：
 
 - `mindwtr_list_tasks` 預設為 `limit: 200`，且 `limit` 上限為 `500`。
 - MCP 任務建立／更新驗證會將任務標題限制在 `500` 個字元。

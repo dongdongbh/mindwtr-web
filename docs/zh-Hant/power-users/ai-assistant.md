@@ -1,6 +1,6 @@
 # AI 助理（BYOK）
 
-如水內建選用的 AI 助理，可協助釐清任務、拆解任務，並檢視過時項目。此功能**預設關閉**，採用**自備金鑰（BYOK）**模式。
+Mindwtr 內建選用的 AI 助理，可協助釐清任務、拆解任務，並檢視過時項目。此功能**預設關閉**，採用**自備金鑰（BYOK）**模式。
 
 ## 隱私權模式
 
@@ -26,7 +26,7 @@
 
 ## OpenAI 相容端點（本機或託管）
 
-如水可連接任何公開 **OpenAI 相容 Chat Completions API** 的服務，包括本機伺服器及部分託管服務供應商。
+Mindwtr 可連接任何公開 **OpenAI 相容 Chat Completions API** 的服務，包括本機伺服器及部分託管服務供應商。
 
 以下情況可使用這項設定：
 
@@ -43,7 +43,7 @@
 3. 只有使用官方 OpenAI 時，才將**自訂 base URL** 留空。
 4. 只有自訂端點允許未經驗證的要求時，才將 **API key** 留空。
 
-如水會自動附加 `/chat/completions`，因此除非服務要求完整路徑，否則請使用供應商的 base URL，而非完整的 chat-completions 路徑。
+Mindwtr 會自動附加 `/chat/completions`，因此除非服務要求完整路徑，否則請使用供應商的 base URL，而非完整的 chat-completions 路徑。
 
 常見 base URL：
 - **llama.cpp**：`http://localhost:8080/v1`
@@ -76,7 +76,7 @@ GLM 類託管端點範例：
 ### Copilot 建議
 （僅適用於收集箱及專注檢視）
 
-輸入內容時，如水可建議：
+輸入內容時，Mindwtr 可建議：
 - 情境
 - 標籤
 - 預估時間
@@ -95,7 +95,7 @@ Copilot 絕不會在未經你核准的情況下套用變更。
 
 ## 注意事項
 
-- AI 是**選用功能**。如水不使用 AI 也能運作。
+- AI 是**選用功能**。Mindwtr 不使用 AI 也能運作。
 - 回應會解析為結構化 JSON；若解析失敗，不會套用任何變更。
 ## Whisper 語言代碼
 

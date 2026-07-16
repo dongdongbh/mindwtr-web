@@ -47,5 +47,5 @@ settings.gtd.dailyReview.includeFocusStep
 ## 相關頁面
 
 - [每週回顧](/zh-Hant/use/weekly-review)
-- [如水的 GTD 工作流程](/zh-Hant/use/gtd-workflow)
+- [Mindwtr 的 GTD 工作流程](/zh-Hant/use/gtd-workflow)
 - [行事曆整合](/zh-Hant/use/calendar-integration)

@@ -1,6 +1,6 @@
 # 本機 API 伺服器
 
-如水內建選用的本機 REST API 伺服器，供指令碼及整合使用。在桌面版中，它於應用程式 binary 內執行，並採用與應用程式相同的本機儲存路徑。儲存庫也提供 Bun 輔助工具，供開發及進階指令碼使用。
+Mindwtr 內建選用的本機 REST API 伺服器，供指令碼及整合使用。在桌面版中，它於應用程式 binary 內執行，並採用與應用程式相同的本機儲存路徑。儲存庫也提供 Bun 輔助工具，供開發及進階指令碼使用。
 
 ---
 
@@ -59,7 +59,7 @@ bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 | `MINDWTR_DB_PATH`   | 覆寫 mindwtr.db 位置（若省略 `--db`）                  |
 | `MINDWTR_API_TOKEN` | 僅供 Bun 輔助工具使用：若設定，要求必須包含 `Authorization: Bearer <token>` |
 
-API 預設會使用如水的平台路徑解析 `data.json` 與 `mindwtr.db`（Linux 上優先使用 XDG data）。
+API 預設會使用 Mindwtr 的平台路徑解析 `data.json` 與 `mindwtr.db`（Linux 上優先使用 XDG data）。
 
 ---
 

@@ -4,13 +4,13 @@
 
 ## 范围
 
-- 如水云端是一个轻量级自托管后端，用于 JSON 同步和经令牌认证的任务自动化端点，并非完整的托管应用界面。
+- Mindwtr Cloud 是一个轻量级自托管后端，用于 JSON 同步和经令牌认证的任务自动化端点，并非完整的托管应用界面。
 - 它最适合单租户或小规模可信部署。
 - 你应将其置于 HTTPS 反向代理之后，并采用标准的服务器加固措施。
 
 客户端兼容性说明：
 
-- 如水云端客户端要求公共 URL 使用 **HTTPS**。
+- Mindwtr Cloud 客户端要求公共 URL 使用 **HTTPS**。
 - 只有 `localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、环回/私有 IPv6 地址、`*.local` 和 `*.home.arpa` 等本地/私有目标才接受 HTTP。
 - 对于自定义 DNS、VPN、Tailscale、ZeroTier 或其他未被识别为本地/私有的名称，请在反向代理层添加 TLS。
 - **允许不安全连接 (HTTP)** 设置仅适用于可信的本地/私有端点；它不是公共 HTTP 覆盖选项。
@@ -29,7 +29,7 @@
 - `/v1/data` 下的同步流量
 - `/v1/tasks`、`/v1/projects`、`/v1/areas`、`/v1/sections` 和 `/v1/search` 等任务自动化端点
 
-`PUT /v1/data` 基于合并，并非盲目替换。服务器会读取当前命名空间快照，使用如水常规的修订感知同步规则将其与上传的快照合并，验证合并后的数据，然后写回。上传较旧或不完整视图的客户端不应指望仅通过发送完整 JSON 负载就能抹除较新的远程记录。
+`PUT /v1/data` 基于合并，并非盲目替换。服务器会读取当前命名空间快照，使用 Mindwtr 的常规修订感知同步规则将其与上传的快照合并，验证合并后的数据，然后写回。上传较旧或不完整视图的客户端不应指望仅通过发送完整 JSON 负载就能抹除较新的远程记录。
 
 REST 引用字段必须指向仍然有效的记录。例如，创建或修补项目时，如果其 `areaId` 所指区域已被软删除，服务器会返回 `404 Area not found`，而不是将项目关联到墓碑记录。使用 `areaId: null` 可清除项目的区域；空字符串会被拒绝。
 
@@ -135,7 +135,7 @@ MINDWTR_CADDYFILE=Caddyfile.https
 docker compose --env-file docker/.env.https.local -f docker/compose.https.yaml up -d
 ```
 
-将如水的“自托管 URL”设置为基础 URL，例如 `https://mindwtr.example.com`。如水会自动附加 `/v1/data`。
+将 Mindwtr 的“自托管 URL”设置为基础 URL，例如 `https://mindwtr.example.com`。Mindwtr 会自动附加 `/v1/data`。
 
 对于使用 Caddy 内部 CA 的仅局域网主机名，请使用 `Caddyfile.local-https`：
 
@@ -239,7 +239,7 @@ proxy_set_header Authorization $http_authorization;
 
 用户删除附件时，客户端会保留一条 `pendingRemoteDeletes` 记录，直到后端删除成功。这些待处理删除有意不设过期时间，因为在远程删除成功前移除它们可能会遗留私密文件。
 
-如水云端还为当前 `data.json` 快照不再引用的附件文件提供经认证的孤立文件清理：
+Mindwtr Cloud 还为当前 `data.json` 快照不再引用的附件文件提供经认证的孤立文件清理：
 
 ```text
 POST /v1/attachments/orphans

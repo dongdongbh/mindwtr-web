@@ -1,6 +1,6 @@
 # 加入測試版管道
 
-如水會在正式穩定版發行前，先發布 beta 與候選發行版組建。測試版能更早取得新功能與錯誤修正，也有助於在同一組建提供給所有穩定版使用者前，找出特定平台的問題。
+Mindwtr 會在正式穩定版發行前，先發布 beta 與候選發行版組建。測試版能更早取得新功能與錯誤修正，也有助於在同一組建提供給所有穩定版使用者前，找出特定平台的問題。
 
 你可以長期留在測試版管道。穩定版也會發布至測試版管道，因此測試人員不必在測試週期結束後切回穩定版，也能持續使用最新版本。
 
@@ -20,11 +20,11 @@
 
 ## iOS、iPadOS 與 macOS - TestFlight
 
-安裝 TestFlight，然後加入如水測試版：
+安裝 TestFlight，然後加入 Mindwtr 測試版：
 
-- [如水 TestFlight 測試版](https://testflight.apple.com/join/7SMJCTSR)
+- [Mindwtr TestFlight 測試版](https://testflight.apple.com/join/7SMJCTSR)
 
-若要退出 TestFlight，請從 TestFlight 移除如水，再從 App Store 或 Mac App Store 重新安裝穩定版。
+若要退出 TestFlight，請從 TestFlight 移除 Mindwtr，再從 App Store 或 Mac App Store 重新安裝穩定版。
 
 ## Linux - AUR 測試版
 
@@ -111,7 +111,7 @@ docker pull ghcr.io/dongdongbh/mindwtr-cloud:beta
 
 預發行組建會發布至 GitHub Releases，並標示為 pre-release：
 
-- [如水 Releases](https://github.com/dongdongbh/Mindwtr/releases)
+- [Mindwtr Releases](https://github.com/dongdongbh/Mindwtr/releases)
 
 請尋找帶有 `-rc` 或 `-beta` 等預發行後綴的版本。穩定版仍可在同一頁面取得。
 

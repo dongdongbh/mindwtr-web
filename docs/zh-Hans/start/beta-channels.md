@@ -1,6 +1,6 @@
 # 加入测试版渠道
 
-如水会在最终稳定版之前发布测试版和候选发布版。测试版能更早获得新功能与错误修复，也有助于在同一构建推送给所有稳定版用户前发现平台特有问题。
+Mindwtr 会在最终稳定版之前发布测试版和候选发布版。测试版能更早获得新功能与错误修复，也有助于在同一构建推送给所有稳定版用户前发现平台特有问题。
 
 你可以长期留在测试版渠道。稳定版也会发布到这些渠道，因此测试者无需在每轮测试后切回稳定渠道才能保持最新。
 
@@ -20,11 +20,11 @@
 
 ## iOS、iPadOS 与 macOS - TestFlight
 
-安装 TestFlight，然后加入如水测试版：
+安装 TestFlight，然后加入 Mindwtr 测试版：
 
-- [如水 TestFlight 测试版](https://testflight.apple.com/join/7SMJCTSR)
+- [Mindwtr TestFlight 测试版](https://testflight.apple.com/join/7SMJCTSR)
 
-要退出 TestFlight，请从 TestFlight 中移除如水，再从 App Store 或 Mac App Store 重新安装稳定版。
+要退出 TestFlight，请从 TestFlight 中移除 Mindwtr，再从 App Store 或 Mac App Store 重新安装稳定版。
 
 ## Linux - AUR Beta
 
@@ -111,7 +111,7 @@ docker pull ghcr.io/dongdongbh/mindwtr-cloud:beta
 
 预发布构建会在 GitHub Releases 上发布，并标记为 pre-release：
 
-- [如水 Releases](https://github.com/dongdongbh/Mindwtr/releases)
+- [Mindwtr 发布页](https://github.com/dongdongbh/Mindwtr/releases)
 
 请查找带 `-rc` 或 `-beta` 等预发布后缀的版本。稳定版仍可从同一页面下载。
 

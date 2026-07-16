@@ -258,7 +258,7 @@ Focus first decides whether a task is available, then sorts the visible actions:
    - within the same bucket: priority when enabled, then start time, oldest creation date, title, and id
 4. **Review Due** shows tasks whose review date is due. After looking an item over, you can clear its review date (**Mark reviewed**) or push it out with **Review in 1 week**, on desktop from the task's quick-action menu, on mobile by long-pressing the row.
 
-Start date is Mindwtr's defer/planned-date field. Future-start tasks are hidden from Focus by default unless you enable future-start visibility. Sequential projects also limit Focus to the first available action for that project or section, so later actions stay out of Focus until the previous step is no longer blocking them.
+Start date is Mindwtr's defer/planned-date field. Focus always hides future-start tasks until their start day; the Next actions list counts them in a "hidden (future start)" notice with a **Show** toggle when you want to peek ahead. Sequential projects also limit Focus to the first available action for that project or section, so later actions stay out of Focus until the previous step is no longer blocking them.
 
 Time estimate and energy are Focus filters and grouping options, not default sort keys. Grouping by context, project, area, energy, or priority changes the visual groups; tasks inside those groups keep the same availability and next-action ordering.
 

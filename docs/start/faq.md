@@ -58,7 +58,7 @@ https://github.com/dongdongbh/Mindwtr/issues
 
 Other ways to reach out:
 
-- **In-app feedback**: use **Send feedback** from **Settings → About** when it is available in your build. It sends a bug report, feature request, or other note without needing a GitHub account, and the reply email field is optional.
+- **In-app feedback**: use **Send feedback** from **Settings → About** when it is available in your build. It sends a bug report, feature request, or other note without needing a GitHub account, and the reply email field is optional. For bug reports, **Include recent diagnostics** attaches a bounded snapshot of recent in-app views and actions plus any available recent diagnostic logs; it works even when detailed logging is off, and the added snapshot is not saved on the device. See the [privacy policy](https://mindwtr.app/privacy) for details.
 - **Email**: for anything that doesn't fit a public issue (a private or account question), write to [support@mindwtr.app](mailto:support@mindwtr.app).
 
 If you're reporting a bug, please include your **platform** and **app version** (Settings → About) so it's easier to help.

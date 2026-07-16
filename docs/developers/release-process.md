@@ -32,9 +32,9 @@ Use SemVer prerelease names:
 - follow-up blocker fix: `v1.1.0-rc.2`
 - final stable release: `v1.1.0`
 
-Do not replace artifacts on an existing tag. If the released artifact is wrong, fix forward with a new tag.
+Do not replace artifacts for an RC that reached testers. Fix that case with the next RC number. If a run fails before GitHub publishes the prerelease, cancel it, fix `main`, delete and recreate the same RC tag on the corrected commit, then push the tag again.
 
-The RC tag carries the prerelease suffix, but app and package version files stay on the stable base version (`X.Y.Z`). Do not run `./scripts/bump-version.sh X.Y.Z-rc.1`. Run it with `X.Y.Z`, commit the base version, then tag `vX.Y.Z-rc.1`. This keeps Apple bundle versions numeric and lets Android rely on `versionCode` for ordering. The RC workflow validates this before building.
+Run `./scripts/bump-version.sh vX.Y.Z-rc.N` for an RC. The script keeps app and package version files on the stable base version (`X.Y.Z`) while writing the full RC version to `apps/mobile/release-version.json` for env-free FOSS builds. The RC workflow checks both values before platform builds start.
 
 ### When to Use the RC Train
 
@@ -58,7 +58,8 @@ Publish RC builds only to channels that can support testers without creating hig
 | macOS App Store build | TestFlight | Mac App Store remains the stable channel. |
 | Android Play build | Google Play internal testing and open testing (`beta`) by default; closed/custom tracks when configured | Production receives a later stable upload, and the internal test track is refreshed by the stable workflow. |
 | Linux Flatpak | Flathub beta branch | Future automation: publish stable to both stable and beta branches so beta users are not stranded. |
-| Arch Linux | `mindwtr-beta` or equivalent AUR package | Future automation: update the beta package to the final stable version when no newer RC exists. |
+| Arch Linux | AUR `mindwtr-bin-beta` | The stable release refreshes the persistent beta package. |
+| Debian/Fedora Linux | Beta APT/RPM repositories | Stable packages remain in separate stable repository directories. |
 | Windows direct download | GitHub prerelease installer/portable | Microsoft Store remains stable-only unless package flights are later automated. |
 
 Keep these stable-only unless there is a clear need and automation is already in place:
@@ -70,15 +71,17 @@ Keep these stable-only unless there is a clear need and automation is already in
 - Homebrew stable cask
 - Chocolatey
 - Scoop stable bucket
-- APT/RPM repos
+- stable APT/RPM repos
 
-APT/RPM beta repos and Microsoft Store package flights are valid future additions, but they should not be part of the first RC process. Add them only after the manual RC train has proven useful and repeatable.
+Microsoft Store package flights remain a possible future addition.
 
 ### Current RC Automation
 
 The RC workflow is `.github/workflows/release-rc.yml`.
 
-A new `vX.Y.Z-rc.N` tag push starts the workflow and verifies that the tag points at the commit being built. Repeated RC tag-push runs for the same tag are treated as recovery, including explicit delete/recreate retags: the tag-push run validates and then skips publication so Play or TestFlight uploads are not repeated accidentally. Use `workflow_dispatch` with explicit inputs for recovery reruns or controlled channel selection. The workflow reuses the same channel build jobs as stable where practical, then creates a GitHub prerelease from the exact Linux, macOS, Windows, Android, and Android FOSS artifacts.
+A new `vX.Y.Z-rc.N` tag push starts the workflow and verifies the tag, stable base versions, committed FOSS release version, and tag commit before platform builds start. A failed run with no published GitHub prerelease recovers by deleting and recreating the same tag on the corrected commit. If a GitHub release already exists for the tag, the workflow validates only; publish changes under the next RC number. Use `workflow_dispatch` only for controlled channel retries or non-default channel selection.
+
+The workflow reuses the stable channel build jobs where practical, then creates a GitHub prerelease from the exact Linux, macOS, Windows, Android, and Android FOSS artifacts.
 
 It also publishes tester builds to the store-backed channels that are already wired:
 
@@ -87,6 +90,7 @@ It also publishes tester builds to the store-backed channels that are already wi
 - macOS App Store build to TestFlight with App Store review submission disabled.
 - Flathub beta branch update PRs through the shared Flathub workflow; manual runs can disable this when channel setup is not ready.
 - AUR `mindwtr-bin-beta` updates after the GitHub prerelease assets exist; manual runs can disable this when the package channel is not ready.
+- Beta APT/RPM repository updates after the GitHub prerelease exists; manual runs can disable them.
 
 The stable `release.yml` remains the stable-release workflow. It is guarded so prerelease tags do not publish stable-only channels such as production Google Play, Microsoft Store, Snap stable, Linux APT/RPM repos, Flathub stable, AUR stable, Scoop, winget, Homebrew, or Chocolatey.
 
@@ -102,7 +106,7 @@ The review-latency channels need a head start. Use this default schedule:
 | Day | Action |
 | --- | --- |
 | T-7 to T-5 | Feature freeze. Only bug fixes, release notes, metadata, and release blockers are allowed. |
-| T-5 | Create the release branch, bump app/package versions to `X.Y.Z`, generate RC-specific release notes such as `docs/release-notes/X.Y.Z-rc.1.md`, and tag `vX.Y.Z-rc.1` so `release-rc.yml` uploads TestFlight, Google Play testing, Flathub beta, and AUR beta builds where those channels are enabled. |
+| T-5 | Create the release branch, run `./scripts/bump-version.sh vX.Y.Z-rc.1`, generate RC-specific release notes such as `docs/release-notes/X.Y.Z-rc.1.md`, and tag `vX.Y.Z-rc.1` so `release-rc.yml` uploads the enabled tester channels. |
 | T-4 | Run channel artifact smoke checks as reviewed builds become available. Fix only blockers. |
 | T-3 | Confirm the GitHub prerelease from `release-rc.yml`, verify the Flathub beta PR and `mindwtr-bin-beta` update when those workflow inputs were enabled, and announce the RC to testers. |
 | T-2 to T-1 | Triage feedback. Cut `rc.2` only for blockers. Non-blockers move to the next cycle. |
@@ -227,6 +231,7 @@ At minimum, verify:
 
 - release notes exist and match the actual changes
 - package versions are aligned across the monorepo
+- `apps/mobile/release-version.json` contains the full RC version for an RC tag
 - Android `versionCode` was incremented
 - desktop package lock passes `repair-package-lock.py --check`
 - FOSS config still strips blocked permissions and keeps only intentional ones

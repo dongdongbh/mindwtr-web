@@ -227,7 +227,7 @@ gemini mcp add mindwtr \
 
 ### 5. Aplicación Gemini (apps personalizadas)
 
-Las aplicaciones web y móvil de Gemini pueden conectarse a un servidor MCP remoto mediante una URL ("apps personalizadas" en gemini.google.com). Esto funciona con `mindwtr-mcp` en **modo HTTP** (ver más abajo): aloja el servidor en un lugar accesible para los servidores de Google (una URL HTTPS pública detrás de un proxy inverso; Gemini se conecta desde el lado de Google, así que `localhost` no funciona) y añade esa URL como app personalizada junto con tu token bearer.
+Las aplicaciones web y móvil de Gemini pueden conectarse a un servidor MCP remoto mediante una URL ("apps personalizadas" en gemini.google.com). Esto funciona con `mindwtr-mcp` en [modo HTTP](#acceso-remoto-http): aloja el servidor en un lugar accesible para los servidores de Google (una URL HTTPS pública detrás de un proxy inverso; Gemini se conecta desde el lado de Google, así que `localhost` no funciona) y añade esa URL como app personalizada junto con tu token bearer.
 
 ---
 

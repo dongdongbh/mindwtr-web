@@ -227,7 +227,7 @@ gemini mcp add mindwtr \
 
 ### 5. Gemini-App (benutzerdefinierte Apps)
 
-Die Gemini-Web- und Mobil-Apps können sich per URL mit einem entfernten MCP-Server verbinden („benutzerdefinierte Apps" auf gemini.google.com). Das funktioniert mit `mindwtr-mcp` im **HTTP-Modus** (siehe unten): Hosten Sie den Server unter einer Adresse, die Googles Server erreichen können (eine öffentliche HTTPS-URL hinter einem Reverse-Proxy; Gemini verbindet sich von Googles Seite aus, `localhost` funktioniert daher nicht), und fügen Sie diese URL zusammen mit Ihrem Bearer-Token als benutzerdefinierte App hinzu.
+Die Gemini-Web- und Mobil-Apps können sich per URL mit einem entfernten MCP-Server verbinden („benutzerdefinierte Apps" auf gemini.google.com). Das funktioniert mit `mindwtr-mcp` im [HTTP-Modus](#fernzugriff-http): Hosten Sie den Server unter einer Adresse, die Googles Server erreichen können (eine öffentliche HTTPS-URL hinter einem Reverse-Proxy; Gemini verbindet sich von Googles Seite aus, `localhost` funktioniert daher nicht), und fügen Sie diese URL zusammen mit Ihrem Bearer-Token als benutzerdefinierte App hinzu.
 
 ---
 

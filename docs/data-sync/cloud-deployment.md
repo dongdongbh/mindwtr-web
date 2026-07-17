@@ -308,6 +308,5 @@ Clock note:
 ## Related Pages
 
 - [Cloud API](/developers/cloud-api)
-- [Cloud API](/developers/cloud-api)
 - [Data and Sync](/data-sync/)
 - [Docker Deployment](/power-users/docker-deployment)

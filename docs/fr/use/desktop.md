@@ -134,11 +134,13 @@ Tâches récemment terminées. Utilisez cette vue comme journal à court terme d
 
 Si vous avez achevé une tâche avant de la marquer comme Terminée, cliquez sur son horodatage **Terminée** pour le corriger. Vous pouvez également faire un clic droit sur le bouton de validation d’une tâche ouverte afin de la marquer comme Terminée à une heure antérieure. Cela est utile lorsque l’heure d’achèvement compte pour vos archives ou pour une planification de type « répéter après l’achèvement ».
 
+Choisissez **Sélectionner** pour choisir des tâches ou **Tout sélectionner**, puis utilisez **Déplacer → Archivés** pour classer la sélection plus tôt.
+
 ### 📦 Archivés
 
 Tâches terminées qui ont été classées. Les tâches archivées sont masquées des listes de tâches normales, mais vous pouvez les rechercher ou les restaurer ici. Cliquez sur l’horodatage **Terminée** d’une tâche pour le corriger.
 
-Choisissez **Sélectionner** pour choisir des tâches ou **Tout sélectionner**. Vous pouvez restaurer la sélection dans la Boîte de réception ou la déplacer vers la Corbeille. Mindwtr ne supprime définitivement les tâches que depuis la Corbeille.
+Choisissez **Sélectionner** pour choisir des tâches ou **Tout sélectionner**. Vous pouvez ramener la sélection dans Terminé sans modifier son heure d’achèvement, la restaurer dans la Boîte de réception ou la déplacer vers la Corbeille. Mindwtr ne supprime définitivement les tâches que depuis la Corbeille.
 
 ### 🗑️ Corbeille
 
@@ -207,6 +209,8 @@ Sous macOS, **Envoyer les tâches vers le calendrier** peut également inscrire 
 Une recherche puissante avec des opérateurs pour tout trouver instantanément.
 
 **Ouvrir :** appuyez sur `/` ou `Ctrl/Cmd + K`, ou cliquez sur l’icône de recherche.
+
+Le texte de recherche est facultatif. Ouvrez **Filtres** pour afficher les éléments correspondants selon le statut, la portée, le domaine, l’échéance, le lieu, le contexte ou l’étiquette ; choisissez **Terminé** et **Archivés** (ou **Inclure les tâches Terminées et Archivées**) pour afficher les éléments achevés.
 
 #### Opérateurs de recherche
 
@@ -520,7 +524,7 @@ Accédez aux Paramètres depuis la barre latérale.
 - **Jour/heure de la revue** : personnalisez le moment où vous souhaitez recevoir le rappel
 
 ### GTD
-- **Archivage automatique** : déplacez automatiquement les tâches Terminées vers Archivées après un nombre défini de jours (par défaut : 7 jours), ou choisissez **Jamais** pour conserver les tâches achevées dans Terminé
+- **Archivage automatique** : déplacez automatiquement les tâches Terminées vers Archivées après un nombre défini de jours (par défaut : 7 jours), ou choisissez **Jamais** pour conserver les tâches achevées dans Terminé. Réduire le délai archive immédiatement les tâches déjà Terminées qui dépassent désormais la nouvelle limite.
 - **Limite de tâches Focus** : choisissez combien de tâches peuvent être marquées pour le Focus du jour
 - **Fonctionnalités** : signaux facultatifs que vous pouvez activer au besoin :
   - **Priorités** : afficher un indicateur de priorité sur les tâches

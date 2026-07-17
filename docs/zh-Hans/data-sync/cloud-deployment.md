@@ -308,6 +308,5 @@ DELETE /v1/attachments/orphans
 ## 相关页面
 
 - [云端 API](/zh-Hans/developers/cloud-api)
-- [云端 API](/zh-Hans/developers/cloud-api)
 - [数据与同步](/zh-Hans/data-sync/)
 - [Docker 部署](/zh-Hans/power-users/docker-deployment)

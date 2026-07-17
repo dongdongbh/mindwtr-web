@@ -153,5 +153,4 @@ Consulta también: [Contextos y etiquetas](/es/use/contexts-tags).
 ## Consulta también
 
 - [Flujo de trabajo GTD en Mindwtr](/es/use/gtd-workflow)
-- [Flujo de trabajo GTD en Mindwtr](/es/use/gtd-workflow)
 - [Revisión semanal](/es/use/weekly-review)

@@ -123,5 +123,4 @@ Cloud-backed MCP mode reads `/v1/data` and exposes read tools for tasks, project
 
 - [MCP Server](/power-users/mcp)
 - [Cloud Deployment](/data-sync/cloud-deployment)
-- [Cloud Deployment](/data-sync/cloud-deployment)
 - [Sync Algorithm](/data-sync/sync-algorithm)

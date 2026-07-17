@@ -150,5 +150,4 @@ Voir aussi : [Contextes et tags](/fr/use/contexts-tags)
 ## Voir aussi
 
 - [Flux GTD dans Mindwtr](/fr/use/gtd-workflow)
-- [Flux GTD dans Mindwtr](/fr/use/gtd-workflow)
 - [Revue hebdomadaire](/fr/use/weekly-review)

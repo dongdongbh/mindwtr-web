@@ -123,5 +123,4 @@ Der Cloud-gestützte MCP-Modus liest `/v1/data` und stellt Lesewerkzeuge für Au
 
 - [MCP-Server](/de/power-users/mcp)
 - [Cloud-Bereitstellung](/de/data-sync/cloud-deployment)
-- [Cloud-Bereitstellung](/de/data-sync/cloud-deployment)
 - [Synchronisierungsalgorithmus](/de/data-sync/sync-algorithm)

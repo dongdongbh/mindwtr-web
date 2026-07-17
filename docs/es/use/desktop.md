@@ -134,11 +134,13 @@ Tareas completadas recientemente. Úsala como registro de finalización a corto 
 
 Si terminaste una tarea antes de marcarla como Terminada, haz clic en su marca de tiempo **Completada** para corregirla. También puedes hacer clic derecho en el botón de completar de cualquier tarea abierta para marcarla como Terminada a una hora anterior. Esto ayuda cuando la hora de finalización importa para tus registros o para la programación «repetir después de completar».
 
+Elige **Seleccionar** para escoger tareas o **Seleccionar todo** y luego usa **Mover → Archivadas** para archivarlas antes.
+
 ### 📦 Archivadas
 
 Tareas completadas que se han apartado. Las tareas archivadas se ocultan de las listas normales, pero aquí puedes buscarlas o restaurarlas. Haz clic en la marca de tiempo **Completada** de una tarea para corregirla.
 
-Elige **Seleccionar** para escoger tareas o **Seleccionar todo**. Puedes restaurar la selección a la Bandeja de entrada o moverla a la Papelera. Mindwtr solo elimina tareas permanentemente desde la Papelera.
+Elige **Seleccionar** para escoger tareas o **Seleccionar todo**. Puedes devolver la selección a Terminadas sin cambiar su hora de finalización, restaurarla a la Bandeja de entrada o moverla a la Papelera. Mindwtr solo elimina tareas permanentemente desde la Papelera.
 
 ### 🗑️ Papelera
 
@@ -207,6 +209,8 @@ En macOS, **Enviar tareas al calendario** también puede escribir las tareas pro
 Búsqueda potente con operadores para encontrar cualquier cosa al instante.
 
 **Abrir:** pulsa `/`, `Ctrl/Cmd + K` o haz clic en el icono de búsqueda.
+
+El texto de búsqueda es opcional. Abre **Filtros** para mostrar los elementos que coincidan por estado, ámbito, área, fecha de vencimiento, ubicación, contexto o etiqueta; elige **Terminadas** y **Archivadas** (o **Incluir tareas Terminadas y Archivadas**) cuando quieras ver elementos completados.
 
 #### Operadores de búsqueda
 
@@ -520,7 +524,7 @@ Abre Ajustes desde la barra lateral.
 - **Día/hora de revisión**: personaliza cuándo quieres recibir el recordatorio
 
 ### GTD
-- **Archivado automático**: mueve automáticamente las tareas Terminadas a Archivadas tras el número de días indicado (predeterminado: 7 días), o elige **Nunca** para conservarlas en Terminadas
+- **Archivado automático**: mueve automáticamente las tareas Terminadas a Archivadas tras el número de días indicado (predeterminado: 7 días), o elige **Nunca** para conservarlas en Terminadas. Al reducir el intervalo, las tareas Terminadas existentes que ya superen el nuevo límite se archivan inmediatamente.
 - **Límite de tareas de Foco**: elige cuántas tareas se pueden marcar para el Foco de hoy
 - **Funciones**: señales opcionales que puedes activar cuando las necesites:
   - **Prioridades**: muestra una bandera de prioridad en las tareas

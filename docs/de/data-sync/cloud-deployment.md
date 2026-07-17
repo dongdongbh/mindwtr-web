@@ -308,6 +308,5 @@ Hinweis zur Uhr:
 ## Verwandte Seiten
 
 - [Cloud API](/de/developers/cloud-api)
-- [Cloud API](/de/developers/cloud-api)
 - [Daten und Synchronisierung](/de/data-sync/)
 - [Docker-Bereitstellung](/de/power-users/docker-deployment)

@@ -117,6 +117,10 @@ Les noms de contextes et de tags acceptent les lettres et chiffres Unicode (y co
 1. Accédez à l’onglet **Prochaines actions** ou à **Contextes** depuis le tiroir
 2. Touchez un contexte pour filtrer
 
+Les pastilles de filtre passent par trois états : sélectionnez un contexte ou un tag une fois pour l’inclure, une deuxième fois pour l’exclure (affiché barré), une troisième pour l’effacer. Les pastilles exclues masquent toujours leurs tâches, quel que soit le mode de correspondance.
+
+Dès que deux contextes ou plus sont sélectionnés, la commande **Correspondance des contextes** apparaît : **Tous** (par défaut) montre les tâches portant tous les contextes sélectionnés, **Au moins un** montre celles qui en portent au moins un. Les tags disposent de la même commande, **Correspondance des tags**.
+
 ### Regrouper par contexte ou par tag
 
 Les barres d’outils des listes de tâches comportent également une commande **Grouper**. Utilisez-la pour regrouper les listes par contexte, domaine, projet ou tag lorsque vous parcourez une grande liste Boîte de réception, En attente, Un jour/Peut-être, Référence, Terminées ou Prochaines actions.

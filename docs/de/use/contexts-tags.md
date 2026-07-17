@@ -117,6 +117,10 @@ Kontext- und Tag-Namen akzeptieren Unicode-Buchstaben und -Ziffern (einschließl
 1. Öffnen Sie den Tab **Nächste Aktionen** oder **Kontexte** im Navigationsmenü.
 2. Tippen Sie zum Filtern auf einen Kontext.
 
+Filter-Chips durchlaufen drei Zustände: Einmal auswählen schließt einen Kontext oder Tag ein, ein zweites Mal schließt ihn aus (durchgestrichen dargestellt), ein drittes Mal setzt ihn zurück. Ausgeschlossene Chips blenden ihre Aufgaben immer aus, unabhängig vom Abgleichmodus.
+
+Sobald zwei oder mehr Kontexte ausgewählt sind, erscheint die Steuerung **Kontextabgleich**: **Alle** (Standard) zeigt Aufgaben mit allen ausgewählten Kontexten, **Beliebig** zeigt Aufgaben mit mindestens einem. Für Tags gibt es dieselbe Steuerung als **Schlagwortabgleich**.
+
 ### Nach Kontexten oder Tags gruppieren
 
 Die Werkzeugleisten von Aufgabenlisten enthalten außerdem eine Steuerung **Gruppieren**. Damit können Sie größere Listen für Posteingang, Warten, Irgendwann/Vielleicht, Referenz, Erledigt oder Nächste Aktionen nach Kontext, Bereich, Projekt oder Tag gruppieren.

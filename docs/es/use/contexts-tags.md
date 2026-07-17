@@ -117,6 +117,10 @@ Los nombres de contextos y etiquetas aceptan letras y números Unicode (incluido
 1. Ve a la pestaña **Próximas acciones** o a **Contextos** desde el menú lateral
 2. Toca un contexto para filtrar
 
+Las fichas de filtro pasan por tres estados: selecciona un contexto o etiqueta una vez para incluirlo, otra vez para excluirlo (se muestra tachado) y una tercera para quitarlo. Las fichas excluidas siempre ocultan sus tareas, sin importar el modo de coincidencia.
+
+Con dos o más contextos seleccionados aparece el control **Coincidencia de contextos**: **Todas** (el valor predeterminado) muestra las tareas que llevan todos los contextos seleccionados y **Cualquiera** muestra las que llevan al menos uno. Las etiquetas tienen el mismo control como **Coincidencia de etiquetas**.
+
 ### Agrupar por contextos o etiquetas
 
 Las barras de herramientas de las listas de tareas también incluyen un control **Agrupar**. Úsalo para agrupar listas por contexto, área, proyecto o etiqueta al revisar una lista más grande de Bandeja de entrada, En espera, Algún día/Quizá, Referencia, Hechas o Próximas acciones.

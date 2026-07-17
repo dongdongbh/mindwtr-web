@@ -138,7 +138,7 @@ Wählen Sie **Auswählen**, um Aufgaben zu markieren, oder **Alle auswählen**, 
 
 ### 📦 Archiviert
 
-Abgelegte abgeschlossene Aufgaben. Sie sind in normalen Listen ausgeblendet, können hier aber gesucht oder wiederhergestellt werden. Klicken Sie zur Korrektur auf den Zeitstempel **Abgeschlossen**.
+Abgelegte abgeschlossene Aufgaben. Sie sind in normalen Listen ausgeblendet, können hier aber gesucht oder wiederhergestellt werden. Klicken Sie zur Korrektur auf den Zeitstempel **Abgeschlossen**. Ein Umschalter „Aufgaben | Projekte“ oben zeigt stattdessen archivierte Projekte: Wiederherstellen reaktiviert das Projekt (samt der mit ihm abgeschlossenen Aufgaben), Löschen verschiebt es in den Papierkorb.
 
 Wählen Sie **Auswählen**, um Aufgaben zu markieren, oder **Alle auswählen**. Sie können die Auswahl zurück nach Erledigt verschieben, ohne den Abschlusszeitpunkt zu ändern, sie im Posteingang wiederherstellen oder in den Papierkorb verschieben. Mindwtr löscht Aufgaben nur aus dem Papierkorb endgültig.
 

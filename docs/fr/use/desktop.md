@@ -138,7 +138,7 @@ Choisissez **Sélectionner** pour choisir des tâches ou **Tout sélectionner**,
 
 ### 📦 Archivés
 
-Tâches terminées qui ont été classées. Les tâches archivées sont masquées des listes de tâches normales, mais vous pouvez les rechercher ou les restaurer ici. Cliquez sur l’horodatage **Terminée** d’une tâche pour le corriger.
+Tâches terminées qui ont été classées. Les tâches archivées sont masquées des listes de tâches normales, mais vous pouvez les rechercher ou les restaurer ici. Cliquez sur l’horodatage **Terminée** d’une tâche pour le corriger. Un sélecteur Tâches | Projets en haut affiche à la place les projets archivés : restaurer un projet le réactive (en récupérant les tâches terminées avec lui), et le supprimer l’envoie à la corbeille.
 
 Choisissez **Sélectionner** pour choisir des tâches ou **Tout sélectionner**. Vous pouvez ramener la sélection dans Terminé sans modifier son heure d’achèvement, la restaurer dans la Boîte de réception ou la déplacer vers la Corbeille. Mindwtr ne supprime définitivement les tâches que depuis la Corbeille.
 

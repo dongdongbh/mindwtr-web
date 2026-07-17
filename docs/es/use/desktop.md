@@ -138,7 +138,7 @@ Elige **Seleccionar** para escoger tareas o **Seleccionar todo** y luego usa **M
 
 ### 📦 Archivadas
 
-Tareas completadas que se han apartado. Las tareas archivadas se ocultan de las listas normales, pero aquí puedes buscarlas o restaurarlas. Haz clic en la marca de tiempo **Completada** de una tarea para corregirla.
+Tareas completadas que se han apartado. Las tareas archivadas se ocultan de las listas normales, pero aquí puedes buscarlas o restaurarlas. Haz clic en la marca de tiempo **Completada** de una tarea para corregirla. Un selector Tareas | Proyectos en la parte superior muestra en su lugar los proyectos archivados: restaurar uno lo reactiva (recuperando las tareas completadas con él) y eliminarlo lo envía a la Papelera.
 
 Elige **Seleccionar** para escoger tareas o **Seleccionar todo**. Puedes devolver la selección a Terminadas sin cambiar su hora de finalización, restaurarla a la Bandeja de entrada o moverla a la Papelera. Mindwtr solo elimina tareas permanentemente desde la Papelera.
 

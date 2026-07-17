@@ -122,7 +122,7 @@ flowchart TD
 Terminées et Archivées sont deux états fermés, mais ils remplissent des rôles différents :
 
 - **Terminées** est le journal des achèvements récents. Utilisez-le pour les tâches que vous pourriez vouloir voir pendant une revue quotidienne ou hebdomadaire.
-- **Archivées** est l’historique classé. Les tâches archivées sont masquées dans les listes de tâches normales, mais restent disponibles dans la vue Archivées pour être recherchées, restaurées ou supprimées définitivement.
+- **Archivées** est l’historique classé. Les tâches archivées sont masquées dans les listes de tâches normales, mais restent disponibles dans la vue Archivées pour être recherchées, restaurées ou supprimées définitivement. La vue Archivées liste aussi les projets archivés derrière un sélecteur Tâches | Projets, où ils peuvent être restaurés ou supprimés.
 - **Archivage automatique** peut déplacer les tâches Terminées vers Archivées après un nombre de jours défini. Réglez-le sur **Jamais** si vous souhaitez que Terminées conserve indéfiniment toutes les tâches achevées.
 
 ### Contextes et tags

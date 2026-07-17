@@ -122,7 +122,7 @@ flowchart TD
 Hechas y Archivadas son estados cerrados, pero cumplen funciones distintas:
 
 - **Hechas** es el registro de finalizaciones recientes. Úsalo para las tareas que quizá quieras ver durante la revisión diaria o semanal.
-- **Archivadas** es el historial guardado. Las tareas archivadas se ocultan de las listas de tareas normales, pero siguen disponibles en la vista Archivadas para buscar, restaurar o eliminar permanentemente.
+- **Archivadas** es el historial guardado. Las tareas archivadas se ocultan de las listas de tareas normales, pero siguen disponibles en la vista Archivadas para buscar, restaurar o eliminar permanentemente. La vista Archivadas también muestra los proyectos archivados tras un selector Tareas | Proyectos, donde se pueden restaurar o eliminar.
 - **Archivado automático** puede mover tareas de Hechas a Archivadas después de un número determinado de días. Configúralo como **Nunca** si quieres que Hechas conserve todas las tareas completadas indefinidamente.
 
 ### Contextos y etiquetas

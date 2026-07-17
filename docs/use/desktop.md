@@ -138,7 +138,7 @@ Choose **Select** to pick tasks or **Select All**, then use **Move → Archived*
 
 ### 📦 Archived
 
-Completed tasks that have been filed away. Archived tasks are hidden from normal task lists, but you can search or restore them here. Click a task's **Completed** timestamp to correct it.
+Completed tasks that have been filed away. Archived tasks are hidden from normal task lists, but you can search or restore them here. Click a task's **Completed** timestamp to correct it. A Tasks | Projects switch at the top shows archived projects instead: restoring one reactivates it (bringing back the tasks completed with it), and deleting moves it to the Trash.
 
 Choose **Select** to pick tasks or **Select All**. You can move the selection back to Done without changing its completion time, restore it to Inbox, or move it to Trash. Mindwtr permanently deletes tasks only from Trash.
 

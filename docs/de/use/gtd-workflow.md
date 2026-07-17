@@ -122,7 +122,7 @@ flowchart TD
 „Erledigt“ und „Archiviert“ sind beide abgeschlossene Zustände, dienen aber unterschiedlichen Zwecken:
 
 - **Erledigt** ist das Protokoll der letzten Abschlüsse. Verwenden Sie es für Aufgaben, die Sie beim täglichen oder wöchentlichen Rückblick sehen möchten.
-- **Archiviert** ist abgelegte Historie. Archivierte Aufgaben sind in normalen Aufgabenlisten ausgeblendet, bleiben aber in der Ansicht „Archiviert“ zum Suchen, Wiederherstellen oder endgültigen Löschen verfügbar.
+- **Archiviert** ist abgelegte Historie. Archivierte Aufgaben sind in normalen Aufgabenlisten ausgeblendet, bleiben aber in der Ansicht „Archiviert“ zum Suchen, Wiederherstellen oder endgültigen Löschen verfügbar. Die Ansicht „Archiviert“ zeigt hinter einem Umschalter „Aufgaben | Projekte“ auch archivierte Projekte, die sich dort wiederherstellen oder löschen lassen.
 - **Automatisch archivieren** kann erledigte Aufgaben nach einer festgelegten Anzahl von Tagen nach „Archiviert“ verschieben. Wählen Sie **Nie**, wenn „Erledigt“ alle abgeschlossenen Aufgaben unbegrenzt behalten soll.
 
 ### Kontexte und Tags

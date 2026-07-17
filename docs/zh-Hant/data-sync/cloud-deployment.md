@@ -308,6 +308,5 @@ DELETE /v1/attachments/orphans
 ## 相關頁面
 
 - [雲端 API](/zh-Hant/developers/cloud-api)
-- [雲端 API](/zh-Hant/developers/cloud-api)
 - [資料與同步](/zh-Hant/data-sync/)
 - [Docker 部署](/zh-Hant/power-users/docker-deployment)

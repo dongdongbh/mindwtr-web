@@ -42,7 +42,7 @@ Touchez l’onglet **Menu** pour accéder aux vues supplémentaires :
  - 🗑️ **Corbeille** : tâches et projets supprimés
  - ⚙️ **Paramètres** : préférences de l’application
 
-Ouvrez **Archivés** et touchez **Sélectionner** pour gérer plusieurs tâches. Touchez **Tout sélectionner** ou choisissez des tâches, puis restaurez-les dans la Boîte de réception ou déplacez-les vers la Corbeille. Mindwtr ne supprime définitivement les tâches que depuis la Corbeille.
+Ouvrez **Terminé** et touchez **Sélectionner** pour choisir des tâches, puis utilisez **Déplacer → Archivés** pour les classer plus tôt. Dans **Archivés**, touchez **Sélectionner** ou **Tout sélectionner** pour ramener des tâches dans Terminé sans modifier leur heure d’achèvement, les restaurer dans la Boîte de réception ou les déplacer vers la Corbeille. Mindwtr ne supprime définitivement les tâches que depuis la Corbeille.
 
 Ouvrez la **Corbeille** et touchez **Sélectionner** pour gérer plusieurs tâches et projets supprimés. Touchez **Tout sélectionner** ou choisissez des éléments, puis restaurez-les ou supprimez-les définitivement en une seule étape. Toute suppression définitive demande toujours une confirmation.
 
@@ -628,7 +628,7 @@ Personnalisez le fonctionnement de Mindwtr pour votre flux de travail GTD :
 - Valeurs par défaut : 10m, 30m, 1h, 2h, 3h, 4h, 4h+
 
 **Archivage automatique :**
-- Déplacez automatiquement les tâches Terminées vers Archivées après un nombre défini de jours (par défaut : 7 jours)
+- Déplacez automatiquement les tâches Terminées vers Archivées après un nombre défini de jours (par défaut : 7 jours). Réduire le délai archive immédiatement les tâches déjà Terminées qui dépassent désormais la nouvelle limite.
 - Choisissez « Jamais » pour conserver indéfiniment les tâches achevées dans la liste Terminé
 
 **Traitement de la Boîte de réception :**

@@ -308,6 +308,5 @@ Nota sobre el reloj:
 ## Páginas relacionadas
 
 - [API de Cloud](/es/developers/cloud-api)
-- [API de Cloud](/es/developers/cloud-api)
 - [Datos y sincronización](/es/data-sync/)
 - [Despliegue con Docker](/es/power-users/docker-deployment)

@@ -123,5 +123,4 @@ Le mode MCP adossé au Cloud lit `/v1/data` et expose des outils de lecture pour
 
 - [Serveur MCP](/fr/power-users/mcp)
 - [Déploiement Cloud](/fr/data-sync/cloud-deployment)
-- [Déploiement Cloud](/fr/data-sync/cloud-deployment)
 - [Algorithme de synchronisation](/fr/data-sync/sync-algorithm)

@@ -308,6 +308,5 @@ Remarque sur l’horloge :
 ## Pages connexes
 
 - [API Cloud](/fr/developers/cloud-api)
-- [API Cloud](/fr/developers/cloud-api)
 - [Données et synchronisation](/fr/data-sync/)
 - [Déploiement avec Docker](/fr/power-users/docker-deployment)

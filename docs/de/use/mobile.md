@@ -42,7 +42,7 @@ Tippen Sie auf **Menü**, um weitere Ansichten zu öffnen:
 - 🗑️ **Papierkorb**: gelöschte Aufgaben und Projekte
 - ⚙️ **Einstellungen**: App-Einstellungen
 
-Öffnen Sie **Archiviert** und tippen Sie auf **Auswählen**, um mehrere Aufgaben zu verwalten. Wählen Sie Aufgaben oder **Alle auswählen** und stellen Sie sie im Posteingang wieder her oder verschieben Sie sie in den Papierkorb. Endgültig gelöscht wird nur aus dem Papierkorb.
+Öffnen Sie **Erledigt** und tippen Sie auf **Auswählen**, um Aufgaben zu markieren. Verwenden Sie dann **Verschieben → Archiviert**, um sie vorzeitig abzulegen. Unter **Archiviert** können Sie mit **Auswählen** oder **Alle auswählen** Aufgaben zurück nach Erledigt verschieben, ohne den Abschlusszeitpunkt zu ändern, sie im Posteingang wiederherstellen oder in den Papierkorb verschieben. Mindwtr löscht Aufgaben nur aus dem Papierkorb endgültig.
 
 Öffnen Sie **Papierkorb** und tippen Sie auf **Auswählen**, um mehrere gelöschte Aufgaben und Projekte gemeinsam wiederherzustellen oder endgültig zu löschen. Endgültiges Löschen verlangt immer eine Bestätigung.
 
@@ -564,7 +564,7 @@ Erinnerungen werden auf dem Telefon geplant; es gibt keinen Push-Server. Wenn Si
 - Standard: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
 
 **Automatisch archivieren:**
-- Erledigte Aufgaben nach Tagen archivieren (Standard 7)
+- Erledigte Aufgaben nach einer festgelegten Anzahl von Tagen archivieren (Standard: 7). Wenn Sie die Verzögerung verkürzen, werden vorhandene Erledigt-Aufgaben, die nun älter als der neue Grenzwert sind, sofort archiviert.
 - **Nie** für unbegrenzte Erledigt-Liste
 
 **Posteingangsverarbeitung:**

@@ -150,5 +150,4 @@ Siehe auch: [Kontexte und Tags](/de/use/contexts-tags)
 ## Siehe auch
 
 - [GTD-Arbeitsablauf in Mindwtr](/de/use/gtd-workflow)
-- [GTD-Arbeitsablauf in Mindwtr](/de/use/gtd-workflow)
 - [Wochenrückblick](/de/use/weekly-review)

@@ -123,5 +123,4 @@ El modo MCP con nube lee `/v1/data` y ofrece herramientas de lectura para tareas
 
 - [Servidor MCP](/es/power-users/mcp)
 - [Despliegue en la nube](/es/data-sync/cloud-deployment)
-- [Despliegue en la nube](/es/data-sync/cloud-deployment)
 - [Algoritmo de sincronización](/es/data-sync/sync-algorithm)

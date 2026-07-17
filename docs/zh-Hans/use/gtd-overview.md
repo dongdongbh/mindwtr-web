@@ -153,5 +153,4 @@ Mindwtr 采用灵活的“容器”模型，让你可以顺畅整理：
 ## 另请参阅
 
 - [Mindwtr 中的 GTD 工作流](/zh-Hans/use/gtd-workflow)
-- [Mindwtr 中的 GTD 工作流](/zh-Hans/use/gtd-workflow)
 - [每周回顾](/zh-Hans/use/weekly-review)

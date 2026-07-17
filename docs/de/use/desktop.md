@@ -134,11 +134,13 @@ Kürzlich abgeschlossene Aufgaben als kurzfristiges Abschlussprotokoll für täg
 
 Wenn Sie eine Aufgabe früher erledigt haben, als Sie sie markiert haben, klicken Sie auf den Zeitstempel **Abgeschlossen**, um ihn zu korrigieren. Sie können auch auf die Abschlussschaltfläche einer geöffneten Aufgabe rechtsklicken und einen früheren Zeitpunkt wählen. Das hilft bei Aufzeichnungen und Wiederholungen nach Abschluss.
 
+Wählen Sie **Auswählen**, um Aufgaben zu markieren, oder **Alle auswählen**, und verwenden Sie dann **Verschieben → Archiviert**, um die Auswahl vorzeitig abzulegen.
+
 ### 📦 Archiviert
 
 Abgelegte abgeschlossene Aufgaben. Sie sind in normalen Listen ausgeblendet, können hier aber gesucht oder wiederhergestellt werden. Klicken Sie zur Korrektur auf den Zeitstempel **Abgeschlossen**.
 
-Wählen Sie **Auswählen**, um Aufgaben zu markieren, oder **Alle auswählen**. Sie können sie in den Posteingang wiederherstellen oder in den Papierkorb verschieben. Mindwtr löscht Aufgaben nur aus dem Papierkorb endgültig.
+Wählen Sie **Auswählen**, um Aufgaben zu markieren, oder **Alle auswählen**. Sie können die Auswahl zurück nach Erledigt verschieben, ohne den Abschlusszeitpunkt zu ändern, sie im Posteingang wiederherstellen oder in den Papierkorb verschieben. Mindwtr löscht Aufgaben nur aus dem Papierkorb endgültig.
 
 ### 🗑️ Papierkorb
 
@@ -207,6 +209,8 @@ Unter macOS kann **Aufgaben in Kalender übertragen** geplante/fällige Aufgaben
 Leistungsfähige Suche mit Operatoren.
 
 **Öffnen:** `/` oder `Ctrl/Cmd + K` drücken oder auf das Suchsymbol klicken.
+
+Suchtext ist optional. Öffnen Sie **Filter**, um passende Einträge nach Status, Umfang, Bereich, Fälligkeitsdatum, Ort, Kontext oder Tag aufzulisten; wählen Sie **Erledigt** und **Archiviert** (oder **Erledigte und archivierte Aufgaben einbeziehen**), wenn Sie abgeschlossene Einträge sehen möchten.
 
 #### Suchoperatoren
 
@@ -515,7 +519,7 @@ In jeder Voreinstellung setzt `s` plus Buchstabe direkt den Status (`si` Postein
 - **Tag/Uhrzeit** anpassen
 
 ### GTD
-- **Automatisch archivieren**: Erledigte Aufgaben nach einer Anzahl von Tagen archivieren (Standard: 7) oder mit **Nie** behalten
+- **Automatisch archivieren**: Erledigte Aufgaben nach einer Anzahl von Tagen archivieren (Standard: 7) oder mit **Nie** behalten. Wenn Sie die Verzögerung verkürzen, werden vorhandene Erledigt-Aufgaben, die nun älter als der neue Grenzwert sind, sofort archiviert.
 - **Fokusaufgabenlimit** festlegen
 - **Funktionen**: optionale Signale:
   - **Prioritäten**

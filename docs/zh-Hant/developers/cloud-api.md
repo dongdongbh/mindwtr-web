@@ -123,5 +123,4 @@ DELETE /v1/attachments/orphans
 
 - [MCP 伺服器](/zh-Hant/power-users/mcp)
 - [雲端部署](/zh-Hant/data-sync/cloud-deployment)
-- [雲端部署](/zh-Hant/data-sync/cloud-deployment)
 - [同步演算法](/zh-Hant/data-sync/sync-algorithm)

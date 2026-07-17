@@ -227,7 +227,7 @@ gemini mcp add mindwtr \
 
 ### 5. Gemini 應用程式（自訂應用程式）
 
-Gemini 網頁版與行動版應用程式可以透過 URL 連接遠端 MCP 伺服器（即 gemini.google.com 上的「自訂應用程式」）。這需要 `mindwtr-mcp` 以 **HTTP 模式**執行（見下文）：把伺服器託管在 Google 伺服器可以連到的位置（反向代理之後的公開 HTTPS URL；Gemini 是從 Google 端發起連線，因此 `localhost` 行不通），然後將該 URL 連同你的 Bearer 權杖一起新增為自訂應用程式。
+Gemini 網頁版與行動版應用程式可以透過 URL 連接遠端 MCP 伺服器（即 gemini.google.com 上的「自訂應用程式」）。這需要 `mindwtr-mcp` 以 [HTTP 模式](#遠端存取-http)執行：把伺服器託管在 Google 伺服器可以連到的位置（反向代理之後的公開 HTTPS URL；Gemini 是從 Google 端發起連線，因此 `localhost` 行不通），然後將該 URL 連同你的 Bearer 權杖一起新增為自訂應用程式。
 
 ---
 

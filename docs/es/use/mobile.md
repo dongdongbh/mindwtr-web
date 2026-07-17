@@ -42,7 +42,7 @@ Toca la pestaña **Menú** para acceder a más vistas:
  - 🗑️ **Papelera**: tareas y proyectos eliminados
  - ⚙️ **Ajustes**: preferencias de la aplicación
 
-Abre **Archivadas** y toca **Seleccionar** para gestionar más de una tarea. Toca **Seleccionar todo** o elige tareas y después restáuralas a la Bandeja de entrada o muévelas a la Papelera. Mindwtr solo elimina tareas permanentemente desde la Papelera.
+Abre **Terminadas** y toca **Seleccionar** para elegir tareas; después usa **Mover → Archivadas** para archivarlas antes. En **Archivadas**, toca **Seleccionar** o **Seleccionar todo** para devolver tareas a Terminadas sin cambiar su hora de finalización, restaurarlas a la Bandeja de entrada o moverlas a la Papelera. Mindwtr solo elimina tareas permanentemente desde la Papelera.
 
 Abre **Papelera** y toca **Seleccionar** para gestionar varias tareas y proyectos eliminados. Toca **Seleccionar todo** o elige elementos y después restáuralos o elimínalos permanentemente en un solo paso. La eliminación permanente siempre pide confirmación.
 
@@ -628,7 +628,7 @@ Personaliza cómo funciona Mindwtr en tu flujo GTD:
 - Predeterminado: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
 
 **Archivado automático:**
-- Mueve automáticamente las tareas Terminadas a Archivadas tras un número de días (predeterminado: 7 días)
+- Mueve automáticamente las tareas Terminadas a Archivadas tras un número de días (predeterminado: 7 días). Al reducir el intervalo, las tareas Terminadas existentes que ya superen el nuevo límite se archivan inmediatamente.
 - Elige «Nunca» para conservar las tareas completadas indefinidamente en Terminadas
 
 **Procesamiento de la Bandeja de entrada:**

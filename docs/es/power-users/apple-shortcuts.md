@@ -65,12 +65,14 @@ Usa **Añadir a la Bandeja de entrada de Mindwtr** para crear una tarea silencio
 | Etiquetas | No | Separadas por comas; Mindwtr las normaliza como `#tag`. |
 | Proyecto | No | Coincide con un proyecto activo por título. Los desconocidos o archivados se ignoran y la tarea llega igualmente a la Bandeja de entrada. |
 
+El texto de **Tarea** admite la [sintaxis de añadido rápido](/es/use/mobile#sintaxis-de-adicion-rapida) completa (`/due:`, `@context`, `#tag`, `+Project` y demás). Se analiza al crear la tarea, exactamente igual que en el cuadro de captura de la app; el ajuste **Limpiar texto de añadido rápido** decide si la sintaxis reconocida se elimina del título.
+
 Al ejecutarse:
 
 1. La acción pone la captura en cola en el dispositivo y termina de inmediato. Mindwtr permanece en segundo plano.
 2. La próxima vez que Mindwtr se abra o vuelva al primer plano, la tarea en cola se crea mediante el almacenamiento y la sincronización normales.
 
-Como se crea al volver a abrir Mindwtr, no aparecerá en otros dispositivos sincronizados ni se activará ningún recordatorio hasta que la aplicación vuelva a ejecutarse en ese iPhone o iPad. A diferencia de **Capturar en Mindwtr**, esta acción nunca crea proyectos.
+Como se crea al volver a abrir Mindwtr, no aparecerá en otros dispositivos sincronizados ni se activará ningún recordatorio hasta que la aplicación vuelva a ejecutarse en ese iPhone o iPad. El parámetro **Proyecto** nunca crea proyectos; sin embargo, un `+Project` escrito en el texto de la tarea sigue las reglas del añadido rápido y puede crear uno.
 
 ### Ejemplo: tarea activada por el calendario
 

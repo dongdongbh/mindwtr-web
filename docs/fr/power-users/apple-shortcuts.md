@@ -73,12 +73,14 @@ Paramètres :
 | Étiquettes | Non | Étiquettes séparées par des virgules. Mindwtr les normalise au format `#tag`. |
 | Projet | Non | Correspond à un projet actif par son titre. Les projets inconnus ou archivés sont ignorés, et la tâche arrive quand même dans la boîte de réception. |
 
+Le texte de **Tâche** prend en charge la [syntaxe d’ajout rapide](/fr/use/mobile#syntaxe-d-ajout-rapide) complète (`/due:`, `@context`, `#tag`, `+Project`, etc.). Elle est analysée à la création de la tâche, exactement comme dans la zone de capture de l’app ; le réglage **Nettoyer le texte de l’ajout rapide** détermine si la syntaxe reconnue est retirée du titre.
+
 Ce qui se passe lors de l’exécution :
 
 1. L’action place la capture dans la file d’attente de l’appareil et se termine immédiatement. Mindwtr reste en arrière-plan.
 2. À la prochaine ouverture de Mindwtr (ou à son retour au premier plan), la tâche en attente est créée dans la boîte de réception via le magasin et le flux de synchronisation habituels.
 
-Comme la tâche est créée à la prochaine ouverture, elle n’apparaît pas sur les autres appareils synchronisés et aucun rappel ne se déclenche tant que Mindwtr n’a pas été relancé sur cet iPhone ou cet iPad. Contrairement à **Capturer dans Mindwtr**, cette action ne crée jamais de nouveaux projets.
+Comme la tâche est créée à la prochaine ouverture, elle n’apparaît pas sur les autres appareils synchronisés et aucun rappel ne se déclenche tant que Mindwtr n’a pas été relancé sur cet iPhone ou cet iPad. Le paramètre **Projet** ne crée jamais de nouveaux projets ; en revanche, un `+Project` écrit dans le texte de la tâche suit les règles de l’ajout rapide et peut en créer un.
 
 ### Exemple : tâche déclenchée par le calendrier
 

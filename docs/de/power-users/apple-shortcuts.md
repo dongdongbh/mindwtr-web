@@ -73,12 +73,14 @@ Parameter:
 | Tags | Nein | Kommagetrennte Tags. Mindwtr normalisiert sie zu `#tag`. |
 | Projekt | Nein | Wird anhand des Titels einem aktiven Projekt zugeordnet. Unbekannte oder archivierte Projekte werden ignoriert; die Aufgabe landet dennoch im Posteingang. |
 
+Der **Aufgabe**-Text unterstützt die vollständige [Schnelleingabe-Syntax](/de/use/mobile#syntax-fur-„schnell-hinzufugen) (`/due:`, `@context`, `#tag`, `+Project` und mehr). Sie wird beim Erstellen der Aufgabe genauso ausgewertet wie im Erfassungsfeld der App; die Einstellung **Schnell-hinzufügen-Text bereinigen** bestimmt, ob die erkannte Syntax aus dem Titel entfernt wird.
+
 Ablauf beim Ausführen:
 
 1. Die Aktion reiht die Erfassung auf dem Gerät ein und wird sofort beendet. Mindwtr bleibt im Hintergrund.
 2. Wenn Mindwtr das nächste Mal geöffnet wird oder in den Vordergrund zurückkehrt, wird die eingereihte Aufgabe über den normalen Store- und Synchronisierungsweg im Posteingang erstellt.
 
-Da die Aufgabe erst beim nächsten Öffnen erstellt wird, erscheint sie auf anderen synchronisierten Geräten erst und löst erst dann eine Erinnerung aus, wenn Mindwtr auf diesem iPhone oder iPad erneut ausgeführt wurde. Anders als **In Mindwtr erfassen** erstellt diese Aktion niemals neue Projekte.
+Da die Aufgabe erst beim nächsten Öffnen erstellt wird, erscheint sie auf anderen synchronisierten Geräten erst und löst erst dann eine Erinnerung aus, wenn Mindwtr auf diesem iPhone oder iPad erneut ausgeführt wurde. Der Parameter **Projekt** erstellt niemals neue Projekte; ein `+Project` im Aufgabentext folgt jedoch den Schnelleingabe-Regeln und kann eines anlegen.
 
 ### Beispiel: kalendermäßig ausgelöste Aufgabe
 

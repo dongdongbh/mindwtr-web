@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
 import { DOCS_LOCALES } from "./locales/index.mjs";
 import { descriptionForPage, docsUrl, pageSeoHead } from "./seo.mjs";
+import { localSearchOptions } from "./search.mjs";
 
 export default defineConfig({
   title: "Mindwtr Docs",
@@ -48,6 +49,10 @@ export default defineConfig({
     // is doc sections only, and the source repo lives in socialLinks (icon).
     logoLink: "https://mindwtr.app/",
     i18nRouting: true,
+    search: {
+      provider: "local",
+      options: localSearchOptions
+    },
     socialLinks: [
       { icon: "github", link: "https://github.com/dongdongbh/Mindwtr" }
     ]

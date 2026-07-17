@@ -37,6 +37,19 @@ Indica a la aplicación de escritorio una carpeta de correo y cada mensaje que l
 
 [Guía de captura por correo](/es/power-users/email-capture)
 
+### Jira y otros gestores de trabajo
+
+Deja que la propia automatización de Jira envíe cada nuevo elemento de trabajo a tu Bandeja de entrada, por correo o directamente a tu servidor autohospedado. La aplicación no incluye ningún cliente de Jira y la captura es de un solo sentido.
+
+| Pregunta | Respuesta |
+| --- | --- |
+| Qué puede leer | Nada. Jira envía los elementos hacia fuera; Mindwtr nunca se conecta a Jira. |
+| Qué puede cambiar | Crea tareas en la Bandeja de entrada. Completar una tarea nunca toca la incidencia de Jira. |
+| Dónde se ejecuta | En la propia automatización de Jira, alimentando la captura por correo o tu propio servidor. |
+| Qué sale del dispositivo | Nada. Tus credenciales de Jira se quedan en Jira; Mindwtr no guarda ningún token del gestor. |
+
+[Guía de captura desde Jira](/es/power-users/jira-capture)
+
 ## Conectar tus herramientas personales
 
 ### Obsidian

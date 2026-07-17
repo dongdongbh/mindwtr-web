@@ -37,6 +37,19 @@ Indiquez à l’application pour ordinateur un dossier de courrier : chaque mess
 
 [Guide de capture par e-mail](/fr/power-users/email-capture)
 
+### Jira et autres outils de suivi
+
+Laissez l’automatisation de Jira envoyer chaque nouveau ticket dans votre Boîte de réception, par e-mail ou directement vers votre serveur auto-hébergé. L’application n’embarque aucun client Jira, et la capture est à sens unique.
+
+| Question | Réponse |
+| --- | --- |
+| Données lisibles | Aucune. Jira pousse les tickets vers l’extérieur ; Mindwtr ne se connecte jamais à Jira. |
+| Modifications possibles | Crée des tâches dans la Boîte de réception. Terminer une tâche ne touche jamais le ticket Jira. |
+| Exécution | Dans l’automatisation de Jira elle-même, qui alimente la capture par e-mail ou votre propre serveur. |
+| Données quittant l’appareil | Aucune. Vos identifiants Jira restent dans Jira ; Mindwtr ne stocke aucun jeton de l’outil. |
+
+[Guide de capture Jira](/fr/power-users/jira-capture)
+
 ## Connecter vos outils personnels
 
 ### Obsidian

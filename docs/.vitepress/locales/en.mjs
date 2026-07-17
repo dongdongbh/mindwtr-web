@@ -74,6 +74,7 @@ export default {
       aiAssistant: "AI assistant",
       appleShortcuts: "Apple Shortcuts",
       emailCapture: "Email capture",
+      jiraCapture: "Jira capture",
       localApi: "Local API",
       mcpServer: "MCP server",
       obsidian: "Obsidian integration",

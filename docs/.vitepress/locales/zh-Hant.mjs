@@ -74,6 +74,7 @@ export default {
       aiAssistant: "AI 助理",
       appleShortcuts: "Apple 捷徑",
       emailCapture: "電子郵件收集",
+      jiraCapture: "Jira 收集",
       localApi: "本機 API",
       mcpServer: "MCP 伺服器",
       obsidian: "Obsidian 整合",

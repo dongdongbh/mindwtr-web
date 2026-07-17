@@ -37,6 +37,19 @@ Point the desktop app at a mail folder and each message that lands there becomes
 
 [Email capture guide](/power-users/email-capture)
 
+### Jira and other work trackers
+
+Let Jira's own automation push each new work item into your Inbox, by email or straight to your self-hosted server. There is no Jira client inside the app, and captures are one-way.
+
+| Question | Answer |
+| --- | --- |
+| What it can read | Nothing. Jira pushes work items out; Mindwtr never connects to Jira. |
+| What it can change | Creates Inbox tasks. Completing a task never touches the Jira issue. |
+| Where it runs | Inside Jira's own automation, feeding email capture or your own server. |
+| What leaves your device | Nothing. Your Jira credentials stay in Jira; Mindwtr stores no tracker token. |
+
+[Jira capture guide](/power-users/jira-capture)
+
 ## Connect your personal tools
 
 ### Obsidian

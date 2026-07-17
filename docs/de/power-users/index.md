@@ -37,6 +37,19 @@ Verknüpfen Sie die Desktop-App mit einem E-Mail-Ordner. Jede dort eingehende Na
 
 [Anleitung zur E-Mail-Erfassung](/de/power-users/email-capture)
 
+### Jira und andere Work-Tracker
+
+Lassen Sie Jiras eigene Automatisierung jeden neuen Vorgang in Ihren Posteingang schicken, per E-Mail oder direkt an Ihren selbst gehosteten Server. In der App steckt kein Jira-Client, und die Erfassung ist einseitig.
+
+| Frage | Antwort |
+| --- | --- |
+| Was sie lesen kann | Nichts. Jira schickt Vorgänge hinaus; Mindwtr verbindet sich nie mit Jira. |
+| Was sie ändern kann | Erstellt Aufgaben im Posteingang. Das Erledigen einer Aufgabe berührt den Jira-Vorgang nie. |
+| Wo sie ausgeführt wird | In Jiras eigener Automatisierung, die die E-Mail-Erfassung oder Ihren eigenen Server füttert. |
+| Was Ihr Gerät verlässt | Nichts. Ihre Jira-Zugangsdaten bleiben in Jira; Mindwtr speichert kein Tracker-Token. |
+
+[Anleitung zur Jira-Erfassung](/de/power-users/jira-capture)
+
 ## Persönliche Werkzeuge verbinden
 
 ### Obsidian

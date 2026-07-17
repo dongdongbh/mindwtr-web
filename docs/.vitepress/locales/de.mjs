@@ -74,6 +74,7 @@ export default {
       aiAssistant: "KI-Assistent",
       appleShortcuts: "Apple-Kurzbefehle",
       emailCapture: "Aufgaben per E-Mail erfassen",
+      jiraCapture: "Aufgaben aus Jira erfassen",
       localApi: "Lokale API",
       mcpServer: "MCP-Server",
       obsidian: "Obsidian-Integration",

@@ -225,6 +225,35 @@ gemini mcp add mindwtr \
 }
 ```
 
+### 5. Gemini 應用程式（自訂應用程式）
+
+Gemini 網頁版與行動版應用程式可以透過 URL 連接遠端 MCP 伺服器（即 gemini.google.com 上的「自訂應用程式」）。這需要 `mindwtr-mcp` 以 **HTTP 模式**執行（見下文）：把伺服器託管在 Google 伺服器可以連到的位置（反向代理之後的公開 HTTPS URL；Gemini 是從 Google 端發起連線，因此 `localhost` 行不通），然後將該 URL 連同你的 Bearer 權杖一起新增為自訂應用程式。
+
+---
+
+## 遠端存取（HTTP）
+
+> 需要比 1.1.1 更新的 `mindwtr-mcp` 版本（或從原始碼執行）。
+
+伺服器預設使用 stdio。傳入 `--http` 後改為提供可串流的 HTTP MCP 端點，遠端 MCP 用戶端即可透過 URL 連線。HTTP 模式對兩種後端（本機 SQLite 或自行託管的 Cloud）皆適用。
+
+```bash
+mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"
+```
+
+各旗標（皆有對應的 `MINDWTR_MCP_HTTP*` 環境變數）：
+
+| 旗標 | 環境變數 | 意義 |
+| --- | --- | --- |
+| `--http` | `MINDWTR_MCP_HTTP` | 啟用 HTTP 模式。設定下列任一旗標時也會隱含啟用。 |
+| `--http-token <token>` | `MINDWTR_MCP_HTTP_TOKEN` | 只要啟用 HTTP 模式即**必填**，至少 16 個字元。可用 `openssl rand -hex 32` 產生。沒有權杖伺服器會拒絕啟動。 |
+| `--http-host <host>` | `MINDWTR_MCP_HTTP_HOST` | 繫結位址，預設 `127.0.0.1`。 |
+| `--http-port <port>` | `MINDWTR_MCP_HTTP_PORT` | 繫結連接埠，預設 `8722`。 |
+
+MCP 端點為 `POST /mcp`，每個請求都必須帶 `Authorization: Bearer <token>`。`GET /healthz` 不需驗證即回傳 `200 ok`，供反向代理做健康檢查。沒有有效權杖的請求會得到 `401`；超過 1 MiB 的請求主體會得到 `413`。HTTP 模式下伺服器只要在監聽就持續執行（不會連接 stdio），`--write`／唯讀行為維持不變。
+
+伺服器未內建 TLS 或速率限制。若要讓伺服器對 localhost 以外開放，請在前面架一個反向代理（Caddy、nginx）處理 HTTPS，並把取得的 `https://` URL 連同權杖交給遠端 MCP 用戶端。
+
 ---
 
 ## 手動執行

@@ -225,6 +225,35 @@ gemini mcp add mindwtr \
 }
 ```
 
+### 5. Gemini app (custom apps)
+
+The Gemini web and mobile apps can connect to a remote MCP server by URL ("custom apps" at gemini.google.com). This works with `mindwtr-mcp` running in [HTTP mode](#remote-access-http): host it somewhere Google's servers can reach (a public HTTPS URL behind a reverse proxy; Gemini connects from Google's side, so `localhost` won't work), then add that URL as a custom app together with your bearer token.
+
+---
+
+## Remote access (HTTP)
+
+> Requires a `mindwtr-mcp` release newer than 1.1.1 (or running from source).
+
+By default the server speaks stdio. Pass `--http` to instead serve a streamable-HTTP MCP endpoint, so remote MCP clients can connect by URL. HTTP mode works with either backend (local SQLite or self-hosted Cloud).
+
+```bash
+mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"
+```
+
+Flags (all have `MINDWTR_MCP_HTTP*` environment variable equivalents):
+
+| Flag | Env var | Meaning |
+| --- | --- | --- |
+| `--http` | `MINDWTR_MCP_HTTP` | Enable HTTP mode. Also implied by any of the flags below. |
+| `--http-token <token>` | `MINDWTR_MCP_HTTP_TOKEN` | **Required** whenever HTTP mode is on, at least 16 characters. Generate one with `openssl rand -hex 32`. The server refuses to start without it. |
+| `--http-host <host>` | `MINDWTR_MCP_HTTP_HOST` | Bind address, default `127.0.0.1`. |
+| `--http-port <port>` | `MINDWTR_MCP_HTTP_PORT` | Bind port, default `8722`. |
+
+The MCP endpoint is `POST /mcp` and requires `Authorization: Bearer <token>` on every request. `GET /healthz` returns `200 ok` without auth for reverse-proxy health checks. Requests without a valid token get `401`; bodies over 1 MiB get `413`. In HTTP mode the server stays alive as long as it is listening (stdio is not connected), and `--write`/read-only behavior is unchanged.
+
+There is no built-in TLS or rate limiting. To expose the server beyond localhost, put a reverse proxy (Caddy, nginx) in front for HTTPS and give the resulting `https://` URL plus your token to the remote MCP client.
+
 ---
 
 ## Running Manually

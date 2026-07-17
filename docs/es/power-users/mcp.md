@@ -225,6 +225,35 @@ gemini mcp add mindwtr \
 }
 ```
 
+### 5. Aplicación Gemini (apps personalizadas)
+
+Las aplicaciones web y móvil de Gemini pueden conectarse a un servidor MCP remoto mediante una URL ("apps personalizadas" en gemini.google.com). Esto funciona con `mindwtr-mcp` en **modo HTTP** (ver más abajo): aloja el servidor en un lugar accesible para los servidores de Google (una URL HTTPS pública detrás de un proxy inverso; Gemini se conecta desde el lado de Google, así que `localhost` no funciona) y añade esa URL como app personalizada junto con tu token bearer.
+
+---
+
+## Acceso remoto (HTTP)
+
+> Requiere una versión de `mindwtr-mcp` posterior a 1.1.1 (o ejecutar desde el código fuente).
+
+De forma predeterminada, el servidor habla stdio. Pasa `--http` para servir en su lugar un endpoint MCP de HTTP transmisible, de modo que los clientes MCP remotos puedan conectarse por URL. El modo HTTP funciona con ambos backends (SQLite local o Cloud autoalojado).
+
+```bash
+mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"
+```
+
+Flags (todas tienen variables de entorno `MINDWTR_MCP_HTTP*` equivalentes):
+
+| Flag | Variable de entorno | Significado |
+| --- | --- | --- |
+| `--http` | `MINDWTR_MCP_HTTP` | Activa el modo HTTP. También queda implícito con cualquiera de las flags siguientes. |
+| `--http-token <token>` | `MINDWTR_MCP_HTTP_TOKEN` | **Obligatorio** siempre que el modo HTTP esté activo; mínimo 16 caracteres. Genera uno con `openssl rand -hex 32`. Sin token, el servidor se niega a arrancar. |
+| `--http-host <host>` | `MINDWTR_MCP_HTTP_HOST` | Dirección de enlace, por defecto `127.0.0.1`. |
+| `--http-port <port>` | `MINDWTR_MCP_HTTP_PORT` | Puerto de enlace, por defecto `8722`. |
+
+El endpoint MCP es `POST /mcp` y exige `Authorization: Bearer <token>` en cada petición. `GET /healthz` devuelve `200 ok` sin autenticación para las comprobaciones de salud del proxy inverso. Las peticiones sin token válido reciben `401`; los cuerpos de más de 1 MiB reciben `413`. En modo HTTP el servidor sigue vivo mientras escucha (stdio no se conecta), y el comportamiento de `--write`/solo lectura no cambia.
+
+No hay TLS ni limitación de velocidad integrados. Para exponer el servidor más allá de localhost, coloca delante un proxy inverso (Caddy, nginx) para HTTPS y entrega la URL `https://` resultante junto con tu token al cliente MCP remoto.
+
 ---
 
 ## Ejecución manual

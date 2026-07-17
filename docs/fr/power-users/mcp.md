@@ -225,6 +225,35 @@ gemini mcp add mindwtr \
 }
 ```
 
+### 5. Application Gemini (apps personnalisées)
+
+Les applications web et mobiles Gemini peuvent se connecter à un serveur MCP distant via une URL (« apps personnalisées » sur gemini.google.com). Cela fonctionne avec `mindwtr-mcp` en **mode HTTP** (voir ci-dessous) : hébergez le serveur à un endroit accessible aux serveurs de Google (une URL HTTPS publique derrière un reverse proxy ; Gemini se connecte depuis les serveurs de Google, donc `localhost` ne fonctionne pas), puis ajoutez cette URL comme app personnalisée avec votre jeton bearer.
+
+---
+
+## Accès distant (HTTP)
+
+> Nécessite une version de `mindwtr-mcp` plus récente que 1.1.1 (ou une exécution depuis les sources).
+
+Par défaut, le serveur parle stdio. Passez `--http` pour servir à la place un point de terminaison MCP HTTP en streaming, afin que les clients MCP distants puissent se connecter par URL. Le mode HTTP fonctionne avec les deux backends (SQLite local ou Cloud auto-hébergé).
+
+```bash
+mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"
+```
+
+Options (toutes ont des variables d'environnement `MINDWTR_MCP_HTTP*` équivalentes) :
+
+| Option | Variable d'environnement | Signification |
+| --- | --- | --- |
+| `--http` | `MINDWTR_MCP_HTTP` | Active le mode HTTP. Également impliqué par n'importe laquelle des options ci-dessous. |
+| `--http-token <token>` | `MINDWTR_MCP_HTTP_TOKEN` | **Obligatoire** dès que le mode HTTP est actif ; au moins 16 caractères. Générez-en un avec `openssl rand -hex 32`. Sans jeton, le serveur refuse de démarrer. |
+| `--http-host <host>` | `MINDWTR_MCP_HTTP_HOST` | Adresse d'écoute, par défaut `127.0.0.1`. |
+| `--http-port <port>` | `MINDWTR_MCP_HTTP_PORT` | Port d'écoute, par défaut `8722`. |
+
+Le point de terminaison MCP est `POST /mcp` et exige `Authorization: Bearer <token>` à chaque requête. `GET /healthz` renvoie `200 ok` sans authentification pour les contrôles de santé du reverse proxy. Les requêtes sans jeton valide reçoivent `401` ; les corps de plus de 1 MiB reçoivent `413`. En mode HTTP, le serveur reste actif tant qu'il écoute (stdio n'est pas connecté), et le comportement `--write`/lecture seule est inchangé.
+
+Aucun TLS ni limitation de débit n'est intégré. Pour exposer le serveur au-delà de localhost, placez un reverse proxy (Caddy, nginx) devant pour le HTTPS et fournissez l'URL `https://` obtenue avec votre jeton au client MCP distant.
+
 ---
 
 ## Exécution manuelle

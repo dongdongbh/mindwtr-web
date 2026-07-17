@@ -225,6 +225,35 @@ gemini mcp add mindwtr \
 }
 ```
 
+### 5. Gemini 应用（自定义应用）
+
+Gemini 网页版和移动版应用可以通过 URL 连接远程 MCP 服务器（即 gemini.google.com 上的"自定义应用"）。这需要 `mindwtr-mcp` 运行在 **HTTP 模式**（见下文）：把服务器托管在 Google 服务器能访问到的地方（反向代理之后的公网 HTTPS URL；Gemini 从 Google 一侧发起连接，因此 `localhost` 行不通），然后把该 URL 连同你的 Bearer 令牌一起添加为自定义应用。
+
+---
+
+## 远程访问（HTTP）
+
+> 需要比 1.1.1 更新的 `mindwtr-mcp` 版本（或从源码运行）。
+
+服务器默认使用 stdio。传入 `--http` 后改为提供可流式传输的 HTTP MCP 端点，远程 MCP 客户端即可通过 URL 连接。HTTP 模式对两种后端（本地 SQLite 或自托管 Cloud）都适用。
+
+```bash
+mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"
+```
+
+各标志（均有对应的 `MINDWTR_MCP_HTTP*` 环境变量）：
+
+| 标志 | 环境变量 | 含义 |
+| --- | --- | --- |
+| `--http` | `MINDWTR_MCP_HTTP` | 启用 HTTP 模式。设置下面任一标志时也会隐式启用。 |
+| `--http-token <token>` | `MINDWTR_MCP_HTTP_TOKEN` | 只要启用 HTTP 模式就**必填**，至少 16 个字符。可用 `openssl rand -hex 32` 生成。没有令牌服务器会拒绝启动。 |
+| `--http-host <host>` | `MINDWTR_MCP_HTTP_HOST` | 绑定地址，默认 `127.0.0.1`。 |
+| `--http-port <port>` | `MINDWTR_MCP_HTTP_PORT` | 绑定端口，默认 `8722`。 |
+
+MCP 端点为 `POST /mcp`，每个请求都必须携带 `Authorization: Bearer <token>`。`GET /healthz` 无需认证即返回 `200 ok`，供反向代理做健康检查。没有有效令牌的请求返回 `401`；超过 1 MiB 的请求体返回 `413`。HTTP 模式下服务器只要在监听就保持运行（不再连接 stdio），`--write`/只读行为保持不变。
+
+服务器不内置 TLS 或限流。若要在 localhost 之外暴露服务器，请在前面放一个反向代理（Caddy、nginx）处理 HTTPS，并把得到的 `https://` URL 和令牌交给远程 MCP 客户端。
+
 ---
 
 ## 手动运行

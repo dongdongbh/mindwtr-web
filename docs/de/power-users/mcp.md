@@ -225,6 +225,35 @@ gemini mcp add mindwtr \
 }
 ```
 
+### 5. Gemini-App (benutzerdefinierte Apps)
+
+Die Gemini-Web- und Mobil-Apps können sich per URL mit einem entfernten MCP-Server verbinden („benutzerdefinierte Apps" auf gemini.google.com). Das funktioniert mit `mindwtr-mcp` im **HTTP-Modus** (siehe unten): Hosten Sie den Server unter einer Adresse, die Googles Server erreichen können (eine öffentliche HTTPS-URL hinter einem Reverse-Proxy; Gemini verbindet sich von Googles Seite aus, `localhost` funktioniert daher nicht), und fügen Sie diese URL zusammen mit Ihrem Bearer-Token als benutzerdefinierte App hinzu.
+
+---
+
+## Fernzugriff (HTTP)
+
+> Erfordert eine `mindwtr-mcp`-Version neuer als 1.1.1 (oder die Ausführung aus dem Quellcode).
+
+Standardmäßig spricht der Server stdio. Mit `--http` stellt er stattdessen einen Streamable-HTTP-MCP-Endpunkt bereit, sodass sich entfernte MCP-Clients per URL verbinden können. Der HTTP-Modus funktioniert mit beiden Backends (lokale SQLite-Datenbank oder selbst gehostete Cloud).
+
+```bash
+mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"
+```
+
+Flags (alle haben `MINDWTR_MCP_HTTP*`-Umgebungsvariablen als Äquivalent):
+
+| Flag | Umgebungsvariable | Bedeutung |
+| --- | --- | --- |
+| `--http` | `MINDWTR_MCP_HTTP` | Aktiviert den HTTP-Modus. Wird auch durch jedes der folgenden Flags impliziert. |
+| `--http-token <token>` | `MINDWTR_MCP_HTTP_TOKEN` | **Erforderlich**, sobald der HTTP-Modus aktiv ist; mindestens 16 Zeichen. Erzeugen Sie eines mit `openssl rand -hex 32`. Ohne Token startet der Server nicht. |
+| `--http-host <host>` | `MINDWTR_MCP_HTTP_HOST` | Bind-Adresse, Standard `127.0.0.1`. |
+| `--http-port <port>` | `MINDWTR_MCP_HTTP_PORT` | Bind-Port, Standard `8722`. |
+
+Der MCP-Endpunkt ist `POST /mcp` und verlangt bei jeder Anfrage `Authorization: Bearer <token>`. `GET /healthz` liefert ohne Authentifizierung `200 ok` für Reverse-Proxy-Healthchecks. Anfragen ohne gültiges Token erhalten `401`; Anfragekörper über 1 MiB erhalten `413`. Im HTTP-Modus läuft der Server, solange er lauscht (stdio wird nicht verbunden), und das `--write`-/Nur-Lese-Verhalten bleibt unverändert.
+
+Eingebautes TLS oder Rate-Limiting gibt es nicht. Um den Server über localhost hinaus zugänglich zu machen, stellen Sie einen Reverse-Proxy (Caddy, nginx) für HTTPS davor und geben Sie die resultierende `https://`-URL samt Token an den entfernten MCP-Client.
+
 ---
 
 ## Manuell ausführen

@@ -86,6 +86,10 @@ Token 已過期／撤銷，或由不同的 app key 簽發。請重新連接 Drop
 
 先使用**測試連線**。若成功，再執行**同步**並查看[診斷與日誌](/zh-Hant/data-sync/diagnostics-logs)。
 
+### 在線時提示「無法連接同步伺服器」
+
+行動端在裝置顯示網絡正常、但 Mindwtr 自身對 Dropbox 的請求持續失敗時會出現這個提示。同步走 `content.dropboxapi.com`，而**測試連線**只訪問 `api.dropboxapi.com`，因此測試可能通過而同步仍然失敗。請檢查 Mindwtr 是否被允許使用行動數據（iOS：設定 > 行動網路），以及是否有 VPN、DNS 過濾或防火牆攔截了應用的網絡請求。
+
 ---
 
 ## 安全性與隱私權

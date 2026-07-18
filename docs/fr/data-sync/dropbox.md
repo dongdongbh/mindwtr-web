@@ -86,6 +86,10 @@ Votre version a probablement désactivé Dropbox, comme souvent dans les version
 
 Utilisez d’abord **Tester la connexion**. Si le test réussit, lancez **Synchroniser** puis consultez les journaux décrits dans [Diagnostics et journaux](/fr/data-sync/diagnostics-logs).
 
+### « Impossible de joindre le serveur de synchronisation » alors que vous êtes en ligne
+
+Sur mobile, ce message apparaît quand l’appareil signale un réseau fonctionnel mais que les requêtes de Mindwtr vers Dropbox continuent d’échouer. La synchronisation passe par `content.dropboxapi.com`, alors que **Tester la connexion** n’atteint que `api.dropboxapi.com` : le test peut donc réussir alors que la synchronisation échoue. Vérifiez que Mindwtr est autorisé à utiliser les données cellulaires (iOS : Réglages > Données cellulaires) et qu’aucun VPN, filtre DNS ou pare-feu ne bloque le trafic de l’application.
+
 ---
 
 ## Sécurité et confidentialité

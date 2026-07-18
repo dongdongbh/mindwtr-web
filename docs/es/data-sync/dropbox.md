@@ -86,6 +86,10 @@ Es probable que tu compilación tenga Dropbox desactivado —algo habitual en co
 
 Usa primero **Probar conexión**. Si funciona, ejecuta **Sincronizar** y revisa [Diagnóstico y registros](/es/data-sync/diagnostics-logs).
 
+### «No se pudo contactar con el servidor de sincronización» estando en línea
+
+En el móvil este mensaje aparece cuando el dispositivo indica que hay red, pero las solicitudes de Mindwtr a Dropbox siguen fallando. La sincronización usa `content.dropboxapi.com`, mientras que **Probar conexión** solo llega a `api.dropboxapi.com`, así que la prueba puede funcionar aunque la sincronización falle. Comprueba que Mindwtr puede usar datos móviles (iOS: Ajustes > Datos móviles) y si una VPN, un filtro DNS o un cortafuegos bloquea el tráfico de la aplicación.
+
 ---
 
 ## Seguridad y privacidad

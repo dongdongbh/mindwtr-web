@@ -86,6 +86,10 @@
 
 先使用**测试连接**。如果成功，再执行**同步**并查看[诊断与日志](/zh-Hans/data-sync/diagnostics-logs)。
 
+### 在线时提示“无法连接同步服务器”
+
+移动端在设备显示网络正常、但 Mindwtr 自身对 Dropbox 的请求持续失败时会出现这个提示。同步走 `content.dropboxapi.com`，而**测试连接**只访问 `api.dropboxapi.com`，因此测试可能通过而同步仍然失败。请检查 Mindwtr 是否被允许使用蜂窝数据（iOS：设置 > 蜂窝网络），以及是否有 VPN、DNS 过滤或防火墙拦截了应用的网络请求。
+
 ---
 
 ## 安全与隐私

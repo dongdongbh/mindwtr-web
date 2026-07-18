@@ -86,6 +86,10 @@ Your build likely has Dropbox disabled (common in FOSS builds) or missing build-
 
 Use **Test connection** first. If successful, run **Sync** and check logs in [Diagnostics and Logs](/data-sync/diagnostics-logs).
 
+### "Couldn't reach the sync server" while you are online
+
+Mobile shows this message when the device reports a working network but Mindwtr's own requests to Dropbox keep failing. Sync downloads and uploads through `content.dropboxapi.com`, while **Test connection** only reaches `api.dropboxapi.com`, so the test can pass while sync fails. Check that Mindwtr is allowed to use cellular data (iOS Settings > Cellular), and whether a VPN, DNS filter, or firewall blocks the app's traffic.
+
 ---
 
 ## Security & Privacy

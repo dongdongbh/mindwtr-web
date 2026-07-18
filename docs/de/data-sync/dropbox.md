@@ -86,6 +86,10 @@ In Ihrem Build ist Dropbox wahrscheinlich deaktiviert (häufig bei FOSS-Builds) 
 
 Verwenden Sie zuerst **Verbindung testen**. Führen Sie bei Erfolg die **Synchronisierung** aus und prüfen Sie die Protokolle unter [Diagnose und Protokolle](/de/data-sync/diagnostics-logs).
 
+### „Sync-Server nicht erreichbar“, obwohl Sie online sind
+
+Mobil erscheint diese Meldung, wenn das Gerät ein funktionierendes Netzwerk meldet, die Anfragen von Mindwtr an Dropbox aber weiterhin fehlschlagen. Die Synchronisierung läuft über `content.dropboxapi.com`, während **Verbindung testen** nur `api.dropboxapi.com` erreicht; der Test kann also gelingen, obwohl die Synchronisierung fehlschlägt. Prüfen Sie, ob Mindwtr mobile Daten verwenden darf (iOS: Einstellungen > Mobilfunk), und ob ein VPN, DNS-Filter oder eine Firewall den Datenverkehr der App blockiert.
+
 ---
 
 ## Sicherheit und Datenschutz

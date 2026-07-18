@@ -262,7 +262,7 @@ In der Ansicht **Fokus** sehen Sie:
    - innerhalb derselben Gruppe: Priorität (wenn aktiviert), dann Startzeit, ältestes Erstellungsdatum, Titel und ID
 4. **Durchsicht fällig** zeigt Aufgaben mit fälligem Wiedervorlagedatum. Nach der Prüfung können Sie das Wiedervorlagedatum entfernen (**Als geprüft markieren**) oder mit **In 1 Woche prüfen** verschieben – auf dem Desktop im Schnellaktionsmenü der Aufgabe, auf Mobilgeräten durch langes Drücken der Zeile.
 
-Das Startdatum ist das Zurückstellungs-/Planungsdatum von Mindwtr. „Fokus“ blendet Aufgaben mit zukünftigem Start immer bis zu ihrem Starttag aus. Die Liste „Nächste Aktionen“ zählt sie in einem Hinweis „ausgeblendet (zukünftiger Start)“ und bietet einen Umschalter **Anzeigen** zum Vorausblick. Sequenzielle Projekte beschränken „Fokus“ außerdem auf die erste verfügbare Aktion des Projekts oder Abschnitts. Spätere Aktionen bleiben ausgeblendet, bis der vorherige Schritt sie nicht mehr blockiert.
+Das Startdatum ist das Zurückstellungs-/Planungsdatum von Mindwtr. „Fokus“ und die Liste „Nächste Aktionen“ blenden Aufgaben mit zukünftigem Start immer bis zu ihrem Starttag aus. Verwenden Sie **Projekte** oder die **Suche**, um vorauszublicken. Sequenzielle Projekte beschränken „Fokus“ außerdem auf die erste verfügbare Aktion des Projekts oder Abschnitts. Spätere Aktionen bleiben ausgeblendet, bis der vorherige Schritt sie nicht mehr blockiert.
 
 Zeitschätzung und Energie sind Fokusfilter und Gruppierungsoptionen, keine Standardsortierschlüssel. Eine Gruppierung nach Kontext, Projekt, Bereich, Energie oder Priorität verändert die sichtbaren Gruppen; innerhalb dieser Gruppen behalten Aufgaben dieselbe Verfügbarkeits- und Nächste-Aktion-Sortierung.
 

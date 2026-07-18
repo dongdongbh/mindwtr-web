@@ -224,7 +224,7 @@ Utilisez **Projets**, **Contextes** ou **Recherche** pour consulter l’ensemble
 
 Oui, les deux :
 
-- Une **date de début** diffère une tâche : une date future la masque dans Focus et les actions suivantes, puis elle réapparaît avec son statut existant à la date prévue. Focus masque les tâches différées jusqu’à leur date de début ; dans la liste des actions suivantes, elles sont comptabilisées dans l’avis « masquées (début futur) », qui comporte un bouton **Afficher**.
+- Une **date de début** diffère une tâche : une date future la masque dans Focus et les actions suivantes, puis elle réapparaît avec son statut existant à la date prévue. Focus et la liste des actions suivantes masquent les tâches différées jusqu’à leur date de début ; utilisez **Projets** ou la **Recherche** pour les voir plus tôt.
 - Une **date de révision** est un rappel différé : lorsqu’elle arrive, Mindwtr vous présente la tâche afin que vous la réexaminiez. Rien ne change tant que vous n’avez pas pris de décision.
 - Le **délai avant le début** lie le début à la date d’échéance (par exemple, rendre la tâche visible deux jours avant l’échéance).
 

@@ -224,7 +224,7 @@ Use **Projects**, **Contexts**, or **Search** to inspect the full task inventory
 
 Yes, both:
 
-- **Start date** defers a task: a future start hides it from Focus and Next actions, and it reappears with its existing status when the date arrives. Focus keeps deferred tasks hidden until their start day; in the Next actions list they are counted by the "hidden (future start)" notice, which has a **Show** toggle.
+- **Start date** defers a task: a future start hides it from Focus and Next actions, and it reappears with its existing status when the date arrives. Focus and the Next actions list keep deferred tasks hidden until their start day; use **Projects** or **Search** to see them sooner.
 - **Review date** is a tickler: when it arrives, Mindwtr surfaces the task for you to reconsider. Nothing changes until you decide.
 - **Start lead time** ties the start to the due date (e.g., become visible two days before due).
 

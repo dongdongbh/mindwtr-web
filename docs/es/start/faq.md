@@ -224,7 +224,7 @@ Usa **Proyectos**, **Contextos** o **Buscar** para inspeccionar el inventario co
 
 Sí, ambos:
 
-- La **fecha de inicio** aplaza una tarea: una fecha de inicio futura la oculta de Foco y de Próximas acciones, y reaparece con su estado actual cuando llega la fecha. Foco mantiene ocultas las tareas aplazadas hasta el día de inicio; en la lista Próximas acciones, se cuentan en el aviso «ocultas (inicio futuro)», que incluye un interruptor **Mostrar**.
+- La **fecha de inicio** aplaza una tarea: una fecha de inicio futura la oculta de Foco y de Próximas acciones, y reaparece con su estado actual cuando llega la fecha. Foco y la lista Próximas acciones mantienen ocultas las tareas aplazadas hasta el día de inicio; usa **Proyectos** o **Buscar** para verlas antes.
 - La **fecha de revisión** es un tickler: cuando llega, Mindwtr muestra la tarea para que vuelvas a considerarla. Nada cambia hasta que tú decidas.
 - El **tiempo de antelación del inicio** vincula el inicio a la fecha límite (por ejemplo, hacerla visible dos días antes de la fecha límite).
 

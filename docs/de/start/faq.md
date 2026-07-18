@@ -221,7 +221,7 @@ Verwenden Sie **Projekte**, **Kontexte** oder die **Suche**, um den vollständig
 
 Ja, beides:
 
-- Das **Startdatum** stellt eine Aufgabe zurück: Ein zukünftiger Start blendet sie aus „Fokus“ und „Nächste Aktionen“ aus; beim Erreichen erscheint sie mit ihrem bisherigen Status wieder. „Fokus“ blendet zurückgestellte Aufgaben bis zum Starttag aus. In „Nächste Aktionen“ werden sie im Hinweis „ausgeblendet (zukünftiger Start)“ gezählt, der einen Umschalter **Anzeigen** besitzt.
+- Das **Startdatum** stellt eine Aufgabe zurück: Ein zukünftiger Start blendet sie aus „Fokus“ und „Nächste Aktionen“ aus; beim Erreichen erscheint sie mit ihrem bisherigen Status wieder. „Fokus“ und „Nächste Aktionen“ blenden zurückgestellte Aufgaben bis zum Starttag aus. Verwenden Sie **Projekte** oder die **Suche**, um sie früher zu sehen.
 - Das **Wiedervorlagedatum** ist ein Tickler: Bei Eintritt zeigt Mindwtr die Aufgabe zur Neubewertung an. Bis zu Ihrer Entscheidung ändert sich nichts.
 - Die **Startvorlaufzeit** koppelt den Start an das Fälligkeitsdatum (z. B. zwei Tage vor Fälligkeit sichtbar werden).
 

@@ -447,6 +447,8 @@ Aufgaben sortieren nach:
 - Titel (alphabetisch)
 - Erstellt (älteste/neueste)
 
+Innerhalb eines Projekts wird die gewählte Sortierung pro Projekt gemerkt und mit Ihren anderen Geräten synchronisiert. Projekte ohne gewählte Sortierung verwenden die manuelle Reihenfolge; das Ziehen zum Umsortieren bleibt verfügbar, solange ein Projekt auf Standard steht.
+
 ---
 
 ## Hierarchische Kontexte und Tags

@@ -450,6 +450,8 @@ Usa el desplegable de ordenación para ordenar las tareas por:
 - Título (alfabéticamente)
 - Creación (más antiguas/más recientes)
 
+Dentro de un proyecto, el orden elegido se recuerda por proyecto y se sincroniza con tus otros dispositivos. Los proyectos sin orden elegido usan el orden manual, y arrastrar para reordenar sigue disponible mientras el proyecto esté en Predeterminado.
+
 ---
 
 ## Contextos y etiquetas jerárquicos

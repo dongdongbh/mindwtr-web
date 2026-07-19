@@ -450,6 +450,8 @@ Utilisez la liste déroulante de tri pour classer les tâches par :
 - Titre (ordre alphabétique)
 - Date de création (de la plus ancienne à la plus récente ou inversement)
 
+Dans un projet, le tri choisi est mémorisé pour ce projet et se synchronise avec vos autres appareils. Les projets sans tri choisi gardent l'ordre manuel, et le glisser-déposer reste disponible tant que le projet est sur Défaut.
+
 ---
 
 ## Contextes et étiquettes hiérarchiques

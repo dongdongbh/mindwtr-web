@@ -450,6 +450,8 @@ Use the sort dropdown to order tasks by:
 - Title (alphabetical)
 - Created (oldest/newest)
 
+Inside a project, the chosen sort is remembered per project and syncs to your other devices. Projects without a chosen sort use manual order, and drag-reordering stays available while a project is on Default.
+
 ---
 
 ## Hierarchical Contexts & Tags

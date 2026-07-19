@@ -15,7 +15,7 @@ Mindwtr desktop supports keyboard-first use with Standard (Gmail/Todoist-style),
 - Use `Ctrl+Z` / `Cmd+Z` to undo the last task completion or deletion in any preset.
 - Use `s` followed by a letter to set the selected task's status in any preset: `si` Inbox, `sn` Next, `sw` Waiting, `ss` Someday, `sd` Done, `sa` Archived. A toast confirms the change with an undo button.
 - Use `Insert` to jump to the add-task input (it opens quick add in views without one).
-- Use `Shift+A` then `1`-`9` to switch to an Area by sidebar order, and `Shift+A` then `0` to clear the Area filter. Keeping Shift held into the number also works. Plain `a` opens quick add.
+- Press `1`-`9` (outside any text field) to switch to an Area by sidebar order, and `0` to clear the Area filter; the `Shift+A` chord followed by the number still works too. Plain `a` opens quick add.
 - Use `Ctrl+Alt+S` to run manual sync on desktop.
 - In the right-click / Shift+F10 context menu: ↑/↓ move between items, → opens a submenu panel and ← comes back, Enter activates, Esc closes and returns focus to the task.
 

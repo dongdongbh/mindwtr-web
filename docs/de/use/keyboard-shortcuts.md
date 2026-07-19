@@ -15,7 +15,7 @@ Mindwtr unterstützt auf dem Desktop eine tastaturorientierte Bedienung mit den 
 - Mit `Ctrl+Z` / `Cmd+Z` machen Sie in jeder Voreinstellung den letzten Aufgabenabschluss oder die letzte Löschung rückgängig.
 - Verwenden Sie in jeder Voreinstellung `s` gefolgt von einem Buchstaben, um den Status der ausgewählten Aufgabe festzulegen: `si` Posteingang, `sn` Nächstes, `sw` Warten, `ss` Irgendwann, `sd` Erledigt, `sa` Archiviert. Eine Benachrichtigung bestätigt die Änderung und bietet eine Schaltfläche zum Rückgängigmachen.
 - Mit `Insert` wechseln Sie zum Eingabefeld zum Hinzufügen einer Aufgabe (in Ansichten ohne dieses Feld wird „Schnell hinzufügen“ geöffnet).
-- Drücken Sie `Shift+A` und danach `1`–`9`, um entsprechend der Reihenfolge in der Seitenleiste zu einem Bereich zu wechseln, oder `Shift+A` und danach `0`, um den Bereichsfilter zu entfernen. Sie können die Umschalttaste auch bis zur Zahl gedrückt halten. Ein einfaches `a` öffnet „Schnell hinzufügen“.
+- Drücken Sie `1`–`9` (außerhalb von Textfeldern), um entsprechend der Reihenfolge in der Seitenleiste zu einem Bereich zu wechseln, oder `0`, um den Bereichsfilter zu entfernen; die Tastenfolge `Shift+A` und danach die Zahl funktioniert weiterhin. Ein einfaches `a` öffnet „Schnell hinzufügen“.
 - Mit `Ctrl+Alt+S` führen Sie auf dem Desktop eine manuelle Synchronisierung aus.
 - Im Kontextmenü über Rechtsklick / `Shift+F10`: ↑/↓ wechselt zwischen Einträgen, → öffnet ein Untermenü und ← kehrt zurück, `Enter` aktiviert, `Esc` schließt das Menü und setzt den Fokus zurück auf die Aufgabe.
 

@@ -15,7 +15,7 @@ Mindwtr para escritorio permite trabajar principalmente con el teclado mediante 
 - Usa `Ctrl+Z` / `Cmd+Z` para deshacer la última finalización o eliminación en cualquier perfil.
 - En cualquier perfil, pulsa `s` y después una letra para establecer el estado de la tarea seleccionada: `si` Bandeja de entrada, `sn` Próxima, `sw` En espera, `ss` Algún día, `sd` Terminada y `sa` Archivada. Una notificación confirma el cambio e incluye un botón para deshacerlo.
 - Usa `Insert` para ir al campo de adición de tareas; en las vistas que no lo tengan, abre Adición rápida.
-- Usa `Shift+A` y después `1`-`9` para cambiar a un área según el orden de la barra lateral, o `Shift+A` y después `0` para quitar el filtro de área. También funciona si mantienes pulsado Shift al introducir el número. Una `a` sin modificadores abre Adición rápida.
+- Pulsa `1`-`9` (fuera de cualquier campo de texto) para cambiar a un área según el orden de la barra lateral, o `0` para quitar el filtro de área; la combinación `Shift+A` seguida del número sigue funcionando. Una `a` sin modificadores abre Adición rápida.
 - Usa `Ctrl+Alt+S` para ejecutar una sincronización manual en el escritorio.
 - En el menú contextual de clic derecho / `Shift+F10`: ↑/↓ se desplazan entre elementos, → abre un panel de submenú, ← vuelve, Enter activa y Esc cierra y devuelve el foco a la tarea.
 

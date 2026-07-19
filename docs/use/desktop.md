@@ -18,7 +18,7 @@ The desktop app features a sidebar navigation with all GTD views and a main cont
 
 If you keep pushing a task's due date later, its row shows a small hourglass badge with the number of postponements (after the third push) next to the due date. The badge is a nudge that the task may need re-clarifying, delegating, or dropping instead of another deferral.
 
-Most task lists share the same control row for selecting tasks, filtering, sorting, grouping, showing details, and switching compact density. Use **Group** to organize Inbox, Next, Waiting, Someday/Maybe, Reference, Done, and other list views by metadata such as context, area, project, or tag.
+Most task lists share the same control row for selecting tasks, filtering, sorting, grouping, showing details, and switching list density (Comfortable, Compact, or Condensed). Use **Group** to organize Inbox, Next, Waiting, Someday/Maybe, Reference, Done, and other list views by metadata such as context, area, project, or tag.
 
 ## Focus Mode
 

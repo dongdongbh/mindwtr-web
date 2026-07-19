@@ -18,7 +18,7 @@ La aplicación de escritorio incluye una barra lateral de navegación con todas 
 
 Si sigues posponiendo la fecha de vencimiento de una tarea, su fila muestra junto a ella una pequeña insignia de reloj de arena con el número de aplazamientos (a partir del tercero). La insignia te recuerda que quizá debas volver a aclarar la tarea, delegarla o descartarla en vez de aplazarla otra vez.
 
-La mayoría de las listas de tareas comparten la misma fila de controles para seleccionar tareas, filtrar, ordenar, agrupar, mostrar detalles y cambiar a una densidad compacta. Usa **Agrupar** para organizar la Bandeja de entrada, Próximas, En espera, Algún día/Tal vez, Referencia, Terminadas y otras vistas de lista por metadatos como contexto, área, proyecto o etiqueta.
+La mayoría de las listas de tareas comparten la misma fila de controles para seleccionar tareas, filtrar, ordenar, agrupar, mostrar detalles y cambiar la densidad de la lista (Cómodo, Compacto o Condensado). Usa **Agrupar** para organizar la Bandeja de entrada, Próximas, En espera, Algún día/Tal vez, Referencia, Terminadas y otras vistas de lista por metadatos como contexto, área, proyecto o etiqueta.
 
 ## Modo Foco
 

@@ -18,7 +18,7 @@ L’application de bureau comporte une barre latérale de navigation avec toutes
 
 Si vous continuez à repousser l’échéance d’une tâche, sa ligne affiche un petit badge en forme de sablier indiquant le nombre de reports (après le troisième report) à côté de l’échéance. Ce badge vous invite à envisager de clarifier à nouveau, déléguer ou abandonner la tâche plutôt que de la reporter encore une fois.
 
-La plupart des listes de tâches partagent la même rangée de commandes pour sélectionner, filtrer, trier et regrouper les tâches, afficher leurs détails et passer en densité compacte. Utilisez **Grouper** pour organiser la Boîte de réception, les Actions suivantes, En attente, Un jour/Peut-être, Référence, Terminé et les autres vues en liste selon des métadonnées telles que le contexte, le domaine, le projet ou l’étiquette.
+La plupart des listes de tâches partagent la même rangée de commandes pour sélectionner, filtrer, trier et regrouper les tâches, afficher leurs détails et changer la densité de la liste (Confortable, Compact ou Condensé). Utilisez **Grouper** pour organiser la Boîte de réception, les Actions suivantes, En attente, Un jour/Peut-être, Référence, Terminé et les autres vues en liste selon des métadonnées telles que le contexte, le domaine, le projet ou l’étiquette.
 
 ## Mode Focus
 

@@ -47,11 +47,11 @@ El selector controla a qué tarea se vincula el panel, si existe alguna. Los con
 
 Las tareas tienen un valor opcional **Tiempo empleado** junto a Tiempo estimado en el editor. Requiere v1.1.0 o posterior; las versiones anteriores, como v1.0.5, no lo incluyen.
 
-Tiempo empleado es opcional y está oculto de forma predeterminada. Sus superficies solo aparecen cuando están activados tanto **Temporizador Pomodoro** como **Vincular temporizador a tarea**: el campo del editor en escritorio y móvil, además del distintivo de la fila y el botón de inicio rápido en escritorio. Al desactivarlos no se muestra nada relacionado con el tiempo; los valores registrados se conservan y reaparecen si vuelves a activar la función. Ocultar Tiempo estimado en el diseño del editor también oculta Tiempo empleado.
+Tiempo empleado es opcional y está oculto de forma predeterminada. Sus superficies solo aparecen cuando están activados tanto **Temporizador Pomodoro** como **Vincular temporizador a tarea**: el campo del editor y el distintivo de la fila en escritorio y móvil, además del botón de inicio rápido en escritorio. Al desactivarlos no se muestra nada relacionado con el tiempo; los valores registrados se conservan y reaparecen si vuelves a activar la función. Ocultar Tiempo estimado en el diseño del editor también oculta Tiempo empleado.
 
 - Cada sesión de concentración completada con una tarea vinculada añade sus minutos al total de esa tarea.
 - También puedes establecer o corregir el total manualmente en el editor.
-- Las tareas con tiempo registrado muestran un pequeño distintivo en las listas de escritorio, y el total se sincroniza entre dispositivos como cualquier otro campo.
+- Las tareas con tiempo registrado muestran un pequeño distintivo en las listas de escritorio y móvil, y el total se sincroniza entre dispositivos como cualquier otro campo.
 
 Por diseño no existe un registro por sesión, una pantalla de informes ni un cronómetro libre. El total es un único número por tarea. Para informes externos, lee `timeSpentMinutes` mediante la API de la nube o el servidor MCP.
 

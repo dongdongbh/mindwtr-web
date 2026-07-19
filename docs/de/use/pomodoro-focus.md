@@ -44,11 +44,11 @@ Die Aufgabenauswahl bestimmt, mit welcher Aufgabe das Pomodoro-Feld gegebenenfal
 
 Aufgaben besitzen im Aufgabeneditor neben der Zeitschätzung optional den Wert **Aufgewendete Zeit**. „Aufgewendete Zeit“ erfordert v1.1.0 oder neuer; ältere Versionen wie v1.0.5 bieten die Funktion nicht.
 
-„Aufgewendete Zeit“ ist freiwillig und standardmäßig deaktiviert: Die zugehörigen Oberflächen erscheinen nur, wenn sowohl die Funktion **Pomodoro-Zeitgeber** als auch **Zeitgeber mit Aufgabe verknüpfen** aktiviert sind – das Editorfeld auf Desktop und Mobilgeräten sowie die Aufgabenplakette und Schnellstartschaltfläche auf dem Desktop. Wenn Sie die Funktionen deaktivieren, werden nirgendwo zeitbezogene Angaben angezeigt (aufgezeichnete Werte bleiben erhalten und erscheinen nach erneuter Aktivierung wieder). Wenn Sie das Feld „Zeitschätzung“ im Layout des Aufgabeneditors ausblenden, wird auch „Aufgewendete Zeit“ ausgeblendet.
+„Aufgewendete Zeit“ ist freiwillig und standardmäßig deaktiviert: Die zugehörigen Oberflächen erscheinen nur, wenn sowohl die Funktion **Pomodoro-Zeitgeber** als auch **Zeitgeber mit Aufgabe verknüpfen** aktiviert sind – das Editorfeld und die Aufgabenplakette auf Desktop und Mobilgeräten sowie die Schnellstartschaltfläche auf dem Desktop. Wenn Sie die Funktionen deaktivieren, werden nirgendwo zeitbezogene Angaben angezeigt (aufgezeichnete Werte bleiben erhalten und erscheinen nach erneuter Aktivierung wieder). Wenn Sie das Feld „Zeitschätzung“ im Layout des Aufgabeneditors ausblenden, wird auch „Aufgewendete Zeit“ ausgeblendet.
 
 - Jede abgeschlossene Fokusphase mit verknüpfter Zeitgeberaufgabe addiert die Fokusminuten dieser Phase zur Gesamtsumme der Aufgabe.
 - Sie können die Gesamtsumme im Editor auch von Hand festlegen oder korrigieren.
-- Aufgaben mit aufgezeichneter Zeit zeigen in Desktop-Aufgabenlisten eine kleine Plakette. Die Gesamtsumme wird wie jedes andere Aufgabenfeld zwischen Ihren Geräten synchronisiert.
+- Aufgaben mit aufgezeichneter Zeit zeigen in Aufgabenlisten auf Desktop und Mobilgeräten eine kleine Plakette. Die Gesamtsumme wird wie jedes andere Aufgabenfeld zwischen Ihren Geräten synchronisiert.
 
 Bewusst nicht vorgesehen sind ein Protokoll einzelner Sitzungen, eine Berichtsansicht oder eine frei laufende Stoppuhr. Die Gesamtsumme ist eine einzelne Zahl pro Aufgabe. Für externe Berichte können Sie `timeSpentMinutes` über die Cloud API oder den MCP-Server auslesen.
 

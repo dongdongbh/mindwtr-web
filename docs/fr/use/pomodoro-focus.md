@@ -45,11 +45,11 @@ Le sélecteur détermine la tâche éventuellement associée au panneau. Les com
 
 Les tâches proposent une valeur facultative **Temps passé** à côté de l’Estimation du temps dans l’éditeur. Cette fonction nécessite la v1.1.0 ou une version ultérieure ; les versions antérieures comme la v1.0.5 ne la possèdent pas.
 
-Le Temps passé est facultatif et désactivé par défaut : ses éléments n’apparaissent que si **Minuteur Pomodoro** et **Lier le minuteur à une tâche** sont tous deux activés. Cela concerne le champ de l’éditeur sur ordinateur et mobile, ainsi que le badge et le bouton de démarrage rapide dans les lignes de tâches sur ordinateur. Désactivez-les et aucune information temporelle n’apparaît ; les valeurs enregistrées sont conservées et réapparaissent à la réactivation. Masquer l’Estimation du temps dans la disposition de l’éditeur masque également le Temps passé.
+Le Temps passé est facultatif et désactivé par défaut : ses éléments n’apparaissent que si **Minuteur Pomodoro** et **Lier le minuteur à une tâche** sont tous deux activés. Cela concerne le champ de l’éditeur et le badge des lignes de tâches sur ordinateur et mobile, ainsi que le bouton de démarrage rapide sur ordinateur. Désactivez-les et aucune information temporelle n’apparaît ; les valeurs enregistrées sont conservées et réapparaissent à la réactivation. Masquer l’Estimation du temps dans la disposition de l’éditeur masque également le Temps passé.
 
 - Chaque session de concentration terminée et liée à une tâche ajoute ses minutes au total de cette tâche.
 - Vous pouvez aussi définir ou corriger le total dans l’éditeur.
-- Les tâches ayant du temps enregistré affichent un petit badge dans les listes sur ordinateur ; le total se synchronise comme les autres champs.
+- Les tâches ayant du temps enregistré affichent un petit badge dans les listes sur ordinateur et mobile ; le total se synchronise comme les autres champs.
 
 Il n’existe volontairement ni journal par session, ni écran de rapports, ni chronomètre libre. Le total est un nombre unique par tâche. Pour produire des rapports externes, lisez `timeSpentMinutes` avec l’API cloud ou le serveur MCP.
 

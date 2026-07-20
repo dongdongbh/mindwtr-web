@@ -56,7 +56,7 @@ Optional but useful:
 
 | Variable | Purpose | Notes |
 | --- | --- | --- |
-| `MINDWTR_CLOUD_AUTH_TOKENS` | Comma-separated allowlist of bearer tokens. | Recommended setting for production. |
+| `MINDWTR_CLOUD_AUTH_TOKENS` | Comma-separated allowlist of bearer tokens. Each token must be 20-512 characters of letters, numbers, or `. _ ~ + / = -`; the server refuses to start otherwise. | Recommended setting for production. |
 | `MINDWTR_CLOUD_AUTH_TOKENS_FILE` | Path to a file containing bearer tokens. | Useful for Docker secrets; file contents may match `MINDWTR_CLOUD_AUTH_TOKENS`. |
 | `MINDWTR_CLOUD_TOKEN` | Legacy single-token alias. | Still supported for backward compatibility, but deprecated. |
 | `MINDWTR_CLOUD_TOKEN_FILE` | Path to a file containing the legacy single token. | Still supported for backward compatibility, but deprecated. |

@@ -56,7 +56,7 @@ Facultatif, mais utile :
 
 | Variable | Rôle | Remarques |
 | --- | --- | --- |
-| `MINDWTR_CLOUD_AUTH_TOKENS` | Liste d’autorisation de jetons porteurs séparés par des virgules. | Réglage recommandé pour la production. |
+| `MINDWTR_CLOUD_AUTH_TOKENS` | Liste d’autorisation de jetons porteurs séparés par des virgules. Chaque jeton doit compter entre 20 et 512 caractères parmi lettres, chiffres ou `. _ ~ + / = -` ; sinon le serveur refuse de démarrer. | Réglage recommandé pour la production. |
 | `MINDWTR_CLOUD_AUTH_TOKENS_FILE` | Chemin vers un fichier contenant des jetons porteurs. | Utile pour les secrets Docker ; le contenu du fichier peut correspondre à `MINDWTR_CLOUD_AUTH_TOKENS`. |
 | `MINDWTR_CLOUD_TOKEN` | Ancien alias pour un jeton unique. | Toujours pris en charge pour la rétrocompatibilité, mais obsolète. |
 | `MINDWTR_CLOUD_TOKEN_FILE` | Chemin vers un fichier contenant l’ancien jeton unique. | Toujours pris en charge pour la rétrocompatibilité, mais obsolète. |

@@ -56,7 +56,7 @@ Opcionales, pero útiles:
 
 | Variable | Propósito | Notas |
 | --- | --- | --- |
-| `MINDWTR_CLOUD_AUTH_TOKENS` | Lista separada por comas de tokens de portador permitidos. | Configuración recomendada para producción. |
+| `MINDWTR_CLOUD_AUTH_TOKENS` | Lista separada por comas de tokens de portador permitidos. Cada token debe tener entre 20 y 512 caracteres con letras, números o `. _ ~ + / = -`; de lo contrario el servidor no arranca. | Configuración recomendada para producción. |
 | `MINDWTR_CLOUD_AUTH_TOKENS_FILE` | Ruta a un archivo que contiene tokens de portador. | Útil para secretos de Docker; el contenido del archivo puede coincidir con `MINDWTR_CLOUD_AUTH_TOKENS`. |
 | `MINDWTR_CLOUD_TOKEN` | Alias heredado para un único token. | Sigue siendo compatible con versiones anteriores, pero está obsoleto. |
 | `MINDWTR_CLOUD_TOKEN_FILE` | Ruta a un archivo que contiene el token único heredado. | Sigue siendo compatible con versiones anteriores, pero está obsoleto. |

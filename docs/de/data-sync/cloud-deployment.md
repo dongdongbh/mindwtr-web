@@ -56,7 +56,7 @@ Optional, aber nützlich:
 
 | Variable | Zweck | Hinweise |
 | --- | --- | --- |
-| `MINDWTR_CLOUD_AUTH_TOKENS` | Kommagetrennte Positivliste von Bearer-Tokens. | Empfohlene Produktionseinstellung. |
+| `MINDWTR_CLOUD_AUTH_TOKENS` | Kommagetrennte Positivliste von Bearer-Tokens. Jedes Token muss 20-512 Zeichen aus Buchstaben, Ziffern oder `. _ ~ + / = -` umfassen; andernfalls startet der Server nicht. | Empfohlene Produktionseinstellung. |
 | `MINDWTR_CLOUD_AUTH_TOKENS_FILE` | Pfad zu einer Datei mit Bearer-Tokens. | Nützlich für Docker Secrets; der Inhalt kann `MINDWTR_CLOUD_AUTH_TOKENS` entsprechen. |
 | `MINDWTR_CLOUD_TOKEN` | Älterer Alias für ein einzelnes Token. | Aus Kompatibilitätsgründen weiter unterstützt, aber veraltet. |
 | `MINDWTR_CLOUD_TOKEN_FILE` | Pfad zu einer Datei mit dem älteren einzelnen Token. | Aus Kompatibilitätsgründen weiter unterstützt, aber veraltet. |

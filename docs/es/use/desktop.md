@@ -72,7 +72,7 @@ Foco oculta las tareas cuya fecha de inicio es futura y las tareas posteriores d
 
 Resultados de varios pasos que contienen tareas relacionadas.
 
-- **Modo secuencial**: solo aparece en Foco la primera tarea disponible del proyecto
+- **Modo secuencial**: solo aparece en Foco la primera tarea disponible del proyecto; en la vista del proyecto, la tarea disponible se resalta y las tareas en cola se muestran atenuadas
 - **Modo paralelo**: todas las tareas disponibles del proyecto pueden aparecer en Foco
 - **Ámbito secuencial**: los proyectos secuenciales pueden avanzar en todo el proyecto o sección por sección; el ámbito por sección muestra la primera tarea disponible de cada sección.
 - **Estado**: Activo, En espera, Algún día, Archivado

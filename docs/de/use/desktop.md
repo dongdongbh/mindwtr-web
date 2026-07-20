@@ -72,7 +72,7 @@ Ihr gemeinsames Dashboard für das tägliche Erledigen. „Fokus“ ist kein vol
 
 Mehrstufige Ergebnisse mit zusammengehörigen Aufgaben.
 
-- **Sequenzieller Modus**: Nur die erste verfügbare Projektaufgabe erscheint in „Fokus“.
+- **Sequenzieller Modus**: Nur die erste verfügbare Projektaufgabe erscheint in „Fokus“. In der Projektansicht ist die verfügbare Aufgabe hervorgehoben, wartende Aufgaben erscheinen abgeblendet.
 - **Paralleler Modus**: Alle verfügbaren Projektaufgaben können in „Fokus“ erscheinen.
 - **Sequenzieller Umfang**: Projektweit oder abschnittsweise; der Abschnittsumfang zeigt die erste verfügbare Aufgabe jedes Abschnitts.
 - **Status**: Aktiv, Warten, Irgendwann, Archiviert

@@ -72,7 +72,7 @@ Focus masque les tâches dont la date de début est future et les tâches ultér
 
 Résultats en plusieurs étapes contenant des tâches liées.
 
-- **Mode séquentiel** : seule la première tâche disponible du projet apparaît dans Focus
+- **Mode séquentiel** : seule la première tâche disponible du projet apparaît dans Focus ; dans la vue du projet, la tâche disponible est mise en évidence et les tâches en attente apparaissent estompées
 - **Mode parallèle** : toutes les tâches disponibles du projet peuvent apparaître dans Focus
 - **Portée séquentielle** : les projets séquentiels peuvent avancer à l’échelle du projet ou section par section ; la portée par section affiche la première tâche disponible de chaque section.
 - **Statut** : Actif, En attente, Un jour, Archivé

@@ -72,7 +72,7 @@ Focus hides future-start tasks and later tasks in sequential projects. Use **Con
 
 Multi-step outcomes containing related tasks.
 
-- **Sequential mode**: Only the first available project task appears in Focus
+- **Sequential mode**: Only the first available project task appears in Focus; in the project view the available action is highlighted and queued tasks render muted
 - **Parallel mode**: All available project tasks can appear in Focus
 - **Sequential scope**: Sequential projects can advance project-wide or section-by-section; section scope shows the first available task in each section.
 - **Status**: Active, Waiting, Someday, Archived

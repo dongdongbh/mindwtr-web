@@ -191,7 +191,7 @@ Checklisten als Vorlagen:
 - Der Editor beginnt minimalistisch. **Weitere Optionen** zeigt erweiterte Felder.
 - **Projektabschnitt** organisiert Aufgaben innerhalb eines unterteilten Projekts. Bei Posteingangsaufgaben, nicht zugewiesenen Aufgaben oder Projekten ohne Abschnitte leer lassen.
 - Status, Priorität und Energiestufe verwenden Pillensteuerungen statt Auswahlmenüs.
-- Datumsfelder bieten Schnelloptionen für **Heute**, **Morgen**, **+3 Tage**, **Nächste Woche**, **Nächster Monat** und **Kein Datum**.
+- Öffnen Sie den Kalender eines Datumsfelds, um neben der Monatsansicht Schnelloptionen zu wählen: **Heute**, **Morgen**, **+2 Tage**, **+3 Tage**, **Nächste Woche**, **Nächster Monat** und **Kein Datum**.
 - Unter **Einstellungen → GTD → Layout des Aufgabeneditors** wählen Sie zwischen seitlicher Vorschau und zentriertem Pop-up.
 
 ---

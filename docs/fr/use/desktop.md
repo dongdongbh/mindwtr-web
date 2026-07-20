@@ -191,7 +191,7 @@ Utilisez les listes de contrôle comme modèles :
 - L’éditeur s’ouvre sous une forme minimale. Utilisez **Plus d’options** pour afficher les champs avancés.
 - **Section du projet** est un champ d’organisation pour les tâches au sein d’un projet divisé en sections. Laissez-le vide pour les tâches de la Boîte de réception, les tâches non attribuées ou les projets sans section.
 - Statut, Priorité et Niveau d’énergie utilisent des boutons en forme de pastille plutôt que des listes déroulantes pour accélérer la sélection au clavier et au pointeur.
-- Les champs de date comprennent des raccourcis pour **Aujourd’hui**, **Demain**, **+3 jours**, **Semaine prochaine**, **Mois prochain** et **Aucune date**.
+- Ouvrez le calendrier d’un champ de date pour choisir des raccourcis à côté de la grille du mois : **Aujourd’hui**, **Demain**, **+2 jours**, **+3 jours**, **Semaine prochaine**, **Mois prochain** et **Aucune date**.
 - Dans **Paramètres → GTD → Mise en page de l’éditeur de tâche**, choisissez si l’éditeur sur ordinateur s’ouvre sous forme d’aperçu latéral intégré ou de fenêtre contextuelle centrée.
 
 ---

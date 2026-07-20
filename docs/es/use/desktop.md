@@ -191,7 +191,7 @@ Usa listas de comprobación como plantillas:
 - El editor empieza mostrando lo mínimo. Usa **Más opciones** para revelar campos avanzados.
 - **Sección del proyecto** es un campo organizativo para las tareas de un proyecto con secciones. Déjalo vacío en tareas de la Bandeja de entrada, tareas sin asignar o proyectos sin secciones.
 - Estado, Prioridad y Nivel de energía usan controles de pastilla en vez de menús desplegables para agilizar la selección con teclado y puntero.
-- Los campos de fecha incluyen opciones rápidas para **Hoy**, **Mañana**, **+3 días**, **Próxima semana**, **Próximo mes** y **Sin fecha**.
+- Abre el calendario de un campo de fecha para elegir opciones rápidas junto a la cuadrícula del mes: **Hoy**, **Mañana**, **+2 días**, **+3 días**, **Próxima semana**, **Próximo mes** y **Sin fecha**.
 - En **Ajustes → GTD → Diseño del editor de tareas**, elige si el editor de escritorio se abre como panel lateral en línea o como ventana emergente centrada.
 
 ---

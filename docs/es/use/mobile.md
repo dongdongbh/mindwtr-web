@@ -252,7 +252,7 @@ Mindwtr analiza lenguaje natural al añadir tareas:
 
 **Formatos de fecha:** today, tomorrow, friday, next week, in 3 days
 
-Las frases sueltas como "next week" en el título se convierten en fechas porque **Detectar fechas en lenguaje natural** (Ajustes → GTD, activado por defecto) está habilitado. Desactívalo para que esas frases queden como texto literal del título; los tokens explícitos como `/due:friday` funcionan siempre. El ajuste se sincroniza entre tus dispositivos.
+Una fecha u hora al final de lo que escribes se convierte en la fecha límite, y las palabras detectadas se eliminan del título: `Grab a coffee with Marta Jun 23 6pm` crea "Grab a coffee with Marta", con vencimiento el 23 de junio a las 18:00. La detección solo lee el final del texto, así que un título como "Review June report" queda intacto. Esto lo controla **Detectar fechas en lenguaje natural** (Ajustes → GTD, activado por defecto); desactívalo para que las frases de fecha queden como texto literal del título. Los tokens explícitos como `/due:friday` funcionan en cualquier caso y tienen prioridad sobre la detección. El ajuste se sincroniza entre tus dispositivos.
 
 ---
 

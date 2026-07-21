@@ -308,7 +308,7 @@ Mindwtr analyse le langage naturel lors de l’ajout de tâches :
 
 **Formats de date :** today, tomorrow, friday, next week, in 3 days, 2025-01-15
 
-Les formulations libres comme "next week" dans le titre deviennent des dates parce que **Détecter les dates en langage naturel** (Paramètres → GTD, activé par défaut) est actif. Désactivez-le pour conserver ces formulations comme texte littéral du titre ; les jetons explicites comme `/due:friday` fonctionnent toujours. Le réglage se synchronise entre vos appareils.
+Une date ou une heure à la fin de votre saisie devient la date d’échéance, et les mots reconnus sont retirés du titre : `Grab a coffee with Marta Jun 23 6pm` crée "Grab a coffee with Marta", à échéance du 23 juin à 18 h. La détection ne lit que la fin du texte ; un titre comme "Review June report" reste donc inchangé. C’est le réglage **Détecter les dates en langage naturel** (Paramètres → GTD, activé par défaut) ; désactivez-le pour conserver les formulations de date comme texte littéral du titre. Les jetons explicites comme `/due:friday` fonctionnent dans tous les cas et priment sur la détection. Le réglage se synchronise entre vos appareils.
 
 ---
 

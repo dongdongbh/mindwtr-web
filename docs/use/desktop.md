@@ -308,7 +308,7 @@ Mindwtr parses natural language when adding tasks:
 
 **Date formats:** today, tomorrow, friday, next week, in 3 days, 2025-01-15
 
-Bare phrases like "next week" in a title become dates because **Detect natural-language dates** (Settings → GTD, on by default) is enabled. Turn it off to keep such phrases as literal title text; explicit tokens like `/due:friday` always work. The setting syncs across your devices.
+A date or time phrase at the end of what you type becomes the due date, and the matched words are removed from the title: `Grab a coffee with Marta Jun 23 6pm` creates "Grab a coffee with Marta", due June 23 at 6pm. Detection only reads the end of the text, so a title like "Review June report" stays untouched. This is **Detect natural-language dates** (Settings → GTD, on by default); turn it off to keep date phrases as literal title text. Explicit tokens like `/due:friday` work regardless and take priority over detection. The setting syncs across your devices.
 
 ---
 

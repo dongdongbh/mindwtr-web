@@ -568,8 +568,14 @@ h1 .accent {
   box-shadow: none;
 }
 
+.desktop-frame picture,
 .desktop-frame img {
+  display: block;
   width: 100%;
+}
+
+.desktop-frame img {
+  height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: center;
@@ -927,27 +933,37 @@ h2 {
 .coverflow-dots {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0;
 }
 
 .coverflow-dot {
-  width: 9px;
-  height: 9px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
   padding: 0;
   border: 0;
   border-radius: 999px;
-  background: var(--line-strong);
+  background: transparent;
   cursor: pointer;
+}
+
+.coverflow-dot::before {
+  width: 9px;
+  height: 9px;
+  border-radius: inherit;
+  background: var(--line-strong);
+  content: "";
   transition:
     background var(--dur-short) var(--ease-out),
     transform var(--dur-short) var(--ease-out);
 }
 
-.coverflow-dot:hover {
+.coverflow-dot:hover::before {
   background: var(--muted);
 }
 
-.coverflow-dot.is-active {
+.coverflow-dot.is-active::before {
   background: var(--blue);
   transform: scale(1.25);
 }

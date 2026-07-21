@@ -351,19 +351,30 @@ if (findings.length === 0) {
       const isLandingHome =
         page.site.name === "landing" && /^(?:\/(?:de|es|fr|zh))?\/$/.test(page.path);
       if (isLandingHome) {
-        const approvedHero = "/assets/screenshots/landing_image.png";
-        const image = [...page.html.matchAll(/<img\b[^>]*>/gi)].find((match) =>
-          match[0].includes(`src="${approvedHero}"`)
+        const approvedHeroFallback = "/assets/screenshots/landing_image.png";
+        const responsiveHero = "/assets/screenshots/landing_image-840.webp";
+        const responsiveHero2x = "/assets/screenshots/landing_image-1672.webp";
+        const image = tagAttributes(page.html, "img").find(
+          (attributes) => attributes.src === approvedHeroFallback
         );
-        const preload = [...page.html.matchAll(/<link\b[^>]*>/gi)].find(
-          (match) =>
-            /\brel="preload"/.test(match[0]) &&
-            /\bas="image"/.test(match[0]) &&
-            match[0].includes(`href="${approvedHero}"`)
+        const source = tagAttributes(page.html, "source").find(
+          (attributes) =>
+            attributes.type === "image/webp" &&
+            attributes.srcset?.includes(responsiveHero) &&
+            attributes.srcset?.includes(responsiveHero2x)
         );
-        if (!image || !preload) {
+        const preload = tagAttributes(page.html, "link").find(
+          (attributes) =>
+            attributes.rel === "preload" &&
+            attributes.as === "image" &&
+            attributes.type === "image/webp" &&
+            attributes.href === responsiveHero &&
+            attributes.imagesrcset?.includes(responsiveHero) &&
+            attributes.imagesrcset?.includes(responsiveHero2x)
+        );
+        if (!image || !source || !preload) {
           findings.push(
-            `${page.site.name}${page.path}: homepage must render and preload the approved PNG hero`
+            `${page.site.name}${page.path}: homepage must preserve the approved PNG hero fallback and preload its responsive WebP source`
           );
         }
       }

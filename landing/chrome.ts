@@ -369,7 +369,7 @@ ${alternateLocales}    <meta property="og:url" content="${url}" />
     <meta name="twitter:description" content="${meta.socialDescription}" />
     <meta name="twitter:image" content="${ORIGIN}/assets/screenshots/social-preview.jpg" />
     <meta name="twitter:image:alt" content="${t.socialImageAlt}" />
-    <link rel="icon" href="/assets/brand/icon.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/brand/icon-96.png" />
 ${canonical}${schema}${displayFont}${alternates}${detect}`;
 }
 
@@ -393,7 +393,7 @@ function header(locale: Locale, pageName: string, pagePath: string): string {
   return `    <header class="site-header">
       <div class="site-header-inner">
         <a class="brand" href="${home}" aria-label="${t.homeAria}">
-          <img src="/assets/brand/icon.png" alt="" />
+          <img src="/assets/brand/icon-96.png" alt="" width="34" height="34" />
           <span>Mindwtr</span>
         </a>
         <nav aria-label="${t.primaryNavAria}">

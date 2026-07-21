@@ -11,7 +11,7 @@
       property="og:description"
       content="把一切从脑中清空。几秒钟记下任务，一眼看到下一步。免费、无需账号、离线可用。"
     />
-    <link rel="preload" as="image" href="/assets/screenshots/landing_image.png" />
+    <link rel="preload" as="image" href="/assets/screenshots/landing_image-840.webp" imagesrcset="/assets/screenshots/landing_image-840.webp 840w, /assets/screenshots/landing_image-1672.webp 1672w" imagesizes="(max-width: 900px) calc(100vw - 28px), 62vw" type="image/webp" fetchpriority="high" />
     <title>Mindwtr — 免费开源的 GTD 待办应用</title>
   </head>
   <body>
@@ -44,7 +44,10 @@
 
         <div class="hero-media" aria-label="Mindwtr 应用截图">
           <figure class="desktop-frame">
-            <img src="/assets/screenshots/landing_image.png" alt="Mindwtr 在桌面端和手机上显示专注与回顾视图" />
+            <picture>
+              <source type="image/webp" srcset="/assets/screenshots/landing_image-840.webp 840w, /assets/screenshots/landing_image-1672.webp 1672w" sizes="(max-width: 900px) calc(100vw - 28px), 62vw" />
+              <img src="/assets/screenshots/landing_image.png" alt="Mindwtr 在桌面端和手机上显示专注与回顾视图" width="1672" height="941" fetchpriority="high" decoding="async" />
+            </picture>
           </figure>
         </div>
       </section>
@@ -486,7 +489,7 @@
             </header>
             <div class="dl-badges">
               <a class="store-badge apple" href="https://apps.apple.com/app/mindwtr/id6758597144">
-                <img src="/assets/badges/app-store.svg" alt="在 Mac App Store 下载" />
+                <img src="/assets/badges/app-store.svg" alt="在 Mac App Store 下载" width="120" height="40" />
               </a>
             </div>
             <ul class="dl-options">
@@ -510,7 +513,7 @@
             </header>
             <div class="dl-badges">
               <a class="store-badge microsoft" href="https://apps.microsoft.com/detail/9n0v5b0b6frx">
-                <img src="/assets/badges/microsoft-store.svg" alt="从 Microsoft Store 获取" />
+                <img src="/assets/badges/microsoft-store.svg" alt="从 Microsoft Store 获取" width="161" height="44" />
               </a>
             </div>
             <ul class="dl-options">
@@ -531,10 +534,10 @@
             </header>
             <div class="dl-badges">
               <a class="store-badge flathub" href="https://flathub.org/apps/tech.dongdongbh.mindwtr">
-                <img src="/assets/badges/flathub.png" alt="在 Flathub 获取" />
+                <img src="/assets/badges/flathub.png" alt="在 Flathub 获取" width="240" height="80" />
               </a>
               <a class="store-badge snap" href="https://snapcraft.io/mindwtr">
-                <img src="/assets/badges/snap-store.svg" alt="从 Snap Store 获取" />
+                <img src="/assets/badges/snap-store.svg" alt="从 Snap Store 获取" width="182" height="56" />
               </a>
             </div>
             <ul class="dl-options">
@@ -558,7 +561,7 @@
             </header>
             <div class="dl-badges">
               <a class="store-badge apple" href="https://apps.apple.com/app/mindwtr/id6758597144">
-                <img src="/assets/badges/app-store.svg" alt="在 App Store 下载" />
+                <img src="/assets/badges/app-store.svg" alt="在 App Store 下载" width="120" height="40" />
               </a>
             </div>
             <ul class="dl-options">
@@ -575,13 +578,13 @@
             </header>
             <div class="dl-badges">
               <a class="store-badge google" href="https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr">
-                <img src="/assets/badges/google-play.png" alt="在 Google Play 获取" />
+                <img src="/assets/badges/google-play.png" alt="在 Google Play 获取" width="646" height="250" />
               </a>
               <a class="store-badge fdroid" href="https://f-droid.org/en/packages/tech.dongdongbh.mindwtr/">
-                <img src="/assets/badges/f-droid.svg" alt="在 F-Droid 获取" />
+                <img src="/assets/badges/f-droid.svg" alt="在 F-Droid 获取" width="646" height="250" />
               </a>
               <a class="store-badge izzy" href="https://apt.izzysoft.de/packages/tech.dongdongbh.mindwtr">
-                <img src="/assets/badges/izzyondroid.png" alt="在 IzzyOnDroid 获取" />
+                <img src="/assets/badges/izzyondroid.png" alt="在 IzzyOnDroid 获取" width="646" height="250" />
               </a>
             </div>
             <ul class="dl-options">

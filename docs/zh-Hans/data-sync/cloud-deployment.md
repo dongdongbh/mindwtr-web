@@ -56,7 +56,7 @@ REST 引用字段必须指向仍然有效的记录。例如，创建或修补项
 
 | 变量 | 用途 | 说明 |
 | --- | --- | --- |
-| `MINDWTR_CLOUD_AUTH_TOKENS` | 以逗号分隔的持有者令牌允许列表。 | 推荐用于生产环境。 |
+| `MINDWTR_CLOUD_AUTH_TOKENS` | 以逗号分隔的持有者令牌允许列表。每个令牌必须由 20-512 个字母、数字或 `. _ ~ + / = -` 字符组成，否则服务器会拒绝启动。 | 推荐用于生产环境。 |
 | `MINDWTR_CLOUD_AUTH_TOKENS_FILE` | 包含持有者令牌的文件路径。 | 适用于 Docker 密钥；文件内容可与 `MINDWTR_CLOUD_AUTH_TOKENS` 相同。 |
 | `MINDWTR_CLOUD_TOKEN` | 旧版单令牌别名。 | 为向后兼容仍受支持，但已弃用。 |
 | `MINDWTR_CLOUD_TOKEN_FILE` | 包含旧版单令牌的文件路径。 | 为向后兼容仍受支持，但已弃用。 |

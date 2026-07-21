@@ -56,7 +56,7 @@ REST 參考欄位必須指向使用中記錄。例如，建立或修補專案時
 
 | 變數 | 用途 | 注意事項 |
 | --- | --- | --- |
-| `MINDWTR_CLOUD_AUTH_TOKENS` | 以逗號分隔的 bearer token 允許清單。 | 正式環境建議設定。 |
+| `MINDWTR_CLOUD_AUTH_TOKENS` | 以逗號分隔的 bearer token 允許清單。每個 token 必須由 20-512 個英文字母、數字或 `. _ ~ + / = -` 字元組成，否則伺服器會拒絕啟動。 | 正式環境建議設定。 |
 | `MINDWTR_CLOUD_AUTH_TOKENS_FILE` | 含有 bearer token 的檔案路徑。 | 適合 Docker secrets；檔案內容可採用與 `MINDWTR_CLOUD_AUTH_TOKENS` 相同的格式。 |
 | `MINDWTR_CLOUD_TOKEN` | 舊版單一 token 別名。 | 為了向後相容仍支援，但已棄用。 |
 | `MINDWTR_CLOUD_TOKEN_FILE` | 含有舊版單一 token 的檔案路徑。 | 為了向後相容仍支援，但已棄用。 |

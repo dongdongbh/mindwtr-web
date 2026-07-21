@@ -100,10 +100,10 @@ Les dates absolues utilisent toujours le format ISO `YYYY-MM-DD`, par exemple `/
 
 Mindwtr propose quatre outils de regroupement distincts :
 
-- **Projets :** résultats en plusieurs étapes que vous souhaitez atteindre, par exemple « Lancer le site v2 ».
-- **Domaines :** responsabilités continues sans état final, par exemple « Santé », « Famille » ou « Carrière ».
-- **Contextes :** lieu ou moyen nécessaire à la tâche, par exemple `@home`, `@phone`, `@errands`.
-- **Tags :** libellés souples pour l’énergie, le thème ou un regroupement personnalisé, par exemple `#focused`, `#lowenergy`.
+- **Projets** : résultats en plusieurs étapes que vous souhaitez atteindre, par exemple « Lancer le site v2 ».
+- **Domaines** : responsabilités continues sans état final, par exemple « Santé », « Famille » ou « Carrière ».
+- **Contextes** : lieu ou moyen nécessaire à la tâche, par exemple `@home`, `@phone`, `@errands`.
+- **Tags** : libellés souples pour l’énergie, le thème ou un regroupement personnalisé, par exemple `#focused`, `#lowenergy`.
 
 Règle pratique :
 

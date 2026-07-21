@@ -67,6 +67,19 @@ Mindwtr unterstützt direkt fünf Backends:
 
 Geschwindigkeitsunterschiede fallen vor allem bei großen Anhängen ins Gewicht, die WebDAV und Dropbox als einzelne Uploads und Downloads übertragen. Was bei einer Synchronisierung tatsächlich übertragen wird, beschreibt der [Datenlebenszyklus](/de/data-sync/data-lifecycle).
 
+### Datenhoheit
+
+| Modus | Verlässt eine Kopie das Gerät? | Sie kontrollieren | Externe Kopie |
+| --- | --- | --- | --- |
+| **Synchronisierung aus** | Nein | Das Gerät und seine Sicherungen | Keine |
+| **Dateisynchronisierung** | Nur wenn ein anderes Werkzeug den ausgewählten Ordner repliziert | Den Ordner und jeden Anbieter oder jedes Gerät, der bzw. das ihn synchronisiert | `data.json` und Anhänge in diesem Ordner |
+| **Dropbox** | Ja | Das verbundene Dropbox-Konto | `/Apps/Mindwtr/data.json` und Anhänge im App-Ordner |
+| **iCloud / CloudKit** | Ja | Apple-ID und iCloud-Konto | CloudKit-Datensätze und Anhänge |
+| **WebDAV** | Ja | Endpunkt, Konto und Zugangsdaten | `data.json` und Anhänge auf diesem WebDAV-Server |
+| **Mindwtr Cloud (selbst gehostet)** | Ja | Bereitstellung, Speicher und Zugriffstoken | Synchronisierungsdaten und Anhänge auf diesem Server |
+
+Die lokale SQLite-Datenbank bleibt die maßgebliche Quelle. Dateibasierte Synchronisierung verwendet lesbares JSON und speichert Anhänge als Dateien. Behandeln Sie daher den ausgewählten Ordner, das Anbieterkonto oder den Server als vertrauenswürdigen Speicher. Mindwtr betreibt keinen gehosteten Synchronisierungsdienst. Direkte Dropbox-Anfragen laufen nicht über den Mindwtr-Entwickler, und Dropbox-Tokens bleiben auf Ihrem Gerät.
+
 Unter **Einstellungen → Synchronisierung** zeigen unterstützte Builds diese Möglichkeiten in einem gemeinsamen Backend-Auswahlfeld und erklären anschließend den gewählten Einrichtungsweg:
 
 - **Cloud-Synchronisierung**: **Dropbox** und auf Apple-Plattformen **iCloud**

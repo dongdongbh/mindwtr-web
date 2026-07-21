@@ -22,6 +22,25 @@ Abre **Ajustes → Datos** y elige la acción de importación correspondiente. M
 
 Los importadores nativos son la mejor opción cuando aparece tu aplicación. Conservan más estructura que el texto sin formato y procesan detalles específicos como carpetas, listas, etiquetas, fechas, listas de comprobación y recurrencias, cuando la exportación de origen los incluye.
 
+## Fidelidad de importación de un vistazo
+
+Esta cobertura se revisó el 21 de julio de 2026 con el código de importación del commit [18b11a6](https://github.com/dongdongbh/Mindwtr/commit/18b11a6814fbde064df627fcaf63143c4279bd5b) de Mindwtr. Los datos de prueba cubren CSV y ZIP de Todoist, CSV y ZIP de TickTick 7.1, JSON y ZIP del esquema 3 de DGT, y CSV, CSV UTF-16, JSON y ZIP de OmniFocus. Los formatos de exportación pueden cambiar. Revisa la vista previa y la guía específica antes de confirmar.
+
+| Origen | Mejor entrada | Mindwtr conserva | Qué comprobar después |
+| --- | --- | --- | --- |
+| [TickTick](/es/import/ticktick) | Copia CSV o ZIP | Carpetas como áreas, listas como proyectos, etiquetas, prioridades, fechas, listas de comprobación, estado de finalización y recurrencias compatibles | Adjuntos, detalles de presentación, avisos y relación entre tareas principales y secundarias |
+| [Todoist](/es/import/todoist) | Copia CSV o ZIP | Proyectos, secciones, tareas activas, descripciones y comentarios, prioridades, fechas límite, etiquetas y subtareas como elementos de comprobación | Recurrencias, que se importan una vez con el texto original; filas omitidas o dañadas |
+| [DGT GTD](/es/import/dgt-gtd) | Copia JSON o ZIP | Carpetas como áreas, proyectos, contextos, etiquetas, listas de comprobación, prioridades, fechas límite, estado de finalización y recurrencias compatibles | Recurrencias no compatibles y entradas omitidas del archivo |
+| [OmniFocus](/es/import/omnifocus) | JSON o ZIP de Omni Automation para mayor fidelidad; admite CSV | Carpetas como áreas, proyectos, etiquetas, contextos, notas, fechas, estado de finalización, anidación simple y recurrencias compatibles | Anidación profunda, fechas planificadas y texto de duración, y pérdidas propias de CSV |
+| [Recordatorios de Apple](/es/data-sync/#importacion-de-recordatorios-de-apple-ios) | Una lista seleccionada en iOS | Títulos y notas de recordatorios incompletos | Fechas y otros campos, elementos omitidos y la opción de borrar el origen |
+
+## Verificar o deshacer
+
+1. Conserva la exportación original y crea una [copia de Mindwtr](/es/data-sync/backup-restore) reciente antes de importar.
+2. Revisa los recuentos y avisos de la vista previa. Cancela si los totales de proyectos o tareas parecen incorrectos.
+3. Tras importar, compara un proyecto y varias tareas representativas con el origen. Comprueba títulos, proyecto o estado, fechas, etiquetas o contextos, notas, listas de comprobación y recurrencias.
+4. Si la asignación es incorrecta, restaura la instantánea desde **Ajustes → Sincronización → Instantáneas de recuperación**, corrige la exportación de origen e inténtalo de nuevo. Algunos importadores pueden duplicar tareas si cargas dos veces el mismo archivo.
+
 ## Métodos de migración alternativos
 
 Si tu aplicación no aparece, usa una de las alternativas siguientes. Son deliberadamente más sencillas que los importadores nativos y resultan útiles para las muchas aplicaciones que exportan texto sin formato, CSV o JSON.

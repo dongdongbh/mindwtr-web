@@ -22,6 +22,25 @@ Open **Settings -> Data** and choose the matching import action. Mindwtr shows a
 
 Native importers are the best path when your old app is listed. They preserve more structure than plain text, and they handle app-specific details such as folders, lists, tags, dates, checklists, and recurrence when the source export exposes them.
 
+## Import Fidelity at a Glance
+
+This coverage was reviewed on July 21, 2026 against the importer code at Mindwtr commit [18b11a6](https://github.com/dongdongbh/Mindwtr/commit/18b11a6814fbde064df627fcaf63143c4279bd5b). The importer fixtures cover Todoist CSV and ZIP, TickTick 7.1 CSV and ZIP, DGT schema version 3 JSON and ZIP, and OmniFocus CSV, UTF-16 CSV, JSON, and ZIP. Export formats can change, so use the preview and the app-specific guide before confirming.
+
+| Source | Best input | Mindwtr preserves | Check after import |
+| --- | --- | --- | --- |
+| [TickTick](/import/ticktick) | CSV or ZIP backup | Folders as areas, lists as projects, tags, priorities, dates, checklists, completion state, and supported recurrence | Attachments, presentation details, warnings, and parent-child mapping |
+| [Todoist](/import/todoist) | CSV or ZIP backup | Projects, sections, active tasks, descriptions and comments, priorities, due dates, labels, and subtasks as checklist items | Recurrence, which imports once with its original text; skipped or malformed rows |
+| [DGT GTD](/import/dgt-gtd) | JSON or ZIP backup | Folders as areas, projects, contexts, tags, checklists, priorities, due dates, completion state, and supported recurrence | Unsupported recurrence and skipped archive entries |
+| [OmniFocus](/import/omnifocus) | Omni Automation JSON or ZIP for best fidelity; CSV is supported | Folders as areas, projects, tags, contexts, notes, dates, completion state, simple nesting, and supported recurrence | Deep nesting, planned dates and duration text, and CSV-specific loss |
+| [Apple Reminders](/data-sync/#apple-reminders-import-ios) | A selected list on iOS | Titles and notes from incomplete reminders | Dates and other fields, skipped items, and the optional source-deletion choice |
+
+## Verify or Roll Back
+
+1. Keep the original export and make a fresh [Mindwtr backup](/data-sync/backup-restore) before importing.
+2. Check the preview counts and warnings. Cancel if the project or task totals look wrong.
+3. After import, compare one project and a few representative tasks with the source. Check titles, project or status, dates, tags or contexts, notes, checklists, and recurrence.
+4. If the mapping is wrong, restore the recovery snapshot from **Settings → Sync → Recovery Snapshots**, adjust the source export, and try again. Importing the same export twice can duplicate tasks in some importers.
+
 ## Alternative Migration Methods
 
 If your app is not listed, use one of the fallback paths below. These are intentionally simpler than native importers and are useful for the long tail of apps that export plain text, CSV, or JSON.

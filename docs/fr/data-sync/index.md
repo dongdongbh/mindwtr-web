@@ -67,6 +67,19 @@ Mindwtr prend directement en charge cinq backends de synchronisation :
 
 Les différences de vitesse sont surtout importantes avec les pièces jointes volumineuses, que WebDAV et Dropbox transfèrent sous forme de téléversements/téléchargements individuels. Consultez [Cycle de vie des données](/fr/data-sync/data-lifecycle) pour savoir ce qui est réellement transféré lors d’une synchronisation.
 
+### Maîtrise des données
+
+| Mode | Une copie quitte-t-elle l’appareil ? | Vous contrôlez | Copie distante |
+| --- | --- | --- | --- |
+| **Synchronisation désactivée** | Non | L’appareil et ses sauvegardes | Aucune |
+| **Synchronisation de fichiers** | Seulement si un autre outil réplique le dossier choisi | Le dossier et tout fournisseur ou appareil qui le synchronise | `data.json` et les pièces jointes de ce dossier |
+| **Dropbox** | Oui | Le compte Dropbox connecté | `/Apps/Mindwtr/data.json` et les pièces jointes du dossier d’application |
+| **iCloud / CloudKit** | Oui | L’identifiant Apple et le compte iCloud | Enregistrements CloudKit et pièces jointes |
+| **WebDAV** | Oui | Le point d’accès, le compte et les identifiants | `data.json` et les pièces jointes sur ce serveur WebDAV |
+| **Mindwtr Cloud (auto-hébergé)** | Oui | Le déploiement, le stockage et le jeton d’accès | Données de synchronisation et pièces jointes sur ce serveur |
+
+La base SQLite locale reste la source de référence. La synchronisation par fichiers utilise un JSON lisible et conserve les pièces jointes sous forme de fichiers. Considérez donc le dossier, le compte fournisseur ou le serveur choisi comme un stockage de confiance. Mindwtr n’exploite aucun service de synchronisation hébergé. Les requêtes directes vers Dropbox ne transitent pas par le développeur de Mindwtr, et les jetons Dropbox restent sur votre appareil.
+
 Dans **Réglages → Synchronisation**, les versions prises en charge présentent ces options dans un sélecteur de backend unique, puis expliquent la procédure de configuration sélectionnée :
 
 - **Synchronisation cloud** : **Dropbox** et **iCloud** sur les plateformes Apple

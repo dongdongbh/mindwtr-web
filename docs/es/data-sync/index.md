@@ -67,6 +67,19 @@ Mindwtr admite directamente cinco backends de sincronización:
 
 Las diferencias de velocidad importan sobre todo con archivos adjuntos grandes, que WebDAV y Dropbox transfieren como subidas/descargas individuales. Consulta [Ciclo de vida de los datos](/es/data-sync/data-lifecycle) para saber qué se mueve realmente durante una sincronización.
 
+### Control de los datos
+
+| Modo | ¿Sale una copia del dispositivo? | Tú controlas | Copia remota |
+| --- | --- | --- | --- |
+| **Sincronización desactivada** | No | El dispositivo y sus copias de seguridad | Ninguna |
+| **Sincronización de archivos** | Solo si otra herramienta replica la carpeta elegida | La carpeta y cualquier proveedor o dispositivo que la sincronice | `data.json` y los adjuntos de esa carpeta |
+| **Dropbox** | Sí | La cuenta de Dropbox conectada | `/Apps/Mindwtr/data.json` y los adjuntos de la carpeta de la aplicación |
+| **iCloud / CloudKit** | Sí | El Apple ID y la cuenta de iCloud | Registros de CloudKit y adjuntos |
+| **WebDAV** | Sí | El endpoint, la cuenta y las credenciales | `data.json` y los adjuntos de ese servidor WebDAV |
+| **Mindwtr Cloud (autohospedado)** | Sí | El despliegue, el almacenamiento y el token de acceso | Datos de sincronización y adjuntos de ese servidor |
+
+La base SQLite local sigue siendo la fuente principal. La sincronización por archivos usa JSON legible y guarda los adjuntos como archivos, así que trata la carpeta, la cuenta del proveedor o el servidor elegidos como almacenamiento de confianza. Mindwtr no ofrece un servicio de sincronización alojado. Las solicitudes directas a Dropbox no pasan por el desarrollador de Mindwtr y los tokens de Dropbox permanecen en tu dispositivo.
+
 En **Ajustes → Sincronización**, las versiones compatibles muestran estas opciones en un único selector de backend y después explican la vía de configuración seleccionada:
 
 - **Sincronización en la nube**: **Dropbox** e **iCloud** en plataformas Apple

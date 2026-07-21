@@ -22,6 +22,25 @@ Mindwtr bietet vollwertige Importer für einige Apps, deren Exportformat struktu
 
 Native Importer sind die beste Wahl, wenn Ihre bisherige App aufgeführt ist. Sie erhalten mehr Struktur als einfacher Text und berücksichtigen app-spezifische Details wie Ordner, Listen, Tags, Daten, Checklisten und Wiederholungen, sofern der Quellexport diese enthält.
 
+## Importtreue im Überblick
+
+Diese Übersicht wurde am 21. Juli 2026 mit dem Importcode aus Mindwtr-Commit [18b11a6](https://github.com/dongdongbh/Mindwtr/commit/18b11a6814fbde064df627fcaf63143c4279bd5b) abgeglichen. Die Import-Fixtures decken Todoist CSV und ZIP, TickTick 7.1 CSV und ZIP, DGT-Schema Version 3 als JSON und ZIP sowie OmniFocus CSV, UTF-16-CSV, JSON und ZIP ab. Exportformate können sich ändern. Prüfen Sie daher die Vorschau und den jeweiligen App-Leitfaden, bevor Sie den Import bestätigen.
+
+| Quelle | Beste Eingabe | Mindwtr erhält | Nach dem Import prüfen |
+| --- | --- | --- | --- |
+| [TickTick](/de/import/ticktick) | CSV- oder ZIP-Sicherung | Ordner als Bereiche, Listen als Projekte, Tags, Prioritäten, Daten, Checklisten, Abschlussstatus und unterstützte Wiederholungen | Anhänge, Darstellungsdetails, Warnungen und Zuordnung von über- und untergeordneten Aufgaben |
+| [Todoist](/de/import/todoist) | CSV- oder ZIP-Sicherung | Projekte, Abschnitte, aktive Aufgaben, Beschreibungen und Kommentare, Prioritäten, Fälligkeitsdaten, Labels und Unteraufgaben als Checklistenpunkte | Wiederholungen, die einmalig mit dem Originaltext importiert werden; übersprungene oder fehlerhafte Zeilen |
+| [DGT GTD](/de/import/dgt-gtd) | JSON- oder ZIP-Sicherung | Ordner als Bereiche, Projekte, Kontexte, Tags, Checklisten, Prioritäten, Fälligkeitsdaten, Abschlussstatus und unterstützte Wiederholungen | Nicht unterstützte Wiederholungen und übersprungene Archiveinträge |
+| [OmniFocus](/de/import/omnifocus) | Omni-Automation-JSON oder ZIP für die beste Übernahme; CSV wird unterstützt | Ordner als Bereiche, Projekte, Tags, Kontexte, Notizen, Daten, Abschlussstatus, einfache Verschachtelung und unterstützte Wiederholungen | Tiefe Verschachtelung, geplante Daten und Dauertext sowie CSV-bedingte Verluste |
+| [Apple Erinnerungen](/de/data-sync/#apple-reminders-import-ios) | Eine ausgewählte Liste unter iOS | Titel und Notizen unerledigter Erinnerungen | Daten und andere Felder, übersprungene Einträge und die optionale Löschung aus der Quelle |
+
+## Prüfen oder zurücksetzen
+
+1. Bewahren Sie den Originalexport auf und erstellen Sie vor dem Import eine neue [Mindwtr-Sicherung](/de/data-sync/backup-restore).
+2. Prüfen Sie die Anzahl und Warnungen in der Vorschau. Brechen Sie ab, wenn die Projekt- oder Aufgabenanzahl falsch wirkt.
+3. Vergleichen Sie nach dem Import ein Projekt und einige typische Aufgaben mit der Quelle. Prüfen Sie Titel, Projekt oder Status, Daten, Tags oder Kontexte, Notizen, Checklisten und Wiederholungen.
+4. Wenn die Zuordnung falsch ist, stellen Sie den Wiederherstellungspunkt unter **Einstellungen → Synchronisierung → Wiederherstellungspunkte** wieder her, passen Sie den Quellexport an und versuchen Sie es erneut. Bei einigen Importern kann derselbe Export beim zweiten Import Aufgaben duplizieren.
+
 ## Alternative Migrationsmethoden
 
 Falls Ihre App nicht aufgeführt ist, verwenden Sie eine der folgenden Ausweichmöglichkeiten. Sie sind bewusst einfacher als native Importer und eignen sich für die vielen Apps, die einfachen Text, CSV oder JSON exportieren.

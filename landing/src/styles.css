@@ -1760,6 +1760,28 @@ main > section:last-child {
   font-weight: 700;
 }
 
+.compare-notes {
+  max-width: 880px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+.compare-notes p {
+  margin: 0;
+}
+
+.compare-notes p + p {
+  margin-top: 10px;
+}
+
+.compare-notes a {
+  color: var(--ink-soft);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

@@ -67,6 +67,19 @@ Mindwtr directly supports five sync backends:
 
 Speed differences matter most with large attachments, which WebDAV and Dropbox transfer as individual uploads/downloads. See [Data lifecycle](/data-sync/data-lifecycle) for what actually moves during a sync.
 
+### Data ownership
+
+| Mode | Does a copy leave the device? | You control | Remote copy |
+| --- | --- | --- | --- |
+| **Sync off** | No | The device and its backups | None |
+| **File Sync** | Only if another tool replicates the selected folder | The folder and any provider or device that syncs it | `data.json` and attachment files in that folder |
+| **Dropbox** | Yes | The connected Dropbox account | `/Apps/Mindwtr/data.json` and attachments in the app folder |
+| **iCloud / CloudKit** | Yes | The Apple ID and iCloud account | CloudKit records and attachment assets |
+| **WebDAV** | Yes | The endpoint, account, and credentials | `data.json` and attachments on that WebDAV server |
+| **Mindwtr Cloud (self-hosted)** | Yes | The deployment, storage, and access token | Sync data and attachments on that server |
+
+The local SQLite database remains the source of truth. File-based sync uses human-readable JSON and keeps attachments as files, so treat the selected folder, provider account, or server as trusted storage. Mindwtr does not operate a hosted sync service. Direct Dropbox requests are not proxied through the Mindwtr developer, and Dropbox tokens stay on your device.
+
 In **Settings → Sync**, supported builds show these as one backend selector, then explain the selected setup path:
 
 - **Cloud Sync**: **Dropbox** and **iCloud** on Apple platforms

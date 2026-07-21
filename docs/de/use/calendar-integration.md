@@ -198,7 +198,7 @@ Unter Linux kann Mindwtr aktivierte Evolution-Data-Server-Kalender lesen und gep
 4. Aktivieren Sie **Aufgaben in Kalender übertragen**, wenn Mindwtr-Aufgaben in den Systemkalender geschrieben werden sollen.
 5. Klappen Sie **Synchronisierungsziel** auf, aktualisieren Sie die Kalender und wählen Sie einen eigenen Kalender `Mindwtr` oder ein anderes beschreibbares Ziel.
 
-Unter Linux gibt es keinen separaten Kalender-Berechtigungsdialog. Schreibgeschützte Kalender können in Mindwtr erscheinen, werden aber nicht als Übertragungsziel angeboten. Die aktuellen Flatpak- und Snap-Pakete können nicht auf den Evolution Data Server des Hosts zugreifen; verwenden Sie für diese Integration vorerst ein natives Paket oder das AUR-Paket.
+Unter Linux gibt es keinen separaten Kalender-Berechtigungsdialog. Schreibgeschützte Kalender können in Mindwtr erscheinen, werden aber nicht als Übertragungsziel angeboten. Die Flatpak-Unterstützung ist für die nächste Flathub-Version vorbereitet; bis diese Version installiert ist, verwenden Sie für diese Integration ein natives Paket oder das AUR-Paket. Snap wird weiterhin nicht unterstützt.
 
 ### Desktop/Web: ICS-URLs
 

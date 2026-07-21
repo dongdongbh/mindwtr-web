@@ -198,7 +198,7 @@ Sous Linux, Mindwtr peut lire les calendriers Evolution Data Server activés et 
 4. Activez **Envoyer les tâches vers le calendrier** si vous souhaitez inscrire les tâches Mindwtr dans le calendrier système.
 5. Dépliez **Cible de synchronisation**, actualisez les calendriers, puis choisissez un calendrier `Mindwtr` dédié ou une autre cible inscriptible.
 
-Linux n’affiche pas de boîte de dialogue d’autorisation distincte pour le calendrier. Les calendriers en lecture seule peuvent apparaître dans Mindwtr, mais ne sont pas proposés comme cibles d’envoi. Les versions Flatpak et Snap actuelles ne peuvent pas accéder au service Evolution Data Server de l’hôte ; utilisez pour l’instant un paquet natif ou le paquet AUR pour cette intégration.
+Linux n’affiche pas de boîte de dialogue d’autorisation distincte pour le calendrier. Les calendriers en lecture seule peuvent apparaître dans Mindwtr, mais ne sont pas proposés comme cibles d’envoi. La prise en charge de Flatpak est préparée pour la prochaine version Flathub ; jusqu’à l’installation de cette version, utilisez un paquet natif ou le paquet AUR pour cette intégration. Snap reste non pris en charge.
 
 ### Ordinateur/Web : URL ICS
 

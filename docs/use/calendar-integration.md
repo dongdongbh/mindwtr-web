@@ -198,7 +198,7 @@ On Linux, Mindwtr can read enabled Evolution Data Server calendars and push sche
 4. Enable **Push tasks to calendar** if you want Mindwtr tasks written to the system calendar.
 5. Expand **Sync target**, refresh the calendars, and choose a dedicated `Mindwtr` calendar or another writable target.
 
-Linux does not show a separate calendar permission dialog. Read-only calendars can appear in Mindwtr but are not offered as push targets. The current Flatpak and Snap builds cannot access the host Evolution Data Server service; use a native package or the AUR build for this integration for now.
+Linux does not show a separate calendar permission dialog. Read-only calendars can appear in Mindwtr but are not offered as push targets. Flatpak support is prepared for the next Flathub release; until that release is installed, use a native package or the AUR build for this integration. Snap remains unsupported.
 
 ### Desktop/Web: ICS URLs
 

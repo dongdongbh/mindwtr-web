@@ -4,7 +4,8 @@ Mindwtr supports calendar integration in two directions: reading external calend
 
 - **Mobile (iOS/Android):** device calendars already exposed by the system, ICS subscription URLs, and one-way Mindwtr -> device calendar push
 - **Desktop (macOS):** Apple Calendar via EventKit for read and one-way task push, plus ICS subscription URLs
-- **Desktop (Linux/Windows) and Web:** ICS subscription URLs
+- **Desktop (Linux):** calendars exposed by Evolution Data Server for read and one-way task push, plus ICS subscription URLs
+- **Desktop (Windows) and Web:** ICS subscription URLs
 
 ## Concepts
 
@@ -80,11 +81,12 @@ Supported today:
 | iOS/Android mobile | Direct ICS subscription URLs | The URL must return raw iCalendar data. |
 | macOS desktop | Read Apple Calendar accounts | Read events through macOS EventKit after permission is granted. This includes calendars synced into Apple Calendar, such as iCloud, Google, and Exchange. |
 | macOS desktop | Push Mindwtr tasks to Apple Calendar | Writes scheduled/due Mindwtr tasks into a selected writable Apple Calendar target through EventKit. |
+| Linux desktop | Read system calendar accounts | Reads enabled calendars exposed by Evolution Data Server, including accounts configured in Evolution or GNOME Online Accounts. |
+| Linux desktop | Push Mindwtr tasks to a system calendar | Writes scheduled/due Mindwtr tasks into a selected writable Evolution Data Server calendar. |
 | Desktop and Web | Direct ICS subscription URLs | The URL must return raw iCalendar data. |
 
 Not supported today:
 
-- Linux native desktop calendar accounts.
 - Windows native desktop calendar accounts.
 - CalDAV account login, server discovery, or DAVx5-specific account discovery.
 - Calendar provider OAuth inside Mindwtr, such as signing in to Google, Microsoft, or Nextcloud from Mindwtr.
@@ -184,7 +186,19 @@ On macOS desktop, Mindwtr can read Apple Calendar events and push scheduled/due 
 4. Enable **Push tasks to calendar** if you want Mindwtr tasks written to Apple Calendar
 5. Choose a dedicated `Mindwtr` calendar or another writable calendar target
 
-This works only for calendars that are already visible in Apple Calendar. Linux and Windows do not have native desktop calendar account integration today.
+This works only for calendars that are already visible in Apple Calendar.
+
+### Linux: GNOME/Evolution Data Server Integration
+
+On Linux, Mindwtr can read enabled Evolution Data Server calendars and push scheduled/due tasks to writable calendars. This includes accounts already configured in Evolution or GNOME Online Accounts when they are exposed through Evolution Data Server.
+
+1. Configure the calendar account in Evolution or GNOME Online Accounts and confirm it appears in Evolution.
+2. Make sure `evolution-data-server` is installed and running.
+3. Open **Settings -> Calendar** in Mindwtr.
+4. Enable **Push tasks to calendar** if you want Mindwtr tasks written to the system calendar.
+5. Expand **Sync target**, refresh the calendars, and choose a dedicated `Mindwtr` calendar or another writable target.
+
+Linux does not show a separate calendar permission dialog. Read-only calendars can appear in Mindwtr but are not offered as push targets. The current Flatpak and Snap builds cannot access the host Evolution Data Server service; use a native package or the AUR build for this integration for now.
 
 ### Desktop/Web: ICS URLs
 

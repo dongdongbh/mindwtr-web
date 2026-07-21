@@ -4,7 +4,8 @@ Mindwtr prend en charge l’intégration du calendrier dans les deux sens : la l
 
 - **Mobile (iOS/Android) :** calendriers de l’appareil déjà exposés par le système, URL d’abonnement ICS et envoi unidirectionnel de Mindwtr vers le calendrier de l’appareil
 - **Ordinateur (macOS) :** Calendrier Apple via EventKit pour la lecture et l’envoi unidirectionnel de tâches, ainsi que les URL d’abonnement ICS
-- **Ordinateur (Linux/Windows) et Web :** URL d’abonnement ICS
+- **Ordinateur (Linux) :** calendriers exposés par Evolution Data Server pour la lecture et l’envoi unidirectionnel de tâches, ainsi que les URL d’abonnement ICS
+- **Ordinateur (Windows) et Web :** URL d’abonnement ICS
 
 ## Concepts
 
@@ -80,11 +81,12 @@ Pris en charge actuellement :
 | Mobile iOS/Android | URL directes d’abonnement ICS | L’URL doit renvoyer des données iCalendar brutes. |
 | Ordinateur macOS | Lire les comptes Calendrier Apple | Lit les événements via EventKit sur macOS après l’octroi de l’autorisation. Cela comprend les calendriers synchronisés avec Calendrier Apple, comme iCloud, Google et Exchange. |
 | Ordinateur macOS | Envoyer les tâches Mindwtr vers Calendrier Apple | Inscrit les tâches Mindwtr planifiées ou arrivant à échéance dans un calendrier Apple inscriptible sélectionné via EventKit. |
+| Ordinateur Linux | Lire les comptes de calendrier système | Lit les calendriers activés exposés par Evolution Data Server, y compris les comptes configurés dans Evolution ou Comptes en ligne GNOME. |
+| Ordinateur Linux | Envoyer les tâches Mindwtr vers un calendrier système | Inscrit les tâches Mindwtr planifiées ou arrivant à échéance dans un calendrier Evolution Data Server inscriptible sélectionné. |
 | Ordinateur et Web | URL directes d’abonnement ICS | L’URL doit renvoyer des données iCalendar brutes. |
 
 Non pris en charge actuellement :
 
-- Les comptes de calendrier natifs sur ordinateur Linux.
 - Les comptes de calendrier natifs sur ordinateur Windows.
 - La connexion à un compte CalDAV, la découverte du serveur ou la découverte de comptes propre à DAVx5.
 - OAuth d’un fournisseur de calendrier dans Mindwtr, par exemple la connexion à Google, Microsoft ou Nextcloud depuis Mindwtr.
@@ -184,7 +186,19 @@ Sur macOS, Mindwtr peut lire les événements de Calendrier Apple et envoyer les
 4. Activez **Envoyer les tâches vers le calendrier** si vous souhaitez que les tâches Mindwtr soient inscrites dans Calendrier Apple
 5. Choisissez un calendrier `Mindwtr` dédié ou une autre cible de calendrier inscriptible
 
-Cela fonctionne uniquement pour les calendriers déjà visibles dans Calendrier Apple. Linux et Windows ne disposent actuellement d’aucune intégration native aux comptes de calendrier sur ordinateur.
+Cela fonctionne uniquement pour les calendriers déjà visibles dans Calendrier Apple.
+
+### Linux : intégration à GNOME/Evolution Data Server
+
+Sous Linux, Mindwtr peut lire les calendriers Evolution Data Server activés et envoyer les tâches planifiées ou arrivant à échéance vers les calendriers inscriptibles. Cela comprend les comptes déjà configurés dans Evolution ou Comptes en ligne GNOME lorsqu’ils sont exposés par Evolution Data Server.
+
+1. Configurez le compte de calendrier dans Evolution ou Comptes en ligne GNOME et vérifiez qu’il apparaît dans Evolution.
+2. Vérifiez que `evolution-data-server` est installé et en cours d’exécution.
+3. Ouvrez **Paramètres -> Calendrier** dans Mindwtr.
+4. Activez **Envoyer les tâches vers le calendrier** si vous souhaitez inscrire les tâches Mindwtr dans le calendrier système.
+5. Dépliez **Cible de synchronisation**, actualisez les calendriers, puis choisissez un calendrier `Mindwtr` dédié ou une autre cible inscriptible.
+
+Linux n’affiche pas de boîte de dialogue d’autorisation distincte pour le calendrier. Les calendriers en lecture seule peuvent apparaître dans Mindwtr, mais ne sont pas proposés comme cibles d’envoi. Les versions Flatpak et Snap actuelles ne peuvent pas accéder au service Evolution Data Server de l’hôte ; utilisez pour l’instant un paquet natif ou le paquet AUR pour cette intégration.
 
 ### Ordinateur/Web : URL ICS
 

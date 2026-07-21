@@ -4,7 +4,8 @@ Mindwtr admite la integración con calendarios en dos direcciones: leer calendar
 
 - **Móvil (iOS/Android):** calendarios del dispositivo ya expuestos por el sistema, URL de suscripción ICS y envío unidireccional de Mindwtr -> calendario del dispositivo
 - **Escritorio (macOS):** Apple Calendar mediante EventKit para lectura y envío unidireccional de tareas, además de URL de suscripción ICS
-- **Escritorio (Linux/Windows) y web:** URL de suscripción ICS
+- **Escritorio (Linux):** calendarios expuestos por Evolution Data Server para lectura y envío unidireccional de tareas, además de URL de suscripción ICS
+- **Escritorio (Windows) y web:** URL de suscripción ICS
 
 ## Conceptos
 
@@ -80,11 +81,12 @@ Compatibilidad actual:
 | Móvil iOS/Android | URL directas de suscripción ICS | La URL debe devolver datos iCalendar sin procesar. |
 | Escritorio macOS | Leer cuentas de Apple Calendar | Lee eventos mediante EventKit de macOS después de conceder el permiso. Esto incluye calendarios sincronizados con Apple Calendar, como iCloud, Google y Exchange. |
 | Escritorio macOS | Enviar tareas de Mindwtr a Apple Calendar | Escribe las tareas de Mindwtr programadas/con fecha límite en un destino editable seleccionado de Apple Calendar mediante EventKit. |
+| Escritorio Linux | Leer cuentas de calendario del sistema | Lee los calendarios habilitados que expone Evolution Data Server, incluidas las cuentas configuradas en Evolution o Cuentas en línea de GNOME. |
+| Escritorio Linux | Enviar tareas de Mindwtr a un calendario del sistema | Escribe las tareas de Mindwtr programadas/con fecha límite en un calendario editable seleccionado de Evolution Data Server. |
 | Escritorio y web | URL directas de suscripción ICS | La URL debe devolver datos iCalendar sin procesar. |
 
 Sin compatibilidad actualmente:
 
-- Cuentas de calendario nativas del escritorio de Linux.
 - Cuentas de calendario nativas del escritorio de Windows.
 - Inicio de sesión en cuentas CalDAV, descubrimiento de servidores o descubrimiento de cuentas específico de DAVx5.
 - OAuth del proveedor de calendario dentro de Mindwtr, como iniciar sesión en Google, Microsoft o Nextcloud desde Mindwtr.
@@ -184,7 +186,19 @@ En el escritorio de macOS, Mindwtr puede leer eventos de Apple Calendar y enviar
 4. Activa **Enviar tareas al calendario** si quieres que las tareas de Mindwtr se escriban en Apple Calendar
 5. Elige un calendario dedicado `Mindwtr` u otro calendario editable como destino
 
-Esto solo funciona con los calendarios que ya están visibles en Apple Calendar. Linux y Windows no tienen actualmente integración nativa con cuentas de calendario de escritorio.
+Esto solo funciona con los calendarios que ya están visibles en Apple Calendar.
+
+### Linux: integración con GNOME/Evolution Data Server
+
+En Linux, Mindwtr puede leer los calendarios habilitados de Evolution Data Server y enviar tareas programadas/con fecha límite a calendarios editables. Esto incluye las cuentas ya configuradas en Evolution o Cuentas en línea de GNOME cuando Evolution Data Server las expone.
+
+1. Configura la cuenta de calendario en Evolution o Cuentas en línea de GNOME y confirma que aparece en Evolution.
+2. Asegúrate de que `evolution-data-server` esté instalado y en ejecución.
+3. Abre **Ajustes -> Calendario** en Mindwtr.
+4. Activa **Enviar tareas al calendario** si quieres que las tareas de Mindwtr se escriban en el calendario del sistema.
+5. Expande **Destino de sincronización**, actualiza los calendarios y elige un calendario dedicado `Mindwtr` u otro destino editable.
+
+Linux no muestra un diálogo separado de permiso para el calendario. Los calendarios de solo lectura pueden aparecer en Mindwtr, pero no se ofrecen como destinos de envío. Las compilaciones Flatpak y Snap actuales no pueden acceder al servicio Evolution Data Server del sistema; por ahora, usa un paquete nativo o la compilación de AUR para esta integración.
 
 ### Escritorio/web: URL de ICS
 

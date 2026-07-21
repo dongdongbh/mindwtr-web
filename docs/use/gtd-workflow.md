@@ -167,7 +167,7 @@ Example: **Launch website** can have sections such as **Design**, **Development*
 
 The **Project Section** field on a task assigns that task to one of its project's sections. It is useful only after the task belongs to a project that has sections. For unassigned tasks, or projects without sections, leave the field blank.
 
-Sequential projects can use a project-wide scope or a section scope. Use section scope when a project has independent phases or workstreams: Mindwtr shows the first available task in each section instead of blocking the whole project behind one task.
+Sequential projects can use a project-wide scope or a section scope. Use section scope when a project has independent phases or workstreams: Mindwtr shows the first available task in each section instead of blocking the whole project behind one task. With section scope, completing a section's last next action asks "What's the next action?" for that section, just as finishing a project's last action does for the whole project.
 
 ### Due Dates and Reminders
 

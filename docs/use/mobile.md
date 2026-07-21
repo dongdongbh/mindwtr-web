@@ -38,11 +38,11 @@ Tap the **Menu** tab to access additional views:
  - 💭 **Someday/Maybe**: Future ideas
  - 📚 **Reference**: Reference material
  - ✅ **Done**: Recently completed tasks
- - 📦 **Archived**: Completed tasks filed away from normal lists
+- 📦 **Archived**: Completed tasks and projects filed away from normal lists
  - 🗑️ **Trash**: Deleted tasks and projects
  - ⚙️ **Settings**: App preferences
 
-Open **Done** and tap **Select** to choose tasks, then use **Move → Archived** to file them away early. In **Archived**, tap **Select** or **Select All** to move tasks back to Done without changing their completion time, restore them to Inbox, or move them to Trash. Mindwtr permanently deletes tasks only from Trash.
+Open **Done** and tap **Select** to choose tasks, then use **Move → Archived** to file them away early. In **Archived**, tap **Select** or **Select All** to move tasks back to Done without changing their completion time, restore them to Inbox, or move them to Trash. Switch to **Projects** to open, restore, or move archived projects to Trash. Mindwtr permanently deletes items only from Trash.
 
 Open **Trash** and tap **Select** to manage several deleted tasks and projects. Tap **Select All** or choose items, then restore or permanently delete them in one step. Permanent deletion always asks for confirmation.
 
@@ -350,7 +350,7 @@ Review your tasks and update their status.
 - See task details (description, start time, deadline, contexts)
 - Quickly mark tasks as done
 - Navigate between tasks
-- **Select mode**: Batch select tasks and share them
+- **Select mode**: Batch organize, move, tag, share, or delete tasks
 - During Weekly Review, use the **Process Inbox** step to clear captured items before continuing through calendar, waiting-for, projects, and someday review.
 
 ---

@@ -38,11 +38,11 @@ Toca la pestaña **Menú** para acceder a más vistas:
  - 💭 **Algún día/Tal vez**: ideas futuras
  - 📚 **Referencia**: material de referencia
  - ✅ **Terminadas**: tareas completadas recientemente
- - 📦 **Archivadas**: tareas completadas apartadas de las listas normales
+ - 📦 **Archivadas**: tareas y proyectos completados apartados de las listas normales
  - 🗑️ **Papelera**: tareas y proyectos eliminados
  - ⚙️ **Ajustes**: preferencias de la aplicación
 
-Abre **Terminadas** y toca **Seleccionar** para elegir tareas; después usa **Mover → Archivadas** para archivarlas antes. En **Archivadas**, toca **Seleccionar** o **Seleccionar todo** para devolver tareas a Terminadas sin cambiar su hora de finalización, restaurarlas a la Bandeja de entrada o moverlas a la Papelera. Mindwtr solo elimina tareas permanentemente desde la Papelera.
+Abre **Terminadas** y toca **Seleccionar** para elegir tareas; después usa **Mover → Archivadas** para archivarlas antes. En **Archivadas**, toca **Seleccionar** o **Seleccionar todo** para devolver tareas a Terminadas sin cambiar su hora de finalización, restaurarlas a la Bandeja de entrada o moverlas a la Papelera. Cambia a **Proyectos** para abrir, restaurar o mover proyectos archivados a la Papelera. Mindwtr solo elimina elementos permanentemente desde la Papelera.
 
 Abre **Papelera** y toca **Seleccionar** para gestionar varias tareas y proyectos eliminados. Toca **Seleccionar todo** o elige elementos y después restáuralos o elimínalos permanentemente en un solo paso. La eliminación permanente siempre pide confirmación.
 
@@ -350,7 +350,7 @@ Revisa tus tareas y actualiza su estado.
 - Consulta los detalles de la tarea (descripción, hora de inicio, plazo y contextos)
 - Marca tareas rápidamente como terminadas
 - Navega entre tareas
-- **Modo de selección**: selecciona tareas por lotes y compártelas
+- **Modo de selección**: organiza, mueve, etiqueta, comparte o elimina tareas por lotes
 - Durante la Revisión semanal, usa el paso **Procesar Bandeja de entrada** para vaciar los elementos capturados antes de continuar con el calendario, En espera, los proyectos y Algún día.
 
 ---

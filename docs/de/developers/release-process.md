@@ -57,7 +57,7 @@ Veröffentlichen Sie RC-Builds nur in Kanälen, die Tester ohne hohen Wartungsau
 | iOS | TestFlight | Der App Store bleibt der stabile Kanal. |
 | macOS-App-Store-Build | TestFlight | Der Mac App Store bleibt der stabile Kanal. |
 | Android-Play-Build | Standardmäßig interne Tests und offene Tests (`beta`) bei Google Play; geschlossene/benutzerdefinierte Tracks, sofern konfiguriert | Production erhält später einen stabilen Upload, und der interne Test-Track wird vom stabilen Workflow aktualisiert. |
-| Linux Flatpak | Flathub-Beta-Branch | Künftige Automatisierung: Stable sowohl im stabilen als auch im Beta-Branch veröffentlichen, damit Beta-Benutzer nicht zurückbleiben. |
+| Linux Flatpak | Flathub-Beta-Branch | Stabile Releases werden sowohl im stabilen als auch im Beta-Branch veröffentlicht, damit Beta-Benutzer nicht zurückbleiben. |
 | Arch Linux | AUR `mindwtr-bin-beta` | Das stabile Release aktualisiert das dauerhaft bestehende Beta-Paket. |
 | Debian/Fedora Linux | Beta-APT-/RPM-Repositorys | Stabile Pakete verbleiben in getrennten Verzeichnissen der stabilen Repositorys. |
 | Direkter Windows-Download | Installer/portable Version aus dem GitHub-Prerelease | Microsoft Store bleibt ausschließlich stabil, sofern Paket-Flights nicht später automatisiert werden. |

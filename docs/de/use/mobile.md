@@ -38,11 +38,11 @@ Tippen Sie auf **Menü**, um weitere Ansichten zu öffnen:
 - 💭 **Irgendwann/Vielleicht**: zukünftige Ideen
 - 📚 **Referenz**: Referenzmaterial
 - ✅ **Erledigt**: kürzlich abgeschlossene Aufgaben
-- 📦 **Archiviert**: abgelegte abgeschlossene Aufgaben
+- 📦 **Archiviert**: abgelegte abgeschlossene Aufgaben und Projekte
 - 🗑️ **Papierkorb**: gelöschte Aufgaben und Projekte
 - ⚙️ **Einstellungen**: App-Einstellungen
 
-Öffnen Sie **Erledigt** und tippen Sie auf **Auswählen**, um Aufgaben zu markieren. Verwenden Sie dann **Verschieben → Archiviert**, um sie vorzeitig abzulegen. Unter **Archiviert** können Sie mit **Auswählen** oder **Alle auswählen** Aufgaben zurück nach Erledigt verschieben, ohne den Abschlusszeitpunkt zu ändern, sie im Posteingang wiederherstellen oder in den Papierkorb verschieben. Mindwtr löscht Aufgaben nur aus dem Papierkorb endgültig.
+Öffnen Sie **Erledigt** und tippen Sie auf **Auswählen**, um Aufgaben zu markieren. Verwenden Sie dann **Verschieben → Archiviert**, um sie vorzeitig abzulegen. Unter **Archiviert** können Sie mit **Auswählen** oder **Alle auswählen** Aufgaben zurück nach Erledigt verschieben, ohne den Abschlusszeitpunkt zu ändern, sie im Posteingang wiederherstellen oder in den Papierkorb verschieben. Wechseln Sie zu **Projekte**, um archivierte Projekte zu öffnen, wiederherzustellen oder in den Papierkorb zu verschieben. Mindwtr löscht Einträge nur aus dem Papierkorb endgültig.
 
 Öffnen Sie **Papierkorb** und tippen Sie auf **Auswählen**, um mehrere gelöschte Aufgaben und Projekte gemeinsam wiederherzustellen oder endgültig zu löschen. Endgültiges Löschen verlangt immer eine Bestätigung.
 
@@ -319,7 +319,7 @@ Aufgaben prüfen und Status aktualisieren:
 - Details ansehen
 - schnell erledigen
 - zwischen Aufgaben navigieren
-- im **Auswahlmodus** mehrere Aufgaben teilen
+- im **Auswahlmodus** mehrere Aufgaben organisieren, verschieben, taggen, teilen oder löschen
 - im Wochenrückblick zuerst über **Posteingang verarbeiten** die Erfassungen klären
 
 ---

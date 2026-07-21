@@ -57,7 +57,7 @@ Publica compilaciones RC únicamente en canales que puedan admitir personas enca
 | iOS | TestFlight | App Store sigue siendo el canal estable. |
 | Compilación para macOS App Store | TestFlight | Mac App Store sigue siendo el canal estable. |
 | Compilación para Android Play | Pruebas internas de Google Play y pruebas abiertas (`beta`) de forma predeterminada; canales cerrados/personalizados cuando estén configurados | Producción recibe posteriormente una subida estable y el flujo de trabajo estable actualiza el canal de pruebas internas. |
-| Linux Flatpak | Rama beta de Flathub | Automatización futura: publicar la versión estable tanto en la rama estable como en la beta para no dejar atrás a los usuarios de la beta. |
+| Linux Flatpak | Rama beta de Flathub | Las versiones estables se publican tanto en la rama estable como en la beta para no dejar atrás a los usuarios de la beta. |
 | Arch Linux | AUR `mindwtr-bin-beta` | El lanzamiento estable actualiza el paquete beta persistente. |
 | Debian/Fedora Linux | Repositorios APT/RPM beta | Los paquetes estables permanecen en directorios separados de repositorios estables. |
 | Descarga directa para Windows | Instalador/versión portátil del prelanzamiento de GitHub | Microsoft Store permanece solo en estable salvo que posteriormente se automaticen los paquetes piloto. |

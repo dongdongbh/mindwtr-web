@@ -57,7 +57,7 @@ Publiez les builds RC uniquement sur les canaux capables d'accueillir des testeu
 | iOS | TestFlight | L'App Store reste le canal stable. |
 | Build macOS App Store | TestFlight | Le Mac App Store reste le canal stable. |
 | Build Android Play | Tests internes Google Play et tests ouverts (`beta`) par défaut ; pistes fermées/personnalisées lorsqu'elles sont configurées | La production reçoit ultérieurement un téléversement stable, et la piste de tests internes est actualisée par le flux de travail stable. |
-| Linux Flatpak | Branche bêta Flathub | Automatisation future : publier la version stable dans les branches stable et bêta afin que les utilisateurs bêta ne soient pas abandonnés. |
+| Linux Flatpak | Branche bêta Flathub | Les versions stables sont publiées dans les branches stable et bêta afin que les utilisateurs bêta ne soient pas abandonnés. |
 | Arch Linux | AUR `mindwtr-bin-beta` | La version stable actualise le paquet bêta persistant. |
 | Linux Debian/Fedora | Dépôts APT/RPM bêta | Les paquets stables restent dans des répertoires de dépôt stable distincts. |
 | Téléchargement direct Windows | Programme d'installation/version portable en préversion GitHub | Le Microsoft Store reste réservé aux versions stables, sauf si les package flights sont automatisés ultérieurement. |

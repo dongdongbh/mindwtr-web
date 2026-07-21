@@ -38,11 +38,11 @@ Touchez l’onglet **Menu** pour accéder aux vues supplémentaires :
  - 💭 **Un jour/Peut-être** : idées pour l’avenir
  - 📚 **Référence** : documents de référence
  - ✅ **Terminé** : tâches récemment terminées
- - 📦 **Archivés** : tâches terminées classées hors des listes normales
+ - 📦 **Archivés** : tâches et projets terminés classés hors des listes normales
  - 🗑️ **Corbeille** : tâches et projets supprimés
  - ⚙️ **Paramètres** : préférences de l’application
 
-Ouvrez **Terminé** et touchez **Sélectionner** pour choisir des tâches, puis utilisez **Déplacer → Archivés** pour les classer plus tôt. Dans **Archivés**, touchez **Sélectionner** ou **Tout sélectionner** pour ramener des tâches dans Terminé sans modifier leur heure d’achèvement, les restaurer dans la Boîte de réception ou les déplacer vers la Corbeille. Mindwtr ne supprime définitivement les tâches que depuis la Corbeille.
+Ouvrez **Terminé** et touchez **Sélectionner** pour choisir des tâches, puis utilisez **Déplacer → Archivés** pour les classer plus tôt. Dans **Archivés**, touchez **Sélectionner** ou **Tout sélectionner** pour ramener des tâches dans Terminé sans modifier leur heure d’achèvement, les restaurer dans la Boîte de réception ou les déplacer vers la Corbeille. Passez à **Projets** pour ouvrir, restaurer ou déplacer des projets archivés vers la Corbeille. Mindwtr ne supprime définitivement les éléments que depuis la Corbeille.
 
 Ouvrez la **Corbeille** et touchez **Sélectionner** pour gérer plusieurs tâches et projets supprimés. Touchez **Tout sélectionner** ou choisissez des éléments, puis restaurez-les ou supprimez-les définitivement en une seule étape. Toute suppression définitive demande toujours une confirmation.
 
@@ -350,7 +350,7 @@ Passez vos tâches en revue et mettez leur statut à jour.
 - Consultez les détails de la tâche (description, heure de début, échéance, contextes)
 - Marquez rapidement les tâches comme terminées
 - Naviguez entre les tâches
-- **Mode Sélection** : sélectionnez plusieurs tâches et partagez-les
+- **Mode Sélection** : organisez, déplacez, étiquetez, partagez ou supprimez plusieurs tâches
 - Pendant la Revue hebdomadaire, utilisez l’étape **Traiter la Boîte de réception** pour vider les éléments collectés avant de poursuivre avec le calendrier, les éléments en attente, les projets et les éléments « un jour ».
 
 ---

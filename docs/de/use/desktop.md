@@ -51,7 +51,7 @@ Ihre Erfassungszone. Alle neuen Aufgaben landen vor der Verarbeitung hier.
 
 Ihr gemeinsames Dashboard für das tägliche Erledigen. „Fokus“ ist kein vollständiger Bestand aller Aufgaben mit Status `next`, sondern beschränkt die Liste auf jetzt verfügbare Arbeit.
 
-- **Heutiger Fokus**: Mit Stern markierte Prioritätsaufgaben bis zum festgelegten Fokuslimit
+- **Heutiger Fokus**: Mit Stern markierte Prioritätsaufgaben bis zum festgelegten Fokuslimit. Fokussierte Nächste Aktionen zeigen zudem einen kleinen ausgefüllten Stern neben ihrem Titel in Aufgabenlisten und auf dem Board, sodass die Fokus-Zugehörigkeit auf einen Blick erkennbar ist
 - **Überfällig**: Einträge nach ihrem Fälligkeitsdatum
 - **Heute fällig**: heute fällige Aufgaben
 - **Nächste Aktionen**: ausführbare Aufgaben ohne Fälligkeitsdatum, nach Kontext gefiltert
@@ -309,6 +309,8 @@ Mindwtr wertet beim Hinzufügen natürliche Sprache aus:
 | `/status` | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | Status festlegen |
 
 **Datumsformate:** today, tomorrow, friday, next week, in 3 days, 2025-01-15
+
+Freie Formulierungen wie "next week" im Titel werden zu Daten, weil **Daten in natürlicher Sprache erkennen** (Einstellungen → GTD, standardmäßig aktiviert) eingeschaltet ist. Schalten Sie die Option aus, damit solche Formulierungen als Titeltext erhalten bleiben; explizite Tokens wie `/due:friday` funktionieren immer. Die Einstellung wird zwischen Ihren Geräten synchronisiert.
 
 ---
 

@@ -229,6 +229,8 @@ iOS-Kurzbefehlsbeispiel:
 
 **Datumsformate:** today, tomorrow, friday, next week, in 3 days
 
+Freie Formulierungen wie "next week" im Titel werden zu Daten, weil **Daten in natürlicher Sprache erkennen** (Einstellungen → GTD, standardmäßig aktiviert) eingeschaltet ist. Schalten Sie die Option aus, damit solche Formulierungen als Titeltext erhalten bleiben; explizite Tokens wie `/due:friday` funktionieren immer. Die Einstellung wird zwischen Ihren Geräten synchronisiert.
+
 ---
 
 ## Audioerfassung

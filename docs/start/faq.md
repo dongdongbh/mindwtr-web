@@ -311,6 +311,8 @@ Yes! Mindwtr supports quick-add syntax:
 
 Example: `Call client /due:friday @phone`
 
+Bare date phrases without a token (like "next week" in the title) are detected too. If you'd rather keep them as literal text, turn off **Detect natural-language dates** in Settings → GTD.
+
 ### What are contexts?
 
 Contexts are tags that indicate where or with what you can complete a task. Examples: `@home`, `@work`, `@phone`, `@computer`. Filter by context to see only tasks you can do right now. See [Contexts and Tags](/use/contexts-tags).

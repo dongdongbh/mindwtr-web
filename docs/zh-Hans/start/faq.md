@@ -311,6 +311,8 @@ Linux 日志位置（默认）：`~/.local/share/mindwtr/logs/mindwtr.log`
 
 示例：`Call client /due:friday @phone`
 
+不带令牌的日期短语（如标题中的 "next week"）也会被识别。若希望保留为普通文字，请在 设置 → GTD 中关闭**识别自然语言日期**。
+
 ### 什么是情境？
 
 情境是表明你可以在何处或借助什么完成任务的标签。例如：`@home`、`@work`、`@phone`、`@computer`。按情境筛选，只查看你现在可以完成的任务。请参阅[情境与标签](/zh-Hans/use/contexts-tags)。

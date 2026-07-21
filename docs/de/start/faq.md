@@ -304,6 +304,8 @@ Ja! Mindwtr unterstützt die Syntax für „Schnell hinzufügen“:
 
 Beispiel: `Call client /due:friday @phone`
 
+Auch freie Datumsformulierungen ohne Token (etwa "next week" im Titel) werden erkannt. Wenn Sie sie lieber als Text behalten möchten, deaktivieren Sie **Daten in natürlicher Sprache erkennen** unter Einstellungen → GTD.
+
 ### Was sind Kontexte?
 
 Kontexte sind Tags, die angeben, wo oder womit eine Aufgabe erledigt werden kann, etwa `@home`, `@work`, `@phone`, `@computer`. Filtern Sie nach Kontext, um nur jetzt ausführbare Aufgaben zu sehen. Siehe [Kontexte und Tags](/de/use/contexts-tags).

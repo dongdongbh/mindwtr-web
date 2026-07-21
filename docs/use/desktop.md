@@ -51,7 +51,7 @@ Your capture zone. All new tasks land here before processing.
 
 Your unified dashboard for daily engagement. Focus is not a full inventory of every task with status `next`; it narrows the list to work that is available now.
 
-- **Today's Focus**: Starred priority tasks for deep work, up to your configured Focus limit.
+- **Today's Focus**: Starred priority tasks for deep work, up to your configured Focus limit. Focused Next tasks also show a small filled star beside their title in task lists and on the Board, so Focus membership reads at a glance.
 - **Overdue**: Past due items.
 - **Due Today**: Tasks due today.
 - **Next Actions**: Ready tasks without due dates, filtered by context.
@@ -307,6 +307,8 @@ Mindwtr parses natural language when adding tasks:
 | `/status`    | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | Sets status |
 
 **Date formats:** today, tomorrow, friday, next week, in 3 days, 2025-01-15
+
+Bare phrases like "next week" in a title become dates because **Detect natural-language dates** (Settings → GTD, on by default) is enabled. Turn it off to keep such phrases as literal title text; explicit tokens like `/due:friday` always work. The setting syncs across your devices.
 
 ---
 

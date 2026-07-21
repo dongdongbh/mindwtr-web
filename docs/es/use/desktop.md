@@ -51,7 +51,7 @@ Tu zona de captura. Todas las tareas nuevas llegan aquí antes de procesarlas.
 
 Tu panel unificado para la actividad diaria. Foco no es un inventario completo de todas las tareas con estado `next`; limita la lista al trabajo disponible ahora.
 
-- **Foco de hoy**: tareas prioritarias marcadas con estrella para trabajar con concentración, hasta el límite de Foco configurado.
+- **Foco de hoy**: tareas prioritarias marcadas con estrella para trabajar con concentración, hasta el límite de Foco configurado. Las próximas acciones enfocadas también muestran una pequeña estrella rellena junto a su título en las listas de tareas y en el Tablero, de modo que la pertenencia al Foco se ve de un vistazo.
 - **Atrasadas**: elementos cuya fecha de vencimiento ya pasó.
 - **Vencen hoy**: tareas que vencen hoy.
 - **Próximas acciones**: tareas listas y sin fecha de vencimiento, filtradas por contexto.
@@ -307,6 +307,8 @@ Mindwtr analiza lenguaje natural al añadir tareas:
 | `/status`    | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | Establece el estado |
 
 **Formatos de fecha:** today, tomorrow, friday, next week, in 3 days, 2025-01-15
+
+Las frases sueltas como "next week" en el título se convierten en fechas porque **Detectar fechas en lenguaje natural** (Ajustes → GTD, activado por defecto) está habilitado. Desactívalo para que esas frases queden como texto literal del título; los tokens explícitos como `/due:friday` funcionan siempre. El ajuste se sincroniza entre tus dispositivos.
 
 ---
 

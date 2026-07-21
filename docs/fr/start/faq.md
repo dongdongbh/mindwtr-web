@@ -311,6 +311,8 @@ Oui ! Mindwtr prend en charge la syntaxe d’ajout rapide :
 
 Exemple : `Call client /due:friday @phone`
 
+Les formulations de date libres sans jeton (comme "next week" dans le titre) sont aussi détectées. Si vous préférez les conserver comme texte littéral, désactivez **Détecter les dates en langage naturel** dans Paramètres → GTD.
+
 ### Que sont les contextes ?
 
 Les contextes sont des étiquettes qui indiquent où ou avec quoi vous pouvez accomplir une tâche. Exemples : `@home`, `@work`, `@phone`, `@computer`. Filtrez par contexte pour n’afficher que les tâches que vous pouvez réaliser immédiatement. Consultez [Contextes et étiquettes](/fr/use/contexts-tags).

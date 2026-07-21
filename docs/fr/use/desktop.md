@@ -51,7 +51,7 @@ Votre zone de collecte. Toutes les nouvelles tâches y arrivent avant d’être 
 
 Votre tableau de bord unifié pour l’engagement quotidien. Focus ne constitue pas un inventaire complet de toutes les tâches ayant le statut `next` ; il restreint la liste au travail disponible maintenant.
 
-- **Focus du jour** : tâches prioritaires étoilées pour le travail approfondi, dans la limite Focus que vous avez configurée.
+- **Focus du jour** : tâches prioritaires étoilées pour le travail approfondi, dans la limite Focus que vous avez configurée. Les actions suivantes mises en focus affichent aussi une petite étoile pleine à côté de leur titre dans les listes de tâches et sur le Tableau, pour repérer d'un coup d'œil l'appartenance au Focus.
 - **En retard** : éléments dont l’échéance est dépassée.
 - **À faire aujourd’hui** : tâches dont l’échéance est aujourd’hui.
 - **Actions suivantes** : tâches prêtes sans échéance, filtrées par contexte.
@@ -307,6 +307,8 @@ Mindwtr analyse le langage naturel lors de l’ajout de tâches :
 | `/status`    | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | Définit le statut |
 
 **Formats de date :** today, tomorrow, friday, next week, in 3 days, 2025-01-15
+
+Les formulations libres comme "next week" dans le titre deviennent des dates parce que **Détecter les dates en langage naturel** (Paramètres → GTD, activé par défaut) est actif. Désactivez-le pour conserver ces formulations comme texte littéral du titre ; les jetons explicites comme `/due:friday` fonctionnent toujours. Le réglage se synchronise entre vos appareils.
 
 ---
 

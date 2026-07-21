@@ -311,6 +311,8 @@ Los registros son exclusivamente locales y ocultan las credenciales habituales (
 
 Ejemplo: `Call client /due:friday @phone`
 
+Las frases de fecha sueltas sin token (como "next week" en el título) también se detectan. Si prefieres conservarlas como texto literal, desactiva **Detectar fechas en lenguaje natural** en Ajustes → GTD.
+
 ### ¿Qué son los contextos?
 
 Los contextos son etiquetas que indican dónde o con qué puedes completar una tarea. Ejemplos: `@home`, `@work`, `@phone`, `@computer`. Filtra por contexto para ver únicamente las tareas que puedes hacer ahora mismo. Consulta [Contextos y etiquetas](/es/use/contexts-tags).

@@ -49,3 +49,7 @@ Eine typische Bereitstellung umfasst:
 ::: warning Geheimnisse der Bereitstellung gehören nicht in Git
 Speichern Sie Server-Token, Datenbank-URLs und Zugangsdaten bei Ihrer Hostingplattform oder in einer lokalen Geheimnisverwaltung. Committen Sie sie nicht in ein Repository.
 :::
+
+::: tip Server unter einer LAN-Adresse (Heimnetz, Reverse Proxy)
+Zeigt die Server-URL auf eine Adresse im lokalen Netzwerk, fragen Apple-Geräte beim ersten Kontakt nach der Berechtigung "Lokales Netzwerk"; bestätigen Sie die Abfrage oder aktivieren Sie Mindwtr später unter Datenschutz & Sicherheit, dann Lokales Netzwerk. Zeigt die Mac-App die Abfrage nie und erreicht den Server nicht, aktualisieren Sie sie: Builds vor v1.1.5 deklarierten die Berechtigung nicht, sodass macOS 15 und neuer lokale Adressen stillschweigend blockierte.
+:::

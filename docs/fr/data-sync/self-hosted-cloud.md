@@ -49,3 +49,7 @@ Un déploiement courant comprend :
 ::: warning Ne placez jamais les secrets de déploiement dans Git
 Stockez les jetons du serveur, URL de base de données et identifiants des fournisseurs dans votre plateforme d’hébergement ou votre gestionnaire de secrets local. Ne les validez jamais dans un dépôt.
 :::
+
+::: tip Serveur sur une adresse LAN (home lab, proxy inverse)
+Quand l'URL du serveur pointe vers une adresse du réseau local, les appareils Apple demandent l'autorisation Réseau local au premier contact ; acceptez l'invite ou activez Mindwtr plus tard dans Confidentialité et sécurité, puis Réseau local. Si l'app Mac n'affiche jamais l'invite et n'atteint pas le serveur, mettez-la à jour : les versions antérieures à v1.1.5 ne déclaraient pas l'autorisation, et macOS 15 et suivants refusaient donc les adresses locales en silence.
+:::

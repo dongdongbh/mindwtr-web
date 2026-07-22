@@ -49,3 +49,7 @@ Un despliegue habitual incluye:
 ::: warning No guardes secretos del despliegue en Git
 Guarda los tokens, URL de bases de datos y credenciales de proveedores en tu plataforma de alojamiento o gestor de secretos local. No los confirmes en un repositorio.
 :::
+
+::: tip Servidor en una dirección LAN (laboratorio casero, proxy inverso)
+Cuando la URL del servidor apunta a una dirección de la red local, los dispositivos Apple piden el permiso de Red local en el primer contacto; acepta el aviso o activa Mindwtr después en Privacidad y seguridad, luego Red local. Si la app de Mac nunca muestra el aviso y no alcanza el servidor, actualízala: las versiones anteriores a v1.1.5 no declaraban el permiso, por lo que macOS 15 y posteriores denegaban las direcciones locales en silencio.
+:::

@@ -51,3 +51,7 @@ A typical deployment includes:
 Store server tokens, database URLs, and provider credentials in your hosting platform or local secret manager. Do not commit them to a repository.
 :::
 
+::: tip Server on a LAN address (home lab, reverse proxy)
+When the server URL points at a local network address, Apple devices ask for Local Network permission on first contact; approve the prompt or enable Mindwtr later under Privacy & Security, then Local Network. If the Mac app never shows the prompt and cannot reach the server, update it: builds before v1.1.5 did not declare the permission, so macOS 15 and later denied local addresses silently.
+:::
+

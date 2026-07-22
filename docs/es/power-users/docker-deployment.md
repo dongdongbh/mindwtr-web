@@ -10,23 +10,23 @@ Están disponibles como imágenes de Docker y se pueden orquestar fácilmente me
 
 ## Inicio rápido (Docker Compose)
 
-La forma más sencilla de empezar localmente es usar el archivo `compose.yaml` incluido en el directorio `docker/` del repositorio.
+No necesitas clonar el repositorio. Las imágenes oficiales se publican en GHCR, y el archivo `compose.yaml` las descarga por ti.
 
-1. **Clona el repositorio** (si aún no lo has hecho):
+1. **Descarga el archivo compose**:
    ```bash
-   git clone https://github.com/dongdongbh/Mindwtr.git
-   cd Mindwtr
+   curl -LO https://raw.githubusercontent.com/dongdongbh/Mindwtr/main/docker/compose.yaml
    ```
 
-2. **Establece la configuración HTTP local**:
-   ```bash
-   export MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
-   export MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
+2. **Crea un archivo `.env` junto a él** (Docker Compose lo lee automáticamente):
+   ```dotenv
+   MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
+   MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
    ```
 
-3. **Inicia los servicios**:
+3. **Descarga e inicia los servicios**:
    ```bash
-   docker compose -f docker/compose.yaml up --build -d
+   docker compose pull
+   docker compose up -d
    ```
 
 4. **Accede a los servicios**:
@@ -34,6 +34,8 @@ La forma más sencilla de empezar localmente es usar el archivo `compose.yaml` i
    - **Comprobación de estado de Cloud:** Abre `http://localhost:8787/health`.
    - **URL autoalojada para pruebas locales:** `http://localhost:8787`
    - **URL base de la API REST:** `http://localhost:8787/v1`
+
+Si prefieres compilar las imágenes desde el código fuente, clona el repositorio y ejecuta `docker compose -f docker/compose.yaml up --build -d` desde su raíz. Consulta [Compilación manual](#compilacion-manual) más abajo.
 
 Este archivo Compose predeterminado usa únicamente HTTP y está pensado para pruebas locales o privadas. Los clientes de escritorio y móviles de Mindwtr solo aceptan HTTP para destinos locales o privados reconocidos, como `localhost`, `127.0.0.1`, `10.x.x.x`, desde `172.16.x.x` hasta `172.31.x.x`, `192.168.x.x`, direcciones IPv6 de bucle local o privadas, `*.local` y `*.home.arpa`.
 

@@ -10,23 +10,23 @@ These are available as Docker images and can be easily orchestrated using Docker
 
 ## Quick Start (Docker Compose)
 
-The easiest way to get started locally is using the `compose.yaml` file included in the `docker/` directory of the repository.
+You do not need to clone the repository. The official images are published on GHCR, and the `compose.yaml` file pulls them for you.
 
-1. **Clone the repository** (if you haven't already):
+1. **Download the compose file**:
    ```bash
-   git clone https://github.com/dongdongbh/Mindwtr.git
-   cd Mindwtr
+   curl -LO https://raw.githubusercontent.com/dongdongbh/Mindwtr/main/docker/compose.yaml
    ```
 
-2. **Set local HTTP configuration**:
-   ```bash
-   export MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
-   export MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
+2. **Create a `.env` file next to it** (Docker Compose reads it automatically):
+   ```dotenv
+   MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
+   MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
    ```
 
-3. **Start the services**:
+3. **Pull and start the services**:
    ```bash
-   docker compose -f docker/compose.yaml up --build -d
+   docker compose pull
+   docker compose up -d
    ```
 
 4. **Access the services**:
@@ -34,6 +34,8 @@ The easiest way to get started locally is using the `compose.yaml` file included
    - **Cloud Health Check:** Open `http://localhost:8787/health`.
    - **Self-Hosted URL for local testing:** `http://localhost:8787`
    - **REST API Base URL:** `http://localhost:8787/v1`
+
+To build the images from source instead, clone the repository and run `docker compose -f docker/compose.yaml up --build -d` from its root. See [Building Manually](#building-manually) below.
 
 This default compose file is HTTP-only and intended for local/private testing. Mindwtr desktop and mobile clients accept HTTP only for recognized local/private targets such as `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` through `172.31.x.x`, `192.168.x.x`, loopback/private IPv6 addresses, `*.local`, and `*.home.arpa`.
 

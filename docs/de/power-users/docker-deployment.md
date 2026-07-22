@@ -10,23 +10,23 @@ Diese sind als Docker-Images verfügbar und lassen sich einfach mit Docker Compo
 
 ## Schnellstart (Docker Compose)
 
-Am einfachsten beginnen Sie lokal mit der Datei `compose.yaml` im Verzeichnis `docker/` des Repositorys.
+Sie müssen das Repository nicht klonen. Die offiziellen Images werden auf GHCR veröffentlicht, und die Datei `compose.yaml` lädt sie für Sie herunter.
 
-1. **Klonen Sie das Repository** (falls noch nicht geschehen):
+1. **Laden Sie die Compose-Datei herunter**:
    ```bash
-   git clone https://github.com/dongdongbh/Mindwtr.git
-   cd Mindwtr
+   curl -LO https://raw.githubusercontent.com/dongdongbh/Mindwtr/main/docker/compose.yaml
    ```
 
-2. **Legen Sie die lokale HTTP-Konfiguration fest**:
-   ```bash
-   export MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
-   export MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
+2. **Legen Sie daneben eine `.env`-Datei an** (Docker Compose liest sie automatisch):
+   ```dotenv
+   MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
+   MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
    ```
 
-3. **Starten Sie die Dienste**:
+3. **Laden und starten Sie die Dienste**:
    ```bash
-   docker compose -f docker/compose.yaml up --build -d
+   docker compose pull
+   docker compose up -d
    ```
 
 4. **Rufen Sie die Dienste auf**:
@@ -34,6 +34,8 @@ Am einfachsten beginnen Sie lokal mit der Datei `compose.yaml` im Verzeichnis `d
    - **Cloud-Zustandsprüfung:** Öffnen Sie `http://localhost:8787/health`.
    - **Self-Hosted-URL für lokale Tests:** `http://localhost:8787`
    - **Basis-URL der REST-API:** `http://localhost:8787/v1`
+
+Wenn Sie die Images stattdessen aus dem Quellcode bauen möchten, klonen Sie das Repository und führen Sie in dessen Stammverzeichnis `docker compose -f docker/compose.yaml up --build -d` aus. Siehe [Manuell bauen](#manuell-bauen) weiter unten.
 
 Diese standardmäßige Compose-Datei verwendet ausschließlich HTTP und ist für lokale/private Tests vorgesehen. Mindwtr-Clients für Desktop- und Mobilgeräte akzeptieren HTTP nur für erkannte lokale/private Ziele wie `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` bis `172.31.x.x`, `192.168.x.x`, Loopback-/private IPv6-Adressen, `*.local` und `*.home.arpa`.
 

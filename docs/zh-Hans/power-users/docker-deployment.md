@@ -10,23 +10,23 @@ Mindwtr 为运行以下服务提供官方 Docker 支持：
 
 ## 快速开始（Docker Compose）
 
-在本地开始使用的最简单方式，是使用仓库 `docker/` 目录中包含的 `compose.yaml` 文件。
+你不需要克隆仓库。官方镜像已发布到 GHCR，`compose.yaml` 会自动为你拉取。
 
-1. **克隆仓库**（如果尚未克隆）：
+1. **下载 compose 文件**：
    ```bash
-   git clone https://github.com/dongdongbh/Mindwtr.git
-   cd Mindwtr
+   curl -LO https://raw.githubusercontent.com/dongdongbh/Mindwtr/main/docker/compose.yaml
    ```
 
-2. **设置本地 HTTP 配置**：
-   ```bash
-   export MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
-   export MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
+2. **在旁边创建 `.env` 文件**（Docker Compose 会自动读取）：
+   ```dotenv
+   MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
+   MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
    ```
 
-3. **启动服务**：
+3. **拉取并启动服务**：
    ```bash
-   docker compose -f docker/compose.yaml up --build -d
+   docker compose pull
+   docker compose up -d
    ```
 
 4. **访问服务**：
@@ -34,6 +34,8 @@ Mindwtr 为运行以下服务提供官方 Docker 支持：
    - **云端健康检查：**打开 `http://localhost:8787/health`。
    - **用于本地测试的自托管 URL：**`http://localhost:8787`
    - **REST API 基础 URL：**`http://localhost:8787/v1`
+
+如果你想从源码构建镜像，请克隆仓库并在其根目录运行 `docker compose -f docker/compose.yaml up --build -d`。参见下方的[手动构建](#手动构建)。
 
 这个默认 compose 文件仅使用 HTTP，适用于本地/私有测试。Mindwtr 桌面端和移动端客户端仅会为已识别的本地/私有目标接受 HTTP，例如 `localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、环回/私有 IPv6 地址、`*.local` 和 `*.home.arpa`。
 

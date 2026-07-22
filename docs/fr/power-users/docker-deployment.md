@@ -10,23 +10,23 @@ Ces composants sont disponibles sous forme d’images Docker et peuvent être fa
 
 ## Démarrage rapide (Docker Compose)
 
-La manière la plus simple de démarrer localement consiste à utiliser le fichier `compose.yaml` inclus dans le répertoire `docker/` du dépôt.
+Vous n’avez pas besoin de cloner le dépôt. Les images officielles sont publiées sur GHCR, et le fichier `compose.yaml` les télécharge pour vous.
 
-1. **Clonez le dépôt** (si ce n’est pas déjà fait) :
+1. **Téléchargez le fichier compose** :
    ```bash
-   git clone https://github.com/dongdongbh/Mindwtr.git
-   cd Mindwtr
+   curl -LO https://raw.githubusercontent.com/dongdongbh/Mindwtr/main/docker/compose.yaml
    ```
 
-2. **Définissez la configuration HTTP locale** :
-   ```bash
-   export MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
-   export MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
+2. **Créez un fichier `.env` à côté** (Docker Compose le lit automatiquement) :
+   ```dotenv
+   MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
+   MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
    ```
 
-3. **Démarrez les services** :
+3. **Téléchargez et démarrez les services** :
    ```bash
-   docker compose -f docker/compose.yaml up --build -d
+   docker compose pull
+   docker compose up -d
    ```
 
 4. **Accédez aux services** :
@@ -34,6 +34,8 @@ La manière la plus simple de démarrer localement consiste à utiliser le fichi
    - **Contrôle d’intégrité du Cloud :** ouvrez `http://localhost:8787/health`.
    - **URL auto-hébergée pour les tests locaux :** `http://localhost:8787`
    - **URL de base de l’API REST :** `http://localhost:8787/v1`
+
+Pour construire les images depuis les sources, clonez le dépôt et exécutez `docker compose -f docker/compose.yaml up --build -d` depuis sa racine. Voir [Construction manuelle](#construction-manuelle) ci-dessous.
 
 Ce fichier Compose par défaut utilise uniquement HTTP et est destiné aux tests locaux ou privés. Les clients de bureau et mobiles Mindwtr n’acceptent HTTP que pour les cibles locales ou privées reconnues, comme `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` à `172.31.x.x`, `192.168.x.x`, les adresses IPv6 de bouclage ou privées, `*.local` et `*.home.arpa`.
 

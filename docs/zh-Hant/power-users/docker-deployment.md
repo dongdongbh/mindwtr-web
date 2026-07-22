@@ -10,23 +10,23 @@ Mindwtr 正式支援使用 Docker 執行：
 
 ## 快速開始（Docker Compose）
 
-若要在本機快速開始，最簡單的方式是使用儲存庫 `docker/` 目錄內隨附的 `compose.yaml` 檔案。
+您不需要 clone 儲存庫。官方映像已發佈到 GHCR，`compose.yaml` 會自動為您拉取。
 
-1. **Clone 儲存庫**（若尚未完成）：
+1. **下載 compose 檔案**：
    ```bash
-   git clone https://github.com/dongdongbh/Mindwtr.git
-   cd Mindwtr
+   curl -LO https://raw.githubusercontent.com/dongdongbh/Mindwtr/main/docker/compose.yaml
    ```
 
-2. **設定本機 HTTP 組態**：
-   ```bash
-   export MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
-   export MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
+2. **在旁邊建立 `.env` 檔案**（Docker Compose 會自動讀取）：
+   ```dotenv
+   MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
+   MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
    ```
 
-3. **啟動服務**：
+3. **拉取並啟動服務**：
    ```bash
-   docker compose -f docker/compose.yaml up --build -d
+   docker compose pull
+   docker compose up -d
    ```
 
 4. **存取服務**：
@@ -34,6 +34,8 @@ Mindwtr 正式支援使用 Docker 執行：
    - **Cloud 健康狀態檢查：**開啟 `http://localhost:8787/health`。
    - **供本機測試的自行託管 URL：**`http://localhost:8787`
    - **REST API Base URL：**`http://localhost:8787/v1`
+
+若您想從原始碼組建映像，請 clone 儲存庫並在其根目錄執行 `docker compose -f docker/compose.yaml up --build -d`。請參閱下方的[手動組建](#手動組建)。
 
 此預設 compose 檔案只使用 HTTP，適合本機／私人測試。Mindwtr 桌面版及行動版用戶端只會對已辨識為本機／私人目標的位址接受 HTTP，例如 `localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、loopback／private IPv6 位址、`*.local` 及 `*.home.arpa`。
 

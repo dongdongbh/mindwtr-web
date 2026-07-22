@@ -10,7 +10,7 @@ Mindwtr desktop supports keyboard-first use with Standard (Gmail/Todoist-style),
 - Use `gi` for Inbox, `gn` for Next Actions, and `gf` for Focus (Standard and Vim modes).
 - Use `a` to add a task when Mindwtr is focused. `o` still works for the same app-scoped add-task action.
 - Use `j` and `k` to move selection, and `Enter` to open the selected task.
-- In Standard mode, use `e` to mark done, `x` to select tasks for batch actions, `Shift+Enter` to edit, `#` to delete, and `z` to undo.
+- In Standard mode, use `e` to mark done, `x` to select tasks for batch actions, `S` to add or remove the selected task from today's focus, `F2` to rename it, `Shift+Enter` to edit, `#` to delete, and `z` to undo.
 - In Vim mode, use `e` to edit, `x` to toggle done, and `dd` to delete.
 - Use `Ctrl+Z` / `Cmd+Z` to undo the last task completion or deletion in any preset.
 - Use `s` followed by a letter to set the selected task's status in any preset: `si` Inbox, `sn` Next, `sw` Waiting, `ss` Someday, `sd` Done, `sa` Archived. A toast confirms the change with an undo button.

@@ -10,7 +10,7 @@ Mindwtr unterstützt auf dem Desktop eine tastaturorientierte Bedienung mit den 
 - Verwenden Sie `gi` für den Posteingang, `gn` für „Nächste Aktionen“ und `gf` für „Fokus“ (im Standard- und Vim-Modus).
 - Verwenden Sie `a`, um eine Aufgabe hinzuzufügen, während Mindwtr im Fokus ist. `o` funktioniert weiterhin für dieselbe app-interne Aktion zum Hinzufügen einer Aufgabe.
 - Mit `j` und `k` bewegen Sie die Auswahl und mit `Enter` öffnen Sie die ausgewählte Aufgabe.
-- Im Standardmodus markiert `e` eine Aufgabe als erledigt, `x` wählt Aufgaben für Stapelaktionen aus, `Shift+Enter` bearbeitet, `#` löscht und `z` macht rückgängig.
+- Im Standardmodus markiert `e` eine Aufgabe als erledigt, `x` wählt Aufgaben für Stapelaktionen aus, `S` fügt die ausgewählte Aufgabe zum heutigen Fokus hinzu oder entfernt sie daraus, `F2` benennt sie um, `Shift+Enter` bearbeitet, `#` löscht und `z` macht rückgängig.
 - Im Vim-Modus bearbeitet `e`, `x` schaltet „Erledigt“ um und `dd` löscht.
 - Mit `Ctrl+Z` / `Cmd+Z` machen Sie in jeder Voreinstellung den letzten Aufgabenabschluss oder die letzte Löschung rückgängig.
 - Verwenden Sie in jeder Voreinstellung `s` gefolgt von einem Buchstaben, um den Status der ausgewählten Aufgabe festzulegen: `si` Posteingang, `sn` Nächstes, `sw` Warten, `ss` Irgendwann, `sd` Erledigt, `sa` Archiviert. Eine Benachrichtigung bestätigt die Änderung und bietet eine Schaltfläche zum Rückgängigmachen.

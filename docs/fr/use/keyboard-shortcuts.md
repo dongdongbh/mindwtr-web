@@ -10,7 +10,7 @@ Mindwtr sur ordinateur permet une utilisation centrée sur le clavier avec les p
 - Utilisez `gi` pour la Boîte de réception, `gn` pour les Prochaines actions et `gf` pour Focus dans les modes Standard et Vim.
 - Utilisez `a` pour ajouter une tâche lorsque Mindwtr a le focus. `o` déclenche toujours la même action limitée à l’application.
 - Utilisez `j` et `k` pour déplacer la sélection, puis `Enter` pour ouvrir la tâche sélectionnée.
-- En mode Standard, utilisez `e` pour terminer, `x` pour sélectionner des tâches en vue d’actions groupées, `Shift+Enter` pour modifier, `#` pour supprimer et `z` pour annuler.
+- En mode Standard, utilisez `e` pour terminer, `x` pour sélectionner des tâches en vue d’actions groupées, `S` pour ajouter ou retirer la tâche sélectionnée du focus du jour, `F2` pour la renommer, `Shift+Enter` pour modifier, `#` pour supprimer et `z` pour annuler.
 - En mode Vim, utilisez `e` pour modifier, `x` pour basculer l’état terminé et `dd` pour supprimer.
 - Utilisez `Ctrl+Z` ou `Cmd+Z` pour annuler la dernière tâche terminée ou supprimée, quel que soit le préréglage.
 - Utilisez `s` suivi d’une lettre pour définir le statut de la tâche sélectionnée : `si` Boîte de réception, `sn` Prochaine action, `sw` En attente, `ss` Un jour, `sd` Terminé, `sa` Archivé. Une notification confirme la modification et propose de l’annuler.

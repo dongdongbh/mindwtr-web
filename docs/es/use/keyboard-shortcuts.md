@@ -10,7 +10,7 @@ Mindwtr para escritorio permite trabajar principalmente con el teclado mediante 
 - Usa `gi` para Bandeja de entrada, `gn` para Próximas acciones y `gf` para Foco (modos Estándar y Vim).
 - Usa `a` para añadir una tarea cuando Mindwtr tenga el foco. `o` sigue realizando la misma acción limitada a la aplicación.
 - Usa `j` y `k` para mover la selección, e `Enter` para abrir la tarea seleccionada.
-- En el modo Estándar, usa `e` para marcar como terminada, `x` para seleccionar tareas para acciones por lotes, `Shift+Enter` para editar, `#` para eliminar y `z` para deshacer.
+- En el modo Estándar, usa `e` para marcar como terminada, `x` para seleccionar tareas para acciones por lotes, `S` para añadir o quitar la tarea seleccionada del foco de hoy, `F2` para cambiarle el nombre, `Shift+Enter` para editar, `#` para eliminar y `z` para deshacer.
 - En el modo Vim, usa `e` para editar, `x` para alternar el estado terminado y `dd` para eliminar.
 - Usa `Ctrl+Z` / `Cmd+Z` para deshacer la última finalización o eliminación en cualquier perfil.
 - En cualquier perfil, pulsa `s` y después una letra para establecer el estado de la tarea seleccionada: `si` Bandeja de entrada, `sn` Próxima, `sw` En espera, `ss` Algún día, `sd` Terminada y `sa` Archivada. Una notificación confirma el cambio e incluye un botón para deshacerlo.

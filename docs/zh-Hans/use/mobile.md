@@ -252,7 +252,7 @@ Mindwtr 会在添加任务时解析自然语言：
 
 **日期格式：** today、tomorrow、friday、next week、in 3 days
 
-输入末尾的日期或时间短语会成为截止日期，被识别的文字会从标题中移除：输入 `Grab a coffee with Marta Jun 23 6pm` 会创建标题为 "Grab a coffee with Marta"、截止于 6 月 23 日 18:00 的任务。识别只读取文本末尾，因此像 "Review June report" 这样的标题不会受影响。这由**识别自然语言日期**（设置 → GTD，默认开启）控制；关闭后，日期短语会保留为标题文字。显式令牌（如 `/due:friday`）始终有效，并优先于自动识别。该设置会在设备间同步。
+输入末尾的日期或时间短语会成为截止日期：输入 `Grab a coffee with Marta Jun 23 6pm` 会创建截止于 6 月 23 日 18:00 的任务。识别只读取文本末尾，因此像 "Review June report" 这样的标题不会受影响。默认情况下标题会完整保留你输入的文字；开启**整理快速添加文本**（设置 → GTD）后会同时移除被识别的日期文字，标题变为 "Grab a coffee with Marta"。关闭**识别自然语言日期**（设置 → GTD，默认开启）后，日期短语保留为普通文字，不设置日期。显式令牌（如 `/due:friday`）始终有效，并优先于自动识别。这两项设置都会在设备间同步。
 
 ---
 

@@ -247,7 +247,7 @@ Mindwtr 为高级用户提供了一个可自行托管的简单同步服务器（
 
 - **公共 Mindwtr Cloud URL 必须使用 HTTPS。**`localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、环回/私有 IPv6 地址、`*.local` 和 `*.home.arpa` 等本地/私有目标会自动允许普通 HTTP。
 - 如果你在可信局域网之外公开云端，请将服务器置于 `caddy`、`nginx` 或 `traefik` 等使用 HTTPS 的反向代理之后。
-- 自定义 DNS、VPN 主机名、Tailscale、ZeroTier 以及任何未被识别为本地/私有的名称都应使用 HTTPS。**允许不安全连接 (HTTP)** 设置是针对可信本地/私有端点的兼容性设置；它不是公共 HTTP 覆盖选项。
+- 自定义 DNS、VPN 主机名、Tailscale、ZeroTier 以及任何未被识别为本地/私有的名称都应使用 HTTPS，或在同步设置中开启**允许不安全连接（HTTP）**，以便通过明文 HTTP 接受该主机名。开启后数据将以未加密方式传输，请仅在可信网络中使用。
 
 ### 5. Dropbox OAuth 同步
 

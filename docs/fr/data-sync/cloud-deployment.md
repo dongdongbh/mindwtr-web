@@ -12,8 +12,7 @@ Remarque sur la compatibilité des clients :
 
 - Les clients Mindwtr Cloud exigent **HTTPS** pour les URL publiques.
 - HTTP n’est accepté que pour les cibles locales/privées telles que `localhost`, `127.0.0.1`, `10.x.x.x`, de `172.16.x.x` à `172.31.x.x`, `192.168.x.x`, les adresses IPv6 de bouclage/privées, `*.local` et `*.home.arpa`.
-- Pour un DNS personnalisé, un VPN, Tailscale, ZeroTier ou d’autres noms qui ne sont pas reconnus comme locaux/privés, ajoutez TLS au niveau du proxy inverse.
-- Le réglage **Autoriser les connexions non sécurisées (HTTP)** est réservé aux points de terminaison locaux/privés de confiance ; il ne permet pas de remplacer publiquement HTTPS par HTTP.
+- Pour un DNS personnalisé, un VPN, Tailscale, ZeroTier ou d’autres noms qui ne sont pas reconnus comme locaux/privés, ajoutez TLS au niveau du proxy inverse, ou activez **Autoriser HTTP non sécurisé (non recommandé)** dans les réglages de synchronisation de l’application pour accepter ce nom d’hôte en HTTP non chiffré. Le réglage est désactivé par défaut et les données circulent alors en clair ; ne l’utilisez que sur un réseau de confiance.
 
 ## Topologie de déploiement
 

@@ -12,8 +12,7 @@
 
 - Mindwtr Cloud 用戶端要求公開 URL 使用 **HTTPS**。
 - 只有 `localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、loopback/private IPv6 位址、`*.local` 與 `*.home.arpa` 等本機／私人目標接受 HTTP。
-- 自訂 DNS、VPN、Tailscale、ZeroTier 或其他未辨識為本機／私人的名稱，請在反向 Proxy 層加入 TLS。
-- **允許不安全連線（HTTP）**設定只供受信任的本機／私人端點使用，不能用來覆寫公開 HTTP 限制。
+- 自訂 DNS、VPN、Tailscale、ZeroTier 或其他未辨識為本機／私人的名稱，請在反向 Proxy 層加入 TLS，或在應用程式的同步設定中開啟**允許不安全連接（HTTP）**，以透過明文 HTTP 接受該主機名稱。此開關預設為關閉，開啟後資料會以未加密方式傳輸，請只在信任的網路上使用。
 
 ## 部署拓撲
 

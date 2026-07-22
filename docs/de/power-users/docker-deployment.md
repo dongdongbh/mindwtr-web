@@ -39,7 +39,7 @@ Wenn Sie die Images stattdessen aus dem Quellcode bauen möchten, klonen Sie das
 
 Diese standardmäßige Compose-Datei verwendet ausschließlich HTTP und ist für lokale/private Tests vorgesehen. Mindwtr-Clients für Desktop- und Mobilgeräte akzeptieren HTTP nur für erkannte lokale/private Ziele wie `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` bis `172.31.x.x`, `192.168.x.x`, Loopback-/private IPv6-Adressen, `*.local` und `*.home.arpa`.
 
-Verwenden Sie HTTPS für öffentliche URLs, benutzerdefinierte DNS-Namen, VPN-Hostnamen, Tailscale, ZeroTier oder jeden Namen, der nicht als lokal/privat erkannt wird. Die Einstellung **Unsichere Verbindungen (HTTP) zulassen** dient der Kompatibilität mit vertrauenswürdigen lokalen/privaten Endpunkten; sie erlaubt HTTP nicht allgemein im öffentlichen Netz.
+Verwenden Sie HTTPS für öffentliche URLs, benutzerdefinierte DNS-Namen, VPN-Hostnamen, Tailscale, ZeroTier oder jeden Namen, der nicht als lokal/privat erkannt wird, oder aktivieren Sie **Unsichere Verbindungen (HTTP) zulassen** in den Sync-Einstellungen der App, um diesen Hostnamen über unverschlüsseltes HTTP zu akzeptieren. Die Daten werden dann unverschlüsselt übertragen; nutzen Sie die Option daher nur in einem Netzwerk, dem Sie vertrauen.
 
 ---
 

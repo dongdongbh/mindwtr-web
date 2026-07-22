@@ -247,7 +247,7 @@ Nota importante para el cliente:
 
 - **Se requiere HTTPS para las URL públicas de Mindwtr Cloud.** HTTP sin cifrar se permite automáticamente para destinos locales/privados como `localhost`, `127.0.0.1`, `10.x.x.x`, desde `172.16.x.x` hasta `172.31.x.x`, `192.168.x.x`, direcciones IPv6 de bucle invertido/privadas, `*.local` y `*.home.arpa`.
 - Si expones Cloud fuera de una LAN de confianza, coloca el servidor detrás de HTTPS con un proxy inverso como `caddy`, `nginx` o `traefik`.
-- Usa HTTPS para DNS personalizados, nombres de host de VPN, Tailscale, ZeroTier y cualquier nombre que no se reconozca como local/privado. La opción **Permitir conexiones no seguras (HTTP)** es una opción de compatibilidad para endpoints locales/privados de confianza; no permite usar HTTP público.
+- Usa HTTPS para DNS personalizados, nombres de host de VPN, Tailscale, ZeroTier y cualquier nombre que no se reconozca como local/privado, o activa **Permitir conexiones no seguras (HTTP)** en los ajustes de sincronización para aceptar ese nombre de host por HTTP sin cifrar. Los datos viajan entonces sin cifrar, así que úsala solo en una red de confianza.
 
 ### 5. Sincronización OAuth con Dropbox
 

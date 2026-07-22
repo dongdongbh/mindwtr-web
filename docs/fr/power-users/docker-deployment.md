@@ -39,7 +39,7 @@ Pour construire les images depuis les sources, clonez le dépôt et exécutez `d
 
 Ce fichier Compose par défaut utilise uniquement HTTP et est destiné aux tests locaux ou privés. Les clients de bureau et mobiles Mindwtr n’acceptent HTTP que pour les cibles locales ou privées reconnues, comme `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` à `172.31.x.x`, `192.168.x.x`, les adresses IPv6 de bouclage ou privées, `*.local` et `*.home.arpa`.
 
-Pour les URL publiques, les noms DNS personnalisés, les noms d’hôte VPN, Tailscale, ZeroTier ou tout nom qui n’est pas reconnu comme local ou privé, utilisez HTTPS. Le réglage **Autoriser les connexions non sécurisées (HTTP)** est un réglage de compatibilité pour les points de terminaison locaux ou privés de confiance ; il ne permet pas d’utiliser HTTP publiquement.
+Pour les URL publiques, les noms DNS personnalisés, les noms d’hôte VPN, Tailscale, ZeroTier ou tout nom qui n’est pas reconnu comme local ou privé, utilisez HTTPS, ou activez **Autoriser HTTP non sécurisé (non recommandé)** dans les réglages de synchronisation de l’application pour accepter ce nom d’hôte en HTTP non chiffré. Les données circulent alors en clair ; ne l’utilisez que sur un réseau de confiance.
 
 ---
 

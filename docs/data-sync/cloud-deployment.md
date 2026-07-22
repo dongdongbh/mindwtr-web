@@ -12,8 +12,7 @@ Client compatibility note:
 
 - Mindwtr Cloud clients require **HTTPS** for public URLs.
 - HTTP is accepted only for local/private targets such as `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` through `172.31.x.x`, `192.168.x.x`, loopback/private IPv6 addresses, `*.local`, and `*.home.arpa`.
-- For custom DNS, VPN, Tailscale, ZeroTier, or other names that are not recognized as local/private, add TLS at the reverse proxy layer.
-- The **Allow insecure connections (HTTP)** setting is for trusted local/private endpoints only; it is not a public HTTP override.
+- For custom DNS, VPN, Tailscale, ZeroTier, or other names that are not recognized as local/private, add TLS at the reverse proxy layer, or enable **Allow insecure connections (HTTP)** in the app's sync settings to accept that hostname over plain HTTP. The toggle is off by default and data then travels unencrypted, so only use it on a network you trust.
 
 ## Deployment Topology
 

@@ -39,7 +39,7 @@ To build the images from source instead, clone the repository and run `docker co
 
 This default compose file is HTTP-only and intended for local/private testing. Mindwtr desktop and mobile clients accept HTTP only for recognized local/private targets such as `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` through `172.31.x.x`, `192.168.x.x`, loopback/private IPv6 addresses, `*.local`, and `*.home.arpa`.
 
-For public URLs, custom DNS names, VPN hostnames, Tailscale, ZeroTier, or any name that is not recognized as local/private, use HTTPS. The **Allow insecure connections (HTTP)** setting is a compatibility setting for trusted local/private endpoints; it is not a public HTTP override.
+For public URLs, custom DNS names, VPN hostnames, Tailscale, ZeroTier, or any name that is not recognized as local/private, use HTTPS, or enable **Allow insecure connections (HTTP)** in the app's sync settings to accept that hostname over plain HTTP. Data then travels unencrypted, so only use it on a network you trust.
 
 ---
 

@@ -231,7 +231,7 @@ Android 官方 OneDrive 应用**不会**持续双向同步本地文件夹。
 
 Mindwtr 现在会在首次 `PUT` 前自动创建缺失的父文件夹，因此你可以将它指向一个新的空文件夹，而无需手动预先创建每一层。
 
-公共 URL 上的 WebDAV 使用 HTTPS。只有 `localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、环回/私有 IPv6 地址、`*.local` 和 `*.home.arpa` 等已识别的本地/私有目标才允许普通 HTTP。自定义 DNS、VPN 主机名、Tailscale、ZeroTier 以及任何未被识别为本地/私有的名称都应使用 HTTPS。
+公共 URL 上的 WebDAV 使用 HTTPS。`localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、环回/私有 IPv6 地址、`*.local` 和 `*.home.arpa` 等已识别的本地/私有目标会自动允许普通 HTTP。对于自定义 DNS、VPN 主机名、Tailscale、ZeroTier 以及任何未被识别为本地/私有的名称，请使用 HTTPS，或在同步设置中开启**允许不安全连接（HTTP）**。开启后数据将以未加密方式传输，请仅在可信网络中使用。
 
 ### 4. Mindwtr Cloud（自托管）
 

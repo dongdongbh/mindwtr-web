@@ -308,7 +308,7 @@ Mindwtr wertet beim Hinzufügen natürliche Sprache aus:
 | `/note:text` | `/note:call back` | Beschreibung hinzufügen |
 | `/status` | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | Status festlegen |
 
-**Datumsformate:** today, tomorrow, friday, next week, in 3 days, 2025-01-15
+**Datumsformate:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 
 Eine Datums- oder Zeitangabe am Ende der Eingabe wird zum Fälligkeitsdatum: `Grab a coffee with Marta Jun 23 6pm` erzeugt eine Aufgabe, fällig am 23. Juni um 18 Uhr. Die Erkennung liest nur das Ende des Textes, ein Titel wie "Review June report" bleibt also unverändert. Standardmäßig bleibt der Titel genau wie eingegeben; aktivieren Sie **Schnell-hinzufügen-Text bereinigen** (Einstellungen → GTD), um die erkannten Wörter zusätzlich zu entfernen, sodass "Grab a coffee with Marta" übrig bleibt. Deaktivieren Sie **Daten in natürlicher Sprache erkennen** (Einstellungen → GTD, standardmäßig aktiviert), damit Datumsangaben reiner Text bleiben und kein Datum gesetzt wird. Explizite Tokens wie `/due:friday` funktionieren unabhängig davon und haben Vorrang vor der Erkennung. Beide Einstellungen werden zwischen Ihren Geräten synchronisiert.
 

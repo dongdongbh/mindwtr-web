@@ -250,7 +250,7 @@ Mindwtr analyse le langage naturel lors de l’ajout de tâches :
 | `/note:text` | `/note:call back` | Ajoute une description              |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | Définit le statut |
 
-**Formats de date :** today, tomorrow, friday, next week, in 3 days
+**Formats de date :** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 
 Une date ou une heure à la fin de votre saisie devient la date d’échéance : `Grab a coffee with Marta Jun 23 6pm` crée une tâche à échéance du 23 juin à 18 h. La détection ne lit que la fin du texte ; un titre comme "Review June report" reste donc inchangé. Par défaut le titre conserve votre texte tel que saisi ; activez **Nettoyer le texte de l’ajout rapide** (Paramètres → GTD) pour retirer aussi les mots reconnus, ce qui laisse "Grab a coffee with Marta". Désactivez **Détecter les dates en langage naturel** (Paramètres → GTD, activé par défaut) pour garder les formulations de date littérales, sans date. Les jetons explicites comme `/due:friday` fonctionnent dans tous les cas et priment sur la détection. Les deux réglages se synchronisent entre vos appareils.
 

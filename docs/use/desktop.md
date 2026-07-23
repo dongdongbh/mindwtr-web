@@ -306,7 +306,7 @@ Mindwtr parses natural language when adding tasks:
 | `/note:text` | `/note:call back` | Adds description    |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | Sets status |
 
-**Date formats:** today, tomorrow, friday, next week, in 3 days, 2025-01-15
+**Date formats:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 
 A date or time phrase at the end of what you type becomes the due date: `Grab a coffee with Marta Jun 23 6pm` creates a task due June 23 at 6pm. Detection only reads the end of the text, so a title like "Review June report" stays untouched. By default the title keeps your text exactly as typed; turn on **Clean up quick add text** (Settings → GTD) to also remove the matched words, leaving "Grab a coffee with Marta". Turn off **Detect natural-language dates** (Settings → GTD, on by default) to keep date phrases literal with no date set. Explicit tokens like `/due:friday` work regardless and take priority over detection. Both settings sync across your devices.
 

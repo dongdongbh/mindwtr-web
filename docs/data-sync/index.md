@@ -231,7 +231,7 @@ Sync directly to a WebDAV server:
 
 Mindwtr now creates missing parent folders automatically before the first `PUT`, so you can point it at a new empty folder without manually pre-creating every level.
 
-WebDAV uses HTTPS for public URLs. Plain HTTP is allowed only for recognized local/private targets such as `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` through `172.31.x.x`, `192.168.x.x`, loopback/private IPv6 addresses, `*.local`, and `*.home.arpa`. Use HTTPS for custom DNS, VPN hostnames, Tailscale, ZeroTier, and any name that is not recognized as local/private.
+WebDAV uses HTTPS for public URLs. Plain HTTP is allowed automatically for recognized local/private targets such as `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` through `172.31.x.x`, `192.168.x.x`, loopback/private IPv6 addresses, `*.local`, and `*.home.arpa`. For custom DNS, VPN hostnames, Tailscale, ZeroTier, and any name that is not recognized as local/private, use HTTPS or enable **Allow insecure connections (HTTP)** in the sync settings. Data then travels unencrypted, so only use the override on a network you trust.
 
 ### 4. Mindwtr Cloud (Self-Hosted)
 

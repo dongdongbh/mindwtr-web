@@ -230,7 +230,7 @@ Direkte Synchronisierung mit einem WebDAV-Server:
 
 Mindwtr erstellt fehlende übergeordnete Ordner vor dem ersten `PUT` automatisch. Dadurch kann ein neuer leerer Ordner angegeben werden, ohne jede Ebene vorher manuell anzulegen.
 
-Öffentliche URLs verlangen HTTPS. HTTP ist nur für erkannte lokale/private Ziele erlaubt: `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` bis `172.31.x.x`, `192.168.x.x`, private/Loopback-IPv6-Adressen, `*.local`, `*.home.arpa`. Verwenden Sie HTTPS für eigenes DNS, VPN-Namen, Tailscale, ZeroTier und alle nicht als privat erkannten Namen.
+Öffentliche WebDAV-URLs verwenden HTTPS. Reines HTTP ist automatisch für erkannte lokale/private Ziele erlaubt: `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` bis `172.31.x.x`, `192.168.x.x`, private/Loopback-IPv6-Adressen, `*.local`, `*.home.arpa`. Verwenden Sie für eigenes DNS, VPN-Namen, Tailscale, ZeroTier und alle nicht als privat erkannten Namen HTTPS, oder aktivieren Sie **Unsichere Verbindungen (HTTP) erlauben** in den Sync-Einstellungen. Die Daten werden dann unverschlüsselt übertragen; verwenden Sie die Option daher nur in einem Netzwerk, dem Sie vertrauen.
 
 ### 4. Mindwtr Cloud (selbst gehostet)
 

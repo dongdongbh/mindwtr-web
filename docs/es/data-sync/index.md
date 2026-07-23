@@ -231,7 +231,7 @@ Sincroniza directamente con un servidor WebDAV:
 
 Mindwtr ahora crea automáticamente las carpetas superiores ausentes antes del primer `PUT`, por lo que puedes apuntarlo a una carpeta nueva y vacía sin crear manualmente cada nivel de antemano.
 
-WebDAV usa HTTPS para las URL públicas. HTTP sin cifrar solo se permite para destinos locales/privados reconocidos como `localhost`, `127.0.0.1`, `10.x.x.x`, desde `172.16.x.x` hasta `172.31.x.x`, `192.168.x.x`, direcciones IPv6 de bucle invertido/privadas, `*.local` y `*.home.arpa`. Usa HTTPS para DNS personalizados, nombres de host de VPN, Tailscale, ZeroTier y cualquier nombre que no se reconozca como local/privado.
+WebDAV usa HTTPS para las URL públicas. HTTP sin cifrar se permite automáticamente para destinos locales/privados reconocidos como `localhost`, `127.0.0.1`, `10.x.x.x`, desde `172.16.x.x` hasta `172.31.x.x`, `192.168.x.x`, direcciones IPv6 de bucle invertido/privadas, `*.local` y `*.home.arpa`. Para DNS personalizados, nombres de host de VPN, Tailscale, ZeroTier y cualquier nombre que no se reconozca como local/privado, usa HTTPS o activa **Permitir conexiones no seguras (HTTP)** en los ajustes de sincronización. Los datos viajan entonces sin cifrar, así que usa la opción solo en una red de confianza.
 
 ### 4. Mindwtr Cloud (autohospedado)
 

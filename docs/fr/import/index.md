@@ -53,7 +53,7 @@ Sur ordinateur :
 
 1. Ouvrez Ajout rapide.
 2. Collez plusieurs lignes dans le champ de tâche.
-3. Confirmez avec **Créer les tâches**.
+3. Des lignes non vides consécutives ouvrent la confirmation **Créer les tâches**. Un texte contenant une ligne vide est conservé dans une seule tâche.
 
 Sur mobile :
 
@@ -61,7 +61,7 @@ Sur mobile :
 2. Collez plusieurs lignes dans le champ de tâche.
 3. Touchez Enregistrer, puis confirmez la création groupée.
 
-Chaque ligne non vide devient une tâche. Mindwtr analyse chaque ligne avec la syntaxe d’ajout rapide ; vous pouvez donc y inclure des métadonnées :
+Pour une capture groupée, chaque ligne non vide devient une tâche. Mindwtr analyse chaque ligne avec la syntaxe d’ajout rapide ; vous pouvez donc y inclure des métadonnées :
 
 ```text
 Email Bob about Q3 report +Work @computer #followup /due:friday

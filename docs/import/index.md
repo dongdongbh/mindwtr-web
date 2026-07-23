@@ -53,7 +53,7 @@ Desktop:
 
 1. Open Quick Add.
 2. Paste multiple lines into the task field.
-3. Confirm **Create tasks**.
+3. Contiguous nonblank lines open the **Create tasks** confirmation. Text with a blank line is kept as one task.
 
 Mobile:
 
@@ -61,7 +61,7 @@ Mobile:
 2. Paste multiple lines into the task field.
 3. Tap Save and confirm the bulk create prompt.
 
-Each nonblank line becomes one task. Each line is parsed with Mindwtr quick-add syntax, so you can include metadata inline:
+For bulk capture, each nonblank line becomes one task. Each line is parsed with Mindwtr quick-add syntax, so you can include metadata inline:
 
 ```text
 Email Bob about Q3 report +Work @computer #followup /due:friday

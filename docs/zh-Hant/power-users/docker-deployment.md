@@ -23,6 +23,8 @@ Mindwtr 正式支援使用 Docker 執行：
    MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
    ```
 
+   `MINDWTR_CLOUD_CORS_ORIGIN` 必須與您在瀏覽器中開啟 PWA 的位址完全一致，包含協定與連接埠。`http://localhost:5173` 只有在瀏覽器執行於 Docker 主機上時才有效，從其他裝置存取時請填寫主機位址，例如 `http://192.168.1.20:5173`。只能設定一個來源。
+
 3. **拉取並啟動服務**：
    ```bash
    docker compose pull

@@ -23,6 +23,8 @@ Sie müssen das Repository nicht klonen. Die offiziellen Images werden auf GHCR 
    MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
    ```
 
+   `MINDWTR_CLOUD_CORS_ORIGIN` muss exakt der Adresse entsprechen, unter der Sie die PWA im Browser öffnen, einschließlich Schema und Port. `http://localhost:5173` funktioniert nur, wenn der Browser auf dem Docker-Host selbst läuft. Von jedem anderen Gerät aus verwenden Sie die Adresse des Hosts, zum Beispiel `http://192.168.1.20:5173`. Es kann nur eine Origin gesetzt werden.
+
 3. **Laden und starten Sie die Dienste**:
    ```bash
    docker compose pull

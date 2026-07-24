@@ -23,6 +23,8 @@ You do not need to clone the repository. The official images are published on GH
    MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
    ```
 
+   `MINDWTR_CLOUD_CORS_ORIGIN` must be the exact address you open the PWA at in your browser, including scheme and port. `http://localhost:5173` only works when the browser runs on the Docker host itself. From any other machine, use the host's address, for example `http://192.168.1.20:5173`. Only one origin can be set.
+
 3. **Pull and start the services**:
    ```bash
    docker compose pull

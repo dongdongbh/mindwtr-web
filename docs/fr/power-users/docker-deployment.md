@@ -23,6 +23,8 @@ Vous n’avez pas besoin de cloner le dépôt. Les images officielles sont publi
    MINDWTR_CLOUD_CORS_ORIGIN=http://localhost:5173
    ```
 
+   `MINDWTR_CLOUD_CORS_ORIGIN` doit correspondre exactement à l’adresse à laquelle vous ouvrez la PWA dans votre navigateur, schéma et port compris. `http://localhost:5173` ne fonctionne que si le navigateur s’exécute sur l’hôte Docker lui-même. Depuis une autre machine, utilisez l’adresse de l’hôte, par exemple `http://192.168.1.20:5173`. Une seule origine peut être définie.
+
 3. **Téléchargez et démarrez les services** :
    ```bash
    docker compose pull

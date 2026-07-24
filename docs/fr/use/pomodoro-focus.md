@@ -45,7 +45,7 @@ Le sélecteur détermine la tâche éventuellement associée au panneau. Les com
 
 Les tâches proposent une valeur facultative **Temps passé** à côté de l’Estimation du temps dans l’éditeur. Cette fonction nécessite la v1.1.0 ou une version ultérieure ; les versions antérieures comme la v1.0.5 ne la possèdent pas.
 
-Le Temps passé est facultatif et désactivé par défaut : ses éléments n’apparaissent que si **Minuteur Pomodoro** et **Lier le minuteur à une tâche** sont tous deux activés. Cela concerne le champ de l’éditeur et le badge des lignes de tâches sur ordinateur et mobile, ainsi que le bouton de démarrage rapide sur ordinateur. Désactivez-les et aucune information temporelle n’apparaît ; les valeurs enregistrées sont conservées et réapparaissent à la réactivation. Masquer l’Estimation du temps dans la disposition de l’éditeur masque également le Temps passé.
+Le Temps passé est facultatif et désactivé par défaut : ses éléments n’apparaissent que si **Minuteur Pomodoro** et **Lier le minuteur à une tâche** sont tous deux activés. Cela concerne le champ de l’éditeur et le badge des lignes de tâches sur ordinateur et mobile, la boîte de dialogue d’achèvement sur mobile et le bouton de démarrage rapide sur ordinateur. Désactivez-les et aucune information temporelle n’apparaît ; les valeurs enregistrées sont conservées et réapparaissent à la réactivation. Masquer l’Estimation du temps dans la disposition de l’éditeur masque également le Temps passé.
 
 - Chaque session de concentration terminée et liée à une tâche ajoute ses minutes au total de cette tâche.
 - Vous pouvez aussi définir ou corriger le total dans l’éditeur.

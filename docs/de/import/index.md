@@ -49,19 +49,24 @@ Falls Ihre App nicht aufgeführt ist, verwenden Sie eine der folgenden Ausweichm
 
 Am schnellsten kopieren Sie eine Aufgabenliste und fügen sie in die Schnelleingabe bzw. Schnellerfassung ein.
 
+Mindwtr entscheidet anhand von Leerzeilen, ob eine Aufgabe oder mehrere Aufgaben erstellt werden:
+
+- Enthält der eingefügte Text mindestens eine Leerzeile, behält Mindwtr den gesamten Text als eine Aufgabe bei und verbindet die nicht leeren Zeilen zu einem Titel.
+- Enthält der Text keine Leerzeilen, wird jede nicht leere Zeile zu einer eigenen Aufgabe.
+
 Desktop:
 
 1. Öffnen Sie die Schnelleingabe.
 2. Fügen Sie mehrere Zeilen in das Aufgabenfeld ein.
-3. Bestätigen Sie **Aufgaben erstellen**.
+3. Wenn Mindwtr mehrere Aufgaben erkennt, bestätigen Sie **Aufgaben erstellen**.
 
 Mobilgeräte:
 
 1. Öffnen Sie die Schnellerfassung.
 2. Fügen Sie mehrere Zeilen in das Aufgabenfeld ein.
-3. Tippen Sie auf Speichern und bestätigen Sie das Erstellen mehrerer Aufgaben.
+3. Tippen Sie auf Speichern und bestätigen Sie das Erstellen mehrerer Aufgaben, wenn Mindwtr mehrere Aufgaben erkennt.
 
-Jede nicht leere Zeile wird zu einer Aufgabe. Jede Zeile wird mit der Schnelleingabesyntax von Mindwtr ausgewertet, sodass Sie Metadaten direkt einfügen können:
+Bei mehreren Aufgaben wird jede Zeile mit der Schnelleingabesyntax von Mindwtr ausgewertet, sodass Sie Metadaten direkt einfügen können:
 
 ```text
 Email Bob about Q3 report +Work @computer #followup /due:friday

@@ -49,19 +49,24 @@ Si votre application n’est pas répertoriée, utilisez l’une des solutions c
 
 La solution de repli la plus rapide consiste à copier une liste de tâches et à la coller dans Ajout rapide ou Capture rapide.
 
+Mindwtr utilise les lignes vides pour choisir entre une seule tâche et une création groupée :
+
+- Si le texte collé contient au moins une ligne vide, Mindwtr conserve tout le contenu dans une seule tâche et réunit les lignes non vides dans un même titre.
+- S’il ne contient aucune ligne vide, chaque ligne non vide devient une tâche distincte.
+
 Sur ordinateur :
 
 1. Ouvrez Ajout rapide.
 2. Collez plusieurs lignes dans le champ de tâche.
-3. Des lignes non vides consécutives ouvrent la confirmation **Créer les tâches**. Un texte contenant une ligne vide est conservé dans une seule tâche.
+3. Si Mindwtr détecte plusieurs tâches, confirmez **Créer les tâches**.
 
 Sur mobile :
 
 1. Ouvrez Capture rapide.
 2. Collez plusieurs lignes dans le champ de tâche.
-3. Touchez Enregistrer, puis confirmez la création groupée.
+3. Touchez Enregistrer, puis confirmez la création groupée si Mindwtr détecte plusieurs tâches.
 
-Pour une capture groupée, chaque ligne non vide devient une tâche. Mindwtr analyse chaque ligne avec la syntaxe d’ajout rapide ; vous pouvez donc y inclure des métadonnées :
+Lors d’une création groupée, Mindwtr analyse chaque ligne avec la syntaxe d’ajout rapide ; vous pouvez donc y inclure des métadonnées :
 
 ```text
 Email Bob about Q3 report +Work @computer #followup /due:friday

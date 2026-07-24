@@ -49,19 +49,24 @@ Si tu aplicación no aparece, usa una de las alternativas siguientes. Son delibe
 
 La alternativa más rápida es copiar una lista de tareas y pegarla en Adición rápida o Captura rápida.
 
+Mindwtr usa las líneas vacías para decidir si crea una sola tarea o un lote:
+
+- Si el texto pegado contiene alguna línea vacía, Mindwtr conserva todo como una sola tarea y une las líneas no vacías en un único título.
+- Si no contiene líneas vacías, cada línea no vacía se convierte en una tarea independiente.
+
 Escritorio:
 
 1. Abre Adición rápida.
 2. Pega varias líneas en el campo de tareas.
-3. Confirma **Crear tareas**.
+3. Si Mindwtr detecta un lote, confirma **Crear tareas**.
 
 Dispositivo móvil:
 
 1. Abre Captura rápida.
 2. Pega varias líneas en el campo de tareas.
-3. Toca Guardar y confirma la creación en bloque.
+3. Toca Guardar y confirma la creación en bloque si Mindwtr detecta un lote.
 
-Cada línea que no esté vacía se convierte en una tarea. Se analiza con la sintaxis de adición rápida de Mindwtr, por lo que puedes incluir metadatos en la propia línea:
+En un lote, cada línea se analiza con la sintaxis de adición rápida de Mindwtr, por lo que puedes incluir metadatos en la propia línea:
 
 ```text
 Email Bob about Q3 report +Work @computer #followup /due:friday

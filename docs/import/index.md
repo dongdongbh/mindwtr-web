@@ -49,19 +49,24 @@ If your app is not listed, use one of the fallback paths below. These are intent
 
 The fastest fallback is to copy a list of tasks and paste it into Quick Add / Quick Capture.
 
+Mindwtr uses blank lines to choose between one task and a batch:
+
+- If the pasted text contains any blank line, Mindwtr keeps the whole paste as one task and joins its nonblank lines into one title.
+- If the pasted text has no blank lines, each nonblank line becomes a separate task.
+
 Desktop:
 
 1. Open Quick Add.
 2. Paste multiple lines into the task field.
-3. Contiguous nonblank lines open the **Create tasks** confirmation. Text with a blank line is kept as one task.
+3. If Mindwtr detects a batch, confirm **Create tasks**.
 
 Mobile:
 
 1. Open Quick Capture.
 2. Paste multiple lines into the task field.
-3. Tap Save and confirm the bulk create prompt.
+3. Tap Save and confirm the bulk create prompt if Mindwtr detects a batch.
 
-For bulk capture, each nonblank line becomes one task. Each line is parsed with Mindwtr quick-add syntax, so you can include metadata inline:
+For a batch, each line is parsed with Mindwtr quick-add syntax, so you can include metadata inline:
 
 ```text
 Email Bob about Q3 report +Work @computer #followup /due:friday

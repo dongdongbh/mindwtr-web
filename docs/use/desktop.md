@@ -34,6 +34,7 @@ Mindwtr runs in the background to handle auto-sync.
 - **Closing the window** minimizes the app to the system tray instead of quitting.
 - **Click the tray icon** to show/hide the window.
 - **Right-click the tray icon** to Quit the application completely.
+- **Launching at login** starts the window hidden in the tray automatically, as long as the tray icon is enabled; opening the app yourself always shows the window.
 
 ## Views
 

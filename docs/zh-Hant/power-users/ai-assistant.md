@@ -89,6 +89,7 @@ Copilot 絕不會在未經你核准的情況下套用變更。
 
 - **離線（Whisper）**：下載模型（Tiny 約 75MB、Base 約 150MB），即可完全離線轉錄。
 - **雲端（OpenAI/Gemini）**：使用你的 API key 進行高準確度轉錄。
+- **自架伺服器（相容 OpenAI）**：在 OpenAI 語音提供者下設定自訂基礎 URL，即可在你自己的伺服器上轉錄，而不經過 api.openai.com。任何提供 OpenAI `/v1/audio/transcriptions` 介面的伺服器都可以（whisper.cpp、Speaches、LocalAI、vLLM）；此時 API 金鑰為選填，模型欄位也接受你伺服器自己的模型名稱。
 - **模式**：
   - **智慧解析**：從自然口語中擷取截止日期、專案及優先順序（例如「Buy milk tomorrow priority high」）。
   - **僅轉錄**：只產生文字。

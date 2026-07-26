@@ -89,6 +89,7 @@ Transcribe voice notes into tasks.
 
 - **Offline (Whisper)**: Download a model (~75MB for Tiny, ~150MB for Base) to transcribe fully offline.
 - **Cloud (OpenAI/Gemini)**: Use your API key for high-accuracy transcription.
+- **Self-hosted (OpenAI-compatible)**: Set a custom base URL under the OpenAI speech provider to transcribe on your own server instead of api.openai.com. Anything serving OpenAI's `/v1/audio/transcriptions` works (whisper.cpp, Speaches, LocalAI, vLLM); an API key is optional there, and the model field accepts your server's own model name.
 - **Modes**:
   - **Smart Parse**: Extracts due dates, projects, and priorities from natural speech (e.g., "Buy milk tomorrow priority high").
   - **Transcript Only**: Just the text.

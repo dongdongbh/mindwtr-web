@@ -89,6 +89,7 @@ Transkribiert Sprachnotizen in Aufgaben.
 
 - **Offline (Whisper)**: Laden Sie ein Modell herunter (ca. 75 MB für Tiny, ca. 150 MB für Base), um vollständig offline zu transkribieren.
 - **Cloud (OpenAI/Gemini)**: Verwenden Sie Ihren API-Schlüssel für eine besonders genaue Transkription.
+- **Selbst gehostet (OpenAI-kompatibel)**: Legen Sie unter dem OpenAI-Sprachanbieter eine benutzerdefinierte Basis-URL fest, um auf Ihrem eigenen Server statt über api.openai.com zu transkribieren. Alles, was OpenAIs `/v1/audio/transcriptions` bereitstellt, funktioniert (whisper.cpp, Speaches, LocalAI, vLLM); ein API-Schlüssel ist dort optional, und das Modellfeld akzeptiert den Modellnamen Ihres Servers.
 - **Modi**:
   - **Intelligent auswerten**: Extrahiert Fälligkeitsdaten, Projekte und Prioritäten aus natürlicher Sprache (z. B. „Morgen Milch kaufen, Priorität hoch“).
   - **Nur Transkript**: Nur der Text.

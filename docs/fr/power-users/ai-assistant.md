@@ -96,6 +96,7 @@ Transcrit les notes vocales en tâches.
 
 - **Hors ligne avec Whisper :** téléchargez un modèle, environ 75 Mo pour Tiny ou 150 Mo pour Base, pour une transcription entièrement locale.
 - **Cloud avec OpenAI ou Gemini :** utilisez votre clé d’API pour une transcription très précise.
+- **Auto-hébergé, compatible OpenAI :** définissez une URL de base personnalisée sous le fournisseur vocal OpenAI pour transcrire sur votre propre serveur au lieu d’api.openai.com. Tout serveur exposant `/v1/audio/transcriptions` d’OpenAI convient (whisper.cpp, Speaches, LocalAI, vLLM) ; la clé API y est facultative et le champ modèle accepte le nom de modèle de votre serveur.
 - **Modes :**
   - **Analyse intelligente :** extrait de la parole naturelle les échéances, projets et priorités, par exemple « Acheter du lait demain priorité haute » ;
   - **Transcription seule :** produit uniquement le texte.

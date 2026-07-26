@@ -101,6 +101,14 @@ Transcribe notas de voz como tareas.
   - **Análisis inteligente:** extrae fechas límite, proyectos y prioridades del habla natural, por ejemplo «Comprar leche mañana prioridad alta».
   - **Solo transcripción:** únicamente el texto.
 
+#### Transcripción autoalojada
+
+Configura el proveedor de voz en OpenAI y luego completa la URL base: la raíz de tu servidor, terminada en `/v1` (por ejemplo, `http://localhost:8000/v1`). Mindwtr envía la grabación a `/v1/audio/transcriptions` en esa dirección, igual que hace con OpenAI.
+
+- Deja la clave de API vacía si tu servidor no la usa.
+- Escribe el nombre de modelo de tu propio servidor en el campo de modelo. Los modelos listados son sugerencias, no un conjunto fijo.
+- Un servidor de voz solo transcribe. **Análisis inteligente** necesita un modelo de lenguaje, así que sin un asistente de IA configurado, una captura se convierte en una tarea titulada con la transcripción, sin extraer de ella fechas, proyectos ni prioridades. Configura el asistente por separado si quieres eso.
+
 ## Notas
 
 - La IA es **opcional**. Mindwtr funciona sin ella.

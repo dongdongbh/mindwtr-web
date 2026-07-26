@@ -94,6 +94,14 @@ Transcribe voice notes into tasks.
   - **Smart Parse**: Extracts due dates, projects, and priorities from natural speech (e.g., "Buy milk tomorrow priority high").
   - **Transcript Only**: Just the text.
 
+#### Self-hosted transcription
+
+Set the speech provider to OpenAI, then fill in the base URL: your server's root, ending in `/v1` (for example `http://localhost:8000/v1`). Mindwtr posts the recording to `/v1/audio/transcriptions` there, exactly as it does to OpenAI.
+
+- Leave the API key empty if your server does not use one.
+- Type your server's own model name in the model field. The listed models are suggestions, not a fixed set.
+- Transcription is all a speech server does. **Smart Parse** needs a language model, so without an AI assistant configured a capture becomes a task titled with the transcript, and dates, projects and priorities are not pulled out of it. Configure the assistant separately if you want those.
+
 ## Notes
 
 - AI is **optional**. Mindwtr works without it.

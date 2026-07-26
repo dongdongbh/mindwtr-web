@@ -94,6 +94,14 @@ Transkribiert Sprachnotizen in Aufgaben.
   - **Intelligent auswerten**: Extrahiert Fälligkeitsdaten, Projekte und Prioritäten aus natürlicher Sprache (z. B. „Morgen Milch kaufen, Priorität hoch“).
   - **Nur Transkript**: Nur der Text.
 
+#### Selbst gehostete Transkription
+
+Setzen Sie den Sprachanbieter auf OpenAI und tragen Sie dann die Basis-URL ein: die Wurzel Ihres Servers, endend auf `/v1` (zum Beispiel `http://localhost:8000/v1`). Mindwtr sendet die Aufnahme dorthin an `/v1/audio/transcriptions`, genau wie an OpenAI.
+
+- Lassen Sie den API-Schlüssel leer, wenn Ihr Server keinen benötigt.
+- Geben Sie im Modellfeld den Modellnamen Ihres eigenen Servers ein. Die aufgeführten Modelle sind Vorschläge, keine feste Auswahl.
+- Ein Sprachserver übernimmt nur die Transkription. **Intelligent auswerten** benötigt ein Sprachmodell; ist kein KI-Assistent konfiguriert, wird eine Aufnahme zu einer Aufgabe mit dem Transkript als Titel, ohne dass Fälligkeitsdaten, Projekte oder Prioritäten daraus extrahiert werden. Konfigurieren Sie den Assistenten separat, wenn Sie das möchten.
+
 ## Hinweise
 
 - KI ist **optional**. Mindwtr funktioniert ohne sie.

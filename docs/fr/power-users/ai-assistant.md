@@ -101,6 +101,14 @@ Transcrit les notes vocales en tâches.
   - **Analyse intelligente :** extrait de la parole naturelle les échéances, projets et priorités, par exemple « Acheter du lait demain priorité haute » ;
   - **Transcription seule :** produit uniquement le texte.
 
+#### Transcription auto-hébergée
+
+Définissez le fournisseur vocal sur OpenAI, puis renseignez l’URL de base : la racine de votre serveur, se terminant par `/v1` (par exemple `http://localhost:8000/v1`). Mindwtr y envoie l’enregistrement vers `/v1/audio/transcriptions`, exactement comme pour OpenAI.
+
+- Laissez la clé d’API vide si votre serveur n’en utilise pas.
+- Saisissez le nom de modèle de votre propre serveur dans le champ modèle. Les modèles proposés ne sont que des suggestions, pas un ensemble fixe.
+- Un serveur vocal ne fait que transcrire. **Analyse intelligente** nécessite un modèle de langage : sans assistant IA configuré, une capture devient donc une tâche dont le titre est la transcription, sans en extraire d’échéances, projets ni priorités. Configurez l’assistant séparément si vous souhaitez ces informations.
+
 ## Remarques
 
 - L’IA est **facultative**. Mindwtr fonctionne sans elle.

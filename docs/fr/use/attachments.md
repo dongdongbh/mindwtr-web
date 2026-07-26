@@ -19,6 +19,7 @@ Mindwtr permet de joindre des fichiers et des liens aux **tâches** et aux **pro
 
 - Ouvrez une tâche ou un projet.
 - Dans **Pièces jointes**, cliquez sur **Ajouter un fichier** ou **Ajouter un lien**.
+- Ou faites glisser des fichiers depuis votre gestionnaire de fichiers sur un éditeur de tâche ouvert pour les joindre.
 - Pour un lien, collez une URL ou le chemin d’un fichier local.
 - Dans les pièces jointes d’une tâche, **Joindre une note Obsidian** n’apparaît qu’après l’activation de l’intégration Obsidian.
 

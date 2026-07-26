@@ -19,6 +19,7 @@ Mit Mindwtr können Sie Dateien und Links an **Aufgaben** und **Projekte** anhä
 
 - Öffnen Sie eine Aufgabe oder ein Projekt.
 - Klicken Sie unter **Anhänge** auf **Datei hinzufügen** oder **Link hinzufügen**.
+- Oder ziehen Sie Dateien aus Ihrem Dateimanager auf einen geöffneten Aufgabeneditor, um sie anzuhängen.
 - Fügen Sie für Links eine URL oder einen lokalen Dateipfad ein.
 - Bei Aufgabenanhängen erscheint **Obsidian-Notiz anhängen** erst, nachdem Sie die Obsidian-Integration aktiviert haben.
 

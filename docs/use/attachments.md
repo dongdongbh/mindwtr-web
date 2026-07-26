@@ -19,6 +19,7 @@ Mindwtr lets you attach files and links to **tasks** and **projects**. Attachmen
 
 - Open a task or project.
 - In **Attachments**, click **Add file** or **Add link**.
+- Or drag files from your file manager onto an open task editor to attach them.
 - For links, paste a URL or local file path.
 - In task attachments, **Attach Obsidian Note** appears only after you enable the Obsidian integration.
 

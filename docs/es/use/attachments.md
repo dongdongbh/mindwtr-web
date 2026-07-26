@@ -19,6 +19,7 @@ Mindwtr permite adjuntar archivos y enlaces a **tareas** y **proyectos**. Los ad
 
 - Abre una tarea o un proyecto.
 - En **Adjuntos**, haz clic en **Añadir archivo** o **Añadir enlace**.
+- O arrastra archivos desde tu gestor de archivos hasta un editor de tarea abierto para adjuntarlos.
 - Para los enlaces, pega una URL o una ruta de archivo local.
 - En los adjuntos de una tarea, **Adjuntar nota de Obsidian** solo aparece después de habilitar la integración con Obsidian.
 

@@ -55,12 +55,14 @@ Vor der Wiederherstellung speichert die mobile App eine lokale Wiederherstellung
 
 ## Wiederherstellungsmomentaufnahmen
 
-Mindwtr erstellt vor Wiederherstellungs- und Importvorgängen automatisch Wiederherstellungsmomentaufnahmen.
+Die nativen Desktop- und Mobil-Apps erstellen automatisch Wiederherstellungsmomentaufnahmen vor der Wiederherstellung einer Sicherung und vor unterstützten Datenimporten, einschließlich Importen in den Einstellungen und bestätigter Text-Massenerfassung. Der Browser-/PWA-Build besitzt kein lokales Momentaufnahmeverzeichnis.
 
 - **Desktop**: Momentaufnahmen erscheinen unter **Einstellungen → Synchronisierung → Wiederherstellungsmomentaufnahmen**.
 - **Mobilgeräte**: Momentaufnahmen erscheinen unter **Einstellungen → Synchronisierung → Wiederherstellungsmomentaufnahmen**.
 
 Verwenden Sie sie, wenn Sie die falsche Datei wiederhergestellt haben oder einen lokalen Import-/Wiederherstellungsvorgang zurücknehmen möchten.
+
+Momentaufnahmen enthalten nur Mindwtr-Daten. Sie können keine in einer anderen App gelöschten Ausgangseinträge wiederherstellen, einschließlich Erinnerungen, die nach dem Import aus Apple Erinnerungen entfernt wurden.
 
 ---
 

@@ -59,10 +59,10 @@ Mindwtr admite directamente cinco backends de sincronización:
 
 | Backend | Plataformas | Esfuerzo de configuración | Velocidad relativa | Gestión de conflictos | Ideal para |
 | --- | --- | --- | --- | --- | --- |
-| **Sincronización de archivos** (carpeta) | Todas | Bajo, elige una carpeta | La más rápida (sistema de archivos sin procesar) | Por archivo; el proveedor de carpetas ve un solo archivo | Syncthing, clientes de unidades en la nube existentes, LAN |
-| **WebDAV** | Todas | Medio, URL del servidor + credenciales | Más lenta, un ciclo HTTP por solicitud | Controlada por la aplicación, fusión por elemento | Nextcloud/ownCloud/Fastmail, BYOS remoto |
-| **Mindwtr Cloud (autohospedado)** | Todas | Mayor, desplegar `apps/cloud` + token | Rápida, un solo endpoint, el servidor fusiona al escribir | Fusión en la aplicación + el servidor | Varios dispositivos editando simultáneamente |
-| **Dropbox** | Versiones compatibles | Bajo, inicio de sesión OAuth | Moderada, API del proveedor | Controlada por la aplicación, fusión por elemento | La opción en la nube más sencilla sin servidor propio |
+| **Sincronización de archivos** (carpeta) | Aplicaciones nativas de escritorio/móvil | Bajo, elige una carpeta | La más rápida (sistema de archivos sin procesar) | Por archivo; el proveedor de carpetas ve un solo archivo | Syncthing, clientes de unidades en la nube existentes, LAN |
+| **WebDAV** | Aplicaciones nativas; navegador/PWA con CORS | Medio, URL del servidor + credenciales | Más lenta, un ciclo HTTP por solicitud | Controlada por la aplicación, fusión por elemento | Nextcloud/ownCloud/Fastmail, BYOS remoto |
+| **Mindwtr Cloud (autohospedado)** | Aplicaciones nativas + navegador/PWA | Mayor, desplegar `apps/cloud` + token | Rápida, un solo endpoint, el servidor fusiona al escribir | Fusión en la aplicación + el servidor | Varios dispositivos editando simultáneamente |
+| **Dropbox** | Versiones nativas compatibles | Bajo, inicio de sesión OAuth | Moderada, API del proveedor | Controlada por la aplicación, fusión por elemento | La opción en la nube más sencilla sin servidor propio |
 | **iCloud / CloudKit** | Versiones de Apple | Bajo, activar en Ajustes | Rápida, sincronización por registro | Fusión por registro de CloudKit | Conjuntos de dispositivos solo Apple |
 
 Las diferencias de velocidad importan sobre todo con archivos adjuntos grandes, que WebDAV y Dropbox transfieren como subidas/descargas individuales. Consulta [Ciclo de vida de los datos](/es/data-sync/data-lifecycle) para saber qué se mueve realmente durante una sincronización.
@@ -78,7 +78,9 @@ Las diferencias de velocidad importan sobre todo con archivos adjuntos grandes, 
 | **WebDAV** | Sí | El endpoint, la cuenta y las credenciales | `data.json` y los adjuntos de ese servidor WebDAV |
 | **Mindwtr Cloud (autohospedado)** | Sí | El despliegue, el almacenamiento y el token de acceso | Datos de sincronización y adjuntos de ese servidor |
 
-La base SQLite local sigue siendo la fuente principal. La sincronización por archivos usa JSON legible y guarda los adjuntos como archivos, así que trata la carpeta, la cuenta del proveedor o el servidor elegidos como almacenamiento de confianza. Mindwtr no ofrece un servicio de sincronización alojado. Las solicitudes directas a Dropbox no pasan por el desarrollador de Mindwtr y los tokens de Dropbox permanecen en tu dispositivo.
+Las aplicaciones nativas usan una base SQLite local como fuente principal. La versión de navegador/PWA guarda su conjunto de datos local en el almacenamiento del navegador vinculado al origen; borrar los datos del sitio o cambiar de origen elimina el acceso a esa copia local. La sincronización de archivos no está disponible en el navegador. WebDAV en el navegador solo funciona si la política CORS del servidor permite el origen de la PWA.
+
+La sincronización por archivos usa JSON legible y guarda los adjuntos como archivos, así que trata la carpeta, la cuenta del proveedor o el servidor elegidos como almacenamiento de confianza. Mindwtr no ofrece un servicio de sincronización alojado. Las solicitudes directas a Dropbox no pasan por el desarrollador de Mindwtr y los tokens de Dropbox permanecen en tu dispositivo.
 
 En **Ajustes → Sincronización**, las versiones compatibles muestran estas opciones en un único selector de backend y después explican la vía de configuración seleccionada:
 

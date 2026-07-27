@@ -59,10 +59,10 @@ Mindwtr directly supports five sync backends:
 
 | Backend | Platforms | Setup effort | Relative speed | Conflict handling | Best for |
 | --- | --- | --- | --- | --- | --- |
-| **File Sync** (folder) | All | Low, pick a folder | Fastest (plain filesystem) | File-level; the folder provider sees one file | Syncthing, existing cloud-drive clients, LAN |
-| **WebDAV** | All | Medium, server URL + credentials | Slower, HTTP round-trip per request | App-controlled, per-item merge | Nextcloud/ownCloud/Fastmail, remote BYOS |
-| **Mindwtr Cloud (self-hosted)** | All | Higher, deploy `apps/cloud` + token | Fast, single endpoint, server merges on write | App + server-side merge | Several devices editing concurrently |
-| **Dropbox** | Supported builds | Low, OAuth sign-in | Moderate, provider API | App-controlled, per-item merge | Easiest cloud option without your own server |
+| **File Sync** (folder) | Native desktop/mobile | Low, pick a folder | Fastest (plain filesystem) | File-level; the folder provider sees one file | Syncthing, existing cloud-drive clients, LAN |
+| **WebDAV** | Native apps; browser/PWA with CORS | Medium, server URL + credentials | Slower, HTTP round-trip per request | App-controlled, per-item merge | Nextcloud/ownCloud/Fastmail, remote BYOS |
+| **Mindwtr Cloud (self-hosted)** | Native apps + browser/PWA | Higher, deploy `apps/cloud` + token | Fast, single endpoint, server merges on write | App + server-side merge | Several devices editing concurrently |
+| **Dropbox** | Supported native builds | Low, OAuth sign-in | Moderate, provider API | App-controlled, per-item merge | Easiest cloud option without your own server |
 | **iCloud / CloudKit** | Apple builds | Low, toggle in Settings | Fast, per-record sync | Per-record CloudKit merge | Apple-only device sets |
 
 Speed differences matter most with large attachments, which WebDAV and Dropbox transfer as individual uploads/downloads. See [Data lifecycle](/data-sync/data-lifecycle) for what actually moves during a sync.
@@ -78,7 +78,9 @@ Speed differences matter most with large attachments, which WebDAV and Dropbox t
 | **WebDAV** | Yes | The endpoint, account, and credentials | `data.json` and attachments on that WebDAV server |
 | **Mindwtr Cloud (self-hosted)** | Yes | The deployment, storage, and access token | Sync data and attachments on that server |
 
-The local SQLite database remains the source of truth. File-based sync uses human-readable JSON and keeps attachments as files, so treat the selected folder, provider account, or server as trusted storage. Mindwtr does not operate a hosted sync service. Direct Dropbox requests are not proxied through the Mindwtr developer, and Dropbox tokens stay on your device.
+Native apps use a local SQLite database as the source of truth. The browser/PWA build instead keeps its local dataset in origin-scoped browser storage, so clearing site data or changing the site origin removes access to that local copy. File Sync is unavailable in the browser. Browser WebDAV works only when the server’s CORS policy allows the PWA origin.
+
+File-based sync uses human-readable JSON and keeps attachments as files, so treat the selected folder, provider account, or server as trusted storage. Mindwtr does not operate a hosted sync service. Direct Dropbox requests are not proxied through the Mindwtr developer, and Dropbox tokens stay on your device.
 
 In **Settings → Sync**, supported builds show these as one backend selector, then explain the selected setup path:
 

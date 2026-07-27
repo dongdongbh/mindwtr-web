@@ -55,12 +55,14 @@ Avant la restauration, la version mobile enregistre un instantané de récupéra
 
 ## Instantanés de récupération
 
-Mindwtr crée automatiquement des instantanés avant les opérations de restauration et d’import.
+Les applications natives pour ordinateur et mobile créent automatiquement des instantanés avant la restauration d’une sauvegarde et les imports de données pris en charge, notamment les imports des Paramètres et la capture groupée de texte confirmée. La version navigateur/PWA ne possède pas de répertoire local d’instantanés.
 
 - **Ordinateur :** dans **Paramètres → Synchronisation → Instantanés de récupération**
 - **Mobile :** dans **Paramètres → Synchronisation → Instantanés de récupération**
 
 Utilisez-les si vous avez restauré le mauvais fichier ou souhaitez annuler un import ou une restauration locale.
+
+Les instantanés contiennent uniquement les données Mindwtr. Ils ne peuvent pas restaurer les éléments sources supprimés d’une autre application, notamment les rappels retirés d’Apple Rappels après l’import.
 
 ---
 

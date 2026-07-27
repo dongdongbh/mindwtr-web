@@ -59,10 +59,10 @@ Mindwtr prend directement en charge cinq backends de synchronisation :
 
 | Backend | Plateformes | Effort de configuration | Vitesse relative | Gestion des conflits | Idéal pour |
 | --- | --- | --- | --- | --- | --- |
-| **Synchronisation de fichiers** (dossier) | Toutes | Faible, choisissez un dossier | La plus rapide (système de fichiers ordinaire) | Au niveau du fichier ; le fournisseur du dossier voit un seul fichier | Syncthing, clients de stockage cloud existants, réseau local |
-| **WebDAV** | Toutes | Moyen, URL du serveur + identifiants | Plus lente, un aller-retour HTTP par requête | Contrôlée par l’application, fusion par élément | Nextcloud/ownCloud/Fastmail, stockage distant sur votre propre serveur |
-| **Mindwtr Cloud (auto-hébergé)** | Toutes | Plus important, déploiement de `apps/cloud` + jeton | Rapide, point de terminaison unique, fusion par le serveur lors de l’écriture | Fusion par l’application + côté serveur | Plusieurs appareils effectuant des modifications simultanément |
-| **Dropbox** | Versions prises en charge | Faible, connexion OAuth | Modérée, API du fournisseur | Contrôlée par l’application, fusion par élément | Option cloud la plus simple sans votre propre serveur |
+| **Synchronisation de fichiers** (dossier) | Applications natives ordinateur/mobile | Faible, choisissez un dossier | La plus rapide (système de fichiers ordinaire) | Au niveau du fichier ; le fournisseur du dossier voit un seul fichier | Syncthing, clients de stockage cloud existants, réseau local |
+| **WebDAV** | Applications natives ; navigateur/PWA avec CORS | Moyen, URL du serveur + identifiants | Plus lente, un aller-retour HTTP par requête | Contrôlée par l’application, fusion par élément | Nextcloud/ownCloud/Fastmail, stockage distant sur votre propre serveur |
+| **Mindwtr Cloud (auto-hébergé)** | Applications natives + navigateur/PWA | Plus important, déploiement de `apps/cloud` + jeton | Rapide, point de terminaison unique, fusion par le serveur lors de l’écriture | Fusion par l’application + côté serveur | Plusieurs appareils effectuant des modifications simultanément |
+| **Dropbox** | Versions natives prises en charge | Faible, connexion OAuth | Modérée, API du fournisseur | Contrôlée par l’application, fusion par élément | Option cloud la plus simple sans votre propre serveur |
 | **iCloud / CloudKit** | Versions Apple | Faible, activation dans les Réglages | Rapide, synchronisation par enregistrement | Fusion CloudKit par enregistrement | Ensemble d’appareils Apple uniquement |
 
 Les différences de vitesse sont surtout importantes avec les pièces jointes volumineuses, que WebDAV et Dropbox transfèrent sous forme de téléversements/téléchargements individuels. Consultez [Cycle de vie des données](/fr/data-sync/data-lifecycle) pour savoir ce qui est réellement transféré lors d’une synchronisation.
@@ -78,7 +78,9 @@ Les différences de vitesse sont surtout importantes avec les pièces jointes vo
 | **WebDAV** | Oui | Le point d’accès, le compte et les identifiants | `data.json` et les pièces jointes sur ce serveur WebDAV |
 | **Mindwtr Cloud (auto-hébergé)** | Oui | Le déploiement, le stockage et le jeton d’accès | Données de synchronisation et pièces jointes sur ce serveur |
 
-La base SQLite locale reste la source de référence. La synchronisation par fichiers utilise un JSON lisible et conserve les pièces jointes sous forme de fichiers. Considérez donc le dossier, le compte fournisseur ou le serveur choisi comme un stockage de confiance. Mindwtr n’exploite aucun service de synchronisation hébergé. Les requêtes directes vers Dropbox ne transitent pas par le développeur de Mindwtr, et les jetons Dropbox restent sur votre appareil.
+Les applications natives utilisent une base SQLite locale comme source de référence. La version navigateur/PWA conserve plutôt son jeu de données local dans le stockage du navigateur lié à l’origine ; effacer les données du site ou changer d’origine supprime l’accès à cette copie locale. La synchronisation de fichiers n’est pas disponible dans le navigateur. WebDAV dans le navigateur ne fonctionne que si la politique CORS du serveur autorise l’origine de la PWA.
+
+La synchronisation par fichiers utilise un JSON lisible et conserve les pièces jointes sous forme de fichiers. Considérez donc le dossier, le compte fournisseur ou le serveur choisi comme un stockage de confiance. Mindwtr n’exploite aucun service de synchronisation hébergé. Les requêtes directes vers Dropbox ne transitent pas par le développeur de Mindwtr, et les jetons Dropbox restent sur votre appareil.
 
 Dans **Réglages → Synchronisation**, les versions prises en charge présentent ces options dans un sélecteur de backend unique, puis expliquent la procédure de configuration sélectionnée :
 

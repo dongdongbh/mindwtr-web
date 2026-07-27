@@ -59,10 +59,10 @@ Mindwtr unterstützt direkt fünf Backends:
 
 | Backend | Plattformen | Einrichtung | Relative Geschwindigkeit | Konflikte | Geeignet für |
 | --- | --- | --- | --- | --- | --- |
-| **Dateisynchronisierung** (Ordner) | Alle | Niedrig, Ordner auswählen | Am schnellsten (reines Dateisystem) | Dateiebene; der Ordneranbieter sieht eine Datei | Syncthing, vorhandene Cloud-Drive-Clients, LAN |
-| **WebDAV** | Alle | Mittel, Server-URL + Zugangsdaten | Langsamer, HTTP-Roundtrip pro Anfrage | App-gesteuerte Zusammenführung je Eintrag | Nextcloud/ownCloud/Fastmail, entferntes BYOS |
-| **Mindwtr Cloud (selbst gehostet)** | Alle | Höher, `apps/cloud` + Token bereitstellen | Schnell, ein Endpunkt, Server führt beim Schreiben zusammen | App- + serverseitige Zusammenführung | Mehrere gleichzeitig bearbeitende Geräte |
-| **Dropbox** | Unterstützte Builds | Niedrig, OAuth-Anmeldung | Mittel, Anbieter-API | App-gesteuerte Zusammenführung je Eintrag | Einfachste Cloud-Option ohne eigenen Server |
+| **Dateisynchronisierung** (Ordner) | Native Desktop-/Mobil-Apps | Niedrig, Ordner auswählen | Am schnellsten (reines Dateisystem) | Dateiebene; der Ordneranbieter sieht eine Datei | Syncthing, vorhandene Cloud-Drive-Clients, LAN |
+| **WebDAV** | Native Apps; Browser/PWA mit CORS | Mittel, Server-URL + Zugangsdaten | Langsamer, HTTP-Roundtrip pro Anfrage | App-gesteuerte Zusammenführung je Eintrag | Nextcloud/ownCloud/Fastmail, entferntes BYOS |
+| **Mindwtr Cloud (selbst gehostet)** | Native Apps + Browser/PWA | Höher, `apps/cloud` + Token bereitstellen | Schnell, ein Endpunkt, Server führt beim Schreiben zusammen | App- + serverseitige Zusammenführung | Mehrere gleichzeitig bearbeitende Geräte |
+| **Dropbox** | Unterstützte native Builds | Niedrig, OAuth-Anmeldung | Mittel, Anbieter-API | App-gesteuerte Zusammenführung je Eintrag | Einfachste Cloud-Option ohne eigenen Server |
 | **iCloud / CloudKit** | Apple-Builds | Niedrig, in den Einstellungen aktivieren | Schnell, Synchronisierung je Datensatz | CloudKit-Zusammenführung je Datensatz | Reine Apple-Gerätegruppen |
 
 Geschwindigkeitsunterschiede fallen vor allem bei großen Anhängen ins Gewicht, die WebDAV und Dropbox als einzelne Uploads und Downloads übertragen. Was bei einer Synchronisierung tatsächlich übertragen wird, beschreibt der [Datenlebenszyklus](/de/data-sync/data-lifecycle).
@@ -78,7 +78,9 @@ Geschwindigkeitsunterschiede fallen vor allem bei großen Anhängen ins Gewicht,
 | **WebDAV** | Ja | Endpunkt, Konto und Zugangsdaten | `data.json` und Anhänge auf diesem WebDAV-Server |
 | **Mindwtr Cloud (selbst gehostet)** | Ja | Bereitstellung, Speicher und Zugriffstoken | Synchronisierungsdaten und Anhänge auf diesem Server |
 
-Die lokale SQLite-Datenbank bleibt die maßgebliche Quelle. Dateibasierte Synchronisierung verwendet lesbares JSON und speichert Anhänge als Dateien. Behandeln Sie daher den ausgewählten Ordner, das Anbieterkonto oder den Server als vertrauenswürdigen Speicher. Mindwtr betreibt keinen gehosteten Synchronisierungsdienst. Direkte Dropbox-Anfragen laufen nicht über den Mindwtr-Entwickler, und Dropbox-Tokens bleiben auf Ihrem Gerät.
+Native Apps verwenden eine lokale SQLite-Datenbank als maßgebliche Quelle. Der Browser-/PWA-Build speichert seinen lokalen Datensatz stattdessen im ursprungsgebundenen Browser-Speicher. Beim Löschen der Websitedaten oder Wechseln der Website-Quelle geht der Zugriff auf diese lokale Kopie verloren. Dateisynchronisierung ist im Browser nicht verfügbar. WebDAV funktioniert im Browser nur, wenn die CORS-Richtlinie des Servers den PWA-Ursprung zulässt.
+
+Dateibasierte Synchronisierung verwendet lesbares JSON und speichert Anhänge als Dateien. Behandeln Sie daher den ausgewählten Ordner, das Anbieterkonto oder den Server als vertrauenswürdigen Speicher. Mindwtr betreibt keinen gehosteten Synchronisierungsdienst. Direkte Dropbox-Anfragen laufen nicht über den Mindwtr-Entwickler, und Dropbox-Tokens bleiben auf Ihrem Gerät.
 
 Unter **Einstellungen → Synchronisierung** zeigen unterstützte Builds diese Möglichkeiten in einem gemeinsamen Backend-Auswahlfeld und erklären anschließend den gewählten Einrichtungsweg:
 

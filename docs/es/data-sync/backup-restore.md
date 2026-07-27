@@ -55,12 +55,14 @@ Antes de restaurar, el móvil guarda una instantánea de recuperación local en 
 
 ## Instantáneas de recuperación
 
-Mindwtr crea automáticamente instantáneas de recuperación antes de restaurar e importar.
+Las aplicaciones nativas de escritorio y móvil crean instantáneas de recuperación automáticamente antes de restaurar copias y de las importaciones de datos compatibles, incluidas las importaciones de Ajustes y la captura masiva de texto confirmada. La versión de navegador/PWA no tiene un directorio local de instantáneas.
 
 - **Escritorio:** aparecen en **Ajustes → Sincronizar → Instantáneas de recuperación**.
 - **Dispositivos móviles:** aparecen en **Ajustes → Sincronizar → Instantáneas de recuperación**.
 
 Úsalas si restauraste el archivo equivocado o quieres revertir una importación o restauración local.
+
+Las instantáneas solo contienen datos de Mindwtr. No pueden restaurar elementos de origen eliminados de otra aplicación, incluidos los recordatorios borrados de Recordatorios de Apple después de importarlos.
 
 ---
 

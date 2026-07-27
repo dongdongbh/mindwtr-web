@@ -17,9 +17,12 @@ Ejemplo: **Lista de equipaje**
 Al duplicar se restablece lo siguiente:
 
 - los elementos de la lista empiezan sin marcar;
-- se borran las fechas de planificación y revisión;
-- se borra la recurrencia;
+- se borra la finalización, y la copia de una tarea completada o archivada vuelve como **Próxima acción**;
+- la copia queda fuera del Enfoque de hoy;
+- los archivos adjuntos no se copian; los enlaces sí;
 - la copia se convierte en una tarea nueva, con identificadores nuevos para la lista y los adjuntos.
+
+Lo que se conserva: título, descripción, proyecto, sección, área, contextos, etiquetas y las fechas de inicio, vencimiento y revisión. Una tarea recurrente conserva su regla, pero inicia su propia serie independiente, de modo que completar una copia ya no adelanta la otra.
 
 ### Restablecer la lista de comprobación
 
@@ -40,7 +43,7 @@ Al restablecer:
 ## Dónde encontrarlo
 
 - **Dispositivos móviles:** editor de tareas → **Duplicar tarea** o **Restablecer lista de comprobación**.
-- **Escritorio:** menú de acciones de la tarea.
+- **Escritorio:** menú de acciones de la tarea. Las filas completadas en **Hecho** y **Archivado** también muestran un botón de copiar al pasar el cursor.
 
 ## Qué opción elegir
 

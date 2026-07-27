@@ -17,9 +17,12 @@ Exemple : **Liste pour la valise**
 La duplication réinitialise les éléments suivants :
 
 - les éléments de la liste de contrôle sont tous décochés ;
-- les dates de planification et de revue sont effacées ;
-- la récurrence est supprimée ;
+- l’achèvement est effacé, et la copie d’une tâche terminée ou archivée revient en **Prochaine action** ;
+- la copie n’est pas reprise dans le Focus du jour ;
+- les pièces jointes ne sont pas copiées ; les liens le sont ;
 - la copie devient une nouvelle tâche avec de nouveaux identifiants de liste de contrôle et de pièces jointes.
+
+Ce qui est conservé : titre, description, projet, section, domaine, contextes, étiquettes, ainsi que les dates de début, d’échéance et de revue. Une tâche récurrente conserve sa règle mais démarre sa propre série indépendante : terminer une copie ne fait plus avancer l’autre.
 
 ### Réinitialiser la liste de contrôle
 
@@ -40,7 +43,7 @@ La réinitialisation :
 ## Où trouver ces actions
 
 - **Mobile :** éditeur de tâche → **Dupliquer la tâche** ou **Réinitialiser la liste de contrôle**
-- **Ordinateur :** menu des actions de la tâche
+- **Ordinateur :** menu des actions de la tâche. Les lignes terminées dans **Terminé** et **Archivé** affichent aussi un bouton de copie au survol.
 
 ## Laquelle choisir ?
 

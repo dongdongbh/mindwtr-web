@@ -17,9 +17,12 @@ Beispiel: **Packliste**
 Beim Duplizieren wird Folgendes zurückgesetzt:
 
 - Checklistenpunkte beginnen unabgehakt.
-- Planungs- und Wiedervorlagedaten werden gelöscht.
-- Die Wiederholung wird entfernt.
+- Die Erledigung wird zurückgesetzt; die Kopie einer erledigten oder archivierten Aufgabe kehrt als **Nächste Aktion** zurück.
+- Die Kopie wird nicht in den Heutigen Fokus übernommen.
+- Dateianhänge werden nicht kopiert; Links schon.
 - Die Kopie wird zu einer neuen Aufgabe mit neuen Checklisten- und Anhangs-IDs.
+
+Erhalten bleiben: Titel, Beschreibung, Projekt, Abschnitt, Bereich, Kontexte, Schlagwörter sowie Start-, Fälligkeits- und Wiedervorlagedaten. Eine wiederkehrende Aufgabe behält ihre Regel, startet aber eine eigene, unabhängige Serie — das Erledigen einer Kopie setzt die andere nicht mehr fort.
 
 ### Checkliste zurücksetzen
 
@@ -40,7 +43,7 @@ Das Zurücksetzen:
 ## Wo die Funktionen zu finden sind
 
 - **Mobilgeräte:** Aufgaben-Editor → **Aufgabe duplizieren** oder **Checkliste zurücksetzen**
-- **Desktop:** Aktionsmenü der Aufgabe
+- **Desktop:** Aktionsmenü der Aufgabe. Erledigte Zeilen in **Erledigt** und **Archiviert** zeigen beim Überfahren mit der Maus zusätzlich eine Kopieren-Schaltfläche.
 
 ## Welche Variante passt?
 

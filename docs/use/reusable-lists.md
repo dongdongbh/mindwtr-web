@@ -16,9 +16,12 @@ Example: **Packing List**
 What duplication resets:
 
 - checklist items start unchecked
-- schedule and review dates are cleared
-- recurrence is cleared
+- completion is cleared, and a copy of a done or archived task comes back as a **Next Action**
+- the copy is dropped from Today's Focus
+- file attachments are left behind; links are copied
 - the copy becomes a fresh task with new checklist and attachment IDs
+
+What it keeps: title, description, project, section, area, contexts, tags, start, due, and review dates. A recurring task keeps its rule but starts its own independent series, so completing one copy no longer advances the other.
 
 ### Reset Checklist
 Use when you want the same list again.
@@ -38,7 +41,7 @@ What reset does:
 ## Where to Find
 
 - **Mobile:** Task editor → **Duplicate task** or **Reset checklist**
-- **Desktop:** Task actions menu
+- **Desktop:** Task actions menu. Completed rows in **Done** and **Archived** also have a copy button that appears when you hover them.
 
 ## Which One To Choose
 

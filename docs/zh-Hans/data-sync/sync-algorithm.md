@@ -6,7 +6,7 @@ Mindwtr 采用本地优先同步，并以确定性方式处理冲突。
 
 ## 输入与输出
 
-- 输入 A：本地快照（`tasks`、`projects`、`sections`、`areas`、`settings`）
+- 输入 A：本地快照（`tasks`、`projects`、`sections`、`areas`、`people`、`settings`）
 - 输入 B：远程快照（结构相同）
 - 输出：合并后的快照 + 合并统计信息（`conflicts`、`clockSkew`、`timestampAdjustments`、`futureTimestampClamps`、`conflictIds`、`conflictReasonCounts`、`conflictSamples`、`timestampAdjustmentIds`、`futureTimestampClampIds`），以及有上限的同步诊断日志。
 

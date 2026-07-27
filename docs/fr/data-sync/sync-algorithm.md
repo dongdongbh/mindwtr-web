@@ -6,7 +6,7 @@ Cette page est la référence technique de fusion pour la maintenance et le déb
 
 ## Entrées et sorties
 
-- Entrée A : instantané local (`tasks`, `projects`, `sections`, `areas`, `settings`)
+- Entrée A : instantané local (`tasks`, `projects`, `sections`, `areas`, `people`, `settings`)
 - Entrée B : instantané distant (même structure)
 - Sortie : instantané fusionné + statistiques de fusion (`conflicts`, `clockSkew`, `timestampAdjustments`, `futureTimestampClamps`, `conflictIds`, `conflictReasonCounts`, `conflictSamples`, `timestampAdjustmentIds`, `futureTimestampClampIds`) ainsi que des journaux de diagnostic de synchronisation de taille limitée.
 

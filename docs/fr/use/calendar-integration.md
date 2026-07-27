@@ -118,7 +118,7 @@ Sur iOS et Android, Mindwtr peut envoyer les tâches planifiées et celles ayant
 
 Configuration :
 
-1. Ouvrez **Paramètres → Calendrier**
+1. Ouvrez **Menu → Paramètres → Avancé → Calendrier**
 2. Activez **Envoyer les tâches vers le calendrier**
 3. Accordez l’autorisation d’accès au calendrier
 4. Dépliez **Cible de synchronisation**
@@ -139,7 +139,7 @@ Pour utiliser un calendrier `Mindwtr` distinct associé à Google sur Android :
 2. Créez un calendrier nommé `Mindwtr` dans le même compte Google que celui utilisé sur Android.
 3. Sur Android, ouvrez Google Agenda et actualisez le compte. Vérifiez que la synchronisation de l’agenda est activée dans les paramètres de compte Android.
 4. Dans l’application Google Agenda pour Android, activez **Partager les données de Google Agenda avec d’autres applications** afin qu’Android expose les calendriers Google à Mindwtr.
-5. Revenez dans **Paramètres → Calendrier** de Mindwtr, touchez **Actualiser les calendriers**, puis sélectionnez la cible `Mindwtr` qui affiche votre compte Google.
+5. Revenez dans **Menu → Paramètres → Avancé → Calendrier** de Mindwtr, touchez **Actualiser les calendriers**, puis sélectionnez la cible `Mindwtr` qui affiche votre compte Google.
 
 Si le calendrier `Mindwtr` associé à Google n’apparaît pas encore dans Mindwtr, Android ne l’a pas exposé via le fournisseur de calendrier du système. Actualisez Google Agenda, vérifiez la synchronisation du compte Android, activez **Partager les données de Google Agenda avec d’autres applications** dans Google Agenda, puis touchez **Actualiser les calendriers** dans Mindwtr.
 
@@ -150,7 +150,7 @@ Pour utiliser une cible Calendrier Apple distincte sur iPhone ou iPad :
 1. Ouvrez Calendrier Apple.
 2. Créez un calendrier nommé `Mindwtr`. Utilisez iCloud si vous souhaitez que les événements apparaissent sur d’autres appareils Apple, ou un calendrier local s’ils doivent rester sur l’appareil.
 3. Si vous utilisez iCloud, vérifiez que la synchronisation du calendrier est activée dans **Réglages -> Compte Apple -> iCloud -> Calendrier** sur iOS.
-4. Ouvrez **Paramètres -> Calendrier** dans Mindwtr.
+4. Ouvrez **Menu → Paramètres → Avancé → Calendrier** dans Mindwtr.
 5. Activez **Envoyer les tâches vers le calendrier** et accordez l’autorisation d’accès au calendrier.
 6. Dépliez **Cible de synchronisation**, touchez **Actualiser les calendriers**, puis choisissez la cible `Mindwtr` de Calendrier Apple.
 7. Dans Calendrier Apple, ouvrez la liste des calendriers et vérifiez que le calendrier `Mindwtr` sélectionné est visible.
@@ -166,7 +166,7 @@ Sur mobile, Mindwtr peut lire les calendriers depuis la base de données de cale
 
 Configuration :
 
-1. Ouvrez **Paramètres → Calendrier**
+1. Ouvrez **Menu → Paramètres → Avancé → Calendrier**
 2. Activez **Calendriers de l’appareil**
 3. Accordez l’autorisation d’accès au calendrier
 4. Dépliez **Calendriers de l’appareil**
@@ -180,7 +180,7 @@ Mindwtr masque ses propres calendriers `Mindwtr` cibles dans la liste de lecture
 
 Sur macOS, Mindwtr peut lire les événements de Calendrier Apple et envoyer les tâches Mindwtr planifiées ou arrivant à échéance via EventKit :
 
-1. Ouvrez **Paramètres -> Calendrier**
+1. Ouvrez **Paramètres → Intégrations → Calendrier**
 2. Demandez l’accès à Calendrier Apple
 3. Autorisez Mindwtr dans **Réglages Système -> Confidentialité et sécurité -> Calendriers** sur macOS
 4. Activez **Envoyer les tâches vers le calendrier** si vous souhaitez que les tâches Mindwtr soient inscrites dans Calendrier Apple
@@ -194,7 +194,7 @@ Sous Linux, Mindwtr peut lire les calendriers Evolution Data Server activés et 
 
 1. Configurez le compte de calendrier dans Evolution ou Comptes en ligne GNOME et vérifiez qu’il apparaît dans Evolution.
 2. Vérifiez que `evolution-data-server` est installé et en cours d’exécution.
-3. Ouvrez **Paramètres -> Calendrier** dans Mindwtr.
+3. Ouvrez **Paramètres → Intégrations → Calendrier** dans Mindwtr.
 4. Activez **Envoyer les tâches vers le calendrier** si vous souhaitez inscrire les tâches Mindwtr dans le calendrier système.
 5. Dépliez **Cible de synchronisation**, actualisez les calendriers, puis choisissez un calendrier `Mindwtr` dédié ou une autre cible inscriptible.
 
@@ -202,7 +202,7 @@ Linux n’affiche pas de boîte de dialogue d’autorisation distincte pour le c
 
 ### Ordinateur/Web : URL ICS
 
-1. Ouvrez **Paramètres → Calendrier**
+1. Ouvrez **Paramètres → Intégrations → Calendrier**
 2. Ajoutez votre **URL ICS**
 3. Actualisez pour récupérer les événements
 

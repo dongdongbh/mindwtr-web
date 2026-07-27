@@ -21,6 +21,8 @@ import {
 
 ## 类型
 
+以下代码片段仅展示常用字段，并不完整。请导入 `@mindwtr/core` 导出的类型，或以 `packages/core/src/types.ts` 为权威定义。
+
 ### Task
 
 ```typescript
@@ -57,7 +59,7 @@ interface Task {
     pushCount?: number;            // Number of times due date was pushed later
     repeatReminderMinutes?: number; // Due-time repeat reminder preset: 5, 10, 15, 30, or 60
     textDirection?: 'auto' | 'ltr' | 'rtl';
-    timeEstimate?: TimeEstimate;   // '5min' | '10min' | '15min' | '30min' | '1hr' | '2hr' | '3hr' | '4hr' | '4hr+'
+    timeEstimate?: TimeEstimate;   // 预设值至 '4hr+'，或表示自定义分钟数的 `custom:${number}`
     reviewAt?: string;             // Tickler date
     completedAt?: string;          // When completed
     rev?: number;                  // Monotonic revision counter for sync
@@ -66,7 +68,8 @@ interface Task {
     updatedAt: string;             // Last update timestamp
     deletedAt?: string;            // Soft-delete timestamp
     purgedAt?: string;             // Permanently deleted (tombstone only)
-    orderNum?: number;             // Manual sort order
+    order?: number;                // 项目内的手动排序
+    orderNum?: number;             // 兼容旧载荷的已弃用别名
 }
 ```
 
@@ -93,6 +96,7 @@ type RecurrenceByDay = RecurrenceWeekday | `${'1' | '2' | '3' | '4' | '-1'}${Rec
 
 interface Recurrence {
     rule: RecurrenceRule;
+    seriesId?: string;                   // 重复序列的稳定标识
     strategy?: RecurrenceStrategy;      // Defaults to 'strict'
     byDay?: RecurrenceByDay[];          // Weekly/monthly weekday pattern
     count?: number;                     // Total occurrences in the series, including the current task
@@ -107,6 +111,7 @@ interface Recurrence {
 - `count` 会在创建指定总数的发生项后结束序列。
 - 当下一个生成的任务晚于给定日期/时间时，`until` 会结束序列。
 - `completedOccurrences` 是内部使用且同步安全的元数据；客户端在往返传递重复对象时应保留它。
+- 客户端在往返传递重复对象时还必须保留 `seriesId` 和所有锚点元数据。
 - `showFutureRecurrence` 属于任务，而不属于重复对象。它要求“日历”显示一个仅用于规划的下次发生项；客户端在往返传递任务时应保留这个布尔值。
 
 ### Project
@@ -162,8 +167,8 @@ interface Area {
     order: number;
     rev?: number;
     revBy?: string;
-    createdAt?: string;
-    updatedAt?: string;
+    createdAt: string;
+    updatedAt: string;
     deletedAt?: string;            // Soft-delete tombstone for sync
 }
 ```
@@ -426,7 +431,9 @@ setStorageAdapter(myStorageAdapter);
 interface StorageAdapter {
     getData: () => Promise<AppData>;
     saveData: (data: AppData) => Promise<void>;
+    saveTask?: (task: Task, snapshot?: AppData) => Promise<void>;
     queryTasks?: (options: TaskQueryOptions) => Promise<Task[]>;
+    searchAll?: (query: string) => Promise<SearchResults>;
 }
 ```
 
@@ -441,10 +448,10 @@ interface StorageAdapter {
 ```typescript
 import { parseQuickAdd } from '@mindwtr/core';
 
-const result = parseQuickAdd(input: string, projects?: Project[]);
+const result: QuickAddResult = parseQuickAdd(input, projects, now, areas, options);
 ```
 
-### 语法
+### 常用语法
 
 | 令牌 | 示例 | 结果 |
 | --- | --- | --- |

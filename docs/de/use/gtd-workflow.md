@@ -167,13 +167,15 @@ Beispiel: **Website veröffentlichen** kann Abschnitte wie **Design**, **Entwick
 
 Das Feld **Projektabschnitt** einer Aufgabe weist sie einem Abschnitt ihres Projekts zu. Es ist erst sinnvoll, nachdem die Aufgabe zu einem Projekt mit Abschnitten gehört. Lassen Sie es bei nicht zugewiesenen Aufgaben oder Projekten ohne Abschnitte leer.
 
-Sequenzielle Projekte können projektweit oder abschnittsweise gelten. Verwenden Sie den Abschnittsumfang, wenn ein Projekt unabhängige Phasen oder Arbeitsstränge besitzt: Mindwtr zeigt dann die erste verfügbare Aufgabe jedes Abschnitts, statt das gesamte Projekt hinter einer Aufgabe zu blockieren.
+Sequenzielle Projekte können projektweit oder abschnittsweise gelten. Verwenden Sie den Abschnittsumfang, wenn ein Projekt unabhängige Phasen oder Arbeitsstränge besitzt: Mindwtr zeigt dann die erste verfügbare Aufgabe jedes Abschnitts, statt das gesamte Projekt hinter einer Aufgabe zu blockieren. Beim Abschnittsumfang fragt Mindwtr nach Abschluss der letzten nächsten Aktion eines Abschnitts „Was ist die nächste Aktion?“ für diesen Abschnitt, genau wie nach der letzten Aktion des gesamten Projekts.
 
 ### Fälligkeitsdaten und Erinnerungen
 
 - Legen Sie das **Fälligkeitsdatum** für Fristen fest.
 - Legen Sie das **Startdatum** für den Beginn fest.
 - Legen Sie ein **Wiedervorlagedatum** (Tickler) für regelmäßige Prüfungen fest.
+
+Für Aufgaben mit Fälligkeitszeit können Sie die **Erinnerung wiederholen** nach 5, 10, 15, 30 oder 60 Minuten. Bei Aufgaben mit einer Startzeit oder einem Fälligkeitsdatum deaktiviert **Erinnerungen überspringen** die Start- und Fälligkeitserinnerungen, ohne die Aufgabe aus „Fokus“ oder anderen Listen zu entfernen.
 
 <a id="dates-vs-status"></a>
 

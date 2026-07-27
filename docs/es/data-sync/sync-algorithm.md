@@ -6,7 +6,7 @@ Esta página es la referencia técnica de fusión para responsables de mantenimi
 
 ## Entradas y salidas
 
-- Entrada A: instantánea local (`tasks`, `projects`, `sections`, `areas`, `settings`)
+- Entrada A: instantánea local (`tasks`, `projects`, `sections`, `areas`, `people`, `settings`)
 - Entrada B: instantánea remota (misma estructura)
 - Salida: instantánea fusionada + estadísticas de fusión (`conflicts`, `clockSkew`, `timestampAdjustments`, `futureTimestampClamps`, `conflictIds`, `conflictReasonCounts`, `conflictSamples`, `timestampAdjustmentIds`, `futureTimestampClampIds`) más registros acotados de diagnóstico de sincronización.
 

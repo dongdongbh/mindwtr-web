@@ -21,6 +21,8 @@ import {
 
 ## Tipos
 
+Los fragmentos siguientes muestran campos de uso habitual y no son exhaustivos. Importa los tipos exportados desde `@mindwtr/core` o usa `packages/core/src/types.ts` como definición canónica.
+
 ### Task
 
 ```typescript
@@ -57,7 +59,7 @@ interface Task {
     pushCount?: number;            // Number of times due date was pushed later
     repeatReminderMinutes?: number; // Due-time repeat reminder preset: 5, 10, 15, 30, or 60
     textDirection?: 'auto' | 'ltr' | 'rtl';
-    timeEstimate?: TimeEstimate;   // '5min' | '10min' | '15min' | '30min' | '1hr' | '2hr' | '3hr' | '4hr' | '4hr+'
+    timeEstimate?: TimeEstimate;   // Preajustes hasta '4hr+' o `custom:${number}` minutos
     reviewAt?: string;             // Tickler date
     completedAt?: string;          // When completed
     rev?: number;                  // Monotonic revision counter for sync
@@ -66,7 +68,8 @@ interface Task {
     updatedAt: string;             // Last update timestamp
     deletedAt?: string;            // Soft-delete timestamp
     purgedAt?: string;             // Permanently deleted (tombstone only)
-    orderNum?: number;             // Manual sort order
+    order?: number;                // Orden manual dentro de un proyecto
+    orderNum?: number;             // Alias obsoleto aceptado en cargas antiguas
 }
 ```
 
@@ -93,6 +96,7 @@ type RecurrenceByDay = RecurrenceWeekday | `${'1' | '2' | '3' | '4' | '-1'}${Rec
 
 interface Recurrence {
     rule: RecurrenceRule;
+    seriesId?: string;                   // Identidad estable de la serie recurrente
     strategy?: RecurrenceStrategy;      // Defaults to 'strict'
     byDay?: RecurrenceByDay[];          // Weekly/monthly weekday pattern
     count?: number;                     // Total occurrences in the series, including the current task
@@ -107,6 +111,7 @@ interface Recurrence {
 - `count` detiene la serie después de que se haya creado el número total de repeticiones.
 - `until` detiene la serie cuando la siguiente tarea generada caería después de la fecha/hora indicada.
 - `completedOccurrences` son metadatos internos seguros para la sincronización; los clientes deben conservarlos al procesar objetos de recurrencia de ida y vuelta.
+- Los clientes también deben conservar `seriesId` y todos los metadatos de anclaje al procesar objetos de recurrencia de ida y vuelta.
 - `showFutureRecurrence` pertenece a la tarea, no al objeto de recurrencia. Solicita que el Calendario muestre una siguiente repetición únicamente para planificación; los clientes deben conservar el booleano al procesar tareas de ida y vuelta.
 
 ### Project
@@ -162,8 +167,8 @@ interface Area {
     order: number;
     rev?: number;
     revBy?: string;
-    createdAt?: string;
-    updatedAt?: string;
+    createdAt: string;
+    updatedAt: string;
     deletedAt?: string;            // Soft-delete tombstone for sync
 }
 ```
@@ -426,7 +431,9 @@ setStorageAdapter(myStorageAdapter);
 interface StorageAdapter {
     getData: () => Promise<AppData>;
     saveData: (data: AppData) => Promise<void>;
+    saveTask?: (task: Task, snapshot?: AppData) => Promise<void>;
     queryTasks?: (options: TaskQueryOptions) => Promise<Task[]>;
+    searchAll?: (query: string) => Promise<SearchResults>;
 }
 ```
 
@@ -441,10 +448,10 @@ Analiza la entrada de tareas en lenguaje natural.
 ```typescript
 import { parseQuickAdd } from '@mindwtr/core';
 
-const result = parseQuickAdd(input: string, projects?: Project[]);
+const result: QuickAddResult = parseQuickAdd(input, projects, now, areas, options);
 ```
 
-### Sintaxis
+### Sintaxis habitual
 
 | Token        | Ejemplo            | Resultado                    |
 | ------------ | ------------------ | ---------------------------- |

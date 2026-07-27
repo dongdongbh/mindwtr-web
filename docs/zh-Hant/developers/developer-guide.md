@@ -105,7 +105,7 @@ Mindwtr/
 │       └── src/
 │           ├── store.ts   # Zustand store
 │           ├── types.ts   # TypeScript types
-│           ├── i18n.ts    # Translations
+│           ├── i18n/      # 翻譯載入器與語系
 │           └── ...
 │
 ├── scripts/               # Utility scripts (CLI, API, release)
@@ -115,9 +115,7 @@ Mindwtr/
 └── package.json           # Monorepo root
 ```
 
-公開的使用者與開發者文件維護於本儲存庫的 `docs/` 目錄，並發布至 [docs.mindwtr.app](https://docs.mindwtr.app/)。公開來源位於 [mindwtr-web 的 `docs/` 目錄](https://github.com/dongdongbh/mindwtr-web/tree/main/docs)。新增或遷移指南頁面時，優先使用該文件儲存庫。
-
-公開文件來源：https://github.com/dongdongbh/mindwtr-web/tree/main/docs
+[`mindwtr-web/docs` 目錄樹](https://github.com/dongdongbh/mindwtr-web/tree/main/docs)是公開使用者與開發者文件的權威來源，並發布至 [docs.mindwtr.app](https://docs.mindwtr.app/)。應用程式儲存庫中的 `docs/` 目錄包含 ADR、貢獻與流程指南、版本資訊等工程與發行產物。
 
 ---
 
@@ -176,7 +174,7 @@ Mindwtr/
 | **樣式** | Tailwind CSS | NativeWind (Tailwind) | N/A |
 | **狀態** | Zustand（共用） | Zustand（共用） | N/A |
 | **平台** | Tauri v2 (Rust) | Expo (iOS/Android) | Bun |
-| **路由器** | React Router | Expo Router | N/A |
+| **路由器** | 內部檢視狀態 | Expo Router | N/A |
 | **語言** | TypeScript | TypeScript | TypeScript |
 
 ---

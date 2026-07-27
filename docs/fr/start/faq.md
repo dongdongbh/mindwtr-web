@@ -466,7 +466,7 @@ Oui. Mindwtr peut importer les exportations CSV et les sauvegardes ZIP de Todois
 
 - Les projets Todoist deviennent des projets Mindwtr
 - Les sous-tâches deviennent des éléments de liste de contrôle
-- Les tâches actives associées à un projet restent dans leur projet ; les tâches actives sans projet restent disponibles pour le traitement dans la boîte de réception
+- Chaque tâche active importée devient une Prochaine action dans le projet créé
 
 Consultez [Importation depuis Todoist](/fr/import/todoist).
 

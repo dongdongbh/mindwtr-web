@@ -20,6 +20,8 @@ If you keep pushing a task's due date later, its row shows a small hourglass bad
 
 Most task lists share the same control row for selecting tasks, filtering, sorting, grouping, showing details, and switching list density (Comfortable, Compact, or Condensed). Use **Group** to organize Inbox, Next, Waiting, Someday/Maybe, Reference, Done, and other list views by metadata such as context, area, project, or tag. Done adds a **Completion date** grouping — Today, Yesterday, Previous 7 days, Earlier, and Not completed — using your local calendar days, so it reads as a log of what you finished when. Empty groups are hidden.
 
+Drag a task onto **Inbox**, **Someday/Maybe**, **Waiting For**, **Reference**, **Done**, or **Archived** in the sidebar to change its status; the toast offers **Undo**. **Trash** is not a drop target. Drop the task on **Calendar**, or pause over Calendar while dragging, to open today with the task still in hand. Schedule view switches to Week so you can drop it on a day and time.
+
 ## Focus Mode
 
 Use Focus Mode to hide the sidebar and keep the list centered (800px max width).
@@ -33,8 +35,9 @@ Mindwtr runs in the background to handle auto-sync.
 
 - **Closing the window** minimizes the app to the system tray instead of quitting.
 - **Click the tray icon** to show/hide the window.
+- **Hover the tray icon** to see the Today's Focus count and as many task titles as fit on supported systems.
 - **Right-click the tray icon** to Quit the application completely.
-- **Launching at login** starts the window hidden in the tray automatically, as long as the tray icon is enabled; opening the app yourself always shows the window.
+- **Launching at login** starts the window hidden in the tray automatically, as long as the tray icon is enabled; opening the app yourself always shows the window. Microsoft Store builds also show the window when launched at login because their startup task cannot pass the tray-start signal.
 
 ## Views
 
@@ -114,6 +117,8 @@ Incubate ideas you might want to pursue later.
 Time-based view of tasks with due dates or start times.
 
 On wide layouts, the Calendar includes a **Plan next actions** panel for the selected day. It surfaces unscheduled Next Actions and due-but-unscheduled tasks so you can place them into open time without leaving Calendar. Collapse the panel when you want more room for the day/week grid.
+
+Right-click a task in Calendar for the normal task actions, including **Remove from calendar**.
 
 ### 📋 Board View
 
@@ -200,7 +205,7 @@ Use checklists as templates:
 ## Calendar Integration
 
 Mindwtr can overlay external calendars in the Calendar view. On macOS it can read Apple Calendar through EventKit; on all desktop platforms it can read direct ICS subscription URLs.
-Add an **ICS URL** in **Settings → Calendar** when you need an ICS subscription.
+Add an **ICS URL** in **Settings → Integrations → Calendar** when you need an ICS subscription.
 External events are read-only, but you can create a separate Mindwtr task from an event in Calendar; Mindwtr copies the event title, date/time, location, description, and calendar name where available.
 Use **Plan next actions** in Calendar to turn the selected day into a planning surface: review unscheduled work, choose a task, and schedule it into a free slot while keeping due dates as deadlines.
 On macOS, **Push tasks to calendar** can also write scheduled/due Mindwtr tasks into a selected writable Apple Calendar target. See [Calendar Integration](/use/calendar-integration) for setup details.
@@ -346,6 +351,8 @@ Mindwtr sends desktop notifications to keep you on track:
 - **Due date reminders**: Alerts when tasks are due
 - **Start time alerts**: Reminds you when it's time to begin
 - **Recurring task reminders**: Notifications for recurring items
+
+Tasks with a due time can set **Repeat reminder** to 5, 10, 15, 30, or 60 minutes. For tasks with a timed start or due date, **Skip reminders** turns off start and due reminders while the task stays visible in Focus and lists.
 
 ### Settings
 
@@ -535,6 +542,9 @@ Access Settings from the sidebar.
 - **Features**: Optional signals you can enable when needed:
   - **Priorities**: Show a priority flag on tasks
   - **Time Estimates**: Add a duration field for time blocking
+- **Time Estimate Presets**: Choose which estimates appear in the task editor
+  - Options: 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 4h+
+  - Default: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
 - **Inbox Processing**: Keep guided inbox processing for teaching GTD, or switch the default to **Quick** mode for a compact one-screen flow
   - Choose whether to show the 2-minute shortcut, ask for project early, include contexts/tags, allow scheduling, and offer reference during processing
 - **Task Editor Layout**: Choose which fields are shown by default, move fields between sections, and reorder them

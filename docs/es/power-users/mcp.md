@@ -2,9 +2,9 @@
 
 Mindwtr ofrece un servidor opcional de **MCP (Model Context Protocol)**. Esto te permite conectar agentes de IA (como **Claude Desktop**, **Claude Code**, **OpenAI Codex** o **Gemini CLI**) a tu base de datos local de Mindwtr o a un endpoint autoalojado de Mindwtr Cloud.
 
-Es un servidor **stdio** (sin endpoint HTTP alojado). Los clientes MCP lo inician como subproceso y se comunican mediante JSON-RPC a través de stdin/stdout.
+De forma predeterminada, el servidor usa **stdio**: los clientes MCP lo inician como subproceso y se comunican mediante JSON-RPC a través de stdin/stdout. También admite HTTP transmisible autenticado y opcional para clientes remotos.
 
-> Referencia canónica: [apps/mcp-server/README.md](https://github.com/dongdongbh/Mindwtr/blob/main/apps/mcp-server/README.md). Mantén esta página alineada con ese archivo cuando cambien las herramientas o los esquemas de MCP.
+> Referencia de implementación: [apps/mcp-server/README.md](https://github.com/dongdongbh/Mindwtr/blob/main/apps/mcp-server/README.md). Si ese README difiere del código actual del servidor o de los esquemas generados de las herramientas MCP, prevalecen el código y los esquemas.
 
 ---
 
@@ -647,13 +647,16 @@ Si necesitas más de 500 tareas, pagina con `limit` + `offset` en lugar de esper
 - `quickAdd`: string (obligatorio si se omite `title`)
 - `status`: `inbox | next | waiting | someday | reference | done | archived`
 - `projectId`: string
+- `sectionId`: string
 - `dueDate`: ISO string
 - `startTime`: ISO string
 - `contexts`: string[]
 - `tags`: string[]
 - `description`: string
-- `priority`: string
-- `timeEstimate`: string (por ejemplo, `30m`, `2h`)
+- `priority`: `low | medium | high | urgent`
+- `energyLevel`: `low | medium | high`
+- `assignedTo`: string
+- `timeEstimate`: `5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
 
 **Ejemplo**
 
@@ -668,7 +671,7 @@ Si necesitas más de 500 tareas, pagina con `limit` + `offset` en lugar de esper
 **Campos de entrada**
 
 - `id`: string (UUID de la tarea)
-- `title`, `status`, `projectId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `timeEstimate`, `reviewAt`, `isFocusedToday`
+- `title`, `status`, `projectId`, `sectionId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `isFocusedToday`
 
 **Notas**
 
@@ -814,9 +817,9 @@ Si necesitas más de 500 tareas, pagina con `limit` + `offset` en lugar de esper
 
 ## Seguridad y notas
 
-- **Concurrencia:** El servidor usa el modo WAL de SQLite. Las escrituras pueden fallar si la base de datos está bloqueada; se espera que los clientes vuelvan a intentarlo.
+- **Concurrencia (modo SQLite local):** El servidor usa el modo WAL de SQLite y reintenta los conflictos de bloqueo transitorios ejecutando de nuevo la escritura con los datos actuales. El cliente solo necesita reintentar si se agotan esos intentos.
 - **Lógica compartida:** Las operaciones de escritura usan la biblioteca compartida `@mindwtr/core` para garantizar que se apliquen las reglas de negocio.
-- **Persistencia:** El servidor permanece activo mientras `stdin` esté abierto.
+- **Persistencia:** En modo stdio, el servidor permanece activo mientras stdin esté abierto. En modo HTTP, permanece activo mientras el listener esté en ejecución.
 
 ## Solución de problemas
 

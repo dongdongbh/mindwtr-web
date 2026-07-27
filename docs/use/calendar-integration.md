@@ -118,7 +118,7 @@ On iOS and Android, Mindwtr can push scheduled tasks and tasks with due dates in
 
 Setup:
 
-1. Open **Settings → Calendar**
+1. Open **Menu → Settings → Advanced → Calendar**
 2. Enable **Push tasks to calendar**
 3. Grant calendar permission
 4. Expand **Sync target**
@@ -139,7 +139,7 @@ To use a separate Google-backed `Mindwtr` calendar on Android:
 2. Create a new calendar named `Mindwtr` under the same Google account used on Android.
 3. On Android, open Google Calendar and refresh the account. Make sure Calendar sync is enabled in Android account settings.
 4. In the Google Calendar Android app, enable **Share Google Calendar data with other apps** so Android exposes Google calendars to Mindwtr.
-5. Return to Mindwtr **Settings → Calendar**, tap **Refresh calendars**, and select the `Mindwtr` target that shows your Google account.
+5. Return to Mindwtr **Menu → Settings → Advanced → Calendar**, tap **Refresh calendars**, and select the `Mindwtr` target that shows your Google account.
 
 If the Google-backed `Mindwtr` calendar does not appear in Mindwtr yet, Android has not exposed it through the system calendar provider. Refresh Google Calendar, check Android account sync, enable **Share Google Calendar data with other apps** in Google Calendar, then tap **Refresh calendars** in Mindwtr.
 
@@ -150,7 +150,7 @@ To use a separate Apple Calendar target on iPhone or iPad:
 1. Open Apple Calendar.
 2. Create a new calendar named `Mindwtr`. Use iCloud if you want the events to appear on other Apple devices, or use a local calendar if it should stay on the device.
 3. If you use iCloud, confirm Calendar sync is enabled in iOS **Settings -> Apple Account -> iCloud -> Calendar**.
-4. Open Mindwtr **Settings -> Calendar**.
+4. Open Mindwtr **Menu → Settings → Advanced → Calendar**.
 5. Enable **Push tasks to calendar** and grant calendar permission.
 6. Expand **Sync target**, tap **Refresh calendars**, and choose the `Mindwtr` Apple Calendar target.
 7. In Apple Calendar, open the calendars list and make sure the selected `Mindwtr` calendar is visible.
@@ -166,7 +166,7 @@ On mobile, Mindwtr can read calendars from the device calendar database:
 
 Setup:
 
-1. Open **Settings → Calendar**
+1. Open **Menu → Settings → Advanced → Calendar**
 2. Enable **Device calendars**
 3. Grant calendar permission
 4. Expand **Device calendars**
@@ -180,7 +180,7 @@ Mindwtr hides its own pushed `Mindwtr` calendars from the read list to avoid imp
 
 On macOS desktop, Mindwtr can read Apple Calendar events and push scheduled/due Mindwtr tasks through EventKit:
 
-1. Open **Settings -> Calendar**
+1. Open **Settings → Integrations → Calendar**
 2. Request Apple Calendar access
 3. Allow Mindwtr in macOS **System Settings -> Privacy & Security -> Calendars**
 4. Enable **Push tasks to calendar** if you want Mindwtr tasks written to Apple Calendar
@@ -194,7 +194,7 @@ On Linux, Mindwtr can read enabled Evolution Data Server calendars and push sche
 
 1. Configure the calendar account in Evolution or GNOME Online Accounts and confirm it appears in Evolution.
 2. Make sure `evolution-data-server` is installed and running.
-3. Open **Settings -> Calendar** in Mindwtr.
+3. Open **Settings → Integrations → Calendar** in Mindwtr.
 4. Enable **Push tasks to calendar** if you want Mindwtr tasks written to the system calendar.
 5. Expand **Sync target**, refresh the calendars, and choose a dedicated `Mindwtr` calendar or another writable target.
 
@@ -202,7 +202,7 @@ Linux does not show a separate calendar permission dialog. Read-only calendars c
 
 ### Desktop/Web: ICS URLs
 
-1. Open **Settings → Calendar**
+1. Open **Settings → Integrations → Calendar**
 2. Add your **ICS URL**
 3. Refresh to fetch events
 

@@ -105,7 +105,7 @@ Mindwtr/
 │       └── src/
 │           ├── store.ts   # Zustand store
 │           ├── types.ts   # TypeScript types
-│           ├── i18n.ts    # Translations
+│           ├── i18n/      # 翻译加载器和语言包
 │           └── ...
 │
 ├── scripts/               # Utility scripts (CLI, API, release)
@@ -115,9 +115,7 @@ Mindwtr/
 └── package.json           # Monorepo root
 ```
 
-面向公众的用户与开发者文档在本仓库的 `docs/` 目录中维护，并发布到 <https://docs.mindwtr.app/>。公共源代码位于 <https://github.com/dongdongbh/mindwtr-web/tree/main/docs>。新增或迁移指南页面时，请优先使用该文档仓库。
-
-公共文档源：<https://github.com/dongdongbh/mindwtr-web/tree/main/docs>
+[`mindwtr-web/docs` 目录树](https://github.com/dongdongbh/mindwtr-web/tree/main/docs)是面向公众的用户与开发者文档的权威来源，并发布到 <https://docs.mindwtr.app/>。应用仓库中的 `docs/` 目录包含 ADR、贡献与流程指南、发布说明等工程与发布产物。
 
 ---
 
@@ -176,7 +174,7 @@ Mindwtr/
 | **样式**   | Tailwind CSS     | NativeWind (Tailwind) | 不适用           |
 | **状态**   | Zustand（共享）  | Zustand（共享）       | 不适用           |
 | **平台**   | Tauri v2 (Rust)  | Expo (iOS/Android)    | Bun              |
-| **路由**   | React Router     | Expo Router           | 不适用           |
+| **路由**   | 内部视图状态     | Expo Router           | 不适用           |
 | **语言**   | TypeScript       | TypeScript            | TypeScript       |
 
 ---

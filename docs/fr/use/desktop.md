@@ -20,6 +20,8 @@ Si vous continuez à repousser l’échéance d’une tâche, sa ligne affiche u
 
 La plupart des listes de tâches partagent la même rangée de commandes pour sélectionner, filtrer, trier et regrouper les tâches, afficher leurs détails et changer la densité de la liste (Confortable, Compact ou Condensé). Utilisez **Grouper** pour organiser la Boîte de réception, les Actions suivantes, En attente, Un jour/Peut-être, Référence, Terminé et les autres vues en liste selon des métadonnées telles que le contexte, le domaine, le projet ou l’étiquette. Terminé ajoute un regroupement par **date d’achèvement** — Aujourd’hui, Hier, 7 derniers jours, Plus tôt et Non terminé — selon vos jours calendaires locaux, ce qui en fait un journal de ce que vous avez terminé. Les groupes vides sont masqués.
 
+Faites glisser une tâche dans la barre latérale vers **Boîte de réception**, **Un jour/Peut-être**, **En attente**, **Références**, **Terminé** ou **Archivé** pour changer son statut ; la notification propose **Annuler**. La **Corbeille** n’accepte pas les dépôts. Déposez la tâche sur **Calendrier**, ou marquez une pause au-dessus du Calendrier pendant le déplacement, pour ouvrir aujourd’hui. La vue Planning passe à Semaine afin que vous puissiez déposer la tâche sur un jour et une heure.
+
 ## Mode Focus
 
 Utilisez le mode Focus pour masquer la barre latérale et garder la liste centrée (largeur maximale de 800px).
@@ -33,8 +35,9 @@ Mindwtr fonctionne en arrière-plan pour gérer la synchronisation automatique.
 
 - **Fermer la fenêtre** réduit l’application dans la zone de notification système au lieu de la quitter.
 - **Cliquez sur l’icône de la zone de notification** pour afficher ou masquer la fenêtre.
+- **Survolez l’icône de la zone de notification** pour afficher le nombre de Priorités du jour et autant de titres de tâches que possible sur les systèmes compatibles.
 - **Faites un clic droit sur l’icône de la zone de notification** pour quitter complètement l’application.
-- **Lancer à l’ouverture de session** démarre automatiquement avec la fenêtre masquée dans la zone de notification tant que son icône est activée ; lorsque vous ouvrez vous-même l’application, la fenêtre est toujours affichée.
+- **Lancer à l’ouverture de session** démarre automatiquement avec la fenêtre masquée dans la zone de notification tant que son icône est activée ; lorsque vous ouvrez vous-même l’application, la fenêtre est toujours affichée. Les versions Microsoft Store affichent aussi la fenêtre au démarrage de session, car leur tâche de démarrage ne peut pas transmettre le signal de démarrage dans la zone de notification.
 
 ## Vues
 
@@ -114,6 +117,8 @@ Laissez mûrir les idées que vous voudrez peut-être poursuivre plus tard.
 Vue chronologique des tâches avec des échéances ou des heures de début.
 
 Sur les mises en page larges, le Calendrier comprend un panneau **Planifier les actions suivantes** pour le jour sélectionné. Il présente les Actions suivantes non planifiées et les tâches échues mais non planifiées afin que vous puissiez les placer dans les créneaux libres sans quitter le Calendrier. Réduisez le panneau lorsque vous souhaitez laisser plus de place à la grille du jour ou de la semaine.
+
+Faites un clic droit sur une tâche du Calendrier pour ouvrir les actions habituelles, dont **Supprimer du calendrier**.
 
 ### 📋 Vue Tableau
 
@@ -200,7 +205,7 @@ Utilisez les listes de contrôle comme modèles :
 ## Intégration du calendrier
 
 Mindwtr peut superposer des calendriers externes dans la vue Calendrier. Sous macOS, il peut lire le Calendrier Apple par l’intermédiaire d’EventKit ; sur toutes les plateformes de bureau, il peut lire directement les URL d’abonnement ICS.
-Ajoutez une **URL ICS** dans **Paramètres → Calendrier** lorsque vous avez besoin d’un abonnement ICS.
+Ajoutez une **URL ICS** dans **Paramètres → Intégrations → Calendrier** lorsque vous avez besoin d’un abonnement ICS.
 Les événements externes sont en lecture seule, mais vous pouvez créer une tâche Mindwtr distincte à partir d’un événement du Calendrier ; Mindwtr copie le titre, la date et l’heure, le lieu, la description et le nom du calendrier de l’événement lorsqu’ils sont disponibles.
 Utilisez **Planifier les actions suivantes** dans le Calendrier pour transformer le jour sélectionné en surface de planification : examinez le travail non planifié, choisissez une tâche et planifiez-la dans un créneau libre tout en conservant les échéances comme dates limites.
 Sous macOS, **Envoyer les tâches vers le calendrier** peut également inscrire les tâches Mindwtr planifiées ou échues dans un calendrier Apple cible sélectionné et accessible en écriture. Consultez [Intégration du calendrier](/fr/use/calendar-integration) pour connaître les détails de la configuration.
@@ -347,6 +352,8 @@ Mindwtr envoie des notifications sur le bureau pour vous aider à rester sur la 
 - **Alertes d’heure de début** : vous rappellent quand il est temps de commencer
 - **Rappels de tâches récurrentes** : notifications pour les éléments récurrents
 
+Les tâches avec une heure d’échéance peuvent régler **Répéter le rappel** sur 5, 10, 15, 30 ou 60 minutes. Pour les tâches avec une heure de début ou une date d’échéance, **Ignorer les rappels** désactive les rappels de début et d’échéance ; la tâche reste visible dans Focus et les listes.
+
 ### Paramètres
 
 Configurez les notifications dans les Paramètres :
@@ -437,7 +444,7 @@ Sélectionnez plusieurs tâches pour effectuer des opérations par lot :
    - **Déplacer** : modifier le statut de toutes les tâches sélectionnées
    - **Attribuer un domaine** : déplacer toutes les tâches sélectionnées sous un domaine précis (ou retirer le domaine)
    - **Ajouter une étiquette** : ajouter une étiquette à toutes les tâches sélectionnées
-   - **Retirer une étiquette** : retirer une étiquette de toutes les tâches sélectionnées
+   - **Retirer une étiquette** : retirer une ou plusieurs étiquettes de toutes les tâches sélectionnées
    - **Ajouter un contexte** : ajouter un contexte à toutes les tâches sélectionnées
    - **Retirer un contexte** : retirer un contexte de toutes les tâches sélectionnées
    - **Supprimer** : supprimer toutes les tâches sélectionnées
@@ -535,6 +542,9 @@ Accédez aux Paramètres depuis la barre latérale.
 - **Fonctionnalités** : signaux facultatifs que vous pouvez activer au besoin :
   - **Priorités** : afficher un indicateur de priorité sur les tâches
   - **Estimations de temps** : ajouter un champ de durée pour la planification par blocs de temps
+- **Préréglages d’estimation de temps** : choisissez les estimations affichées dans l’éditeur de tâche
+  - Options : 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 4h+
+  - Valeurs par défaut : 10m, 30m, 1h, 2h, 3h, 4h, 4h+
 - **Traitement de la Boîte de réception** : conservez le traitement guidé de la Boîte de réception pour apprendre la méthode GTD, ou choisissez par défaut le mode **Rapide** pour un flux compact sur un seul écran
   - Choisissez d’afficher ou non le raccourci des 2 minutes, de demander le projet au début, d’inclure les contextes et les étiquettes, d’autoriser la planification et de proposer une référence pendant le traitement
 - **Mise en page de l’éditeur de tâche** : choisissez les champs affichés par défaut, déplacez-les entre les sections et réorganisez-les

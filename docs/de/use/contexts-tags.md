@@ -157,15 +157,17 @@ Wenn Sie wiederverwendbare Metadaten bereinigen oder umbenennen möchten:
 
 Bereiche und Personen können auch bei der Zuweisung erstellt werden. Geben Sie einen Namen in die Auswahl **Bereich** oder das Feld **Zugewiesen an** ein und wählen Sie **Erstellen** oder **Neue Person**, wenn es keine genaue Übereinstimmung gibt.
 
-### Kontexte gesammelt bearbeiten
+### Kontexte und Tags gesammelt bearbeiten
 
-Auf dem Desktop können Sie Kontexte für viele Aufgaben gleichzeitig aktualisieren:
+Sie können Kontexte und Tags für viele Aufgaben gleichzeitig aktualisieren:
 
 1. Aktivieren Sie in einer Listenansicht den Modus **Auswählen**.
 2. Wählen Sie die zu bearbeitenden Aufgaben.
-3. Verwenden Sie in der Leiste für Stapelaktionen **Kontext hinzufügen** oder **Kontext entfernen**.
+3. Verwenden Sie in der Leiste für Stapelaktionen **Tag hinzufügen**, **Tag entfernen**, **Kontext hinzufügen** oder **Kontext entfernen**.
 
-Das ist nützlich, wenn Sie nach einem Wochenrückblick oder einer Projektplanung eine ganze Aufgabengruppe neu klassifizieren möchten.
+Die Aktionen zum Entfernen zeigen nur Werte, die den ausgewählten Aufgaben tatsächlich zugewiesen sind, und Sie können mehrere gleichzeitig auswählen. Aufgaben ohne einen ausgewählten Wert bleiben unverändert.
+
+Das ist nützlich, wenn Sie nach einem Wochenrückblick oder einer Projektplanung eine ganze Aufgabengruppe neu klassifizieren möchten. Auf Mobilgeräten bietet dieselbe Auswahlleiste **Tag hinzufügen** und **Tag entfernen**.
 
 ---
 

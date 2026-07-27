@@ -89,8 +89,8 @@ Wichtige Spalten:
 
 - `name`, `icon`, `view`: Anzeigemetadaten
 - `criteria`: serialisierte Filterkriterien
-- `sortBy`, `sortOrder`: optionale gespeicherte Sortierung
-- `createdAt`, `updatedAt`: lokale Metadaten
+- `sortBy`, `sortOrder`, `groupBy`: optionale gespeicherte Sortierung und Gruppierung
+- `createdAt`, `updatedAt`, `deletedAt`: Zeitstempel und Metadaten für logisches Löschen
 
 ### `calendar_sync`
 
@@ -122,6 +122,8 @@ Indizierte Suchfelder für Aufgaben:
 - `tags`
 - `contexts`
 - `location`
+- `checklist`
+- `assignedTo`
 
 ### `projects_fts`
 

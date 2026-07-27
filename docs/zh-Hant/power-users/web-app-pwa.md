@@ -36,8 +36,9 @@ bun desktop:web:build
 ## PWA 行為
 
 - 在瀏覽器中執行時，應用程式會註冊 `apps/desktop/public/sw.js`
-- `sw.js` 會預先快取 `/`、`/index.html`、`/manifest.webmanifest`、`/icon.png` 與 `/logo.png`，並隨選快取其他同源 GET 要求
-- 離線時，導覽要求會退回 `/index.html`（因此深層連結仍可載入）
+- `sw.js` 會預先快取 `/`、`/index.html`、`/manifest.webmanifest`、`/icon.png` 與 `/logo.png`；之後只會視需要快取指令碼、樣式、圖片和字型等靜態資源。API 與同步要求一律透過網路傳送。
+- 導覽要求會先使用網路，只在離線時退回已快取的應用程式外殼。
+- 目前檢視會儲存在 `?view=` 中，因此重新整理與複製連結都會保留同一畫面，不需要在靜態託管服務設定路由。篩選條件不會編碼在 URL 中。
 
 ---
 

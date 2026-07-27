@@ -2,9 +2,9 @@
 
 Mindwtr provides an optional **MCP (Model Context Protocol)** server. This allows you to connect AI agents (like **Claude Desktop**, **Claude Code**, **OpenAI Codex**, or **Gemini CLI**) to your local Mindwtr database, or to a self-hosted Mindwtr Cloud endpoint.
 
-This is a **stdio** server (no hosted HTTP endpoint). MCP clients launch it as a subprocess and talk over JSON-RPC on stdin/stdout.
+By default, the server uses **stdio**: MCP clients launch it as a subprocess and communicate over JSON-RPC on stdin/stdout. It also supports opt-in authenticated streamable HTTP for remote clients.
 
-> Canonical reference: [apps/mcp-server/README.md](https://github.com/dongdongbh/Mindwtr/blob/main/apps/mcp-server/README.md). Keep this page aligned with that file when MCP tools or schemas change.
+> Implementation reference: [apps/mcp-server/README.md](https://github.com/dongdongbh/Mindwtr/blob/main/apps/mcp-server/README.md). If that README differs from the current server code or generated MCP tool schemas, the code and schemas are authoritative.
 
 ---
 
@@ -647,13 +647,16 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 - `quickAdd`: string (required if `title` omitted)
 - `status`: `inbox | next | waiting | someday | reference | done | archived`
 - `projectId`: string
+- `sectionId`: string
 - `dueDate`: ISO string
 - `startTime`: ISO string
 - `contexts`: string[]
 - `tags`: string[]
 - `description`: string
-- `priority`: string
-- `timeEstimate`: string (e.g. `30m`, `2h`)
+- `priority`: `low | medium | high | urgent`
+- `energyLevel`: `low | medium | high`
+- `assignedTo`: string
+- `timeEstimate`: `5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
 
 **Example**
 
@@ -668,7 +671,7 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 **Input fields**
 
 - `id`: string (task UUID)
-- `title`, `status`, `projectId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `timeEstimate`, `reviewAt`, `isFocusedToday`
+- `title`, `status`, `projectId`, `sectionId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `isFocusedToday`
 
 **Notes**
 
@@ -814,9 +817,9 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 
 ## Safety & Notes
 
-- **Concurrency:** The server uses SQLite WAL mode. Writes may fail if the DB is locked; clients are expected to retry.
+- **Concurrency (local SQLite mode):** The server uses SQLite WAL mode and retries transient lock conflicts by rerunning the write against current data. Retry from the client only if those attempts are exhausted.
 - **Shared Logic:** Write operations use the shared `@mindwtr/core` library to ensure business rules are enforced.
-- **Keep-Alive:** The server stays alive as long as `stdin` is open.
+- **Keep-Alive:** In stdio mode, the server stays alive while stdin is open. In HTTP mode, it stays alive while the listener is running.
 
 ## Troubleshooting
 

@@ -105,7 +105,7 @@ Mindwtr/
 │       └── src/
 │           ├── store.ts   # Store Zustand
 │           ├── types.ts   # Types TypeScript
-│           ├── i18n.ts    # Traductions
+│           ├── i18n/      # Chargeur de traductions et locales
 │           └── ...
 │
 ├── scripts/               # Scripts utilitaires (CLI, API, publication)
@@ -115,9 +115,7 @@ Mindwtr/
 └── package.json           # Racine du monorepo
 ```
 
-La documentation publique destinée aux utilisateurs et aux développeurs est maintenue dans le répertoire `docs/` de ce dépôt et publiée sur https://docs.mindwtr.app/. Les sources publiques se trouvent à l'adresse https://github.com/dongdongbh/mindwtr-web/tree/main/docs. Privilégiez ce dépôt de documentation pour les pages de guide nouvelles ou migrées.
-
-Sources de la documentation publique : https://github.com/dongdongbh/mindwtr-web/tree/main/docs
+L’[arborescence `mindwtr-web/docs`](https://github.com/dongdongbh/mindwtr-web/tree/main/docs) est la source canonique de la documentation publique destinée aux utilisateurs et aux développeurs et publie sur https://docs.mindwtr.app/. Le répertoire `docs/` du dépôt de l’application contient des artefacts d’ingénierie et de publication tels que les ADR, les guides de contribution et de processus, et les notes de version.
 
 ---
 
@@ -176,7 +174,7 @@ Sources de la documentation publique : https://github.com/dongdongbh/mindwtr-web
 | **Style**      | Tailwind CSS     | NativeWind (Tailwind) | S/O              |
 | **État**       | Zustand (partagé)| Zustand (partagé)     | S/O              |
 | **Plateforme** | Tauri v2 (Rust)  | Expo (iOS/Android)    | Bun              |
-| **Routeur**    | React Router     | Expo Router           | S/O              |
+| **Routeur**    | État interne des vues | Expo Router       | S/O              |
 | **Langage**    | TypeScript       | TypeScript            | TypeScript       |
 
 ---

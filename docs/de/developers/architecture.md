@@ -101,7 +101,8 @@ Das Core-Paket enthält die gesamte gemeinsame Geschäftslogik:
 | `sync.ts` + `sync-*.ts` | Core für die Synchronisierungszusammenführung plus gemeinsame Synchronisierungshilfen; siehe Modulliste unten |
 | `date.ts`           | Hilfsfunktionen zur sicheren Datumsanalyse                   |
 | `ai/`               | KI-Integration (Gemini/OpenAI/Anthropic)      |
-| `sqlite-adapter.ts` | Schnittstelle des lokalen Speicheradapters               |
+| `storage.ts`        | Schnittstelle des lokalen Speicheradapters               |
+| `sqlite-adapter.ts` | Gemeinsame SQLite-Speicherimplementierung                 |
 | `webdav.ts`         | WebDAV-Synchronisierungsclient                            |
 
 Die aktuellen Synchronisierungsuntermodule teilen das Protokoll nach Verantwortungsbereich auf: `sync-run.ts` ist die gemeinsame Zustandsmaschine für Synchronisierungszyklen (Phasenreihenfolge, Prüfungen zum Überspringen unveränderter Daten, Anhangsphasen, Fehler-/Wiedereinreihungsbehandlung) hinter den Ports in `sync-run-ports.ts` — Desktop und Mobilgeräte stellen Transport-, Speicher- und Benachrichtigungsadapter bereit (ADR 0014); `sync-orchestrator.ts` serialisiert Zyklen und reiht Folgezyklen ein, `sync-normalization.ts` repariert die Form der Nutzdaten, `sync-signatures.ts` berechnet vergleichbare Inhaltssignaturen, `sync-merge-settings.ts` führt Einstellungsgruppen zusammen, `sync-tombstones.ts` übernimmt die Bereinigung nach Aufbewahrungsfristen, `sync-revision.ts` versieht Änderungen mit Revisionen und `sync-client-helpers.ts` / `sync-service-utils.ts` enthalten Hilfsfunktionen für Plattformdienste.
@@ -234,11 +235,11 @@ apps/mobile/
 ```
 Drawer/Stack Layout
 ├── Tab Navigator
-│   ├── Inbox
-│   ├── Agenda
-│   ├── Next Actions
-│   ├── Projects
-│   └── Menu (links to other views)
+│   ├── Fokus
+│   ├── Posteingang
+│   ├── Erfassen
+│   ├── Schnellzugriff (Projekte, Kalender, Kontexte oder Review)
+│   └── Menü (Links zu anderen Ansichten)
 ├── Other Screens (Stack)
 │   ├── Board
 │   ├── Calendar
@@ -267,9 +268,9 @@ interface TaskStore {
 
     // Actions
     fetchData: () => Promise<void>;
-    addTask: (title: string, props?: Partial<Task>) => Promise<void>;
-    updateTask: (id: string, updates: Partial<Task>) => Promise<void>;
-    deleteTask: (id: string) => Promise<void>;
+    addTask: (title: string, props?: Partial<Task>) => Promise<StoreActionResult>;
+    updateTask: (id: string, updates: Partial<Task>) => Promise<StoreActionResult>;
+    deleteTask: (id: string) => Promise<StoreActionResult>;
     // ... projects, areas, and settings actions
 }
 ```
@@ -279,7 +280,7 @@ interface TaskStore {
 Der Store verwendet injizierte Speicheradapter:
 
 ```typescript
-// Desktop: Tauri file system
+// Desktop: SQLite über Tauri
 setStorageAdapter(tauriStorage);
 
 // Mobile: SQLite (with JSON backup fallback)

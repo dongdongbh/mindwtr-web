@@ -175,6 +175,8 @@ Sequential projects can use a project-wide scope or a section scope. Use section
 - Set **start date** for when to begin
 - Set **review date** (tickler) for periodic check-ins
 
+For tasks with a due time, set **Repeat reminder** to 5, 10, 15, 30, or 60 minutes. For tasks with a timed start or due date, **Skip reminders** disables start and due reminders without removing the task from Focus or other lists.
+
 ### Dates vs. Status
 
 Mindwtr keeps task status and task dates separate. Status is the GTD state you choose, such as `inbox`, `next`, `waiting`, or `someday`. Dates control when and why a task appears; a date arriving never changes a task's status on its own.

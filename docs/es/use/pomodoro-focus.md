@@ -32,9 +32,11 @@ Esta función está **desactivada** de forma predeterminada para mantener Foco s
 - Al terminar, Mindwtr cambia a descanso y se pausa para que lo inicies de forma deliberada.
 - Cuando termina el descanso, vuelve a la fase de concentración.
 
+Si una fase termina mientras la ventana de escritorio está en segundo plano, Mindwtr hace parpadear su entrada en la barra de tareas de Windows y de la mayoría de escritorios Linux; en macOS, el icono del Dock rebota.
+
 La vinculación con tareas es opcional y está desactivada de forma predeterminada. Activa **Ajustes → GTD → Temporizador Pomodoro → Vincular temporizador a tarea** si quieres ver el selector Tarea del temporizador y la acción **Marcar tarea como terminada** en Foco.
 
-En escritorio y en móvil, el panel se puede plegar: el chevrón de su cabecera lo reduce a una fila fina con el tiempo restante y la fase, mientras el temporizador sigue funcionando. El estado plegado se recuerda en cada dispositivo, no se sincroniza, y empieza desplegado. En escritorio, al pulsar el botón de reproducción de una tarea se vuelve a abrir.
+En escritorio y en móvil, el panel se puede plegar: el chevrón de su cabecera lo reduce a una fila fina con el tiempo restante y la fase; en móvil también muestra **En curso** o **En pausa**. El temporizador sigue funcionando. El estado plegado se recuerda en cada dispositivo, no se sincroniza, y empieza desplegado. En escritorio, al pulsar el botón de reproducción de una tarea se vuelve a abrir.
 
 Controles:
 
@@ -47,7 +49,7 @@ El selector controla a qué tarea se vincula el panel, si existe alguna. Los con
 
 Las tareas tienen un valor opcional **Tiempo empleado** junto a Tiempo estimado en el editor. Requiere v1.1.0 o posterior; las versiones anteriores, como v1.0.5, no lo incluyen.
 
-Tiempo empleado es opcional y está oculto de forma predeterminada. Sus superficies solo aparecen cuando están activados tanto **Temporizador Pomodoro** como **Vincular temporizador a tarea**: el campo del editor y el distintivo de la fila en escritorio y móvil, el diálogo de finalización en móvil y el botón de inicio rápido en escritorio. Al desactivarlos no se muestra nada relacionado con el tiempo; los valores registrados se conservan y reaparecen si vuelves a activar la función. Ocultar Tiempo estimado en el diseño del editor también oculta Tiempo empleado.
+Tiempo empleado es opcional y está oculto de forma predeterminada. Sus superficies solo aparecen cuando están activados tanto **Temporizador Pomodoro** como **Vincular temporizador a tarea**: el campo del editor y el distintivo de la fila en escritorio y móvil, el diálogo de finalización en escritorio y móvil, y el botón de inicio rápido en escritorio. Al desactivarlos no se muestra nada relacionado con el tiempo; los valores registrados se conservan y reaparecen si vuelves a activar la función. Ocultar Tiempo estimado en el diseño del editor también oculta Tiempo empleado.
 
 - Cada sesión de concentración completada con una tarea vinculada añade sus minutos al total de esa tarea.
 - También puedes establecer o corregir el total manualmente en el editor.
@@ -61,6 +63,8 @@ Cuando están activados Pomodoro y **Vincular temporizador a tarea**, al pasar e
 
 - Púlsalo para vincular esa tarea e iniciar inmediatamente una sesión, sin buscarla en el desplegable.
 - El botón también muestra cuántas sesiones de concentración has completado en esa tarea.
+
+El botón de reproducción está disponible dondequiera que aparezca una tarea. La tarea vinculada permanece seleccionada incluso fuera de Foco y sigue en el selector hasta que la desvincules o la elimines.
 
 ---
 

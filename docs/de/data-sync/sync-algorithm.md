@@ -6,7 +6,7 @@ Diese Seite ist die technische Zusammenführungsreferenz für Wartung und Fehler
 
 ## Eingaben und Ausgaben
 
-- Eingabe A: lokale Momentaufnahme (`tasks`, `projects`, `sections`, `areas`, `settings`)
+- Eingabe A: lokale Momentaufnahme (`tasks`, `projects`, `sections`, `areas`, `people`, `settings`)
 - Eingabe B: entfernte Momentaufnahme (gleiche Struktur)
 - Ausgabe: zusammengeführte Momentaufnahme + Zusammenführungsstatistik (`conflicts`, `clockSkew`, `timestampAdjustments`, `futureTimestampClamps`, `conflictIds`, `conflictReasonCounts`, `conflictSamples`, `timestampAdjustmentIds`, `futureTimestampClampIds`) sowie begrenzte Synchronisierungsdiagnoseprotokolle
 

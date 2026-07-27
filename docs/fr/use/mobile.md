@@ -44,6 +44,8 @@ Touchez l’onglet **Menu** pour accéder aux vues supplémentaires :
 
 Ouvrez **Terminé** et touchez **Sélectionner** pour choisir des tâches, puis utilisez **Déplacer → Archivés** pour les classer plus tôt. Dans **Archivés**, touchez **Sélectionner** ou **Tout sélectionner** pour ramener des tâches dans Terminé sans modifier leur heure d’achèvement, les restaurer dans la Boîte de réception ou les déplacer vers la Corbeille. Passez à **Projets** pour ouvrir, restaurer ou déplacer des projets archivés vers la Corbeille. Mindwtr ne supprime définitivement les éléments que depuis la Corbeille.
 
+Dans **Terminé**, triez par **Date d’achèvement** pour afficher d’abord les tâches achevées le plus récemment. Regroupez par **Date d’achèvement** pour diviser la liste en **Aujourd’hui**, **Hier**, **7 derniers jours**, **Plus tôt** et **Non terminé** ; les groupes vides restent masqués.
+
 Ouvrez la **Corbeille** et touchez **Sélectionner** pour gérer plusieurs tâches et projets supprimés. Touchez **Tout sélectionner** ou choisissez des éléments, puis restaurez-les ou supprimez-les définitivement en une seule étape. Toute suppression définitive demande toujours une confirmation.
 
 ---
@@ -126,6 +128,8 @@ Ajoutez le widget Mindwtr à votre écran d’accueil pour y accéder rapidement
 2. Sélectionnez **Widgets**
 3. Trouvez et ajoutez le widget **Mindwtr**
 4. Touchez le widget pour ouvrir la capture rapide ou afficher les éléments Focus
+
+Sous Android, les libellés d’échéance indiquent **Aujourd’hui**, le jour de la semaine pour les tâches des sept prochains jours, ou une date compacte pour les échéances ultérieures. Les tâches en retard ou à échéance aujourd’hui sont mises en évidence.
 
 ### Widget de l’écran verrouillé iOS
 
@@ -262,7 +266,7 @@ Collectez des tâches avec votre voix grâce à la transcription assistée par I
 
 ### Configuration
 
-1. Accédez à **Menu → Paramètres → Assistant IA**.
+1. Accédez à **Menu → Paramètres → Avancé → Assistant IA**.
 2. Activez **Reconnaissance vocale**.
 3. Choisissez un **Fournisseur** :
    - **OpenAI / Gemini** : service infonuagique (nécessite une clé API).
@@ -339,7 +343,7 @@ Par défaut, les Actions suivantes sont classées avec les actions à échéance
 - **Filtres enregistrés** : enregistrez des critères Focus réutilisables tels que les projets, contextes, étiquettes, priorités, niveaux d’énergie et estimations de temps.
 - **Balayer vers Focus** : balayez une tâche vers la droite pour basculer son état « Focus » (elle est déplacée vers Aujourd’hui).
 - **Statut rapide** : touchez le badge de statut pour modifier le statut.
-- **Pomodoro (facultatif)** : activez-le dans **Paramètres → GTD → Fonctionnalités → Minuteur Pomodoro** pour afficher un minuteur compact de concentration/pause. Laissez-le sur **Minuteur uniquement**, ou activez **Lier le minuteur à la tâche** pour afficher le sélecteur de tâche du Minuteur et l’action **Marquer la tâche comme terminée**.
+- **Pomodoro (facultatif)** : activez-le dans **Paramètres → GTD → Fonctionnalités → Minuteur Pomodoro** pour afficher un minuteur compact de concentration/pause. Laissez-le sur **Minuteur uniquement**, ou activez **Lier le minuteur à la tâche** pour afficher le sélecteur de tâche du Minuteur et l’action **Marquer la tâche comme terminée**. Une fois replié, une ligne étroite garde visibles le temps restant, la phase et l’état **En cours** ou **En pause**.
 
 ---
 
@@ -421,7 +425,7 @@ Mindwtr peut superposer des calendriers externes et envoyer les tâches Mindwtr 
 
 Pour envoyer des tâches vers Google Agenda sous Android ou Calendrier Apple sous iOS :
 
-1. Accédez à **Paramètres -> Calendrier**
+1. Accédez à **Menu → Paramètres → Avancé → Calendrier**
 2. Activez **Envoyer les tâches vers le calendrier**
 3. Accordez l’autorisation d’accéder au calendrier
 4. Développez **Cible de synchronisation**
@@ -431,7 +435,7 @@ Pour configurer la cible Google Agenda sous Android et Calendrier Apple sous iOS
 
 Pour superposer des calendriers externes avec des abonnements ICS :
 
-1. Accédez à **Paramètres -> Calendrier**
+1. Accédez à **Menu → Paramètres → Avancé → Calendrier**
 2. Ajoutez votre **URL ICS**
 3. Actualisez pour récupérer les événements
 
@@ -467,7 +471,7 @@ Le panneau de planification est la surface de planification mobile : utilisez-le
 
 Abonnez-vous à des calendriers externes pour afficher leurs événements à côté de vos tâches :
 
-1. Accédez à **Paramètres → Avancé → Calendrier**
+1. Accédez à **Menu → Paramètres → Avancé → Calendrier**
 2. Saisissez l’URL du calendrier (format ICS/webcal)
 3. Donnez-lui un nom et touchez **Ajouter**
 4. Les événements externes apparaissent sous forme de blocs gris dans la vue Jour
@@ -581,6 +585,8 @@ Mindwtr envoie des notifications pour vous aider à rester sur la bonne voie.
 - **Rappels d’échéance** : alertes lorsque les tâches arrivent à échéance
 - **Alertes d’heure de début** : vous rappellent quand il est temps de commencer
 - **Rappels de tâches récurrentes** : notifications pour les éléments récurrents
+
+Les tâches avec une heure d’échéance peuvent définir **Répéter le rappel** après 5, 10, 15, 30 ou 60 minutes. Pour les tâches avec une heure de début ou une date d’échéance, **Ignorer les rappels** désactive les rappels de début et d’échéance ; la tâche reste visible dans Focus et les listes.
 
 Touchez le corps de la notification pour accéder directement à l’écran **Revue**.
 

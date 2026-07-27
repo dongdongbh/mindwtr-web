@@ -258,6 +258,7 @@ Richtlinien:
 - wichtige Korrekturen/Funktionen zuerst aufführen
 - wichtige Commits auflisten, wenn hilfreich
 - für RCs `docs/release-notes/X.Y.Z-rc.N.md` oder `docs/release-notes/vX.Y.Z-rc.N.md` verwenden und die vollständige RC-Version in die erste Überschrift aufnehmen; `docs/release-notes/X.Y.Z.md` für das endgültige stabile Release reservieren
+- bei stabilen Releases muss die erste Zeile genau `# Mindwtr X.Y.Z` oder `# Mindwtr vX.Y.Z` lauten; `release.yml` lehnt andere Überschriften ab
 - Google-Play-Kurztexte unter `docs/release-notes/google-play/` bei Bedarf abstimmen
 - `metadata/*/release_notes.txt` für App-Store-Versionshinweise aktualisieren
 - neue Android-Changelog-Datei unter `metadata/*/changelogs/<versionCode>.txt` hinzufügen

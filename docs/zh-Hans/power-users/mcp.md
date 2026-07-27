@@ -2,9 +2,9 @@
 
 Mindwtr 提供可选的 **MCP（Model Context Protocol，模型上下文协议）**服务器。它允许你将 AI 智能体（例如 **Claude Desktop**、**Claude Code**、**OpenAI Codex** 或 **Gemini CLI**）连接到本地 Mindwtr 数据库，或连接到自托管的 Mindwtr Cloud 端点。
 
-这是一个 **stdio** 服务器（没有托管的 HTTP 端点）。MCP 客户端将它作为子进程启动，并通过 stdin/stdout 使用 JSON-RPC 通信。
+服务器默认使用 **stdio**：MCP 客户端将它作为子进程启动，并通过 stdin/stdout 使用 JSON-RPC 通信。它也支持供远程客户端选择使用的身份验证流式 HTTP。
 
-> 规范参考：[apps/mcp-server/README.md](https://github.com/dongdongbh/Mindwtr/blob/main/apps/mcp-server/README.md)。当 MCP 工具或 schema 发生变化时，请保持此页面与该文件一致。
+> 实现参考：[apps/mcp-server/README.md](https://github.com/dongdongbh/Mindwtr/blob/main/apps/mcp-server/README.md)。如果该 README 与当前服务器代码或生成的 MCP 工具 schema 不一致，以代码和 schema 为准。
 
 ---
 
@@ -647,13 +647,16 @@ Schema 说明：
 - `quickAdd`：string（省略 `title` 时必填）
 - `status`：`inbox | next | waiting | someday | reference | done | archived`
 - `projectId`：string
+- `sectionId`：string
 - `dueDate`：ISO string
 - `startTime`：ISO string
 - `contexts`：string[]
 - `tags`：string[]
 - `description`：string
-- `priority`：string
-- `timeEstimate`：string（例如 `30m`、`2h`）
+- `priority`：`low | medium | high | urgent`
+- `energyLevel`：`low | medium | high`
+- `assignedTo`：string
+- `timeEstimate`：`5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
 
 **示例**
 
@@ -668,7 +671,7 @@ Schema 说明：
 **输入字段**
 
 - `id`：string（任务 UUID）
-- `title`、`status`、`projectId`、`dueDate`、`startTime`、`contexts`、`tags`、`description`、`priority`、`timeEstimate`、`reviewAt`、`isFocusedToday`
+- `title`、`status`、`projectId`、`sectionId`、`dueDate`、`startTime`、`contexts`、`tags`、`description`、`priority`、`energyLevel`、`assignedTo`、`timeEstimate`、`reviewAt`、`isFocusedToday`
 
 **说明**
 
@@ -814,9 +817,9 @@ Schema 说明：
 
 ## 安全与说明
 
-- **并发：**服务器使用 SQLite WAL 模式。如果数据库被锁定，写入可能失败；客户端应进行重试。
+- **并发（本地 SQLite 模式）：**服务器使用 SQLite WAL 模式。遇到临时锁冲突时，服务器会基于当前数据重新执行写入。只有这些重试全部失败后，客户端才需要重试。
 - **共享逻辑：**写入操作使用共享的 `@mindwtr/core` 库，以确保执行业务规则。
-- **保持活动：**只要 `stdin` 保持打开，服务器就会继续运行。
+- **保持活动：**在 stdio 模式下，只要 stdin 保持打开，服务器就会继续运行；在 HTTP 模式下，只要监听器运行，服务器就会继续运行。
 
 ## 故障排除
 

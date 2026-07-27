@@ -30,9 +30,11 @@ Cette fonction est **désactivée** par défaut pour préserver une vue Focus mi
 - À la fin d’une session, Mindwtr passe en pause et s’arrête pour vous laisser la démarrer volontairement.
 - À la fin d’une pause, il revient à la phase de concentration.
 
+Lorsqu’une phase se termine alors que la fenêtre de bureau est en arrière-plan, Mindwtr fait clignoter son entrée dans la barre des tâches sous Windows et sur la plupart des bureaux Linux ; sous macOS, l’icône du Dock rebondit.
+
 L’association à une tâche est facultative et désactivée par défaut. Activez **Paramètres → GTD → Minuteur Pomodoro → Lier le minuteur à une tâche** pour afficher le sélecteur et l’action **Marquer la tâche comme terminée** dans Focus.
 
-Sur ordinateur comme sur mobile, le panneau peut se replier : le chevron de son en-tête le réduit à une fine ligne qui n’affiche que le temps restant et la phase, sans arrêter le minuteur. Cet état est mémorisé par appareil plutôt que synchronisé, et le panneau démarre déplié. Sur ordinateur, le bouton de lecture d’une tâche rouvre le panneau.
+Sur ordinateur comme sur mobile, le panneau peut se replier : le chevron de son en-tête le réduit à une fine ligne qui affiche le temps restant et la phase ; sur mobile, elle indique aussi **En cours** ou **En pause**. Le minuteur continue de fonctionner. Cet état est mémorisé par appareil plutôt que synchronisé, et le panneau démarre déplié. Sur ordinateur, le bouton de lecture d’une tâche rouvre le panneau.
 
 Commandes :
 
@@ -45,7 +47,7 @@ Le sélecteur détermine la tâche éventuellement associée au panneau. Les com
 
 Les tâches proposent une valeur facultative **Temps passé** à côté de l’Estimation du temps dans l’éditeur. Cette fonction nécessite la v1.1.0 ou une version ultérieure ; les versions antérieures comme la v1.0.5 ne la possèdent pas.
 
-Le Temps passé est facultatif et désactivé par défaut : ses éléments n’apparaissent que si **Minuteur Pomodoro** et **Lier le minuteur à une tâche** sont tous deux activés. Cela concerne le champ de l’éditeur et le badge des lignes de tâches sur ordinateur et mobile, la boîte de dialogue d’achèvement sur mobile et le bouton de démarrage rapide sur ordinateur. Désactivez-les et aucune information temporelle n’apparaît ; les valeurs enregistrées sont conservées et réapparaissent à la réactivation. Masquer l’Estimation du temps dans la disposition de l’éditeur masque également le Temps passé.
+Le Temps passé est facultatif et désactivé par défaut : ses éléments n’apparaissent que si **Minuteur Pomodoro** et **Lier le minuteur à une tâche** sont tous deux activés. Cela concerne le champ de l’éditeur et le badge des lignes de tâches sur ordinateur et mobile, la boîte de dialogue d’achèvement sur ordinateur et mobile, et le bouton de démarrage rapide sur ordinateur. Désactivez-les et aucune information temporelle n’apparaît ; les valeurs enregistrées sont conservées et réapparaissent à la réactivation. Masquer l’Estimation du temps dans la disposition de l’éditeur masque également le Temps passé.
 
 - Chaque session de concentration terminée et liée à une tâche ajoute ses minutes au total de cette tâche.
 - Vous pouvez aussi définir ou corriger le total dans l’éditeur.
@@ -59,6 +61,8 @@ Lorsque Pomodoro et **Lier le minuteur à une tâche** sont activés, survoler u
 
 - cliquez dessus pour associer la tâche et lancer immédiatement une session, sans chercher dans le menu ;
 - le bouton indique aussi le nombre de sessions terminées pour cette tâche.
+
+Le bouton de lecture est disponible partout où une tâche apparaît. La tâche liée reste sélectionnée même en dehors de Focus et demeure dans le sélecteur jusqu’à ce que vous la dissociiez ou la supprimiez.
 
 ---
 

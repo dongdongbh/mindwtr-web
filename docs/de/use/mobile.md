@@ -44,6 +44,8 @@ Tippen Sie auf **Menü**, um weitere Ansichten zu öffnen:
 
 Öffnen Sie **Erledigt** und tippen Sie auf **Auswählen**, um Aufgaben zu markieren. Verwenden Sie dann **Verschieben → Archiviert**, um sie vorzeitig abzulegen. Unter **Archiviert** können Sie mit **Auswählen** oder **Alle auswählen** Aufgaben zurück nach Erledigt verschieben, ohne den Abschlusszeitpunkt zu ändern, sie im Posteingang wiederherstellen oder in den Papierkorb verschieben. Wechseln Sie zu **Projekte**, um archivierte Projekte zu öffnen, wiederherzustellen oder in den Papierkorb zu verschieben. Mindwtr löscht Einträge nur aus dem Papierkorb endgültig.
 
+Unter **Erledigt** zeigt die Sortierung nach **Abschlussdatum** die neuesten Abschlüsse zuerst. Die Gruppierung nach **Abschlussdatum** teilt die Liste in **Heute**, **Gestern**, **Letzte 7 Tage**, **Früher** und **Nicht abgeschlossen**; leere Gruppen bleiben ausgeblendet.
+
 Öffnen Sie **Papierkorb** und tippen Sie auf **Auswählen**, um mehrere gelöschte Aufgaben und Projekte gemeinsam wiederherzustellen oder endgültig zu löschen. Endgültiges Löschen verlangt immer eine Bestätigung.
 
 ---
@@ -115,6 +117,8 @@ Geeignet für:
 2. **Widgets** wählen
 3. **Mindwtr** hinzufügen
 4. Widget für Schnellerfassung oder Fokuseinträge antippen
+
+Auf Android zeigen Fälligkeitsangaben **Heute**, den Wochentag für Aufgaben innerhalb der nächsten Woche oder ein kompaktes Datum für spätere Aufgaben. Überfällige und heute fällige Aufgaben werden hervorgehoben.
 
 ### iOS-Sperrbildschirm-Widget
 
@@ -237,7 +241,7 @@ Eine Datums- oder Zeitangabe am Ende der Eingabe wird zum Fälligkeitsdatum: `Gr
 
 ### Einrichtung
 
-1. **Menü → Einstellungen → KI-Assistent**
+1. **Menü → Einstellungen → Erweitert → KI-Assistent**
 2. **Sprache zu Text** aktivieren
 3. **Anbieter**:
    - **OpenAI / Gemini**: Cloud, API-Schlüssel erforderlich
@@ -304,11 +308,11 @@ Standardsortierung: bald fällig, undatiert, weit in der Zukunft fällig; innerh
 
 ### Funktionen
 
-- **Kontextfilter**
+- **Kontextfilter**: Tippen Sie auf einen Kontextchip, um die Liste der Nächsten Aktionen zu filtern.
 - **Gespeicherte Filter** für Projekte, Kontexte, Tags, Priorität, Energie und Zeitschätzungen
-- **Zum Fokus wischen**: nach rechts wischen, um Fokusstatus umzuschalten
+- **Zum Fokus wischen**: nach rechts wischen, um den Fokusstatus umzuschalten und die Aufgabe nach „Heute“ zu verschieben
 - **Schnellstatus**: Statusplakette antippen
-- **Pomodoro (optional)** unter **Einstellungen → GTD → Funktionen → Pomodoro-Zeitgeber**; **Nur Zeitgeber** oder mit **Zeitgeber mit Aufgabe verknüpfen**
+- **Pomodoro (optional)** unter **Einstellungen → GTD → Funktionen → Pomodoro-Zeitgeber**; **Nur Zeitgeber** oder **Zeitgeber mit Aufgabe verknüpfen**, um die Aufgabenauswahl des Zeitgebers und die Aktion **Aufgabe als erledigt markieren** anzuzeigen. Eingeklappt zeigt eine schmale Zeile Restzeit, Phase und den Status **Läuft** oder **Pausiert**.
 
 ---
 
@@ -344,7 +348,7 @@ Wiederholungsstrategien:
 - **Nach Abschluss wiederholen**
 - **Endet: Nie / Am Datum / Nach N Vorkommen**
 
-Mindwtr hält eine aktive Instanz. Zukünftige Vorkommen werden bis zum Abschluss nicht vorab angelegt, außer als Planungsvorschau mit **Nächstes Vorkommen im Kalender anzeigen**. Im Wiederholungsfeld können Sie Strategie, Vorschau und Serienende festlegen.
+Mindwtr hält eine aktive Instanz. Der Kalender zeigt diese aktive Instanz, wenn sie ein Fälligkeitsdatum oder eine Startzeit hat. Zukünftige Vorkommen werden bis zum Abschluss nicht vorab angelegt, außer als Planungsvorschau mit **Nächstes Vorkommen im Kalender anzeigen**. Im Wiederholungsfeld können Sie Strategie, Vorschau und Serienende festlegen.
 
 ### Anhänge
 
@@ -378,7 +382,7 @@ Mindwtr kann externe Kalender überlagern und datierte Aufgaben in den Geräteka
 
 Aufgaben in Android-/Google- oder iOS-/Apple-Kalender übertragen:
 
-1. **Einstellungen → Kalender**
+1. **Menü → Einstellungen → Erweitert → Kalender**
 2. **Aufgaben in Kalender übertragen** aktivieren
 3. Berechtigung erteilen
 4. **Synchronisierungsziel** öffnen
@@ -388,7 +392,7 @@ Hinweise zur Einrichtung von Google Kalender unter Android und Apple Kalender un
 
 ICS-Abonnements:
 
-1. **Einstellungen → Kalender**
+1. **Menü → Einstellungen → Erweitert → Kalender**
 2. **ICS-URL** hinzufügen
 3. Termine aktualisieren
 
@@ -407,7 +411,7 @@ Externe Termine sind schreibgeschützt. Über **Aufgabe erstellen** entsteht ein
 
 1. In der Tagesansicht **Aufgaben planen** antippen
 2. Nächste Aktionen wählen oder Todo-Aufgaben suchen
-3. Mindwtr findet das früheste freie Zeitfenster
+3. Mindwtr findet das früheste freie Zeitfenster und vermeidet Konflikte mit sichtbaren externen Terminen und geplanten Aufgaben
 4. Startzeit richtet sich nach der Zeitschätzung
 
 Das Planungsfeld wandelt ungeplante nächste Aktionen oder fällige ungeplante Arbeit in konkrete Zeitblöcke um. Klappen Sie es für mehr Kalenderplatz ein.
@@ -420,7 +424,7 @@ Das Planungsfeld wandelt ungeplante nächste Aktionen oder fällige ungeplante A
 
 ### Externe Kalender (iCal/ICS)
 
-1. **Einstellungen → Erweitert → Kalender**
+1. **Menü → Einstellungen → Erweitert → Kalender**
 2. ICS-/webcal-URL eingeben
 3. Namen vergeben und **Hinzufügen**
 4. Termine erscheinen grau in der Tagesansicht
@@ -520,6 +524,8 @@ Beim Abschluss wird die aktuelle Zeit gespeichert. Wenn Sie früher fertig waren
 - **Fälligkeitserinnerungen**
 - **Startzeitwarnungen**
 - **Erinnerungen an wiederkehrende Aufgaben**
+
+Aufgaben mit einer Fälligkeitszeit können die **Erinnerung wiederholen** nach 5, 10, 15, 30 oder 60 Minuten. Bei Aufgaben mit einer Startzeit oder einem Fälligkeitsdatum deaktiviert **Erinnerungen überspringen** die Start- und Fälligkeitserinnerungen; die Aufgabe bleibt in Fokus und Listen sichtbar.
 
 Tippen auf den Benachrichtigungstext öffnet **Durchsicht**.
 

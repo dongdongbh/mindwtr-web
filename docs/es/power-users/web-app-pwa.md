@@ -38,8 +38,9 @@ El resultado queda en `apps/desktop/dist/` y puede alojarse como sitio estático
 ## Comportamiento de la PWA
 
 - La aplicación registra `apps/desktop/public/sw.js` al ejecutarse en el navegador.
-- `sw.js` precarga `/`, `/index.html`, `/manifest.webmanifest`, `/icon.png` y `/logo.png`, y guarda bajo demanda otras solicitudes GET del mismo origen.
-- Sin conexión, las solicitudes de navegación recurren a `/index.html`, por lo que los enlaces profundos siguen cargando.
+- `sw.js` precarga `/`, `/index.html`, `/manifest.webmanifest`, `/icon.png` y `/logo.png`; bajo demanda solo guarda recursos estáticos como scripts, estilos, imágenes y fuentes. Las solicitudes de API y sincronización permanecen en la red.
+- Las solicitudes de navegación usan primero la red y solo recurren a la estructura de la aplicación almacenada en caché cuando no hay conexión.
+- La vista actual se guarda en `?view=`, por lo que al actualizar o copiar un enlace se conserva la misma pantalla sin configurar rutas en el alojamiento estático. Los filtros no se codifican en la URL.
 
 ---
 

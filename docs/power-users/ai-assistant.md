@@ -14,7 +14,7 @@ Mindwtr includes an optional AI assistant to help clarify tasks, break them down
 - **Google Gemini**
 - **Anthropic (Claude)**
 
-Configure in **Settings → AI assistant**:
+Configure it in **Settings → AI assistant** on desktop or **Menu → Settings → Advanced → AI assistant** on mobile:
 
 - Enable/disable AI
 - Provider
@@ -35,7 +35,7 @@ Use this setup for:
 - **Hosted OpenAI-compatible providers**: for example GLM or other vendors that expose an OpenAI-compatible endpoint.
 
 1. If needed, start or obtain access to an OpenAI-compatible endpoint.
-2. In **Settings → AI assistant**:
+2. In **Settings → AI assistant** on desktop or **Menu → Settings → Advanced → AI assistant** on mobile:
    - Set **Provider** to **OpenAI**
    - Set **Model** to the model name exposed by that service
    - Set **Custom base URL** to the service's base URL
@@ -108,5 +108,5 @@ Set the speech provider to OpenAI, then fill in the base URL: your server's root
 - Responses are parsed as structured JSON; if parsing fails, no changes are applied.
 ## Whisper language codes
 
-If you use the Whisper offline model, you can set an explicit language code in Settings → AI Assistant → Audio language.
+If you use the Whisper offline model, set an explicit language code in **Settings → AI Assistant → Audio language** on desktop or **Menu → Settings → Advanced → AI Assistant → Audio language** on mobile.
 See the language list here: [Whisper language list](https://whisper-api.com/docs/languages/).

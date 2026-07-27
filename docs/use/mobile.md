@@ -44,6 +44,8 @@ Tap the **Menu** tab to access additional views:
 
 Open **Done** and tap **Select** to choose tasks, then use **Move → Archived** to file them away early. In **Archived**, tap **Select** or **Select All** to move tasks back to Done without changing their completion time, restore them to Inbox, or move them to Trash. Switch to **Projects** to open, restore, or move archived projects to Trash. Mindwtr permanently deletes items only from Trash.
 
+In Done, sort by **Completion date** to show the newest completions first. Group by **Completion date** to split the list into **Today**, **Yesterday**, **Previous 7 days**, **Earlier**, and **Not completed**; empty groups stay hidden.
+
 Open **Trash** and tap **Select** to manage several deleted tasks and projects. Tap **Select All** or choose items, then restore or permanently delete them in one step. Permanent deletion always asks for confirmation.
 
 ---
@@ -126,6 +128,8 @@ Add the Mindwtr widget to your home screen for quick access:
 2. Select **Widgets**
 3. Find and add the **Mindwtr** widget
 4. Tap the widget to open quick capture or view focus items
+
+On Android, dated rows show **Today**, a weekday for the coming week, or a compact date. Tasks due today or overdue receive extra emphasis.
 
 ### iOS Lock Screen Widget
 
@@ -262,7 +266,7 @@ Capture tasks using your voice with AI-powered transcription.
 
 ### Setup
 
-1. Go to **Menu → Settings → AI Assistant**.
+1. Go to **Menu → Settings → Advanced → AI Assistant**.
 2. Enable **Speech to Text**.
 3. Choose a **Provider**:
    - **OpenAI / Gemini**: Cloud-based (requires API key).
@@ -339,7 +343,7 @@ Default Next Actions order is due-soon actions first, undated actions next, and 
 - **Saved Filters**: Save reusable Focus criteria such as projects, contexts, tags, priority, energy level, and time estimates.
 - **Swipe to Focus**: Swipe a task right to toggle "Focus" status (moves it to Today).
 - **Quick Status**: Tap the status badge to change status.
-- **Pomodoro (Optional)**: Enable in **Settings → GTD → Features → Pomodoro timer** to show a compact focus/break timer. Leave it as **Timer only**, or turn on **Link timer to task** to show the Timer task picker and **Mark task done** action.
+- **Pomodoro (Optional)**: Enable in **Settings → GTD → Features → Pomodoro timer** to show a compact focus/break timer. Leave it as **Timer only**, or turn on **Link timer to task** to show the Timer task picker and **Mark task done** action. Collapse the card to keep the remaining time, phase, and **Running** or **Paused** status visible in a slim row.
 
 ---
 
@@ -421,7 +425,7 @@ Mindwtr can overlay external calendars and push dated Mindwtr tasks to the devic
 
 To push tasks to Android/Google Calendar or Apple Calendar on iOS:
 
-1. Go to **Settings -> Calendar**
+1. Go to **Menu → Settings → Advanced → Calendar**
 2. Enable **Push tasks to calendar**
 3. Grant calendar permission
 4. Expand **Sync target**
@@ -431,7 +435,7 @@ For Android Google Calendar and iOS Apple Calendar target setup, see [Calendar I
 
 To overlay external calendars with ICS subscriptions:
 
-1. Go to **Settings -> Calendar**
+1. Go to **Menu → Settings → Advanced → Calendar**
 2. Add your **ICS URL**
 3. Refresh to fetch events
 
@@ -467,7 +471,7 @@ The scheduling panel is the mobile planning surface: use it when you are looking
 
 Subscribe to external calendars to see events alongside your tasks:
 
-1. Go to **Settings → Advanced → Calendar**
+1. Go to **Menu → Settings → Advanced → Calendar**
 2. Enter the calendar URL (ICS/webcal format)
 3. Give it a name and tap **Add**
 4. External events appear as gray blocks in Day view
@@ -581,6 +585,8 @@ Mindwtr sends notifications to keep you on track.
 - **Due date reminders**: Alerts when tasks are due
 - **Start time alerts**: Reminds you when it's time to begin
 - **Recurring task reminders**: Notifications for recurring items
+
+Tasks with a due time can set **Repeat reminder** to 5, 10, 15, 30, or 60 minutes. For tasks with a timed start or due date, **Skip reminders** turns off start and due reminders while the task stays visible in Focus and lists.
 
 Tap the notification body to jump directly to the **Review** screen.
 

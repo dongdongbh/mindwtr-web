@@ -30,9 +30,11 @@ Diese Funktion ist standardmäßig **deaktiviert**, damit „Fokus“ minimalist
 - Nach dem Ende einer Fokusphase wechselt Mindwtr zur Pause und hält an, damit Sie diese bewusst starten können.
 - Nach dem Ende einer Pause wechselt es zurück zum Fokus.
 
+Endet eine Phase, während das Desktopfenster im Hintergrund ist, blinkt Mindwtr unter Windows und auf den meisten Linux-Desktops in der Taskleiste; unter macOS springt das Dock-Symbol.
+
 Die Aufgabenverknüpfung ist optional und standardmäßig deaktiviert. Aktivieren Sie **Einstellungen → GTD → Pomodoro-Zeitgeber → Zeitgeber mit Aufgabe verknüpfen**, wenn Sie in „Fokus“ die Auswahl der Zeitgeberaufgabe und die Aktion **Aufgabe als erledigt markieren** verwenden möchten.
 
-Auf Desktop und Mobilgeräten kann das Feld eingeklappt werden: Der Pfeil in seiner Kopfzeile reduziert es auf eine schmale Zeile, die nur Restzeit und Phase zeigt; der Zeitgeber läuft weiter. Der Einklappzustand wird pro Gerät gespeichert statt synchronisiert, und das Feld startet ausgeklappt. Auf dem Desktop öffnet die Wiedergabeschaltfläche einer Aufgabe das Feld wieder.
+Auf Desktop und Mobilgeräten kann das Feld eingeklappt werden: Der Pfeil in seiner Kopfzeile reduziert es auf eine schmale Zeile mit Restzeit und Phase; auf Mobilgeräten zeigt sie zusätzlich **Läuft** oder **Pausiert**. Der Zeitgeber läuft weiter. Der Einklappzustand wird pro Gerät gespeichert statt synchronisiert, und das Feld startet ausgeklappt. Auf dem Desktop öffnet die Wiedergabeschaltfläche einer Aufgabe das Feld wieder.
 
 Steuerelemente:
 - **Zeitgeber**: Start/Pause, Zurücksetzen und Phase wechseln
@@ -44,7 +46,7 @@ Die Aufgabenauswahl bestimmt, mit welcher Aufgabe das Pomodoro-Feld gegebenenfal
 
 Aufgaben besitzen im Aufgabeneditor neben der Zeitschätzung optional den Wert **Aufgewendete Zeit**. „Aufgewendete Zeit“ erfordert v1.1.0 oder neuer; ältere Versionen wie v1.0.5 bieten die Funktion nicht.
 
-„Aufgewendete Zeit“ ist freiwillig und standardmäßig deaktiviert: Die zugehörigen Oberflächen erscheinen nur, wenn sowohl die Funktion **Pomodoro-Zeitgeber** als auch **Zeitgeber mit Aufgabe verknüpfen** aktiviert sind – das Editorfeld und die Aufgabenplakette auf Desktop und Mobilgeräten, der Abschlussdialog auf Mobilgeräten sowie die Schnellstartschaltfläche auf dem Desktop. Wenn Sie die Funktionen deaktivieren, werden nirgendwo zeitbezogene Angaben angezeigt (aufgezeichnete Werte bleiben erhalten und erscheinen nach erneuter Aktivierung wieder). Wenn Sie das Feld „Zeitschätzung“ im Layout des Aufgabeneditors ausblenden, wird auch „Aufgewendete Zeit“ ausgeblendet.
+„Aufgewendete Zeit“ ist freiwillig und standardmäßig deaktiviert: Die zugehörigen Oberflächen erscheinen nur, wenn sowohl die Funktion **Pomodoro-Zeitgeber** als auch **Zeitgeber mit Aufgabe verknüpfen** aktiviert sind – das Editorfeld und die Aufgabenplakette auf Desktop und Mobilgeräten, der Abschlussdialog auf Desktop und Mobilgeräten sowie die Schnellstartschaltfläche auf dem Desktop. Wenn Sie die Funktionen deaktivieren, werden nirgendwo zeitbezogene Angaben angezeigt (aufgezeichnete Werte bleiben erhalten und erscheinen nach erneuter Aktivierung wieder). Wenn Sie das Feld „Zeitschätzung“ im Layout des Aufgabeneditors ausblenden, wird auch „Aufgewendete Zeit“ ausgeblendet.
 
 - Jede abgeschlossene Fokusphase mit verknüpfter Zeitgeberaufgabe addiert die Fokusminuten dieser Phase zur Gesamtsumme der Aufgabe.
 - Sie können die Gesamtsumme im Editor auch von Hand festlegen oder korrigieren.
@@ -58,6 +60,8 @@ Wenn sowohl die Pomodoro-Funktion als auch **Zeitgeber mit Aufgabe verknüpfen**
 
 - Klicken Sie darauf, um die Aufgabe zu verknüpfen und sofort eine Fokusphase zu starten, ohne sie im Auswahlmenü für die Zeitgeberaufgabe suchen zu müssen.
 - Die Schaltfläche zeigt außerdem, wie viele Fokusphasen Sie für diese Aufgabe abgeschlossen haben.
+
+Die Wiedergabeschaltfläche ist überall verfügbar, wo eine Aufgabe angezeigt wird. Eine verknüpfte Aufgabe bleibt auch außerhalb von „Fokus“ ausgewählt und in der Auswahl, bis Sie die Verknüpfung lösen oder die Aufgabe löschen.
 
 ---
 

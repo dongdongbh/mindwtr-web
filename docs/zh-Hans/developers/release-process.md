@@ -259,6 +259,7 @@ git push origin main --tags
 - 重要的修复/功能应排在前面
 - 有帮助时列出重要提交
 - 对于 RC，使用 `docs/release-notes/X.Y.Z-rc.N.md` 或 `docs/release-notes/vX.Y.Z-rc.N.md`，并在第一个标题中包含完整 RC 版本；`docs/release-notes/X.Y.Z.md` 仅供最终稳定版使用
+- 对于稳定版，第一行必须严格写为 `# Mindwtr X.Y.Z` 或 `# Mindwtr vX.Y.Z`；`release.yml` 会拒绝其他标题
 - 需要时保持 `docs/release-notes/google-play/` 中的 Google Play 简短说明一致
 - 更新 `metadata/*/release_notes.txt` 中的 App Store 发布说明
 - 在 `metadata/*/changelogs/<versionCode>.txt` 下添加新的 Android 变更日志文件

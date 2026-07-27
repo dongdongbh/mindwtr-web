@@ -14,7 +14,7 @@ Mindwtr enthält einen optionalen KI-Assistenten, der dabei hilft, Aufgaben zu k
 - **Google Gemini**
 - **Anthropic (Claude)**
 
-Konfigurieren Sie unter **Einstellungen → KI-Assistent**:
+Konfigurieren Sie den Assistenten auf dem Desktop unter **Einstellungen → KI-Assistent** oder auf Mobilgeräten unter **Menü → Einstellungen → Erweitert → KI-Assistent**:
 
 - KI aktivieren/deaktivieren
 - Anbieter
@@ -35,7 +35,7 @@ Verwenden Sie diese Einrichtung für:
 - **Gehostete OpenAI-kompatible Anbieter**: beispielsweise GLM oder andere Anbieter mit einem OpenAI-kompatiblen Endpunkt.
 
 1. Starten Sie bei Bedarf einen OpenAI-kompatiblen Endpunkt oder verschaffen Sie sich Zugriff darauf.
-2. Unter **Einstellungen → KI-Assistent**:
+2. Auf dem Desktop unter **Einstellungen → KI-Assistent** oder auf Mobilgeräten unter **Menü → Einstellungen → Erweitert → KI-Assistent**:
    - Setzen Sie **Anbieter** auf **OpenAI**.
    - Setzen Sie **Modell** auf den Modellnamen, den dieser Dienst bereitstellt.
    - Setzen Sie **Benutzerdefinierte Basis-URL** auf die Basis-URL des Dienstes.
@@ -108,5 +108,5 @@ Setzen Sie den Sprachanbieter auf OpenAI und tragen Sie dann die Basis-URL ein: 
 - Antworten werden als strukturiertes JSON ausgewertet. Schlägt die Auswertung fehl, werden keine Änderungen übernommen.
 ## Whisper-Sprachcodes
 
-Wenn Sie das Offline-Modell von Whisper verwenden, können Sie unter Einstellungen → KI-Assistent → Audiosprache einen ausdrücklichen Sprachcode festlegen.
+Wenn Sie das Offline-Modell von Whisper verwenden, legen Sie den Sprachcode auf dem Desktop unter **Einstellungen → KI-Assistent → Audiosprache** oder auf Mobilgeräten unter **Menü → Einstellungen → Erweitert → KI-Assistent → Audiosprache** fest.
 Die Liste der Sprachen finden Sie hier: [Whisper-Sprachliste](https://whisper-api.com/docs/languages/).

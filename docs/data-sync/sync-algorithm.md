@@ -6,7 +6,7 @@ This page is the technical merge reference for maintainers and debugging. For us
 
 ## Inputs and Outputs
 
-- Input A: local snapshot (`tasks`, `projects`, `sections`, `areas`, `settings`)
+- Input A: local snapshot (`tasks`, `projects`, `sections`, `areas`, `people`, `settings`)
 - Input B: remote snapshot (same shape)
 - Output: merged snapshot + merge stats (`conflicts`, `clockSkew`, `timestampAdjustments`, `futureTimestampClamps`, `conflictIds`, `conflictReasonCounts`, `conflictSamples`, `timestampAdjustmentIds`, `futureTimestampClampIds`) plus bounded sync diagnostics logs.
 

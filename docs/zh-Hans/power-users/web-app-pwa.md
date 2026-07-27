@@ -38,8 +38,9 @@ bun desktop:web:build
 ## PWA 行为
 
 - 在浏览器中运行时，应用会注册 `apps/desktop/public/sw.js`
-- `sw.js` 会预缓存 `/`、`/index.html`、`/manifest.webmanifest`、`/icon.png` 和 `/logo.png`，并按需缓存其他同源 GET 请求
-- 离线时，导航请求会回退到 `/index.html`，因此深层链接仍可加载
+- `sw.js` 会预缓存 `/`、`/index.html`、`/manifest.webmanifest`、`/icon.png` 和 `/logo.png`；之后仅按需缓存脚本、样式、图片和字体等静态资源。API 和同步请求始终通过网络发送。
+- 导航请求会优先使用网络，仅在离线时回退到已缓存的应用外壳。
+- 当前视图保存在 `?view=` 中，因此刷新和复制链接都能保留同一界面，无需在静态托管服务中配置路由。筛选条件不会编码到 URL 中。
 
 ---
 

@@ -259,6 +259,7 @@ Directives :
 - présentez d'abord les correctifs/fonctionnalités importants
 - répertoriez les commits notables lorsque cela est utile
 - pour les RC, utilisez `docs/release-notes/X.Y.Z-rc.N.md` ou `docs/release-notes/vX.Y.Z-rc.N.md` et indiquez la version RC complète dans le premier titre ; réservez `docs/release-notes/X.Y.Z.md` à la version stable finale
+- pour les versions stables, la première ligne doit être exactement `# Mindwtr X.Y.Z` ou `# Mindwtr vX.Y.Z` ; `release.yml` rejette les autres titres
 - maintenez les extraits Google Play dans `docs/release-notes/google-play/` alignés si nécessaire
 - mettez à jour `metadata/*/release_notes.txt` pour les notes de version de l'App Store
 - ajoutez le nouveau fichier de journal des modifications Android sous `metadata/*/changelogs/<versionCode>.txt`

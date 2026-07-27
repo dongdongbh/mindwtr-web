@@ -157,15 +157,17 @@ Lorsque vous souhaitez nettoyer ou renommer des métadonnées réutilisables :
 
 Les domaines et les personnes peuvent également être créés au moment de leur attribution. Saisissez un nom dans le sélecteur **Domaine** ou le champ **Assigné à**, puis choisissez **Créer** ou **Nouvelle personne** lorsqu’aucune correspondance exacte n’existe.
 
-### Modifier les contextes en masse
+### Modifier les contextes et les tags en masse
 
-Sur ordinateur, vous pouvez mettre à jour les contextes de nombreuses tâches en une seule fois :
+Vous pouvez mettre à jour les contextes et les tags de nombreuses tâches en une seule fois :
 
 1. Passez en mode **Sélectionner** dans une vue de liste
 2. Choisissez les tâches à modifier
-3. Utilisez **Ajouter un contexte** ou **Supprimer un contexte** dans la barre d’actions groupées
+3. Utilisez **Ajouter une étiquette**, **Retirer une étiquette**, **Ajouter un contexte** ou **Retirer un contexte** dans la barre d’actions groupées
 
-C’est utile pour reclasser tout un lot de tâches après une revue hebdomadaire ou une session de planification de projet.
+Les actions de retrait n’affichent que les valeurs réellement attribuées aux tâches sélectionnées et permettent d’en choisir plusieurs à la fois. Les tâches qui ne possèdent pas une valeur choisie restent inchangées.
+
+C’est utile pour reclasser tout un lot de tâches après une revue hebdomadaire ou une session de planification de projet. Sur mobile, la même barre de sélection propose **Ajouter une étiquette** et **Retirer une étiquette**.
 
 ---
 

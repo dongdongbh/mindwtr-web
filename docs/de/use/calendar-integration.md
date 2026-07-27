@@ -118,7 +118,7 @@ Unter iOS und Android kann Mindwtr geplante Aufgaben und Aufgaben mit Fälligkei
 
 Einrichtung:
 
-1. Öffnen Sie **Einstellungen → Kalender**.
+1. Öffnen Sie **Menü → Einstellungen → Erweitert → Kalender**.
 2. Aktivieren Sie **Aufgaben in Kalender übertragen**.
 3. Erteilen Sie die Kalenderberechtigung.
 4. Klappen Sie **Synchronisierungsziel** auf.
@@ -139,7 +139,7 @@ So verwenden Sie unter Android einen separaten Google-basierten Kalender `Mindwt
 2. Erstellen Sie unter demselben Google-Konto, das Sie unter Android verwenden, einen neuen Kalender namens `Mindwtr`.
 3. Öffnen Sie Google Kalender unter Android und aktualisieren Sie das Konto. Stellen Sie sicher, dass die Kalendersynchronisierung in den Android-Kontoeinstellungen aktiviert ist.
 4. Aktivieren Sie in der Android-App von Google Kalender **Google-Kalenderdaten mit anderen Apps teilen**, damit Android die Google-Kalender für Mindwtr bereitstellt.
-5. Kehren Sie in Mindwtr zu **Einstellungen → Kalender** zurück, tippen Sie auf **Kalender aktualisieren** und wählen Sie das Ziel `Mindwtr`, das Ihr Google-Konto anzeigt.
+5. Kehren Sie in Mindwtr zu **Menü → Einstellungen → Erweitert → Kalender** zurück, tippen Sie auf **Kalender aktualisieren** und wählen Sie das Ziel `Mindwtr`, das Ihr Google-Konto anzeigt.
 
 Wenn der Google-basierte Kalender `Mindwtr` noch nicht in Mindwtr erscheint, hat Android ihn noch nicht über den System-Kalenderanbieter bereitgestellt. Aktualisieren Sie Google Kalender, prüfen Sie die Android-Kontosynchronisierung, aktivieren Sie in Google Kalender **Google-Kalenderdaten mit anderen Apps teilen** und tippen Sie anschließend in Mindwtr auf **Kalender aktualisieren**.
 
@@ -150,7 +150,7 @@ So verwenden Sie auf einem iPhone oder iPad einen separaten Apple-Kalender als Z
 1. Öffnen Sie Apple Kalender.
 2. Erstellen Sie einen neuen Kalender namens `Mindwtr`. Verwenden Sie iCloud, wenn die Termine auf anderen Apple-Geräten erscheinen sollen, oder einen lokalen Kalender, wenn sie auf dem Gerät bleiben sollen.
 3. Wenn Sie iCloud verwenden, prüfen Sie unter iOS **Einstellungen → Apple Account → iCloud → Kalender**, ob die Kalendersynchronisierung aktiviert ist.
-4. Öffnen Sie in Mindwtr **Einstellungen → Kalender**.
+4. Öffnen Sie in Mindwtr **Menü → Einstellungen → Erweitert → Kalender**.
 5. Aktivieren Sie **Aufgaben in Kalender übertragen** und erteilen Sie die Kalenderberechtigung.
 6. Klappen Sie **Synchronisierungsziel** auf, tippen Sie auf **Kalender aktualisieren** und wählen Sie den Apple-Kalender `Mindwtr` als Ziel.
 7. Öffnen Sie in Apple Kalender die Kalenderliste und stellen Sie sicher, dass der ausgewählte Kalender `Mindwtr` sichtbar ist.
@@ -166,7 +166,7 @@ Auf Mobilgeräten kann Mindwtr Kalender aus der Kalenderdatenbank des Geräts le
 
 Einrichtung:
 
-1. Öffnen Sie **Einstellungen → Kalender**.
+1. Öffnen Sie **Menü → Einstellungen → Erweitert → Kalender**.
 2. Aktivieren Sie **Gerätekalender**.
 3. Erteilen Sie die Kalenderberechtigung.
 4. Klappen Sie **Gerätekalender** auf.
@@ -180,7 +180,7 @@ Mindwtr blendet die eigenen übertragenen `Mindwtr`-Kalender aus der Leseliste a
 
 Auf dem macOS-Desktop kann Mindwtr über EventKit Apple-Kalendertermine lesen und geplante/fällige Mindwtr-Aufgaben übertragen:
 
-1. Öffnen Sie **Einstellungen → Kalender**.
+1. Öffnen Sie **Einstellungen → Integrationen → Kalender**.
 2. Fordern Sie Zugriff auf Apple Kalender an.
 3. Erlauben Sie Mindwtr den Zugriff unter macOS **Systemeinstellungen → Datenschutz & Sicherheit → Kalender**.
 4. Aktivieren Sie **Aufgaben in Kalender übertragen**, wenn Mindwtr-Aufgaben in Apple Kalender geschrieben werden sollen.
@@ -194,7 +194,7 @@ Unter Linux kann Mindwtr aktivierte Evolution-Data-Server-Kalender lesen und gep
 
 1. Richten Sie das Kalenderkonto in Evolution oder GNOME Online Accounts ein und prüfen Sie, ob es in Evolution erscheint.
 2. Stellen Sie sicher, dass `evolution-data-server` installiert ist und läuft.
-3. Öffnen Sie in Mindwtr **Einstellungen → Kalender**.
+3. Öffnen Sie in Mindwtr **Einstellungen → Integrationen → Kalender**.
 4. Aktivieren Sie **Aufgaben in Kalender übertragen**, wenn Mindwtr-Aufgaben in den Systemkalender geschrieben werden sollen.
 5. Klappen Sie **Synchronisierungsziel** auf, aktualisieren Sie die Kalender und wählen Sie einen eigenen Kalender `Mindwtr` oder ein anderes beschreibbares Ziel.
 
@@ -202,7 +202,7 @@ Unter Linux gibt es keinen separaten Kalender-Berechtigungsdialog. Schreibgesch�
 
 ### Desktop/Web: ICS-URLs
 
-1. Öffnen Sie **Einstellungen → Kalender**.
+1. Öffnen Sie **Einstellungen → Integrationen → Kalender**.
 2. Fügen Sie Ihre **ICS-URL** hinzu.
 3. Aktualisieren Sie, um Termine abzurufen.
 

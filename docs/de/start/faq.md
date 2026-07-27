@@ -458,7 +458,7 @@ Ja. Mindwtr importiert Todoist-CSV-Exporte und ZIP-Sicherungen unter **Einstellu
 
 - Todoist-Projekte werden zu Mindwtr-Projekten.
 - Unteraufgaben werden zu Checklistenpunkten.
-- Aktive Aufgaben mit Projektzuweisung bleiben bei ihren Projekten; aktive Aufgaben ohne Zuweisung bleiben für die Posteingangsverarbeitung verfügbar.
+- Jede importierte aktive Aufgabe wird in ihrem erzeugten Projekt zu einer Nächsten Aktion.
 
 Siehe [Todoist-Import](/de/import/todoist).
 

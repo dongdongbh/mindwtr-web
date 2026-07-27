@@ -38,8 +38,9 @@ Le résultat se trouve dans `apps/desktop/dist/` et peut être hébergé comme s
 ## Comportement de la PWA
 
 - L’application enregistre `apps/desktop/public/sw.js` dans le navigateur.
-- `sw.js` met en cache au préalable `/`, `/index.html`, `/manifest.webmanifest`, `/icon.png` et `/logo.png`, puis à la demande les autres requêtes GET de même origine.
-- Hors ligne, les requêtes de navigation reviennent à `/index.html`, de sorte que les liens profonds continuent de fonctionner.
+- `sw.js` met en cache au préalable `/`, `/index.html`, `/manifest.webmanifest`, `/icon.png` et `/logo.png`. Il ne met ensuite en cache à la demande que les ressources statiques, comme les scripts, styles, images et polices. Les requêtes d’API et de synchronisation restent sur le réseau.
+- Les requêtes de navigation utilisent d’abord le réseau et ne reviennent à l’enveloppe d’application mise en cache que hors ligne.
+- La vue actuelle est enregistrée dans `?view=`. L’actualisation et les liens copiés conservent donc le même écran sans configuration de routes sur l’hébergement statique. Les filtres ne sont pas encodés dans l’URL.
 
 ---
 

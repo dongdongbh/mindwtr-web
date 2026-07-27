@@ -89,8 +89,8 @@ Columnas destacadas:
 
 - `name`, `icon`, `view`: metadatos de presentación
 - `criteria`: criterios de filtrado serializados
-- `sortBy`, `sortOrder`: orden opcional guardado
-- `createdAt`, `updatedAt`: metadatos locales
+- `sortBy`, `sortOrder`, `groupBy`: ordenación y agrupación opcionales guardadas
+- `createdAt`, `updatedAt`, `deletedAt`: marcas de tiempo y metadatos de eliminación lógica
 
 ### `calendar_sync`
 
@@ -122,6 +122,8 @@ Campos indexados para la búsqueda de tareas:
 - `tags`
 - `contexts`
 - `location`
+- `checklist`
+- `assignedTo`
 
 ### `projects_fts`
 

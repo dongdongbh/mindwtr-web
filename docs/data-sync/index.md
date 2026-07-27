@@ -275,7 +275,7 @@ Mindwtr automatically syncs in the following situations:
 - **On app blur/background**: when you switch away from the desktop app, but only if there are pending local changes to push.
 - **Periodic desktop heartbeat**: every 15 minutes while Mindwtr is running.
 
-If an automatic sync fails, Mindwtr pauses automatic retry attempts for about 60 seconds. Manual sync remains available during that cooldown.
+Automatic retries after backend failures start after about one minute and increase to ten minutes after repeated failures. A provider-supplied retry delay can override that schedule. Manual sync remains available.
 
 ### Settings Sync Options
 
@@ -382,8 +382,8 @@ On iOS, some cloud providers may not expose folder selection in Files. In that c
 
 Mobile now syncs automatically:
 - When the app goes to background
-- 5 seconds after data changes
-- When returning to the app (if >30 seconds have passed)
+- After data changes, with a backend-aware debounce (remote: 2 seconds for the first change and 5 seconds for continued changes; file: 8 and 15 seconds) and pacing based on recent sync duration
+- When returning to the app after more than 30 seconds for remote backends or 45 seconds for file sync
 
 You can also tap **Sync** manually anytime in Settings.
 
@@ -490,7 +490,7 @@ Mindwtr can import Todoist exports from **Settings → Data → Import from Todo
 - Creates Mindwtr projects from Todoist projects
 - Preserves Todoist sections as Mindwtr sections
 - Converts Todoist subtasks into checklist items
-- Leaves imported tasks in **Inbox** so you can process them through your normal GTD flow
+- Places every imported active task in its generated project as a **Next Action**
 
 Recurring Todoist schedules are not recreated automatically. Mindwtr imports the task once and keeps the original recurrence text in the description.
 

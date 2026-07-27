@@ -89,8 +89,8 @@ SQLite 结构的事实来源位于：
 
 - `name`、`icon`、`view`：显示元数据
 - `criteria`：序列化的筛选条件
-- `sortBy`、`sortOrder`：可选的已保存顺序
-- `createdAt`、`updatedAt`：本地元数据
+- `sortBy`、`sortOrder`、`groupBy`：可选的已保存排序与分组
+- `createdAt`、`updatedAt`、`deletedAt`：时间戳与软删除元数据
 
 ### `calendar_sync`
 
@@ -122,6 +122,8 @@ SQLite FTS5 为桌面端/移动端的本地搜索提供支持。
 - `tags`
 - `contexts`
 - `location`
+- `checklist`
+- `assignedTo`
 
 ### `projects_fts`
 

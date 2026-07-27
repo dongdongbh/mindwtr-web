@@ -36,8 +36,9 @@ Die Build-Ausgabe liegt in `apps/desktop/dist/` und kann als statische Website g
 ## PWA-Verhalten
 
 - Die App registriert bei der Ausführung im Browser `apps/desktop/public/sw.js`.
-- `sw.js` speichert `/`, `/index.html`, `/manifest.webmanifest`, `/icon.png` und `/logo.png` vorab im Cache und speichert weitere GET-Anfragen desselben Ursprungs bei Bedarf.
-- Navigationsanfragen greifen offline auf `/index.html` zurück, sodass auch Deep Links weiterhin geladen werden.
+- `sw.js` speichert `/`, `/index.html`, `/manifest.webmanifest`, `/icon.png` und `/logo.png` vorab im Cache. Bei Bedarf werden nur statische Ressourcen wie Skripte, Stylesheets, Bilder und Schriften zwischengespeichert. API- und Synchronisierungsanfragen bleiben im Netzwerk.
+- Navigationsanfragen verwenden zuerst das Netzwerk und greifen nur offline auf die zwischengespeicherte App-Shell zurück.
+- Die aktuelle Ansicht wird in `?view=` gespeichert. Dadurch bleiben beim Neuladen und in kopierten Links dieselben Bildschirme erhalten, ohne dass der statische Host Routen konfigurieren muss. Filter werden nicht in der URL codiert.
 
 ---
 

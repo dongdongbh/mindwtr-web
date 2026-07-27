@@ -30,9 +30,11 @@ By default, this feature is **off** to keep Focus minimal and distraction-free.
 - When a focus session ends, Mindwtr switches to break and pauses so you can start intentionally.
 - When a break ends, it switches back to focus.
 
+When a phase ends while the desktop window is in the background, Mindwtr flashes its taskbar entry on Windows and most Linux desktops; on macOS, the Dock icon bounces.
+
 Task linking is optional and off by default. Turn on **Settings → GTD → Pomodoro timer → Link timer to task** when you want the Timer task picker and **Mark task done** action in Focus.
 
-On both desktop and mobile the panel can be folded away: the chevron in its header collapses it to a slim row showing just the remaining time and phase, and the timer keeps running. The fold state is remembered per device rather than synced, and it starts expanded. On desktop, pressing a task's play button reopens the panel.
+On both desktop and mobile the panel can be folded away: the chevron in its header collapses it to a slim row showing the remaining time and phase; on mobile it also shows **Running** or **Paused**. The timer keeps running. The fold state is remembered per device rather than synced, and it starts expanded. On desktop, pressing a task's play button reopens the panel.
 
 Controls:
 - **Timer**: Start/Pause, Reset, and Switch phase
@@ -44,7 +46,7 @@ The task picker controls which task, if any, the Pomodoro panel is attached to. 
 
 Tasks have an optional **Time Spent** value next to the Time Estimate in the task editor. Time Spent requires v1.1.0 or later; earlier versions such as v1.0.5 do not have it.
 
-Time Spent is opt-in and off by default: its surfaces only appear while both the **Pomodoro timer** feature and **Link timer to task** are enabled: the editor field and task-row badge on desktop and mobile, the mobile completion-time dialog, and the quick-start button on desktop. Turn them off and nothing time-related shows anywhere (recorded values are kept and reappear if you re-enable it). Hiding the Time Estimate field in the task editor layout hides Time Spent with it.
+Time Spent is opt-in and off by default: its surfaces only appear while both the **Pomodoro timer** feature and **Link timer to task** are enabled: the editor field and task-row badge on desktop and mobile, the completion-time dialog on desktop and mobile, and the quick-start button on desktop. Turn them off and nothing time-related shows anywhere (recorded values are kept and reappear if you re-enable it). Hiding the Time Estimate field in the task editor layout hides Time Spent with it.
 
 - Every completed focus session with a linked Timer task adds the session's focus minutes to that task's total.
 - You can also set or correct the total by hand in the editor.
@@ -58,6 +60,8 @@ When both the Pomodoro feature and **Link timer to task** are enabled, hovering 
 
 - Click it to link that task and start a focus session at once, with no hunting through the Timer task dropdown.
 - The button also shows how many focus sessions you have completed on that task.
+
+The play button is available wherever a task appears. A linked task stays selected even outside Focus and remains in the picker until you unlink or delete it.
 
 ---
 

@@ -167,13 +167,15 @@ Exemple : **Lancer le site web** peut comporter des sections telles que **Design
 
 Le champ **Section de projet** d’une tâche l’associe à l’une des sections de son projet. Il n’est utile qu’une fois la tâche rattachée à un projet qui possède des sections. Pour les tâches sans attribution ou les projets sans sections, laissez ce champ vide.
 
-Les projets séquentiels peuvent utiliser une portée au niveau du projet ou de la section. Utilisez la portée de section lorsqu’un projet comporte des phases ou des flux de travail indépendants : Mindwtr affiche la première tâche disponible de chaque section au lieu de bloquer tout le projet derrière une seule tâche.
+Les projets séquentiels peuvent utiliser une portée au niveau du projet ou de la section. Utilisez la portée de section lorsqu’un projet comporte des phases ou des flux de travail indépendants : Mindwtr affiche la première tâche disponible de chaque section au lieu de bloquer tout le projet derrière une seule tâche. Avec la portée par section, terminer la dernière action suivante d’une section déclenche la question « Quelle est l’action suivante ? » pour cette section, comme après la dernière action du projet entier.
 
 ### Dates d’échéance et rappels
 
 - Définissez une **date d’échéance** pour les délais
 - Définissez une **date de début** pour le moment où commencer
 - Définissez une **date de revue** (pense-bête) pour les vérifications périodiques
+
+Pour les tâches avec une heure d’échéance, définissez **Répéter le rappel** après 5, 10, 15, 30 ou 60 minutes. Pour les tâches avec une heure de début ou une date d’échéance, **Ignorer les rappels** désactive les rappels de début et d’échéance sans retirer la tâche de Focus ni des autres listes.
 
 ### Dates et statut
 

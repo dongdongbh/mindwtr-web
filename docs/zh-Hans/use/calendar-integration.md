@@ -118,7 +118,7 @@ Mindwtr 中的重复任务会生成为任务实例，而不是展开成日历系
 
 设置：
 
-1. 打开**设置 → 日历**
+1. 打开**菜单 → 设置 → 高级 → 日历**
 2. 启用**将任务推送到日历**
 3. 授予日历权限
 4. 展开**同步目标**
@@ -139,7 +139,7 @@ Mindwtr 中的重复任务会生成为任务实例，而不是展开成日历系
 2. 在 Android 所用的同一 Google 账户下创建名为 `Mindwtr` 的新日历。
 3. 在 Android 上打开 Google Calendar 并刷新账户。确保已在 Android 账户设置中启用日历同步。
 4. 在 Google Calendar Android 应用中，启用**与其他应用共享 Google Calendar 数据**，让 Android 向 Mindwtr 提供 Google 日历。
-5. 返回 Mindwtr 的**设置 → 日历**，点按**刷新日历**，然后选择显示你的 Google 账户的 `Mindwtr` 目标。
+5. 返回 Mindwtr 的**菜单 → 设置 → 高级 → 日历**，点按**刷新日历**，然后选择显示你的 Google 账户的 `Mindwtr` 目标。
 
 如果由 Google 支持的 `Mindwtr` 日历尚未出现在 Mindwtr 中，说明 Android 还没有通过系统日历提供程序将其提供出来。刷新 Google Calendar，检查 Android 账户同步，在 Google Calendar 中启用**与其他应用共享 Google Calendar 数据**，然后在 Mindwtr 中点按**刷新日历**。
 
@@ -150,7 +150,7 @@ Mindwtr 中的重复任务会生成为任务实例，而不是展开成日历系
 1. 打开 Apple Calendar。
 2. 创建名为 `Mindwtr` 的新日历。如果希望事件显示在其他 Apple 设备上，请使用 iCloud；如果只想保留在当前设备上，请使用本地日历。
 3. 如果使用 iCloud，请确认已在 iOS 的**设置 -> Apple 账户 -> iCloud -> 日历**中启用日历同步。
-4. 打开 Mindwtr 的**设置 -> 日历**。
+4. 打开 Mindwtr 的**菜单 → 设置 → 高级 → 日历**。
 5. 启用**将任务推送到日历**并授予日历权限。
 6. 展开**同步目标**，点按**刷新日历**，然后选择 `Mindwtr` Apple Calendar 目标。
 7. 在 Apple Calendar 中打开日历列表，并确保所选的 `Mindwtr` 日历可见。
@@ -166,7 +166,7 @@ Mindwtr 中的重复任务会生成为任务实例，而不是展开成日历系
 
 设置：
 
-1. 打开**设置 → 日历**
+1. 打开**菜单 → 设置 → 高级 → 日历**
 2. 启用**设备日历**
 3. 授予日历权限
 4. 展开**设备日历**
@@ -180,7 +180,7 @@ Mindwtr 会从读取列表中隐藏自己推送的 `Mindwtr` 日历，以避免�
 
 在 macOS 桌面端，Mindwtr 可以通过 EventKit 读取 Apple Calendar 事件，并推送 Mindwtr 中已排期或到期的任务：
 
-1. 打开**设置 -> 日历**
+1. 打开**设置 → 集成 → 日历**
 2. 请求 Apple Calendar 访问权限
 3. 在 macOS 的**系统设置 -> 隐私与安全性 -> 日历**中允许 Mindwtr 访问
 4. 如果希望将 Mindwtr 中的任务写入 Apple Calendar，请启用**将任务推送到日历**
@@ -194,7 +194,7 @@ Mindwtr 会从读取列表中隐藏自己推送的 `Mindwtr` 日历，以避免�
 
 1. 在 Evolution 或 GNOME 在线账户中配置日历账户，并确认它显示在 Evolution 中。
 2. 确保已安装并运行 `evolution-data-server`。
-3. 在 Mindwtr 中打开**设置 -> 日历**。
+3. 在 Mindwtr 中打开**设置 → 集成 → 日历**。
 4. 如果希望将 Mindwtr 中的任务写入系统日历，请启用**将任务推送到日历**。
 5. 展开**同步目标**，刷新日历，然后选择专用的 `Mindwtr` 日历或其他可写目标。
 
@@ -202,7 +202,7 @@ Linux 不会显示单独的日历权限对话框。只读日历可以显示在 M
 
 ### 桌面端/Web：ICS URL
 
-1. 打开**设置 → 日历**
+1. 打开**设置 → 集成 → 日历**
 2. 添加你的 **ICS URL**
 3. 刷新以获取事件
 

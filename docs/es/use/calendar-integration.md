@@ -118,7 +118,7 @@ En iOS y Android, Mindwtr puede enviar tareas programadas y tareas con fechas l�
 
 Configuración:
 
-1. Abre **Ajustes → Calendario**
+1. Abre **Menú → Ajustes → Avanzado → Calendario**
 2. Activa **Enviar tareas al calendario**
 3. Concede permiso para el calendario
 4. Expande **Destino de sincronización**
@@ -139,7 +139,7 @@ Para usar un calendario independiente `Mindwtr` respaldado por Google en Android
 2. Crea un nuevo calendario llamado `Mindwtr` en la misma cuenta de Google utilizada en Android.
 3. En Android, abre Google Calendar y actualiza la cuenta. Asegúrate de que la sincronización de Calendar esté activada en los ajustes de la cuenta de Android.
 4. En la aplicación Google Calendar para Android, activa **Compartir datos de Google Calendar con otras aplicaciones** para que Android exponga los calendarios de Google a Mindwtr.
-5. Vuelve a **Ajustes → Calendario** de Mindwtr, toca **Actualizar calendarios** y selecciona el destino `Mindwtr` que muestre tu cuenta de Google.
+5. Vuelve a **Menú → Ajustes → Avanzado → Calendario** de Mindwtr, toca **Actualizar calendarios** y selecciona el destino `Mindwtr` que muestre tu cuenta de Google.
 
 Si el calendario `Mindwtr` respaldado por Google todavía no aparece en Mindwtr, Android no lo ha expuesto mediante el proveedor de calendarios del sistema. Actualiza Google Calendar, comprueba la sincronización de la cuenta de Android, activa **Compartir datos de Google Calendar con otras aplicaciones** en Google Calendar y, después, toca **Actualizar calendarios** en Mindwtr.
 
@@ -150,7 +150,7 @@ Para usar un destino independiente de Apple Calendar en un iPhone o iPad:
 1. Abre Apple Calendar.
 2. Crea un nuevo calendario llamado `Mindwtr`. Usa iCloud si quieres que los eventos aparezcan en otros dispositivos Apple o usa un calendario local si debe permanecer en el dispositivo.
 3. Si usas iCloud, confirma que la sincronización de Calendar esté activada en **Ajustes -> Cuenta de Apple -> iCloud -> Calendar** de iOS.
-4. Abre **Ajustes -> Calendario** de Mindwtr.
+4. Abre **Menú → Ajustes → Avanzado → Calendario** de Mindwtr.
 5. Activa **Enviar tareas al calendario** y concede permiso para el calendario.
 6. Expande **Destino de sincronización**, toca **Actualizar calendarios** y elige el destino `Mindwtr` de Apple Calendar.
 7. En Apple Calendar, abre la lista de calendarios y asegúrate de que el calendario `Mindwtr` seleccionado esté visible.
@@ -166,7 +166,7 @@ En el móvil, Mindwtr puede leer calendarios de la base de datos de calendarios 
 
 Configuración:
 
-1. Abre **Ajustes → Calendario**
+1. Abre **Menú → Ajustes → Avanzado → Calendario**
 2. Activa **Calendarios del dispositivo**
 3. Concede permiso para el calendario
 4. Expande **Calendarios del dispositivo**
@@ -180,7 +180,7 @@ Mindwtr oculta de la lista de lectura sus propios calendarios `Mindwtr` de desti
 
 En el escritorio de macOS, Mindwtr puede leer eventos de Apple Calendar y enviar tareas de Mindwtr programadas/con fecha límite mediante EventKit:
 
-1. Abre **Ajustes -> Calendario**
+1. Abre **Ajustes → Integraciones → Calendario**
 2. Solicita acceso a Apple Calendar
 3. Permite Mindwtr en **Ajustes del Sistema -> Privacidad y seguridad -> Calendarios** de macOS
 4. Activa **Enviar tareas al calendario** si quieres que las tareas de Mindwtr se escriban en Apple Calendar
@@ -194,7 +194,7 @@ En Linux, Mindwtr puede leer los calendarios habilitados de Evolution Data Serve
 
 1. Configura la cuenta de calendario en Evolution o Cuentas en línea de GNOME y confirma que aparece en Evolution.
 2. Asegúrate de que `evolution-data-server` esté instalado y en ejecución.
-3. Abre **Ajustes -> Calendario** en Mindwtr.
+3. Abre **Ajustes → Integraciones → Calendario** en Mindwtr.
 4. Activa **Enviar tareas al calendario** si quieres que las tareas de Mindwtr se escriban en el calendario del sistema.
 5. Expande **Destino de sincronización**, actualiza los calendarios y elige un calendario dedicado `Mindwtr` u otro destino editable.
 
@@ -202,7 +202,7 @@ Linux no muestra un diálogo separado de permiso para el calendario. Los calenda
 
 ### Escritorio/web: URL de ICS
 
-1. Abre **Ajustes → Calendario**
+1. Abre **Ajustes → Integraciones → Calendario**
 2. Añade tu **URL de ICS**
 3. Actualiza para obtener los eventos
 

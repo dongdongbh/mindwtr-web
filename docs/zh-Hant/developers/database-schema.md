@@ -89,8 +89,8 @@ SQLite 結構描述的單一事實來源位於：
 
 - `name`、`icon`、`view`：顯示中繼資料
 - `criteria`：序列化的篩選條件
-- `sortBy`、`sortOrder`：選用的已儲存排序方式
-- `createdAt`、`updatedAt`：本機中繼資料
+- `sortBy`、`sortOrder`、`groupBy`：選用的已儲存排序與分組
+- `createdAt`、`updatedAt`、`deletedAt`：時間戳記與軟刪除中繼資料
 
 ### `calendar_sync`
 
@@ -122,6 +122,8 @@ SQLite FTS5 提供桌面版／行動版的本機搜尋功能。
 - `tags`
 - `contexts`
 - `location`
+- `checklist`
+- `assignedTo`
 
 ### `projects_fts`
 

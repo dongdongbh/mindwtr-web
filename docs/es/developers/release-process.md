@@ -259,6 +259,7 @@ Pautas:
 - incluye primero las correcciones/funciones importantes
 - enumera commits relevantes cuando sea útil
 - para las RC, utiliza `docs/release-notes/X.Y.Z-rc.N.md` o `docs/release-notes/vX.Y.Z-rc.N.md` e incluye la versión RC completa en el primer encabezado; reserva `docs/release-notes/X.Y.Z.md` para la versión estable final
+- para las versiones estables, la primera línea debe ser exactamente `# Mindwtr X.Y.Z` o `# Mindwtr vX.Y.Z`; `release.yml` rechaza otros encabezados
 - mantén alineados los fragmentos de Google Play en `docs/release-notes/google-play/` cuando sea necesario
 - actualiza `metadata/*/release_notes.txt` para las notas de la versión de App Store
 - añade el nuevo archivo de registro de cambios de Android en `metadata/*/changelogs/<versionCode>.txt`

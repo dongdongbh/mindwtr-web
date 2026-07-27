@@ -180,7 +180,8 @@ curl -s -X POST 'http://127.0.0.1:3456/tasks' \
 **Completar una tarea:**
 
 ```bash
-curl -s -X POST "http://127.0.0.1:4317/tasks/$TASK_ID/complete" | jq .
+curl -s -X POST "http://127.0.0.1:3456/tasks/$TASK_ID/complete" \
+  -H 'Authorization: Bearer <token>' | jq .
 ```
 
 ---

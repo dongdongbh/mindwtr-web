@@ -275,7 +275,7 @@ Mindwtr se synchronise automatiquement dans les situations suivantes :
 - **Lorsque l’application perd le focus/passe en arrière-plan** : lorsque vous quittez l’application pour ordinateur, mais uniquement si des modifications locales doivent être envoyées.
 - **Signal périodique sur ordinateur** : toutes les 15 minutes tant que Mindwtr est en cours d’exécution.
 
-Si une synchronisation automatique échoue, Mindwtr suspend les nouvelles tentatives automatiques pendant environ 60 secondes. La synchronisation manuelle reste disponible pendant ce délai de récupération.
+Après un échec du service de synchronisation, les nouvelles tentatives automatiques commencent au bout d’une minute environ et peuvent attendre jusqu’à dix minutes si les échecs se répètent. Le fournisseur peut imposer un autre délai. La synchronisation manuelle reste disponible.
 
 ### Options de synchronisation des réglages
 
@@ -382,8 +382,8 @@ Sur iOS, certains fournisseurs cloud peuvent ne pas proposer la sélection de do
 
 La version mobile se synchronise désormais automatiquement :
 - Lorsque l’application passe en arrière-plan
-- 5 secondes après une modification des données
-- Lors du retour dans l’application (si plus de 30 secondes se sont écoulées)
+- Après une modification des données, avec un délai adapté au service (distant : 2 secondes pour la première modification et 5 secondes pour les modifications continues ; fichier : 8 et 15 secondes) et un rythme fondé sur la durée des synchronisations récentes
+- Au retour dans l’application après plus de 30 secondes pour les services distants ou 45 secondes pour la synchronisation par fichier
 
 Vous pouvez également toucher **Synchroniser** manuellement à tout moment dans les Réglages.
 
@@ -490,7 +490,7 @@ Mindwtr peut importer des exportations Todoist depuis **Réglages → Données �
 - Crée des projets Mindwtr à partir des projets Todoist
 - Préserve les sections Todoist comme sections Mindwtr
 - Convertit les sous-tâches Todoist en éléments de liste de contrôle
-- Laisse les tâches importées dans la **Boîte de réception** afin que vous puissiez les traiter selon votre procédure GTD habituelle
+- Place chaque tâche active importée dans le projet créé comme **Prochaine action**
 
 Les planifications récurrentes de Todoist ne sont pas recréées automatiquement. Mindwtr importe la tâche une seule fois et conserve le texte original de la récurrence dans la description.
 

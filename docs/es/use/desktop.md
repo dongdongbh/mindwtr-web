@@ -20,6 +20,8 @@ Si sigues posponiendo la fecha de vencimiento de una tarea, su fila muestra junt
 
 La mayoría de las listas de tareas comparten la misma fila de controles para seleccionar tareas, filtrar, ordenar, agrupar, mostrar detalles y cambiar la densidad de la lista (Cómodo, Compacto o Condensado). Usa **Agrupar** para organizar la Bandeja de entrada, Próximas, En espera, Algún día/Tal vez, Referencia, Terminadas y otras vistas de lista por metadatos como contexto, área, proyecto o etiqueta. Hecho añade una agrupación por **fecha de finalización** —Hoy, Ayer, Últimos 7 días, Anterior y Sin completar— según tus días naturales locales, de modo que se lee como un registro de lo que terminaste y cuándo. Los grupos vacíos se ocultan.
 
+Arrastra una tarea en la barra lateral hasta **Bandeja de entrada**, **Algún día/Tal vez**, **En espera**, **Referencia**, **Hecho** o **Archivado** para cambiar su estado; el aviso ofrece **Deshacer**. **Papelera** no acepta tareas arrastradas. Suelta la tarea en **Calendario**, o mantenla un momento sobre Calendario mientras la arrastras, para abrir hoy. La vista Agenda cambia a Semana para que puedas soltarla en un día y una hora.
+
 ## Modo Foco
 
 Usa el modo Foco para ocultar la barra lateral y mantener la lista centrada (anchura máxima de 800 px).
@@ -33,8 +35,9 @@ Mindwtr se ejecuta en segundo plano para gestionar la sincronización automátic
 
 - **Cerrar la ventana** minimiza la aplicación a la bandeja del sistema en vez de salir.
 - **Haz clic en el icono de la bandeja** para mostrar u ocultar la ventana.
+- **Pasa el puntero sobre el icono de la bandeja** para ver el recuento del Foco de hoy y tantos títulos de tareas como quepan en los sistemas compatibles.
 - **Haz clic derecho en el icono de la bandeja** para salir por completo de la aplicación.
-- **Iniciar al entrar en el sistema** abre automáticamente la ventana oculta en la bandeja mientras el icono de bandeja esté activado; si abres la aplicación manualmente, la ventana siempre se muestra.
+- **Iniciar al entrar en el sistema** abre automáticamente la ventana oculta en la bandeja mientras el icono de bandeja esté activado; si abres la aplicación manualmente, la ventana siempre se muestra. Las versiones de Microsoft Store también muestran la ventana al iniciar sesión porque su tarea de inicio no puede transmitir la señal de inicio en la bandeja.
 
 ## Vistas
 
@@ -114,6 +117,8 @@ Incuba ideas que quizá quieras llevar a cabo más adelante.
 Vista temporal de las tareas con fechas de vencimiento u horas de inicio.
 
 En diseños anchos, el Calendario incluye un panel **Planificar próximas acciones** para el día seleccionado. Muestra Próximas acciones no programadas y tareas vencidas pero sin programar para que puedas colocarlas en huecos libres sin salir del Calendario. Contrae el panel cuando quieras más espacio para la cuadrícula diaria o semanal.
+
+Haz clic derecho en una tarea del Calendario para abrir las acciones habituales, incluida **Quitar del calendario**.
 
 ### 📋 Vista de tablero
 
@@ -200,7 +205,7 @@ Usa listas de comprobación como plantillas:
 ## Integración con calendarios
 
 Mindwtr puede superponer calendarios externos en la vista Calendario. En macOS puede leer Apple Calendar mediante EventKit; en todas las plataformas de escritorio puede leer URL directas de suscripciones ICS.
-Añade una **URL de ICS** en **Ajustes → Calendario** cuando necesites una suscripción ICS.
+Añade una **URL de ICS** en **Ajustes → Integraciones → Calendario** cuando necesites una suscripción ICS.
 Los eventos externos son de solo lectura, pero puedes crear desde un evento del Calendario una tarea independiente de Mindwtr; Mindwtr copia el título, la fecha y hora, la ubicación, la descripción y el nombre del calendario cuando están disponibles.
 Usa **Planificar próximas acciones** en Calendario para convertir el día seleccionado en una superficie de planificación: revisa el trabajo no programado, elige una tarea y prográmala en un hueco libre manteniendo las fechas de vencimiento como plazos.
 En macOS, **Enviar tareas al calendario** también puede escribir las tareas programadas o con vencimiento de Mindwtr en un calendario de Apple de destino que permita escritura. Consulta [Integración con calendarios](/es/use/calendar-integration) para configurarlo.
@@ -347,6 +352,8 @@ Mindwtr envía notificaciones de escritorio para ayudarte a mantener el rumbo:
 - **Avisos de hora de inicio**: te recuerdan cuándo debes empezar
 - **Recordatorios de tareas recurrentes**: notificaciones de elementos recurrentes
 
+Las tareas con hora de vencimiento pueden configurar **Recordatorio repetido** en 5, 10, 15, 30 o 60 minutos. En las tareas con hora de inicio o fecha de vencimiento, **Omitir recordatorios** desactiva los avisos de inicio y vencimiento; la tarea sigue apareciendo en Foco y en las listas.
+
 ### Ajustes
 
 Configura las notificaciones en Ajustes:
@@ -437,7 +444,7 @@ Selecciona varias tareas para realizar operaciones por lotes:
    - **Mover**: cambia el estado de todas las seleccionadas
    - **Asignar área**: mueve todas las tareas seleccionadas a un área concreta (o borra el área)
    - **Añadir etiqueta**: añade una etiqueta a todas las seleccionadas
-   - **Quitar etiqueta**: quita una etiqueta de todas las tareas seleccionadas
+   - **Quitar etiqueta**: quita una o varias etiquetas de todas las tareas seleccionadas
    - **Añadir contexto**: añade un contexto a todas las tareas seleccionadas
    - **Quitar contexto**: quita un contexto de todas las tareas seleccionadas
    - **Eliminar**: elimina todas las seleccionadas
@@ -535,6 +542,9 @@ Abre Ajustes desde la barra lateral.
 - **Funciones**: señales opcionales que puedes activar cuando las necesites:
   - **Prioridades**: muestra una bandera de prioridad en las tareas
   - **Estimaciones de tiempo**: añade un campo de duración para organizar bloques de tiempo
+- **Preajustes de estimación de tiempo**: elige qué estimaciones aparecen en el editor de tareas
+  - Opciones: 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 4h+
+  - Predeterminado: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
 - **Procesamiento de la Bandeja de entrada**: conserva el procesamiento guiado para aprender GTD o cambia el modo predeterminado a **Rápido** para un flujo compacto de una sola pantalla
   - Elige si se muestra el atajo de 2 minutos, se pregunta pronto por el proyecto, se incluyen contextos/etiquetas, se permite programar y se ofrece la opción de referencia durante el procesamiento
 - **Diseño del editor de tareas**: elige qué campos se muestran de forma predeterminada, muévelos entre secciones y ordénalos

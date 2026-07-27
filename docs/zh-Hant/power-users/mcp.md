@@ -2,9 +2,9 @@
 
 Mindwtr 提供選用的 **MCP（Model Context Protocol）**伺服器。你可以將 AI agent（例如 **Claude Desktop**、**Claude Code**、**OpenAI Codex** 或 **Gemini CLI**）連接至本機 Mindwtr 資料庫，或自行託管的 Mindwtr Cloud 端點。
 
-這是 **stdio** 伺服器（沒有託管的 HTTP 端點）。MCP 用戶端會將它啟動為子程序，並透過 stdin/stdout 使用 JSON-RPC 通訊。
+伺服器預設使用 **stdio**：MCP 用戶端會將它啟動為子程序，並透過 stdin/stdout 使用 JSON-RPC 通訊。它也支援供遠端用戶端選用的已驗證串流 HTTP。
 
-> 標準參考文件：[apps/mcp-server/README.md](https://github.com/dongdongbh/Mindwtr/blob/main/apps/mcp-server/README.md)。MCP 工具或 schema 變更時，請保持本頁與該檔案一致。
+> 實作參考文件：[apps/mcp-server/README.md](https://github.com/dongdongbh/Mindwtr/blob/main/apps/mcp-server/README.md)。如果該 README 與目前的伺服器程式碼或產生的 MCP 工具 schema 不一致，請以程式碼及 schema 為準。
 
 ---
 
@@ -647,13 +647,16 @@ Schema 注意事項：
 - `quickAdd`：string（省略 `title` 時必填）
 - `status`：`inbox | next | waiting | someday | reference | done | archived`
 - `projectId`：string
+- `sectionId`：string
 - `dueDate`：ISO string
 - `startTime`：ISO string
 - `contexts`：string[]
 - `tags`：string[]
 - `description`：string
-- `priority`：string
-- `timeEstimate`：string（例如 `30m`、`2h`）
+- `priority`：`low | medium | high | urgent`
+- `energyLevel`：`low | medium | high`
+- `assignedTo`：string
+- `timeEstimate`：`5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
 
 **範例**
 
@@ -668,7 +671,7 @@ Schema 注意事項：
 **輸入欄位**
 
 - `id`：string（task UUID）
-- `title`、`status`、`projectId`、`dueDate`、`startTime`、`contexts`、`tags`、`description`、`priority`、`timeEstimate`、`reviewAt`、`isFocusedToday`
+- `title`、`status`、`projectId`、`sectionId`、`dueDate`、`startTime`、`contexts`、`tags`、`description`、`priority`、`energyLevel`、`assignedTo`、`timeEstimate`、`reviewAt`、`isFocusedToday`
 
 **注意事項**
 
@@ -814,9 +817,9 @@ Schema 注意事項：
 
 ## 安全性與注意事項
 
-- **並行處理：**伺服器使用 SQLite WAL 模式。若 DB 已鎖定，寫入可能失敗；用戶端應重試。
+- **並行處理（本機 SQLite 模式）：**伺服器使用 SQLite WAL 模式。遇到暫時鎖定衝突時，伺服器會依目前資料重新執行寫入。只有這些重試全數失敗後，用戶端才需要重試。
 - **共用邏輯：**寫入操作使用共用的 `@mindwtr/core` 函式庫，確保套用商業規則。
-- **保持執行：**只要 `stdin` 維持開啟，伺服器就會繼續執行。
+- **保持執行：**在 stdio 模式下，只要 stdin 維持開啟，伺服器就會繼續執行；在 HTTP 模式下，只要監聽器執行，伺服器就會繼續執行。
 
 ## 疑難排解
 

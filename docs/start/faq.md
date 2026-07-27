@@ -466,7 +466,7 @@ Yes. Mindwtr can import Todoist CSV exports and ZIP backups from **Settings → 
 
 - Todoist projects become Mindwtr projects
 - Subtasks become checklist items
-- Project-assigned active tasks stay with their projects; unassigned active tasks stay available for Inbox processing
+- Every imported active task becomes a Next Action in its generated project
 
 See [Todoist Import](/import/todoist).
 

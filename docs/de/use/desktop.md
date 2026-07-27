@@ -20,6 +20,8 @@ Wenn Sie das Fälligkeitsdatum einer Aufgabe wiederholt nach hinten verschieben,
 
 Die meisten Aufgabenlisten verwenden dieselbe Steuerungszeile zum Auswählen, Filtern, Sortieren, Gruppieren, Anzeigen von Details und Umschalten der Listendichte (Komfortabel, Kompakt oder Verdichtet). Mit **Gruppieren** ordnen Sie Posteingang, Nächste Aktionen, Warten, Irgendwann/Vielleicht, Referenz, Erledigt und andere Listen nach Metadaten wie Kontext, Bereich, Projekt oder Tag. Erledigt bietet zusätzlich die Gruppierung **Abschlussdatum** – Heute, Gestern, Letzte 7 Tage, Früher und Nicht abgeschlossen – auf Basis Ihrer lokalen Kalendertage, sodass die Liste sich wie ein Protokoll des Erledigten liest. Leere Gruppen werden ausgeblendet.
 
+Ziehen Sie eine Aufgabe in der Seitenleiste auf **Posteingang**, **Irgendwann/Vielleicht**, **Warten**, **Referenz**, **Erledigt** oder **Archiviert**, um ihren Status zu ändern; die Meldung bietet **Rückgängig**. Der **Papierkorb** ist kein Ablageziel. Ziehen Sie die Aufgabe auf **Kalender** oder halten Sie sie beim Ziehen kurz darüber, um den heutigen Tag zu öffnen. Aus der Terminplanansicht wechselt Mindwtr in die Wochenansicht, damit Sie die Aufgabe auf einem Tag und einer Uhrzeit ablegen können.
+
 ## Fokusmodus
 
 Der Fokusmodus blendet die Seitenleiste aus und hält die Liste zentriert (maximal 800 px breit).
@@ -33,8 +35,9 @@ Mindwtr läuft für die automatische Synchronisierung im Hintergrund.
 
 - Beim **Schließen des Fensters** wird die App in die Taskleiste minimiert, statt beendet.
 - Ein **Klick auf das Taskleistensymbol** zeigt oder verbirgt das Fenster.
+- Beim **Überfahren des Taskleistensymbols** sehen Sie auf unterstützten Systemen die Anzahl im heutigen Fokus und so viele Aufgabentitel wie hineinpassen.
 - Ein **Rechtsklick auf das Taskleistensymbol** bietet „Beenden“, um die App vollständig zu schließen.
-- **Beim Anmelden starten** öffnet das Fenster automatisch ausgeblendet in der Taskleiste, solange das Taskleistensymbol aktiviert ist; wenn Sie die App selbst öffnen, wird das Fenster immer angezeigt.
+- **Beim Anmelden starten** öffnet das Fenster automatisch ausgeblendet in der Taskleiste, solange das Taskleistensymbol aktiviert ist; wenn Sie die App selbst öffnen, wird das Fenster immer angezeigt. Microsoft-Store-Builds zeigen das Fenster auch beim Start nach der Anmeldung, da ihre Startaufgabe das Taskleistensignal nicht übergeben kann.
 
 ## Ansichten
 
@@ -114,6 +117,8 @@ Ideen reifen lassen, die Sie später verfolgen möchten.
 Zeitbasierte Ansicht von Aufgaben mit Fälligkeitsdaten oder Startzeiten.
 
 In breiten Layouts enthält der Kalender für den ausgewählten Tag ein Feld **Nächste Aktionen planen**. Es zeigt ungeplante nächste Aktionen und fällige, aber ungeplante Aufgaben, damit Sie sie direkt in freie Zeiten legen können. Klappen Sie das Feld ein, um mehr Platz für das Tages-/Wochenraster zu erhalten.
+
+Ein Rechtsklick auf eine Aufgabe im Kalender öffnet die üblichen Aufgabenaktionen einschließlich **Aus dem Kalender löschen**.
 
 ### 📋 Board-Ansicht
 
@@ -200,7 +205,7 @@ Checklisten als Vorlagen:
 ## Kalenderintegration
 
 Mindwtr kann externe Kalender in der Kalenderansicht überlagern. Unter macOS liest es Apple Kalender über EventKit, auf allen Desktop-Plattformen direkte ICS-Abonnement-URLs.
-Fügen Sie unter **Einstellungen → Kalender** eine **ICS-URL** hinzu.
+Fügen Sie unter **Einstellungen → Integrationen → Kalender** eine **ICS-URL** hinzu.
 Externe Termine sind schreibgeschützt, aber Sie können daraus eine separate Mindwtr-Aufgabe erstellen. Mindwtr kopiert, sofern verfügbar, Titel, Datum/Uhrzeit, Ort, Beschreibung und Kalendername.
 Verwenden Sie **Nächste Aktionen planen**, um den ausgewählten Tag als Planungsoberfläche zu nutzen: ungeplante Arbeit prüfen, eine Aufgabe wählen und in ein freies Zeitfenster legen, während Fälligkeitsdaten Fristen bleiben.
 Unter macOS kann **Aufgaben in Kalender übertragen** geplante/fällige Aufgaben außerdem in einen beschreibbaren Apple-Kalender schreiben. Einzelheiten enthält die [Kalenderintegration](/de/use/calendar-integration).
@@ -349,6 +354,8 @@ Mindwtr sendet Desktop-Benachrichtigungen:
 - **Startzeitwarnungen**
 - **Erinnerungen an wiederkehrende Aufgaben**
 
+Aufgaben mit Fälligkeitszeit können **Erinnerung wiederholen** auf 5, 10, 15, 30 oder 60 Minuten setzen. Bei Aufgaben mit einer Startzeit oder einem Fälligkeitsdatum deaktiviert **Erinnerungen überspringen** die Start- und Fälligkeitserinnerungen; die Aufgabe bleibt in „Fokus“ und den Listen sichtbar.
+
 ### Einstellungen
 
 In den Einstellungen:
@@ -434,7 +441,7 @@ Mehrere Aufgaben gemeinsam bearbeiten:
    - **Verschieben**: Status aller ausgewählten ändern
    - **Bereich zuweisen**: Bereich setzen oder entfernen
    - **Tag hinzufügen**: Allen ausgewählten Aufgaben einen Tag hinzufügen
-   - **Tag entfernen**: Einen Tag von allen ausgewählten Aufgaben entfernen
+   - **Tag entfernen**: Einen oder mehrere Tags von allen ausgewählten Aufgaben entfernen
    - **Kontext hinzufügen**: Allen ausgewählten Aufgaben einen Kontext hinzufügen
    - **Kontext entfernen**: Einen Kontext von allen ausgewählten Aufgaben entfernen
    - **Löschen**
@@ -530,6 +537,9 @@ In jeder Voreinstellung setzt `s` plus Buchstabe direkt den Status (`si` Postein
 - **Funktionen**: optionale Signale:
   - **Prioritäten**
   - **Zeitschätzungen**
+- **Zeitschätzungsvoreinstellungen**: Legen Sie fest, welche Zeitschätzungen im Aufgabeneditor erscheinen.
+  - Optionen: 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 4h+
+  - Standard: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
 - **Posteingangsverarbeitung**: Geführten Lernablauf behalten oder standardmäßig **Schnell** für einen kompakten Bildschirm verwenden
   - 2-Minuten-Regel, frühe Projektfrage, Kontexte/Tags, Planung und Referenzangebot konfigurieren
 - **Layout des Aufgabeneditors**: Standardfelder, Abschnitte und Reihenfolge festlegen

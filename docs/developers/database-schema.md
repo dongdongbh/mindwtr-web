@@ -89,8 +89,8 @@ Notable columns:
 
 - `name`, `icon`, `view`: display metadata
 - `criteria`: serialized filter criteria
-- `sortBy`, `sortOrder`: optional saved ordering
-- `createdAt`, `updatedAt`: local metadata
+- `sortBy`, `sortOrder`, `groupBy`: optional saved ordering and grouping
+- `createdAt`, `updatedAt`, `deletedAt`: timestamps and soft-delete metadata
 
 ### `calendar_sync`
 
@@ -122,6 +122,8 @@ Indexed task search fields:
 - `tags`
 - `contexts`
 - `location`
+- `checklist`
+- `assignedTo`
 
 ### `projects_fts`
 

@@ -259,6 +259,7 @@ Guidelines:
 - include the important fixes/features first
 - list notable commits when helpful
 - for RCs, use `docs/release-notes/X.Y.Z-rc.N.md` or `docs/release-notes/vX.Y.Z-rc.N.md` and include the full RC version in the first heading; reserve `docs/release-notes/X.Y.Z.md` for the final stable release
+- for stable releases, make the first line exactly `# Mindwtr X.Y.Z` or `# Mindwtr vX.Y.Z`; `release.yml` rejects other headings
 - keep Google Play snippets in `docs/release-notes/google-play/` aligned when needed
 - update `metadata/*/release_notes.txt` for App Store release notes
 - add the new Android changelog file under `metadata/*/changelogs/<versionCode>.txt`

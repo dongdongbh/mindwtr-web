@@ -101,7 +101,8 @@ El paquete principal contiene toda la lógica de negocio compartida:
 | `sync.ts` + `sync-*.ts` | Núcleo de fusión de sincronización y funciones auxiliares compartidas; consulta la lista de módulos a continuación |
 | `date.ts`           | Funciones para el análisis seguro de fechas     |
 | `ai/`               | Integración con IA (Gemini/OpenAI/Anthropic)    |
-| `sqlite-adapter.ts` | Interfaz del adaptador de almacenamiento local  |
+| `storage.ts`        | Interfaz del adaptador de almacenamiento local  |
+| `sqlite-adapter.ts` | Implementación compartida de almacenamiento SQLite |
 | `webdav.ts`         | Cliente de sincronización WebDAV                |
 
 Los submódulos de sincronización actuales dividen el protocolo por responsabilidad: `sync-run.ts` es la máquina de estados compartida del ciclo de sincronización (secuencia de fases, comprobaciones para omitir datos sin cambios, fases de adjuntos, gestión de errores y de volver a poner en cola) que se encuentra detrás de los puertos de `sync-run-ports.ts`; las aplicaciones de escritorio y móvil proporcionan adaptadores de transporte, almacenamiento y notificaciones (ADR 0014). `sync-orchestrator.ts` serializa los ciclos y pone en cola los posteriores, `sync-normalization.ts` repara la forma de la carga útil, `sync-signatures.ts` calcula firmas de contenido comparables, `sync-merge-settings.ts` fusiona grupos de ajustes, `sync-tombstones.ts` gestiona la limpieza según la retención, `sync-revision.ts` asigna revisiones y `sync-client-helpers.ts` / `sync-service-utils.ts` contienen funciones auxiliares de los servicios de plataforma.
@@ -233,11 +234,11 @@ apps/mobile/
 ```
 Drawer/Stack Layout
 ├── Tab Navigator
-│   ├── Inbox
-│   ├── Agenda
-│   ├── Next Actions
-│   ├── Projects
-│   └── Menu (links to other views)
+│   ├── Enfoque
+│   ├── Bandeja de entrada
+│   ├── Captura
+│   ├── Acceso rápido (Proyectos, Calendario, Contextos o Revisión)
+│   └── Menú (enlaces a otras vistas)
 ├── Other Screens (Stack)
 │   ├── Board
 │   ├── Calendar
@@ -266,9 +267,9 @@ interface TaskStore {
 
     // Actions
     fetchData: () => Promise<void>;
-    addTask: (title: string, props?: Partial<Task>) => Promise<void>;
-    updateTask: (id: string, updates: Partial<Task>) => Promise<void>;
-    deleteTask: (id: string) => Promise<void>;
+    addTask: (title: string, props?: Partial<Task>) => Promise<StoreActionResult>;
+    updateTask: (id: string, updates: Partial<Task>) => Promise<StoreActionResult>;
+    deleteTask: (id: string) => Promise<StoreActionResult>;
     // ... projects, areas, and settings actions
 }
 ```
@@ -278,7 +279,7 @@ interface TaskStore {
 El almacén usa adaptadores de almacenamiento inyectados:
 
 ```typescript
-// Desktop: Tauri file system
+// Escritorio: SQLite mediante Tauri
 setStorageAdapter(tauriStorage);
 
 // Mobile: SQLite (with JSON backup fallback)

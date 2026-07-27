@@ -44,6 +44,8 @@ Toca la pestaña **Menú** para acceder a más vistas:
 
 Abre **Terminadas** y toca **Seleccionar** para elegir tareas; después usa **Mover → Archivadas** para archivarlas antes. En **Archivadas**, toca **Seleccionar** o **Seleccionar todo** para devolver tareas a Terminadas sin cambiar su hora de finalización, restaurarlas a la Bandeja de entrada o moverlas a la Papelera. Cambia a **Proyectos** para abrir, restaurar o mover proyectos archivados a la Papelera. Mindwtr solo elimina elementos permanentemente desde la Papelera.
 
+En **Terminadas**, ordena por **Fecha de finalización** para mostrar primero las tareas completadas más recientes. Agrupa por **Fecha de finalización** para dividir la lista en **Hoy**, **Ayer**, **Últimos 7 días**, **Anterior** y **Sin completar**; los grupos vacíos permanecen ocultos.
+
 Abre **Papelera** y toca **Seleccionar** para gestionar varias tareas y proyectos eliminados. Toca **Seleccionar todo** o elige elementos y después restáuralos o elimínalos permanentemente en un solo paso. La eliminación permanente siempre pide confirmación.
 
 ---
@@ -126,6 +128,8 @@ Añade el widget de Mindwtr a la pantalla de inicio para acceder rápidamente:
 2. Selecciona **Widgets**
 3. Busca y añade el widget **Mindwtr**
 4. Tócalo para abrir la captura rápida o ver los elementos de Foco
+
+En Android, las etiquetas de vencimiento muestran **Hoy**, el día de la semana para tareas dentro de los próximos siete días o una fecha compacta para fechas posteriores. Las tareas vencidas y las que vencen hoy aparecen destacadas.
 
 ### Widget de la pantalla bloqueada de iOS
 
@@ -262,7 +266,7 @@ Captura tareas con la voz mediante transcripción con IA.
 
 ### Configuración
 
-1. Ve a **Menú → Ajustes → Asistente de IA**.
+1. Ve a **Menú → Ajustes → Avanzado → Asistente de IA**.
 2. Activa **Voz a texto**.
 3. Elige un **Proveedor**:
    - **OpenAI / Gemini**: basado en la nube (requiere clave de API).
@@ -339,7 +343,7 @@ El orden predeterminado de Próximas acciones coloca primero las acciones con ve
 - **Filtros guardados**: guarda criterios de Foco reutilizables, como proyectos, contextos, etiquetas, prioridad, nivel de energía y estimaciones de tiempo.
 - **Deslizar a Foco**: desliza una tarea hacia la derecha para alternar su estado «Foco» (la mueve a Hoy).
 - **Estado rápido**: toca la insignia de estado para cambiarlo.
-- **Pomodoro (opcional)**: actívalo en **Ajustes → GTD → Funciones → Temporizador Pomodoro** para mostrar un temporizador compacto de concentración/descanso. Déjalo en **Solo temporizador** o activa **Vincular temporizador a tarea** para mostrar el selector de tarea del temporizador y la acción **Marcar tarea como terminada**.
+- **Pomodoro (opcional)**: actívalo en **Ajustes → GTD → Funciones → Temporizador Pomodoro** para mostrar un temporizador compacto de concentración/descanso. Déjalo en **Solo temporizador** o activa **Vincular temporizador a tarea** para mostrar el selector de tarea del temporizador y la acción **Marcar tarea como terminada**. Al contraerlo, una fila estrecha mantiene visibles el tiempo restante, la fase y el estado **En curso** o **En pausa**.
 
 ---
 
@@ -421,7 +425,7 @@ Mindwtr puede superponer calendarios externos y enviar tareas fechadas al calend
 
 Para enviar tareas a Google Calendar en Android o Apple Calendar en iOS:
 
-1. Ve a **Ajustes -> Calendario**
+1. Ve a **Menú → Ajustes → Avanzado → Calendario**
 2. Activa **Enviar tareas al calendario**
 3. Concede permiso para el calendario
 4. Amplía **Destino de sincronización**
@@ -431,7 +435,7 @@ Para configurar el destino de Google Calendar en Android y Apple Calendar en iOS
 
 Para superponer calendarios externos con suscripciones ICS:
 
-1. Ve a **Ajustes -> Calendario**
+1. Ve a **Menú → Ajustes → Avanzado → Calendario**
 2. Añade tu **URL de ICS**
 3. Actualiza para obtener los eventos
 
@@ -467,7 +471,7 @@ El panel de programación es la superficie de planificación móvil: úsalo cuan
 
 Suscríbete a calendarios externos para ver eventos junto a tus tareas:
 
-1. Ve a **Ajustes → Avanzado → Calendario**
+1. Ve a **Menú → Ajustes → Avanzado → Calendario**
 2. Introduce la URL del calendario (formato ICS/webcal)
 3. Ponle un nombre y toca **Añadir**
 4. Los eventos externos aparecen como bloques grises en la vista diaria
@@ -581,6 +585,8 @@ Mindwtr envía notificaciones para ayudarte a mantener el rumbo.
 - **Recordatorios de fecha de vencimiento**: avisan cuando vencen las tareas
 - **Avisos de hora de inicio**: te recuerdan cuándo debes empezar
 - **Recordatorios de tareas recurrentes**: notificaciones de elementos recurrentes
+
+Las tareas con hora de vencimiento pueden configurar **Repetir recordatorio** a los 5, 10, 15, 30 o 60 minutos. En las tareas con hora de inicio o fecha de vencimiento, **Omitir recordatorios** desactiva los recordatorios de inicio y vencimiento; la tarea sigue visible en Foco y en las listas.
 
 Toca el cuerpo de la notificación para ir directamente a la pantalla **Revisión**.
 

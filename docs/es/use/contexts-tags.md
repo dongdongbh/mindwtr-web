@@ -157,15 +157,17 @@ Cuando quieras ordenar o cambiar el nombre de metadatos reutilizables:
 
 Las Áreas y las Personas también se pueden crear mientras las asignas. Escribe en el selector **Área** o en el campo **Asignado a** y, después, elige **Crear** o **Nueva persona** cuando no haya una coincidencia exacta.
 
-### Edición masiva de contextos
+### Edición masiva de contextos y etiquetas
 
-En el escritorio, puedes actualizar los contextos de muchas tareas a la vez:
+Puedes actualizar los contextos y las etiquetas de muchas tareas a la vez:
 
 1. Entra en el modo **Seleccionar** en una vista de lista
 2. Elige las tareas que quieras editar
-3. Usa **Añadir contexto** o **Eliminar contexto** en la barra de acciones masivas
+3. Usa **Añadir etiqueta**, **Quitar etiqueta**, **Añadir contexto** o **Quitar contexto** en la barra de acciones masivas
 
-Esto resulta útil cuando quieres reclasificar un lote completo de tareas después de una revisión semanal o una sesión de planificación de proyectos.
+Las acciones para quitar solo muestran los valores que realmente tienen las tareas seleccionadas y permiten elegir varios a la vez. Las tareas que no tengan un valor elegido no se modifican.
+
+Esto resulta útil cuando quieres reclasificar un lote completo de tareas después de una revisión semanal o una sesión de planificación de proyectos. En móvil, la misma barra de selección ofrece **Añadir etiqueta** y **Quitar etiqueta**.
 
 ---
 

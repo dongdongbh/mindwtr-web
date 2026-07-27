@@ -36,8 +36,9 @@ Build output is in `apps/desktop/dist/` and can be hosted as a static site.
 ## PWA Behavior
 
 - The app registers `apps/desktop/public/sw.js` when running in a browser
-- `sw.js` precaches `/`, `/index.html`, `/manifest.webmanifest`, `/icon.png`, `/logo.png` and caches other same-origin GET requests on demand
-- Navigation requests fall back to `/index.html` when offline (so deep links still load)
+- `sw.js` precaches `/`, `/index.html`, `/manifest.webmanifest`, `/icon.png`, and `/logo.png`; it caches only static assets such as scripts, styles, images, and fonts on demand. API and sync requests stay on the network.
+- Navigation requests use the network first and fall back to the cached app shell only while offline.
+- The current view is stored in `?view=`, so refresh and copied links keep the same screen without static-host route configuration. Filters are not encoded in the URL.
 
 ---
 

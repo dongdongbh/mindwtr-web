@@ -14,7 +14,7 @@ Mindwtr incluye un asistente de IA opcional que ayuda a aclarar y dividir tareas
 - **Google Gemini**
 - **Anthropic (Claude)**
 
-Configúralo en **Ajustes → Asistente de IA**:
+Configúralo en **Ajustes → Asistente de IA** en escritorio o en **Menú → Ajustes → Avanzado → Asistente de IA** en móvil:
 
 - activar o desactivar la IA;
 - proveedor;
@@ -35,7 +35,7 @@ Usa esta configuración para:
 - **Proveedores alojados compatibles con OpenAI:** por ejemplo, GLM u otros que expongan un endpoint compatible.
 
 1. Si hace falta, inicia u obtén acceso a un endpoint compatible.
-2. En **Ajustes → Asistente de IA**:
+2. En **Ajustes → Asistente de IA** en escritorio o en **Menú → Ajustes → Avanzado → Asistente de IA** en móvil:
    - establece **Proveedor** en **OpenAI**;
    - indica en **Modelo** el nombre expuesto por el servicio;
    - establece **URL base personalizada** en la URL base del servicio;
@@ -116,4 +116,4 @@ Configura el proveedor de voz en OpenAI y luego completa la URL base: la raíz d
 
 ## Códigos de idioma de Whisper
 
-Si usas el modelo Whisper sin conexión, puedes establecer un código de idioma en Ajustes → Asistente de IA → Idioma del audio. Consulta la [lista de idiomas de Whisper](https://whisper-api.com/docs/languages/).
+Si usas el modelo Whisper sin conexión, establece el código de idioma en **Ajustes → Asistente de IA → Idioma del audio** en escritorio o en **Menú → Ajustes → Avanzado → Asistente de IA → Idioma del audio** en móvil. Consulta la [lista de idiomas de Whisper](https://whisper-api.com/docs/languages/).

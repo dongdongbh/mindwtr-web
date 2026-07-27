@@ -167,13 +167,15 @@ Ejemplo: **Lanzar el sitio web** puede tener secciones como **Diseño**, **Desar
 
 El campo **Sección del proyecto** de una tarea asigna esa tarea a una de las secciones de su proyecto. Solo resulta útil después de que la tarea pertenezca a un proyecto que tenga secciones. Para las tareas sin asignar o los proyectos sin secciones, deja el campo vacío.
 
-Los proyectos secuenciales pueden usar un ámbito para todo el proyecto o un ámbito por sección. Usa el ámbito por sección cuando un proyecto tenga fases o líneas de trabajo independientes: Mindwtr muestra la primera tarea disponible de cada sección en lugar de bloquear todo el proyecto detrás de una única tarea.
+Los proyectos secuenciales pueden usar un ámbito para todo el proyecto o un ámbito por sección. Usa el ámbito por sección cuando un proyecto tenga fases o líneas de trabajo independientes: Mindwtr muestra la primera tarea disponible de cada sección en lugar de bloquear todo el proyecto detrás de una única tarea. Con el ámbito por sección, al completar la última próxima acción de una sección, Mindwtr pregunta «¿Cuál es la próxima acción?» para esa sección, igual que tras la última acción del proyecto completo.
 
 ### Fechas límite y recordatorios
 
 - Establece una **fecha límite** para los plazos
 - Establece una **fecha de inicio** para indicar cuándo comenzar
 - Establece una **fecha de revisión** (recordatorio) para las comprobaciones periódicas
+
+En las tareas con hora de vencimiento, configura **Repetir recordatorio** a los 5, 10, 15, 30 o 60 minutos. En las tareas con hora de inicio o fecha de vencimiento, **Omitir recordatorios** desactiva los recordatorios de inicio y vencimiento sin quitar la tarea de Foco ni de otras listas.
 
 ### Fechas frente a estado
 

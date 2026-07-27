@@ -101,7 +101,8 @@ Mindwtr/
 | `sync.ts` + `sync-*.ts` | 同步合并核心及共享同步辅助函数；请参阅下方模块列表 |
 | `date.ts` | 安全的日期解析工具 |
 | `ai/` | AI 集成（Gemini/OpenAI/Anthropic） |
-| `sqlite-adapter.ts` | 本地存储适配器接口 |
+| `storage.ts` | 本地存储适配器接口 |
+| `sqlite-adapter.ts` | 共享 SQLite 存储实现 |
 | `webdav.ts` | WebDAV 同步客户端 |
 
 当前的同步子模块按职责拆分协议：`sync-run.ts` 是 `sync-run-ports.ts` 中各端口背后的共享同步周期状态机（阶段排序、无变化跳过检查、附件阶段、错误/重新排队处理）——桌面端和移动端提供传输、存储及通知适配器（ADR 0014）；`sync-orchestrator.ts` 串行执行同步周期并将后续周期加入队列，`sync-normalization.ts` 修复载荷形状，`sync-signatures.ts` 计算可比较的内容签名，`sync-merge-settings.ts` 合并设置组，`sync-tombstones.ts` 处理保留期清理，`sync-revision.ts` 标记修订版本，而 `sync-client-helpers.ts` / `sync-service-utils.ts` 则包含平台服务辅助函数。
@@ -233,11 +234,11 @@ apps/mobile/
 ```
 Drawer/Stack Layout
 ├── Tab Navigator
-│   ├── Inbox
-│   ├── Agenda
-│   ├── Next Actions
-│   ├── Projects
-│   └── Menu (links to other views)
+│   ├── 专注
+│   ├── 收集箱
+│   ├── 快速收集
+│   ├── 快速访问（项目、日历、情境或回顾）
+│   └── 菜单（链接到其他视图）
 ├── Other Screens (Stack)
 │   ├── Board
 │   ├── Calendar
@@ -266,9 +267,9 @@ interface TaskStore {
 
     // Actions
     fetchData: () => Promise<void>;
-    addTask: (title: string, props?: Partial<Task>) => Promise<void>;
-    updateTask: (id: string, updates: Partial<Task>) => Promise<void>;
-    deleteTask: (id: string) => Promise<void>;
+    addTask: (title: string, props?: Partial<Task>) => Promise<StoreActionResult>;
+    updateTask: (id: string, updates: Partial<Task>) => Promise<StoreActionResult>;
+    deleteTask: (id: string) => Promise<StoreActionResult>;
     // ... projects, areas, and settings actions
 }
 ```
@@ -278,7 +279,7 @@ interface TaskStore {
 存储使用注入的存储适配器：
 
 ```typescript
-// Desktop: Tauri file system
+// 桌面端：通过 Tauri 使用 SQLite
 setStorageAdapter(tauriStorage);
 
 // Mobile: SQLite (with JSON backup fallback)

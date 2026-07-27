@@ -275,7 +275,7 @@ Mindwtr se sincroniza automáticamente en las situaciones siguientes:
 - **Al desenfocar/enviar al fondo la aplicación**: cuando sales de la aplicación de escritorio, pero solo si hay cambios locales pendientes que enviar.
 - **Pulso periódico en escritorio**: cada 15 minutos mientras Mindwtr está en ejecución.
 
-Si una sincronización automática falla, Mindwtr pausa los reintentos automáticos durante unos 60 segundos. La sincronización manual sigue disponible durante ese tiempo de espera.
+Los reintentos automáticos tras fallos del backend empiezan al cabo de un minuto y aumentan hasta diez minutos si los fallos se repiten. El proveedor puede indicar otro tiempo de espera. La sincronización manual sigue disponible.
 
 ### Opciones de sincronización de ajustes
 
@@ -382,8 +382,8 @@ En iOS, es posible que algunos proveedores en la nube no permitan seleccionar ca
 
 Ahora el móvil se sincroniza automáticamente:
 - Cuando la aplicación pasa a segundo plano
-- 5 segundos después de cambiar los datos
-- Al volver a la aplicación (si han pasado >30 segundos)
+- Después de cambiar los datos, con una espera según el backend (remoto: 2 segundos para el primer cambio y 5 segundos para cambios continuos; archivo: 8 y 15 segundos) y un ritmo basado en la duración de las sincronizaciones recientes
+- Al volver a la aplicación después de más de 30 segundos con backends remotos o 45 segundos con sincronización de archivos
 
 También puedes tocar **Sincronizar** manualmente en cualquier momento desde Ajustes.
 
@@ -490,7 +490,7 @@ Mindwtr puede importar exportaciones de Todoist desde **Ajustes → Datos → Im
 - Crea proyectos de Mindwtr a partir de los proyectos de Todoist
 - Conserva las secciones de Todoist como secciones de Mindwtr
 - Convierte las subtareas de Todoist en elementos de lista de comprobación
-- Deja las tareas importadas en **Bandeja de entrada** para que puedas procesarlas mediante tu flujo GTD habitual
+- Coloca cada tarea activa importada en el proyecto generado como **Próxima acción**
 
 Las planificaciones recurrentes de Todoist no se recrean automáticamente. Mindwtr importa la tarea una vez y conserva el texto original de recurrencia en la descripción.
 

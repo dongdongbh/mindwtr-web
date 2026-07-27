@@ -101,7 +101,8 @@ The core package contains all shared business logic:
 | `sync.ts` + `sync-*.ts` | Sync merge core plus shared sync helpers; see module list below |
 | `date.ts`           | Safe date parsing utilities                   |
 | `ai/`               | AI integration (Gemini/OpenAI/Anthropic)      |
-| `sqlite-adapter.ts` | Local storage adapter interface               |
+| `storage.ts`        | Local storage adapter interface               |
+| `sqlite-adapter.ts` | Shared SQLite storage implementation          |
 | `webdav.ts`         | WebDAV sync client                            |
 
 Current sync sub-modules split the protocol by responsibility: `sync-run.ts` is the shared sync cycle state machine (phase sequencing, unchanged-skip checks, attachment phases, error/requeue handling) behind the ports in `sync-run-ports.ts` — desktop and mobile provide transport, storage, and notification adapters (ADR 0014); `sync-orchestrator.ts` serializes cycles and queues follow-ups, `sync-normalization.ts` repairs payload shape, `sync-signatures.ts` computes comparable content signatures, `sync-merge-settings.ts` merges settings groups, `sync-tombstones.ts` handles retention cleanup, `sync-revision.ts` stamps revisions, and `sync-client-helpers.ts` / `sync-service-utils.ts` hold platform service helpers.
@@ -233,10 +234,10 @@ apps/mobile/
 ```
 Drawer/Stack Layout
 ├── Tab Navigator
+│   ├── Focus
 │   ├── Inbox
-│   ├── Agenda
-│   ├── Next Actions
-│   ├── Projects
+│   ├── Capture
+│   ├── Quick Access (Projects, Calendar, Contexts, or Review)
 │   └── Menu (links to other views)
 ├── Other Screens (Stack)
 │   ├── Board
@@ -266,9 +267,9 @@ interface TaskStore {
     
     // Actions
     fetchData: () => Promise<void>;
-    addTask: (title: string, props?: Partial<Task>) => Promise<void>;
-    updateTask: (id: string, updates: Partial<Task>) => Promise<void>;
-    deleteTask: (id: string) => Promise<void>;
+    addTask: (title: string, props?: Partial<Task>) => Promise<StoreActionResult>;
+    updateTask: (id: string, updates: Partial<Task>) => Promise<StoreActionResult>;
+    deleteTask: (id: string) => Promise<StoreActionResult>;
     // ... projects, areas, and settings actions
 }
 ```
@@ -278,7 +279,7 @@ interface TaskStore {
 The store uses injected storage adapters:
 
 ```typescript
-// Desktop: Tauri file system
+// Desktop: Tauri-backed SQLite
 setStorageAdapter(tauriStorage);
 
 // Mobile: SQLite (with JSON backup fallback)

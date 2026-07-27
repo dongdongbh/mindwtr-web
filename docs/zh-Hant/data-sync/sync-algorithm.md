@@ -6,7 +6,7 @@ Mindwtr 採用在地優先同步，並以確定性方式處理衝突。
 
 ## 輸入與輸出
 
-- 輸入 A：本機快照（`tasks`、`projects`、`sections`、`areas`、`settings`）
+- 輸入 A：本機快照（`tasks`、`projects`、`sections`、`areas`、`people`、`settings`）
 - 輸入 B：遠端快照（相同形狀）
 - 輸出：合併快照 + 合併統計（`conflicts`、`clockSkew`、`timestampAdjustments`、`futureTimestampClamps`、`conflictIds`、`conflictReasonCounts`、`conflictSamples`、`timestampAdjustmentIds`、`futureTimestampClampIds`），另加有界同步診斷日誌。
 

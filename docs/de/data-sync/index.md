@@ -274,7 +274,7 @@ Mindwtr synchronisiert in folgenden Situationen automatisch:
 - **Bei Fokusverlust/Hintergrund**: wenn von der Desktop-App weg gewechselt wird, jedoch nur bei ausstehenden lokalen Änderungen, die übertragen werden müssen.
 - **Periodischer Desktop-Heartbeat**: alle 15 Minuten, solange Mindwtr läuft.
 
-Schlägt eine automatische Synchronisierung fehl, pausiert Mindwtr automatische Wiederholungsversuche etwa 60 Sekunden lang. Während dieser Abklingzeit bleibt die manuelle Synchronisierung möglich.
+Automatische Wiederholungsversuche nach Backend-Fehlern beginnen nach etwa einer Minute und verlängern sich bei wiederholten Fehlern auf bis zu zehn Minuten. Vom Anbieter vorgegebene Wartezeiten können davon abweichen. Die manuelle Synchronisierung bleibt verfügbar.
 
 ### Synchronisierte Einstellungen
 
@@ -381,8 +381,8 @@ Manche Cloud-Anbieter bieten unter iOS in „Dateien“ keine Ordnerauswahl an. 
 Mobilgeräte synchronisieren jetzt automatisch:
 
 - beim Wechsel in den Hintergrund
-- 5 Sekunden nach Datenänderungen
-- bei Rückkehr, wenn mehr als 30 Sekunden vergangen sind
+- nach Datenänderungen mit backendabhängiger Entprellung (Remote: 2 Sekunden bei der ersten und 5 Sekunden bei fortlaufenden Änderungen; Datei: 8 bzw. 15 Sekunden) und einer an die letzte Synchronisierungsdauer angepassten Taktung
+- bei Rückkehr, wenn bei Remote-Backends mehr als 30 Sekunden oder bei Dateisynchronisierung mehr als 45 Sekunden vergangen sind
 
 Unter „Einstellungen“ kann **Synchronisieren** außerdem jederzeit manuell angetippt werden.
 
@@ -489,7 +489,7 @@ Mindwtr kann Todoist-Exporte unter **Einstellungen → Daten → Aus Todoist imp
 - Todoist-Projekte → Projekte
 - Todoist-Abschnitte → Abschnitte
 - Unteraufgaben → Checklistenpunkte
-- importierte Aufgaben bleiben zur GTD-Verarbeitung im **Posteingang**
+- jede importierte aktive Aufgabe wird im erzeugten Projekt zu einer **Nächsten Aktion**
 
 Wiederkehrende Todoist-Pläne werden nicht automatisch neu erstellt. Mindwtr importiert die Aufgabe einmal und behält den ursprünglichen Wiederholungstext in der Beschreibung.
 

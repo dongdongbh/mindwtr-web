@@ -14,7 +14,7 @@ Mindwtr 內建選用的 AI 助理，可協助釐清任務、拆解任務，並�
 - **Google Gemini**
 - **Anthropic (Claude)**
 
-請在**設定 → AI 助理**中設定：
+請在桌面版的**設定 → AI 助理**或行動版的**選單 → 設定 → 進階 → AI 助理**中設定：
 
 - 啟用／停用 AI
 - 服務供應商
@@ -35,7 +35,7 @@ Mindwtr 可連接任何公開 **OpenAI 相容 Chat Completions API** 的服務�
 - **OpenAI 相容託管服務供應商**：例如 GLM，或其他公開 OpenAI 相容端點的供應商。
 
 1. 視需要啟動 OpenAI 相容端點，或取得其存取權。
-2. 在**設定 → AI 助理**中：
+2. 在桌面版的**設定 → AI 助理**或行動版的**選單 → 設定 → 進階 → AI 助理**中：
    - 將**服務供應商**設為 **OpenAI**
    - 將**模型**設為該服務公開的模型名稱
    - 將**自訂 base URL** 設為該服務的 base URL
@@ -108,5 +108,5 @@ Copilot 絕不會在未經你核准的情況下套用變更。
 - 回應會解析為結構化 JSON；若解析失敗，不會套用任何變更。
 ## Whisper 語言代碼
 
-若使用 Whisper 離線模型，可在設定 → AI 助理 → 音訊語言中指定語言代碼。
+若使用 Whisper 離線模型，可在桌面版的**設定 → AI 助理 → 音訊語言**或行動版的**選單 → 設定 → 進階 → AI 助理 → 音訊語言**中指定語言代碼。
 語言清單請參閱：[Whisper language list](https://whisper-api.com/docs/languages/)。

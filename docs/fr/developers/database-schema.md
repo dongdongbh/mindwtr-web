@@ -81,8 +81,8 @@ Définitions de filtres enregistrés pour la vue Focus.
 
 - `name`, `icon`, `view` : métadonnées d’affichage
 - `criteria` : critères sérialisés
-- `sortBy`, `sortOrder` : ordre enregistré facultatif
-- `createdAt`, `updatedAt` : métadonnées locales
+- `sortBy`, `sortOrder`, `groupBy` : ordre et regroupement enregistrés facultatifs
+- `createdAt`, `updatedAt`, `deletedAt` : horodatages et métadonnées de suppression logique
 
 ### `calendar_sync`
 
@@ -112,6 +112,8 @@ Champs de tâches indexés :
 - `tags`
 - `contexts`
 - `location`
+- `checklist`
+- `assignedTo`
 
 ### `projects_fts`
 

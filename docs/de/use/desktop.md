@@ -18,7 +18,7 @@ Die Desktop-App besitzt eine Seitenleistennavigation mit allen GTD-Ansichten und
 
 Wenn Sie das Fälligkeitsdatum einer Aufgabe wiederholt nach hinten verschieben, zeigt die Zeile nach der dritten Verschiebung neben dem Datum eine kleine Sanduhr mit der Anzahl. Sie erinnert daran, dass die Aufgabe möglicherweise erneut geklärt, delegiert oder verworfen werden sollte, statt sie erneut aufzuschieben.
 
-Die meisten Aufgabenlisten verwenden dieselbe Steuerungszeile zum Auswählen, Filtern, Sortieren, Gruppieren, Anzeigen von Details und Umschalten der Listendichte (Komfortabel, Kompakt oder Verdichtet). Mit **Gruppieren** ordnen Sie Posteingang, Nächste Aktionen, Warten, Irgendwann/Vielleicht, Referenz, Erledigt und andere Listen nach Metadaten wie Kontext, Bereich, Projekt oder Tag.
+Die meisten Aufgabenlisten verwenden dieselbe Steuerungszeile zum Auswählen, Filtern, Sortieren, Gruppieren, Anzeigen von Details und Umschalten der Listendichte (Komfortabel, Kompakt oder Verdichtet). Mit **Gruppieren** ordnen Sie Posteingang, Nächste Aktionen, Warten, Irgendwann/Vielleicht, Referenz, Erledigt und andere Listen nach Metadaten wie Kontext, Bereich, Projekt oder Tag. Erledigt bietet zusätzlich die Gruppierung **Abschlussdatum** – Heute, Gestern, Letzte 7 Tage, Früher und Nicht abgeschlossen – auf Basis Ihrer lokalen Kalendertage, sodass die Liste sich wie ein Protokoll des Erledigten liest. Leere Gruppen werden ausgeblendet.
 
 ## Fokusmodus
 
@@ -449,6 +449,7 @@ Aufgaben sortieren nach:
 - Wiedervorlagedatum
 - Titel (alphabetisch)
 - Erstellt (älteste/neueste)
+- Abschlussdatum (nur Erledigt) – neueste zuerst, nie abgeschlossene Aufgaben am Ende
 
 Innerhalb eines Projekts wird die gewählte Sortierung pro Projekt gemerkt und mit Ihren anderen Geräten synchronisiert. Projekte ohne gewählte Sortierung verwenden die manuelle Reihenfolge; das Ziehen zum Umsortieren bleibt verfügbar, solange ein Projekt auf Standard steht.
 

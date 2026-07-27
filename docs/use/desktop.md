@@ -18,7 +18,7 @@ The desktop app features a sidebar navigation with all GTD views and a main cont
 
 If you keep pushing a task's due date later, its row shows a small hourglass badge with the number of postponements (after the third push) next to the due date. The badge is a nudge that the task may need re-clarifying, delegating, or dropping instead of another deferral.
 
-Most task lists share the same control row for selecting tasks, filtering, sorting, grouping, showing details, and switching list density (Comfortable, Compact, or Condensed). Use **Group** to organize Inbox, Next, Waiting, Someday/Maybe, Reference, Done, and other list views by metadata such as context, area, project, or tag.
+Most task lists share the same control row for selecting tasks, filtering, sorting, grouping, showing details, and switching list density (Comfortable, Compact, or Condensed). Use **Group** to organize Inbox, Next, Waiting, Someday/Maybe, Reference, Done, and other list views by metadata such as context, area, project, or tag. Done adds a **Completion date** grouping — Today, Yesterday, Previous 7 days, Earlier, and Not completed — using your local calendar days, so it reads as a log of what you finished when. Empty groups are hidden.
 
 ## Focus Mode
 
@@ -452,6 +452,7 @@ Use the sort dropdown to order tasks by:
 - Review date
 - Title (alphabetical)
 - Created (oldest/newest)
+- Completion date (Done only) — newest first, with anything never completed last
 
 Inside a project, the chosen sort is remembered per project and syncs to your other devices. Projects without a chosen sort use manual order, and drag-reordering stays available while a project is on Default.
 

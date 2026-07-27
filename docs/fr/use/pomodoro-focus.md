@@ -32,7 +32,7 @@ Cette fonction est **désactivée** par défaut pour préserver une vue Focus mi
 
 L’association à une tâche est facultative et désactivée par défaut. Activez **Paramètres → GTD → Minuteur Pomodoro → Lier le minuteur à une tâche** pour afficher le sélecteur et l’action **Marquer la tâche comme terminée** dans Focus.
 
-Sur ordinateur, le panneau peut se replier : le chevron de son en-tête le réduit à une fine ligne qui n’affiche que le temps restant et la phase, sans arrêter le minuteur. Cet état est mémorisé et le bouton de lecture d’une tâche rouvre le panneau.
+Sur ordinateur comme sur mobile, le panneau peut se replier : le chevron de son en-tête le réduit à une fine ligne qui n’affiche que le temps restant et la phase, sans arrêter le minuteur. Cet état est mémorisé par appareil plutôt que synchronisé, et le panneau démarre déplié. Sur ordinateur, le bouton de lecture d’une tâche rouvre le panneau.
 
 Commandes :
 

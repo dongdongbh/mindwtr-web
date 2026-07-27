@@ -32,7 +32,7 @@ Diese Funktion ist standardmäßig **deaktiviert**, damit „Fokus“ minimalist
 
 Die Aufgabenverknüpfung ist optional und standardmäßig deaktiviert. Aktivieren Sie **Einstellungen → GTD → Pomodoro-Zeitgeber → Zeitgeber mit Aufgabe verknüpfen**, wenn Sie in „Fokus“ die Auswahl der Zeitgeberaufgabe und die Aktion **Aufgabe als erledigt markieren** verwenden möchten.
 
-Auf dem Desktop kann das Feld eingeklappt werden: Der Pfeil in seiner Kopfzeile reduziert es auf eine schmale Zeile, die nur Restzeit und Phase zeigt; der Zeitgeber läuft weiter. Der Einklappzustand wird gespeichert, und beim Drücken der Wiedergabeschaltfläche einer Aufgabe öffnet sich das Feld wieder.
+Auf Desktop und Mobilgeräten kann das Feld eingeklappt werden: Der Pfeil in seiner Kopfzeile reduziert es auf eine schmale Zeile, die nur Restzeit und Phase zeigt; der Zeitgeber läuft weiter. Der Einklappzustand wird pro Gerät gespeichert statt synchronisiert, und das Feld startet ausgeklappt. Auf dem Desktop öffnet die Wiedergabeschaltfläche einer Aufgabe das Feld wieder.
 
 Steuerelemente:
 - **Zeitgeber**: Start/Pause, Zurücksetzen und Phase wechseln

@@ -89,6 +89,21 @@ Wenn Sie die Synchronisierung verwenden, betrachten Sie die Wiederherstellung zu
 
 ---
 
+## Wiederherstellung und Synchronisierung
+
+Eine Wiederherstellung gilt als bewusste Entscheidung und nicht als weitere Änderung, die zusammengeführt wird:
+
+- Datensätze aus der Sicherung werden mit einer höheren Revision zurückgeschrieben, als die Gegenstelle hat, und gewinnen daher die nächste Zusammenführung.
+- Datensätze, die das wiederherstellende Gerät kannte, die aber nicht in der Sicherung enthalten sind, werden als gelöscht markiert, damit die Gegenstelle sie beim nächsten Synchronisieren nicht zurückgibt.
+
+Der zweite Punkt sorgt dafür, dass eine Wiederherstellung Bestand hat. Andernfalls liegt alles, was nach dem Erstellen der Sicherung angelegt wurde, weiterhin auf der Gegenstelle, und der nächste Abgleich wertet das Fehlen als neuen Datensatz und stellt ihn wieder her.
+
+Datensätze, die dieses Gerät nie gesehen hat, bleiben unangetastet. Hat ein anderes Gerät Aufgaben angelegt, während dieses offline war, löscht eine Wiederherstellung hier sie nicht.
+
+Da eine Wiederherstellung diese Löschungen an alle synchronisierten Geräte weitergibt, stellen Sie auf einem Gerät wieder her und lassen Sie es synchronisieren, bevor Sie die anderen verwenden.
+
+---
+
 ## Tipps
 
 - Bewahren Sie zusätzlich zur Synchronisierung regelmäßige manuelle Exporte auf.

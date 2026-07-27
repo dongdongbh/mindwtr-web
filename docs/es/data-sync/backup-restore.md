@@ -89,6 +89,21 @@ Si usas sincronización, considera la restauración como la sustitución inicial
 
 ---
 
+## Restauración y sincronización
+
+Una restauración se trata como una decisión deliberada, no como una edición más que deba combinarse:
+
+- Los registros que contiene la copia se reescriben con una revisión superior a la del servidor remoto, de modo que la versión restaurada gana la siguiente combinación.
+- Los registros que el dispositivo conocía pero que la copia no contiene se marcan como eliminados, para que el servidor remoto no los devuelva en la siguiente sincronización.
+
+Ese segundo punto es lo que hace que una restauración se mantenga. Sin él, todo lo creado después de hacer la copia sigue existiendo en el servidor remoto, y la siguiente sincronización interpreta su ausencia como un registro nuevo y lo restaura.
+
+Los registros que este dispositivo nunca vio no se tocan. Si otro dispositivo creó tareas mientras este estaba sin conexión, restaurar una copia aquí no las elimina.
+
+Como la restauración propaga esas eliminaciones a todos los dispositivos sincronizados, restaura en un dispositivo y deja que se sincronice antes de usar los demás.
+
+---
+
 ## Consejos
 
 - Conserva exportaciones manuales periódicas además de la sincronización.

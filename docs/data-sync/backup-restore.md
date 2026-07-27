@@ -89,6 +89,21 @@ If you use sync, think of restore as replacing the current local state first. Sy
 
 ---
 
+## Restore and Sync
+
+A restore is treated as a deliberate decision, not as one more edit to be merged:
+
+- Records the backup contains are written back at a revision above whatever the remote holds, so the restored version wins the next merge
+- Records the restoring device knew about but the backup does not contain are marked deleted, so the remote does not hand them back on the next sync
+
+That second point is what makes a restore stick. Without it, anything created after the backup was taken still exists on the remote, and the next sync reads its absence as a new record and restores it.
+
+Records this device had never seen are left alone. If another device created tasks while this one was offline, restoring a backup here does not delete them.
+
+Because a restore now propagates those deletions to every synced device, restore on one device and let it sync before using the others.
+
+---
+
 ## Tips
 
 - Keep periodic manual exports in addition to sync

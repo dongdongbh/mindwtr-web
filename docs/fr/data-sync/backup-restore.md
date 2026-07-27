@@ -89,6 +89,21 @@ Si vous utilisez la synchronisation, considérez que la restauration remplace d�
 
 ---
 
+## Restauration et synchronisation
+
+Une restauration est traitée comme une décision délibérée, et non comme une modification de plus à fusionner :
+
+- Les enregistrements présents dans la sauvegarde sont réécrits à une révision supérieure à celle du serveur distant, si bien que la version restaurée l’emporte lors de la fusion suivante.
+- Les enregistrements que l’appareil connaissait mais qui sont absents de la sauvegarde sont marqués comme supprimés, afin que le serveur distant ne les rende pas à la synchronisation suivante.
+
+C’est ce second point qui fait tenir une restauration. Sans lui, tout ce qui a été créé après la sauvegarde existe encore sur le serveur distant, et la synchronisation suivante interprète cette absence comme un nouvel enregistrement et le restaure.
+
+Les enregistrements que cet appareil n’a jamais vus ne sont pas touchés. Si un autre appareil a créé des tâches pendant que celui-ci était hors ligne, une restauration ici ne les supprime pas.
+
+Comme une restauration propage ces suppressions à tous les appareils synchronisés, restaurez sur un appareil et laissez-le se synchroniser avant d’utiliser les autres.
+
+---
+
 ## Conseils
 
 - Conservez des exports manuels réguliers en complément de la synchronisation.

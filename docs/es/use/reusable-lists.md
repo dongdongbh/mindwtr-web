@@ -17,7 +17,7 @@ Ejemplo: **Lista de equipaje**
 Al duplicar se restablece lo siguiente:
 
 - los elementos de la lista empiezan sin marcar;
-- se borra la finalización, y la copia de una tarea completada o archivada vuelve como **Próxima acción**;
+- se borra la finalización, y la copia de una tarea completada o archivada llega a la **Bandeja de entrada** para volver a aclararla;
 - la copia queda fuera del Enfoque de hoy;
 - los archivos adjuntos no se copian; los enlaces sí;
 - la copia se convierte en una tarea nueva, con identificadores nuevos para la lista y los adjuntos.

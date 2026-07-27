@@ -16,7 +16,7 @@ Example: **Packing List**
 What duplication resets:
 
 - checklist items start unchecked
-- completion is cleared, and a copy of a done or archived task comes back as a **Next Action**
+- completion is cleared, and a copy of a done or archived task lands in the **Inbox** to be clarified again
 - the copy is dropped from Today's Focus
 - file attachments are left behind; links are copied
 - the copy becomes a fresh task with new checklist and attachment IDs

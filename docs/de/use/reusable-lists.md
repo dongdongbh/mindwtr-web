@@ -17,7 +17,7 @@ Beispiel: **Packliste**
 Beim Duplizieren wird Folgendes zurückgesetzt:
 
 - Checklistenpunkte beginnen unabgehakt.
-- Die Erledigung wird zurückgesetzt; die Kopie einer erledigten oder archivierten Aufgabe kehrt als **Nächste Aktion** zurück.
+- Die Erledigung wird zurückgesetzt; die Kopie einer erledigten oder archivierten Aufgabe landet im **Eingang** und wird erneut geklärt.
 - Die Kopie wird nicht in den Heutigen Fokus übernommen.
 - Dateianhänge werden nicht kopiert; Links schon.
 - Die Kopie wird zu einer neuen Aufgabe mit neuen Checklisten- und Anhangs-IDs.

@@ -17,7 +17,7 @@ Exemple : **Liste pour la valise**
 La duplication réinitialise les éléments suivants :
 
 - les éléments de la liste de contrôle sont tous décochés ;
-- l’achèvement est effacé, et la copie d’une tâche terminée ou archivée revient en **Prochaine action** ;
+- l’achèvement est effacé, et la copie d’une tâche terminée ou archivée arrive dans la **Boîte de réception** pour être clarifiée à nouveau ;
 - la copie n’est pas reprise dans le Focus du jour ;
 - les pièces jointes ne sont pas copiées ; les liens le sont ;
 - la copie devient une nouvelle tâche avec de nouveaux identifiants de liste de contrôle et de pièces jointes.

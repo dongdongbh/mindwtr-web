@@ -437,7 +437,7 @@ Select multiple tasks to perform batch operations:
    - **Move**: Change status for all selected
    - **Assign Area**: Move all selected tasks under a specific area (or clear the area)
    - **Add Tag**: Add a tag to all selected
-   - **Remove Tag**: Remove a tag from all selected tasks
+   - **Remove Tag**: Remove one or more tags from all selected tasks
    - **Add Context**: Add a context to all selected tasks
    - **Remove Context**: Remove a context from all selected tasks
    - **Delete**: Delete all selected

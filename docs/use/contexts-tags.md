@@ -157,15 +157,17 @@ When you want to clean up or rename reusable metadata:
 
 Areas and People can also be created while assigning them. Type in the **Area** picker or **Assigned to** field, then choose **Create** or **New Person** when there is no exact match.
 
-### Bulk Editing Contexts
+### Bulk Editing Contexts & Tags
 
-On desktop, you can update contexts across many tasks at once:
+You can update contexts and tags across many tasks at once:
 
 1. Enter **Select** mode in a list view
 2. Choose the tasks you want to edit
-3. Use **Add Context** or **Remove Context** in the bulk action bar
+3. Use **Add Tag**, **Remove Tag**, **Add Context**, or **Remove Context** in the bulk action bar
 
-This is useful when you want to reclassify a whole batch of tasks after a weekly review or project planning pass.
+The remove actions list only the values the selected tasks actually carry, and you can pick several at once. Tasks that do not have a picked value are left untouched.
+
+This is useful when you want to reclassify a whole batch of tasks after a weekly review or project planning pass. Mobile offers **Add Tag** and **Remove Tag** on the same selection bar.
 
 ---
 

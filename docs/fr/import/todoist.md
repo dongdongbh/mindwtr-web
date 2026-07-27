@@ -19,10 +19,10 @@ Mindwtr transpose les exports Todoist dans son modèle en privilégiant GTD :
 - les sections Todoist deviennent des **sections Mindwtr** ;
 - les sous-tâches Todoist deviennent des **éléments de liste de contrôle** ;
 - les libellés Todoist deviennent des **tags** ;
-- les tâches actives affectées à un projet deviennent des **Prochaines actions** dans leur projet Mindwtr ;
-- les tâches actives non affectées restent disponibles pour le traitement dans la **Boîte de réception**.
+- chaque fichier CSV/projet Todoist devient un projet Mindwtr ;
+- toutes les tâches actives importées deviennent des **Prochaines actions** dans ce projet.
 
-Mindwtr évite ainsi d’envoyer dans la Boîte de réception les tâches de projet déjà organisées, tout en laissant les tâches isolées prêtes pour le traitement GTD.
+L’importateur affecte chaque tâche active au projet qu’il crée.
 
 ---
 
@@ -51,9 +51,8 @@ Avant l’import, Mindwtr enregistre si possible un instantané de récupératio
 
 Après l’import :
 
-- les projets nécessaires sont créés ;
-- les tâches actives affectées à un projet apparaissent dans leur projet comme **Prochaines actions** ;
-- les tâches actives non affectées restent disponibles pour le traitement dans la **Boîte de réception** ;
+- un projet est créé pour chaque fichier CSV/projet Todoist importé ;
+- toutes les tâches actives importées apparaissent comme **Prochaines actions** dans ces projets ;
 - des avertissements signalent les tâches récurrentes, les lignes ignorées ou les entrées d’archive non prises en charge.
 
 ---

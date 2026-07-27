@@ -19,10 +19,10 @@ Mindwtr ordnet Todoist-Exporte mit Blick auf GTD dem eigenen Modell zu:
 - Todoist-Abschnitte werden zu **Mindwtr-Abschnitten**.
 - Todoist-Unteraufgaben werden zu **Checklistenpunkten**.
 - Todoist-Labels werden zu **Tags**.
-- Aktive Aufgaben in einem Projekt werden zu **Nächsten Aktionen** ihres Mindwtr-Projekts.
-- Aktive Aufgaben ohne Zuweisung bleiben zur Verarbeitung im **Posteingang** verfügbar.
+- Jede Todoist-CSV bzw. jedes Todoist-Projekt wird zu einem Mindwtr-Projekt.
+- Alle importierten aktiven Aufgaben werden in diesem Projekt zu **Nächsten Aktionen**.
 
-So landet bereits organisierte Projektarbeit nicht unnötig im Posteingang, während lose Aufgaben weiterhin für die GTD-Verarbeitung bereitstehen.
+Der Importer ordnet jede aktive Aufgabe ihrem neu erzeugten Projekt zu.
 
 ---
 
@@ -51,9 +51,8 @@ Vor dem Import speichert Mindwtr, sofern unterstützt, eine Wiederherstellungsmo
 
 Nach dem Import:
 
-- werden bei Bedarf neue Projekte erstellt,
-- erscheinen aktive Aufgaben mit Projektzuweisung als **Nächste Aktionen** im jeweiligen Projekt,
-- bleiben aktive Aufgaben ohne Zuweisung zur Verarbeitung im **Posteingang** verfügbar und
+- wird für jede importierte Todoist-CSV bzw. jedes Todoist-Projekt ein neues Projekt erstellt,
+- erscheinen alle importierten aktiven Aufgaben in diesen Projekten als **Nächste Aktionen** und
 - werden Warnungen für wiederkehrende Aufgaben, übersprungene Zeilen und nicht unterstützte Archiveinträge angezeigt.
 
 ---

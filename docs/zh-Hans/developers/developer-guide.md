@@ -132,7 +132,7 @@ Mindwtr/
 | `bun mobile:start`   | 启动 Expo 开发服务器 |
 | `bun mobile:android` | 在 Android 上运行    |
 | `bun mobile:ios`     | 在 iOS 上运行        |
-| `bun test`           | 运行所有测试         |
+| `bun run test`       | 运行所有测试         |
 | `bun mindwtr:cli`    | 运行 CLI 工具         |
 | `bun mindwtr:api`    | 运行本地 API 服务器   |
 
@@ -142,7 +142,7 @@ Mindwtr/
 | ----------- | ---------------------- |
 | `bun dev`   | 使用热重载的开发模式   |
 | `bun build` | 构建生产版本           |
-| `bun test`  | 运行测试               |
+| `bun run test` | 运行测试               |
 
 ### 移动端（`apps/mobile`）
 
@@ -163,7 +163,7 @@ Mindwtr/
 
 | 命令        | 说明         |
 | ----------- | ------------ |
-| `bun test`  | 运行单元测试 |
+| `bun run test` | 运行单元测试 |
 | `bun build` | 构建软件包   |
 
 ---
@@ -201,7 +201,7 @@ Mindwtr/
 
 1. 创建功能分支
 2. 在相关软件包中进行更改
-3. 运行测试：`bun test`
+3. 运行测试：`bun run test`
 4. 在桌面端测试：`bun desktop:dev`
 5. 在移动端测试：`bun mobile:start`
 6. 使用描述清楚的消息提交更改
@@ -220,13 +220,13 @@ Mindwtr/
 
 ```bash
 # Run all tests
-bun test
+bun run test
 
 # Run desktop tests
-cd apps/desktop && bun test
+cd apps/desktop && bun run test
 
 # Run core tests
-cd packages/core && bun test
+cd packages/core && bun run test
 ```
 
 ---

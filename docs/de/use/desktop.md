@@ -34,6 +34,7 @@ Mindwtr läuft für die automatische Synchronisierung im Hintergrund.
 - Beim **Schließen des Fensters** wird die App in die Taskleiste minimiert, statt beendet.
 - Ein **Klick auf das Taskleistensymbol** zeigt oder verbirgt das Fenster.
 - Ein **Rechtsklick auf das Taskleistensymbol** bietet „Beenden“, um die App vollständig zu schließen.
+- **Beim Anmelden starten** öffnet das Fenster automatisch ausgeblendet in der Taskleiste, solange das Taskleistensymbol aktiviert ist; wenn Sie die App selbst öffnen, wird das Fenster immer angezeigt.
 
 ## Ansichten
 

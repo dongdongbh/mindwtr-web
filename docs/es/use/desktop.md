@@ -34,6 +34,7 @@ Mindwtr se ejecuta en segundo plano para gestionar la sincronización automátic
 - **Cerrar la ventana** minimiza la aplicación a la bandeja del sistema en vez de salir.
 - **Haz clic en el icono de la bandeja** para mostrar u ocultar la ventana.
 - **Haz clic derecho en el icono de la bandeja** para salir por completo de la aplicación.
+- **Iniciar al entrar en el sistema** abre automáticamente la ventana oculta en la bandeja mientras el icono de bandeja esté activado; si abres la aplicación manualmente, la ventana siempre se muestra.
 
 ## Vistas
 

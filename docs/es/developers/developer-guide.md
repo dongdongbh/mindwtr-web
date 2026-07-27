@@ -132,7 +132,7 @@ Fuente de la documentación pública: https://github.com/dongdongbh/mindwtr-web/
 | `bun mobile:start`   | Iniciar el servidor de desarrollo de Expo |
 | `bun mobile:android` | Ejecutar en Android                |
 | `bun mobile:ios`     | Ejecutar en iOS                    |
-| `bun test`           | Ejecutar todas las pruebas         |
+| `bun run test`       | Ejecutar todas las pruebas         |
 | `bun mindwtr:cli`    | Ejecutar la herramienta CLI        |
 | `bun mindwtr:api`    | Ejecutar el servidor de API local  |
 
@@ -142,7 +142,7 @@ Fuente de la documentación pública: https://github.com/dongdongbh/mindwtr-web/
 | ----------- | ---------------------------------------- |
 | `bun dev`   | Modo de desarrollo con recarga en caliente |
 | `bun build` | Compilar para producción                 |
-| `bun test`  | Ejecutar las pruebas                     |
+| `bun run test` | Ejecutar las pruebas                     |
 
 ### Móvil (`apps/mobile`)
 
@@ -163,7 +163,7 @@ Fuente de la documentación pública: https://github.com/dongdongbh/mindwtr-web/
 
 | Comando     | Descripción                       |
 | ----------- | --------------------------------- |
-| `bun test`  | Ejecutar las pruebas unitarias    |
+| `bun run test` | Ejecutar las pruebas unitarias    |
 | `bun build` | Compilar el paquete               |
 
 ---
@@ -201,7 +201,7 @@ Quienes contribuyan deben tratar el transporte de instantáneas como una elecci�
 
 1. Crea una rama de función
 2. Realiza cambios en el paquete correspondiente
-3. Ejecuta las pruebas: `bun test`
+3. Ejecuta las pruebas: `bun run test`
 4. Prueba en escritorio: `bun desktop:dev`
 5. Prueba en móvil: `bun mobile:start`
 6. Haz un commit con un mensaje descriptivo
@@ -220,13 +220,13 @@ Al añadir un nuevo tipo de entidad de nivel superior, actualiza toda la superfi
 
 ```bash
 # Run all tests
-bun test
+bun run test
 
 # Run desktop tests
-cd apps/desktop && bun test
+cd apps/desktop && bun run test
 
 # Run core tests
-cd packages/core && bun test
+cd packages/core && bun run test
 ```
 
 ---

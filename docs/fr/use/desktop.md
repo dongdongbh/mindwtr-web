@@ -34,6 +34,7 @@ Mindwtr fonctionne en arrière-plan pour gérer la synchronisation automatique.
 - **Fermer la fenêtre** réduit l’application dans la zone de notification système au lieu de la quitter.
 - **Cliquez sur l’icône de la zone de notification** pour afficher ou masquer la fenêtre.
 - **Faites un clic droit sur l’icône de la zone de notification** pour quitter complètement l’application.
+- **Lancer à l’ouverture de session** démarre automatiquement avec la fenêtre masquée dans la zone de notification tant que son icône est activée ; lorsque vous ouvrez vous-même l’application, la fenêtre est toujours affichée.
 
 ## Vues
 

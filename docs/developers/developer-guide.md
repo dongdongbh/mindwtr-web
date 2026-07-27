@@ -132,7 +132,7 @@ Public docs source: https://github.com/dongdongbh/mindwtr-web/tree/main/docs
 | `bun mobile:start`   | Start Expo dev server    |
 | `bun mobile:android` | Run on Android           |
 | `bun mobile:ios`     | Run on iOS               |
-| `bun test`           | Run all tests            |
+| `bun run test`       | Run all tests            |
 | `bun mindwtr:cli`    | Run CLI tool             |
 | `bun mindwtr:api`    | Run local API server     |
 
@@ -142,7 +142,7 @@ Public docs source: https://github.com/dongdongbh/mindwtr-web/tree/main/docs
 | ----------- | ------------------------ |
 | `bun dev`   | Dev mode with hot reload |
 | `bun build` | Build for production     |
-| `bun test`  | Run tests                |
+| `bun run test` | Run tests                |
 
 ### Mobile (`apps/mobile`)
 
@@ -163,7 +163,7 @@ Public docs source: https://github.com/dongdongbh/mindwtr-web/tree/main/docs
 
 | Command     | Description    |
 | ----------- | -------------- |
-| `bun test`  | Run unit tests |
+| `bun run test` | Run unit tests |
 | `bun build` | Build package  |
 
 ---
@@ -201,7 +201,7 @@ Contributors should treat the snapshot transport as a deliberate product choice,
 
 1. Create a feature branch
 2. Make changes in the relevant package
-3. Run tests: `bun test`
+3. Run tests: `bun run test`
 4. Test on desktop: `bun desktop:dev`
 5. Test on mobile: `bun mobile:start`
 6. Commit with descriptive message
@@ -220,13 +220,13 @@ When adding a new top-level entity type, update the full persistence and sync su
 
 ```bash
 # Run all tests
-bun test
+bun run test
 
 # Run desktop tests
-cd apps/desktop && bun test
+cd apps/desktop && bun run test
 
 # Run core tests
-cd packages/core && bun test
+cd packages/core && bun run test
 ```
 
 ---

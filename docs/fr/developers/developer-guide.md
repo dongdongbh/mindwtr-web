@@ -132,7 +132,7 @@ Sources de la documentation publique : https://github.com/dongdongbh/mindwtr-web
 | `bun mobile:start`   | Démarrer le serveur de développement Expo |
 | `bun mobile:android` | Exécuter sur Android                   |
 | `bun mobile:ios`     | Exécuter sur iOS                       |
-| `bun test`           | Exécuter tous les tests                |
+| `bun run test`       | Exécuter tous les tests                |
 | `bun mindwtr:cli`    | Exécuter l'outil CLI                   |
 | `bun mindwtr:api`    | Exécuter le serveur d'API local        |
 
@@ -142,7 +142,7 @@ Sources de la documentation publique : https://github.com/dongdongbh/mindwtr-web
 | ----------- | ---------------------------------------- |
 | `bun dev`   | Mode développement avec rechargement à chaud |
 | `bun build` | Construire pour la production            |
-| `bun test`  | Exécuter les tests                       |
+| `bun run test` | Exécuter les tests                       |
 
 ### Mobile (`apps/mobile`)
 
@@ -163,7 +163,7 @@ Sources de la documentation publique : https://github.com/dongdongbh/mindwtr-web
 
 | Commande    | Description               |
 | ----------- | ------------------------- |
-| `bun test`  | Exécuter les tests unitaires |
+| `bun run test` | Exécuter les tests unitaires |
 | `bun build` | Construire le paquet      |
 
 ---
@@ -201,7 +201,7 @@ Les contributeurs doivent considérer le transport par instantanés comme un cho
 
 1. Créez une branche de fonctionnalité
 2. Apportez les modifications dans le paquet concerné
-3. Exécutez les tests : `bun test`
+3. Exécutez les tests : `bun run test`
 4. Testez sur ordinateur : `bun desktop:dev`
 5. Testez sur mobile : `bun mobile:start`
 6. Validez avec un message descriptif
@@ -220,13 +220,13 @@ Lors de l'ajout d'un nouveau type d'entité de premier niveau, mettez à jour to
 
 ```bash
 # Exécuter tous les tests
-bun test
+bun run test
 
 # Exécuter les tests de bureau
-cd apps/desktop && bun test
+cd apps/desktop && bun run test
 
 # Exécuter les tests du noyau
-cd packages/core && bun test
+cd packages/core && bun run test
 ```
 
 ---

@@ -132,7 +132,7 @@ Quelle der öffentlichen Dokumentation: https://github.com/dongdongbh/mindwtr-we
 | `bun mobile:start`   | Expo-Entwicklungsserver starten    |
 | `bun mobile:android` | Unter Android ausführen           |
 | `bun mobile:ios`     | Unter iOS ausführen               |
-| `bun test`           | Alle Tests ausführen            |
+| `bun run test`       | Alle Tests ausführen            |
 | `bun mindwtr:cli`    | CLI-Werkzeug ausführen             |
 | `bun mindwtr:api`    | Lokalen API-Server ausführen     |
 
@@ -142,7 +142,7 @@ Quelle der öffentlichen Dokumentation: https://github.com/dongdongbh/mindwtr-we
 | ----------- | ------------------------ |
 | `bun dev`   | Entwicklungsmodus mit Hot Reload |
 | `bun build` | Für die Produktion bauen     |
-| `bun test`  | Tests ausführen                |
+| `bun run test` | Tests ausführen                |
 
 ### Mobilgeräte (`apps/mobile`)
 
@@ -163,7 +163,7 @@ Quelle der öffentlichen Dokumentation: https://github.com/dongdongbh/mindwtr-we
 
 | Befehl      | Beschreibung    |
 | ----------- | -------------- |
-| `bun test`  | Unit-Tests ausführen |
+| `bun run test` | Unit-Tests ausführen |
 | `bun build` | Paket bauen  |
 
 ---
@@ -203,7 +203,7 @@ Mitwirkende sollten den Snapshot-Transport als bewusste Produktentscheidung beha
 
 1. Einen Feature-Branch erstellen
 2. Änderungen im betreffenden Paket vornehmen
-3. Tests ausführen: `bun test`
+3. Tests ausführen: `bun run test`
 4. Auf dem Desktop testen: `bun desktop:dev`
 5. Auf Mobilgeräten testen: `bun mobile:start`
 6. Mit einer aussagekräftigen Nachricht committen
@@ -222,13 +222,13 @@ Aktualisieren Sie beim Hinzufügen eines neuen Entitätstyps auf oberster Ebene 
 
 ```bash
 # Run all tests
-bun test
+bun run test
 
 # Run desktop tests
-cd apps/desktop && bun test
+cd apps/desktop && bun run test
 
 # Run core tests
-cd packages/core && bun test
+cd packages/core && bun run test
 ```
 
 ---

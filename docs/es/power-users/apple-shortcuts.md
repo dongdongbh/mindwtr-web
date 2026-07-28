@@ -65,7 +65,7 @@ Usa **Añadir a la Bandeja de entrada de Mindwtr** para crear una tarea silencio
 | Etiquetas | No | Separadas por comas; Mindwtr las normaliza como `#tag`. |
 | Proyecto | No | Coincide con un proyecto activo por título. Los desconocidos o archivados se ignoran y la tarea llega igualmente a la Bandeja de entrada. |
 
-El texto de **Tarea** admite la [sintaxis de añadido rápido](/es/use/mobile#sintaxis-de-adicion-rapida) completa (`/due:`, `@context`, `#tag`, `+Project` y demás). Se analiza al crear la tarea, exactamente igual que en el cuadro de captura de la app; el ajuste **Limpiar texto de añadido rápido** decide si la sintaxis reconocida se elimina del título.
+El texto de **Tarea** admite la [sintaxis de añadido rápido](/es/use/mobile#sintaxis-de-adicion-rapida) completa (`/due:`, `@context`, `#tag`, `+Project` y demás). Se analiza al crear la tarea, exactamente igual que en el cuadro de captura de la app; la sintaxis reconocida sale del título igual que en la app.
 
 Al ejecutarse:
 

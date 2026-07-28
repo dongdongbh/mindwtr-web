@@ -73,7 +73,7 @@ Parameters:
 | Tags | No | Comma-separated tags. Mindwtr normalizes them to `#tag`. |
 | Project | No | Matches an active project by title. Unknown or archived projects are ignored, and the task still lands in the Inbox. |
 
-The **Task** text supports the full [quick-add syntax](/use/mobile#quick-add-syntax) (`/due:`, `@context`, `#tag`, `+Project`, and the rest). It is parsed when the task is created, exactly like the in-app capture box, and the **Clean up quick add text** setting decides whether the recognized syntax is stripped from the title.
+The **Task** text supports the full [quick-add syntax](/use/mobile#quick-add-syntax) (`/due:`, `@context`, `#tag`, `+Project`, and the rest). It is parsed when the task is created, exactly like the in-app capture box, and the recognized syntax leaves the title just as it does in the app.
 
 What happens when it runs:
 

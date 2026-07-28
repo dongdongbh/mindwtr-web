@@ -73,7 +73,7 @@ Paramètres :
 | Étiquettes | Non | Étiquettes séparées par des virgules. Mindwtr les normalise au format `#tag`. |
 | Projet | Non | Correspond à un projet actif par son titre. Les projets inconnus ou archivés sont ignorés, et la tâche arrive quand même dans la boîte de réception. |
 
-Le texte de **Tâche** prend en charge la [syntaxe d’ajout rapide](/fr/use/mobile#syntaxe-d-ajout-rapide) complète (`/due:`, `@context`, `#tag`, `+Project`, etc.). Elle est analysée à la création de la tâche, exactement comme dans la zone de capture de l’app ; le réglage **Nettoyer le texte de l’ajout rapide** détermine si la syntaxe reconnue est retirée du titre.
+Le texte de **Tâche** prend en charge la [syntaxe d’ajout rapide](/fr/use/mobile#syntaxe-d-ajout-rapide) complète (`/due:`, `@context`, `#tag`, `+Project`, etc.). Elle est analysée à la création de la tâche, exactement comme dans la zone de capture de l’app ; la syntaxe reconnue quitte le titre comme dans l’app.
 
 Ce qui se passe lors de l’exécution :
 

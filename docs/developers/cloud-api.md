@@ -113,6 +113,22 @@ Attachment paths are resolved inside the authenticated token namespace. Uploads 
 
 The orphan cleanup endpoint scans the namespace for files no longer referenced by `data.json`. It skips files modified in the last five minutes so an upload racing with a later snapshot write is not removed.
 
+## Calendar Feed
+
+```text
+GET /v1/calendar/feed
+POST /v1/calendar/feed
+DELETE /v1/calendar/feed
+
+GET /v1/calendar/:token.ics
+```
+
+The first three require the bearer token and read, rotate, and revoke the namespace's feed token. They return `{ "feed": { "token", "path", "createdAt" } }`, or `{ "feed": null }` when nothing is published. `POST` returns `404` for a namespace that has never synced data.
+
+`GET /v1/calendar/:token.ics` takes no `Authorization` header — the token in the URL is the credential — and returns `text/calendar` for that namespace. An unknown token is a `404`.
+
+The feed carries one event per scheduled task (`startTime`) and one per deadline (`dueDate`), matching what the app's Calendar view shows: completed, archived, reference, deleted, and non-active-project tasks are excluded, and a task scheduled and due on the same day appears once. Events carry a stable `UID` and the task title only — no description, checklist, attachments, tags, or project metadata.
+
 ## MCP Adapter
 
 The published `mindwtr-mcp` helper can use a self-hosted Cloud endpoint as a backend. Configure it with `--cloud-url` and `--cloud-token` or the `MINDWTR_MCP_CLOUD_URL` / `MINDWTR_MCP_CLOUD_TOKEN` environment variables.

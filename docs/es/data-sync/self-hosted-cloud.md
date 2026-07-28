@@ -46,6 +46,22 @@ Un despliegue habitual incluye:
 4. Configura Mindwtr con la URL y la credencial del servidor.
 5. Ejecuta una sincronización manual y comprueba que los mismos datos aparecen en un segundo dispositivo.
 
+## Suscripción de calendario
+
+Un servidor autoalojado puede publicar un feed iCalendar de solo lectura con tus tareas programadas y fechas límite, para que cualquier app de calendario pueda suscribirse.
+
+1. En Mindwtr para escritorio abre Ajustes, luego Sincronización, con Autoalojado seleccionado.
+2. En Suscripción de calendario elige **Generar URL**.
+3. Copia la URL y añádela como calendario suscrito en tu app de calendario.
+
+El feed muestra lo mismo que la vista Calendario: las tareas programadas a su hora de inicio, las fechas límite como eventos de día completo en su día de vencimiento, y nada que esté completado, archivado, como referencia, eliminado o en un proyecto no activo. Los eventos llevan solo el título de la tarea: las descripciones, listas de control, adjuntos, etiquetas y proyectos nunca se publican.
+
+::: warning Cualquiera con la URL puede leer el feed
+La URL es la única credencial; no lleva contraseña. Compártela como compartirías un enlace secreto, y elige **Regenerar** para invalidar la URL anterior o **Revocar** para retirar el feed por completo.
+:::
+
+El feed es de solo lectura. Editar un evento en tu app de calendario no cambia la tarea en Mindwtr, y esto no es CalDAV: el feed es unidireccional.
+
 ::: warning No guardes secretos del despliegue en Git
 Guarda los tokens, URL de bases de datos y credenciales de proveedores en tu plataforma de alojamiento o gestor de secretos local. No los confirmes en un repositorio.
 :::

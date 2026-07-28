@@ -113,6 +113,22 @@ Anhangspfade werden innerhalb des authentifizierten Token-Namensraums aufgelöst
 
 Der Endpunkt zum Bereinigen verwaister Dateien durchsucht den Namensraum nach Dateien, auf die `data.json` nicht mehr verweist. Dateien, die in den letzten fünf Minuten geändert wurden, werden übersprungen, damit ein Upload, der zeitgleich mit einem späteren Snapshot-Schreibvorgang erfolgt, nicht entfernt wird.
 
+## Kalender-Feed
+
+```text
+GET /v1/calendar/feed
+POST /v1/calendar/feed
+DELETE /v1/calendar/feed
+
+GET /v1/calendar/:token.ics
+```
+
+Die ersten drei Endpunkte benötigen den Bearer-Token und lesen, rotieren bzw. widerrufen den Feed-Token des Namespace. Sie liefern `{ "feed": { "token", "path", "createdAt" } }` oder `{ "feed": null }`, wenn nichts veröffentlicht ist. `POST` liefert `404` für einen Namespace, der noch nie Daten synchronisiert hat.
+
+`GET /v1/calendar/:token.ics` benötigt keinen `Authorization`-Header — der Token in der URL ist das Zugangsmittel — und liefert `text/calendar` für diesen Namespace. Ein unbekannter Token ergibt `404`.
+
+Der Feed enthält ein Ereignis pro geplanter Aufgabe (`startTime`) und eines pro Frist (`dueDate`), passend zur Kalenderansicht der App: erledigte, archivierte, Referenz-, gelöschte und Aufgaben aus nicht aktiven Projekten fehlen, und eine Aufgabe, die am selben Tag geplant und fällig ist, erscheint einmal. Ereignisse tragen eine stabile `UID` und nur den Aufgabentitel — keine Beschreibung, Checkliste, Anhänge, Tags oder Projektdaten.
+
 ## MCP-Adapter
 
 Die veröffentlichte Hilfsanwendung `mindwtr-mcp` kann einen selbst gehosteten Cloud-Endpunkt als Backend verwenden. Konfigurieren Sie sie mit `--cloud-url` und `--cloud-token` oder den Umgebungsvariablen `MINDWTR_MCP_CLOUD_URL` / `MINDWTR_MCP_CLOUD_TOKEN`.

@@ -46,6 +46,22 @@ Eine typische Bereitstellung umfasst:
 4. Konfigurieren Sie Mindwtr mit Server-URL und Zugangsdaten.
 5. Starten Sie eine manuelle Synchronisierung und prüfen Sie, ob dieselben Daten auf einem zweiten Gerät erscheinen.
 
+## Kalender-Abonnement
+
+Ein selbst gehosteter Server kann einen schreibgeschützten iCalendar-Feed deiner geplanten Aufgaben und Fristen veröffentlichen, den jede Kalender-App abonnieren kann.
+
+1. Öffne in Mindwtr für den Desktop die Einstellungen, dann Synchronisierung, mit ausgewähltem Selbst gehostet.
+2. Wähle unter Kalender-Abonnement **URL erzeugen**.
+3. Kopiere die URL und füge sie in deiner Kalender-App als abonnierten Kalender hinzu.
+
+Der Feed zeigt, was die Kalenderansicht zeigt: geplante Aufgaben zu ihrer Startzeit, Fristen als ganztägige Ereignisse an ihrem Fälligkeitstag, und nichts, was erledigt, archiviert, Referenz, gelöscht oder in einem nicht aktiven Projekt ist. Ereignisse tragen nur den Aufgabentitel — Beschreibungen, Checklisten, Anhänge, Tags und Projekte werden nie veröffentlicht.
+
+::: warning Wer die URL hat, kann den Feed lesen
+Die URL ist das einzige Zugangsmittel; es gibt kein Passwort darauf. Teile sie wie einen geheimen Link, und wähle **Neu erzeugen**, um die alte URL ungültig zu machen, oder **Widerrufen**, um den Feed ganz abzuschalten.
+:::
+
+Der Feed ist schreibgeschützt. Ein Ereignis in deiner Kalender-App zu bearbeiten ändert die Aufgabe in Mindwtr nicht, und das ist kein CalDAV — der Feed läuft in eine Richtung.
+
 ::: warning Geheimnisse der Bereitstellung gehören nicht in Git
 Speichern Sie Server-Token, Datenbank-URLs und Zugangsdaten bei Ihrer Hostingplattform oder in einer lokalen Geheimnisverwaltung. Committen Sie sie nicht in ein Repository.
 :::

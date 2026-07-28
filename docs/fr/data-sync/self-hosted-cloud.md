@@ -46,6 +46,22 @@ Un déploiement courant comprend :
 4. Configurez Mindwtr avec l’URL et les identifiants de votre serveur.
 5. Lancez une synchronisation manuelle et vérifiez que les mêmes données apparaissent sur un second appareil.
 
+## Abonnement au calendrier
+
+Un serveur auto-hébergé peut publier un flux iCalendar en lecture seule de vos tâches planifiées et de vos échéances, auquel n'importe quelle application de calendrier peut s'abonner.
+
+1. Dans Mindwtr pour ordinateur, ouvrez Paramètres, puis Synchronisation, avec Auto-hébergé sélectionné.
+2. Sous Abonnement au calendrier, choisissez **Générer l'URL**.
+3. Copiez l'URL et ajoutez-la comme calendrier abonné dans votre application de calendrier.
+
+Le flux montre ce que montre la vue Calendrier : les tâches planifiées à leur heure de début, les échéances comme événements sur la journée entière à leur date d'échéance, et rien de ce qui est terminé, archivé, en référence, supprimé ou dans un projet non actif. Les événements ne portent que le titre de la tâche — descriptions, check-lists, pièces jointes, étiquettes et projets ne sont jamais publiés.
+
+::: warning Toute personne disposant de l'URL peut lire le flux
+L'URL est le seul identifiant ; aucun mot de passe ne la protège. Partagez-la comme un lien secret, et choisissez **Régénérer** pour invalider l'ancienne URL ou **Révoquer** pour retirer complètement le flux.
+:::
+
+Le flux est en lecture seule. Modifier un événement dans votre application de calendrier ne change pas la tâche dans Mindwtr, et il ne s'agit pas de CalDAV — le flux est à sens unique.
+
 ::: warning Ne placez jamais les secrets de déploiement dans Git
 Stockez les jetons du serveur, URL de base de données et identifiants des fournisseurs dans votre plateforme d’hébergement ou votre gestionnaire de secrets local. Ne les validez jamais dans un dépôt.
 :::

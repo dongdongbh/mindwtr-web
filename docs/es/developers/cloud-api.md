@@ -113,6 +113,22 @@ Las rutas se resuelven dentro del espacio del token autenticado. Las subidas res
 
 La limpieza de huérfanos busca archivos sin referencia en `data.json`. Omite los modificados en los últimos cinco minutos para no eliminar una subida que compita con una escritura posterior de la instantánea.
 
+## Feed de calendario
+
+```text
+GET /v1/calendar/feed
+POST /v1/calendar/feed
+DELETE /v1/calendar/feed
+
+GET /v1/calendar/:token.ics
+```
+
+Los tres primeros requieren el token bearer y leen, rotan y revocan el token del feed del espacio de nombres. Devuelven `{ "feed": { "token", "path", "createdAt" } }`, o `{ "feed": null }` cuando no hay nada publicado. `POST` devuelve `404` para un espacio de nombres que nunca ha sincronizado datos.
+
+`GET /v1/calendar/:token.ics` no lleva cabecera `Authorization` — el token de la URL es la credencial — y devuelve `text/calendar` para ese espacio de nombres. Un token desconocido devuelve `404`.
+
+El feed incluye un evento por tarea programada (`startTime`) y uno por fecha límite (`dueDate`), igual que la vista Calendario de la app: se excluyen las tareas completadas, archivadas, de referencia, eliminadas y las de proyectos no activos, y una tarea programada y vencida el mismo día aparece una sola vez. Los eventos llevan un `UID` estable y solo el título de la tarea: sin descripción, lista de control, adjuntos, etiquetas ni datos del proyecto.
+
 ## Adaptador MCP
 
 El auxiliar publicado `mindwtr-mcp` puede usar un endpoint Cloud autohospedado como backend. Configúralo mediante `--cloud-url` y `--cloud-token`, o las variables `MINDWTR_MCP_CLOUD_URL` / `MINDWTR_MCP_CLOUD_TOKEN`.

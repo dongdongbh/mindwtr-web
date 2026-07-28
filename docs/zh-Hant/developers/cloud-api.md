@@ -113,6 +113,22 @@ DELETE /v1/attachments/orphans
 
 孤立附件清理端點會掃描命名空間，尋找不再被 `data.json` 參照的檔案。它會略過最近五分鐘內修改的檔案，避免與後續快照寫入競爭的上傳遭到移除。
 
+## 行事曆訂閱來源
+
+```text
+GET /v1/calendar/feed
+POST /v1/calendar/feed
+DELETE /v1/calendar/feed
+
+GET /v1/calendar/:token.ics
+```
+
+前三個端點需要 bearer 權杖，分別用於讀取、輪換與撤銷該命名空間的訂閱權杖。它們回傳 `{ "feed": { "token", "path", "createdAt" } }`；若尚未發布則回傳 `{ "feed": null }`。對於從未同步過資料的命名空間，`POST` 回傳 `404`。
+
+`GET /v1/calendar/:token.ics` 不需要 `Authorization` 標頭——網址中的權杖就是憑證——並回傳該命名空間的 `text/calendar` 內容。未知權杖回傳 `404`。
+
+訂閱來源為每個已排程的任務（`startTime`）產生一個事件，為每個截止日期（`dueDate`）產生一個事件，與應用程式內行事曆檢視一致：已完成、已封存、參考資料、已刪除以及不在使用中專案的任務都會排除；同一天既已排程又到期的任務只出現一次。事件僅包含穩定的 `UID` 與任務標題，不含描述、清單、附件、標籤或專案資訊。
+
 ## MCP 配接器
 
 已發布的 `mindwtr-mcp` 輔助工具可使用自行託管的雲端端點作為後端。請透過 `--cloud-url` 與 `--cloud-token`，或 `MINDWTR_MCP_CLOUD_URL`／`MINDWTR_MCP_CLOUD_TOKEN` 環境變數進行設定。

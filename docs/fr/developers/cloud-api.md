@@ -113,6 +113,22 @@ Les chemins des pièces jointes sont résolus dans l’espace de noms du jeton a
 
 Le point de terminaison de nettoyage des fichiers orphelins analyse l’espace de noms afin de trouver les fichiers qui ne sont plus référencés par `data.json`. Il ignore les fichiers modifiés au cours des cinq dernières minutes afin qu’un téléversement en concurrence avec une écriture ultérieure de l’instantané ne soit pas supprimé.
 
+## Flux de calendrier
+
+```text
+GET /v1/calendar/feed
+POST /v1/calendar/feed
+DELETE /v1/calendar/feed
+
+GET /v1/calendar/:token.ics
+```
+
+Les trois premiers exigent le jeton bearer et permettent de lire, régénérer et révoquer le jeton de flux de l'espace de noms. Ils renvoient `{ "feed": { "token", "path", "createdAt" } }`, ou `{ "feed": null }` si rien n'est publié. `POST` renvoie `404` pour un espace de noms qui n'a jamais synchronisé de données.
+
+`GET /v1/calendar/:token.ics` ne prend pas d'en-tête `Authorization` — le jeton dans l'URL est l'identifiant — et renvoie `text/calendar` pour cet espace de noms. Un jeton inconnu renvoie `404`.
+
+Le flux contient un événement par tâche planifiée (`startTime`) et un par échéance (`dueDate`), conformément à la vue Calendrier de l'application : les tâches terminées, archivées, de référence, supprimées et celles des projets non actifs sont exclues, et une tâche planifiée et due le même jour n'apparaît qu'une fois. Les événements portent un `UID` stable et le seul titre de la tâche — ni description, ni check-list, ni pièces jointes, ni étiquettes, ni données de projet.
+
 ## Adaptateur MCP
 
 L’utilitaire publié `mindwtr-mcp` peut utiliser un point de terminaison Cloud auto-hébergé comme backend. Configurez-le avec `--cloud-url` et `--cloud-token`, ou avec les variables d’environnement `MINDWTR_MCP_CLOUD_URL` / `MINDWTR_MCP_CLOUD_TOKEN`.

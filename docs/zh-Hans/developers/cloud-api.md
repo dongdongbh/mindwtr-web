@@ -113,6 +113,22 @@ DELETE /v1/attachments/orphans
 
 失去关联文件清理端点会扫描命名空间，查找不再被 `data.json` 引用的文件。它会跳过最近五分钟内修改的文件，避免在上传与稍后快照写入竞争时误删。
 
+## 日历订阅源
+
+```text
+GET /v1/calendar/feed
+POST /v1/calendar/feed
+DELETE /v1/calendar/feed
+
+GET /v1/calendar/:token.ics
+```
+
+前三个接口需要 bearer 令牌，分别用于读取、轮换和撤销该命名空间的订阅源令牌。它们返回 `{ "feed": { "token", "path", "createdAt" } }`；若尚未发布则返回 `{ "feed": null }`。对于从未同步过数据的命名空间，`POST` 返回 `404`。
+
+`GET /v1/calendar/:token.ics` 不需要 `Authorization` 头——URL 中的令牌本身就是凭据——并返回该命名空间的 `text/calendar` 内容。未知令牌返回 `404`。
+
+订阅源为每个已安排的任务（`startTime`）生成一个事件，为每个截止日期（`dueDate`）生成一个事件，与应用内日历视图保持一致：已完成、已归档、参考资料、已删除以及不在活动项目中的任务都会被排除；同一天既已安排又到期的任务只出现一次。事件仅包含稳定的 `UID` 和任务标题，不含描述、清单、附件、标签或项目信息。
+
 ## MCP 适配器
 
 已发布的 `mindwtr-mcp` 辅助程序可将自托管 Cloud 端点用作后端。通过 `--cloud-url` 和 `--cloud-token`，或 `MINDWTR_MCP_CLOUD_URL` / `MINDWTR_MCP_CLOUD_TOKEN` 环境变量配置。

@@ -47,6 +47,22 @@ A typical deployment includes:
 4. Configure Mindwtr with your server URL and credential.
 5. Run manual sync and verify the same data appears on a second device.
 
+## Calendar subscription
+
+A self-hosted server can publish a read-only iCalendar feed of your scheduled tasks and deadlines, so any calendar app can subscribe to them.
+
+1. In Mindwtr desktop, open Settings, then Sync, with Self-hosted selected.
+2. Under Calendar subscription, choose **Generate URL**.
+3. Copy the URL and add it as a subscribed calendar in your calendar app.
+
+The feed shows what the Calendar view shows: scheduled tasks at their start time, deadlines as all-day events on their due date, and nothing that is completed, archived, reference, deleted, or in a non-active project. Events carry the task title only — descriptions, checklists, attachments, tags, and projects are never published.
+
+::: warning Anyone with the URL can read the feed
+The URL is the only credential; there is no password on it. Share it the way you would share a secret link, and choose **Regenerate** to invalidate the old URL or **Revoke** to take the feed down entirely.
+:::
+
+The feed is read-only. Editing an event in your calendar app does not change the task in Mindwtr, and this is not CalDAV — the feed is one-way.
+
 ::: warning Keep deployment secrets out of git
 Store server tokens, database URLs, and provider credentials in your hosting platform or local secret manager. Do not commit them to a repository.
 :::

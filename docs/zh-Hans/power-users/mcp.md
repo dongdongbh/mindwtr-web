@@ -12,6 +12,8 @@ Mindwtr 提供可选的 **MCP（Model Context Protocol，模型上下文协议�
 
 桌面端和移动端应用二进制文件包含 Mindwtr 应用，但目前**不**包含桌面端启动/停止开关。独立 MCP 辅助程序以 [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) 发布，并已列入公共 [MCP Registry](https://registry.modelcontextprotocol.io/)。
 
+[![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
+
 你**无需**从源代码运行整个应用即可使用 MCP。正常使用桌面端应用二进制文件管理任务，然后让 MCP 客户端通过 `npx` 启动 `mindwtr-mcp`，或使用 npm 全局安装它。让辅助程序指向桌面端应用的本地 `mindwtr.db`。
 
 在桌面端，应用会在**设置 -> 同步 -> 本地数据**中显示确切的本地数据路径。移动端二进制文件不公开本地 MCP 服务器接口。
@@ -261,8 +263,6 @@ MCP 端点为 `POST /mcp`，每个请求都必须携带 `Authorization: Bearer <
 通常无需手动运行（MCP 客户端会代劳），但这对测试很有用。
 
 ### 从 npm 运行
-
-[![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
 ```bash
 # Read-only

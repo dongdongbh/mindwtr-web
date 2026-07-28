@@ -12,6 +12,8 @@ By default, the server uses **stdio**: MCP clients launch it as a subprocess and
 
 The desktop and mobile app binaries include the Mindwtr app, but they do **not** currently include a desktop start/stop toggle. The standalone MCP helper is published as [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) and listed in the public [MCP Registry](https://registry.modelcontextprotocol.io/).
 
+[![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
+
 You do **not** need to run the whole app from source to use MCP. Use the normal desktop app binary for your tasks, then let your MCP client launch `mindwtr-mcp` with `npx`, or install it globally with npm. Point the helper at the desktop app's local `mindwtr.db`.
 
 On desktop, the app shows the exact local data path in **Settings -> Sync -> Local Data**. Mobile binaries do not expose a local MCP server surface.
@@ -261,8 +263,6 @@ There is no built-in TLS or rate limiting. To expose the server beyond localhost
 You usually don't need to run this manually (the MCP client does it), but it's useful for testing.
 
 ### From npm
-
-[![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
 ```bash
 # Read-only

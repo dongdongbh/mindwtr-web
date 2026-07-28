@@ -12,6 +12,8 @@ Par défaut, le serveur utilise **stdio** : les clients MCP le lancent comme sou
 
 Les binaires des applications de bureau et mobiles comprennent l’application Mindwtr, mais ils n’incluent **pas** actuellement de commande de démarrage/arrêt sur ordinateur. L’utilitaire MCP autonome est publié sous le nom [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) et répertorié dans le [registre MCP](https://registry.modelcontextprotocol.io/) public.
 
+[![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
+
 Vous n’avez **pas** besoin d’exécuter toute l’application depuis les sources pour utiliser MCP. Utilisez le binaire normal de l’application de bureau pour vos tâches, puis laissez votre client MCP lancer `mindwtr-mcp` avec `npx`, ou installez-le globalement avec npm. Indiquez à l’utilitaire la base locale `mindwtr.db` de l’application de bureau.
 
 Sur ordinateur, l’application affiche le chemin exact des données locales sous **Réglages -> Synchronisation -> Données locales**. Les binaires mobiles n’exposent pas de serveur MCP local.
@@ -261,8 +263,6 @@ Aucun TLS ni limitation de débit n'est intégré. Pour exposer le serveur au-de
 Il n’est généralement pas nécessaire de l’exécuter manuellement (le client MCP s’en charge), mais cela peut être utile pour les tests.
 
 ### Depuis npm
-
-[![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
 ```bash
 # Read-only

@@ -12,6 +12,8 @@ Mindwtr 提供選用的 **MCP（Model Context Protocol）**伺服器。你可以
 
 桌面版與行動版 binary 包含 Mindwtr 應用程式，但目前**不包含**桌面版啟動／停止開關。獨立的 MCP 輔助工具以 [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) 發佈，並已列入公開的 [MCP Registry](https://registry.modelcontextprotocol.io/)。
 
+[![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
+
 使用 MCP **不需要**從原始碼執行整個應用程式。你可以使用一般桌面版處理任務，再讓 MCP 用戶端透過 `npx` 啟動 `mindwtr-mcp`，或使用 npm 全域安裝。請將輔助工具指向桌面版的本機 `mindwtr.db`。
 
 在桌面版中，應用程式會於**設定 -> 同步 -> 本機資料**顯示確切的本機資料路徑。行動版 binary 不提供本機 MCP 伺服器介面。
@@ -261,8 +263,6 @@ MCP 端點為 `POST /mcp`，每個請求都必須帶 `Authorization: Bearer <tok
 通常不需要手動執行（MCP 用戶端會代為執行），但手動執行有助於測試。
 
 ### 從 npm 執行
-
-[![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
 ```bash
 # Read-only

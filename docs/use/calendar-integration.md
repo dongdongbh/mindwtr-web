@@ -22,9 +22,11 @@ Mindwtr supports calendar integration in two directions: reading external calend
 ## Views
 
 - **Day view**: time grid with scheduled tasks, deadlines, and external events.
-- **Week view**: seven-day planning grid for scanning the current work week.
+- **Week view**: planning grid for scanning the current work week, showing seven days by default.
 - **Month view**: overview with markers for deadlines, scheduled tasks, and events.
 - **Schedule view**: rolling 60-day list for upcoming deadlines, scheduled tasks, and external events.
+
+Week view can show anywhere from two to seven days. Step the count with the control that appears in the header on desktop, or by swiping up and down on the timeline on mobile. Fewer days gives each remaining column more width, which helps when titles are long or you are dropping tasks onto specific times. The visible days always stay inside one week and always include the day you are on, so a five-day count starting on Monday stays Monday to Friday as you move between weeks. The count is a per-device layout choice and is not synced.
 
 On desktop, the current calendar state is reflected in the URL:
 

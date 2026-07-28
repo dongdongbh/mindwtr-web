@@ -1,8 +1,5 @@
 # Serveur MCP
 
-[![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
-[![MCP Toplist](https://mcptoplist.com/badge/io.github.dongdongbh%2Fmindwtr.svg)](https://mcptoplist.com/server/io.github.dongdongbh%2Fmindwtr)
-
 Mindwtr fournit un serveur **MCP (Model Context Protocol)** facultatif. Il permet de connecter des agents d’IA (comme **Claude Desktop**, **Claude Code**, **OpenAI Codex** ou **Gemini CLI**) à votre base de données Mindwtr locale ou à un point de terminaison Mindwtr Cloud auto-hébergé.
 
 Par défaut, le serveur utilise **stdio** : les clients MCP le lancent comme sous-processus et communiquent par JSON-RPC sur stdin/stdout. Il prend aussi en charge un transport HTTP diffusé, authentifié et facultatif pour les clients distants.
@@ -264,6 +261,8 @@ Aucun TLS ni limitation de débit n'est intégré. Pour exposer le serveur au-de
 Il n’est généralement pas nécessaire de l’exécuter manuellement (le client MCP s’en charge), mais cela peut être utile pour les tests.
 
 ### Depuis npm
+
+[![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
 ```bash
 # Read-only

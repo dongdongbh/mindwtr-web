@@ -1,8 +1,5 @@
 # MCP 伺服器
 
-[![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
-[![MCP Toplist](https://mcptoplist.com/badge/io.github.dongdongbh%2Fmindwtr.svg)](https://mcptoplist.com/server/io.github.dongdongbh%2Fmindwtr)
-
 Mindwtr 提供選用的 **MCP（Model Context Protocol）**伺服器。你可以將 AI agent（例如 **Claude Desktop**、**Claude Code**、**OpenAI Codex** 或 **Gemini CLI**）連接至本機 Mindwtr 資料庫，或自行託管的 Mindwtr Cloud 端點。
 
 伺服器預設使用 **stdio**：MCP 用戶端會將它啟動為子程序，並透過 stdin/stdout 使用 JSON-RPC 通訊。它也支援供遠端用戶端選用的已驗證串流 HTTP。
@@ -264,6 +261,8 @@ MCP 端點為 `POST /mcp`，每個請求都必須帶 `Authorization: Bearer <tok
 通常不需要手動執行（MCP 用戶端會代為執行），但手動執行有助於測試。
 
 ### 從 npm 執行
+
+[![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
 ```bash
 # Read-only

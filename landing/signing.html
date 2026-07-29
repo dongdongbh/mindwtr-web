@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- chrome: shared head meta, header, and footer are injected at build time by chrome.ts -->
+    <meta
+      name="description"
+      content="How Mindwtr's Windows releases are built and signed: the SignPath Foundation code signing policy, who reviews and approves releases, and what a signature does and doesn't prove."
+    />
+    <meta property="og:title" content="Mindwtr Code Signing Policy" />
+    <meta
+      property="og:description"
+      content="Official builds come from the public release workflow. Free code signing provided by SignPath.io, certificate by SignPath Foundation."
+    />
+    <title>Code Signing Policy — Mindwtr</title>
+  </head>
+  <body>
+
+    <main>
+      <section class="support-hero" aria-labelledby="signing-title">
+        <h1 id="signing-title">Code signing policy</h1>
+        <p class="support-lead">
+          A Windows installer is the one part of Mindwtr you have to run before
+          you can inspect it. Here’s where the builds come from, who signs them,
+          and what a signature does and doesn’t prove.
+        </p>
+      </section>
+
+      <section class="legal section-band" aria-labelledby="signing-title">
+        <div class="legal-body">
+          <p class="legal-updated">Last updated 29 July 2026</p>
+
+          <h2>1. Where the builds come from</h2>
+          <p>
+            Every official Mindwtr release is built by the release workflow in
+            the public
+            <a href="https://github.com/dongdongbh/Mindwtr">Mindwtr repository</a>,
+            from the source code in that repository. Only official release tags
+            are eligible for signing — pull requests, forks, branch builds, and
+            development builds are not.
+          </p>
+
+          <h2>2. Signing</h2>
+          <p>
+            Free code signing provided by
+            <a href="https://signpath.io/">SignPath.io</a>, certificate by
+            <a href="https://signpath.org/">SignPath Foundation</a>. The private
+            key stays in SignPath’s hardware security module — the project never
+            holds it — and every signing request is approved by hand.
+          </p>
+
+          <h2>3. Project roles</h2>
+          <ul>
+            <li><strong>Committer and reviewer:</strong> Dongda Li</li>
+            <li><strong>Signing approver:</strong> Dongda Li</li>
+          </ul>
+          <p>
+            Contributions from other authors are reviewed before they are merged
+            into an official release.
+          </p>
+
+          <h2>4. Privacy</h2>
+          <p>
+            Mindwtr is local-first. It does not transfer information about you or
+            your data to networked systems unless you turn on a networked feature
+            yourself. The <a href="/privacy">privacy policy</a> covers each of
+            those features in detail.
+          </p>
+
+          <h2>5. Current status</h2>
+          <p>
+            The SignPath Foundation application is pending. Until a release is
+            named here as signed, don’t assume a Windows download carries a
+            SignPath signature. Every release does publish SHA-256 checksums on
+            its
+            <a href="https://github.com/dongdongbh/Mindwtr/releases">GitHub release page</a>,
+            and in-app desktop updates are verified against the project’s own
+            updater key — neither of those changes.
+          </p>
+
+          <h2>6. What a signature is for</h2>
+          <p>
+            A signature tells you an installer came from this project and hasn’t
+            been altered since it was signed. It is not a switch that turns off
+            Windows SmartScreen or antivirus prompts. Microsoft builds publisher
+            reputation over time, so warnings can still appear on a freshly
+            signed release; signing every release consistently is what lets that
+            reputation accumulate instead of starting from zero each time.
+          </p>
+
+          <h2>7. Questions</h2>
+          <p>
+            Email
+            <a href="mailto:support@mindwtr.app?subject=Mindwtr%20code%20signing">support@mindwtr.app</a>
+            or open an issue on
+            <a href="https://github.com/dongdongbh/Mindwtr/issues">GitHub</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>

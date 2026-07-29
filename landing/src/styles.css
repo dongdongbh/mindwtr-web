@@ -1320,6 +1320,24 @@ h2 {
   align-self: flex-start;
 }
 
+/* SignPath attribution: required wherever the downloads are offered. */
+.download-note {
+  margin: 26px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.download-note a {
+  color: var(--blue-deep);
+  font-weight: 600;
+}
+
+.download-note a:hover {
+  text-decoration: underline;
+}
+
 .store-badge,
 .github-download {
   display: flex;

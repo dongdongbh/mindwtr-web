@@ -83,6 +83,7 @@ Bun 輔助工具只有在設定 `MINDWTR_API_TOKEN` 時才要求 token。
 | `GET`    | `/tasks`              | 列出任務                     |
 | `GET`    | `/tasks?status=next`  | 依狀態篩選                   |
 | `GET`    | `/tasks?query=@work`  | 搜尋任務                     |
+| `GET`    | `/tasks?isFocusedToday=true` | 桌面版：篩選**今日焦點**任務 |
 | `GET`    | `/tasks?all=1`        | 包含已完成／已封存項目       |
 | `GET`    | `/tasks?deleted=1`    | 包含已軟刪除項目             |
 | `POST`   | `/tasks`              | 建立任務                     |
@@ -96,6 +97,8 @@ Bun 輔助工具只有在設定 `MINDWTR_API_TOKEN` 時才要求 token。
 | `GET`    | `/areas`              | 列出領域                     |
 | `GET`    | `/v1/areas`           | 領域的相容性別名             |
 | `GET`    | `/search?query=...`   | 搜尋任務及專案               |
+
+桌面版本機 API 接受 `isFocusedToday=true`/`1` 與 `isFocusedToday=false`/`0`。`true` 或 `1` 會傳回標記為**今日焦點**的任務；`false` 或 `0` 會傳回未標記的任務，包括沒有該欄位的舊記錄。省略此參數時，API 不會依此欄位篩選。其他值會傳回 `400`。
 
 ### 回應結構
 

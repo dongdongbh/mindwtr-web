@@ -83,6 +83,7 @@ L’utilitaire Bun n’exige un jeton que lorsque `MINDWTR_API_TOKEN` est défin
 | `GET`    | `/tasks`               | Répertorier les tâches                   |
 | `GET`    | `/tasks?status=next`   | Filtrer par statut                       |
 | `GET`    | `/tasks?query=@work`   | Rechercher des tâches                    |
+| `GET`    | `/tasks?isFocusedToday=true` | Ordinateur : filtrer les **Priorités du jour** |
 | `GET`    | `/tasks?all=1`         | Inclure les tâches terminées/archivées   |
 | `GET`    | `/tasks?deleted=1`     | Inclure les suppressions logiques        |
 | `POST`   | `/tasks`               | Créer une tâche                          |
@@ -96,6 +97,8 @@ L’utilitaire Bun n’exige un jeton que lorsque `MINDWTR_API_TOKEN` est défin
 | `GET`    | `/areas`               | Répertorier les domaines                 |
 | `GET`    | `/v1/areas`            | Alias de compatibilité pour les domaines |
 | `GET`    | `/search?query=...`    | Rechercher des tâches et des projets     |
+
+L’API locale de l’application de bureau accepte `isFocusedToday=true`/`1` et `isFocusedToday=false`/`0`. Avec `true` ou `1`, elle renvoie les tâches des **Priorités du jour**. Avec `false` ou `0`, elle renvoie les tâches non marquées, y compris les anciens enregistrements dépourvus de ce champ. Sans le paramètre, elle ne filtre pas la liste selon ce champ. Pour toute autre valeur, elle répond avec `400`.
 
 ### Formes des réponses
 

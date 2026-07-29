@@ -83,6 +83,7 @@ Das Bun-Hilfsprogramm verlangt nur dann ein Token, wenn `MINDWTR_API_TOKEN` gese
 | `GET`    | `/tasks`              | Aufgaben auflisten                   |
 | `GET`    | `/tasks?status=next`  | Nach Status filtern                  |
 | `GET`    | `/tasks?query=@work`  | Aufgaben suchen                      |
+| `GET`    | `/tasks?isFocusedToday=true` | Desktop: Nach „Heutiger Fokus“ filtern |
 | `GET`    | `/tasks?all=1`        | Erledigte/archivierte einschließen   |
 | `GET`    | `/tasks?deleted=1`    | Vorläufig gelöschte einschließen     |
 | `POST`   | `/tasks`              | Aufgabe erstellen                    |
@@ -96,6 +97,8 @@ Das Bun-Hilfsprogramm verlangt nur dann ein Token, wenn `MINDWTR_API_TOKEN` gese
 | `GET`    | `/areas`              | Bereiche auflisten                   |
 | `GET`    | `/v1/areas`           | Kompatibilitätsalias für Bereiche    |
 | `GET`    | `/search?query=...`   | Aufgaben und Projekte suchen         |
+
+Die lokale Desktop-API akzeptiert `isFocusedToday=true`/`1` und `isFocusedToday=false`/`0`. Mit `true` oder `1` liefert sie Aufgaben im **Heutigen Fokus**. Mit `false` oder `0` liefert sie nicht markierte Aufgaben, einschließlich älterer Datensätze ohne dieses Feld. Ohne den Parameter filtert sie die Liste nicht nach diesem Feld. Bei anderen Werten antwortet sie mit `400`.
 
 ### Antwortstrukturen
 

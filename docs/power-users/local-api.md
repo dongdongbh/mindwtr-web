@@ -83,6 +83,7 @@ The Bun helper only requires a token when `MINDWTR_API_TOKEN` is set.
 | `GET`    | `/tasks`              | List tasks                    |
 | `GET`    | `/tasks?status=next`  | Filter by status              |
 | `GET`    | `/tasks?query=@work`  | Search tasks                  |
+| `GET`    | `/tasks?isFocusedToday=true` | Desktop: filter Focus Today |
 | `GET`    | `/tasks?all=1`        | Include done/archived         |
 | `GET`    | `/tasks?deleted=1`    | Include soft-deleted          |
 | `POST`   | `/tasks`              | Create task                   |
@@ -96,6 +97,8 @@ The Bun helper only requires a token when `MINDWTR_API_TOKEN` is set.
 | `GET`    | `/areas`              | List areas                    |
 | `GET`    | `/v1/areas`           | Compatibility alias for areas |
 | `GET`    | `/search?query=...`   | Search tasks + projects       |
+
+The desktop Local API accepts `isFocusedToday=true`/`1` and `isFocusedToday=false`/`0`. With `true` or `1`, it returns tasks marked for Focus Today. With `false` or `0`, it returns unmarked tasks, including older records without the field. Omit the parameter to leave the list unfiltered. Other values return `400`.
 
 ### Response Shapes
 

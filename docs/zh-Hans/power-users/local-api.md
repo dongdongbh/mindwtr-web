@@ -83,6 +83,7 @@ Bun 辅助程序仅在设置了 `MINDWTR_API_TOKEN` 时才要求令牌。
 | `GET`    | `/tasks`              | 列出任务                      |
 | `GET`    | `/tasks?status=next`  | 按状态筛选                    |
 | `GET`    | `/tasks?query=@work`  | 搜索任务                      |
+| `GET`    | `/tasks?isFocusedToday=true` | 桌面端：筛选**今日焦点**任务 |
 | `GET`    | `/tasks?all=1`        | 包含已完成/已归档任务         |
 | `GET`    | `/tasks?deleted=1`    | 包含软删除任务                |
 | `POST`   | `/tasks`              | 创建任务                      |
@@ -96,6 +97,8 @@ Bun 辅助程序仅在设置了 `MINDWTR_API_TOKEN` 时才要求令牌。
 | `GET`    | `/areas`              | 列出领域                      |
 | `GET`    | `/v1/areas`           | 领域端点的兼容别名            |
 | `GET`    | `/search?query=...`   | 搜索任务和项目                |
+
+桌面端本地 API 接受 `isFocusedToday=true`/`1` 和 `isFocusedToday=false`/`0`。`true` 或 `1` 返回标记为**今日焦点**的任务；`false` 或 `0` 返回未标记的任务，包括没有该字段的旧记录。省略该参数时，API 不按此字段筛选。其他值会返回 `400`。
 
 ### 响应结构
 

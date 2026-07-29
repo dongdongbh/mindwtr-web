@@ -22,9 +22,11 @@ Mindwtr prend en charge l’intégration du calendrier dans les deux sens : la l
 ## Vues
 
 - **Vue Jour** : grille horaire avec les tâches planifiées, les échéances et les événements externes.
-- **Vue Semaine** : grille de planification sur sept jours pour parcourir la semaine de travail en cours.
+- **Vue Semaine** : grille de planification pour parcourir la semaine de travail en cours, avec sept jours par défaut.
 - **Vue Mois** : vue d’ensemble avec des repères pour les échéances, les tâches planifiées et les événements.
 - **Vue Planning** : liste glissante sur 60 jours des échéances, tâches planifiées et événements externes à venir.
+
+La vue Semaine peut afficher de deux à sept jours. Réglez ce nombre avec la commande dans l’en-tête sur ordinateur, ou en balayant la chronologie vers le haut ou le bas sur mobile. Avec moins de jours, chaque colonne restante s’élargit, ce qui facilite la lecture des titres longs et le dépôt des tâches à une heure précise. Les jours affichés restent dans une même semaine et comprennent le jour où vous vous trouvez ; une vue de cinq jours commençant le lundi reste donc du lundi au vendredi lorsque vous changez de semaine. Mindwtr conserve ce choix de mise en page sur chaque appareil et ne le synchronise pas.
 
 ### Revenir sur le travail terminé
 

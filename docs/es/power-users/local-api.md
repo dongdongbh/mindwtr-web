@@ -83,6 +83,7 @@ El asistente de Bun solo requiere un token cuando se establece `MINDWTR_API_TOKE
 | `GET`    | `/tasks`              | Enumera las tareas                    |
 | `GET`    | `/tasks?status=next`  | Filtra por estado              |
 | `GET`    | `/tasks?query=@work`  | Busca tareas                  |
+| `GET`    | `/tasks?isFocusedToday=true` | Escritorio: filtra por **Foco de hoy** |
 | `GET`    | `/tasks?all=1`        | Incluye las completadas/archivadas         |
 | `GET`    | `/tasks?deleted=1`    | Incluye las eliminadas de forma lógica          |
 | `POST`   | `/tasks`              | Crea una tarea                   |
@@ -96,6 +97,8 @@ El asistente de Bun solo requiere un token cuando se establece `MINDWTR_API_TOKE
 | `GET`    | `/areas`              | Enumera las áreas                    |
 | `GET`    | `/v1/areas`           | Alias de compatibilidad para las áreas |
 | `GET`    | `/search?query=...`   | Busca tareas y proyectos       |
+
+La API local de escritorio acepta `isFocusedToday=true`/`1` e `isFocusedToday=false`/`0`. Con `true` o `1`, devuelve las tareas del **Foco de hoy**. Con `false` o `0`, devuelve las tareas sin esa marca, incluidos los registros antiguos que no contienen el campo. Si omites el parámetro, la lista no se filtra por este campo. Los demás valores devuelven `400`.
 
 ### Formas de las respuestas
 

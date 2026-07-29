@@ -26,6 +26,14 @@ Mindwtr admite la integración con calendarios en dos direcciones: leer calendar
 - **Vista de mes**: resumen con indicadores de fechas límite, tareas programadas y eventos.
 - **Vista de agenda**: lista móvil de 60 días con próximas fechas límite, tareas programadas y eventos externos.
 
+### Mirar atrás al trabajo terminado
+
+De forma predeterminada el calendario muestra el trabajo que aún tienes por delante. El botón **Completadas** de la cabecera del calendario también revela las tareas completadas y archivadas, situadas en el día en que se completaron y no en la fecha de inicio o de vencimiento que aún puedan tener. Se dibujan atenuadas y tachadas para que nunca parezcan trabajo pendiente, y no se pueden arrastrar a otro día: una finalización es un registro de lo ocurrido, no un plan.
+
+Las tareas archivadas antes de que Mindwtr registrara las marcas de tiempo de finalización recurren a su fecha de última modificación, la misma que muestra la lista de Archivo.
+
+El botón es una elección de vista por dispositivo y no se sincroniza, y nunca afecta a un [feed de suscripción de calendario](/es/data-sync/self-hosted-cloud) publicado: ese feed solo lleva trabajo pendiente.
+
 En el escritorio, el estado actual del calendario se refleja en la URL:
 
 - `calendarView`: `day`, `week`, `month` o `schedule`

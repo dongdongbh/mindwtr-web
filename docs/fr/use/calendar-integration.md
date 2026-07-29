@@ -26,6 +26,14 @@ Mindwtr prend en charge l’intégration du calendrier dans les deux sens : la l
 - **Vue Mois** : vue d’ensemble avec des repères pour les échéances, les tâches planifiées et les événements.
 - **Vue Planning** : liste glissante sur 60 jours des échéances, tâches planifiées et événements externes à venir.
 
+### Revenir sur le travail terminé
+
+Par défaut, le calendrier montre le travail qui reste à faire. Le bouton **Terminées** dans l’en-tête du calendrier révèle aussi les tâches terminées et archivées, placées au jour où elles ont été terminées plutôt qu’à une date de début ou d’échéance qu’elles porteraient encore. Elles sont affichées en gris et barrées pour ne jamais passer pour du travail en cours, et elles ne peuvent pas être glissées vers un autre jour : un achèvement est une trace de ce qui s’est passé, pas un plan.
+
+Les tâches archivées avant que Mindwtr n’enregistre les horodatages d’achèvement se rabattent sur leur date de dernière modification, celle qu’affiche déjà la liste Archives.
+
+Ce bouton est un choix d’affichage propre à l’appareil et n’est pas synchronisé ; il n’affecte jamais un [flux d’abonnement au calendrier](/fr/data-sync/self-hosted-cloud) publié — ce flux ne transporte que le travail en cours.
+
 Sur ordinateur, l’état actuel du calendrier est reflété dans l’URL :
 
 - `calendarView` : `day`, `week`, `month` ou `schedule`

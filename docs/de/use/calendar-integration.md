@@ -26,6 +26,14 @@ Mindwtr unterstützt die Kalenderintegration in zwei Richtungen: externe Kalende
 - **Monatsansicht**: Überblick mit Markierungen für Fristen, geplante Aufgaben und Termine.
 - **Terminplanansicht**: Fortlaufende 60-Tage-Liste für anstehende Fristen, geplante Aufgaben und externe Termine.
 
+### Rückblick auf erledigte Arbeit
+
+Standardmäßig zeigt der Kalender, was noch vor dir liegt. Der Schalter **Erledigt** in der Kalenderkopfzeile blendet zusätzlich erledigte und archivierte Aufgaben ein — an dem Tag, an dem sie abgeschlossen wurden, nicht an einem Start- oder Fälligkeitsdatum, das sie noch tragen. Sie werden gedämpft und durchgestrichen dargestellt, damit sie nie wie offene Arbeit wirken, und sie lassen sich nicht auf einen anderen Tag ziehen: Ein Abschluss ist eine Aufzeichnung, kein Plan.
+
+Aufgaben, die archiviert wurden, bevor Mindwtr Abschlusszeitpunkte erfasst hat, greifen auf ihr Änderungsdatum zurück — dasselbe Datum, das auch die Archivliste für sie zeigt.
+
+Der Schalter ist eine gerätebezogene Ansichtsentscheidung und wird nicht synchronisiert. Er wirkt sich nie auf einen veröffentlichten [Kalender-Abonnement-Feed](/de/data-sync/self-hosted-cloud) aus — dieser Feed enthält immer nur offene Arbeit.
+
 Auf dem Desktop wird der aktuelle Kalenderzustand in der URL abgebildet:
 
 - `calendarView`: `day`, `week`, `month` oder `schedule`

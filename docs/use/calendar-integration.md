@@ -28,6 +28,14 @@ Mindwtr supports calendar integration in two directions: reading external calend
 
 Week view can show anywhere from two to seven days. Step the count with the control that appears in the header on desktop, or by swiping up and down on the timeline on mobile. Fewer days gives each remaining column more width, which helps when titles are long or you are dropping tasks onto specific times. The visible days always stay inside one week and always include the day you are on, so a five-day count starting on Monday stays Monday to Friday as you move between weeks. The count is a per-device layout choice and is not synced.
 
+### Looking back at completed work
+
+By default the calendar shows work that is still ahead of you. The **Completed** toggle in the calendar header also reveals done and archived tasks, placed on the day they were completed rather than on any start or due date they still carry. They are drawn muted and struck through so they never read as outstanding work, and they cannot be dragged to another day — a completion is a record of what happened, not a plan.
+
+Tasks archived before Mindwtr recorded completion timestamps fall back to their last-modified date, the same date the Archive list shows for them.
+
+The toggle is a per-device view choice and is not synced, and it never affects a published [calendar subscription feed](/data-sync/self-hosted-cloud) — that feed only ever carries outstanding work.
+
 On desktop, the current calendar state is reflected in the URL:
 
 - `calendarView`: `day`, `week`, `month`, or `schedule`

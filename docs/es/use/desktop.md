@@ -18,7 +18,7 @@ La aplicación de escritorio incluye una barra lateral de navegación con todas 
 
 Si sigues posponiendo la fecha de vencimiento de una tarea, su fila muestra junto a ella una pequeña insignia de reloj de arena con el número de aplazamientos (a partir del tercero). La insignia te recuerda que quizá debas volver a aclarar la tarea, delegarla o descartarla en vez de aplazarla otra vez.
 
-La mayoría de las listas de tareas comparten la misma fila de controles para seleccionar tareas, filtrar, ordenar, agrupar, mostrar detalles y cambiar la densidad de la lista (Cómodo, Compacto o Condensado). Usa **Agrupar** para organizar la Bandeja de entrada, Próximas, En espera, Algún día/Tal vez, Referencia, Terminadas y otras vistas de lista por metadatos como contexto, área, proyecto o etiqueta. Hecho añade una agrupación por **fecha de finalización** —Hoy, Ayer, Últimos 7 días, Anterior y Sin completar— según tus días naturales locales, de modo que se lee como un registro de lo que terminaste y cuándo. Los grupos vacíos se ocultan.
+La mayoría de las listas de tareas comparten la misma fila de controles para seleccionar tareas, filtrar, ordenar, agrupar, mostrar detalles y cambiar la densidad de la lista (Cómodo, Compacto o Condensado). Usa **Agrupar** para organizar la Bandeja de entrada, Próximas, En espera, Algún día/Tal vez, Referencia, Terminadas, Archivadas y otras vistas de lista por metadatos como contexto, área, proyecto o etiqueta. Terminadas y Archivadas añaden una agrupación por **fecha de finalización** —Hoy, Ayer, Últimos 7 días, Anterior y Sin completar— según tus días naturales locales, de modo que ambas se leen como un registro de lo que terminaste y cuándo. Los grupos vacíos se ocultan.
 
 Arrastra una tarea en la barra lateral hasta **Bandeja de entrada**, **Algún día/Tal vez**, **En espera**, **Referencia**, **Hecho** o **Archivado** para cambiar su estado; el aviso ofrece **Deshacer**. **Papelera** no acepta tareas arrastradas. Suelta la tarea en **Calendario**, o mantenla un momento sobre Calendario mientras la arrastras, para abrir hoy. La vista Agenda cambia a Semana para que puedas soltarla en un día y una hora.
 
@@ -145,6 +145,8 @@ Elige **Seleccionar** para escoger tareas o **Seleccionar todo** y luego usa **M
 ### 📦 Archivadas
 
 Tareas completadas que se han apartado. Las tareas archivadas se ocultan de las listas normales, pero aquí puedes buscarlas o restaurarlas. Haz clic en la marca de tiempo **Completada** de una tarea para corregirla. Un selector Tareas | Proyectos en la parte superior muestra en su lugar los proyectos archivados: restaurar uno lo reactiva (recuperando las tareas completadas con él) y eliminarlo lo envía a la Papelera.
+
+Archivadas comparte la fila de controles de las demás listas de tareas: **Filtros** acota por contexto, etiqueta, prioridad y tiempo estimado, y tanto **Ordenar** como **Agrupar** ofrecen **fecha de finalización**, ya que aquí todo es trabajo terminado. De forma predeterminada, lo completado más recientemente aparece primero. Las selecciones de filtro se comparten entre las listas de tareas, así que un contexto elegido en otra vista también acota esta.
 
 Elige **Seleccionar** para escoger tareas o **Seleccionar todo**. Puedes devolver la selección a Terminadas sin cambiar su hora de finalización, restaurarla a la Bandeja de entrada o moverla a la Papelera. Mindwtr solo elimina tareas permanentemente desde la Papelera.
 

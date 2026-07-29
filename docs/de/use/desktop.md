@@ -18,7 +18,7 @@ Die Desktop-App besitzt eine Seitenleistennavigation mit allen GTD-Ansichten und
 
 Wenn Sie das Fälligkeitsdatum einer Aufgabe wiederholt nach hinten verschieben, zeigt die Zeile nach der dritten Verschiebung neben dem Datum eine kleine Sanduhr mit der Anzahl. Sie erinnert daran, dass die Aufgabe möglicherweise erneut geklärt, delegiert oder verworfen werden sollte, statt sie erneut aufzuschieben.
 
-Die meisten Aufgabenlisten verwenden dieselbe Steuerungszeile zum Auswählen, Filtern, Sortieren, Gruppieren, Anzeigen von Details und Umschalten der Listendichte (Komfortabel, Kompakt oder Verdichtet). Mit **Gruppieren** ordnen Sie Posteingang, Nächste Aktionen, Warten, Irgendwann/Vielleicht, Referenz, Erledigt und andere Listen nach Metadaten wie Kontext, Bereich, Projekt oder Tag. Erledigt bietet zusätzlich die Gruppierung **Abschlussdatum** – Heute, Gestern, Letzte 7 Tage, Früher und Nicht abgeschlossen – auf Basis Ihrer lokalen Kalendertage, sodass die Liste sich wie ein Protokoll des Erledigten liest. Leere Gruppen werden ausgeblendet.
+Die meisten Aufgabenlisten verwenden dieselbe Steuerungszeile zum Auswählen, Filtern, Sortieren, Gruppieren, Anzeigen von Details und Umschalten der Listendichte (Komfortabel, Kompakt oder Verdichtet). Mit **Gruppieren** ordnen Sie Posteingang, Nächste Aktionen, Warten, Irgendwann/Vielleicht, Referenz, Erledigt, Archiviert und andere Listen nach Metadaten wie Kontext, Bereich, Projekt oder Tag. Erledigt und Archiviert bieten zusätzlich die Gruppierung **Abschlussdatum** – Heute, Gestern, Letzte 7 Tage, Früher und Nicht abgeschlossen – auf Basis Ihrer lokalen Kalendertage, sodass sich beide Listen wie ein Protokoll des Erledigten lesen. Leere Gruppen werden ausgeblendet.
 
 Ziehen Sie eine Aufgabe in der Seitenleiste auf **Posteingang**, **Irgendwann/Vielleicht**, **Warten**, **Referenz**, **Erledigt** oder **Archiviert**, um ihren Status zu ändern; die Meldung bietet **Rückgängig**. Der **Papierkorb** ist kein Ablageziel. Ziehen Sie die Aufgabe auf **Kalender** oder halten Sie sie beim Ziehen kurz darüber, um den heutigen Tag zu öffnen. Aus der Terminplanansicht wechselt Mindwtr in die Wochenansicht, damit Sie die Aufgabe auf einem Tag und einer Uhrzeit ablegen können.
 
@@ -145,6 +145,8 @@ Wählen Sie **Auswählen**, um Aufgaben zu markieren, oder **Alle auswählen**, 
 ### 📦 Archiviert
 
 Abgelegte abgeschlossene Aufgaben. Sie sind in normalen Listen ausgeblendet, können hier aber gesucht oder wiederhergestellt werden. Klicken Sie zur Korrektur auf den Zeitstempel **Abgeschlossen**. Ein Umschalter „Aufgaben | Projekte“ oben zeigt stattdessen archivierte Projekte: Wiederherstellen reaktiviert das Projekt (samt der mit ihm abgeschlossenen Aufgaben), Löschen verschiebt es in den Papierkorb.
+
+Archiviert nutzt dieselbe Steuerungszeile wie die übrigen Aufgabenlisten: **Filter** grenzt nach Kontext, Tag, Priorität und Zeitaufwand ein, und **Sortieren** wie **Gruppieren** bieten **Abschlussdatum** an, da hier ausschließlich abgeschlossene Arbeit liegt. Standardmäßig stehen die neuesten Abschlüsse oben. Filterauswahlen gelten für alle Aufgabenlisten gemeinsam, ein anderswo gewählter Kontext grenzt also auch diese Liste ein.
 
 Wählen Sie **Auswählen**, um Aufgaben zu markieren, oder **Alle auswählen**. Sie können die Auswahl zurück nach Erledigt verschieben, ohne den Abschlusszeitpunkt zu ändern, sie im Posteingang wiederherstellen oder in den Papierkorb verschieben. Mindwtr löscht Aufgaben nur aus dem Papierkorb endgültig.
 

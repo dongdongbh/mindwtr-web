@@ -18,7 +18,7 @@ The desktop app features a sidebar navigation with all GTD views and a main cont
 
 If you keep pushing a task's due date later, its row shows a small hourglass badge with the number of postponements (after the third push) next to the due date. The badge is a nudge that the task may need re-clarifying, delegating, or dropping instead of another deferral.
 
-Most task lists share the same control row for selecting tasks, filtering, sorting, grouping, showing details, and switching list density (Comfortable, Compact, or Condensed). Use **Group** to organize Inbox, Next, Waiting, Someday/Maybe, Reference, Done, and other list views by metadata such as context, area, project, or tag. Done adds a **Completion date** grouping — Today, Yesterday, Previous 7 days, Earlier, and Not completed — using your local calendar days, so it reads as a log of what you finished when. Empty groups are hidden.
+Most task lists share the same control row for selecting tasks, filtering, sorting, grouping, showing details, and switching list density (Comfortable, Compact, or Condensed). Use **Group** to organize Inbox, Next, Waiting, Someday/Maybe, Reference, Done, Archived, and other list views by metadata such as context, area, project, or tag. Done and Archived add a **Completion date** grouping — Today, Yesterday, Previous 7 days, Earlier, and Not completed — using your local calendar days, so each reads as a log of what you finished when. Empty groups are hidden.
 
 Drag a task onto **Inbox**, **Someday/Maybe**, **Waiting For**, **Reference**, **Done**, or **Archived** in the sidebar to change its status; the toast offers **Undo**. **Trash** is not a drop target. Drop the task on **Calendar**, or pause over Calendar while dragging, to open today with the task still in hand. Schedule view switches to Week so you can drop it on a day and time.
 
@@ -145,6 +145,8 @@ Choose **Select** to pick tasks or **Select All**, then use **Move → Archived*
 ### 📦 Archived
 
 Completed tasks that have been filed away. Archived tasks are hidden from normal task lists, but you can search or restore them here. Click a task's **Completed** timestamp to correct it. A Tasks | Projects switch at the top shows archived projects instead: restoring one reactivates it (bringing back the tasks completed with it), and deleting moves it to the Trash.
+
+Archived shares the control row used by the other task lists: **Filters** narrows by context, tag, priority, and time estimate, while **Sort** and **Group** both offer **Completion date**, since everything here is finished work. The newest completion comes first by default. Filter selections are shared across the task lists, so a context picked elsewhere narrows this list too.
 
 Choose **Select** to pick tasks or **Select All**. You can move the selection back to Done without changing its completion time, restore it to Inbox, or move it to Trash. Mindwtr permanently deletes tasks only from Trash.
 

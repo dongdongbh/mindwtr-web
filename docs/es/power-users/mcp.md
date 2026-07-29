@@ -652,6 +652,7 @@ Si necesitas más de 500 tareas, pagina con `limit` + `offset` en lugar de esper
 - `sectionId`: string
 - `dueDate`: ISO string
 - `startTime`: ISO string
+- `recurrence`: objeto de recurrencia o cadena RRULE de RFC 5545
 - `contexts`: string[]
 - `tags`: string[]
 - `description`: string
@@ -674,6 +675,7 @@ Si necesitas más de 500 tareas, pagina con `limit` + `offset` en lugar de esper
 
 - `id`: string (UUID de la tarea)
 - `title`, `status`, `projectId`, `sectionId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `isFocusedToday`
+- `recurrence`: objeto de recurrencia, cadena RRULE de RFC 5545 o `null` para borrarla
 
 **Notas**
 

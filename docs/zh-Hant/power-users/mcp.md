@@ -652,6 +652,7 @@ Schema 注意事項：
 - `sectionId`：string
 - `dueDate`：ISO string
 - `startTime`：ISO string
+- `recurrence`：重複規則物件或 RFC 5545 RRULE 字串
 - `contexts`：string[]
 - `tags`：string[]
 - `description`：string
@@ -674,6 +675,7 @@ Schema 注意事項：
 
 - `id`：string（task UUID）
 - `title`、`status`、`projectId`、`sectionId`、`dueDate`、`startTime`、`contexts`、`tags`、`description`、`priority`、`energyLevel`、`assignedTo`、`timeEstimate`、`reviewAt`、`isFocusedToday`
+- `recurrence`：重複規則物件、RFC 5545 RRULE 字串，或使用 `null` 清除
 
 **注意事項**
 

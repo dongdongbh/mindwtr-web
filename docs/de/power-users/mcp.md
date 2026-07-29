@@ -652,6 +652,7 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 - `sectionId`: string
 - `dueDate`: ISO string
 - `startTime`: ISO string
+- `recurrence`: Wiederholungsobjekt oder RFC-5545-RRULE-Zeichenfolge
 - `contexts`: string[]
 - `tags`: string[]
 - `description`: string
@@ -674,6 +675,7 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 
 - `id`: string (task UUID)
 - `title`, `status`, `projectId`, `sectionId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `isFocusedToday`
+- `recurrence`: Wiederholungsobjekt, RFC-5545-RRULE-Zeichenfolge oder `null` zum Leeren
 
 **Hinweise**
 

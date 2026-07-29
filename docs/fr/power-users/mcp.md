@@ -652,6 +652,7 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 - `sectionId` : chaîne
 - `dueDate` : chaîne ISO
 - `startTime` : chaîne ISO
+- `recurrence` : objet de récurrence ou chaîne RRULE RFC 5545
 - `contexts` : chaîne[]
 - `tags` : chaîne[]
 - `description` : chaîne
@@ -674,6 +675,7 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 
 - `id` : chaîne (UUID de la tâche)
 - `title`, `status`, `projectId`, `sectionId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `isFocusedToday`
+- `recurrence` : objet de récurrence, chaîne RRULE RFC 5545 ou `null` pour l’effacer
 
 **Remarques**
 

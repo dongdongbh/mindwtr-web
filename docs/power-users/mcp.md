@@ -652,6 +652,7 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 - `sectionId`: string
 - `dueDate`: ISO string
 - `startTime`: ISO string
+- `recurrence`: recurrence object or RFC 5545 RRULE string
 - `contexts`: string[]
 - `tags`: string[]
 - `description`: string
@@ -674,6 +675,7 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 
 - `id`: string (task UUID)
 - `title`, `status`, `projectId`, `sectionId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `isFocusedToday`
+- `recurrence`: recurrence object, RFC 5545 RRULE string, or `null` to clear it
 
 **Notes**
 

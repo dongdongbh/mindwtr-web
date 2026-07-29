@@ -638,7 +638,7 @@ Personnalisez le fonctionnement de Mindwtr pour votre flux de travail GTD :
 - Valeurs par défaut : 10m, 30m, 1h, 2h, 3h, 4h, 4h+
 
 **Archivage automatique :**
-- Déplacez automatiquement les tâches Terminées vers Archivées après un nombre défini de jours (par défaut : 7 jours). Réduire le délai archive immédiatement les tâches déjà Terminées qui dépassent désormais la nouvelle limite.
+- Déplacez automatiquement les tâches Terminées vers Archivées après un nombre défini de jours (par défaut : 7 jours). Réduire le délai archive immédiatement les tâches déjà Terminées qui dépassent désormais la nouvelle limite. Sinon la vérification a lieu au démarrage de l'application, au plus une fois toutes les 12 heures — sauf si vous corrigez la date d'achèvement d'une tâche à une date antérieure à la limite : elle est alors archivée aussitôt.
 - Choisissez « Jamais » pour conserver indéfiniment les tâches achevées dans la liste Terminé
 
 **Traitement de la Boîte de réception :**

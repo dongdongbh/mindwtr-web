@@ -638,7 +638,7 @@ Personaliza cómo funciona Mindwtr en tu flujo GTD:
 - Predeterminado: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
 
 **Archivado automático:**
-- Mueve automáticamente las tareas Terminadas a Archivadas tras un número de días (predeterminado: 7 días). Al reducir el intervalo, las tareas Terminadas existentes que ya superen el nuevo límite se archivan inmediatamente.
+- Mueve automáticamente las tareas Terminadas a Archivadas tras un número de días (predeterminado: 7 días). Al reducir el intervalo, las tareas Terminadas existentes que ya superen el nuevo límite se archivan inmediatamente. Por lo demás, la comprobación se ejecuta al abrir la aplicación, como mucho una vez cada 12 horas, salvo que corrijas la fecha de finalización de una tarea a un momento anterior al límite: entonces se archiva al instante.
 - Elige «Nunca» para conservar las tareas completadas indefinidamente en Terminadas
 
 **Procesamiento de la Bandeja de entrada:**

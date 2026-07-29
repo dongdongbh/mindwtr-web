@@ -539,7 +539,7 @@ Abre Ajustes desde la barra lateral.
 - **Día/hora de revisión**: personaliza cuándo quieres recibir el recordatorio
 
 ### GTD
-- **Archivado automático**: mueve automáticamente las tareas Terminadas a Archivadas tras el número de días indicado (predeterminado: 7 días), o elige **Nunca** para conservarlas en Terminadas. Al reducir el intervalo, las tareas Terminadas existentes que ya superen el nuevo límite se archivan inmediatamente.
+- **Archivado automático**: mueve automáticamente las tareas Terminadas a Archivadas tras el número de días indicado (predeterminado: 7 días), o elige **Nunca** para conservarlas en Terminadas. Al reducir el intervalo, las tareas Terminadas existentes que ya superen el nuevo límite se archivan inmediatamente. Por lo demás, la comprobación se ejecuta al abrir la aplicación, como mucho una vez cada 12 horas, salvo que corrijas la fecha de finalización de una tarea a un momento anterior al límite: entonces se archiva al instante.
 - **Límite de tareas de Foco**: elige cuántas tareas se pueden marcar para el Foco de hoy
 - **Funciones**: señales opcionales que puedes activar cuando las necesites:
   - **Prioridades**: muestra una bandera de prioridad en las tareas

@@ -574,7 +574,7 @@ Erinnerungen werden auf dem Telefon geplant; es gibt keinen Push-Server. Wenn Si
 - Standard: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
 
 **Automatisch archivieren:**
-- Erledigte Aufgaben nach einer festgelegten Anzahl von Tagen archivieren (Standard: 7). Wenn Sie die Verzögerung verkürzen, werden vorhandene Erledigt-Aufgaben, die nun älter als der neue Grenzwert sind, sofort archiviert.
+- Erledigte Aufgaben nach einer festgelegten Anzahl von Tagen archivieren (Standard: 7). Wenn Sie die Verzögerung verkürzen, werden vorhandene Erledigt-Aufgaben, die nun älter als der neue Grenzwert sind, sofort archiviert. Ansonsten läuft die Prüfung beim Start der App, höchstens alle 12 Stunden — außer wenn Sie die Abschlusszeit einer Aufgabe auf einen Zeitpunkt vor dem Grenzwert korrigieren: dann wird sie sofort archiviert.
 - **Nie** für unbegrenzte Erledigt-Liste
 
 **Posteingangsverarbeitung:**

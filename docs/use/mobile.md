@@ -638,7 +638,7 @@ Customize how Mindwtr works for your GTD workflow:
 - Default: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
 
 **Auto-Archive:**
-- Automatically move Done tasks to Archived after a set number of days (default: 7 days). Reducing the delay immediately archives existing Done tasks that are now older than the new limit.
+- Automatically move Done tasks to Archived after a set number of days (default: 7 days). Reducing the delay immediately archives existing Done tasks that are now older than the new limit. Otherwise the check runs when the app starts, at most once every 12 hours — except when you correct a task's completion time to something older than the limit, which files it away straight away.
 - Set to "Never" to keep completions in the Done list indefinitely
 
 **Inbox Processing:**

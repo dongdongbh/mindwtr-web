@@ -337,7 +337,7 @@ node apps/mcp-server/dist/index.js --db "/path/to/mindwtr.db"
 
 ### 读取工具
 
-- **`mindwtr_list_tasks`**：使用筛选条件（状态、项目、日期范围、搜索）列出任务。
+- **`mindwtr_list_tasks`**：使用筛选条件（状态、项目、日期范围、搜索、用于今日专注的 `isFocusedToday`）列出任务。
 - **`mindwtr_list_projects`**：列出所有项目。
 - **`mindwtr_get_project`**：按 ID 获取特定项目的详情。
 - **`mindwtr_list_sections`**：列出项目分区，可选择按项目筛选。

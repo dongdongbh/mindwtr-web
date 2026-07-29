@@ -337,7 +337,7 @@ Seul `--write` permet l’accès en écriture (aucun autre alias).
 
 ### Outils de lecture
 
-- **`mindwtr_list_tasks`** : répertorier les tâches avec des filtres (statut, projet, plage de dates, recherche).
+- **`mindwtr_list_tasks`** : répertorier les tâches avec des filtres (statut, projet, plage de dates, recherche, `isFocusedToday` pour le focus du jour).
 - **`mindwtr_list_projects`** : répertorier tous les projets.
 - **`mindwtr_get_project`** : obtenir les détails d’un projet précis par son ID.
 - **`mindwtr_list_sections`** : répertorier les sections des projets, avec filtrage facultatif par projet.

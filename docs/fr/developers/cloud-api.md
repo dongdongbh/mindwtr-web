@@ -51,6 +51,7 @@ Paramètres de requête de la liste :
 | `status` | Un statut de tâche : `inbox`, `next`, `waiting`, `someday`, `reference`, `done` ou `archived`. |
 | `all=1` | Inclut les tâches terminées. |
 | `deleted=1` | Inclut les tâches supprimées de manière réversible. |
+| `isFocusedToday` | `true`/`1` renvoie uniquement les tâches du focus du jour ; `false`/`0` uniquement les autres. Omettez-le pour ne pas filtrer. |
 | `limit`, `offset` | Taille de la page et décalage de départ. |
 
 La création accepte soit `title`, soit l’`input` d’ajout rapide, ainsi que des `props` facultatives. La modification accepte les champs de tâche pris en charge par la couche de validation du cloud et incrémente les métadonnées de révision de synchronisation.

@@ -337,7 +337,7 @@ Only `--write` is supported for write access (no alternate aliases).
 
 ### Read Tools
 
-- **`mindwtr_list_tasks`**: List tasks with filters (status, project, date range, search).
+- **`mindwtr_list_tasks`**: List tasks with filters (status, project, date range, search, `isFocusedToday` for today's focus).
 - **`mindwtr_list_projects`**: List all projects.
 - **`mindwtr_get_project`**: Get details of a specific project by ID.
 - **`mindwtr_list_sections`**: List project sections, optionally filtered by project.

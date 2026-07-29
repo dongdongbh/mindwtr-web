@@ -51,6 +51,7 @@ POST /v1/tasks/:id/archive
 | `status` | 一種任務狀態：`inbox`、`next`、`waiting`、`someday`、`reference`、`done` 或 `archived`。 |
 | `all=1` | 納入已完成任務。 |
 | `deleted=1` | 納入軟刪除任務。 |
+| `isFocusedToday` | `true`/`1` 僅回傳標記為今日專注的任務；`false`/`0` 僅回傳其餘任務。省略則不篩選。 |
 | `limit`, `offset` | 頁面大小與起始位移。 |
 
 建立時可接受 `title` 或快速新增的 `input`，以及選用的 `props`。修補操作接受雲端驗證層支援的任務欄位，並提高同步修訂版中繼資料。

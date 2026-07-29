@@ -51,6 +51,7 @@ POST /v1/tasks/:id/archive
 | `status` | 一种任务状态：`inbox`、`next`、`waiting`、`someday`、`reference`、`done` 或 `archived`。 |
 | `all=1` | 包含已完成任务。 |
 | `deleted=1` | 包含软删除任务。 |
+| `isFocusedToday` | `true`/`1` 仅返回标记为今日专注的任务；`false`/`0` 仅返回其余任务。省略则不过滤。 |
 | `limit`、`offset` | 页面大小与起始偏移。 |
 
 创建操作接受 `title` 或快速添加 `input`，以及可选的 `props`。Patch 接受云端验证层支持的任务字段，并推进同步修订元数据。

@@ -51,6 +51,7 @@ Parámetros de lista:
 | `status` | Un estado: `inbox`, `next`, `waiting`, `someday`, `reference`, `done` o `archived`. |
 | `all=1` | Incluye tareas completadas. |
 | `deleted=1` | Incluye tareas eliminadas de forma reversible. |
+| `isFocusedToday` | `true`/`1` devuelve solo las tareas destacadas para el foco de hoy; `false`/`0` solo el resto. Omítelo para no filtrar. |
 | `limit`, `offset` | Tamaño de página y desplazamiento inicial. |
 
 La creación acepta `title` o un `input` de adición rápida, además de `props` opcional. El parche acepta campos compatibles con la validación de nube y aumenta los metadatos de revisión.

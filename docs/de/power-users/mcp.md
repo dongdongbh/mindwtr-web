@@ -337,7 +337,7 @@ Für den Schreibzugriff wird ausschließlich `--write` unterstützt (keine alter
 
 ### Lesewerkzeuge
 
-- **`mindwtr_list_tasks`**: Aufgaben mit Filtern auflisten (Status, Projekt, Datumsbereich, Suche).
+- **`mindwtr_list_tasks`**: Aufgaben mit Filtern auflisten (Status, Projekt, Datumsbereich, Suche, `isFocusedToday` für den heutigen Fokus).
 - **`mindwtr_list_projects`**: Alle Projekte auflisten.
 - **`mindwtr_get_project`**: Details eines bestimmten Projekts anhand der ID abrufen.
 - **`mindwtr_list_sections`**: Projektabschnitte auflisten, optional nach Projekt gefiltert.

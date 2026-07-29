@@ -51,6 +51,7 @@ List query parameters:
 | `status` | One task status: `inbox`, `next`, `waiting`, `someday`, `reference`, `done`, or `archived`. |
 | `all=1` | Include completed tasks. |
 | `deleted=1` | Include soft-deleted tasks. |
+| `isFocusedToday` | `true`/`1` returns only tasks starred for today's focus; `false`/`0` returns only the rest. Omit for no filter. |
 | `limit`, `offset` | Page size and start offset. |
 
 Create accepts either `title` or quick-add `input`, plus optional `props`. Patch accepts task fields supported by the cloud validation layer and bumps sync revision metadata.

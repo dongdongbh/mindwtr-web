@@ -51,6 +51,7 @@ Abfrageparameter für Listen:
 | `status` | Ein Aufgabenstatus: `inbox`, `next`, `waiting`, `someday`, `reference`, `done` oder `archived`. |
 | `all=1` | Erledigte Aufgaben einbeziehen. |
 | `deleted=1` | Vorläufig gelöschte Aufgaben einbeziehen. |
+| `isFocusedToday` | `true`/`1` liefert nur Aufgaben im heutigen Fokus, `false`/`0` nur die übrigen. Weglassen bedeutet kein Filter. |
 | `limit`, `offset` | Seitengröße und Startversatz. |
 
 Beim Erstellen werden entweder `title` oder die Schnelleingabe `input` sowie optional `props` akzeptiert. Patch akzeptiert Aufgabenfelder, die von der Cloud-Validierungsschicht unterstützt werden, und erhöht die Metadaten der Synchronisierungsrevision.

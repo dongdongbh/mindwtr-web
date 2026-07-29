@@ -337,7 +337,7 @@ Solo se admite `--write` para el acceso de escritura (no hay alias alternativos)
 
 ### Herramientas de lectura
 
-- **`mindwtr_list_tasks`**: Enumera tareas con filtros (estado, proyecto, intervalo de fechas y búsqueda).
+- **`mindwtr_list_tasks`**: Enumera tareas con filtros (estado, proyecto, intervalo de fechas, búsqueda y `isFocusedToday` para el foco de hoy).
 - **`mindwtr_list_projects`**: Enumera todos los proyectos.
 - **`mindwtr_get_project`**: Obtiene los detalles de un proyecto concreto por ID.
 - **`mindwtr_list_sections`**: Enumera las secciones de los proyectos, con filtro opcional por proyecto.

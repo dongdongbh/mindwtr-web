@@ -115,6 +115,8 @@ La visibilité des calendriers externes est une préférence d’affichage local
 - L’état affiché/masqué de chaque calendrier dans la vue Calendrier est enregistré sur l’appareil actuel.
 - Les calendriers masqués restent disponibles dans les Paramètres ; ils sont simplement exclus de la surface de planification visible et de la vérification des créneaux libres sur cet appareil.
 
+Un abonnement `.ics` contient souvent plusieurs calendriers logiques, distingués par le champ `CATEGORIES` de chaque événement. Mindwtr divise ce flux automatiquement : chaque catégorie devient un calendrier à part dans la vue Calendrier, avec sa propre couleur et son propre bouton afficher/masquer. Un événement portant plusieurs catégories appartient à la première. Les flux qui utilisent `CATEGORIES` comme étiquettes libres sont laissés tels quels : au-delà de huit catégories distinctes, le flux reste un seul calendrier. Dans les deux cas, le flux garde une seule ligne dans les Paramètres, là où se trouvent son URL et son bouton Supprimer.
+
 ### Mobile : envoyer les tâches Mindwtr vers le calendrier
 
 Sur iOS et Android, Mindwtr peut envoyer les tâches planifiées et celles ayant une date d’échéance vers un calendrier sélectionné de l’appareil :

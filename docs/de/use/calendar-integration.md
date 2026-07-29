@@ -115,6 +115,8 @@ Die Sichtbarkeit externer Kalender ist eine lokale Anzeigeeinstellung:
 - Der Ein-/Ausblendzustand jedes Kalenders in der Kalenderansicht wird auf dem aktuellen Gerät gespeichert.
 - Ausgeblendete Kalender bleiben in den Einstellungen verfügbar. Sie werden auf diesem Gerät lediglich von der sichtbaren Planungsoberfläche und der Prüfung freier Zeitfenster ausgeschlossen.
 
+Ein abonnierter `.ics`-Feed enthält oft mehrere logische Kalender, die über das Feld `CATEGORIES` jedes Termins unterschieden werden. Mindwtr teilt einen solchen Feed automatisch auf: Jede Kategorie wird in der Kalenderansicht zu einem eigenen Kalender mit eigener Farbe und eigenem Ein-/Ausblendschalter. Ein Termin mit mehreren Kategorien gehört zur ersten davon. Feeds, die `CATEGORIES` als freie Schlagwörter verwenden, bleiben unangetastet: Ab acht verschiedenen Kategorien bleibt der Feed ein einzelner Kalender. In beiden Fällen behält der Feed eine Zeile in den Einstellungen, denn dort liegen seine URL und die Schaltfläche zum Entfernen.
+
 ### Mobilgeräte: Mindwtr-Aufgaben in den Kalender übertragen
 
 Unter iOS und Android kann Mindwtr geplante Aufgaben und Aufgaben mit Fälligkeitsdatum in einen ausgewählten Gerätekalender übertragen:

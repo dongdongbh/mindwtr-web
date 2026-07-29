@@ -115,6 +115,8 @@ External calendar visibility is a local display preference:
 - The per-calendar show/hide state in the Calendar view is stored on the current device.
 - Hidden calendars are still available in Settings; they are just excluded from the visible planning surface and free-slot checks on that device.
 
+A subscribed `.ics` feed often holds several logical calendars, told apart by each event's `CATEGORIES` field. Mindwtr splits such a feed automatically: every category becomes its own calendar in the Calendar view, with its own colour and its own show/hide toggle. An event that lists several categories belongs to the first one. Feeds that use `CATEGORIES` as free-form tags are left alone — past eight distinct categories the feed stays a single calendar. Either way the feed keeps one row in Settings, since that is where its URL and Remove button live.
+
 ### Mobile: Push Mindwtr Tasks to Calendar
 
 On iOS and Android, Mindwtr can push scheduled tasks and tasks with due dates into a selected device calendar:

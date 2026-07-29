@@ -115,6 +115,8 @@ La visibilidad de los calendarios externos es una preferencia de visualización 
 - El estado de mostrar/ocultar de cada calendario en la vista Calendario se almacena en el dispositivo actual.
 - Los calendarios ocultos siguen estando disponibles en Ajustes; simplemente se excluyen de la superficie de planificación visible y de las comprobaciones de intervalos libres en ese dispositivo.
 
+Una suscripción `.ics` suele contener varios calendarios lógicos, distinguidos por el campo `CATEGORIES` de cada evento. Mindwtr divide ese feed automáticamente: cada categoría se convierte en su propio calendario en la vista Calendario, con su color y su interruptor de mostrar/ocultar. Un evento que indica varias categorías pertenece a la primera. Los feeds que usan `CATEGORIES` como etiquetas libres se dejan intactos: a partir de ocho categorías distintas el feed sigue siendo un único calendario. En ambos casos el feed conserva una sola fila en Ajustes, que es donde están su URL y el botón Eliminar.
+
 ### Móvil: enviar tareas de Mindwtr al calendario
 
 En iOS y Android, Mindwtr puede enviar tareas programadas y tareas con fechas límite a un calendario seleccionado del dispositivo:

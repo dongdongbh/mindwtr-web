@@ -44,6 +44,8 @@ Tap the **Menu** tab to access additional views:
 
 Open **Done** and tap **Select** to choose tasks, then use **Move → Archived** to file them away early. In **Archived**, tap **Select** or **Select All** to move tasks back to Done without changing their completion time, restore them to Inbox, or move them to Trash. Switch to **Projects** to open, restore, or move archived projects to Trash. Mindwtr permanently deletes items only from Trash.
 
+**Archived** has a search box and a **Filters** button in its header. Filters narrows by context, tag, priority, and time estimate, and holds **Sort** and **Group** — both offering **Completion date**, since everything filed here is finished work. The newest completion comes first by default. Filter selections are shared across the task lists, so a context picked elsewhere narrows this list too. Search and filters apply to the Tasks side of the Tasks | Projects switch.
+
 In Done, sort by **Completion date** to show the newest completions first. Group by **Completion date** to split the list into **Today**, **Yesterday**, **Previous 7 days**, **Earlier**, and **Not completed**; empty groups stay hidden.
 
 Open **Trash** and tap **Select** to manage several deleted tasks and projects. Tap **Select All** or choose items, then restore or permanently delete them in one step. Permanent deletion always asks for confirmation.

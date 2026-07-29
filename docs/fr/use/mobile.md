@@ -44,6 +44,8 @@ Touchez l’onglet **Menu** pour accéder aux vues supplémentaires :
 
 Ouvrez **Terminé** et touchez **Sélectionner** pour choisir des tâches, puis utilisez **Déplacer → Archivés** pour les classer plus tôt. Dans **Archivés**, touchez **Sélectionner** ou **Tout sélectionner** pour ramener des tâches dans Terminé sans modifier leur heure d’achèvement, les restaurer dans la Boîte de réception ou les déplacer vers la Corbeille. Passez à **Projets** pour ouvrir, restaurer ou déplacer des projets archivés vers la Corbeille. Mindwtr ne supprime définitivement les éléments que depuis la Corbeille.
 
+**Archivés** dispose d’un champ de recherche et d’un bouton **Filtres** dans son en-tête. Filtres restreint par contexte, étiquette, priorité et temps estimé, et contient **Trier** et **Regrouper** — tous deux proposant **Date d’achèvement**, puisque tout ce qui est classé ici est du travail terminé. Par défaut, l’achèvement le plus récent vient en premier. Les sélections de filtres sont partagées entre les listes de tâches : un contexte choisi ailleurs restreint donc aussi cette liste. La recherche et les filtres s’appliquent au côté Tâches du sélecteur Tâches | Projets.
+
 Dans **Terminé**, triez par **Date d’achèvement** pour afficher d’abord les tâches achevées le plus récemment. Regroupez par **Date d’achèvement** pour diviser la liste en **Aujourd’hui**, **Hier**, **7 derniers jours**, **Plus tôt** et **Non terminé** ; les groupes vides restent masqués.
 
 Ouvrez la **Corbeille** et touchez **Sélectionner** pour gérer plusieurs tâches et projets supprimés. Touchez **Tout sélectionner** ou choisissez des éléments, puis restaurez-les ou supprimez-les définitivement en une seule étape. Toute suppression définitive demande toujours une confirmation.

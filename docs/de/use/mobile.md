@@ -44,6 +44,8 @@ Tippen Sie auf **Menü**, um weitere Ansichten zu öffnen:
 
 Öffnen Sie **Erledigt** und tippen Sie auf **Auswählen**, um Aufgaben zu markieren. Verwenden Sie dann **Verschieben → Archiviert**, um sie vorzeitig abzulegen. Unter **Archiviert** können Sie mit **Auswählen** oder **Alle auswählen** Aufgaben zurück nach Erledigt verschieben, ohne den Abschlusszeitpunkt zu ändern, sie im Posteingang wiederherstellen oder in den Papierkorb verschieben. Wechseln Sie zu **Projekte**, um archivierte Projekte zu öffnen, wiederherzustellen oder in den Papierkorb zu verschieben. Mindwtr löscht Einträge nur aus dem Papierkorb endgültig.
 
+**Archiviert** hat ein Suchfeld und eine Schaltfläche **Filter** in der Kopfzeile. Filter grenzt nach Kontext, Tag, Priorität und Zeitaufwand ein und enthält **Sortieren** und **Gruppieren** — beide bieten **Abschlussdatum**, da hier ausschließlich abgeschlossene Arbeit abgelegt ist. Standardmäßig steht der neueste Abschluss oben. Filterauswahlen gelten für alle Aufgabenlisten gemeinsam, ein anderswo gewählter Kontext grenzt also auch diese Liste ein. Suche und Filter gelten für die Seite „Aufgaben“ des Umschalters Aufgaben | Projekte.
+
 Unter **Erledigt** zeigt die Sortierung nach **Abschlussdatum** die neuesten Abschlüsse zuerst. Die Gruppierung nach **Abschlussdatum** teilt die Liste in **Heute**, **Gestern**, **Letzte 7 Tage**, **Früher** und **Nicht abgeschlossen**; leere Gruppen bleiben ausgeblendet.
 
 Öffnen Sie **Papierkorb** und tippen Sie auf **Auswählen**, um mehrere gelöschte Aufgaben und Projekte gemeinsam wiederherzustellen oder endgültig zu löschen. Endgültiges Löschen verlangt immer eine Bestätigung.

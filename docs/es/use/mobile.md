@@ -44,6 +44,8 @@ Toca la pestaña **Menú** para acceder a más vistas:
 
 Abre **Terminadas** y toca **Seleccionar** para elegir tareas; después usa **Mover → Archivadas** para archivarlas antes. En **Archivadas**, toca **Seleccionar** o **Seleccionar todo** para devolver tareas a Terminadas sin cambiar su hora de finalización, restaurarlas a la Bandeja de entrada o moverlas a la Papelera. Cambia a **Proyectos** para abrir, restaurar o mover proyectos archivados a la Papelera. Mindwtr solo elimina elementos permanentemente desde la Papelera.
 
+**Archivadas** tiene un cuadro de búsqueda y un botón **Filtros** en su cabecera. Filtros acota por contexto, etiqueta, prioridad y tiempo estimado, y contiene **Ordenar** y **Agrupar** — ambos ofrecen **Fecha de finalización**, ya que aquí solo se archiva trabajo terminado. De forma predeterminada, primero aparece la finalización más reciente. Las selecciones de filtro se comparten entre las listas de tareas, así que un contexto elegido en otra lista también acota esta. La búsqueda y los filtros se aplican al lado Tareas del selector Tareas | Proyectos.
+
 En **Terminadas**, ordena por **Fecha de finalización** para mostrar primero las tareas completadas más recientes. Agrupa por **Fecha de finalización** para dividir la lista en **Hoy**, **Ayer**, **Últimos 7 días**, **Anterior** y **Sin completar**; los grupos vacíos permanecen ocultos.
 
 Abre **Papelera** y toca **Seleccionar** para gestionar varias tareas y proyectos eliminados. Toca **Seleccionar todo** o elige elementos y después restáuralos o elimínalos permanentemente en un solo paso. La eliminación permanente siempre pide confirmación.

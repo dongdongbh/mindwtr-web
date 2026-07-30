@@ -52,14 +52,17 @@ bun mobile:start
 
 **Linux (Arch):**
 ```bash
-sudo pacman -S rust webkit2gtk-4.1 base-devel
+sudo pacman -S rust webkit2gtk-4.1 base-devel cmake alsa-lib libayatana-appindicator
 ```
 
 **Linux (Debian/Ubuntu):**
 ```bash
-sudo apt install libwebkit2gtk-4.1-dev build-essential libssl-dev libgtk-3-dev
+sudo apt install libwebkit2gtk-4.1-dev build-essential libssl-dev libgtk-3-dev \
+  cmake perl libasound2-dev libayatana-appindicator3-dev
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
+
+For minimal build environments (containers, Nix) the full native set beyond the WebKitGTK/GTK3 stack is: `cmake` plus a C/C++ toolchain with `bindgen` support (local Whisper transcription), `perl` (OpenSSL's build), ALSA headers (audio), and `libayatana-appindicator` (tray icon).
 
 **macOS:**
 ```bash

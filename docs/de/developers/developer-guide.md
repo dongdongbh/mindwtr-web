@@ -52,14 +52,17 @@ bun mobile:start
 
 **Linux (Arch):**
 ```bash
-sudo pacman -S rust webkit2gtk-4.1 base-devel
+sudo pacman -S rust webkit2gtk-4.1 base-devel cmake alsa-lib libayatana-appindicator
 ```
 
 **Linux (Debian/Ubuntu):**
 ```bash
-sudo apt install libwebkit2gtk-4.1-dev build-essential libssl-dev libgtk-3-dev
+sudo apt install libwebkit2gtk-4.1-dev build-essential libssl-dev libgtk-3-dev \
+  cmake perl libasound2-dev libayatana-appindicator3-dev
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
+
+Für minimale Build-Umgebungen (Container, Nix) umfasst der vollständige Satz nativer Abhängigkeiten jenseits des WebKitGTK-/GTK3-Stacks: `cmake` sowie eine C/C++-Toolchain mit `bindgen`-Unterstützung (lokale Whisper-Transkription), `perl` (Build von OpenSSL), ALSA-Header (Audio) und `libayatana-appindicator` (Tray-Symbol).
 
 **macOS:**
 ```bash

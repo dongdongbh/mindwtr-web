@@ -52,14 +52,17 @@ bun mobile:start
 
 **Linux（Arch）：**
 ```bash
-sudo pacman -S rust webkit2gtk-4.1 base-devel
+sudo pacman -S rust webkit2gtk-4.1 base-devel cmake alsa-lib libayatana-appindicator
 ```
 
 **Linux（Debian/Ubuntu）：**
 ```bash
-sudo apt install libwebkit2gtk-4.1-dev build-essential libssl-dev libgtk-3-dev
+sudo apt install libwebkit2gtk-4.1-dev build-essential libssl-dev libgtk-3-dev \
+  cmake perl libasound2-dev libayatana-appindicator3-dev
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
+
+在最小化构建环境（容器、Nix）中，除 WebKitGTK/GTK3 相关组件外，还需要的完整原生依赖是：`cmake` 以及支持 `bindgen` 的 C/C++ 工具链（本地 Whisper 转录）、`perl`（OpenSSL 的构建）、ALSA 头文件（音频）和 `libayatana-appindicator`（系统托盘图标）。
 
 **macOS：**
 ```bash

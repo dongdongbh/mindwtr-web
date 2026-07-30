@@ -153,6 +153,10 @@ La imagen de Docker `mindwtr-app` sirve la compilación para navegador/PWA. La s
 
 Para la sincronización alojada en Docker, usa el servidor en la nube autoalojado incluido o WebDAV. Si el endpoint autoalojado está detrás de Authelia u otro proxy SSO interactivo, configura el proxy para permitir que la ruta de sincronización/API de Mindwtr use directamente el token de portador de Mindwtr; la aplicación móvil no puede completar un inicio de sesión de Authelia en el navegador delante de `/v1/data`.
 
+### Recordatorios en la PWA de Docker
+
+Los recordatorios de tareas y de fechas de inicio, vencimiento y revisión también se muestran en la versión del navegador, como notificaciones web. Concede permiso de notificaciones al sitio (Ajustes → Notificaciones) y deja abierta una pestaña de Mindwtr: la versión del navegador no tiene servicio en segundo plano, así que los recordatorios solo se entregan mientras haya una pestaña en ejecución. Una pestaña en segundo plano ve limitados sus temporizadores, por lo que un recordatorio puede llegar hasta un minuto tarde, y el que venza con todas las pestañas cerradas se omite en lugar de entregarse después. Para recordatorios que sobrevivan a un navegador cerrado, usa la aplicación de escritorio o móvil.
+
 ### API de automatización de tareas
 
 El mismo contenedor `mindwtr-cloud` también expone la API REST para automatizar tareas. Usa la misma URL base y el mismo token de portador que la sincronización.

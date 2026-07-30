@@ -153,6 +153,10 @@ Docker `mindwtr-app` image 提供瀏覽器／PWA 組建。此 runtime 無法使�
 
 Docker 託管的同步請使用隨附的自行託管雲端伺服器或 WebDAV。若自行託管端點位於 Authelia 或其他互動式 SSO proxy 後方，請設定 proxy，讓 Mindwtr 的同步／API 路徑直接使用 Mindwtr 的 bearer token；行動版無法在 `/v1/data` 前方完成 Authelia 瀏覽器登入。
 
+### Docker PWA 中的提醒
+
+任務提醒以及開始、到期與檢視日期提醒在瀏覽器版本中同樣會觸發，形式為網頁通知。請為網站授予通知權限（設定 → 通知），並保持一個 Mindwtr 分頁開啟：瀏覽器版本沒有背景服務，因此只有在分頁執行時才會送達提醒。位於背景的分頁其計時器會被節流，提醒可能最多遲到一分鐘；在所有分頁都關閉時到點的提醒會被跳過，而不會稍後補送。若需要在瀏覽器關閉後仍然可靠的提醒，請使用桌面或行動應用程式。
+
 ### 任務自動化 API
 
 同一個 `mindwtr-cloud` 容器也會公開供任務自動化使用的 REST API。它採用與同步相同的 base URL 及 bearer token。

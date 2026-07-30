@@ -153,6 +153,10 @@ Das Docker-Image `mindwtr-app` stellt den Browser-/PWA-Build bereit. Die native 
 
 Verwenden Sie für eine mit Docker gehostete Synchronisierung den mitgelieferten Self-Hosted-Cloud-Server oder WebDAV. Wenn der Self-Hosted-Endpunkt hinter Authelia oder einem anderen interaktiven SSO-Proxy liegt, konfigurieren Sie den Proxy so, dass der Synchronisierungs-/API-Pfad von Mindwtr das Bearer-Token von Mindwtr direkt verwenden kann. Die Mobil-App kann keine Authelia-Browseranmeldung vor `/v1/data` abschließen.
 
+### Erinnerungen in der Docker-PWA
+
+Erinnerungen für Aufgaben, Start-, Fällig- und Überprüfungstermine erscheinen auch im Browser-Build, als Web-Benachrichtigungen. Erteilen Sie der Seite die Benachrichtigungsberechtigung (Einstellungen → Benachrichtigungen) und lassen Sie einen Mindwtr-Tab offen: Der Browser-Build hat keinen Hintergrunddienst, Erinnerungen werden also nur bei laufendem Tab ausgeliefert. Ein Tab im Hintergrund wird in seinen Timern gebremst, eine Erinnerung kann daher bis zu eine Minute später eintreffen; eine Erinnerung, die bei vollständig geschlossenen Tabs fällig war, wird übersprungen und nicht nachgeliefert. Für Erinnerungen, die einen geschlossenen Browser überdauern, verwenden Sie die Desktop- oder Mobil-App.
+
 ### API zur Aufgabenautomatisierung
 
 Derselbe Container `mindwtr-cloud` stellt auch die REST-API zur Aufgabenautomatisierung bereit. Sie verwendet dieselbe Basis-URL und dasselbe Bearer-Token wie die Synchronisierung.

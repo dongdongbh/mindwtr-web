@@ -153,6 +153,10 @@ The Docker `mindwtr-app` image serves the browser/PWA build. Native Dropbox OAut
 
 For Docker-hosted sync, use the bundled self-hosted cloud server or WebDAV. If the self-hosted endpoint is behind Authelia or another interactive SSO proxy, configure the proxy to let the Mindwtr sync/API path use Mindwtr's bearer token directly; the mobile app cannot complete an Authelia browser login in front of `/v1/data`.
 
+### Reminders in the Docker PWA
+
+Task, start, due, and review reminders fire in the browser build too, as Web Notifications. Grant the site notification permission (Settings → Notifications) and keep a Mindwtr tab open: the browser build has no background service, so reminders are only delivered while a tab is running. A tab in the background has its timers throttled, so a reminder can arrive up to a minute late, and one reached while every tab was closed is skipped rather than delivered later. For reminders that survive a closed browser, use the desktop or mobile app.
+
 ### Task Automation API
 
 The same `mindwtr-cloud` container also exposes the REST API for task automation. It uses the same base URL and the same bearer token as sync.

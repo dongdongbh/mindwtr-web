@@ -153,6 +153,10 @@ L’image Docker `mindwtr-app` sert la version navigateur/PWA. La synchronisatio
 
 Pour une synchronisation hébergée avec Docker, utilisez le serveur Cloud auto-hébergé fourni ou WebDAV. Si le point de terminaison auto-hébergé se trouve derrière Authelia ou un autre proxy SSO interactif, configurez le proxy pour que le chemin de synchronisation/API de Mindwtr utilise directement le jeton porteur de Mindwtr ; l’application mobile ne peut pas effectuer une connexion Authelia dans le navigateur devant `/v1/data`.
 
+### Rappels dans la PWA Docker
+
+Les rappels de tâche, de date de début, d’échéance et de revue s’affichent aussi dans la version navigateur, sous forme de notifications web. Accordez l’autorisation de notification au site (Réglages → Notifications) et gardez un onglet Mindwtr ouvert : la version navigateur n’a pas de service en arrière-plan, les rappels ne sont donc délivrés que tant qu’un onglet tourne. Un onglet en arrière-plan voit ses minuteurs bridés, un rappel peut donc arriver jusqu’à une minute en retard, et celui atteint alors que tous les onglets étaient fermés est ignoré plutôt que délivré ensuite. Pour des rappels qui survivent à un navigateur fermé, utilisez l’application de bureau ou mobile.
+
 ### API d’automatisation des tâches
 
 Le même conteneur `mindwtr-cloud` expose également l’API REST d’automatisation des tâches. Elle utilise la même URL de base et le même jeton porteur que la synchronisation.

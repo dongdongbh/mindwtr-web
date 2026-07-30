@@ -539,7 +539,7 @@ Accédez aux Paramètres depuis la barre latérale.
 - **Jour/heure de la revue** : personnalisez le moment où vous souhaitez recevoir le rappel
 
 ### GTD
-- **Archivage automatique** : déplacez automatiquement les tâches Terminées vers Archivées après un nombre défini de jours (par défaut : 7 jours), ou choisissez **Jamais** pour conserver les tâches achevées dans Terminé. Réduire le délai archive immédiatement les tâches déjà Terminées qui dépassent désormais la nouvelle limite. Sinon la vérification a lieu au démarrage de l'application, au plus une fois toutes les 12 heures — sauf si vous corrigez la date d'achèvement d'une tâche à une date antérieure à la limite : elle est alors archivée aussitôt.
+- **Archivage automatique** : déplacez automatiquement les tâches Terminées vers Archivées après un nombre défini de jours (par défaut : 7 jours), ou choisissez **Jamais** pour conserver les tâches achevées dans Terminé. Réduire le délai archive immédiatement les tâches déjà Terminées qui dépassent désormais la nouvelle limite. Sinon la vérification a lieu à chaque démarrage de l'application, et si vous corrigez la date d'achèvement d'une tâche à une date antérieure à la limite, elle est archivée aussitôt.
 - **Limite de tâches Focus** : choisissez combien de tâches peuvent être marquées pour le Focus du jour
 - **Fonctionnalités** : signaux facultatifs que vous pouvez activer au besoin :
   - **Priorités** : afficher un indicateur de priorité sur les tâches

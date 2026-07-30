@@ -539,7 +539,7 @@ Access Settings from the sidebar.
 - **Review Day/Time**: Customize when you want to be reminded
 
 ### GTD
-- **Auto-Archive**: Automatically move Done tasks to Archived after a set number of days (default: 7 days), or choose **Never** to keep completed tasks in Done. Reducing the delay immediately archives existing Done tasks that are now older than the new limit. Otherwise the check runs when the app starts, at most once every 12 hours — except when you correct a task's completion time to something older than the limit, which files it away straight away.
+- **Auto-Archive**: Automatically move Done tasks to Archived after a set number of days (default: 7 days), or choose **Never** to keep completed tasks in Done. Reducing the delay immediately archives existing Done tasks that are now older than the new limit. Otherwise the check runs every time the app starts, and correcting a task's completion time to something older than the limit files it away straight away.
 - **Focus task limit**: Choose how many tasks can be marked for Today's Focus
 - **Features**: Optional signals you can enable when needed:
   - **Priorities**: Show a priority flag on tasks

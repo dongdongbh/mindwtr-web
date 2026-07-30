@@ -534,7 +534,7 @@ In jeder Voreinstellung setzt `s` plus Buchstabe direkt den Status (`si` Postein
 - **Tag/Uhrzeit** anpassen
 
 ### GTD
-- **Automatisch archivieren**: Erledigte Aufgaben nach einer Anzahl von Tagen archivieren (Standard: 7) oder mit **Nie** behalten. Wenn Sie die Verzögerung verkürzen, werden vorhandene Erledigt-Aufgaben, die nun älter als der neue Grenzwert sind, sofort archiviert. Ansonsten läuft die Prüfung beim Start der App, höchstens alle 12 Stunden — außer wenn Sie die Abschlusszeit einer Aufgabe auf einen Zeitpunkt vor dem Grenzwert korrigieren: dann wird sie sofort archiviert.
+- **Automatisch archivieren**: Erledigte Aufgaben nach einer Anzahl von Tagen archivieren (Standard: 7) oder mit **Nie** behalten. Wenn Sie die Verzögerung verkürzen, werden vorhandene Erledigt-Aufgaben, die nun älter als der neue Grenzwert sind, sofort archiviert. Ansonsten läuft die Prüfung bei jedem Start der App, und wenn Sie die Abschlusszeit einer Aufgabe auf einen Zeitpunkt vor dem Grenzwert korrigieren, wird sie sofort archiviert.
 - **Fokusaufgabenlimit** festlegen
 - **Funktionen**: optionale Signale:
   - **Prioritäten**

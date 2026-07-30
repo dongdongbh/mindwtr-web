@@ -8,14 +8,14 @@ Mindwtr sur ordinateur permet une utilisation centrée sur le clavier avec les p
 - Appuyez sur `?` pour afficher la fiche des raccourcis actifs. Elle se termine par un tableau de la syntaxe d’ajout rapide qui recense tous les jetons (`/start:`, `/note:`, `@context`, `+Project`, …).
 - Utilisez `/` pour rechercher.
 - Utilisez `gi` pour la Boîte de réception, `gn` pour les Prochaines actions et `gf` pour Focus dans les modes Standard et Vim.
-- Utilisez `a` pour ajouter une tâche lorsque Mindwtr a le focus. `o` déclenche toujours la même action limitée à l’application.
+- Utilisez `a` pour ajouter une tâche lorsque Mindwtr a le focus. La touche tient compte du contexte : dans un projet, la boîte de dialogue d’ajout s’ouvre avec ce projet déjà sélectionné, et dans les vues dotées d’un champ d’ajout intégré, c’est ce champ qui reçoit le focus.
 - Utilisez `j` et `k` pour déplacer la sélection, puis `Enter` pour ouvrir la tâche sélectionnée.
 - En mode Standard, utilisez `e` pour terminer, `x` pour sélectionner des tâches en vue d’actions groupées, `S` pour ajouter ou retirer la tâche sélectionnée du focus du jour, `F2` pour la renommer, `Shift+Enter` pour modifier, `#` pour supprimer et `z` pour annuler.
 - En mode Vim, utilisez `e` pour modifier, `x` pour basculer l’état terminé et `dd` pour supprimer.
 - Utilisez `Ctrl+Z` ou `Cmd+Z` pour annuler la dernière tâche terminée ou supprimée, quel que soit le préréglage.
 - Utilisez `s` suivi d’une lettre pour définir le statut de la tâche sélectionnée : `si` Boîte de réception, `sn` Prochaine action, `sw` En attente, `ss` Un jour, `sd` Terminé, `sa` Archivé. Une notification confirme la modification et propose de l’annuler.
 - Utilisez `Insert` pour atteindre le champ d’ajout de tâche ; l’ajout rapide s’ouvre dans les vues qui n’en ont pas.
-- Appuyez sur `1` à `9` (hors de tout champ de texte) pour choisir un domaine selon son ordre dans la barre latérale, et sur `0` pour supprimer le filtre de domaine ; le raccourci `Shift+A` suivi du chiffre fonctionne toujours aussi. La touche `a` seule ouvre l’ajout rapide.
+- Appuyez sur `1` à `9` (hors de tout champ de texte) pour choisir un domaine selon son ordre dans la barre latérale, et sur `0` pour supprimer le filtre de domaine ; le raccourci `Shift+A` suivi du chiffre fonctionne toujours aussi. La touche `a` seule ajoute une tâche dans le contexte actuel.
 - Utilisez `Ctrl+Alt+S` pour lancer une synchronisation manuelle sur ordinateur.
 - Dans le menu contextuel ouvert par clic droit ou `Shift+F10` : ↑/↓ parcourent les éléments, → ouvre un sous-menu et ← revient en arrière, Entrée active l’élément, Échap ferme le menu et rend le focus à la tâche.
 

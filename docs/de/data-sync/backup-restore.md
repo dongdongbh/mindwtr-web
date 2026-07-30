@@ -9,7 +9,7 @@ Die Wiederherstellung ist als Ablauf zum **Ersetzen lokaler Daten** konzipiert:
 - Mindwtr erstellt nach Möglichkeit zuerst eine Wiederherstellungsmomentaufnahme.
 - Die ausgewählte Sicherung ersetzt den aktuellen lokalen Datensatz.
 
-Dadurch bleibt die Wiederherstellung einfach und vorhersehbar. Sie ist kein Zusammenführungsvorgang.
+Dadurch bleibt die Wiederherstellung einfach und vorhersehbar. Sie ist kein Zusammenführungsvorgang – verwenden Sie dafür **Backup zusammenführen**.
 
 ---
 
@@ -53,6 +53,21 @@ Vor der Wiederherstellung speichert die mobile App eine lokale Wiederherstellung
 
 ---
 
+## Aus einer Sicherung zusammenführen
+
+**Backup zusammenführen** steht auf beiden Plattformen neben der Wiederherstellung und kombiniert eine Sicherungsdatei mit Ihren aktuellen Daten, statt sie zu ersetzen. Dabei gelten dieselben Regeln wie bei der Synchronisierung:
+
+- Einträge, die es nur in der Sicherung gibt, werden hinzugefügt.
+- Gibt es beide Fassungen, gewinnt die neuere.
+- Einträge, die es nur auf diesem Gerät gibt, bleiben erhalten.
+- Einträge, die Sie auf diesem Gerät gelöscht haben, bleiben gelöscht, auch wenn die Sicherung noch eine aktive Fassung enthält.
+
+Nach dem Zusammenführen meldet Mindwtr, wie viele Aufgaben hinzugefügt und wie viele aktualisiert wurden. Nach Möglichkeit wird zuvor eine Wiederherstellungsmomentaufnahme gespeichert, sodass sich ein Zusammenführen wie eine Wiederherstellung zurücknehmen lässt.
+
+Verwenden Sie das Zusammenführen, um eine zweite Mindwtr-Installation (ein Diensthandy, ein Reise-Laptop) in Ihre Hauptinstallation zu übernehmen oder Änderungen zwischen Geräten zu übertragen, ohne eine der beiden Seiten zu leeren. Verwenden Sie die Wiederherstellung, wenn die Sicherung das ersetzen soll, was auf dem Gerät liegt.
+
+---
+
 ## Wiederherstellungsmomentaufnahmen
 
 Die nativen Desktop- und Mobil-Apps erstellen automatisch Wiederherstellungsmomentaufnahmen vor der Wiederherstellung einer Sicherung und vor unterstützten Datenimporten, einschließlich Importen in den Einstellungen und bestätigter Text-Massenerfassung. Der Browser-/PWA-Build besitzt kein lokales Momentaufnahmeverzeichnis.
@@ -81,7 +96,7 @@ Schlägt die Validierung fehl, wird die Wiederherstellung blockiert und Ihre akt
 
 ## Was die Wiederherstellung nicht tut
 
-- Sie führt die Sicherung **nicht** mit Ihren aktuellen lokalen Daten zusammen.
+- Sie führt die Sicherung **nicht** mit Ihren aktuellen lokalen Daten zusammen (dafür ist **Backup zusammenführen** da).
 - Sie stellt **nicht** nur eine einzelne Aufgabe oder ein einzelnes Projekt wieder her.
 - Sie überschreibt entfernte Synchronisierungsdienste nicht von selbst, bevor der nächste Synchronisierungslauf stattfindet.
 

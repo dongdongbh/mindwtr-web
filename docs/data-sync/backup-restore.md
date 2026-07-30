@@ -9,7 +9,7 @@ Restore is designed as a **local data replacement** flow:
 - Mindwtr creates a recovery snapshot first when possible
 - The selected backup replaces the current local dataset
 
-This keeps restore simple and predictable. It is not a merge operation.
+This keeps restore simple and predictable. It is not a merge operation — for that, use **Merge Backup** instead.
 
 ---
 
@@ -53,6 +53,21 @@ Before restore, mobile saves a local recovery snapshot in app storage.
 
 ---
 
+## Merge from Backup
+
+**Merge Backup** sits beside Restore on both platforms and combines a backup file with your current data instead of replacing it. It uses the same rules as sync:
+
+- Items only in the backup are added
+- Where both copies exist, the newer one wins
+- Items only on this device stay
+- Items you deleted on this device stay deleted, even if the backup still holds a live copy
+
+After the merge, Mindwtr reports how many tasks were added and updated. A recovery snapshot is saved first when possible, so a merge can be rolled back like a restore.
+
+Use merge to consolidate a second Mindwtr instance (a work phone, a travel laptop) into your main one, or to move changes between devices without wiping either side. Use restore when you want the backup to replace what is on the device.
+
+---
+
 ## Recovery Snapshots
 
 Native desktop and mobile apps create recovery snapshots automatically before backup restore and supported data imports, including Settings imports and confirmed bulk text capture. The browser/PWA build has no local snapshot directory.
@@ -81,7 +96,7 @@ If validation fails, restore is blocked and your current data stays unchanged.
 
 ## What Restore Does Not Do
 
-- It does **not** merge the backup with your current local data
+- It does **not** merge the backup with your current local data (that is what **Merge Backup** is for)
 - It does **not** restore only one task or one project
 - It does **not** overwrite remote sync services by itself until your next sync cycle
 

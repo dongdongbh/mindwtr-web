@@ -9,7 +9,7 @@ La restauration est conçue comme un **remplacement des données locales** :
 - Mindwtr crée d’abord un instantané de récupération lorsque c’est possible ;
 - la sauvegarde choisie remplace l’ensemble de données local actuel.
 
-La restauration reste ainsi simple et prévisible. Il ne s’agit pas d’une fusion.
+La restauration reste ainsi simple et prévisible. Il ne s’agit pas d’une fusion : pour cela, utilisez **Fusionner une sauvegarde**.
 
 ---
 
@@ -53,6 +53,21 @@ Avant la restauration, la version mobile enregistre un instantané de récupéra
 
 ---
 
+## Fusionner une sauvegarde
+
+**Fusionner une sauvegarde** se trouve à côté de la restauration sur les deux plateformes et combine un fichier de sauvegarde avec vos données actuelles au lieu de les remplacer. Les règles sont celles de la synchronisation :
+
+- les éléments présents uniquement dans la sauvegarde sont ajoutés ;
+- lorsque les deux versions existent, la plus récente l’emporte ;
+- les éléments présents uniquement sur cet appareil sont conservés ;
+- les éléments que vous avez supprimés sur cet appareil restent supprimés, même si la sauvegarde en contient encore une version active.
+
+À la fin, Mindwtr indique combien de tâches ont été ajoutées et combien ont été mises à jour. Un instantané de récupération est enregistré au préalable lorsque c’est possible : une fusion s’annule donc comme une restauration.
+
+Utilisez la fusion pour regrouper une seconde installation de Mindwtr (un téléphone professionnel, un ordinateur portable de voyage) dans l’installation principale, ou pour transférer des modifications d’un appareil à l’autre sans vider ni l’un ni l’autre. Utilisez la restauration lorsque la sauvegarde doit remplacer ce qui se trouve sur l’appareil.
+
+---
+
 ## Instantanés de récupération
 
 Les applications natives pour ordinateur et mobile créent automatiquement des instantanés avant la restauration d’une sauvegarde et les imports de données pris en charge, notamment les imports des Paramètres et la capture groupée de texte confirmée. La version navigateur/PWA ne possède pas de répertoire local d’instantanés.
@@ -81,7 +96,7 @@ En cas d’échec de la validation, la restauration est bloquée et vos données
 
 ## Ce que la restauration ne fait pas
 
-- Elle ne **fusionne pas** la sauvegarde avec vos données locales actuelles.
+- Elle ne **fusionne pas** la sauvegarde avec vos données locales actuelles (c’est le rôle de **Fusionner une sauvegarde**).
 - Elle ne restaure pas une tâche ou un projet isolé.
 - Elle n’écrase pas à elle seule les services de synchronisation distants avant le prochain cycle.
 

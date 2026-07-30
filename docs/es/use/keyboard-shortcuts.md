@@ -8,14 +8,14 @@ Mindwtr para escritorio permite trabajar principalmente con el teclado mediante 
 - Pulsa `?` para abrir la hoja de atajos del perfil actual. Al final incluye una tabla de sintaxis de adición rápida con todos los tokens (`/start:`, `/note:`, `@context`, `+Project`, …).
 - Usa `/` para buscar.
 - Usa `gi` para Bandeja de entrada, `gn` para Próximas acciones y `gf` para Foco (modos Estándar y Vim).
-- Usa `a` para añadir una tarea cuando Mindwtr tenga el foco. `o` sigue realizando la misma acción limitada a la aplicación.
+- Usa `a` para añadir una tarea cuando Mindwtr tenga el foco. Es contextual: dentro de un proyecto, el diálogo de adición se abre con ese proyecto ya seleccionado, y en las vistas con campo de adición integrado el foco pasa a ese campo.
 - Usa `j` y `k` para mover la selección, e `Enter` para abrir la tarea seleccionada.
 - En el modo Estándar, usa `e` para marcar como terminada, `x` para seleccionar tareas para acciones por lotes, `S` para añadir o quitar la tarea seleccionada del foco de hoy, `F2` para cambiarle el nombre, `Shift+Enter` para editar, `#` para eliminar y `z` para deshacer.
 - En el modo Vim, usa `e` para editar, `x` para alternar el estado terminado y `dd` para eliminar.
 - Usa `Ctrl+Z` / `Cmd+Z` para deshacer la última finalización o eliminación en cualquier perfil.
 - En cualquier perfil, pulsa `s` y después una letra para establecer el estado de la tarea seleccionada: `si` Bandeja de entrada, `sn` Próxima, `sw` En espera, `ss` Algún día, `sd` Terminada y `sa` Archivada. Una notificación confirma el cambio e incluye un botón para deshacerlo.
 - Usa `Insert` para ir al campo de adición de tareas; en las vistas que no lo tengan, abre Adición rápida.
-- Pulsa `1`-`9` (fuera de cualquier campo de texto) para cambiar a un área según el orden de la barra lateral, o `0` para quitar el filtro de área; la combinación `Shift+A` seguida del número sigue funcionando. Una `a` sin modificadores abre Adición rápida.
+- Pulsa `1`-`9` (fuera de cualquier campo de texto) para cambiar a un área según el orden de la barra lateral, o `0` para quitar el filtro de área; la combinación `Shift+A` seguida del número sigue funcionando. Una `a` sin modificadores añade una tarea en el contexto actual.
 - Usa `Ctrl+Alt+S` para ejecutar una sincronización manual en el escritorio.
 - En el menú contextual de clic derecho / `Shift+F10`: ↑/↓ se desplazan entre elementos, → abre un panel de submenú, ← vuelve, Enter activa y Esc cierra y devuelve el foco a la tarea.
 

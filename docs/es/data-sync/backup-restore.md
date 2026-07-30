@@ -9,7 +9,7 @@ La restauración está diseñada como un proceso de **sustitución de datos loca
 - cuando es posible, crea primero una instantánea de recuperación;
 - la copia elegida sustituye el conjunto de datos local actual.
 
-Así la restauración es sencilla y predecible. No es una operación de combinación.
+Así la restauración es sencilla y predecible. No es una operación de combinación: para eso está **Combinar copia de seguridad**.
 
 ---
 
@@ -53,6 +53,21 @@ Antes de restaurar, el móvil guarda una instantánea de recuperación local en 
 
 ---
 
+## Combinar desde una copia
+
+**Combinar copia de seguridad** está junto a Restaurar en ambas plataformas y une un archivo de copia con tus datos actuales en lugar de sustituirlos. Sigue las mismas reglas que la sincronización:
+
+- los elementos que solo están en la copia se añaden;
+- cuando existen las dos versiones, gana la más reciente;
+- los elementos que solo están en este dispositivo se conservan;
+- los elementos que borraste en este dispositivo siguen borrados, aunque la copia todavía tenga una versión activa.
+
+Al terminar, Mindwtr indica cuántas tareas se añadieron y cuántas se actualizaron. Cuando es posible se guarda antes una instantánea de recuperación, así que una combinación se puede revertir igual que una restauración.
+
+Usa la combinación para volcar una segunda instancia de Mindwtr (un móvil de trabajo, un portátil de viaje) en la principal, o para llevar cambios de un dispositivo a otro sin vaciar ninguno de los dos. Usa la restauración cuando quieras que la copia sustituya lo que hay en el dispositivo.
+
+---
+
 ## Instantáneas de recuperación
 
 Las aplicaciones nativas de escritorio y móvil crean instantáneas de recuperación automáticamente antes de restaurar copias y de las importaciones de datos compatibles, incluidas las importaciones de Ajustes y la captura masiva de texto confirmada. La versión de navegador/PWA no tiene un directorio local de instantáneas.
@@ -81,7 +96,7 @@ Si la validación falla, se bloquea la restauración y tus datos actuales no cam
 
 ## Qué no hace la restauración
 
-- **No** combina la copia con tus datos locales actuales.
+- **No** combina la copia con tus datos locales actuales (para eso está **Combinar copia de seguridad**).
 - **No** restaura una sola tarea o un solo proyecto.
 - **No** sobrescribe por sí sola los servicios de sincronización remotos hasta el siguiente ciclo de sincronización.
 

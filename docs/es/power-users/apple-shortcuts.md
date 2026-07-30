@@ -1,8 +1,8 @@
 # Atajos de Apple
 
-Mindwtr admite Atajos de Apple mediante App Intents nativos en iPhone y iPad. La primera versión se centra en el ciclo de captura GTD: llevar rápidamente los asuntos pendientes a Mindwtr y después revisarlos y procesarlos dentro de la aplicación.
+Mindwtr admite Atajos de Apple mediante App Intents nativos en iPhone y iPad, centrados en el ciclo de captura GTD: llevar rápidamente los asuntos pendientes a Mindwtr y después revisarlos y procesarlos dentro de la aplicación. La versión 2 añade captura silenciosa con fechas, lectura de tareas desde los atajos y búsqueda en Spotlight.
 
-Su alcance es deliberadamente menor que el sistema maduro de Atajos de Things, que ofrece acciones para crear, buscar, editar y mostrar elementos, además de acciones personalizadas. Mindwtr v1 empieza por captura y navegación para mantener la fiabilidad y no evitar sus rutas normales de creación, revisión y sincronización.
+Su alcance es deliberadamente menor que el sistema maduro de Atajos de Things. Mindwtr amplía el conjunto de acciones con cuidado para mantener la fiabilidad y no evitar nunca sus rutas normales de creación, revisión y sincronización.
 
 ## Disponibilidad
 
@@ -54,9 +54,9 @@ Usa **Abrir una lista de Mindwtr** para ir a una vista GTD.
 
 Si no configuras una lista, el atajo usa la Bandeja de entrada.
 
-### Añadir a la Bandeja de entrada de Mindwtr
+### Añadir a Mindwtr
 
-Usa **Añadir a la Bandeja de entrada de Mindwtr** para crear una tarea silenciosamente sin abrir Mindwtr. Esta es la acción indicada para automatizaciones de Atajos. Un activador temporal, de calendario o ubicación puede añadir una tarea sin que nadie toque el teléfono.
+Usa **Añadir a Mindwtr** (llamada **Añadir a la Bandeja de entrada de Mindwtr** antes de la v2) para crear una tarea silenciosamente sin abrir Mindwtr. Esta es la acción indicada para automatizaciones de Atajos. Un activador temporal, de calendario o ubicación puede añadir una tarea sin que nadie toque el teléfono.
 
 | Parámetro | Obligatorio | Notas |
 | --- | --- | --- |
@@ -64,6 +64,8 @@ Usa **Añadir a la Bandeja de entrada de Mindwtr** para crear una tarea silencio
 | Nota | No | Se añade como descripción. |
 | Etiquetas | No | Separadas por comas; Mindwtr las normaliza como `#tag`. |
 | Proyecto | No | Coincide con un proyecto activo por título. Los desconocidos o archivados se ignoran y la tarea llega igualmente a la Bandeja de entrada. |
+| Fecha límite | No | La fecha límite de la tarea. Se guarda como fecha sin hora, así que nunca programa por sí sola un recordatorio. |
+| Fecha de inicio | No | La fecha de inicio de la tarea, solo fecha como la fecha límite. |
 
 El texto de **Tarea** admite la [sintaxis de añadido rápido](/es/use/mobile#sintaxis-de-adicion-rapida) completa (`/due:`, `@context`, `#tag`, `+Project` y demás). Se analiza al crear la tarea, exactamente igual que en el cuadro de captura de la app; la sintaxis reconocida sale del título igual que en la app.
 
@@ -74,11 +76,26 @@ Al ejecutarse:
 
 Como se crea al volver a abrir Mindwtr, no aparecerá en otros dispositivos sincronizados ni se activará ningún recordatorio hasta que la aplicación vuelva a ejecutarse en ese iPhone o iPad. El parámetro **Proyecto** nunca crea proyectos; sin embargo, un `+Project` escrito en el texto de la tarea sigue las reglas del añadido rápido y puede crear uno.
 
+### Obtener tareas de Mindwtr
+
+Usa **Obtener tareas de Mindwtr** para leer tareas dentro de un atajo sin abrir la aplicación, y encadenarlas con otras acciones (leerlas en voz alta, mostrar un menú, enviarlas a algún sitio).
+
+| Parámetro | Obligatorio | Notas |
+| --- | --- | --- |
+| Lista | Sí | Una de Bandeja de entrada, Foco, Próximas acciones, En espera o Algún día. |
+| Proyecto | No | Un proyecto activo por título. Si lo defines, tiene prioridad sobre la lista. |
+
+Los resultados salen de una instantánea que Mindwtr mantiene mientras se ejecuta, con un máximo de 50 tareas por lista o proyecto, así que reflejan la última vez que se abrió la aplicación: la misma frescura que los widgets.
+
+### Tareas en Spotlight
+
+En iOS 18 y posteriores, las tareas de Mindwtr aparecen en la búsqueda de Spotlight. Al abrir una vas a su lista en Mindwtr. El índice se actualiza cuando se ejecuta la aplicación, igual que Obtener tareas de Mindwtr.
+
 ### Ejemplo: tarea activada por el calendario
 
 1. En **Atajos**, abre **Automatización** y crea una.
 2. Elige un activador, por ejemplo un evento de calendario cuyo título contenga «recogida de basura».
-3. Añade **Añadir a la Bandeja de entrada de Mindwtr** y define **Tarea** como «Sacar la basura».
+3. Añade **Añadir a Mindwtr** y define **Tarea** como «Sacar la basura».
 4. Configura **Ejecutar inmediatamente** para que no necesite confirmación.
 
 ## Atajos de ejemplo
@@ -119,16 +136,15 @@ Alias compatibles:
 | Título | `title`, `text`, `name`, `thingName`, `itemListElementName`, `itemListName` |
 | Nota | `note`, `description`, `body`, `thingDescription`, `itemListDescription` |
 
-## Limitaciones de v1
+## Limitaciones actuales
 
-Mindwtr v1 no incluye:
+La compatibilidad con Atajos de Mindwtr todavía no incluye:
 
-- tipos de tarea o lista AppEntity personalizados;
-- acciones para buscar, editar, duplicar, eliminar o trabajar por lotes;
-- planificación directa desde Atajos de tareas recurrentes, recordatorios o fechas;
+- acciones para editar, completar, duplicar, eliminar o trabajar por lotes;
+- planificación desde Atajos de tareas recurrentes o recordatorios (las fechas límite y de inicio son solo fecha);
 - compatibilidad con Apple Watch o CarPlay.
 
-Son buenas opciones futuras, pero requieren un diseño cuidadoso para que las ediciones y escrituras en segundo plano respeten la sincronización local-first y las reglas GTD.
+Las acciones de escritura más allá de la captura son lo siguiente en la lista, apoyadas en las entidades de tarea que introdujo la v2; requieren un diseño cuidadoso para que las ediciones y escrituras en segundo plano respeten la sincronización local-first y las reglas GTD.
 
 ## Enlaces relacionados
 

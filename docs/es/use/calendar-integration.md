@@ -117,6 +117,10 @@ La visibilidad de los calendarios externos es una preferencia de visualización 
 
 Una suscripción `.ics` suele contener varios calendarios lógicos, distinguidos por el campo `CATEGORIES` de cada evento. Mindwtr divide ese feed automáticamente: cada categoría se convierte en su propio calendario en la vista Calendario, con su color y su interruptor de mostrar/ocultar. Un evento que indica varias categorías pertenece a la primera. Los feeds que usan `CATEGORIES` como etiquetas libres se dejan intactos: a partir de ocho categorías distintas el feed sigue siendo un único calendario. En ambos casos el feed conserva una sola fila en Ajustes, que es donde están su URL y el botón Eliminar.
 
+### Colores de los calendarios
+
+Los feeds que declaran sus propios colores los conservan: Mindwtr lee la propiedad estándar `COLOR`, el color de calendario de Apple y los colores por categoría, como los de Fossify, de modo que un calendario suscrito se ve igual que en la aplicación de la que procede. El color que elijas tú en Mindwtr siempre prevalece sobre el del feed, y los calendarios sin ninguna indicación reciben un color asignado automáticamente y estable.
+
 ### Móvil: enviar tareas de Mindwtr al calendario
 
 En iOS y Android, Mindwtr puede enviar tareas programadas y tareas con fechas límite a un calendario seleccionado del dispositivo:

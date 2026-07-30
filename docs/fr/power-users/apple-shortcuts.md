@@ -1,8 +1,8 @@
 # Raccourcis Apple
 
-Mindwtr prend en charge les Raccourcis Apple grâce aux App Intents natifs sur iPhone et iPad. La première version se concentre sur la boucle de capture GTD : consignez rapidement vos préoccupations dans Mindwtr, puis examinez-les et traitez-les dans l’application.
+Mindwtr prend en charge les Raccourcis Apple grâce aux App Intents natifs sur iPhone et iPad, en se concentrant sur la boucle de capture GTD : consignez rapidement vos préoccupations dans Mindwtr, puis examinez-les et traitez-les dans l’application. La version 2 ajoute la capture silencieuse avec dates, la lecture des tâches dans les raccourcis et la recherche Spotlight.
 
-Cette intégration est volontairement moins étendue que le système mature de raccourcis de Things. Things propose des actions pour créer, rechercher, modifier et afficher des éléments, ainsi que des actions personnalisées sur les éléments et les listes. La v1 de Mindwtr se concentre sur la capture et la navigation afin de rester fiable et de ne pas contourner les mécanismes habituels de Mindwtr pour la création, la révision et la synchronisation des tâches.
+Cette intégration est volontairement moins étendue que le système mature de raccourcis de Things. Mindwtr étoffe son jeu d’actions avec prudence, afin de rester fiable et de ne jamais contourner les mécanismes habituels de Mindwtr pour la création, la révision et la synchronisation des tâches.
 
 ## Disponibilité
 
@@ -60,9 +60,9 @@ Destinations prises en charge :
 
 Le raccourci ouvre par défaut la boîte de réception si aucune liste n’est configurée.
 
-### Ajouter à la boîte de réception Mindwtr
+### Ajouter à Mindwtr
 
-Utilisez **Ajouter à la boîte de réception Mindwtr** pour créer une tâche silencieusement, sans ouvrir Mindwtr. C’est l’action à utiliser dans les automatisations de Raccourcis. Un déclencheur horaire, de calendrier ou de localisation peut ajouter une tâche sans que personne ne touche le téléphone.
+Utilisez **Ajouter à Mindwtr** (appelée **Ajouter à la boîte de réception Mindwtr** avant la v2) pour créer une tâche silencieusement, sans ouvrir Mindwtr. C’est l’action à utiliser dans les automatisations de Raccourcis. Un déclencheur horaire, de calendrier ou de localisation peut ajouter une tâche sans que personne ne touche le téléphone.
 
 Paramètres :
 
@@ -72,6 +72,8 @@ Paramètres :
 | Note | Non | Ajoutée comme description de la tâche. |
 | Étiquettes | Non | Étiquettes séparées par des virgules. Mindwtr les normalise au format `#tag`. |
 | Projet | Non | Correspond à un projet actif par son titre. Les projets inconnus ou archivés sont ignorés, et la tâche arrive quand même dans la boîte de réception. |
+| Date d’échéance | Non | La date d’échéance de la tâche. Enregistrée comme une date sans heure, elle ne programme donc jamais de rappel à elle seule. |
+| Date de début | Non | La date de début de la tâche, sans heure comme la date d’échéance. |
 
 Le texte de **Tâche** prend en charge la [syntaxe d’ajout rapide](/fr/use/mobile#syntaxe-d-ajout-rapide) complète (`/due:`, `@context`, `#tag`, `+Project`, etc.). Elle est analysée à la création de la tâche, exactement comme dans la zone de capture de l’app ; la syntaxe reconnue quitte le titre comme dans l’app.
 
@@ -82,11 +84,26 @@ Ce qui se passe lors de l’exécution :
 
 Comme la tâche est créée à la prochaine ouverture, elle n’apparaît pas sur les autres appareils synchronisés et aucun rappel ne se déclenche tant que Mindwtr n’a pas été relancé sur cet iPhone ou cet iPad. Le paramètre **Projet** ne crée jamais de nouveaux projets ; en revanche, un `+Project` écrit dans le texte de la tâche suit les règles de l’ajout rapide et peut en créer un.
 
+### Obtenir les tâches Mindwtr
+
+Utilisez **Obtenir les tâches Mindwtr** pour lire des tâches dans un raccourci sans ouvrir l’app, afin de les enchaîner avec d’autres actions (les faire énoncer, afficher un menu, les envoyer quelque part).
+
+| Paramètre | Obligatoire | Remarques |
+| --- | --- | --- |
+| Liste | Oui | L’une des listes Boîte de réception, Focus, Prochaines actions, En attente ou Un jour. |
+| Projet | Non | Un projet actif par son titre. S’il est défini, il prime sur la liste. |
+
+Les résultats proviennent d’un instantané que Mindwtr tient à jour pendant son exécution, limité à 50 tâches par liste ou par projet ; ils reflètent donc la dernière ouverture de l’app, avec la même fraîcheur que les widgets.
+
+### Tâches dans Spotlight
+
+À partir d’iOS 18, les tâches Mindwtr apparaissent dans la recherche Spotlight. En ouvrir une vous conduit à la liste correspondante dans Mindwtr. L’index se rafraîchit à l’exécution de l’app, comme pour Obtenir les tâches Mindwtr.
+
 ### Exemple : tâche déclenchée par le calendrier
 
 1. Dans l’app **Raccourcis**, ouvrez **Automatisation** et créez une nouvelle automatisation.
 2. Choisissez un déclencheur, par exemple un événement de calendrier dont le titre contient « collecte des déchets ».
-3. Ajoutez l’action **Ajouter à la boîte de réception Mindwtr** de Mindwtr et définissez **Tâche** sur « Sortir les poubelles ».
+3. Ajoutez l’action **Ajouter à Mindwtr** de Mindwtr et définissez **Tâche** sur « Sortir les poubelles ».
 4. Réglez l’automatisation sur **Exécuter immédiatement** afin qu’aucune confirmation ne soit nécessaire.
 
 ## Exemples de raccourcis
@@ -127,16 +144,15 @@ Alias de capture pris en charge :
 | Titre | `title`, `text`, `name`, `thingName`, `itemListElementName`, `itemListName` |
 | Note | `note`, `description`, `body`, `thingDescription`, `itemListDescription` |
 
-## Limites de la v1
+## Limites actuelles
 
-La v1 de Mindwtr n’inclut pas :
+La prise en charge des Raccourcis par Mindwtr n’inclut pas encore :
 
-- De types de tâche ou de liste AppEntity personnalisés.
-- D’actions de recherche, modification, duplication, suppression ou traitement par lots.
-- De planification directe de tâches récurrentes, de rappels ou de dates depuis Raccourcis.
+- D’actions de modification, d’achèvement, de duplication, de suppression ou de traitement par lots.
+- De planification de tâches récurrentes ou de rappels depuis Raccourcis (les dates d’échéance et de début sont sans heure).
 - De prise en charge de l’Apple Watch ou de CarPlay.
 
-Ce sont de bonnes pistes pour l’avenir, mais elles nécessitent une conception soigneuse, car les modifications et les écritures en arrière-plan doivent préserver la synchronisation locale d’abord et les règles du flux GTD de Mindwtr.
+Les actions d’écriture au-delà de la capture sont la prochaine étape, bâties sur les entités de tâche introduites en v2 ; elles nécessitent une conception soigneuse, car les modifications et les écritures en arrière-plan doivent préserver la synchronisation locale d’abord et les règles du flux GTD de Mindwtr.
 
 ## Liens connexes
 

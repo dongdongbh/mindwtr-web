@@ -117,6 +117,10 @@ External calendar visibility is a local display preference:
 
 A subscribed `.ics` feed often holds several logical calendars, told apart by each event's `CATEGORIES` field. Mindwtr splits such a feed automatically: every category becomes its own calendar in the Calendar view, with its own colour and its own show/hide toggle. An event that lists several categories belongs to the first one. Feeds that use `CATEGORIES` as free-form tags are left alone — past eight distinct categories the feed stays a single calendar. Either way the feed keeps one row in Settings, since that is where its URL and Remove button live.
 
+### Calendar colours
+
+Feeds that declare their own colours keep them: Mindwtr reads the standard `COLOR` property, Apple's calendar colour, and per-category colours such as Fossify's, so a subscribed calendar looks the same as it does in the app it came from. A colour you pick yourself in Mindwtr always wins over the feed's, and calendars without any hint get a stable automatically assigned colour.
+
 ### Mobile: Push Mindwtr Tasks to Calendar
 
 On iOS and Android, Mindwtr can push scheduled tasks and tasks with due dates into a selected device calendar:

@@ -1,8 +1,8 @@
 # Apple 捷徑
 
-Mindwtr 透過原生 App Intents，在 iPhone 及 iPad 上支援 Apple 捷徑。第一個版本著重於 GTD 收集循環：快速將未竟事項放入 Mindwtr，再到應用程式內回顧及處理。
+Mindwtr 透過原生 App Intents，在 iPhone 及 iPad 上支援 Apple 捷徑，著重於 GTD 收集循環：快速將未竟事項放入 Mindwtr，再到應用程式內回顧及處理。第 2 版新增了帶日期的靜默收集、將任務讀入捷徑，以及 Spotlight 搜尋。
 
-這項功能刻意比 Things 成熟的捷徑系統精簡。Things 提供建立、尋找、編輯、顯示，以及自訂項目／清單動作。Mindwtr v1 從收集及導覽開始，以維持可靠性，也避免繞過 Mindwtr 的一般任務建立、修訂及同步流程。
+這項功能刻意比 Things 成熟的捷徑系統精簡。Mindwtr 會謹慎地擴充動作範圍，以維持可靠性，也絕不繞過 Mindwtr 的一般任務建立、修訂及同步流程。
 
 ## 可用範圍
 
@@ -60,9 +60,9 @@ Mindwtr 透過原生 App Intents，在 iPhone 及 iPad 上支援 Apple 捷徑。
 
 若未設定清單，捷徑預設開啟收集箱。
 
-### Add to Mindwtr Inbox
+### Add to Mindwtr
 
-使用 **Add to Mindwtr Inbox** 可安靜建立任務，而不開啟 Mindwtr。這適合在「捷徑」的「自動化」中使用。時間、行事曆或位置觸發條件可以在無人操作手機時新增任務。
+使用 **Add to Mindwtr**（v2 之前稱為 **Add to Mindwtr Inbox**）可安靜建立任務，而不開啟 Mindwtr。這適合在「捷徑」的「自動化」中使用。時間、行事曆或位置觸發條件可以在無人操作手機時新增任務。
 
 參數：
 
@@ -72,6 +72,8 @@ Mindwtr 透過原生 App Intents，在 iPhone 及 iPad 上支援 Apple 捷徑。
 | Note | 否 | 新增為任務描述。 |
 | Tags | 否 | 以逗號分隔的標籤。Mindwtr 會將其正規化為 `#tag`。 |
 | Project | 否 | 依標題比對使用中的專案。未知或已封存的專案會被忽略，任務仍會進入收集箱。 |
+| Due date | 否 | 任務的截止日期。僅儲存日期、不含時間，因此本身絕不會排定提醒。 |
+| Start date | 否 | 任務的開始日期，與截止日期一樣只含日期。 |
 
 **Task** 文字支援完整的[快速新增語法](/zh-Hant/use/mobile#快速新增語法)（`/due:`、`@context`、`#tag`、`+Project` 等）。建立任務時會像 app 內的收集框一樣解析這些語法；**整理快速新增文字**設定決定是否從標題中移除識別到的語法。
 
@@ -82,11 +84,26 @@ Mindwtr 透過原生 App Intents，在 iPhone 及 iPad 上支援 Apple 捷徑。
 
 由於任務會在下次開啟時建立，因此 Mindwtr 再次於該 iPhone 或 iPad 上執行前，任務不會出現在其他同步裝置上，也不會觸發提醒。**Project** 參數絕不會建立新專案；不過在任務文字中寫入 `+Project` 會遵循快速新增規則，可以建立新專案。
 
+### Get Mindwtr Tasks
+
+使用 **Get Mindwtr Tasks** 可在不開啟 app 的情況下，將任務讀入捷徑，再串接其他動作（朗讀、顯示選單、傳送到別處）。
+
+| 參數 | 必要 | 說明 |
+| --- | --- | --- |
+| List | 是 | Inbox、Focus、Next、Waiting、Someday 其中之一。 |
+| Project | 否 | 依標題比對使用中的專案。若有設定，會優先於清單。 |
+
+結果來自 Mindwtr 執行期間維護的快照，每個清單或專案最多 50 筆任務，因此反映的是 app 上次開啟時的狀態，與小工具的即時性相同。
+
+### Spotlight 中的任務
+
+在 iOS 18 以上版本，Mindwtr 任務會出現在 Spotlight 搜尋中。開啟其中一筆會帶你前往該任務在 Mindwtr 中所屬的清單。索引會在 app 執行時更新，與 Get Mindwtr Tasks 相同。
+
 ### 範例：行事曆觸發的任務
 
 1. 在**捷徑** app 中開啟**自動化**，並建立新的自動化操作。
 2. 選擇觸發條件，例如標題含有「garbage collection」的行事曆事件。
-3. 新增 Mindwtr 的 **Add to Mindwtr Inbox** 動作，並將 **Task** 設為「Take out the trash」。
+3. 新增 Mindwtr 的 **Add to Mindwtr** 動作，並將 **Task** 設為「Take out the trash」。
 4. 將自動化操作設為**立即執行**，使其無須確認。
 
 ## 捷徑範例
@@ -127,16 +144,15 @@ Mindwtr 也支援 URL scheme 自動化。當其他自動化工具看不到原生
 | Title | `title`, `text`, `name`, `thingName`, `itemListElementName`, `itemListName` |
 | Note | `note`, `description`, `body`, `thingDescription`, `itemListDescription` |
 
-## v1 限制
+## 目前的限制
 
-Mindwtr v1 不包含：
+Mindwtr 的捷徑支援尚未包含：
 
-- 自訂 AppEntity 任務或清單類型。
-- 尋找、編輯、複製、刪除或批次動作。
-- 從「捷徑」直接設定重複任務、提醒或日期排程。
+- 編輯、完成、複製、刪除或批次動作。
+- 從「捷徑」設定重複任務或提醒排程（截止日期與開始日期只含日期）。
 - Apple Watch 或 CarPlay 支援。
 
-這些都是適合未來加入的功能，但仍需仔細設計，因為編輯及背景寫入必須維持 Mindwtr 的在地優先同步及 GTD 工作流程規則。
+收集以外的寫入動作是接下來的規劃，將建立在 v2 導入的任務實體之上；這些仍需仔細設計，因為編輯及背景寫入必須維持 Mindwtr 的在地優先同步及 GTD 工作流程規則。
 
 ## 相關連結
 

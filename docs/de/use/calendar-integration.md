@@ -117,6 +117,10 @@ Die Sichtbarkeit externer Kalender ist eine lokale Anzeigeeinstellung:
 
 Ein abonnierter `.ics`-Feed enthält oft mehrere logische Kalender, die über das Feld `CATEGORIES` jedes Termins unterschieden werden. Mindwtr teilt einen solchen Feed automatisch auf: Jede Kategorie wird in der Kalenderansicht zu einem eigenen Kalender mit eigener Farbe und eigenem Ein-/Ausblendschalter. Ein Termin mit mehreren Kategorien gehört zur ersten davon. Feeds, die `CATEGORIES` als freie Schlagwörter verwenden, bleiben unangetastet: Ab acht verschiedenen Kategorien bleibt der Feed ein einzelner Kalender. In beiden Fällen behält der Feed eine Zeile in den Einstellungen, denn dort liegen seine URL und die Schaltfläche zum Entfernen.
 
+### Kalenderfarben
+
+Feeds, die eigene Farben angeben, behalten sie: Mindwtr liest die Standardeigenschaft `COLOR`, die Kalenderfarbe von Apple sowie Farben pro Kategorie, etwa die von Fossify. So sieht ein abonnierter Kalender genauso aus wie in der App, aus der er stammt. Eine Farbe, die Sie in Mindwtr selbst wählen, hat immer Vorrang vor der des Feeds, und Kalender ohne jeden Hinweis erhalten eine stabile, automatisch vergebene Farbe.
+
 ### Mobilgeräte: Mindwtr-Aufgaben in den Kalender übertragen
 
 Unter iOS und Android kann Mindwtr geplante Aufgaben und Aufgaben mit Fälligkeitsdatum in einen ausgewählten Gerätekalender übertragen:

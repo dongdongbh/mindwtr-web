@@ -1,8 +1,8 @@
 # Apple-Kurzbefehle
 
-Mindwtr unterstützt Apple-Kurzbefehle auf iPhone und iPad über native App Intents. Die erste Version konzentriert sich auf den GTD-Erfassungsablauf: offene Punkte schnell in Mindwtr übernehmen und sie anschließend in der App durchsehen und verarbeiten.
+Mindwtr unterstützt Apple-Kurzbefehle auf iPhone und iPad über native App Intents, mit Schwerpunkt auf dem GTD-Erfassungsablauf: offene Punkte schnell in Mindwtr übernehmen und sie anschließend in der App durchsehen und verarbeiten. Version 2 ergänzt die Erfassung im Hintergrund mit Datumsangaben, das Auslesen von Aufgaben in Kurzbefehle und die Spotlight-Suche.
 
-Der Umfang ist bewusst kleiner als das ausgereifte Kurzbefehlsystem von Things. Things bietet Aktionen zum Erstellen, Suchen, Bearbeiten und Anzeigen sowie benutzerdefinierte Aktionen für Einträge und Listen. Mindwtr v1 beginnt mit Erfassung und Navigation, damit die Funktion zuverlässig bleibt und die normalen Abläufe zur Aufgabenerstellung, Revision und Synchronisierung von Mindwtr nicht umgeht.
+Der Umfang ist bewusst kleiner als das ausgereifte Kurzbefehlsystem von Things. Mindwtr erweitert den Aktionsumfang behutsam, damit die Funktion zuverlässig bleibt und die normalen Abläufe zur Aufgabenerstellung, Revision und Synchronisierung von Mindwtr nie umgeht.
 
 ## Verfügbarkeit
 
@@ -60,9 +60,9 @@ Unterstützte Ziele:
 
 Wenn keine Liste konfiguriert ist, verwendet der Kurzbefehl standardmäßig den Posteingang.
 
-### Zum Mindwtr-Posteingang hinzufügen
+### Zu Mindwtr hinzufügen
 
-Verwenden Sie **Zum Mindwtr-Posteingang hinzufügen**, um im Hintergrund eine Aufgabe zu erstellen, ohne Mindwtr zu öffnen. Diese Aktion eignet sich für Kurzbefehle-Automationen. Ein Zeit-, Kalender- oder Standortauslöser kann eine Aufgabe hinzufügen, ohne dass jemand das Telefon berührt.
+Verwenden Sie **Zu Mindwtr hinzufügen** (vor v2 **Zum Mindwtr-Posteingang hinzufügen**), um im Hintergrund eine Aufgabe zu erstellen, ohne Mindwtr zu öffnen. Diese Aktion eignet sich für Kurzbefehle-Automationen. Ein Zeit-, Kalender- oder Standortauslöser kann eine Aufgabe hinzufügen, ohne dass jemand das Telefon berührt.
 
 Parameter:
 
@@ -72,6 +72,8 @@ Parameter:
 | Notiz | Nein | Wird als Aufgabenbeschreibung hinzugefügt. |
 | Tags | Nein | Kommagetrennte Tags. Mindwtr normalisiert sie zu `#tag`. |
 | Projekt | Nein | Wird anhand des Titels einem aktiven Projekt zugeordnet. Unbekannte oder archivierte Projekte werden ignoriert; die Aufgabe landet dennoch im Posteingang. |
+| Fälligkeitsdatum | Nein | Das Fälligkeitsdatum der Aufgabe. Wird als Datum ohne Uhrzeit gespeichert und plant daher von sich aus nie eine Erinnerung. |
+| Startdatum | Nein | Das Startdatum der Aufgabe, wie das Fälligkeitsdatum nur als Datum. |
 
 Der **Aufgabe**-Text unterstützt die vollständige [Schnelleingabe-Syntax](/de/use/mobile#syntax-fur-„schnell-hinzufugen) (`/due:`, `@context`, `#tag`, `+Project` und mehr). Sie wird beim Erstellen der Aufgabe genauso ausgewertet wie im Erfassungsfeld der App; die Einstellung **Schnell-hinzufügen-Text bereinigen** bestimmt, ob die erkannte Syntax aus dem Titel entfernt wird.
 
@@ -82,11 +84,26 @@ Ablauf beim Ausführen:
 
 Da die Aufgabe erst beim nächsten Öffnen erstellt wird, erscheint sie auf anderen synchronisierten Geräten erst und löst erst dann eine Erinnerung aus, wenn Mindwtr auf diesem iPhone oder iPad erneut ausgeführt wurde. Der Parameter **Projekt** erstellt niemals neue Projekte; ein `+Project` im Aufgabentext folgt jedoch den Schnelleingabe-Regeln und kann eines anlegen.
 
+### Mindwtr-Aufgaben abrufen
+
+Verwenden Sie **Mindwtr-Aufgaben abrufen**, um Aufgaben in einen Kurzbefehl einzulesen, ohne die App zu öffnen – etwa zur Weiterverwendung in anderen Aktionen (vorlesen lassen, als Menü anzeigen, irgendwohin senden).
+
+| Parameter | Erforderlich | Hinweise |
+| --- | --- | --- |
+| Liste | Ja | Eine von Posteingang, Fokus, Nächste Aktionen, Warten, Irgendwann. |
+| Projekt | Nein | Ein aktives Projekt anhand des Titels. Wenn gesetzt, hat es Vorrang vor der Liste. |
+
+Die Ergebnisse stammen aus einer Momentaufnahme, die Mindwtr während der Ausführung pflegt, und sind auf 50 Aufgaben pro Liste oder Projekt begrenzt. Sie geben also den Stand des letzten App-Starts wieder – genauso aktuell wie die Widgets.
+
+### Aufgaben in Spotlight
+
+Ab iOS 18 erscheinen Mindwtr-Aufgaben in der Spotlight-Suche. Wenn Sie eine davon öffnen, gelangen Sie zur zugehörigen Liste in Mindwtr. Der Index wird beim Ausführen der App aktualisiert, genau wie bei Mindwtr-Aufgaben abrufen.
+
 ### Beispiel: kalendermäßig ausgelöste Aufgabe
 
 1. Öffnen Sie in der App **Kurzbefehle** den Bereich **Automation** und erstellen Sie eine neue Automation.
 2. Wählen Sie einen Auslöser, beispielsweise einen Kalendereintrag, dessen Titel „Müllabfuhr“ enthält.
-3. Fügen Sie die Mindwtr-Aktion **Zum Mindwtr-Posteingang hinzufügen** hinzu und setzen Sie **Aufgabe** auf „Müll rausbringen“.
+3. Fügen Sie die Mindwtr-Aktion **Zu Mindwtr hinzufügen** hinzu und setzen Sie **Aufgabe** auf „Müll rausbringen“.
 4. Stellen Sie die Automation auf **Sofort ausführen**, damit keine Bestätigung erforderlich ist.
 
 ## Beispielkurzbefehle
@@ -127,16 +144,15 @@ Unterstützte Erfassungsaliase:
 | Titel | `title`, `text`, `name`, `thingName`, `itemListElementName`, `itemListName` |
 | Notiz | `note`, `description`, `body`, `thingDescription`, `itemListDescription` |
 
-## Einschränkungen von v1
+## Aktuelle Einschränkungen
 
-Mindwtr v1 enthält nicht:
+Die Kurzbefehl-Unterstützung von Mindwtr enthält noch nicht:
 
-- benutzerdefinierte AppEntity-Aufgaben- oder -Listentypen
-- Aktionen zum Suchen, Bearbeiten, Duplizieren, Löschen oder zur Stapelverarbeitung
-- direkte Planung wiederkehrender Aufgaben, Erinnerungen oder Daten aus Kurzbefehle
+- Aktionen zum Bearbeiten, Abschließen, Duplizieren, Löschen oder zur Stapelverarbeitung
+- Planung wiederkehrender Aufgaben oder Erinnerungen aus Kurzbefehle (Fälligkeits- und Startdatum sind reine Datumsangaben)
 - Unterstützung für Apple Watch oder CarPlay
 
-Dies sind sinnvolle Kandidaten für die Zukunft. Sie müssen jedoch sorgfältig entworfen werden, da Bearbeitungen und Schreibvorgänge im Hintergrund die Local-First-Synchronisierung und die GTD-Ablaufregeln von Mindwtr erhalten müssen.
+Schreibende Aktionen über die Erfassung hinaus sind als Nächstes geplant, aufbauend auf den mit v2 eingeführten Aufgaben-Entitäten. Sie müssen sorgfältig entworfen werden, da Bearbeitungen und Schreibvorgänge im Hintergrund die Local-First-Synchronisierung und die GTD-Ablaufregeln von Mindwtr erhalten müssen.
 
 ## Verwandte Links
 

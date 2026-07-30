@@ -1,8 +1,8 @@
 # Apple Shortcuts
 
-Mindwtr supports Apple Shortcuts through native App Intents on iPhone and iPad. The first version focuses on the GTD capture loop: get open loops into Mindwtr quickly, then review and process them inside the app.
+Mindwtr supports Apple Shortcuts through native App Intents on iPhone and iPad, focused on the GTD capture loop: get open loops into Mindwtr quickly, then review and process them inside the app. Version 2 adds silent capture with dates, reading tasks into shortcuts, and Spotlight search.
 
-This is intentionally smaller than Things' mature Shortcuts system. Things exposes create, find, edit, show, and custom item/list actions. Mindwtr v1 starts with capture and navigation so it stays reliable and does not bypass Mindwtr's normal task creation, revision, and sync paths.
+This is intentionally smaller than Things' mature Shortcuts system. Mindwtr grows the action set carefully so it stays reliable and never bypasses Mindwtr's normal task creation, revision, and sync paths.
 
 ## Availability
 
@@ -60,9 +60,9 @@ Supported destinations:
 
 The shortcut defaults to Inbox if no list is configured.
 
-### Add to Mindwtr Inbox
+### Add to Mindwtr
 
-Use **Add to Mindwtr Inbox** to create a task silently, without opening Mindwtr. This is the action to use inside Shortcuts Automations. A time, calendar, or location trigger can add a task with no one touching the phone.
+Use **Add to Mindwtr** (called **Add to Mindwtr Inbox** before v2) to create a task silently, without opening Mindwtr. This is the action to use inside Shortcuts Automations. A time, calendar, or location trigger can add a task with no one touching the phone.
 
 Parameters:
 
@@ -72,6 +72,8 @@ Parameters:
 | Note | No | Added as the task description. |
 | Tags | No | Comma-separated tags. Mindwtr normalizes them to `#tag`. |
 | Project | No | Matches an active project by title. Unknown or archived projects are ignored, and the task still lands in the Inbox. |
+| Due date | No | The task's due date. Stored as a date without a time, so it never schedules a reminder by itself. |
+| Start date | No | The task's start date, date-only like the due date. |
 
 The **Task** text supports the full [quick-add syntax](/use/mobile#quick-add-syntax) (`/due:`, `@context`, `#tag`, `+Project`, and the rest). It is parsed when the task is created, exactly like the in-app capture box, and the recognized syntax leaves the title just as it does in the app.
 
@@ -82,11 +84,26 @@ What happens when it runs:
 
 Because the task is created on next open, it does not appear on other synced devices, and no reminder fires, until Mindwtr runs again on that iPhone or iPad. The **Project** parameter never creates new projects, though a `+Project` written in the task text follows quick-add rules and can create one.
 
+### Get Mindwtr Tasks
+
+Use **Get Mindwtr Tasks** to read tasks into a shortcut without opening the app — for chaining into other actions (speak them, show a menu, send them somewhere).
+
+| Parameter | Required | Notes |
+| --- | --- | --- |
+| List | Yes | One of Inbox, Focus, Next, Waiting, Someday. |
+| Project | No | An active project by title. When set, it takes precedence over the list. |
+
+Results come from a snapshot Mindwtr maintains while it runs, capped at 50 tasks per list or project, so they reflect the last time the app was open — same freshness as the widgets.
+
+### Tasks in Spotlight
+
+On iOS 18 and later, Mindwtr tasks appear in Spotlight search. Opening one takes you to the task's list in Mindwtr. The index refreshes when the app runs, like Get Mindwtr Tasks.
+
 ### Example: calendar-triggered task
 
 1. In the **Shortcuts** app, open **Automation** and create a new automation.
 2. Choose a trigger, for example a calendar event whose title contains "garbage collection".
-3. Add Mindwtr's **Add to Mindwtr Inbox** action and set **Task** to "Take out the trash".
+3. Add Mindwtr's **Add to Mindwtr** action and set **Task** to "Take out the trash".
 4. Set the automation to **Run Immediately** so it needs no confirmation.
 
 ## Example shortcuts
@@ -127,16 +144,15 @@ Supported capture aliases:
 | Title | `title`, `text`, `name`, `thingName`, `itemListElementName`, `itemListName` |
 | Note | `note`, `description`, `body`, `thingDescription`, `itemListDescription` |
 
-## v1 limits
+## Current limits
 
-Mindwtr v1 does not include:
+Mindwtr's Shortcuts support does not yet include:
 
-- Custom AppEntity task or list types.
-- Find, edit, duplicate, delete, or batch actions.
-- Direct recurring-task, reminder, or date scheduling from Shortcuts.
+- Edit, complete, duplicate, delete, or batch actions.
+- Recurring-task or reminder scheduling from Shortcuts (due and start dates are date-only).
 - Apple Watch or CarPlay support.
 
-These are good future candidates, but they need careful design because edits and background writes must preserve Mindwtr's local-first sync and GTD workflow rules.
+Write actions beyond capture are planned next, built on the task entities introduced in v2 — they need careful design because edits and background writes must preserve Mindwtr's local-first sync and GTD workflow rules.
 
 ## Related links
 

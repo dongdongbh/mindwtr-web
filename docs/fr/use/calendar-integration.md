@@ -117,6 +117,10 @@ La visibilité des calendriers externes est une préférence d’affichage local
 
 Un abonnement `.ics` contient souvent plusieurs calendriers logiques, distingués par le champ `CATEGORIES` de chaque événement. Mindwtr divise ce flux automatiquement : chaque catégorie devient un calendrier à part dans la vue Calendrier, avec sa propre couleur et son propre bouton afficher/masquer. Un événement portant plusieurs catégories appartient à la première. Les flux qui utilisent `CATEGORIES` comme étiquettes libres sont laissés tels quels : au-delà de huit catégories distinctes, le flux reste un seul calendrier. Dans les deux cas, le flux garde une seule ligne dans les Paramètres, là où se trouvent son URL et son bouton Supprimer.
 
+### Couleurs des calendriers
+
+Les flux qui déclarent leurs propres couleurs les conservent : Mindwtr lit la propriété standard `COLOR`, la couleur de calendrier d’Apple et les couleurs par catégorie, comme celles de Fossify, si bien qu’un calendrier abonné s’affiche comme dans l’application dont il provient. Une couleur que vous choisissez vous-même dans Mindwtr l’emporte toujours sur celle du flux, et les calendriers sans aucune indication reçoivent une couleur attribuée automatiquement et stable.
+
 ### Mobile : envoyer les tâches Mindwtr vers le calendrier
 
 Sur iOS et Android, Mindwtr peut envoyer les tâches planifiées et celles ayant une date d’échéance vers un calendrier sélectionné de l’appareil :

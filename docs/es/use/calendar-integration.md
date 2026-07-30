@@ -22,11 +22,11 @@ Mindwtr admite la integración con calendarios en dos direcciones: leer calendar
 ## Vistas
 
 - **Vista de día**: cuadrícula horaria con tareas programadas, fechas límite y eventos externos.
-- **Vista de semana**: cuadrícula de planificación para revisar la semana laboral actual, con siete días de forma predeterminada.
+- **Vista de semana**: cuadrícula para revisar un intervalo de planificación de varios días, con siete días de forma predeterminada.
 - **Vista de mes**: resumen con indicadores de fechas límite, tareas programadas y eventos.
 - **Vista de agenda**: lista móvil de 60 días con próximas fechas límite, tareas programadas y eventos externos.
 
-La vista de semana puede mostrar entre dos y siete días. Cambia la cantidad con el control de la cabecera en el escritorio o deslizando hacia arriba y abajo en la línea de tiempo en el móvil. Al mostrar menos días, cada columna restante gana anchura, lo que ayuda con los títulos largos y al soltar tareas en horas concretas. Los días visibles se mantienen dentro de una misma semana e incluyen el día en el que estás; por eso, una vista de cinco días que empieza el lunes conserva el intervalo de lunes a viernes al cambiar de semana. Mindwtr guarda esta preferencia de diseño en cada dispositivo y no la sincroniza.
+La vista de semana puede mostrar entre dos y siete días. Cambia la cantidad con el control de la cabecera en el escritorio o deslizando hacia arriba y abajo en la línea de tiempo en el móvil. Al mostrar menos días, cada columna restante gana anchura, lo que ayuda con los títulos largos y al soltar tareas en horas concretas. En el escritorio, las vistas más cortas forman un intervalo continuo: Anterior y Siguiente avanzan el número de días visibles, por lo que ningún día queda inaccesible. En el móvil, la semana completa sigue disponible y la ventana más estrecha se desplaza dentro de ella. Mindwtr guarda esta preferencia de diseño en cada dispositivo y no la sincroniza.
 
 ### Mirar atrás al trabajo terminado
 

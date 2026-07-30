@@ -144,7 +144,7 @@ Choose **Select** to pick tasks or **Select All**, then use **Move → Archived*
 
 ### 📦 Archived
 
-Completed tasks that have been filed away. Archived tasks are hidden from normal task lists, but you can search or restore them here. Click a task's **Completed** timestamp to correct it. A Tasks | Projects switch at the top shows archived projects instead: restoring one reactivates it (bringing back the tasks completed with it), and deleting moves it to the Trash.
+Completed tasks that have been filed away. Archived tasks are hidden from normal task lists, but you can search or restore them here. Click a task's title to open its notes, subtasks, and attachments read-only, without restoring it. Click the **Completed** timestamp to correct it, or use the row's restore action to send the task back to the Inbox. A Tasks | Projects switch at the top shows archived projects instead: restoring one reactivates it (bringing back the tasks completed with it), and deleting moves it to the Trash.
 
 Archived shares the control row used by the other task lists: **Filters** narrows by context, tag, priority, and time estimate, while **Sort** and **Group** both offer **Completion date**, since everything here is finished work. The newest completion comes first by default. Filter selections are shared across the task lists, so a context picked elsewhere narrows this list too.
 

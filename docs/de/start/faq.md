@@ -88,6 +88,7 @@ Mindwtr bietet derzeit folgende Sprachoptionen, ungefähr nach der weltweiten Ge
 - Русский
 - Deutsch
 - 日本語
+- فارسی
 - Tiếng Việt
 - Türkçe
 - 한국어

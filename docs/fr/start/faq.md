@@ -88,6 +88,7 @@ Mindwtr propose actuellement les langues suivantes, classées approximativement 
 - Русский
 - Deutsch
 - 日本語
+- فارسی
 - Tiếng Việt
 - Türkçe
 - 한국어

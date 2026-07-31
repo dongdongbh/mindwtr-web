@@ -520,7 +520,7 @@ Abre Ajustes desde la barra lateral.
 
 ### General
 - **Apariencia**: Clara, Oscura o Sistema
-- **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués, ruso, alemán, japonés, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo
+- **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués, ruso, alemán, japonés, persa, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo
 - **Atajos de teclado**: preajuste Estándar, Vim o Emacs
 - **Abrir al iniciar**: inicia Mindwtr automáticamente al iniciar sesión
 

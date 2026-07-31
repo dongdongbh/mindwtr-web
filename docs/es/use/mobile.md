@@ -608,7 +608,7 @@ Asegúrate de que las notificaciones estén activadas:
 ### General
 
 - **Apariencia**: Sistema, Clara u Oscura
-- **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués, ruso, alemán, japonés, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo
+- **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués, ruso, alemán, japonés, persa, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo
 
 ### Notificaciones
 

@@ -608,7 +608,7 @@ Assurez-vous que les notifications sont activées :
 ### Général
 
 - **Apparence** : Système, Clair ou Sombre
-- **Langue** : anglais, chinois (simplifié), chinois (traditionnel), hindi, espagnol, arabe, français, portugais, russe, allemand, japonais, vietnamien, turc, coréen, italien, polonais, néerlandais, tchèque
+- **Langue** : anglais, chinois (simplifié), chinois (traditionnel), hindi, espagnol, arabe, français, portugais, russe, allemand, japonais, persan, vietnamien, turc, coréen, italien, polonais, néerlandais, tchèque
 
 ### Notifications
 

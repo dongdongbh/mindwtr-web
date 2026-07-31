@@ -216,7 +216,7 @@ interface AppData {
     people?: Person[];
     settings: {
         theme?: 'light' | 'dark' | 'system';
-        language?: 'en' | 'vi' | 'zh' | 'zh-Hant' | 'es' | 'hi' | 'ar' | 'de' | 'ru' | 'ja' | 'fr' | 'pt' | 'pl' | 'ko' | 'cs' | 'it' | 'tr' | 'nl' | 'system';
+        language?: 'en' | 'vi' | 'zh' | 'zh-Hant' | 'es' | 'hi' | 'ar' | 'de' | 'ru' | 'ja' | 'fr' | 'pt' | 'pl' | 'ko' | 'cs' | 'it' | 'tr' | 'nl' | 'fa' | 'system';
         weekStart?: 'system' | 'monday' | 'sunday' | 'saturday'; // absent or 'system' = follow the device locale
         dateFormat?: string;
         timeFormat?: string;

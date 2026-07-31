@@ -88,6 +88,7 @@ Mindwtr admite actualmente estas opciones de idioma, enumeradas aproximadamente 
 - Русский
 - Deutsch
 - 日本語
+- فارسی
 - Tiếng Việt
 - Türkçe
 - 한국어

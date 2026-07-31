@@ -520,7 +520,7 @@ Accédez aux Paramètres depuis la barre latérale.
 
 ### Général
 - **Apparence** : Clair, Sombre ou Système
-- **Langue** : anglais, chinois (simplifié), chinois (traditionnel), hindi, espagnol, arabe, français, portugais, russe, allemand, japonais, vietnamien, turc, coréen, italien, polonais, néerlandais, tchèque
+- **Langue** : anglais, chinois (simplifié), chinois (traditionnel), hindi, espagnol, arabe, français, portugais, russe, allemand, japonais, persan, vietnamien, turc, coréen, italien, polonais, néerlandais, tchèque
 - **Raccourcis clavier** : préréglage Standard, Vim ou Emacs
 - **Lancer au démarrage** : démarrer Mindwtr automatiquement lors de votre connexion
 

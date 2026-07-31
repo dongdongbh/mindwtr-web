@@ -119,7 +119,7 @@ A subscribed `.ics` feed often holds several logical calendars, told apart by ea
 
 ### Calendar colours
 
-Feeds that declare their own colours keep them: Mindwtr reads the standard `COLOR` property, Apple's calendar colour, and per-category colours such as Fossify's, so a subscribed calendar looks the same as it does in the app it came from. A colour you pick yourself in Mindwtr always wins over the feed's, and calendars without any hint get a stable automatically assigned colour.
+Feeds that declare their own colours keep them: Mindwtr reads the standard `COLOR` property, Apple's calendar colour, and per-category colours such as Fossify's, so a subscribed calendar looks the same as it does in the app it came from. A colour you pick yourself in Mindwtr always wins over the feed's, and calendars without any hint get a stable automatically assigned colour. To go back to the feed's own colour after picking one, choose the **Auto** swatch in the subscription's colour picker.
 
 ### Mobile: Push Mindwtr Tasks to Calendar
 

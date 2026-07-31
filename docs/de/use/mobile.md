@@ -548,7 +548,7 @@ Erinnerungen werden auf dem Telefon geplant; es gibt keinen Push-Server. Wenn Si
 ### Allgemein
 
 - **Darstellung**: System, Hell, Dunkel
-- **Sprache**: Englisch, Chinesisch (vereinfacht/traditionell), Hindi, Spanisch, Arabisch, Französisch, Portugiesisch, Russisch, Deutsch, Japanisch, Persisch, Vietnamesisch, Türkisch, Koreanisch, Italienisch, Polnisch, Niederländisch, Tschechisch
+- **Sprache**: Englisch, Chinesisch (vereinfacht/traditionell), Hindi, Spanisch, Arabisch, Französisch, Portugiesisch, Russisch, Deutsch, Japanisch, Persisch, Vietnamesisch, Türkisch, Koreanisch, Italienisch, Polnisch, Niederländisch, Tschechisch, Schwedisch
 
 ### Benachrichtigungen
 

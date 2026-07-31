@@ -96,6 +96,7 @@ Mindwtr bietet derzeit folgende Sprachoptionen, ungefähr nach der weltweiten Ge
 - Polski
 - Nederlands
 - Čeština
+- Svenska
 
 ### Wo werden meine Daten gespeichert?
 

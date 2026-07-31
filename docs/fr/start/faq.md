@@ -96,6 +96,7 @@ Mindwtr propose actuellement les langues suivantes, classées approximativement 
 - Polski
 - Nederlands
 - Čeština
+- Svenska
 
 ### Où mes données sont-elles stockées ?
 

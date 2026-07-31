@@ -132,7 +132,7 @@ Kanban-Board mit Ziehen und Ablegen:
 
 Ziehen Sie Karten innerhalb einer Spalte, um die manuelle Board-Reihenfolge festzulegen. Beim Wechsel des Status wird die alte Spaltenreihenfolge entfernt, damit die Aufgabe in der neuen Spalte neu eingeordnet werden kann.
 
-Das Board-Suchfeld filtert sichtbare Karten nach Titel, Notizen, Projekt, Kontext oder Tag. Die Filterschaltfläche bietet Schnellfilter für Kontexte, Tags, Fälligkeitsdaten und Projekte; **Filter löschen** entfernt Suchtext und aktive Filter.
+Das Board-Suchfeld filtert sichtbare Karten nach Titel, Notizen, Projekt, Kontext oder Tag. Die Filterschaltfläche bietet Schnellfilter für Kontexte, Tags, Fälligkeitsdaten und Projekte; Kontext- und Tag-Chips durchlaufen die Zustände Einschließen, Ausschließen (durchgestrichen) und Aus, und **Filter löschen** entfernt Suchtext und aktive Filter.
 
 ### ✅ Erledigt
 
@@ -239,6 +239,8 @@ Suchtext ist optional. Öffnen Sie **Filter**, um passende Einträge nach Status
 | `start:` | `start:>=tomorrow` | Ab einem Datum beginnende Aufgaben |
 | `created:` | `created:>=30d` | In den letzten 30 Tagen erstellte Aufgaben |
 | `OR` | `@home OR @work` | Eine der Bedingungen erfüllen |
+
+Ein vorangestelltes `-` negiert jeden Operator, nicht nur die beiden gezeigten: `-context:@computer` listet nur Aufgaben, die kein `@computer` benötigen, `-tag:#deep` blendet ein Tag aus, `-project:HomeReno` schließt ein Projekt aus.
 
 **Datumsformate:** `today`, `tomorrow`, `7d` (7 Tage), `2w` (2 Wochen), `1m` (1 Monat), `2025-01-15`
 

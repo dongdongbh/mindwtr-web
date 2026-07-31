@@ -80,6 +80,8 @@ Usa operadores para realizar filtros potentes:
 | `created:`  | `created:>=30d`    | Tareas creadas en los últimos 30 días |
 | `OR`        | `@home OR @work`   | Coincide con cualquiera de las condiciones |
 
+Un `-` inicial niega cualquier operador, no solo los dos mostrados: `-context:@computer` lista solo tareas que no requieren `@computer`, `-tag:#deep` oculta una etiqueta, `-project:HomeReno` excluye un proyecto.
+
 ### Búsquedas guardadas
 
 Las Búsquedas guardadas son accesos directos a consultas reutilizables.

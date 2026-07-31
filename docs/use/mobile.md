@@ -80,6 +80,8 @@ Use operators for powerful filtering:
 | `created:`  | `created:>=30d`    | Tasks created in last 30 days |
 | `OR`        | `@home OR @work`   | Match either condition  |
 
+A leading `-` negates any operator, not just the two shown: `-context:@computer` lists only tasks that don't require `@computer`, `-tag:#deep` hides a tag, `-project:HomeReno` excludes a project.
+
 ### Saved Searches
 
 Saved Searches are shortcuts for reusable search queries.

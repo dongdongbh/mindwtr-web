@@ -80,6 +80,8 @@ Utilisez des opérateurs pour effectuer des filtrages puissants :
 | `created:`  | `created:>=30d`    | Tâches créées au cours des 30 derniers jours |
 | `OR`        | `@home OR @work`   | Correspondre à l’une ou l’autre condition |
 
+Un `-` en tête nie n’importe quel opérateur, pas seulement les deux affichés : `-context:@computer` ne liste que les tâches qui ne nécessitent pas `@computer`, `-tag:#deep` masque une étiquette, `-project:HomeReno` exclut un projet.
+
 ### Recherches enregistrées
 
 Les Recherches enregistrées sont des raccourcis vers des requêtes de recherche réutilisables.

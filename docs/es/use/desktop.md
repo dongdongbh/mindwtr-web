@@ -132,7 +132,7 @@ Tablero Kanban con columnas y función de arrastrar y soltar:
 
 Arrastra tarjetas dentro de una columna para establecer el orden manual del tablero. Mover una tarea a otro estado borra su orden en la columna anterior para que pueda ordenarse en la nueva.
 
-Usa el campo de búsqueda del Tablero para limitar las tarjetas visibles por título, notas, proyecto, contexto o etiqueta. El botón de filtro abre filtros rápidos de contextos, etiquetas, fechas de vencimiento y proyectos; **Borrar filtros** elimina tanto el texto de búsqueda como los filtros activos.
+Usa el campo de búsqueda del Tablero para limitar las tarjetas visibles por título, notas, proyecto, contexto o etiqueta. El botón de filtro abre filtros rápidos de contextos, etiquetas, fechas de vencimiento y proyectos; las fichas de contexto y etiqueta pasan por los estados incluir, excluir (tachado) y desactivado, y **Borrar filtros** elimina tanto el texto de búsqueda como los filtros activos.
 
 ### ✅ Terminadas
 
@@ -239,6 +239,8 @@ El texto de búsqueda es opcional. Abre **Filtros** para mostrar los elementos q
 | `start:`    | `start:>=tomorrow` | Tareas que comienzan desde una fecha|
 | `created:`  | `created:>=30d`    | Tareas creadas en los últimos 30 días |
 | `OR`        | `@home OR @work`   | Coincide con cualquiera de las condiciones |
+
+Un `-` inicial niega cualquier operador, no solo los dos mostrados: `-context:@computer` lista solo tareas que no requieren `@computer`, `-tag:#deep` oculta una etiqueta, `-project:HomeReno` excluye un proyecto.
 
 **Formatos de fecha:** `today`, `tomorrow`, `7d` (7 días), `2w` (2 semanas), `1m` (1 mes), `2025-01-15`
 

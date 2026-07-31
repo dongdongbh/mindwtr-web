@@ -132,7 +132,7 @@ Kanban-style drag-and-drop board with columns:
 
 Drag cards within a column to set manual board order. Moving a task to another status clears its old column order so it can be ordered in the new column.
 
-Use the Board search field to narrow visible cards by title, notes, project, context, or tag. The filter button opens quick filters for contexts, tags, due dates, and projects; **Clear filters** removes both search text and active filters.
+Use the Board search field to narrow visible cards by title, notes, project, context, or tag. The filter button opens quick filters for contexts, tags, due dates, and projects; context and tag chips cycle through include, exclude (struck through), and off, and **Clear filters** removes both search text and active filters.
 
 ### ✅ Done
 
@@ -239,6 +239,8 @@ Search text is optional. Open **Filters** to list matching items by status, scop
 | `start:`    | `start:>=tomorrow` | Tasks starting from date      |
 | `created:`  | `created:>=30d`    | Tasks created in last 30 days |
 | `OR`        | `@home OR @work`   | Match either condition        |
+
+A leading `-` negates any operator, not just the two shown: `-context:@computer` lists only tasks that don't require `@computer`, `-tag:#deep` hides a tag, `-project:HomeReno` excludes a project.
 
 **Date formats:** `today`, `tomorrow`, `7d` (7 days), `2w` (2 weeks), `1m` (1 month), `2025-01-15`
 

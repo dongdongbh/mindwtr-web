@@ -78,6 +78,8 @@ Die Suche blendet erledigte und archivierte Einträge standardmäßig aus. Bei T
 | `created:` | `created:>=30d` | In letzten 30 Tagen erstellt |
 | `OR` | `@home OR @work` | Eine Bedingung erfüllen |
 
+Ein vorangestelltes `-` negiert jeden Operator, nicht nur die beiden gezeigten: `-context:@computer` listet nur Aufgaben, die kein `@computer` benötigen, `-tag:#deep` blendet ein Tag aus, `-project:HomeReno` schließt ein Projekt aus.
+
 ### Gespeicherte Suchen
 
 1. Suchabfrage eingeben

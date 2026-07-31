@@ -80,6 +80,8 @@ Mindwtr 行動版以 React Native 與 Expo 建置。Android 提供完整支援�
 | `created:`  | `created:>=30d`    | 過去 30 天建立的任務         |
 | `OR`        | `@home OR @work`   | 符合任一條件                 |
 
+在任何運算子前加 `-` 即可反向篩選，不限於表中列出的兩個：`-context:@computer` 只列出不需要 `@computer` 的任務，`-tag:#deep` 隱藏某個標籤，`-project:HomeReno` 排除某個專案。
+
 ### 已儲存搜尋
 
 「已儲存搜尋」是可重複使用之搜尋查詢的捷徑。

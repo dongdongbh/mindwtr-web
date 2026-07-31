@@ -80,6 +80,8 @@ Mindwtr 移动应用使用 React Native 和 Expo 构建。Android 已获得完�
 | `created:`  | `created:>=30d`    | 最近 30 天内创建的任务 |
 | `OR`        | `@home OR @work`   | 匹配任一条件  |
 
+在任何操作符前加 `-` 即可取反，不限于表中列出的两个：`-context:@computer` 只列出不需要 `@computer` 的任务，`-tag:#deep` 隐藏某个标签，`-project:HomeReno` 排除某个项目。
+
 ### 已保存的搜索
 
 已保存的搜索是可重复使用的搜索查询快捷方式。

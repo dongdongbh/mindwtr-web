@@ -132,7 +132,7 @@ Tableau à colonnes de type Kanban avec glisser-déposer :
 
 Faites glisser les cartes dans une colonne pour définir manuellement leur ordre dans le tableau. Déplacer une tâche vers un autre statut efface son ordre dans l’ancienne colonne afin qu’elle puisse être ordonnée dans la nouvelle.
 
-Utilisez le champ de recherche du Tableau pour limiter les cartes visibles selon le titre, les notes, le projet, le contexte ou l’étiquette. Le bouton de filtre ouvre des filtres rapides pour les contextes, les étiquettes, les échéances et les projets ; **Effacer les filtres** supprime à la fois le texte de recherche et les filtres actifs.
+Utilisez le champ de recherche du Tableau pour limiter les cartes visibles selon le titre, les notes, le projet, le contexte ou l’étiquette. Le bouton de filtre ouvre des filtres rapides pour les contextes, les étiquettes, les échéances et les projets ; les pastilles de contexte et d’étiquette passent par les états inclure, exclure (barré) et désactivé, et **Effacer les filtres** supprime à la fois le texte de recherche et les filtres actifs.
 
 ### ✅ Terminé
 
@@ -239,6 +239,8 @@ Le texte de recherche est facultatif. Ouvrez **Filtres** pour afficher les élé
 | `start:`    | `start:>=tomorrow` | Tâches commençant à partir d’une date    |
 | `created:`  | `created:>=30d`    | Tâches créées au cours des 30 derniers jours |
 | `OR`        | `@home OR @work`   | Correspondre à l’une ou l’autre condition |
+
+Un `-` en tête nie n’importe quel opérateur, pas seulement les deux affichés : `-context:@computer` ne liste que les tâches qui ne nécessitent pas `@computer`, `-tag:#deep` masque une étiquette, `-project:HomeReno` exclut un projet.
 
 **Formats de date :** `today`, `tomorrow`, `7d` (7 jours), `2w` (2 semaines), `1m` (1 mois), `2025-01-15`
 

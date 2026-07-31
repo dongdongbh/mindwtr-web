@@ -231,6 +231,32 @@ gemini mcp add mindwtr \
 
 Gemini 網頁版與行動版應用程式可以透過 URL 連接遠端 MCP 伺服器（即 gemini.google.com 上的「自訂應用程式」）。這需要 `mindwtr-mcp` 以 [HTTP 模式](#遠端存取-http)執行：把伺服器託管在 Google 伺服器可以連到的位置（反向代理之後的公開 HTTPS URL；Gemini 是從 Google 端發起連線，因此 `localhost` 行不通），然後將該 URL 連同你的 Bearer 權杖一起新增為自訂應用程式。
 
+### 6. Google Antigravity
+
+Antigravity（Google 的代理式 IDE）從 JSON 設定檔讀取本機 MCP 伺服器，沒有用於新增伺服器的 CLI 指令。可在代理側邊欄中透過 **MCP Servers** -> **Manage MCP Servers** -> **View raw config** 開啟該檔案，也可以直接編輯：
+
+- **目前版本：**`~/.gemini/config/mcp_config.json`（工作區層級：`.agents/mcp_config.json`）
+- **舊版本：**`~/.gemini/antigravity/mcp_config.json`（Windows：`%USERPROFILE%\.gemini\antigravity\mcp_config.json`）
+
+```json
+{
+  "mcpServers": {
+    "mindwtr": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mindwtr-mcp",
+        "--db",
+        "C:\\Users\\YOUR_USERNAME\\AppData\\Roaming\\mindwtr\\mindwtr.db",
+        "--write"
+      ]
+    }
+  }
+}
+```
+
+把路徑換成你所在平台的本機資料庫路徑（Windows 路徑在 JSON 中需要雙反斜線）。省略 `--write` 即為唯讀存取。重新啟動 Antigravity，確認 `mindwtr` 出現在其 MCP 伺服器設定中。Antigravity 的本機 MCP 設定與 Gemini CLI 的 `settings.json` 以及 Gemini 應用程式的自訂應用程式彼此獨立。
+
 ---
 
 ## 遠端存取（HTTP）

@@ -231,6 +231,32 @@ gemini mcp add mindwtr \
 
 The Gemini web and mobile apps can connect to a remote MCP server by URL ("custom apps" at gemini.google.com). This works with `mindwtr-mcp` running in [HTTP mode](#remote-access-http): host it somewhere Google's servers can reach (a public HTTPS URL behind a reverse proxy; Gemini connects from Google's side, so `localhost` won't work), then add that URL as a custom app together with your bearer token.
 
+### 6. Google Antigravity
+
+Antigravity (Google's agentic IDE) reads local MCP servers from a JSON config file; there is no CLI command for adding one. Open the file from the agent side panel via **MCP Servers** -> **Manage MCP Servers** -> **View raw config**, or edit it directly:
+
+- **Current releases:** `~/.gemini/config/mcp_config.json` (per-workspace: `.agents/mcp_config.json`)
+- **Older releases:** `~/.gemini/antigravity/mcp_config.json` (Windows: `%USERPROFILE%\.gemini\antigravity\mcp_config.json`)
+
+```json
+{
+  "mcpServers": {
+    "mindwtr": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mindwtr-mcp",
+        "--db",
+        "C:\\Users\\YOUR_USERNAME\\AppData\\Roaming\\mindwtr\\mindwtr.db",
+        "--write"
+      ]
+    }
+  }
+}
+```
+
+Replace the path with your platform's local database path (Windows paths need doubled backslashes in JSON). Omit `--write` for read-only access. Restart Antigravity and check that `mindwtr` appears in its MCP server settings. Antigravity's local MCP config is separate from Gemini CLI's `settings.json` and from the Gemini app's custom apps.
+
 ---
 
 ## Remote access (HTTP)

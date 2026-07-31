@@ -231,6 +231,32 @@ gemini mcp add mindwtr \
 
 Gemini 网页版和移动版应用可以通过 URL 连接远程 MCP 服务器（即 gemini.google.com 上的"自定义应用"）。这需要 `mindwtr-mcp` 运行在 [HTTP 模式](#远程访问-http)：把服务器托管在 Google 服务器能访问到的地方（反向代理之后的公网 HTTPS URL；Gemini 从 Google 一侧发起连接，因此 `localhost` 行不通），然后把该 URL 连同你的 Bearer 令牌一起添加为自定义应用。
 
+### 6. Google Antigravity
+
+Antigravity（Google 的智能体 IDE）从 JSON 配置文件读取本地 MCP 服务器，没有用于添加服务器的 CLI 命令。可在智能体侧边栏中通过 **MCP Servers** -> **Manage MCP Servers** -> **View raw config** 打开该文件，也可以直接编辑：
+
+- **当前版本：**`~/.gemini/config/mcp_config.json`（工作区级：`.agents/mcp_config.json`）
+- **旧版本：**`~/.gemini/antigravity/mcp_config.json`（Windows：`%USERPROFILE%\.gemini\antigravity\mcp_config.json`）
+
+```json
+{
+  "mcpServers": {
+    "mindwtr": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mindwtr-mcp",
+        "--db",
+        "C:\\Users\\YOUR_USERNAME\\AppData\\Roaming\\mindwtr\\mindwtr.db",
+        "--write"
+      ]
+    }
+  }
+}
+```
+
+把路径换成你所在平台的本地数据库路径（Windows 路径在 JSON 中需要双反斜杠）。省略 `--write` 即为只读访问。重启 Antigravity，确认 `mindwtr` 出现在其 MCP 服务器设置中。Antigravity 的本地 MCP 配置与 Gemini CLI 的 `settings.json` 以及 Gemini 应用的自定义应用互相独立。
+
 ---
 
 ## 远程访问（HTTP）

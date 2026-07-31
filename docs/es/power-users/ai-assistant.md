@@ -5,7 +5,7 @@ Mindwtr incluye un asistente de IA opcional que ayuda a aclarar y dividir tareas
 ## Modelo de privacidad
 
 - **Local-first:** tus datos permanecen en tu dispositivo.
-- **Bajo demanda:** las solicitudes solo se envían cuando pulsas una acción de IA o activas las sugerencias de Copilot.
+- **Bajo demanda:** las solicitudes solo se envían cuando pulsas una acción de IA o activas las sugerencias de Copilot. Al abrir los ajustes de IA con una clave configurada también se consulta la lista de modelos actual de tu proveedor, para que el selector de modelos esté al día — esa solicitud no incluye datos de tareas.
 - **Alcance limitado:** el asistente solo recibe los datos de la tarea que necesita.
 
 ## Proveedores compatibles
@@ -106,7 +106,7 @@ Transcribe notas de voz como tareas.
 Configura el proveedor de voz en OpenAI y luego completa la URL base: la raíz de tu servidor, terminada en `/v1` (por ejemplo, `http://localhost:8000/v1`). Mindwtr envía la grabación a `/v1/audio/transcriptions` en esa dirección, igual que hace con OpenAI.
 
 - Deja la clave de API vacía si tu servidor no la usa.
-- Escribe el nombre de modelo de tu propio servidor en el campo de modelo. Los modelos listados son sugerencias, no un conjunto fijo.
+- El selector de modelos muestra lo que tu servidor informa en `/v1/models` cuando responde; si no, recurre a sugerencias. Siempre puedes escribir cualquier nombre de modelo — la lista no es un conjunto fijo.
 - Un servidor de voz solo transcribe. **Análisis inteligente** necesita un modelo de lenguaje, así que sin un asistente de IA configurado, una captura se convierte en una tarea titulada con la transcripción, sin extraer de ella fechas, proyectos ni prioridades. Configura el asistente por separado si quieres eso.
 
 ## Notas

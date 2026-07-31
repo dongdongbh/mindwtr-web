@@ -5,7 +5,7 @@ Mindwtr includes an optional AI assistant to help clarify tasks, break them down
 ## Privacy Model
 
 - **Local-first**: Your data stays on your device.
-- **On-demand**: Requests are only sent when you tap AI actions or enable Copilot suggestions.
+- **On-demand**: Requests are only sent when you tap AI actions or enable Copilot suggestions. Opening the AI settings with a key configured also asks your provider for its current model list, so the model picker stays up to date — no task data is included in that request.
 - **Scoped**: The assistant only receives the task data it needs.
 
 ## Supported Providers
@@ -99,7 +99,7 @@ Transcribe voice notes into tasks.
 Set the speech provider to OpenAI, then fill in the base URL: your server's root, ending in `/v1` (for example `http://localhost:8000/v1`). Mindwtr posts the recording to `/v1/audio/transcriptions` there, exactly as it does to OpenAI.
 
 - Leave the API key empty if your server does not use one.
-- Type your server's own model name in the model field. The listed models are suggestions, not a fixed set.
+- The model picker lists whatever your server reports at `/v1/models` when it answers; otherwise it falls back to suggestions. You can always type any model name — the list is not a fixed set.
 - Transcription is all a speech server does. **Smart Parse** needs a language model, so without an AI assistant configured a capture becomes a task titled with the transcript, and dates, projects and priorities are not pulled out of it. Configure the assistant separately if you want those.
 
 ## Notes

@@ -5,7 +5,7 @@ Mindwtr enthält einen optionalen KI-Assistenten, der dabei hilft, Aufgaben zu k
 ## Datenschutzmodell
 
 - **Local First**: Ihre Daten bleiben auf Ihrem Gerät.
-- **Bei Bedarf**: Anfragen werden nur gesendet, wenn Sie KI-Aktionen verwenden oder Copilot-Vorschläge aktivieren.
+- **Bei Bedarf**: Anfragen werden nur gesendet, wenn Sie KI-Aktionen verwenden oder Copilot-Vorschläge aktivieren. Beim Öffnen der KI-Einstellungen mit hinterlegtem Schlüssel wird außerdem die aktuelle Modellliste Ihres Anbieters abgefragt, damit die Modellauswahl aktuell bleibt — Aufgabendaten werden dabei nicht übertragen.
 - **Auf das Nötige beschränkt**: Der Assistent erhält nur die benötigten Aufgabendaten.
 
 ## Unterstützte Anbieter
@@ -99,7 +99,7 @@ Transkribiert Sprachnotizen in Aufgaben.
 Setzen Sie den Sprachanbieter auf OpenAI und tragen Sie dann die Basis-URL ein: die Wurzel Ihres Servers, endend auf `/v1` (zum Beispiel `http://localhost:8000/v1`). Mindwtr sendet die Aufnahme dorthin an `/v1/audio/transcriptions`, genau wie an OpenAI.
 
 - Lassen Sie den API-Schlüssel leer, wenn Ihr Server keinen benötigt.
-- Geben Sie im Modellfeld den Modellnamen Ihres eigenen Servers ein. Die aufgeführten Modelle sind Vorschläge, keine feste Auswahl.
+- Die Modellauswahl zeigt, was Ihr Server unter `/v1/models` meldet, sofern er antwortet; andernfalls werden Vorschläge angezeigt. Sie können jederzeit einen beliebigen Modellnamen eingeben — die Liste ist keine feste Auswahl.
 - Ein Sprachserver übernimmt nur die Transkription. **Intelligent auswerten** benötigt ein Sprachmodell; ist kein KI-Assistent konfiguriert, wird eine Aufnahme zu einer Aufgabe mit dem Transkript als Titel, ohne dass Fälligkeitsdaten, Projekte oder Prioritäten daraus extrahiert werden. Konfigurieren Sie den Assistenten separat, wenn Sie das möchten.
 
 ## Hinweise

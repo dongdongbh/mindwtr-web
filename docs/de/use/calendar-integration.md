@@ -119,7 +119,7 @@ Ein abonnierter `.ics`-Feed enthält oft mehrere logische Kalender, die über da
 
 ### Kalenderfarben
 
-Feeds, die eigene Farben angeben, behalten sie: Mindwtr liest die Standardeigenschaft `COLOR`, die Kalenderfarbe von Apple sowie Farben pro Kategorie, etwa die von Fossify. So sieht ein abonnierter Kalender genauso aus wie in der App, aus der er stammt. Eine Farbe, die Sie in Mindwtr selbst wählen, hat immer Vorrang vor der des Feeds, und Kalender ohne jeden Hinweis erhalten eine stabile, automatisch vergebene Farbe.
+Feeds, die eigene Farben angeben, behalten sie: Mindwtr liest die Standardeigenschaft `COLOR`, die Kalenderfarbe von Apple sowie Farben pro Kategorie, etwa die von Fossify. So sieht ein abonnierter Kalender genauso aus wie in der App, aus der er stammt. Eine Farbe, die Sie in Mindwtr selbst wählen, hat immer Vorrang vor der des Feeds, und Kalender ohne jeden Hinweis erhalten eine stabile, automatisch vergebene Farbe. Um wieder die Farbe des Feeds zu verwenden, wählen Sie im Farbwähler des Abonnements **Automatisch**.
 
 ### Mobilgeräte: Mindwtr-Aufgaben in den Kalender übertragen
 

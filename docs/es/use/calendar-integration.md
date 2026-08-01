@@ -119,7 +119,7 @@ Una suscripción `.ics` suele contener varios calendarios lógicos, distinguidos
 
 ### Colores de los calendarios
 
-Los feeds que declaran sus propios colores los conservan: Mindwtr lee la propiedad estándar `COLOR`, el color de calendario de Apple y los colores por categoría, como los de Fossify, de modo que un calendario suscrito se ve igual que en la aplicación de la que procede. El color que elijas tú en Mindwtr siempre prevalece sobre el del feed, y los calendarios sin ninguna indicación reciben un color asignado automáticamente y estable.
+Los feeds que declaran sus propios colores los conservan: Mindwtr lee la propiedad estándar `COLOR`, el color de calendario de Apple y los colores por categoría, como los de Fossify, de modo que un calendario suscrito se ve igual que en la aplicación de la que procede. El color que elijas tú en Mindwtr siempre prevalece sobre el del feed, y los calendarios sin ninguna indicación reciben un color asignado automáticamente y estable. Para volver al color del feed, elige **Auto** en el selector de color de la suscripción.
 
 ### Móvil: enviar tareas de Mindwtr al calendario
 

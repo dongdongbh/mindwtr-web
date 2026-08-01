@@ -174,7 +174,7 @@ scoop bucket add mindwtr https://github.com/dongdongbh/homebrew-mindwtr
 scoop install mindwtr
 ```
 
-### 安裝程式（.msi 或 .exe）
+### 安裝程式（.exe）
 
 1. 從 [GitHub Releases](https://github.com/dongdongbh/Mindwtr/releases) 下載安裝程式
 2. 執行安裝程式

@@ -119,7 +119,7 @@ Un abonnement `.ics` contient souvent plusieurs calendriers logiques, distingué
 
 ### Couleurs des calendriers
 
-Les flux qui déclarent leurs propres couleurs les conservent : Mindwtr lit la propriété standard `COLOR`, la couleur de calendrier d’Apple et les couleurs par catégorie, comme celles de Fossify, si bien qu’un calendrier abonné s’affiche comme dans l’application dont il provient. Une couleur que vous choisissez vous-même dans Mindwtr l’emporte toujours sur celle du flux, et les calendriers sans aucune indication reçoivent une couleur attribuée automatiquement et stable.
+Les flux qui déclarent leurs propres couleurs les conservent : Mindwtr lit la propriété standard `COLOR`, la couleur de calendrier d’Apple et les couleurs par catégorie, comme celles de Fossify, si bien qu’un calendrier abonné s’affiche comme dans l’application dont il provient. Une couleur que vous choisissez vous-même dans Mindwtr l’emporte toujours sur celle du flux, et les calendriers sans aucune indication reçoivent une couleur attribuée automatiquement et stable. Pour revenir à la couleur du flux, sélectionnez **Automatique** dans le sélecteur de couleur de l’abonnement.
 
 ### Mobile : envoyer les tâches Mindwtr vers le calendrier
 

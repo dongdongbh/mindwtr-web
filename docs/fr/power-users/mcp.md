@@ -686,6 +686,7 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 - `energyLevel` : `low | medium | high`
 - `assignedTo` : chaîne
 - `timeEstimate` : `5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
+- Autres champs modifiables : `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`
 
 **Exemple**
 
@@ -700,7 +701,7 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 **Champs d’entrée**
 
 - `id` : chaîne (UUID de la tâche)
-- `title`, `status`, `projectId`, `sectionId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `isFocusedToday`
+- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`
 - `recurrence` : objet de récurrence, chaîne RRULE RFC 5545 ou `null` pour l’effacer
 
 **Remarques**

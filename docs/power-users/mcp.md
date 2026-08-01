@@ -686,6 +686,7 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 - `energyLevel`: `low | medium | high`
 - `assignedTo`: string
 - `timeEstimate`: `5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
+- Additional writable fields: `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`
 
 **Example**
 
@@ -700,7 +701,7 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 **Input fields**
 
 - `id`: string (task UUID)
-- `title`, `status`, `projectId`, `sectionId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `isFocusedToday`
+- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`
 - `recurrence`: recurrence object, RFC 5545 RRULE string, or `null` to clear it
 
 **Notes**

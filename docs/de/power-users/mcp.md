@@ -686,6 +686,7 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 - `energyLevel`: `low | medium | high`
 - `assignedTo`: string
 - `timeEstimate`: `5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
+- Weitere beschreibbare Felder: `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`
 
 **Beispiel**
 
@@ -700,7 +701,7 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 **Eingabefelder**
 
 - `id`: string (task UUID)
-- `title`, `status`, `projectId`, `sectionId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `isFocusedToday`
+- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`
 - `recurrence`: Wiederholungsobjekt, RFC-5545-RRULE-Zeichenfolge oder `null` zum Leeren
 
 **Hinweise**

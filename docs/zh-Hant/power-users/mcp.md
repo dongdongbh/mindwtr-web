@@ -686,6 +686,7 @@ Schema 注意事項：
 - `energyLevel`：`low | medium | high`
 - `assignedTo`：string
 - `timeEstimate`：`5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
+- 其他可寫欄位：`areaId`、`reviewAt`、`taskMode`、`relativeStartOffset`、`showFutureRecurrence`、`pushCount`、`checklist`、`textDirection`、`location`、`isFocusedToday`、`timeSpentMinutes`、`suppressMindwtrReminders`、`repeatReminderMinutes`
 
 **範例**
 
@@ -700,7 +701,7 @@ Schema 注意事項：
 **輸入欄位**
 
 - `id`：string（task UUID）
-- `title`、`status`、`projectId`、`sectionId`、`dueDate`、`startTime`、`contexts`、`tags`、`description`、`priority`、`energyLevel`、`assignedTo`、`timeEstimate`、`reviewAt`、`isFocusedToday`
+- `title`、`status`、`projectId`、`sectionId`、`areaId`、`dueDate`、`startTime`、`contexts`、`tags`、`description`、`priority`、`energyLevel`、`assignedTo`、`timeEstimate`、`reviewAt`、`taskMode`、`relativeStartOffset`、`showFutureRecurrence`、`pushCount`、`checklist`、`textDirection`、`location`、`isFocusedToday`、`timeSpentMinutes`、`suppressMindwtrReminders`、`repeatReminderMinutes`、`order`、`boardOrder`、`focusOrder`
 - `recurrence`：重複規則物件、RFC 5545 RRULE 字串，或使用 `null` 清除
 
 **注意事項**

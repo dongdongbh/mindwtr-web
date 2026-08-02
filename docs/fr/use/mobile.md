@@ -388,9 +388,9 @@ Les tâches récurrentes prennent en charge deux stratégies :
 - **Répéter après l’achèvement** (prochaine date calculée à partir de l’heure d’achèvement)
 - **Fin : Jamais / À une date / Après N occurrences**
 
-Mindwtr conserve une seule occurrence active d’une tâche récurrente. Le Calendrier affiche cette occurrence actuelle lorsqu’elle possède une échéance ou une heure de début ; les occurrences futures ne sont pas créées à l’avance tant que l’occurrence actuelle n’est pas terminée, sauf si **Afficher la prochaine occurrence dans le Calendrier** est activé pour obtenir un aperçu de planification uniquement.
+Mindwtr conserve une seule occurrence active d’une tâche récurrente. Le Calendrier affiche cette occurrence actuelle lorsqu’elle possède une échéance ou une heure de début ; les occurrences futures ne sont pas créées à l’avance tant que l’occurrence actuelle n’est pas terminée, sauf si **Voir les occurrences à venir dans le calendrier** est activé pour obtenir un aperçu de planification uniquement.
 
-Utilisez le champ de récurrence dans l’éditeur de tâche, puis activez **Répéter après l’achèvement** ou **Afficher la prochaine occurrence dans le Calendrier** selon vos besoins.
+Utilisez le champ de récurrence dans l’éditeur de tâche, puis activez **Répéter après l’achèvement** ou **Voir les occurrences à venir dans le calendrier** selon vos besoins.
 La même feuille vous permet d’arrêter une série à une date cible ou après un nombre total fixe d’occurrences.
 
 ### Pièces jointes

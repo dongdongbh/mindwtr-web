@@ -64,7 +64,7 @@ Mit **Endet** legen Sie fest, wann die Serie endet:
 
 Mindwtr hält für eine wiederkehrende Serie jeweils eine aktive Aufgabe vor. Die nächste tatsächliche Aufgabe wird erstellt, wenn Sie die aktuelle abschließen.
 
-Aktivieren Sie **Nächstes Vorkommen im Kalender anzeigen**, wenn Sie eine Planungsvorschau des nächsten Vorkommens sehen möchten. Diese Vorschau hilft bei der Vorausplanung, ist aber keine zweite aktive Aufgabe.
+Aktivieren Sie **Künftige Wiederholungen im Kalender anzeigen**, wenn Sie eine Planungsvorschau der Serie sehen möchten. Der Kalender zeigt jedes Vorkommen im sichtbaren Monats-, Wochen- oder Zeitplanbereich — eine tägliche Aufgabe füllt jeden sichtbaren Tag. Diese Vorschauen helfen bei der Vorausplanung, sind aber keine zusätzlichen aktiven Aufgaben.
 
 ## Was beim Abschluss geschieht
 

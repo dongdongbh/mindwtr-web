@@ -429,7 +429,7 @@ Beim Abschluss erzeugt Mindwtr automatisch die nächste Instanz mit aktualisiert
 - **Nach Abschluss wiederholen**: nächste Fälligkeit ab Abschlusszeit, z. B. in 5 Tagen
 - **Endet: Nie / Am Datum / Nach N Vorkommen**: unbegrenzt, an einem Datum oder nach einer Anzahl enden; der Parserwert `After N occurrences` zählt die aktuelle Aufgabe mit.
 
-Mindwtr hält eine aktive Instanz. Der Kalender zeigt sie mit Fälligkeitsdatum oder Startzeit; zukünftige Vorkommen werden bis zum Abschluss nicht vorab angelegt, außer als reine Planungsvorschau mit **Nächstes Vorkommen im Kalender anzeigen**.
+Mindwtr hält eine aktive Instanz. Der Kalender zeigt sie mit Fälligkeitsdatum oder Startzeit; zukünftige Vorkommen werden bis zum Abschluss nicht vorab angelegt, außer als reine Planungsvorschau mit **Künftige Wiederholungen im Kalender anzeigen**.
 
 Stellen Sie **Nach Abschluss wiederholen**, Enddatum oder Anzahl im Wiederholungsfeld des Aufgabeneditors ein.
 

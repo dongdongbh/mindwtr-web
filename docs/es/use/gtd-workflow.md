@@ -304,7 +304,7 @@ Destaca tareas como prioridades de hoy hasta alcanzar el límite de Enfoque conf
 
 Configura las tareas recurrentes desde el campo **Recurrencia** del editor de tareas. Elige una recurrencia diaria, semanal, mensual o anual y, después, elige si la tarea mantiene una programación fija o se repite después de completarla.
 
-Mindwtr conserva una instancia activa de cada tarea recurrente. Las repeticiones futuras no se crean de antemano como tareas reales; la siguiente tarea aparece cuando completas la actual. Puedes activar **Mostrar la próxima repetición en el Calendario** cuando quieras una vista previa de planificación.
+Mindwtr conserva una instancia activa de cada tarea recurrente. Las repeticiones futuras no se crean de antemano como tareas reales; la siguiente tarea aparece cuando completas la actual. Puedes activar **Mostrar próximas apariciones en el Calendario** cuando quieras una vista previa de planificación.
 
 **Ejemplos de tareas recurrentes:**
 - Semanal: "Revisar el estado del proyecto"

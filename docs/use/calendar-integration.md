@@ -50,7 +50,7 @@ Recurring Mindwtr tasks are generated as task instances, not as an expanded cale
 
 - The calendar shows the active task instance when it has a due date or scheduled start time.
 - By default, Mindwtr does not pre-populate future task occurrences in the calendar. The next real task instance is created only when the current recurring task is completed.
-- If **Show next occurrence in Calendar** is enabled on a recurring task, Calendar can show one planning-only preview of the next occurrence. That preview is not a real task and mobile/macOS calendar push writes it as a normal single event, not as a native recurring event.
+- If **Show future occurrences in Calendar** is enabled on a recurring task, Calendar shows planning-only previews of every occurrence in the visible range. Those previews are not real tasks, and mobile/macOS calendar push still writes only the next occurrence as a normal single event, not as a native recurring event.
 - **Strict** keeps the fixed schedule cadence. A monthly task due on the 1st stays anchored to that planned cycle, but Mindwtr still creates one next instance per completion instead of filling every future month.
 - **Repeat after completion** calculates the next instance from when you finish the current one. For example, a plain monthly habit completed on the 15th is scheduled from the 15th next time.
 - Mobile and macOS calendar push mirror these concrete task instances. They do not export Mindwtr recurrence rules as native recurring calendar events.

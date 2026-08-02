@@ -304,7 +304,7 @@ Star tasks as today's priorities up to your configured Focus limit:
 
 Set up recurring tasks from the task editor's **Recurrence** field. Choose daily, weekly, monthly, or yearly recurrence, then choose whether the task stays on a fixed schedule or repeats after completion.
 
-Mindwtr keeps one active instance of a recurring task. Future occurrences are not pre-populated as real tasks; the next task appears when you complete the current one. You can turn on **Show next occurrence in Calendar** when you want a planning preview.
+Mindwtr keeps one active instance of a recurring task. Future occurrences are not pre-populated as real tasks; the next task appears when you complete the current one. You can turn on **Show future occurrences in Calendar** when you want a planning preview.
 
 **Example recurring tasks:**
 - Weekly: "Review project status"

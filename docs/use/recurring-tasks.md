@@ -64,7 +64,7 @@ Use **Ends** to control when the series stops:
 
 Mindwtr keeps one active task for a recurring series. It creates the next real task when you complete the current one.
 
-Turn on **Show next occurrence in Calendar** when you want a planning preview of the next occurrence. This preview helps you plan ahead, but it is not a second active task.
+Turn on **Show future occurrences in Calendar** when you want a planning preview of the series. The calendar paints every occurrence in the visible month, week, or schedule range — a daily task fills every visible day. These previews help you plan ahead, but they are not extra active tasks.
 
 ## What Happens When You Complete It
 

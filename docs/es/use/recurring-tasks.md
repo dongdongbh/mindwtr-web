@@ -64,7 +64,7 @@ Usa **Termina** para controlar cuándo se detiene la serie:
 
 Mindwtr mantiene una sola tarea activa por serie recurrente. Crea la siguiente tarea real cuando completas la actual.
 
-Activa **Mostrar la próxima aparición en el Calendario** si quieres verla como previsión. Sirve para planificar, pero no es una segunda tarea activa.
+Activa **Mostrar próximas apariciones en el Calendario** si quieres una vista previa de planificación de la serie. El calendario muestra cada aparición dentro del rango visible de mes, semana o agenda: una tarea diaria llena todos los días visibles. Estas vistas previas ayudan a planificar, pero no son tareas activas adicionales.
 
 ## Qué ocurre al completarla
 

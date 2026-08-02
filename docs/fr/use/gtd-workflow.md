@@ -304,7 +304,7 @@ Marquez d’une étoile les tâches prioritaires du jour jusqu’à la limite Fo
 
 Configurez les tâches récurrentes depuis le champ **Récurrence** de l’éditeur de tâche. Choisissez une récurrence quotidienne, hebdomadaire, mensuelle ou annuelle, puis indiquez si la tâche doit conserver un calendrier fixe ou se répéter après son achèvement.
 
-Mindwtr conserve une seule instance active d’une tâche récurrente. Les occurrences futures ne sont pas préremplies sous forme de véritables tâches ; la tâche suivante apparaît lorsque vous terminez la tâche actuelle. Vous pouvez activer **Afficher la prochaine occurrence dans le calendrier** si vous souhaitez un aperçu de planification.
+Mindwtr conserve une seule instance active d’une tâche récurrente. Les occurrences futures ne sont pas préremplies sous forme de véritables tâches ; la tâche suivante apparaît lorsque vous terminez la tâche actuelle. Vous pouvez activer **Voir les occurrences à venir dans le calendrier** si vous souhaitez un aperçu de planification.
 
 **Exemples de tâches récurrentes :**
 - Hebdomadaire : « Examiner l’état du projet »

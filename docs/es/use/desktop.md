@@ -430,7 +430,7 @@ Cuando completas una tarea recurrente, Mindwtr crea automáticamente la siguient
 - **Finaliza: Nunca / En una fecha / Después de N repeticiones**: elige si la serie continúa para siempre, se detiene en una fecha concreta o termina tras un número fijo de repeticiones.
   `After N occurrences` cuenta la tarea actual como parte del total de la serie.
 
-Mindwtr mantiene una instancia activa de cada tarea recurrente. El Calendario muestra esa instancia actual cuando tiene fecha de vencimiento u hora de inicio; las repeticiones futuras no se rellenan de antemano hasta completar la actual, salvo que se active **Mostrar próxima repetición en el Calendario** como vista previa solo para planificación.
+Mindwtr mantiene una instancia activa de cada tarea recurrente. El Calendario muestra esa instancia actual cuando tiene fecha de vencimiento u hora de inicio; las repeticiones futuras no se rellenan de antemano hasta completar la actual, salvo que se active **Mostrar próximas apariciones en el Calendario** como vista previa solo para planificación.
 
 Puedes activar esta opción en el campo de recurrencia del editor con **Repetir después de completar**.
 Usa la misma hoja de recurrencia para establecer una fecha final o un número de repeticiones cuando necesites que la serie se detenga automáticamente.

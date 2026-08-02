@@ -308,7 +308,7 @@ Markieren Sie bis zu Ihrem festgelegten Fokuslimit Aufgaben mit einem Stern als 
 
 Richten Sie wiederkehrende Aufgaben im Feld **Wiederholung** des Aufgabeneditors ein. Wählen Sie tägliche, wöchentliche, monatliche oder jährliche Wiederholung und anschließend, ob die Aufgabe einem festen Zeitplan folgt oder nach dem Abschluss wiederholt wird.
 
-Mindwtr hält eine aktive Instanz einer wiederkehrenden Aufgabe vor. Zukünftige Vorkommen werden nicht als echte Aufgaben vorab angelegt; die nächste Aufgabe erscheint beim Abschluss der aktuellen. Aktivieren Sie **Nächstes Vorkommen im Kalender anzeigen**, wenn Sie eine Planungsvorschau wünschen.
+Mindwtr hält eine aktive Instanz einer wiederkehrenden Aufgabe vor. Zukünftige Vorkommen werden nicht als echte Aufgaben vorab angelegt; die nächste Aufgabe erscheint beim Abschluss der aktuellen. Aktivieren Sie **Künftige Wiederholungen im Kalender anzeigen**, wenn Sie eine Planungsvorschau wünschen.
 
 **Beispiele für wiederkehrende Aufgaben:**
 - Wöchentlich: „Projektstatus prüfen“

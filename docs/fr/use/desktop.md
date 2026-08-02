@@ -430,7 +430,7 @@ Lorsque vous terminez une tâche récurrente, Mindwtr crée automatiquement l’
 - **Fin : Jamais / À une date / Après N occurrences** : choisissez si la série se poursuit indéfiniment, s’arrête à une date précise ou s’arrête après un nombre fixe d’occurrences.
   `After N occurrences` compte la tâche actuelle dans le total de la série.
 
-Mindwtr conserve une seule occurrence active d’une tâche récurrente. Le Calendrier affiche cette occurrence actuelle lorsqu’elle possède une échéance ou une heure de début ; les occurrences futures ne sont pas créées à l’avance tant que l’occurrence actuelle n’est pas terminée, sauf si **Afficher la prochaine occurrence dans le Calendrier** est activé pour obtenir un aperçu de planification uniquement.
+Mindwtr conserve une seule occurrence active d’une tâche récurrente. Le Calendrier affiche cette occurrence actuelle lorsqu’elle possède une échéance ou une heure de début ; les occurrences futures ne sont pas créées à l’avance tant que l’occurrence actuelle n’est pas terminée, sauf si **Voir les occurrences à venir dans le calendrier** est activé pour obtenir un aperçu de planification uniquement.
 
 Vous pouvez activer ou désactiver cette option dans le champ de récurrence de l’éditeur de tâche à l’aide de **Répéter après l’achèvement**.
 Utilisez la même feuille de récurrence pour définir une date de fin ou un nombre d’occurrences lorsque la série doit s’arrêter automatiquement.

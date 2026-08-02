@@ -64,7 +64,7 @@ Utilisez **Se termine** pour arrêter la série :
 
 Mindwtr conserve une seule tâche active par série récurrente. La prochaine tâche réelle est créée lorsque vous terminez la tâche actuelle.
 
-Activez **Afficher la prochaine occurrence dans le calendrier** pour voir un aperçu de planification. Cet aperçu facilite l’anticipation, mais ne constitue pas une seconde tâche active.
+Activez **Voir les occurrences à venir dans le calendrier** pour obtenir un aperçu de planification de la série. Le calendrier affiche chaque occurrence dans la plage visible (mois, semaine ou planning) — une tâche quotidienne remplit chaque jour visible. Ces aperçus facilitent l’anticipation, mais ne constituent pas des tâches actives supplémentaires.
 
 ## Effet de l’achèvement
 

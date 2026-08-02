@@ -17,7 +17,7 @@ Mindwtr para escritorio permite trabajar principalmente con el teclado mediante 
 - Usa `Insert` para ir al campo de adición de tareas; en las vistas que no lo tengan, abre Adición rápida.
 - Pulsa `1`-`9` (fuera de cualquier campo de texto) para cambiar a un área según el orden de la barra lateral, o `0` para quitar el filtro de área; la combinación `Shift+A` seguida del número sigue funcionando. Una `a` sin modificadores añade una tarea en el contexto actual.
 - Usa `Ctrl+Alt+S` para ejecutar una sincronización manual en el escritorio.
-- En el menú contextual de clic derecho / `Shift+F10`: ↑/↓ se desplazan entre elementos, → abre un panel de submenú, ← vuelve, Enter activa y Esc cierra y devuelve el foco a la tarea.
+- En el menú contextual de clic derecho / `Shift+F10`: ↑/↓ se desplazan entre elementos, → abre un panel de submenú, ← vuelve, Enter activa (dentro de un panel de submenú, Enter guarda el valor y cierra el menú) y Esc cierra y devuelve el foco a la tarea.
 
 Los atajos se ignoran mientras escribes en campos editables si entrarían en conflicto con la escritura.
 

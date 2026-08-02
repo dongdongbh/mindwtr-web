@@ -17,7 +17,7 @@ Mindwtr desktop supports keyboard-first use with Standard (Gmail/Todoist-style),
 - Use `Insert` to jump to the add-task input (it opens quick add in views without one).
 - Press `1`-`9` (outside any text field) to switch to an Area by sidebar order, and `0` to clear the Area filter; the `Shift+A` chord followed by the number still works too. Plain `a` adds a task in the current context.
 - Use `Ctrl+Alt+S` to run manual sync on desktop.
-- In the right-click / Shift+F10 context menu: ↑/↓ move between items, → opens a submenu panel and ← comes back, Enter activates, Esc closes and returns focus to the task.
+- In the right-click / Shift+F10 context menu: ↑/↓ move between items, → opens a submenu panel and ← comes back, Enter activates, and inside a submenu panel Enter saves the value and closes the menu; Esc closes and returns focus to the task.
 
 Shortcuts are ignored while typing in editable fields when the shortcut would conflict with text entry.
 

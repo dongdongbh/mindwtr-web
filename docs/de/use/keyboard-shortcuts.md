@@ -17,7 +17,7 @@ Mindwtr unterstützt auf dem Desktop eine tastaturorientierte Bedienung mit den 
 - Mit `Insert` wechseln Sie zum Eingabefeld zum Hinzufügen einer Aufgabe (in Ansichten ohne dieses Feld wird „Schnell hinzufügen“ geöffnet).
 - Drücken Sie `1`–`9` (außerhalb von Textfeldern), um entsprechend der Reihenfolge in der Seitenleiste zu einem Bereich zu wechseln, oder `0`, um den Bereichsfilter zu entfernen; die Tastenfolge `Shift+A` und danach die Zahl funktioniert weiterhin. Ein einfaches `a` fügt im aktuellen Kontext eine Aufgabe hinzu.
 - Mit `Ctrl+Alt+S` führen Sie auf dem Desktop eine manuelle Synchronisierung aus.
-- Im Kontextmenü über Rechtsklick / `Shift+F10`: ↑/↓ wechselt zwischen Einträgen, → öffnet ein Untermenü und ← kehrt zurück, `Enter` aktiviert, `Esc` schließt das Menü und setzt den Fokus zurück auf die Aufgabe.
+- Im Kontextmenü über Rechtsklick / `Shift+F10`: ↑/↓ wechselt zwischen Einträgen, → öffnet ein Untermenü und ← kehrt zurück, `Enter` aktiviert – in einem Untermenü-Panel speichert `Enter` den Wert und schließt das Menü; `Esc` schließt das Menü und setzt den Fokus zurück auf die Aufgabe.
 
 Während der Eingabe in bearbeitbaren Feldern werden Tastenkürzel ignoriert, wenn sie mit der Texteingabe in Konflikt geraten würden.
 

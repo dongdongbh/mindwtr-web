@@ -17,7 +17,7 @@ Mindwtr sur ordinateur permet une utilisation centrée sur le clavier avec les p
 - Utilisez `Insert` pour atteindre le champ d’ajout de tâche ; l’ajout rapide s’ouvre dans les vues qui n’en ont pas.
 - Appuyez sur `1` à `9` (hors de tout champ de texte) pour choisir un domaine selon son ordre dans la barre latérale, et sur `0` pour supprimer le filtre de domaine ; le raccourci `Shift+A` suivi du chiffre fonctionne toujours aussi. La touche `a` seule ajoute une tâche dans le contexte actuel.
 - Utilisez `Ctrl+Alt+S` pour lancer une synchronisation manuelle sur ordinateur.
-- Dans le menu contextuel ouvert par clic droit ou `Shift+F10` : ↑/↓ parcourent les éléments, → ouvre un sous-menu et ← revient en arrière, Entrée active l’élément, Échap ferme le menu et rend le focus à la tâche.
+- Dans le menu contextuel ouvert par clic droit ou `Shift+F10` : ↑/↓ parcourent les éléments, → ouvre un sous-menu et ← revient en arrière, Entrée active l’élément (dans un panneau de sous-menu, Entrée enregistre la valeur et ferme le menu), Échap ferme le menu et rend le focus à la tâche.
 
 Les raccourcis susceptibles d’entrer en conflit avec la saisie sont ignorés lorsque vous écrivez dans un champ modifiable.
 

@@ -183,7 +183,7 @@ Mindwtr sépare le statut et les dates d’une tâche. Le statut est l’état G
 
 Il existe un raccourci délibéré au moment de la modification : donner une date de début à un élément de la **Boîte de réception** revient à le clarifier — vous avez décidé quand vous pourrez agir — donc Mindwtr le déplace vers `next` dès que vous définissez la date, comme lorsque vous marquez un élément de la Boîte de réception d’une étoile. Si vous choisissez un statut lors de la même modification, votre choix l’emporte, et les tâches `someday` ou `waiting` conservent toujours leur statut lorsque vous leur attribuez une date : une tâche Un jour datée est un pense-bête, et une tâche En attente datée est un rappel de suivi.
 
-- La **date de début** est un seuil de report/disponibilité. Par défaut, une date de début future masque la tâche dans Focus. Lorsque cette date arrive, la tâche réapparaît avec le statut qu’elle avait déjà.
+- La **date de début** est un seuil de report/disponibilité. Par défaut, une date de début future masque la tâche dans Focus. Lorsque cette date arrive, la tâche réapparaît avec le statut qu’elle avait déjà. Si le début comporte une heure précise, Focus et les prochaines actions gardent la tâche masquée jusqu’à cette heure : une tâche démarrable à 17 h n’encombre pas la liste du matin.
 - La **date de revue** est un pense-bête. Lorsque cette date arrive, Mindwtr fait apparaître la tâche dans les vues qui prennent en charge les éléments à revoir afin que vous puissiez la réexaminer ; rien ne change avant votre décision.
 - La **date d’échéance** est un délai. À mesure qu’elle approche ou qu’elle est dépassée, Mindwtr souligne l’échéance de la tâche dans l’affichage, les rappels et l’ordre de tri ; son statut ne change pas.
 

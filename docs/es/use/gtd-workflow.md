@@ -183,7 +183,7 @@ Mindwtr mantiene separados el estado y las fechas de las tareas. El estado es la
 
 Hay un atajo deliberado al editar: asignar una fecha de inicio a un elemento de la **Bandeja de entrada** cuenta como aclararlo —has decidido cuándo puedes actuar sobre él—, por lo que Mindwtr lo mueve a `next` en cuanto estableces la fecha, igual que al destacar un elemento de la Bandeja de entrada. Si eliges un estado en la misma edición, prevalece tu elección, y las tareas `someday` o `waiting` siempre conservan su estado cuando les asignas una fecha: un elemento con fecha de algún día es un recordatorio y un elemento en espera con fecha es un recordatorio de seguimiento.
 
-- La **fecha de inicio** es una barrera de aplazamiento/disponibilidad. De forma predeterminada, un inicio futuro oculta la tarea de Enfoque. Cuando llega la fecha, la tarea vuelve a aparecer con el estado que ya tenía.
+- La **fecha de inicio** es una barrera de aplazamiento/disponibilidad. De forma predeterminada, un inicio futuro oculta la tarea de Enfoque. Cuando llega la fecha, la tarea vuelve a aparecer con el estado que ya tenía. Si el inicio tiene una hora concreta, Enfoque y las próximas acciones mantienen la tarea oculta hasta esa hora: una tarea que puede empezar a las 17:00 no estorba en la lista de la mañana.
 - La **fecha de revisión** es un recordatorio. Cuando llega la fecha, Mindwtr muestra la tarea donde la vista admite elementos cuya revisión ha vencido para que puedas reconsiderarla; nada cambia hasta que tú lo decidas.
 - La **fecha límite** es un plazo. A medida que se acerca o pasa, Mindwtr resalta el plazo de la tarea mediante la visualización, los recordatorios y la presión de ordenación; el estado no cambia.
 

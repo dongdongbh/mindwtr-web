@@ -183,7 +183,7 @@ Mindwtr keeps task status and task dates separate. Status is the GTD state you c
 
 There is one deliberate shortcut at edit time: giving an **Inbox** item a start date counts as clarifying it — you have decided when you can act on it — so Mindwtr moves it to `next` the moment you set the date, the same way starring an Inbox item does. If you pick a status in the same edit, your choice wins, and `someday` or `waiting` tasks always keep their status when you date them: a dated someday is a tickler, a dated waiting-for is a follow-up reminder.
 
-- **Start date** is a defer/availability gate. A future start hides the task from Focus by default. When the date arrives, the task appears again with whatever status it already has.
+- **Start date** is a defer/availability gate. A future start hides the task from Focus by default. When the date arrives, the task appears again with whatever status it already has. If the start has a specific time, Focus and Next actions keep the task hidden until that time of day too, so a task startable at 5:00 PM does not clutter the morning's list.
 - **Review date** is a tickler. When the date arrives, Mindwtr surfaces the task where that view supports review-due items so you can reconsider it; nothing changes until you decide.
 - **Due date** is a deadline. As it approaches or passes, Mindwtr gives the task deadline emphasis through display, reminders, and sorting pressure; status stays unchanged.
 

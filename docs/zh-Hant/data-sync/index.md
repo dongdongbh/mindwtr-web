@@ -108,6 +108,7 @@ Mindwtr 直接支援五種同步後端：
 - **最簡單即用的雲端同步：**支援組建中的 Dropbox OAuth。
 - **最佳純 Apple 設定：**支援 Apple 組建中的原生 iCloud / CloudKit。
 - **最佳 BYOS 遠端同步：**WebDAV 或 Mindwtr Cloud（自行託管）。應用程式控制同步週期並逐項合併。
+- **Android + Windows、不使用雲端帳號：**透過自家 Wi-Fi 使用檔案同步 + Syncthing——依照下文的 Syncthing 設定順序操作，並在第二台裝置開啟 Mindwtr 之前，讓兩台裝置先完成首次 Syncthing 同步。
 - **檔案同步（Syncthing/Dropbox 等）：**可以運作，但因 `data.json` 是單一檔案，**衝突發生在檔案層級**。
 - **檔案同步最佳做法：**避免同時在兩部裝置編輯；開啟另一部裝置上的應用程式前，請等待同步完成。若發生衝突，保留最新的 `data.json`，並刪除 `data.json.sync-conflict-*` 副本。
 

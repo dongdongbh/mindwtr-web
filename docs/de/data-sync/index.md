@@ -676,6 +676,17 @@ Struktur von `data.json`:
 - Builds mit Heartbeat-Analyse können ein kleines App-Zustandsereignis senden; es enthält keine Aufgaben, Projekte, Notizen, Dateien, KI-Prompts oder Kontoinhalte. Siehe [Datenschutzrichtlinie](https://mindwtr.app/privacy).
 - Sie kontrollieren Ihre Daten vollständig.
 
+## Sicherheit und Verschlüsselung
+
+Mindwtr fügt keine eigene Verschlüsselungsebene hinzu; der Schutz ruhender Daten kommt vom Gerät, Server oder Anbieter, der die Daten hält:
+
+- **Auf dem Gerät**: Die Daten liegen in SQLite im privaten Speicher der App. Nutzen Sie Betriebssystem-Verschlüsselung — FileVault (macOS), BitLocker (Windows), LUKS (Linux) oder die Standard-Geräteverschlüsselung von iOS und Android — um die lokale Kopie zu schützen.
+- **iCloud (CloudKit)**: Synchronisierte Datensätze sind bei der Übertragung und auf Apples Servern verschlüsselt, jedoch mit von Apple verwalteten Schlüsseln. Mindwtr nutzt die verschlüsselten CloudKit-Feld-APIs nicht, daher sind Aufgabenfelder nicht Ende-zu-Ende-verschlüsselt — auch nicht mit erweitertem Datenschutz (Advanced Data Protection).
+- **Dropbox und WebDAV**: Übertragungen nutzen TLS und Anbieter verschlüsseln ihren Speicher in der Regel, aber der Anbieter hält die Schlüssel und kann das Sync-Dokument technisch lesen.
+- **Selbst gehostete Cloud**: Die Privatsphäre hängt vom Serverbetrieb ab. Ein VPN schützt Zugriff und Datenverkehr; die gespeicherte Kopie schützt erst die Verschlüsselung der Server-Festplatte (z. B. LUKS).
+
+Für ein verschlüsseltes Sync-Ziel heute: Richten Sie die Ordner-Synchronisierung auf einen Ordner, den etwas anderes verschlüsselt — ein verschlüsseltes Dateisystem oder ein gocryptfs/Cryptomator-Mount — oder kombinieren Sie sie mit dem Untrusted-Device-Modus von Syncthing, damit Zwischenstationen nur Ciphertext halten (eine Beta-Funktion von Syncthing; vertrauenswürdige Geräte behalten lesbare Kopien).
+
 ---
 
 ## Siehe auch

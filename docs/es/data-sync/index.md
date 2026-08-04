@@ -675,6 +675,17 @@ La estructura del archivo `data.json`:
 - Las versiones configuradas con análisis de pulso pueden enviar un pequeño evento sobre el estado de la aplicación; no incluye contenido de tareas, proyectos, notas, archivos, indicaciones para la IA ni cuentas. Consulta la [Política de privacidad](https://mindwtr.app/privacy).
 - Tú controlas completamente tus datos
 
+## Seguridad y cifrado
+
+Mindwtr no añade una capa de cifrado propia; la protección en reposo depende del dispositivo, servidor o proveedor que guarda los datos:
+
+- **En el dispositivo**: los datos se almacenan en SQLite dentro del espacio privado de la aplicación. Usa el cifrado del sistema operativo — FileVault (macOS), BitLocker (Windows), LUKS (Linux) o el cifrado estándar de iOS y Android — para proteger la copia local.
+- **iCloud (CloudKit)**: los registros sincronizados se cifran en tránsito y en los servidores de Apple, pero con claves gestionadas por Apple. Mindwtr no usa las API de campos cifrados de CloudKit, así que los campos de las tareas no están cifrados de extremo a extremo, tampoco con la Protección de datos avanzada.
+- **Dropbox y WebDAV**: las transferencias usan TLS y los proveedores suelen cifrar su almacenamiento, pero el proveedor posee las claves y técnicamente puede leer el documento de sincronización.
+- **Nube autoalojada**: la privacidad depende de cómo se administre el servidor. Una VPN protege el acceso y el tráfico; lo que protege la copia almacenada es cifrar el disco del servidor (por ejemplo con LUKS).
+
+Para un destino de sincronización cifrado hoy, apunta la sincronización de carpeta a una carpeta que otro sistema cifre — un sistema de archivos cifrado o un montaje gocryptfs/Cryptomator — o combínala con el modo de dispositivos no confiables de Syncthing para que los intermediarios solo guarden texto cifrado (una función beta de Syncthing; los dispositivos de confianza siguen teniendo copias legibles).
+
 ---
 
 ## Consulta también

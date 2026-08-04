@@ -675,6 +675,17 @@ The `data.json` file structure:
 - Builds configured with heartbeat analytics may send a small app-health event; it does not include task, project, note, file, AI prompt, or account content. See the [Privacy Policy](https://mindwtr.app/privacy).
 - You control your data completely
 
+## Security and Encryption
+
+Mindwtr does not add its own encryption layer; protection at rest comes from the device, server, or provider that holds the data:
+
+- **On device**: data is stored in SQLite inside the app's private storage. Use operating-system encryption — FileVault (macOS), BitLocker (Windows), LUKS (Linux), or the standard device encryption on iOS and Android — to protect the local copy.
+- **iCloud (CloudKit)**: synced records are encrypted in transit and on Apple's servers with Apple-managed keys. Mindwtr does not use CloudKit's encrypted-field APIs, so task fields are not end-to-end encrypted, including under Advanced Data Protection.
+- **Dropbox and WebDAV**: transfers use TLS and providers usually encrypt their storage, but the provider holds the keys and can technically read the sync document.
+- **Self-hosted Cloud**: privacy depends on how the server is run. A VPN protects access and traffic; encrypting the server's disk (for example with LUKS) is what protects the stored copy.
+
+For an encrypted sync destination today, point File Sync at a folder that something else encrypts — an encrypted filesystem or a gocryptfs/Cryptomator mount — or combine it with Syncthing's untrusted-device mode so relays hold only ciphertext (a beta Syncthing feature; trusted devices still keep readable copies).
+
 ---
 
 ## See Also

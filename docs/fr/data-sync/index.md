@@ -675,6 +675,17 @@ Structure du fichier `data.json` :
 - Les versions configurées avec l’analyse des signaux de fonctionnement peuvent envoyer un petit événement sur l’état de l’application ; il ne contient aucune tâche, aucun projet, aucune note, aucun fichier, aucune invite d’IA ni aucun contenu de compte. Consultez la [Politique de confidentialité](https://mindwtr.app/privacy).
 - Vous contrôlez entièrement vos données
 
+## Sécurité et chiffrement
+
+Mindwtr n'ajoute pas sa propre couche de chiffrement ; la protection au repos vient de l'appareil, du serveur ou du fournisseur qui détient les données :
+
+- **Sur l'appareil** : les données sont stockées dans SQLite, dans l'espace privé de l'application. Utilisez le chiffrement du système d'exploitation — FileVault (macOS), BitLocker (Windows), LUKS (Linux) ou le chiffrement standard d'iOS et d'Android — pour protéger la copie locale.
+- **iCloud (CloudKit)** : les enregistrements synchronisés sont chiffrés en transit et sur les serveurs d'Apple, mais avec des clés gérées par Apple. Mindwtr n'utilise pas les API de champs chiffrés de CloudKit ; les champs des tâches ne sont donc pas chiffrés de bout en bout, même avec la Protection avancée des données.
+- **Dropbox et WebDAV** : les transferts utilisent TLS et les fournisseurs chiffrent généralement leur stockage, mais le fournisseur détient les clés et peut techniquement lire le document de synchronisation.
+- **Cloud auto-hébergé** : la confidentialité dépend de l'administration du serveur. Un VPN protège l'accès et le trafic ; c'est le chiffrement du disque du serveur (par exemple LUKS) qui protège la copie stockée.
+
+Pour une destination de synchronisation chiffrée dès aujourd'hui, faites pointer la synchronisation de dossier vers un dossier chiffré par un autre outil — un système de fichiers chiffré ou un montage gocryptfs/Cryptomator — ou combinez-la avec le mode appareils non fiables de Syncthing pour que les relais ne détiennent que du texte chiffré (fonction bêta de Syncthing ; les appareils de confiance conservent des copies lisibles).
+
 ---
 
 ## Voir aussi

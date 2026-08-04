@@ -497,6 +497,7 @@ Abre Proyectos desde **Menú → Proyectos**.
 ### Detalles del proyecto
 
 - Consulta todas las tareas del proyecto
+- Mira el material de referencia del proyecto en una sección de **Referencia** debajo de la lista de tareas; también aparecen las referencias cuyas etiquetas coinciden con las del proyecto
 - Añade tareas nuevas
 - Agrupa tareas con **Secciones** dentro del proyecto. Las secciones son encabezados dentro de un proyecto, no subtareas ni proyectos independientes.
 - Toca una tarea para asignarle una **Sección** en el editor

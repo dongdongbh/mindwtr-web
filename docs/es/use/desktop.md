@@ -83,6 +83,7 @@ Resultados de varios pasos que contienen tareas relacionadas.
 - **Áreas de enfoque**: agrupa los proyectos por áreas de nivel superior (por ejemplo, Trabajo o Salud) para mantener organizada la barra lateral. Arrastra un proyecto a un área para moverlo; mientras arrastras, las áreas contraídas y vacías (y **Sin área**) también aparecen como destinos.
 - **Mover tareas arrastrando**: arrastra una tarea desde la lista del proyecto abierto hasta otro proyecto de la barra lateral para moverla allí (queda después de las tareas existentes del destino), o hasta el encabezado de un área para convertirla en tarea directa de esa área. Funciona con cualquier ordenación; un aviso **Movida a…** permite Deshacer con un clic, y los proyectos archivados no aceptan elementos.
 - **Etiquetas de proyecto**: etiqueta proyectos y fíltralos por etiqueta
+- **Referencias en proyectos**: las tareas de referencia aparecen en una sección de Referencia debajo de la lista de tareas del proyecto, incluidas las referencias cuyas etiquetas coinciden con las del proyecto, de modo que una misma referencia puede aparecer en varios proyectos
 - **Notas de apoyo**: añade notas de planificación y material de referencia
 - **Secciones**: agrupaciones opcionales de tareas dentro de un proyecto (fases, hitos o líneas de trabajo). Las secciones son encabezados dentro de un proyecto, no subtareas ni proyectos independientes.
 - **Fecha de revisión**: define fechas de seguimiento para revisar el proyecto

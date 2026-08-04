@@ -448,6 +448,7 @@ Unter **Menü → Projekte**.
 ### Projektdetails
 
 - Alle Aufgaben im Projekt anzeigen
+- Referenzmaterial des Projekts in einem **Referenz**-Abschnitt unter der Aufgabenliste sehen — auch Referenzen, deren Tags mit den Projekt-Tags übereinstimmen
 - Neue Aufgaben hinzufügen
 - Mit **Abschnitten** gruppieren (Überschriften, keine Unteraufgaben/Projekte)
 - Aufgabe antippen, um **Abschnitt** zuzuweisen

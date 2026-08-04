@@ -83,6 +83,7 @@ Mehrstufige Ergebnisse mit zusammengehörigen Aufgaben.
 - **Fokusbereiche**: Projekte nach übergeordneten Bereichen (z. B. Beruf, Gesundheit) gruppieren. Ziehen Sie ein Projekt auf einen Bereich; beim Ziehen erscheinen auch eingeklappte und leere Bereiche sowie **Kein Bereich** als Ziele.
 - **Aufgaben durch Ziehen verschieben**: Ziehen Sie eine Aufgabe aus der geöffneten Projektliste auf ein anderes Projekt in der Seitenleiste (sie landet hinter dessen vorhandenen Aufgaben) oder auf eine Bereichsüberschrift, um sie zur direkten Bereichsaufgabe zu machen. Dies funktioniert in jeder Sortierung. Eine Meldung **Verschoben nach …** bietet Rückgängig; archivierte Projekte nehmen keine Aufgaben an.
 - **Projekt-Tags**: Projekte markieren und nach Tags filtern
+- **Referenzen in Projekten**: Referenzaufgaben erscheinen in einem Referenz-Abschnitt unter der Aufgabenliste des Projekts — auch Referenzen, deren Tags mit den Projekt-Tags übereinstimmen, sodass eine Referenz in mehreren Projekten auftauchen kann
 - **Begleitnotizen**: Planungsnotizen und Referenzmaterial hinzufügen
 - **Abschnitte**: Optionale Aufgabengruppen innerhalb eines Projekts (Phasen, Meilensteine, Arbeitsstränge), keine Unteraufgaben oder separaten Projekte
 - **Wiedervorlagedatum**: Tickler-Daten für die Projektdurchsicht

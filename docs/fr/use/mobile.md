@@ -497,6 +497,7 @@ Ouvrez les Projets depuis **Menu → Projets**.
 ### Détails du projet
 
 - Affichez toutes les tâches du projet
+- Consultez les documents de référence du projet dans une section **Référence** sous la liste des tâches — les références dont les étiquettes correspondent à celles du projet y apparaissent aussi
 - Ajoutez de nouvelles tâches
 - Regroupez les tâches à l’aide de **Sections** dans le projet. Les sections sont des titres à l’intérieur d’un seul projet, pas des sous-tâches ni des projets distincts.
 - Touchez une tâche pour lui attribuer une **Section** dans l’éditeur de tâche

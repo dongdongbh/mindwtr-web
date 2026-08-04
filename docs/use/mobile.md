@@ -497,6 +497,7 @@ Open Projects from **Menu → Projects**.
 ### Project Details
 
 - View all tasks in the project
+- See the project's reference material in a **References** section below the task list — references whose tags match the project's tags appear there too
 - Add new tasks
 - Group tasks with **Sections** inside the project. Sections are headings inside one project, not subtasks or separate projects.
 - Tap a task to assign a **Section** in the task editor

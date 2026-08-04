@@ -1200,19 +1200,28 @@ h2 {
   white-space: nowrap;
 }
 
-/* One default action per card. The pill takes the full card width so it reads
-   as the card's answer, not as one badge among several. It also has to wrap:
-   the German and Spanish labels overflow a nowrap pill at 320px, and the
-   vertical padding keeps a two-line label inside the shape. */
-/* .button.dl-primary outweighs .button.primary so the compact shadow wins. */
-.button.dl-primary {
-  width: 100%;
-  padding: var(--space-sm) var(--space-md);
-  white-space: normal;
-  text-align: center;
-  /* Six pills in one grid: the full-size glow ×6 reads as haze, so cards use
-     the compact header-CTA shadow scale. */
-  box-shadow: 0 8px 20px var(--blue-a30);
+.dl-badges {
+  --badge-scale: 1.15;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+}
+
+.dl-badges .store-badge {
+  width: auto;
+  max-width: 190px;
+  height: auto;
+  justify-content: flex-start;
+}
+
+/* Explicit height (not max-height) so small badges scale UP to match, not just
+   large ones scale down. Per-badge --badge-h compensates for each official
+   badge's baked-in padding so the visible logos land at one height. */
+.dl-badges .store-badge img {
+  height: calc((var(--badge-h, 52px) - 12px) * var(--badge-scale, 1));
+  width: auto;
+  max-width: 100%;
 }
 
 .dl-options {
@@ -1301,61 +1310,6 @@ h2 {
   color: var(--blue-deep);
 }
 
-/* Every other channel folds in here. Same <details> language as the language
-   switcher — hairline, soft surface, quiet summary — but it expands in flow
-   instead of opening a popover, and `margin-top: auto` lines the summaries up
-   across cards of unequal height. */
-/* Ruled, not boxed: a border box inside the bordered card would nest cards,
-   so the extras open under a top rule like every other un-boxed group. */
-.dl-more {
-  margin-top: auto;
-  border-top: 2px solid var(--line-strong);
-}
-
-.dl-more summary {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-sm) 0;
-  color: var(--muted);
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
-  list-style: none;
-  transition: color var(--dur-short) var(--ease-out);
-}
-
-.dl-more summary::-webkit-details-marker {
-  display: none;
-}
-
-.dl-more summary:hover,
-.dl-more[open] summary {
-  color: var(--blue-deep);
-}
-
-/* Drawn chevron rather than the platform triangle, so the affordance matches
-   the hairline weight of everything else in the card. */
-.dl-more summary::after {
-  content: "";
-  flex: 0 0 auto;
-  width: 6px;
-  height: 6px;
-  margin-left: auto;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: translateY(-2px) rotate(45deg);
-  transition: transform var(--dur-short) var(--ease-out);
-}
-
-.dl-more[open] summary::after {
-  transform: translateY(1px) rotate(-135deg);
-}
-
-.dl-more .dl-options {
-  padding: 0 0 var(--space-xs);
-}
-
 .dl-all-copy {
   margin: 0;
   color: var(--muted);
@@ -1366,8 +1320,7 @@ h2 {
   align-self: flex-start;
 }
 
-/* One quiet line out to /signing, where the full SignPath attribution and the
-   current certificate status live. */
+/* SignPath attribution: required wherever the downloads are offered. */
 .download-note {
   margin: 26px 0 0;
   color: var(--muted);
@@ -1385,28 +1338,78 @@ h2 {
   text-decoration: underline;
 }
 
+.store-badge,
 .github-download {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
-  width: min(196px, 100%);
-  height: 46px;
+  width: 100%;
+  max-width: 232px;
+  height: 72px;
   min-height: 0;
   border: 0;
-  border-radius: 11px;
-  padding: 0 18px;
-  background: #181717;
-  color: var(--surface-raised);
-  box-shadow: 0 12px 26px rgba(24, 23, 23, 0.22);
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
   transition:
     opacity var(--dur-short) var(--ease-out),
     transform var(--dur-short) var(--ease-out);
 }
 
+.store-badge:hover,
 .github-download:hover {
   opacity: 0.92;
   transform: translateY(-2px);
+}
+
+/* Normalize on the visible logo height. Each store's official badge bakes in
+   a different amount of transparent padding, so per-badge heights compensate
+   to make the logos read at one consistent size. */
+.store-badge img {
+  height: var(--badge-h, 52px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.store-badge.apple {
+  --badge-h: 54px;
+}
+
+.store-badge.google {
+  --badge-h: 74px;
+}
+
+.store-badge.microsoft {
+  --badge-h: 54px;
+}
+
+.store-badge.flathub {
+  --badge-h: 54px;
+}
+
+.store-badge.snap {
+  --badge-h: 54px;
+}
+
+.store-badge.fdroid {
+  --badge-h: 74px;
+}
+
+.store-badge.izzy {
+  --badge-h: 74px;
+}
+
+.github-download {
+  gap: 9px;
+  width: min(196px, 100%);
+  height: 46px;
+  border-radius: 11px;
+  padding: 0 18px;
+  background: #181717;
+  color: var(--surface-raised);
+  box-shadow: 0 12px 26px rgba(24, 23, 23, 0.22);
 }
 
 .github-download svg {
@@ -2038,9 +2041,14 @@ main > section:last-child {
     gap: 16px;
   }
 
+  .store-badge,
   .github-download {
     max-width: 100%;
     height: 68px;
+  }
+
+  .github-download {
+    max-width: 100%;
   }
 
   .site-footer {

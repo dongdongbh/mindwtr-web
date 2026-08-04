@@ -499,7 +499,7 @@
       <section class="download section-band" id="download" aria-labelledby="download-title">
         <div class="section-copy">
           <h2 id="download-title">下载 Mindwtr</h2>
-          <p>永久免费，不是试用版。无需账号，无需邮箱，装上就能用。</p>
+          <p>选择适合你设备的安装方式。应用商店一键安装，也提供包管理器和直接下载的安装文件。</p>
         </div>
         <div class="download-platforms" aria-label="按平台下载 Mindwtr">
           <article class="dl-platform" id="download-mac" data-platform="mac">
@@ -507,24 +507,23 @@
               <h3>macOS</h3>
               <span class="dl-recommended" hidden>为你推荐</span>
             </header>
-            <a class="button primary dl-primary" href="https://apps.apple.com/app/mindwtr/id6758597144">下载 macOS 版</a>
+            <div class="dl-badges">
+              <a class="store-badge apple" href="https://apps.apple.com/app/mindwtr/id6758597144">
+                <img src="/assets/badges/app-store.svg" alt="在 Mac App Store 下载" width="120" height="40" />
+              </a>
+            </div>
             <ul class="dl-options">
               <li class="dl-cmd-row">
                 <code class="dl-cmd">brew install --cask mindwtr</code>
                 <button type="button" class="dl-copy" data-copy="brew install --cask mindwtr" aria-label="复制 Homebrew 命令" hidden>复制</button>
               </li>
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下载 <code>.dmg</code> <span aria-hidden="true">→</span></a>
+              </li>
+              <li>
+                <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">加入 TestFlight 测试版 <span aria-hidden="true">→</span></a>
+              </li>
             </ul>
-            <details class="dl-more">
-              <summary>其他安装方式</summary>
-              <ul class="dl-options">
-                <li>
-                  <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下载 <code>.dmg</code> <span aria-hidden="true">→</span></a>
-                </li>
-                <li>
-                  <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">TestFlight 测试版（早期构建） <span aria-hidden="true">→</span></a>
-                </li>
-              </ul>
-            </details>
           </article>
 
           <article class="dl-platform" id="download-windows" data-platform="windows">
@@ -532,21 +531,20 @@
               <h3>Windows</h3>
               <span class="dl-recommended" hidden>为你推荐</span>
             </header>
-            <a class="button primary dl-primary" href="https://apps.microsoft.com/detail/9n0v5b0b6frx">下载 Windows 版</a>
+            <div class="dl-badges">
+              <a class="store-badge microsoft" href="https://apps.microsoft.com/detail/9n0v5b0b6frx">
+                <img src="/assets/badges/microsoft-store.svg" alt="从 Microsoft Store 获取" width="161" height="44" />
+              </a>
+            </div>
             <ul class="dl-options">
               <li class="dl-cmd-row">
                 <code class="dl-cmd">winget install dongdongbh.Mindwtr</code>
                 <button type="button" class="dl-copy" data-copy="winget install dongdongbh.Mindwtr" aria-label="复制 winget 命令" hidden>复制</button>
               </li>
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下载 <code>.exe</code> · 便携版 <code>.zip</code> <span aria-hidden="true">→</span></a>
+              </li>
             </ul>
-            <details class="dl-more">
-              <summary>其他安装方式</summary>
-              <ul class="dl-options">
-                <li>
-                  <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下载 <code>.exe</code> · 便携版 <code>.zip</code> <span aria-hidden="true">→</span></a>
-                </li>
-              </ul>
-            </details>
           </article>
 
           <article class="dl-platform" id="download-linux" data-platform="linux">
@@ -554,27 +552,26 @@
               <h3>Linux</h3>
               <span class="dl-recommended" hidden>为你推荐</span>
             </header>
-            <a class="button primary dl-primary" href="https://flathub.org/apps/tech.dongdongbh.mindwtr">在 Flathub 获取</a>
+            <div class="dl-badges">
+              <a class="store-badge flathub" href="https://flathub.org/apps/tech.dongdongbh.mindwtr">
+                <img src="/assets/badges/flathub.png" alt="在 Flathub 获取" width="240" height="80" />
+              </a>
+              <a class="store-badge snap" href="https://snapcraft.io/mindwtr">
+                <img src="/assets/badges/snap-store.svg" alt="从 Snap Store 获取" width="182" height="56" />
+              </a>
+            </div>
             <ul class="dl-options">
               <li class="dl-cmd-row">
                 <code class="dl-cmd">flatpak install flathub tech.dongdongbh.mindwtr</code>
                 <button type="button" class="dl-copy" data-copy="flatpak install flathub tech.dongdongbh.mindwtr" aria-label="复制 Flatpak 命令" hidden>复制</button>
               </li>
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下载 <code>AppImage</code> · <code>.deb</code> · <code>.rpm</code> <span aria-hidden="true">→</span></a>
+              </li>
+              <li>
+                <a class="dl-aside" href="https://docs.mindwtr.app/start/desktop-installation">AUR、APT 与 DNF 软件源、从源码构建 <span aria-hidden="true">→</span></a>
+              </li>
             </ul>
-            <details class="dl-more">
-              <summary>其他安装方式</summary>
-              <ul class="dl-options">
-                <li>
-                  <a class="dl-direct" href="https://snapcraft.io/mindwtr">Snap Store <span aria-hidden="true">→</span></a>
-                </li>
-                <li>
-                  <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下载 <code>AppImage</code> · <code>.deb</code> · <code>.rpm</code> <span aria-hidden="true">→</span></a>
-                </li>
-                <li>
-                  <a class="dl-aside" href="https://docs.mindwtr.app/start/desktop-installation">AUR、APT 与 DNF 软件源、从源码构建 <span aria-hidden="true">→</span></a>
-                </li>
-              </ul>
-            </details>
           </article>
 
           <article class="dl-platform" id="download-ios" data-platform="ios">
@@ -582,15 +579,16 @@
               <h3>iOS 与 iPadOS</h3>
               <span class="dl-recommended" hidden>为你推荐</span>
             </header>
-            <a class="button primary dl-primary" href="https://apps.apple.com/app/mindwtr/id6758597144">下载 iOS 版</a>
-            <details class="dl-more">
-              <summary>其他安装方式</summary>
-              <ul class="dl-options">
-                <li>
-                  <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">TestFlight 测试版（早期构建） <span aria-hidden="true">→</span></a>
-                </li>
-              </ul>
-            </details>
+            <div class="dl-badges">
+              <a class="store-badge apple" href="https://apps.apple.com/app/mindwtr/id6758597144">
+                <img src="/assets/badges/app-store.svg" alt="在 App Store 下载" width="120" height="40" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li>
+                <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">加入 TestFlight 测试版 <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
           </article>
 
           <article class="dl-platform" id="download-android" data-platform="android">
@@ -598,24 +596,25 @@
               <h3>Android</h3>
               <span class="dl-recommended" hidden>为你推荐</span>
             </header>
-            <a class="button primary dl-primary" href="https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr">在 Google Play 获取</a>
-            <details class="dl-more">
-              <summary>其他安装方式</summary>
-              <ul class="dl-options">
-                <li>
-                  <a class="dl-direct" href="https://f-droid.org/en/packages/tech.dongdongbh.mindwtr/">F-Droid <span aria-hidden="true">→</span></a>
-                </li>
-                <li>
-                  <a class="dl-direct" href="https://apt.izzysoft.de/packages/tech.dongdongbh.mindwtr">IzzyOnDroid <span aria-hidden="true">→</span></a>
-                </li>
-                <li>
-                  <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下载 <code>.apk</code> <span aria-hidden="true">→</span></a>
-                </li>
-                <li>
-                  <a class="dl-aside" href="https://play.google.com/apps/testing/tech.dongdongbh.mindwtr">Google Play 测试版（早期构建） <span aria-hidden="true">→</span></a>
-                </li>
-              </ul>
-            </details>
+            <div class="dl-badges">
+              <a class="store-badge google" href="https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr">
+                <img src="/assets/badges/google-play.png" alt="在 Google Play 获取" width="646" height="250" />
+              </a>
+              <a class="store-badge fdroid" href="https://f-droid.org/en/packages/tech.dongdongbh.mindwtr/">
+                <img src="/assets/badges/f-droid.svg" alt="在 F-Droid 获取" width="646" height="250" />
+              </a>
+              <a class="store-badge izzy" href="https://apt.izzysoft.de/packages/tech.dongdongbh.mindwtr">
+                <img src="/assets/badges/izzyondroid.png" alt="在 IzzyOnDroid 获取" width="646" height="250" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下载 <code>.apk</code> <span aria-hidden="true">→</span></a>
+              </li>
+              <li>
+                <a class="dl-aside" href="https://play.google.com/apps/testing/tech.dongdongbh.mindwtr">加入 Google Play 测试版 <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
           </article>
 
           <article class="dl-platform dl-platform-all" data-platform="all">
@@ -630,7 +629,9 @@
           </article>
         </div>
         <p class="download-note">
-          Windows 代码签名进展：<a href="/signing">代码签名政策</a>。
+          Windows 代码签名由 <a href="https://signpath.io/">SignPath.io</a> 免费提供，证书来自
+          <a href="https://signpath.org/">SignPath Foundation</a>——申请审核中。
+          <a href="/signing">代码签名政策</a>
         </p>
       </section>
     </main>

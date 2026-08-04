@@ -43,6 +43,10 @@ paru -S mindwtr
 
 [AUR 套件：mindwtr](https://aur.archlinux.org/packages/mindwtr)
 
+#### 驗證官方 AUR 套件
+
+Mindwtr 僅認可三個 AUR 套件識別：`mindwtr-bin`（穩定版預先建置套件）、`mindwtr`（穩定版原始碼建置套件）及 [`mindwtr-bin-beta`](/zh-Hant/start/beta-channels)（預發行版）。套件來源必須指向 `github.com/dongdongbh/Mindwtr`，維護者或共同維護者中必須包含 `dongdongbh`。建置前請檢查 `PKGBUILD` 與 `.SRCINFO` 的每項變更。新的發行校驗和資訊清單使用指紋為 `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D` 的金鑰簽署。
+
 ### Debian / Ubuntu
 
 [![APT repo](https://img.shields.io/badge/APT_repo-Install-1f6feb?logo=debian&logoColor=white)](https://dongdongbh.github.io/Mindwtr/deb)

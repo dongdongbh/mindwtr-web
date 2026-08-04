@@ -43,6 +43,10 @@ paru -S mindwtr
 
 [AUR package: mindwtr](https://aur.archlinux.org/packages/mindwtr)
 
+#### Verify the official AUR packages
+
+Mindwtr recognizes exactly three AUR identities: `mindwtr-bin` (stable prebuilt), `mindwtr` (stable source build), and [`mindwtr-bin-beta`](/start/beta-channels) (prerelease). Their package source must point to `github.com/dongdongbh/Mindwtr`; the maintainer or co-maintainer must include `dongdongbh`. Review every `PKGBUILD` and `.SRCINFO` change before building. New release checksum manifests are signed by key fingerprint `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`.
+
 ### Debian / Ubuntu
 
 [![APT repo](https://img.shields.io/badge/APT_repo-Install-1f6feb?logo=debian&logoColor=white)](https://dongdongbh.github.io/Mindwtr/deb)

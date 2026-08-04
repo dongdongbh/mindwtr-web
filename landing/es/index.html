@@ -182,6 +182,10 @@
               <img src="/assets/screenshots/tour-engage.webp" alt="La vista Enfoque con el foco de hoy y las siguientes acciones debajo" width="1920" height="1080" loading="lazy" />
             </figure>
           </div>
+          <p class="loop-status" aria-hidden="true">
+            <span class="loop-count" data-tour-count>01 / 05</span>
+            <span class="loop-caption" data-tour-caption>Capturar</span>
+          </p>
         </div>
       </section>
 
@@ -247,7 +251,7 @@
             versión web que puedes alojar en tu propio servidor.
           </p>
         </div>
-        <div class="coverflow" aria-roledescription="carousel" aria-label="Vistas de Mindwtr">
+        <div class="coverflow" role="group" aria-roledescription="carousel" aria-label="Vistas de Mindwtr">
           <div class="coverflow-stage">
             <button type="button" class="coverflow-slide is-active" tabindex="-1" aria-label="Mostrar la vista de tablero">
               <img src="/assets/screenshots/showcase-board.webp" alt="Vista de tablero de Mindwtr con columnas de Bandeja de entrada, Siguientes acciones, En espera y Algún día" loading="lazy" />
@@ -313,6 +317,11 @@
             públicas actuales de cada producto.
           </p>
         </div>
+        <p class="compare-legend">
+          <span><i class="lg-yes"></i> Sí</span>
+          <span><i class="lg-partial"></i> Parcial</span>
+          <span><i class="lg-no"></i> No</span>
+        </p>
         <div class="compare-wrap">
           <table class="compare-table">
             <caption class="sr-only">Capacidades de Mindwtr comparadas con Todoist, TickTick, Everdo y NirvanaHQ</caption>
@@ -338,7 +347,7 @@
               <tr>
                 <th scope="row">Método GTD completo de serie</th>
                 <td class="col-me yes" aria-label="Sí"></td>
-                <td class="yes" aria-label="Sí"></td>
+                <td class="partial" aria-label="Parcial"></td>
                 <td class="partial" aria-label="Parcial"></td>
                 <td class="yes" aria-label="Sí"></td>
                 <td class="yes" aria-label="Sí"></td>
@@ -348,11 +357,19 @@
                 <td class="col-me yes" aria-label="Sí"></td>
                 <td class="yes" aria-label="Sí"></td>
                 <td class="yes" aria-label="Sí"></td>
-                <td class="partial" aria-label="Parcial"></td>
+                <td class="yes" aria-label="Sí"></td>
                 <td class="partial" aria-label="Parcial"></td>
               </tr>
               <tr>
-                <th scope="row">Funciona sin conexión, sin cuenta</th>
+                <th scope="row">Funciona sin conexión</th>
+                <td class="col-me yes" aria-label="Sí"></td>
+                <td class="yes" aria-label="Sí"></td>
+                <td class="no" aria-label="No"></td>
+                <td class="yes" aria-label="Sí"></td>
+                <td class="no" aria-label="No"></td>
+              </tr>
+              <tr>
+                <th scope="row">Sin necesidad de cuenta</th>
                 <td class="col-me yes" aria-label="Sí"></td>
                 <td class="no" aria-label="No"></td>
                 <td class="no" aria-label="No"></td>
@@ -386,11 +403,6 @@
             </tbody>
           </table>
         </div>
-        <p class="compare-legend">
-          <span><i class="lg-yes"></i> Sí</span>
-          <span><i class="lg-partial"></i> Parcial</span>
-          <span><i class="lg-no"></i> No</span>
-        </p>
         <div class="compare-notes">
           <p>
             <strong>Método.</strong> Comprobado el <time datetime="2026-07-21">21 de julio de 2026</time>
@@ -400,8 +412,9 @@
             macOS, Windows, iOS y Android. «No» significa que las fuentes oficiales no documentan
             esa capacidad; «Parcial» indica compatibilidad limitada. Fuentes:
             <a href="https://docs.mindwtr.app/es/start/what-mindwtr-is">Mindwtr</a>,
-            <a href="https://www.todoist.com/es/pricing">planes de Todoist</a> y
-            <a href="https://www.todoist.com/downloads">aplicaciones</a>,
+            <a href="https://www.todoist.com/es/pricing">planes de Todoist</a>,
+            <a href="https://www.todoist.com/downloads">aplicaciones</a> y
+            <a href="https://www.todoist.com/help/articles/use-todoist-while-offline-4rbaZw">modo sin conexión</a>,
             <a href="https://www.ticktick.com/upgrade">planes de TickTick</a> y
             <a href="https://ticktick.com/download">aplicaciones</a>,
             <a href="https://everdo.net/">Everdo</a> y
@@ -520,6 +533,11 @@
           <h2 id="download-title">Descargar Mindwtr</h2>
           <p>Elige el canal que encaje con tu dispositivo. Tiendas para instalar con un clic, gestores de paquetes y archivos directos para el resto.</p>
         </div>
+        <ul class="proof-list" aria-label="Lo que incluye cada descarga">
+          <li>Gratis para siempre</li>
+          <li>Funciona sin conexión</li>
+          <li>Sin cuenta</li>
+        </ul>
         <div class="download-platforms" aria-label="Descargar Mindwtr por plataforma">
           <article class="dl-platform" id="download-mac" data-platform="mac">
             <header class="dl-platform-head">
@@ -532,17 +550,22 @@
               </a>
             </div>
             <ul class="dl-options">
-              <li class="dl-cmd-row">
-                <code class="dl-cmd">brew install --cask mindwtr</code>
-                <button type="button" class="dl-copy" data-copy="brew install --cask mindwtr" aria-label="Copiar el comando de Homebrew" hidden>Copiar</button>
-              </li>
               <li>
                 <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">Directo <code>.dmg</code> <span aria-hidden="true">→</span></a>
               </li>
-              <li>
-                <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">Unirse a la beta de TestFlight <span aria-hidden="true">→</span></a>
-              </li>
             </ul>
+            <details class="dl-more">
+              <summary>Línea de comandos y betas</summary>
+              <ul class="dl-options">
+                <li class="dl-cmd-row">
+                  <code class="dl-cmd">brew install --cask mindwtr</code>
+                  <button type="button" class="dl-copy" data-copy="brew install --cask mindwtr" aria-label="Copiar el comando de Homebrew" hidden>Copiar</button>
+                </li>
+                <li>
+                  <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">Unirse a la beta de TestFlight <span aria-hidden="true">→</span></a>
+                </li>
+              </ul>
+            </details>
           </article>
 
           <article class="dl-platform" id="download-windows" data-platform="windows">
@@ -556,14 +579,20 @@
               </a>
             </div>
             <ul class="dl-options">
-              <li class="dl-cmd-row">
-                <code class="dl-cmd">winget install dongdongbh.Mindwtr</code>
-                <button type="button" class="dl-copy" data-copy="winget install dongdongbh.Mindwtr" aria-label="Copiar el comando de winget" hidden>Copiar</button>
-              </li>
               <li>
                 <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">Directo <code>.exe</code> · portable <code>.zip</code> <span aria-hidden="true">→</span></a>
               </li>
             </ul>
+            <details class="dl-more">
+              <summary>Línea de comandos</summary>
+              <ul class="dl-options">
+                <li class="dl-cmd-row">
+                  <code class="dl-cmd">winget install dongdongbh.Mindwtr</code>
+                  <button type="button" class="dl-copy" data-copy="winget install dongdongbh.Mindwtr" aria-label="Copiar el comando de winget" hidden>Copiar</button>
+                </li>
+              </ul>
+            </details>
+            <p class="dl-note">Estado de la firma de código en Windows: <a href="/signing">política de firma de código</a>.</p>
           </article>
 
           <article class="dl-platform" id="download-linux" data-platform="linux">
@@ -580,17 +609,22 @@
               </a>
             </div>
             <ul class="dl-options">
-              <li class="dl-cmd-row">
-                <code class="dl-cmd">flatpak install flathub tech.dongdongbh.mindwtr</code>
-                <button type="button" class="dl-copy" data-copy="flatpak install flathub tech.dongdongbh.mindwtr" aria-label="Copiar el comando de Flatpak" hidden>Copiar</button>
-              </li>
               <li>
                 <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">Directo <code>AppImage</code> · <code>.deb</code> · <code>.rpm</code> <span aria-hidden="true">→</span></a>
               </li>
-              <li>
-                <a class="dl-aside" href="https://docs.mindwtr.app/start/desktop-installation">AUR, repos APT y DNF, compilar desde el código <span aria-hidden="true">→</span></a>
-              </li>
             </ul>
+            <details class="dl-more">
+              <summary>Línea de comandos y otras instalaciones</summary>
+              <ul class="dl-options">
+                <li class="dl-cmd-row">
+                  <code class="dl-cmd">flatpak install flathub tech.dongdongbh.mindwtr</code>
+                  <button type="button" class="dl-copy" data-copy="flatpak install flathub tech.dongdongbh.mindwtr" aria-label="Copiar el comando de Flatpak" hidden>Copiar</button>
+                </li>
+                <li>
+                  <a class="dl-aside" href="https://docs.mindwtr.app/start/desktop-installation">AUR, repos APT y DNF, compilar desde el código <span aria-hidden="true">→</span></a>
+                </li>
+              </ul>
+            </details>
           </article>
 
           <article class="dl-platform" id="download-ios" data-platform="ios">
@@ -603,11 +637,14 @@
                 <img src="/assets/badges/app-store.svg" alt="Descargar en el App Store" width="120" height="40" />
               </a>
             </div>
-            <ul class="dl-options">
-              <li>
-                <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">Unirse a la beta de TestFlight <span aria-hidden="true">→</span></a>
-              </li>
-            </ul>
+            <details class="dl-more">
+              <summary>Acceso a la beta</summary>
+              <ul class="dl-options">
+                <li>
+                  <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">Unirse a la beta de TestFlight <span aria-hidden="true">→</span></a>
+                </li>
+              </ul>
+            </details>
           </article>
 
           <article class="dl-platform" id="download-android" data-platform="android">
@@ -630,10 +667,15 @@
               <li>
                 <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">Directo <code>.apk</code> <span aria-hidden="true">→</span></a>
               </li>
-              <li>
-                <a class="dl-aside" href="https://play.google.com/apps/testing/tech.dongdongbh.mindwtr">Unirse a la beta de Google Play <span aria-hidden="true">→</span></a>
-              </li>
             </ul>
+            <details class="dl-more">
+              <summary>Acceso a la beta</summary>
+              <ul class="dl-options">
+                <li>
+                  <a class="dl-aside" href="https://play.google.com/apps/testing/tech.dongdongbh.mindwtr">Unirse a la beta de Google Play <span aria-hidden="true">→</span></a>
+                </li>
+              </ul>
+            </details>
           </article>
 
           <article class="dl-platform dl-platform-all" data-platform="all">
@@ -647,9 +689,6 @@
             </a>
           </article>
         </div>
-        <p class="download-note">
-          Estado de la firma de código en Windows: <a href="/signing">política de firma de código</a>.
-        </p>
       </section>
     </main>
 

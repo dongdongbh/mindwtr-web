@@ -176,6 +176,10 @@
               <img src="/assets/screenshots/tour-engage.webp" alt="专注视图：今日专注与下方的下一步行动" width="1920" height="1080" loading="lazy" />
             </figure>
           </div>
+          <p class="loop-status" aria-hidden="true">
+            <span class="loop-count" data-tour-count>01 / 05</span>
+            <span class="loop-caption" data-tour-caption>收集</span>
+          </p>
         </div>
       </section>
 
@@ -239,7 +243,7 @@
             在 macOS、Windows、Linux、iOS 和 Android 上使用 Mindwtr，还有可以部署在自己服务器上的网页版。
           </p>
         </div>
-        <div class="coverflow" aria-roledescription="carousel" aria-label="Mindwtr 视图">
+        <div class="coverflow" role="group" aria-roledescription="carousel" aria-label="Mindwtr 视图">
           <div class="coverflow-stage">
             <button type="button" class="coverflow-slide is-active" tabindex="-1" aria-label="显示看板视图">
               <img src="/assets/screenshots/showcase-board.webp" alt="Mindwtr 看板视图：收集箱、下一步行动、等待中、将来/也许四列" loading="lazy" />
@@ -301,6 +305,11 @@
             基于各产品当前公开功能的一份简短、客观的对比。
           </p>
         </div>
+        <p class="compare-legend">
+          <span><i class="lg-yes"></i> 是</span>
+          <span><i class="lg-partial"></i> 部分</span>
+          <span><i class="lg-no"></i> 否</span>
+        </p>
         <div class="compare-wrap">
           <table class="compare-table">
             <caption class="sr-only">Mindwtr 与 Todoist、TickTick、Everdo、NirvanaHQ 的功能对比</caption>
@@ -326,7 +335,7 @@
               <tr>
                 <th scope="row">开箱即用的完整 GTD 方法</th>
                 <td class="col-me yes" aria-label="是"></td>
-                <td class="yes" aria-label="是"></td>
+                <td class="partial" aria-label="部分"></td>
                 <td class="partial" aria-label="部分"></td>
                 <td class="yes" aria-label="是"></td>
                 <td class="yes" aria-label="是"></td>
@@ -336,11 +345,19 @@
                 <td class="col-me yes" aria-label="是"></td>
                 <td class="yes" aria-label="是"></td>
                 <td class="yes" aria-label="是"></td>
-                <td class="partial" aria-label="部分"></td>
+                <td class="yes" aria-label="是"></td>
                 <td class="partial" aria-label="部分"></td>
               </tr>
               <tr>
-                <th scope="row">离线可用，无需账号</th>
+                <th scope="row">离线可用</th>
+                <td class="col-me yes" aria-label="是"></td>
+                <td class="yes" aria-label="是"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="yes" aria-label="是"></td>
+                <td class="no" aria-label="否"></td>
+              </tr>
+              <tr>
+                <th scope="row">无需账号</th>
                 <td class="col-me yes" aria-label="是"></td>
                 <td class="no" aria-label="否"></td>
                 <td class="no" aria-label="否"></td>
@@ -374,11 +391,6 @@
             </tbody>
           </table>
         </div>
-        <p class="compare-legend">
-          <span><i class="lg-yes"></i> 是</span>
-          <span><i class="lg-partial"></i> 部分</span>
-          <span><i class="lg-no"></i> 否</span>
-        </p>
         <div class="compare-notes">
           <p>
             <strong>方法。</strong>本表于 <time datetime="2026-07-21">2026 年 7 月 21 日</time>
@@ -386,8 +398,9 @@
             将来／也许、回顾和顺序项目均为原生功能。“全平台”要求 Linux、macOS、Windows、iOS 和
             Android 均有原生应用。“否”表示官方资料未说明该能力；“部分”表示只支持其中一部分。来源：
             <a href="https://docs.mindwtr.app/zh-Hans/start/what-mindwtr-is">Mindwtr</a>、
-            <a href="https://www.todoist.com/pricing">Todoist 方案</a>和
-            <a href="https://www.todoist.com/downloads">应用</a>、
+            <a href="https://www.todoist.com/pricing">Todoist 方案</a>、
+            <a href="https://www.todoist.com/downloads">应用</a>和
+            <a href="https://www.todoist.com/help/articles/use-todoist-while-offline-4rbaZw">离线模式</a>、
             <a href="https://www.ticktick.com/upgrade">TickTick 方案</a>和
             <a href="https://ticktick.com/download">应用</a>、
             <a href="https://everdo.net/">Everdo</a>，以及
@@ -501,6 +514,11 @@
           <h2 id="download-title">下载 Mindwtr</h2>
           <p>选择适合你设备的安装方式。应用商店一键安装，也提供包管理器和直接下载的安装文件。</p>
         </div>
+        <ul class="proof-list" aria-label="每个下载渠道都包含">
+          <li>永久免费</li>
+          <li>离线可用</li>
+          <li>无需账号</li>
+        </ul>
         <div class="download-platforms" aria-label="按平台下载 Mindwtr">
           <article class="dl-platform" id="download-mac" data-platform="mac">
             <header class="dl-platform-head">
@@ -513,17 +531,22 @@
               </a>
             </div>
             <ul class="dl-options">
-              <li class="dl-cmd-row">
-                <code class="dl-cmd">brew install --cask mindwtr</code>
-                <button type="button" class="dl-copy" data-copy="brew install --cask mindwtr" aria-label="复制 Homebrew 命令" hidden>复制</button>
-              </li>
               <li>
                 <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下载 <code>.dmg</code> <span aria-hidden="true">→</span></a>
               </li>
-              <li>
-                <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">加入 TestFlight 测试版 <span aria-hidden="true">→</span></a>
-              </li>
             </ul>
+            <details class="dl-more">
+              <summary>命令行与测试版</summary>
+              <ul class="dl-options">
+                <li class="dl-cmd-row">
+                  <code class="dl-cmd">brew install --cask mindwtr</code>
+                  <button type="button" class="dl-copy" data-copy="brew install --cask mindwtr" aria-label="复制 Homebrew 命令" hidden>复制</button>
+                </li>
+                <li>
+                  <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">加入 TestFlight 测试版 <span aria-hidden="true">→</span></a>
+                </li>
+              </ul>
+            </details>
           </article>
 
           <article class="dl-platform" id="download-windows" data-platform="windows">
@@ -537,14 +560,20 @@
               </a>
             </div>
             <ul class="dl-options">
-              <li class="dl-cmd-row">
-                <code class="dl-cmd">winget install dongdongbh.Mindwtr</code>
-                <button type="button" class="dl-copy" data-copy="winget install dongdongbh.Mindwtr" aria-label="复制 winget 命令" hidden>复制</button>
-              </li>
               <li>
                 <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下载 <code>.exe</code> · 便携版 <code>.zip</code> <span aria-hidden="true">→</span></a>
               </li>
             </ul>
+            <details class="dl-more">
+              <summary>命令行</summary>
+              <ul class="dl-options">
+                <li class="dl-cmd-row">
+                  <code class="dl-cmd">winget install dongdongbh.Mindwtr</code>
+                  <button type="button" class="dl-copy" data-copy="winget install dongdongbh.Mindwtr" aria-label="复制 winget 命令" hidden>复制</button>
+                </li>
+              </ul>
+            </details>
+            <p class="dl-note">Windows 代码签名进展：<a href="/signing">代码签名政策</a>。</p>
           </article>
 
           <article class="dl-platform" id="download-linux" data-platform="linux">
@@ -561,17 +590,22 @@
               </a>
             </div>
             <ul class="dl-options">
-              <li class="dl-cmd-row">
-                <code class="dl-cmd">flatpak install flathub tech.dongdongbh.mindwtr</code>
-                <button type="button" class="dl-copy" data-copy="flatpak install flathub tech.dongdongbh.mindwtr" aria-label="复制 Flatpak 命令" hidden>复制</button>
-              </li>
               <li>
                 <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下载 <code>AppImage</code> · <code>.deb</code> · <code>.rpm</code> <span aria-hidden="true">→</span></a>
               </li>
-              <li>
-                <a class="dl-aside" href="https://docs.mindwtr.app/start/desktop-installation">AUR、APT 与 DNF 软件源、从源码构建 <span aria-hidden="true">→</span></a>
-              </li>
             </ul>
+            <details class="dl-more">
+              <summary>命令行与其他安装方式</summary>
+              <ul class="dl-options">
+                <li class="dl-cmd-row">
+                  <code class="dl-cmd">flatpak install flathub tech.dongdongbh.mindwtr</code>
+                  <button type="button" class="dl-copy" data-copy="flatpak install flathub tech.dongdongbh.mindwtr" aria-label="复制 Flatpak 命令" hidden>复制</button>
+                </li>
+                <li>
+                  <a class="dl-aside" href="https://docs.mindwtr.app/start/desktop-installation">AUR、APT 与 DNF 软件源、从源码构建 <span aria-hidden="true">→</span></a>
+                </li>
+              </ul>
+            </details>
           </article>
 
           <article class="dl-platform" id="download-ios" data-platform="ios">
@@ -584,11 +618,14 @@
                 <img src="/assets/badges/app-store.svg" alt="在 App Store 下载" width="120" height="40" />
               </a>
             </div>
-            <ul class="dl-options">
-              <li>
-                <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">加入 TestFlight 测试版 <span aria-hidden="true">→</span></a>
-              </li>
-            </ul>
+            <details class="dl-more">
+              <summary>测试版入口</summary>
+              <ul class="dl-options">
+                <li>
+                  <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">加入 TestFlight 测试版 <span aria-hidden="true">→</span></a>
+                </li>
+              </ul>
+            </details>
           </article>
 
           <article class="dl-platform" id="download-android" data-platform="android">
@@ -611,10 +648,15 @@
               <li>
                 <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下载 <code>.apk</code> <span aria-hidden="true">→</span></a>
               </li>
-              <li>
-                <a class="dl-aside" href="https://play.google.com/apps/testing/tech.dongdongbh.mindwtr">加入 Google Play 测试版 <span aria-hidden="true">→</span></a>
-              </li>
             </ul>
+            <details class="dl-more">
+              <summary>测试版入口</summary>
+              <ul class="dl-options">
+                <li>
+                  <a class="dl-aside" href="https://play.google.com/apps/testing/tech.dongdongbh.mindwtr">加入 Google Play 测试版 <span aria-hidden="true">→</span></a>
+                </li>
+              </ul>
+            </details>
           </article>
 
           <article class="dl-platform dl-platform-all" data-platform="all">
@@ -628,9 +670,6 @@
             </a>
           </article>
         </div>
-        <p class="download-note">
-          Windows 代码签名进展：<a href="/signing">代码签名政策</a>。
-        </p>
       </section>
     </main>
 

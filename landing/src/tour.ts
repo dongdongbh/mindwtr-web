@@ -14,6 +14,15 @@ export function initLoopTour(): void {
   const n = tabs.length;
   if (n === 0 || shots.length !== n) return;
 
+  // The counter and caption are server-rendered with step 1's values, so the
+  // no-JS page is already correct; JS only keeps them in step with the tabs.
+  const count = root.querySelector<HTMLElement>("[data-tour-count]");
+  const caption = root.querySelector<HTMLElement>("[data-tour-caption]");
+  const pad = (value: number) => String(value).padStart(2, "0");
+  // The step title is the text node after the `<i>` number inside `.step-tag`.
+  const title = (tab: HTMLElement) =>
+    tab.querySelector(".step-tag")?.lastChild?.textContent?.trim() ?? "";
+
   let active = tabs.findIndex((tab) => tab.classList.contains("is-active"));
   if (active < 0) active = 0;
 
@@ -29,6 +38,8 @@ export function initLoopTour(): void {
       shot.classList.toggle("is-active", i === active);
       shot.setAttribute("aria-hidden", i === active ? "false" : "true");
     });
+    if (count) count.textContent = `${pad(active + 1)} / ${pad(n)}`;
+    if (caption) caption.textContent = title(tabs[active]);
   }
 
   function go(to: number, moveFocus: boolean): void {

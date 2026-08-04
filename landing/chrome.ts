@@ -227,7 +227,7 @@ const DETECT_SCRIPT = `    <script>
           }
           if (!target || target === "en") return;
           var path = "/" + target + (page[1] ? "/" + page[1] : "/");
-          location.replace(path + location.search + location.hash);
+          location.assign(path + location.search + location.hash);
         } catch (e) {}
       })();
     </script>

@@ -1,7 +1,7 @@
 /* Hallmark · audit-fix pass (2026-07-14) — structure unchanged, no macrostructure claimed.
  * theme: Clear Water (project-owned) · paper: light · display: classical-serif · accent: cool-blue
  * type: Instrument Serif (display) + Avenir Next/system-ui (body) + system mono
- * contrast: focus ring 4.36:1 · legal line 5.27:1 · table glyphs 4.46/4.49:1
+ * contrast: focus ring 4.36:1 · legal line 5.27:1 · table marks 5.18/4.57/4.54:1 (worst case, on blue-soft)
  * responsive: verified 320/375/414/768 across en/de/es/fr/zh — no h-scroll, no clipped CTA
  */
 
@@ -72,10 +72,11 @@
   --surface-glass: rgba(251, 253, 253, 0.82);
   --sheen: rgba(255, 255, 255, 0.75);
 
-  /* Comparison-table verdict glyphs. The glyph *is* the data, so it owes the
-     3:1 that any meaningful graphic does — the old #93a3a0 managed 2.6:1. */
-  --tone-partial: #667a77;
-  --tone-no: #b25c5c;
+  /* Comparison-table verdict marks. The ✕ is rendered as text, and the legend
+     repeats both marks on the paper, so they owe the 4.5:1 body-text floor on
+     every backdrop they land on — not the 3:1 a graphic would. */
+  --tone-partial: #5a6e6b;
+  --tone-no: #a75050;
 
   /* Heading color: as dark/legible as near-black, but clearly cool-toned. */
   --heading: #14365f;
@@ -467,6 +468,14 @@ h1 {
   color: var(--heading);
 }
 
+/* `ch` is the width of a Latin "0", roughly half an em; a CJK glyph is a full
+   em, so 10ch is five characters and 心静如水。lands one short. Give the
+   Chinese pages twice the measure — still a display measure, but counted in
+   characters that are actually that wide. */
+h1:lang(zh) {
+  max-width: 20ch;
+}
+
 /* Hero focal accent: only the "water" word picks up the brand blue. */
 h1 .accent {
   color: var(--blue);
@@ -818,6 +827,29 @@ h2 {
   object-position: center top;
 }
 
+/* Where you are in the five steps, for anyone reading the stage rather than
+   the rail. Mirrors the rail's mono numbering. */
+.loop-status {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 14px 0 0;
+}
+
+.loop-count {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--blue);
+}
+
+.loop-caption {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
 /* Platforms --------------------------------------------------------------- */
 .platforms {
   display: block;
@@ -1064,14 +1096,16 @@ h2 {
   text-wrap: pretty;
 }
 
+/* The mark hangs where the face draws it, at cap height. line-height: 0 keeps
+   the oversized glyph from opening the first line; no vertical-align nudge,
+   which used to drop it to the baseline where it read as a comma. */
 .review blockquote::before {
   content: "\201C";
-  margin-right: 0.04em;
+  margin-right: 0.09em;
   color: var(--blue);
   font-size: 1.5em;
   line-height: 0;
   font-weight: 700;
-  vertical-align: -0.3em;
 }
 
 .review-by {
@@ -1141,6 +1175,11 @@ h2 {
 }
 
 /* Download ---------------------------------------------------------------- */
+/* The hero's proof chips, repeated at the moment of decision. */
+.download .proof-list {
+  margin: 0 0 30px;
+}
+
 .download-platforms {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1310,6 +1349,63 @@ h2 {
   color: var(--blue-deep);
 }
 
+/* Package-manager commands and beta invitations are for the minority who came
+   looking; they fold away behind one rule so the badges own the card. */
+.dl-more {
+  margin-top: auto;
+  border-top: 2px solid var(--line-strong);
+}
+
+.dl-more summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  transition: color var(--dur-short) var(--ease-out);
+}
+
+.dl-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.dl-more summary:hover,
+.dl-more[open] summary {
+  color: var(--blue-deep);
+}
+
+/* Drawn chevron rather than the platform triangle, so the affordance matches
+   the hairline weight of everything else in the card. */
+.dl-more summary::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  margin-left: auto;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform var(--dur-short) var(--ease-out);
+}
+
+.dl-more[open] summary::after {
+  transform: translateY(1px) rotate(-135deg);
+}
+
+.dl-more .dl-options {
+  padding: 0 0 var(--space-xs);
+}
+
+/* Only one child per card can claim the leftover space. The Windows card ends
+   with the signing note, so the fold there sits right under the options. */
+#download-windows .dl-more {
+  margin-top: 0;
+}
+
 .dl-all-copy {
   margin: 0;
   color: var(--muted);
@@ -1320,21 +1416,22 @@ h2 {
   align-self: flex-start;
 }
 
-/* SignPath attribution: required wherever the downloads are offered. */
-.download-note {
-  margin: 26px 0 0;
+/* Signing status concerns Windows builds only, so it sits at the foot of the
+   Windows card; margin-top: auto pins it to the card bottom. */
+.dl-note {
+  margin: auto 0 0;
+  padding-top: var(--space-sm);
   color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.6;
-  text-align: center;
+  font-size: 0.82rem;
+  line-height: 1.55;
 }
 
-.download-note a {
+.dl-note a {
   color: var(--blue-deep);
   font-weight: 600;
 }
 
-.download-note a:hover {
+.dl-note a:hover {
   text-decoration: underline;
 }
 
@@ -1723,7 +1820,7 @@ main > section:last-child {
 
 .compare-table td.yes::before {
   content: "\2713";
-  color: var(--teal);
+  color: var(--teal-ink);
   font-weight: 800;
   font-size: 1.05rem;
 }
@@ -1732,9 +1829,23 @@ main > section:last-child {
   color: var(--blue-deep);
 }
 
+/* The partial mark is drawn, not typed: U+25D0 carried barely a third of the
+   check's ink and sat above the baseline. A ring with a half fill reads as
+   "some of this" at the same weight as its neighbours. */
+.compare-table td.partial::before,
+.compare-legend .lg-partial::before {
+  content: "";
+  display: inline-block;
+  width: 0.86em;
+  height: 0.86em;
+  box-sizing: border-box;
+  border: 1.5px solid var(--tone-partial);
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--tone-partial) 50%, transparent 50%);
+  vertical-align: middle;
+}
+
 .compare-table td.partial::before {
-  content: "\25D0";
-  color: var(--tone-partial);
   font-size: 1rem;
 }
 
@@ -1745,12 +1856,14 @@ main > section:last-child {
   font-size: 0.98rem;
 }
 
+/* Above the table, not below it: the marks have to be readable before they are
+   met, not explained afterwards. */
 .compare-legend {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  margin: 18px 0 0;
+  margin: 0 0 16px;
   color: var(--muted);
   font-size: 0.88rem;
 }
@@ -1763,13 +1876,8 @@ main > section:last-child {
 
 .compare-legend .lg-yes::before {
   content: "\2713";
-  color: var(--teal);
+  color: var(--teal-ink);
   font-weight: 800;
-}
-
-.compare-legend .lg-partial::before {
-  content: "\25D0";
-  color: var(--tone-partial);
 }
 
 .compare-legend .lg-no::before {

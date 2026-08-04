@@ -1180,14 +1180,14 @@ h2 {
   margin: 0 0 30px;
 }
 
-/* Cards hug their content. Stretching them to equal height left the sparse
-   cards (iOS especially) mostly void, with the fold rule floating at the
-   bottom of empty space. */
+/* Equal-height rows with the fold rules pinned to a shared bottom baseline.
+   The voids this used to create came from the Android badge pile inflating
+   its whole row; those badges are scaled down below instead. */
 .download-platforms {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .dl-platform {
@@ -1264,6 +1264,13 @@ h2 {
   height: calc((var(--badge-h, 52px) - 12px) * var(--badge-scale, 1));
   width: auto;
   max-width: 100%;
+}
+
+/* Three Android badges at full scale stack two rows deep and make Android the
+   tallest card on the page — the whole row then stretches to match it. Scaled
+   down they sit on one line at desktop widths and match the other cards. */
+#download-android .dl-badges {
+  --badge-scale: 0.75;
 }
 
 .dl-options {
@@ -1355,6 +1362,7 @@ h2 {
 /* Package-manager commands and beta invitations are for the minority who came
    looking; they fold away behind one rule so the badges own the card. */
 .dl-more {
+  margin-top: auto;
   border-top: 2px solid var(--line-strong);
 }
 

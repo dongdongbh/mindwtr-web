@@ -1180,11 +1180,14 @@ h2 {
   margin: 0 0 30px;
 }
 
+/* Cards hug their content. Stretching them to equal height left the sparse
+   cards (iOS especially) mostly void, with the fold rule floating at the
+   bottom of empty space. */
 .download-platforms {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
-  align-items: stretch;
+  align-items: start;
 }
 
 .dl-platform {
@@ -1352,7 +1355,6 @@ h2 {
 /* Package-manager commands and beta invitations are for the minority who came
    looking; they fold away behind one rule so the badges own the card. */
 .dl-more {
-  margin-top: auto;
   border-top: 2px solid var(--line-strong);
 }
 
@@ -1400,12 +1402,6 @@ h2 {
   padding: 0 0 var(--space-xs);
 }
 
-/* Only one child per card can claim the leftover space. The Windows card ends
-   with the signing note, so the fold there sits right under the options. */
-#download-windows .dl-more {
-  margin-top: 0;
-}
-
 .dl-all-copy {
   margin: 0;
   color: var(--muted);
@@ -1419,7 +1415,7 @@ h2 {
 /* Signing status concerns Windows builds only, so it sits at the foot of the
    Windows card; margin-top: auto pins it to the card bottom. */
 .dl-note {
-  margin: auto 0 0;
+  margin: 0;
   padding-top: var(--space-sm);
   color: var(--muted);
   font-size: 0.82rem;

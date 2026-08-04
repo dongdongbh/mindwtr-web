@@ -28,9 +28,12 @@ wrangler.*.local.toml
 project/
 .agents/
 .hallmark/
+.impeccable/
 skills-lock.json
 AGENTS.md
 CLAUDE.md
+PRODUCT.md
+DESIGN.md
 
 # OS/editor noise
 .DS_Store

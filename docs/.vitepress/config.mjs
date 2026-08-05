@@ -55,6 +55,10 @@ export default defineConfig({
     },
     socialLinks: [
       { icon: "github", link: "https://github.com/dongdongbh/Mindwtr" }
-    ]
+    ],
+    footer: {
+      message: "Mindwtr™ and the Mindwtr logo are trademarks of the Mindwtr project.",
+      copyright: "© 2025–2026 Dongda Li · Free and open source (AGPL-3.0)"
+    }
   }
 });

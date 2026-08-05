@@ -448,7 +448,7 @@ function footer(locale: Locale, pagePath: string): string {
     .join("\n");
   return `    <footer class="site-footer">
       <nav class="footer-nav" aria-label="${t.footerAria}">
-        <span>Mindwtr</span>
+        <span>Mindwtr&trade;</span>
 ${links}
       </nav>
       <p class="footer-copyright">

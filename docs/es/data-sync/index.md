@@ -109,7 +109,7 @@ Las configuraciones existentes de Dropbox siguen funcionando; simplemente se mue
 - **Mejor configuración exclusiva de Apple:** iCloud / CloudKit nativo en versiones compatibles de Apple.
 - **Mejor sincronización BYOS remota:** WebDAV o Mindwtr Cloud (autohospedado). La aplicación controla el ciclo de sincronización y fusiona por elemento.
 - **Android + Windows sin cuenta en la nube:** sincronización de archivos con Syncthing en tu propia Wi-Fi — sigue el orden de configuración de Syncthing más abajo y deja que ambos dispositivos completen su primer intercambio de Syncthing antes de abrir Mindwtr en el segundo.
-- **Sincronización de archivos (Syncthing/Dropbox/etc.):** funciona, pero **los conflictos son por archivo** porque `data.json` es un único archivo.
+- **Sincronización de archivos (Syncthing/Dropbox/etc.):** funciona, y Mindwtr sigue fusionando por elemento cada vez que lee el archivo — pero la herramienta de carpetas replica `data.json` según su propio ritmo, y si dos dispositivos escriben antes de que converja, **esa herramienta resuelve la colisión a nivel de archivo completo** (gana el archivo más reciente o se crea una copia `sync-conflict`), de modo que la versión de un lado puede quedar apartada antes de que Mindwtr pueda fusionarla.
 - **Prácticas recomendadas para la sincronización de archivos:** evita editar en dos dispositivos al mismo tiempo y espera a que termine la sincronización antes de abrir la aplicación en otro dispositivo. Si aparecen conflictos, conserva el `data.json` más reciente y elimina las copias `data.json.sync-conflict-*`.
 
 ### Proxy de escritorio

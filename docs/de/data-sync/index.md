@@ -109,7 +109,7 @@ Vorhandene Dropbox-Einrichtungen funktionieren weiter; sie erscheinen lediglich 
 - **Beste reine Apple-Einrichtung:** natives iCloud/CloudKit in unterstützten Apple-Builds.
 - **Bestes entferntes BYOS:** WebDAV oder Mindwtr Cloud (selbst gehostet). Die App steuert den Synchronisierungszyklus und führt Daten je Eintrag zusammen.
 - **Android + Windows ohne Cloud-Konto:** Dateisynchronisierung mit Syncthing im eigenen WLAN — folgen Sie der Syncthing-Einrichtungsreihenfolge weiter unten und lassen Sie beide Geräte den ersten Syncthing-Abgleich abschließen, bevor Mindwtr auf dem zweiten Gerät geöffnet wird.
-- **Dateisynchronisierung (Syncthing/Dropbox usw.):** funktioniert, aber **Konflikte entstehen auf Dateiebene**, da `data.json` eine einzelne Datei ist.
+- **Dateisynchronisierung (Syncthing/Dropbox usw.):** funktioniert, und Mindwtr führt beim Lesen der Datei weiterhin je Eintrag zusammen — aber das Ordnerwerkzeug repliziert `data.json` nach eigenem Zeitplan. Schreiben zwei Geräte, bevor es abgeglichen hat, löst **dieses Werkzeug die Kollision auf Dateiebene** (neueste Datei gewinnt oder eine `sync-conflict`-Kopie entsteht), sodass die Version einer Seite beiseitegelegt werden kann, bevor Mindwtr sie zusammenführen konnte.
 - **Bewährtes Verfahren für Dateisynchronisierung:** nicht gleichzeitig auf zwei Geräten bearbeiten und die Synchronisierung abschließen lassen, bevor die App auf einem anderen Gerät geöffnet wird. Bei Konflikten die neueste `data.json` behalten und die Kopien `data.json.sync-conflict-*` löschen.
 
 ### Desktop-Proxy

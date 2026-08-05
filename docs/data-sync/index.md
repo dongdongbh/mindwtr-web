@@ -109,7 +109,7 @@ Existing Dropbox setups continue to work; they are simply shown as the top-level
 - **Best Apple-only setup:** native iCloud / CloudKit on supported Apple builds.
 - **Best BYOS remote sync:** WebDAV or Mindwtr Cloud (Self-Hosted). The app controls the sync cycle and merges per item.
 - **Android + Windows without a cloud account:** File Sync with Syncthing over your own Wi-Fi — follow the Syncthing setup order below, and let both devices finish their first Syncthing exchange before opening Mindwtr on the second one.
-- **File Sync (Syncthing/Dropbox/etc.):** works, but **conflicts are file-level** because `data.json` is a single file.
+- **File Sync (Syncthing/Dropbox/etc.):** works, and Mindwtr still merges per item whenever it reads the file — but the folder tool replicates `data.json` on its own schedule, and when two devices write before it converges, **that tool resolves the collision at whole-file level** (newest file wins, or a `sync-conflict` copy forks), so one side's version can be set aside before Mindwtr can merge it.
 - **Best practices for File Sync:** avoid editing on two devices at the same time, and wait for sync to finish before opening the app on another device. If conflicts appear, keep the newest `data.json` and delete the `data.json.sync-conflict-*` copies.
 
 ### Desktop Proxy

@@ -109,7 +109,7 @@ Mindwtr 直接支持五种同步后端：
 - **最佳纯 Apple 设置：**受支持 Apple 构建中的原生 iCloud / CloudKit。
 - **最佳自带存储远程同步：**WebDAV 或 Mindwtr Cloud（自托管）。应用控制同步周期并逐项合并。
 - **Android + Windows、不用云账号：**通过自家 Wi-Fi 使用文件同步 + Syncthing——按照下文的 Syncthing 设置顺序操作，并在第二台设备打开 Mindwtr 之前，让两台设备先完成首次 Syncthing 同步。
-- **文件同步（Syncthing/Dropbox 等）：**可以工作，但由于 `data.json` 是单个文件，**冲突是文件级的**。
+- **文件同步（Syncthing/Dropbox 等）：**可以工作，Mindwtr 每次读取文件时仍会逐项合并——但文件夹工具按自己的节奏复制 `data.json`；若两台设备在其收敛前都写入，**由该工具在整文件层面裁决冲突**（最新文件获胜，或分叉出 `sync-conflict` 副本），因此某一方的版本可能在 Mindwtr 合并之前就被搁置。
 - **文件同步最佳实践：**避免同时在两台设备上编辑，并等待同步完成后再在另一台设备上打开应用。如果出现冲突，请保留最新的 `data.json`，并删除 `data.json.sync-conflict-*` 副本。
 
 ### 桌面端代理

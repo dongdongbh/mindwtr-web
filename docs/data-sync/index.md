@@ -67,8 +67,6 @@ Mindwtr directly supports five sync backends:
 
 Speed differences matter most with large attachments, which WebDAV and Dropbox transfer as individual uploads/downloads. See [Data lifecycle](/data-sync/data-lifecycle) for what actually moves during a sync.
 
-The per-item merge itself is identical in every backend — each device always downloads the full document and merges it locally, field by field. The "Conflict handling" column describes what sits between your devices. WebDAV, Dropbox, and the cloud server hold one authoritative remote copy, so every concurrent edit funnels through the app's merge. A File Sync folder is often replicated by a separate tool (Syncthing, a drive client) that knows nothing about the file's contents: if two devices write between its scans, that tool resolves the collision at whole-file granularity — an overwrite or a conflict copy Mindwtr never reads. Devices still re-converge on later cycles because each re-merges its full local store, but propagation can lag and conflict files can accumulate. A passthrough mount (rclone mount, RSAF, and similar) is not a replicator — it exposes the single remote copy directly, so it behaves like the app-controlled backends.
-
 ### Data ownership
 
 | Mode | Does a copy leave the device? | You control | Remote copy |

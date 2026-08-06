@@ -47,6 +47,14 @@
             key stays in SignPath’s hardware security module — the project never
             holds it — and every signing request is approved by hand.
           </p>
+          <p>
+            Because the foundation holds the certificate, Windows shows
+            <strong>“SignPath Foundation”</strong> as the verified publisher on
+            signed builds, not “Mindwtr”. That is the trade for free HSM-backed
+            signing that open-source projects never have to fund personally; the
+            signature still means the installer was built from this repository
+            and has not been altered since.
+          </p>
 
           <h2>3. Project roles</h2>
           <ul>
@@ -68,9 +76,10 @@
 
           <h2>5. Current status</h2>
           <p>
-            The SignPath Foundation application is pending. Until a release is
-            named here as signed, don’t assume a Windows download carries a
-            SignPath signature. Every release does publish SHA-256 checksums on
+            The SignPath Foundation application is approved and signing is wired
+            into the release workflow; the release certificate is still being
+            issued. Until a release is named here as signed, don’t assume a
+            Windows download carries a SignPath signature. Every release does publish SHA-256 checksums on
             its
             <a href="https://github.com/dongdongbh/Mindwtr/releases">GitHub release page</a>,
             and in-app desktop updates are verified against the project’s own

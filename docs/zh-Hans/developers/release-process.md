@@ -225,6 +225,21 @@ git push origin main --tags
 
 ---
 
+## Windows 代码签名
+
+Windows 构建通过 SignPath Foundation 进行 Authenticode 签名。`.github/workflows/release-windows.yml` 中的签名段落每次发布会执行两轮签名，而且顺序很重要：
+
+1. `tauri build --no-bundle` 只生成独立的 `mindwtr.exe`，先对它签名。NSIS 安装程序会内嵌这个二进制文件的副本，因此在签名之前打包的安装程序会把未签名的 exe 装到每台机器上。签名后的 exe 同时供便携版 ZIP 和 MSIX 布局使用。
+2. 随后 `tauri bundle` 围绕已签名的 exe 构建安装程序，再在第二轮中对 `mindwtr-setup.exe` 签名。
+
+每一轮都是独立的 SignPath 提交，压缩包中恰好只有一个文件，因此 `release-signing` 策略每次发布需要两次人工批准，每次在构建失败前有 30 分钟超时。两轮无法合并：exe 签名完成之前，安装程序根本不存在。稳定版与 RC 工作流都会调用这个作业，所以一个 RC 标签同样需要这两次批准。
+
+整段逻辑的前提是仓库为 `dongdongbh/Mindwtr`、两个 SignPath 机密都已设置，并且存在标签。派生仓库、拉取请求以及没有标签的手动运行按设计构建为未签名版本。
+
+在下一个签名版本发布之前，必须在 SignPath 界面中更新工件配置，使其匹配这两次单文件提交。这是本仓库之外的维护者操作——仅有工作流改动并不够——而且它会使先前使用旧的单次双文件提交所做的测试签名验证失效。
+
+---
+
 ## 添加标签前
 
 至少应验证：
@@ -239,6 +254,7 @@ git push origin main --tags
 - 商店/发布元数据更改是有意的，并且按平台限制在适当范围内
 - 控制台中的移动应用商店类别仍然正确：Google Play 为 `Productivity > Task Management`，App Store 主类别为 `Productivity`
 - Google Play 各语言区域的正文不超过 500 字符的 API 限制
+- SignPath 工件配置与当前 Windows 两次提交的签名流程一致
 
 对于较大的发布，还应验证：
 

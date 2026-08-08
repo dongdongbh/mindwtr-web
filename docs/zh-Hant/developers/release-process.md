@@ -225,6 +225,21 @@ git push origin main --tags
 
 ---
 
+## Windows 程式碼簽署
+
+Windows 建置透過 SignPath Foundation 進行 Authenticode 簽署。`.github/workflows/release-windows.yml` 中的簽署區塊每次發布會執行兩輪簽署，而且順序很重要：
+
+1. `tauri build --no-bundle` 只產生獨立的 `mindwtr.exe`，並先對它簽署。NSIS 安裝程式會內嵌這個二進位檔的副本，因此在簽署前就打包的安裝程式，會把未簽署的 exe 裝到每台機器上。已簽署的 exe 同時供可攜版 ZIP 與 MSIX 版面配置使用。
+2. 接著 `tauri bundle` 會圍繞已簽署的 exe 建置安裝程式，再於第二輪對 `mindwtr-setup.exe` 簽署。
+
+每一輪都是獨立的 SignPath 提交，壓縮檔中恰好只有一個檔案，因此 `release-signing` 原則每次發布需要兩次人工核准，每次在建置失敗前有 30 分鐘逾時。兩輪無法合併：exe 簽署完成之前，安裝程式根本不存在。穩定版與 RC 工作流程都會呼叫這個作業，因此一個 RC 標籤同樣需要這兩次核准。
+
+整個區塊的前提是儲存庫為 `dongdongbh/Mindwtr`、兩個 SignPath 祕密都已設定，且存在標籤。分支儲存庫、提取請求以及沒有標籤的手動執行，依設計會建置為未簽署版本。
+
+在下一個已簽署版本發布之前，必須在 SignPath 介面更新成品設定，使其符合這兩次單一檔案的提交。這是本儲存庫之外的維護者作業——僅有工作流程變更並不足夠——而且會使先前採用舊的單次雙檔案提交所做的測試簽署驗證失效。
+
+---
+
 ## 加上標籤前
 
 至少應驗證：
@@ -239,6 +254,7 @@ git push origin main --tags
 - 商店／版本中繼資料變更是刻意且依平台限定範圍
 - 主控台中的行動版商店分類仍然正確：Google Play `Productivity > Task Management`，App Store 主要分類為 `Productivity`
 - Google Play 語系內文符合 API 500 字元限制
+- SignPath 成品設定與目前 Windows 兩次提交的簽署流程一致
 
 對於較大的版本，還應驗證：
 

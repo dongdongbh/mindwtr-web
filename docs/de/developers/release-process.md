@@ -224,6 +224,21 @@ git push origin main --tags
 
 ---
 
+## Windows-Codesignierung
+
+Windows-Builds werden über SignPath Foundation mit Authenticode signiert. Der Signierblock in `.github/workflows/release-windows.yml` führt pro Release zwei Signierrunden aus, und die Reihenfolge ist entscheidend:
+
+1. `tauri build --no-bundle` hält bei der losen `mindwtr.exe` an, die zuerst signiert wird. Das NSIS-Installationsprogramm bettet eine eigene Kopie dieser Binärdatei ein; ein vor dem Signieren gebündeltes Installationsprogramm würde also auf jedem Rechner eine unsignierte EXE ablegen. Die signierte EXE fließt außerdem in das portable ZIP und das MSIX-Layout ein.
+2. `tauri bundle` baut anschließend das Installationsprogramm um die signierte EXE herum, und `mindwtr-setup.exe` wird in einer zweiten Runde signiert.
+
+Jede Runde ist eine eigene SignPath-Einreichung eines ZIPs mit genau einer Datei. Die Richtlinie `release-signing` verlangt daher zwei manuelle Freigaben pro Release, jeweils mit 30 Minuten Zeitlimit, bevor der Build fehlschlägt. Die Runden lassen sich nicht zusammenlegen: Das Installationsprogramm existiert erst, wenn die EXE signiert ist. Sowohl der stabile als auch der RC-Workflow rufen diesen Job auf, ein RC-Tag kostet also dieselben zwei Freigaben.
+
+Der gesamte Block ist daran gebunden, dass das Repository `dongdongbh/Mindwtr` ist, beide SignPath-Secrets gesetzt sind und ein Tag vorliegt. Forks, Pull Requests und Dispatch-Läufe ohne Tag erzeugen bewusst unsignierte Builds.
+
+Vor dem nächsten signierten Release muss die Artefaktkonfiguration in der SignPath-Oberfläche an die zwei Einreichungen mit je einer Datei angepasst werden. Das ist eine Aufgabe der Maintainer außerhalb dieses Repositories — die Workflow-Änderung allein genügt nicht — und sie entwertet den früheren Testsignierlauf, der die alte einzelne Einreichung mit beiden Dateien genutzt hat.
+
+---
+
 ## Vor dem Taggen
 
 Prüfen Sie mindestens:
@@ -238,6 +253,7 @@ Prüfen Sie mindestens:
 - Änderungen an Store-/Release-Metadaten sind beabsichtigt und je Plattform begrenzt
 - Kategorien der mobilen Stores in den Konsolen sind weiterhin korrekt: Google Play `Productivity > Task Management` und primäre App-Store-Kategorie `Productivity`
 - Gebietsschemainhalte für Google Play halten die API-Grenze von 500 Zeichen ein
+- die SignPath-Artefaktkonfiguration passt zum aktuellen Windows-Signierablauf mit zwei Einreichungen
 
 Prüfen Sie bei größeren Releases außerdem:
 

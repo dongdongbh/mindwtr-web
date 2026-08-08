@@ -225,6 +225,21 @@ git push origin main --tags
 
 ---
 
+## Signature de code Windows
+
+Les versions Windows sont signées avec Authenticode via SignPath Foundation. Le bloc de signature de `.github/workflows/release-windows.yml` exécute deux tours de signature par publication, et l'ordre compte :
+
+1. `tauri build --no-bundle` s'arrête au `mindwtr.exe` isolé, qui est signé en premier. L'installateur NSIS intègre sa propre copie de ce binaire : un installateur empaqueté avant la signature déposerait donc un exe non signé sur chaque machine. L'exe signé alimente aussi le ZIP portable et la disposition MSIX.
+2. `tauri bundle` construit ensuite l'installateur autour de l'exe signé, et `mindwtr-setup.exe` est signé lors d'un second tour.
+
+Chaque tour est une soumission SignPath distincte, sous forme d'un zip contenant exactement un fichier ; la politique `release-signing` demande donc deux approbations manuelles par publication, chacune avec un délai de 30 minutes avant l'échec de la compilation. Les tours ne peuvent pas être fusionnés : l'installateur n'existe pas tant que l'exe n'est pas signé. Le processus stable comme celui des RC appellent ce travail, une étiquette RC coûte donc les deux mêmes approbations.
+
+L'ensemble du bloc dépend du dépôt `dongdongbh/Mindwtr`, de la présence des deux secrets SignPath et d'une étiquette. Les forks, les demandes de tirage et les exécutions manuelles sans étiquette produisent volontairement des versions non signées.
+
+Avant la prochaine publication signée, la configuration des artefacts dans l'interface SignPath doit être mise à jour pour correspondre aux deux soumissions à fichier unique. C'est une action de mainteneur en dehors de ce dépôt — la modification du workflow ne suffit pas — et elle invalide la validation précédente en signature de test, qui reposait sur l'ancienne soumission unique contenant les deux fichiers.
+
+---
+
 ## Avant de créer l'étiquette
 
 Vérifiez au minimum que :
@@ -239,6 +254,7 @@ Vérifiez au minimum que :
 - les modifications des métadonnées des boutiques/publications sont intentionnelles et limitées à chaque plateforme
 - les catégories des boutiques mobiles dans les consoles sont toujours correctes : Google Play `Productivity > Task Management` et catégorie principale de l'App Store `Productivity`
 - les textes des paramètres régionaux de Google Play respectent la limite de 500 caractères de l'API
+- la configuration des artefacts SignPath correspond au processus de signature Windows actuel à deux soumissions
 
 Pour les publications plus importantes, vérifiez également :
 

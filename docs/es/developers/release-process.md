@@ -225,6 +225,21 @@ git push origin main --tags
 
 ---
 
+## Firma de código en Windows
+
+Las compilaciones de Windows se firman con Authenticode a través de SignPath Foundation. El bloque de firma de `.github/workflows/release-windows.yml` ejecuta dos rondas de firma por lanzamiento, y el orden importa:
+
+1. `tauri build --no-bundle` se detiene en el `mindwtr.exe` suelto, que se firma primero. El instalador NSIS incrusta su propia copia de ese binario, así que un instalador empaquetado antes de firmar dejaría un exe sin firmar en cada equipo. El exe firmado también alimenta el ZIP portátil y el diseño MSIX.
+2. `tauri bundle` construye después el instalador alrededor del exe firmado, y `mindwtr-setup.exe` se firma en una segunda ronda.
+
+Cada ronda es un envío propio a SignPath de un zip con exactamente un archivo, por lo que la política `release-signing` pide dos aprobaciones manuales por lanzamiento, cada una con un tiempo límite de 30 minutos antes de que falle la compilación. Las rondas no se pueden fusionar: el instalador no existe hasta que el exe está firmado. Tanto el flujo estable como el de RC llaman a este trabajo, así que una etiqueta RC cuesta las mismas dos aprobaciones.
+
+Todo el bloque depende de que el repositorio sea `dongdongbh/Mindwtr`, de que estén presentes ambos secretos de SignPath y de que haya una etiqueta. Las bifurcaciones, las solicitudes de incorporación y las ejecuciones manuales sin etiqueta se compilan sin firma por diseño.
+
+Antes del próximo lanzamiento firmado hay que actualizar la configuración de artefactos en la interfaz de SignPath para que coincida con los dos envíos de un solo archivo. Es una acción de mantenimiento externa a este repositorio — el cambio del flujo de trabajo por sí solo no basta — e invalida la validación anterior con certificado de prueba, que usaba el envío único con ambos archivos.
+
+---
+
 ## Antes de etiquetar
 
 Como mínimo, verifica:
@@ -239,6 +254,7 @@ Como mínimo, verifica:
 - que los cambios en los metadatos de tiendas/lanzamiento sean intencionados y estén limitados a cada plataforma
 - que las categorías de las tiendas móviles en las consolas sigan siendo correctas: Google Play `Productivity > Task Management` y la categoría principal de App Store `Productivity`
 - que el contenido de las configuraciones regionales de Google Play respete el límite de 500 caracteres de la API
+- que la configuración de artefactos de SignPath coincida con el flujo actual de firma de Windows con dos envíos
 
 Para lanzamientos de mayor envergadura, verifica también:
 

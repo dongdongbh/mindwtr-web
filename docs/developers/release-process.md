@@ -225,6 +225,21 @@ git push origin main --tags
 
 ---
 
+## Windows Code Signing
+
+Windows builds are Authenticode-signed through SignPath Foundation. The signing block in `.github/workflows/release-windows.yml` runs two signing rounds per release, and the order matters:
+
+1. `tauri build --no-bundle` stops at the loose `mindwtr.exe`, which is signed first. The NSIS installer embeds its own copy of that binary, so an installer bundled before signing would put an unsigned exe on every machine. The signed exe also feeds the portable ZIP and the MSIX layout.
+2. `tauri bundle` then builds the installer around the signed exe, and `mindwtr-setup.exe` is signed in a second round.
+
+Each round is its own SignPath submission of a zip holding exactly one file, so the `release-signing` policy asks for two manual approvals per release, each with a 30-minute timeout before the build fails. The rounds cannot be merged: the installer does not exist until the exe has been signed. Both the stable and the RC workflow call this job, so an RC tag costs the same two approvals.
+
+The whole block is gated on the repository being `dongdongbh/Mindwtr`, both SignPath secrets being present, and a tag. Forks, pull requests, and tagless dispatch runs build unsigned by design.
+
+Before the next signed release, the artifact configuration in the SignPath UI has to be updated to match the two single-file submissions. That is a maintainer action outside this repository — the workflow change alone is not enough — and it invalidates the earlier test-signed validation run, which exercised the old single submission carrying both files.
+
+---
+
 ## Before Tagging
 
 At minimum, verify:
@@ -239,6 +254,7 @@ At minimum, verify:
 - store/release metadata changes are intentional and scoped per platform
 - mobile store categories in the consoles are still correct: Google Play `Productivity > Task Management` and App Store primary category `Productivity`
 - Google Play locale bodies fit the 500-character API limit
+- the SignPath artifact configuration matches the current two-submission Windows signing flow
 
 For larger releases, also verify:
 

@@ -1,6 +1,6 @@
 # Focus Pomodoro
 
-Mindwtr propose un minuteur Pomodoro facultatif dans la vue **Focus** sur ordinateur et mobile.
+Mindwtr propose un minuteur Pomodoro facultatif dans la vue **Focus** sur ordinateur et mobile. Sur ordinateur, le minuteur continue de tourner et vous alerte où que vous soyez dans l’application : une session que vous lancez puis laissez de côté arrive quand même à son terme.
 
 Cette fonction est **désactivée** par défaut pour préserver une vue Focus minimale et sans distraction.
 

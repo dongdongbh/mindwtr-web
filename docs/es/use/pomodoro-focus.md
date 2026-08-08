@@ -1,6 +1,6 @@
 # Foco Pomodoro
 
-Mindwtr incluye un panel opcional con temporizador Pomodoro en la vista **Foco** de escritorio y móvil.
+Mindwtr incluye un panel opcional con temporizador Pomodoro en la vista **Foco** de escritorio y móvil. En el escritorio, el temporizador sigue corriendo y te avisa estés donde estés en la aplicación, así que una sesión que inicias y luego dejas atrás termina igualmente.
 
 Esta función está **desactivada** de forma predeterminada para mantener Foco sencillo y sin distracciones.
 

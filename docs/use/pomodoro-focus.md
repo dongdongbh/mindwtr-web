@@ -1,6 +1,6 @@
 # Pomodoro Focus
 
-Mindwtr includes an optional Pomodoro timer panel in the **Focus** view on desktop and mobile.
+Mindwtr includes an optional Pomodoro timer panel in the **Focus** view on desktop and mobile. On desktop the timer keeps counting down and alerts you wherever you are in the app, so a session you start and then leave behind still finishes.
 
 By default, this feature is **off** to keep Focus minimal and distraction-free.
 

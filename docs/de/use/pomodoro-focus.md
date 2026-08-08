@@ -1,6 +1,6 @@
 # Pomodoro-Fokus
 
-Mindwtr bietet auf dem Desktop und auf Mobilgeräten in der Ansicht **Fokus** optional ein Pomodoro-Zeitgeberfeld.
+Mindwtr bietet auf dem Desktop und auf Mobilgeräten in der Ansicht **Fokus** optional ein Pomodoro-Zeitgeberfeld. Auf dem Desktop läuft der Zeitgeber überall in der App weiter und meldet sich dort auch, sodass eine Sitzung, die Sie starten und dann verlassen, trotzdem zu Ende läuft.
 
 Diese Funktion ist standardmäßig **deaktiviert**, damit „Fokus“ minimalistisch und ablenkungsfrei bleibt.
 

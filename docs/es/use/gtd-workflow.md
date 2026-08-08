@@ -76,7 +76,9 @@ flowchart TD
     C -->|Papelera| D[Eliminar]
     C -->|Idea futura| E[Algún día/Quizá]
     C -->|Referencia| F[Añadir a las notas]
-    B -->|Sí| G{¿Menos de 2 min?}
+    B -->|Sí| P{¿Más de un paso?}
+    P -->|Sí| Q[Convertirlo en proyecto → nómbralo y define su primera acción]
+    P -->|No| G{¿Menos de 2 min?}
     G -->|Sí| H[Hacerlo ahora → Hecha]
     G -->|No| I{¿Quién debería hacerlo?}
     I -->|Lo haré yo| J[Añadir contextos → Próximas acciones]
@@ -103,6 +105,19 @@ flowchart TD
 
 **¿Asignar un proyecto?** (Opcional)
 - Vincula las tareas relacionadas a un proyecto
+
+### Ejemplo práctico: un recado de dos pasos
+
+Llega un aviso de revisión de seguridad para tu coche. Capturas **Aviso de revisión del coche** y el elemento aparece en la Bandeja de entrada. Resolverlo implica dos acciones — llamar al concesionario y después llevar el coche —, así que al procesarlo se convierte en un proyecto en lugar de una sola tarea. Pulsa **Procesar Bandeja** y luego:
+
+1. La primera pantalla es **Concreta la tarea**. Reformula la captura si es vaga y pulsa **Siguiente**.
+2. **¿Es accionable?** Pulsa **Sí, es accionable**.
+3. **¿Requiere más de un paso?** Pulsa **Sí, convertir en proyecto**.
+4. Nombra el proyecto — *Revisión de seguridad del coche* — y escribe la primera acción real en **Siguiente acción**: *Llamar al concesionario para pedir cita*.
+5. Pulsa **Añadir otra acción** y escribe el paso siguiente: *Llevar el coche a la revisión*.
+6. Pulsa **Crear proyecto y añadir una siguiente acción**.
+
+Mindwtr crea el proyecto, convierte tu captura en su primera siguiente acción y devuelve el paso posterior a la Bandeja de entrada con el proyecto ya asignado, para que lo aclares por separado — incluida la fecha de la cita cuando la tengas. El procesamiento continúa con el siguiente elemento. Si un paso posterior aún no se puede concretar hoy, déjalo fuera y captúralo después de la llamada; el proyecto mantiene visible el resultado hasta que no quede nada por hacer.
 
 ---
 

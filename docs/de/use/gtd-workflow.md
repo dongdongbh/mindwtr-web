@@ -76,7 +76,9 @@ flowchart TD
     C -->|Trash| D[Delete]
     C -->|Future idea| E[Someday/Maybe]
     C -->|Reference| F[Add to notes]
-    B -->|Yes| G{Less than 2 min?}
+    B -->|Yes| P{More than one step?}
+    P -->|Yes| Q[Make it a project → name it, then its first next action]
+    P -->|No| G{Less than 2 min?}
     G -->|Yes| H[Do it now → Done]
     G -->|No| I{Who should do it?}
     I -->|I'll do it| J[Add contexts → Next Actions]
@@ -103,6 +105,19 @@ flowchart TD
 
 **Einem Projekt zuweisen?** (Optional)
 - Verknüpfen Sie zusammengehörige Aufgaben mit einem Projekt.
+
+### Praxisbeispiel: Eine Besorgung in zwei Schritten
+
+Für Ihr Auto trifft ein Rückrufschreiben ein. Sie erfassen **Rückruf für das Auto**, und der Eintrag landet im Posteingang. Die Erledigung besteht aus zwei Handlungen — beim Autohaus anrufen und später das Auto hinbringen —, deshalb wird daraus beim Verarbeiten ein Projekt statt einer einzelnen Aufgabe. Klicken Sie auf **Posteingang verarbeiten** und dann:
+
+1. Zuerst erscheint **Die Aufgabe präzisieren**. Formulieren Sie die Erfassung um, falls sie unklar ist, und klicken Sie auf **Nächste**.
+2. **Ist dies ausführbar?** Klicken Sie auf **Ja, es ist ausführbar**.
+3. **Ist mehr als ein Schritt nötig?** Klicken Sie auf **Ja, erstelle ein Projekt**.
+4. Benennen Sie das Projekt — *Rückruf für das Auto* — und tragen Sie unter **Nächste Aktion** die erste echte Handlung ein: *Beim Autohaus anrufen und Termin vereinbaren*.
+5. Klicken Sie auf **Weitere Aktion hinzufügen** und tragen Sie den Folgeschritt ein: *Auto zum Rückruftermin bringen*.
+6. Klicken Sie auf **Ein Projekt erstellen & Nächste Aktion hinzufügen**.
+
+Mindwtr legt das Projekt an, macht Ihre Erfassung zu dessen erster nächster Aktion und schickt den Folgeschritt mit bereits zugewiesenem Projekt zurück in den Posteingang, sodass Sie ihn eigenständig klären — samt Termin, sobald Sie ihn kennen. Anschließend geht die Verarbeitung mit dem nächsten Posteingangseintrag weiter. Ist ein späterer Schritt heute noch nicht absehbar, lassen Sie ihn weg und erfassen ihn nach dem Anruf; das Projekt hält das Ergebnis sichtbar, bis nichts mehr zu tun ist.
 
 ---
 

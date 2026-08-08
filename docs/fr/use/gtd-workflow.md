@@ -76,7 +76,9 @@ flowchart TD
     C -->|Corbeille| D[Supprimer]
     C -->|Idée future| E[Un jour/Peut-être]
     C -->|Référence| F[Ajouter aux notes]
-    B -->|Oui| G{Moins de 2 min ?}
+    B -->|Oui| P{Plus d’une étape ?}
+    P -->|Oui| Q[En faire un projet → nommez-le, puis sa prochaine action]
+    P -->|Non| G{Moins de 2 min ?}
     G -->|Oui| H[Le faire maintenant → Terminé]
     G -->|Non| I{Qui doit le faire ?}
     I -->|Je m'en charge| J[Ajouter des contextes → Prochaines actions]
@@ -103,6 +105,19 @@ flowchart TD
 
 **Associer un projet ?** (Facultatif)
 - Associez les tâches liées à un projet
+
+### Exemple concret : une course en deux étapes
+
+Un avis de rappel de sécurité arrive pour votre voiture. Vous capturez **Avis de rappel pour la voiture**, qui atterrit dans la boîte de réception. Le traiter demande deux actions — appeler le concessionnaire, puis y amener la voiture —, il devient donc un projet plutôt qu’une tâche unique. Cliquez sur **Traiter la Boîte de réception**, puis :
+
+1. Le premier écran est **Affiner la tâche**. Reformulez la capture si elle est vague, puis cliquez sur **Suivant**.
+2. **Est-ce actionnable ?** Cliquez sur **Oui, c’est actionnable**.
+3. **Plus d’une étape ?** Cliquez sur **Oui, fais-en un projet**.
+4. Nommez le projet — *Rappel de sécurité de la voiture* — et saisissez la première action réelle sous **Prochaine action** : *Appeler le concessionnaire pour fixer un rendez-vous*.
+5. Cliquez sur **Ajouter une autre action** et saisissez l’étape suivante : *Amener la voiture pour le rappel*.
+6. Cliquez sur **Créer un projet et ajouter la prochaine action**.
+
+Mindwtr crée le projet, transforme votre capture en sa première prochaine action et renvoie l’étape suivante dans la boîte de réception avec le projet déjà associé, pour que vous la clarifiiez séparément — date de rendez-vous comprise, une fois connue. Le traitement enchaîne ensuite avec l’élément suivant. Si une étape ultérieure est impossible à définir aujourd’hui, laissez-la de côté et capturez-la après l’appel ; le projet garde le résultat visible tant qu’il reste quelque chose à faire.
 
 ---
 

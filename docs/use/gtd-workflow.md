@@ -76,7 +76,9 @@ flowchart TD
     C -->|Trash| D[Delete]
     C -->|Future idea| E[Someday/Maybe]
     C -->|Reference| F[Add to notes]
-    B -->|Yes| G{Less than 2 min?}
+    B -->|Yes| P{More than one step?}
+    P -->|Yes| Q[Make it a project → name it, then its first next action]
+    P -->|No| G{Less than 2 min?}
     G -->|Yes| H[Do it now → Done]
     G -->|No| I{Who should do it?}
     I -->|I'll do it| J[Add contexts → Next Actions]
@@ -103,6 +105,19 @@ flowchart TD
 
 **Assign a project?** (Optional)
 - Link related tasks to a project
+
+### Worked Example: A Two-Step Errand
+
+A safety recall notice arrives for your car. You capture **Car safety recall notice**, which lands in the Inbox. Handling it takes two actions — call the dealer, then take the car in — so during processing it becomes a project rather than a single task. Click **Process Inbox**, then:
+
+1. **Refine the task** is the first screen. Reword the capture if it is vague, then click **Next**.
+2. **Is this actionable?** Click **Yes, it's actionable**.
+3. **More than one step?** Click **Yes, make it a project**.
+4. Name the project — *Car safety recall* — and type the first real action under **Next action**: *Call the dealer to book the recall appointment*.
+5. Click **+ Add another action** and type the follow-up step: *Take the car in for the recall*.
+6. Click **Create project & add next action**.
+
+Mindwtr creates the project, turns your capture into its first next action, and sends the follow-up step back to the Inbox with the project already attached, so you clarify it on its own — including the appointment date once you have it. Processing then continues with the next inbox item. If a later step is unknowable today, leave it out and capture it after the call; the project keeps the outcome visible until nothing is left to do.
 
 ---
 

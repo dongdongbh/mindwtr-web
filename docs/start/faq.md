@@ -84,7 +84,7 @@ Mindwtr currently supports these language options, listed roughly by total speak
 - Español
 - العربية
 - Français
-- Português
+- Português (Brasil)
 - Русский
 - Deutsch
 - 日本語

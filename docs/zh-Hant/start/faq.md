@@ -84,7 +84,7 @@ Mindwtr 目前提供以下語言選項，大致依全球使用人數排列：
 - Español
 - العربية
 - Français
-- Português
+- Português (Brasil)
 - Русский
 - Deutsch
 - 日本語

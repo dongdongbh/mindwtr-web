@@ -84,7 +84,7 @@ Mindwtr bietet derzeit folgende Sprachoptionen, ungefähr nach der weltweiten Ge
 - Español
 - العربية
 - Français
-- Português
+- Português (Brasil)
 - Русский
 - Deutsch
 - 日本語

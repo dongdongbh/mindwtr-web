@@ -345,6 +345,7 @@ Aufgaben per Sprache mit KI-gestützter Transkription erfassen.
 - **Schnell hinzufügen**: Modus in der Leiste über das Mikrofonsymbol auf **Audio** stellen
 - **Aufnehmen**: Mikrofon anklicken und Aufgabe natürlich sprechen
 - **Beenden**: Stopp anklicken; der Text füllt das Eingabefeld
+- **Aufgabeneditor**: Das Beschreibungsfeld hat eine eigene Mikrofonschaltfläche. Sie nimmt auf und transkribiert mit demselben Anbieter und Verarbeitungsmodus in die Beschreibung.
 - **Anhänge**: **Audioanhänge speichern** unter **Einstellungen → Allgemein** aktivieren, um die Originalaufnahme zu behalten
 
 ---

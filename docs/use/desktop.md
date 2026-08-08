@@ -343,6 +343,7 @@ Capture tasks using your voice with AI-powered transcription.
 - **Quick Add**: Toggle the capture mode to **Audio** (microphone icon) in the Quick Add bar.
 - **Record**: Click the microphone to start recording. Speak your task naturally.
 - **Finish**: Click stop to transcribe. The text will populate the input field.
+- **Task editor**: The description field has its own microphone button. It records and transcribes into the description with the same provider and processing mode.
 - **Attachments**: Enable "Save audio attachments" in **Settings → General** to keep the original voice note.
 
 ---

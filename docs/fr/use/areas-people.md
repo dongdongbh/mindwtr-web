@@ -31,6 +31,18 @@ Utilisez les Paramètres pour gérer directement les domaines enregistrés.
 
 Supprimer un domaine conserve ses tâches et ses projets. Mindwtr les rend non attribués au lieu de supprimer le travail.
 
+### Filtrer par domaine
+
+Le filtre de domaine restreint Mindwtr aux domaines que vous voulez consulter. Sur l’ordinateur, il se trouve en bas de la barre latérale ; sur mobile, c’est le contrôle en haut à gauche de l’en-tête.
+
+Un clic sur un domaine le fait passer par trois états :
+
+1. **Sélectionné** — ses projets et tâches sont affichés.
+2. **Exclu** — ses projets et tâches sont masqués.
+3. **Désactivé** — le domaine n’agit plus sur le filtre.
+
+Sélectionnez plusieurs domaines pour les voir ensemble, ou excluez-en un pour voir tout le reste. **Aucun domaine** figure aussi dans la liste, ce qui permet d’inclure ou d’exclure le travail sans domaine. Le choix s’applique à toutes les vues : Focus, Prochaines actions, Projets, Calendrier, Recherche, Revue, Tableau et Contextes le suivent tant que vous ne l’effacez pas.
+
 ## Personnes
 
 Les personnes sont des noms d’attributaires réutilisables pour les tâches déléguées, les éléments En attente et les recherches centrées sur quelqu’un. Elles peuvent aussi contenir des notes et liens de référence, tels qu’une adresse e-mail, une fiche de contact ou un lien Obsidian.

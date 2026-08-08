@@ -31,6 +31,18 @@ Verwenden Sie die Einstellungen, wenn Sie gespeicherte Bereiche direkt verwalten
 
 Beim Löschen eines Bereichs bleiben seine Aufgaben und Projekte erhalten. Mindwtr hebt ihre Zuweisung auf, statt die Arbeit zu löschen.
 
+### Nach Bereich filtern
+
+Der Bereichsfilter schränkt Mindwtr auf die Bereiche ein, die Sie gerade sehen wollen. Auf dem Desktop steht er unten in der Seitenleiste, auf dem Mobilgerät oben links in der Kopfzeile des Bildschirms.
+
+Ein Klick auf einen Bereich schaltet ihn durch drei Zustände:
+
+1. **Ausgewählt** – seine Projekte und Aufgaben werden angezeigt.
+2. **Ausgeschlossen** – seine Projekte und Aufgaben werden ausgeblendet.
+3. **Aus** – der Bereich wirkt sich nicht mehr auf den Filter aus.
+
+Wählen Sie mehrere Bereiche aus, um sie gemeinsam zu sehen, oder schließen Sie einen aus, um alles außer diesem zu sehen. **Keine Bereiche** steht ebenfalls in der Liste, sodass Sie Arbeit ohne Bereich einschließen oder ausschließen können. Die Auswahl gilt in allen Ansichten: Fokus, Nächste Aktionen, Projekte, Kalender, Suche, Rückblick, Board und Kontexte folgen ihr, bis Sie sie zurücksetzen.
+
 ## Personen
 
 Personen sind wiederverwendbare Namen von Verantwortlichen für delegierte Aufgaben, Einträge unter „Warten“ und personenbezogene Suchen. Sie können außerdem Notizen und Referenzlinks enthalten, etwa eine E-Mail-Adresse, eine Kontaktseite oder einen Obsidian-Link.

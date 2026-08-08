@@ -31,6 +31,18 @@ Usa Ajustes para administrar directamente las áreas guardadas.
 
 Al eliminar un área se conservan sus tareas y proyectos. Mindwtr los deja sin asignar en vez de eliminar el trabajo.
 
+### Filtrar por área
+
+El filtro de áreas reduce Mindwtr a las áreas que quieres mirar. En el escritorio está al final de la barra lateral; en el móvil es el control de la parte superior izquierda del encabezado.
+
+Al pulsar un área, esta recorre tres estados:
+
+1. **Seleccionada**: se muestran sus proyectos y tareas.
+2. **Excluida**: se ocultan sus proyectos y tareas.
+3. **Desactivada**: el área deja de afectar al filtro.
+
+Selecciona varias áreas para verlas juntas, o excluye una para ver todo lo demás. **Sin área** también aparece en la lista, así que puedes incluir o excluir el trabajo que no tiene área. La elección se aplica en todas las vistas: Foco, Próximas acciones, Proyectos, Calendario, Búsqueda, Revisión, Tablero y Contextos la respetan hasta que la borres.
+
 ## Personas
 
 Las personas son nombres de responsables reutilizables para tareas delegadas, elementos En espera y búsquedas centradas en alguien. También pueden contener notas y enlaces de referencia, como una dirección de correo, una página de contacto o un enlace de Obsidian.

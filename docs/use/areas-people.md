@@ -31,6 +31,18 @@ Use Settings when you want to manage saved Areas directly.
 
 Deleting an Area keeps its tasks and projects. Mindwtr moves them to unassigned instead of deleting the work.
 
+### Filter by Area
+
+The area switcher narrows Mindwtr to the areas you want to look at. On desktop it sits at the bottom of the sidebar; on mobile it is the control at the top left of the screen header.
+
+Clicking an area cycles it through three states:
+
+1. **Selected** — its projects and tasks are shown.
+2. **Excluded** — its projects and tasks are hidden.
+3. **Off** — the area no longer affects the filter.
+
+Select several areas to see them together, or exclude one to see everything except it. **No area** appears in the list too, so you can include or exclude work that has no Area. The choice applies across views: Focus, Next actions, Projects, Calendar, Search, Review, Board, and Contexts all follow it until you clear it.
+
 ## People
 
 People are reusable assignee names for delegated tasks, Waiting For items, and person-centered searches. They can also hold notes and reference links, such as an email address, contact page, or Obsidian link.

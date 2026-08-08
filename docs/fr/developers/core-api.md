@@ -499,15 +499,16 @@ const merged = mergeAppData(localData: AppData, remoteData: AppData);
 
 ## Internationalisation
 
-### translations
+### loadTranslations
 
-Chaînes de traduction pour toutes les langues prises en charge.
+Charge les chaînes de traduction d'une langue. Les dictionnaires sont chargés à la demande : `getTranslationsSync` renvoie donc les chaînes anglaises tant que cette langue n'a pas été chargée une fois.
 
 ```typescript
-import { translations, Language } from '@mindwtr/core';
+import { loadTranslations, getTranslationsSync } from '@mindwtr/core';
 
-translations.en['nav.inbox'];  // 'Inbox'
-translations.zh['nav.inbox'];  // '收集箱'
+const zh = await loadTranslations('zh');
+zh['nav.inbox'];                         // '收集箱'
+getTranslationsSync('zh')['nav.inbox'];  // '收集箱' once loaded
 ```
 
 ---

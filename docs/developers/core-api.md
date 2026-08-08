@@ -499,15 +499,16 @@ const merged = mergeAppData(localData: AppData, remoteData: AppData);
 
 ## Internationalization
 
-### translations
+### loadTranslations
 
-Translation strings for all supported languages.
+Load one language's translation strings. Dictionaries load on demand, so `getTranslationsSync` returns the English strings until that language has been loaded once.
 
 ```typescript
-import { translations, Language } from '@mindwtr/core';
+import { loadTranslations, getTranslationsSync } from '@mindwtr/core';
 
-translations.en['nav.inbox'];  // 'Inbox'
-translations.zh['nav.inbox'];  // '收集箱'
+const zh = await loadTranslations('zh');
+zh['nav.inbox'];                         // '收集箱'
+getTranslationsSync('zh')['nav.inbox'];  // '收集箱' once loaded
 ```
 
 ---

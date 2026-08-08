@@ -499,15 +499,16 @@ const merged = mergeAppData(localData: AppData, remoteData: AppData);
 
 ## 国际化
 
-### translations
+### loadTranslations
 
-所有支持语言的翻译字符串。
+加载某一种语言的翻译字符串。词典按需加载，因此在该语言首次加载完成之前，`getTranslationsSync` 返回英文字符串。
 
 ```typescript
-import { translations, Language } from '@mindwtr/core';
+import { loadTranslations, getTranslationsSync } from '@mindwtr/core';
 
-translations.en['nav.inbox'];  // 'Inbox'
-translations.zh['nav.inbox'];  // '收集箱'
+const zh = await loadTranslations('zh');
+zh['nav.inbox'];                         // '收集箱'
+getTranslationsSync('zh')['nav.inbox'];  // '收集箱' once loaded
 ```
 
 ---

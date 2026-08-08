@@ -499,15 +499,16 @@ const merged = mergeAppData(localData: AppData, remoteData: AppData);
 
 ## Internationalisierung
 
-### translations
+### loadTranslations
 
-Übersetzungszeichenfolgen für alle unterstützten Sprachen.
+Lädt die Übersetzungszeichenfolgen einer Sprache. Wörterbücher werden bei Bedarf geladen, daher liefert `getTranslationsSync` die englischen Zeichenfolgen, bis diese Sprache einmal geladen wurde.
 
 ```typescript
-import { translations, Language } from '@mindwtr/core';
+import { loadTranslations, getTranslationsSync } from '@mindwtr/core';
 
-translations.en['nav.inbox'];  // 'Inbox'
-translations.zh['nav.inbox'];  // '收集箱'
+const zh = await loadTranslations('zh');
+zh['nav.inbox'];                         // '收集箱'
+getTranslationsSync('zh')['nav.inbox'];  // '收集箱' once loaded
 ```
 
 ---

@@ -39,7 +39,7 @@ Mindwtr ordnet OmniFocus-Exporte mit Schwerpunkt auf GTD seinem eigenen Modell z
 - OmniFocus-Markierungen dienen als **Hinweis auf hohe Priorität**
 - einfache, einstufig verschachtelte Aufgaben können zu **Checklistenpunkten** werden
 - komplexere oder tiefer verschachtelte Aufgaben werden zu normalen Aufgaben abgeflacht; die ursprüngliche Hierarchie bleibt in Titel und Beschreibung erhalten
-- Wiederholungsregeln aus Omni Automation werden, sofern unterstützt, **Mindwtr-Wiederholungen** zugeordnet
+- Wiederholungsregeln aus Omni Automation werden, sofern unterstützt, **Mindwtr-Wiederholungen** zugeordnet; eine Regel, die Mindwtr nicht exakt abbilden kann, wird wortgetreu als Notiz an der Aufgabe übernommen, statt in eine andere Regel umgewandelt zu werden
 
 Mindwtr besitzt derzeit kein separates, OmniFocus entsprechendes Feld für geplante Daten. Wenn OmniFocus ein geplantes Datum oder eine Dauer als Text enthält, bewahrt Mindwtr diese Information in der importierten Beschreibung auf, statt sie zu verwerfen.
 

@@ -39,7 +39,7 @@ Mindwtr 以 GTD 優先的原則，將 OmniFocus 匯出資料對應至 Mindwtr �
 - OmniFocus 旗標會成為**高優先順序提示**
 - 簡單的單層巢狀任務可成為**檢查清單項目**
 - 較複雜或更深層的巢狀任務會攤平成一般任務，並在標題與描述中保留原始階層
-- 受支援時，Omni Automation 重複規則會對應至 Mindwtr 的**重複規則**
+- 受支援時，Omni Automation 重複規則會對應至 Mindwtr 的**重複規則**；Mindwtr 無法精確表示的規則會原樣保留為該任務的備註，而不會被轉換成另一條規則
 
 Mindwtr 目前沒有獨立的 OmniFocus 式預定日期欄位。當 OmniFocus 包含預定日期或工期文字時，Mindwtr 會將該資訊保留在匯入後的描述中，而不會捨棄。
 

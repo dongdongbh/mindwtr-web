@@ -24,14 +24,14 @@ Native Importer sind die beste Wahl, wenn Ihre bisherige App aufgeführt ist. Si
 
 ## Importtreue im Überblick
 
-Diese Übersicht wurde am 21. Juli 2026 mit dem Importcode aus Mindwtr-Commit [18b11a6](https://github.com/dongdongbh/Mindwtr/commit/18b11a6814fbde064df627fcaf63143c4279bd5b) abgeglichen. Die Import-Fixtures decken Todoist CSV und ZIP, TickTick 7.1 CSV und ZIP, DGT-Schema Version 3 als JSON und ZIP sowie OmniFocus CSV, UTF-16-CSV, JSON und ZIP ab. Exportformate können sich ändern. Prüfen Sie daher die Vorschau und den jeweiligen App-Leitfaden, bevor Sie den Import bestätigen.
+Diese Übersicht wurde am 8. August 2026 mit dem Importcode aus Mindwtr-Commit [28a59fc](https://github.com/dongdongbh/Mindwtr/commit/28a59fc1c54939989de7e365fff8797d6cd2d10c) abgeglichen. Die Import-Fixtures decken Todoist CSV und ZIP, TickTick 7.1 CSV und ZIP, DGT-Schema Version 3 als JSON und ZIP sowie OmniFocus CSV, UTF-16-CSV, JSON und ZIP ab. Exportformate können sich ändern. Prüfen Sie daher die Vorschau und den jeweiligen App-Leitfaden, bevor Sie den Import bestätigen.
 
 | Quelle | Beste Eingabe | Mindwtr erhält | Nach dem Import prüfen |
 | --- | --- | --- | --- |
 | [TickTick](/de/import/ticktick) | CSV- oder ZIP-Sicherung | Ordner als Bereiche, Listen als Projekte, Tags, Prioritäten, Daten, Checklisten, Abschlussstatus und unterstützte Wiederholungen | Anhänge, Darstellungsdetails, Warnungen und Zuordnung von über- und untergeordneten Aufgaben |
 | [Todoist](/de/import/todoist) | CSV- oder ZIP-Sicherung | Projekte, Abschnitte, aktive Aufgaben, Beschreibungen und Kommentare, Prioritäten, Fälligkeitsdaten, Labels und Unteraufgaben als Checklistenpunkte | Wiederholungen, die einmalig mit dem Originaltext importiert werden; übersprungene oder fehlerhafte Zeilen |
 | [DGT GTD](/de/import/dgt-gtd) | JSON- oder ZIP-Sicherung | Ordner als Bereiche, Projekte, Kontexte, Tags, Checklisten, Prioritäten, Fälligkeitsdaten, Abschlussstatus und unterstützte Wiederholungen | Nicht unterstützte Wiederholungen und übersprungene Archiveinträge |
-| [OmniFocus](/de/import/omnifocus) | Omni-Automation-JSON oder ZIP für die beste Übernahme; CSV wird unterstützt | Ordner als Bereiche, Projekte, Tags, Kontexte, Notizen, Daten, Abschlussstatus, einfache Verschachtelung und unterstützte Wiederholungen | Tiefe Verschachtelung, geplante Daten und Dauertext sowie CSV-bedingte Verluste |
+| [OmniFocus](/de/import/omnifocus) | Omni-Automation-JSON oder ZIP für die beste Übernahme; CSV wird unterstützt | Ordner als Bereiche, Projekte, Tags, Kontexte, Notizen, Daten, Abschlussstatus, einfache Verschachtelung und unterstützte Wiederholungen | Tiefe Verschachtelung, geplante Daten und Dauertext, wortgetreu als Notiz übernommene Wiederholungsregeln sowie CSV-bedingte Verluste |
 | [Apple Erinnerungen](/de/data-sync/#apple-reminders-import-ios) | Eine ausgewählte Liste unter iOS | Titel und Notizen unerledigter Erinnerungen | Daten und andere Felder, übersprungene Einträge und die optionale Löschung aus der Quelle |
 
 ## Prüfen oder zurücksetzen

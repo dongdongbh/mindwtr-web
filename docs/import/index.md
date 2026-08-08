@@ -24,14 +24,14 @@ Native importers are the best path when your old app is listed. They preserve mo
 
 ## Import Fidelity at a Glance
 
-This coverage was reviewed on July 21, 2026 against the importer code at Mindwtr commit [18b11a6](https://github.com/dongdongbh/Mindwtr/commit/18b11a6814fbde064df627fcaf63143c4279bd5b). The importer fixtures cover Todoist CSV and ZIP, TickTick 7.1 CSV and ZIP, DGT schema version 3 JSON and ZIP, and OmniFocus CSV, UTF-16 CSV, JSON, and ZIP. Export formats can change, so use the preview and the app-specific guide before confirming.
+This coverage was reviewed on August 8, 2026 against the importer code at Mindwtr commit [28a59fc](https://github.com/dongdongbh/Mindwtr/commit/28a59fc1c54939989de7e365fff8797d6cd2d10c). The importer fixtures cover Todoist CSV and ZIP, TickTick 7.1 CSV and ZIP, DGT schema version 3 JSON and ZIP, and OmniFocus CSV, UTF-16 CSV, JSON, and ZIP. Export formats can change, so use the preview and the app-specific guide before confirming.
 
 | Source | Best input | Mindwtr preserves | Check after import |
 | --- | --- | --- | --- |
 | [TickTick](/import/ticktick) | CSV or ZIP backup | Folders as areas, lists as projects, tags, priorities, dates, checklists, completion state, and supported recurrence | Attachments, presentation details, warnings, and parent-child mapping |
 | [Todoist](/import/todoist) | CSV or ZIP backup | Projects, sections, active tasks, descriptions and comments, priorities, due dates, labels, and subtasks as checklist items | Recurrence, which imports once with its original text; skipped or malformed rows |
 | [DGT GTD](/import/dgt-gtd) | JSON or ZIP backup | Folders as areas, projects, contexts, tags, checklists, priorities, due dates, completion state, and supported recurrence | Unsupported recurrence and skipped archive entries |
-| [OmniFocus](/import/omnifocus) | Omni Automation JSON or ZIP for best fidelity; CSV is supported | Folders as areas, projects, tags, contexts, notes, dates, completion state, simple nesting, and supported recurrence | Deep nesting, planned dates and duration text, and CSV-specific loss |
+| [OmniFocus](/import/omnifocus) | Omni Automation JSON or ZIP for best fidelity; CSV is supported | Folders as areas, projects, tags, contexts, notes, dates, completion state, simple nesting, and supported recurrence | Deep nesting, planned dates and duration text, repeat rules kept verbatim as a note, and CSV-specific loss |
 | [Apple Reminders](/data-sync/#apple-reminders-import-ios) | A selected list on iOS | Titles and notes from incomplete reminders | Dates and other fields, skipped items, and the optional source-deletion choice |
 
 ## Verify or Roll Back

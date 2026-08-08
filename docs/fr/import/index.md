@@ -24,14 +24,14 @@ Les outils natifs sont la meilleure solution lorsque votre ancienne application 
 
 ## Fidélité de l’import en bref
 
-Cette couverture a été vérifiée le 21 juillet 2026 avec le code d’import du commit Mindwtr [18b11a6](https://github.com/dongdongbh/Mindwtr/commit/18b11a6814fbde064df627fcaf63143c4279bd5b). Les jeux d’essai couvrent les formats CSV et ZIP de Todoist, CSV et ZIP de TickTick 7.1, JSON et ZIP du schéma DGT version 3, ainsi que CSV, CSV UTF-16, JSON et ZIP d’OmniFocus. Les formats d’export peuvent changer. Examinez l’aperçu et le guide propre à l’application avant de confirmer.
+Cette couverture a été vérifiée le 8 août 2026 avec le code d’import du commit Mindwtr [28a59fc](https://github.com/dongdongbh/Mindwtr/commit/28a59fc1c54939989de7e365fff8797d6cd2d10c). Les jeux d’essai couvrent les formats CSV et ZIP de Todoist, CSV et ZIP de TickTick 7.1, JSON et ZIP du schéma DGT version 3, ainsi que CSV, CSV UTF-16, JSON et ZIP d’OmniFocus. Les formats d’export peuvent changer. Examinez l’aperçu et le guide propre à l’application avant de confirmer.
 
 | Source | Meilleure entrée | Mindwtr préserve | À vérifier après l’import |
 | --- | --- | --- | --- |
 | [TickTick](/fr/import/ticktick) | Sauvegarde CSV ou ZIP | Dossiers sous forme de domaines, listes sous forme de projets, tags, priorités, dates, listes de contrôle, état d’achèvement et récurrences prises en charge | Pièces jointes, détails de présentation, avertissements et association entre tâches parentes et enfants |
 | [Todoist](/fr/import/todoist) | Sauvegarde CSV ou ZIP | Projets, sections, tâches actives, descriptions et commentaires, priorités, échéances, libellés et sous-tâches sous forme d’éléments de contrôle | Récurrences, importées une seule fois avec leur texte d’origine ; lignes ignorées ou incorrectes |
 | [DGT GTD](/fr/import/dgt-gtd) | Sauvegarde JSON ou ZIP | Dossiers sous forme de domaines, projets, contextes, tags, listes de contrôle, priorités, échéances, état d’achèvement et récurrences prises en charge | Récurrences non prises en charge et entrées d’archive ignorées |
-| [OmniFocus](/fr/import/omnifocus) | JSON ou ZIP Omni Automation pour une meilleure fidélité ; CSV pris en charge | Dossiers sous forme de domaines, projets, tags, contextes, notes, dates, état d’achèvement, imbrication simple et récurrences prises en charge | Imbrication profonde, dates planifiées et durée en texte, et pertes propres au CSV |
+| [OmniFocus](/fr/import/omnifocus) | JSON ou ZIP Omni Automation pour une meilleure fidélité ; CSV pris en charge | Dossiers sous forme de domaines, projets, tags, contextes, notes, dates, état d’achèvement, imbrication simple et récurrences prises en charge | Imbrication profonde, dates planifiées et durée en texte, règles de répétition conservées telles quelles en note, et pertes propres au CSV |
 | [Rappels Apple](/fr/data-sync/#importation-depuis-rappels-apple-ios) | Une liste choisie sur iOS | Titres et notes des rappels non terminés | Dates et autres champs, éléments ignorés et choix de suppression dans la source |
 
 ## Vérifier ou revenir en arrière

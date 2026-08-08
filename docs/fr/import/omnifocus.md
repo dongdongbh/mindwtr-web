@@ -39,7 +39,7 @@ Mindwtr transpose les exports OmniFocus dans son modèle en privilégiant GTD :
 - les indicateurs OmniFocus deviennent un **indice de priorité élevée** ;
 - les tâches imbriquées simples sur un seul niveau peuvent devenir des **éléments de liste de contrôle** ;
 - les imbrications plus riches ou plus profondes sont aplaties en tâches normales, avec la hiérarchie d’origine conservée dans le titre et la description ;
-- les règles de répétition Omni Automation deviennent des **récurrences Mindwtr** lorsqu’elles sont prises en charge.
+- les règles de répétition Omni Automation deviennent des **récurrences Mindwtr** lorsqu’elles sont prises en charge ; une règle que Mindwtr ne peut pas représenter exactement est conservée telle quelle en note sur la tâche au lieu d’être convertie en une autre règle.
 
 Mindwtr ne dispose pas actuellement d’un champ de date planifiée distinct comme OmniFocus. Lorsqu’OmniFocus fournit une date planifiée ou une durée sous forme de texte, Mindwtr conserve cette information dans la description importée au lieu de la supprimer.
 

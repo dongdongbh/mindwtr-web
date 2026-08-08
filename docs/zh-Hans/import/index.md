@@ -24,14 +24,14 @@ Mindwtr 可以从受支持的应用导入完整导出，但相比把所有旧任
 
 ## 导入保真度概览
 
-以下范围于 2026 年 7 月 21 日根据 Mindwtr 提交 [18b11a6](https://github.com/dongdongbh/Mindwtr/commit/18b11a6814fbde064df627fcaf63143c4279bd5b) 的导入代码核对。导入测试数据涵盖 Todoist CSV 和 ZIP、TickTick 7.1 CSV 和 ZIP、DGT 第 3 版模式的 JSON 和 ZIP，以及 OmniFocus CSV、UTF-16 CSV、JSON 和 ZIP。导出格式可能变化，请在确认前查看预览和对应应用指南。
+以下范围于 2026 年 8 月 8 日根据 Mindwtr 提交 [28a59fc](https://github.com/dongdongbh/Mindwtr/commit/28a59fc1c54939989de7e365fff8797d6cd2d10c) 的导入代码核对。导入测试数据涵盖 Todoist CSV 和 ZIP、TickTick 7.1 CSV 和 ZIP、DGT 第 3 版模式的 JSON 和 ZIP，以及 OmniFocus CSV、UTF-16 CSV、JSON 和 ZIP。导出格式可能变化，请在确认前查看预览和对应应用指南。
 
 | 来源 | 最佳输入 | Mindwtr 会保留 | 导入后检查 |
 | --- | --- | --- | --- |
 | [TickTick](/zh-Hans/import/ticktick) | CSV 或 ZIP 备份 | 文件夹转为领域、清单转为项目，以及标签、优先级、日期、检查清单、完成状态和受支持的重复规则 | 附件、显示细节、警告，以及父子任务映射 |
 | [Todoist](/zh-Hans/import/todoist) | CSV 或 ZIP 备份 | 项目、分区、活跃任务、描述和评论、优先级、截止日期、标签，以及转为检查项的子任务 | 重复规则会连同原文只导入一次；还应检查跳过或损坏的行 |
 | [DGT GTD](/zh-Hans/import/dgt-gtd) | JSON 或 ZIP 备份 | 文件夹转为领域，以及项目、情境、标签、检查清单、优先级、截止日期、完成状态和受支持的重复规则 | 不受支持的重复规则和被跳过的压缩包条目 |
-| [OmniFocus](/zh-Hans/import/omnifocus) | Omni Automation JSON 或 ZIP 保真度最佳；也支持 CSV | 文件夹转为领域，以及项目、标签、情境、笔记、日期、完成状态、简单嵌套和受支持的重复规则 | 深层嵌套、计划日期和时长文本，以及 CSV 特有的损失 |
+| [OmniFocus](/zh-Hans/import/omnifocus) | Omni Automation JSON 或 ZIP 保真度最佳；也支持 CSV | 文件夹转为领域，以及项目、标签、情境、笔记、日期、完成状态、简单嵌套和受支持的重复规则 | 深层嵌套、计划日期和时长文本、原样保留为备注的重复规则，以及 CSV 特有的损失 |
 | [Apple 提醒事项](/zh-Hans/data-sync/#apple-提醒事项导入-ios) | iOS 上选定的列表 | 未完成提醒事项的标题和备注 | 日期和其他字段、跳过的条目，以及是否删除来源的选项 |
 
 ## 验证或回退

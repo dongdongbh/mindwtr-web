@@ -24,14 +24,14 @@ Los importadores nativos son la mejor opción cuando aparece tu aplicación. Con
 
 ## Fidelidad de importación de un vistazo
 
-Esta cobertura se revisó el 21 de julio de 2026 con el código de importación del commit [18b11a6](https://github.com/dongdongbh/Mindwtr/commit/18b11a6814fbde064df627fcaf63143c4279bd5b) de Mindwtr. Los datos de prueba cubren CSV y ZIP de Todoist, CSV y ZIP de TickTick 7.1, JSON y ZIP del esquema 3 de DGT, y CSV, CSV UTF-16, JSON y ZIP de OmniFocus. Los formatos de exportación pueden cambiar. Revisa la vista previa y la guía específica antes de confirmar.
+Esta cobertura se revisó el 8 de agosto de 2026 con el código de importación del commit [28a59fc](https://github.com/dongdongbh/Mindwtr/commit/28a59fc1c54939989de7e365fff8797d6cd2d10c) de Mindwtr. Los datos de prueba cubren CSV y ZIP de Todoist, CSV y ZIP de TickTick 7.1, JSON y ZIP del esquema 3 de DGT, y CSV, CSV UTF-16, JSON y ZIP de OmniFocus. Los formatos de exportación pueden cambiar. Revisa la vista previa y la guía específica antes de confirmar.
 
 | Origen | Mejor entrada | Mindwtr conserva | Qué comprobar después |
 | --- | --- | --- | --- |
 | [TickTick](/es/import/ticktick) | Copia CSV o ZIP | Carpetas como áreas, listas como proyectos, etiquetas, prioridades, fechas, listas de comprobación, estado de finalización y recurrencias compatibles | Adjuntos, detalles de presentación, avisos y relación entre tareas principales y secundarias |
 | [Todoist](/es/import/todoist) | Copia CSV o ZIP | Proyectos, secciones, tareas activas, descripciones y comentarios, prioridades, fechas límite, etiquetas y subtareas como elementos de comprobación | Recurrencias, que se importan una vez con el texto original; filas omitidas o dañadas |
 | [DGT GTD](/es/import/dgt-gtd) | Copia JSON o ZIP | Carpetas como áreas, proyectos, contextos, etiquetas, listas de comprobación, prioridades, fechas límite, estado de finalización y recurrencias compatibles | Recurrencias no compatibles y entradas omitidas del archivo |
-| [OmniFocus](/es/import/omnifocus) | JSON o ZIP de Omni Automation para mayor fidelidad; admite CSV | Carpetas como áreas, proyectos, etiquetas, contextos, notas, fechas, estado de finalización, anidación simple y recurrencias compatibles | Anidación profunda, fechas planificadas y texto de duración, y pérdidas propias de CSV |
+| [OmniFocus](/es/import/omnifocus) | JSON o ZIP de Omni Automation para mayor fidelidad; admite CSV | Carpetas como áreas, proyectos, etiquetas, contextos, notas, fechas, estado de finalización, anidación simple y recurrencias compatibles | Anidación profunda, fechas planificadas y texto de duración, reglas de repetición conservadas literalmente como nota, y pérdidas propias de CSV |
 | [Recordatorios de Apple](/es/data-sync/#importacion-de-recordatorios-de-apple-ios) | Una lista seleccionada en iOS | Títulos y notas de recordatorios incompletos | Fechas y otros campos, elementos omitidos y la opción de borrar el origen |
 
 ## Verificar o deshacer

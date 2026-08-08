@@ -39,7 +39,7 @@ Mindwtr maps OmniFocus exports into Mindwtr’s model with a GTD-first bias:
 - OmniFocus flags become a **high-priority hint**
 - Simple one-level nested tasks can become **checklist items**
 - Richer or deeper nested tasks are flattened into normal tasks with the original hierarchy preserved in the title and description
-- Omni Automation repeat rules are mapped into **Mindwtr recurrence** when supported
+- Omni Automation repeat rules are mapped into **Mindwtr recurrence** when supported; a rule Mindwtr cannot represent exactly is kept verbatim as a note on the task instead of being converted into a different rule
 
 Mindwtr does not currently have a separate OmniFocus-style planned date field. When OmniFocus includes a planned date or duration text, Mindwtr keeps that information in the imported description instead of dropping it.
 

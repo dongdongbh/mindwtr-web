@@ -39,7 +39,7 @@ Mindwtr 以 GTD 优先的方式将 OmniFocus 导出映射到自身模型：
 - OmniFocus 旗标成为**高优先级提示**
 - 简单的单层嵌套任务可成为**检查清单项目**
 - 更丰富或更深的嵌套任务会展开为普通任务，并在标题和描述中保留原始层级
-- 支持时，Omni Automation 重复规则会映射为 **Mindwtr 中的重复规则**
+- 支持时，Omni Automation 重复规则会映射为 **Mindwtr 中的重复规则**；Mindwtr 无法精确表示的规则会原样保留为该任务的备注，而不会被转换成另一条规则
 
 Mindwtr 目前没有独立的 OmniFocus 式计划日期字段。当 OmniFocus 包含计划日期或时长文字时，Mindwtr 会把这些信息保存在导入后的描述中，而不是丢弃。
 

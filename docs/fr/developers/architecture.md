@@ -93,8 +93,9 @@ Le package du cœur contient toute la logique métier partagée :
 | `store.ts`          | Store d’état Zustand avec toutes les actions          |
 | `types.ts`          | Interfaces TypeScript (Task, Project, etc.)   |
 | `i18n/i18n-loader.ts` | Chargement différé des traductions                    |
-| `i18n/i18n-translate.ts` | Utilitaires de traduction au moment du build          |
+| `i18n/i18n-locales.ts` | Un descripteur par langue : chargeurs, seuil de couverture |
 | `i18n/locales/*.ts` | Locale anglaise de base et surcharges propres à chaque langue |
+| `i18n/starter-seed-strings.ts` | Chaînes générées du jeu de démarrage (ne pas modifier à la main) |
 | `contexts.ts`       | Contextes et étiquettes prédéfinis                      |
 | `quick-add.ts`      | Analyseur de tâches en langage naturel                  |
 | `recurrence.ts`     | Logique des tâches récurrentes (RFC 5545 partiel)       |
@@ -366,7 +367,7 @@ Les traductions sont réparties dans le dossier `packages/core/src/i18n/` :
 
 ```typescript
 // packages/core/src/i18n/i18n-loader.ts
-// packages/core/src/i18n/i18n-translations.ts
+// packages/core/src/i18n/i18n-locales.ts
 // packages/core/src/i18n/locales/*.ts
 ```
 

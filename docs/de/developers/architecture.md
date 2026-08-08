@@ -93,8 +93,9 @@ Das Core-Paket enthält die gesamte gemeinsame Geschäftslogik:
 | `store.ts`          | Zustand-State-Store mit allen Aktionen          |
 | `types.ts`          | TypeScript-Schnittstellen (Task, Project usw.)   |
 | `i18n/i18n-loader.ts` | Verzögertes Laden von Übersetzungen                    |
-| `i18n/i18n-translate.ts` | Übersetzungshilfen zur Build-Zeit          |
+| `i18n/i18n-locales.ts` | Ein Deskriptor pro Sprache: Loader, Abdeckungsuntergrenze |
 | `i18n/locales/*.ts` | Englisches Basis-Gebietsschema plus sprachspezifische Überschreibungen |
+| `i18n/starter-seed-strings.ts` | Generierte Startdaten-Zeichenfolgen (nicht von Hand bearbeiten) |
 | `contexts.ts`       | Voreingestellte Kontexte und Tags                      |
 | `quick-add.ts`      | Parser für Aufgaben in natürlicher Sprache                  |
 | `recurrence.ts`     | Logik für wiederkehrende Aufgaben (RFC 5545 teilweise)       |
@@ -367,7 +368,7 @@ Testabdeckung und Release-Gates werden separat in der [Teststrategie](/de/develo
 
 ```typescript
 // packages/core/src/i18n/i18n-loader.ts
-// packages/core/src/i18n/i18n-translations.ts
+// packages/core/src/i18n/i18n-locales.ts
 // packages/core/src/i18n/locales/*.ts
 ```
 

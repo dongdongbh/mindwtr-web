@@ -93,8 +93,9 @@ El paquete principal contiene toda la lógica de negocio compartida:
 | `store.ts`          | Almacén de estado Zustand con todas las acciones |
 | `types.ts`          | Interfaces TypeScript (Task, Project, etc.)     |
 | `i18n/i18n-loader.ts` | Carga diferida de traducciones                |
-| `i18n/i18n-translate.ts` | Funciones auxiliares de traducción en tiempo de compilación |
+| `i18n/i18n-locales.ts` | Un descriptor por idioma: cargadores y mínimo de cobertura |
 | `i18n/locales/*.ts` | Configuración regional base en inglés y sobrescrituras por idioma |
+| `i18n/starter-seed-strings.ts` | Cadenas generadas de la semilla inicial (no editar a mano) |
 | `contexts.ts`       | Contextos y etiquetas predefinidos              |
 | `quick-add.ts`      | Analizador de tareas en lenguaje natural        |
 | `recurrence.ts`     | Lógica de tareas recurrentes (RFC 5545 parcial) |
@@ -366,7 +367,7 @@ Las traducciones se distribuyen dentro de la carpeta `packages/core/src/i18n/`:
 
 ```typescript
 // packages/core/src/i18n/i18n-loader.ts
-// packages/core/src/i18n/i18n-translations.ts
+// packages/core/src/i18n/i18n-locales.ts
 // packages/core/src/i18n/locales/*.ts
 ```
 

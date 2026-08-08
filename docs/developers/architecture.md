@@ -93,8 +93,9 @@ The core package contains all shared business logic:
 | `store.ts`          | Zustand state store with all actions          |
 | `types.ts`          | TypeScript interfaces (Task, Project, etc.)   |
 | `i18n/i18n-loader.ts` | Lazy translation loading                    |
-| `i18n/i18n-translate.ts` | Build-time translation helpers          |
+| `i18n/i18n-locales.ts` | One descriptor per locale: loaders, coverage floor |
 | `i18n/locales/*.ts` | English base locale plus per-language overrides |
+| `i18n/starter-seed-strings.ts` | Generated first-run seed strings (do not hand-edit) |
 | `contexts.ts`       | Preset contexts and tags                      |
 | `quick-add.ts`      | Natural language task parser                  |
 | `recurrence.ts`     | Recurring task logic (RFC 5545 partial)       |
@@ -366,7 +367,7 @@ Translations are split across the `packages/core/src/i18n/` folder:
 
 ```typescript
 // packages/core/src/i18n/i18n-loader.ts
-// packages/core/src/i18n/i18n-translations.ts
+// packages/core/src/i18n/i18n-locales.ts
 // packages/core/src/i18n/locales/*.ts
 ```
 

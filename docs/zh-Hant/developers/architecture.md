@@ -93,8 +93,9 @@ Mindwtr/
 | `store.ts` | 含所有動作的 Zustand 狀態儲存區 |
 | `types.ts` | TypeScript 介面（Task、Project 等） |
 | `i18n/i18n-loader.ts` | 延遲載入翻譯 |
-| `i18n/i18n-translate.ts` | 建置時翻譯輔助函式 |
+| `i18n/i18n-locales.ts` | 每種語言一筆描述項：載入器與覆蓋率下限 |
 | `i18n/locales/*.ts` | 英文基礎語系與各語言覆寫 |
+| `i18n/starter-seed-strings.ts` | 自動產生的首次啟動種子文案（請勿手動編輯） |
 | `contexts.ts` | 預設情境與標籤 |
 | `quick-add.ts` | 自然語言任務解析器 |
 | `recurrence.ts` | 重複任務邏輯（部分 RFC 5545） |
@@ -367,7 +368,7 @@ Mindwtr 目前刻意以完整快照進行同步傳輸。這不是缺少差異系
 
 ```typescript
 // packages/core/src/i18n/i18n-loader.ts
-// packages/core/src/i18n/i18n-translations.ts
+// packages/core/src/i18n/i18n-locales.ts
 // packages/core/src/i18n/locales/*.ts
 ```
 

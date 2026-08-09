@@ -227,7 +227,7 @@ git push origin main --tags
 
 ## Windows 程式碼簽署
 
-Windows 建置透過 SignPath Foundation 進行 Authenticode 簽署。`.github/workflows/release-windows.yml` 中的簽署區塊每次發布會執行兩輪簽署，而且順序很重要：
+發布工作流程已準備好透過 SignPath Foundation 對 Windows 建置進行 Authenticode 簽署，但目前尚無已發布的下載被確認帶有簽署。待發布憑證與 SignPath 成品設定就緒後，`.github/workflows/release-windows.yml` 中的簽署區塊每次發布會執行兩輪簽署，而且順序很重要：
 
 1. `tauri build --no-bundle` 只產生獨立的 `mindwtr.exe`，並先對它簽署。NSIS 安裝程式會內嵌這個二進位檔的副本，因此在簽署前就打包的安裝程式，會把未簽署的 exe 裝到每台機器上。已簽署的 exe 同時供可攜版 ZIP 與 MSIX 版面配置使用。
 2. 接著 `tauri bundle` 會圍繞已簽署的 exe 建置安裝程式，再於第二輪對 `mindwtr-setup.exe` 簽署。

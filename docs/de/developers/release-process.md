@@ -226,7 +226,7 @@ git push origin main --tags
 
 ## Windows-Codesignierung
 
-Windows-Builds werden über SignPath Foundation mit Authenticode signiert. Der Signierblock in `.github/workflows/release-windows.yml` führt pro Release zwei Signierrunden aus, und die Reihenfolge ist entscheidend:
+Der Release-Workflow ist für die Authenticode-Signierung von Windows-Builds über SignPath Foundation vorbereitet; derzeit ist jedoch kein veröffentlichter Download als signiert bestätigt. Sobald das Release-Zertifikat und die SignPath-Artefaktkonfiguration bereit sind, führt der Signierblock in `.github/workflows/release-windows.yml` pro Release zwei Signierrunden aus, und die Reihenfolge ist entscheidend:
 
 1. `tauri build --no-bundle` hält bei der losen `mindwtr.exe` an, die zuerst signiert wird. Das NSIS-Installationsprogramm bettet eine eigene Kopie dieser Binärdatei ein; ein vor dem Signieren gebündeltes Installationsprogramm würde also auf jedem Rechner eine unsignierte EXE ablegen. Die signierte EXE fließt außerdem in das portable ZIP und das MSIX-Layout ein.
 2. `tauri bundle` baut anschließend das Installationsprogramm um die signierte EXE herum, und `mindwtr-setup.exe` wird in einer zweiten Runde signiert.

@@ -227,7 +227,7 @@ git push origin main --tags
 
 ## Signature de code Windows
 
-Les versions Windows sont signées avec Authenticode via SignPath Foundation. Le bloc de signature de `.github/workflows/release-windows.yml` exécute deux tours de signature par publication, et l'ordre compte :
+Le workflow de publication est prêt à signer les versions Windows avec Authenticode via SignPath Foundation, mais aucun téléchargement publié n'est actuellement confirmé comme signé. Lorsque le certificat de publication et la configuration des artefacts SignPath seront prêts, le bloc de signature de `.github/workflows/release-windows.yml` exécutera deux tours de signature par publication, et l'ordre compte :
 
 1. `tauri build --no-bundle` s'arrête au `mindwtr.exe` isolé, qui est signé en premier. L'installateur NSIS intègre sa propre copie de ce binaire : un installateur empaqueté avant la signature déposerait donc un exe non signé sur chaque machine. L'exe signé alimente aussi le ZIP portable et la disposition MSIX.
 2. `tauri bundle` construit ensuite l'installateur autour de l'exe signé, et `mindwtr-setup.exe` est signé lors d'un second tour.

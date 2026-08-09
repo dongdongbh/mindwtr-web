@@ -227,7 +227,7 @@ git push origin main --tags
 
 ## Firma de código en Windows
 
-Las compilaciones de Windows se firman con Authenticode a través de SignPath Foundation. El bloque de firma de `.github/workflows/release-windows.yml` ejecuta dos rondas de firma por lanzamiento, y el orden importa:
+El flujo de lanzamiento está preparado para firmar las compilaciones de Windows con Authenticode a través de SignPath Foundation, pero actualmente ninguna descarga publicada está confirmada como firmada. Cuando estén listos el certificado de lanzamiento y la configuración de artefactos de SignPath, el bloque de firma de `.github/workflows/release-windows.yml` ejecutará dos rondas de firma por lanzamiento, y el orden importa:
 
 1. `tauri build --no-bundle` se detiene en el `mindwtr.exe` suelto, que se firma primero. El instalador NSIS incrusta su propia copia de ese binario, así que un instalador empaquetado antes de firmar dejaría un exe sin firmar en cada equipo. El exe firmado también alimenta el ZIP portátil y el diseño MSIX.
 2. `tauri bundle` construye después el instalador alrededor del exe firmado, y `mindwtr-setup.exe` se firma en una segunda ronda.

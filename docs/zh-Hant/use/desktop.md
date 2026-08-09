@@ -217,7 +217,7 @@ Mindwtr 可在「行事曆」檢視疊加外部行事曆。macOS 可透過 Event
 
 使用運算子快速找到任何內容。
 
-**開啟：**按 `/`、`Ctrl/Cmd + K`，或按一下搜尋圖示。
+**開啟**：按 `/`、`Ctrl/Cmd + K`，或按一下搜尋圖示。
 
 搜尋文字可以留空。開啟**篩選**，可依狀態、範圍、領域、截止日期、地點、情境或標籤列出符合項目；若要查看已完成項目，請選擇**已完成**與**已歸檔**（或**包含已完成及已歸檔任務**）。
 
@@ -254,7 +254,7 @@ Mindwtr 可在「行事曆」檢視疊加外部行事曆。macOS 可透過 Event
 3. 為搜尋命名（例如「即將到期的工作任務」）
 4. 從側邊欄的**已儲存搜尋**區段開啟
 
-**刪除已儲存搜尋：**開啟已儲存搜尋，再按一下垃圾桶圖示。
+**刪除已儲存搜尋**：開啟已儲存搜尋，再按一下垃圾桶圖示。
 
 「已儲存搜尋」與「專注」中的**已儲存篩選條件**彼此獨立。「專注」的已儲存篩選條件會以篩選條件方式同步，並從「專注」篩選控制項編輯。
 
@@ -278,7 +278,7 @@ Mindwtr 可在「行事曆」檢視疊加外部行事曆。macOS 可透過 Event
 - Windows：預設停用，以免 Mindwtr 默默搶走其他應用程式的按鍵組合；啟用時建議選擇 `Ctrl+Alt+M`
 - 避免舊版 `Ctrl+Shift+A` 選項：Chrome、Word 與 Excel 都會使用，而全域快速鍵會在整個系統中覆寫它們
 
-**Flatpak/Wayland 注意事項：**部分 compositor 不允許應用程式註冊全域快速鍵。此時請改為將桌面快速鍵綁定至 `flatpak run tech.dongdongbh.mindwtr --quick-add`。
+**Flatpak/Wayland 注意事項**：部分 compositor 不允許應用程式註冊全域快速鍵。此時請改為將桌面快速鍵綁定至 `flatpak run tech.dongdongbh.mindwtr --quick-add`。
 
 ### 系統匣圖示
 
@@ -317,7 +317,7 @@ Mindwtr 會在新增任務時解析自然語言：
 | `/note:text`      | `/note:call back`            | 加入描述                                  |
 | `/status`         | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | 設定狀態 |
 
-**日期格式：**today、tomorrow、friday、next week、in 3 days、2025-01-15、26.06.、26.06.2026
+**日期格式**：today、tomorrow、friday、next week、in 3 days、2025-01-15、26.06.、26.06.2026
 
 輸入結尾的日期或時間片語會成為截止日期：輸入 `Grab a coffee with Marta Jun 23 6pm` 會建立截止於 6 月 23 日 18:00 的任務。識別只讀取文字結尾，因此像 "Review June report" 這樣的標題不會受影響。預設情況下標題會完整保留你輸入的文字；開啟**整理快速新增文字**（設定 → GTD）後會同時移除被識別的日期文字，標題變為 "Grab a coffee with Marta"。關閉**識別自然語言日期**（設定 → GTD，預設開啟）後，日期片語保留為一般文字，不會設定日期。明確標記（如 `/due:friday`）始終有效，並優先於自動識別。這兩項設定都會在裝置間同步。
 

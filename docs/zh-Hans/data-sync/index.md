@@ -105,12 +105,12 @@ Mindwtr 直接支持五种同步后端：
 
 ## 同步建议
 
-- **最简单的即插即用云同步：**受支持构建中的 Dropbox OAuth。
-- **最佳纯 Apple 设置：**受支持 Apple 构建中的原生 iCloud / CloudKit。
-- **最佳自带存储远程同步：**WebDAV 或 Mindwtr Cloud（自托管）。应用控制同步周期并逐项合并。
-- **Android + Windows、不用云账号：**通过自家 Wi-Fi 使用文件同步 + Syncthing——按照下文的 Syncthing 设置顺序操作，并在第二台设备打开 Mindwtr 之前，让两台设备先完成首次 Syncthing 同步。
-- **文件同步（Syncthing/Dropbox 等）：**可以工作，Mindwtr 每次读取文件时仍会逐项合并——但文件夹工具按自己的节奏复制 `data.json`；若两台设备在其收敛前都写入，**由该工具在整文件层面裁决冲突**（最新文件获胜，或分叉出 `sync-conflict` 副本），因此某一方的版本可能在 Mindwtr 合并之前就被搁置。
-- **文件同步最佳实践：**避免同时在两台设备上编辑，并等待同步完成后再在另一台设备上打开应用。如果出现冲突，请保留最新的 `data.json`，并删除 `data.json.sync-conflict-*` 副本。
+- **最简单的即插即用云同步**：受支持构建中的 Dropbox OAuth。
+- **最佳纯 Apple 设置**：受支持 Apple 构建中的原生 iCloud / CloudKit。
+- **最佳自带存储远程同步**：WebDAV 或 Mindwtr Cloud（自托管）。应用控制同步周期并逐项合并。
+- **Android + Windows、不用云账号**：通过自家 Wi-Fi 使用文件同步 + Syncthing——按照下文的 Syncthing 设置顺序操作，并在第二台设备打开 Mindwtr 之前，让两台设备先完成首次 Syncthing 同步。
+- **文件同步（Syncthing/Dropbox 等）**：可以工作，Mindwtr 每次读取文件时仍会逐项合并——但文件夹工具按自己的节奏复制 `data.json`；若两台设备在其收敛前都写入，**由该工具在整文件层面裁决冲突**（最新文件获胜，或分叉出 `sync-conflict` 副本），因此某一方的版本可能在 Mindwtr 合并之前就被搁置。
+- **文件同步最佳实践**：避免同时在两台设备上编辑，并等待同步完成后再在另一台设备上打开应用。如果出现冲突，请保留最新的 `data.json`，并删除 `data.json.sync-conflict-*` 副本。
 
 ### 桌面端代理
 
@@ -194,7 +194,7 @@ Syncthing 与 Mindwtr 配合良好，但初始设置顺序很重要。
 2. 将 `attachments (1)`/`attachments (2)` 中的文件移入 `attachments/`。
 3. 删除重复文件夹，让 Syncthing 收敛。
 
-**重要提示：**不要直接同步 `~/.local/share/mindwtr`。移动端存储位于沙盒中。请改用文件同步文件夹 + `data.json`。
+**重要提示**：不要直接同步 `~/.local/share/mindwtr`。移动端存储位于沙盒中。请改用文件同步文件夹 + `data.json`。
 如果你已经同步了应用数据目录，请切换到专用同步文件夹，并在设置中重新选择它。
 
 #### Android 上的 Google Drive（文件同步）和 Dropbox 文件同步回退方案
@@ -353,9 +353,9 @@ Mindwtr 会在启动时和数据更改时自动同步。
 
 如果目标文件夹路径尚不存在，Mindwtr 会尝试在上传 `data.json` 前自动创建缺失的父集合。
 
-> **Linux 说明：**如果你的桌面会话未提供 Secret Service 密钥环（例如 `org.freedesktop.secrets` 不可用），Mindwtr 会回退到 `~/.config/mindwtr/secrets.toml` 中的本地密钥存储。
+> **Linux 说明**：如果你的桌面会话未提供 Secret Service 密钥环（例如 `org.freedesktop.secrets` 不可用），Mindwtr 会回退到 `~/.config/mindwtr/secrets.toml` 中的本地密钥存储。
 
-> **提示：**对于 Nextcloud，URL 格式为：
+> **提示**：对于 Nextcloud，URL 格式为：
 > `https://your-server.com/remote.php/dav/files/USERNAME/path/to/folder`
 >
 > 支持带显式端口的 URL（例如 `https://example.com:5000/mindwtr`）。

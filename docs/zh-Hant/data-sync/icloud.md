@@ -4,10 +4,10 @@
 
 ## 可用平台
 
-- **iPhone / iPad：**可在**設定 → 同步**中使用原生 `iCloud` 同步後端
-- **Android：**不支援
-- **Windows / Linux：**不支援
-- **macOS 桌面版：**可在**設定 → 同步**中使用原生 `iCloud` 同步後端
+- **iPhone / iPad**：可在**設定 → 同步**中使用原生 `iCloud` 同步後端
+- **Android**：不支援
+- **Windows / Linux**：不支援
+- **macOS 桌面版**：可在**設定 → 同步**中使用原生 `iCloud` 同步後端
 
 ## 同步內容
 

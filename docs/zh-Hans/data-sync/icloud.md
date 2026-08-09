@@ -4,10 +4,10 @@
 
 ## 可用平台
 
-- **iPhone / iPad：**在**设置 → 同步**中通过原生 `iCloud` 同步后端使用
-- **Android：**不支持
-- **Windows / Linux：**不支持
-- **macOS 桌面端：**在**设置 → 同步**中通过原生 `iCloud` 同步后端使用
+- **iPhone / iPad**：在**设置 → 同步**中通过原生 `iCloud` 同步后端使用
+- **Android**：不支持
+- **Windows / Linux**：不支持
+- **macOS 桌面端**：在**设置 → 同步**中通过原生 `iCloud` 同步后端使用
 
 ## 同步内容
 

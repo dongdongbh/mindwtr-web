@@ -2,10 +2,10 @@
 
 Mindwtr 支持两个方向的日历集成：将外部日历读入规划界面，以及在平台提供可写设备日历时，将 Mindwtr 中的任务推送到其中。
 
-- **移动端（iOS/Android）：**系统已提供的设备日历、ICS 订阅 URL，以及从 Mindwtr 到设备日历的单向推送
-- **桌面端（macOS）：**通过 EventKit 读取 Apple Calendar 并单向推送任务，另支持 ICS 订阅 URL
-- **桌面端（Linux）：**通过 Evolution Data Server 读取系统日历并单向推送任务，另支持 ICS 订阅 URL
-- **桌面端（Windows）和 Web：**ICS 订阅 URL
+- **移动端（iOS/Android）**：系统已提供的设备日历、ICS 订阅 URL，以及从 Mindwtr 到设备日历的单向推送
+- **桌面端（macOS）**：通过 EventKit 读取 Apple Calendar 并单向推送任务，另支持 ICS 订阅 URL
+- **桌面端（Linux）**：通过 Evolution Data Server 读取系统日历并单向推送任务，另支持 ICS 订阅 URL
+- **桌面端（Windows）和 Web**：ICS 订阅 URL
 
 ## 概念
 
@@ -177,8 +177,8 @@ Mindwtr 中的重复任务会生成为任务实例，而不是展开成日历系
 
 在移动端，Mindwtr 可以从设备日历数据库读取日历：
 
-- **Android：**通过 Android 日历提供程序读取。如果某个同步应用没有通过该提供程序提供日历，Mindwtr 就无法看到它们。
-- **iOS：**通过基于 EventKit 的系统日历读取，例如在 iOS 设置中启用后的 iCloud、Google、Exchange 和 Outlook。
+- **Android**：通过 Android 日历提供程序读取。如果某个同步应用没有通过该提供程序提供日历，Mindwtr 就无法看到它们。
+- **iOS**：通过基于 EventKit 的系统日历读取，例如在 iOS 设置中启用后的 iCloud、Google、Exchange 和 Outlook。
 
 设置：
 

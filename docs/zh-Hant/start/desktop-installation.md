@@ -127,7 +127,7 @@ chmod +x Mindwtr-*.AppImage
 ./Mindwtr-*.AppImage
 ```
 
-> **提示：**使用 [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) 可獲得更好的桌面整合。
+> **提示**：使用 [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) 可獲得更好的桌面整合。
 
 ### 其他發行版
 

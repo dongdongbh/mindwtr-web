@@ -11,11 +11,11 @@
 
 ## 可用環境
 
-- **桌面版（官方組建）：**支援
-- **行動版（官方組建）：**支援
-- **Expo Go：**不支援 Dropbox OAuth
-- **FOSS 組建：**可能停用 Dropbox 同步
-- **Docker/PWA 網頁組建：**不支援；請改用原生桌面／行動版、自行託管同步或 WebDAV
+- **桌面版（官方組建）**：支援
+- **行動版（官方組建）**：支援
+- **Expo Go**：不支援 Dropbox OAuth
+- **FOSS 組建**：可能停用 Dropbox 同步
+- **Docker/PWA 網頁組建**：不支援；請改用原生桌面／行動版、自行託管同步或 WebDAV
 
 若組建已停用 Dropbox，或你使用 Docker 提供的 PWA，請改用[資料與同步](/zh-Hant/data-sync/)中的檔案同步、[雲端部署](/zh-Hant/data-sync/cloud-deployment)中的自行託管方式，或 WebDAV。
 

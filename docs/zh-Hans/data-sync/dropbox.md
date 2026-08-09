@@ -11,11 +11,11 @@
 
 ## 可用平台
 
-- **桌面端（官方构建）：**支持
-- **移动端（官方构建）：**支持
-- **Expo Go：**不支持 Dropbox OAuth
-- **FOSS 构建：**可能禁用 Dropbox 同步
-- **Docker/PWA Web 构建：**不支持；请改用原生桌面端/移动端构建、自托管同步或 WebDAV
+- **桌面端（官方构建）**：支持
+- **移动端（官方构建）**：支持
+- **Expo Go**：不支持 Dropbox OAuth
+- **FOSS 构建**：可能禁用 Dropbox 同步
+- **Docker/PWA Web 构建**：不支持；请改用原生桌面端/移动端构建、自托管同步或 WebDAV
 
 如果你的构建禁用了 Dropbox，或正在使用 Docker 提供的 PWA，请改用[数据与同步](/zh-Hans/data-sync/)（文件同步）、[云端部署](/zh-Hans/data-sync/cloud-deployment)（自托管）或 WebDAV。
 

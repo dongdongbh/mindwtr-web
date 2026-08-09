@@ -94,7 +94,7 @@ Mindwtr 直接支援五種同步後端：
 
 - **直接支援的供應商／協定**：支援的 Apple 組建上的原生 iCloud / CloudKit、WebDAV 伺服器、Mindwtr 自行託管端點，以及 Dropbox OAuth（支援的組建）。
 - **間接支援的供應商**：透過檔案同步使用 iCloud Drive、Google Drive、OneDrive、Syncthing、網路分享與 Dropbox。
-- **重要：**原生 iCloud 同步**僅限 Apple**。Android、Windows 與 Linux 應改用檔案同步、WebDAV、Mindwtr Cloud 或 Dropbox。
+- **重要**：原生 iCloud 同步**僅限 Apple**。Android、Windows 與 Linux 應改用檔案同步、WebDAV、Mindwtr Cloud 或 Dropbox。
 
 **快速建議：**
 - **Dropbox**：支援的組建中最簡單的跨平台雲端選項；透過 OAuth 連接後，Mindwtr 會使用其 Dropbox App Folder。
@@ -105,12 +105,12 @@ Mindwtr 直接支援五種同步後端：
 
 ## 同步建議
 
-- **最簡單即用的雲端同步：**支援組建中的 Dropbox OAuth。
-- **最佳純 Apple 設定：**支援 Apple 組建中的原生 iCloud / CloudKit。
-- **最佳 BYOS 遠端同步：**WebDAV 或 Mindwtr Cloud（自行託管）。應用程式控制同步週期並逐項合併。
-- **Android + Windows、不使用雲端帳號：**透過自家 Wi-Fi 使用檔案同步 + Syncthing——依照下文的 Syncthing 設定順序操作，並在第二台裝置開啟 Mindwtr 之前，讓兩台裝置先完成首次 Syncthing 同步。
-- **檔案同步（Syncthing/Dropbox 等）：**可以運作，Mindwtr 每次讀取檔案時仍會逐項合併——但資料夾工具依自己的節奏複製 `data.json`；若兩部裝置在其收斂前都寫入，**由該工具在整份檔案層級裁決衝突**（最新檔案獲勝，或分叉出 `sync-conflict` 副本），因此其中一方的版本可能在 Mindwtr 合併之前就被擱置。
-- **檔案同步最佳做法：**避免同時在兩部裝置編輯；開啟另一部裝置上的應用程式前，請等待同步完成。若發生衝突，保留最新的 `data.json`，並刪除 `data.json.sync-conflict-*` 副本。
+- **最簡單即用的雲端同步**：支援組建中的 Dropbox OAuth。
+- **最佳純 Apple 設定**：支援 Apple 組建中的原生 iCloud / CloudKit。
+- **最佳 BYOS 遠端同步**：WebDAV 或 Mindwtr Cloud（自行託管）。應用程式控制同步週期並逐項合併。
+- **Android + Windows、不使用雲端帳號**：透過自家 Wi-Fi 使用檔案同步 + Syncthing——依照下文的 Syncthing 設定順序操作，並在第二台裝置開啟 Mindwtr 之前，讓兩台裝置先完成首次 Syncthing 同步。
+- **檔案同步（Syncthing/Dropbox 等）**：可以運作，Mindwtr 每次讀取檔案時仍會逐項合併——但資料夾工具依自己的節奏複製 `data.json`；若兩部裝置在其收斂前都寫入，**由該工具在整份檔案層級裁決衝突**（最新檔案獲勝，或分叉出 `sync-conflict` 副本），因此其中一方的版本可能在 Mindwtr 合併之前就被擱置。
+- **檔案同步最佳做法**：避免同時在兩部裝置編輯；開啟另一部裝置上的應用程式前，請等待同步完成。若發生衝突，保留最新的 `data.json`，並刪除 `data.json.sync-conflict-*` 副本。
 
 ### 桌面版 Proxy
 
@@ -194,7 +194,7 @@ Syncthing 很適合搭配 Mindwtr，但初始設定順序很重要。
 2. 將 `attachments (1)`／`attachments (2)` 中的檔案移至 `attachments/`。
 3. 刪除重複資料夾，讓 Syncthing 收斂。
 
-**重要：**不要直接同步 `~/.local/share/mindwtr`。行動版儲存空間受沙盒限制。請改用檔案同步資料夾 + `data.json`。
+**重要**：不要直接同步 `~/.local/share/mindwtr`。行動版儲存空間受沙盒限制。請改用檔案同步資料夾 + `data.json`。
 如果已同步應用程式資料目錄，請切換至專用同步資料夾，並在設定中重新選取。
 
 #### Android 上的 Google Drive（檔案同步）與 Dropbox 檔案同步備援
@@ -353,9 +353,9 @@ Mindwtr 會在啟動及資料變更時自動同步。
 
 若目標資料夾路徑尚不存在，Mindwtr 會在上傳 `data.json` 前嘗試自動建立缺少的父 collection。
 
-> **Linux 注意事項：**如果桌面工作階段沒有提供 Secret Service keyring（例如無法使用 `org.freedesktop.secrets`），Mindwtr 會退回使用 `~/.config/mindwtr/secrets.toml` 中的本機密鑰儲存空間。
+> **Linux 注意事項**：如果桌面工作階段沒有提供 Secret Service keyring（例如無法使用 `org.freedesktop.secrets`），Mindwtr 會退回使用 `~/.config/mindwtr/secrets.toml` 中的本機密鑰儲存空間。
 
-> **提示：**Nextcloud 的 URL 格式為：
+> **提示**：Nextcloud 的 URL 格式為：
 > `https://your-server.com/remote.php/dav/files/USERNAME/path/to/folder`
 >
 > 支援明確指定連接埠的 URL（例如 `https://example.com:5000/mindwtr`）。

@@ -32,8 +32,8 @@ Mindwtr 为运行以下服务提供官方 Docker 支持：
    ```
 
 4. **访问服务**：
-   - **PWA（Web 应用）：**在浏览器中打开 `http://localhost:5173`。
-   - **云端健康检查：**打开 `http://localhost:8787/health`。
+   - **PWA（Web 应用）**：在浏览器中打开 `http://localhost:5173`。
+   - **云端健康检查**：打开 `http://localhost:8787/health`。
    - **用于本地测试的自托管 URL：**`http://localhost:8787`
    - **REST API 基础 URL：**`http://localhost:8787/v1`
 
@@ -232,5 +232,5 @@ docker build -f docker/cloud/Dockerfile -t mindwtr-cloud .
 
 ## 技术说明
 
-- **PWA 服务：**Web 应用使用客户端渲染。Nginx 容器配置了 `try_files`，将所有请求重定向至 `index.html`，避免刷新页面时出现 404 错误。
-- **基础镜像：**构建使用 Bun（固定为 v1.3），并包含 `better-sqlite3` 所需的 C++20 标志。
+- **PWA 服务**：Web 应用使用客户端渲染。Nginx 容器配置了 `try_files`，将所有请求重定向至 `index.html`，避免刷新页面时出现 404 错误。
+- **基础镜像**：构建使用 Bun（固定为 v1.3），并包含 `better-sqlite3` 所需的 C++20 标志。

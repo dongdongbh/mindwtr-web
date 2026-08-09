@@ -70,10 +70,10 @@ TestFlight 测试版也可通过 https://testflight.apple.com/join/7SMJCTSR 获�
 
 ### 选项
 
-1. **App Store（推荐）：**安装稳定版
-2. **TestFlight：**安装最新 iOS 测试版构建
-3. **模拟器构建：**源代码中提供，用于开发
-4. **自行构建：**使用 Xcode 自行构建并签名（设备签名需要 Apple Developer 账户）
+1. **App Store（推荐）**：安装稳定版
+2. **TestFlight**：安装最新 iOS 测试版构建
+3. **模拟器构建**：源代码中提供，用于开发
+4. **自行构建**：使用 Xcode 自行构建并签名（设备签名需要 Apple Developer 账户）
 
 不过，在 App Store 上维护 iOS 版本需要每年支付一笔不小的费用（参阅 [Apple Developer Program](https://developer.apple.com/support/enrollment/)），目前由开发者个人承担。
 
@@ -114,7 +114,7 @@ open ios/*.xcworkspace
 2. 覆盖现有应用安装
 3. 你的数据会予以保留
 
-> **提示：**在应用中前往**设置 → 关于 → 检查更新**，可查看是否有新版本。
+> **提示**：在应用中前往**设置 → 关于 → 检查更新**，可查看是否有新版本。
 
 ---
 
@@ -145,7 +145,7 @@ open ios/*.xcworkspace
 2. 点按**存储 → 清除数据**
 3. 重新打开应用
 
-> **注意：**这会删除所有本地数据。请从同步或备份恢复。
+> **注意**：这会删除所有本地数据。请从同步或备份恢复。
 
 ### 同步无法工作
 

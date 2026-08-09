@@ -21,10 +21,10 @@
 
 服务提供方说明：
 
-- **Gmail：**启用两步验证，再创建[应用专用密码](https://myaccount.google.com/apppasswords)；服务器为 `imap.gmail.com`
-- **iCloud Mail：**创建[应用专用密码](https://support.apple.com/102654)；服务器为 `imap.mail.me.com`
-- **Fastmail 与标准 IMAP 服务器：**创建应用专用密码；使用服务提供方的 IMAP 主机
-- **Outlook.com 与 Microsoft 365：**Microsoft 已关闭基于密码的 IMAP，请改用 [Power Automate 方案](#outlook-与-microsoft-365-power-automate)
+- **Gmail**：启用两步验证，再创建[应用专用密码](https://myaccount.google.com/apppasswords)；服务器为 `imap.gmail.com`
+- **iCloud Mail**：创建[应用专用密码](https://support.apple.com/102654)；服务器为 `imap.mail.me.com`
+- **Fastmail 与标准 IMAP 服务器**：创建应用专用密码；使用服务提供方的 IMAP 主机
+- **Outlook.com 与 Microsoft 365**：Microsoft 已关闭基于密码的 IMAP，请改用 [Power Automate 方案](#outlook-与-microsoft-365-power-automate)
 
 ## 从手机分享邮件
 
@@ -94,10 +94,10 @@ export default {
 
 任何能够读取邮箱（或直接接收邮件）并发送 HTTP 请求的自动化工具都可采用相同模式：
 
-- **n8n / Node-RED：**IMAP 或 Gmail 触发节点连接 HTTP 请求节点
-- **Zapier：***Email by Zapier* 入站地址（或 Gmail 触发器）连接 *Webhooks by Zapier* POST 步骤
-- **任何常开设备上的脚本：**轮询邮件文件夹并发送每封新邮件
-- **邮件服务器上的 Sieve/procmail：**把匹配邮件传给小型脚本
+- **n8n / Node-RED**：IMAP 或 Gmail 触发节点连接 HTTP 请求节点
+- **Zapier**：*Email by Zapier* 入站地址（或 Gmail 触发器）连接 *Webhooks by Zapier* POST 步骤
+- **任何常开设备上的脚本**：轮询邮件文件夹并发送每封新邮件
+- **邮件服务器上的 Sieve/procmail**：把匹配邮件传给小型脚本
 
 请保护好令牌：持有令牌的任何人都能读写该命名空间中的任务。
 

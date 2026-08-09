@@ -104,7 +104,7 @@ Mindwtr 目前提供以下語言選項，大致依全球使用人數排列：
 - **桌面資料（Linux）：**`~/.local/share/mindwtr/data.json`
 - **桌面設定（Linux）：**`~/.config/mindwtr/config.toml`
 - **Windows/macOS：**`%APPDATA%/mindwtr/` 或 `~/Library/Application Support/mindwtr/`
-- **行動版：**應用程式內部儲存空間
+- **行動版**：應用程式內部儲存空間
 
 詳情請參閱[資料與同步](/zh-Hant/data-sync/)。
 
@@ -120,9 +120,9 @@ Mindwtr 支援檔案同步、WebDAV、自行託管 Cloud Sync，以及 Dropbox �
 
 是，在支援的 Apple 組建上：
 
-- **iPhone / iPad：**在**設定 → 同步**中提供原生 **iCloud** 後端
-- **macOS 桌面版：**在**設定 → 同步**中提供原生 **iCloud** 後端
-- **Android / Windows / Linux：**沒有原生 iCloud 後端
+- **iPhone / iPad**：在**設定 → 同步**中提供原生 **iCloud** 後端
+- **macOS 桌面版**：在**設定 → 同步**中提供原生 **iCloud** 後端
+- **Android / Windows / Linux**：沒有原生 iCloud 後端
 
 請參閱 [iCloud 同步](/zh-Hant/data-sync/icloud)與[資料與同步](/zh-Hant/data-sync/)。
 
@@ -130,8 +130,8 @@ Mindwtr 支援檔案同步、WebDAV、自行託管 Cloud Sync，以及 Dropbox �
 
 Mindwtr 已可透過**檔案同步**搭配 OneDrive：
 
-- **Windows/macOS：**將 Mindwtr 的 `data.json` 放入 OneDrive 資料夾，OneDrive 會自動處理同步。
-- **Android：**官方 OneDrive 應用程式**不提供**真正的雙向資料夾同步。
+- **Windows/macOS**：將 Mindwtr 的 `data.json` 放入 OneDrive 資料夾，OneDrive 會自動處理同步。
+- **Android**：官方 OneDrive 應用程式**不提供**真正的雙向資料夾同步。
   請使用 **OneSync (Autosync for OneDrive)** 或 **FolderSync** 等「橋接」輔助應用程式，持續同步本機資料夾。
   再將 Mindwtr 指向**設定 → 同步**中的該本機資料夾（Mindwtr 會使用其中的 `data.json`）。
 
@@ -155,8 +155,8 @@ OneDrive/Google Drive 使用檔案同步，既能讓資料保持在你的掌控�
 - 持續因應各供應商維護
 
 **目前替代方式：**
-- **桌面版：**在任務中貼上 `message://` 或郵件連結；支援的用戶端也可將郵件拖入任務筆記。
-- **行動版：**使用分享選單，將選取的電子郵件內容傳送至 Mindwtr。
+- **桌面版**：在任務中貼上 `message://` 或郵件連結；支援的用戶端也可將郵件拖入任務筆記。
+- **行動版**：使用分享選單，將選取的電子郵件內容傳送至 Mindwtr。
 
 Mindwtr**不提供** `add@mindwtr.com` 收件匣，因為這需要中央伺服器接收及儲存你的電子郵件。
 
@@ -172,9 +172,9 @@ Getting Things Done（GTD）是 David Allen 創立的生產力方法，由五個
 
 Mindwtr 原生呈現較低層級的視野：
 
-- **視野 0（行動）：**下一步行動與任務清單。
-- **視野 1（專案）：**明確的專案實體。
-- **視野 2（領域）：**領域將相關專案分組。
+- **視野 0（行動）**：下一步行動與任務清單。
+- **視野 1（專案）**：明確的專案實體。
+- **視野 2（領域）**：領域將相關專案分組。
 
 視野 3 至 5（目標、願景、使命）目前沒有專用實體。大多數使用者會用以下方式追蹤：
 
@@ -198,8 +198,8 @@ Mindwtr 原生呈現較低層級的視野：
 
 專案類型會控制呈現內容：
 
-- **循序：**一次只呈現一項可用的「下一步」任務。其他「下一步」任務仍留在專案中等待輪到。
-- **平行：**多項彼此獨立的「下一步」任務可以同時呈現，因為執行順序不限。
+- **循序**：一次只呈現一項可用的「下一步」任務。其他「下一步」任務仍留在專案中等待輪到。
+- **平行**：多項彼此獨立的「下一步」任務可以同時呈現，因為執行順序不限。
 
 循序專案中較後面的步驟不是**參考資料**。參考資料用於不可執行的支援內容、筆記與文件。
 
@@ -267,8 +267,8 @@ Mindwtr 只保留一個使用中的重複任務實例，不會預先建立該系
 
 可以，支援單向推送：
 
-- **Android/iOS：**將有日期的任務推送至裝置行事曆。Android 已透過 Google Calendar 驗證；iOS 請使用 Apple 行事曆中已可用的行事曆。最好在該帳號中建立名為 `Mindwtr` 的專用行事曆。
-- **macOS 桌面版：**透過 EventKit 推送至 Apple 行事曆。
+- **Android/iOS**：將有日期的任務推送至裝置行事曆。Android 已透過 Google Calendar 驗證；iOS 請使用 Apple 行事曆中已可用的行事曆。最好在該帳號中建立名為 `Mindwtr` 的專用行事曆。
+- **macOS 桌面版**：透過 EventKit 推送至 Apple 行事曆。
 
 重複任務的*規則*不會匯出為原生重複行事曆事件，只會推送具體實例。請參閱[行事曆整合](/zh-Hant/use/calendar-integration)。
 
@@ -374,14 +374,14 @@ Mindwtr 支援 Vim 與 Emacs 按鍵綁定預設。按 `?`（Vim）或 `Ctrl-h`�
 
 ### 支援哪些平台？
 
-- **Android：**透過 Google Play 或下載 APK 提供完整支援
-- **iOS：**已在 App Store 上架，也可透過 TestFlight 測試版取得。維持 App Store 發行仍需每年支付 Apple Developer 費用，因此贊助有助於讓 iOS 版持續供應。
+- **Android**：透過 Google Play 或下載 APK 提供完整支援
+- **iOS**：已在 App Store 上架，也可透過 TestFlight 測試版取得。維持 App Store 發行仍需每年支付 Apple Developer 費用，因此贊助有助於讓 iOS 版持續供應。
 
 ### 為什麼桌面版與行動版的編輯方式不同？
 
 Mindwtr 遵循各平台慣例：
-- **桌面版：**按一下切換詳細資料；按兩下開啟完整編輯模式（可從任務的 `⋯` 選單就地重新命名標題）；按一下右鍵開啟快顯選單。
-- **行動版：**點選一次即開啟編輯模式，滑動動作則處理快速變更。
+- **桌面版**：按一下切換詳細資料；按兩下開啟完整編輯模式（可從任務的 `⋯` 選單就地重新命名標題）；按一下右鍵開啟快顯選單。
+- **行動版**：點選一次即開啟編輯模式，滑動動作則處理快速變更。
 
 這些模式讓應用程式在各平台上維持快速且符合使用習慣。
 
@@ -439,8 +439,8 @@ Mindwtr 遵循各平台慣例：
 
 ### 如何備份資料？
 
-**桌面版：**使用**設定 → 資料 → 匯出備份**，或備份應用程式資料資料夾中的 `data.json`。
-**行動版：**使用**設定 → 資料 → 匯出備份**儲存副本。
+**桌面版**：使用**設定 → 資料 → 匯出備份**，或備份應用程式資料資料夾中的 `data.json`。
+**行動版**：使用**設定 → 資料 → 匯出備份**儲存副本。
 
 請參閱[備份與還原](/zh-Hant/data-sync/backup-restore)。
 

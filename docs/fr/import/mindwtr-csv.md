@@ -24,6 +24,7 @@ Passez par le CSV Mindwtr lorsque votre application n’y figure pas. Exportez l
 - **Noms de colonnes :** reconnus sans tenir compte de la casse ni de l’ordre. Ce sont toujours les noms anglais ci-dessous, quelle que soit la langue de l’interface Mindwtr.
 - **Colonnes inconnues :** ignorées, avec un avertissement indiquant combien ont été écartées.
 - **Lignes vides :** ignorées sans bruit. Une ligne qui a du contenu mais pas de titre est ignorée avec un avertissement.
+- **Cellules NULL :** une cellule ne contenant que `NULL` est traitée comme vide. Les fichiers CSV exportés depuis des bases SQL écrivent ainsi les valeurs manquantes.
 
 ## Référence des colonnes
 
@@ -60,6 +61,7 @@ Toutes les colonnes sauf `Title` sont facultatives : n’incluez que celles dont
 - Une valeur terminée par `Z` ou par un décalage tel que `+02:00` est enregistrée comme l’instant précis qu’elle désigne.
 - `Created At` et `Completed At` sont toujours enregistrés comme un instant précis, car ils indiquent quand une chose s’est réellement produite.
 - Une valeur que Mindwtr ne sait pas lire est laissée vide, et l’aperçu indique combien ont été écartées.
+- Les horodatages de style SQL comme `2026-02-21 22:44:00.6390000 +00:00` sont acceptés : les décimales supplémentaires et l’espace avant le décalage sont normalisés automatiquement.
 
 ISO 8601 (`YYYY-MM-DD`) est l’écriture la plus sûre. D’autres formats sont tentés, mais une colonne de tableur restée au format de date local est la cause la plus fréquente de valeurs écartées.
 
@@ -123,5 +125,6 @@ Les avertissements sont comptés pour l’ensemble de l’import et affichés un
 - Ajoutez une colonne `ID` s’il y a la moindre chance que vous affiniez l’export pour le réimporter.
 - Laissez `Status` vide lorsque votre source n’a pas d’équivalent. Par défaut, le travail de projet part dans Prochaines actions et le reste dans la Boîte de réception, prêt à être clarifié.
 - Conservez l’export d’origine et l’instantané de récupération jusqu’à ce que vous ayez vérifié le résultat.
+- Les tâches importées en `done` ou `archived` apparaissent dans les vues Terminées et Archives, pas dans la liste des tâches de leur projet — les pages de projet ne montrent que le travail ouvert.
 
 Voir aussi [Importer des données depuis d’autres applications](/fr/import/) et [Sauvegarde et restauration](/fr/data-sync/backup-restore).

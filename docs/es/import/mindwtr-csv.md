@@ -24,6 +24,7 @@ Recurre al CSV de Mindwtr cuando tu aplicación no aparezca. Exporta el CSV que 
 - **Nombres de columna:** se reconocen sin distinguir mayúsculas ni orden. Son siempre los nombres en inglés que figuran más abajo, sea cual sea el idioma de la interfaz de Mindwtr.
 - **Columnas desconocidas:** se ignoran y un aviso indica cuántas se omitieron.
 - **Filas vacías:** se omiten en silencio. Una fila con contenido pero sin título se omite con un aviso.
+- **Celdas NULL:** una celda que solo contiene `NULL` se trata como vacía. Los archivos CSV exportados desde bases de datos SQL escriben así los valores ausentes.
 
 ## Referencia de columnas
 
@@ -60,6 +61,7 @@ Todas las columnas salvo `Title` son opcionales: basta con incluir las que realm
 - Un valor terminado en `Z` o con un desplazamiento como `+02:00` se guarda como el instante preciso que indica.
 - `Created At` y `Completed At` se guardan siempre como un instante preciso, porque registran cuándo ocurrió algo realmente.
 - Un valor que Mindwtr no pueda leer se deja vacío, y la vista previa indica cuántos se omitieron.
+- Se aceptan marcas de tiempo de estilo SQL como `2026-02-21 22:44:00.6390000 +00:00`: los dígitos fraccionarios adicionales y el espacio antes del desfase se normalizan automáticamente.
 
 ISO 8601 (`YYYY-MM-DD`) es la forma más segura de escribirlas. Se intentan otros formatos, pero una columna de la hoja de cálculo con fechas en formato local es el motivo más frecuente de valores omitidos.
 
@@ -123,5 +125,6 @@ Los avisos se cuentan para toda la importación y se muestran una vez con su rec
 - Añade una columna `ID` si hay alguna posibilidad de que afines la exportación y la importes de nuevo.
 - Deja `Status` en blanco cuando tu origen no tenga nada equivalente. El valor predeterminado coloca el trabajo de proyecto en Siguiente y todo lo demás en la Bandeja de entrada, listo para que lo aclares.
 - Conserva la exportación original y la instantánea de recuperación hasta que hayas verificado el resultado.
+- Las tareas importadas como `done` o `archived` aparecen en las vistas Hechas y Archivo, no en la lista de tareas de su proyecto — las páginas de proyecto muestran solo el trabajo abierto.
 
 Consulta también [Importar datos desde otras aplicaciones](/es/import/) y [Copia de seguridad y restauración](/es/data-sync/backup-restore).

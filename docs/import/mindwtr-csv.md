@@ -24,6 +24,7 @@ Reach for Mindwtr CSV when your app is not listed. Export whatever CSV it produc
 - **Column names:** matched without regard to case or order. They are always the English names below, whatever language the Mindwtr interface is set to.
 - **Unknown columns:** ignored, with a warning that tells you how many were skipped.
 - **Empty rows:** skipped silently. A row that has other content but no title is skipped with a warning.
+- **NULL cells:** a cell containing only `NULL` is treated as empty. CSV files exported from SQL databases write missing values that way.
 
 ## Column Reference
 
@@ -60,6 +61,7 @@ Every column except `Title` is optional, and you only need the ones you actually
 - A value ending in `Z` or an offset such as `+02:00` is stored as the precise instant it names.
 - `Created At` and `Completed At` are always stored as a precise instant, because they record when something really happened.
 - A value Mindwtr cannot read is left empty, and the preview reports how many were skipped.
+- SQL-style timestamps such as `2026-02-21 22:44:00.6390000 +00:00` are accepted: the extra fractional digits and the space before the offset are normalized away.
 
 ISO 8601 (`YYYY-MM-DD`) is the safest thing to write. Other formats are attempted, but a spreadsheet column still holding locale-specific dates is the most common reason values get skipped.
 
@@ -123,5 +125,6 @@ Warnings are counted for the whole import and shown once with their count, never
 - Add an `ID` column if there is any chance you will refine the export and import it again.
 - Leave `Status` blank when your source has nothing equivalent. The default puts project work in Next and everything else in the Inbox, ready for you to clarify.
 - Keep the original export and the recovery snapshot until you have verified the result.
+- Imported `done` and `archived` tasks appear in the Done and Archive views, not in their project's task list — project pages show open work only.
 
 See also [Importing Data From Other Apps](/import/) and [Backup and Restore](/data-sync/backup-restore).

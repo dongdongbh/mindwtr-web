@@ -24,6 +24,7 @@ Greifen Sie zur Mindwtr-CSV, wenn Ihre App nicht aufgeführt ist. Exportieren Si
 - **Spaltennamen:** werden unabhängig von Groß- und Kleinschreibung und Reihenfolge erkannt. Es sind stets die englischen Namen von unten, in welcher Sprache die Mindwtr-Oberfläche auch eingestellt ist.
 - **Unbekannte Spalten:** werden ignoriert, mit einer Warnung, die deren Anzahl nennt.
 - **Leere Zeilen:** werden stillschweigend übersprungen. Eine Zeile mit Inhalt, aber ohne Titel, wird mit einer Warnung übersprungen.
+- **NULL-Zellen:** Eine Zelle, die nur `NULL` enthält, wird als leer behandelt. Aus SQL-Datenbanken exportierte CSV-Dateien schreiben fehlende Werte auf diese Weise.
 
 ## Spaltenreferenz
 
@@ -60,6 +61,7 @@ Außer `Title` ist jede Spalte optional; Sie brauchen nur die, die Sie tatsächl
 - Ein Wert mit `Z` am Ende oder mit einem Versatz wie `+02:00` wird als der genannte exakte Zeitpunkt gespeichert.
 - `Created At` und `Completed At` werden immer als exakter Zeitpunkt gespeichert, weil sie festhalten, wann etwas tatsächlich geschehen ist.
 - Einen Wert, den Mindwtr nicht lesen kann, lässt es leer, und die Vorschau nennt die Anzahl der übersprungenen Werte.
+- SQL-Zeitstempel wie `2026-02-21 22:44:00.6390000 +00:00` werden akzeptiert: Die zusätzlichen Nachkommastellen und das Leerzeichen vor dem Offset werden automatisch bereinigt.
 
 ISO 8601 (`YYYY-MM-DD`) ist die sicherste Schreibweise. Andere Formate werden versucht, aber eine Tabellenspalte mit landesüblichen Datumsangaben ist der häufigste Grund für übersprungene Werte.
 
@@ -123,5 +125,6 @@ Warnungen werden für den gesamten Import gezählt und einmal mit ihrer Anzahl a
 - Ergänzen Sie eine `ID`-Spalte, falls Sie den Export später verfeinern und erneut importieren könnten.
 - Lassen Sie `Status` leer, wenn es in Ihrer Quelle nichts Entsprechendes gibt. Die Vorgabe legt Projektarbeit unter „Nächste Schritte“ und alles Übrige in den Posteingang, bereit zum Klären.
 - Bewahren Sie den Originalexport und den Wiederherstellungspunkt auf, bis Sie das Ergebnis geprüft haben.
+- Importierte Aufgaben mit Status `done` oder `archived` erscheinen in den Ansichten „Erledigt“ und „Archiv“, nicht in der Aufgabenliste ihres Projekts — Projektseiten zeigen nur offene Arbeit.
 
 Siehe auch [Daten aus anderen Apps importieren](/de/import/) und [Sichern und Wiederherstellen](/de/data-sync/backup-restore).

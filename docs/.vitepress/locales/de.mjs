@@ -67,7 +67,8 @@ export default {
       ticktick: "TickTick",
       todoist: "Todoist",
       dgtGtd: "DGT GTD",
-      omnifocus: "OmniFocus"
+      omnifocus: "OmniFocus",
+      mindwtrCsv: "Mindwtr CSV"
     },
     powerUsers: {
       overview: "Überblick",

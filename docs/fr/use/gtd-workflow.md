@@ -204,6 +204,14 @@ Il existe un raccourci délibéré au moment de la modification : donner une dat
 
 Certaines actions de traitement définissent à la fois le statut et les dates : choisir **Plus tard** pendant le traitement de la Boîte de réception déplace l’élément vers `next` et définit une date de début, tout comme le fait de définir directement une date de début sur un élément de la Boîte de réception. Ensuite, les dates ne contrôlent plus que la visibilité ; elles ne changent plus jamais le statut.
 
+### Planifié mais pas encore réalisable
+
+Certains travaux sont pleinement engagés sans pouvoir commencer tout de suite. Mindwtr ne leur attribue aucun statut particulier, et c’est délibéré : « pas encore » relève de la séquence ou du calendrier, pas d’un nouvel état GTD.
+
+Si la tâche attend des étapes antérieures du même projet, laissez-la en `next` et passez le projet en mode Séquentiel. Seule la première tâche ouverte atteint Focus et les prochaines actions ; les autres restent dans la vue du projet avec la mention **Plus loin dans la séquence**, si bien que toute la chaîne est consignée sans encombrer vos listes d’actions. Lorsqu’un projet comporte des chantiers indépendants, la portée par section fait de même pour chaque phase.
+
+Si la tâche attend plutôt une date, donnez-lui une date de début. Elle reste hors de Focus et des prochaines actions jusqu’à ce jour, puis réapparaît avec le statut qu’elle avait déjà : il s’agit d’une disponibilité, non d’un délai — n’ajoutez une date d’échéance que si le travail en a réellement une. Réservez les statuts voisins à ce qu’ils signifient vraiment : `someday` désigne un travail que vous n’avez pas engagé, et `waiting` un travail bloqué par une autre personne.
+
 ### Délai relatif avant le début
 
 Utilisez **Délai avant le début** lorsque la date de début doit rester liée à la date d’échéance. Par exemple, une tâche due vendredi peut commencer deux jours avant son échéance, ou une tâche due à 17 h peut commencer trois heures avant. Un délai de **0** signifie que la tâche commence le jour même de son échéance, ce qui convient aux tâches récurrentes qui ne doivent pas apparaître avant le jour où elles sont dues.

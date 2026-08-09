@@ -206,6 +206,14 @@ Beim Bearbeiten gibt es eine bewusste Abkürzung: Wenn Sie einem **Posteingangs*
 
 Einige Verarbeitungsaktionen setzen Status und Daten gemeinsam: Wenn Sie bei der Posteingangsverarbeitung **Später** wählen, wird der Eintrag nach `next` verschoben und erhält ein Startdatum. Das direkte Festlegen eines Startdatums für einen Posteingangseintrag bewirkt dasselbe. Danach steuern Daten nur noch die Sichtbarkeit und ändern nie wieder den Status.
 
+### Geplant, aber noch nicht machbar
+
+Manche Arbeit ist fest zugesagt, lässt sich aber noch nicht beginnen. Mindwtr gibt ihr bewusst keinen eigenen Status: „noch nicht“ ist eine Aussage über Reihenfolge oder Zeitpunkt, kein weiterer GTD-Zustand.
+
+Wartet die Aufgabe auf frühere Schritte desselben Projekts, belassen Sie sie auf `next` und stellen Sie das Projekt auf den sequenziellen Modus um. Nur die erste offene Aufgabe erreicht „Fokus“ und die nächsten Aktionen; die übrigen bleiben in der Projektansicht mit **Später in der Sequenz** gekennzeichnet. So bleibt die ganze Kette dokumentiert, ohne Ihre Aktionslisten zu überfüllen. Bei Projekten mit unabhängigen Arbeitssträngen leistet der Abschnittsbereich dasselbe je Phase.
+
+Wartet die Aufgabe dagegen auf ein Datum, geben Sie ihr ein Startdatum. Sie bleibt bis zu diesem Tag aus „Fokus“ und den nächsten Aktionen ausgeblendet und erscheint dann mit ihrem bisherigen Status wieder. Das ist Verfügbarkeit, keine Frist – vergeben Sie ein Fälligkeitsdatum nur, wenn die Arbeit wirklich eine Frist hat. Behalten Sie die benachbarten Status für das, was sie tatsächlich bedeuten: `someday` ist Arbeit, zu der Sie sich nicht verpflichtet haben, und `waiting` ist Arbeit, die auf eine andere Person wartet.
+
 ### Relative Vorlaufzeit
 
 Verwenden Sie **Startvorlaufzeit**, wenn das Startdatum an das Fälligkeitsdatum gekoppelt bleiben soll. Eine am Freitag fällige Aufgabe kann beispielsweise zwei Tage vorher beginnen, oder eine um 17:00 Uhr fällige Aufgabe drei Stunden vorher. Eine Vorlaufzeit von **0** bedeutet, dass die Aufgabe am Fälligkeitstag selbst beginnt. Das eignet sich für wiederkehrende Arbeiten, die erst am Fälligkeitstag erscheinen sollen.

@@ -17,14 +17,15 @@ Mindwtr ofrece importadores específicos para un pequeño grupo de aplicaciones 
 - [Importar desde DGT GTD](/es/import/dgt-gtd): exportaciones JSON o copias ZIP.
 - [Importar desde OmniFocus](/es/import/omnifocus): exportaciones CSV, JSON o ZIP.
 - [Importar Recordatorios de Apple](/es/data-sync/#importacion-de-recordatorios-de-apple-ios): importación exclusiva de iOS para recordatorios incompletos de una lista seleccionada.
+- [Importar desde CSV de Mindwtr](/es/import/mindwtr-csv): un formato de columnas documentado para cualquier aplicación que no tenga importador propio.
 
-Abre **Ajustes → Datos** y elige la acción de importación correspondiente. Mindwtr muestra una vista previa antes de añadir nada.
+Abre **Ajustes → Datos** y elige la acción de importación correspondiente: Todoist, TickTick, DGT GTD, OmniFocus o el CSV genérico de Mindwtr. Mindwtr muestra una vista previa antes de añadir nada.
 
 Los importadores nativos son la mejor opción cuando aparece tu aplicación. Conservan más estructura que el texto sin formato y procesan detalles específicos como carpetas, listas, etiquetas, fechas, listas de comprobación y recurrencias, cuando la exportación de origen los incluye.
 
 ## Fidelidad de importación de un vistazo
 
-Esta cobertura se revisó el 8 de agosto de 2026 con el código de importación del commit [28a59fc](https://github.com/dongdongbh/Mindwtr/commit/28a59fc1c54939989de7e365fff8797d6cd2d10c) de Mindwtr. Los datos de prueba cubren CSV y ZIP de Todoist, CSV y ZIP de TickTick 7.1, JSON y ZIP del esquema 3 de DGT, y CSV, CSV UTF-16, JSON y ZIP de OmniFocus. Los formatos de exportación pueden cambiar. Revisa la vista previa y la guía específica antes de confirmar.
+Esta cobertura se revisó el 9 de agosto de 2026 con el código de importación del commit [e787c2e](https://github.com/dongdongbh/Mindwtr/commit/e787c2e8cbe1ac93330a55d89fe5edc677f0eefe) de Mindwtr. Los datos de prueba cubren CSV y ZIP de Todoist, CSV y ZIP de TickTick 7.1, JSON y ZIP del esquema 3 de DGT, CSV, CSV UTF-16, JSON y ZIP de OmniFocus, y el CSV de Mindwtr como archivo suelto y dentro de un ZIP. Los formatos de exportación pueden cambiar. Revisa la vista previa y la guía específica antes de confirmar.
 
 | Origen | Mejor entrada | Mindwtr conserva | Qué comprobar después |
 | --- | --- | --- | --- |
@@ -33,6 +34,7 @@ Esta cobertura se revisó el 8 de agosto de 2026 con el código de importación 
 | [DGT GTD](/es/import/dgt-gtd) | Copia JSON o ZIP | Carpetas como áreas, proyectos, contextos, etiquetas, listas de comprobación, prioridades, fechas límite, estado de finalización y recurrencias compatibles | Recurrencias no compatibles y entradas omitidas del archivo |
 | [OmniFocus](/es/import/omnifocus) | JSON o ZIP de Omni Automation para mayor fidelidad; admite CSV | Carpetas como áreas, proyectos, etiquetas, contextos, notas, fechas, estado de finalización, anidación simple y recurrencias compatibles | Anidación profunda, fechas planificadas y texto de duración, reglas de repetición conservadas literalmente como nota, y pérdidas propias de CSV |
 | [Recordatorios de Apple](/es/data-sync/#importacion-de-recordatorios-de-apple-ios) | Una lista seleccionada en iOS | Títulos y notas de recordatorios incompletos | Fechas y otros campos, elementos omitidos y la opción de borrar el origen |
+| [CSV de Mindwtr](/es/import/mindwtr-csv) | Un archivo CSV, o un ZIP de archivos CSV, con los nombres de columna documentados | Áreas, proyectos, secciones, estados, contextos, etiquetas, personas asignadas, prioridad, energía, fechas de inicio, límite, revisión y finalización, listas de comprobación, ubicación y orden manual | Las recurrencias, que se ignoran; fechas ilegibles; identificadores repetidos; y filas omitidas por no tener título |
 
 ## Verificar o deshacer
 
@@ -143,7 +145,7 @@ node scripts/migration/csv-to-quickadd-text.mjs tasks.csv \
   --note "Notes"
 ```
 
-Este script es un punto de partida, no un importador específico compatible oficialmente. No conservará tareas anidadas, adjuntos, recurrencias ni campos propios de una aplicación a menos que lo adaptes.
+Este script es un punto de partida, no un importador específico compatible oficialmente. No conservará tareas anidadas, adjuntos, recurrencias ni campos propios de una aplicación a menos que lo adaptes. La [importación nativa desde CSV de Mindwtr](/es/import/mindwtr-csv) ya cubre casi todo aquello para lo que se escribió el script, y además conserva secciones, estados, listas de comprobación y áreas que el texto de adición rápida no puede expresar, así que recurre al script solo cuando necesites exactamente su salida.
 
 ### CLI, API local y MCP
 
@@ -160,9 +162,10 @@ Usa esta vía cuando tu aplicación anterior exporte JSON o CSV estructurado y n
 Sigue este orden:
 
 1. Comprueba si tu aplicación exporta a un formato que Mindwtr ya importe.
-2. Prueba a copiar y pegar o usa texto sin formato para las tareas activas que aún necesites.
-3. Usa el script auxiliar para CSV si tu aplicación exporta una hoja de cálculo sencilla.
-4. Usa la API local, la CLI o MCP si necesitas una migración estructurada personalizada.
+2. Exporta un CSV, renombra sus columnas con los nombres del [CSV de Mindwtr](/es/import/mindwtr-csv) e impórtalo de forma nativa. Es la alternativa con mayor fidelidad.
+3. Prueba a copiar y pegar o usa texto sin formato para las tareas activas que aún necesites.
+4. Usa el script auxiliar para CSV si quieres texto de adición rápida que puedas retocar a mano antes de importarlo.
+5. Usa la API local, la CLI o MCP si necesitas una migración estructurada personalizada.
 
 Si quieres un importador nativo para una aplicación concreta, abre una conversación o incidencia en GitHub e incluye:
 

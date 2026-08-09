@@ -204,6 +204,14 @@ Hay un atajo deliberado al editar: asignar una fecha de inicio a un elemento de 
 
 Algunas acciones de procesamiento establecen a la vez el estado y las fechas: elegir **Más tarde** al procesar la Bandeja de entrada mueve el elemento a `next` y establece una fecha de inicio, y establecer directamente una fecha de inicio en un elemento de la Bandeja de entrada hace lo mismo. Después de eso, las fechas solo controlan la visibilidad; nunca vuelven a cambiar el estado.
 
+### Planificado pero aún no accionable
+
+Hay trabajo con el que ya te has comprometido y que, sin embargo, todavía no puede empezar. Mindwtr no le da un estado propio, y es algo deliberado: «todavía no» es un hecho sobre la secuencia o el momento, no otro estado de GTD.
+
+Si la tarea espera a pasos anteriores del mismo proyecto, déjala en `next` y pon el proyecto en modo Secuencial. Solo la primera tarea abierta llega a Enfoque y a las próximas acciones; el resto permanece en la vista del proyecto con la marca **Más adelante en la secuencia**, de modo que toda la cadena queda registrada sin saturar tus listas de acciones. Cuando un proyecto tiene fases independientes, el ámbito de sección hace lo mismo en cada una.
+
+Si en cambio la tarea espera a una fecha, asígnale una fecha de inicio. Se mantendrá fuera de Enfoque y de las próximas acciones hasta ese día y luego reaparecerá con el estado que ya tenía: eso es disponibilidad, no un plazo; añade una fecha límite solo cuando el trabajo tenga uno de verdad. Reserva los estados vecinos para lo que de verdad significan: `someday` es trabajo con el que no te has comprometido y `waiting` es trabajo bloqueado por otra persona.
+
 ### Tiempo de antelación relativo para el inicio
 
 Usa **Tiempo de antelación para el inicio** cuando la fecha de inicio deba permanecer vinculada a la fecha límite. Por ejemplo, una tarea que vence el viernes puede comenzar dos días antes de la fecha límite, o una tarea que vence a las 5:00 p. m. puede comenzar tres horas antes. Un tiempo de antelación de **0** significa que la tarea comienza el propio día de la fecha límite, lo cual resulta apropiado para tareas recurrentes que no deberían aparecer hasta el día en que vencen.

@@ -204,6 +204,14 @@ There is one deliberate shortcut at edit time: giving an **Inbox** item a start 
 
 Some processing actions set status and dates together — choosing **Later** while processing the Inbox moves the item to `next` and sets a start date, and setting a start date on an Inbox item directly does the same. After that, dates only control visibility; they never change status again.
 
+### Planned but Not Yet Actionable
+
+Some work is fully committed but cannot be started yet. Mindwtr gives it no status of its own, and that is deliberate: "not yet" is a fact about sequence or timing, not another GTD state.
+
+If the task waits on earlier steps in the same project, leave it as `next` and put the project in Sequential mode. Only the first open task reaches Focus and Next actions; the rest stay in the project view marked **Later in sequence**, so the whole chain is on record without crowding your action lists. Section scope does the same thing per phase when a project has independent workstreams.
+
+If the task waits on a date instead, give it a start date. It stays out of Focus and Next actions until that day and then reappears with the status it already had, which is availability rather than a deadline — add a due date only when the work truly has one. Keep the neighbouring statuses for what they actually mean: `someday` is work you have not committed to, and `waiting` is work blocked on another person.
+
 ### Relative Start Lead Time
 
 Use **Start lead time** when the start date should stay tied to the due date. For example, a task due Friday can start two days before due, or a task due at 5:00 PM can start three hours before due. A lead time of **0** means the task starts on the due date itself, which suits recurring chores that shouldn't appear until the day they're due.

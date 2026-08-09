@@ -17,14 +17,15 @@ Mindwtr has first-class importers for a small set of apps where the export forma
 - [DGT GTD Import](/import/dgt-gtd) - JSON exports or ZIP backups
 - [OmniFocus Import](/import/omnifocus) - CSV, JSON, or ZIP exports
 - [Apple Reminders Import](/data-sync/#apple-reminders-import-ios) - iOS-only import for incomplete reminders from a selected Reminders list
+- [Mindwtr CSV Import](/import/mindwtr-csv) - a documented CSV layout for every app that has no importer of its own
 
-Open **Settings -> Data** and choose the matching import action. Mindwtr shows a preview before it adds anything.
+Open **Settings -> Data** and choose the matching import action: Todoist, TickTick, DGT GTD, OmniFocus, or the generic Mindwtr CSV. Mindwtr shows a preview before it adds anything.
 
 Native importers are the best path when your old app is listed. They preserve more structure than plain text, and they handle app-specific details such as folders, lists, tags, dates, checklists, and recurrence when the source export exposes them.
 
 ## Import Fidelity at a Glance
 
-This coverage was reviewed on August 8, 2026 against the importer code at Mindwtr commit [28a59fc](https://github.com/dongdongbh/Mindwtr/commit/28a59fc1c54939989de7e365fff8797d6cd2d10c). The importer fixtures cover Todoist CSV and ZIP, TickTick 7.1 CSV and ZIP, DGT schema version 3 JSON and ZIP, and OmniFocus CSV, UTF-16 CSV, JSON, and ZIP. Export formats can change, so use the preview and the app-specific guide before confirming.
+This coverage was reviewed on August 9, 2026 against the importer code at Mindwtr commit [e787c2e](https://github.com/dongdongbh/Mindwtr/commit/e787c2e8cbe1ac93330a55d89fe5edc677f0eefe). The importer fixtures cover Todoist CSV and ZIP, TickTick 7.1 CSV and ZIP, DGT schema version 3 JSON and ZIP, OmniFocus CSV, UTF-16 CSV, JSON, and ZIP, and Mindwtr CSV as a single file and inside a ZIP. Export formats can change, so use the preview and the app-specific guide before confirming.
 
 | Source | Best input | Mindwtr preserves | Check after import |
 | --- | --- | --- | --- |
@@ -33,6 +34,7 @@ This coverage was reviewed on August 8, 2026 against the importer code at Mindwt
 | [DGT GTD](/import/dgt-gtd) | JSON or ZIP backup | Folders as areas, projects, contexts, tags, checklists, priorities, due dates, completion state, and supported recurrence | Unsupported recurrence and skipped archive entries |
 | [OmniFocus](/import/omnifocus) | Omni Automation JSON or ZIP for best fidelity; CSV is supported | Folders as areas, projects, tags, contexts, notes, dates, completion state, simple nesting, and supported recurrence | Deep nesting, planned dates and duration text, repeat rules kept verbatim as a note, and CSV-specific loss |
 | [Apple Reminders](/data-sync/#apple-reminders-import-ios) | A selected list on iOS | Titles and notes from incomplete reminders | Dates and other fields, skipped items, and the optional source-deletion choice |
+| [Mindwtr CSV](/import/mindwtr-csv) | A CSV file, or a ZIP of CSV files, using the documented column names | Areas, projects, sections, statuses, contexts, tags, assignees, priority, energy, start, due, review and completion dates, checklists, location, and manual order | Recurrence, which is ignored; unparsed dates; duplicate IDs; and rows skipped for having no title |
 
 ## Verify or Roll Back
 
@@ -143,7 +145,7 @@ node scripts/migration/csv-to-quickadd-text.mjs tasks.csv \
   --note "Notes"
 ```
 
-This script is a starting point, not a supported app-specific importer. It will not preserve nested tasks, attachments, recurrence, or app-specific fields unless you adapt it.
+This script is a starting point, not a supported app-specific importer. It will not preserve nested tasks, attachments, recurrence, or app-specific fields unless you adapt it. The native [Mindwtr CSV Import](/import/mindwtr-csv) now covers most of what this script was written for, and it keeps sections, statuses, checklists, and areas that quick-add text cannot express, so reach for the script only when you need its exact quick-add output.
 
 ### CLI, Local API, and MCP
 
@@ -160,9 +162,10 @@ Use this path when your old app exports structured JSON or CSV and you want more
 Use this order:
 
 1. Check whether your app can export to a format Mindwtr already imports.
-2. Try copy/paste or plain text for the active tasks you still need.
-3. Use the CSV helper script if your app exports a simple spreadsheet.
-4. Use the Local API, CLI, or MCP if you need a custom structured migration.
+2. Export a CSV, rename its columns to the [Mindwtr CSV](/import/mindwtr-csv) names, and import it natively. This is the highest-fidelity fallback.
+3. Try copy/paste or plain text for the active tasks you still need.
+4. Use the CSV helper script if you want quick-add text you can edit by hand before importing.
+5. Use the Local API, CLI, or MCP if you need a custom structured migration.
 
 If you want a native importer for a specific app, open a GitHub Discussion or issue with:
 

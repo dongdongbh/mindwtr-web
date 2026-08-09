@@ -17,14 +17,15 @@ Mindwtr bietet vollwertige Importer für einige Apps, deren Exportformat struktu
 - [DGT-GTD-Import](/de/import/dgt-gtd) – JSON-Exporte oder ZIP-Sicherungen
 - [OmniFocus-Import](/de/import/omnifocus) – CSV-, JSON- oder ZIP-Exporte
 - [Import aus Apple Erinnerungen](/de/data-sync/#apple-reminders-import-ios) – nur unter iOS verfügbarer Import unerledigter Erinnerungen aus einer ausgewählten Erinnerungsliste
+- [Mindwtr-CSV-Import](/de/import/mindwtr-csv) – ein dokumentiertes CSV-Layout für alle Apps ohne eigenen Importer
 
-Öffnen Sie **Einstellungen → Daten** und wählen Sie die passende Importaktion. Mindwtr zeigt eine Vorschau an, bevor Daten hinzugefügt werden.
+Öffnen Sie **Einstellungen → Daten** und wählen Sie die passende Importaktion: Todoist, TickTick, DGT GTD, OmniFocus oder die generische Mindwtr-CSV. Mindwtr zeigt eine Vorschau an, bevor Daten hinzugefügt werden.
 
 Native Importer sind die beste Wahl, wenn Ihre bisherige App aufgeführt ist. Sie erhalten mehr Struktur als einfacher Text und berücksichtigen app-spezifische Details wie Ordner, Listen, Tags, Daten, Checklisten und Wiederholungen, sofern der Quellexport diese enthält.
 
 ## Importtreue im Überblick
 
-Diese Übersicht wurde am 8. August 2026 mit dem Importcode aus Mindwtr-Commit [28a59fc](https://github.com/dongdongbh/Mindwtr/commit/28a59fc1c54939989de7e365fff8797d6cd2d10c) abgeglichen. Die Import-Fixtures decken Todoist CSV und ZIP, TickTick 7.1 CSV und ZIP, DGT-Schema Version 3 als JSON und ZIP sowie OmniFocus CSV, UTF-16-CSV, JSON und ZIP ab. Exportformate können sich ändern. Prüfen Sie daher die Vorschau und den jeweiligen App-Leitfaden, bevor Sie den Import bestätigen.
+Diese Übersicht wurde am 9. August 2026 mit dem Importcode aus Mindwtr-Commit [e787c2e](https://github.com/dongdongbh/Mindwtr/commit/e787c2e8cbe1ac93330a55d89fe5edc677f0eefe) abgeglichen. Die Import-Fixtures decken Todoist CSV und ZIP, TickTick 7.1 CSV und ZIP, DGT-Schema Version 3 als JSON und ZIP, OmniFocus CSV, UTF-16-CSV, JSON und ZIP sowie Mindwtr-CSV als Einzeldatei und im ZIP ab. Exportformate können sich ändern. Prüfen Sie daher die Vorschau und den jeweiligen App-Leitfaden, bevor Sie den Import bestätigen.
 
 | Quelle | Beste Eingabe | Mindwtr erhält | Nach dem Import prüfen |
 | --- | --- | --- | --- |
@@ -33,6 +34,7 @@ Diese Übersicht wurde am 8. August 2026 mit dem Importcode aus Mindwtr-Commit [
 | [DGT GTD](/de/import/dgt-gtd) | JSON- oder ZIP-Sicherung | Ordner als Bereiche, Projekte, Kontexte, Tags, Checklisten, Prioritäten, Fälligkeitsdaten, Abschlussstatus und unterstützte Wiederholungen | Nicht unterstützte Wiederholungen und übersprungene Archiveinträge |
 | [OmniFocus](/de/import/omnifocus) | Omni-Automation-JSON oder ZIP für die beste Übernahme; CSV wird unterstützt | Ordner als Bereiche, Projekte, Tags, Kontexte, Notizen, Daten, Abschlussstatus, einfache Verschachtelung und unterstützte Wiederholungen | Tiefe Verschachtelung, geplante Daten und Dauertext, wortgetreu als Notiz übernommene Wiederholungsregeln sowie CSV-bedingte Verluste |
 | [Apple Erinnerungen](/de/data-sync/#apple-reminders-import-ios) | Eine ausgewählte Liste unter iOS | Titel und Notizen unerledigter Erinnerungen | Daten und andere Felder, übersprungene Einträge und die optionale Löschung aus der Quelle |
+| [Mindwtr CSV](/de/import/mindwtr-csv) | Eine CSV-Datei oder ein ZIP mit CSV-Dateien, das die dokumentierten Spaltennamen verwendet | Bereiche, Projekte, Abschnitte, Status, Kontexte, Tags, Zuständige, Priorität, Energie, Start-, Fälligkeits-, Wiedervorlage- und Abschlussdaten, Checklisten, Ort und manuelle Reihenfolge | Ignorierte Wiederholungen, nicht lesbare Daten, doppelte IDs und Zeilen, die mangels Titel übersprungen wurden |
 
 ## Prüfen oder zurücksetzen
 
@@ -143,7 +145,7 @@ node scripts/migration/csv-to-quickadd-text.mjs tasks.csv \
   --note "Notes"
 ```
 
-Dieses Skript ist ein Ausgangspunkt und kein unterstützter app-spezifischer Importer. Es erhält weder verschachtelte Aufgaben, Anhänge, Wiederholungen noch app-spezifische Felder, sofern Sie es nicht entsprechend anpassen.
+Dieses Skript ist ein Ausgangspunkt und kein unterstützter app-spezifischer Importer. Es erhält weder verschachtelte Aufgaben, Anhänge, Wiederholungen noch app-spezifische Felder, sofern Sie es nicht entsprechend anpassen. Der native [Mindwtr-CSV-Import](/de/import/mindwtr-csv) deckt inzwischen das meiste ab, wofür dieses Skript geschrieben wurde, und erhält zusätzlich Abschnitte, Status, Checklisten und Bereiche, die sich in Schnelleingabetext nicht ausdrücken lassen. Greifen Sie also nur dann zum Skript, wenn Sie genau dessen Schnelleingabeausgabe benötigen.
 
 ### CLI, lokale API und MCP
 
@@ -160,9 +162,10 @@ Verwenden Sie diesen Weg, wenn Ihre bisherige App strukturierte JSON- oder CSV-D
 Gehen Sie in dieser Reihenfolge vor:
 
 1. Prüfen Sie, ob Ihre App in ein Format exportieren kann, das Mindwtr bereits importiert.
-2. Probieren Sie Kopieren/Einfügen oder einfachen Text für die aktiven Aufgaben aus, die Sie noch benötigen.
-3. Verwenden Sie das CSV-Hilfsskript, wenn Ihre App eine einfache Tabelle exportiert.
-4. Verwenden Sie die lokale API, CLI oder MCP, wenn Sie eine benutzerdefinierte strukturierte Migration benötigen.
+2. Exportieren Sie eine CSV-Datei, benennen Sie deren Spalten in die Namen der [Mindwtr-CSV](/de/import/mindwtr-csv) um und importieren Sie sie nativ. Das ist die verlustärmste Ausweichmöglichkeit.
+3. Probieren Sie Kopieren/Einfügen oder einfachen Text für die aktiven Aufgaben aus, die Sie noch benötigen.
+4. Verwenden Sie das CSV-Hilfsskript, wenn Sie Schnelleingabetext wünschen, den Sie vor dem Import noch von Hand bearbeiten können.
+5. Verwenden Sie die lokale API, CLI oder MCP, wenn Sie eine benutzerdefinierte strukturierte Migration benötigen.
 
 Wenn Sie einen nativen Importer für eine bestimmte App wünschen, eröffnen Sie eine GitHub-Diskussion oder ein Issue mit folgenden Angaben:
 

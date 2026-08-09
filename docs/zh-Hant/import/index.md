@@ -17,14 +17,15 @@ Mindwtr 可以匯入受支援應用程式的完整匯出檔，但經過篩選、
 - [匯入 DGT GTD](/zh-Hant/import/dgt-gtd) - JSON 匯出檔或 ZIP 備份
 - [匯入 OmniFocus](/zh-Hant/import/omnifocus) - CSV、JSON 或 ZIP 匯出檔
 - [匯入 Apple 提醒事項](/zh-Hant/data-sync/#apple-提醒事項匯入-ios) - 僅限 iOS，可從所選的「提醒事項」清單匯入未完成的提醒事項
+- [匯入 Mindwtr CSV](/zh-Hant/import/mindwtr-csv) - 一套有文件說明的 CSV 欄位格式，適用於所有沒有專屬匯入工具的應用程式
 
-開啟**設定 → 資料**，選擇相應的匯入動作。Mindwtr 會在新增任何內容前顯示預覽。
+開啟**設定 → 資料**，選擇相應的匯入動作：Todoist、TickTick、DGT GTD、OmniFocus，或通用的 Mindwtr CSV。Mindwtr 會在新增任何內容前顯示預覽。
 
 若清單中有你原本使用的應用程式，原生匯入工具就是最佳選擇。它們能比純文字保留更多結構，也能處理來源匯出檔所提供的應用程式特有資訊，例如資料夾、清單、標籤、日期、檢查清單與重複規則。
 
 ## 匯入保真度概覽
 
-以下範圍於 2026 年 8 月 8 日依據 Mindwtr 提交 [28a59fc](https://github.com/dongdongbh/Mindwtr/commit/28a59fc1c54939989de7e365fff8797d6cd2d10c) 的匯入程式碼核對。匯入測試資料涵蓋 Todoist CSV 與 ZIP、TickTick 7.1 CSV 與 ZIP、DGT 第 3 版結構的 JSON 與 ZIP，以及 OmniFocus CSV、UTF-16 CSV、JSON 與 ZIP。匯出格式可能改變，請在確認前查看預覽和對應的應用程式指南。
+以下範圍於 2026 年 8 月 9 日依據 Mindwtr 提交 [e787c2e](https://github.com/dongdongbh/Mindwtr/commit/e787c2e8cbe1ac93330a55d89fe5edc677f0eefe) 的匯入程式碼核對。匯入測試資料涵蓋 Todoist CSV 與 ZIP、TickTick 7.1 CSV 與 ZIP、DGT 第 3 版結構的 JSON 與 ZIP、OmniFocus CSV、UTF-16 CSV、JSON 與 ZIP，以及單獨檔案與壓縮檔內的 Mindwtr CSV。匯出格式可能改變，請在確認前查看預覽和對應的應用程式指南。
 
 | 來源 | 最佳輸入 | Mindwtr 會保留 | 匯入後檢查 |
 | --- | --- | --- | --- |
@@ -33,6 +34,7 @@ Mindwtr 可以匯入受支援應用程式的完整匯出檔，但經過篩選、
 | [DGT GTD](/zh-Hant/import/dgt-gtd) | JSON 或 ZIP 備份 | 資料夾轉為領域，以及專案、情境、標籤、檢查清單、優先順序、截止日期、完成狀態和受支援的重複規則 | 不受支援的重複規則和略過的壓縮檔項目 |
 | [OmniFocus](/zh-Hant/import/omnifocus) | Omni Automation JSON 或 ZIP 保真度最佳；亦支援 CSV | 資料夾轉為領域，以及專案、標籤、情境、筆記、日期、完成狀態、簡單巢狀結構和受支援的重複規則 | 深層巢狀結構、計畫日期和時長文字、原樣保留為備註的重複規則，以及 CSV 特有的損失 |
 | [Apple 提醒事項](/zh-Hant/data-sync/#apple-提醒事項匯入-ios) | iOS 上選定的清單 | 未完成提醒事項的標題和備註 | 日期和其他欄位、略過的項目，以及是否刪除來源的選項 |
+| [Mindwtr CSV](/zh-Hant/import/mindwtr-csv) | 採用文件所列欄位名稱的 CSV 檔案，或內含多個 CSV 的 ZIP | 領域、專案、分區、狀態、情境、標籤、負責人、優先順序、精力、開始日期、截止日期、複查日期、完成時間、檢查清單、地點與手動排序 | 遭忽略的重複規則、無法解析的日期、重複的 ID，以及因缺少標題而略過的列 |
 
 ## 驗證或回復
 
@@ -143,7 +145,7 @@ node scripts/migration/csv-to-quickadd-text.mjs tasks.csv \
   --note "Notes"
 ```
 
-此指令碼只是起點，並非正式支援的特定應用程式匯入工具。除非自行調整，否則它無法保留巢狀任務、附件、重複規則或應用程式特有欄位。
+此指令碼只是起點，並非正式支援的特定應用程式匯入工具。除非自行調整，否則它無法保留巢狀任務、附件、重複規則或應用程式特有欄位。原生的 [Mindwtr CSV 匯入](/zh-Hant/import/mindwtr-csv)如今已涵蓋當初撰寫此指令碼的多數情境，並且能保留快速新增文字無法表達的分區、狀態、檢查清單與領域，因此只有在確實需要它輸出的快速新增文字時才使用此指令碼。
 
 ### CLI、本機 API 與 MCP
 
@@ -160,9 +162,10 @@ node scripts/migration/csv-to-quickadd-text.mjs tasks.csv \
 請依下列順序處理：
 
 1. 確認應用程式能否匯出為 Mindwtr 已支援匯入的格式。
-2. 對仍需使用的有效任務，嘗試複製／貼上或純文字方式。
-3. 若應用程式匯出的是簡易試算表，請使用 CSV 輔助指令碼。
-4. 若需要自訂結構化遷移，請使用本機 API、CLI 或 MCP。
+2. 匯出 CSV，把欄位名稱改成 [Mindwtr CSV](/zh-Hant/import/mindwtr-csv) 所用的名稱，再以原生方式匯入。這是保真度最高的替代做法。
+3. 對仍需使用的有效任務，嘗試複製／貼上或純文字方式。
+4. 若你想取得可在匯入前手動修改的快速新增文字，請使用 CSV 輔助指令碼。
+5. 若需要自訂結構化遷移，請使用本機 API、CLI 或 MCP。
 
 若希望特定應用程式獲得原生匯入支援，請開啟 GitHub Discussion 或 issue，並提供：
 

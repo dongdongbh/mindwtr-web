@@ -62,7 +62,8 @@ export const SIDEBAR_SECTIONS = [
       ["ticktick", "/import/ticktick"],
       ["todoist", "/import/todoist"],
       ["dgtGtd", "/import/dgt-gtd"],
-      ["omnifocus", "/import/omnifocus"]
+      ["omnifocus", "/import/omnifocus"],
+      ["mindwtrCsv", "/import/mindwtr-csv"]
     ]
   },
   {

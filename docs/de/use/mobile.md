@@ -154,6 +154,10 @@ Die Benachrichtigung ist lautlos und bleibt unten. Deaktivieren Sie den Schalter
 
 Android-Builds stellen unterstützten Assistenten (einschließlich Gemini-/Assistant-Oberflächen über Android App Actions) eine Erfassungsaktion bereit. Per Sprache erstellte Erfassungen öffnen einen Bestätigungsablauf für Titel und Notiz.
 
+### Android-Systemsuche
+
+Aktiviere **Einstellungen → Allgemein → In der Systemsuche anzeigen** (standardmäßig aus, Android 12+), damit die Systemsuche und kompatible Launcher deine Aufgaben, Projekte und Bereiche über den Titel finden. Der Index enthält nur Titel sowie minimale Status-, Fälligkeits- und Projekt-/Bereichs-Metadaten — niemals Beschreibungen, Notizen oder Anhänge — und nichts verlässt das Gerät. Ein Tipp auf ein Ergebnis öffnet das Element in Mindwtr; wird der Schalter deaktiviert, wird alles aus dem Index entfernt.
+
 ### Android-Intents zur Kontextautomatisierung
 
 Automatisierungs-Apps wie Tasker, MacroDroid oder Phone Profiles können einen Mindwtr-Kontext aktivieren. Verwenden Sie für reine Hintergrundauslöser den Android-Broadcast. Mindwtr prüft passende, jetzt verfügbare `/next`-Aktionen und sendet nur bei vorhandener Arbeit eine Benachrichtigung. Diese öffnet die passende Kontextansicht.

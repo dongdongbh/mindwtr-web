@@ -167,6 +167,10 @@ La notification est silencieuse et reste discrète en bas du volet. Désactivez 
 
 Les versions Android exposent une action de capture aux assistants compatibles, notamment les interfaces Gemini/Assistant passant par les App Actions Android. Les captures créées par la voix ouvrent le flux de confirmation de Mindwtr afin que vous puissiez vérifier le titre et la note avant de les enregistrer.
 
+### Recherche système Android
+
+Activez **Réglages → Général → Exposer à la recherche système** (désactivé par défaut, Android 12+) pour que la recherche système et les launchers compatibles trouvent vos tâches, projets et domaines par leur titre. L’index ne contient que les titres et des métadonnées minimales de statut, d’échéance et de projet/domaine — jamais les descriptions, notes ou pièces jointes — et rien ne quitte l’appareil. Toucher un résultat ouvre l’élément dans Mindwtr, et désactiver l’interrupteur supprime tout de l’index.
+
 ### Intents d’automatisation de contexte Android
 
 Les applications d’automatisation telles que Tasker, MacroDroid ou Phone Profiles peuvent activer un contexte Mindwtr. Utilisez le formulaire de diffusion Android pour les déclenchements qui doivent rester en arrière-plan. Lorsqu’il est activé, Mindwtr vérifie les actions `/next` correspondantes disponibles maintenant et n’envoie une notification que si du travail peut être affiché. Toucher cette notification ouvre la vue Contextes correspondante.

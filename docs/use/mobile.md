@@ -167,6 +167,10 @@ The notification is silent and stays out of the way at the bottom of the shade. 
 
 Android builds expose a capture action to supported assistants, including Gemini/Assistant surfaces that route through Android App Actions. Voice-created captures open Mindwtr's confirmation flow so you can review the title and note before saving.
 
+### Android System Search
+
+Turn on **Settings → General → Expose to system search** (off by default, Android 12+) to let system search and compatible launchers find your tasks, projects, and areas by title. The index stores only titles plus minimal status, due-date, and project/area metadata — never descriptions, notes, or attachments — and nothing leaves the device. Tapping a result opens the item in Mindwtr, and turning the switch off removes everything from the index.
+
 ### Android Context Automation Intents
 
 Automation apps such as Tasker, MacroDroid, or Phone Profiles can activate a Mindwtr context. Use the Android broadcast form for background-only triggers. When activated, Mindwtr checks matching `/next` actions that are available now and sends a notification only when there is work to show. Tapping that notification opens the matching Contexts view.

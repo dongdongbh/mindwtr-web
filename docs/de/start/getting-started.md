@@ -40,7 +40,7 @@ Wenn Sie Mindwtr im Browser bereitstellen möchten, können Sie die Web-App (PWA
 
 ## Erster Start
 
-Bei einer Neuinstallation fragt Mindwtr, ob Sie neu beginnen, eine Sicherung importieren oder eine Synchronisierung verbinden möchten. Nach der Einrichtung öffnet die App standardmäßig die Ansicht **Fokus**, damit die heutigen Kalendereinträge und nächsten Aktionen zuerst sichtbar sind. Erfassen Sie neue Aufgaben im **Posteingang**, wenn Sie einen Gedanken schnell ablegen möchten.
+Bei einer Neuinstallation fragt Mindwtr, ob Sie neu beginnen, eine Sicherung importieren oder eine Synchronisierung verbinden möchten. **Neu beginnen** erstellt das Projekt **Erste Schritte** in Ihrer Sprache und öffnet es sofort, damit Sie den Arbeitsablauf direkt in der App kennenlernen. Bei späteren Starts öffnet Mindwtr standardmäßig die Ansicht **Fokus**, damit die heutigen Kalendereinträge und nächsten Aktionen zuerst sichtbar sind. Erfassen Sie neue Aufgaben im **Posteingang**, wenn Sie einen Gedanken schnell ablegen möchten.
 
 ### Der grundlegende Arbeitsablauf
 

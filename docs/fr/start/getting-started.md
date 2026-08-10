@@ -40,7 +40,7 @@ Utilisez Docker pour exécuter la PWA et le serveur de synchronisation auto-héb
 
 ## Premier lancement
 
-Lors d’une nouvelle installation, Mindwtr vous propose de partir de zéro, d’importer une sauvegarde ou de connecter la synchronisation. Après la configuration, la vue **Focus** s’ouvre par défaut pour afficher en premier le calendrier du jour et les prochaines actions. Capturez le nouveau travail dans la **Boîte de réception** chaque fois que vous avez besoin de déposer rapidement une idée.
+Lors d’une nouvelle installation, Mindwtr vous propose de partir de zéro, d’importer une sauvegarde ou de connecter la synchronisation. **Partir de zéro** crée le projet **Premiers pas** dans votre langue et l’ouvre immédiatement pour vous faire découvrir le flux de travail dans l’application. Lors des lancements suivants, Mindwtr ouvre par défaut la vue **Focus** pour afficher en premier le calendrier du jour et les prochaines actions. Capturez le nouveau travail dans la **Boîte de réception** chaque fois que vous avez besoin de déposer rapidement une idée.
 
 ### Flux de base
 

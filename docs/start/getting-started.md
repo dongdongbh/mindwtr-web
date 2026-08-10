@@ -40,7 +40,7 @@ Run the web app (PWA) and self-hosted sync server with Docker when you want a br
 
 ## First Launch
 
-On a fresh install, Mindwtr asks whether you want to start fresh, import a backup, or connect sync. After setup, it opens the **Focus** view by default so today's calendar items and next actions are visible first. Capture new work into the **Inbox** whenever you need to park an idea quickly.
+On a fresh install, Mindwtr asks whether you want to start fresh, import a backup, or connect sync. **Start Fresh** creates a localized **Getting Started** project and opens it immediately so you can learn the workflow in the app. On later launches, Mindwtr opens the **Focus** view by default so today's calendar items and next actions are visible first. Capture new work into the **Inbox** whenever you need to park an idea quickly.
 
 ### The Basic Workflow
 

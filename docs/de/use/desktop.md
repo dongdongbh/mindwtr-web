@@ -518,7 +518,7 @@ In jeder Voreinstellung setzt `s` plus Buchstabe direkt den Status (`si` Postein
 Über die Seitenleiste öffnen.
 
 ### Allgemein
-- **Darstellung**: Hell, Dunkel oder System
+- **Darstellung**: System, Hell, Dunkel, E-Ink, Nord, Catppuccin Macchiato, Dracula oder Sepia
 - **Sprache**: Englisch, Chinesisch (vereinfacht/traditionell), Hindi, Spanisch, Arabisch, Französisch, Portugiesisch (Brasilien), Russisch, Deutsch, Japanisch, Persisch, Vietnamesisch, Türkisch, Koreanisch, Italienisch, Polnisch, Niederländisch, Tschechisch, Schwedisch
 - **Tastenkürzel**: Standard, Vim oder Emacs
 - **Beim Systemstart öffnen**: Mindwtr nach der Anmeldung automatisch starten

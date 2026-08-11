@@ -523,7 +523,7 @@ Dans chaque préréglage, `s` suivi d’une lettre définit directement le statu
 Accédez aux Paramètres depuis la barre latérale.
 
 ### Général
-- **Apparence** : Clair, Sombre ou Système
+- **Apparence** : Système, Clair, Sombre, Encre électronique, Nord, Catppuccin Macchiato, Dracula ou Sépia
 - **Langue** : anglais, chinois (simplifié), chinois (traditionnel), hindi, espagnol, arabe, français, portugais (Brésil), russe, allemand, japonais, persan, vietnamien, turc, coréen, italien, polonais, néerlandais, tchèque, suédois
 - **Raccourcis clavier** : préréglage Standard, Vim ou Emacs
 - **Lancer au démarrage** : démarrer Mindwtr automatiquement lors de votre connexion

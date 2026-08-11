@@ -351,7 +351,7 @@ Mindwtr supports Vim and Emacs keybinding presets. Press `?` (Vim) or `Ctrl-h` (
 
 ### How do I change the theme?
 
-Go to Settings → Appearance. Choose Light, Dark, or System.
+Go to Settings → Appearance. Choose System, Light, Dark, E-Ink, Nord, Catppuccin Macchiato, Dracula, or Sepia.
 
 ### How do I sync with my phone?
 

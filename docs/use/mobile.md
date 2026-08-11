@@ -614,7 +614,7 @@ Make sure notifications are enabled:
 
 ### General
 
-- **Appearance**: System, Light, or Dark
+- **Appearance**: System, Light, Dark, Material 3 (Light), Material 3 (Dark), E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia, or OLED / Midnight
 - **Language**: English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese (Brazil), Russian, German, Japanese, Persian, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech, Swedish
 
 ### Notifications

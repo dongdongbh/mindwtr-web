@@ -552,7 +552,7 @@ Erinnerungen werden auf dem Telefon geplant; es gibt keinen Push-Server. Wenn Si
 
 ### Allgemein
 
-- **Darstellung**: System, Hell, Dunkel
+- **Darstellung**: System, Hell, Dunkel, Material 3 (Hell), Material 3 (Dunkel), E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia oder OLED / Mitternacht
 - **Sprache**: Englisch, Chinesisch (vereinfacht/traditionell), Hindi, Spanisch, Arabisch, Französisch, Portugiesisch (Brasilien), Russisch, Deutsch, Japanisch, Persisch, Vietnamesisch, Türkisch, Koreanisch, Italienisch, Polnisch, Niederländisch, Tschechisch, Schwedisch
 
 ### Benachrichtigungen

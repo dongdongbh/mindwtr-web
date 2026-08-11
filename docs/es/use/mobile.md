@@ -614,7 +614,7 @@ Asegúrate de que las notificaciones estén activadas:
 
 ### General
 
-- **Apariencia**: Sistema, Clara u Oscura
+- **Apariencia**: Sistema, Clara, Oscura, Material 3 (Claro), Material 3 (Oscuro), E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia u OLED / Medianoche
 - **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués (Brasil), ruso, alemán, japonés, persa, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo, sueco
 
 ### Notificaciones

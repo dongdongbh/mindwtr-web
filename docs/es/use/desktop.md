@@ -523,7 +523,7 @@ En todos los preajustes, `s` seguida de una letra establece directamente el esta
 Abre Ajustes desde la barra lateral.
 
 ### General
-- **Apariencia**: Clara, Oscura o Sistema
+- **Apariencia**: Sistema, Clara, Oscura, E-Ink, Nord, Catppuccin Macchiato, Dracula o Sepia
 - **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués (Brasil), ruso, alemán, japonés, persa, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo, sueco
 - **Atajos de teclado**: preajuste Estándar, Vim o Emacs
 - **Abrir al iniciar**: inicia Mindwtr automáticamente al iniciar sesión

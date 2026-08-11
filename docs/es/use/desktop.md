@@ -85,7 +85,7 @@ Resultados de varios pasos que contienen tareas relacionadas.
 - **Etiquetas de proyecto**: etiqueta proyectos y fíltralos por etiqueta
 - **Referencias en proyectos**: las tareas de referencia aparecen en una sección de Referencia debajo de la lista de tareas del proyecto, incluidas las referencias cuyas etiquetas coinciden con las del proyecto, de modo que una misma referencia puede aparecer en varios proyectos
 - **Notas de apoyo**: añade notas de planificación y material de referencia
-- **Secciones**: agrupaciones opcionales de tareas dentro de un proyecto (fases, hitos o líneas de trabajo). Las secciones son encabezados dentro de un proyecto, no subtareas ni proyectos independientes.
+- **Secciones**: agrupaciones opcionales de tareas dentro de un proyecto (fases, hitos o líneas de trabajo). Las secciones son encabezados dentro de un proyecto, no subtareas ni proyectos independientes. Un proyecto con secciones también puede mostrarlas como columnas contiguas — el conmutador **Columnas** junto a Ordenar — con arrastre entre columnas para cambiar de sección y desplazamiento manteniendo pulsado el botón central del ratón; la elección se recuerda por proyecto en este dispositivo.
 - **Fecha de revisión**: define fechas de seguimiento para revisar el proyecto
 - **Archivar**: completar un proyecto significa archivarlo; sus tareas restantes se completan con él y **Reactivar** lo deshace
 

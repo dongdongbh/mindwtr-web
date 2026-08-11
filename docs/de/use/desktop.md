@@ -85,7 +85,7 @@ Mehrstufige Ergebnisse mit zusammengehörigen Aufgaben.
 - **Projekt-Tags**: Projekte markieren und nach Tags filtern
 - **Referenzen in Projekten**: Referenzaufgaben erscheinen in einem Referenz-Abschnitt unter der Aufgabenliste des Projekts — auch Referenzen, deren Tags mit den Projekt-Tags übereinstimmen, sodass eine Referenz in mehreren Projekten auftauchen kann
 - **Begleitnotizen**: Planungsnotizen und Referenzmaterial hinzufügen
-- **Abschnitte**: Optionale Aufgabengruppen innerhalb eines Projekts (Phasen, Meilensteine, Arbeitsstränge), keine Unteraufgaben oder separaten Projekte
+- **Abschnitte**: Optionale Aufgabengruppen innerhalb eines Projekts (Phasen, Meilensteine, Arbeitsstränge), keine Unteraufgaben oder separaten Projekte. Ein Projekt mit Abschnitten kann sie auch als nebeneinanderliegende Spalten anzeigen — der **Spalten**-Umschalter neben Sortieren — mit Ziehen zwischen Spalten zum Abschnittswechsel und gedrückter mittlerer Maustaste zum Schwenken; die Wahl wird pro Projekt auf diesem Gerät gemerkt.
 - **Wiedervorlagedatum**: Tickler-Daten für die Projektdurchsicht
 - **Archivieren**: Ein Projekt wird durch Archivieren abgeschlossen; übrige Aufgaben werden mit abgeschlossen, **Reaktivieren** macht dies rückgängig.
 

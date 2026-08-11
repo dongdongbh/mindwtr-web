@@ -85,7 +85,7 @@ Résultats en plusieurs étapes contenant des tâches liées.
 - **Étiquettes de projet** : attribuez des étiquettes aux projets et filtrez par étiquette
 - **Références dans les projets** : les tâches de référence apparaissent dans une section Référence sous la liste des tâches du projet — y compris les références dont les étiquettes correspondent à celles du projet, si bien qu'une même référence peut apparaître dans plusieurs projets
 - **Notes d’accompagnement** : ajoutez des notes de planification et des documents de référence
-- **Sections** : regroupements facultatifs de tâches au sein d’un projet (phases, jalons, sous-chantiers). Les sections sont des titres à l’intérieur d’un seul projet, pas des sous-tâches ni des projets distincts.
+- **Sections** : regroupements facultatifs de tâches au sein d’un projet (phases, jalons, sous-chantiers). Les sections sont des titres à l’intérieur d’un seul projet, pas des sous-tâches ni des projets distincts. Un projet à sections peut aussi les afficher en colonnes côte à côte — le bouton **Colonnes** à côté de Trier — avec glisser entre colonnes pour changer de section et défilement au bouton central maintenu ; le choix est mémorisé par projet sur cet appareil.
 - **Date de revue** : définissez des dates de rappel pour la revue du projet
 - **Archiver** : terminer un projet signifie l’archiver — les tâches restantes sont terminées avec lui, et **Réactiver** annule cette action
 

@@ -74,7 +74,7 @@ During weekly review, the assistant can flag stale tasks and suggest actions lik
 - Keep
 
 ### Copilot Suggestions
-(Only available in Inbox and Focus views)
+(Available in the task editor, the desktop lists' Quick Add row, and mobile quick capture)
 
 As you type, Mindwtr can suggest:
 - Contexts

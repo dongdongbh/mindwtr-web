@@ -74,7 +74,7 @@ Während der wöchentlichen Durchsicht kann der Assistent veraltete Aufgaben ken
 - Behalten
 
 ### Copilot-Vorschläge
-(Nur in den Ansichten Posteingang und Fokus verfügbar)
+(Verfügbar im Aufgabeneditor, in der Schnell-hinzufügen-Zeile der Desktop-Listen und in der mobilen Schnellerfassung)
 
 Während Sie tippen, kann Mindwtr Folgendes vorschlagen:
 - Kontexte

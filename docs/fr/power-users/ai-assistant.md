@@ -80,7 +80,7 @@ Pendant la revue hebdomadaire, l’assistant peut signaler les tâches anciennes
 
 ### Suggestions Copilot
 
-Disponibles uniquement dans les vues Boîte de réception et Focus.
+Disponibles dans l'éditeur de tâches, la ligne d'Ajout rapide des listes du bureau et la Capture rapide sur mobile.
 
 Pendant la saisie, Mindwtr peut suggérer :
 

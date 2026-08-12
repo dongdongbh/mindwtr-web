@@ -80,7 +80,7 @@ Durante la revisión semanal, puede señalar tareas estancadas y sugerir accione
 
 ### Sugerencias de Copilot
 
-Solo disponibles en Bandeja de entrada y Foco.
+Disponibles en el editor de tareas, en la fila de Adición rápida de las listas de escritorio y en la Captura rápida del móvil.
 
 Mientras escribes, Mindwtr puede sugerir:
 

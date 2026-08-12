@@ -234,7 +234,7 @@ Le workflow de publication est prêt à signer les versions Windows avec Authent
 
 Chaque tour est une soumission SignPath distincte, sous forme d'un zip contenant exactement un fichier ; la politique `release-signing` demande donc deux approbations manuelles par publication, chacune avec un délai de 30 minutes avant l'échec de la compilation. Les tours ne peuvent pas être fusionnés : l'installateur n'existe pas tant que l'exe n'est pas signé. Le processus stable comme celui des RC appellent ce travail, une étiquette RC coûte donc les deux mêmes approbations.
 
-L'ensemble du bloc dépend du dépôt `dongdongbh/Mindwtr`, de la présence des deux secrets SignPath et d'une étiquette. Les forks, les demandes de tirage et les exécutions manuelles sans étiquette produisent volontairement des versions non signées.
+L'ensemble du bloc dépend du dépôt `dongdongbh/Mindwtr`, de la variable de dépôt `SIGNPATH_SIGNING_ENABLED` définie à `true`, de la présence des deux secrets SignPath et d'une étiquette. Les forks, les demandes de tirage et les exécutions manuelles sans étiquette produisent volontairement des versions non signées. La variable est l'interrupteur principal : si elle n'est pas définie, les étapes de signature sont ignorées en silence et la version est publiée non signée, sans aucune vérification en échec pour le signaler.
 
 Avant la prochaine publication signée, la configuration des artefacts dans l'interface SignPath doit être mise à jour pour correspondre aux deux soumissions à fichier unique. C'est une action de mainteneur en dehors de ce dépôt — la modification du workflow ne suffit pas — et elle invalide la validation précédente en signature de test, qui reposait sur l'ancienne soumission unique contenant les deux fichiers.
 

@@ -233,7 +233,7 @@ Der Release-Workflow ist für die Authenticode-Signierung von Windows-Builds üb
 
 Jede Runde ist eine eigene SignPath-Einreichung eines ZIPs mit genau einer Datei. Die Richtlinie `release-signing` verlangt daher zwei manuelle Freigaben pro Release, jeweils mit 30 Minuten Zeitlimit, bevor der Build fehlschlägt. Die Runden lassen sich nicht zusammenlegen: Das Installationsprogramm existiert erst, wenn die EXE signiert ist. Sowohl der stabile als auch der RC-Workflow rufen diesen Job auf, ein RC-Tag kostet also dieselben zwei Freigaben.
 
-Der gesamte Block ist daran gebunden, dass das Repository `dongdongbh/Mindwtr` ist, beide SignPath-Secrets gesetzt sind und ein Tag vorliegt. Forks, Pull Requests und Dispatch-Läufe ohne Tag erzeugen bewusst unsignierte Builds.
+Der gesamte Block ist daran gebunden, dass das Repository `dongdongbh/Mindwtr` ist, die Repository-Variable `SIGNPATH_SIGNING_ENABLED` auf `true` steht, beide SignPath-Secrets gesetzt sind und ein Tag vorliegt. Forks, Pull Requests und Dispatch-Läufe ohne Tag erzeugen bewusst unsignierte Builds. Die Variable ist der Hauptschalter: Ist sie nicht gesetzt, werden die Signierschritte stillschweigend übersprungen und das Release erscheint unsigniert — ohne fehlschlagende Prüfung, die darauf hinweist.
 
 Vor dem nächsten signierten Release muss die Artefaktkonfiguration in der SignPath-Oberfläche an die zwei Einreichungen mit je einer Datei angepasst werden. Das ist eine Aufgabe der Maintainer außerhalb dieses Repositories — die Workflow-Änderung allein genügt nicht — und sie entwertet den früheren Testsignierlauf, der die alte einzelne Einreichung mit beiden Dateien genutzt hat.
 

@@ -234,7 +234,7 @@ The release workflow is prepared to Authenticode-sign Windows builds through Sig
 
 Each round is its own SignPath submission of a zip holding exactly one file, so the `release-signing` policy asks for two manual approvals per release, each with a 30-minute timeout before the build fails. The rounds cannot be merged: the installer does not exist until the exe has been signed. Both the stable and the RC workflow call this job, so an RC tag costs the same two approvals.
 
-The whole block is gated on the repository being `dongdongbh/Mindwtr`, both SignPath secrets being present, and a tag. Forks, pull requests, and tagless dispatch runs build unsigned by design.
+The whole block is gated on the repository being `dongdongbh/Mindwtr`, the repository variable `SIGNPATH_SIGNING_ENABLED` being `true`, both SignPath secrets being present, and a tag. Forks, pull requests, and tagless dispatch runs build unsigned by design. The variable is the master switch: when it is unset the signing steps skip silently and the release ships unsigned, with no failing check to catch it.
 
 Before the next signed release, the artifact configuration in the SignPath UI has to be updated to match the two single-file submissions. That is a maintainer action outside this repository — the workflow change alone is not enough — and it invalidates the earlier test-signed validation run, which exercised the old single submission carrying both files.
 

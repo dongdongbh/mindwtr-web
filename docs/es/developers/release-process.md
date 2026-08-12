@@ -234,7 +234,7 @@ El flujo de lanzamiento está preparado para firmar las compilaciones de Windows
 
 Cada ronda es un envío propio a SignPath de un zip con exactamente un archivo, por lo que la política `release-signing` pide dos aprobaciones manuales por lanzamiento, cada una con un tiempo límite de 30 minutos antes de que falle la compilación. Las rondas no se pueden fusionar: el instalador no existe hasta que el exe está firmado. Tanto el flujo estable como el de RC llaman a este trabajo, así que una etiqueta RC cuesta las mismas dos aprobaciones.
 
-Todo el bloque depende de que el repositorio sea `dongdongbh/Mindwtr`, de que estén presentes ambos secretos de SignPath y de que haya una etiqueta. Las bifurcaciones, las solicitudes de incorporación y las ejecuciones manuales sin etiqueta se compilan sin firma por diseño.
+Todo el bloque depende de que el repositorio sea `dongdongbh/Mindwtr`, de que la variable del repositorio `SIGNPATH_SIGNING_ENABLED` sea `true`, de que estén presentes ambos secretos de SignPath y de que haya una etiqueta. Las bifurcaciones, las solicitudes de incorporación y las ejecuciones manuales sin etiqueta se compilan sin firma por diseño. La variable es el interruptor maestro: si no está definida, los pasos de firma se omiten en silencio y la versión se publica sin firmar, sin ninguna comprobación que falle para avisarlo.
 
 Antes del próximo lanzamiento firmado hay que actualizar la configuración de artefactos en la interfaz de SignPath para que coincida con los dos envíos de un solo archivo. Es una acción de mantenimiento externa a este repositorio — el cambio del flujo de trabajo por sí solo no basta — e invalida la validación anterior con certificado de prueba, que usaba el envío único con ambos archivos.
 

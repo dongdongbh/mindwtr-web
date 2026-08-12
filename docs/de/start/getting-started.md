@@ -92,6 +92,8 @@ Absolute Daten verwenden unabhängig vom Gebietsschema und Anzeigeformat der Obe
 
 - Kontext- und Tag-Namen akzeptieren Unicode-Buchstaben und -Ziffern (z. B. CJK-Zeichen und Buchstaben mit Akzent).
 
+**Live-Vorschau:** Während Sie in ein Erfassungsfeld auf dem Desktop oder auf dem Mobilgerät tippen, zeigen Chips unter dem Feld, was Mindwtr erkannt hat: die ermittelten Datumsangaben, Projekt, Bereich, Kontexte, Tags, zugewiesene Person und Status – dazu einen Warn-Chip, wenn ein Datumsbefehl nicht gelesen werden kann. Die Chips bleiben verborgen, bis etwas erkannt wurde, und stammen aus derselben Auswertung wie das Speichern, sodass die Aufgabe genau so angelegt wird, wie die Chips sie beschreiben.
+
 > **Tipp:** Mit der **Spracherfassung** können Sie Aufgaben auch einsprechen. Aktivieren Sie sie unter **Einstellungen → KI-Assistent**, um Sprache mit intelligenter Auswertung in Text umzuwandeln.
 
 ---

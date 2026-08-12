@@ -89,6 +89,8 @@ Absolute dates use fixed ISO format `YYYY-MM-DD` (for example, `/due:2026-03-15`
 **Unicode support**
 - Context and tag names accept Unicode letters and numbers (e.g., CJK and accented characters).
 
+**Live preview:** As you type in any capture input on desktop or mobile, chips under the field show what Mindwtr recognized: the resolved dates, project, area, contexts, tags, assignee, and status, plus a warning chip when a date command cannot be read. The chips stay hidden until something is recognized, and they come from the same parse that saving uses, so the task is created exactly as they describe it.
+
 > **Tip:** You can also use **Audio Capture** to speak your tasks. Enable it in **Settings → AI Assistant** to use voice-to-text with smart parsing.
 
 ---

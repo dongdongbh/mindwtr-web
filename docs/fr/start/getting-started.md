@@ -92,6 +92,8 @@ Les dates absolues utilisent toujours le format ISO `YYYY-MM-DD`, par exemple `/
 
 - Les noms de contexte et de tag acceptent les lettres et chiffres Unicode, notamment les caractères CJK et accentués.
 
+**Aperçu en direct :** pendant que vous saisissez du texte dans un champ de capture, sur ordinateur comme sur mobile, des pastilles sous le champ indiquent ce que Mindwtr a reconnu : les dates résolues, le projet, le domaine, les contextes, les tags, la personne assignée et le statut, ainsi qu’une pastille d’avertissement lorsqu’une commande de date ne peut pas être lue. Les pastilles restent masquées tant que rien n’est reconnu et proviennent de la même analyse que l’enregistrement : la tâche est donc créée exactement comme elles la décrivent.
+
 > **Conseil :** vous pouvez aussi dicter vos tâches avec la **Capture audio**. Activez-la dans **Paramètres → Assistant IA** pour utiliser la transcription avec analyse intelligente.
 
 ---

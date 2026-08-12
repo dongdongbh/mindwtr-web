@@ -92,6 +92,8 @@ Las fechas absolutas usan el formato ISO fijo `YYYY-MM-DD` (por ejemplo, `/due:2
 
 - Los nombres de contextos y etiquetas aceptan letras y números Unicode (por ejemplo, caracteres CJK y acentuados).
 
+**Vista previa en directo:** Mientras escribes en cualquier campo de captura del escritorio o del móvil, unas fichas bajo el campo muestran lo que Mindwtr ha reconocido: las fechas resueltas, el proyecto, el área, los contextos, las etiquetas, la persona asignada y el estado, además de una ficha de advertencia cuando no puede leer un comando de fecha. Las fichas permanecen ocultas hasta que se reconoce algo y proceden del mismo análisis que usa el guardado, así que la tarea se crea exactamente como las fichas la describen.
+
 > **Consejo:** También puedes usar la **captura de audio** para dictar tareas. Actívala en **Ajustes → Asistente de IA** para usar la conversión de voz a texto con análisis inteligente.
 
 ---

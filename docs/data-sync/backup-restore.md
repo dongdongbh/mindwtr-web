@@ -18,7 +18,7 @@ This keeps restore simple and predictable. It is not a merge operation — for t
 ### Desktop
 
 1. Open **Settings → Data**
-2. In **Data Transfer**, choose **Export Backup**
+2. In **Backup**, choose **Export Backup**
 3. Save the JSON file where you want
 
 ### Mobile
@@ -36,7 +36,7 @@ The backup format is compatible with Mindwtr’s internal `data.json` structure.
 ### Desktop
 
 1. Open **Settings → Data**
-2. In **Data Transfer**, choose **Restore Backup**
+2. In **Backup**, choose **Restore Backup**
 3. Select a Mindwtr backup JSON file
 4. Review the summary and confirm restore
 

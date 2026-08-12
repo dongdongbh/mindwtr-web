@@ -18,7 +18,7 @@ Así la restauración es sencilla y predecible. No es una operación de combinac
 ### Escritorio
 
 1. Abre **Ajustes → Datos**.
-2. En **Transferencia de datos**, elige **Exportar copia de seguridad**.
+2. En **Backup**, elige **Exportar copia de seguridad**.
 3. Guarda el archivo JSON donde quieras.
 
 ### Dispositivos móviles
@@ -36,7 +36,7 @@ El formato de la copia es compatible con la estructura interna `data.json` de Mi
 ### Escritorio
 
 1. Abre **Ajustes → Datos**.
-2. En **Transferencia de datos**, elige **Restaurar copia de seguridad**.
+2. En **Backup**, elige **Restaurar copia de seguridad**.
 3. Selecciona un archivo JSON de copia de Mindwtr.
 4. Revisa el resumen y confirma la restauración.
 

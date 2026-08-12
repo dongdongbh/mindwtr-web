@@ -18,7 +18,7 @@ La restauration reste ainsi simple et prévisible. Il ne s’agit pas d’une fu
 ### Ordinateur
 
 1. Ouvrez **Paramètres → Données**.
-2. Dans **Transfert de données**, choisissez **Exporter une sauvegarde**.
+2. Dans **Sauvegarde**, choisissez **Exporter une sauvegarde**.
 3. Enregistrez le fichier JSON à l’emplacement voulu.
 
 ### Mobile
@@ -36,7 +36,7 @@ Le format de sauvegarde est compatible avec la structure interne `data.json` de 
 ### Ordinateur
 
 1. Ouvrez **Paramètres → Données**.
-2. Dans **Transfert de données**, choisissez **Restaurer une sauvegarde**.
+2. Dans **Sauvegarde**, choisissez **Restaurer une sauvegarde**.
 3. Sélectionnez un fichier JSON de sauvegarde Mindwtr.
 4. Examinez le résumé et confirmez la restauration.
 

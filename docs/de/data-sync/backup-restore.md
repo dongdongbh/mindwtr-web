@@ -18,7 +18,7 @@ Dadurch bleibt die Wiederherstellung einfach und vorhersehbar. Sie ist kein Zusa
 ### Desktop
 
 1. Öffnen Sie **Einstellungen → Daten**.
-2. Wählen Sie unter **Datenübertragung** die Option **Sicherung exportieren**.
+2. Wählen Sie unter **Backup** die Option **Sicherung exportieren**.
 3. Speichern Sie die JSON-Datei am gewünschten Ort.
 
 ### Mobilgeräte
@@ -36,7 +36,7 @@ Das Sicherungsformat ist mit der internen `data.json`-Struktur von Mindwtr kompa
 ### Desktop
 
 1. Öffnen Sie **Einstellungen → Daten**.
-2. Wählen Sie unter **Datenübertragung** die Option **Sicherung wiederherstellen**.
+2. Wählen Sie unter **Backup** die Option **Sicherung wiederherstellen**.
 3. Wählen Sie eine JSON-Sicherungsdatei von Mindwtr.
 4. Prüfen Sie die Zusammenfassung und bestätigen Sie die Wiederherstellung.
 

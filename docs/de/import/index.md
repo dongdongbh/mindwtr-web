@@ -41,7 +41,7 @@ Diese Übersicht wurde am 9. August 2026 mit dem Importcode aus Mindwtr-Commit [
 1. Bewahren Sie den Originalexport auf und erstellen Sie vor dem Import eine neue [Mindwtr-Sicherung](/de/data-sync/backup-restore).
 2. Prüfen Sie die Anzahl und Warnungen in der Vorschau. Brechen Sie ab, wenn die Projekt- oder Aufgabenanzahl falsch wirkt.
 3. Vergleichen Sie nach dem Import ein Projekt und einige typische Aufgaben mit der Quelle. Prüfen Sie Titel, Projekt oder Status, Daten, Tags oder Kontexte, Notizen, Checklisten und Wiederholungen.
-4. Wenn die Zuordnung falsch ist, stellen Sie den Wiederherstellungspunkt unter **Einstellungen → Synchronisierung → Wiederherstellungspunkte** wieder her, passen Sie den Quellexport an und versuchen Sie es erneut. Bei einigen Importern kann derselbe Export beim zweiten Import Aufgaben duplizieren.
+4. Wenn die Zuordnung falsch ist, tippen Sie in der Ergebnismeldung auf **Import rückgängig machen** oder stellen Sie den Wiederherstellungspunkt später unter **Einstellungen → Synchronisierung → Wiederherstellungspunkte** wieder her, passen Sie den Quellexport an und versuchen Sie es erneut. Bei einigen Importern kann derselbe Export beim zweiten Import Aufgaben duplizieren.
 
 ## Alternative Migrationsmethoden
 

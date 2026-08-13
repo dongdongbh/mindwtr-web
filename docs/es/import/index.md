@@ -41,7 +41,7 @@ Esta cobertura se revisó el 9 de agosto de 2026 con el código de importación 
 1. Conserva la exportación original y crea una [copia de Mindwtr](/es/data-sync/backup-restore) reciente antes de importar.
 2. Revisa los recuentos y avisos de la vista previa. Cancela si los totales de proyectos o tareas parecen incorrectos.
 3. Tras importar, compara un proyecto y varias tareas representativas con el origen. Comprueba títulos, proyecto o estado, fechas, etiquetas o contextos, notas, listas de comprobación y recurrencias.
-4. Si la asignación es incorrecta, restaura la instantánea desde **Ajustes → Sincronización → Instantáneas de recuperación**, corrige la exportación de origen e inténtalo de nuevo. Algunos importadores pueden duplicar tareas si cargas dos veces el mismo archivo.
+4. Si la asignación es incorrecta, toca **Deshacer importación** en el mensaje de resultado, o restaura la instantánea más tarde desde **Ajustes → Sincronización → Instantáneas de recuperación**, corrige la exportación de origen e inténtalo de nuevo. Algunos importadores pueden duplicar tareas si cargas dos veces el mismo archivo.
 
 ## Métodos de migración alternativos
 

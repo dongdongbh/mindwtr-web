@@ -41,7 +41,7 @@ Cette couverture a été vérifiée le 9 août 2026 avec le code d’import du c
 1. Conservez l’export d’origine et créez une [sauvegarde Mindwtr](/fr/data-sync/backup-restore) récente avant l’import.
 2. Vérifiez les nombres et les avertissements de l’aperçu. Annulez si le total des projets ou des tâches semble incorrect.
 3. Après l’import, comparez un projet et quelques tâches représentatives avec la source. Vérifiez les titres, le projet ou l’état, les dates, les tags ou contextes, les notes, les listes de contrôle et les récurrences.
-4. Si la correspondance est incorrecte, restaurez l’instantané depuis **Paramètres → Synchronisation → Instantanés de récupération**, corrigez l’export source et recommencez. Certains outils peuvent dupliquer les tâches si vous importez deux fois le même fichier.
+4. Si la correspondance est incorrecte, touchez **Annuler l’import** dans le message de résultat, ou restaurez l’instantané plus tard depuis **Paramètres → Synchronisation → Instantanés de récupération**, corrigez l’export source et recommencez. Certains outils peuvent dupliquer les tâches si vous importez deux fois le même fichier.
 
 ## Autres méthodes de migration
 

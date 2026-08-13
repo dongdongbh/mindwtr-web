@@ -41,7 +41,7 @@ This coverage was reviewed on August 9, 2026 against the importer code at Mindwt
 1. Keep the original export and make a fresh [Mindwtr backup](/data-sync/backup-restore) before importing.
 2. Check the preview counts and warnings. Cancel if the project or task totals look wrong.
 3. After import, compare one project and a few representative tasks with the source. Check titles, project or status, dates, tags or contexts, notes, checklists, and recurrence.
-4. If the mapping is wrong, restore the recovery snapshot from **Settings → Sync → Recovery Snapshots**, adjust the source export, and try again. Importing the same export twice can duplicate tasks in some importers.
+4. If the mapping is wrong, tap **Undo import** on the result message, or restore the recovery snapshot later from **Settings → Sync → Recovery Snapshots**, adjust the source export, and try again. Importing the same export twice can duplicate tasks in some importers.
 
 ## Alternative Migration Methods
 

@@ -270,7 +270,7 @@ Flujo de rotación recomendado:
 
 1. Añade el token nuevo a `MINDWTR_CLOUD_AUTH_TOKENS` junto al antiguo.
 2. Actualiza los clientes con el token nuevo.
-3. Elimina el token antiguo después del periodo de migración.
+3. Elimina el token antiguo después del periodo de migración. Eliminar un token también detiene su feed de calendario publicado: la URL del feed responde 404 desde entonces, y el servidor borra el estado guardado del feed en su siguiente reinicio — los suscriptores necesitan una nueva URL de feed publicada con el token nuevo.
 
 Como el hash del token se asigna al espacio de nombres/archivo, cambiar el token cambia el espacio de nombres de almacenamiento. Si necesitas continuidad con un token nuevo, migra deliberadamente el archivo de datos/directorio de archivos adjuntos correspondiente.
 

@@ -270,7 +270,7 @@ Recommended rotation flow:
 
 1. Add new token to `MINDWTR_CLOUD_AUTH_TOKENS` alongside old token.
 2. Update clients to new token.
-3. Remove old token after migration window.
+3. Remove old token after migration window. Removing a token also stops its published calendar feed: the feed URL answers 404 from then on, and the server deletes the feed's stored state on its next restart — subscribers need a new feed URL published with the new token.
 
 Because token hash maps namespace/file, changing token changes storage namespace. If you require continuity under a new token, migrate corresponding data file/attachment directory deliberately.
 

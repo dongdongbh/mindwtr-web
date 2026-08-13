@@ -270,7 +270,7 @@ Empfohlener Ablauf:
 
 1. Neues Token neben dem alten zu `MINDWTR_CLOUD_AUTH_TOKENS` hinzufügen.
 2. Clients auf das neue Token umstellen.
-3. Altes Token nach dem Migrationsfenster entfernen.
+3. Altes Token nach dem Migrationsfenster entfernen. Mit dem Token endet auch sein veröffentlichter Kalender-Feed: Die Feed-URL antwortet ab dann mit 404, und der Server löscht den gespeicherten Feed-Zustand beim nächsten Neustart — Abonnenten brauchen eine neue Feed-URL, die mit dem neuen Token veröffentlicht wird.
 
 Da der Token-Hash den Namensraum/die Datei bestimmt, ändert ein Tokenwechsel den Speichernamensraum. Wenn Sie Kontinuität mit einem neuen Token benötigen, migrieren Sie die entsprechende Datendatei und das Anhangsverzeichnis bewusst.
 

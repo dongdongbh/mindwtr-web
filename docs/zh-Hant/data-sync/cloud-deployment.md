@@ -270,7 +270,7 @@ DELETE /v1/attachments/orphans
 
 1. 將新 token 與舊 token 一同加入 `MINDWTR_CLOUD_AUTH_TOKENS`。
 2. 將用戶端更新為新 token。
-3. 遷移期間結束後移除舊 token。
+3. 遷移期間結束後移除舊 token。移除 token 也會停止它發布的日曆訂閱源：訂閱源 URL 從此回應 404，伺服器會在下次重啟時刪除該訂閱源的儲存狀態——訂閱者需要以新 token 重新發布的訂閱源 URL。
 
 由於 token 雜湊會對應命名空間／檔案，變更 token 也會變更儲存命名空間。如果新 token 必須延續資料，請刻意遷移相應的資料檔案／附件目錄。
 

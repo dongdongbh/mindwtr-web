@@ -270,7 +270,7 @@ Procédure de rotation recommandée :
 
 1. Ajoutez le nouveau jeton à `MINDWTR_CLOUD_AUTH_TOKENS` aux côtés de l’ancien.
 2. Mettez à jour les clients avec le nouveau jeton.
-3. Supprimez l’ancien jeton après la période de migration.
+3. Supprimez l’ancien jeton après la période de migration. Supprimer un jeton arrête aussi son flux de calendrier publié : l’URL du flux répond 404 dès lors, et le serveur supprime l’état enregistré du flux à son prochain redémarrage — les abonnés ont besoin d’une nouvelle URL de flux publiée avec le nouveau jeton.
 
 Comme le hachage du jeton détermine l’espace de noms/le fichier, modifier le jeton change l’espace de noms de stockage. Si vous devez assurer la continuité avec un nouveau jeton, migrez délibérément le fichier de données/répertoire de pièces jointes correspondant.
 

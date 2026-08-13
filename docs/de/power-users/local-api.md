@@ -100,6 +100,8 @@ Das Bun-Hilfsprogramm verlangt nur dann ein Token, wenn `MINDWTR_API_TOKEN` gese
 
 Die lokale Desktop-API akzeptiert `isFocusedToday=true`/`1` und `isFocusedToday=false`/`0`. Mit `true` oder `1` liefert sie Aufgaben im **Heutigen Fokus**. Mit `false` oder `0` liefert sie nicht markierte Aufgaben, einschließlich älterer Datensätze ohne dieses Feld. Ohne den Parameter filtert sie die Liste nicht nach diesem Feld. Bei anderen Werten antwortet sie mit `400`.
 
+`query` ist hier eine reine Textsuche: Der Wert wird in Kleinbuchstaben umgewandelt und als Teilzeichenfolge gegen Titel, Beschreibung, Status, Tags, Kontexte, Projekt- und Bereichs-IDs sowie Support-Notizen der Aufgabe geprüft. Es ist nicht die Operatorsprache. `status:`, `context:`, `tag:`, `due:<=7d`, Ausdrücke in Anführungszeichen und `-Negation` gehören zum Suchfeld der App, zu `--query` der CLI und zur Aufgabenliste des MCP-Servers; hier gesendet werden sie als wörtliche Zeichen verglichen und liefern meist nichts.
+
 ### Antwortstrukturen
 
 **Aufgabe (Auszug)**

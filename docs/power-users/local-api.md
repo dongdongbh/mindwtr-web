@@ -100,6 +100,8 @@ The Bun helper only requires a token when `MINDWTR_API_TOKEN` is set.
 
 The desktop Local API accepts `isFocusedToday=true`/`1` and `isFocusedToday=false`/`0`. With `true` or `1`, it returns tasks marked for Focus Today. With `false` or `0`, it returns unmarked tasks, including older records without the field. Omit the parameter to leave the list unfiltered. Other values return `400`.
 
+`query` here is plain-text matching: the value is lowercased and tested as a substring against the task's title, description, status, tags, contexts, project and area ids, and support notes. It is not the operator language. `status:`, `context:`, `tag:`, `due:<=7d`, quoted phrases and `-negation` belong to the app's search box, the CLI's `--query`, and the MCP server's task listing; sent here they match as literal characters and will usually return nothing.
+
 ### Response Shapes
 
 **Task (partial)**

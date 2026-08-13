@@ -100,6 +100,8 @@ L’utilitaire Bun n’exige un jeton que lorsque `MINDWTR_API_TOKEN` est défin
 
 L’API locale de l’application de bureau accepte `isFocusedToday=true`/`1` et `isFocusedToday=false`/`0`. Avec `true` ou `1`, elle renvoie les tâches des **Priorités du jour**. Avec `false` ou `0`, elle renvoie les tâches non marquées, y compris les anciens enregistrements dépourvus de ce champ. Sans le paramètre, elle ne filtre pas la liste selon ce champ. Pour toute autre valeur, elle répond avec `400`.
 
+Ici, `query` est une recherche en texte brut : la valeur est mise en minuscules et testée comme sous-chaîne sur le titre, la description, le statut, les tags, les contextes, les identifiants de projet et de domaine et les notes de suivi de la tâche. Ce n’est pas le langage d’opérateurs. `status:`, `context:`, `tag:`, `due:<=7d`, les expressions entre guillemets et la `-négation` appartiennent au champ de recherche de l’application, au `--query` de la CLI et à la liste de tâches du serveur MCP ; envoyés ici, ils sont comparés comme des caractères littéraux et ne renvoient généralement rien.
+
 ### Formes des réponses
 
 **Tâche (partielle)**

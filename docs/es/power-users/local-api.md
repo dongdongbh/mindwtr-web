@@ -100,6 +100,8 @@ El asistente de Bun solo requiere un token cuando se establece `MINDWTR_API_TOKE
 
 La API local de escritorio acepta `isFocusedToday=true`/`1` e `isFocusedToday=false`/`0`. Con `true` o `1`, devuelve las tareas del **Foco de hoy**. Con `false` o `0`, devuelve las tareas sin esa marca, incluidos los registros antiguos que no contienen el campo. Si omites el parámetro, la lista no se filtra por este campo. Los demás valores devuelven `400`.
 
+Aquí `query` es una búsqueda de texto plano: el valor se pasa a minúsculas y se comprueba como subcadena contra el título, la descripción, el estado, las etiquetas, los contextos, los identificadores de proyecto y área y las notas de apoyo de la tarea. No es el lenguaje de operadores. `status:`, `context:`, `tag:`, `due:<=7d`, las frases entre comillas y la `-negación` pertenecen al buscador de la aplicación, al `--query` de la CLI y al listado de tareas del servidor MCP; enviados aquí se comparan como caracteres literales y normalmente no devuelven nada.
+
 ### Formas de las respuestas
 
 **Tarea (parcial)**

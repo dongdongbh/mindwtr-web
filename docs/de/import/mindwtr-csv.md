@@ -95,12 +95,20 @@ Mindwtr gibt jeder Zeile eine stabile Identität. Wird dieselbe Datei zweimal im
 - Löschungen werden respektiert. Wenn Sie ein importiertes Projekt löschen und die Datei erneut importieren, wird das Projekt nicht neu angelegt, und seine Zeilen kommen ohne dieses Projekt an.
 - Gehört der Name eines importierten Bereichs oder Projekts bereits zu etwas anderem, erhält der neue Eintrag den Zusatz `(Mindwtr CSV)` im Namen, und eine Warnung weist darauf hin.
 
+## Export aus Mindwtr
+
+Mindwtr schreibt genau dieses Format, der Weg führt also in beide Richtungen. **Einstellungen → Daten → Sicherung → CSV exportieren** speichert Ihre aktuellen Aufgaben als eine CSV-Datei, auf dem Desktop wie auf dem Mobilgerät.
+
+- Die Spalte `ID` wird immer geschrieben. Ein bearbeiteter Export aktualisiert beim erneuten Import dieselben Aufgaben, statt sie zu verdoppeln. Die Hinweise zur Identität oben gelten unverändert.
+- Gelöschte Aufgaben werden nie exportiert. Das Format hat keine Spalte dafür, und eine solche Zeile käme beim nächsten Import als aktive Aufgabe zurück.
+- Wiederholungen werden nicht geschrieben, passend zu dem, was der Importer liest. Sie richten sie weiterhin in der App ein.
+- Für eine vollständige Kopie samt Einstellungen und Löschverlauf verwenden Sie stattdessen die JSON-[Sicherung](/de/data-sync/backup-restore).
+
 ## Was dieser Importer nicht leistet
 
 - **Wiederholungen.** Aus einer CSV entstehen keine Serien. Richten Sie sie nach dem Import in der App ein.
 - **Unteraufgaben-Hierarchie.** Es gibt keine Elternspalte. Verwenden Sie `Checklist` für die Schritte innerhalb einer Aufgabe und `Section` zur Gruppierung innerhalb eines Projekts.
 - **Anhänge.** Dateipfade oder URLs in einer CSV sind Text; es wird nichts geladen oder kopiert.
-- **Export.** Mindwtr schreibt dieses Format derzeit nicht. Verwenden Sie zum Umzug zwischen Mindwtr-Installationen die JSON-[Sicherung](/de/data-sync/backup-restore).
 
 ## Mögliche Warnungen
 

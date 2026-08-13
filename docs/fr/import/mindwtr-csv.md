@@ -95,12 +95,20 @@ Mindwtr attribue à chaque ligne une identité stable : importer deux fois le m�
 - Les suppressions sont respectées. Si vous supprimez un projet importé puis réimportez le fichier, le projet n’est pas recréé et ses lignes arrivent sans lui.
 - Si le nom d’un domaine ou d’un projet importé appartient déjà à autre chose, le nouvel élément reçoit `(Mindwtr CSV)` à la fin de son nom et un avertissement le signale.
 
+## Exporter depuis Mindwtr
+
+Mindwtr écrit ce même format : l’aller-retour est donc complet. **Réglages → Données → Sauvegarde → Exporter en CSV** enregistre vos tâches actuelles dans un seul fichier CSV, sur ordinateur comme sur mobile.
+
+- La colonne `ID` est toujours écrite : réimporter un export modifié met à jour les mêmes tâches au lieu de les dupliquer. Les remarques sur l’identité ci-dessus s’appliquent telles quelles.
+- Les tâches supprimées ne sont jamais exportées. Le format n’a pas de colonne pour elles et une telle ligne reviendrait comme tâche active au prochain import.
+- La récurrence n’est pas écrite, à l’image de ce que lit l’importateur. Les répétitions se configurent toujours dans l’application.
+- Pour une copie complète incluant les réglages et l’historique des éléments supprimés, utilisez plutôt la [sauvegarde](/fr/data-sync/backup-restore) JSON.
+
 ## Ce que cet outil ne fait pas
 
 - **Récurrence.** Un CSV ne crée aucune répétition. Configurez-les dans l’application après l’import.
 - **Hiérarchie de sous-tâches.** Il n’existe pas de colonne parente. Utilisez `Checklist` pour les étapes d’une même tâche et `Section` pour regrouper au sein d’un projet.
 - **Pièces jointes.** Les chemins de fichiers ou les URL d’un CSV restent du texte ; rien n’est téléchargé ni copié.
-- **Export.** Mindwtr n’écrit pas encore ce format. Pour déplacer des données entre installations de Mindwtr, utilisez la [sauvegarde](/fr/data-sync/backup-restore) JSON.
 
 ## Avertissements possibles
 

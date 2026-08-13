@@ -95,12 +95,20 @@ Mindwtr da a cada fila una identidad estable, así que importar dos veces el mis
 - Las eliminaciones se respetan. Si borras un proyecto importado y vuelves a importar el archivo, el proyecto no se recrea y sus filas llegan sin él.
 - Si el nombre de un área o un proyecto importado ya pertenece a otro elemento, el nuevo recibe `(Mindwtr CSV)` al final del nombre y un aviso lo indica.
 
+## Exportar desde Mindwtr
+
+Mindwtr escribe este mismo formato, así que el viaje de ida y vuelta está completo. **Ajustes → Datos → Copia de seguridad → Exportar CSV** guarda tus tareas actuales en un único archivo CSV, tanto en escritorio como en móvil.
+
+- La columna `ID` se escribe siempre, de modo que reimportar un export editado actualiza las mismas tareas en lugar de duplicarlas. Las notas sobre identidad de más arriba se aplican tal cual.
+- Las tareas eliminadas nunca se exportan. El formato no tiene columna para ellas y una fila así volvería como tarea activa en la siguiente importación.
+- La recurrencia no se escribe, igual que no la lee el importador. Las repeticiones se siguen configurando en la aplicación.
+- Para una copia completa con ajustes e historial de elementos eliminados, usa la [copia de seguridad](/es/data-sync/backup-restore) en JSON.
+
 ## Lo que este importador no hace
 
 - **Recurrencias.** Un CSV no crea repeticiones. Configúralas en la aplicación después de importar.
 - **Jerarquía de subtareas.** No hay columna de tarea principal. Usa `Checklist` para los pasos dentro de una tarea y `Section` para agrupar dentro de un proyecto.
 - **Adjuntos.** Las rutas de archivo o las URL de un CSV son texto; no se descarga ni se copia nada.
-- **Exportación.** Mindwtr todavía no escribe este formato. Para mover datos entre instalaciones de Mindwtr, usa la [copia de seguridad](/es/data-sync/backup-restore) en JSON.
 
 ## Avisos que puedes ver
 

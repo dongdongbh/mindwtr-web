@@ -99,7 +99,7 @@ Mindwtr gives every row a stable identity, so importing the same file twice does
 
 Mindwtr writes this same format, so the round trip is complete. **Settings → Data → Backup → Export CSV** saves your live tasks as one CSV file, on desktop and mobile.
 
-- The `ID` column is always written, so re-importing an edited export updates the same tasks instead of duplicating them. The identity notes above apply directly.
+- The `ID` column is always written, so re-importing an export does not duplicate anything: rows whose `ID` matches a task you already have are skipped with a warning. Edits made to an exported file are **not** pushed back in — change those tasks in the app instead. The identity notes above apply directly.
 - Deleted tasks are never exported. The format has no column for them, and such a row would return as a live task on the next import.
 - Recurrence is not written, matching what the importer reads. Repeats stay set up in the app.
 - For a complete copy including settings and deleted-item history, use the JSON [backup](/data-sync/backup-restore) instead.

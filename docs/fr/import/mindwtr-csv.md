@@ -99,7 +99,7 @@ Mindwtr attribue à chaque ligne une identité stable : importer deux fois le m�
 
 Mindwtr écrit ce même format : l’aller-retour est donc complet. **Réglages → Données → Sauvegarde → Exporter en CSV** enregistre vos tâches actuelles dans un seul fichier CSV, sur ordinateur comme sur mobile.
 
-- La colonne `ID` est toujours écrite : réimporter un export modifié met à jour les mêmes tâches au lieu de les dupliquer. Les remarques sur l’identité ci-dessus s’appliquent telles quelles.
+- La colonne `ID` est toujours écrite : réimporter un export ne duplique rien, les lignes dont l’`ID` correspond à une tâche existante sont ignorées avec un avertissement. Les modifications apportées à un fichier exporté ne sont **pas** réinjectées — modifiez ces tâches dans l’application. Les remarques sur l’identité ci-dessus s’appliquent telles quelles.
 - Les tâches supprimées ne sont jamais exportées. Le format n’a pas de colonne pour elles et une telle ligne reviendrait comme tâche active au prochain import.
 - La récurrence n’est pas écrite, à l’image de ce que lit l’importateur. Les répétitions se configurent toujours dans l’application.
 - Pour une copie complète incluant les réglages et l’historique des éléments supprimés, utilisez plutôt la [sauvegarde](/fr/data-sync/backup-restore) JSON.

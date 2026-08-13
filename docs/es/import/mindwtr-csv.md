@@ -99,7 +99,7 @@ Mindwtr da a cada fila una identidad estable, así que importar dos veces el mis
 
 Mindwtr escribe este mismo formato, así que el viaje de ida y vuelta está completo. **Ajustes → Datos → Copia de seguridad → Exportar CSV** guarda tus tareas actuales en un único archivo CSV, tanto en escritorio como en móvil.
 
-- La columna `ID` se escribe siempre, de modo que reimportar un export editado actualiza las mismas tareas en lugar de duplicarlas. Las notas sobre identidad de más arriba se aplican tal cual.
+- La columna `ID` se escribe siempre, así que reimportar un export no duplica nada: las filas cuyo `ID` coincide con una tarea que ya tienes se omiten con un aviso. Los cambios hechos en un archivo exportado **no** se devuelven a la aplicación; edita esas tareas dentro de ella. Las notas sobre identidad de más arriba se aplican tal cual.
 - Las tareas eliminadas nunca se exportan. El formato no tiene columna para ellas y una fila así volvería como tarea activa en la siguiente importación.
 - La recurrencia no se escribe, igual que no la lee el importador. Las repeticiones se siguen configurando en la aplicación.
 - Para una copia completa con ajustes e historial de elementos eliminados, usa la [copia de seguridad](/es/data-sync/backup-restore) en JSON.

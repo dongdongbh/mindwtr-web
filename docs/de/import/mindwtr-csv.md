@@ -99,7 +99,7 @@ Mindwtr gibt jeder Zeile eine stabile Identität. Wird dieselbe Datei zweimal im
 
 Mindwtr schreibt genau dieses Format, der Weg führt also in beide Richtungen. **Einstellungen → Daten → Sicherung → CSV exportieren** speichert Ihre aktuellen Aufgaben als eine CSV-Datei, auf dem Desktop wie auf dem Mobilgerät.
 
-- Die Spalte `ID` wird immer geschrieben. Ein bearbeiteter Export aktualisiert beim erneuten Import dieselben Aufgaben, statt sie zu verdoppeln. Die Hinweise zur Identität oben gelten unverändert.
+- Die Spalte `ID` wird immer geschrieben, daher verdoppelt ein erneuter Import nichts: Zeilen, deren `ID` zu einer vorhandenen Aufgabe passt, werden mit einer Warnung übersprungen. Änderungen an einer exportierten Datei werden **nicht** zurückgespielt — bearbeiten Sie diese Aufgaben stattdessen in der App. Die Hinweise zur Identität oben gelten unverändert.
 - Gelöschte Aufgaben werden nie exportiert. Das Format hat keine Spalte dafür, und eine solche Zeile käme beim nächsten Import als aktive Aufgabe zurück.
 - Wiederholungen werden nicht geschrieben, passend zu dem, was der Importer liest. Sie richten sie weiterhin in der App ein.
 - Für eine vollständige Kopie samt Einstellungen und Löschverlauf verwenden Sie stattdessen die JSON-[Sicherung](/de/data-sync/backup-restore).

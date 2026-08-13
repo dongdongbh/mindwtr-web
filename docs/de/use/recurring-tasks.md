@@ -72,6 +72,8 @@ Wenn Sie eine wiederkehrende Aufgabe abschließen, erstellt Mindwtr die nächste
 
 Besitzt die Aufgabe ein Fälligkeits-, Start- oder Wiedervorlagedatum, verschiebt Mindwtr diese Felder entsprechend der Wiederholungsregel. Reine Datumswerte bleiben reine Datumswerte.
 
+Schließen Sie eine Aufgabe verspätet ab, behält die nächste Aufgabe den ursprünglichen Rhythmus: Sie landet auf dem ersten Vorkommen nach dem Moment des Abschlusses, und dazwischen verpasste Vorkommen werden übersprungen, statt sich als überfällige Kopien anzusammeln. Eine wöchentliche Montagsaufgabe, die erst am Mittwoch abgeschlossen wird, kehrt am folgenden Montag zurück. Start-, Fälligkeits- und Wiedervorlagedatum rücken gemeinsam vor und behalten die von Ihnen gesetzten Abstände.
+
 Die nächste Aufgabe erscheint erst in „Fokus“ und unter „Nächste Aktionen“, wenn ihr Datum erreicht ist. Ein zukünftiges Startdatum stellt sie wie gewohnt zurück. Eine wiederkehrende Aufgabe ohne Startdatum wird bis zu ihrem nächsten Datum zurückgestellt (dem früheren von Fälligkeits- und Wiedervorlagedatum). Dadurch erscheint das gerade erstellte nächste Vorkommen nicht unmittelbar nach Abschluss der aktuellen Aufgabe wieder in der Liste. Zurückgestellte Vorkommen bleiben unter **Projekte** und in der **Suche** sichtbar.
 
 ## Verwandte Seiten

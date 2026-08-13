@@ -72,6 +72,8 @@ Lorsque vous terminez une tâche récurrente, Mindwtr crée la suivante avec le 
 
 Si la tâche possède une échéance, une date de début ou une date de revue, Mindwtr les avance selon la règle de récurrence. Les valeurs sans heure restent sans heure.
 
+Si vous terminez une tâche en retard, la tâche suivante conserve le rythme d'origine : elle se place sur la première occurrence qui suit le moment où vous avez terminé, et les occurrences manquées entre-temps sont ignorées au lieu de s'accumuler en copies en retard. Une tâche hebdomadaire du lundi terminée un mercredi revient le lundi suivant. Les dates de début, d'échéance et de revue avancent ensemble, en conservant les écarts que vous avez définis.
+
 La tâche suivante reste hors de Focus et des Prochaines actions jusqu’à sa date. Une date de début future la reporte comme d’habitude ; sans date de début, une tâche récurrente est reportée jusqu’à sa prochaine date, la plus proche entre son échéance et sa date de revue. La nouvelle occurrence ne réapparaît donc pas immédiatement après l’achèvement de la précédente. Les occurrences reportées restent visibles dans **Projets** et la **Recherche**.
 
 ## Pages associées

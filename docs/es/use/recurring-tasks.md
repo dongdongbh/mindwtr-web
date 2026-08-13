@@ -72,6 +72,8 @@ Al completar una tarea recurrente, Mindwtr crea la siguiente con el mismo títul
 
 Si tiene fecha límite, fecha de inicio o fecha de revisión, Mindwtr hace avanzar esos campos según la regla de recurrencia. Los valores que solo contienen una fecha siguen sin hora.
 
+Si completas una tarea tarde, la siguiente mantiene el ritmo original: cae en la primera aparición posterior al momento en que la completaste, y las apariciones perdidas entre medias se omiten en lugar de acumularse como copias vencidas. Una tarea semanal del lunes completada un miércoles vuelve el lunes siguiente. Las fechas de inicio, límite y revisión avanzan juntas, conservando los intervalos que definiste.
+
 La tarea siguiente no aparece en Foco ni en Próximas acciones hasta que llega su fecha. Una fecha de inicio futura la aplaza como de costumbre; una tarea recurrente sin fecha de inicio queda aplazada hasta su próxima fecha, la primera entre la fecha límite y la de revisión. Así, la nueva aparición no vuelve a la lista justo después de completar la actual. Las apariciones aplazadas siguen visibles en **Proyectos** y **Buscar**.
 
 ## Páginas relacionadas

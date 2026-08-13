@@ -72,6 +72,8 @@ When you complete a recurring task, Mindwtr creates the next task with the same 
 
 If the task has a due date, start date, or review date, Mindwtr advances those fields according to the recurrence rule. Date-only values stay date-only.
 
+If you complete a task late, the next task keeps the original schedule: it lands on the first occurrence after the moment you completed it, and any occurrences you missed in between are skipped instead of piling up as overdue copies. A weekly Monday task completed on Wednesday comes back the following Monday. Start, due, and review dates move forward together, keeping the gaps you set between them.
+
 The next task stays out of Focus and Next actions until its date arrives. A future start date defers it as usual, and a recurring task without a start date is deferred until its next date (the earlier of its due and review dates). This keeps the freshly created next occurrence from reappearing in the list right after you complete the current one. Deferred occurrences remain visible in **Projects** and **Search**.
 
 ## Related Pages

@@ -46,7 +46,7 @@ Abre **Terminadas** y toca **Seleccionar** para elegir tareas; después usa **Mo
 
 **Archivadas** tiene un cuadro de búsqueda y un botón **Filtros** en su cabecera. Filtros acota por contexto, etiqueta, prioridad y tiempo estimado, y contiene **Ordenar** y **Agrupar** — ambos ofrecen **Fecha de finalización**, ya que aquí solo se archiva trabajo terminado. De forma predeterminada, primero aparece la finalización más reciente. Las selecciones de filtro se comparten entre las listas de tareas, así que un contexto elegido en otra lista también acota esta. La búsqueda y los filtros se aplican al lado Tareas del selector Tareas | Proyectos.
 
-En **Terminadas**, ordena por **Fecha de finalización** para mostrar primero las tareas completadas más recientes. Agrupa por **Fecha de finalización** para dividir la lista en **Hoy**, **Ayer**, **Últimos 7 días**, un encabezado por mes natural para lo más antiguo (enero de 2026, diciembre de 2025, …) y **Sin completar**; los grupos vacíos permanecen ocultos y el grupo general sin asignar va al final. Toca cualquier encabezado de grupo para plegarlo: cada lista recuerda qué grupos están plegados en cada modo de agrupación en ese dispositivo, y las tareas de un grupo plegado quedan fuera de **Seleccionar** y de las acciones en lote.
+En **Terminadas**, ordena por **Fecha de finalización** para mostrar primero las tareas completadas más recientes. Agrupa por **Fecha de finalización** para dividir la lista en **Hoy**, **Ayer**, **Últimos 7 días**, un encabezado por mes natural para lo más antiguo (enero de 2026, diciembre de 2025, …) y **Sin completar**; los grupos vacíos permanecen ocultos y el grupo general sin asignar va al final. Referencias, Bandeja de entrada, Terminadas y Archivadas también se pueden agrupar por **Contexto**. Una tarea con varios contextos aparece en cada grupo correspondiente y las tareas sin contexto quedan al final en **Sin contexto**. Toca cualquier encabezado de grupo para plegarlo: cada lista recuerda qué grupos están plegados en cada modo de agrupación en ese dispositivo, y las tareas de un grupo plegado quedan fuera de **Seleccionar** y de las acciones en lote.
 
 Abre **Papelera** y toca **Seleccionar** para gestionar varias tareas y proyectos eliminados. Toca **Seleccionar todo** o elige elementos y después restáuralos o elimínalos permanentemente en un solo paso. La eliminación permanente siempre pide confirmación.
 
@@ -678,6 +678,8 @@ Consulta [Datos y sincronización](/es/data-sync/) para configurar la sincroniza
 - **Estado de la última sincronización**: consulta cuándo se sincronizaron los datos por última vez
 - **Historial de sincronización**: contraído de forma predeterminada; tócalo para ampliar las entradas recientes
 - **Exportar copia de seguridad**: guarda los datos en un archivo
+- **Exportar CSV de Mindwtr**: guarda un archivo de tareas para hojas de cálculo que se puede reimportar sin duplicados
+- **Exportar TaskNotes**: guarda un Markdown por tarea en un ZIP para el complemento TaskNotes de Obsidian
 - **Importación de Recordatorios de Apple**: elige una lista de Recordatorios e importa los recordatorios incompletos a la Bandeja de entrada. Los recordatorios importados permanecen en Recordatorios de Apple y se omiten los ya importados, completados o sin título.
 - **Opciones de sincronización de ajustes**: elige qué preferencias se sincronizan entre dispositivos (tema, idioma/formato de fecha, valores GTD predeterminados, URL de calendarios externos, ajustes de IA y Filtros guardados). Las claves de API y las rutas de modelos locales nunca se sincronizan.
 
@@ -701,6 +703,7 @@ Consulta [Datos y sincronización](/es/data-sync/) para configurar la sincroniza
 - Buscar actualizaciones
 - **Enviar comentarios** para informar de errores, solicitar funciones o enviar otras notas cuando la compilación tenga habilitados los comentarios. Puedes incluir un correo de respuesta si quieres seguimiento.
 - Enlaces al sitio web y GitHub
+- Enlace a la política de privacidad
 
 ---
 

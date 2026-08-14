@@ -449,6 +449,13 @@ The same workflow applies. Avoid editing on multiple devices simultaneously to p
 2. Tap **Export Backup**
 3. Save to your desired location
 
+For a readable or portable task export, open the **Backup** fold under **Settings → Data** and choose:
+
+- **Export Mindwtr CSV** for a spreadsheet-friendly task file that Mindwtr can safely re-import without duplicating existing task IDs.
+- **Export TaskNotes** for a ZIP containing one Markdown file per task with YAML frontmatter, ready for the Obsidian TaskNotes plugin and compatible with Mindwtr's Obsidian import.
+
+Exports, restores, and imports create a recovery snapshot where supported. After an import, restore, or merge, use **Undo** in the result message to roll back immediately.
+
 ### Restore from Backup
 
 Mindwtr can restore local data directly from a backup JSON file on both desktop and mobile.
@@ -470,6 +477,10 @@ See [Backup and Restore](/data-sync/backup-restore) for the detailed flow.
 ## Imports and Migrations
 
 Use these guides when bringing task data from another app into Mindwtr. Imports add data to Mindwtr; they do not configure sync.
+
+### Mindwtr CSV / ZIP Import
+
+Use **Settings → Data → Import Data → Import Mindwtr CSV** to import a documented task spreadsheet or a ZIP containing CSV files. The format covers status, projects, sections, areas, contexts, tags, assignees, priority, energy, start/due/review dates, completion, checklists, and manual order. Re-importing a Mindwtr export skips task IDs that already exist instead of duplicating or overwriting them.
 
 ### TickTick CSV / ZIP Import
 

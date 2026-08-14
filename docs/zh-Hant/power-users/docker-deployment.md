@@ -96,7 +96,7 @@ MINDWTR_CLOUD_CORS_ORIGIN=https://mindwtr.home.arpa
 MINDWTR_CADDYFILE=Caddyfile.local-https
 ```
 
-這會使用 Caddy 的內部憑證授權單位。每台用戶端裝置都必須信任 Caddy 的本機根憑證，Mindwtr 才會接受 HTTPS 連線。對行動版用戶端而言，公用 Let's Encrypt 憑證通常更可靠。
+這會使用 Caddy 的內部憑證授權單位。每台用戶端裝置都必須信任 Caddy 的本機根憑證，Mindwtr 才會接受 HTTPS 連線。Mindwtr 1.2.0 及更新版本會在 Android 上信任使用者安裝的憑證授權單位；iPhone 和 iPad 還需要安裝根憑證並明確啟用完全信任。若 hostname 可從公用網路存取，公用 Let's Encrypt 憑證仍是最簡單的選擇。
 
 僅限 LAN 的 stack 啟動後，請匯出 Caddy 的本機根憑證：
 

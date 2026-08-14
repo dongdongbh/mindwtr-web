@@ -449,6 +449,13 @@ La même procédure s’applique. Évitez d’effectuer des modifications simult
 2. Touchez **Exporter une sauvegarde**
 3. Enregistrez-la à l’emplacement souhaité
 
+Pour obtenir un export de tâches lisible ou portable, ouvrez la section **Sauvegarde** sous **Réglages → Données** et choisissez :
+
+- **Exporter un CSV Mindwtr** pour un fichier de tâches adapté aux tableurs que Mindwtr peut réimporter sans dupliquer les identifiants existants.
+- **Exporter TaskNotes** pour un ZIP contenant un fichier Markdown par tâche avec des métadonnées YAML, prêt pour le module TaskNotes d’Obsidian et compatible avec l’import Obsidian de Mindwtr.
+
+Les exports, restaurations et imports créent un instantané de récupération lorsque la plateforme le permet. Après un import, une restauration ou une fusion, utilisez **Annuler** dans le message de résultat pour revenir immédiatement en arrière.
+
 ### Restaurer à partir d’une sauvegarde
 
 Mindwtr peut restaurer directement les données locales à partir d’un fichier JSON de sauvegarde, aussi bien sur ordinateur que sur mobile.
@@ -470,6 +477,10 @@ Consultez [Sauvegarde et restauration](/fr/data-sync/backup-restore) pour conna�
 ## Importations et migrations
 
 Utilisez ces guides pour transférer dans Mindwtr des données de tâches provenant d’une autre application. Les importations ajoutent des données à Mindwtr ; elles ne configurent pas la synchronisation.
+
+### Importation CSV / ZIP Mindwtr
+
+Utilisez **Réglages → Données → Importer des données → Importer un CSV Mindwtr** pour importer un tableau de tâches documenté ou un ZIP contenant des fichiers CSV. Le format couvre l’état, les projets, les sections, les domaines, les contextes, les tags, les responsables, la priorité, l’énergie, les dates de début/échéance/révision, l’achèvement, les listes et l’ordre manuel. Réimporter un export Mindwtr ignore les identifiants déjà présents au lieu de les dupliquer ou de les écraser.
 
 ### Importation CSV / ZIP de TickTick
 

@@ -96,7 +96,7 @@ MINDWTR_CLOUD_CORS_ORIGIN=https://mindwtr.home.arpa
 MINDWTR_CADDYFILE=Caddyfile.local-https
 ```
 
-Dies verwendet die interne Zertifizierungsstelle von Caddy. Jedes Clientgerät muss dem lokalen Stammzertifikat von Caddy vertrauen, bevor Mindwtr die HTTPS-Verbindung akzeptiert. Öffentliche Let's-Encrypt-Zertifikate sind für Mobilclients die zuverlässigere Wahl.
+Dies verwendet die interne Zertifizierungsstelle von Caddy. Jedes Clientgerät muss dem lokalen Stammzertifikat von Caddy vertrauen, bevor Mindwtr die HTTPS-Verbindung akzeptiert. Mindwtr 1.2.0 und neuer vertraut unter Android auf benutzerinstallierte Zertifizierungsstellen; auf iPhone und iPad muss das Stammzertifikat zusätzlich installiert und ausdrücklich als vollständig vertrauenswürdig aktiviert werden. Öffentliche Let's-Encrypt-Zertifikate bleiben die einfachste Wahl, wenn der Hostname öffentlich erreichbar ist.
 
 Exportieren Sie nach dem Start des reinen LAN-Stacks das lokale Stammzertifikat von Caddy:
 

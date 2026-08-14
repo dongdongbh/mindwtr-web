@@ -96,7 +96,7 @@ MINDWTR_CLOUD_CORS_ORIGIN=https://mindwtr.home.arpa
 MINDWTR_CADDYFILE=Caddyfile.local-https
 ```
 
-Cette configuration utilise l’autorité de certification interne de Caddy. Chaque appareil client doit faire confiance au certificat racine local de Caddy avant que Mindwtr n’accepte la connexion HTTPS. Les certificats publics Let’s Encrypt sont l’option la plus fiable pour les clients mobiles.
+Cette configuration utilise l’autorité de certification interne de Caddy. Chaque appareil client doit faire confiance au certificat racine local de Caddy avant que Mindwtr n’accepte la connexion HTTPS. Mindwtr 1.2.0 et les versions ultérieures font confiance aux autorités installées par l’utilisateur sur Android ; sur iPhone et iPad, il faut aussi installer le certificat racine et activer explicitement la confiance totale. Les certificats publics Let’s Encrypt restent la solution la plus simple lorsque le nom d’hôte est accessible publiquement.
 
 Après le démarrage de la pile réservée au réseau local, exportez le certificat racine local de Caddy :
 

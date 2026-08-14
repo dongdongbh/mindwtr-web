@@ -46,7 +46,7 @@ Open **Done** and tap **Select** to choose tasks, then use **Move → Archived**
 
 **Archived** has a search box and a **Filters** button in its header. Filters narrows by context, tag, priority, and time estimate, and holds **Sort** and **Group** — both offering **Completion date**, since everything filed here is finished work. The newest completion comes first by default. Filter selections are shared across the task lists, so a context picked elsewhere narrows this list too. Search and filters apply to the Tasks side of the Tasks | Projects switch.
 
-In Done, sort by **Completion date** to show the newest completions first. Group by **Completion date** to split the list into **Today**, **Yesterday**, **Previous 7 days**, one heading per calendar month for anything older (January 2026, December 2025, …), and **Not completed**; empty groups stay hidden, and the ungrouped catch-all group comes last. Tap any group heading to fold that group — each list remembers which of its groups are folded per grouping mode on that device, and a folded group’s tasks drop out of **Select** and the bulk actions.
+In Done, sort by **Completion date** to show the newest completions first. Group by **Completion date** to split the list into **Today**, **Yesterday**, **Previous 7 days**, one heading per calendar month for anything older (January 2026, December 2025, …), and **Not completed**; empty groups stay hidden, and the ungrouped catch-all group comes last. References, Inbox, Done, and Archive can also group by **Context**. A task with several contexts appears in each matching group, while tasks without one collect under **No context** at the end. Tap any group heading to fold that group — each list remembers which of its groups are folded per grouping mode on that device, and a folded group’s tasks drop out of **Select** and the bulk actions.
 
 Open **Trash** and tap **Select** to manage several deleted tasks and projects. Tap **Select All** or choose items, then restore or permanently delete them in one step. Permanent deletion always asks for confirmation.
 
@@ -678,6 +678,8 @@ See [Data and Sync](/data-sync/) for sync setup.
 - **Last sync status**: View when data was last synced
 - **Sync history**: Collapsed by default; tap to expand recent entries
 - **Export Backup**: Save data to a file
+- **Export Mindwtr CSV**: Save a spreadsheet-friendly task export that can be re-imported without duplicating existing tasks
+- **Export TaskNotes**: Save one Markdown file per task in a ZIP for Obsidian's TaskNotes plugin
 - **Apple Reminders import**: Choose a Reminders list and import incomplete reminders into Inbox. Imported reminders remain in Apple Reminders, and already imported, completed, or untitled reminders are skipped.
 - **Settings sync options**: Choose which preferences sync across devices (theme, language/date format, GTD defaults, external calendar URLs, AI settings, and Saved Filters). API keys and local model paths are never synced.
 
@@ -701,6 +703,7 @@ See [Data and Sync](/data-sync/) for sync setup.
 - Check for updates
 - **Send feedback** for bug reports, feature requests, or other notes when the build has feedback enabled. You can include a reply email if you want follow-up.
 - Website and GitHub links
+- Privacy policy link
 
 ---
 

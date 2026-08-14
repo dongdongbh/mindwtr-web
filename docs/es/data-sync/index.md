@@ -449,6 +449,13 @@ Se aplica el mismo flujo de trabajo. Evita editar simultáneamente en varios dis
 2. Toca **Exportar copia de seguridad**
 3. Guarda el archivo en la ubicación que quieras
 
+Para una exportación de tareas legible o portátil, abre la sección **Copia de seguridad** en **Ajustes → Datos** y elige:
+
+- **Exportar CSV de Mindwtr** para guardar un archivo de tareas apto para hojas de cálculo que Mindwtr puede volver a importar sin duplicar identificadores existentes.
+- **Exportar TaskNotes** para guardar un ZIP con un archivo Markdown por tarea y metadatos YAML, listo para el complemento TaskNotes de Obsidian y compatible con la importación de Obsidian de Mindwtr.
+
+Las exportaciones, restauraciones e importaciones crean una instantánea de recuperación cuando es posible. Después de importar, restaurar o fusionar, usa **Deshacer** en el mensaje de resultado para revertir la operación de inmediato.
+
 ### Restaurar desde una copia de seguridad
 
 Mindwtr puede restaurar los datos locales directamente desde un archivo JSON de copia de seguridad tanto en el escritorio como en el móvil.
@@ -470,6 +477,10 @@ Consulta [Copia de seguridad y restauración](/es/data-sync/backup-restore) para
 ## Importaciones y migraciones
 
 Usa estas guías cuando incorpores a Mindwtr datos de tareas de otra aplicación. Las importaciones añaden datos a Mindwtr; no configuran la sincronización.
+
+### Importación CSV / ZIP de Mindwtr
+
+Usa **Ajustes → Datos → Importar datos → Importar CSV de Mindwtr** para importar una hoja de tareas documentada o un ZIP con archivos CSV. El formato incluye estado, proyectos, secciones, áreas, contextos, etiquetas, responsables, prioridad, energía, fechas de inicio/vencimiento/revisión, finalización, listas y orden manual. Al volver a importar una exportación de Mindwtr se omiten los identificadores ya existentes en vez de duplicarlos o sobrescribirlos.
 
 ### Importación CSV / ZIP de TickTick
 

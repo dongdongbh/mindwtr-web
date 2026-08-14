@@ -46,7 +46,7 @@ Tippen Sie auf **Menü**, um weitere Ansichten zu öffnen:
 
 **Archiviert** hat ein Suchfeld und eine Schaltfläche **Filter** in der Kopfzeile. Filter grenzt nach Kontext, Tag, Priorität und Zeitaufwand ein und enthält **Sortieren** und **Gruppieren** — beide bieten **Abschlussdatum**, da hier ausschließlich abgeschlossene Arbeit abgelegt ist. Standardmäßig steht der neueste Abschluss oben. Filterauswahlen gelten für alle Aufgabenlisten gemeinsam, ein anderswo gewählter Kontext grenzt also auch diese Liste ein. Suche und Filter gelten für die Seite „Aufgaben“ des Umschalters Aufgaben | Projekte.
 
-Unter **Erledigt** zeigt die Sortierung nach **Abschlussdatum** die neuesten Abschlüsse zuerst. Die Gruppierung nach **Abschlussdatum** teilt die Liste in **Heute**, **Gestern**, **Letzte 7 Tage**, je eine Überschrift pro Kalendermonat für ältere Aufgaben (Januar 2026, Dezember 2025, …) und **Nicht abgeschlossen**; leere Gruppen bleiben ausgeblendet, und die Sammelgruppe ohne Zuordnung steht am Ende. Tippen Sie auf eine Gruppenüberschrift, um die Gruppe einzuklappen — jede Liste merkt sich pro Gruppierung, welche ihrer Gruppen auf diesem Gerät eingeklappt sind, und die Aufgaben einer eingeklappten Gruppe fallen aus **Auswählen** und den Sammelaktionen heraus.
+Unter **Erledigt** zeigt die Sortierung nach **Abschlussdatum** die neuesten Abschlüsse zuerst. Die Gruppierung nach **Abschlussdatum** teilt die Liste in **Heute**, **Gestern**, **Letzte 7 Tage**, je eine Überschrift pro Kalendermonat für ältere Aufgaben (Januar 2026, Dezember 2025, …) und **Nicht abgeschlossen**; leere Gruppen bleiben ausgeblendet, und die Sammelgruppe ohne Zuordnung steht am Ende. Referenz, Posteingang, Erledigt und Archiviert lassen sich außerdem nach **Kontext** gruppieren. Eine Aufgabe mit mehreren Kontexten erscheint in jeder passenden Gruppe; Aufgaben ohne Kontext stehen am Ende unter **Kein Kontext**. Tippen Sie auf eine Gruppenüberschrift, um die Gruppe einzuklappen — jede Liste merkt sich pro Gruppierung, welche ihrer Gruppen auf diesem Gerät eingeklappt sind, und die Aufgaben einer eingeklappten Gruppe fallen aus **Auswählen** und den Sammelaktionen heraus.
 
 Öffnen Sie **Papierkorb** und tippen Sie auf **Auswählen**, um mehrere gelöschte Aufgaben und Projekte gemeinsam wiederherzustellen oder endgültig zu löschen. Endgültiges Löschen verlangt immer eine Bestätigung.
 
@@ -614,6 +614,8 @@ Einrichtung: [Daten und Synchronisierung](/de/data-sync/).
 - **Letzter Status**
 - **Verlauf**: standardmäßig eingeklappt
 - **Sicherung exportieren**
+- **Mindwtr-CSV exportieren**: Tabellenfreundliche Aufgabendatei, die ohne Duplikate erneut importiert werden kann
+- **TaskNotes exportieren**: Eine Markdown-Datei pro Aufgabe in einem ZIP für das Obsidian-TaskNotes-Plugin
 - **Apple-Erinnerungen-Import**: Liste wählen und unerledigte Erinnerungen importieren; sie bleiben in Apple Erinnerungen, bereits importierte, erledigte oder titellose werden übersprungen
 - **Synchronisierte Einstellungen**: Darstellung, Sprache/Datumsformat, GTD-Standardwerte, externe Kalender-URLs, KI-Einstellungen, gespeicherte Filter; niemals API-Schlüssel oder lokale Modellpfade
 
@@ -637,6 +639,7 @@ Einrichtung: [Daten und Synchronisierung](/de/data-sync/).
 - Nach Aktualisierungen suchen
 - **Feedback senden**, sofern aktiviert; optionale Antwort-E-Mail
 - Website- und GitHub-Links
+- Link zur Datenschutzerklärung
 
 ---
 

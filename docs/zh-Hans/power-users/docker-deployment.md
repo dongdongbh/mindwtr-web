@@ -96,7 +96,7 @@ MINDWTR_CLOUD_CORS_ORIGIN=https://mindwtr.home.arpa
 MINDWTR_CADDYFILE=Caddyfile.local-https
 ```
 
-这会使用 Caddy 的内部证书颁发机构。每台客户端设备都必须信任 Caddy 的本地根证书，Mindwtr 才会接受 HTTPS 连接。对移动端客户端来说，公共 Let's Encrypt 证书是更可靠的选择。
+这会使用 Caddy 的内部证书颁发机构。每台客户端设备都必须信任 Caddy 的本地根证书，Mindwtr 才会接受 HTTPS 连接。Mindwtr 1.2.0 及更高版本在 Android 上信任用户安装的证书颁发机构；iPhone 和 iPad 还需要安装根证书并明确启用完全信任。若主机名可从公网访问，公共 Let's Encrypt 证书仍是最简单的选择。
 
 仅限局域网的服务栈启动后，导出 Caddy 的本地根证书：
 

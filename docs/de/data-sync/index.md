@@ -448,6 +448,13 @@ Das gleiche Verfahren gilt. Gleichzeitige Bearbeitung auf mehreren Geräten verm
 2. Auf **Sicherung exportieren** tippen
 3. Am gewünschten Ort speichern
 
+Für einen lesbaren oder übertragbaren Aufgabenexport öffnen Sie unter **Einstellungen → Daten** den Abschnitt **Sicherung** und wählen:
+
+- **Mindwtr-CSV exportieren** für eine tabellenfreundliche Aufgabendatei, die Mindwtr erneut importieren kann, ohne vorhandene Aufgaben-IDs zu duplizieren.
+- **TaskNotes exportieren** für ein ZIP mit einer Markdown-Datei pro Aufgabe und YAML-Frontmatter, passend für das Obsidian-TaskNotes-Plugin und den Obsidian-Import von Mindwtr.
+
+Exporte, Wiederherstellungen und Importe erstellen, sofern unterstützt, eine Wiederherstellungsmomentaufnahme. Nach einem Import, einer Wiederherstellung oder einer Zusammenführung können Sie die Aktion direkt in der Ergebnismeldung **rückgängig machen**.
+
 ### Aus Sicherung wiederherstellen
 
 Mindwtr kann lokale Daten auf Desktop und Mobilgeräten direkt aus einer JSON-Sicherungsdatei wiederherstellen.
@@ -469,6 +476,10 @@ Den ausführlichen Ablauf beschreibt [Sicherung und Wiederherstellung](/de/data-
 ## Importe und Migrationen
 
 Diese Anleitungen helfen beim Übertragen von Aufgabendaten aus einer anderen App nach Mindwtr. Importe fügen Daten zu Mindwtr hinzu, richten aber keine Synchronisierung ein.
+
+### Mindwtr-CSV-/ZIP-Import
+
+Unter **Einstellungen → Daten → Daten importieren → Mindwtr-CSV importieren** können Sie eine dokumentierte Aufgabentabelle oder ein ZIP mit CSV-Dateien importieren. Das Format umfasst Status, Projekte, Abschnitte, Bereiche, Kontexte, Tags, Personen, Priorität, Energie, Start-/Fälligkeits-/Prüfdaten, Abschluss, Checklisten und manuelle Reihenfolge. Beim erneuten Import eines Mindwtr-Exports werden bereits vorhandene Aufgaben-IDs übersprungen statt dupliziert oder überschrieben.
 
 ### TickTick-CSV-/ZIP-Import
 

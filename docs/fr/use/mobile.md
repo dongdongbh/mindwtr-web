@@ -46,7 +46,7 @@ Ouvrez **Terminé** et touchez **Sélectionner** pour choisir des tâches, puis 
 
 **Archivés** dispose d’un champ de recherche et d’un bouton **Filtres** dans son en-tête. Filtres restreint par contexte, étiquette, priorité et temps estimé, et contient **Trier** et **Regrouper** — tous deux proposant **Date d’achèvement**, puisque tout ce qui est classé ici est du travail terminé. Par défaut, l’achèvement le plus récent vient en premier. Les sélections de filtres sont partagées entre les listes de tâches : un contexte choisi ailleurs restreint donc aussi cette liste. La recherche et les filtres s’appliquent au côté Tâches du sélecteur Tâches | Projets.
 
-Dans **Terminé**, triez par **Date d’achèvement** pour afficher d’abord les tâches achevées le plus récemment. Regroupez par **Date d’achèvement** pour diviser la liste en **Aujourd’hui**, **Hier**, **7 derniers jours**, un titre par mois calendaire pour les tâches plus anciennes (janvier 2026, décembre 2025, …) et **Non terminé** ; les groupes vides restent masqués et le groupe fourre-tout sans attribution passe en dernier. Touchez un titre de groupe pour le replier — chaque liste mémorise, pour chaque mode de regroupement, les groupes repliés sur cet appareil, et les tâches d’un groupe replié sortent de **Sélectionner** et des actions groupées.
+Dans **Terminé**, triez par **Date d’achèvement** pour afficher d’abord les tâches achevées le plus récemment. Regroupez par **Date d’achèvement** pour diviser la liste en **Aujourd’hui**, **Hier**, **7 derniers jours**, un titre par mois calendaire pour les tâches plus anciennes (janvier 2026, décembre 2025, …) et **Non terminé** ; les groupes vides restent masqués et le groupe fourre-tout sans attribution passe en dernier. Références, Boîte de réception, Terminé et Archivés peuvent aussi être regroupés par **Contexte**. Une tâche avec plusieurs contextes apparaît dans chaque groupe correspondant, tandis que les tâches sans contexte se trouvent à la fin sous **Sans contexte**. Touchez un titre de groupe pour le replier — chaque liste mémorise, pour chaque mode de regroupement, les groupes repliés sur cet appareil, et les tâches d’un groupe replié sortent de **Sélectionner** et des actions groupées.
 
 Ouvrez la **Corbeille** et touchez **Sélectionner** pour gérer plusieurs tâches et projets supprimés. Touchez **Tout sélectionner** ou choisissez des éléments, puis restaurez-les ou supprimez-les définitivement en une seule étape. Toute suppression définitive demande toujours une confirmation.
 
@@ -678,6 +678,8 @@ Consultez [Données et synchronisation](/fr/data-sync/) pour configurer la synch
 - **État de la dernière synchronisation** : afficher la date de la dernière synchronisation des données
 - **Historique de synchronisation** : réduit par défaut ; touchez-le pour développer les entrées récentes
 - **Exporter une sauvegarde** : enregistrer les données dans un fichier
+- **Exporter un CSV Mindwtr** : enregistrer un fichier de tâches pour tableur, réimportable sans doublons
+- **Exporter TaskNotes** : enregistrer un Markdown par tâche dans un ZIP pour le module TaskNotes d’Obsidian
 - **Importation depuis Rappels Apple** : choisissez une liste Rappels et importez les rappels incomplets dans la Boîte de réception. Les rappels importés restent dans Rappels Apple, et ceux qui ont déjà été importés, qui sont terminés ou qui n’ont pas de titre sont ignorés.
 - **Options de synchronisation des paramètres** : choisissez les préférences à synchroniser entre les appareils (thème, langue/format de date, valeurs GTD par défaut, URL de calendriers externes, paramètres de l’IA et Filtres enregistrés). Les clés API et les chemins de modèles locaux ne sont jamais synchronisés.
 
@@ -701,6 +703,7 @@ Consultez [Données et synchronisation](/fr/data-sync/) pour configurer la synch
 - Rechercher les mises à jour
 - **Envoyer des commentaires** pour les rapports de bogues, les demandes de fonctionnalités ou d’autres remarques lorsque la version permet l’envoi de commentaires. Vous pouvez indiquer une adresse e-mail si vous souhaitez recevoir une réponse.
 - Liens vers le site web et GitHub
+- Lien vers la politique de confidentialité
 
 ---
 

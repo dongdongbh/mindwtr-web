@@ -87,6 +87,8 @@ name=Mindwtr Beta Repository
 baseurl=https://dongdongbh.github.io/Mindwtr/rpm-beta
 enabled=1
 gpgcheck=0
+repo_gpgcheck=1
+gpgkey=https://dongdongbh.github.io/Mindwtr/mindwtr.gpg.key
 EOF
 
 sudo dnf install mindwtr

@@ -64,6 +64,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 Für minimale Build-Umgebungen (Container, Nix) umfasst der vollständige Satz nativer Abhängigkeiten jenseits des WebKitGTK-/GTK3-Stacks: `cmake` sowie eine C/C++-Toolchain mit `bindgen`-Unterstützung (lokale Whisper-Transkription), `perl` (Build von OpenSSL), ALSA-Header (Audio) und `libayatana-appindicator` (Tray-Symbol).
 
+Ein von der Community gepflegtes Nix-Flake, das die Desktop-App, den Sync-Server und die Web-App paketiert, ist unter [TheRealGramdalf/mindwtr-flake](https://github.com/TheRealGramdalf/mindwtr-flake) verfügbar. Es wird außerhalb dieses Repositories gepflegt und ist nicht Teil der offiziellen Release-Pipeline.
+
 **macOS:**
 ```bash
 xcode-select --install

@@ -64,6 +64,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 Pour les environnements de construction minimaux (conteneurs, Nix), l’ensemble complet des dépendances natives au-delà de la pile WebKitGTK/GTK3 est le suivant : `cmake` ainsi qu’une chaîne d’outils C/C++ prenant en charge `bindgen` (transcription Whisper locale), `perl` (la construction d’OpenSSL), les en-têtes ALSA (audio) et `libayatana-appindicator` (icône de la barre d’état système).
 
+Un flake Nix maintenu par la communauté, qui empaquette l'application de bureau, le serveur de synchronisation et l'application web, est disponible sur [TheRealGramdalf/mindwtr-flake](https://github.com/TheRealGramdalf/mindwtr-flake). Il est maintenu en dehors de ce dépôt et ne fait pas partie du processus de publication officiel.
+
 **macOS :**
 ```bash
 xcode-select --install

@@ -64,6 +64,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 For minimal build environments (containers, Nix) the full native set beyond the WebKitGTK/GTK3 stack is: `cmake` plus a C/C++ toolchain with `bindgen` support (local Whisper transcription), `perl` (OpenSSL's build), ALSA headers (audio), and `libayatana-appindicator` (tray icon).
 
+A community-maintained Nix flake packaging the desktop app, sync server, and web app is available at [TheRealGramdalf/mindwtr-flake](https://github.com/TheRealGramdalf/mindwtr-flake). It is maintained outside this repository and is not part of the official release pipeline.
+
 **macOS:**
 ```bash
 xcode-select --install

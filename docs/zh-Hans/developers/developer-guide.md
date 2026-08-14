@@ -64,6 +64,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 在最小化构建环境（容器、Nix）中，除 WebKitGTK/GTK3 相关组件外，还需要的完整原生依赖是：`cmake` 以及支持 `bindgen` 的 C/C++ 工具链（本地 Whisper 转录）、`perl`（OpenSSL 的构建）、ALSA 头文件（音频）和 `libayatana-appindicator`（系统托盘图标）。
 
+社区维护的 Nix flake（打包桌面应用、同步服务器和 Web 应用）可在 [TheRealGramdalf/mindwtr-flake](https://github.com/TheRealGramdalf/mindwtr-flake) 获取。它在本仓库之外维护，不属于官方发布流程。
+
 **macOS：**
 ```bash
 xcode-select --install

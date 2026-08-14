@@ -523,7 +523,7 @@ In every preset, `s` followed by a letter sets the selected task's status direct
 Access Settings from the sidebar.
 
 ### General
-- **Appearance**: System, Light, Dark, E-Ink, Nord, Catppuccin Macchiato, Dracula, or Sepia
+- **Appearance**: System, Light, Dark, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia, or OLED / Midnight
 - **Language**: English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese (Brazil), Russian, German, Japanese, Persian, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech, Swedish
 - **Keyboard Shortcuts**: Standard, Vim, or Emacs preset
 - **Launch at Startup**: Start Mindwtr automatically when you sign in

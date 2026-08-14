@@ -351,7 +351,7 @@ Mindwtr propose des ensembles de raccourcis Vim et Emacs. Appuyez sur `?` (Vim) 
 
 ### Comment changer le thème ?
 
-Accédez à Paramètres → Apparence. Choisissez Système, Clair, Sombre, Encre électronique, Nord, Catppuccin Macchiato, Dracula ou Sépia.
+Accédez à Paramètres → Apparence. Choisissez Système, Clair, Sombre, Encre électronique, Nord, Catppuccin Macchiato, Dracula, Sépia ou OLED / Minuit.
 
 ### Comment synchroniser avec mon téléphone ?
 

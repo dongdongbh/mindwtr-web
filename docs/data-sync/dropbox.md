@@ -26,8 +26,8 @@ If Dropbox is disabled in your build, or you are using the Docker-served PWA, us
 1. Open **Settings → Sync**.
 2. In the **Sync backend** selector, choose **Dropbox**. Mindwtr shows the selected path as **Cloud Sync**.
 3. Click/Tap **Connect Dropbox** and complete OAuth in your browser.
-4. Back in Mindwtr, use **Test connection**.
-5. Run **Sync**.
+4. On mobile, return to Mindwtr. It runs the first sync immediately; once that succeeds, Dropbox is saved and sync is enabled automatically.
+5. On desktop, use **Test connection**, then run **Sync**.
 
 After first sync, verify the app folder exists in Dropbox:
 

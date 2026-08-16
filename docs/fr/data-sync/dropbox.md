@@ -26,8 +26,8 @@ Si Dropbox est désactivé dans votre version ou si vous utilisez la PWA servie 
 1. Ouvrez **Paramètres → Synchronisation**.
 2. Dans le sélecteur de **Système de synchronisation**, choisissez **Dropbox**. Mindwtr affiche le chemin choisi comme **Synchronisation cloud**.
 3. Cliquez ou touchez **Connecter Dropbox** et terminez l’autorisation OAuth dans votre navigateur.
-4. De retour dans Mindwtr, utilisez **Tester la connexion**.
-5. Lancez **Synchroniser**.
+4. Sur mobile, revenez dans Mindwtr. La première synchronisation démarre immédiatement ; lorsqu’elle réussit, Dropbox est enregistré et la synchronisation est activée automatiquement.
+5. Sur ordinateur, utilisez **Tester la connexion**, puis lancez **Synchroniser**.
 
 Après la première synchronisation, vérifiez la présence du dossier d’application dans Dropbox :
 

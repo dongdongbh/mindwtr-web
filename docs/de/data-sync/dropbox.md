@@ -26,8 +26,8 @@ Wenn Dropbox in Ihrem Build deaktiviert ist oder Sie die über Docker bereitgest
 1. Öffnen Sie **Einstellungen → Synchronisierung**.
 2. Wählen Sie in der Auswahl **Synchronisierungs-Backend** die Option **Dropbox**. Mindwtr zeigt den ausgewählten Pfad als **Cloud-Synchronisierung** an.
 3. Klicken oder tippen Sie auf **Dropbox verbinden** und schließen Sie OAuth in Ihrem Browser ab.
-4. Verwenden Sie zurück in Mindwtr **Verbindung testen**.
-5. Führen Sie eine **Synchronisierung** aus.
+4. Kehren Sie auf Mobilgeräten zu Mindwtr zurück. Die erste Synchronisierung startet sofort; nach erfolgreichem Abschluss wird Dropbox gespeichert und die Synchronisierung automatisch aktiviert.
+5. Verwenden Sie auf dem Desktop **Verbindung testen** und führen Sie danach eine **Synchronisierung** aus.
 
 Prüfen Sie nach der ersten Synchronisierung, ob der App-Ordner in Dropbox vorhanden ist:
 

@@ -26,8 +26,8 @@ Si Dropbox está desactivado en tu compilación o usas la PWA servida por Docker
 1. Abre **Ajustes → Sincronizar**.
 2. En **Backend de sincronización**, elige **Dropbox**. Mindwtr muestra la ruta seleccionada como **Sincronización en la nube**.
 3. Pulsa **Conectar Dropbox** y completa OAuth en el navegador.
-4. De vuelta en Mindwtr, usa **Probar conexión**.
-5. Ejecuta **Sincronizar**.
+4. En el móvil, vuelve a Mindwtr. La primera sincronización comienza de inmediato; cuando termina correctamente, Dropbox queda guardado y la sincronización se activa automáticamente.
+5. En el escritorio, usa **Probar conexión** y después ejecuta **Sincronizar**.
 
 Después de la primera sincronización, comprueba que la carpeta de la aplicación existe en Dropbox:
 

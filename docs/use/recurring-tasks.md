@@ -76,6 +76,8 @@ If you complete a task late, the next task keeps the original schedule: it lands
 
 The next task stays out of Focus and Next actions until its date arrives. A future start date defers it as usual, and a recurring task without a start date is deferred until its next date (the earlier of its due and review dates). This keeps the freshly created next occurrence from reappearing in the list right after you complete the current one. Deferred occurrences remain visible in **Projects** and **Search**.
 
+This rule applies to every recurring task from the moment it exists, not only to the next occurrence after a completion. A one-off task with a due date stays visible ahead of its deadline so you can work on it early, but a recurring task treats that same date as the day it should reappear — so two tasks with the same due date can behave differently in Focus when one of them repeats. To surface a recurring task before its date, give it a start date: it appears in Focus and Next actions from that day while keeping its deadline.
+
 ## Related Pages
 
 - [GTD Workflow in Mindwtr](/use/gtd-workflow)

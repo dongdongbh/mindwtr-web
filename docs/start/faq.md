@@ -216,6 +216,7 @@ Yes. The easiest place is while processing the Inbox: when the guided flow asks 
 Focus deliberately shows only what you can act on right now, so a task can be hidden for a few reasons:
 
 - It has a **future start date**, so it reappears when the date arrives.
+- It is a **recurring task whose date hasn't arrived**: a recurring task without a start date is deferred to its next due or review date, unlike a one-off task whose deadline stays visible ahead of time.
 - It is a **later task in a sequential project**, so only the first available task is surfaced.
 - An active **context filter** excludes it.
 - Its status is not actionable (Inbox, Someday, Waiting).

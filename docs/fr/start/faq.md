@@ -216,6 +216,7 @@ Oui. Le plus simple est de le faire pendant le traitement de la boîte de récep
 Focus n’affiche volontairement que ce sur quoi vous pouvez agir immédiatement. Une tâche peut donc être masquée pour plusieurs raisons :
 
 - Elle a une **date de début future** et réapparaîtra lorsque cette date arrivera.
+- C’est une **tâche récurrente dont la date n’est pas encore arrivée** : une tâche récurrente sans date de début est reportée jusqu’à sa prochaine échéance ou date de revue, contrairement à une tâche ponctuelle dont l’échéance reste visible à l’avance.
 - C’est une **tâche ultérieure d’un projet séquentiel** ; seule la première tâche disponible est donc proposée.
 - Un **filtre de contexte** actif l’exclut.
 - Son statut ne permet pas d’agir (Boîte de réception, Un jour, En attente).

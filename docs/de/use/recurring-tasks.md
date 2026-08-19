@@ -76,6 +76,8 @@ Schließen Sie eine Aufgabe verspätet ab, behält die nächste Aufgabe den ursp
 
 Die nächste Aufgabe erscheint erst in „Fokus“ und unter „Nächste Aktionen“, wenn ihr Datum erreicht ist. Ein zukünftiges Startdatum stellt sie wie gewohnt zurück. Eine wiederkehrende Aufgabe ohne Startdatum wird bis zu ihrem nächsten Datum zurückgestellt (dem früheren von Fälligkeits- und Wiedervorlagedatum). Dadurch erscheint das gerade erstellte nächste Vorkommen nicht unmittelbar nach Abschluss der aktuellen Aufgabe wieder in der Liste. Zurückgestellte Vorkommen bleiben unter **Projekte** und in der **Suche** sichtbar.
 
+Diese Regel gilt für jede wiederkehrende Aufgabe von dem Moment an, in dem sie existiert — nicht nur für das nächste Vorkommen nach einem Abschluss. Eine einmalige Aufgabe mit Fälligkeitsdatum bleibt vor ihrer Frist sichtbar, damit Sie früher daran arbeiten können; eine wiederkehrende Aufgabe behandelt dasselbe Datum dagegen als den Tag, an dem sie wieder erscheinen soll — zwei Aufgaben mit demselben Fälligkeitsdatum können sich im Fokus daher unterschiedlich verhalten, wenn eine von ihnen wiederkehrt. Um eine wiederkehrende Aufgabe vor ihrem Datum sichtbar zu machen, geben Sie ihr ein Startdatum: Ab diesem Tag erscheint sie in „Fokus“ und unter „Nächste Aktionen“ und behält ihre Frist.
+
 ## Verwandte Seiten
 
 - [GTD-Arbeitsablauf in Mindwtr](/de/use/gtd-workflow)

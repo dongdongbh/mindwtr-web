@@ -216,6 +216,7 @@ Sí. El lugar más sencillo es mientras procesas la Bandeja de entrada: cuando e
 Foco muestra deliberadamente solo aquello en lo que puedes actuar ahora mismo, por lo que una tarea puede estar oculta por varios motivos:
 
 - Tiene una **fecha de inicio futura**, por lo que reaparecerá cuando llegue esa fecha.
+- Es una **tarea recurrente cuya fecha aún no ha llegado**: una tarea recurrente sin fecha de inicio queda aplazada hasta su próxima fecha límite o de revisión, a diferencia de una tarea puntual, cuya fecha límite sigue visible con antelación.
 - Es una **tarea posterior de un proyecto secuencial**, por lo que solo se muestra la primera tarea disponible.
 - Un **filtro de contexto** activo la excluye.
 - Su estado no permite actuar sobre ella (Bandeja de entrada, Algún día, En espera).

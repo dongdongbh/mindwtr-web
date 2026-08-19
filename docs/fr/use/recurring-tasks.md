@@ -76,6 +76,8 @@ Si vous terminez une tâche en retard, la tâche suivante conserve le rythme d'o
 
 La tâche suivante reste hors de Focus et des Prochaines actions jusqu’à sa date. Une date de début future la reporte comme d’habitude ; sans date de début, une tâche récurrente est reportée jusqu’à sa prochaine date, la plus proche entre son échéance et sa date de revue. La nouvelle occurrence ne réapparaît donc pas immédiatement après l’achèvement de la précédente. Les occurrences reportées restent visibles dans **Projets** et la **Recherche**.
 
+Cette règle s’applique à toute tâche récurrente dès sa création, et pas seulement à l’occurrence suivante après un achèvement. Une tâche ponctuelle avec une échéance reste visible avant sa date pour que vous puissiez vous y mettre en avance, tandis qu’une tâche récurrente traite cette même date comme le jour où elle doit réapparaître — deux tâches partageant la même échéance peuvent donc se comporter différemment dans Focus lorsque l’une d’elles se répète. Pour faire apparaître une tâche récurrente avant sa date, donnez-lui une date de début : elle apparaît dans Focus et les Prochaines actions à partir de ce jour tout en conservant son échéance.
+
 ## Pages associées
 
 - [Flux GTD dans Mindwtr](/fr/use/gtd-workflow)

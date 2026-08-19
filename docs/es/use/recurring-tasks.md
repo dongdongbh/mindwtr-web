@@ -76,6 +76,8 @@ Si completas una tarea tarde, la siguiente mantiene el ritmo original: cae en la
 
 La tarea siguiente no aparece en Foco ni en Próximas acciones hasta que llega su fecha. Una fecha de inicio futura la aplaza como de costumbre; una tarea recurrente sin fecha de inicio queda aplazada hasta su próxima fecha, la primera entre la fecha límite y la de revisión. Así, la nueva aparición no vuelve a la lista justo después de completar la actual. Las apariciones aplazadas siguen visibles en **Proyectos** y **Buscar**.
 
+Esta regla se aplica a toda tarea recurrente desde el momento en que existe, no solo a la siguiente aparición tras completarla. Una tarea puntual con fecha límite sigue visible antes de su vencimiento para que puedas adelantarla, pero una tarea recurrente trata esa misma fecha como el día en que debe reaparecer — así que dos tareas con la misma fecha límite pueden comportarse de forma distinta en Foco cuando una de ellas se repite. Para que una tarea recurrente aparezca antes de su fecha, asígnale una fecha de inicio: aparecerá en Foco y en Próximas acciones desde ese día sin perder su fecha límite.
+
 ## Páginas relacionadas
 
 - [Flujo de trabajo GTD en Mindwtr](/es/use/gtd-workflow)

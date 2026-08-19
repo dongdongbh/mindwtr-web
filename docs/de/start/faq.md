@@ -213,6 +213,7 @@ Ja. Am einfachsten während der Posteingangsverarbeitung: Wenn der geführte Abl
 „Fokus“ zeigt bewusst nur, was Sie jetzt erledigen können. Eine Aufgabe kann aus mehreren Gründen ausgeblendet sein:
 
 - Sie besitzt ein **zukünftiges Startdatum** und erscheint bei dessen Eintritt wieder.
+- Sie ist eine **wiederkehrende Aufgabe, deren Datum noch nicht erreicht ist**: Eine wiederkehrende Aufgabe ohne Startdatum wird bis zu ihrem nächsten Fälligkeits- oder Wiedervorlagedatum zurückgestellt — anders als eine einmalige Aufgabe, deren Frist vorab sichtbar bleibt.
 - Sie ist eine **spätere Aufgabe in einem sequenziellen Projekt**; nur die erste verfügbare Aufgabe wird angezeigt.
 - Ein aktiver **Kontextfilter** schließt sie aus.
 - Ihr Status ist nicht ausführbar (Posteingang, Irgendwann, Warten).

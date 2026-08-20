@@ -314,7 +314,7 @@ Yes! Mindwtr supports quick-add syntax:
 
 Example: `Call client /due:friday @phone`
 
-Bare date phrases without a token (like "next week" in the title) are detected too. If you'd rather keep them as literal text, turn off **Detect natural-language dates** in Settings → GTD.
+Bare date phrases without a token (like "next week" in the title) are detected too. If you'd rather keep them as literal text, turn off **Detect natural-language dates** in Settings → GTD. When the app runs in German, Spanish, French, Italian, Japanese, Dutch, Portuguese, Russian, Swedish, or Chinese, date phrases in that language are detected too — English phrases keep working in every language.
 
 ### What are contexts?
 

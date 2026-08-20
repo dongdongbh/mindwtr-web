@@ -314,7 +314,7 @@ Los registros son exclusivamente locales y ocultan las credenciales habituales (
 
 Ejemplo: `Call client /due:friday @phone`
 
-Las frases de fecha sueltas sin token (como "next week" en el título) también se detectan. Si prefieres conservarlas como texto literal, desactiva **Detectar fechas en lenguaje natural** en Ajustes → GTD.
+Las frases de fecha sueltas sin token (como "next week" en el título) también se detectan. Si prefieres conservarlas como texto literal, desactiva **Detectar fechas en lenguaje natural** en Ajustes → GTD. Cuando la app está en alemán, español, francés, italiano, japonés, neerlandés, portugués, ruso, sueco o chino, también se detectan las frases de fecha en ese idioma — las frases en inglés siguen funcionando en cualquier idioma.
 
 ### ¿Qué son los contextos?
 

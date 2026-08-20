@@ -307,7 +307,7 @@ Ja! Mindwtr unterstützt die Syntax für „Schnell hinzufügen“:
 
 Beispiel: `Call client /due:friday @phone`
 
-Auch freie Datumsformulierungen ohne Token (etwa "next week" im Titel) werden erkannt. Wenn Sie sie lieber als Text behalten möchten, deaktivieren Sie **Daten in natürlicher Sprache erkennen** unter Einstellungen → GTD.
+Auch freie Datumsformulierungen ohne Token (etwa "next week" im Titel) werden erkannt. Wenn Sie sie lieber als Text behalten möchten, deaktivieren Sie **Daten in natürlicher Sprache erkennen** unter Einstellungen → GTD. Läuft die App auf Deutsch, Spanisch, Französisch, Italienisch, Japanisch, Niederländisch, Portugiesisch, Russisch, Schwedisch oder Chinesisch, werden auch Datumsangaben in dieser Sprache erkannt — englische Formulierungen funktionieren weiterhin in jeder Sprache.
 
 ### Was sind Kontexte?
 

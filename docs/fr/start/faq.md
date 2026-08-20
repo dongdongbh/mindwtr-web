@@ -314,7 +314,7 @@ Oui ! Mindwtr prend en charge la syntaxe d’ajout rapide :
 
 Exemple : `Call client /due:friday @phone`
 
-Les formulations de date libres sans jeton (comme "next week" dans le titre) sont aussi détectées. Si vous préférez les conserver comme texte littéral, désactivez **Détecter les dates en langage naturel** dans Paramètres → GTD.
+Les formulations de date libres sans jeton (comme "next week" dans le titre) sont aussi détectées. Si vous préférez les conserver comme texte littéral, désactivez **Détecter les dates en langage naturel** dans Paramètres → GTD. Lorsque l’application est en allemand, espagnol, français, italien, japonais, néerlandais, portugais, russe, suédois ou chinois, les formulations de date dans cette langue sont détectées elles aussi — les formulations en anglais continuent de fonctionner dans toutes les langues.
 
 ### Que sont les contextes ?
 

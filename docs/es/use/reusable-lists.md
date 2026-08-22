@@ -2,7 +2,7 @@
 
 Mindwtr admite listas de comprobación reutilizables para tareas que repites sin un calendario estricto, como preparar equipaje, comprar alimentos o preparar un viaje.
 
-## Dos patrones
+## Tres patrones
 
 ### Duplicar (plantillas)
 
@@ -40,10 +40,30 @@ Al restablecer:
 - se actualiza la tarea actual en vez de crear otra copia;
 - la tarea vuelve a abrirse si ya estaba marcada como terminada.
 
+### Duplicar un proyecto (plantillas de varias tareas)
+
+Úsalo cuando la plantilla sea un proyecto entero y no una sola lista de comprobación.
+
+Ejemplo: **Alta de cliente**
+
+1. Mantén un proyecto maestro con sus secciones y tareas
+2. Duplica el proyecto cuando empiece un cliente nuevo
+3. Trabaja sobre la copia; el maestro no se toca
+
+Lo que restablece la duplicación de un proyecto:
+
+- la copia se llama `<Project> (Copy)`, se coloca al final de la misma área y no queda enfocada
+- cada tarea copiada vuelve a **Siguiente** (las de referencia siguen siendo de referencia), con las fechas de inicio, vencimiento, revisión y finalización borradas
+- las listas de comprobación de las tareas copiadas empiezan sin marcar y nada entra en el Foco de hoy
+- los adjuntos se copian tanto en el proyecto como en sus tareas y se vuelven a subir en la siguiente sincronización
+
+Lo que se conserva: las notas, el área, las etiquetas, el color y el estado del proyecto, además de toda su estructura de secciones, con cada tarea de vuelta en la sección de la que venía. La fecha de vencimiento y la de revisión del propio proyecto se copian tal cual: a diferencia de las de las tareas, no se borran, así que revísalas en la copia. Las tareas y secciones eliminadas no se copian.
+
 ## Dónde encontrarlo
 
 - **Dispositivos móviles:** editor de tareas → **Duplicar tarea** o **Restablecer lista de comprobación**.
 - **Escritorio:** menú de acciones de la tarea. Las filas completadas en **Hecho** y **Archivado** también muestran un botón de copiar al pasar el cursor.
+- **Proyectos:** en escritorio, haz clic derecho en un proyecto de la barra lateral o usa **Duplicar** en la cabecera del proyecto. En móvil, desliza la fila del proyecto hacia la derecha o usa **Duplicar** en la ficha de detalle del proyecto.
 
 ## Qué opción elegir
 

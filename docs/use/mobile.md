@@ -513,6 +513,7 @@ Open Projects from **Menu → Projects**.
 - Set review date
 - Reorder project tasks with the drag handle when custom ordering is enabled. Dropping a task under a different section header moves it into that section, and dropping it above the first header clears its section
 - Archive the project (this is how a project is completed — remaining tasks are completed with it, and **Reactivate** undoes it)
+- Duplicate the project — swipe its row to the right in the project list, or use **Duplicate** in the project detail sheet — to copy its sections and tasks into a fresh copy (see [Reusable Lists](/use/reusable-lists))
 
 The **Project Section** field in the task editor assigns a task to one of the sections in its current project. It only matters after the task belongs to a project that has sections; otherwise, leave it blank.
 

@@ -99,6 +99,7 @@ Multi-step outcomes containing related tasks.
 - **Sections**: Optional task groupings inside a project (phases, milestones, sub-workstreams). Sections are headings inside one project, not subtasks or separate projects. A sectioned project can also show its sections as side-by-side columns — the **Columns** toggle next to Sort — with drag between columns to change section and a held middle mouse button to pan; the choice is remembered per project on this device.
 - **Review date**: Set tickler dates for project review
 - **Archive**: Completing a project means archiving it — remaining tasks are completed with it, and **Reactivate** undoes it
+- **Duplicate**: Right-click a project in the sidebar, or use **Duplicate** in the project header, to copy the whole project with its sections and tasks. The copy starts fresh — see [Reusable Lists](/use/reusable-lists)
 
 The **Project Section** field in the task editor assigns a task to one of the sections in its current project. It only has a useful value after the task belongs to a project that has sections.
 

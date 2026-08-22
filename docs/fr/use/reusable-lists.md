@@ -2,7 +2,7 @@
 
 Mindwtr propose des listes de contrôle réutilisables pour les tâches que vous répétez sans calendrier strict, par exemple préparer une valise, faire les courses ou organiser un voyage.
 
-## Deux méthodes
+## Trois méthodes
 
 ### Dupliquer (modèles)
 
@@ -40,10 +40,30 @@ La réinitialisation :
 - met à jour la tâche existante au lieu d’en créer une copie ;
 - rouvre la tâche si elle avait déjà été marquée comme terminée.
 
+### Dupliquer un projet (modèles à plusieurs tâches)
+
+À utiliser lorsque le modèle est un projet entier plutôt qu’une seule liste de contrôle.
+
+Exemple : **Intégration d’un client**
+
+1. Conservez un projet maître avec ses sections et ses tâches
+2. Dupliquez le projet à l’arrivée d’un nouveau client
+3. Travaillez sur la copie ; le maître reste intact
+
+Ce que la duplication d’un projet réinitialise :
+
+- la copie s’appelle `<Project> (Copy)`, se place à la fin du même domaine et n’est pas mise en avant
+- chaque tâche copiée repasse en **Suivant** (les tâches de référence le restent), avec les dates de début, d’échéance, de revue et d’achèvement effacées
+- les listes de contrôle des tâches copiées repartent décochées et rien n’entre dans le Focus du jour
+- les pièces jointes sont copiées sur le projet comme sur ses tâches et sont renvoyées lors de la prochaine synchronisation
+
+Ce qui est conservé : les notes, le domaine, les étiquettes, la couleur et le statut du projet, ainsi que toute sa structure de sections, chaque tâche retrouvant la section d’où elle venait. L’échéance et la date de revue du projet lui-même sont reprises telles quelles — contrairement à celles des tâches, elles ne sont pas effacées, vérifiez-les donc sur la copie. Les tâches et sections supprimées ne sont pas copiées.
+
 ## Où trouver ces actions
 
 - **Mobile :** éditeur de tâche → **Dupliquer la tâche** ou **Réinitialiser la liste de contrôle**
 - **Ordinateur :** menu des actions de la tâche. Les lignes terminées dans **Terminé** et **Archivé** affichent aussi un bouton de copie au survol.
+- **Projets :** sur ordinateur, faites un clic droit sur un projet dans la barre latérale ou utilisez **Dupliquer** dans l’en-tête du projet. Sur mobile, faites glisser la ligne du projet vers la droite ou utilisez **Dupliquer** dans la fiche de détail du projet.
 
 ## Laquelle choisir ?
 

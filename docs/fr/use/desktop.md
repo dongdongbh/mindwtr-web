@@ -99,6 +99,7 @@ Résultats en plusieurs étapes contenant des tâches liées.
 - **Sections** : regroupements facultatifs de tâches au sein d’un projet (phases, jalons, sous-chantiers). Les sections sont des titres à l’intérieur d’un seul projet, pas des sous-tâches ni des projets distincts. Un projet à sections peut aussi les afficher en colonnes côte à côte — le bouton **Colonnes** à côté de Trier — avec glisser entre colonnes pour changer de section et défilement au bouton central maintenu ; le choix est mémorisé par projet sur cet appareil.
 - **Date de revue** : définissez des dates de rappel pour la revue du projet
 - **Archiver** : terminer un projet signifie l’archiver — les tâches restantes sont terminées avec lui, et **Réactiver** annule cette action
+- **Dupliquer** : faites un clic droit sur un projet dans la barre latérale, ou utilisez **Dupliquer** dans l’en-tête du projet, pour copier tout le projet avec ses sections et ses tâches. La copie repart à zéro — voir [Listes réutilisables](/fr/use/reusable-lists)
 
 Le champ **Section du projet** de l’éditeur de tâche affecte une tâche à l’une des sections de son projet actuel. Il n’a de valeur utile qu’une fois la tâche rattachée à un projet comportant des sections.
 

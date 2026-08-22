@@ -99,6 +99,7 @@ Resultados de varios pasos que contienen tareas relacionadas.
 - **Secciones**: agrupaciones opcionales de tareas dentro de un proyecto (fases, hitos o líneas de trabajo). Las secciones son encabezados dentro de un proyecto, no subtareas ni proyectos independientes. Un proyecto con secciones también puede mostrarlas como columnas contiguas — el conmutador **Columnas** junto a Ordenar — con arrastre entre columnas para cambiar de sección y desplazamiento manteniendo pulsado el botón central del ratón; la elección se recuerda por proyecto en este dispositivo.
 - **Fecha de revisión**: define fechas de seguimiento para revisar el proyecto
 - **Archivar**: completar un proyecto significa archivarlo; sus tareas restantes se completan con él y **Reactivar** lo deshace
+- **Duplicar**: haz clic derecho en un proyecto de la barra lateral, o usa **Duplicar** en la cabecera del proyecto, para copiar el proyecto entero con sus secciones y tareas. La copia empieza de cero: consulta [Listas reutilizables](/es/use/reusable-lists)
 
 El campo **Sección del proyecto** del editor asigna una tarea a una de las secciones de su proyecto actual. Solo tiene un valor útil cuando la tarea pertenece a un proyecto que contiene secciones.
 

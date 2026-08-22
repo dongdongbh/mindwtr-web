@@ -2,7 +2,7 @@
 
 Mindwtr unterstützt wiederverwendbare Checklisten für Aufgaben, die sich ohne festen Zeitplan wiederholen, etwa Packlisten, Einkäufe oder Reisevorbereitungen.
 
-## Zwei Vorgehensweisen
+## Drei Vorgehensweisen
 
 ### Duplizieren (Vorlagen)
 
@@ -40,10 +40,30 @@ Das Zurücksetzen:
 - aktualisiert die vorhandene Aufgabe, statt eine zweite Kopie anzulegen, und
 - öffnet die Aufgabe erneut, falls sie bereits als erledigt markiert war.
 
+### Ein Projekt duplizieren (Vorlagen mit mehreren Aufgaben)
+
+Verwenden Sie diese Variante, wenn die Vorlage ein ganzes Projekt und nicht nur eine Checkliste ist.
+
+Beispiel: **Kunden-Onboarding**
+
+1. Führen Sie ein Musterprojekt mit seinen Abschnitten und Aufgaben
+2. Duplizieren Sie das Projekt, wenn ein neuer Kunde startet
+3. Arbeiten Sie mit der Kopie; das Original bleibt unverändert
+
+Was beim Duplizieren eines Projekts zurückgesetzt wird:
+
+- die Kopie heißt `<Project> (Copy)`, landet am Ende desselben Bereichs und ist nicht fokussiert
+- jede kopierte Aufgabe wird wieder **Als Nächstes** (Referenzaufgaben bleiben Referenz); Start-, Fälligkeits-, Wiedervorlage- und Abschlussdaten werden gelöscht
+- Checklistenpunkte der kopierten Aufgaben starten unabgehakt, und nichts landet im Tagesfokus
+- Anhänge werden sowohl am Projekt als auch an den Aufgaben kopiert und beim nächsten Synchronisieren erneut hochgeladen
+
+Erhalten bleiben: Notizen, Bereich, Schlagwörter, Farbe und Status des Projekts sowie die gesamte Abschnittsstruktur — jede Aufgabe landet wieder in ihrem ursprünglichen Abschnitt. Fälligkeits- und Wiedervorlagedatum des Projekts selbst werden unverändert übernommen — anders als bei den Aufgaben werden sie nicht gelöscht, prüfen Sie sie also an der Kopie. Gelöschte Aufgaben und Abschnitte werden nicht kopiert.
+
 ## Wo die Funktionen zu finden sind
 
 - **Mobilgeräte:** Aufgaben-Editor → **Aufgabe duplizieren** oder **Checkliste zurücksetzen**
 - **Desktop:** Aktionsmenü der Aufgabe. Erledigte Zeilen in **Erledigt** und **Archiviert** zeigen beim Überfahren mit der Maus zusätzlich eine Kopieren-Schaltfläche.
+- **Projekte:** Desktop — Rechtsklick auf ein Projekt in der Seitenleiste oder **Duplizieren** in der Projektkopfzeile. Mobilgeräte — Projektzeile nach rechts wischen oder **Duplizieren** in der Projektdetailansicht.
 
 ## Welche Variante passt?
 

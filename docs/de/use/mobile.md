@@ -464,6 +464,7 @@ Unter **Menü → Projekte**.
 - Wiedervorlagedatum festlegen
 - Aufgaben bei eigener Sortierung am Griff verschieben; unter eine Abschnittsüberschrift ziehen, um zuzuweisen, oder oberhalb der ersten ablegen, um den Abschnitt zu entfernen
 - Projekt **archivieren**, um es samt übrigen Aufgaben abzuschließen; **Reaktivieren** macht dies rückgängig
+- Projekt duplizieren — Projektzeile in der Liste nach rechts wischen oder **Duplizieren** in der Projektdetailansicht verwenden —, um Abschnitte und Aufgaben in eine frische Kopie zu übernehmen (siehe [Wiederverwendbare Listen](/de/use/reusable-lists))
 
 **Projektabschnitt** ist nur bei Aufgaben in Projekten mit Abschnitten relevant.
 

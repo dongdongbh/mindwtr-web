@@ -513,6 +513,7 @@ Ouvrez les Projets depuis **Menu → Projets**.
 - Définissez la date de revue
 - Réorganisez les tâches du projet à l’aide de la poignée de déplacement lorsque l’ordre personnalisé est activé. Déposer une tâche sous l’en-tête d’une autre section la déplace dans cette section, tandis que la déposer au-dessus du premier en-tête retire son affectation à une section
 - Archivez le projet (c’est ainsi qu’un projet est achevé — les tâches restantes sont terminées avec lui, et **Réactiver** annule cette action)
+- Dupliquez le projet — faites glisser sa ligne vers la droite dans la liste des projets, ou utilisez **Dupliquer** dans la fiche de détail — pour copier ses sections et ses tâches dans une nouvelle copie (voir [Listes réutilisables](/fr/use/reusable-lists))
 
 Le champ **Section du projet** de l’éditeur de tâche affecte une tâche à l’une des sections de son projet actuel. Il n’a d’importance qu’une fois la tâche rattachée à un projet comportant des sections ; sinon, laissez-le vide.
 

@@ -2,7 +2,7 @@
 
 Mindwtr supports reusable checklists for tasks you repeat without strict schedules (packing, groceries, travel prep).
 
-## Two Patterns
+## Three Patterns
 
 ### Duplicate (Templates)
 Use when each run is a fresh copy.
@@ -38,10 +38,29 @@ What reset does:
 - updates the task in place instead of creating a second copy
 - reopens the task if it had already been marked done
 
+### Duplicate a Project (Multi-Task Templates)
+Use when the template is a whole project rather than a single checklist.
+
+Example: **Client Onboarding**
+
+1. Keep a master project with its sections and tasks
+2. Duplicate the project when a new client starts
+3. Work the copy; the master stays untouched
+
+What project duplication resets:
+
+- the copy is named `<Project> (Copy)` and lands at the end of the same area, not focused
+- every copied task goes back to **Next** (reference tasks stay reference), with start, due, review, and completion dates cleared
+- checklist items in the copied tasks start unchecked, and nothing lands in Today's Focus
+- attachments are copied on both the project and its tasks, and upload again on the next sync
+
+What it keeps: the project's notes, area, tags, colour, and status, plus its whole section structure, with each task landing back in the section it came from. The project's own deadline and review date carry over as they are — unlike the tasks' dates, they are not cleared, so check them on the copy. Deleted tasks and sections are not copied.
+
 ## Where to Find
 
 - **Mobile:** Task editor → **Duplicate task** or **Reset checklist**
 - **Desktop:** Task actions menu. Completed rows in **Done** and **Archived** also have a copy button that appears when you hover them.
+- **Projects:** desktop — right-click a project in the sidebar, or use **Duplicate** in the project header. Mobile — swipe a project row to the right, or use **Duplicate** in the project detail sheet.
 
 ## Which One To Choose
 

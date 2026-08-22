@@ -98,9 +98,12 @@ If validation fails, restore is blocked and your current data stays unchanged.
 
 - It does **not** merge the backup with your current local data (that is what **Merge Backup** is for)
 - It does **not** restore only one task or one project
+- It does **not** restore your attached files — a backup JSON carries each attachment's metadata and path, never the file bytes
 - It does **not** overwrite remote sync services by itself until your next sync cycle
 
 If you use sync, think of restore as replacing the current local state first. Sync behavior after that depends on your backend and which device syncs next.
+
+Attachment files live outside the backup and must be copied separately. On desktop they sit in an `attachments` folder beside `mindwtr.db` (see [Data and Sync](/data-sync/) for the per-OS location). Back that folder up alongside the JSON, or a restore returns attachment entries pointing at files you no longer have. [Attachments](/use/attachments) covers what is stored where.
 
 ---
 

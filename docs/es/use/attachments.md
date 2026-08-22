@@ -35,6 +35,7 @@ Mindwtr permite adjuntar archivos y enlaces a **tareas** y **proyectos**. Los ad
 - **Añadir enlace** guarda una referencia. Pega una URL o una ruta local —o usa **Enlazar a archivo…** en el escritorio— cuando quieras hacer referencia a un archivo sin copiarlo. Si el archivo se mueve, el enlace a la ruta deja de funcionar, como es de esperar.
 - Cada fila indica el tipo: un clip significa que Mindwtr guarda una copia; un icono de enlace indica que es una referencia y su descripción emergente muestra el destino completo.
 - Los adjuntos añadidos en escritorio antes de v1.1.0 hacen referencia a la ruta original en vez de guardar una copia y muestran el icono de enlace. Vuelve a adjuntarlos para convertirlos en copias.
+- **Los archivos adjuntos no están dentro de una copia de seguridad JSON.** La copia guarda solo los metadatos y la ruta de cada adjunto; en escritorio, las copias en sí viven en una carpeta `attachments` junto a `mindwtr.db` y tienes que copiar esa carpeta aparte. Consulta [Copia de seguridad y restauración](/es/data-sync/backup-restore).
 
 ---
 

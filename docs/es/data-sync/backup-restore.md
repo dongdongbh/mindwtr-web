@@ -98,9 +98,12 @@ Si la validación falla, se bloquea la restauración y tus datos actuales no cam
 
 - **No** combina la copia con tus datos locales actuales (para eso está **Combinar copia de seguridad**).
 - **No** restaura una sola tarea o un solo proyecto.
+- **No** restaura tus archivos adjuntos: un JSON de copia de seguridad guarda los metadatos y la ruta de cada adjunto, nunca el contenido del archivo.
 - **No** sobrescribe por sí sola los servicios de sincronización remotos hasta el siguiente ciclo de sincronización.
 
 Si usas sincronización, considera la restauración como la sustitución inicial del estado local. Lo que ocurra después dependerá del backend y del dispositivo que se sincronice a continuación.
+
+Los archivos adjuntos viven fuera de la copia de seguridad y hay que copiarlos aparte. En escritorio están en una carpeta `attachments` junto a `mindwtr.db` (consulta [Datos y sincronización](/es/data-sync/) para la ruta de cada sistema operativo). Respalda esa carpeta junto con el JSON o una restauración devolverá adjuntos que apuntan a archivos que ya no tienes. [Adjuntos](/es/use/attachments) explica qué se guarda y dónde.
 
 ---
 

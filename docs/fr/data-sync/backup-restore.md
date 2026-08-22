@@ -98,9 +98,12 @@ En cas d’échec de la validation, la restauration est bloquée et vos données
 
 - Elle ne **fusionne pas** la sauvegarde avec vos données locales actuelles (c’est le rôle de **Fusionner une sauvegarde**).
 - Elle ne restaure pas une tâche ou un projet isolé.
+- Elle ne restaure **pas** vos fichiers joints : un JSON de sauvegarde ne contient que les métadonnées et le chemin de chaque pièce jointe, jamais le contenu du fichier.
 - Elle n’écrase pas à elle seule les services de synchronisation distants avant le prochain cycle.
 
 Si vous utilisez la synchronisation, considérez que la restauration remplace d’abord l’état local actuel. Le comportement ultérieur dépend du système choisi et du prochain appareil à se synchroniser.
+
+Les fichiers joints vivent en dehors de la sauvegarde et doivent être copiés séparément. Sur ordinateur, ils se trouvent dans un dossier `attachments` à côté de `mindwtr.db` (voir [Données et synchronisation](/fr/data-sync/) pour le chemin selon le système). Sauvegardez ce dossier avec le JSON, sinon une restauration rendra des pièces jointes qui pointent vers des fichiers que vous n’avez plus. [Pièces jointes](/fr/use/attachments) détaille ce qui est stocké où.
 
 ---
 

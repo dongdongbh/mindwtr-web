@@ -35,6 +35,7 @@ Mit Mindwtr können Sie Dateien und Links an **Aufgaben** und **Projekte** anhä
 - **Link hinzufügen** speichert einen Verweis. Fügen Sie eine URL oder einen lokalen Dateipfad ein (oder verwenden Sie auf dem Desktop **Mit Datei verknüpfen …**, um eine auszuwählen), wenn Sie auf eine Datei verweisen möchten, ohne sie zu kopieren. Ein Pfadlink funktioniert nicht mehr, wenn die Datei verschoben wird – das ist bei einem Link zu erwarten.
 - Jede Anhangszeile zeigt den Typ: Eine Büroklammer bedeutet, dass Mindwtr eine Kopie der Datei besitzt, ein Linksymbol kennzeichnet einen Verweis (der Tooltip zeigt das vollständige Ziel).
 - Vor v1.1.0 auf dem Desktop hinzugefügte Dateianhänge verweisen auf den ursprünglichen Pfad, statt eine Kopie zu enthalten (sie zeigen das Linksymbol). Hängen Sie die Datei erneut an, um sie in eine Kopie umzuwandeln.
+- **Anhangsdateien stecken nicht in einer JSON-Sicherung.** Die Sicherung speichert nur die Metadaten und den Pfad jedes Anhangs; auf dem Desktop liegen die Kopien selbst in einem Ordner `attachments` neben `mindwtr.db`, den Sie separat kopieren müssen. Siehe [Sicherung und Wiederherstellung](/de/data-sync/backup-restore).
 
 ---
 

@@ -35,6 +35,7 @@ Mindwtr lets you attach files and links to **tasks** and **projects**. Attachmen
 - **Add link** stores a pointer. Paste a URL or a local file path (or use **Link to file…** on desktop to browse for one) when you want to reference a file without copying it. A path link breaks if the file moves, which is expected of a link.
 - Each attachment row shows which one it is: a paperclip means Mindwtr holds a copy of the file, a link icon means it is a pointer (the tooltip shows the full target).
 - File attachments added on desktop before v1.1.0 reference the original path instead of holding a copy (they show the link icon); re-attach a file to convert it into a copy.
+- **Attachment files are not inside a JSON backup.** The backup stores each attachment's metadata and path only; on desktop the copies themselves live in an `attachments` folder beside `mindwtr.db`, and you have to copy that folder separately. See [Backup and Restore](/data-sync/backup-restore).
 
 ---
 

@@ -35,6 +35,7 @@ Mindwtr permet de joindre des fichiers et des liens aux **tâches** et aux **pro
 - **Ajouter un lien** enregistre un pointeur. Collez une URL ou le chemin d’un fichier local — ou utilisez **Lier à un fichier…** sur ordinateur — pour référencer un fichier sans le copier. Le lien vers un chemin cesse de fonctionner si le fichier est déplacé, comme attendu.
 - Chaque ligne précise sa nature : un trombone indique que Mindwtr possède une copie, une icône de lien qu’il s’agit d’un pointeur. L’infobulle affiche la cible complète.
 - Les pièces jointes ajoutées sur ordinateur avant la v1.1.0 pointent vers leur emplacement d’origine au lieu d’être copiées et affichent l’icône de lien. Joignez de nouveau le fichier pour en faire une copie.
+- **Les fichiers joints ne sont pas dans une sauvegarde JSON.** La sauvegarde n’enregistre que les métadonnées et le chemin de chaque pièce jointe ; sur ordinateur, les copies elles-mêmes se trouvent dans un dossier `attachments` à côté de `mindwtr.db`, et vous devez copier ce dossier séparément. Voir [Sauvegarde et restauration](/fr/data-sync/backup-restore).
 
 ---
 

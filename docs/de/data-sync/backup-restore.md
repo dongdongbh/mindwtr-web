@@ -98,9 +98,12 @@ Schlägt die Validierung fehl, wird die Wiederherstellung blockiert und Ihre akt
 
 - Sie führt die Sicherung **nicht** mit Ihren aktuellen lokalen Daten zusammen (dafür ist **Backup zusammenführen** da).
 - Sie stellt **nicht** nur eine einzelne Aufgabe oder ein einzelnes Projekt wieder her.
+- Sie stellt Ihre angehängten Dateien **nicht** wieder her — eine Sicherungs-JSON enthält nur die Metadaten und den Pfad jedes Anhangs, niemals die Dateiinhalte.
 - Sie überschreibt entfernte Synchronisierungsdienste nicht von selbst, bevor der nächste Synchronisierungslauf stattfindet.
 
 Wenn Sie die Synchronisierung verwenden, betrachten Sie die Wiederherstellung zunächst als Ersetzen des aktuellen lokalen Zustands. Das anschließende Synchronisierungsverhalten hängt von Ihrem Backend und davon ab, welches Gerät als Nächstes synchronisiert.
+
+Anhangsdateien liegen außerhalb der Sicherung und müssen separat kopiert werden. Auf dem Desktop liegen sie in einem Ordner `attachments` neben `mindwtr.db` (den Pfad pro Betriebssystem finden Sie unter [Daten und Synchronisierung](/de/data-sync/)). Sichern Sie diesen Ordner zusammen mit der JSON-Datei, sonst liefert eine Wiederherstellung Anhangseinträge, die auf nicht mehr vorhandene Dateien verweisen. [Anhänge](/de/use/attachments) beschreibt, was wo gespeichert wird.
 
 ---
 

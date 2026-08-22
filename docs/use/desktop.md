@@ -20,6 +20,8 @@ If you keep pushing a task's due date later, its row shows a small hourglass bad
 
 Most task lists share the same control row for selecting tasks, filtering, sorting, grouping, showing details, and switching list density (Comfortable, Compact, or Condensed). Use **Group** to organize Inbox, Next, Waiting, Someday/Maybe, Reference, Done, Archived, and other list views by metadata such as context, area, project, or tag. Done and Archived add a **Completion date** grouping — Today, Yesterday, Previous 7 days, then one heading per calendar month for anything older (January 2026, December 2025, …), and Not completed — using your local calendar days, so each reads as a log of what you finished when. Empty groups are hidden, the ungrouped catch-all (No project, No context, General, and so on) comes last, and every group heading collapses — each list remembers which of its groups are folded per grouping mode on that device.
 
+**Focus**, **Inbox**, **Next Actions**, **Waiting For**, and **Someday/Maybe** each remember their own **Group** choice, so grouping Focus by project leaves the Inbox as it was. On the first launch after updating, whatever grouping those lists shared carries over to all five, and from then on they are independent.
+
 Drag a task onto **Inbox**, **Someday/Maybe**, **Waiting For**, **Reference**, **Done**, or **Archived** in the sidebar to change its status; the toast offers **Undo**. **Trash** is not a drop target. Drop the task on **Calendar**, or pause over Calendar while dragging, to open today with the task still in hand. Schedule view switches to Week so you can drop it on a day and time.
 
 ## Focus Mode

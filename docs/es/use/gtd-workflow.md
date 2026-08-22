@@ -198,7 +198,7 @@ Mindwtr mantiene separados el estado y las fechas de las tareas. El estado es la
 
 Hay un atajo deliberado al editar: asignar una fecha de inicio a un elemento de la **Bandeja de entrada** cuenta como aclararlo —has decidido cuándo puedes actuar sobre él—, por lo que Mindwtr lo mueve a `next` en cuanto estableces la fecha, igual que al destacar un elemento de la Bandeja de entrada. Si eliges un estado en la misma edición, prevalece tu elección, y las tareas `someday` o `waiting` siempre conservan su estado cuando les asignas una fecha: un elemento con fecha de algún día es un recordatorio y un elemento en espera con fecha es un recordatorio de seguimiento.
 
-- La **fecha de inicio** es una barrera de aplazamiento/disponibilidad. De forma predeterminada, un inicio futuro oculta la tarea de Enfoque. Cuando llega la fecha, la tarea vuelve a aparecer con el estado que ya tenía. Si el inicio tiene una hora concreta, Enfoque y las próximas acciones mantienen la tarea oculta hasta esa hora: una tarea que puede empezar a las 17:00 no estorba en la lista de la mañana.
+- La **fecha de inicio** es una barrera de aplazamiento/disponibilidad. De forma predeterminada, un inicio futuro oculta la tarea de Enfoque. Cuando llega la fecha, la tarea vuelve a aparecer con el estado que ya tenía. Si el inicio tiene una hora concreta, Enfoque y las próximas acciones mantienen la tarea oculta hasta esa hora: una tarea que puede empezar a las 17:00 no estorba en la lista de la mañana. Los inicios de los próximos 7 días se siguen previsualizando en la sección **Próximas** de Enfoque, de modo que un aplazamiento nunca llega sin avisar.
 - La **fecha de revisión** es un recordatorio. Cuando llega la fecha, Mindwtr muestra la tarea donde la vista admite elementos cuya revisión ha vencido para que puedas reconsiderarla; nada cambia hasta que tú lo decidas.
 - La **fecha límite** es un plazo. A medida que se acerca o pasa, Mindwtr resalta el plazo de la tarea mediante la visualización, los recordatorios y la presión de ordenación; el estado no cambia.
 
@@ -267,8 +267,9 @@ Usa la vista **Enfoque** para ver:
 - Próximas acciones (filtradas por contexto o generales)
 - Elementos vencidos
 - Elementos que vencen hoy
+- Próximas acciones que empiezan o se repiten dentro de los próximos 7 días
 
-Enfoque no es una vista de inventario completo. Oculta las tareas con fecha de inicio futura y las tareas posteriores de proyectos secuenciales para que la lista refleje las acciones disponibles ahora. Usa **Contextos**, **Proyectos** o **Búsqueda** cuando necesites consultar todas las próximas acciones, incluidos los elementos aplazados o bloqueados.
+Enfoque no es una vista de inventario completo. Mantiene las tareas con fecha de inicio futura y las tareas posteriores de proyectos secuenciales fuera de las listas accionables para que reflejen las acciones disponibles ahora. Usa **Contextos**, **Proyectos** o **Búsqueda** cuando necesites consultar todas las próximas acciones, incluidos los elementos aplazados o bloqueados.
 
 ### Cómo ordena Enfoque las acciones disponibles
 
@@ -281,9 +282,10 @@ Enfoque determina primero si una tarea está disponible y después ordena las ac
    - después las acciones sin fecha
    - al final las acciones con fecha límite en un futuro lejano, empezando por la fecha límite más próxima
    - dentro del mismo grupo: prioridad cuando esté activada, después hora de inicio, fecha de creación más antigua, título e id
-4. **Revisión vencida** muestra las tareas cuya fecha de revisión ha llegado. Después de revisar un elemento, puedes borrar su fecha de revisión (**Marcar como revisado**) o aplazarla mediante **Revisar en 1 semana**: en el escritorio, desde el menú de acciones rápidas de la tarea; en el móvil, manteniendo pulsada la fila.
+4. **Próximas** previsualiza las tareas `next` que el aplazamiento retiene ahora mismo pero que aparecerán dentro de los próximos 7 días: una fecha de inicio futura, o una tarea recurrente que espera su siguiente fecha de vencimiento o revisión. Las filas se ordenan por el día en que aparecerán y muestran esa fecha; son solo una vista previa, así que no se pueden marcar con estrella para el Foco de hoy, y la sección desaparece cuando no viene nada.
+5. **Revisión vencida** muestra las tareas cuya fecha de revisión ha llegado. Después de revisar un elemento, puedes borrar su fecha de revisión (**Marcar como revisado**) o aplazarla mediante **Revisar en 1 semana**: en el escritorio, desde el menú de acciones rápidas de la tarea; en el móvil, manteniendo pulsada la fila.
 
-La fecha de inicio es el campo de aplazamiento/fecha planificada de Mindwtr. Enfoque y la lista Próximas acciones siempre ocultan las tareas con inicio futuro hasta su día de inicio; usa **Proyectos** o **Buscar** cuando quieras echar un vistazo. Los proyectos secuenciales también limitan Enfoque a la primera acción disponible para ese proyecto o sección, por lo que las acciones posteriores no aparecen en Enfoque hasta que el paso anterior deja de bloquearlas.
+La fecha de inicio es el campo de aplazamiento/fecha planificada de Mindwtr. Una tarea con inicio futuro se queda fuera de las listas accionables hasta su día de inicio; la sección **Próximas** es el vistazo integrado a la semana que viene, y **Proyectos** o **Buscar** muestran los aplazamientos más lejanos. Los proyectos secuenciales también limitan Enfoque a la primera acción disponible para ese proyecto o sección, por lo que las acciones posteriores no aparecen en Enfoque hasta que el paso anterior deja de bloquearlas.
 
 La estimación de tiempo y la energía son filtros y opciones de agrupación de Enfoque, no claves de ordenación predeterminadas. Agrupar por contexto, proyecto, área, energía o prioridad cambia los grupos visuales; las tareas de esos grupos conservan la misma disponibilidad y ordenación de próximas acciones.
 

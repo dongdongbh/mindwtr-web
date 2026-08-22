@@ -67,9 +67,10 @@ Your unified dashboard for daily engagement. Focus is not a full inventory of ev
 - **Overdue**: Past due items.
 - **Due Today**: Tasks due today.
 - **Next Actions**: Ready tasks without due dates, filtered by context.
+- **Upcoming**: A read-only preview of next actions that start — or recur — within the next 7 days, each row showing the date it will appear. The section only exists when something is coming, and its rows cannot be starred.
 - **Review Due**: Items with tickler dates.
 
-Focus hides future-start tasks and later tasks in sequential projects. Use **Contexts**, **Projects**, or **Search** when you need to inspect broader task inventory.
+Focus keeps future-start tasks and later tasks in sequential projects out of its actionable lists; deferred tasks landing within the next week still show in the **Upcoming** preview. Use **Contexts**, **Projects**, or **Search** when you need to inspect broader task inventory.
 
 **Default Next Actions order:** Focus puts due-soon actions first, undated actions next, and far-future due actions last. Within the same bucket it uses priority when enabled, then start time, creation date, title, and id. See [GTD Workflow in Mindwtr](/use/gtd-workflow#how-focus-sorts-available-actions) for the full logic.
 

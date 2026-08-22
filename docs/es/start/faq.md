@@ -215,7 +215,7 @@ Sí. El lugar más sencillo es mientras procesas la Bandeja de entrada: cuando e
 
 Foco muestra deliberadamente solo aquello en lo que puedes actuar ahora mismo, por lo que una tarea puede estar oculta por varios motivos:
 
-- Tiene una **fecha de inicio futura**, por lo que reaparecerá cuando llegue esa fecha.
+- Tiene una **fecha de inicio futura**, por lo que reaparecerá cuando llegue esa fecha. Mientras espera, un inicio o una próxima repetición dentro de los próximos 7 días sigue apareciendo como fila de solo lectura en **Próximas**.
 - Es una **tarea recurrente cuya fecha aún no ha llegado**: una tarea recurrente sin fecha de inicio queda aplazada hasta su próxima fecha límite o de revisión, a diferencia de una tarea puntual, cuya fecha límite sigue visible con antelación.
 - Es una **tarea posterior de un proyecto secuencial**, por lo que solo se muestra la primera tarea disponible.
 - Un **filtro de contexto** activo la excluye.
@@ -227,7 +227,7 @@ Usa **Proyectos**, **Contextos** o **Buscar** para inspeccionar el inventario co
 
 Sí, ambos:
 
-- La **fecha de inicio** aplaza una tarea: una fecha de inicio futura la oculta de Foco y de Próximas acciones, y reaparece con su estado actual cuando llega la fecha. Foco y la lista Próximas acciones mantienen ocultas las tareas aplazadas hasta el día de inicio; usa **Proyectos** o **Buscar** para verlas antes.
+- La **fecha de inicio** aplaza una tarea: una fecha de inicio futura la mantiene fuera de Foco y de Próximas acciones, y reaparece con su estado actual cuando llega la fecha. Foco previsualiza los aplazamientos que llegan dentro de los próximos 7 días en su sección de solo lectura **Próximas**, con la fecha en la que aparecerá cada uno; usa **Proyectos** o **Buscar** para ver los aplazamientos más lejanos.
 - La **fecha de revisión** es un tickler: cuando llega, Mindwtr muestra la tarea para que vuelvas a considerarla. Nada cambia hasta que tú decidas.
 - El **tiempo de antelación del inicio** vincula el inicio a la fecha límite (por ejemplo, hacerla visible dos días antes de la fecha límite).
 

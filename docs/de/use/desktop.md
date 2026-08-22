@@ -67,9 +67,10 @@ Ihr gemeinsames Dashboard für das tägliche Erledigen. „Fokus“ ist kein vol
 - **Überfällig**: Einträge nach ihrem Fälligkeitsdatum
 - **Heute fällig**: heute fällige Aufgaben
 - **Nächste Aktionen**: ausführbare Aufgaben ohne Fälligkeitsdatum, nach Kontext gefiltert
+- **Anstehend**: eine schreibgeschützte Vorschau auf nächste Aktionen, die innerhalb der nächsten 7 Tage starten oder wiederkehren; jede Zeile zeigt das Datum, an dem sie erscheinen wird. Der Abschnitt erscheint nur, wenn etwas ansteht, und seine Zeilen lassen sich nicht mit einem Stern versehen
 - **Durchsicht fällig**: Einträge mit Tickler-Datum
 
-„Fokus“ blendet Aufgaben mit zukünftigem Start und spätere Aufgaben sequenzieller Projekte aus. Verwenden Sie **Kontexte**, **Projekte** oder die **Suche** für einen größeren Aufgabenbestand.
+„Fokus“ hält Aufgaben mit zukünftigem Start und spätere Aufgaben sequenzieller Projekte aus seinen ausführbaren Listen heraus; zurückgestellte Aufgaben, die innerhalb der nächsten Woche anstehen, erscheinen weiterhin in der Vorschau **Anstehend**. Verwenden Sie **Kontexte**, **Projekte** oder die **Suche** für einen größeren Aufgabenbestand.
 
 **Standardreihenfolge der nächsten Aktionen:** Bald fällige Aktionen zuerst, undatierte danach und weit in der Zukunft fällige zuletzt. Innerhalb derselben Gruppe folgen Priorität (wenn aktiviert), Startzeit, Erstellungsdatum, Titel und ID. Die vollständige Logik steht unter [GTD-Arbeitsablauf in Mindwtr](/de/use/gtd-workflow#how-focus-sorts-available-actions).
 

@@ -215,7 +215,7 @@ Yes. The easiest place is while processing the Inbox: when the guided flow asks 
 
 Focus deliberately shows only what you can act on right now, so a task can be hidden for a few reasons:
 
-- It has a **future start date**, so it reappears when the date arrives.
+- It has a **future start date**, so it reappears when the date arrives. While it waits, a start or next recurrence inside the next 7 days still shows as a read-only row in **Upcoming**.
 - It is a **recurring task whose date hasn't arrived**: a recurring task without a start date is deferred to its next due or review date, unlike a one-off task whose deadline stays visible ahead of time.
 - It is a **later task in a sequential project**, so only the first available task is surfaced.
 - An active **context filter** excludes it.
@@ -227,7 +227,7 @@ Use **Projects**, **Contexts**, or **Search** to inspect the full task inventory
 
 Yes, both:
 
-- **Start date** defers a task: a future start hides it from Focus and Next actions, and it reappears with its existing status when the date arrives. Focus and the Next actions list keep deferred tasks hidden until their start day; use **Projects** or **Search** to see them sooner.
+- **Start date** defers a task: a future start keeps it out of Focus and Next actions, and it reappears with its existing status when the date arrives. Focus previews deferrals landing within the next 7 days in its read-only **Upcoming** section, with the date each will appear; use **Projects** or **Search** to see deferrals further out.
 - **Review date** is a tickler: when it arrives, Mindwtr surfaces the task for you to reconsider. Nothing changes until you decide.
 - **Start lead time** ties the start to the due date (e.g., become visible two days before due).
 

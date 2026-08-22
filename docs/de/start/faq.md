@@ -212,7 +212,7 @@ Ja. Am einfachsten während der Posteingangsverarbeitung: Wenn der geführte Abl
 
 „Fokus“ zeigt bewusst nur, was Sie jetzt erledigen können. Eine Aufgabe kann aus mehreren Gründen ausgeblendet sein:
 
-- Sie besitzt ein **zukünftiges Startdatum** und erscheint bei dessen Eintritt wieder.
+- Sie besitzt ein **zukünftiges Startdatum** und erscheint bei dessen Eintritt wieder. In der Zwischenzeit erscheint ein Start oder eine nächste Wiederholung innerhalb der nächsten 7 Tage weiterhin als schreibgeschützte Zeile unter **Anstehend**.
 - Sie ist eine **wiederkehrende Aufgabe, deren Datum noch nicht erreicht ist**: Eine wiederkehrende Aufgabe ohne Startdatum wird bis zu ihrem nächsten Fälligkeits- oder Wiedervorlagedatum zurückgestellt — anders als eine einmalige Aufgabe, deren Frist vorab sichtbar bleibt.
 - Sie ist eine **spätere Aufgabe in einem sequenziellen Projekt**; nur die erste verfügbare Aufgabe wird angezeigt.
 - Ein aktiver **Kontextfilter** schließt sie aus.
@@ -224,7 +224,7 @@ Verwenden Sie **Projekte**, **Kontexte** oder die **Suche**, um den vollständig
 
 Ja, beides:
 
-- Das **Startdatum** stellt eine Aufgabe zurück: Ein zukünftiger Start blendet sie aus „Fokus“ und „Nächste Aktionen“ aus; beim Erreichen erscheint sie mit ihrem bisherigen Status wieder. „Fokus“ und „Nächste Aktionen“ blenden zurückgestellte Aufgaben bis zum Starttag aus. Verwenden Sie **Projekte** oder die **Suche**, um sie früher zu sehen.
+- Das **Startdatum** stellt eine Aufgabe zurück: Ein zukünftiger Start hält sie aus „Fokus“ und „Nächste Aktionen“ heraus; beim Erreichen erscheint sie mit ihrem bisherigen Status wieder. „Fokus“ zeigt Zurückstellungen der nächsten 7 Tage in seinem schreibgeschützten Abschnitt **Anstehend** samt Datum, an dem sie jeweils erscheinen. Verwenden Sie **Projekte** oder die **Suche** für weiter entfernte Zurückstellungen.
 - Das **Wiedervorlagedatum** ist ein Tickler: Bei Eintritt zeigt Mindwtr die Aufgabe zur Neubewertung an. Bis zu Ihrer Entscheidung ändert sich nichts.
 - Die **Startvorlaufzeit** koppelt den Start an das Fälligkeitsdatum (z. B. zwei Tage vor Fälligkeit sichtbar werden).
 

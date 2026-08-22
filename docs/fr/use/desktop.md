@@ -67,9 +67,10 @@ Votre tableau de bord unifié pour l’engagement quotidien. Focus ne constitue 
 - **En retard** : éléments dont l’échéance est dépassée.
 - **À faire aujourd’hui** : tâches dont l’échéance est aujourd’hui.
 - **Actions suivantes** : tâches prêtes sans échéance, filtrées par contexte.
+- **À venir** : aperçu en lecture seule des actions suivantes qui démarrent — ou reviennent — dans les 7 prochains jours ; chaque ligne indique la date à laquelle elle apparaîtra. La section n’est présente que lorsque quelque chose arrive et ses lignes ne peuvent pas être étoilées.
 - **Revue à effectuer** : éléments dont la date de rappel est arrivée.
 
-Focus masque les tâches dont la date de début est future et les tâches ultérieures des projets séquentiels. Utilisez les **Contextes**, les **Projets** ou la **Recherche** lorsque vous devez examiner un inventaire de tâches plus large.
+Focus tient les tâches dont la date de début est future et les tâches ultérieures des projets séquentiels à l’écart de ses listes actionnables ; les tâches différées qui arrivent dans la semaine restent visibles dans l’aperçu **À venir**. Utilisez les **Contextes**, les **Projets** ou la **Recherche** lorsque vous devez examiner un inventaire de tâches plus large.
 
 **Ordre par défaut des Actions suivantes :** Focus place d’abord les actions à échéance proche, puis les actions sans date et enfin les actions dont l’échéance est lointaine. Au sein d’une même catégorie, il utilise la priorité lorsqu’elle est activée, puis l’heure de début, la date de création, le titre et l’identifiant. Consultez [Le flux de travail GTD dans Mindwtr](/fr/use/gtd-workflow#comment-focus-trie-les-actions-disponibles) pour connaître toute la logique.
 

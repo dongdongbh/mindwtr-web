@@ -198,7 +198,7 @@ Mindwtr sépare le statut et les dates d’une tâche. Le statut est l’état G
 
 Il existe un raccourci délibéré au moment de la modification : donner une date de début à un élément de la **Boîte de réception** revient à le clarifier — vous avez décidé quand vous pourrez agir — donc Mindwtr le déplace vers `next` dès que vous définissez la date, comme lorsque vous marquez un élément de la Boîte de réception d’une étoile. Si vous choisissez un statut lors de la même modification, votre choix l’emporte, et les tâches `someday` ou `waiting` conservent toujours leur statut lorsque vous leur attribuez une date : une tâche Un jour datée est un pense-bête, et une tâche En attente datée est un rappel de suivi.
 
-- La **date de début** est un seuil de report/disponibilité. Par défaut, une date de début future masque la tâche dans Focus. Lorsque cette date arrive, la tâche réapparaît avec le statut qu’elle avait déjà. Si le début comporte une heure précise, Focus et les prochaines actions gardent la tâche masquée jusqu’à cette heure : une tâche démarrable à 17 h n’encombre pas la liste du matin.
+- La **date de début** est un seuil de report/disponibilité. Par défaut, une date de début future masque la tâche dans Focus. Lorsque cette date arrive, la tâche réapparaît avec le statut qu’elle avait déjà. Si le début comporte une heure précise, Focus et les prochaines actions gardent la tâche masquée jusqu’à cette heure : une tâche démarrable à 17 h n’encombre pas la liste du matin. Les débuts prévus dans les 7 prochains jours restent visibles en aperçu dans la section **À venir** de Focus, si bien qu’un report n’arrive jamais sans prévenir.
 - La **date de revue** est un pense-bête. Lorsque cette date arrive, Mindwtr fait apparaître la tâche dans les vues qui prennent en charge les éléments à revoir afin que vous puissiez la réexaminer ; rien ne change avant votre décision.
 - La **date d’échéance** est un délai. À mesure qu’elle approche ou qu’elle est dépassée, Mindwtr souligne l’échéance de la tâche dans l’affichage, les rappels et l’ordre de tri ; son statut ne change pas.
 
@@ -267,8 +267,9 @@ Utilisez la vue **Focus** pour voir :
 - les Prochaines actions (filtrées par contexte ou générales)
 - les éléments en retard
 - les éléments dus aujourd’hui
+- les prochaines actions à venir qui démarrent ou reviennent dans les 7 prochains jours
 
-Focus n’est pas une vue d’inventaire complète. Elle masque les tâches dont la date de début est future et les tâches ultérieures des projets séquentiels afin que la liste reflète les actions disponibles maintenant. Utilisez **Contextes**, **Projets** ou **Recherche** pour examiner toutes les prochaines actions, y compris les éléments reportés ou bloqués.
+Focus n’est pas une vue d’inventaire complète. Elle tient les tâches dont la date de début est future et les tâches ultérieures des projets séquentiels à l’écart des listes actionnables, afin que celles-ci reflètent les actions disponibles maintenant. Utilisez **Contextes**, **Projets** ou **Recherche** pour examiner toutes les prochaines actions, y compris les éléments reportés ou bloqués.
 
 ### Comment Focus trie les actions disponibles
 
@@ -281,9 +282,10 @@ Focus détermine d’abord si une tâche est disponible, puis trie les actions v
    - ensuite les actions sans date
    - enfin les actions dont l’échéance est plus éloignée, de la date d’échéance la plus proche à la plus lointaine
    - au sein d’une même catégorie : la priorité lorsqu’elle est activée, puis l’heure de début, la date de création la plus ancienne, le titre et l’identifiant
-4. **À revoir** affiche les tâches dont la date de revue est arrivée. Après avoir examiné un élément, vous pouvez effacer sa date de revue (**Marquer comme examiné**) ou la reporter avec **Revoir dans 1 semaine**, sur ordinateur depuis le menu d’actions rapides de la tâche et sur mobile en appuyant longuement sur la ligne.
+4. **À venir** donne un aperçu des tâches `next` que le report retient actuellement mais qui apparaîtront dans les 7 prochains jours : une date de début future, ou une tâche récurrente qui attend sa prochaine date d’échéance ou de revue. Les lignes sont triées par le jour où elles apparaîtront et affichent cette date ; il s’agit d’un simple aperçu, elles ne peuvent donc pas être étoilées dans le Focus du jour, et la section disparaît lorsque rien n’arrive.
+5. **À revoir** affiche les tâches dont la date de revue est arrivée. Après avoir examiné un élément, vous pouvez effacer sa date de revue (**Marquer comme examiné**) ou la reporter avec **Revoir dans 1 semaine**, sur ordinateur depuis le menu d’actions rapides de la tâche et sur mobile en appuyant longuement sur la ligne.
 
-La date de début est le champ de report/date planifiée de Mindwtr. Focus et la liste Prochaines actions masquent toujours les tâches dont la date de début est future jusqu’au jour de leur début ; utilisez **Projets** ou la **Recherche** pour regarder en avance. Les projets séquentiels limitent également Focus à la première action disponible du projet ou de la section, de sorte que les actions suivantes restent hors de Focus jusqu’à ce que l’étape précédente cesse de les bloquer.
+La date de début est le champ de report/date planifiée de Mindwtr. Une tâche dont la date de début est future reste hors des listes actionnables jusqu’au jour de son début ; la section **À venir** est le coup d’œil intégré sur la semaine qui vient, et **Projets** ou la **Recherche** montrent les reports plus lointains. Les projets séquentiels limitent également Focus à la première action disponible du projet ou de la section, de sorte que les actions suivantes restent hors de Focus jusqu’à ce que l’étape précédente cesse de les bloquer.
 
 L’estimation du temps et l’énergie sont des filtres et des options de regroupement dans Focus, pas des clés de tri par défaut. Le regroupement par contexte, projet, domaine, énergie ou priorité modifie les groupes visuels ; les tâches au sein de ces groupes conservent le même ordre de disponibilité et de prochaines actions.
 

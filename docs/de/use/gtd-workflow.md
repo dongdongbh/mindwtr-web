@@ -200,7 +200,7 @@ Mindwtr behandelt Aufgabenstatus und Aufgabendaten getrennt. Der Status ist der 
 
 Beim Bearbeiten gibt es eine bewusste Abkürzung: Wenn Sie einem **Posteingangs**eintrag ein Startdatum geben, gilt er als geklärt – Sie haben entschieden, wann Sie ihn bearbeiten können. Mindwtr verschiebt ihn daher beim Festlegen des Datums nach `next`, genau wie beim Markieren eines Posteingangseintrags mit einem Stern. Wählen Sie bei derselben Bearbeitung einen Status, hat Ihre Auswahl Vorrang. Aufgaben unter `someday` oder `waiting` behalten bei einer Datumszuweisung immer ihren Status: Ein datiertes Irgendwann ist eine Wiedervorlage, ein datiertes Warten eine Nachfass-Erinnerung.
 
-- Das **Startdatum** ist eine Zurückstellungs-/Verfügbarkeitsschranke. Ein zukünftiger Start blendet die Aufgabe standardmäßig aus „Fokus“ aus. Wenn das Datum eintritt, erscheint die Aufgabe mit ihrem bisherigen Status wieder. Hat der Start eine konkrete Uhrzeit, bleibt die Aufgabe in „Fokus“ und den nächsten Aktionen auch bis zu dieser Uhrzeit verborgen – eine ab 17:00 Uhr startbare Aufgabe belegt also nicht schon morgens die Liste.
+- Das **Startdatum** ist eine Zurückstellungs-/Verfügbarkeitsschranke. Ein zukünftiger Start blendet die Aufgabe standardmäßig aus „Fokus“ aus. Wenn das Datum eintritt, erscheint die Aufgabe mit ihrem bisherigen Status wieder. Hat der Start eine konkrete Uhrzeit, bleibt die Aufgabe in „Fokus“ und den nächsten Aktionen auch bis zu dieser Uhrzeit verborgen – eine ab 17:00 Uhr startbare Aufgabe belegt also nicht schon morgens die Liste. Starts innerhalb der nächsten 7 Tage erscheinen weiterhin im Abschnitt **Anstehend** von „Fokus“, sodass eine Zurückstellung nie unangekündigt eintrifft.
 - Das **Wiedervorlagedatum** ist ein Tickler. Wenn das Datum eintritt, zeigt Mindwtr die Aufgabe in Ansichten mit fälligen Durchsichtspunkten an, damit Sie sie neu beurteilen können. Bis zu Ihrer Entscheidung ändert sich nichts.
 - Das **Fälligkeitsdatum** ist eine Frist. Wenn sie näher rückt oder verstreicht, hebt Mindwtr die Aufgabe durch Darstellung, Erinnerungen und Sortierungsdruck hervor; der Status bleibt unverändert.
 
@@ -269,8 +269,9 @@ In der Ansicht **Fokus** sehen Sie:
 - Nächste Aktionen (nach Kontext gefiltert oder allgemein)
 - überfällige Einträge
 - heute fällige Einträge
+- anstehende nächste Aktionen, die innerhalb der nächsten 7 Tage starten oder wiederkehren
 
-„Fokus“ ist keine vollständige Bestandsansicht. Zukünftig beginnende Aufgaben und spätere Aufgaben sequenzieller Projekte werden ausgeblendet, damit die Liste jetzt verfügbare Aktionen zeigt. Verwenden Sie **Kontexte**, **Projekte** oder die **Suche**, um alle nächsten Aktionen einschließlich zurückgestellter oder blockierter Einträge zu prüfen.
+„Fokus“ ist keine vollständige Bestandsansicht. Zukünftig beginnende Aufgaben und spätere Aufgaben sequenzieller Projekte bleiben aus den ausführbaren Listen heraus, damit diese jetzt verfügbare Aktionen zeigen. Verwenden Sie **Kontexte**, **Projekte** oder die **Suche**, um alle nächsten Aktionen einschließlich zurückgestellter oder blockierter Einträge zu prüfen.
 
 <a id="how-focus-sorts-available-actions"></a>
 
@@ -285,9 +286,10 @@ In der Ansicht **Fokus** sehen Sie:
    - undatierte Aktionen danach
    - weit in der Zukunft fällige Aktionen zuletzt, mit dem frühesten Fälligkeitsdatum zuerst
    - innerhalb derselben Gruppe: Priorität (wenn aktiviert), dann Startzeit, ältestes Erstellungsdatum, Titel und ID
-4. **Durchsicht fällig** zeigt Aufgaben mit fälligem Wiedervorlagedatum. Nach der Prüfung können Sie das Wiedervorlagedatum entfernen (**Als geprüft markieren**) oder mit **In 1 Woche prüfen** verschieben – auf dem Desktop im Schnellaktionsmenü der Aufgabe, auf Mobilgeräten durch langes Drücken der Zeile.
+4. **Anstehend** zeigt eine Vorschau auf `next`-Aufgaben, die die Zurückstellung derzeit zurückhält, die aber innerhalb der nächsten 7 Tage auftauchen – ein zukünftiges Startdatum oder eine wiederkehrende Aufgabe, die auf ihr nächstes Fälligkeits- oder Wiedervorlagedatum wartet. Die Zeilen sind nach dem Tag sortiert, an dem sie erscheinen, und zeigen dieses Datum. Sie sind reine Vorschau, lassen sich also nicht in den heutigen Fokus stern-markieren, und der Abschnitt verschwindet, wenn nichts ansteht.
+5. **Durchsicht fällig** zeigt Aufgaben mit fälligem Wiedervorlagedatum. Nach der Prüfung können Sie das Wiedervorlagedatum entfernen (**Als geprüft markieren**) oder mit **In 1 Woche prüfen** verschieben – auf dem Desktop im Schnellaktionsmenü der Aufgabe, auf Mobilgeräten durch langes Drücken der Zeile.
 
-Das Startdatum ist das Zurückstellungs-/Planungsdatum von Mindwtr. „Fokus“ und die Liste „Nächste Aktionen“ blenden Aufgaben mit zukünftigem Start immer bis zu ihrem Starttag aus. Verwenden Sie **Projekte** oder die **Suche**, um vorauszublicken. Sequenzielle Projekte beschränken „Fokus“ außerdem auf die erste verfügbare Aktion des Projekts oder Abschnitts. Spätere Aktionen bleiben ausgeblendet, bis der vorherige Schritt sie nicht mehr blockiert.
+Das Startdatum ist das Zurückstellungs-/Planungsdatum von Mindwtr. Eine Aufgabe mit zukünftigem Start bleibt bis zu ihrem Starttag aus den ausführbaren Listen heraus. Der Abschnitt **Anstehend** ist der eingebaute Blick auf die kommende Woche; **Projekte** oder die **Suche** zeigen weiter entfernte Zurückstellungen. Sequenzielle Projekte beschränken „Fokus“ außerdem auf die erste verfügbare Aktion des Projekts oder Abschnitts. Spätere Aktionen bleiben ausgeblendet, bis der vorherige Schritt sie nicht mehr blockiert.
 
 Zeitschätzung und Energie sind Fokusfilter und Gruppierungsoptionen, keine Standardsortierschlüssel. Eine Gruppierung nach Kontext, Projekt, Bereich, Energie oder Priorität verändert die sichtbaren Gruppen; innerhalb dieser Gruppen behalten Aufgaben dieselbe Verfügbarkeits- und Nächste-Aktion-Sortierung.
 

@@ -67,9 +67,10 @@ Tu panel unificado para la actividad diaria. Foco no es un inventario completo d
 - **Atrasadas**: elementos cuya fecha de vencimiento ya pasó.
 - **Vencen hoy**: tareas que vencen hoy.
 - **Próximas acciones**: tareas listas y sin fecha de vencimiento, filtradas por contexto.
+- **Próximas**: vista previa de solo lectura de las acciones que empezarán —o se repetirán— en los próximos 7 días; cada fila muestra la fecha en la que aparecerá. La sección solo está presente cuando hay algo por llegar y sus filas no se pueden marcar con estrella.
 - **Revisión pendiente**: elementos con fechas de seguimiento.
 
-Foco oculta las tareas cuya fecha de inicio es futura y las tareas posteriores de los proyectos secuenciales. Usa **Contextos**, **Proyectos** o **Buscar** cuando necesites examinar un inventario de tareas más amplio.
+Foco mantiene fuera de sus listas accionables las tareas cuya fecha de inicio es futura y las tareas posteriores de los proyectos secuenciales; las tareas aplazadas que llegan durante la próxima semana siguen viéndose en la vista previa **Próximas**. Usa **Contextos**, **Proyectos** o **Buscar** cuando necesites examinar un inventario de tareas más amplio.
 
 **Orden predeterminado de Próximas acciones:** Foco coloca primero las acciones con vencimiento próximo, después las que no tienen fecha y al final las que vencen en un futuro lejano. Dentro del mismo grupo usa la prioridad cuando está habilitada, seguida de la hora de inicio, la fecha de creación, el título y el id. Consulta [Flujo GTD en Mindwtr](/es/use/gtd-workflow#como-ordena-enfoque-las-acciones-disponibles) para conocer toda la lógica.
 

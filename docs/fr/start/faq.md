@@ -215,7 +215,7 @@ Oui. Le plus simple est de le faire pendant le traitement de la boîte de récep
 
 Focus n’affiche volontairement que ce sur quoi vous pouvez agir immédiatement. Une tâche peut donc être masquée pour plusieurs raisons :
 
-- Elle a une **date de début future** et réapparaîtra lorsque cette date arrivera.
+- Elle a une **date de début future** et réapparaîtra lorsque cette date arrivera. En attendant, un début ou une prochaine occurrence situé dans les 7 prochains jours reste affiché en lecture seule dans **À venir**.
 - C’est une **tâche récurrente dont la date n’est pas encore arrivée** : une tâche récurrente sans date de début est reportée jusqu’à sa prochaine échéance ou date de revue, contrairement à une tâche ponctuelle dont l’échéance reste visible à l’avance.
 - C’est une **tâche ultérieure d’un projet séquentiel** ; seule la première tâche disponible est donc proposée.
 - Un **filtre de contexte** actif l’exclut.
@@ -227,7 +227,7 @@ Utilisez **Projets**, **Contextes** ou **Recherche** pour consulter l’ensemble
 
 Oui, les deux :
 
-- Une **date de début** diffère une tâche : une date future la masque dans Focus et les actions suivantes, puis elle réapparaît avec son statut existant à la date prévue. Focus et la liste des actions suivantes masquent les tâches différées jusqu’à leur date de début ; utilisez **Projets** ou la **Recherche** pour les voir plus tôt.
+- Une **date de début** diffère une tâche : une date future la tient hors de Focus et des actions suivantes, puis elle réapparaît avec son statut existant à la date prévue. Focus donne un aperçu des reports qui arrivent dans les 7 prochains jours dans sa section en lecture seule **À venir**, avec la date à laquelle chacun apparaîtra ; utilisez **Projets** ou la **Recherche** pour les reports plus lointains.
 - Une **date de révision** est un rappel différé : lorsqu’elle arrive, Mindwtr vous présente la tâche afin que vous la réexaminiez. Rien ne change tant que vous n’avez pas pris de décision.
 - Le **délai avant le début** lie le début à la date d’échéance (par exemple, rendre la tâche visible deux jours avant l’échéance).
 

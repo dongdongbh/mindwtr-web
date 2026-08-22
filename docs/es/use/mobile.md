@@ -340,8 +340,9 @@ Tu panel principal para hacer. Foco es un panel de actividad, no un inventario c
 | ------------ | ------------------------------------------------------------------------- |
 | **Hoy**      | Tareas enfocadas para hoy, que vencen hoy/están atrasadas o empiezan hoy |
 | **Próximas** | Próximas acciones disponibles que no están bloqueadas ni aplazadas       |
+| **Próximas** (vista previa) | Vista previa de solo lectura de las acciones que empiezan o se repiten dentro de 7 días |
 
-Foco oculta las tareas con inicio futuro y las posteriores de los proyectos secuenciales para limitar la lista a lo que puedes hacer ahora. Usa **Contextos**, **Proyectos** o **Buscar** cuando quieras examinar el inventario de tareas más amplio.
+Foco mantiene las tareas con inicio futuro y las posteriores de los proyectos secuenciales fuera de sus listas accionables para limitarlas a lo que puedes hacer ahora; las tareas aplazadas de la próxima semana siguen viéndose en la vista previa **Próximas**, con la fecha en la que aparecerá cada una. Usa **Contextos**, **Proyectos** o **Buscar** cuando quieras examinar el inventario de tareas más amplio.
 
 El orden predeterminado de Próximas acciones coloca primero las acciones con vencimiento próximo, después las que no tienen fecha y al final las que vencen en un futuro lejano. Dentro del mismo grupo, Foco usa la prioridad cuando está habilitada, seguida de la hora de inicio, la fecha de creación, el título y el id. Consulta [Flujo GTD en Mindwtr](/es/use/gtd-workflow#como-ordena-enfoque-las-acciones-disponibles) para conocer toda la lógica.
 

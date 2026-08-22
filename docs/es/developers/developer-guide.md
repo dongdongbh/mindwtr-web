@@ -408,6 +408,10 @@ Cada token obtiene su propio archivo de datos (nombre de archivo con hash SHA-25
 - `PORT` — Puerto del servidor (predeterminado: 8787)
 - `HOST` — Dirección de escucha (predeterminada: 0.0.0.0)
 - `MINDWTR_CLOUD_DATA_DIR` — Directorio de datos
+- `MINDWTR_CLOUD_AUTH_TOKENS` — Lista de tokens de portador permitidos, separados por comas
+- `MINDWTR_CLOUD_CORS_ORIGIN` — Origen de navegador permitido; sin él, el arranque en producción falla
+
+[Despliegue en la nube](/es/data-sync/cloud-deployment) enumera todas las variables de entorno de la nube con sus valores predeterminados.
 
 ---
 

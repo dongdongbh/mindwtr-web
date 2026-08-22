@@ -408,6 +408,10 @@ Each token gets its own data file (SHA-256 hashed filename).
 - `PORT` — Server port (default 8787)
 - `HOST` — Bind address (default 0.0.0.0)
 - `MINDWTR_CLOUD_DATA_DIR` — Data directory
+- `MINDWTR_CLOUD_AUTH_TOKENS` — Comma-separated bearer-token allowlist
+- `MINDWTR_CLOUD_CORS_ORIGIN` — Allowed browser origin; a production boot throws without it
+
+[Cloud Deployment](/data-sync/cloud-deployment) lists every cloud environment variable with its default.
 
 ---
 

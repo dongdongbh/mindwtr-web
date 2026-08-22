@@ -408,6 +408,10 @@ bun run --filter mindwtr-cloud dev -- --port 8787
 - `PORT` — 服务器端口（默认值 8787）
 - `HOST` — 绑定地址（默认值 0.0.0.0）
 - `MINDWTR_CLOUD_DATA_DIR` — 数据目录
+- `MINDWTR_CLOUD_AUTH_TOKENS` — 以逗号分隔的 bearer token 允许列表
+- `MINDWTR_CLOUD_CORS_ORIGIN` — 允许的浏览器来源；未设置时生产环境启动会直接报错
+
+[云端部署](/zh-Hans/data-sync/cloud-deployment)列出了全部云端环境变量及其默认值。
 
 ---
 

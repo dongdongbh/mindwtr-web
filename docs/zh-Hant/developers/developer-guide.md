@@ -407,6 +407,10 @@ bun run --filter mindwtr-cloud dev -- --port 8787
 - `PORT` — 伺服器連接埠（預設 8787）
 - `HOST` — 繫結位址（預設 0.0.0.0）
 - `MINDWTR_CLOUD_DATA_DIR` — 資料目錄
+- `MINDWTR_CLOUD_AUTH_TOKENS` — 以逗號分隔的 bearer token 允許清單
+- `MINDWTR_CLOUD_CORS_ORIGIN` — 允許的瀏覽器來源；未設定時正式環境啟動會直接失敗
+
+[雲端部署](/zh-Hant/data-sync/cloud-deployment)列出了所有雲端環境變數及其預設值。
 
 ---
 

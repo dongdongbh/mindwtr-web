@@ -408,6 +408,10 @@ Chaque jeton dispose de son propre fichier de données (nom de fichier haché av
 - `PORT` — Port du serveur (8787 par défaut)
 - `HOST` — Adresse d'écoute (0.0.0.0 par défaut)
 - `MINDWTR_CLOUD_DATA_DIR` — Répertoire des données
+- `MINDWTR_CLOUD_AUTH_TOKENS` — Liste d'autorisation de jetons porteurs, séparés par des virgules
+- `MINDWTR_CLOUD_CORS_ORIGIN` — Origine de navigateur autorisée ; sans elle, le démarrage en production échoue
+
+[Déploiement cloud](/fr/data-sync/cloud-deployment) répertorie toutes les variables d'environnement du cloud avec leurs valeurs par défaut.
 
 ---
 

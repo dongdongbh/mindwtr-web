@@ -412,6 +412,10 @@ Jedes Token erhält eine eigene Datendatei (SHA-256-gehashter Dateiname).
 - `PORT` — Server-Port (Standard 8787)
 - `HOST` — Bind-Adresse (Standard 0.0.0.0)
 - `MINDWTR_CLOUD_DATA_DIR` — Datenverzeichnis
+- `MINDWTR_CLOUD_AUTH_TOKENS` — Kommagetrennte Zulassungsliste von Bearer-Tokens
+- `MINDWTR_CLOUD_CORS_ORIGIN` — Erlaubtes Browser-Origin; ein Produktionsstart bricht ohne diese Variable ab
+
+[Cloud-Bereitstellung](/de/data-sync/cloud-deployment) listet alle Cloud-Umgebungsvariablen samt Standardwerten auf.
 
 ---
 

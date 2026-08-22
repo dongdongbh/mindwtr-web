@@ -28,6 +28,15 @@ Chaque type propose **Répéter tous les** pour sauter des intervalles, par exem
 
 Les tâches hebdomadaires peuvent cibler des jours précis. Les tâches mensuelles peuvent revenir le même jour de chaque mois ou employer **Personnalisée** pour des motifs comme un jour précis de la semaine.
 
+## Mois courts et fin de mois
+
+Les répétitions mensuelles et annuelles mémorisent comme ancre le jour du mois défini à l’origine. Quand un mois est trop court, la date se déplace sur son dernier jour, puis revient à l’ancre dès qu’un mois plus long revient.
+
+- Une tâche ancrée au 30 tombe le 28 février, puis revient au 30 en mars.
+- Pour répéter le dernier jour de chaque mois, placez la première date au **31** de n’importe quel mois. Une ancre au 31 tombe sur le véritable dernier jour de chaque mois : 30 septembre, 31 octobre, 30 novembre, 28 février.
+
+L’ancre provient de la date définie : une tâche créée pour le 30 septembre reste au 30 — elle ne saute pas au 31 octobre. Les répétitions après achèvement calculent chaque date suivante à partir du jour où vous avez terminé la tâche et n’ont donc pas d’ancre fixe.
+
 ## Calendrier fixe ou répétition après achèvement
 
 Par défaut, Mindwtr conserve un calendrier fixe. Utilisez-le pour les échéances et engagements qui doivent rester liés au calendrier.

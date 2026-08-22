@@ -28,6 +28,15 @@ Cada tipo permite usar **Repetir cada** para saltar intervalos, por ejemplo, cad
 
 Las tareas semanales pueden elegir días concretos. Las mensuales pueden repetirse el mismo día de cada mes o usar **Personalizada** para patrones como un día de la semana específico.
 
+## Meses cortos y el fin de mes
+
+Las repeticiones mensuales y anuales recuerdan como ancla el día del mes que estableciste originalmente. Cuando un mes es demasiado corto, la fecha pasa a su último día y vuelve al ancla en cuanto llega un mes más largo.
+
+- Una tarea anclada al día 30 cae el 28 de febrero y vuelve al 30 en marzo.
+- Para repetir el último día de cada mes, pon la primera fecha en el **31** de cualquier mes. Un ancla de 31 cae en el último día real de cada mes: 30 de septiembre, 31 de octubre, 30 de noviembre, 28 de febrero.
+
+El ancla proviene de la fecha que estableces, así que una tarea creada para el 30 de septiembre se queda en el día 30 — no salta al 31 de octubre. Las repeticiones después de completar calculan cada fecha siguiente a partir del día en que completaste la tarea, por lo que no tienen ancla fija.
+
 ## Calendario fijo o después de completar
 
 De forma predeterminada, Mindwtr mantiene un calendario fijo. Úsalo para plazos o compromisos que deben seguir vinculados al calendario.

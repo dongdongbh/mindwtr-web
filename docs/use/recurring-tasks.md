@@ -28,6 +28,15 @@ Each repeat type can use **Repeat every** to skip intervals. For example, every 
 
 Weekly tasks can choose specific weekdays. Monthly tasks can repeat on the same day each month, or use **Custom** for patterns such as a specific weekday.
 
+## Short Months and the End of the Month
+
+Monthly and yearly repeats remember the day of the month you originally set as an anchor. When a month is too short, the date moves to that month's last day, then returns to the anchor as soon as a longer month comes around.
+
+- A task anchored on the 30th lands on February 28, then returns to the 30th in March.
+- To repeat on the last day of every month, set the first date on the **31st** of any month. An anchor of 31 lands on each month's real last day: September 30, October 31, November 30, February 28.
+
+The anchor comes from the date you set, so a task created for September 30 stays on the 30th — it does not jump to October 31. After-completion repeats compute each next date from the day you completed the task instead, so they have no fixed anchor.
+
 ## Fixed Schedule or After Completion
 
 By default, Mindwtr keeps a fixed schedule. Use this for deadlines or commitments that should stay tied to the calendar.

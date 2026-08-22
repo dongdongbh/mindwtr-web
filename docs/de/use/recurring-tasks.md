@@ -28,6 +28,15 @@ Bei jeder Wiederholungsart können Sie mit **Alle … wiederholen** Intervalle �
 
 Für wöchentliche Aufgaben lassen sich bestimmte Wochentage auswählen. Monatliche Aufgaben können am gleichen Tag jedes Monats oder über **Benutzerdefiniert** nach einem Muster wie einem bestimmten Wochentag wiederholt werden.
 
+## Kurze Monate und das Monatsende
+
+Monatliche und jährliche Wiederholungen merken sich den ursprünglich gewählten Tag des Monats als Anker. Ist ein Monat zu kurz, rückt das Datum auf dessen letzten Tag und kehrt zum Anker zurück, sobald wieder ein längerer Monat kommt.
+
+- Eine auf den 30. verankerte Aufgabe landet am 28. Februar und kehrt im März zum 30. zurück.
+- Damit eine Aufgabe am letzten Tag jedes Monats wiederkehrt, setzen Sie das erste Datum auf den **31.** eines beliebigen Monats. Ein Anker von 31 landet stets am tatsächlichen letzten Tag jedes Monats: 30. September, 31. Oktober, 30. November, 28. Februar.
+
+Der Anker stammt aus dem gesetzten Datum: Eine für den 30. September erstellte Aufgabe bleibt auf dem 30. — sie springt nicht auf den 31. Oktober. Wiederholungen nach Abschluss berechnen jedes nächste Datum stattdessen ab dem Tag des Abschlusses und haben daher keinen festen Anker.
+
 ## Fester Zeitplan oder nach Abschluss
 
 Standardmäßig behält Mindwtr einen festen Zeitplan bei. Verwenden Sie ihn für Fristen oder Verpflichtungen, die an den Kalender gebunden bleiben sollen.

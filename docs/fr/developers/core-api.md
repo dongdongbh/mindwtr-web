@@ -388,9 +388,6 @@ updateSection(id: string, updates: Partial<Section>): Promise<StoreActionResult>
 
 // Supprimer
 deleteSection(id: string): Promise<StoreActionResult>;
-
-// Restaurer
-restoreSection(id: string): Promise<StoreActionResult>;
 ```
 
 #### Opérations sur les étiquettes

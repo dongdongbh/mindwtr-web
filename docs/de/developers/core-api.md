@@ -388,9 +388,6 @@ updateSection(id: string, updates: Partial<Section>): Promise<StoreActionResult>
 
 // Delete
 deleteSection(id: string): Promise<StoreActionResult>;
-
-// Restore
-restoreSection(id: string): Promise<StoreActionResult>;
 ```
 
 #### Tag-Operationen

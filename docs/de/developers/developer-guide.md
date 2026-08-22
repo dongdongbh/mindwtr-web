@@ -42,8 +42,8 @@ bun mobile:start
 
 ### Alle Plattformen
 
-- [Bun](https://bun.sh/) — Paketmanager und Laufzeit
-- [Node.js](https://nodejs.org/) — JavaScript-Laufzeit (für einige Werkzeuge)
+- [Bun](https://bun.sh/) — Paketmanager und Laufzeit. Verwenden Sie die in `.bun-version` festgelegte Version (derzeit 1.3.5) oder neuer
+- [Node.js](https://nodejs.org/) — JavaScript-Laufzeit (für einige Werkzeuge). Version 20 oder neuer; `apps/mcp-server` wird auf npm veröffentlicht und gibt diese Untergrenze an
 - [Git](https://git-scm.com/) — Versionsverwaltung
 
 ### Desktop-Entwicklung

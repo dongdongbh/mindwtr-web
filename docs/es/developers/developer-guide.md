@@ -42,8 +42,8 @@ bun mobile:start
 
 ### Todas las plataformas
 
-- [Bun](https://bun.sh/) — Gestor de paquetes y entorno de ejecución
-- [Node.js](https://nodejs.org/) — Entorno de ejecución de JavaScript (para algunas herramientas)
+- [Bun](https://bun.sh/) — Gestor de paquetes y entorno de ejecución. Usa la versión fijada en `.bun-version` (actualmente 1.3.5) o posterior
+- [Node.js](https://nodejs.org/) — Entorno de ejecución de JavaScript (para algunas herramientas). Versión 20 o posterior; `apps/mcp-server` se publica en npm y declara ese mínimo
 - [Git](https://git-scm.com/) — Control de versiones
 
 ### Desarrollo para escritorio

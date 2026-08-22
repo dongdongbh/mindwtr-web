@@ -42,8 +42,8 @@ bun mobile:start
 
 ### All Platforms
 
-- [Bun](https://bun.sh/) — Package manager and runtime
-- [Node.js](https://nodejs.org/) — JavaScript runtime (for some tools)
+- [Bun](https://bun.sh/) — Package manager and runtime. Use the version pinned in `.bun-version` (currently 1.3.5) or newer
+- [Node.js](https://nodejs.org/) — JavaScript runtime (for some tools). Version 20 or newer; `apps/mcp-server` is published to npm and declares that floor
 - [Git](https://git-scm.com/) — Version control
 
 ### Desktop Development

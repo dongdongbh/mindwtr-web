@@ -42,8 +42,8 @@ bun mobile:start
 
 ### 所有平台
 
-- [Bun](https://bun.sh/) — 包管理器和运行时
-- [Node.js](https://nodejs.org/) — JavaScript 运行时（部分工具需要）
+- [Bun](https://bun.sh/) — 包管理器和运行时。请使用 `.bun-version` 中固定的版本（当前为 1.3.5）或更高版本
+- [Node.js](https://nodejs.org/) — JavaScript 运行时（部分工具需要）。需要 20 或更高版本；`apps/mcp-server` 会发布到 npm 并声明了该下限
 - [Git](https://git-scm.com/) — 版本控制
 
 ### 桌面端开发

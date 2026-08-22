@@ -130,6 +130,8 @@ record sync history and diagnostics
 - Metadata merge runs before file transfer reconciliation.
 - Winner attachment URI/local status is preserved when usable.
 - If winner has no usable local URI, merge can fall back to the other side URI/status.
+- `contentRev` and `fileHash` are the synced content identity of the attached file. A device bumps `contentRev` only after a hash confirms the bytes really changed, so a higher `contentRev` wins the content fields outright even when the other side wins the attachment-level merge; a tie defers to that merge winner. A missing `contentRev` counts as `0`, so clients that predate content tracking merge in cleanly.
+- The file's recorded modification time and size stay device-local and are stripped before any remote write. They describe this device's own copy of the bytes, and each device re-derives them after its own upload or download. Keeping them out of the synced record is what lets a sync cycle detect a locally edited file by stat comparison without writing a remote change every cycle.
 - Attachment delete-vs-live races use the same merge and `syncConflictDiscarded` diagnostics as tasks/projects, so a deleted attachment winning over a concurrent metadata edit is visible in diagnostics.
 - Missing local files are handled later by attachment sync/download.
 - `settings.attachments.pendingRemoteDeletes` records remote files that still need deletion after a local attachment delete.

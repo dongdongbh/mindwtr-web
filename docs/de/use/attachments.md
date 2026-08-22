@@ -65,6 +65,9 @@ sudo dnf install gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plug
 
 - Anhangsmetadaten werden mit Aufgaben und Projekten synchronisiert.
 - Die eigentlichen Dateien werden nach den Metadaten synchronisiert.
+- Ein Anhang ist keine einmalige Momentaufnahme: Bearbeiten Sie die Datei nach dem Anhängen, wird der neue Inhalt weitergegeben. Jeder Synchronisierungslauf prüft die berührten Dateien auf geänderte Änderungszeit und Größe, bestätigt eine echte Änderung per Inhalts-Hash, lädt die Datei erneut hoch, und andere Geräte laden sie erneut herunter.
+- Das Erkennen von Änderungen an **verknüpften** Dateien (mit externem Pfad) ist zuerst auf dem Desktop verfügbar. Telefone laden aktualisierte Dateien bei jedem Backend erneut herunter, erkennen eigene Änderungen aber nur bei Dateien im App-eigenen Speicher und nur bei Dateisynchronisierung, WebDAV und iCloud.
+- Bearbeiten zwei Geräte dieselbe Datei vor dem Synchronisieren, gewinnt die zuletzt geschriebene Fassung der gesamten Datei: Die spätere Bearbeitung ersetzt die frühere, ohne Zusammenführung innerhalb der Datei.
 - Fehlt eine Datei lokal, bleibt der Anhang sichtbar und kann erneut heruntergeladen werden, sobald er verfügbar ist.
 - Die Bereinigung prüft die dem aktuellen Gerät bekannten Verweise. Wenn ein anderes Gerät noch nicht synchronisiert wurde, werden gemeinsam verwendete entfernte Anhangsdateien nicht global anhand ihrer Verweise gezählt.
 

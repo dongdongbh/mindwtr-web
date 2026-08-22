@@ -65,6 +65,9 @@ sudo dnf install gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plug
 
 - Attachment metadata syncs with tasks/projects.
 - Actual files sync after metadata.
+- An attachment is not a one-time snapshot: editing the file after attaching it propagates the new content. Each sync cycle checks the files it touches for a changed modification time and size, confirms a real change with a content hash, re-uploads that file, and other devices re-download it.
+- Detection of edits to **linked** (external-path) files is desktop-first. Phones re-download updated files on every backend, but only detect their own edits to files in the app's own storage, on File Sync, WebDAV, and iCloud.
+- If two devices edit the same file before syncing, the file resolves whole-file last-writer-wins — the later edit replaces the earlier one, with no merging inside the file.
 - If a file is missing locally, the attachment stays visible and can be re-downloaded when available.
 - Cleanup checks references known to the current device. If another device has not synced yet, shared remote attachment files are not globally reference-counted.
 

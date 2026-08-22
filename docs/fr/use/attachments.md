@@ -65,6 +65,9 @@ sudo dnf install gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plug
 
 - Les métadonnées des pièces jointes se synchronisent avec les tâches et les projets.
 - Les fichiers eux-mêmes se synchronisent après les métadonnées.
+- Une pièce jointe n’est pas un instantané figé : si vous modifiez le fichier après l’avoir joint, le nouveau contenu se propage. Chaque cycle de synchronisation vérifie si les fichiers qu’il touche ont changé de date de modification et de taille, confirme un vrai changement par une empreinte du contenu, renvoie ce fichier, et les autres appareils le retéléchargent.
+- La détection des modifications sur les fichiers **liés** (chemin externe) arrive d’abord sur ordinateur. Les téléphones retéléchargent les fichiers mis à jour sur tous les backends, mais ne détectent leurs propres modifications que pour les fichiers du stockage propre de l’application, et uniquement avec la synchronisation de fichiers, WebDAV et iCloud.
+- Si deux appareils modifient le même fichier avant de se synchroniser, c’est le dernier écrivain qui l’emporte sur le fichier entier : la modification la plus récente remplace la précédente, sans fusion à l’intérieur du fichier.
 - Si un fichier manque en local, la pièce jointe reste visible et peut être téléchargée de nouveau lorsqu’elle devient disponible.
 - Le nettoyage vérifie les références connues de l’appareil actuel. Tant qu’un autre appareil ne s’est pas synchronisé, les fichiers joints distants partagés ne sont pas comptabilisés globalement par référence.
 

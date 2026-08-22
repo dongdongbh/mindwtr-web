@@ -65,6 +65,9 @@ sudo dnf install gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plug
 
 - Los metadatos de los adjuntos se sincronizan con las tareas y los proyectos.
 - Los archivos se sincronizan después de los metadatos.
+- Un adjunto no es una instantánea única: si editas el archivo después de adjuntarlo, el nuevo contenido se propaga. Cada ciclo de sincronización comprueba si los archivos que toca han cambiado de fecha de modificación y tamaño, confirma el cambio real con un hash del contenido, vuelve a subir ese archivo y los demás dispositivos lo descargan de nuevo.
+- La detección de ediciones en archivos **enlazados** (con ruta externa) llega primero al escritorio. Los teléfonos vuelven a descargar los archivos actualizados en todos los backends, pero solo detectan sus propias ediciones en archivos del almacenamiento propio de la app y solo con Sincronización de archivos, WebDAV e iCloud.
+- Si dos dispositivos editan el mismo archivo antes de sincronizar, gana la última escritura del archivo completo: la edición posterior sustituye a la anterior, sin fusionar nada dentro del archivo.
 - Si falta un archivo local, el adjunto permanece visible y puede volver a descargarse cuando esté disponible.
 - La limpieza comprueba las referencias conocidas por el dispositivo actual. Si otro dispositivo aún no se ha sincronizado, los archivos remotos compartidos no se contabilizan globalmente por referencias.
 

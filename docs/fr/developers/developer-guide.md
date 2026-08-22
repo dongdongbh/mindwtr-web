@@ -328,14 +328,16 @@ Sur les chemins compatibles avec la version de bureau, la CLI maintient `mindwtr
 Exécutez un serveur d'API local pour les scripts et les intégrations :
 
 ```bash
-# Démarrer le serveur d'API
-bun mindwtr:api -- --port 4317
+# Démarrer le serveur d'API (MINDWTR_API_TOKEN est obligatoire)
+MINDWTR_API_TOKEN=replace-with-a-strong-token bun mindwtr:api -- --port 4317
 
-# Avec un jeton d'authentification
-MINDWTR_API_TOKEN=secret bun mindwtr:api -- --port 4317
+# Sans authentification - non sécurisé, tests de compatibilité isolés uniquement
+bun mindwtr:api -- --port 4317 --dangerously-disable-auth
 ```
 
 L'API locale utilise le même contrat de stockage que la CLI, en maintenant `mindwtr.db` et `data.json` synchronisés sur les chemins compatibles avec la version de bureau.
+
+Sans l'un ou l'autre, l'utilitaire s'arrête au démarrage. Définissez `MINDWTR_API_CORS_ORIGIN` sur une seule origine http(s) exacte si une page de navigateur doit l'appeler ; aucun en-tête CORS n'est envoyé sans cette variable.
 
 ### Points de terminaison
 

@@ -39,7 +39,7 @@ Desde la raíz del repositorio con Bun:
 
 ```bash
 bun install
-bun run mindwtr:api -- --port 4317 --host 127.0.0.1
+MINDWTR_API_TOKEN=replace-with-a-strong-token bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 ```
 
 ### Opciones
@@ -50,6 +50,7 @@ bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 | `--host <host>` | `127.0.0.1`      | Dirección de enlace                |
 | `--data <path>` | Valor predeterminado de la plataforma | Sobrescribe la ubicación de data.json |
 | `--db <path>`   | Valor predeterminado de la plataforma | Sobrescribe la ubicación de mindwtr.db |
+| `--dangerously-disable-auth` | desactivado | Ejecutar sin ningún token: inseguro y tampoco seguro para navegadores aunque sea en loopback |
 
 ### Variables de entorno
 
@@ -57,7 +58,8 @@ bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 | ------------------- | ---------------------------------------------------- |
 | `MINDWTR_DATA`      | Sobrescribe la ubicación de data.json (si se omite `--data`) |
 | `MINDWTR_DB_PATH`   | Sobrescribe la ubicación de mindwtr.db (si se omite `--db`)  |
-| `MINDWTR_API_TOKEN` | Solo para el asistente de Bun: si se establece, requiere `Authorization: Bearer <token>` |
+| `MINDWTR_API_TOKEN` | **Obligatorio.** Token de portador que el asistente exige en cada solicitud; no arranca sin uno salvo que pases `--dangerously-disable-auth` |
+| `MINDWTR_API_CORS_ORIGIN` | Opcional. Un origen http(s) exacto autorizado a llamar a la API; sin valor no se envían cabeceras CORS |
 
 De forma predeterminada, la API resuelve tanto `data.json` como `mindwtr.db` mediante las rutas de plataforma de Mindwtr (con preferencia por los datos XDG en Linux).
 
@@ -71,7 +73,7 @@ Las solicitudes a la API local de escritorio siempre requieren el token de porta
 Authorization: Bearer <token>
 ```
 
-El asistente de Bun solo requiere un token cuando se establece `MINDWTR_API_TOKEN`.
+El asistente de Bun también requiere un token: sale de inmediato si no se establece `MINDWTR_API_TOKEN`, salvo que pases explícitamente `--dangerously-disable-auth` (pensado solo para pruebas de compatibilidad aisladas).
 
 ---
 

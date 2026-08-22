@@ -331,14 +331,16 @@ Auf Desktop-kompatiblen Pfaden hält die CLI `mindwtr.db` und `data.json` synchr
 Starten Sie einen lokalen API-Server für Skripting und Integrationen:
 
 ```bash
-# Start API server
-bun mindwtr:api -- --port 4317
+# Start API server (MINDWTR_API_TOKEN is required)
+MINDWTR_API_TOKEN=replace-with-a-strong-token bun mindwtr:api -- --port 4317
 
-# With auth token
-MINDWTR_API_TOKEN=secret bun mindwtr:api -- --port 4317
+# Without auth - unsafe, isolated compatibility testing only
+bun mindwtr:api -- --port 4317 --dangerously-disable-auth
 ```
 
 Die lokale API verwendet denselben Speichervertrag wie die CLI und hält `mindwtr.db` und `data.json` auf Desktop-kompatiblen Pfaden synchron.
+
+Wird keines von beidem angegeben, beendet sich das Hilfsprogramm beim Start. Setzen Sie `MINDWTR_API_CORS_ORIGIN` auf genau ein http(s)-Origin, wenn eine Browserseite die API aufrufen muss; ohne Wert werden keine CORS-Header gesendet.
 
 ### Endpunkte
 

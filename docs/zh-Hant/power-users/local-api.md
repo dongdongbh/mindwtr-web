@@ -39,7 +39,7 @@ http://127.0.0.1:3456
 
 ```bash
 bun install
-bun run mindwtr:api -- --port 4317 --host 127.0.0.1
+MINDWTR_API_TOKEN=replace-with-a-strong-token bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 ```
 
 ### 選項
@@ -50,6 +50,7 @@ bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 | `--host <host>` | `127.0.0.1`      | 繫結位址                   |
 | `--data <path>` | 平台預設值       | 覆寫 data.json 位置        |
 | `--db <path>`   | 平台預設值       | 覆寫 mindwtr.db 位置       |
+| `--dangerously-disable-auth` | 關閉 | 完全不使用 token 執行——不安全，即使只監聽回送位址對瀏覽器也不安全 |
 
 ### 環境變數
 
@@ -57,7 +58,8 @@ bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 | ------------------- | ------------------------------------------------------ |
 | `MINDWTR_DATA`      | 覆寫 data.json 位置（若省略 `--data`）                 |
 | `MINDWTR_DB_PATH`   | 覆寫 mindwtr.db 位置（若省略 `--db`）                  |
-| `MINDWTR_API_TOKEN` | 僅供 Bun 輔助工具使用：若設定，要求必須包含 `Authorization: Bearer <token>` |
+| `MINDWTR_API_TOKEN` | **必要。** 輔助工具對每個請求都要求的 bearer token；未設定時將拒絕啟動，除非傳入 `--dangerously-disable-auth` |
+| `MINDWTR_API_CORS_ORIGIN` | 選用。允許呼叫此 API 的單一精確 http(s) 來源；未設定時不會送出 CORS 標頭 |
 
 API 預設會使用 Mindwtr 的平台路徑解析 `data.json` 與 `mindwtr.db`（Linux 上優先使用 XDG data）。
 
@@ -71,7 +73,7 @@ API 預設會使用 Mindwtr 的平台路徑解析 `data.json` 與 `mindwtr.db`�
 Authorization: Bearer <token>
 ```
 
-Bun 輔助工具只有在設定 `MINDWTR_API_TOKEN` 時才要求 token。
+Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即結束，除非你明確傳入 `--dangerously-disable-auth`（僅供隔離環境的相容性測試）。
 
 ---
 

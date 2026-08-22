@@ -328,14 +328,16 @@ On desktop-compatible paths, the CLI keeps `mindwtr.db` and `data.json` aligned 
 Run a local API server for scripting and integrations:
 
 ```bash
-# Start API server
-bun mindwtr:api -- --port 4317
+# Start API server (MINDWTR_API_TOKEN is required)
+MINDWTR_API_TOKEN=replace-with-a-strong-token bun mindwtr:api -- --port 4317
 
-# With auth token
-MINDWTR_API_TOKEN=secret bun mindwtr:api -- --port 4317
+# Without auth - unsafe, isolated compatibility testing only
+bun mindwtr:api -- --port 4317 --dangerously-disable-auth
 ```
 
 The local API uses the same storage contract as the CLI, keeping `mindwtr.db` and `data.json` in sync on desktop-compatible paths.
+
+The helper exits at startup when neither is supplied. Set `MINDWTR_API_CORS_ORIGIN` to one exact http(s) origin if a browser page has to call it; no CORS headers are sent when it is unset.
 
 ### Endpoints
 

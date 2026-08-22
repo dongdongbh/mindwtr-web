@@ -327,14 +327,16 @@ bun mindwtr:cli -- projects
 執行供指令碼與整合使用的本機 API 伺服器：
 
 ```bash
-# Start API server
-bun mindwtr:api -- --port 4317
+# Start API server (MINDWTR_API_TOKEN is required)
+MINDWTR_API_TOKEN=replace-with-a-strong-token bun mindwtr:api -- --port 4317
 
-# With auth token
-MINDWTR_API_TOKEN=secret bun mindwtr:api -- --port 4317
+# Without auth - unsafe, isolated compatibility testing only
+bun mindwtr:api -- --port 4317 --dangerously-disable-auth
 ```
 
 本機 API 使用與 CLI 相同的儲存合約，在桌面版相容路徑上維持 `mindwtr.db` 與 `data.json` 同步。
+
+兩者都未提供時，輔助工具會在啟動階段結束。若需要瀏覽器頁面呼叫它，請將 `MINDWTR_API_CORS_ORIGIN` 設為一個精確的 http(s) 來源；未設定時不會送出 CORS 標頭。
 
 ### 端點
 

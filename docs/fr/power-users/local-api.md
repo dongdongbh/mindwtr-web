@@ -39,7 +39,7 @@ Depuis la racine du dépôt avec Bun :
 
 ```bash
 bun install
-bun run mindwtr:api -- --port 4317 --host 127.0.0.1
+MINDWTR_API_TOKEN=replace-with-a-strong-token bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 ```
 
 ### Options
@@ -50,6 +50,7 @@ bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 | `--host <host>` | `127.0.0.1`             | Adresse d’écoute                       |
 | `--data <path>` | Valeur de la plateforme | Remplacer l’emplacement de data.json   |
 | `--db <path>`   | Valeur de la plateforme | Remplacer l’emplacement de mindwtr.db  |
+| `--dangerously-disable-auth` | désactivé | Démarrer sans aucun jeton — non sécurisé, et pas sûr pour un navigateur même en loopback |
 
 ### Variables d’environnement
 
@@ -57,7 +58,8 @@ bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 | ------------------- | ------------------------------------------------------------------ |
 | `MINDWTR_DATA`      | Remplacer l’emplacement de data.json (si `--data` est omis)        |
 | `MINDWTR_DB_PATH`   | Remplacer l’emplacement de mindwtr.db (si `--db` est omis)         |
-| `MINDWTR_API_TOKEN` | Utilitaire Bun uniquement : si défini, exiger `Authorization: Bearer <token>` |
+| `MINDWTR_API_TOKEN` | **Obligatoire.** Jeton porteur exigé à chaque requête ; l’utilitaire ne démarre pas sans lui, sauf si vous passez `--dangerously-disable-auth` |
+| `MINDWTR_API_CORS_ORIGIN` | Facultatif. Une seule origine http(s) exacte autorisée à appeler l’API ; aucun en-tête CORS n’est envoyé si la variable est absente |
 
 Par défaut, l’API résout `data.json` et `mindwtr.db` à l’aide des chemins de plateforme de Mindwtr (en privilégiant les données XDG sous Linux).
 
@@ -71,7 +73,7 @@ Les requêtes à l’API locale de l’application de bureau exigent toujours le
 Authorization: Bearer <token>
 ```
 
-L’utilitaire Bun n’exige un jeton que lorsque `MINDWTR_API_TOKEN` est défini.
+L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `MINDWTR_API_TOKEN` n’est pas défini, sauf si vous passez explicitement `--dangerously-disable-auth` (réservé aux tests de compatibilité isolés).
 
 ---
 

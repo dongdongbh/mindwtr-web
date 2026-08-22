@@ -39,7 +39,7 @@ Aus dem Stammverzeichnis des Repositorys mit Bun:
 
 ```bash
 bun install
-bun run mindwtr:api -- --port 4317 --host 127.0.0.1
+MINDWTR_API_TOKEN=replace-with-a-strong-token bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 ```
 
 ### Optionen
@@ -50,6 +50,7 @@ bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 | `--host <host>` | `127.0.0.1`      | Bindungsadresse                      |
 | `--data <path>` | Plattformstandard | Speicherort von data.json überschreiben |
 | `--db <path>`   | Plattformstandard | Speicherort von mindwtr.db überschreiben |
+| `--dangerously-disable-auth` | aus | Ganz ohne Token starten — unsicher und selbst auf Loopback nicht browsersicher |
 
 ### Umgebungsvariablen
 
@@ -57,7 +58,8 @@ bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 | ------------------- | -------------------------------------------------------------- |
 | `MINDWTR_DATA`      | Speicherort von data.json überschreiben (wenn `--data` fehlt) |
 | `MINDWTR_DB_PATH`   | Speicherort von mindwtr.db überschreiben (wenn `--db` fehlt)  |
-| `MINDWTR_API_TOKEN` | Nur Bun-Hilfsprogramm: falls gesetzt, `Authorization: Bearer <token>` verlangen |
+| `MINDWTR_API_TOKEN` | **Erforderlich.** Bearer-Token, das das Hilfsprogramm bei jeder Anfrage verlangt; ohne Token startet es nicht, außer `--dangerously-disable-auth` wird übergeben |
+| `MINDWTR_API_CORS_ORIGIN` | Optional. Genau ein http(s)-Origin, das die API aufrufen darf; ohne Wert werden keine CORS-Header gesendet |
 
 Standardmäßig ermittelt die API sowohl `data.json` als auch `mindwtr.db` anhand der Plattformpfade von Mindwtr (unter Linux bevorzugt im XDG-Datenverzeichnis).
 
@@ -71,7 +73,7 @@ Anfragen an die lokale Desktop-API benötigen immer das Bearer-Token, das unter 
 Authorization: Bearer <token>
 ```
 
-Das Bun-Hilfsprogramm verlangt nur dann ein Token, wenn `MINDWTR_API_TOKEN` gesetzt ist.
+Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MINDWTR_API_TOKEN` nicht gesetzt ist — es sei denn, Sie übergeben ausdrücklich `--dangerously-disable-auth` (nur für isolierte Kompatibilitätstests gedacht).
 
 ---
 

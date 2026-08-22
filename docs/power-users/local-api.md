@@ -39,7 +39,7 @@ From the repo root with Bun:
 
 ```bash
 bun install
-bun run mindwtr:api -- --port 4317 --host 127.0.0.1
+MINDWTR_API_TOKEN=replace-with-a-strong-token bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 ```
 
 ### Options
@@ -50,6 +50,7 @@ bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 | `--host <host>` | `127.0.0.1`      | Bind address                |
 | `--data <path>` | Platform default | Override data.json location |
 | `--db <path>`   | Platform default | Override mindwtr.db location |
+| `--dangerously-disable-auth` | off | Run with no token at all — unsafe, and not browser-safe even on loopback |
 
 ### Environment Variables
 
@@ -57,7 +58,8 @@ bun run mindwtr:api -- --port 4317 --host 127.0.0.1
 | ------------------- | ---------------------------------------------------- |
 | `MINDWTR_DATA`      | Override data.json location (if `--data` is omitted) |
 | `MINDWTR_DB_PATH`   | Override mindwtr.db location (if `--db` is omitted)  |
-| `MINDWTR_API_TOKEN` | Bun helper only: if set, require `Authorization: Bearer <token>` |
+| `MINDWTR_API_TOKEN` | **Required.** Bearer token the helper demands on every request; it refuses to start without one unless `--dangerously-disable-auth` is passed |
+| `MINDWTR_API_CORS_ORIGIN` | Optional. One exact http(s) origin allowed to call the API; no CORS headers are sent when unset |
 
 By default, the API resolves both `data.json` and `mindwtr.db` using Mindwtr's platform paths (preferring XDG data on Linux).
 
@@ -71,7 +73,7 @@ Desktop Local API requests always require the bearer token shown in **Settings -
 Authorization: Bearer <token>
 ```
 
-The Bun helper only requires a token when `MINDWTR_API_TOKEN` is set.
+The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TOKEN` is set, or you explicitly pass `--dangerously-disable-auth` (intended only for isolated compatibility testing).
 
 ---
 

@@ -688,14 +688,33 @@ La estructura del archivo `data.json`:
 
 ## Seguridad y cifrado
 
-Mindwtr no añade una capa de cifrado propia; la protección en reposo depende del dispositivo, servidor o proveedor que guarda los datos:
+### Cifrado de la sincronización
+
+La sincronización de archivos, WebDAV y Dropbox se pueden proteger con una frase de contraseña que tú elijas. Todo lo que Mindwtr escribe en el destino de sincronización — el archivo de datos, sus copias de seguridad e instantáneas de recuperación y los archivos adjuntos — se cifra en tu dispositivo antes de escribirlo o subirlo, con AES-256-GCM y una clave derivada de tu frase de contraseña mediante Argon2id. Los archivos cifrados llevan la marca `.enc` en su nombre; los adjuntos conservan sus nombres y contienen bytes cifrados. La fusión y lo que cada dispositivo muestra en la aplicación no cambian.
+
+Se activa en **Ajustes → Sincronización → Cifrado**, apartado que aparece mientras uno de esos tres backends está seleccionado. Desde el mismo sitio se cambia la frase de contraseña o se desactiva el cifrado. Cada una de esas operaciones reescribe todo el destino de sincronización y continúa donde se quedó si se interrumpe.
+
+Léelo antes de activarlo:
+
+- **Actualiza primero todos los dispositivos.** Las versiones sin soporte de cifrado no pueden leer un destino de sincronización cifrado. Sus datos locales están a salvo y se fusionan con normalidad en cuanto se actualizan y se desbloquean.
+- **La frase de contraseña no se puede recuperar.** Anótala o guárdala en un gestor de contraseñas. Si se pierde, las copias sincronizadas no se podrán volver a leer nunca; los datos que ya están en tus dispositivos siguen siendo legibles.
+- **Las versiones anteriores que guarda el proveedor se quedan como están.** El historial de versiones que Dropbox, tu servidor WebDAV o tu herramienta de sincronización de archivos conservara de antes del cifrado sigue siendo legible con la clave antigua o como texto plano.
+- **El proveedor sigue viendo la forma de la carpeta**: cuántos archivos contiene, qué tamaño aproximado tienen y cuándo cambiaron.
+
+Un dispositivo que no tenga la frase de contraseña pausa la sincronización automática y la pide una vez; si la rechazas, la sincronización sigue en pausa hasta que la introduzcas. Una frase de contraseña incorrecta solo vuelve a preguntar y nunca modifica los archivos guardados, y los archivos que no se pueden leer nunca se reparan ni se borran.
+
+El cifrado de la sincronización no cubre la nube Mindwtr autoalojada, iCloud/CloudKit ni la base de datos local de la aplicación en cada dispositivo.
+
+### Protección del almacenamiento
+
+Donde no llega el cifrado de la sincronización, la protección en reposo depende del dispositivo, servidor o proveedor que guarda los datos:
 
 - **En el dispositivo**: los datos se almacenan en SQLite dentro del espacio privado de la aplicación. Usa el cifrado del sistema operativo — FileVault (macOS), BitLocker (Windows), LUKS (Linux) o el cifrado estándar de iOS y Android — para proteger la copia local.
 - **iCloud (CloudKit)**: los registros sincronizados se cifran en tránsito y en los servidores de Apple, pero con claves gestionadas por Apple. Mindwtr no usa las API de campos cifrados de CloudKit, así que los campos de las tareas no están cifrados de extremo a extremo, tampoco con la Protección de datos avanzada.
-- **Dropbox y WebDAV**: las transferencias usan TLS y los proveedores suelen cifrar su almacenamiento, pero el proveedor posee las claves y técnicamente puede leer el documento de sincronización.
+- **Dropbox y WebDAV sin cifrado de la sincronización**: las transferencias usan TLS y los proveedores suelen cifrar su almacenamiento, pero el proveedor posee las claves y técnicamente puede leer el documento de sincronización.
 - **Nube autoalojada**: la privacidad depende de cómo se administre el servidor. Una VPN protege el acceso y el tráfico; lo que protege la copia almacenada es cifrar el disco del servidor (por ejemplo con LUKS).
 
-Para un destino de sincronización cifrado hoy, apunta la sincronización de carpeta a una carpeta que otro sistema cifre — un sistema de archivos cifrado o un montaje gocryptfs/Cryptomator — o combínala con el modo de dispositivos no confiables de Syncthing para que los intermediarios solo guarden texto cifrado (una función beta de Syncthing; los dispositivos de confianza siguen teniendo copias legibles).
+Para un backend que el cifrado de la sincronización no cubre, o mientras algunos dispositivos sigan en una versión antigua, apunta la sincronización de carpeta a una carpeta que otro sistema cifre — un sistema de archivos cifrado o un montaje gocryptfs/Cryptomator — o combínala con el modo de dispositivos no confiables de Syncthing para que los intermediarios solo guarden texto cifrado (una función beta de Syncthing; los dispositivos de confianza siguen teniendo copias legibles).
 
 ---
 

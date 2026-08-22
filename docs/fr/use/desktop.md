@@ -39,6 +39,14 @@ Mindwtr fonctionne en arrière-plan pour gérer la synchronisation automatique.
 - **Faites un clic droit sur l’icône de la zone de notification** pour quitter complètement l’application.
 - **Lancer à l’ouverture de session** démarre automatiquement avec la fenêtre masquée dans la zone de notification tant que son icône est activée ; lorsque vous ouvrez vous-même l’application, la fenêtre est toujours affichée. Les versions Microsoft Store affichent aussi la fenêtre au démarrage de session, car leur tâche de démarrage ne peut pas transmettre le signal de démarrage dans la zone de notification.
 
+### Widget macOS
+
+Sur macOS, l’application de bureau apporte son propre widget.
+
+- **Ajoutez-le depuis la galerie de widgets** — cliquez sur la date dans la barre des menus, puis sur **Modifier les widgets** — et choisissez **Mindwtr** en petit, moyen ou grand format. Il affiche les tâches prioritaires du jour et se met à jour dès que cette liste change.
+- **Un clic sur le widget** ouvre l’application de bureau. Le widget Mac est en outre prioritaire sur le widget iPhone que la galerie proposait jusqu’ici via Continuité, lequel ouvrait l’application sur le téléphone.
+- Le widget est inclus dans la version signée Developer ID (le DMG) ; la version du Mac App Store en bénéficiera lors d’une prochaine livraison.
+
 ## Vues
 
 ### 📥 Boîte de réception

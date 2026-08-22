@@ -39,6 +39,14 @@ Mindwtr se ejecuta en segundo plano para gestionar la sincronización automátic
 - **Haz clic derecho en el icono de la bandeja** para salir por completo de la aplicación.
 - **Iniciar al entrar en el sistema** abre automáticamente la ventana oculta en la bandeja mientras el icono de bandeja esté activado; si abres la aplicación manualmente, la ventana siempre se muestra. Las versiones de Microsoft Store también muestran la ventana al iniciar sesión porque su tarea de inicio no puede transmitir la señal de inicio en la bandeja.
 
+### Widget de macOS
+
+En macOS, la aplicación de escritorio trae su propio widget.
+
+- **Añádelo desde la galería de widgets** — haz clic en la fecha de la barra de menús y luego en **Editar widgets** — y elige **Mindwtr** en tamaño pequeño, mediano o grande. Muestra las tareas del foco de hoy y se actualiza cuando esa lista cambia.
+- **Al hacer clic en el widget** se abre la aplicación de escritorio. El widget de Mac también tiene prioridad sobre el widget del iPhone que la galería ofrecía mediante Continuidad, que abría la aplicación en el teléfono.
+- El widget se incluye en la versión firmada con Developer ID (el DMG); la versión de la Mac App Store lo tendrá en una entrega posterior.
+
 ## Vistas
 
 ### 📥 Bandeja de entrada

@@ -39,6 +39,14 @@ Mindwtr läuft für die automatische Synchronisierung im Hintergrund.
 - Ein **Rechtsklick auf das Taskleistensymbol** bietet „Beenden“, um die App vollständig zu schließen.
 - **Beim Anmelden starten** öffnet das Fenster automatisch ausgeblendet in der Taskleiste, solange das Taskleistensymbol aktiviert ist; wenn Sie die App selbst öffnen, wird das Fenster immer angezeigt. Microsoft-Store-Builds zeigen das Fenster auch beim Start nach der Anmeldung, da ihre Startaufgabe das Taskleistensignal nicht übergeben kann.
 
+### macOS-Widget
+
+Unter macOS bringt die Desktop-App ein eigenes Widget mit.
+
+- **Fügen Sie es aus der Widget-Galerie hinzu** — klicken Sie auf das Datum in der Menüleiste, dann auf **Widgets bearbeiten** — und wählen Sie **Mindwtr** in Klein, Mittel oder Groß. Es zeigt die heutigen Fokusaufgaben und aktualisiert sich, sobald sich diese Liste ändert.
+- **Ein Klick auf das Widget** öffnet die Desktop-App. Das Mac-Widget hat außerdem Vorrang vor dem iPhone-Widget, das die Galerie bisher über Continuity anbot und das die App stattdessen auf dem Telefon öffnete.
+- Das Widget ist im signierten Developer-ID-Build (dem DMG) enthalten; der Mac-App-Store-Build erhält es in einer späteren Version.
+
 ## Ansichten
 
 ### 📥 Posteingang

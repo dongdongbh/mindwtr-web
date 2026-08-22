@@ -688,14 +688,33 @@ The `data.json` file structure:
 
 ## Security and Encryption
 
-Mindwtr does not add its own encryption layer; protection at rest comes from the device, server, or provider that holds the data:
+### Sync Encryption
+
+File Sync, WebDAV, and Dropbox can be protected with a passphrase you choose. Everything Mindwtr writes to the sync location — the data file, its backups and recovery snapshots, and attachments — is encrypted on your device before it is written or uploaded, using AES-256-GCM with a key derived from your passphrase with Argon2id. Encrypted files carry an `.enc` marker in their name; attachments keep their names and hold encrypted bytes. Merging and what each device shows in the app are unchanged.
+
+Turn it on in **Settings → Sync → Encryption**, which appears while one of those three backends is selected. The same place changes the passphrase or turns encryption off again. Each of those rewrites everything in the sync location and picks up where it left off if it is interrupted.
+
+Read these before you enable it:
+
+- **Update every device first.** Versions without encryption support cannot read an encrypted sync location. Their local data is safe and merges in normally once they are updated and unlocked.
+- **The passphrase cannot be recovered.** Write it down or keep it in a password manager. If it is lost, the synced copies can never be read again; the data already on your devices stays readable.
+- **Earlier versions kept by the provider stay as they are.** Whatever version history Dropbox, your WebDAV server, or your file-sync tool retained from before encryption remains readable with the old key or as plain text.
+- **The provider still sees the shape of the folder**: how many files it holds, roughly how large they are, and when they changed.
+
+A device that does not have the passphrase pauses automatic sync and asks for it once; declining keeps sync paused until it is entered. A wrong passphrase asks again and never modifies the stored files, and files that cannot be read are never repaired or deleted.
+
+Sync encryption does not cover self-hosted Mindwtr Cloud, iCloud/CloudKit, or the app's own local database on each device.
+
+### Storage Protection
+
+Where sync encryption does not apply, protection at rest comes from the device, server, or provider that holds the data:
 
 - **On device**: data is stored in SQLite inside the app's private storage. Use operating-system encryption — FileVault (macOS), BitLocker (Windows), LUKS (Linux), or the standard device encryption on iOS and Android — to protect the local copy.
 - **iCloud (CloudKit)**: synced records are encrypted in transit and on Apple's servers with Apple-managed keys. Mindwtr does not use CloudKit's encrypted-field APIs, so task fields are not end-to-end encrypted, including under Advanced Data Protection.
-- **Dropbox and WebDAV**: transfers use TLS and providers usually encrypt their storage, but the provider holds the keys and can technically read the sync document.
+- **Dropbox and WebDAV without sync encryption**: transfers use TLS and providers usually encrypt their storage, but the provider holds the keys and can technically read the sync document.
 - **Self-hosted Cloud**: privacy depends on how the server is run. A VPN protects access and traffic; encrypting the server's disk (for example with LUKS) is what protects the stored copy.
 
-For an encrypted sync destination today, point File Sync at a folder that something else encrypts — an encrypted filesystem or a gocryptfs/Cryptomator mount — or combine it with Syncthing's untrusted-device mode so relays hold only ciphertext (a beta Syncthing feature; trusted devices still keep readable copies).
+For a backend sync encryption does not cover, or while some devices still run an older version, point File Sync at a folder that something else encrypts — an encrypted filesystem or a gocryptfs/Cryptomator mount — or combine it with Syncthing's untrusted-device mode so relays hold only ciphertext (a beta Syncthing feature; trusted devices still keep readable copies).
 
 ---
 

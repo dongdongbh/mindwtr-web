@@ -39,6 +39,14 @@ Mindwtr runs in the background to handle auto-sync.
 - **Right-click the tray icon** to Quit the application completely.
 - **Launching at login** starts the window hidden in the tray automatically, as long as the tray icon is enabled; opening the app yourself always shows the window. Microsoft Store builds also show the window when launched at login because their startup task cannot pass the tray-start signal.
 
+### macOS Widget
+
+On macOS the desktop app brings a widget of its own.
+
+- **Add it from the widget gallery** — click the date in the menu bar, then **Edit Widgets** — and pick **Mindwtr** in small, medium, or large. It shows today's focus tasks and updates as that list changes.
+- **Clicking the widget** opens the desktop app. The Mac widget also takes precedence over the iPhone widget the gallery used to offer through Continuity, which opened the app on the phone instead.
+- The widget ships in the signed Developer ID build (the DMG); the Mac App Store build gets it in a later release.
+
 ## Views
 
 ### 📥 Inbox

@@ -689,14 +689,33 @@ Struktur von `data.json`:
 
 ## Sicherheit und Verschlüsselung
 
-Mindwtr fügt keine eigene Verschlüsselungsebene hinzu; der Schutz ruhender Daten kommt vom Gerät, Server oder Anbieter, der die Daten hält:
+### Sync-Verschlüsselung
+
+Dateisynchronisierung, WebDAV und Dropbox lassen sich mit einer selbst gewählten Passphrase schützen. Alles, was Mindwtr an den Sync-Ort schreibt — die Datendatei, ihre Sicherungen und Wiederherstellungsmomentaufnahmen sowie die Anhänge —, wird vor dem Schreiben oder Hochladen auf Ihrem Gerät verschlüsselt, mit AES-256-GCM und einem Schlüssel, der per Argon2id aus Ihrer Passphrase abgeleitet wird. Verschlüsselte Dateien tragen die Kennung `.enc` im Namen; Anhänge behalten ihre Namen und enthalten verschlüsselte Bytes. Die Zusammenführung und das, was jedes Gerät in der App anzeigt, bleiben unverändert.
+
+Aktiviert wird sie unter **Einstellungen → Synchronisierung → Verschlüsselung**; der Bereich erscheint, solange eines dieser drei Backends ausgewählt ist. An derselben Stelle ändern Sie die Passphrase oder schalten die Verschlüsselung wieder ab. Jeder dieser Vorgänge schreibt alles am Sync-Ort neu und setzt nach einer Unterbrechung dort fort, wo er aufgehört hat.
+
+Lesen Sie dies, bevor Sie sie aktivieren:
+
+- **Zuerst jedes Gerät aktualisieren.** Versionen ohne Unterstützung für Verschlüsselung können einen verschlüsselten Sync-Ort nicht lesen. Ihre lokalen Daten bleiben unversehrt und werden ganz normal zusammengeführt, sobald die Geräte aktualisiert und entsperrt sind.
+- **Die Passphrase lässt sich nicht wiederherstellen.** Notieren Sie sie oder bewahren Sie sie in einem Passwortmanager auf. Geht sie verloren, sind die synchronisierten Kopien nie wieder lesbar; die bereits auf Ihren Geräten liegenden Daten bleiben lesbar.
+- **Frühere Versionen beim Anbieter bleiben, wie sie sind.** Der Versionsverlauf, den Dropbox, Ihr WebDAV-Server oder Ihr Datei-Sync-Werkzeug aus der Zeit vor der Verschlüsselung aufbewahrt hat, bleibt mit dem alten Schlüssel oder als Klartext lesbar.
+- **Der Anbieter sieht weiterhin die Form des Ordners**: wie viele Dateien er enthält, wie groß sie ungefähr sind und wann sie geändert wurden.
+
+Ein Gerät ohne die Passphrase pausiert die automatische Synchronisierung und fragt einmal danach; lehnen Sie ab, bleibt die Synchronisierung pausiert, bis Sie sie eingeben. Eine falsche Passphrase führt nur zu einer erneuten Abfrage und verändert die gespeicherten Dateien nie; unlesbare Dateien werden nie repariert oder gelöscht.
+
+Nicht abgedeckt von der Sync-Verschlüsselung sind die selbst gehostete Mindwtr Cloud, iCloud/CloudKit und die lokale Datenbank der App auf dem jeweiligen Gerät.
+
+### Schutz gespeicherter Daten
+
+Wo die Sync-Verschlüsselung nicht greift, kommt der Schutz ruhender Daten vom Gerät, Server oder Anbieter, der die Daten hält:
 
 - **Auf dem Gerät**: Die Daten liegen in SQLite im privaten Speicher der App. Nutzen Sie Betriebssystem-Verschlüsselung — FileVault (macOS), BitLocker (Windows), LUKS (Linux) oder die Standard-Geräteverschlüsselung von iOS und Android — um die lokale Kopie zu schützen.
 - **iCloud (CloudKit)**: Synchronisierte Datensätze sind bei der Übertragung und auf Apples Servern verschlüsselt, jedoch mit von Apple verwalteten Schlüsseln. Mindwtr nutzt die verschlüsselten CloudKit-Feld-APIs nicht, daher sind Aufgabenfelder nicht Ende-zu-Ende-verschlüsselt — auch nicht mit erweitertem Datenschutz (Advanced Data Protection).
-- **Dropbox und WebDAV**: Übertragungen nutzen TLS und Anbieter verschlüsseln ihren Speicher in der Regel, aber der Anbieter hält die Schlüssel und kann das Sync-Dokument technisch lesen.
+- **Dropbox und WebDAV ohne Sync-Verschlüsselung**: Übertragungen nutzen TLS und Anbieter verschlüsseln ihren Speicher in der Regel, aber der Anbieter hält die Schlüssel und kann das Sync-Dokument technisch lesen.
 - **Selbst gehostete Cloud**: Die Privatsphäre hängt vom Serverbetrieb ab. Ein VPN schützt Zugriff und Datenverkehr; die gespeicherte Kopie schützt erst die Verschlüsselung der Server-Festplatte (z. B. LUKS).
 
-Für ein verschlüsseltes Sync-Ziel heute: Richten Sie die Ordner-Synchronisierung auf einen Ordner, den etwas anderes verschlüsselt — ein verschlüsseltes Dateisystem oder ein gocryptfs/Cryptomator-Mount — oder kombinieren Sie sie mit dem Untrusted-Device-Modus von Syncthing, damit Zwischenstationen nur Ciphertext halten (eine Beta-Funktion von Syncthing; vertrauenswürdige Geräte behalten lesbare Kopien).
+Für ein Backend, das die Sync-Verschlüsselung nicht abdeckt, oder solange einzelne Geräte noch eine ältere Version nutzen: Richten Sie die Ordner-Synchronisierung auf einen Ordner, den etwas anderes verschlüsselt — ein verschlüsseltes Dateisystem oder ein gocryptfs/Cryptomator-Mount — oder kombinieren Sie sie mit dem Untrusted-Device-Modus von Syncthing, damit Zwischenstationen nur Ciphertext halten (eine Beta-Funktion von Syncthing; vertrauenswürdige Geräte behalten lesbare Kopien).
 
 ---
 

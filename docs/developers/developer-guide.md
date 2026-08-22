@@ -144,7 +144,7 @@ The [`mindwtr-web/docs` tree](https://github.com/dongdongbh/mindwtr-web/tree/mai
 | Command     | Description              |
 | ----------- | ------------------------ |
 | `bun dev`   | Dev mode with hot reload |
-| `bun build` | Build for production     |
+| `bun run build` | Build for production     |
 | `bun run test` | Run tests                |
 
 ### Mobile (`apps/mobile`)
@@ -167,7 +167,7 @@ The [`mindwtr-web/docs` tree](https://github.com/dongdongbh/mindwtr-web/tree/mai
 | Command     | Description    |
 | ----------- | -------------- |
 | `bun run test` | Run unit tests |
-| `bun build` | Build package  |
+| `bun run build` | Build package  |
 
 ---
 

@@ -144,7 +144,7 @@ Mindwtr/
 | 命令 | 說明 |
 | --- | --- |
 | `bun dev` | 以熱重新載入執行開發模式 |
-| `bun build` | 建置正式版本 |
+| `bun run build` | 建置正式版本 |
 | `bun run test` | 執行測試 |
 
 ### 行動版（`apps/mobile`）
@@ -167,7 +167,7 @@ Mindwtr/
 | 命令 | 說明 |
 | --- | --- |
 | `bun run test` | 執行單元測試 |
-| `bun build` | 建置套件 |
+| `bun run build` | 建置套件 |
 
 ---
 

@@ -144,7 +144,7 @@ Der [`mindwtr-web/docs`-Baum](https://github.com/dongdongbh/mindwtr-web/tree/mai
 | Befehl      | Beschreibung              |
 | ----------- | ------------------------ |
 | `bun dev`   | Entwicklungsmodus mit Hot Reload |
-| `bun build` | Für die Produktion bauen     |
+| `bun run build` | Für die Produktion bauen     |
 | `bun run test` | Tests ausführen                |
 
 ### Mobilgeräte (`apps/mobile`)
@@ -167,7 +167,7 @@ Der [`mindwtr-web/docs`-Baum](https://github.com/dongdongbh/mindwtr-web/tree/mai
 | Befehl      | Beschreibung    |
 | ----------- | -------------- |
 | `bun run test` | Unit-Tests ausführen |
-| `bun build` | Paket bauen  |
+| `bun run build` | Paket bauen  |
 
 ---
 

@@ -144,7 +144,7 @@ El [árbol `mindwtr-web/docs`](https://github.com/dongdongbh/mindwtr-web/tree/ma
 | Comando     | Descripción                              |
 | ----------- | ---------------------------------------- |
 | `bun dev`   | Modo de desarrollo con recarga en caliente |
-| `bun build` | Compilar para producción                 |
+| `bun run build` | Compilar para producción                 |
 | `bun run test` | Ejecutar las pruebas                     |
 
 ### Móvil (`apps/mobile`)
@@ -167,7 +167,7 @@ El [árbol `mindwtr-web/docs`](https://github.com/dongdongbh/mindwtr-web/tree/ma
 | Comando     | Descripción                       |
 | ----------- | --------------------------------- |
 | `bun run test` | Ejecutar las pruebas unitarias    |
-| `bun build` | Compilar el paquete               |
+| `bun run build` | Compilar el paquete               |
 
 ---
 

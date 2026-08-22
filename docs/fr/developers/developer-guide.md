@@ -144,7 +144,7 @@ L’[arborescence `mindwtr-web/docs`](https://github.com/dongdongbh/mindwtr-web/
 | Commande    | Description                              |
 | ----------- | ---------------------------------------- |
 | `bun dev`   | Mode développement avec rechargement à chaud |
-| `bun build` | Construire pour la production            |
+| `bun run build` | Construire pour la production            |
 | `bun run test` | Exécuter les tests                       |
 
 ### Mobile (`apps/mobile`)
@@ -167,7 +167,7 @@ L’[arborescence `mindwtr-web/docs`](https://github.com/dongdongbh/mindwtr-web/
 | Commande    | Description               |
 | ----------- | ------------------------- |
 | `bun run test` | Exécuter les tests unitaires |
-| `bun build` | Construire le paquet      |
+| `bun run build` | Construire le paquet      |
 
 ---
 

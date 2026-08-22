@@ -13,7 +13,7 @@ L’import est disponible sur ordinateur et sur mobile depuis **Paramètres → 
 
 Privilégiez un outil natif lorsque votre application figure dans [Importer des données depuis d’autres applications](/fr/import/). Ces outils lisent l’export propre à l’application et en connaissent déjà les particularités.
 
-Passez par le CSV Mindwtr lorsque votre application n’y figure pas. Exportez le CSV qu’elle produit, renommez les cellules d’en-tête avec les noms de colonnes ci-dessous dans un tableur, puis importez le résultat. Vous conservez ainsi bien plus qu’en collant une liste de titres : projets, sections, domaines, statuts, dates, tags, contextes et listes de contrôle font tous le voyage.
+Passez par le CSV Mindwtr lorsque votre application n’y figure pas. Exportez le CSV qu’elle produit, renommez les cellules d’en-tête avec les noms de colonnes ci-dessous dans un tableur, puis importez le résultat. Vous conservez ainsi bien plus qu’en collant une liste de titres : projets, sections, domaines, statuts, dates, tags, contextes, listes de contrôle et règles de répétition font tous le voyage.
 
 ## Format du fichier
 
@@ -52,7 +52,7 @@ Toutes les colonnes sauf `Title` sont facultatives : n’incluez que celles dont
 | `Location` | tout texte | Le champ de lieu de la tâche. |
 | `Order` | un nombre | Classe la tâche parmi ses voisines du même projet, domaine ou boîte de réception. Les lignes sans nombre, ou portant le même nombre, gardent l’ordre du fichier. |
 | `ID` | tout identifiant stable | Donne à la ligne une identité durable pour les réimports. Une valeur qui répète une ligne antérieure du même import est écartée avec un avertissement. |
-| `Recurrence` | tout texte | Reconnue afin de ne pas être signalée comme colonne inconnue, mais la valeur est ignorée avec un avertissement. |
+| `Recurrence` | une règle de répétition telle que `FREQ=WEEKLY;BYDAY=MO,TH` | Définit la façon dont la tâche se répète. Ajoutez `;X-MINDWTR-STRATEGY=FLUID` pour une répétition comptée à partir du jour où vous achevez la tâche plutôt qu’à partir de sa date. Une règle que Mindwtr ne sait pas exprimer est ignorée avec un avertissement nommant la ligne, et cette tâche arrive sans répétition. |
 
 ## Dates et heures
 
@@ -101,23 +101,23 @@ Mindwtr écrit ce même format : l’aller-retour est donc complet. **Réglages 
 
 - La colonne `ID` est toujours écrite : réimporter un export ne duplique rien, les lignes dont l’`ID` correspond à une tâche existante sont ignorées avec un avertissement. Les modifications apportées à un fichier exporté ne sont **pas** réinjectées — modifiez ces tâches dans l’application. Les remarques sur l’identité ci-dessus s’appliquent telles quelles.
 - Les tâches supprimées ne sont jamais exportées. Le format n’a pas de colonne pour elles et une telle ligne reviendrait comme tâche active au prochain import.
-- La récurrence n’est pas écrite, à l’image de ce que lit l’importateur. Les répétitions se configurent toujours dans l’application.
+- La récurrence est écrite sous la forme de la règle de répétition que l’importateur relit : les répétitions survivent donc à l’aller-retour. L’avancement d’une série comptée n’est pas écrit, une répétition importée démarre donc une nouvelle série.
 - Pour une copie complète incluant les réglages et l’historique des éléments supprimés, utilisez plutôt la [sauvegarde](/fr/data-sync/backup-restore) JSON.
 
 ## Ce que cet outil ne fait pas
 
-- **Récurrence.** Un CSV ne crée aucune répétition. Configurez-les dans l’application après l’import.
+- **Les règles de répétition que Mindwtr ne sait pas exprimer.** Une règle bâtie sur `BYSETPOS`, ou qui se répète plus d’une fois par jour, est signalée avec sa ligne et sa tâche arrive sans répétition, jamais comme une approximation de la règle écrite.
 - **Hiérarchie de sous-tâches.** Il n’existe pas de colonne parente. Utilisez `Checklist` pour les étapes d’une même tâche et `Section` pour regrouper au sein d’un projet.
 - **Pièces jointes.** Les chemins de fichiers ou les URL d’un CSV restent du texte ; rien n’est téléchargé ni copié.
 
 ## Avertissements possibles
 
-Les avertissements sont comptés pour l’ensemble de l’import et affichés une seule fois avec leur nombre, jamais ligne par ligne :
+Les avertissements sont comptés pour l’ensemble de l’import et affichés une seule fois avec leur nombre, jamais ligne par ligne. Les règles de répétition illisibles ajoutent une ligne supplémentaire nommant les trois premières lignes concernées :
 
 - des colonnes inconnues ont été ignorées
 - des statuts n’ont pas pu être associés et ont été importés dans la Boîte de réception
 - des valeurs `Section` ont été ignorées car leurs lignes n’avaient pas de `Project`
-- des valeurs `Recurrence` ont été ignorées
+- des règles `Recurrence` n’ont pas pu être comprises, et ces tâches sont arrivées sans répétition
 - des dates n’ont pas pu être lues et ont été écartées
 - des lignes ont été supprimées car leur `ID` répétait une ligne antérieure
 - des lignes sans titre ont été ignorées

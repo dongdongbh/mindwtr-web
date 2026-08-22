@@ -480,7 +480,7 @@ Usa estas guías cuando incorpores a Mindwtr datos de tareas de otra aplicación
 
 ### Importación CSV / ZIP de Mindwtr
 
-Usa **Ajustes → Datos → Importar datos → Importar CSV de Mindwtr** para importar una hoja de tareas documentada o un ZIP con archivos CSV. El formato incluye estado, proyectos, secciones, áreas, contextos, etiquetas, responsables, prioridad, energía, fechas de inicio/vencimiento/revisión, finalización, listas y orden manual. Al volver a importar una exportación de Mindwtr se omiten los identificadores ya existentes en vez de duplicarlos o sobrescribirlos.
+Usa **Ajustes → Datos → Importar datos → Importar CSV de Mindwtr** para importar una hoja de tareas documentada o un ZIP con archivos CSV. El formato incluye estado, proyectos, secciones, áreas, contextos, etiquetas, responsables, prioridad, energía, fechas de inicio/vencimiento/revisión, finalización, listas, reglas de repetición y orden manual. Al volver a importar una exportación de Mindwtr se omiten los identificadores ya existentes en vez de duplicarlos o sobrescribirlos.
 
 ### Importación CSV / ZIP de TickTick
 

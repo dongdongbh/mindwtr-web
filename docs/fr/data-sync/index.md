@@ -480,7 +480,7 @@ Utilisez ces guides pour transférer dans Mindwtr des données de tâches proven
 
 ### Importation CSV / ZIP Mindwtr
 
-Utilisez **Réglages → Données → Importer des données → Importer un CSV Mindwtr** pour importer un tableau de tâches documenté ou un ZIP contenant des fichiers CSV. Le format couvre l’état, les projets, les sections, les domaines, les contextes, les tags, les responsables, la priorité, l’énergie, les dates de début/échéance/révision, l’achèvement, les listes et l’ordre manuel. Réimporter un export Mindwtr ignore les identifiants déjà présents au lieu de les dupliquer ou de les écraser.
+Utilisez **Réglages → Données → Importer des données → Importer un CSV Mindwtr** pour importer un tableau de tâches documenté ou un ZIP contenant des fichiers CSV. Le format couvre l’état, les projets, les sections, les domaines, les contextes, les tags, les responsables, la priorité, l’énergie, les dates de début/échéance/révision, l’achèvement, les listes, les règles de répétition et l’ordre manuel. Réimporter un export Mindwtr ignore les identifiants déjà présents au lieu de les dupliquer ou de les écraser.
 
 ### Importation CSV / ZIP de TickTick
 

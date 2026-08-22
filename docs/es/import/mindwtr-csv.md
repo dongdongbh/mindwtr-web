@@ -13,7 +13,7 @@ La importación está disponible en escritorio y en móvil desde **Ajustes → D
 
 Si tu aplicación aparece en [Importar datos desde otras aplicaciones](/es/import/), es mejor usar su importador nativo: esos importadores leen la exportación propia de la aplicación y ya conocen sus peculiaridades.
 
-Recurre al CSV de Mindwtr cuando tu aplicación no aparezca. Exporta el CSV que genere, renombra las celdas de la cabecera con los nombres de columna que se indican más abajo en un editor de hojas de cálculo e importa el resultado. Así se conserva mucho más que pegando una lista de títulos: proyectos, secciones, áreas, estados, fechas, etiquetas, contextos y listas de comprobación sobreviven al traslado.
+Recurre al CSV de Mindwtr cuando tu aplicación no aparezca. Exporta el CSV que genere, renombra las celdas de la cabecera con los nombres de columna que se indican más abajo en un editor de hojas de cálculo e importa el resultado. Así se conserva mucho más que pegando una lista de títulos: proyectos, secciones, áreas, estados, fechas, etiquetas, contextos, listas de comprobación y reglas de repetición sobreviven al traslado.
 
 ## Formato del archivo
 
@@ -52,7 +52,7 @@ Todas las columnas salvo `Title` son opcionales: basta con incluir las que realm
 | `Location` | cualquier texto | El campo de ubicación de la tarea. |
 | `Order` | un número | Ordena la tarea entre sus hermanas del mismo proyecto, área o bandeja de entrada. Las filas sin número, o con el mismo número, mantienen el orden que tenían en el archivo. |
 | `ID` | cualquier identificador estable | Da a la fila una identidad duradera para futuras importaciones. Un valor que repita una fila anterior de la misma importación se descarta con un aviso. |
-| `Recurrence` | cualquier texto | Se reconoce para no contarla como columna desconocida, pero el valor se ignora con un aviso. |
+| `Recurrence` | una regla de repetición como `FREQ=WEEKLY;BYDAY=MO,TH` | Define cómo se repite la tarea. Añade `;X-MINDWTR-STRATEGY=FLUID` para que la repetición cuente desde el día en que completas la tarea en vez de desde su fecha. Una regla que Mindwtr no puede expresar se omite con un aviso que nombra la fila, y esa tarea llega sin repetición. |
 
 ## Fechas y horas
 
@@ -101,23 +101,23 @@ Mindwtr escribe este mismo formato, así que el viaje de ida y vuelta está comp
 
 - La columna `ID` se escribe siempre, así que reimportar un export no duplica nada: las filas cuyo `ID` coincide con una tarea que ya tienes se omiten con un aviso. Los cambios hechos en un archivo exportado **no** se devuelven a la aplicación; edita esas tareas dentro de ella. Las notas sobre identidad de más arriba se aplican tal cual.
 - Las tareas eliminadas nunca se exportan. El formato no tiene columna para ellas y una fila así volvería como tarea activa en la siguiente importación.
-- La recurrencia no se escribe, igual que no la lee el importador. Las repeticiones se siguen configurando en la aplicación.
+- La recurrencia se escribe como la regla de repetición que el importador vuelve a leer, así que las repeticiones sobreviven al viaje de ida y vuelta. Cuánto ha avanzado ya una serie contada no se escribe, así que una repetición importada empieza una serie nueva.
 - Para una copia completa con ajustes e historial de elementos eliminados, usa la [copia de seguridad](/es/data-sync/backup-restore) en JSON.
 
 ## Lo que este importador no hace
 
-- **Recurrencias.** Un CSV no crea repeticiones. Configúralas en la aplicación después de importar.
+- **Reglas de repetición que Mindwtr no puede expresar.** Una regla basada en `BYSETPOS`, o una que se repite más de una vez al día, se informa junto con su fila y su tarea llega sin repetición, nunca como una aproximación de la regla que escribiste.
 - **Jerarquía de subtareas.** No hay columna de tarea principal. Usa `Checklist` para los pasos dentro de una tarea y `Section` para agrupar dentro de un proyecto.
 - **Adjuntos.** Las rutas de archivo o las URL de un CSV son texto; no se descarga ni se copia nada.
 
 ## Avisos que puedes ver
 
-Los avisos se cuentan para toda la importación y se muestran una vez con su recuento, nunca uno por fila:
+Los avisos se cuentan para toda la importación y se muestran una vez con su recuento, nunca uno por fila. Las reglas de repetición ilegibles añaden una línea más que nombra las tres primeras filas afectadas:
 
 - se ignoraron columnas desconocidas
 - hubo estados que no se pudieron asignar y se importaron a la Bandeja de entrada
 - se ignoraron valores de `Section` porque sus filas no tenían `Project`
-- se ignoraron valores de `Recurrence`
+- no se entendieron reglas de `Recurrence`, y esas tareas llegaron sin repetición
 - hubo fechas que no se pudieron interpretar y se omitieron
 - se descartaron filas porque su `ID` repetía una fila anterior
 - se omitieron filas sin título

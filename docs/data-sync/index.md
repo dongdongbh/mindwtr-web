@@ -480,7 +480,7 @@ Use these guides when bringing task data from another app into Mindwtr. Imports 
 
 ### Mindwtr CSV / ZIP Import
 
-Use **Settings → Data → Import Data → Import Mindwtr CSV** to import a documented task spreadsheet or a ZIP containing CSV files. The format covers status, projects, sections, areas, contexts, tags, assignees, priority, energy, start/due/review dates, completion, checklists, and manual order. Re-importing a Mindwtr export skips task IDs that already exist instead of duplicating or overwriting them.
+Use **Settings → Data → Import Data → Import Mindwtr CSV** to import a documented task spreadsheet or a ZIP containing CSV files. The format covers status, projects, sections, areas, contexts, tags, assignees, priority, energy, start/due/review dates, completion, checklists, repeat rules, and manual order. Re-importing a Mindwtr export skips task IDs that already exist instead of duplicating or overwriting them.
 
 ### TickTick CSV / ZIP Import
 

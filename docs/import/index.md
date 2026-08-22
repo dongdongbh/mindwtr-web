@@ -34,7 +34,7 @@ This coverage was reviewed on August 9, 2026 against the importer code at Mindwt
 | [DGT GTD](/import/dgt-gtd) | JSON or ZIP backup | Folders as areas, projects, contexts, tags, checklists, priorities, due dates, completion state, and supported recurrence | Unsupported recurrence and skipped archive entries |
 | [OmniFocus](/import/omnifocus) | Omni Automation JSON or ZIP for best fidelity; CSV is supported | Folders as areas, projects, tags, contexts, notes, dates, completion state, simple nesting, and supported recurrence | Deep nesting, planned dates and duration text, repeat rules kept verbatim as a note, and CSV-specific loss |
 | [Apple Reminders](/data-sync/#apple-reminders-import-ios) | A selected list on iOS | Titles and notes from incomplete reminders | Dates and other fields, skipped items, and the optional source-deletion choice |
-| [Mindwtr CSV](/import/mindwtr-csv) | A CSV file, or a ZIP of CSV files, using the documented column names | Areas, projects, sections, statuses, contexts, tags, assignees, priority, energy, start, due, review and completion dates, checklists, location, and manual order | Recurrence, which is ignored; unparsed dates; duplicate IDs; and rows skipped for having no title |
+| [Mindwtr CSV](/import/mindwtr-csv) | A CSV file, or a ZIP of CSV files, using the documented column names | Areas, projects, sections, statuses, contexts, tags, assignees, priority, energy, start, due, review and completion dates, checklists, location, manual order, and supported recurrence | Repeat rules Mindwtr cannot express, which are reported with their row; unparsed dates; duplicate IDs; and rows skipped for having no title |
 
 ## Verify or Roll Back
 

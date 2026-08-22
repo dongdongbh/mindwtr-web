@@ -479,7 +479,7 @@ Diese Anleitungen helfen beim Übertragen von Aufgabendaten aus einer anderen Ap
 
 ### Mindwtr-CSV-/ZIP-Import
 
-Unter **Einstellungen → Daten → Daten importieren → Mindwtr-CSV importieren** können Sie eine dokumentierte Aufgabentabelle oder ein ZIP mit CSV-Dateien importieren. Das Format umfasst Status, Projekte, Abschnitte, Bereiche, Kontexte, Tags, Personen, Priorität, Energie, Start-/Fälligkeits-/Prüfdaten, Abschluss, Checklisten und manuelle Reihenfolge. Beim erneuten Import eines Mindwtr-Exports werden bereits vorhandene Aufgaben-IDs übersprungen statt dupliziert oder überschrieben.
+Unter **Einstellungen → Daten → Daten importieren → Mindwtr-CSV importieren** können Sie eine dokumentierte Aufgabentabelle oder ein ZIP mit CSV-Dateien importieren. Das Format umfasst Status, Projekte, Abschnitte, Bereiche, Kontexte, Tags, Personen, Priorität, Energie, Start-/Fälligkeits-/Prüfdaten, Abschluss, Checklisten, Wiederholungsregeln und manuelle Reihenfolge. Beim erneuten Import eines Mindwtr-Exports werden bereits vorhandene Aufgaben-IDs übersprungen statt dupliziert oder überschrieben.
 
 ### TickTick-CSV-/ZIP-Import
 

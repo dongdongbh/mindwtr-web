@@ -13,7 +13,7 @@ Der Import steht auf dem Desktop und auf Mobilgeräten unter **Einstellungen →
 
 Bevorzugen Sie einen nativen Importer, wenn Ihre App unter [Daten aus anderen Apps importieren](/de/import/) aufgeführt ist. Diese Importer lesen den app-eigenen Export und kennen dessen Eigenheiten bereits.
 
-Greifen Sie zur Mindwtr-CSV, wenn Ihre App nicht aufgeführt ist. Exportieren Sie die CSV-Datei, die Ihre App erzeugt, benennen Sie die Kopfzellen in einem Tabellenprogramm in die unten genannten Spaltennamen um und importieren Sie das Ergebnis. So bleibt weit mehr erhalten als beim Einfügen einer Titelliste: Projekte, Abschnitte, Bereiche, Status, Daten, Tags, Kontexte und Checklisten überstehen den Umzug.
+Greifen Sie zur Mindwtr-CSV, wenn Ihre App nicht aufgeführt ist. Exportieren Sie die CSV-Datei, die Ihre App erzeugt, benennen Sie die Kopfzellen in einem Tabellenprogramm in die unten genannten Spaltennamen um und importieren Sie das Ergebnis. So bleibt weit mehr erhalten als beim Einfügen einer Titelliste: Projekte, Abschnitte, Bereiche, Status, Daten, Tags, Kontexte, Checklisten und Wiederholungsregeln überstehen den Umzug.
 
 ## Dateiformat
 
@@ -52,7 +52,7 @@ Außer `Title` ist jede Spalte optional; Sie brauchen nur die, die Sie tatsächl
 | `Location` | beliebiger Text | Das Ortsfeld der Aufgabe. |
 | `Order` | eine Zahl | Sortiert die Aufgabe unter ihren Geschwistern im selben Projekt, Bereich oder Posteingang. Zeilen ohne Zahl oder mit gleicher Zahl behalten ihre Reihenfolge aus der Datei. |
 | `ID` | eine beliebige, stabile Kennung | Gibt der Zeile eine dauerhafte Identität für erneute Importe. Ein Wert, der eine frühere Zeile desselben Imports wiederholt, wird mit einer Warnung verworfen. |
-| `Recurrence` | beliebiger Text | Wird erkannt und daher nicht als unbekannte Spalte gemeldet, der Wert wird jedoch mit einer Warnung ignoriert. |
+| `Recurrence` | eine Wiederholungsregel wie `FREQ=WEEKLY;BYDAY=MO,TH` | Legt fest, wie die Aufgabe sich wiederholt. Hängen Sie `;X-MINDWTR-STRATEGY=FLUID` an, damit die Wiederholung ab dem Tag der Erledigung statt ab dem Datum zählt. Eine Regel, die Mindwtr nicht ausdrücken kann, wird mit einer Warnung samt Zeilennummer übersprungen, und diese Aufgabe kommt ohne Wiederholung an. |
 
 ## Daten und Uhrzeiten
 
@@ -101,23 +101,23 @@ Mindwtr schreibt genau dieses Format, der Weg führt also in beide Richtungen. *
 
 - Die Spalte `ID` wird immer geschrieben, daher verdoppelt ein erneuter Import nichts: Zeilen, deren `ID` zu einer vorhandenen Aufgabe passt, werden mit einer Warnung übersprungen. Änderungen an einer exportierten Datei werden **nicht** zurückgespielt — bearbeiten Sie diese Aufgaben stattdessen in der App. Die Hinweise zur Identität oben gelten unverändert.
 - Gelöschte Aufgaben werden nie exportiert. Das Format hat keine Spalte dafür, und eine solche Zeile käme beim nächsten Import als aktive Aufgabe zurück.
-- Wiederholungen werden nicht geschrieben, passend zu dem, was der Importer liest. Sie richten sie weiterhin in der App ein.
+- Wiederholungen werden als die Regel geschrieben, die der Importer wieder einliest, der Rundweg erhält sie also. Wie weit eine gezählte Serie schon gelaufen ist, wird nicht geschrieben, eine importierte Wiederholung beginnt daher eine neue Serie.
 - Für eine vollständige Kopie samt Einstellungen und Löschverlauf verwenden Sie stattdessen die JSON-[Sicherung](/de/data-sync/backup-restore).
 
 ## Was dieser Importer nicht leistet
 
-- **Wiederholungen.** Aus einer CSV entstehen keine Serien. Richten Sie sie nach dem Import in der App ein.
+- **Wiederholungsregeln, die Mindwtr nicht ausdrücken kann.** Eine Regel mit `BYSETPOS` oder eine, die häufiger als täglich wiederholt, wird samt ihrer Zeile gemeldet und ihre Aufgabe kommt ohne Wiederholung an, nie als Annäherung an die geschriebene Regel.
 - **Unteraufgaben-Hierarchie.** Es gibt keine Elternspalte. Verwenden Sie `Checklist` für die Schritte innerhalb einer Aufgabe und `Section` zur Gruppierung innerhalb eines Projekts.
 - **Anhänge.** Dateipfade oder URLs in einer CSV sind Text; es wird nichts geladen oder kopiert.
 
 ## Mögliche Warnungen
 
-Warnungen werden für den gesamten Import gezählt und einmal mit ihrer Anzahl angezeigt, nie einmal pro Zeile:
+Warnungen werden für den gesamten Import gezählt und einmal mit ihrer Anzahl angezeigt, nie einmal pro Zeile. Unlesbare Wiederholungsregeln fügen eine weitere Zeile hinzu, die die ersten drei betroffenen Zeilen nennt:
 
 - unbekannte Spalten wurden ignoriert
 - Status konnten nicht zugeordnet werden und wurden in den Posteingang importiert
 - `Section`-Werte wurden ignoriert, weil ihre Zeilen kein `Project` hatten
-- `Recurrence`-Werte wurden ignoriert
+- `Recurrence`-Regeln konnten nicht verstanden werden, und diese Aufgaben kamen ohne Wiederholung an
 - Datumswerte konnten nicht gelesen werden und wurden übersprungen
 - Zeilen wurden verworfen, weil ihre `ID` eine frühere Zeile wiederholte
 - Zeilen ohne Titel wurden übersprungen

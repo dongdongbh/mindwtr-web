@@ -13,7 +13,7 @@ Import is available on desktop and mobile from **Settings → Data → Import fr
 
 Prefer a native importer when your app is listed on [Importing Data From Other Apps](/import/). Those importers read the app's own export and already understand its quirks.
 
-Reach for Mindwtr CSV when your app is not listed. Export whatever CSV it produces, rename the header cells to the column names below in a spreadsheet editor, and import the result. That preserves far more than pasting a list of titles: projects, sections, areas, statuses, dates, tags, contexts, and checklists all survive the trip.
+Reach for Mindwtr CSV when your app is not listed. Export whatever CSV it produces, rename the header cells to the column names below in a spreadsheet editor, and import the result. That preserves far more than pasting a list of titles: projects, sections, areas, statuses, dates, tags, contexts, checklists, and repeat rules all survive the trip.
 
 ## File Format
 
@@ -52,7 +52,7 @@ Every column except `Title` is optional, and you only need the ones you actually
 | `Location` | any text | The task's location field. |
 | `Order` | a number | Sorts the task among its siblings in the same project, area, or inbox. Rows with no number, or with the same number, keep the order they had in the file. |
 | `ID` | any stable identifier | Gives the row a lasting identity for re-imports. A value that repeats an earlier row in the same import is dropped with a warning. |
-| `Recurrence` | any text | Recognized so it is not reported as an unknown column, but the value is ignored with a warning. |
+| `Recurrence` | a repeat rule such as `FREQ=WEEKLY;BYDAY=MO,TH` | Sets how the task repeats. Add `;X-MINDWTR-STRATEGY=FLUID` for a repeat measured from the day you complete the task instead of from its date. A rule Mindwtr cannot express is skipped with a warning naming the row, and that task arrives without a repeat. |
 
 ## Dates and Times
 
@@ -101,23 +101,23 @@ Mindwtr writes this same format, so the round trip is complete. **Settings → D
 
 - The `ID` column is always written, so re-importing an export does not duplicate anything: rows whose `ID` matches a task you already have are skipped with a warning. Edits made to an exported file are **not** pushed back in — change those tasks in the app instead. The identity notes above apply directly.
 - Deleted tasks are never exported. The format has no column for them, and such a row would return as a live task on the next import.
-- Recurrence is not written, matching what the importer reads. Repeats stay set up in the app.
+- Recurrence is written as the repeat rule the importer reads back, so repeats survive the round trip. How far a counted series has already run is not written, so an imported repeat starts a fresh series.
 - For a complete copy including settings and deleted-item history, use the JSON [backup](/data-sync/backup-restore) instead.
 
 ## What This Importer Does Not Do
 
-- **Recurrence.** Repeats are not created from a CSV. Set them up in the app after importing.
+- **Repeat rules Mindwtr cannot express.** A rule built on `BYSETPOS`, or one that repeats more often than daily, is reported with its row and its task arrives without a repeat, never as an approximation of the rule you wrote.
 - **Subtask hierarchy.** There is no parent column. Use `Checklist` for the steps inside one task and `Section` for grouping inside a project.
 - **Attachments.** File paths or URLs in a CSV are text; nothing is fetched or copied.
 
 ## Warnings You May See
 
-Warnings are counted for the whole import and shown once with their count, never once per row:
+Warnings are counted for the whole import and shown once with their count, never once per row. Unreadable repeat rules add one further line naming the first three rows that carried one:
 
 - unknown columns were ignored
 - statuses could not be mapped and were imported to Inbox
 - `Section` values were ignored because their rows had no `Project`
-- `Recurrence` values were ignored
+- `Recurrence` rules could not be understood, and those tasks arrived without a repeat
 - date values could not be parsed and were skipped
 - rows were dropped because their `ID` repeated an earlier row
 - rows with empty titles were skipped

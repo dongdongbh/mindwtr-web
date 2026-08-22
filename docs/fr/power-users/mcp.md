@@ -315,7 +315,7 @@ bun run mindwtr:mcp -- --db "/path/to/mindwtr.db" --write
 bun run --filter mindwtr-mcp build
 
 # Run
-node apps/mcp-server/dist/index.js --db "/path/to/mindwtr.db"
+node apps/mcp-server/dist/cli.js --db "/path/to/mindwtr.db"
 ```
 
 ---

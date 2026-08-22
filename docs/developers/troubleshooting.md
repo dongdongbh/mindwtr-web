@@ -45,7 +45,7 @@ MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 
 ### Desktop data or config path confusion
 
-See the storage-path notes in `docs/CONTRIBUTING.md` and the in-app Settings screens.
+See [Data and Sync](/data-sync/) for the per-OS database, JSON, and config paths, and the in-app Settings screens.
 
 ---
 

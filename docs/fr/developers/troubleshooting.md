@@ -45,7 +45,7 @@ MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 
 ### Doute sur le chemin des données ou de la configuration
 
-Consultez les remarques sur les chemins de stockage dans `docs/CONTRIBUTING.md` et les écrans Paramètres de l’application.
+Consultez [Données et synchronisation](/fr/data-sync/) pour les chemins de la base de données, du JSON et de la configuration selon le système d’exploitation, ainsi que les écrans Paramètres de l’application.
 
 ---
 

@@ -45,7 +45,7 @@ MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 
 ### Unklarheit über Desktop-Daten- oder Konfigurationspfade
 
-Siehe die Hinweise zu Speicherpfaden in `docs/CONTRIBUTING.md` und die Einstellungsansichten in der App.
+Unter [Daten und Synchronisierung](/de/data-sync/) finden Sie die Datenbank-, JSON- und Konfigurationspfade pro Betriebssystem sowie die Einstellungsansichten in der App.
 
 ---
 

@@ -45,7 +45,7 @@ MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 
 ### 桌面端数据或配置路径不清楚
 
-请参阅 `docs/CONTRIBUTING.md` 中的存储路径说明，以及应用内设置界面。
+请参阅[数据与同步](/zh-Hans/data-sync/)了解各操作系统上的数据库、JSON 与配置文件路径，以及应用内设置界面。
 
 ---
 

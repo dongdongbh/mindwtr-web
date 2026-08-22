@@ -45,7 +45,7 @@ MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 
 ### 對桌面版資料或設定路徑感到困惑
 
-請參閱 `docs/CONTRIBUTING.md` 中的儲存路徑說明，以及應用程式內的設定畫面。
+請參閱[資料與同步](/zh-Hant/data-sync/)了解各作業系統上的資料庫、JSON 與設定檔路徑，以及應用程式內的設定畫面。
 
 ---
 

@@ -45,7 +45,7 @@ MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 
 ### Confusión con rutas de datos o configuración
 
-Consulta las notas de almacenamiento en `docs/CONTRIBUTING.md` y las pantallas de Ajustes.
+Consulta [Datos y sincronización](/es/data-sync/) para ver las rutas de la base de datos, del JSON y de la configuración en cada sistema operativo, y las pantallas de Ajustes.
 
 ---
 

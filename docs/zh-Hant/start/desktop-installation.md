@@ -244,6 +244,28 @@ brew install --cask mindwtr
 
 ---
 
+## 驗證下載檔案
+
+每個 GitHub 發布版本都包含一份 `SHA256SUMS` 校驗和清單以及覆蓋它的分離式 PGP 簽章 `SHA256SUMS.asc`。它們與 APT 和 RPM 儲存庫使用同一把金鑰簽署，金鑰發布於 `https://dongdongbh.github.io/Mindwtr/mindwtr.gpg.key`：
+
+- 金鑰：Mindwtr Bot（RSA 4096）
+- 指紋：`0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`
+
+```bash
+# Import the signing key
+curl -fsSL https://dongdongbh.github.io/Mindwtr/mindwtr.gpg.key | gpg --import
+
+# Verify the manifest signature
+gpg --verify SHA256SUMS.asc SHA256SUMS
+
+# Check the file you downloaded against the manifest
+sha256sum --check --ignore-missing SHA256SUMS
+```
+
+`gpg --verify` 必須回報來自上述指紋的有效簽章。在 macOS 上，校驗和步驟請使用 `shasum -a 256 --check --ignore-missing SHA256SUMS`。
+
+---
+
 ## 資料位置
 
 安裝後，資料會儲存於：

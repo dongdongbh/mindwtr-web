@@ -244,6 +244,28 @@ brew install --cask mindwtr
 
 ---
 
+## Verifying Downloads
+
+Every GitHub release includes a `SHA256SUMS` checksum manifest and a detached PGP signature `SHA256SUMS.asc` covering it. They are signed with the same key that signs the APT and RPM repositories, published at `https://dongdongbh.github.io/Mindwtr/mindwtr.gpg.key`:
+
+- Key: Mindwtr Bot (RSA 4096)
+- Fingerprint: `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`
+
+```bash
+# Import the signing key
+curl -fsSL https://dongdongbh.github.io/Mindwtr/mindwtr.gpg.key | gpg --import
+
+# Verify the manifest signature
+gpg --verify SHA256SUMS.asc SHA256SUMS
+
+# Check the file you downloaded against the manifest
+sha256sum --check --ignore-missing SHA256SUMS
+```
+
+`gpg --verify` must report a good signature from the fingerprint above. On macOS, use `shasum -a 256 --check --ignore-missing SHA256SUMS` for the checksum step.
+
+---
+
 ## Data Location
 
 After installation, your data is stored at:

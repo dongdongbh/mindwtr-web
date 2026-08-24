@@ -244,6 +244,28 @@ brew install --cask mindwtr
 
 ---
 
+## Verificación de las descargas
+
+Cada versión publicada en GitHub incluye un manifiesto de sumas de comprobación `SHA256SUMS` y una firma PGP separada `SHA256SUMS.asc` que lo cubre. Se firman con la misma clave que firma los repositorios APT y RPM, publicada en `https://dongdongbh.github.io/Mindwtr/mindwtr.gpg.key`:
+
+- Clave: Mindwtr Bot (RSA 4096)
+- Huella digital: `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`
+
+```bash
+# Import the signing key
+curl -fsSL https://dongdongbh.github.io/Mindwtr/mindwtr.gpg.key | gpg --import
+
+# Verify the manifest signature
+gpg --verify SHA256SUMS.asc SHA256SUMS
+
+# Check the file you downloaded against the manifest
+sha256sum --check --ignore-missing SHA256SUMS
+```
+
+`gpg --verify` debe informar una firma válida con la huella digital anterior. En macOS, use `shasum -a 256 --check --ignore-missing SHA256SUMS` para el paso de la suma de comprobación.
+
+---
+
 ## Ubicación de los datos
 
 Después de la instalación, tus datos se almacenan en:

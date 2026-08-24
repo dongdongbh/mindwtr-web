@@ -30,7 +30,7 @@ La vista de semana puede mostrar entre dos y siete días. Cambia la cantidad con
 
 ### Mirar atrás al trabajo terminado
 
-De forma predeterminada el calendario muestra el trabajo que aún tienes por delante. El botón **Completadas** de la cabecera del calendario también revela las tareas completadas y archivadas, situadas en el día en que se completaron y no en la fecha de inicio o de vencimiento que aún puedan tener. Se dibujan atenuadas y tachadas para que nunca parezcan trabajo pendiente, y no se pueden arrastrar a otro día: una finalización es un registro de lo ocurrido, no un plan.
+De forma predeterminada el calendario muestra el trabajo que aún tienes por delante. El botón **Completadas** de la cabecera del calendario también revela las tareas completadas y archivadas, situadas en el día en que se completaron y no en la fecha de inicio o de vencimiento que aún puedan tener. Se dibujan atenuadas y tachadas para que nunca parezcan trabajo pendiente, y no se pueden arrastrar a otro día: una finalización es un registro de lo ocurrido, no un plan. El botón **Fechas de inicio** contiguo controla si las tareas aparecen en su fecha de inicio; desactívalo para leer el calendario solo como fechas límite.
 
 Las tareas archivadas antes de que Mindwtr registrara las marcas de tiempo de finalización recurren a su fecha de última modificación, la misma que muestra la lista de Archivo.
 

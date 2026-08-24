@@ -30,7 +30,7 @@ Week view can show anywhere from two to seven days. Step the count with the cont
 
 ### Looking back at completed work
 
-By default the calendar shows work that is still ahead of you. The **Completed** toggle in the calendar header also reveals done and archived tasks, placed on the day they were completed rather than on any start or due date they still carry. They are drawn muted and struck through so they never read as outstanding work, and they cannot be dragged to another day — a completion is a record of what happened, not a plan.
+By default the calendar shows work that is still ahead of you. The **Completed** toggle in the calendar header also reveals done and archived tasks, placed on the day they were completed rather than on any start or due date they still carry. They are drawn muted and struck through so they never read as outstanding work, and they cannot be dragged to another day — a completion is a record of what happened, not a plan. The **Starts** toggle next to it controls whether tasks appear on their start dates — turn it off to read the calendar as deadlines only.
 
 Tasks archived before Mindwtr recorded completion timestamps fall back to their last-modified date, the same date the Archive list shows for them.
 

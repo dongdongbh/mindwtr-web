@@ -30,7 +30,7 @@ La vue Semaine peut afficher de deux à sept jours. Réglez ce nombre avec la co
 
 ### Revenir sur le travail terminé
 
-Par défaut, le calendrier montre le travail qui reste à faire. Le bouton **Terminées** dans l’en-tête du calendrier révèle aussi les tâches terminées et archivées, placées au jour où elles ont été terminées plutôt qu’à une date de début ou d’échéance qu’elles porteraient encore. Elles sont affichées en gris et barrées pour ne jamais passer pour du travail en cours, et elles ne peuvent pas être glissées vers un autre jour : un achèvement est une trace de ce qui s’est passé, pas un plan.
+Par défaut, le calendrier montre le travail qui reste à faire. Le bouton **Terminées** dans l’en-tête du calendrier révèle aussi les tâches terminées et archivées, placées au jour où elles ont été terminées plutôt qu’à une date de début ou d’échéance qu’elles porteraient encore. Elles sont affichées en gris et barrées pour ne jamais passer pour du travail en cours, et elles ne peuvent pas être glissées vers un autre jour : un achèvement est une trace de ce qui s’est passé, pas un plan. Le bouton **Dates de début** juste à côté contrôle si les tâches apparaissent à leur date de début — désactivez-le pour ne lire que les échéances.
 
 Les tâches archivées avant que Mindwtr n’enregistre les horodatages d’achèvement se rabattent sur leur date de dernière modification, celle qu’affiche déjà la liste Archives.
 

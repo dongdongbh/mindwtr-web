@@ -30,7 +30,7 @@ Die Wochenansicht kann zwischen zwei und sieben Tagen anzeigen. Auf dem Desktop 
 
 ### Rückblick auf erledigte Arbeit
 
-Standardmäßig zeigt der Kalender, was noch vor dir liegt. Der Schalter **Erledigt** in der Kalenderkopfzeile blendet zusätzlich erledigte und archivierte Aufgaben ein — an dem Tag, an dem sie abgeschlossen wurden, nicht an einem Start- oder Fälligkeitsdatum, das sie noch tragen. Sie werden gedämpft und durchgestrichen dargestellt, damit sie nie wie offene Arbeit wirken, und sie lassen sich nicht auf einen anderen Tag ziehen: Ein Abschluss ist eine Aufzeichnung, kein Plan.
+Standardmäßig zeigt der Kalender, was noch vor dir liegt. Der Schalter **Erledigt** in der Kalenderkopfzeile blendet zusätzlich erledigte und archivierte Aufgaben ein — an dem Tag, an dem sie abgeschlossen wurden, nicht an einem Start- oder Fälligkeitsdatum, das sie noch tragen. Sie werden gedämpft und durchgestrichen dargestellt, damit sie nie wie offene Arbeit wirken, und sie lassen sich nicht auf einen anderen Tag ziehen: Ein Abschluss ist eine Aufzeichnung, kein Plan. Der Schalter **Startdatum** daneben steuert, ob Aufgaben an ihrem Startdatum erscheinen — ausgeschaltet zeigt der Kalender nur noch Fälligkeiten.
 
 Aufgaben, die archiviert wurden, bevor Mindwtr Abschlusszeitpunkte erfasst hat, greifen auf ihr Änderungsdatum zurück — dasselbe Datum, das auch die Archivliste für sie zeigt.
 

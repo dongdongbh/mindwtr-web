@@ -26,7 +26,7 @@ Los controles de recurrencia aparecen en la pantalla de edición tanto en escrit
 
 Cada tipo permite usar **Repetir cada** para saltar intervalos, por ejemplo, cada 2 semanas o cada 3 meses.
 
-Las tareas semanales pueden elegir días concretos. Las mensuales pueden repetirse el mismo día de cada mes o usar **Personalizada** para patrones como un día de la semana específico.
+Las tareas semanales pueden elegir días concretos. Las mensuales pueden repetirse un día de cada mes o varios días a su elección (como el 1 y el 16), o usar **Personalizada** para patrones como un día de la semana específico o el último día del mes.
 
 ## Meses cortos y el fin de mes
 

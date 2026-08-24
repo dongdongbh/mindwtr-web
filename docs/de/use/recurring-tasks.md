@@ -26,7 +26,7 @@ Die Wiederholungssteuerung erscheint auf dem Desktop und auf Mobilgeräten in de
 
 Bei jeder Wiederholungsart können Sie mit **Alle … wiederholen** Intervalle überspringen, zum Beispiel alle 2 Wochen oder alle 3 Monate.
 
-Für wöchentliche Aufgaben lassen sich bestimmte Wochentage auswählen. Monatliche Aufgaben können am gleichen Tag jedes Monats oder über **Benutzerdefiniert** nach einem Muster wie einem bestimmten Wochentag wiederholt werden.
+Für wöchentliche Aufgaben lassen sich bestimmte Wochentage auswählen. Monatliche Aufgaben können an einem Tag jedes Monats oder an mehreren selbst gewählten Tagen (etwa am 1. und am 16.) wiederholt werden, oder über **Benutzerdefiniert** nach einem Muster wie einem bestimmten Wochentag oder dem letzten Tag des Monats.
 
 ## Kurze Monate und das Monatsende
 

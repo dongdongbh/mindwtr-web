@@ -26,7 +26,7 @@ The recurrence controls appear on desktop and mobile in the task edit screen.
 
 Each repeat type can use **Repeat every** to skip intervals. For example, every 2 weeks or every 3 months.
 
-Weekly tasks can choose specific weekdays. Monthly tasks can repeat on the same day each month, or use **Custom** for patterns such as a specific weekday.
+Weekly tasks can choose specific weekdays. Monthly tasks can repeat on one day each month or on several days you pick (such as the 1st and the 16th), or use **Custom** for patterns such as a specific weekday or the last day of the month.
 
 ## Short Months and the End of the Month
 

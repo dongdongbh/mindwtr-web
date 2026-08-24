@@ -26,7 +26,7 @@ Les commandes de récurrence apparaissent dans l’éditeur sur ordinateur et mo
 
 Chaque type propose **Répéter tous les** pour sauter des intervalles, par exemple toutes les 2 semaines ou tous les 3 mois.
 
-Les tâches hebdomadaires peuvent cibler des jours précis. Les tâches mensuelles peuvent revenir le même jour de chaque mois ou employer **Personnalisée** pour des motifs comme un jour précis de la semaine.
+Les tâches hebdomadaires peuvent cibler des jours précis. Les tâches mensuelles peuvent revenir un jour de chaque mois ou plusieurs jours de votre choix (comme le 1er et le 16), ou employer **Personnalisée** pour des motifs comme un jour précis de la semaine ou le dernier jour du mois.
 
 ## Mois courts et fin de mois
 

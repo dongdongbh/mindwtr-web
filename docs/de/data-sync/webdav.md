@@ -23,6 +23,10 @@ Verwenden Sie WebDAV, wenn:
 Verwenden Sie einen Ordner ausschließlich für die Mindwtr-Synchronisierungsdaten. Mischen Sie die Synchronisierungsdateien der App nicht mit anderen Dokumenten.
 :::
 
+::: warning Nextcloud- und ownCloud-Adressen
+Geben Sie die WebDAV-Adresse ein, nicht die Adresse der Browserseite. Öffnen Sie in Nextcloud „Dateien“ → „Dateieinstellungen“ und kopieren Sie die WebDAV-URL (sie sieht aus wie `https://server/remote.php/dav/files/USERNAME/`). Adressen mit `/apps/files` verweisen auf die Weboberfläche und können nicht synchronisieren.
+:::
+
 ## Fehlerbehebung
 
 - Prüfen Sie, ob die URL auf einen beschreibbaren Ordner verweist.

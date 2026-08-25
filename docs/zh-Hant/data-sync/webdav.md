@@ -23,6 +23,10 @@ WebDAV 同步適合想採用標準、自行掌控的儲存端點，又不想執�
 請保留一個只存放 Mindwtr 同步資料的資料夾，不要將同步檔案與無關文件混在一起。
 :::
 
+::: warning Nextcloud 與 ownCloud 位址
+請填寫 WebDAV 位址，而不是瀏覽器頁面位址。在 Nextcloud 中開啟「檔案」→「檔案設定」，複製 WebDAV URL（形如 `https://server/remote.php/dav/files/USERNAME/`）。包含 `/apps/files` 的位址指向網頁介面，無法同步。
+:::
+
 ## 疑難排解
 
 - 確認 URL 指向可寫入的資料夾。

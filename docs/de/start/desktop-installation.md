@@ -251,9 +251,14 @@ Jedes GitHub-Release enthält ein `SHA256SUMS`-Prüfsummen-Manifest und eine sep
 - Schlüssel: Mindwtr Bot (RSA 4096)
 - Fingerabdruck: `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`
 
+Derselbe Schlüssel ist zusätzlich auf dem Schlüsselserver `keys.openpgp.org` veröffentlicht, unabhängig von GitHubs Infrastruktur — beziehen Sie ihn aus beiden Quellen und prüfen Sie, dass beide den oben genannten Fingerabdruck zeigen.
+
 ```bash
 # Import the signing key
 curl -fsSL https://dongdongbh.github.io/Mindwtr/mindwtr.gpg.key | gpg --import
+
+# Or fetch it from the keys.openpgp.org keyserver (independent second source)
+gpg --keyserver hkps://keys.openpgp.org --recv-keys 0358999BBE704F588B9094979E553245CB17047D
 
 # Verify the manifest signature
 gpg --verify SHA256SUMS.asc SHA256SUMS

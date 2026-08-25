@@ -251,9 +251,14 @@ Cada versión publicada en GitHub incluye un manifiesto de sumas de comprobació
 - Clave: Mindwtr Bot (RSA 4096)
 - Huella digital: `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`
 
+La misma clave también está publicada en el servidor de claves `keys.openpgp.org`, independiente de la infraestructura de GitHub: obténla de ambas fuentes y confirma que muestran la huella digital indicada arriba.
+
 ```bash
 # Import the signing key
 curl -fsSL https://dongdongbh.github.io/Mindwtr/mindwtr.gpg.key | gpg --import
+
+# Or fetch it from the keys.openpgp.org keyserver (independent second source)
+gpg --keyserver hkps://keys.openpgp.org --recv-keys 0358999BBE704F588B9094979E553245CB17047D
 
 # Verify the manifest signature
 gpg --verify SHA256SUMS.asc SHA256SUMS

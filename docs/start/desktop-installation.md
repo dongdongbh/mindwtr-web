@@ -251,9 +251,14 @@ Every GitHub release includes a `SHA256SUMS` checksum manifest and a detached PG
 - Key: Mindwtr Bot (RSA 4096)
 - Fingerprint: `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`
 
+The same key is also published on the `keys.openpgp.org` keyserver, independent of GitHub's infrastructure — fetch it from both sources and confirm they show the identical fingerprint above.
+
 ```bash
 # Import the signing key
 curl -fsSL https://dongdongbh.github.io/Mindwtr/mindwtr.gpg.key | gpg --import
+
+# Or fetch it from the keys.openpgp.org keyserver (independent second source)
+gpg --keyserver hkps://keys.openpgp.org --recv-keys 0358999BBE704F588B9094979E553245CB17047D
 
 # Verify the manifest signature
 gpg --verify SHA256SUMS.asc SHA256SUMS

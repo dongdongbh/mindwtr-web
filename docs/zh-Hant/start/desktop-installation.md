@@ -251,9 +251,14 @@ brew install --cask mindwtr
 - 金鑰：Mindwtr Bot（RSA 4096）
 - 指紋：`0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`
 
+同一金鑰也發佈在獨立於 GitHub 基礎設施的 `keys.openpgp.org` 金鑰伺服器上——請從兩個來源分別取得，並確認兩者顯示的指紋與上文一致。
+
 ```bash
 # Import the signing key
 curl -fsSL https://dongdongbh.github.io/Mindwtr/mindwtr.gpg.key | gpg --import
+
+# Or fetch it from the keys.openpgp.org keyserver (independent second source)
+gpg --keyserver hkps://keys.openpgp.org --recv-keys 0358999BBE704F588B9094979E553245CB17047D
 
 # Verify the manifest signature
 gpg --verify SHA256SUMS.asc SHA256SUMS

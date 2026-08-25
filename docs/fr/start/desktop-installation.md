@@ -251,9 +251,14 @@ Chaque version publiée sur GitHub inclut un manifeste de sommes de contrôle `S
 - Clé : Mindwtr Bot (RSA 4096)
 - Empreinte : `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`
 
+La même clé est également publiée sur le serveur de clés `keys.openpgp.org`, indépendant de l'infrastructure de GitHub — récupérez-la depuis les deux sources et vérifiez qu'elles affichent l'empreinte ci-dessus.
+
 ```bash
 # Import the signing key
 curl -fsSL https://dongdongbh.github.io/Mindwtr/mindwtr.gpg.key | gpg --import
+
+# Or fetch it from the keys.openpgp.org keyserver (independent second source)
+gpg --keyserver hkps://keys.openpgp.org --recv-keys 0358999BBE704F588B9094979E553245CB17047D
 
 # Verify the manifest signature
 gpg --verify SHA256SUMS.asc SHA256SUMS

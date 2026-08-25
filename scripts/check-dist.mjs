@@ -35,7 +35,8 @@ const landingLocales = [
   { key: "de", hreflang: "de", lang: "de" },
   { key: "es", hreflang: "es", lang: "es" },
   { key: "fr", hreflang: "fr", lang: "fr" },
-  { key: "zh", hreflang: "zh-Hans", lang: "zh-Hans" }
+  { key: "zh-Hans", hreflang: "zh-Hans", lang: "zh-Hans" },
+  { key: "zh-Hant", hreflang: "zh-Hant", lang: "zh-Hant" }
 ];
 const landingLocalizedPages = [
   "index",
@@ -349,7 +350,7 @@ if (findings.length === 0) {
       }
 
       const isLandingHome =
-        page.site.name === "landing" && /^(?:\/(?:de|es|fr|zh))?\/$/.test(page.path);
+        page.site.name === "landing" && /^(?:\/(?:de|es|fr|zh-Han[st]))?\/$/.test(page.path);
       if (isLandingHome) {
         const approvedHeroFallback = "/assets/screenshots/landing_image.png";
         const responsiveHero = "/assets/screenshots/landing_image-840.webp";

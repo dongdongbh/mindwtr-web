@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <!-- chrome: shared head meta, header, and footer are injected at build time by chrome.ts -->
+    <meta
+      name="description"
+      content="一款免費開源的待辦應用：把腦子裡的一切放進系統，只看下一步該做什麼。離線可用，無需帳號，資料完全屬於你。"
+    />
+    <meta property="og:title" content="Mindwtr — 免費開源的 GTD 待辦應用" />
+    <meta
+      property="og:description"
+      content="把一切從腦中清空。幾秒鐘記下任務，一眼看到下一步。免費、無需帳號、離線可用。"
+    />
+    <link rel="preload" as="image" href="/assets/screenshots/landing_image-840.webp" imagesrcset="/assets/screenshots/landing_image-840.webp 840w, /assets/screenshots/landing_image-1672.webp 1672w" imagesizes="(max-width: 900px) calc(100vw - 28px), 62vw" type="image/webp" fetchpriority="high" />
+    <title>Mindwtr — 免費開源的 GTD 待辦應用</title>
+  </head>
+  <body>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-ambient" aria-hidden="true">
+          <svg class="ripple" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+            <circle cx="100" cy="100" r="34" stroke-opacity="0.55" />
+            <circle cx="100" cy="100" r="62" stroke-opacity="0.34" />
+            <circle cx="100" cy="100" r="92" stroke-opacity="0.18" />
+          </svg>
+        </div>
+        <div class="hero-copy">
+          <h1 id="hero-title">心靜如<span class="accent">水。</span></h1>
+          <p class="hero-subhead">
+            這款待辦應用幫你清空大腦：幾秒鐘記下任何任務，然後只看當下要做的那一件事。無需帳號，資料留在你自己的裝置上。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" id="primary-download" href="#download">下載 Mindwtr</a>
+            <a class="button secondary" href="https://docs.mindwtr.app/">閱讀文件</a>
+          </div>
+          <ul class="proof-list" aria-label="Mindwtr 的特點">
+            <li>永久免費</li>
+            <li>離線可用</li>
+            <li>無需帳號</li>
+            <li>全平台支援</li>
+          </ul>
+        </div>
+
+        <div class="hero-media" aria-label="Mindwtr 應用截圖">
+          <figure class="desktop-frame">
+            <picture>
+              <source type="image/webp" srcset="/assets/screenshots/landing_image-840.webp 840w, /assets/screenshots/landing_image-1672.webp 1672w" sizes="(max-width: 900px) calc(100vw - 28px), 62vw" />
+              <img src="/assets/screenshots/landing_image.png" alt="Mindwtr 在桌面端和手機上顯示專注與回顧檢視" width="1672" height="941" fetchpriority="high" decoding="async" />
+            </picture>
+          </figure>
+        </div>
+      </section>
+
+      <section class="hero-features" aria-label="Mindwtr 核心功能">
+        <article>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 13h2.6a2 2 0 0 1 1.8 1.1l.3.6a2 2 0 0 0 1.8 1.1h2.4a2 2 0 0 0 1.8-1.1l.3-.6a2 2 0 0 1 1.8-1.1h2.4" />
+              <path d="M6 6.5h12l1.5 6.5v3.5a1.5 1.5 0 0 1-1.5 1.5H6a1.5 1.5 0 0 1-1.5-1.5V13z" />
+            </svg>
+          </span>
+          <div>
+            <h2>隨手記下</h2>
+            <p>任何任務或想法，一鍵放進收集箱。不用再費勁去記。</p>
+          </div>
+        </article>
+        <article>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="8.5" />
+              <circle cx="12" cy="12" r="4.4" />
+              <circle cx="12" cy="12" r="1.1" fill="currentColor" stroke="none" />
+            </svg>
+          </span>
+          <div>
+            <h2>只看下一步</h2>
+            <p>專注檢視只顯示你現在能著手的那幾件事，其餘的先等著。</p>
+          </div>
+        </article>
+        <article>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3.5" y="4.5" width="17" height="15" rx="2.2" />
+              <path d="M9.2 4.5v15M14.8 4.5v15" />
+            </svg>
+          </span>
+          <div>
+            <h2>幾秒鐘歸好類</h2>
+            <p>給它一個日期、一個專案，或者放進「將來」慢慢想。全程引導，不繁瑣。</p>
+          </div>
+        </article>
+        <article>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.8 12a7.2 7.2 0 0 1 12.2-5.2L19.5 9" />
+              <path d="M19.5 4.6V9H15" />
+              <path d="M19.2 12a7.2 7.2 0 0 1-12.2 5.2L4.5 15" />
+              <path d="M4.5 19.4V15H9" />
+            </svg>
+          </span>
+          <div>
+            <h2>每週重新出發</h2>
+            <p>一次簡短的引導式回顧幫你收尾清零，讓你始終信任自己的清單。</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="philosophy section-band" aria-labelledby="problem-title">
+        <h2 id="problem-title">大多數待辦清單，最後悄悄變成了另一件差事。</h2>
+        <p class="philosophy-lead">
+          你把所有事都記下來；一個月後清單一半已經過期，開啟應用就像挨訓。普通的清單從不回答最關鍵的那個問題：我<em>接下來</em>該做什麼？
+        </p>
+        <blockquote class="philosophy-quote">
+          我只是想騎個腳踏車，別給我看飛機駕駛艙。
+        </blockquote>
+        <p class="philosophy-link">
+          <a class="text-link" href="/zh-Hant/gtd">Mindwtr 用一套簡單的方法解決它——什麼是 GTD？<span aria-hidden="true">→</span></a>
+        </p>
+      </section>
+
+      <section class="workflow section-band" aria-labelledby="workflow-title">
+        <div class="section-copy">
+          <h2 id="workflow-title">一個值得信任的系統，而不是又一個嘈雜的任務清單。</h2>
+          <p>
+            用一句話概括 Getting Things Done（GTD）：大腦是用來產生想法的，不是用來存放想法的。Mindwtr 帶你走完從收集到完成的整個循環。<a class="text-link" href="/zh-Hant/gtd">剛接觸 GTD？五分鐘看懂核心思想 <span aria-hidden="true">→</span></a>
+          </p>
+        </div>
+        <div class="loop-tour" data-tour>
+          <ol class="loop-rail" role="tablist" aria-label="GTD 的五個步驟，在應用中逐一展示">
+            <li role="presentation">
+              <button type="button" class="loop-step is-active" id="loop-tab-capture" role="tab" aria-selected="true" aria-controls="loop-shot-capture">
+                <span class="step-tag"><i>01</i>收集</span>
+                <span class="loop-line">把事情從腦子裡倒出來，越快越好。</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-clarify" role="tab" aria-selected="false" aria-controls="loop-shot-clarify" tabindex="-1">
+                <span class="step-tag"><i>02</i>理清</span>
+                <span class="loop-line">把模糊的念頭變成清晰的下一步行動。</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-organize" role="tab" aria-selected="false" aria-controls="loop-shot-organize" tabindex="-1">
+                <span class="step-tag"><i>03</i>組織</span>
+                <span class="loop-line">專案、情境、等待中的事項，各歸各位。</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-reflect" role="tab" aria-selected="false" aria-controls="loop-shot-reflect" tabindex="-1">
+                <span class="step-tag"><i>04</i>回顧</span>
+                <span class="loop-line">定期檢視系統，別讓它過期失效。</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="loop-step" id="loop-tab-engage" role="tab" aria-selected="false" aria-controls="loop-shot-engage" tabindex="-1">
+                <span class="step-tag"><i>05</i>執行</span>
+                <span class="loop-line">放心地選出下一步行動。</span>
+              </button>
+            </li>
+          </ol>
+          <div class="loop-stage">
+            <figure class="loop-shot is-active" id="loop-shot-capture" role="tabpanel" aria-labelledby="loop-tab-capture">
+              <img src="/assets/screenshots/tour-capture.webp" alt="快速新增會在輸入時自動識別情境和截止日期" width="1920" height="1200" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-clarify" role="tabpanel" aria-labelledby="loop-tab-clarify" aria-hidden="true">
+              <img src="/assets/screenshots/tour-clarify.webp" alt="引導式收集箱處理：一次一個問題，判斷事項是否可行動" width="1920" height="1080" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-organize" role="tabpanel" aria-labelledby="loop-tab-organize" aria-hidden="true">
+              <img src="/assets/screenshots/tour-organize.webp" alt="一個帶分組的專案，包含下一步行動和等待中的事項" width="1920" height="1080" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-reflect" role="tabpanel" aria-labelledby="loop-tab-reflect" aria-hidden="true">
+              <img src="/assets/screenshots/tour-reflect.webp" alt="每週回顧精靈正在第 3 步（共 8 步）：檢視日曆" width="1920" height="1080" loading="lazy" />
+            </figure>
+            <figure class="loop-shot" id="loop-shot-engage" role="tabpanel" aria-labelledby="loop-tab-engage" aria-hidden="true">
+              <img src="/assets/screenshots/tour-engage.webp" alt="專注檢視：今日專注與下方的下一步行動" width="1920" height="1080" loading="lazy" />
+            </figure>
+          </div>
+          <p class="loop-status" aria-hidden="true">
+            <span class="loop-count" data-tour-count>01 / 05</span>
+            <span class="loop-caption" data-tour-caption>收集</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="features section-band" aria-labelledby="features-title">
+        <div class="section-copy">
+          <h2 id="features-title">一個完整的系統，而不是功能的堆砌。</h2>
+          <p>
+            每個檢視都為 GTD 方法而設計，深度功能平時不打擾你，需要時隨手可得。
+          </p>
+        </div>
+        <ul class="feature-grid">
+          <li>
+            <h3>專注</h3>
+            <p>按時間排列的日程和你的下一步行動，合併在同一個檢視裡。</p>
+          </li>
+          <li>
+            <h3>看板</h3>
+            <p>幾列簡單的看板——收集箱、下一步、等待中、將來/也許——拖一下就能移動任務。</p>
+          </li>
+          <li>
+            <h3>日曆</h3>
+            <p>給任務加上日期，和你已有的日曆放在一起看。</p>
+          </li>
+          <li>
+            <h3>情境與標籤</h3>
+            <p>按做事的場合給任務打標籤：@家裡、@外出辦事，或 @工作/會議。</p>
+          </li>
+          <li>
+            <h3>全域搜尋</h3>
+            <p>輸入幾個字，任務、筆記、專案全都能找到——需要時還有強大的篩選。</p>
+          </li>
+          <li>
+            <h3>語音記錄</h3>
+            <p>說出一個任務，它會被自動轉成文字並放進你的收集箱。</p>
+          </li>
+          <li>
+            <h3>番茄鐘專注</h3>
+            <p>專注檢視內建 15/3、25/5、50/10 計時器，還可以自訂一組。</p>
+          </li>
+          <li>
+            <h3>可複用清單</h3>
+            <p>複製任務或重置檢查清單，應對一遍遍重複的日常流程。</p>
+          </li>
+          <li>
+            <h3>彈性重複</h3>
+            <p>下一次日期在你完成後才計算，而不是按死板的固定週期。</p>
+          </li>
+        </ul>
+        <p class="feature-foot">
+          20 種語言 · 淺色與深色主題 · Vim 和 Emacs 鍵位 · Android 小工具 · 網頁版與離線支援
+        </p>
+        <p class="feature-see-all">
+          <a class="text-link" href="/zh-Hant/features">檢視全部功能 <span aria-hidden="true">→</span></a>
+        </p>
+      </section>
+
+      <section class="platforms" aria-labelledby="platforms-title">
+        <div class="platform-copy">
+          <h2 id="platforms-title">在哪工作都是原生體驗，隱私始終有保障。</h2>
+          <p>
+            在 macOS、Windows、Linux、iOS 和 Android 上使用 Mindwtr，還有可以部署在自己伺服器上的網頁版。
+          </p>
+        </div>
+        <div class="coverflow" role="group" aria-roledescription="carousel" aria-label="Mindwtr 檢視">
+          <div class="coverflow-stage">
+            <button type="button" class="coverflow-slide is-active" tabindex="-1" aria-label="顯示看板檢視">
+              <img src="/assets/screenshots/showcase-board.webp" alt="Mindwtr 看板檢視：收集箱、下一步行動、等待中、將來/也許四列" loading="lazy" />
+            </button>
+            <button type="button" class="coverflow-slide is-next" tabindex="-1" aria-label="顯示日曆檢視">
+              <img src="/assets/screenshots/showcase-calendar-plan.webp" alt="Mindwtr 日曆檢視，附「計劃下一步行動」側欄" loading="lazy" />
+            </button>
+            <button type="button" class="coverflow-slide" tabindex="-1" aria-label="顯示深色模式">
+              <img src="/assets/screenshots/showcase-dark.webp" alt="深色模式下的 Mindwtr 專注檢視" loading="lazy" />
+            </button>
+            <button type="button" class="coverflow-slide is-prev" tabindex="-1" aria-label="顯示行動版應用">
+              <img src="/assets/screenshots/showcase-mobile.webp" alt="Android 版 Mindwtr：快速新增任務與帶分組的專案" loading="lazy" />
+            </button>
+          </div>
+          <div class="coverflow-controls">
+            <button type="button" class="coverflow-arrow" data-dir="-1" aria-label="上一個檢視">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+            </button>
+            <div class="coverflow-dots" role="group" aria-label="選擇一個檢視">
+              <button type="button" class="coverflow-dot is-active" aria-label="看板檢視" aria-current="true"></button>
+              <button type="button" class="coverflow-dot" aria-label="日曆檢視"></button>
+              <button type="button" class="coverflow-dot" aria-label="深色模式"></button>
+              <button type="button" class="coverflow-dot" aria-label="行動版"></button>
+            </div>
+            <button type="button" class="coverflow-arrow" data-dir="1" aria-label="下一個檢視">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust section-band" aria-labelledby="trust-title">
+        <div class="section-copy">
+          <h2 id="trust-title">無需帳號，沒有訂閱壓力。</h2>
+          <p>
+            任務儲存在你的裝置上——斷網也不會丟，也沒有任何公司握著你的資料。同步預設關閉，開不開、同步到哪裡都由你決定。
+          </p>
+        </div>
+        <div class="trust-grid">
+          <article>
+            <h3>開源</h3>
+            <p>全部程式碼公開，任何人都能看到這款應用在做什麼，也可以幫它變得更好。</p>
+          </article>
+          <article>
+            <h3>資料在你的裝置上</h3>
+            <p>任務、筆記、專案和附件都跟著你走，不在我們的伺服器上。</p>
+          </article>
+          <article>
+            <h3>同步方式由你定</h3>
+            <p>iCloud、Dropbox、共享資料夾、WebDAV，或你自己的伺服器。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="compare section-band" id="compare" aria-labelledby="compare-title">
+        <div class="section-copy">
+          <h2 id="compare-title">完整的 GTD 系統，不把你鎖在裡面。</h2>
+          <p>
+            基於各產品當前公開功能的一份簡短、客觀的對比。
+          </p>
+        </div>
+        <p class="compare-legend">
+          <span><i class="lg-yes"></i> 是</span>
+          <span><i class="lg-partial"></i> 部分</span>
+          <span><i class="lg-no"></i> 否</span>
+        </p>
+        <div class="compare-wrap">
+          <table class="compare-table">
+            <caption class="sr-only">Mindwtr 與 Todoist、TickTick、Everdo、NirvanaHQ 的功能對比</caption>
+            <thead>
+              <tr>
+                <th scope="col">功能</th>
+                <th scope="col" class="col-me">Mindwtr</th>
+                <th scope="col">Todoist</th>
+                <th scope="col">TickTick</th>
+                <th scope="col">Everdo</th>
+                <th scope="col">Nirvana</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">開源</th>
+                <td class="col-me yes" aria-label="是"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="no" aria-label="否"></td>
+              </tr>
+              <tr>
+                <th scope="row">開箱即用的完整 GTD 方法</th>
+                <td class="col-me yes" aria-label="是"></td>
+                <td class="partial" aria-label="部分"></td>
+                <td class="partial" aria-label="部分"></td>
+                <td class="yes" aria-label="是"></td>
+                <td class="yes" aria-label="是"></td>
+              </tr>
+              <tr>
+                <th scope="row">全平台支援，包括 Linux</th>
+                <td class="col-me yes" aria-label="是"></td>
+                <td class="yes" aria-label="是"></td>
+                <td class="yes" aria-label="是"></td>
+                <td class="yes" aria-label="是"></td>
+                <td class="partial" aria-label="部分"></td>
+              </tr>
+              <tr>
+                <th scope="row">離線可用</th>
+                <td class="col-me yes" aria-label="是"></td>
+                <td class="yes" aria-label="是"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="yes" aria-label="是"></td>
+                <td class="no" aria-label="否"></td>
+              </tr>
+              <tr>
+                <th scope="row">無需帳號</th>
+                <td class="col-me yes" aria-label="是"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="yes" aria-label="是"></td>
+                <td class="no" aria-label="否"></td>
+              </tr>
+              <tr>
+                <th scope="row">自備 AI API 金鑰或本地模型</th>
+                <td class="col-me yes" aria-label="是"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="no" aria-label="否"></td>
+              </tr>
+              <tr>
+                <th scope="row">資料同步到哪裡由你選（Dropbox、WebDAV、你的伺服器）</th>
+                <td class="col-me yes" aria-label="是"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="partial" aria-label="部分"></td>
+                <td class="no" aria-label="否"></td>
+              </tr>
+              <tr>
+                <th scope="row">完全免費</th>
+                <td class="col-me yes" aria-label="是"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="no" aria-label="否"></td>
+                <td class="no" aria-label="否"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="compare-notes">
+          <p>
+            <strong>方法。</strong>本表於 <time datetime="2026-07-21">2026 年 7 月 21 日</time>
+            根據各產品的官方介紹、價格、下載和幫助頁面核對。「完整 GTD」要求收件箱、下一步、等待、
+            將來／也許、回顧和順序專案均為原生功能。「全平台」要求 Linux、macOS、Windows、iOS 和
+            Android 均有原生應用。「否」表示官方資料未說明該能力；「部分」表示只支援其中一部分。來源：
+            <a href="https://docs.mindwtr.app/zh-Hant/start/what-mindwtr-is">Mindwtr</a>、
+            <a href="https://www.todoist.com/pricing">Todoist 方案</a>、
+            <a href="https://www.todoist.com/downloads">應用</a>和
+            <a href="https://www.todoist.com/help/articles/use-todoist-while-offline-4rbaZw">離線模式</a>、
+            <a href="https://www.ticktick.com/upgrade">TickTick 方案</a>和
+            <a href="https://ticktick.com/download">應用</a>、
+            <a href="https://everdo.net/">Everdo</a>，以及
+            <a href="https://www.nirvanahq.com/pricing">Nirvana</a>。
+          </p>
+          <p>
+            <strong>適用範圍。</strong>Mindwtr 適合需要完整個人 GTD 流程、本地資料和自主選擇同步方式的人。
+            它不提供共享工作區、任務指派或團隊討論。
+            <a href="https://docs.mindwtr.app/zh-Hant/start/what-mindwtr-is">檢視產品邊界。</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="power" aria-labelledby="power-title">
+        <h2 id="power-title">自動化和 AI 始終是可選項。</h2>
+        <p>
+          接入你自己的 AI 帳號或本地模型，用桌面 API 寫指令碼，接入 MCP，或者自行部署同步伺服器。
+        </p>
+        <a class="text-link" href="https://docs.mindwtr.app/power-users/mcp">瀏覽高階使用者文件</a>
+      </section>
+
+      <section class="reviews section-band" aria-labelledby="reviews-title">
+        <svg class="reviews-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <symbol id="rv-github" viewBox="0 0 24 24"><path fill="#181717" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+          <symbol id="rv-reddit" viewBox="0 0 24 24"><path fill="#ff4500" d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12c-.69 0-1.25.561-1.25 1.249 0 .688.561 1.249 1.25 1.249.688 0 1.249-.561 1.249-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.249 0 .688.561 1.249 1.248 1.249.688 0 1.249-.561 1.249-1.249 0-.688-.561-1.249-1.249-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></symbol>
+          <symbol id="rv-discord" viewBox="0 0 24 24"><path fill="#5865f2" d="M20.317 4.3698a19.7913 19.7913 0 0 0-4.8851-1.5152.0741.0741 0 0 0-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 0 0-.0785-.037 19.7363 19.7363 0 0 0-4.8852 1.515.0699.0699 0 0 0-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 0 0 .0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 0 0 .0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 0 0-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 0 1-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 0 1 .0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 0 1 .0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 0 1-.0066.1276 12.2986 12.2986 0 0 1-1.873.8914.0766.0766 0 0 0-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 0 0 .0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 0 0 .0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 0 0-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></symbol>
+          <symbol id="rv-apple" viewBox="0 0 24 24"><path fill="#000000" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></symbol>
+          <symbol id="rv-googleplay" viewBox="0 0 24 24"><path fill="#00d3ff" d="M4 3 12.5 12 4 12Z"/><path fill="#00e676" d="M4 12 12.5 12 4 21Z"/><path fill="#ffce00" d="M4 3 21 12 12.5 12Z"/><path fill="#ff3d47" d="M12.5 12 21 12 4 21Z"/></symbol>
+        </svg>
+        <div class="section-copy">
+          <h2 id="reviews-title">深受真正踐行 GTD 的人喜愛。</h2>
+          <p>
+            來自 GitHub、Reddit、App Store、Google Play 和 Discord 的真實評價 &mdash; 只做刪減，從不改寫，保留英文原文。
+          </p>
+          <p class="proof-strip">GitHub __GITHUB_STARS__ 星標 · 20 種語言 · macOS · Windows · Linux · iOS · Android</p>
+        </div>
+        <div class="reviews-masonry">
+          <figure class="review">
+            <blockquote lang="en">This is by far the best GTD software I’ve used including two paid subscription ones. Cannot emphasize that enough.</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">James</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-discord"/></svg>Discord</span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <p class="review-stars" role="img" aria-label="評分 5 星（滿分 5 星）">&starf;&starf;&starf;&starf;&starf;</p>
+            <blockquote lang="en">By default this app only shows the task being worked on instead of everything at once! This is amazing for not getting distracted by massive todo lists. &hellip; Also, this is local-only by default, with option to turn on iCloud and other syncs. Simple without all the extra junk no one actually uses. And no garbage AI!</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">Hamstercannon</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-apple"/></svg>App Store</span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <p class="review-stars" role="img" aria-label="評分 5 星（滿分 5 星）">&starf;&starf;&starf;&starf;&starf;</p>
+            <blockquote lang="en">Just what I have been looking for: GTD at its best, local first, no cloud, no costs.</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">Philip</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-googleplay"/></svg>Google Play</span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote lang="en">Exactly the kind of to-do app I’ve been looking for for so long. For Android, Linux, and macOS. Excellent data protection. Offline. Clear, minimalist design without looking ugly. And then it’s also free and open source&hellip;</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">Dads-finest</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-reddit"/></svg>Reddit</span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <p class="review-stars" role="img" aria-label="評分 5 星（滿分 5 星）">&starf;&starf;&starf;&starf;&starf;</p>
+            <blockquote lang="en">Pretty solid cross-platform GTD app with various sync options. Not perfect, but very close to it, and the developer is super responsive.</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">Srijan</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-googleplay"/></svg>Google Play</span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote lang="en">I yearned for GTD again and just cannot go back to Notion &hellip; I looked for 'Todoist open source' alternative and found this recent post. So grateful I did. I added a few tasks and &hellip; this feels fantastic!</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">NicoLargi</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-reddit"/></svg>Reddit</span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <p class="review-stars" role="img" aria-label="評分 5 星（滿分 5 星）">&starf;&starf;&starf;&starf;&starf;</p>
+            <blockquote lang="en">The best digital fast-capture GTD-oriented app I’ve ever used and rapidly improving all the time, and will always be free thanks to the creator’s licensing philosophy.</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">Jonathan</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-googleplay"/></svg>Google Play</span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <p class="review-stars" role="img" aria-label="評分 5 星（滿分 5 星）">&starf;&starf;&starf;&starf;&starf;</p>
+            <blockquote lang="en">A revolutionary task manager application, I can note down anything, and process it later, encouraging me to think freely&hellip;</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">Richardo</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-googleplay"/></svg>Google Play<span class="review-note">翻譯</span></span>
+            </figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote lang="en">I have used several TODO/Task apps in the past and have not much success with them i.e. I never Got Things Done! I have used Mindwtr for a few weeks now and I am very impressed and have actually managed to get a few things done.</blockquote>
+            <figcaption class="review-by">
+              <span class="review-name">gum-leaf</span>
+              <span class="review-src"><svg class="review-glyph" aria-hidden="true"><use href="#rv-github"/></svg>GitHub</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="download section-band" id="download" aria-labelledby="download-title">
+        <div class="section-copy">
+          <h2 id="download-title">下載 Mindwtr</h2>
+          <p>選擇適合你裝置的安裝方式。應用商店一鍵安裝，也提供包管理器和直接下載的安裝檔案。</p>
+        </div>
+        <ul class="proof-list" aria-label="每個下載渠道都包含">
+          <li>永久免費</li>
+          <li>離線可用</li>
+          <li>無需帳號</li>
+        </ul>
+        <div class="download-platforms" aria-label="按平台下載 Mindwtr">
+          <article class="dl-platform" id="download-mac" data-platform="mac">
+            <header class="dl-platform-head">
+              <h3>macOS</h3>
+              <span class="dl-recommended" hidden>為你推薦</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge apple" href="https://apps.apple.com/app/mindwtr/id6758597144">
+                <img src="/assets/badges/app-store.svg" alt="在 Mac App Store 下載" width="120" height="40" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下載 <code>.dmg</code> <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+            <details class="dl-more">
+              <summary>命令列與測試版</summary>
+              <ul class="dl-options">
+                <li class="dl-cmd-row">
+                  <code class="dl-cmd">brew install --cask mindwtr</code>
+                  <button type="button" class="dl-copy" data-copy="brew install --cask mindwtr" aria-label="複製 Homebrew 命令" hidden>複製</button>
+                </li>
+                <li>
+                  <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">加入 TestFlight 測試版 <span aria-hidden="true">→</span></a>
+                </li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="dl-platform" id="download-windows" data-platform="windows">
+            <header class="dl-platform-head">
+              <h3>Windows</h3>
+              <span class="dl-recommended" hidden>為你推薦</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge microsoft" href="https://apps.microsoft.com/detail/9n0v5b0b6frx">
+                <img src="/assets/badges/microsoft-store.svg" alt="從 Microsoft Store 取得" width="161" height="44" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下載 <code>.exe</code> · 便攜版 <code>.zip</code> <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+            <details class="dl-more">
+              <summary>命令列</summary>
+              <ul class="dl-options">
+                <li class="dl-cmd-row">
+                  <code class="dl-cmd">winget install dongdongbh.Mindwtr</code>
+                  <button type="button" class="dl-copy" data-copy="winget install dongdongbh.Mindwtr" aria-label="複製 winget 命令" hidden>複製</button>
+                </li>
+              </ul>
+            </details>
+            <p class="dl-note">Windows 程式碼簽名進展：<a href="/signing">程式碼簽名政策</a>。</p>
+          </article>
+
+          <article class="dl-platform" id="download-linux" data-platform="linux">
+            <header class="dl-platform-head">
+              <h3>Linux</h3>
+              <span class="dl-recommended" hidden>為你推薦</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge flathub" href="https://flathub.org/apps/tech.dongdongbh.mindwtr">
+                <img src="/assets/badges/flathub.png" alt="在 Flathub 取得" width="240" height="80" />
+              </a>
+              <a class="store-badge snap" href="https://snapcraft.io/mindwtr">
+                <img src="/assets/badges/snap-store.svg" alt="從 Snap Store 取得" width="182" height="56" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下載 <code>AppImage</code> · <code>.deb</code> · <code>.rpm</code> <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+            <details class="dl-more">
+              <summary>命令列與其他安裝方式</summary>
+              <ul class="dl-options">
+                <li class="dl-cmd-row">
+                  <code class="dl-cmd">flatpak install flathub tech.dongdongbh.mindwtr</code>
+                  <button type="button" class="dl-copy" data-copy="flatpak install flathub tech.dongdongbh.mindwtr" aria-label="複製 Flatpak 命令" hidden>複製</button>
+                </li>
+                <li>
+                  <a class="dl-aside" href="https://docs.mindwtr.app/start/desktop-installation">AUR、APT 與 DNF 軟體源、從原始碼建置 <span aria-hidden="true">→</span></a>
+                </li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="dl-platform" id="download-ios" data-platform="ios">
+            <header class="dl-platform-head">
+              <h3>iOS 與 iPadOS</h3>
+              <span class="dl-recommended" hidden>為你推薦</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge apple" href="https://apps.apple.com/app/mindwtr/id6758597144">
+                <img src="/assets/badges/app-store.svg" alt="在 App Store 下載" width="120" height="40" />
+              </a>
+            </div>
+            <details class="dl-more">
+              <summary>測試版入口</summary>
+              <ul class="dl-options">
+                <li>
+                  <a class="dl-aside" href="https://testflight.apple.com/join/7SMJCTSR">加入 TestFlight 測試版 <span aria-hidden="true">→</span></a>
+                </li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="dl-platform" id="download-android" data-platform="android">
+            <header class="dl-platform-head">
+              <h3>Android</h3>
+              <span class="dl-recommended" hidden>為你推薦</span>
+            </header>
+            <div class="dl-badges">
+              <a class="store-badge google" href="https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr">
+                <img src="/assets/badges/google-play.png" alt="在 Google Play 取得" width="646" height="250" />
+              </a>
+              <a class="store-badge fdroid" href="https://f-droid.org/en/packages/tech.dongdongbh.mindwtr/">
+                <img src="/assets/badges/f-droid.svg" alt="在 F-Droid 取得" width="646" height="250" />
+              </a>
+              <a class="store-badge izzy" href="https://apt.izzysoft.de/packages/tech.dongdongbh.mindwtr">
+                <img src="/assets/badges/izzyondroid.png" alt="在 IzzyOnDroid 取得" width="646" height="250" />
+              </a>
+            </div>
+            <ul class="dl-options">
+              <li>
+                <a class="dl-direct" href="https://github.com/dongdongbh/Mindwtr/releases/latest">直接下載 <code>.apk</code> <span aria-hidden="true">→</span></a>
+              </li>
+            </ul>
+            <details class="dl-more">
+              <summary>測試版入口</summary>
+              <ul class="dl-options">
+                <li>
+                  <a class="dl-aside" href="https://play.google.com/apps/testing/tech.dongdongbh.mindwtr">加入 Google Play 測試版 <span aria-hidden="true">→</span></a>
+                </li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="dl-platform dl-platform-all" data-platform="all">
+            <header class="dl-platform-head">
+              <h3>全部平台</h3>
+            </header>
+            <p class="dl-all-copy">每個版本的所有安裝包、軟體包、AppImage 和 APK 都在這裡。</p>
+            <a class="github-download" href="https://github.com/dongdongbh/Mindwtr/releases">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              <strong>GitHub Releases</strong>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>

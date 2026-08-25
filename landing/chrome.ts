@@ -12,7 +12,7 @@ import type { Plugin } from "vite";
 
 const ORIGIN = "https://mindwtr.app";
 
-export const LOCALES = ["en", "de", "es", "fr", "zh"] as const;
+export const LOCALES = ["en", "de", "es", "fr", "zh-Hans", "zh-Hant"] as const;
 export type Locale = (typeof LOCALES)[number];
 
 // Pages that exist in every locale. English remains the source text for the
@@ -32,7 +32,8 @@ const HREFLANG: Record<Locale, string> = {
   de: "de",
   es: "es",
   fr: "fr",
-  zh: "zh-Hans"
+  "zh-Hans": "zh-Hans",
+  "zh-Hant": "zh-Hant"
 };
 
 const LANGUAGE_NAMES: Record<Locale, string> = {
@@ -40,7 +41,8 @@ const LANGUAGE_NAMES: Record<Locale, string> = {
   de: "Deutsch",
   es: "Español",
   fr: "Français",
-  zh: "简体中文"
+  "zh-Hans": "简体中文",
+  "zh-Hant": "繁體中文"
 };
 
 // Short label shown on the closed header dropdown.
@@ -49,7 +51,8 @@ const LANGUAGE_SHORT: Record<Locale, string> = {
   de: "DE",
   es: "ES",
   fr: "FR",
-  zh: "中文"
+  "zh-Hans": "简中",
+  "zh-Hant": "繁中"
 };
 
 const DOCS_PATH: Record<Locale, string> = {
@@ -57,7 +60,8 @@ const DOCS_PATH: Record<Locale, string> = {
   de: "https://docs.mindwtr.app/de/",
   es: "https://docs.mindwtr.app/es/",
   fr: "https://docs.mindwtr.app/fr/",
-  zh: "https://docs.mindwtr.app/zh-Hans/"
+  "zh-Hans": "https://docs.mindwtr.app/zh-Hans/",
+  "zh-Hant": "https://docs.mindwtr.app/zh-Hant/"
 };
 
 interface ChromeStrings {
@@ -165,7 +169,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
       "Company. Mindwtr n'est ni affilié à la David Allen Company, ni " +
       "approuvé ou sponsorisé par elle."
   },
-  zh: {
+  "zh-Hans": {
     features: "功能",
     gtd: "什么是 GTD",
     docs: "文档",
@@ -184,6 +188,26 @@ const STRINGS: Record<Locale, ChromeStrings> = {
       "Mindwtr 及 Mindwtr 标志是 Mindwtr 项目的商标。Getting Things Done 和 " +
       "GTD 是 David Allen Company 的注册商标。Mindwtr 与 David Allen Company " +
       "无任何隶属、认可或赞助关系。"
+  },
+  "zh-Hant": {
+    features: "功能",
+    gtd: "什麼是 GTD",
+    docs: "文件",
+    support: "支援",
+    download: "下載",
+    donate: "捐贈",
+    brand: "品牌",
+    privacy: "隱私",
+    homeAria: "Mindwtr 首頁",
+    primaryNavAria: "主導覽",
+    footerAria: "頁尾",
+    languageAria: "語言",
+    copyright: "自由開源（AGPL-3.0）",
+    socialImageAlt: "Mindwtr — 實踐 GTD，在地優先且開源。",
+    legal:
+      "Mindwtr 及 Mindwtr 標誌是 Mindwtr 專案的商標。Getting Things Done 和 " +
+      "GTD 是 David Allen Company 的註冊商標。Mindwtr 與 David Allen Company " +
+      "無任何隸屬、認可或贊助關係。"
   }
 };
 
@@ -207,9 +231,9 @@ function anchor(
 // First-visit language detection, injected only into English pages that have
 // translations. An explicit choice from the footer language switcher (stored
 // by main.ts) always wins; without one, visitors whose browser prefers a
-// language we ship are sent to that version once per page load. Traditional
-// Chinese readers are not redirected to Simplified — they fall through to
-// their next preferred language.
+// language we ship are sent to that version once per page load. Chinese
+// readers are routed by script: Hant/TW/HK/MO tags go to zh-Hant, everything
+// else zh to zh-Hans.
 const DETECT_SCRIPT = `    <script>
       (function () {
         try {
@@ -223,7 +247,7 @@ const DETECT_SCRIPT = `    <script>
             var code = String(langs[i]).toLowerCase();
             if (code.slice(0, 2) === "en") target = "en";
             else if (offered.indexOf(code.slice(0, 2)) !== -1) target = code.slice(0, 2);
-            else if (/^zh/.test(code) && !/hant|tw|hk|mo/.test(code)) target = "zh";
+            else if (/^zh/.test(code)) target = /hant|tw|hk|mo/.test(code) ? "zh-Hant" : "zh-Hans";
           }
           if (!target || target === "en") return;
           var path = "/" + target + (page[1] ? "/" + page[1] : "/");
@@ -238,7 +262,8 @@ const OG_LOCALE: Record<Locale, string> = {
   de: "de_DE",
   es: "es_ES",
   fr: "fr_FR",
-  zh: "zh_CN"
+  "zh-Hans": "zh_CN",
+  "zh-Hant": "zh_TW"
 };
 
 interface PageMeta {
@@ -342,7 +367,7 @@ function sharedHeadMeta(
   // path — preload it. Skipped on zh: its unicode-range excludes CJK, so the
   // Chinese pages never fetch the font and preloading it would be dead weight.
   const displayFont =
-    locale === "zh"
+    locale.startsWith("zh")
       ? ""
       : `    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/instrument-serif-latin.woff2" crossorigin />\n`;
   const alternateLocales = LOCALIZED_PAGES.has(pageName)
@@ -489,7 +514,8 @@ const STAR_LOCALE: Record<Locale, string> = {
   de: "de-DE",
   es: "es-ES",
   fr: "fr-FR",
-  zh: "zh-Hans-CN"
+  "zh-Hans": "zh-Hans-CN",
+  "zh-Hant": "zh-Hant-TW"
 };
 
 export function chrome(): Plugin {

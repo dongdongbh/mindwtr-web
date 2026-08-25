@@ -1,1 +1,4 @@
 /download /#download 302
+# /zh was the Simplified-only Chinese locale before zh-Hant shipped.
+/zh /zh-Hans 301
+/zh/* /zh-Hans/:splat 301

@@ -13,7 +13,7 @@ const PLATFORM_LABEL: Record<Platform, string> = {
   android: "Android",
 };
 
-type Locale = "en" | "de" | "es" | "fr" | "zh";
+type Locale = "en" | "de" | "es" | "fr" | "zh-Hans" | "zh-Hant";
 
 /**
  * The few strings this script writes into the page. Everything else is
@@ -25,12 +25,13 @@ const JS_STRINGS: Record<Locale, { downloadFor: (platform: string) => string; co
   de: { downloadFor: (p) => `Für ${p} herunterladen`, copied: "Kopiert" },
   es: { downloadFor: (p) => `Descargar para ${p}`, copied: "Copiado" },
   fr: { downloadFor: (p) => `Télécharger pour ${p}`, copied: "Copié" },
-  zh: { downloadFor: (p) => `下载 ${p} 版`, copied: "已复制" },
+  "zh-Hans": { downloadFor: (p) => `下载 ${p} 版`, copied: "已复制" },
+  "zh-Hant": { downloadFor: (p) => `下載 ${p} 版`, copied: "已複製" },
 };
 
 function pageLocale(): Locale {
   const lang = (document.documentElement.lang || "en").toLowerCase();
-  if (lang.startsWith("zh")) return "zh";
+  if (lang.startsWith("zh")) return lang.includes("hant") ? "zh-Hant" : "zh-Hans";
   const short = lang.slice(0, 2);
   return short in JS_STRINGS ? (short as Locale) : "en";
 }

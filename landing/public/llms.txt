@@ -8,6 +8,7 @@ Mindwtr works offline, requires no account, and keeps primary task data on the u
 
 - [Mindwtr home](https://mindwtr.app/): Product summary, screenshots, platform downloads, and comparison table.
 - [Features](https://mindwtr.app/features): GTD workflow, views, sync, automation, integrations, and supported platforms.
+- [Comparison](https://mindwtr.app/compare): Mindwtr vs Todoist, TickTick, Everdo, and Nirvana — sourced capability table, account/offline/data-ownership answers, scope boundaries, and FAQ.
 - [What is GTD?](https://mindwtr.app/gtd): Plain-language introduction to Getting Things Done and its five-step workflow.
 - [Support](https://mindwtr.app/support): Help routes, bug reporting, feature requests, and community links.
 - [Privacy policy](https://mindwtr.app/privacy): Data handling for the website and applications.

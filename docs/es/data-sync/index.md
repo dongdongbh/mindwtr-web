@@ -692,7 +692,7 @@ La estructura del archivo `data.json`:
 
 La sincronización de archivos, WebDAV y Dropbox se pueden proteger con una frase de contraseña que tú elijas. Todo lo que Mindwtr escribe en el destino de sincronización — el archivo de datos, sus copias de seguridad e instantáneas de recuperación y los archivos adjuntos — se cifra en tu dispositivo antes de escribirlo o subirlo, con AES-256-GCM y una clave derivada de tu frase de contraseña mediante Argon2id. Los archivos cifrados llevan la marca `.enc` en su nombre; los adjuntos conservan sus nombres y contienen bytes cifrados. La fusión y lo que cada dispositivo muestra en la aplicación no cambian.
 
-Se activa en **Ajustes → Sincronización → Cifrado**, apartado que aparece mientras uno de esos tres backends está seleccionado. Desde el mismo sitio se cambia la frase de contraseña o se desactiva el cifrado. Cada una de esas operaciones reescribe todo el destino de sincronización y continúa donde se quedó si se interrumpe.
+Se activa en **Ajustes → Sincronización → Cifrado**, apartado que aparece mientras uno de esos tres backends está seleccionado. Desde el mismo sitio se cambia la frase de contraseña o se desactiva el cifrado. Cada una de esas operaciones reescribe todo el destino de sincronización y continúa donde se quedó si se interrumpe. La frase de contraseña también puede definirse antes de la primera sincronización: la clave se guarda en el dispositivo y la primera sincronización sube todo ya cifrado.
 
 Léelo antes de activarlo:
 

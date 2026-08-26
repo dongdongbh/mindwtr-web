@@ -692,7 +692,7 @@ The `data.json` file structure:
 
 File Sync, WebDAV, and Dropbox can be protected with a passphrase you choose. Everything Mindwtr writes to the sync location — the data file, its backups and recovery snapshots, and attachments — is encrypted on your device before it is written or uploaded, using AES-256-GCM with a key derived from your passphrase with Argon2id. Encrypted files carry an `.enc` marker in their name; attachments keep their names and hold encrypted bytes. Merging and what each device shows in the app are unchanged.
 
-Turn it on in **Settings → Sync → Encryption**, which appears while one of those three backends is selected. The same place changes the passphrase or turns encryption off again. Each of those rewrites everything in the sync location and picks up where it left off if it is interrupted.
+Turn it on in **Settings → Sync → Encryption**, which appears while one of those three backends is selected. The same place changes the passphrase or turns encryption off again. Each of those rewrites everything in the sync location and picks up where it left off if it is interrupted. You can also set the passphrase before ever running a sync — the key is stored on the device, and the first sync then uploads everything already encrypted.
 
 Read these before you enable it:
 

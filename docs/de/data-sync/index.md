@@ -693,7 +693,7 @@ Struktur von `data.json`:
 
 Dateisynchronisierung, WebDAV und Dropbox lassen sich mit einer selbst gewählten Passphrase schützen. Alles, was Mindwtr an den Sync-Ort schreibt — die Datendatei, ihre Sicherungen und Wiederherstellungsmomentaufnahmen sowie die Anhänge —, wird vor dem Schreiben oder Hochladen auf Ihrem Gerät verschlüsselt, mit AES-256-GCM und einem Schlüssel, der per Argon2id aus Ihrer Passphrase abgeleitet wird. Verschlüsselte Dateien tragen die Kennung `.enc` im Namen; Anhänge behalten ihre Namen und enthalten verschlüsselte Bytes. Die Zusammenführung und das, was jedes Gerät in der App anzeigt, bleiben unverändert.
 
-Aktiviert wird sie unter **Einstellungen → Synchronisierung → Verschlüsselung**; der Bereich erscheint, solange eines dieser drei Backends ausgewählt ist. An derselben Stelle ändern Sie die Passphrase oder schalten die Verschlüsselung wieder ab. Jeder dieser Vorgänge schreibt alles am Sync-Ort neu und setzt nach einer Unterbrechung dort fort, wo er aufgehört hat.
+Aktiviert wird sie unter **Einstellungen → Synchronisierung → Verschlüsselung**; der Bereich erscheint, solange eines dieser drei Backends ausgewählt ist. An derselben Stelle ändern Sie die Passphrase oder schalten die Verschlüsselung wieder ab. Jeder dieser Vorgänge schreibt alles am Sync-Ort neu und setzt nach einer Unterbrechung dort fort, wo er aufgehört hat. Die Passphrase lässt sich auch schon vor der allerersten Synchronisierung festlegen — der Schlüssel wird auf dem Gerät gespeichert, und die erste Synchronisierung lädt dann alles bereits verschlüsselt hoch.
 
 Lesen Sie dies, bevor Sie sie aktivieren:
 

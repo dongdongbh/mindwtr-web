@@ -692,7 +692,7 @@ Structure du fichier `data.json` :
 
 La synchronisation de fichiers, WebDAV et Dropbox peuvent être protégés par une phrase secrète de votre choix. Tout ce que Mindwtr écrit dans la destination de synchronisation — le fichier de données, ses sauvegardes et instantanés de récupération ainsi que les pièces jointes — est chiffré sur votre appareil avant d'être écrit ou envoyé, avec AES-256-GCM et une clé dérivée de votre phrase secrète par Argon2id. Les fichiers chiffrés portent la marque `.enc` dans leur nom ; les pièces jointes gardent leur nom et contiennent des octets chiffrés. La fusion et ce que chaque appareil affiche dans l'application restent inchangés.
 
-Activez-le dans **Réglages → Synchronisation → Chiffrement**, une section qui apparaît tant que l'un de ces trois backends est sélectionné. C'est au même endroit que l'on change la phrase secrète ou que l'on désactive le chiffrement. Chacune de ces opérations réécrit tout le contenu de la destination de synchronisation et reprend là où elle s'est arrêtée si elle est interrompue.
+Activez-le dans **Réglages → Synchronisation → Chiffrement**, une section qui apparaît tant que l'un de ces trois backends est sélectionné. C'est au même endroit que l'on change la phrase secrète ou que l'on désactive le chiffrement. Chacune de ces opérations réécrit tout le contenu de la destination de synchronisation et reprend là où elle s'est arrêtée si elle est interrompue. La phrase secrète peut aussi être définie avant la toute première synchronisation — la clé est stockée sur l'appareil, et la première synchronisation envoie alors tout déjà chiffré.
 
 À lire avant de l'activer :
 

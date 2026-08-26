@@ -2223,6 +2223,28 @@ main > section:last-child {
     gap: 16px;
     font-size: 0.84rem;
   }
+
+  /* The full matrix on /compare carries eight product columns — too many to
+     squeeze onto a phone, so that one keeps its horizontal scroll. */
+  .compare-wrap--matrix {
+    overflow-x: auto;
+  }
+
+  .compare-wrap--matrix .compare-table {
+    min-width: 700px;
+    table-layout: auto;
+  }
+
+  .compare-wrap--matrix .compare-table th:first-child,
+  .compare-wrap--matrix .compare-table td:first-child {
+    width: auto;
+  }
+
+  .compare-wrap--matrix .compare-table thead th {
+    font-size: 0.78rem;
+    white-space: nowrap;
+    overflow-wrap: normal;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- chrome: shared head meta, header, and footer are injected at build time by chrome.ts -->
+    <meta
+      name="description"
+      content="Why productivity systems get abandoned, and what makes one survivable. A plain look at GTD with ADHD, and what to ask of a todo app for ADHD."
+    />
+    <meta property="og:title" content="Todo Apps and ADHD: What Makes GTD Stick — Mindwtr" />
+    <meta
+      property="og:description"
+      content="What makes a task system survivable when attention and working memory are unreliable — and what that asks of the app."
+    />
+    <title>Todo Apps and ADHD: What Makes GTD Stick — Mindwtr</title>
+  </head>
+  <body>
+
+    <main>
+      <section class="support-hero" aria-labelledby="adhd-title">
+        <h1 id="adhd-title">Task apps, GTD, and ADHD</h1>
+        <p class="support-lead">
+          Most people arrive at a page like this with a graveyard behind them:
+          two or three apps, a bullet journal, a whiteboard, and a system that
+          worked beautifully for eleven days. This page is about task-manager
+          design, not medical advice — what makes a system survivable when
+          attention and working memory are unreliable, and what that asks of
+          the software.
+        </p>
+      </section>
+
+      <section class="philosophy section-band" aria-labelledby="adhd-graveyard-title">
+        <h2 id="adhd-graveyard-title">The system asked for too much.</h2>
+        <p class="philosophy-lead">
+          When a productivity system gets abandoned, the usual reading is that
+          the person lacked discipline. The more accurate reading is that the
+          system was charging more than it paid out. Every system has an upkeep
+          cost — tags to maintain, priorities to re-score, a planning ritual
+          every morning, a hierarchy to keep tidy. When the cost lands up front
+          and the benefit arrives later, the whole thing is fragile for
+          everyone. It is the first thing to go when a week gets loud.
+        </p>
+        <p class="philosophy-lead">
+          The second cost is quieter. After a lapse, the list reads as a record
+          of what you didn’t do: forty overdue items in red, each one an
+          accusation. Re-opening it is unpleasant enough that you don’t, and
+          the gap widens. Plenty of systems are pleasant to start and punishing
+          to return to. That is a flaw in the design, not in you.
+        </p>
+      </section>
+
+      <section class="features-group section-band" aria-labelledby="adhd-survivable-title">
+        <div class="section-copy">
+          <h2 id="adhd-survivable-title">What makes a system survivable</h2>
+          <p>
+            Whatever tool you use — paper, plain text, an app — these four
+            properties tend to separate the systems that last from the ones in
+            the graveyard.
+          </p>
+        </div>
+        <ul class="help-grid">
+          <li>
+            <h3>Capture faster than the thought evaporates</h3>
+            <p>An idea has a shelf life measured in seconds. If writing it down takes unlocking, launching, navigating, and choosing a project first, it doesn’t get written down — and a system that isn’t fed stops being worth opening.</p>
+          </li>
+          <li>
+            <h3>One next step, not the whole mountain</h3>
+            <p>A project shown in full is a wall. Ask for the single physical action rather than the state of the whole kitchen, and keep everything else out of sight while you answer.</p>
+          </li>
+          <li>
+            <h3>External memory, because held memory runs out</h3>
+            <p>Even under careful laboratory conditions, estimates of how much a person can actively hold in mind land around four items (<a href="https://doi.org/10.1017/S0140525X01003922">Cowan, 2001</a>). Nobody has enough. The fix is to stop using memory for storage.</p>
+          </li>
+          <li>
+            <h3>Structure that survives a bad week</h3>
+            <p>You will lapse. Assume it, and judge a system by how cheap it is to re-enter. If picking it back up costs an evening of cleanup and a wall of red, the lapse becomes permanent.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="features-group section-band" aria-labelledby="adhd-mindwtr-title">
+        <div class="section-copy">
+          <h2 id="adhd-mindwtr-title">Where Mindwtr lines up</h2>
+          <p>
+            Mindwtr wasn’t designed for ADHD, and it would be dishonest to claim
+            otherwise. It was built to run GTD faithfully — but several of the
+            properties above happen to be the ones the method insists on, so
+            they’re in the app by inheritance.
+          </p>
+        </div>
+        <ul class="help-grid">
+          <li>
+            <h3>Capture in one gesture</h3>
+            <p>A home-screen widget on Android and iOS, a lock-screen widget, an Android Quick Settings tile, and a global hotkey on the desktop. Each opens straight into a text field. Everything lands in one Inbox; sorting is a separate job for later.</p>
+          </li>
+          <li>
+            <h3>Sequential projects show one action</h3>
+            <p>Put a project in sequential mode and only the first open task reaches your Focus and Next Actions lists. The remaining steps stay recorded in the project, marked <em>Later in sequence</em>, so nothing is lost and nothing is in the way.</p>
+          </li>
+          <li>
+            <h3>Contexts cut the list down</h3>
+            <p><a href="https://docs.mindwtr.app/use/contexts-tags">Contexts</a> filter by what you have right now — at a computer, out running errands, phone in hand. Fewer visible options is the point; deciding is the expensive part.</p>
+          </li>
+          <li>
+            <h3>Reminders that fire on your device</h3>
+            <p>Notifications are scheduled locally by the app. No account, no server, and no network needed — they work on a plane, in a basement, and on a phone that hasn’t seen wifi all day.</p>
+          </li>
+          <li>
+            <h3>A Weekly Review built for re-entry</h3>
+            <p>The <a href="https://docs.mindwtr.app/use/weekly-review">guided Weekly Review</a> walks through your lists and asks what’s still real. It is the designed way back in after a bad fortnight: a tidy-up pass rather than a reckoning.</p>
+          </li>
+          <li>
+            <h3>Free, so a lapse can’t cost you the system</h3>
+            <p>Completely free and open source under AGPL-3.0, with no account and no subscription. Nobody locks your list behind a renewal you forgot, and your tasks sit in a local SQLite file you can copy like any other file.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="philosophy section-band" aria-labelledby="adhd-limits-title">
+        <h2 id="adhd-limits-title">What an app can’t do.</h2>
+        <p class="philosophy-lead">
+          No software makes executive function reliable. A task manager can
+          lower the cost of a handful of specific actions — writing something
+          down, finding the next step, remembering at the right moment. It
+          cannot supply the start, and anyone promising otherwise is selling
+          something.
+        </p>
+        <p class="philosophy-lead">
+          So take the parts that help and leave the rest. On some days an index
+          card with three lines on it will beat any app ever written, and that
+          is a good outcome. You also don’t need the whole method: an
+          Inbox you trust and a list of genuine next actions is already a
+          working system, and the rest of GTD can wait indefinitely. And
+          nothing on this page is advice about ADHD itself — that’s a
+          conversation for people who know your situation.
+        </p>
+      </section>
+
+      <section class="philosophy section-band" aria-labelledby="adhd-reading-title">
+        <h2 id="adhd-reading-title">Keep reading</h2>
+        <p class="philosophy-lead">
+          <a href="/cognitive-overload">Cognitive overload</a> covers why a long
+          list costs you something by existing.
+          <a href="/gtd-psychology">The psychology of GTD</a> looks at what the
+          method does to the mind that holds it. And
+          <a href="/gtd">what is GTD?</a> is the five-minute version of the
+          method itself, if you’d rather start there.
+        </p>
+      </section>
+
+      <section class="features-cta" aria-labelledby="adhd-cta-title">
+        <h2 id="adhd-cta-title">Cheap to capture, cheap to come back to.</h2>
+        <div class="features-cta-actions">
+          <a class="button primary" href="/#download">Download Mindwtr</a>
+          <a class="button secondary" href="/features">See everything it does</a>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>

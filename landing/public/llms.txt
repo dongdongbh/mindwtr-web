@@ -8,11 +8,33 @@ Mindwtr works offline, requires no account, and keeps primary task data on the u
 
 - [Mindwtr home](https://mindwtr.app/): Product summary, screenshots, platform downloads, and comparison table.
 - [Features](https://mindwtr.app/features): GTD workflow, views, sync, automation, integrations, and supported platforms.
-- [Comparison](https://mindwtr.app/compare): Mindwtr vs Todoist, TickTick, Everdo, and Nirvana — sourced capability table, account/offline/data-ownership answers, scope boundaries, and FAQ.
+- [Comparison](https://mindwtr.app/compare): Full sourced matrix — Mindwtr vs Todoist, TickTick, Everdo, Nirvana, OmniFocus, Things 3, and Microsoft To Do — plus scope boundaries and FAQ.
 - [What is GTD?](https://mindwtr.app/gtd): Plain-language introduction to Getting Things Done and its five-step workflow.
+- [Mindwtr Handbook](https://mindwtr.app/handbook): Narrative overview of running a complete GTD system in Mindwtr, linking into the documentation.
 - [Support](https://mindwtr.app/support): Help routes, bug reporting, feature requests, and community links.
 - [Privacy policy](https://mindwtr.app/privacy): Data handling for the website and applications.
 - [Brand and trademark](https://mindwtr.app/brand): Official name, logo, and trademark guidance.
+
+## Comparisons
+
+- [Todoist alternative](https://mindwtr.app/todoist-alternative): Mindwtr vs Todoist — sourced head-to-head table, honest trade-offs, and the Todoist import path.
+- [TickTick alternative](https://mindwtr.app/ticktick-alternative): Mindwtr vs TickTick — free-plan limits, offline and account differences, and the TickTick import path.
+- [Everdo alternative](https://mindwtr.app/everdo-alternative): Mindwtr vs Everdo — two local-first GTD apps compared on license, price, and sync; CSV migration route.
+- [OmniFocus for Linux](https://mindwtr.app/omnifocus-for-linux): OmniFocus is Apple-only; Mindwtr on Linux, Windows, and Android, with a first-class OmniFocus importer.
+- [Free GTD app for Android](https://mindwtr.app/free-gtd-app-android): Mindwtr on Android vs Todoist and TickTick — Google Play, F-Droid, widgets, offline, no account.
+- [Todoist alternatives](https://mindwtr.app/todoist-alternatives): Roundup of Todoist alternatives profiled honestly — strengths, catches, pricing, and who each app fits.
+- [TickTick alternatives](https://mindwtr.app/ticktick-alternatives): Roundup of TickTick alternatives profiled honestly — strengths, catches, pricing, and who each app fits.
+- [Best free task manager](https://mindwtr.app/best-free-task-manager): What "free" actually means — free tiers, free products, and free software — across eight task managers.
+
+## Method guides
+
+- [Psychology of GTD](https://mindwtr.app/gtd-psychology): Why GTD works — open loops, working memory limits, external thinking, and review, with sourced citations.
+- [Zeigarnik effect](https://mindwtr.app/zeigarnik-effect): The interrupted-task effect, its mixed replication record, and the plan-making finding GTD builds on.
+- [Cognitive overload](https://mindwtr.app/cognitive-overload): Working memory capacity, cognitive load, attention residue, and how GTD reduces mental load.
+- [Distributed cognition](https://mindwtr.app/distributed-cognition): Thinking with external artifacts — Hutchins, the extended mind, and the requirements of a trusted system.
+- [GTD horizons of focus](https://mindwtr.app/gtd-horizons): The six horizons from next actions to purpose, and a review-based practice for goals and visions.
+- [Task apps and ADHD](https://mindwtr.app/adhd): What makes a task system survivable when attention and working memory are unreliable; not medical advice.
+- [Common GTD problems](https://mindwtr.app/gtd-problems): The walls long-term GTD practitioners hit — stalled reviews, bloated lists, dead contexts — and the method-level fixes.
 
 ## Documentation
 

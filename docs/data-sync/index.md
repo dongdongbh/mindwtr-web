@@ -285,7 +285,7 @@ Mindwtr can sync select preferences across devices. Configure in **Settings → 
 Available options include:
 - **Appearance** (theme)
 - **Language & date format**
-- **GTD preferences** (default schedule time and Focus task limit)
+- **GTD preferences** (default schedule time, Focus task limit, task editor layout)
 - **External calendar URLs** (ICS subscriptions)
 - **AI settings** (models/providers)
 - **Saved Filters** (Focus filter presets)

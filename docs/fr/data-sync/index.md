@@ -285,7 +285,7 @@ Mindwtr peut synchroniser certaines préférences entre les appareils. Configure
 Les options disponibles comprennent :
 - **Apparence** (thème)
 - **Langue et format de date**
-- **Préférences GTD** (heure de planification par défaut et limite de tâches dans Focus)
+- **Préférences GTD** (heure de planification par défaut, limite de tâches dans Focus et disposition de l’éditeur de tâches)
 - **URL de calendriers externes** (abonnements ICS)
 - **Réglages de l’IA** (modèles/fournisseurs)
 - **Filtres enregistrés** (préréglages de filtres Focus)

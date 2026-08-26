@@ -283,7 +283,7 @@ Mindwtr kann ausgewählte Einstellungen zwischen Geräten synchronisieren. Die K
 
 - **Darstellung** (Design)
 - **Sprache und Datumsformat**
-- **GTD-Einstellungen** (Standardplanungszeit und Fokuslimit)
+- **GTD-Einstellungen** (Standardplanungszeit, Fokuslimit, Editor-Layout)
 - **Externe Kalender-URLs** (ICS-Abonnements)
 - **KI-Einstellungen** (Modelle und Anbieter)
 - **Gespeicherte Filter** (Fokus-Filtervorgaben)

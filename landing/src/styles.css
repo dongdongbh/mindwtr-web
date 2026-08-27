@@ -165,7 +165,8 @@ body::before {
     radial-gradient(70% 48% at 82% 2%, var(--blue-a08), transparent 62%);
 }
 
-img {
+img,
+video {
   display: block;
   max-width: 100%;
 }
@@ -2444,7 +2445,8 @@ main > section:last-child {
   margin: 30px 0 0;
 }
 
-.feature-shot img {
+.feature-shot img,
+.feature-shot video {
   width: 100%;
   height: auto;
   border: 1px solid var(--line);
@@ -2650,7 +2652,8 @@ main > section:last-child {
   margin: clamp(26px, 3vw, 34px) 0;
 }
 
-.article-shot img {
+.article-shot img,
+.article-shot video {
   /* The width/height attributes are for layout reservation only — height must
      come back to auto or the attribute's pixel height sticks while max-width
      shrinks the width, stretching the image. */

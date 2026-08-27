@@ -177,6 +177,24 @@ function wireHeaderMorph(): void {
   ).observe(sentinel);
 }
 
+/**
+ * The demo clips autoplay because they read as animated stills, not as video.
+ * For anyone asking for reduced motion that reading is wrong, so the clip
+ * stops and grows controls — still there, just no longer moving on its own.
+ */
+function calmShotVideos(): void {
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  document
+    .querySelectorAll<HTMLVideoElement>(".article-shot video, .feature-shot video")
+    .forEach((video) => {
+      video.autoplay = false;
+      video.removeAttribute("autoplay");
+      video.controls = true;
+      video.pause();
+    });
+}
+
 function init(): void {
   applyPlatform(detectPlatform());
   wireCopyButtons();
@@ -184,6 +202,7 @@ function init(): void {
   wireHeaderMorph();
   initCoverflow();
   initLoopTour();
+  calmShotVideos();
 }
 
 if (document.readyState === "loading") {

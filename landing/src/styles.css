@@ -2643,18 +2643,11 @@ main > section:last-child {
    /features, one radius step down because the article column is less than
    half that page's width.
 
-   The one thing that breaks the column: a 1920px desktop capture shown at
-   the reading measure is illegible — the app's own text ends up at 4px. The
-   plate takes back up to 130px on each side where the viewport has it to
-   give, and collapses to the column exactly when the bleed would start
-   eating the page gutter. */
+   Figures sit exactly at the text measure — one aligned column. The bleed
+   this rule once carried existed for a 68ch measure; at 90ch the captures
+   are legible at column width. */
 .article-shot {
-  --shot-bleed: clamp(
-    0px,
-    calc((100vw - 2 * var(--page-gutter) - var(--article-measure)) / 2),
-    130px
-  );
-  margin: clamp(26px, 3vw, 34px) calc(-1 * var(--shot-bleed));
+  margin: clamp(26px, 3vw, 34px) 0;
 }
 
 .article-shot img {

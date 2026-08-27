@@ -67,6 +67,7 @@ const DOCS_PATH: Record<Locale, string> = {
 interface ChromeStrings {
   features: string;
   gtd: string;
+  guides: string;
   docs: string;
   support: string;
   download: string;
@@ -86,6 +87,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
   en: {
     features: "Features",
     gtd: "What is GTD",
+    guides: "Guides",
     docs: "Docs",
     support: "Support",
     download: "Download",
@@ -107,6 +109,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
   de: {
     features: "Funktionen",
     gtd: "Was ist GTD",
+    guides: "Ratgeber",
     docs: "Doku",
     support: "Support",
     download: "Download",
@@ -128,6 +131,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
   es: {
     features: "Funciones",
     gtd: "Qué es GTD",
+    guides: "Guías",
     docs: "Docs",
     support: "Soporte",
     download: "Descargar",
@@ -151,6 +155,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
     // itself still uses the full word.
     features: "Fonctions",
     gtd: "C'est quoi, GTD",
+    guides: "Guides",
     docs: "Docs",
     support: "Support",
     download: "Télécharger",
@@ -172,6 +177,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
   "zh-Hans": {
     features: "功能",
     gtd: "什么是 GTD",
+    guides: "指南",
     docs: "文档",
     support: "支持",
     download: "下载",
@@ -192,6 +198,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
   "zh-Hant": {
     features: "功能",
     gtd: "什麼是 GTD",
+    guides: "指南",
     docs: "文件",
     support: "支援",
     download: "下載",
@@ -462,6 +469,9 @@ function footer(locale: Locale, pagePath: string): string {
   const links = [
     { href: localePath(locale, "features"), label: t.features },
     { href: localePath(locale, "gtd"), label: t.gtd },
+    // The guides index is English-only, so every locale's footer points at
+    // the same /guides page.
+    { href: "/guides", label: t.guides },
     { href: DOCS_PATH[locale], label: t.docs },
     { href: "https://github.com/dongdongbh/Mindwtr", label: "GitHub" },
     { href: localePath(locale, "support"), label: t.support },

@@ -2505,8 +2505,9 @@ main > section:last-child {
 
 .article {
   /* One column for the prose, the figures and the closing CTA, so the eye
-     never has to re-find the left edge. ~72 characters at the body size. */
-  --article-measure: 68ch;
+     never has to re-find the left edge. ~82 characters at the body size —
+     the wide end of a comfortable reading measure, by request. */
+  --article-measure: 78ch;
 }
 
 .article .section-band,
@@ -2656,7 +2657,11 @@ main > section:last-child {
 }
 
 .article-shot img {
+  /* The width/height attributes are for layout reservation only — height must
+     come back to auto or the attribute's pixel height sticks while max-width
+     shrinks the width, stretching the image. */
   width: auto;
+  height: auto;
   max-width: 100%;
   /* Phone captures run past 2:1 tall — at the article measure an uncapped
      portrait shot is taller than the screen. Bounding the height lets the

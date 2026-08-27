@@ -2482,3 +2482,218 @@ main > section:last-child {
   gap: 14px;
   margin-top: 26px;
 }
+
+/* ---- Long-form articles (the method cluster) ----------------------------
+   /gtd-psychology, /zeigarnik-effect, /cognitive-overload,
+   /distributed-cognition, /adhd, /handbook, /gtd-horizons, /gtd-problems.
+
+   These pages are 1500-word essays written in the landing page's section
+   vocabulary — .philosophy bands, .section-copy, .help-grid. At landing
+   settings that vocabulary centres the text, sets headings at 4.4rem, and
+   caps the measure at 18ch, which is a pitch deck rather than something you
+   read for six minutes. Everything below is scoped under main.article, so
+   the landing, comparison and roundup pages keep exactly the look they have.
+
+   The shape: one measure-width column, left-aligned prose at reading
+   contrast, headings at document scale on the same display face as the
+   title, and the two landing bookends (title block, closing CTA) kept.
+
+   Mobile lives at the foot of this block rather than in the responsive
+   section above: every selector here carries .article on top of the class
+   that section targets, so it outranks it at any source position. Splitting
+   them would only mean the two never agree. */
+
+.article {
+  /* One column for the prose, the figures and the closing CTA, so the eye
+     never has to re-find the left edge. ~72 characters at the body size. */
+  --article-measure: 68ch;
+}
+
+.article .section-band,
+.article .features-cta {
+  width: min(var(--article-measure), calc(100% - var(--page-gutter)));
+}
+
+/* Padding on the top edge only — the space below a section is the last
+   paragraph's own margin, which keeps one rhythm instead of two stacking. */
+.article .section-band {
+  padding: clamp(30px, 3.6vw, 44px) 0 0;
+}
+
+/* Undo the centred grid. Bands with a pull quote centre and bands without
+   don't, which inside one document reads as two templates.
+   `justify-items` has to be reset with it, not just `display`: Chrome now
+   applies box alignment to block layout too, so the inherited `center` went
+   on shrink-wrapping and centring every heading in the quote-carrying bands
+   long after the grid was gone. */
+.article .philosophy {
+  display: block;
+  justify-items: normal;
+  text-align: left;
+}
+
+.article .section-copy {
+  display: block;
+  max-width: none;
+  margin-bottom: 20px;
+}
+
+/* Document headings, not band titles. The display face stays — it is the
+   same face as the h1 directly above and it is the site's voice — but it
+   comes down to a size you scan past rather than stop at, and loses the
+   22ch/18ch cap that was breaking headings into three ragged lines. */
+.article .section-band h2,
+.article .philosophy h2 {
+  max-width: none;
+  margin: 0 0 14px;
+  font-size: clamp(1.6rem, 3.6vw, 2.05rem);
+  line-height: 1.18;
+  letter-spacing: -0.006em;
+}
+
+/* --muted is a caption grey; over 1500 words it is tiring. Body copy moves
+   to --ink-soft and gets the looser leading long-form wants. */
+.article .philosophy .philosophy-lead,
+.article .philosophy-lead,
+.article .section-copy p {
+  max-width: none;
+  margin: 0 0 1.15em;
+  color: var(--ink-soft);
+  font-size: 1.06rem;
+  line-height: 1.68;
+}
+
+/* Seven of the eight pages write their citations and cross-links as a bare
+   <a>, which the global `color: inherit; text-decoration: none` renders as
+   plain body text — a DOI citation with no affordance at all. In a document
+   a link has to look like one. Weight stays at the body's, unlike
+   .text-link: bold links mid-sentence are speed bumps. */
+.article p a {
+  color: var(--blue-deep);
+  font-weight: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--blue-a30);
+  text-underline-offset: 4px;
+  transition: text-decoration-color var(--dur-short) var(--ease-out);
+}
+
+.article p a:hover {
+  text-decoration-color: var(--blue);
+}
+
+/* A quote at 2.6rem across a 20ch measure is a poster. Mid-argument it
+   should be an aside you can read at speed. */
+.article .philosophy-quote {
+  max-width: none;
+  margin: 26px 0 0;
+  padding-left: 20px;
+  border-left: 3px solid var(--blue-a30);
+  font-size: 1.22rem;
+  line-height: 1.45;
+  letter-spacing: -0.008em;
+}
+
+/* The hanging opening mark belongs to a display quote; with a rule down the
+   left it is one decoration too many. */
+.article .philosophy-quote::before {
+  content: none;
+}
+
+.article .quote-attrib {
+  margin: 10px 0 0;
+  padding-left: 23px;
+}
+
+/* Cards inside a document read as an interruption. The same list, ruled and
+   stacked, reads as part of the argument — and the enumerations here are
+   full sentences, not labels, so they want a measure rather than a column. */
+.article .help-grid {
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 4px 0 0;
+}
+
+.article .help-grid li {
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--line);
+}
+
+.article .help-grid h3 {
+  font-size: 1.02rem;
+}
+
+.article .help-grid p {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+.article code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  padding: 1px 5px;
+  border-radius: 6px;
+}
+
+/* Screenshot plates between paragraphs. Same frame as .feature-shot on
+   /features, one radius step down because the article column is less than
+   half that page's width.
+
+   The one thing that breaks the column: a 1920px desktop capture shown at
+   the reading measure is illegible — the app's own text ends up at 4px. The
+   plate takes back up to 130px on each side where the viewport has it to
+   give, and collapses to the column exactly when the bleed would start
+   eating the page gutter. */
+.article-shot {
+  --shot-bleed: clamp(
+    0px,
+    calc((100vw - 2 * var(--page-gutter) - var(--article-measure)) / 2),
+    130px
+  );
+  margin: clamp(26px, 3vw, 34px) calc(-1 * var(--shot-bleed));
+}
+
+.article-shot img {
+  width: auto;
+  max-width: 100%;
+  /* Phone captures run past 2:1 tall — at the article measure an uncapped
+     portrait shot is taller than the screen. Bounding the height lets the
+     width come down with it, so a phone shot sits as a plate in the column
+     rather than a tower through it. */
+  max-height: 74vh;
+  margin-inline: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-sm);
+}
+
+.article-shot figcaption {
+  margin-top: 12px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* The closing CTA stays the landing bookend it is — centred, two buttons —
+   sized to the column it follows, with a rule to close the document. */
+.article .features-cta {
+  margin-top: clamp(18px, 2.5vw, 28px);
+  padding: clamp(38px, 4.5vw, 52px) 0 clamp(40px, 5vw, 60px);
+  border-top: 1px solid var(--line);
+}
+
+.article .features-cta h2 {
+  max-width: none;
+  font-size: clamp(1.85rem, 4.4vw, 2.5rem);
+  line-height: 1.14;
+}
+
+@media (max-width: 720px) {
+  /* Match the 28px page gutter the responsive block gives every other band. */
+  .article .section-band,
+  .article .features-cta {
+    width: min(100% - 28px, var(--article-measure));
+  }
+}

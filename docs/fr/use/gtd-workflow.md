@@ -87,7 +87,9 @@ flowchart TD
     C -->|Corbeille| D[Supprimer]
     C -->|Idée future| E[Un jour/Peut-être]
     C -->|Référence| F[Ajouter aux notes]
+    C -->|Pas encore| N[Incuber jusqu’à une date → retour à cette clarification]
     B -->|Oui| P{Plus d’une étape ?}
+    B -->|Oui, mais pas encore| S[Commencer plus tard → date de début, Prochaines actions]
     P -->|Oui| Q[En faire un projet → nommez-le, puis sa prochaine action]
     P -->|Non| G{Moins de 2 min ?}
     G -->|Oui| H[Le faire maintenant → Terminé]
@@ -99,8 +101,8 @@ flowchart TD
 ### Points de décision
 
 **Une action est-elle nécessaire ?**
-- Non → Supprimez, déplacez vers Un jour/Peut-être ou ajoutez comme référence
-- Oui → Continuez
+- Non → Supprimez, ajoutez comme référence, déplacez vers Un jour/Peut-être, ou **Incubez** : choisissez une date et l’élément revient dans cette clarification pour que vous décidiez à nouveau
+- Oui → Continuez, ou **Commencer plus tard** pour donner une date de début à une action déjà décidée et la classer dans Prochaines actions
 
 **Faut-il plus d’une étape ?**
 - Oui → Transformez la capture en projet : nommez-le et définissez sa prochaine action. Ajoutez autant d’actions supplémentaires que nécessaire. Elles reviennent dans la Boîte de réception avec le projet déjà associé, afin que chacune passe par sa propre clarification

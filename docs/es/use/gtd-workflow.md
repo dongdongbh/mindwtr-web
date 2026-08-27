@@ -87,7 +87,9 @@ flowchart TD
     C -->|Papelera| D[Eliminar]
     C -->|Idea futura| E[Algún día/Quizá]
     C -->|Referencia| F[Añadir a las notas]
+    C -->|Todavía no| N[Incubar hasta una fecha → vuelve a esta fase]
     B -->|Sí| P{¿Más de un paso?}
+    B -->|Sí, pero no todavía| S[Empezar más tarde → fecha de inicio, Próximas acciones]
     P -->|Sí| Q[Convertirlo en proyecto → nómbralo y define su primera acción]
     P -->|No| G{¿Menos de 2 min?}
     G -->|Sí| H[Hacerlo ahora → Hecha]
@@ -99,8 +101,8 @@ flowchart TD
 ### Puntos de decisión
 
 **¿Es accionable?**
-- No → Eliminar, mover a Algún día/Quizá o añadir como referencia
-- Sí → Continuar
+- No → Eliminar, añadir como referencia, mover a Algún día/Quizá o **Incubar**: elige una fecha y el elemento vuelve a esta fase para que decidas de nuevo
+- Sí → Continuar, o **Empezar más tarde** para dar una fecha de inicio a una acción que ya has decidido y archivarla en Próximas acciones
 
 **¿Requiere más de un paso?**
 - Sí → Convierte la captura en un proyecto: ponle un nombre y define su próxima acción. Añade tantas acciones posteriores como necesites. Volverán a la Bandeja de entrada con el proyecto ya asociado, de modo que cada una tenga su propia fase de aclaración

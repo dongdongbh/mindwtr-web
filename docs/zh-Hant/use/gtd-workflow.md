@@ -87,7 +87,9 @@ flowchart TD
     C -->|Trash| D[Delete]
     C -->|Future idea| E[Someday/Maybe]
     C -->|Reference| F[Add to notes]
+    C -->|Not yet| N[Incubate until a date → back to this pass]
     B -->|Yes| P{More than one step?}
+    B -->|Yes, but not yet| S[Start later → start date, Next Actions]
     P -->|Yes| Q[Make it a project → name it, then its first next action]
     P -->|No| G{Less than 2 min?}
     G -->|Yes| H[Do it now → Done]
@@ -99,8 +101,8 @@ flowchart TD
 ### 決策點
 
 **可以採取行動嗎？**
-- 不行 → 刪除、移至「將來/也許」，或加入為參考資料
-- 可以 → 繼續
+- 不行 → 刪除、加入為參考資料、移至「將來/也許」，或選擇**孵化**：挑一個日期，屆時這則會回到本流程，讓你重新決定
+- 可以 → 繼續，或選擇**稍後開始**，為一件已經想清楚的行動設定開始日期並歸入「下一步行動」
 
 **需要多個步驟嗎？**
 - 是 → 將收集項目轉為專案：命名並定義下一步行動，再視需要加入更多後續行動。這些行動會在已連結專案的狀態下回到收集箱，讓每一項都能各自經過釐清流程

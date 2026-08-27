@@ -87,7 +87,9 @@ flowchart TD
     C -->|Trash| D[Delete]
     C -->|Future idea| E[Someday/Maybe]
     C -->|Reference| F[Add to notes]
+    C -->|Not yet| N[Incubate until a date → back to this pass]
     B -->|Yes| P{More than one step?}
+    B -->|Yes, but not yet| S[Start later → start date, Next Actions]
     P -->|Yes| Q[Make it a project → name it, then its first next action]
     P -->|No| G{Less than 2 min?}
     G -->|Yes| H[Do it now → Done]
@@ -99,8 +101,8 @@ flowchart TD
 ### Decision Points
 
 **Is it actionable?**
-- No → Delete, move to Someday/Maybe, or add as reference
-- Yes → Continue
+- No → Delete, add as reference, move to Someday/Maybe, or **Incubate**: pick a date and the item returns to this pass so you can decide again
+- Yes → Continue, or **Start later** to give an action you have already decided on a start date and file it under Next Actions
 
 **More than one step?**
 - Yes → Turn the capture into a project: name it and define its next action. Add as many further actions as you need. They land back in the Inbox with the project already attached, so each gets its own clarify pass

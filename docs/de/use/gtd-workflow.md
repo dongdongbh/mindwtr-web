@@ -87,7 +87,9 @@ flowchart TD
     C -->|Trash| D[Delete]
     C -->|Future idea| E[Someday/Maybe]
     C -->|Reference| F[Add to notes]
+    C -->|Not yet| N[Incubate until a date → back to this pass]
     B -->|Yes| P{More than one step?}
+    B -->|Yes, but not yet| S[Start later → start date, Next Actions]
     P -->|Yes| Q[Make it a project → name it, then its first next action]
     P -->|No| G{Less than 2 min?}
     G -->|Yes| H[Do it now → Done]
@@ -99,8 +101,8 @@ flowchart TD
 ### Entscheidungspunkte
 
 **Ist eine Handlung erforderlich?**
-- Nein → Löschen, nach „Irgendwann/Vielleicht“ verschieben oder als Referenz hinzufügen
-- Ja → Fortfahren
+- Nein → Löschen, als Referenz hinzufügen, nach „Irgendwann/Vielleicht“ verschieben oder **Inkubieren**: Wählen Sie ein Datum, an dem der Eintrag zu diesem Durchlauf zurückkehrt, damit Sie erneut entscheiden können
+- Ja → Fortfahren oder **Später beginnen**, um einer bereits entschiedenen Aktion ein Startdatum zu geben und sie nach „Nächste Aktionen“ zu legen
 
 **Mehr als ein Schritt?**
 - Ja → Wandeln Sie die Erfassung in ein Projekt um: Benennen Sie es und legen Sie die nächste Aktion fest. Fügen Sie beliebig viele weitere Aktionen hinzu. Sie landen mit bereits zugewiesenem Projekt wieder im Posteingang, sodass jede ihren eigenen Klärungsdurchlauf erhält.

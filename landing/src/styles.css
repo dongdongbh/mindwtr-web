@@ -2505,9 +2505,10 @@ main > section:last-child {
 
 .article {
   /* One column for the prose, the figures and the closing CTA, so the eye
-     never has to re-find the left edge. ~82 characters at the body size —
-     the wide end of a comfortable reading measure, by request. */
-  --article-measure: 78ch;
+     never has to re-find the left edge. ~95 characters at the body size —
+     deliberately wide, by request; wider than this and return sweeps get
+     hard to track. */
+  --article-measure: 90ch;
 }
 
 .article .section-band,

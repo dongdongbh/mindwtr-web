@@ -67,6 +67,17 @@ Captúralo todo. No filtres, juzgues ni organices. Sácalo de tu cabeza.
 - **Escritorio:** haz clic en el botón "Procesar bandeja de entrada"
 - **Móvil:** toca el botón "Procesar bandeja de entrada"
 
+### Afinar el título
+
+El título sigue siendo editable en cada paso del asistente y admite la misma sintaxis de adición rápida que la captura:
+
+- `@context`, `#tag`, `!Area`, `+Existing Project`, `%Person`
+- `/energy:`, `/start:`, `/due:`, `/review:`, `/note:`, `/link:`
+
+Los contextos y las etiquetas que escribas se suman a los que ya elegiste; nunca los sustituyen. Un comando de estado como `/waiting` se ignora al aclarar: el estado lo decide el destino que elijas en el flujo de trabajo. Un `+Name` que no coincida con ningún proyecto existente se queda en el título; aclarar nunca crea un proyecto a partir de un comando.
+
+En escritorio el cursor empieza en el título al abrir cada elemento, colocado al final del texto, para que tu primera pulsación afine la captura en lugar de sustituirla.
+
 ### El flujo de trabajo
 
 ```mermaid

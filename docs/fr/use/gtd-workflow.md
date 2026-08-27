@@ -67,6 +67,17 @@ Capturez tout. Ne filtrez, ne jugez et n’organisez rien. Sortez-le de votre t�
 - **Ordinateur :** cliquez sur le bouton « Traiter la boîte de réception »
 - **Mobile :** touchez le bouton « Traiter la boîte de réception »
 
+### Affiner le titre
+
+Le titre reste modifiable à chaque étape de l’assistant et comprend la même syntaxe d’ajout rapide que la capture :
+
+- `@context`, `#tag`, `!Area`, `+Existing Project`, `%Person`
+- `/energy:`, `/start:`, `/due:`, `/review:`, `/note:`, `/link:`
+
+Les contextes et les étiquettes saisis s’ajoutent à ceux déjà sélectionnés, ils ne les remplacent jamais. Une commande de statut comme `/waiting` est ignorée pendant la clarification : le statut est décidé par la destination choisie dans le flux. Un `+Name` qui ne correspond à aucun projet existant reste dans le titre ; la clarification ne crée jamais de projet à partir d’une commande.
+
+Sur ordinateur, le curseur se place dans le titre à l’ouverture de chaque élément, à la fin du texte, pour que votre première frappe affine la capture au lieu de la remplacer.
+
 ### Le flux
 
 ```mermaid

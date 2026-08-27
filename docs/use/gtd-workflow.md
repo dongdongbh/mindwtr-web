@@ -67,6 +67,17 @@ Capture everything. Don't filter, judge, or organize. Get it out of your head.
 - **Desktop:** Click "Process Inbox" button
 - **Mobile:** Tap "Process Inbox" button
 
+### Refining the Title
+
+The title stays editable through every step of the wizard, and it reads the same quick-add syntax as capture:
+
+- `@context`, `#tag`, `!Area`, `+Existing Project`, `%Person`
+- `/energy:`, `/start:`, `/due:`, `/review:`, `/note:`, `/link:`
+
+Typed contexts and tags are added to the ones you already picked, never swapped for them. A status token such as `/waiting` is ignored while clarifying — the destination you choose in the workflow decides the status. A `+Name` that matches no existing project stays in the title; clarifying never creates a project from a token.
+
+On desktop the cursor starts in the title as each item opens, placed at the end of the text, so your first keystroke refines the capture instead of replacing it.
+
 ### The Workflow
 
 ```mermaid

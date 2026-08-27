@@ -67,6 +67,17 @@ Erfassen Sie alles. Filtern, bewerten und organisieren Sie noch nicht. Holen Sie
 - **Desktop:** Klicken Sie auf „Posteingang verarbeiten“.
 - **Mobilgeräte:** Tippen Sie auf „Posteingang verarbeiten“.
 
+### Den Titel verfeinern
+
+Der Titel bleibt in jedem Schritt des Assistenten bearbeitbar und versteht dieselbe Schnell-hinzufügen-Syntax wie die Erfassung:
+
+- `@context`, `#tag`, `!Area`, `+Existing Project`, `%Person`
+- `/energy:`, `/start:`, `/due:`, `/review:`, `/note:`, `/link:`
+
+Eingetippte Kontexte und Schlagwörter kommen zu den bereits ausgewählten hinzu, sie ersetzen sie nie. Ein Statusbefehl wie `/waiting` wird beim Klären ignoriert — über den Status entscheidet das Ziel, das Sie im Arbeitsablauf wählen. Ein `+Name`, zu dem es kein Projekt gibt, bleibt im Titel stehen; beim Klären entsteht aus einem Befehl nie ein Projekt.
+
+Auf dem Desktop steht der Cursor beim Öffnen jedes Eintrags im Titel, am Ende des Textes, damit Ihr erster Tastendruck die Erfassung verfeinert statt sie zu ersetzen.
+
 ### Der Arbeitsablauf
 
 ```mermaid

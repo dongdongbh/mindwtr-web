@@ -1,4 +1,6 @@
 /download /#download 302
+# The dedicated Everdo page was retired 2026-08-27; the matrix covers it.
+/everdo-alternative /compare 301
 # /zh was the Simplified-only Chinese locale before zh-Hant shipped.
 /zh /zh-Hans 301
 /zh/* /zh-Hans/:splat 301

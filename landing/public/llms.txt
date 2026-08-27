@@ -20,7 +20,6 @@ Mindwtr works offline, requires no account, and keeps primary task data on the u
 
 - [Todoist alternative](https://mindwtr.app/todoist-alternative): Mindwtr vs Todoist — sourced head-to-head table, honest trade-offs, and the Todoist import path.
 - [TickTick alternative](https://mindwtr.app/ticktick-alternative): Mindwtr vs TickTick — free-plan limits, offline and account differences, and the TickTick import path.
-- [Everdo alternative](https://mindwtr.app/everdo-alternative): Mindwtr vs Everdo — two local-first GTD apps compared on license, price, and sync; CSV migration route.
 - [OmniFocus for Linux](https://mindwtr.app/omnifocus-for-linux): OmniFocus is Apple-only; Mindwtr on Linux, Windows, and Android, with a first-class OmniFocus importer.
 - [Free GTD app for Android](https://mindwtr.app/free-gtd-app-android): Mindwtr on Android vs Todoist and TickTick — Google Play, F-Droid, widgets, offline, no account.
 - [Todoist alternatives](https://mindwtr.app/todoist-alternatives): Roundup of Todoist alternatives profiled honestly — strengths, catches, pricing, and who each app fits.

@@ -83,7 +83,7 @@ Mindwtr bereinigt **verwaiste Anhänge** (Dateien, auf die keine Aufgabe und kei
 - Desktop: Sie können die Bereinigung auch manuell unter **Einstellungen → Daten → Anhangsbereinigung** ausführen.
 - Mobilgeräte: Die Bereinigung läuft während der Synchronisierung automatisch.
 
-Die Datei-Synchronisierung behält unveränderliche Anhangsgenerationen nach der Bereinigung im gemeinsamen Ordner, weil ein verzögertes Gerät noch darauf verweisen kann. Das schützt die Anhangsdaten, lässt den Ordner aber mit der Zeit wachsen. Um Speicherplatz freizugeben, exportieren Sie eine Sicherung und lassen Sie alle Geräte die Synchronisierung abschließen, bevor Sie nachweislich veraltete Generationen entfernen. Löschen Sie keine anderen Mindwtr-Synchronisierungsdateien und keine Generation, die Sie nicht eindeutig zuordnen können.
+Die Datei-Synchronisierung behält unveränderliche Anhangsgenerationen nach der Bereinigung im gemeinsamen Ordner, weil ein verzögertes Gerät noch darauf verweisen kann. Das schützt die Anhangsdaten, lässt den Ordner aber mit der Zeit wachsen. Um Speicherplatz freizugeben, erstellen Sie eine Dateisystemkopie des gesamten gemeinsam genutzten Synchronisierungsordners einschließlich `data.json` und `attachments/` und bewahren Sie die Kopie außerhalb des Synchronisierungsdienstes auf. Lassen Sie alle Geräte die Synchronisierung abschließen, bevor Sie nachweislich veraltete Generationen entfernen. Löschen Sie keine anderen Mindwtr-Synchronisierungsdateien und keine Generation, die Sie nicht eindeutig zuordnen können.
 
 ---
 

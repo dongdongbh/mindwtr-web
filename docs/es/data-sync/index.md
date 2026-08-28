@@ -344,7 +344,7 @@ En el móvil, las entradas del historial de sincronización están contraídas d
 - WebDAV y otros backends con eliminación versionada pueden borrar también el objeto remoto. Esta limpieza usa las referencias conocidas por el dispositivo actual, no un recuento global. Deja que los dispositivos se sincronicen antes de eliminar archivos adjuntos compartidos y vuelve a adjuntar el archivo si la limpieza borra una copia remota que otro dispositivo todavía necesita.
 - La sincronización de archivos elimina los metadatos huérfanos y los registros locales, pero conserva generaciones inmutables de los adjuntos en la carpeta compartida. Un dispositivo retrasado puede seguir haciendo referencia a uno de esos archivos, por lo que Mindwtr no puede demostrar que su eliminación automática sea segura. La carpeta puede crecer con el tiempo.
 
-Para recuperar espacio de la sincronización de archivos, exporta primero una copia de seguridad y deja que todos los dispositivos terminen de sincronizar. Elimina solo generaciones de adjuntos que hayas comprobado que ningún dispositivo necesita. Borrar el documento de datos de Mindwtr, los archivos de bloqueo o una generación que no puedas identificar puede causar pérdida de datos.
+Para recuperar espacio de la sincronización de archivos, haz primero una copia del sistema de archivos de toda la carpeta compartida, incluidos `data.json` y `attachments/`, y guarda esa copia fuera del servicio de sincronización. Después, deja que todos los dispositivos terminen de sincronizar. Elimina solo generaciones de adjuntos que hayas comprobado que ningún dispositivo necesita. Borrar el documento de datos de Mindwtr, los archivos de bloqueo o una generación que no puedas identificar puede causar pérdida de datos.
 
 ---
 

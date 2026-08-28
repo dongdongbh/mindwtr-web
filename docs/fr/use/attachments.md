@@ -83,7 +83,7 @@ Mindwtr nettoie les **pièces jointes orphelines**, qui ne sont plus référenc�
 - **Ordinateur :** vous pouvez aussi lancer le nettoyage dans **Paramètres → Données → Nettoyage des pièces jointes**.
 - **Mobile :** le nettoyage s’exécute automatiquement pendant la synchronisation.
 
-La synchronisation de fichiers conserve les générations immuables des pièces jointes dans le dossier partagé après le nettoyage, car un appareil en retard peut encore y faire référence. Cela protège les données des pièces jointes, mais le dossier peut grossir au fil du temps. Pour libérer de l’espace, exportez une sauvegarde et laissez tous les appareils terminer leur synchronisation avant de supprimer les générations dont vous avez vérifié qu’elles sont obsolètes. Ne supprimez pas d’autres fichiers de synchronisation Mindwtr ni une génération que vous ne pouvez pas identifier.
+La synchronisation de fichiers conserve les générations immuables des pièces jointes dans le dossier partagé après le nettoyage, car un appareil en retard peut encore y faire référence. Cela protège les données des pièces jointes, mais le dossier peut grossir au fil du temps. Pour libérer de l’espace, faites une copie complète du dossier partagé dans le système de fichiers, y compris `data.json` et `attachments/`, puis conservez cette copie hors du service de synchronisation. Laissez tous les appareils terminer leur synchronisation avant de supprimer les générations dont vous avez vérifié qu’elles sont obsolètes. Ne supprimez pas d’autres fichiers de synchronisation Mindwtr ni une génération que vous ne pouvez pas identifier.
 
 ---
 

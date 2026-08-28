@@ -83,7 +83,7 @@ Mindwtr limpia los **adjuntos huérfanos**, es decir, archivos a los que ya no h
 - Escritorio: también puedes ejecutar la limpieza manualmente en **Ajustes → Datos → Limpieza de adjuntos**.
 - Dispositivos móviles: la limpieza se ejecuta automáticamente durante la sincronización.
 
-La sincronización de archivos conserva generaciones inmutables de los adjuntos en la carpeta compartida después de la limpieza porque un dispositivo retrasado puede seguir haciendo referencia a ellas. Esto protege los datos de los adjuntos, pero la carpeta puede crecer con el tiempo. Para recuperar espacio, exporta una copia de seguridad y deja que todos los dispositivos terminen de sincronizar antes de eliminar generaciones que hayas comprobado que están obsoletas. No borres otros archivos de sincronización de Mindwtr ni una generación que no puedas identificar.
+La sincronización de archivos conserva generaciones inmutables de los adjuntos en la carpeta compartida después de la limpieza porque un dispositivo retrasado puede seguir haciendo referencia a ellas. Esto protege los datos de los adjuntos, pero la carpeta puede crecer con el tiempo. Para recuperar espacio, haz una copia del sistema de archivos de toda la carpeta compartida, incluidos `data.json` y `attachments/`, y guarda esa copia fuera del servicio de sincronización. Deja que todos los dispositivos terminen de sincronizar antes de eliminar generaciones que hayas comprobado que están obsoletas. No borres otros archivos de sincronización de Mindwtr ni una generación que no puedas identificar.
 
 ---
 

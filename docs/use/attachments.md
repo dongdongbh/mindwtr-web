@@ -83,7 +83,7 @@ Mindwtr cleans up **orphaned attachments** (files no longer referenced by any ta
 - Desktop: You can also run cleanup manually in **Settings → Data → Attachment cleanup**.
 - Mobile: Cleanup runs automatically during sync.
 
-File Sync keeps immutable attachment generations in the shared folder after cleanup because a lagging device may still reference them. This protects attachment data, but the folder can grow over time. To reclaim space, export a backup and let every device finish syncing before you remove generation files that you have verified are obsolete. Do not delete other Mindwtr sync files or a generation you cannot identify.
+File Sync keeps immutable attachment generations in the shared folder after cleanup because a lagging device may still reference them. This protects attachment data, but the folder can grow over time. To reclaim space, make a filesystem copy of the entire shared File Sync folder, including `data.json` and `attachments/`, and store that copy outside the sync service. Let every device finish syncing before you remove generation files that you have verified are obsolete. Do not delete other Mindwtr sync files or a generation you cannot identify.
 
 ---
 

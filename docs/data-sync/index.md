@@ -344,7 +344,7 @@ On mobile, sync history entries are collapsed by default; tap to expand.
 - WebDAV and other backends with versioned deletion can remove the remote object. This cleanup uses the references known to the current device, not a global reference count. Let devices sync before deleting shared attachments, and reattach the file if cleanup removes a remote copy another device still needs.
 - File Sync clears the orphaned metadata and local bookkeeping but keeps immutable attachment generations in the shared folder. A lagging device may still reference one of those files, so Mindwtr cannot prove that automatic deletion is safe. The folder can grow over time.
 
-To reclaim File Sync space, export a backup and let every device finish syncing first. Remove only attachment generation files that you have verified no device needs. Deleting the Mindwtr data document, lock files, or a generation you cannot identify can cause data loss.
+To reclaim File Sync space, first make a filesystem copy of the entire shared File Sync folder, including `data.json` and `attachments/`, and store that copy outside the sync service. Then let every device finish syncing. Remove only attachment generation files that you have verified no device needs. Deleting the Mindwtr data document, lock files, or a generation you cannot identify can cause data loss.
 
 ---
 

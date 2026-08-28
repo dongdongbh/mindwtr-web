@@ -34,6 +34,8 @@ Esta función está **desactivada** de forma predeterminada para mantener Foco s
 
 Si una fase termina mientras la ventana de escritorio está en segundo plano, Mindwtr hace parpadear su entrada en la barra de tareas de Windows y de la mayoría de escritorios Linux; en macOS, el icono del Dock rebota.
 
+Cuando termina una sesión de enfoque o un descanso, Mindwtr reproduce un sonido y muestra una notificación. Esto no depende de los recordatorios de tareas. Para trabajar en silencio, desactiva **Ajustes → GTD → Temporizador Pomodoro → Aviso de fin de sesión**.
+
 La vinculación con tareas es opcional y está desactivada de forma predeterminada. Activa **Ajustes → GTD → Temporizador Pomodoro → Vincular temporizador a tarea** si quieres ver el selector Tarea del temporizador y la acción **Marcar tarea como terminada** en Foco.
 
 En escritorio y en móvil, el panel se puede plegar: el chevrón de su cabecera lo reduce a una fila fina con el tiempo restante y la fase; en móvil también muestra **En curso** o **En pausa**. El temporizador sigue funcionando. El estado plegado se recuerda en cada dispositivo, no se sincroniza, y empieza desplegado. En escritorio, al pulsar el botón de reproducción de una tarea se vuelve a abrir.

@@ -32,6 +32,8 @@ Cette fonction est **désactivée** par défaut pour préserver une vue Focus mi
 
 Lorsqu’une phase se termine alors que la fenêtre de bureau est en arrière-plan, Mindwtr fait clignoter son entrée dans la barre des tâches sous Windows et sur la plupart des bureaux Linux ; sous macOS, l’icône du Dock rebondit.
 
+Lorsqu’une session de concentration ou une pause se termine, Mindwtr joue un son et affiche une notification. Cela ne dépend pas des rappels de tâches. Pour travailler en silence, désactivez **Paramètres → GTD → Minuteur Pomodoro → Alerte de fin de session**.
+
 L’association à une tâche est facultative et désactivée par défaut. Activez **Paramètres → GTD → Minuteur Pomodoro → Lier le minuteur à une tâche** pour afficher le sélecteur et l’action **Marquer la tâche comme terminée** dans Focus.
 
 Sur ordinateur comme sur mobile, le panneau peut se replier : le chevron de son en-tête le réduit à une fine ligne qui affiche le temps restant et la phase ; sur mobile, elle indique aussi **En cours** ou **En pause**. Le minuteur continue de fonctionner. Cet état est mémorisé par appareil plutôt que synchronisé, et le panneau démarre déplié. Sur ordinateur, le bouton de lecture d’une tâche rouvre le panneau.

@@ -32,6 +32,8 @@ Diese Funktion ist standardmäßig **deaktiviert**, damit „Fokus“ minimalist
 
 Endet eine Phase, während das Desktopfenster im Hintergrund ist, blinkt Mindwtr unter Windows und auf den meisten Linux-Desktops in der Taskleiste; unter macOS springt das Dock-Symbol.
 
+Wenn ein Fokus-Abschnitt oder eine Pause endet, spielt Mindwtr einen Ton ab und zeigt eine Benachrichtigung. Das hängt nicht von den Aufgabenerinnerungen ab. Für stilles Arbeiten schalte **Einstellungen → GTD → Pomodoro-Timer → Hinweis am Ende der Einheit** aus.
+
 Die Aufgabenverknüpfung ist optional und standardmäßig deaktiviert. Aktivieren Sie **Einstellungen → GTD → Pomodoro-Zeitgeber → Zeitgeber mit Aufgabe verknüpfen**, wenn Sie in „Fokus“ die Auswahl der Zeitgeberaufgabe und die Aktion **Aufgabe als erledigt markieren** verwenden möchten.
 
 Auf Desktop und Mobilgeräten kann das Feld eingeklappt werden: Der Pfeil in seiner Kopfzeile reduziert es auf eine schmale Zeile mit Restzeit und Phase; auf Mobilgeräten zeigt sie zusätzlich **Läuft** oder **Pausiert**. Der Zeitgeber läuft weiter. Der Einklappzustand wird pro Gerät gespeichert statt synchronisiert, und das Feld startet ausgeklappt. Auf dem Desktop öffnet die Wiedergabeschaltfläche einer Aufgabe das Feld wieder.

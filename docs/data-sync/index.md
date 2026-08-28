@@ -340,8 +340,11 @@ On mobile, sync history entries are collapsed by default; tap to expand.
 
 - Attachments are synced **after** metadata merges.
 - Missing attachments remain as placeholders until downloaded.
-- Orphaned attachments are cleaned up automatically (and can be triggered manually on desktop in **Settings → Data**).
-- Remote attachment cleanup is local-reference aware, not global-reference counted. If two devices create or retain references to the same remote attachment before they have synced with each other, one device may not know about the other reference yet. Let devices sync before deleting shared attachments, and reattach the file if cleanup removes a remote copy another device still needs.
+- Mindwtr cleans orphaned local attachment copies and metadata. Desktop users can also start cleanup from **Settings → Data**.
+- WebDAV and other backends with versioned deletion can remove the remote object. This cleanup uses the references known to the current device, not a global reference count. Let devices sync before deleting shared attachments, and reattach the file if cleanup removes a remote copy another device still needs.
+- File Sync clears the orphaned metadata and local bookkeeping but keeps immutable attachment generations in the shared folder. A lagging device may still reference one of those files, so Mindwtr cannot prove that automatic deletion is safe. The folder can grow over time.
+
+To reclaim File Sync space, export a backup and let every device finish syncing first. Remove only attachment generation files that you have verified no device needs. Deleting the Mindwtr data document, lock files, or a generation you cannot identify can cause data loss.
 
 ---
 

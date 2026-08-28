@@ -371,7 +371,7 @@ Mindwtr se synchronisera automatiquement au démarrage et lors de la modificatio
 
 Si le chemin du dossier cible n’existe pas encore, Mindwtr essaiera de créer automatiquement les collections parentes manquantes avant de téléverser `data.json`.
 
-Mindwtr vérifie la sécurité des écritures du serveur avant de lancer la synchronisation. Le serveur doit renvoyer un ETag fort pour `data.json` et respecter les conditions `If-None-Match` et `If-Match` lors des créations, remplacements et suppressions. Les configurations WebDAV enregistrées passent le même test lors de leur première synchronisation après une mise à jour de Mindwtr. Si le contrôle échoue, Mindwtr arrête la synchronisation et signale que le serveur est incompatible. Utilisez un serveur ou une configuration qui prend en charge ces conditions avant de réessayer.
+Mindwtr vérifie la sécurité des écritures du serveur avant de lancer la synchronisation. Le serveur doit renvoyer un ETag fort pour `data.json` et respecter les conditions `If-None-Match` et `If-Match` lors des créations, remplacements et suppressions. Les configurations WebDAV enregistrées sans preuve de sécurité passent le même test avant de se synchroniser. Si le contrôle échoue, Mindwtr arrête la synchronisation et signale que le serveur est incompatible. Utilisez un serveur ou une configuration qui prend en charge ces conditions avant de réessayer.
 
 > **Remarque pour Linux :** si votre session de bureau ne fournit pas de trousseau Secret Service (par exemple si `org.freedesktop.secrets` n’est pas disponible), Mindwtr utilise à la place un stockage local des secrets dans `~/.config/mindwtr/secrets.toml`.
 

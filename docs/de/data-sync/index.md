@@ -369,7 +369,7 @@ Mindwtr synchronisiert anschließend automatisch beim Start und bei Datenänderu
 
 Existiert der Pfad des Zielordners noch nicht, versucht Mindwtr, die fehlenden übergeordneten Verzeichnisse vor dem Upload von `data.json` automatisch anzulegen.
 
-Mindwtr prüft die Schreibsicherheit des Servers, bevor die Synchronisierung beginnt. Der Server muss für `data.json` ein starkes ETag zurückgeben und die Bedingungen `If-None-Match` und `If-Match` beim Erstellen, Ersetzen und Löschen einhalten. Gespeicherte WebDAV-Einrichtungen durchlaufen dieselbe Prüfung bei der ersten Synchronisierung nach einem Mindwtr-Update. Schlägt die Prüfung fehl, stoppt Mindwtr die Synchronisierung und meldet den Server als inkompatibel. Verwenden Sie einen Server oder eine Konfiguration, die diese Bedingungen unterstützt, bevor Sie es erneut versuchen.
+Mindwtr prüft die Schreibsicherheit des Servers, bevor die Synchronisierung beginnt. Der Server muss für `data.json` ein starkes ETag zurückgeben und die Bedingungen `If-None-Match` und `If-Match` beim Erstellen, Ersetzen und Löschen einhalten. Gespeicherte WebDAV-Einrichtungen ohne gespeicherten Sicherheitsnachweis durchlaufen dieselbe Prüfung vor der Synchronisierung. Schlägt die Prüfung fehl, stoppt Mindwtr die Synchronisierung und meldet den Server als inkompatibel. Verwenden Sie einen Server oder eine Konfiguration, die diese Bedingungen unterstützt, bevor Sie es erneut versuchen.
 
 > **Linux-Hinweis:** Ohne Secret-Service-Schlüsselbund (`org.freedesktop.secrets`) verwendet Mindwtr lokale Geheimnisspeicherung in `~/.config/mindwtr/secrets.toml`.
 

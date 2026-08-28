@@ -368,6 +368,8 @@ Mindwtr will automatically sync on startup and when data changes.
 
 If the target folder path does not exist yet, Mindwtr will try to create the missing parent collections automatically before uploading `data.json`.
 
+Mindwtr tests the server's write safety before it starts syncing. The server must return a strong ETag for `data.json` and honor `If-None-Match` and `If-Match` conditions for creates, replacements, and deletes. Saved WebDAV setups run the same test on their first sync after you update Mindwtr. If the check fails, Mindwtr stops sync and reports that the server is incompatible; use a server or configuration that supports these conditions before trying again.
+
 > **Linux note:** If your desktop session does not provide a Secret Service keyring (for example `org.freedesktop.secrets` is unavailable), Mindwtr falls back to local secrets storage in `~/.config/mindwtr/secrets.toml`.
 
 > **Tip:** For Nextcloud, the URL format is:

@@ -368,6 +368,8 @@ Mindwtr 會在啟動及資料變更時自動同步。
 
 若目標資料夾路徑尚不存在，Mindwtr 會在上傳 `data.json` 前嘗試自動建立缺少的父 collection。
 
+Mindwtr 會在開始同步前檢查伺服器的寫入安全性。伺服器必須為 `data.json` 傳回強 ETag，並在建立、取代和刪除時遵守 `If-None-Match` 與 `If-Match` 條件。已儲存的 WebDAV 設定會在 Mindwtr 更新後的首次同步中接受相同檢查。如果檢查失敗，Mindwtr 會停止同步並回報伺服器不相容。請先改用支援這些條件的伺服器或設定，再重新嘗試。
+
 > **Linux 注意事項**：如果桌面工作階段沒有提供 Secret Service keyring（例如無法使用 `org.freedesktop.secrets`），Mindwtr 會退回使用 `~/.config/mindwtr/secrets.toml` 中的本機密鑰儲存空間。
 
 > **提示**：Nextcloud 的 URL 格式為：

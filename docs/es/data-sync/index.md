@@ -368,6 +368,8 @@ Mindwtr se sincronizará automáticamente al iniciarse y cuando cambien los dato
 
 Si la ruta de la carpeta de destino aún no existe, Mindwtr intentará crear automáticamente las colecciones superiores ausentes antes de subir `data.json`.
 
+Mindwtr comprueba la seguridad de escritura del servidor antes de iniciar la sincronización. El servidor debe devolver un ETag fuerte para `data.json` y respetar las condiciones `If-None-Match` e `If-Match` al crear, reemplazar y eliminar archivos. Las configuraciones WebDAV guardadas pasan por la misma prueba en su primera sincronización después de actualizar Mindwtr. Si la comprobación falla, Mindwtr detiene la sincronización e informa de que el servidor es incompatible. Usa un servidor o una configuración que admita estas condiciones antes de volver a intentarlo.
+
 > **Nota para Linux:** Si tu sesión de escritorio no proporciona un llavero de Secret Service (por ejemplo, `org.freedesktop.secrets` no está disponible), Mindwtr recurre al almacenamiento local de secretos en `~/.config/mindwtr/secrets.toml`.
 
 > **Consejo:** Para Nextcloud, el formato de la URL es:

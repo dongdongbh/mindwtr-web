@@ -260,7 +260,7 @@ Mindwtr 会在添加任务时解析自然语言：
 | `/due:date`  | `/due:friday`     | 设置截止日期      |
 | `/energy:<level>` | `/energy:medium` | 设置精力水平（`low`、`medium`、`high`） |
 | `/note:text` | `/note:call back` | 添加描述   |
-| `/status`    | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | 设置状态 |
+| `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | 设置状态 |
 
 **日期格式：** today、tomorrow、friday、next week、in 3 days、2025-01-15、26.06.、26.06.2026
 

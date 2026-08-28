@@ -260,7 +260,7 @@ Mindwtr analyse le langage naturel lors de l’ajout de tâches :
 | `/due:date`  | `/due:friday`     | Définit l’échéance                  |
 | `/energy:<level>` | `/energy:medium` | Définit le niveau d’énergie (`low`, `medium`, `high`) |
 | `/note:text` | `/note:call back` | Ajoute une description              |
-| `/status`    | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | Définit le statut |
+| `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Définit le statut |
 
 **Formats de date :** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 

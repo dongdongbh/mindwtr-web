@@ -461,7 +461,7 @@ const result: QuickAddResult = parseQuickAdd(input, projects, now, areas, option
 | `/due:date`       | `/due:friday`           | `dueDate: 'ISO string'`      |
 | `/energy:<level>` | `/energy:high`          | `energyLevel: 'high'` (prend en charge `low`, `medium`, `high`) |
 | `/note:text`      | `/note:remember X`      | `description: 'remember X'`  |
-| `/status`         | `/next`                 | `status: 'next'` (prend en charge `/inbox`, `/waiting`, `/someday`, `/done`, `/archived`) |
+| `/status`         | `/next`                 | `status: 'next'` (prend en charge `/inbox`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`) |
 
 ---
 

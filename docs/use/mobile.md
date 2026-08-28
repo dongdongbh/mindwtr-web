@@ -260,7 +260,7 @@ Mindwtr parses natural language when adding tasks:
 | `/due:date`  | `/due:friday`     | Sets due date      |
 | `/energy:<level>` | `/energy:medium` | Sets energy level (`low`, `medium`, `high`) |
 | `/note:text` | `/note:call back` | Adds description   |
-| `/status`    | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | Sets status |
+| `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Sets status |
 
 **Date formats:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 

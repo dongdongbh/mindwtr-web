@@ -302,7 +302,7 @@ Ja! Mindwtr unterstützt die Syntax für „Schnell hinzufügen“:
 - `/due:date`: Fälligkeitsdatum festlegen (today, tomorrow, friday, next week usw.)
 - `/energy:low`, `/energy:medium` oder `/energy:high`: Energiestufe festlegen
 - `/note:text`: Beschreibung hinzufügen
-- `/status`: Status festlegen (`/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox`)
+- `/status`: Status festlegen (`/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox`)
 - `+ProjectName`: Projekt zuweisen
 
 Beispiel: `Call client /due:friday @phone`

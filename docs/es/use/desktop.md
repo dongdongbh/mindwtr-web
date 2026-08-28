@@ -327,7 +327,7 @@ Mindwtr analiza lenguaje natural al añadir tareas:
 | `/due:date`  | `/due:friday`     | Establece la fecha de vencimiento |
 | `/energy:<level>` | `/energy:medium` | Establece el nivel de energía (`low`, `medium`, `high`) |
 | `/note:text` | `/note:call back` | Añade una descripción    |
-| `/status`    | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | Establece el estado |
+| `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Establece el estado |
 
 **Formatos de fecha:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 

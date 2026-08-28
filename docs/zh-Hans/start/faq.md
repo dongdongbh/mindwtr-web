@@ -309,7 +309,7 @@ Linux 日志位置（默认）：`~/.local/share/mindwtr/logs/mindwtr.log`
 - `/due:date`：设置截止日期（today、tomorrow、friday、next week 等）
 - `/energy:low`、`/energy:medium` 或 `/energy:high`：设置精力水平
 - `/note:text`：添加描述
-- `/status`：设置状态（`/next`、`/waiting`、`/someday`、`/done`、`/archived`、`/inbox`）
+- `/status`：设置状态（`/next`、`/waiting`、`/someday`、`/reference`、`/done`、`/archived`、`/inbox`）
 - `+ProjectName`：分配到项目
 
 示例：`Call client /due:friday @phone`

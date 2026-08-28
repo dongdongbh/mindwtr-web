@@ -72,7 +72,7 @@ Mindwtr 支持自然语言快速添加。直接在任务输入框中输入即可
 | `/review:date` | `Task /review:next week` | 设置回顾日期 |
 | `/energy:<level>` | `Task /energy:low` | 设置精力水平（`low`、`medium`、`high`） |
 | `/note:text` | `Task /note:remember X` | 添加描述 |
-| `/status` | `/next`、`/waiting`、`/someday`、`/done`、`/archived`、`/inbox` | 设置状态 |
+| `/status` | `/next`、`/waiting`、`/someday`、`/reference`、`/done`、`/archived`、`/inbox` | 设置状态 |
 
 **日期示例：**
 

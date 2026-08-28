@@ -309,7 +309,7 @@ Oui ! Mindwtr prend en charge la syntaxe d’ajout rapide :
 - `/due:date` : définir la date d’échéance (today, tomorrow, friday, next week, etc.)
 - `/energy:low`, `/energy:medium` ou `/energy:high` : définir le niveau d’énergie
 - `/note:text` : ajouter une description
-- `/status` : définir le statut (`/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox`)
+- `/status` : définir le statut (`/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox`)
 - `+ProjectName` : associer à un projet
 
 Exemple : `Call client /due:friday @phone`

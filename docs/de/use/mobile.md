@@ -237,7 +237,7 @@ iOS-Kurzbefehlsbeispiel:
 | `/due:date` | `/due:friday` | Fälligkeitsdatum |
 | `/energy:<level>` | `/energy:medium` | Energie (`low`, `medium`, `high`) |
 | `/note:text` | `/note:call back` | Beschreibung |
-| `/status` | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | Status |
+| `/status` | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Status |
 
 **Datumsformate:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 

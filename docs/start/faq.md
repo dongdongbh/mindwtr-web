@@ -309,7 +309,7 @@ Yes! Mindwtr supports quick-add syntax:
 - `/due:date`: Set due date (today, tomorrow, friday, next week, etc.)
 - `/energy:low`, `/energy:medium`, or `/energy:high`: Set energy level
 - `/note:text`: Add description
-- `/status`: Set status (`/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox`)
+- `/status`: Set status (`/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox`)
 - `+ProjectName`: Assign to project
 
 Example: `Call client /due:friday @phone`

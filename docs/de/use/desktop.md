@@ -329,7 +329,7 @@ Mindwtr wertet beim Hinzufügen natürliche Sprache aus:
 | `/due:date` | `/due:friday` | Fälligkeitsdatum festlegen |
 | `/energy:<level>` | `/energy:medium` | Energiestufe (`low`, `medium`, `high`) |
 | `/note:text` | `/note:call back` | Beschreibung hinzufügen |
-| `/status` | `/next`, `/waiting`, `/someday`, `/done`, `/archived`, `/inbox` | Status festlegen |
+| `/status` | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Status festlegen |
 
 **Datumsformate:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 

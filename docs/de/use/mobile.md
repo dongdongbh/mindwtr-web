@@ -1,6 +1,10 @@
+---
+description: "Geführtes GTD auf iPhone und Android: Posteingang Karte für Karte, Zwei-Minuten-Regel, Fokus, tägliche Revision und Wochenrückblick-Assistent."
+---
+
 # Benutzerhandbuch: Mobilgeräte
 
-Die mobile Mindwtr-App basiert auf React Native und Expo. Android wird vollständig unterstützt; iOS ist im App Store und als TestFlight-Beta verfügbar.
+Die mobile Mindwtr-App bietet auf iPhone und Android den vollständigen geführten GTD-Ablauf: Erfassen, kartenweises Abarbeiten des Posteingangs mit der Zwei-Minuten-Regel, Projekte, Fokus, tägliche Revision und den geführten Assistenten für die wöchentliche Revision. Android wird vollständig unterstützt; iOS ist im App Store und als TestFlight-Beta verfügbar. Mindwtr basiert auf React Native und Expo.
 
 ## Überblick
 

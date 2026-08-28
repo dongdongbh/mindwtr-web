@@ -1,6 +1,10 @@
+---
+description: "iPhone 和 Android 上的完整 GTD 引導體驗：逐卡片清理收集箱、兩分鐘法則、專注、每日回顧和每週回顧精靈。"
+---
+
 # 使用指南：行動版
 
-Mindwtr 行動版以 React Native 與 Expo 建置。Android 提供完整支援；iOS 已在 App Store 上架，也可透過 TestFlight 測試版取得。
+Mindwtr 行動版在 iPhone 與 Android 上提供完整的 GTD 引導流程：收集、逐卡片清理收集箱並套用兩分鐘法則、專案、專注、每日回顧和每週回顧精靈。Android 提供完整支援；iOS 已在 App Store 上架，也可透過 TestFlight 測試版取得。Mindwtr 以 React Native 與 Expo 建置。
 
 ## 概覽
 

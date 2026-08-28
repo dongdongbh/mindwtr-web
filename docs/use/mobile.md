@@ -1,6 +1,10 @@
+---
+description: "Complete guided GTD on iPhone and Android: card-based Inbox processing, the two-minute rule, Focus, Daily Review, and the guided Weekly Review wizard."
+---
+
 # User Guide: Mobile
 
-The Mindwtr mobile app is built with React Native and Expo. Android is fully supported; iOS is available on the App Store and via TestFlight beta.
+The Mindwtr mobile app provides the complete guided GTD workflow on iPhone and Android: capture, card-based Inbox processing with the two-minute rule, Projects, Focus, Daily Review, and the guided Weekly Review wizard. Android is fully supported; iOS is available on the App Store and via TestFlight beta. Mindwtr is built with React Native and Expo.
 
 ## Overview
 

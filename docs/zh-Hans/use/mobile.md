@@ -1,6 +1,10 @@
+---
+description: "iPhone 和 Android 上的完整 GTD 引导体验：逐卡片清理收集箱、两分钟法则、专注、每日回顾和每周回顾向导。"
+---
+
 # 移动端用户指南
 
-Mindwtr 移动应用使用 React Native 和 Expo 构建。Android 已获得完整支持；iOS 版可从 App Store 获取，也可通过 TestFlight 测试版使用。
+Mindwtr 移动应用在 iPhone 和 Android 上提供完整的 GTD 引导流程：收集、逐卡片清理收集箱并应用两分钟法则、项目、专注、每日回顾和每周回顾向导。Android 已获得完整支持；iOS 版可从 App Store 获取，也可通过 TestFlight 测试版使用。Mindwtr 使用 React Native 和 Expo 构建。
 
 ## 概览
 

@@ -1,6 +1,10 @@
+---
+description: "GTD guidé sur iPhone et Android : boîte de réception carte par carte, règle des deux minutes, Priorités et assistant de Revue hebdomadaire."
+---
+
 # Guide d’utilisation : mobile
 
-L’application mobile Mindwtr est conçue avec React Native et Expo. Android est entièrement pris en charge ; iOS est disponible sur l’App Store et par l’intermédiaire de la version bêta TestFlight.
+L’application mobile Mindwtr offre l’ensemble du flux GTD guidé sur iPhone et Android : capture, traitement carte par carte de la boîte de réception avec la règle des deux minutes, Projets, Priorités, Revue quotidienne et l’assistant guidé de Revue hebdomadaire. Android est entièrement pris en charge ; iOS est disponible sur l’App Store et par l’intermédiaire de la version bêta TestFlight. Mindwtr est conçue avec React Native et Expo.
 
 ## Vue d’ensemble
 

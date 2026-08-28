@@ -99,6 +99,7 @@ Mindwtr attribue à chaque ligne une identité stable : importer deux fois le m�
 
 Mindwtr écrit ce même format : l’aller-retour est donc complet. **Réglages → Données → Sauvegarde → Exporter en CSV** enregistre vos tâches actuelles dans un seul fichier CSV, sur ordinateur comme sur mobile.
 
+- Sur ordinateur, le bouton **Exporter en CSV** de la barre d’outils d’une liste de tâches n’exporte que ce que cette liste affiche : les lignes restantes après ses filtres, la recherche et la sélection de domaine. Les groupes repliés restent inclus : replier un groupe le masque, il ne l’exclut pas.
 - La colonne `ID` est toujours écrite : réimporter un export ne duplique rien, les lignes dont l’`ID` correspond à une tâche existante sont ignorées avec un avertissement. Les modifications apportées à un fichier exporté ne sont **pas** réinjectées — modifiez ces tâches dans l’application. Les remarques sur l’identité ci-dessus s’appliquent telles quelles.
 - Les tâches supprimées ne sont jamais exportées. Le format n’a pas de colonne pour elles et une telle ligne reviendrait comme tâche active au prochain import.
 - La récurrence est écrite sous la forme de la règle de répétition que l’importateur relit : les répétitions survivent donc à l’aller-retour. L’avancement d’une série comptée n’est pas écrit, une répétition importée démarre donc une nouvelle série.

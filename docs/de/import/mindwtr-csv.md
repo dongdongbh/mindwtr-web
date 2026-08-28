@@ -99,6 +99,7 @@ Mindwtr gibt jeder Zeile eine stabile Identität. Wird dieselbe Datei zweimal im
 
 Mindwtr schreibt genau dieses Format, der Weg führt also in beide Richtungen. **Einstellungen → Daten → Sicherung → CSV exportieren** speichert Ihre aktuellen Aufgaben als eine CSV-Datei, auf dem Desktop wie auf dem Mobilgerät.
 
+- Auf dem Desktop exportiert die Schaltfläche **CSV exportieren** in der Werkzeugleiste einer Aufgabenliste nur das, was diese Liste gerade zeigt — die Zeilen, die nach Filtern, Suche und Bereichsauswahl übrig bleiben. Eingeklappte Gruppen sind weiterhin enthalten: Einklappen blendet eine Gruppe aus, schließt sie aber nicht aus.
 - Die Spalte `ID` wird immer geschrieben, daher verdoppelt ein erneuter Import nichts: Zeilen, deren `ID` zu einer vorhandenen Aufgabe passt, werden mit einer Warnung übersprungen. Änderungen an einer exportierten Datei werden **nicht** zurückgespielt — bearbeiten Sie diese Aufgaben stattdessen in der App. Die Hinweise zur Identität oben gelten unverändert.
 - Gelöschte Aufgaben werden nie exportiert. Das Format hat keine Spalte dafür, und eine solche Zeile käme beim nächsten Import als aktive Aufgabe zurück.
 - Wiederholungen werden als die Regel geschrieben, die der Importer wieder einliest, der Rundweg erhält sie also. Wie weit eine gezählte Serie schon gelaufen ist, wird nicht geschrieben, eine importierte Wiederholung beginnt daher eine neue Serie.

@@ -338,8 +338,11 @@ Auf Mobilgeräten sind die Einträge im Synchronisierungsverlauf standardmäßig
 
 - Anhänge werden **nach** den Metadaten zusammengeführt.
 - Fehlende Anhänge bleiben bis zum Download als Platzhalter.
-- Verwaiste Anhänge werden automatisch bereinigt; auf dem Desktop kann die Bereinigung auch manuell unter **Einstellungen → Daten** ausgelöst werden.
-- Die Bereinigung entfernter Anhänge berücksichtigt lokale Verweise, zählt sie jedoch nicht global. Wenn zwei Geräte Verweise auf denselben entfernten Anhang erstellen oder behalten, bevor sie miteinander synchronisiert wurden, kennt ein Gerät den Verweis des anderen möglicherweise noch nicht. Geräte vor dem Löschen gemeinsam verwendeter Anhänge synchronisieren lassen und die Datei erneut anhängen, falls die Bereinigung eine entfernte Kopie löscht, die ein anderes Gerät noch benötigt.
+- Mindwtr bereinigt verwaiste lokale Anhangskopien und Metadaten. Auf dem Desktop kann die Bereinigung auch unter **Einstellungen → Daten** gestartet werden.
+- WebDAV und andere Backends mit versionierter Löschung können auch das entfernte Objekt löschen. Diese Bereinigung verwendet die Verweise, die dem aktuellen Gerät bekannt sind, und keinen globalen Referenzzähler. Lassen Sie die Geräte vor dem Löschen gemeinsam verwendeter Anhänge synchronisieren. Hängen Sie die Datei erneut an, falls die Bereinigung eine entfernte Kopie löscht, die ein anderes Gerät noch benötigt.
+- Die Datei-Synchronisierung entfernt verwaiste Metadaten und lokale Verwaltungsdaten, behält aber unveränderliche Anhangsgenerationen im gemeinsamen Ordner. Ein verzögertes Gerät kann noch auf eine dieser Dateien verweisen, daher kann Mindwtr eine automatische Löschung nicht als sicher nachweisen. Der Ordner kann mit der Zeit wachsen.
+
+Um Speicherplatz der Datei-Synchronisierung freizugeben, erstellen Sie zuerst eine Dateisystemkopie des gesamten gemeinsam genutzten Synchronisierungsordners einschließlich `data.json` und `attachments/`. Bewahren Sie diese Kopie außerhalb des Synchronisierungsdienstes auf und lassen Sie alle Geräte die Synchronisierung abschließen. Entfernen Sie nur Anhangsgenerationen, von denen Sie geprüft haben, dass kein Gerät sie mehr benötigt. Das Löschen des Mindwtr-Datendokuments, der Sperrdateien oder einer nicht eindeutig zugeordneten Generation kann zu Datenverlust führen.
 
 ---
 
@@ -365,6 +368,8 @@ Mindwtr synchronisiert anschließend automatisch beim Start und bei Datenänderu
 4. **WebDAV speichern**
 
 Existiert der Pfad des Zielordners noch nicht, versucht Mindwtr, die fehlenden übergeordneten Verzeichnisse vor dem Upload von `data.json` automatisch anzulegen.
+
+Mindwtr prüft die Schreibsicherheit des Servers, bevor die Synchronisierung beginnt. Der Server muss für `data.json` ein starkes ETag zurückgeben und die Bedingungen `If-None-Match` und `If-Match` beim Erstellen, Ersetzen und Löschen einhalten. Gespeicherte WebDAV-Einrichtungen ohne gespeicherten Sicherheitsnachweis durchlaufen dieselbe Prüfung vor der Synchronisierung. Schlägt die Prüfung fehl, stoppt Mindwtr die Synchronisierung und meldet den Server als inkompatibel. Verwenden Sie einen Server oder eine Konfiguration, die diese Bedingungen unterstützt, bevor Sie es erneut versuchen.
 
 > **Linux-Hinweis:** Ohne Secret-Service-Schlüsselbund (`org.freedesktop.secrets`) verwendet Mindwtr lokale Geheimnisspeicherung in `~/.config/mindwtr/secrets.toml`.
 

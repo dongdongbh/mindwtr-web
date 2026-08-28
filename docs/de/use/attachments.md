@@ -78,10 +78,12 @@ sudo dnf install gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plug
 
 ## Bereinigung
 
-Mindwtr bereinigt automatisch **verwaiste Anhänge** (Dateien, auf die keine Aufgabe und kein Projekt mehr verweist).
+Mindwtr bereinigt **verwaiste Anhänge** (Dateien, auf die keine Aufgabe und kein Projekt mehr verweist). Die Bereinigung entfernt lokale Kopien und Synchronisierungsmetadaten. Backends mit versionierter Löschung, etwa WebDAV, können auch das entfernte Objekt löschen.
 
 - Desktop: Sie können die Bereinigung auch manuell unter **Einstellungen → Daten → Anhangsbereinigung** ausführen.
 - Mobilgeräte: Die Bereinigung läuft während der Synchronisierung automatisch.
+
+Die Datei-Synchronisierung behält unveränderliche Anhangsgenerationen nach der Bereinigung im gemeinsamen Ordner, weil ein verzögertes Gerät noch darauf verweisen kann. Das schützt die Anhangsdaten, lässt den Ordner aber mit der Zeit wachsen. Um Speicherplatz freizugeben, erstellen Sie eine Dateisystemkopie des gesamten gemeinsam genutzten Synchronisierungsordners einschließlich `data.json` und `attachments/` und bewahren Sie die Kopie außerhalb des Synchronisierungsdienstes auf. Lassen Sie alle Geräte die Synchronisierung abschließen, bevor Sie nachweislich veraltete Generationen entfernen. Löschen Sie keine anderen Mindwtr-Synchronisierungsdateien und keine Generation, die Sie nicht eindeutig zuordnen können.
 
 ---
 

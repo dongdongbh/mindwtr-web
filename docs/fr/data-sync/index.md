@@ -340,8 +340,11 @@ Sur mobile, les entrées de l’historique de synchronisation sont réduites par
 
 - Les pièces jointes sont synchronisées **après** la fusion des métadonnées.
 - Les pièces jointes manquantes restent affichées comme espaces réservés jusqu’à leur téléchargement.
-- Les pièces jointes orphelines sont nettoyées automatiquement (et le nettoyage peut être déclenché manuellement sur ordinateur dans **Réglages → Données**).
-- Le nettoyage des pièces jointes distantes tient compte des références locales et non d’un comptage global des références. Si deux appareils créent ou conservent des références vers la même pièce jointe distante avant de s’être synchronisés entre eux, un appareil peut ne pas encore connaître la référence de l’autre. Laissez les appareils se synchroniser avant de supprimer des pièces jointes partagées et joignez de nouveau le fichier si le nettoyage supprime une copie distante dont un autre appareil a encore besoin.
+- Mindwtr nettoie les copies locales et les métadonnées des pièces jointes orphelines. Sur ordinateur, vous pouvez aussi lancer le nettoyage dans **Réglages → Données**.
+- WebDAV et les autres backends qui prennent en charge la suppression versionnée peuvent aussi supprimer l’objet distant. Ce nettoyage utilise les références connues de l’appareil actuel, sans comptage global. Laissez les appareils se synchroniser avant de supprimer des pièces jointes partagées et joignez de nouveau le fichier si le nettoyage supprime une copie distante dont un autre appareil a encore besoin.
+- La synchronisation de fichiers efface les métadonnées orphelines et les données de suivi locales, mais conserve les générations immuables des pièces jointes dans le dossier partagé. Un appareil en retard peut encore faire référence à l’un de ces fichiers, donc Mindwtr ne peut pas garantir qu’une suppression automatique serait sûre. Le dossier peut grossir au fil du temps.
+
+Pour libérer de l’espace dans le dossier de synchronisation de fichiers, faites d’abord une copie complète du dossier partagé dans le système de fichiers, y compris `data.json` et `attachments/`, puis conservez cette copie hors du service de synchronisation. Laissez ensuite tous les appareils terminer leur synchronisation. Supprimez uniquement les générations de pièces jointes dont vous avez vérifié qu’aucun appareil n’a besoin. La suppression du document de données Mindwtr, des fichiers de verrouillage ou d’une génération que vous ne pouvez pas identifier peut entraîner une perte de données.
 
 ---
 
@@ -367,6 +370,8 @@ Mindwtr se synchronisera automatiquement au démarrage et lors de la modificatio
 4. Cliquez sur **Enregistrer WebDAV**
 
 Si le chemin du dossier cible n’existe pas encore, Mindwtr essaiera de créer automatiquement les collections parentes manquantes avant de téléverser `data.json`.
+
+Mindwtr vérifie la sécurité des écritures du serveur avant de lancer la synchronisation. Le serveur doit renvoyer un ETag fort pour `data.json` et respecter les conditions `If-None-Match` et `If-Match` lors des créations, remplacements et suppressions. Les configurations WebDAV enregistrées sans preuve de sécurité passent le même test avant de se synchroniser. Si le contrôle échoue, Mindwtr arrête la synchronisation et signale que le serveur est incompatible. Utilisez un serveur ou une configuration qui prend en charge ces conditions avant de réessayer.
 
 > **Remarque pour Linux :** si votre session de bureau ne fournit pas de trousseau Secret Service (par exemple si `org.freedesktop.secrets` n’est pas disponible), Mindwtr utilise à la place un stockage local des secrets dans `~/.config/mindwtr/secrets.toml`.
 

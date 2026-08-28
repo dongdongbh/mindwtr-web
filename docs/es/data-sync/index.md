@@ -340,8 +340,11 @@ En el móvil, las entradas del historial de sincronización están contraídas d
 
 - Los archivos adjuntos se sincronizan **después** de fusionar los metadatos.
 - Los archivos adjuntos ausentes permanecen como marcadores hasta que se descargan.
-- Los archivos adjuntos huérfanos se limpian automáticamente (y la limpieza se puede activar manualmente en el escritorio desde **Ajustes → Datos**).
-- La limpieza remota de archivos adjuntos tiene en cuenta las referencias locales, no un recuento global de referencias. Si dos dispositivos crean o conservan referencias al mismo archivo adjunto remoto antes de haberse sincronizado entre sí, es posible que un dispositivo aún no conozca la otra referencia. Deja que los dispositivos se sincronicen antes de eliminar archivos adjuntos compartidos y vuelve a adjuntar el archivo si la limpieza elimina una copia remota que otro dispositivo todavía necesita.
+- Mindwtr limpia las copias locales y los metadatos de los archivos adjuntos huérfanos. En el escritorio también puedes iniciar la limpieza desde **Ajustes → Datos**.
+- WebDAV y otros backends con eliminación versionada pueden borrar también el objeto remoto. Esta limpieza usa las referencias conocidas por el dispositivo actual, no un recuento global. Deja que los dispositivos se sincronicen antes de eliminar archivos adjuntos compartidos y vuelve a adjuntar el archivo si la limpieza borra una copia remota que otro dispositivo todavía necesita.
+- La sincronización de archivos elimina los metadatos huérfanos y los registros locales, pero conserva generaciones inmutables de los adjuntos en la carpeta compartida. Un dispositivo retrasado puede seguir haciendo referencia a uno de esos archivos, por lo que Mindwtr no puede demostrar que su eliminación automática sea segura. La carpeta puede crecer con el tiempo.
+
+Para recuperar espacio de la sincronización de archivos, haz primero una copia del sistema de archivos de toda la carpeta compartida, incluidos `data.json` y `attachments/`, y guarda esa copia fuera del servicio de sincronización. Después, deja que todos los dispositivos terminen de sincronizar. Elimina solo generaciones de adjuntos que hayas comprobado que ningún dispositivo necesita. Borrar el documento de datos de Mindwtr, los archivos de bloqueo o una generación que no puedas identificar puede causar pérdida de datos.
 
 ---
 
@@ -367,6 +370,8 @@ Mindwtr se sincronizará automáticamente al iniciarse y cuando cambien los dato
 4. Haz clic en **Guardar WebDAV**
 
 Si la ruta de la carpeta de destino aún no existe, Mindwtr intentará crear automáticamente las colecciones superiores ausentes antes de subir `data.json`.
+
+Mindwtr comprueba la seguridad de escritura del servidor antes de iniciar la sincronización. El servidor debe devolver un ETag fuerte para `data.json` y respetar las condiciones `If-None-Match` e `If-Match` al crear, reemplazar y eliminar archivos. Las configuraciones WebDAV guardadas que no tengan una prueba de seguridad registrada pasan por la misma comprobación antes de sincronizar. Si la comprobación falla, Mindwtr detiene la sincronización e informa de que el servidor es incompatible. Usa un servidor o una configuración que admita estas condiciones antes de volver a intentarlo.
 
 > **Nota para Linux:** Si tu sesión de escritorio no proporciona un llavero de Secret Service (por ejemplo, `org.freedesktop.secrets` no está disponible), Mindwtr recurre al almacenamiento local de secretos en `~/.config/mindwtr/secrets.toml`.
 

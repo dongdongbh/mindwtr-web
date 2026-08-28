@@ -223,6 +223,21 @@ Después:
 2. Usa la aplicación puente para sincronizar esa carpeta con una carpeta local en Android.
 3. En Mindwtr, selecciona esa carpeta local en **Ajustes → Sincronización** (Mindwtr usará el `data.json` que contiene).
 
+#### Flatpak (Linux)
+
+La versión Flatpak se ejecuta en un espacio aislado y no solicita ningún acceso propio al sistema de archivos. Cuando eliges una carpeta de sincronización, el portal de archivos del escritorio concede acceso solo a esa carpeta, y Mindwtr puede mostrar la ruta como algo similar a `/run/user/1000/doc/abcd/Mindwtr`.
+
+- Esa ruta es la correspondencia que el portal hace con la carpeta que elegiste, no un directorio de datos aparte de Mindwtr.
+- Apunta Syncthing y otras herramientas de sincronización a la carpeta que elegiste originalmente. No pueden ver la ruta del portal, que solo existe dentro del aislamiento de Mindwtr.
+
+Comprueba que `data.json` aparece en la carpeta que seleccionaste. Si no aparece, la concesión del portal no funciona en tu sistema y puedes dar a Mindwtr acceso directo a una carpeta como alternativa:
+
+```bash
+flatpak override --user --filesystem="$HOME/Mindwtr" tech.dongdongbh.mindwtr
+```
+
+Reinicia Mindwtr después. Esto es un paso de resolución de problemas y no la configuración normal — el portal es la vía prevista, así que avísame si necesitas esto.
+
 ### 3. Sincronización WebDAV
 
 Sincroniza directamente con un servidor WebDAV:

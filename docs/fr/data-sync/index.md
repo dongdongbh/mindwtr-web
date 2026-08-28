@@ -223,6 +223,21 @@ Ensuite :
 2. Utilisez l’application passerelle pour synchroniser ce dossier avec un dossier local sur Android.
 3. Dans Mindwtr, sélectionnez ce dossier local dans **Réglages → Synchronisation** (Mindwtr utilisera le fichier `data.json` qu’il contient).
 
+#### Flatpak (Linux)
+
+La version Flatpak s'exécute dans un bac à sable et ne demande aucun accès au système de fichiers. Lorsque vous choisissez un dossier de synchronisation, le portail de fichiers du bureau n'accorde l'accès qu'à ce dossier, et Mindwtr peut afficher le chemin sous une forme telle que `/run/user/1000/doc/abcd/Mindwtr`.
+
+- Ce chemin est la correspondance établie par le portail avec le dossier que vous avez choisi, et non un répertoire de données distinct de Mindwtr.
+- Faites pointer Syncthing et les autres outils de synchronisation vers le dossier choisi au départ. Ils ne peuvent pas voir le chemin du portail, qui n'existe qu'à l'intérieur du bac à sable de Mindwtr.
+
+Vérifiez que `data.json` apparaît dans le dossier que vous avez sélectionné. Sinon, l'autorisation du portail ne fonctionne pas sur votre installation et vous pouvez, en dernier recours, donner à Mindwtr un accès direct à un dossier :
+
+```bash
+flatpak override --user --filesystem="$HOME/Mindwtr" tech.dongdongbh.mindwtr
+```
+
+Redémarrez Mindwtr ensuite. Il s'agit d'un dépannage et non de la configuration normale — le portail est la voie prévue, signalez-le donc si vous en avez besoin.
+
 ### 3. Synchronisation WebDAV
 
 Synchronisez directement avec un serveur WebDAV :

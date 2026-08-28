@@ -223,6 +223,21 @@ Android 官方 OneDrive 應用程式**不會**持續雙向同步本機資料夾�
 2. 使用橋接應用程式，將該資料夾同步至 Android 上的本機資料夾。
 3. 在 Mindwtr 的**設定 → 同步**中選取該本機資料夾（Mindwtr 會使用其中的 `data.json`）。
 
+#### Flatpak（Linux）
+
+Flatpak 版本執行在沙箱中，本身不要求任何檔案系統權限。當你選擇同步資料夾時，桌面的檔案入口只授予該資料夾的存取權限，Mindwtr 顯示的路徑可能類似 `/run/user/1000/doc/abcd/Mindwtr`。
+
+- 該路徑是入口為你所選資料夾建立的對應，並不是另一個 Mindwtr 資料目錄。
+- 請讓 Syncthing 等同步工具指向你最初選擇的那個資料夾。它們看不到入口路徑，那只存在於 Mindwtr 的沙箱內部。
+
+請確認 `data.json` 出現在你選擇的資料夾中。如果沒有出現，代表入口授權在你的系統上沒有生效，可以作為備用方案給 Mindwtr 直接存取某個資料夾的權限：
+
+```bash
+flatpak override --user --filesystem="$HOME/Mindwtr" tech.dongdongbh.mindwtr
+```
+
+之後重新啟動 Mindwtr。這是排除問題的手段，而不是一般設定——入口才是預期的方式，所以如果你需要這樣做，請回報給我。
+
 ### 3. WebDAV 同步
 
 直接同步至 WebDAV 伺服器：

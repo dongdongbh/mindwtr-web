@@ -223,6 +223,21 @@ Then:
 2. Use the bridge app to sync that folder to a local folder on Android.
 3. In Mindwtr, select that local folder in **Settings → Sync** (Mindwtr will use `data.json` inside).
 
+#### Flatpak (Linux)
+
+The Flatpak build runs in a sandbox and asks for no filesystem access of its own. When you pick a sync folder, the desktop's file portal grants access to just that folder, and Mindwtr may show the path as something like `/run/user/1000/doc/abcd/Mindwtr`.
+
+- That path is the portal's mapping to the folder you chose, not a separate Mindwtr data directory.
+- Point Syncthing and other sync tools at the folder you originally chose. They cannot see the portal path, which exists only inside Mindwtr's sandbox.
+
+Check that `data.json` appears in the folder you selected. If it does not, the portal grant is not working on your setup, and you can give Mindwtr direct access to one folder as a fallback:
+
+```bash
+flatpak override --user --filesystem="$HOME/Mindwtr" tech.dongdongbh.mindwtr
+```
+
+Restart Mindwtr afterwards. This is a troubleshooting step rather than the normal setup — the portal is the intended path, so please report it if you need this.
+
 ### 3. WebDAV Sync
 
 Sync directly to a WebDAV server:

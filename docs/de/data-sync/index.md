@@ -222,6 +222,21 @@ Dann:
 2. Mit der Brücken-App in einen lokalen Android-Ordner synchronisieren.
 3. Diesen lokalen Ordner in Mindwtr unter **Einstellungen → Synchronisierung** wählen (`data.json` wird darin verwendet).
 
+#### Flatpak (Linux)
+
+Die Flatpak-Version läuft in einer Sandbox und fordert selbst keinen Dateisystemzugriff an. Wenn Sie einen Sync-Ordner auswählen, gewährt das Dateiportal der Desktop-Umgebung Zugriff nur auf diesen Ordner, und Mindwtr zeigt den Pfad möglicherweise als etwas wie `/run/user/1000/doc/abcd/Mindwtr` an.
+
+- Dieser Pfad ist die Zuordnung des Portals zu dem von Ihnen gewählten Ordner, kein separates Mindwtr-Datenverzeichnis.
+- Richten Sie Syncthing und andere Sync-Werkzeuge auf den ursprünglich gewählten Ordner. Sie können den Portalpfad nicht sehen, den es nur innerhalb der Sandbox von Mindwtr gibt.
+
+Prüfen Sie, ob `data.json` in dem von Ihnen gewählten Ordner erscheint. Falls nicht, funktioniert die Portalfreigabe auf Ihrem System nicht, und Sie können Mindwtr als Ausweichlösung direkten Zugriff auf einen Ordner geben:
+
+```bash
+flatpak override --user --filesystem="$HOME/Mindwtr" tech.dongdongbh.mindwtr
+```
+
+Starten Sie Mindwtr danach neu. Das ist ein Behelf zur Fehlersuche und nicht die normale Einrichtung — vorgesehen ist das Portal, melden Sie es also bitte, wenn Sie das brauchen.
+
 ### 3. WebDAV-Synchronisierung
 
 Direkte Synchronisierung mit einem WebDAV-Server:

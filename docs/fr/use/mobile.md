@@ -340,7 +340,7 @@ Votre tableau de bord principal pour agir. Focus est un tableau de bord d’enga
 | ------------ | ----------------------------------------------------------------------- |
 | **Aujourd’hui** | Tâches ciblées aujourd’hui, à échéance aujourd’hui/en retard ou commençant aujourd’hui |
 | **Suivantes** | Actions suivantes disponibles qui ne sont ni bloquées ni différées     |
-| **À venir** | Aperçu en lecture seule des actions qui démarrent ou reviennent sous 7 jours |
+| **À venir** | Aperçu des actions qui démarrent ou reviennent sous 7 jours, y compris plus tard aujourd’hui |
 
 Focus tient les tâches dont la date de début est future et les tâches ultérieures des projets séquentiels à l’écart de ses listes actionnables, afin qu’elles restent limitées à ce sur quoi vous pouvez agir maintenant ; les tâches différées de la semaine à venir restent visibles dans l’aperçu **À venir**, avec la date à laquelle chacune apparaîtra. Utilisez les **Contextes**, les **Projets** ou la **Recherche** lorsque vous souhaitez examiner un inventaire de tâches plus large.
 

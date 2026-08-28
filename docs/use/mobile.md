@@ -340,7 +340,7 @@ Your primary dashboard for doing. Focus is an Engage dashboard, not a full inven
 | ------------ | ----------------------------------------------------------------------- |
 | **Today**    | Tasks focused for today, due today/overdue, or starting today           |
 | **Next**     | Available next actions that are not blocked or deferred                 |
-| **Upcoming** | Read-only preview of next actions starting or recurring within 7 days   |
+| **Upcoming** | Preview of next actions starting or recurring within 7 days, including later today |
 
 Focus keeps future-start tasks and later tasks in sequential projects out of its actionable lists so they stay limited to what you can act on now; deferred tasks landing within the next week still show in the **Upcoming** preview, with the date each will appear. Use **Contexts**, **Projects**, or **Search** when you want to inspect the broader task inventory.
 

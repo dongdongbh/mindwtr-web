@@ -69,7 +69,7 @@ Ihr gemeinsames Dashboard für das tägliche Erledigen. „Fokus“ ist kein vol
 - **Überfällig**: Einträge nach ihrem Fälligkeitsdatum
 - **Heute fällig**: heute fällige Aufgaben
 - **Nächste Aktionen**: ausführbare Aufgaben ohne Fälligkeitsdatum, nach Kontext gefiltert
-- **Anstehend**: eine schreibgeschützte Vorschau auf nächste Aktionen, die innerhalb der nächsten 7 Tage starten oder wiederkehren; jede Zeile zeigt das Datum, an dem sie erscheinen wird. Der Abschnitt erscheint nur, wenn etwas ansteht, und seine Zeilen lassen sich nicht mit einem Stern versehen
+- **Anstehend**: eine Vorschau auf nächste Aktionen, die innerhalb der nächsten 7 Tage starten oder wiederkehren; jede Zeile zeigt das Datum, an dem sie erscheinen wird. Aufgaben, die später am heutigen Tag starten, stehen ebenfalls hier, weil Fokus sie bis zu ihrer Uhrzeit ausblendet; diese Zeilen lassen sich für heute mit einem Stern versehen, auf einen anderen Tag verschobene dagegen nicht. Der Abschnitt erscheint nur, wenn etwas ansteht
 - **Durchsicht fällig**: Einträge mit Tickler-Datum
 
 „Fokus“ hält Aufgaben mit zukünftigem Start und spätere Aufgaben sequenzieller Projekte aus seinen ausführbaren Listen heraus; zurückgestellte Aufgaben, die innerhalb der nächsten Woche anstehen, erscheinen weiterhin in der Vorschau **Anstehend**. Verwenden Sie **Kontexte**, **Projekte** oder die **Suche** für einen größeren Aufgabenbestand.

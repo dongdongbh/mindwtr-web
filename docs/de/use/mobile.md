@@ -311,9 +311,9 @@ Das zentrale Dashboard zum Erledigen, kein vollständiger Bestand aller `next`-A
 
 | Abschnitt | Inhalt |
 | ------------ | ----------------------------------------------------------------------- |
-| **Heute** | Heute fokussierte, heute fällige/überfällige oder heute beginnende Aufgaben |
+| **Heute** | Heute fokussierte, heute fällige/überfällige oder heute beginnende Aufgaben, auch später am Tag |
 | **Nächstes** | Verfügbare, nicht blockierte oder zurückgestellte nächste Aktionen |
-| **Anstehend** | Vorschau auf nächste Aktionen, die innerhalb von 7 Tagen starten oder wiederkehren, auch später heute |
+| **Anstehend** | Schreibgeschützte Vorschau auf nächste Aktionen, die an einem anderen Tag innerhalb von 7 Tagen starten oder wiederkehren |
 
 Zukünftig beginnende und spätere Aufgaben sequenzieller Projekte bleiben aus den ausführbaren Listen heraus; zurückgestellte Aufgaben der nächsten Woche erscheinen weiterhin in der Vorschau **Anstehend**, jeweils mit dem Datum, an dem sie auftauchen. Verwenden Sie **Kontexte**, **Projekte** oder die **Suche** für den vollständigen Bestand.
 

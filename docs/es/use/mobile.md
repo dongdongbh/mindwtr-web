@@ -342,9 +342,9 @@ Tu panel principal para hacer. Foco es un panel de actividad, no un inventario c
 
 | Sección      | Contenido                                                                 |
 | ------------ | ------------------------------------------------------------------------- |
-| **Hoy**      | Tareas enfocadas para hoy, que vencen hoy/están atrasadas o empiezan hoy |
+| **Hoy**      | Tareas enfocadas para hoy, que vencen hoy/están atrasadas o empiezan hoy, incluso más tarde hoy |
 | **Próximas** | Próximas acciones disponibles que no están bloqueadas ni aplazadas       |
-| **Próximas** (vista previa) | Vista previa de las acciones que empiezan o se repiten dentro de 7 días, incluido más tarde hoy |
+| **Próximas** (vista previa) | Vista previa de solo lectura de las acciones que empiezan o se repiten otro día dentro de 7 días |
 
 Foco mantiene las tareas con inicio futuro y las posteriores de los proyectos secuenciales fuera de sus listas accionables para limitarlas a lo que puedes hacer ahora; las tareas aplazadas de la próxima semana siguen viéndose en la vista previa **Próximas**, con la fecha en la que aparecerá cada una. Usa **Contextos**, **Proyectos** o **Buscar** cuando quieras examinar el inventario de tareas más amplio.
 

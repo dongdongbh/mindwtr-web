@@ -67,9 +67,9 @@ Your unified dashboard for daily engagement. Focus is not a full inventory of ev
 
 - **Today's Focus**: Starred priority tasks for deep work, up to your configured Focus limit. Focused Next tasks also show a small filled star beside their title in task lists and on the Board, so Focus membership reads at a glance.
 - **Overdue**: Past due items.
-- **Due Today**: Tasks due today.
+- **Due Today**: Tasks due today or starting today, including those that start later today, sorted by time.
 - **Next Actions**: Ready tasks without due dates, filtered by context.
-- **Upcoming**: A preview of next actions that start — or recur — within the next 7 days, each row showing the date it will appear. Tasks that start later today are listed here too, since Focus hides them until their time arrives; those rows can be starred for today, while rows deferred to another day cannot. The section only exists when something is coming.
+- **Upcoming**: A read-only preview of next actions that start — or recur — on another day within the next 7 days, each row showing the date it will appear. The section only exists when something is coming, and its rows cannot be starred.
 - **Review Due**: Items with tickler dates.
 
 Focus keeps future-start tasks and later tasks in sequential projects out of its actionable lists; deferred tasks landing within the next week still show in the **Upcoming** preview. Use **Contexts**, **Projects**, or **Search** when you need to inspect broader task inventory.

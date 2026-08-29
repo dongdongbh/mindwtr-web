@@ -8,7 +8,9 @@ Die mit Abstand wichtigste Erkenntnis aus der Historie: **Fast jeder kritische F
 
 ## 0. Produktphilosophie (vor jeder Engineering-Entscheidung prüfen)
 
-Mindwtr ist **standardmäßig einfach und bei Bedarf leistungsfähig**: progressive Offenlegung (erweiterte Optionen bleiben verborgen, bis sie relevant sind), standardmäßig weniger (weniger Felder, weniger Stellschrauben, weniger Ablenkungen) und keine Funktionsausweitung (Klarheit vor Überfrachtung). *Zeig mir kein Cockpit, wenn ich nur Fahrrad fahren möchte.*
+Mindwtr ist **standardmäßig einfach, bei Bedarf leistungsfähig und nachsichtig, wenn das Leben chaotisch wird**: progressive Offenlegung (erweiterte Optionen bleiben verborgen, bis sie relevant sind), standardmäßig weniger (weniger Felder, weniger Stellschrauben, weniger Ablenkungen) und keine Funktionsausweitung (Klarheit vor Überfrachtung). *Zeig mir kein Cockpit, wenn ich nur Fahrrad fahren möchte.*
+
+Nachsichtig, wenn das Leben chaotisch wird: Das System arbeitet weiter, auch wenn Sie es nicht tun. Wer nach zwei Wochen Abwesenheit zurückkommt, erhält einen machbaren nächsten Schritt und keine Vorwürfe. Ein riesiger Posteingang wird zu einer Verarbeitungssitzung, die Sie abschließen können, und nicht zu einem Urteil. Der Fokus hilft Ihnen, weniger auszuwählen, und verlangt nie, dass Sie alles erledigen. Eine liegengebliebene Aufgabe ist eine Einladung zum Überdenken, kein Versagen. Ein Wochenrückblick lässt sich unterbrechen und später fortsetzen. Wenn Ihnen alles zu viel wird, ignorieren Sie die erweiterten Felder; die App funktioniert trotzdem. Es gibt keine Serien und keine Produktivitätspunkte.
 
 ### Automatisch ist besser als manuell — ableiten, nicht fragen
 

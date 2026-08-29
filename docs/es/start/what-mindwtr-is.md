@@ -14,11 +14,13 @@ Puedes adjuntar notas y archivos a las tareas y los proyectos para tener junto a
 
 Mindwtr guarda los compromisos de una persona: los tuyos. No hay espacios de trabajo compartidos, asignación de tareas a compañeros, hilos de comentarios ni un registro de actividad. En espera registra lo que otras personas te deben, como anotación personal y no como canal de colaboración.
 
-## Sencillo de forma predeterminada y potente cuando hace falta
+## Sencillo de forma predeterminada, potente cuando hace falta e indulgente cuando la vida se complica
 
 El ciclo diario consiste en capturar, aclarar y revisar, y todo lo necesario está visible sin configuración. Las funciones más avanzadas —IA, API local, servidor MCP, tableros y Pomodoro— no estorban hasta que las activas, y activarlas nunca dificulta el ciclo básico. El README del proyecto lo expresa con claridad:
 
 > No me muestres una cabina de piloto cuando solo quiero montar en bicicleta.
+
+Indulgente cuando la vida se complica: el sistema sigue funcionando aunque tú no. Vuelve después de dos semanas fuera y obtendrás un siguiente paso manejable, no un reproche. Una Bandeja de entrada enorme se convierte en una sesión de procesamiento que puedes terminar, no en un veredicto. Foco te ayuda a elegir menos y nunca te dice que lo hagas todo. Una tarea estancada es una invitación a replantearla, no un fracaso. Una Revisión semanal se puede pausar y retomar. Si te sientes desbordado, ignora los campos avanzados y la aplicación seguirá funcionando. No hay rachas ni puntuaciones de productividad.
 
 ## Mejor automático que manual
 

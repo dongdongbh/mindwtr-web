@@ -14,11 +14,13 @@ Vous pouvez joindre des notes et des fichiers aux tâches et aux projets, afin d
 
 Mindwtr contient les engagements d’une seule personne : vous. Il n’y a ni espace de travail partagé, ni attribution de tâches à des collègues, ni fil de commentaires, ni flux d’activité. En attente suit ce que d’autres personnes vous doivent ; c’est un registre personnel, pas un canal de collaboration.
 
-## Simple par défaut, puissant au besoin
+## Simple par défaut, puissant au besoin, indulgent quand la vie devient chaotique
 
 La boucle quotidienne consiste à capturer, clarifier et revoir ; tout ce qu’elle exige est visible sans configuration. Les fonctions plus avancées — IA, API locale, serveur MCP, tableaux et Pomodoro — restent discrètes tant que vous ne les activez pas, sans jamais compliquer la boucle de base. Le README du projet le résume ainsi :
 
 > Ne me montrez pas un poste de pilotage quand je veux simplement faire du vélo.
+
+Indulgent quand la vie devient chaotique : le système continue de fonctionner même quand vous n’y arrivez plus. Revenez après deux semaines d’absence et vous obtenez une prochaine action gérable, pas des reproches. Une Boîte de réception débordante devient une séance de traitement que vous pouvez terminer, pas un verdict. Focus vous aide à choisir moins ; il ne vous demande jamais de tout faire. Une tâche restée en plan est une invitation à la reconsidérer, pas un échec. Une Revue hebdomadaire peut être mise en pause puis reprise. Si vous êtes débordé, ignorez les champs avancés : l’application fonctionne quand même. Il n’y a ni séries ni scores de productivité.
 
 ## L’automatique plutôt que le manuel
 

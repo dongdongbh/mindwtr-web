@@ -8,7 +8,9 @@ The single biggest lesson across the history: **almost every critical (P0/P1) bu
 
 ## 0. Product philosophy (checked before any engineering decision)
 
-Mindwtr is **simple by default and powerful when you need it**: progressive disclosure (advanced options stay hidden until they matter), less by default (fewer fields, fewer knobs, fewer distractions), and no feature creep (clarity over clutter). *Don't show me a cockpit when I just want to ride a bike.*
+Mindwtr is **simple by default, powerful when you need it, and forgiving when life gets messy**: progressive disclosure (advanced options stay hidden until they matter), less by default (fewer fields, fewer knobs, fewer distractions), and no feature creep (clarity over clutter). *Don't show me a cockpit when I just want to ride a bike.*
+
+Forgiving when life gets messy: the system keeps working when you don't. Come back after two weeks away and you get a manageable next step, not a guilt trip. A huge Inbox gets a processing session you can finish, not a verdict. Focus helps you pick less, never tells you to do everything. A stale task is an invitation to reconsider, not a failure. A Weekly Review can be paused and resumed. If you are overwhelmed, ignore the advanced fields and the app still works. There are no streaks and no productivity scores.
 
 ### Automatic beats manual — infer, don't ask
 If the right outcome can be determined automatically — from the platform, the install channel, existing data, or context — the app should just do it. This applies to everything, not only settings: a knob, a confirmation prompt, an extra tap in a workflow, or a UI control the user must operate are all the same failure — the app asking a question it could answer itself. Every manual step moves cognitive load from us (once) onto every user (forever).

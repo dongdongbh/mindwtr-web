@@ -14,11 +14,13 @@ You can attach notes and files to tasks and projects, so the context you need si
 
 Mindwtr holds one person's commitments: yours. There are no shared workspaces, no assigning tasks to teammates, no comment threads, and no activity feed. Waiting For tracks what you are owed by other people, which is a personal record rather than a collaboration channel.
 
-## Simple by default, powerful when needed
+## Simple by default, powerful when needed, forgiving when life gets messy
 
 The daily loop is capture, clarify, review, and everything you need for it is visible without configuration. The heavier features (AI, the local API, the MCP server, boards, Pomodoro) stay out of the way until you turn them on, and turning them on never makes the basic loop harder. The project README puts it plainly:
 
 > Don't show me a cockpit when I just want to ride a bike.
+
+Forgiving when life gets messy: the system keeps working when you don't. Come back after two weeks away and you get a manageable next step, not a guilt trip. A huge Inbox gets a processing session you can finish, not a verdict. Focus helps you pick less, never tells you to do everything. A stale task is an invitation to reconsider, not a failure. A Weekly Review can be paused and resumed. If you are overwhelmed, ignore the advanced fields and the app still works. There are no streaks and no productivity scores.
 
 ## Automatic beats manual
 

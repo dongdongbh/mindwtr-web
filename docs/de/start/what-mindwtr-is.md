@@ -14,11 +14,13 @@ Sie können Aufgaben und Projekten Notizen und Dateien hinzufügen, damit der be
 
 Mindwtr verwaltet die Verpflichtungen einer Person: Ihre. Es gibt keine gemeinsamen Arbeitsbereiche, keine Aufgabenzuweisung an Teammitglieder, keine Kommentarthreads und keinen Aktivitätsfeed. „Warten“ hält fest, was andere Personen Ihnen schulden; das ist eine persönliche Aufzeichnung und kein Kanal zur Zusammenarbeit.
 
-## Standardmäßig einfach, bei Bedarf leistungsstark
+## Standardmäßig einfach, bei Bedarf leistungsstark und nachsichtig, wenn das Leben chaotisch wird
 
 Der tägliche Ablauf besteht aus Erfassen, Klären und Durchsehen. Alles Nötige ist ohne Konfiguration sichtbar. Umfangreichere Funktionen wie KI, lokale API, MCP-Server, Tafeln und Pomodoro bleiben im Hintergrund, bis Sie sie aktivieren. Auch dann erschweren sie den grundlegenden Ablauf nicht. Die README des Projekts bringt es auf den Punkt:
 
 > Zeig mir kein Cockpit, wenn ich nur Fahrrad fahren möchte.
+
+Nachsichtig, wenn das Leben chaotisch wird: Das System arbeitet weiter, auch wenn Sie es nicht tun. Wer nach zwei Wochen Abwesenheit zurückkommt, erhält einen machbaren nächsten Schritt und keine Vorwürfe. Ein riesiger Posteingang wird zu einer Verarbeitungssitzung, die Sie abschließen können, und nicht zu einem Urteil. Der Fokus hilft Ihnen, weniger auszuwählen, und verlangt nie, dass Sie alles erledigen. Eine liegengebliebene Aufgabe ist eine Einladung zum Überdenken, kein Versagen. Ein Wochenrückblick lässt sich unterbrechen und später fortsetzen. Wenn Ihnen alles zu viel wird, ignorieren Sie die erweiterten Felder; die App funktioniert trotzdem. Es gibt keine Serien und keine Produktivitätspunkte.
 
 ## Automatisch ist besser als manuell
 

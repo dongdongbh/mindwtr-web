@@ -6,12 +6,13 @@ Dieser Leitfaden behandelt die Einrichtung der Entwicklungsumgebung und Richtlin
 
 ## Produktphilosophie
 
-Mindwtr ist so konzipiert, dass es **standardmäßig einfach und bei Bedarf leistungsfähig** ist. Unser Schwerpunkt liegt darauf, die kognitive Belastung zu verringern, Überflüssiges zu entfernen und die Benutzer im Arbeitsfluss zu halten. Jeder Beitrag wird an diesen Grundsätzen gemessen:
+Mindwtr ist so konzipiert, dass es **standardmäßig einfach, bei Bedarf leistungsfähig und nachsichtig ist, wenn das Leben chaotisch wird**. Unser Schwerpunkt liegt darauf, die kognitive Belastung zu verringern, Überflüssiges zu entfernen und die Benutzer im Arbeitsfluss zu halten. Jeder Beitrag wird an diesen Grundsätzen gemessen:
 
 - **Progressive Offenlegung**: Erweiterte Optionen bleiben verborgen, bis sie relevant sind.
 - **Standardmäßig weniger**: weniger Felder, weniger Stellschrauben, weniger Ablenkungen.
 - **Funktionsausweitung vermeiden**: Wir geben Klarheit Vorrang vor Überfrachtung.
 - **Automatisch ist besser als manuell**: Wenn sich das richtige Ergebnis ableiten oder vorhersagen lässt — aus Plattform, Installationskanal, vorhandenen Daten oder Kontext —, sollte die App es einfach umsetzen. Das gilt überall, nicht nur für Einstellungen: keine zu konfigurierende Option, keine Frage, die die App selbst beantworten kann, kein zusätzlicher Tipp oder manueller Schritt in einem Arbeitsablauf und keine Benutzeroberfläche, die für das offensichtliche Ergebnis bedient werden muss. Jeder manuelle Schritt verlagert kognitive Belastung von uns (einmal) auf alle Benutzer (für immer). Die Aktualisierungsprüfung dient als Vorbild: Statt eines Schalters „Aktualisierungsprüfungen deaktivieren“ erkennt die App ihre Installationsart und verhält sich je Kanal richtig — Installationen über Paketmanager bleiben von selbst still, ohne dass eine Einstellung ausgeliefert wird. Wenn sich das richtige Verhalten tatsächlich nicht ableiten lässt und eine echte Nachfrage besteht, setzen Sie die Funktion hinter einen vorhandenen Schalter oder eine vorhandene Bedienmöglichkeit, bevor Sie eine neue schaffen.
+- **Nachsichtig, wenn das Leben chaotisch wird**: Machen Sie den Benutzern nie Vorwürfe für Kapazität, die sie nicht hatten. Die Rückkehr nach einer Auszeit muss leichtfallen, große Rückstände werden in begrenzten Sitzungen abgearbeitet, liegengebliebene Einträge laden zum Überdenken ein, und es gibt weder Serien noch Produktivitätspunkte.
 
 _Zeig mir kein Cockpit, wenn ich nur Fahrrad fahren möchte._
 

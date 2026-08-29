@@ -6,12 +6,13 @@ Ce guide couvre la configuration de l'environnement de développement et les dir
 
 ## Philosophie du produit
 
-Mindwtr est conçu pour être **simple par défaut et puissant quand vous en avez besoin**. Nous cherchons à réduire la charge cognitive, à éliminer le superflu et à préserver la concentration des utilisateurs. Chaque contribution est évaluée à l'aune de ces principes :
+Mindwtr est conçu pour être **simple par défaut, puissant quand vous en avez besoin et indulgent quand la vie devient chaotique**. Nous cherchons à réduire la charge cognitive, à éliminer le superflu et à préserver la concentration des utilisateurs. Chaque contribution est évaluée à l'aune de ces principes :
 
 - **Divulgation progressive** : les options avancées restent masquées jusqu'à ce qu'elles deviennent utiles.
 - **Moins par défaut** : moins de champs, moins de réglages, moins de distractions.
 - **Éviter l'accumulation de fonctionnalités** : nous privilégions la clarté plutôt que l'encombrement.
 - **L'automatique l'emporte sur le manuel** : si le bon résultat peut être déduit ou prédit — à partir de la plateforme, du canal d'installation, des données existantes ou du contexte — l'application doit simplement s'en charger. Cela s'applique partout, pas seulement aux paramètres : aucun réglage à configurer, aucune invite demandant ce que l'application peut déterminer elle-même, aucune pression ou étape manuelle supplémentaire dans un flux de travail, aucune interface que l'utilisateur doit manipuler pour obtenir le résultat évident. Chaque étape manuelle transfère la charge cognitive de notre côté (une fois) vers chaque utilisateur (pour toujours). Le vérificateur de mises à jour sert de modèle : au lieu d'un bouton « désactiver la recherche de mises à jour », l'application détecte son mode d'installation et adopte le comportement approprié à chaque canal — les installations effectuées par un gestionnaire de paquets restent silencieuses d'elles-mêmes, sans qu'aucun paramètre ne soit fourni. Lorsque le comportement approprié ne peut réellement pas être déduit et que la demande est avérée, placez la fonctionnalité derrière un commutateur ou un affordance existants avant d'en créer un nouveau.
+- **Indulgent quand la vie devient chaotique** : ne culpabilisez jamais l’utilisateur pour une capacité qu’il n’avait pas. Revenir après une absence doit être facile, les gros retards se traitent en séances délimitées, les éléments restés en plan invitent à les reconsidérer, et il n’y a ni séries ni scores de productivité.
 
 _Ne me montrez pas un cockpit quand je veux simplement faire du vélo._
 

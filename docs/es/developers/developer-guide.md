@@ -6,12 +6,13 @@ Esta guía abarca la configuración del entorno de desarrollo y las pautas de co
 
 ## Filosofía del producto
 
-Mindwtr está diseñado para ser **sencillo de forma predeterminada y potente cuando lo necesitas**. Nos centramos en reducir la carga cognitiva, eliminar lo superfluo y mantener a los usuarios concentrados. Cada contribución se evalúa según estos principios:
+Mindwtr está diseñado para ser **sencillo de forma predeterminada, potente cuando lo necesitas e indulgente cuando la vida se complica**. Nos centramos en reducir la carga cognitiva, eliminar lo superfluo y mantener a los usuarios concentrados. Cada contribución se evalúa según estos principios:
 
 - **Divulgación progresiva**: las opciones avanzadas permanecen ocultas hasta que son relevantes.
 - **Menos de forma predeterminada**: menos campos, menos controles, menos distracciones.
 - **Evitar la proliferación de funciones**: priorizamos la claridad frente a la saturación.
 - **Lo automático supera a lo manual**: si el resultado correcto puede inferirse o predecirse —a partir de la plataforma, el canal de instalación, los datos existentes o el contexto—, la aplicación debe hacerlo sin más. Esto se aplica en todas partes, no solo a los ajustes: ningún control que configurar, ninguna pregunta cuya respuesta pueda determinar la propia aplicación, ningún toque adicional ni paso manual en un flujo de trabajo, ninguna interfaz que el usuario deba manipular para obtener el resultado obvio. Cada paso manual traslada la carga cognitiva de nosotros (una vez) a cada usuario (para siempre). El comprobador de actualizaciones es el modelo: en lugar de un interruptor para «desactivar las comprobaciones de actualizaciones», la aplicación detecta cómo se instaló y se comporta correctamente según el canal; las instalaciones mediante un gestor de paquetes dejan de mostrar avisos por sí solas, sin añadir ningún ajuste. Cuando el comportamiento correcto realmente no puede inferirse y existe una demanda real, sitúa la función detrás de un interruptor o recurso existente antes de crear uno nuevo.
+- **Indulgente cuando la vida se complica**: nunca avergüences al usuario por una capacidad que no tenía. Volver tras un tiempo fuera debe ser fácil, los grandes atrasos se abordan en sesiones acotadas, los elementos estancados invitan a replantearlos y no hay rachas ni puntuaciones de productividad.
 
 _No me muestres una cabina de avión cuando solo quiero montar en bicicleta._
 

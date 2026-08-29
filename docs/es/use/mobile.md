@@ -350,6 +350,8 @@ Foco mantiene las tareas con inicio futuro y las posteriores de los proyectos se
 
 El orden predeterminado de Próximas acciones coloca primero las acciones con vencimiento próximo, después las que no tienen fecha y al final las que vencen en un futuro lejano. Dentro del mismo grupo, Foco usa la prioridad cuando está habilitada, seguida de la hora de inicio, la fecha de creación, el título y el id. Consulta [Flujo GTD en Mindwtr](/es/use/gtd-workflow#como-ordena-enfoque-las-acciones-disponibles) para conocer toda la lógica.
 
+El icono de lista junto a **Filtros** en la cabecera de Foco alterna **Detalles**: al desactivarlo, cada fila se reduce a su título y oculta la vista previa de la descripción y la línea de metadatos; cada dispositivo recuerda la elección.
+
 ### Funciones
 
 - **Filtro de contexto**: toca una pastilla de contexto para filtrar la lista Próximas.

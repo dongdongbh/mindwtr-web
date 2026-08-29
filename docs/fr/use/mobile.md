@@ -350,6 +350,8 @@ Focus tient les tâches dont la date de début est future et les tâches ultéri
 
 Par défaut, les Actions suivantes sont classées avec les actions à échéance proche en premier, puis les actions sans date et enfin les actions dont l’échéance est lointaine. Au sein d’une même catégorie, Focus utilise la priorité lorsqu’elle est activée, puis l’heure de début, la date de création, le titre et l’identifiant. Consultez [Le flux de travail GTD dans Mindwtr](/fr/use/gtd-workflow#comment-focus-trie-les-actions-disponibles) pour connaître toute la logique.
 
+L’icône de liste à côté de **Filtres** dans l’en-tête de Focus bascule les **Détails** : désactivée, chaque ligne se réduit à son titre et masque l’aperçu de la description ainsi que la ligne de métadonnées ; chaque appareil retient ce choix.
+
 ### Fonctionnalités
 
 - **Filtre de contexte** : touchez une pastille de contexte pour filtrer la liste Suivantes.

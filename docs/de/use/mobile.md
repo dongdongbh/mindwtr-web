@@ -319,6 +319,8 @@ Zukünftig beginnende und spätere Aufgaben sequenzieller Projekte bleiben aus d
 
 Standardsortierung: bald fällig, undatiert, weit in der Zukunft fällig; innerhalb einer Gruppe Priorität (wenn aktiviert), Startzeit, Erstellungsdatum, Titel und ID. Siehe [GTD-Arbeitsablauf](/de/use/gtd-workflow#how-focus-sorts-available-actions).
 
+Das Listensymbol neben **Filter** in der Fokus-Kopfzeile schaltet **Details** um: ausgeschaltet zeigt jede Zeile nur noch ihren Titel, ohne Beschreibungsvorschau und Metadatenzeile — jedes Gerät merkt sich die Auswahl.
+
 ### Funktionen
 
 - **Kontextfilter**: Tippen Sie auf einen Kontextchip, um die Liste der Nächsten Aktionen zu filtern.

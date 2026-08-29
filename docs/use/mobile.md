@@ -350,6 +350,8 @@ Focus keeps future-start tasks and later tasks in sequential projects out of its
 
 Default Next Actions order is due-soon actions first, undated actions next, and far-future due actions last. Within the same bucket, Focus uses priority when enabled, then start time, creation date, title, and id. See [GTD Workflow in Mindwtr](/use/gtd-workflow#how-focus-sorts-available-actions) for the full logic.
 
+The list icon beside **Filters** in the Focus header toggles **Details**: turn it off and every row collapses to its title, hiding the description preview and metadata line, with each device remembering the choice.
+
 ### Features
 
 - **Context filter**: Tap a context chip to filter the Next list.

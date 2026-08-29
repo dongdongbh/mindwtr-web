@@ -137,6 +137,8 @@ Prüfen Sie jeden Posteingangseintrag:
 - Projekte besitzen nächste Aktionen.
 - Listen sind aktuell.
 
+Zuerst erscheint ein kurzer Rückblick auf die vergangene Woche: wie viele Aktionen Sie seit dem eingestellten Wochenbeginn erledigt haben und wie viele Projekte dadurch vorangekommen sind, dass eine ihrer Aufgaben erledigt wurde. Ist das Feld „Zeitschätzung“ aktiv, zählt der Rückblick zusätzlich, wie viele dieser erledigten Aufgaben eine Schätzung hatten, und summiert diese Schätzungen; bei aktiver „Aufgewendeter Zeit“ kommt die auf denselben Aufgaben erfasste Zeit hinzu, also die dort eingetragene Zeit und nicht die im Lauf der Woche aufgewendete. Wurde nichts erledigt, entfällt der Rückblick.
+
 Der Abschlussbildschirm zeigt eine kurze Zusammenfassung des Systemzustands: ob der Posteingang leer ist, ob jedes aktive Projekt eine nächste Aktion besitzt und wie viele Einträge unter „Warten“ seit mehr als zwei Wochen unverändert sind. Jede Zeile folgt denselben Regeln wie die Rückblickschritte; Zeilen ohne Meldung bleiben ausgeblendet.
 
 ---

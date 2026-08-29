@@ -137,6 +137,8 @@ Review each inbox item:
 - Projects have next actions
 - Lists are current
 
+First comes a short look-back at the week just finished: how many actions you completed since your configured week start, and how many projects moved forward because one of their tasks was completed. If the Time estimate field is on, it also counts how many of those completed tasks carried an estimate and totals their estimates, and with Time spent on it adds the time tracked on those same tasks, which is time recorded against them rather than time you put in during the week. When nothing was completed, the look-back is left out.
+
 The final screen shows a short summary of where the system stands: whether your Inbox is empty, whether every active project has a next action, and how many Waiting For items have sat untouched for more than two weeks. Each line reflects the same rules the review steps use, and lines with nothing to report stay hidden.
 
 ---

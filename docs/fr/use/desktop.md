@@ -67,7 +67,7 @@ Votre tableau de bord unifié pour l’engagement quotidien. Focus ne constitue 
 
 - **Focus du jour** : tâches prioritaires étoilées pour le travail approfondi, dans la limite Focus que vous avez configurée. Les actions suivantes mises en focus affichent aussi une petite étoile pleine à côté de leur titre dans les listes de tâches et sur le Tableau, pour repérer d'un coup d'œil l'appartenance au Focus.
 - **En retard** : éléments dont l’échéance est dépassée.
-- **À faire aujourd’hui** : tâches dont l’échéance est aujourd’hui ou qui démarrent aujourd’hui, y compris plus tard dans la journée, triées par heure.
+- **À faire aujourd’hui** : tâches dont l’échéance est aujourd’hui ou qui démarrent aujourd’hui, y compris plus tard dans la journée, triées par heure, ces lignes affichant leur heure de début jusqu’à ce qu’elle arrive.
 - **Actions suivantes** : tâches prêtes sans échéance, filtrées par contexte.
 - **À venir** : aperçu en lecture seule des actions suivantes qui démarrent — ou reviennent — un autre jour dans les 7 prochains jours ; chaque ligne indique la date à laquelle elle apparaîtra. La section n’est présente que lorsque quelque chose arrive et ses lignes ne peuvent pas être étoilées.
 - **Revue à effectuer** : éléments dont la date de rappel est arrivée.

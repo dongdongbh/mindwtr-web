@@ -342,7 +342,7 @@ Your primary dashboard for doing. Focus is an Engage dashboard, not a full inven
 
 | Section      | Content                                                                 |
 | ------------ | ----------------------------------------------------------------------- |
-| **Today**    | Tasks focused for today, due today/overdue, or starting today, including later today           |
+| **Today**    | Tasks focused for today, due today/overdue, or starting today, including later today, with those rows showing their start time until it arrives |
 | **Next**     | Available next actions that are not blocked or deferred                 |
 | **Upcoming** | Read-only preview of next actions starting or recurring on another day within 7 days |
 

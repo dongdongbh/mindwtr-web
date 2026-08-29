@@ -67,7 +67,7 @@ Ihr gemeinsames Dashboard für das tägliche Erledigen. „Fokus“ ist kein vol
 
 - **Heutiger Fokus**: Mit Stern markierte Prioritätsaufgaben bis zum festgelegten Fokuslimit. Fokussierte Nächste Aktionen zeigen zudem einen kleinen ausgefüllten Stern neben ihrem Titel in Aufgabenlisten und auf dem Board, sodass die Fokus-Zugehörigkeit auf einen Blick erkennbar ist
 - **Überfällig**: Einträge nach ihrem Fälligkeitsdatum
-- **Heute fällig**: heute fällige oder heute beginnende Aufgaben, auch solche, die erst später am Tag starten, nach Uhrzeit sortiert
+- **Heute fällig**: heute fällige oder heute beginnende Aufgaben, auch solche, die erst später am Tag starten, nach Uhrzeit sortiert, wobei diese Zeilen ihre Startzeit anzeigen, bis diese erreicht ist
 - **Nächste Aktionen**: ausführbare Aufgaben ohne Fälligkeitsdatum, nach Kontext gefiltert
 - **Anstehend**: eine schreibgeschützte Vorschau auf nächste Aktionen, die an einem anderen Tag innerhalb der nächsten 7 Tage starten oder wiederkehren; jede Zeile zeigt das Datum, an dem sie erscheinen wird. Der Abschnitt erscheint nur, wenn etwas ansteht, und seine Zeilen lassen sich nicht mit einem Stern versehen
 - **Durchsicht fällig**: Einträge mit Tickler-Datum

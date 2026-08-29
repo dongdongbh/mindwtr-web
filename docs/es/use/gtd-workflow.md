@@ -289,7 +289,7 @@ Enfoque no es una vista de inventario completo. Mantiene las tareas con fecha de
 Enfoque determina primero si una tarea está disponible y después ordena las acciones visibles:
 
 1. **Enfoque de hoy** muestra las tareas que has seleccionado explícitamente para hoy. Puedes organizarlas manualmente en el orden en que piensas trabajar: arrastra el controlador en el escritorio o usa el interruptor de reordenación del encabezado de la sección en el móvil. El orden manual se aplica mientras la ordenación de Enfoque esté en su valor predeterminado, se sincroniza entre dispositivos y una tarea conserva su lugar hasta que sale de Enfoque.
-2. **Hoy / Agenda** muestra las tareas `next` disponibles que están vencidas, vencen hoy o comienzan hoy, incluidas las que empiezan más tarde hoy. Se ordenan por la fecha/hora de vencimiento o inicio más próxima, después por prioridad cuando las prioridades están activadas y, a continuación, por la fecha de creación más antigua.
+2. **Hoy / Agenda** muestra las tareas `next` disponibles que están vencidas, vencen hoy o comienzan hoy, incluidas las que empiezan más tarde hoy, y esas filas muestran su hora de inicio hasta que llega. Se ordenan por la fecha/hora de vencimiento o inicio más próxima, después por prioridad cuando las prioridades están activadas y, a continuación, por la fecha de creación más antigua.
 3. **Próximas acciones** muestra las demás tareas `next` disponibles. El orden predeterminado es:
    - primero las que vencen pronto, empezando por la fecha límite más próxima (actualmente, las que vencen en los próximos 30 días)
    - después las acciones sin fecha

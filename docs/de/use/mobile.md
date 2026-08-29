@@ -311,7 +311,7 @@ Das zentrale Dashboard zum Erledigen, kein vollständiger Bestand aller `next`-A
 
 | Abschnitt | Inhalt |
 | ------------ | ----------------------------------------------------------------------- |
-| **Heute** | Heute fokussierte, heute fällige/überfällige oder heute beginnende Aufgaben, auch später am Tag |
+| **Heute** | Heute fokussierte, heute fällige/überfällige oder heute beginnende Aufgaben, auch später am Tag, wobei diese Zeilen ihre Startzeit anzeigen, bis diese erreicht ist |
 | **Nächstes** | Verfügbare, nicht blockierte oder zurückgestellte nächste Aktionen |
 | **Anstehend** | Schreibgeschützte Vorschau auf nächste Aktionen, die an einem anderen Tag innerhalb von 7 Tagen starten oder wiederkehren |
 

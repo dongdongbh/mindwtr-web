@@ -342,7 +342,7 @@ Tu panel principal para hacer. Foco es un panel de actividad, no un inventario c
 
 | Sección      | Contenido                                                                 |
 | ------------ | ------------------------------------------------------------------------- |
-| **Hoy**      | Tareas enfocadas para hoy, que vencen hoy/están atrasadas o empiezan hoy, incluso más tarde hoy |
+| **Hoy**      | Tareas enfocadas para hoy, que vencen hoy/están atrasadas o empiezan hoy, incluso más tarde hoy, y esas filas muestran su hora de inicio hasta que llega |
 | **Próximas** | Próximas acciones disponibles que no están bloqueadas ni aplazadas       |
 | **Próximas** (vista previa) | Vista previa de solo lectura de las acciones que empiezan o se repiten otro día dentro de 7 días |
 

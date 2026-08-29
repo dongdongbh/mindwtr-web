@@ -67,7 +67,7 @@ Tu panel unificado para la actividad diaria. Foco no es un inventario completo d
 
 - **Foco de hoy**: tareas prioritarias marcadas con estrella para trabajar con concentración, hasta el límite de Foco configurado. Las próximas acciones enfocadas también muestran una pequeña estrella rellena junto a su título en las listas de tareas y en el Tablero, de modo que la pertenencia al Foco se ve de un vistazo.
 - **Atrasadas**: elementos cuya fecha de vencimiento ya pasó.
-- **Vencen hoy**: tareas que vencen hoy o empiezan hoy, incluidas las que empiezan más tarde hoy, ordenadas por hora.
+- **Vencen hoy**: tareas que vencen hoy o empiezan hoy, incluidas las que empiezan más tarde hoy, ordenadas por hora, y esas filas muestran su hora de inicio hasta que llega.
 - **Próximas acciones**: tareas listas y sin fecha de vencimiento, filtradas por contexto.
 - **Próximas**: vista previa de solo lectura de las acciones que empezarán —o se repetirán— otro día dentro de los próximos 7 días; cada fila muestra la fecha en la que aparecerá. La sección solo está presente cuando hay algo por llegar y sus filas no se pueden marcar con estrella.
 - **Revisión pendiente**: elementos con fechas de seguimiento.

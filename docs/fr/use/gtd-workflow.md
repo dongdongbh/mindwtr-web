@@ -289,7 +289,7 @@ Focus n’est pas une vue d’inventaire complète. Elle tient les tâches dont 
 Focus détermine d’abord si une tâche est disponible, puis trie les actions visibles :
 
 1. **Focus du jour** affiche les tâches que vous avez explicitement choisies pour aujourd’hui. Vous pouvez les classer manuellement dans l’ordre où vous prévoyez de travailler : faites glisser la poignée sur ordinateur, ou utilisez le bouton de réorganisation dans l’en-tête de la section sur mobile. L’ordre manuel s’applique lorsque le tri de Focus est réglé sur sa valeur par défaut, se synchronise entre les appareils et conserve la place d’une tâche jusqu’à ce qu’elle quitte Focus.
-2. **Aujourd’hui/Planning** affiche les tâches `next` disponibles qui sont en retard, dues aujourd’hui ou qui commencent aujourd’hui, y compris avec une heure de début plus tard dans la journée. Elles sont classées selon l’heure de début/d’échéance la plus proche, puis selon la priorité lorsque les priorités sont activées, puis selon la date de création la plus ancienne.
+2. **Aujourd’hui/Planning** affiche les tâches `next` disponibles qui sont en retard, dues aujourd’hui ou qui commencent aujourd’hui, y compris avec une heure de début plus tard dans la journée, ces lignes affichant leur heure de début jusqu’à ce qu’elle arrive. Elles sont classées selon l’heure de début/d’échéance la plus proche, puis selon la priorité lorsque les priorités sont activées, puis selon la date de création la plus ancienne.
 3. **Prochaines actions** affiche les autres tâches `next` disponibles. L’ordre par défaut est :
    - d’abord les échéances proches, de la date d’échéance la plus proche à la plus lointaine (actuellement celles des 30 prochains jours)
    - ensuite les actions sans date

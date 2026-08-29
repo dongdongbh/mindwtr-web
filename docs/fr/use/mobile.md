@@ -342,7 +342,7 @@ Votre tableau de bord principal pour agir. Focus est un tableau de bord d’enga
 
 | Section      | Contenu                                                                 |
 | ------------ | ----------------------------------------------------------------------- |
-| **Aujourd’hui** | Tâches ciblées aujourd’hui, à échéance aujourd’hui/en retard ou commençant aujourd’hui, y compris plus tard dans la journée |
+| **Aujourd’hui** | Tâches ciblées aujourd’hui, à échéance aujourd’hui/en retard ou commençant aujourd’hui, y compris plus tard dans la journée, ces lignes affichant leur heure de début jusqu’à ce qu’elle arrive |
 | **Suivantes** | Actions suivantes disponibles qui ne sont ni bloquées ni différées     |
 | **À venir** | Aperçu en lecture seule des actions qui démarrent ou reviennent un autre jour sous 7 jours |
 

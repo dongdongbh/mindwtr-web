@@ -157,6 +157,24 @@ Technisch versierte Personen können einen eigenen Importer für die Automatisie
 
 Verwenden Sie diesen Weg, wenn Ihre bisherige App strukturierte JSON- oder CSV-Daten exportiert und Sie mehr Kontrolle benötigen als einfacher Text bietet. Diese Werkzeuge verwenden das normale Datenmodell von Mindwtr; benutzerdefinierte Migrationsskripte müssen Sie jedoch selbst erstellen und betreiben.
 
+### KI-gestützte Migration (MCP)
+
+Wenn Sie bereits einen KI-Agenten nutzen (Claude Desktop, Claude Code, Codex, Gemini CLI), wird der [MCP-Server](/de/power-users/mcp) zum flexibelsten Importer überhaupt. Verbinden Sie den Agenten mit Mindwtr, übergeben Sie ihm die Daten Ihrer alten App in beliebiger Form (CSV, JSON-Export oder sogar die rohe SQLite-Datenbankdatei der App) und beschreiben Sie die gewünschte Migration:
+
+```text
+Hier ist die SQLite-Datenbank meiner alten App. Lies ihre Projekte und
+Aufgaben und lege sie in Mindwtr neu an: Listen als Projekte, Fälligkeiten
+und Notizen übernehmen, erledigte Aufgaben überspringen.
+```
+
+Der Agent erkennt das Quellformat selbst, bildet die Felder auf das Datenmodell von Mindwtr ab und erstellt Bereiche, Projekte und Aufgaben über dieselben Werkzeuge wie eine normale Erfassung. Kein Konvertierungsskript und kein Umbenennen von Spalten: Dieser Weg deckt auch Apps ab, die weder einen Importer noch einen sauberen Export haben.
+
+Drei praktische Hinweise:
+
+- Erstellen Sie zuerst ein [Backup](/de/data-sync/backup-restore). MCP-Schreibzugriffe folgen dem normalen Datenmodell von Mindwtr, aber auf diesem Weg gibt es keine Importvorschau und kein direktes Rückgängig; die Wiederherstellung erfolgt über einen Snapshot.
+- Migrieren Sie zuerst ein kleines Projekt und prüfen Sie das Ergebnis, bevor Sie die gesamte Datenbank übergeben.
+- Die Inhalte des Exports laufen durch das verwendete KI-Modell. Prüfen Sie vorher, ob der Umgang Ihres Anbieters mit Daten für private Aufgaben für Sie akzeptabel ist.
+
 ## Wenn Ihre App nicht aufgeführt ist
 
 Gehen Sie in dieser Reihenfolge vor:

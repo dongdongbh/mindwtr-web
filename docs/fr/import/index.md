@@ -157,6 +157,24 @@ Les utilisateurs techniques peuvent écrire leur propre outil d’import à part
 
 Choisissez cette méthode si votre ancienne application exporte du JSON ou du CSV structuré et que le texte brut ne vous donne pas assez de contrôle. Ces outils passent par le modèle de données normal de Mindwtr, mais les scripts de migration personnalisés restent sous votre responsabilité.
 
+### Migration assistée par IA (MCP)
+
+Si vous utilisez déjà un agent IA (Claude Desktop, Claude Code, Codex, Gemini CLI), le [Serveur MCP](/fr/power-users/mcp) en fait l’importateur le plus flexible qui soit. Connectez l’agent à Mindwtr, donnez-lui les données de votre ancienne application sous la forme disponible (un CSV, un export JSON ou même le fichier de base de données SQLite de l’application) et décrivez la migration souhaitée :
+
+```text
+Voici la base de données SQLite de mon ancienne application. Lis ses
+projets et ses tâches et recrée-les dans Mindwtr : les listes comme
+projets, conserve les échéances et les notes, ignore les tâches terminées.
+```
+
+L’agent identifie lui-même le format source, fait correspondre les champs au modèle de données de Mindwtr et crée domaines, projets et tâches avec les mêmes outils qu’une capture normale. Pas de script de conversion ni de colonnes à renommer : cette voie couvre les applications qui n’ont ni importateur ni export propre.
+
+Trois remarques pratiques :
+
+- Faites d’abord une [sauvegarde](/fr/data-sync/backup-restore). Les écritures MCP passent par le modèle de données normal de Mindwtr, mais cette voie n’offre ni aperçu d’importation ni annulation directe ; la récupération passe par la restauration d’un instantané.
+- Migrez d’abord un petit projet et vérifiez le résultat avant de confier toute la base de données.
+- Le contenu de l’export transite par le modèle d’IA utilisé ; vérifiez au préalable que la politique de données de votre fournisseur vous convient pour des tâches privées.
+
 ## Si votre application n’est pas répertoriée
 
 Procédez dans cet ordre :

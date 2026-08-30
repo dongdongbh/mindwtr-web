@@ -157,6 +157,24 @@ Technical users can write their own importer against Mindwtr's automation surfac
 
 Use this path when your old app exports structured JSON or CSV and you want more control than plain text gives. These tools go through Mindwtr's normal data model, but custom migration scripts are self-serve.
 
+### AI-Assisted Migration (MCP)
+
+If you already use an AI agent (Claude Desktop, Claude Code, Codex, Gemini CLI), the [MCP Server](/power-users/mcp) turns it into the most flexible importer of all. Connect the agent to Mindwtr, hand it your old app's data in whatever form it exists (a CSV, a JSON export, or even the app's raw SQLite database file), and describe the migration you want:
+
+```text
+Here is my old app's SQLite database. Read its projects and tasks and
+recreate them in Mindwtr: lists as projects, keep due dates and notes,
+skip completed tasks.
+```
+
+The agent works out the source format on its own, maps fields onto Mindwtr's data model, and creates areas, projects, and tasks through the same tools normal captures use. No converter script and no column renaming: this path covers apps that have no importer and no clean export at all.
+
+Three practical notes:
+
+- Make a [backup](/data-sync/backup-restore) first. MCP writes go through Mindwtr's normal data model, but there is no import preview or one-tap undo on this path; recovery is by restoring a snapshot.
+- Migrate one small project first and inspect the result before handing over the full database.
+- The export's contents pass through the AI model you use, so check that your provider's data handling is acceptable to you before feeding it private tasks.
+
 ## If Your App Is Not Listed
 
 Use this order:

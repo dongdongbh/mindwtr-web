@@ -89,12 +89,12 @@ RC 工作流为 `.github/workflows/release-rc.yml`。
 - 将 iOS App Store 构建发布到 TestFlight，并禁用 App Store 审核提交。
 - 将 macOS App Store 构建发布到 TestFlight，并禁用 App Store 审核提交。
 - 通过共享 Flathub 工作流创建 Flathub beta 分支更新 PR；如果渠道设置尚未就绪，手动运行时可将其禁用。
-- GitHub 预发布版本工件存在后，构建并验证 AUR `mindwtr-beta-bin`，然后将准确的 `PKGBUILD` 和 `.SRCINFO` 保存为审核工件。RC 工作流不会推送到 AUR。
+- GitHub 预发布版本工件存在后，工作流会构建并验证 AUR `mindwtr-beta-bin`，将准确的 `PKGBUILD` 和 `.SRCINFO` 发布到 AUR，并验证远程 Git 提交。
 - GitHub 预发布版本存在后更新 Beta APT/RPM 仓库；手动运行时可将其禁用。
 
 稳定版 `release.yml` 仍是稳定版发布工作流。它设有保护措施，确保预发布标签不会发布到仅限稳定版的渠道，例如 Google Play 生产轨道、Microsoft Store、Snap stable、Linux APT/RPM 仓库、Flathub stable、AUR stable、Scoop、winget、Homebrew 或 Chocolatey。
 
-Flathub beta 需要 `flathub/tech.dongdongbh.mindwtr` 中的 beta 分支和权限。稳定版在完成干净容器验证和所有权检查后，由 `release.yml` 发布 AUR `mindwtr-bin` 和 `mindwtr` 软件包。工作流会将完整的源软件包目录保存为工件。RC 构建仍只为 `mindwtr-beta-bin` 生成提案；AUR 恢复推送后，请使用受 `aur-publish` Environment 保护的手动恢复工作流 `publish-aur.yml`。AUR 维护可能会延迟该渠道，但不会使 Mindwtr 发布失败。
+Flathub beta 需要 `flathub/tech.dongdongbh.mindwtr` 中的 beta 分支和权限。稳定版在完成干净容器验证和所有权检查后，由 `release.yml` 发布 AUR `mindwtr-bin` 和 `mindwtr` 软件包。RC 构建通过 `update-aur-beta.yml` 发布 `mindwtr-beta-bin`，并执行相同的安全检查。如果 AUR 在维护期间禁用推送，请在恢复推送后重新运行该渠道。受 `aur-publish` Environment 保护的 `publish-aur.yml` 工作流仅用于恢复经过审核的稳定版 `mindwtr` 源软件包提案；它不发布二进制包或 beta 包。
 
 由于上传到 Play 测试轨道会消耗一个 Android `versionCode`，每个上传到 Play 的 RC 都需要新的 `versionCode`。RC 工作流会在 Android 构建开始前一次性解析该代码，然后 Play 构建和 Android FOSS 构建使用同一项预检输出并并行运行。工作流上传一个 AAB，并为每个已配置的测试轨道分配相同的 versionCode。当前最终稳定版流程也应使用具有更高 `versionCode` 的全新生产上传，或者未来的稳定版晋级工作流应晋级已经测试的 Play 构建。除非稳定版工作流已能够晋级现有构建，否则不要使用已上传到 Play 的 Android `versionCode` 为最终稳定版本添加标签。
 
@@ -108,7 +108,7 @@ Flathub beta 需要 `flathub/tech.dongdongbh.mindwtr` 中的 beta 分支和权�
 | T-7 至 T-5 | 功能冻结。只允许错误修复、发布说明、元数据和发布阻断问题。 |
 | T-5 | 创建发布分支，运行 `./scripts/bump-version.sh vX.Y.Z-rc.1`，生成 RC 专属发布说明（例如 `docs/release-notes/X.Y.Z-rc.1.md`），并添加 `vX.Y.Z-rc.1` 标签，让 `release-rc.yml` 上传已启用的测试渠道。 |
 | T-4 | 随着经过审核的构建变得可用，运行渠道工件冒烟检查。只修复阻断问题。 |
-| T-3 | 确认 `release-rc.yml` 生成的 GitHub 预发布版本；如果启用了相应工作流输入，验证 Flathub beta PR 和保存的 `mindwtr-beta-bin` 提案；然后向测试人员公告 RC。 |
+| T-3 | 确认 `release-rc.yml` 生成的 GitHub 预发布版本；如果启用了相应工作流输入，验证 Flathub beta PR 和 `mindwtr-beta-bin` 的 AUR 更新；然后向测试人员公告 RC。 |
 | T-2 至 T-1 | 分类处理反馈。仅为阻断问题发布 `rc.2`。非阻断问题移至下一个周期。 |
 | 发布日 | 添加 `vX.Y.Z` 标签，在所有渠道发布稳定版，并将所有长期存在的测试渠道更新到稳定版本。 |
 | T+1 至 T+2 | 关注崩溃、GitHub 议题、Discord、商店反馈和下游软件包报告。如有需要，使用下一个补丁标签进行修补，例如在 `v1.1.0` 后发布 `v1.1.1`。 |

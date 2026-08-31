@@ -195,6 +195,31 @@ function calmShotVideos(): void {
     });
 }
 
+/**
+ * The video cards ship as plain links to YouTube with a locally hosted poster,
+ * so the page makes no Google request on load. A plain left-click swaps the
+ * poster for a youtube-nocookie embed and plays in place; modified clicks,
+ * middle-click and no-JS visitors keep the ordinary link.
+ */
+function wireVideoCards(): void {
+  document.querySelectorAll<HTMLAnchorElement>("a.video-card").forEach((card) => {
+    card.addEventListener("click", (event) => {
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+      const id = card.href.match(/youtu\.be\/([\w-]{6,})/)?.[1];
+      const poster = card.querySelector<HTMLElement>(".video-poster");
+      if (!id || !poster) return;
+      event.preventDefault();
+      const iframe = document.createElement("iframe");
+      iframe.className = "video-embed";
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
+      iframe.title = card.querySelector("h3")?.textContent ?? "YouTube";
+      iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+      iframe.allowFullscreen = true;
+      poster.replaceChildren(iframe);
+    });
+  });
+}
+
 function init(): void {
   applyPlatform(detectPlatform());
   wireCopyButtons();
@@ -203,6 +228,7 @@ function init(): void {
   initCoverflow();
   initLoopTour();
   calmShotVideos();
+  wireVideoCards();
 }
 
 if (document.readyState === "loading") {

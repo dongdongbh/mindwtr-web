@@ -2803,3 +2803,11 @@ main > section:last-child {
     width: min(100% - 28px, var(--article-measure));
   }
 }
+
+/* Click-to-load YouTube embed: fills the poster box once a card is activated. */
+.video-embed {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}

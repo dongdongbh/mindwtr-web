@@ -147,6 +147,17 @@ Faites glisser les cartes dans une colonne pour définir manuellement leur ordre
 
 Utilisez le champ de recherche du Tableau pour limiter les cartes visibles selon le titre, les notes, le projet, le contexte ou l’étiquette. Le bouton de filtre ouvre des filtres rapides pour les contextes, les étiquettes, les échéances et les projets ; les pastilles de contexte et d’étiquette passent par les états inclure, exclure (barré) et désactivé, et **Effacer les filtres** supprime à la fois le texte de recherche et les filtres actifs.
 
+### 📊 Chronologie
+
+Vue en lecture seule des tâches datées. Chaque tâche ayant des dates est représentée par une barre horizontale allant de sa date de début à son échéance, colorée selon son projet — ou selon son domaine lorsque le projet n’a pas de couleur propre.
+
+- Les tâches qui n’ont qu’une date de début, ou qu’une échéance, affichent un petit repère sur ce jour
+- Les tâches sans dates n’apparaissent pas ici
+- Une ligne verticale marque aujourd’hui, et le bouton **Aujourd’hui** y ramène
+- Trois niveaux de zoom — jour, semaine et mois — arbitrent entre détail et période
+
+Cliquez sur une barre pour ouvrir la tâche. La Chronologie se contente d’afficher : faire glisser une barre ne modifie pas les dates. Modifiez la date de début et l’échéance dans l’éditeur de tâches.
+
 ### ✅ Terminé
 
 Tâches récemment terminées. Utilisez cette vue comme journal à court terme de vos réalisations pour votre revue quotidienne ou hebdomadaire.

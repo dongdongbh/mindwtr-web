@@ -147,6 +147,17 @@ Drag cards within a column to set manual board order. Moving a task to another s
 
 Use the Board search field to narrow visible cards by title, notes, project, context, or tag. The filter button opens quick filters for contexts, tags, due dates, and projects; context and tag chips cycle through include, exclude (struck through), and off, and **Clear filters** removes both search text and active filters.
 
+### 📊 Timeline
+
+Read-only overview of dated work across time. Each task with dates is drawn as a horizontal bar running from its start date to its due date, colored by its project — or by its area when the project has no color of its own.
+
+- Tasks with only a start date, or only a due date, show a small marker on that day
+- Tasks without dates don't appear here
+- A vertical line marks today, and the **Today** button jumps back to it
+- Three zoom levels — day, week, and month — trade detail for range
+
+Click a bar to open the task. Timeline only displays: dragging a bar does not change dates. Edit start and due dates in the task editor.
+
 ### ✅ Done
 
 Recently completed tasks. Use this as your short-term completion log for daily or weekly review.

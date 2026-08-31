@@ -147,6 +147,17 @@ Ziehen Sie Karten innerhalb einer Spalte, um die manuelle Board-Reihenfolge fest
 
 Das Board-Suchfeld filtert sichtbare Karten nach Titel, Notizen, Projekt, Kontext oder Tag. Die Filterschaltfläche bietet Schnellfilter für Kontexte, Tags, Fälligkeitsdaten und Projekte; Kontext- und Tag-Chips durchlaufen die Zustände Einschließen, Ausschließen (durchgestrichen) und Aus, und **Filter löschen** entfernt Suchtext und aktive Filter.
 
+### 📊 Zeitleiste
+
+Schreibgeschützter Überblick über terminierte Arbeit. Jede Aufgabe mit Datum erscheint als waagerechter Balken vom Startdatum bis zum Fälligkeitsdatum, eingefärbt nach ihrem Projekt – oder nach ihrem Bereich, wenn das Projekt keine eigene Farbe hat.
+
+- Aufgaben mit nur einem Startdatum oder nur einem Fälligkeitsdatum zeigen eine kleine Markierung an diesem Tag
+- Aufgaben ohne Datum erscheinen hier nicht
+- Eine senkrechte Linie markiert heute, und die Schaltfläche **Heute** springt dorthin zurück
+- Drei Zoomstufen – Tag, Woche und Monat – wechseln zwischen Detailgrad und Zeitraum
+
+Ein Klick auf einen Balken öffnet die Aufgabe. Die Zeitleiste zeigt nur an: Das Ziehen eines Balkens ändert keine Daten. Start- und Fälligkeitsdatum bearbeiten Sie im Aufgabeneditor.
+
 ### ✅ Erledigt
 
 Kürzlich abgeschlossene Aufgaben als kurzfristiges Abschlussprotokoll für tägliche oder wöchentliche Rückblicke.

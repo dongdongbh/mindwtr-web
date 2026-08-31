@@ -147,6 +147,17 @@ Arrastra tarjetas dentro de una columna para establecer el orden manual del tabl
 
 Usa el campo de búsqueda del Tablero para limitar las tarjetas visibles por título, notas, proyecto, contexto o etiqueta. El botón de filtro abre filtros rápidos de contextos, etiquetas, fechas de vencimiento y proyectos; las fichas de contexto y etiqueta pasan por los estados incluir, excluir (tachado) y desactivado, y **Borrar filtros** elimina tanto el texto de búsqueda como los filtros activos.
 
+### 📊 Línea de tiempo
+
+Vista de solo lectura del trabajo con fechas. Cada tarea con fechas se dibuja como una barra horizontal que va de su fecha de inicio a su fecha de vencimiento, coloreada según su proyecto o, si el proyecto no tiene color propio, según su área.
+
+- Las tareas que solo tienen fecha de inicio, o solo fecha de vencimiento, muestran una pequeña marca en ese día
+- Las tareas sin fechas no aparecen aquí
+- Una línea vertical marca hoy, y el botón **Hoy** vuelve a ese punto
+- Tres niveles de zoom —día, semana y mes— cambian detalle por alcance
+
+Haz clic en una barra para abrir la tarea. La Línea de tiempo solo muestra: arrastrar una barra no cambia las fechas. Edita la fecha de inicio y la de vencimiento en el editor de tareas.
+
 ### ✅ Terminadas
 
 Tareas completadas recientemente. Úsala como registro de finalización a corto plazo para la revisión diaria o semanal.

@@ -50,6 +50,13 @@ En una instalación nueva, Mindwtr te pregunta si quieres empezar de cero, impor
 4. **Reflexiona** durante la Revisión semanal.
 5. **Actúa** con confianza.
 
+### ¿Prefieres un recorrido en vídeo?
+
+Dos tutoriales en inglés del [canal de YouTube de Mindwtr](https://www.youtube.com/@mindwtr) recorren todo el flujo de trabajo, desde la captura hasta la Revisión semanal, además de los ajustes y la sincronización.
+
+- [Mindwtr Desktop Demo & Tutorial — Complete Local-First GTD Workflow](https://youtu.be/c-1Fxx5gFlo) (unos 23 minutos)
+- [Mindwtr Mobile Demo & Tutorial: Complete Local-First GTD Workflow](https://youtu.be/FApCFhViwJE) (unos 26 minutos)
+
 ---
 
 ## Sintaxis de adición rápida

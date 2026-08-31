@@ -50,6 +50,13 @@
 4. 在每週回顧中**回顧**
 5. 安心**執行**
 
+### 想看影片導覽？
+
+[Mindwtr 的 YouTube 頻道](https://www.youtube.com/@mindwtr)上有兩部英文教學，完整示範從收集到每週回顧的整套流程，也涵蓋設定與同步。
+
+- [Mindwtr Desktop Demo & Tutorial — Complete Local-First GTD Workflow](https://youtu.be/c-1Fxx5gFlo)（約 23 分鐘）
+- [Mindwtr Mobile Demo & Tutorial: Complete Local-First GTD Workflow](https://youtu.be/FApCFhViwJE)（約 26 分鐘）
+
 ---
 
 ## 快速新增語法

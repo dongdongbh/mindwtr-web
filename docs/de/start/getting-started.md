@@ -50,6 +50,13 @@ Bei einer Neuinstallation fragt Mindwtr, ob Sie neu beginnen, eine Sicherung imp
 4. Beim Wochenrückblick **reflektieren**
 5. Mit Zuversicht **erledigen**
 
+### Lieber eine Video-Anleitung?
+
+Zwei englischsprachige Tutorials auf dem [YouTube-Kanal von Mindwtr](https://www.youtube.com/@mindwtr) zeigen den gesamten Arbeitsablauf, vom Erfassen bis zum Wochenrückblick, dazu Einstellungen und Synchronisierung.
+
+- [Mindwtr Desktop Demo & Tutorial — Complete Local-First GTD Workflow](https://youtu.be/c-1Fxx5gFlo) (etwa 23 Minuten)
+- [Mindwtr Mobile Demo & Tutorial: Complete Local-First GTD Workflow](https://youtu.be/FApCFhViwJE) (etwa 26 Minuten)
+
 ---
 
 ## Syntax für „Schnell hinzufügen“

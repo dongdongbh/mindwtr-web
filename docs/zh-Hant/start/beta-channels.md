@@ -31,12 +31,12 @@ Mindwtr 會在正式穩定版發行前，先發布 beta 與候選發行版組建
 Arch Linux 及其衍生版本的使用者可安裝專用的測試版套件：
 
 ```bash
-yay -S mindwtr-bin-beta
+yay -S mindwtr-beta-bin
 ```
 
 套件頁面：
 
-- [AUR 上的 mindwtr-bin-beta](https://aur.archlinux.org/packages/mindwtr-bin-beta)
+- [AUR 上的 mindwtr-beta-bin](https://aur.archlinux.org/packages/mindwtr-beta-bin)
 
 若要回到穩定版，請改為安裝 `mindwtr-bin`。
 

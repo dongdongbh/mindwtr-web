@@ -31,12 +31,12 @@ To leave TestFlight, remove Mindwtr from TestFlight and reinstall the stable ver
 Arch Linux and derivative users can install the dedicated beta package:
 
 ```bash
-yay -S mindwtr-bin-beta
+yay -S mindwtr-beta-bin
 ```
 
 Package page:
 
-- [mindwtr-bin-beta on AUR](https://aur.archlinux.org/packages/mindwtr-bin-beta)
+- [mindwtr-beta-bin on AUR](https://aur.archlinux.org/packages/mindwtr-beta-bin)
 
 To go back to stable, install `mindwtr-bin` instead.
 

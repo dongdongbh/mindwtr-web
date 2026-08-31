@@ -58,7 +58,7 @@ RC 建置只發布至能支援測試人員且不會帶來高額維護成本的�
 | macOS App Store 建置 | TestFlight | Mac App Store 仍為穩定版管道。 |
 | Android Play 建置 | 預設使用 Google Play 內部測試與公開測試（`beta`）；設定後可使用封閉／自訂測試群組 | 正式環境稍後會收到穩定版上傳，內部測試群組則由穩定版工作流程重新整理。 |
 | Linux Flatpak | Flathub beta 分支 | 穩定版會同時發布至 stable 與 beta 分支，避免 Beta 使用者停留在舊版本。 |
-| Arch Linux | AUR `mindwtr-bin-beta` | 穩定版發布會重新整理持續性的 Beta 套件。 |
+| Arch Linux | AUR `mindwtr-beta-bin` | 穩定版發布會重新整理持續性的 Beta 套件。 |
 | Debian/Fedora Linux | Beta APT/RPM 儲存庫 | 穩定版套件會保留在個別的穩定版儲存庫目錄中。 |
 | Windows 直接下載 | GitHub 預發布安裝程式／可攜版 | 除非日後針對套件發行小眾測試版導入自動化，否則 Microsoft Store 只提供穩定版。 |
 
@@ -89,12 +89,12 @@ RC 工作流程為 `.github/workflows/release-rc.yml`。
 - 將 iOS App Store 建置發布至 TestFlight，且停用 App Store 審查提交。
 - 將 macOS App Store 建置發布至 TestFlight，且停用 App Store 審查提交。
 - 透過共用 Flathub 工作流程建立 Flathub beta 分支更新 PR；若管道尚未設定完成，手動執行可停用此項。
-- GitHub 預發布成品存在後，建置並驗證 AUR `mindwtr-bin-beta`，再將確切的 `PKGBUILD` 與 `.SRCINFO` 儲存為審核成品。RC 工作流程不會推送至 AUR。
+- GitHub 預發布成品存在後，建置並驗證 AUR `mindwtr-beta-bin`，再將確切的 `PKGBUILD` 與 `.SRCINFO` 儲存為審核成品。RC 工作流程不會推送至 AUR。
 - GitHub 預發布版本存在後更新 Beta APT/RPM 儲存庫；手動執行可停用此項。
 
 穩定版 `release.yml` 仍是穩定版發布工作流程。其防護會阻止預發布標籤發布至僅限穩定版的管道，例如 Google Play 正式環境、Microsoft Store、Snap stable、Linux APT/RPM 儲存庫、Flathub stable、AUR stable、Scoop、winget、Homebrew 或 Chocolatey。
 
-Flathub beta 需要 `flathub/tech.dongdongbh.mindwtr` 中的 beta 分支與權限。穩定版在完成乾淨容器驗證與擁有權檢查後，由 `release.yml` 發布 AUR `mindwtr-bin` 與 `mindwtr` 套件。工作流程會將完整的來源套件目錄儲存為成品。RC 建置仍只為 `mindwtr-bin-beta` 產生提案；AUR 恢復推送後，請使用受 `aur-publish` Environment 保護的手動復原工作流程 `publish-aur.yml`。AUR 維護可能會延遲此管道，但不會使 Mindwtr 發布失敗。
+Flathub beta 需要 `flathub/tech.dongdongbh.mindwtr` 中的 beta 分支與權限。穩定版在完成乾淨容器驗證與擁有權檢查後，由 `release.yml` 發布 AUR `mindwtr-bin` 與 `mindwtr` 套件。工作流程會將完整的來源套件目錄儲存為成品。RC 建置仍只為 `mindwtr-beta-bin` 產生提案；AUR 恢復推送後，請使用受 `aur-publish` Environment 保護的手動復原工作流程 `publish-aur.yml`。AUR 維護可能會延遲此管道，但不會使 Mindwtr 發布失敗。
 
 由於上傳至 Play 測試會耗用一個 Android `versionCode`，每個上傳至 Play 的 RC 都需要新的 `versionCode`。RC 工作流程會在 Android 建置開始前解析一次該代碼，接著 Play 建置與 Android FOSS 建置會使用相同的預檢輸出並平行執行。工作流程會上傳一個 AAB，並將相同的 versionCode 指派至每個已設定的測試群組。目前最終穩定版流程也應使用具有更高 `versionCode` 的全新正式環境上傳，或者未來的穩定版提升工作流程應提升已測試的 Play 建置。除非穩定版工作流程已能提升現有建置，否則不得為 Android `versionCode` 已上傳至 Play 的最終穩定版本加上標籤。
 
@@ -108,7 +108,7 @@ Flathub beta 需要 `flathub/tech.dongdongbh.mindwtr` 中的 beta 分支與權�
 | T-7 至 T-5 | 功能凍結。只允許錯誤修正、版本資訊、中繼資料與發布阻擋問題。 |
 | T-5 | 建立發布分支、執行 `./scripts/bump-version.sh vX.Y.Z-rc.1`、產生 RC 特定版本資訊（例如 `docs/release-notes/X.Y.Z-rc.1.md`），並加上 `vX.Y.Z-rc.1` 標籤，讓 `release-rc.yml` 上傳已啟用的測試人員管道。 |
 | T-4 | 經過審查的建置可供使用時，執行管道成品冒煙檢查。只修正阻擋問題。 |
-| T-3 | 確認由 `release-rc.yml` 建立的 GitHub 預發布版本；當對應工作流程輸入已啟用時，驗證 Flathub beta PR 與儲存的 `mindwtr-bin-beta` 提案；並向測試人員公告 RC。 |
+| T-3 | 確認由 `release-rc.yml` 建立的 GitHub 預發布版本；當對應工作流程輸入已啟用時，驗證 Flathub beta PR 與儲存的 `mindwtr-beta-bin` 提案；並向測試人員公告 RC。 |
 | T-2 至 T-1 | 分流意見回饋。只有阻擋問題才發布 `rc.2`。非阻擋問題移至下一個週期。 |
 | 發布日 | 加上 `vX.Y.Z` 標籤，在所有管道發布穩定版，並將現有的持續性測試管道更新至穩定版本。 |
 | T+1 至 T+2 | 監看當機、GitHub 問題、Discord、商店意見回饋與下游套件報告。如有需要，使用下一個修補標籤進行修補，例如發布 `v1.1.1` 作為 `v1.1.0` 的後續版本。 |

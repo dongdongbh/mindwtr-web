@@ -45,7 +45,7 @@ paru -S mindwtr
 
 #### Offizielle AUR-Pakete prüfen
 
-Mindwtr erkennt genau drei AUR-Paketnamen an: `mindwtr-bin` (vorgefertigte stabile Version), `mindwtr` (stabiler Quellcode-Build) und [`mindwtr-bin-beta`](/de/start/beta-channels) (Vorabversion). Die Paketquelle muss auf `github.com/dongdongbh/Mindwtr` verweisen; `dongdongbh` muss als Maintainer oder Co-Maintainer aufgeführt sein. Prüfen Sie jede Änderung an `PKGBUILD` und `.SRCINFO` vor dem Build. Neue Prüfsummen-Manifeste werden mit dem Schlüssel `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D` signiert.
+Mindwtr erkennt genau drei AUR-Paketnamen an: `mindwtr-bin` (vorgefertigte stabile Version), `mindwtr` (stabiler Quellcode-Build) und [`mindwtr-beta-bin`](/de/start/beta-channels) (Vorabversion). Die Paketquelle muss auf `github.com/dongdongbh/Mindwtr` verweisen; `dongdongbh` muss als Maintainer oder Co-Maintainer aufgeführt sein. Prüfen Sie jede Änderung an `PKGBUILD` und `.SRCINFO` vor dem Build. Neue Prüfsummen-Manifeste werden mit dem Schlüssel `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D` signiert.
 
 ### Debian / Ubuntu
 

@@ -58,7 +58,7 @@ Veröffentlichen Sie RC-Builds nur in Kanälen, die Tester ohne hohen Wartungsau
 | macOS-App-Store-Build | TestFlight | Der Mac App Store bleibt der stabile Kanal. |
 | Android-Play-Build | Standardmäßig interne Tests und offene Tests (`beta`) bei Google Play; geschlossene/benutzerdefinierte Tracks, sofern konfiguriert | Production erhält später einen stabilen Upload, und der interne Test-Track wird vom stabilen Workflow aktualisiert. |
 | Linux Flatpak | Flathub-Beta-Branch | Stabile Releases werden sowohl im stabilen als auch im Beta-Branch veröffentlicht, damit Beta-Benutzer nicht zurückbleiben. |
-| Arch Linux | AUR `mindwtr-bin-beta` | Das stabile Release aktualisiert das dauerhaft bestehende Beta-Paket. |
+| Arch Linux | AUR `mindwtr-beta-bin` | Das stabile Release aktualisiert das dauerhaft bestehende Beta-Paket. |
 | Debian/Fedora Linux | Beta-APT-/RPM-Repositorys | Stabile Pakete verbleiben in getrennten Verzeichnissen der stabilen Repositorys. |
 | Direkter Windows-Download | Installer/portable Version aus dem GitHub-Prerelease | Microsoft Store bleibt ausschließlich stabil, sofern Paket-Flights nicht später automatisiert werden. |
 
@@ -89,12 +89,12 @@ Außerdem veröffentlicht er Tester-Builds in den bereits verbundenen Store-gest
 - iOS-App-Store-Build in TestFlight mit deaktivierter Einreichung zur App-Store-Prüfung.
 - macOS-App-Store-Build in TestFlight mit deaktivierter Einreichung zur App-Store-Prüfung.
 - Pull Requests zur Aktualisierung des Flathub-Beta-Branches über den gemeinsamen Flathub-Workflow; manuelle Läufe können dies deaktivieren, wenn der Kanal noch nicht bereit ist.
-- AUR `mindwtr-bin-beta` wird erstellt und geprüft, sobald die GitHub-Prerelease-Artefakte vorhanden sind; danach werden die exakten Dateien `PKGBUILD` und `.SRCINFO` als Prüfartefakt gespeichert. Der RC-Workflow pusht nicht ins AUR.
+- AUR `mindwtr-beta-bin` wird erstellt und geprüft, sobald die GitHub-Prerelease-Artefakte vorhanden sind; danach werden die exakten Dateien `PKGBUILD` und `.SRCINFO` als Prüfartefakt gespeichert. Der RC-Workflow pusht nicht ins AUR.
 - Aktualisierungen der Beta-APT-/RPM-Repositorys, nachdem das GitHub-Prerelease vorhanden ist; manuelle Läufe können sie deaktivieren.
 
 Der stabile `release.yml` bleibt der Workflow für stabile Releases. Er ist so geschützt, dass Tags für Vorabversionen keine ausschließlich stabilen Kanäle wie Google Play Production, Microsoft Store, Snap Stable, Linux-APT-/RPM-Repositorys, Flathub Stable, AUR Stable, Scoop, winget, Homebrew oder Chocolatey veröffentlichen.
 
-Flathub Beta erfordert den Beta-Branch und Berechtigungen in `flathub/tech.dongdongbh.mindwtr`. Stabile Releases veröffentlichen die AUR-Pakete `mindwtr-bin` und `mindwtr` nach einer Prüfung in einem sauberen Container und einer Eigentumsprüfung über `release.yml`. Der Workflow speichert den exakten Quellpaketbaum als Artefakt. Bei RC-Builds bleibt `mindwtr-bin-beta` ein reiner Vorschlag; verwenden Sie den durch das Environment `aur-publish` geschützten Wiederherstellungs-Workflow `publish-aur.yml`, sobald das AUR Pushes annimmt. AUR-Wartung kann diesen Kanal verzögern, ohne das Mindwtr-Release fehlschlagen zu lassen.
+Flathub Beta erfordert den Beta-Branch und Berechtigungen in `flathub/tech.dongdongbh.mindwtr`. Stabile Releases veröffentlichen die AUR-Pakete `mindwtr-bin` und `mindwtr` nach einer Prüfung in einem sauberen Container und einer Eigentumsprüfung über `release.yml`. Der Workflow speichert den exakten Quellpaketbaum als Artefakt. Bei RC-Builds bleibt `mindwtr-beta-bin` ein reiner Vorschlag; verwenden Sie den durch das Environment `aur-publish` geschützten Wiederherstellungs-Workflow `publish-aur.yml`, sobald das AUR Pushes annimmt. AUR-Wartung kann diesen Kanal verzögern, ohne das Mindwtr-Release fehlschlagen zu lassen.
 
 Da ein Upload in einen Play-Test-Track einen Android-`versionCode` verbraucht, benötigt jeder RC mit Play-Upload einen neuen `versionCode`. Der RC-Workflow ermittelt diesen Code einmal, bevor die Android-Builds beginnen. Anschließend verwenden der Play-Build und der Android-FOSS-Build dieselbe Vorabprüfungsausgabe und laufen parallel. Der Workflow lädt ein AAB hoch und weist allen konfigurierten Test-Tracks denselben versionCode zu. Der aktuelle endgültige Stable-Ablauf sollte ebenfalls einen neuen Production-Upload mit höherem `versionCode` verwenden, oder ein künftiger Stable-Promotion-Workflow sollte den bereits getesteten Play-Build hochstufen. Taggen Sie kein endgültiges Stable-Release mit einem Android-`versionCode`, der bereits zu Play hochgeladen wurde, sofern der Stable-Workflow nicht gelernt hat, diesen vorhandenen Build hochzustufen.
 
@@ -107,7 +107,7 @@ Kanäle mit längerer Prüfzeit benötigen Vorlauf. Verwenden Sie diesen Standar
 | T-7 bis T-5 | Feature Freeze. Nur Fehlerbehebungen, Versionshinweise, Metadaten und Release-Blocker sind zulässig. |
 | T-5 | Release-Branch erstellen, `./scripts/bump-version.sh vX.Y.Z-rc.1` ausführen, RC-spezifische Versionshinweise wie `docs/release-notes/X.Y.Z-rc.1.md` erzeugen und `vX.Y.Z-rc.1` taggen, damit `release-rc.yml` die aktivierten Testerkanäle beliefert. |
 | T-4 | Smoke-Tests der Kanalartefakte ausführen, sobald geprüfte Builds verfügbar werden. Nur Blocker beheben. |
-| T-3 | GitHub-Prerelease aus `release-rc.yml` bestätigen, Flathub-Beta-PR und den gespeicherten Vorschlag für `mindwtr-bin-beta` prüfen, wenn diese Workflow-Eingaben aktiviert waren, und den RC für Tester ankündigen. |
+| T-3 | GitHub-Prerelease aus `release-rc.yml` bestätigen, Flathub-Beta-PR und den gespeicherten Vorschlag für `mindwtr-beta-bin` prüfen, wenn diese Workflow-Eingaben aktiviert waren, und den RC für Tester ankündigen. |
 | T-2 bis T-1 | Rückmeldungen triagieren. `rc.2` nur bei Blockern erstellen. Nichtblocker wandern in den nächsten Zyklus. |
 | Veröffentlichungstag | `vX.Y.Z` taggen, überall stabil veröffentlichen und alle vorhandenen dauerhaften Testkanäle ebenfalls auf die stabile Version aktualisieren. |
 | T+1 bis T+2 | Abstürze, GitHub-Issues, Discord, Store-Rückmeldungen und Downstream-Paketberichte beobachten. Bei Bedarf mit dem nächsten Patch-Tag korrigieren, etwa `v1.1.1` nach `v1.1.0`. |

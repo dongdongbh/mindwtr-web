@@ -153,6 +153,10 @@ Hechas y Archivadas son estados cerrados, pero cumplen funciones distintas:
 - **Archivadas** es el historial guardado. Las tareas archivadas se ocultan de las listas de tareas normales, pero siguen disponibles en la vista Archivadas para buscar, restaurar o eliminar permanentemente. La vista Archivadas también muestra los proyectos archivados tras un selector Tareas | Proyectos, donde se pueden restaurar o eliminar.
 - **Archivado automático** puede mover tareas de Hechas a Archivadas después de un número determinado de días. Configúralo como **Nunca** si quieres que Hechas conserve todas las tareas completadas indefinidamente.
 
+### Secciones de Algún día/Quizá
+
+Usa secciones con nombre para dividir una lista larga de Algún día/Quizá en temas como Viajes, Libros o Casa. Crea una sección al asignar una tarea, o gestiona los nombres y el orden en **Ajustes → Gestionar → Secciones de Algún día**. La primera sección activa la agrupación; las decisiones posteriores se conservan. Eliminar o renombrar una sección no elimina sus tareas, y las asignaciones se sincronizan con los dispositivos compatibles.
+
 ### Contextos y etiquetas
 
 Añade contextos para filtrar según dónde puedas realizar las tareas:

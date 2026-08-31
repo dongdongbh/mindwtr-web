@@ -153,6 +153,10 @@ Terminées et Archivées sont deux états fermés, mais ils remplissent des rôl
 - **Archivées** est l’historique classé. Les tâches archivées sont masquées dans les listes de tâches normales, mais restent disponibles dans la vue Archivées pour être recherchées, restaurées ou supprimées définitivement. La vue Archivées liste aussi les projets archivés derrière un sélecteur Tâches | Projets, où ils peuvent être restaurés ou supprimés.
 - **Archivage automatique** peut déplacer les tâches Terminées vers Archivées après un nombre de jours défini. Réglez-le sur **Jamais** si vous souhaitez que Terminées conserve indéfiniment toutes les tâches achevées.
 
+### Sections Un jour/Peut-être
+
+Utilisez des sections nommées pour diviser une longue liste Un jour/Peut-être en thèmes comme Voyages, Livres ou Maison. Créez une section pendant l’attribution d’une tâche, ou gérez les noms et l’ordre sous **Réglages → Gérer → Sections Un jour**. La première section active le regroupement ; vos choix suivants restent inchangés. Supprimer ou renommer une section ne supprime pas ses tâches, et les attributions se synchronisent avec les appareils compatibles.
+
 ### Contextes et tags
 
 Ajoutez des contextes pour filtrer selon l’endroit où vous pouvez effectuer les tâches :

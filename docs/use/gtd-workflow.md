@@ -153,6 +153,10 @@ Done and Archived are both closed states, but they serve different jobs:
 - **Archived** is filed history. Archived tasks are hidden from normal task lists, but stay available in the Archived view for search, restore, or permanent deletion. The Archived view also lists archived projects behind a Tasks | Projects switch, where they can be restored or deleted.
 - **Auto-Archive** can move Done tasks to Archived after a set number of days. Set it to **Never** if you want Done to keep all completed tasks indefinitely.
 
+### Someday/Maybe sections
+
+Use named sections to break a long Someday/Maybe list into themes such as Trips, Books, or Home. Create a section while assigning a Someday task, or manage names and order under **Settings → Manage → Someday sections**. The first section turns grouping on; later grouping choices remain yours. Deleting or renaming a section does not delete its tasks, and the section assignments sync with supported devices.
+
 ### Contexts and Tags
 
 Add contexts to filter by where you can do tasks:

@@ -153,6 +153,10 @@ Mindwtr legt das Projekt an, macht Ihre Erfassung zu dessen erster nächster Akt
 - **Archiviert** ist abgelegte Historie. Archivierte Aufgaben sind in normalen Aufgabenlisten ausgeblendet, bleiben aber in der Ansicht „Archiviert“ zum Suchen, Wiederherstellen oder endgültigen Löschen verfügbar. Die Ansicht „Archiviert“ zeigt hinter einem Umschalter „Aufgaben | Projekte“ auch archivierte Projekte, die sich dort wiederherstellen oder löschen lassen.
 - **Automatisch archivieren** kann erledigte Aufgaben nach einer festgelegten Anzahl von Tagen nach „Archiviert“ verschieben. Wählen Sie **Nie**, wenn „Erledigt“ alle abgeschlossenen Aufgaben unbegrenzt behalten soll.
 
+### Abschnitte für Irgendwann/Vielleicht
+
+Mit benannten Abschnitten gliedern Sie eine lange Irgendwann/Vielleicht-Liste nach Themen wie Reisen, Bücher oder Zuhause. Erstellen Sie einen Abschnitt beim Zuweisen einer Aufgabe oder verwalten Sie Namen und Reihenfolge unter **Einstellungen → Verwalten → Irgendwann-Abschnitte**. Der erste Abschnitt aktiviert die Gruppierung; spätere Gruppierungsentscheidungen bleiben erhalten. Das Löschen oder Umbenennen eines Abschnitts löscht keine Aufgaben, und die Zuordnungen werden mit unterstützten Geräten synchronisiert.
+
 ### Kontexte und Tags
 
 Fügen Sie Kontexte hinzu, um danach zu filtern, wo Sie Aufgaben erledigen können:

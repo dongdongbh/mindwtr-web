@@ -328,6 +328,7 @@ Mindwtr wertet beim Hinzufügen natürliche Sprache aus:
 | `/area:<name>` | `/area:Personal` | Bereich zuweisen (ohne Leerzeichen) |
 | `/due:date` | `/due:friday` | Fälligkeitsdatum festlegen |
 | `/energy:<level>` | `/energy:medium` | Energiestufe (`low`, `medium`, `high`) |
+| `/priority:<level>` | `/priority:high` | Priorität (`low`, `medium`, `high`, `urgent`) |
 | `/note:text` | `/note:call back` | Beschreibung hinzufügen |
 | `/status` | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Status festlegen |
 

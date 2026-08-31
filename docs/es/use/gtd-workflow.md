@@ -72,7 +72,7 @@ Captúralo todo. No filtres, juzgues ni organices. Sácalo de tu cabeza.
 El título sigue siendo editable en cada paso del asistente y admite la misma sintaxis de adición rápida que la captura:
 
 - `@context`, `#tag`, `!Area`, `+Existing Project`, `%Person`
-- `/energy:`, `/start:`, `/due:`, `/review:`, `/note:`, `/link:`
+- `/energy:`, `/priority:`, `/start:`, `/due:`, `/review:`, `/note:`, `/link:`
 
 Los contextos y las etiquetas que escribas se suman a los que ya elegiste; nunca los sustituyen. Un comando de estado como `/waiting` se ignora al aclarar: el estado lo decide el destino que elijas en el flujo de trabajo. Un `+Name` que no coincida con ningún proyecto existente se queda en el título; aclarar nunca crea un proyecto a partir de un comando.
 

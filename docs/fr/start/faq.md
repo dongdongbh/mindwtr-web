@@ -308,6 +308,7 @@ Oui ! Mindwtr prend en charge la syntaxe d’ajout rapide :
 - `%Person` : définir la personne responsable (`%"Full Name"` pour les nouveaux noms composés de plusieurs mots)
 - `/due:date` : définir la date d’échéance (today, tomorrow, friday, next week, etc.)
 - `/energy:low`, `/energy:medium` ou `/energy:high` : définir le niveau d’énergie
+- `/priority:low`, `/priority:medium`, `/priority:high` ou `/priority:urgent` : définir la priorité
 - `/note:text` : ajouter une description
 - `/status` : définir le statut (`/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox`)
 - `+ProjectName` : associer à un projet

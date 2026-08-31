@@ -263,6 +263,7 @@ Mindwtr 会在添加任务时解析自然语言：
 | `/area:<name>` | `/area:Personal` | 分配到领域（不含空格） |
 | `/due:date`  | `/due:friday`     | 设置截止日期      |
 | `/energy:<level>` | `/energy:medium` | 设置精力水平（`low`、`medium`、`high`） |
+| `/priority:<level>` | `/priority:high` | 设置优先级（`low`、`medium`、`high`、`urgent`） |
 | `/note:text` | `/note:call back` | 添加描述   |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | 设置状态 |
 

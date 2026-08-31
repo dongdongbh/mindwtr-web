@@ -308,6 +308,7 @@ Linux 日志位置（默认）：`~/.local/share/mindwtr/logs/mindwtr.log`
 - `%Person`：设置“分配给”的人员（新建多词姓名时使用 `%"Full Name"`）
 - `/due:date`：设置截止日期（today、tomorrow、friday、next week 等）
 - `/energy:low`、`/energy:medium` 或 `/energy:high`：设置精力水平
+- `/priority:low`、`/priority:medium`、`/priority:high` 或 `/priority:urgent`：设置优先级
 - `/note:text`：添加描述
 - `/status`：设置状态（`/next`、`/waiting`、`/someday`、`/reference`、`/done`、`/archived`、`/inbox`）
 - `+ProjectName`：分配到项目

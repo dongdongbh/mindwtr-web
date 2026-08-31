@@ -301,6 +301,7 @@ Ja! Mindwtr unterstützt die Syntax für „Schnell hinzufügen“:
 - `%Person`: „Zugewiesen an“ festlegen (`%"Full Name"` für neue mehrteilige Namen)
 - `/due:date`: Fälligkeitsdatum festlegen (today, tomorrow, friday, next week usw.)
 - `/energy:low`, `/energy:medium` oder `/energy:high`: Energiestufe festlegen
+- `/priority:low`, `/priority:medium`, `/priority:high` oder `/priority:urgent`: Priorität festlegen
 - `/note:text`: Beschreibung hinzufügen
 - `/status`: Status festlegen (`/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox`)
 - `+ProjectName`: Projekt zuweisen

@@ -460,6 +460,7 @@ const result: QuickAddResult = parseQuickAdd(input, projects, now, areas, option
 | `%Person` | `%Jim` or `%"Jim Smith"` | `assignedTo: 'Jim'`（已知姓名可通过 `knownPeople` 匹配未加引号的多词姓名） |
 | `/due:date` | `/due:friday` | `dueDate: 'ISO string'` |
 | `/energy:<level>` | `/energy:high` | `energyLevel: 'high'`（支持 `low`、`medium`、`high`） |
+| `/priority:<level>` | `/priority:high` | `priority: 'high'`（支持 `low`、`medium`、`high`、`urgent`） |
 | `/note:text` | `/note:remember X` | `description: 'remember X'` |
 | `/status` | `/next` | `status: 'next'`（支持 `/inbox`、`/waiting`、`/someday`、`/reference`、`/done`、`/archived`） |
 

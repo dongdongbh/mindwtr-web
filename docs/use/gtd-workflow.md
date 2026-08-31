@@ -72,7 +72,7 @@ Capture everything. Don't filter, judge, or organize. Get it out of your head.
 The title stays editable through every step of the wizard, and it reads the same quick-add syntax as capture:
 
 - `@context`, `#tag`, `!Area`, `+Existing Project`, `%Person`
-- `/energy:`, `/start:`, `/due:`, `/review:`, `/note:`, `/link:`
+- `/energy:`, `/priority:`, `/start:`, `/due:`, `/review:`, `/note:`, `/link:`
 
 Typed contexts and tags are added to the ones you already picked, never swapped for them. A status token such as `/waiting` is ignored while clarifying — the destination you choose in the workflow decides the status. A `+Name` that matches no existing project stays in the title; clarifying never creates a project from a token.
 

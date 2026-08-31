@@ -460,6 +460,7 @@ const result: QuickAddResult = parseQuickAdd(input, projects, now, areas, option
 | `%Person`    | `%Jim` oder `%"Jim Smith"` | `assignedTo: 'Jim'` (bekannte Namen werden über `knownPeople` auch als mehrteilige Namen ohne Anführungszeichen erkannt) |
 | `/due:date`  | `/due:friday`      | `dueDate: 'ISO string'`     |
 | `/energy:<level>` | `/energy:high` | `energyLevel: 'high'` (unterstützt `low`, `medium`, `high`) |
+| `/priority:<level>` | `/priority:high` | `priority: 'high'` (unterstützt `low`, `medium`, `high`, `urgent`) |
 | `/note:text` | `/note:remember X` | `description: 'remember X'` |
 | `/status`    | `/next`            | `status: 'next'` (unterstützt `/inbox`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`) |
 

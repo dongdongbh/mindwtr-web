@@ -326,6 +326,7 @@ Mindwtr analyse le langage naturel lors de l’ajout de tâches :
 | `/area:<name>` | `/area:Personal` | Attribue à un domaine (sans espaces) |
 | `/due:date`  | `/due:friday`     | Définit l’échéance                  |
 | `/energy:<level>` | `/energy:medium` | Définit le niveau d’énergie (`low`, `medium`, `high`) |
+| `/priority:<level>` | `/priority:high` | Définit la priorité (`low`, `medium`, `high`, `urgent`) |
 | `/note:text` | `/note:call back` | Ajoute une description              |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Définit le statut |
 

@@ -71,6 +71,7 @@ Mindwtr admite lenguaje natural al añadir elementos rápidamente. Escribe direc
 | `/due:date` | `Report /due:friday` | Establece la fecha límite |
 | `/review:date` | `Task /review:next week` | Establece la fecha de revisión |
 | `/energy:<level>` | `Task /energy:low` | Establece el nivel de energía (`low`, `medium`, `high`) |
+| `/priority:<level>` | `Task /priority:high`     | Establece la prioridad (`low`, `medium`, `high`, `urgent`) |
 | `/note:text` | `Task /note:remember X` | Añade una descripción |
 | `/status` | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Establece el estado |
 

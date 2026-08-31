@@ -71,6 +71,7 @@ Mindwtr comprend la saisie naturelle dans le champ de tâche. La même syntaxe f
 | `/due:date` | `Report /due:friday` | Définit l’échéance |
 | `/review:date` | `Task /review:next week` | Définit la date de revue |
 | `/energy:<level>` | `Task /energy:low` | Définit le niveau d’énergie : `low`, `medium`, `high` |
+| `/priority:<level>` | `Task /priority:high`     | Définit la priorité : `low`, `medium`, `high`, `urgent` |
 | `/note:text` | `Task /note:remember X` | Ajoute une description |
 | `/status` | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Définit le statut |
 

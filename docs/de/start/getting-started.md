@@ -71,6 +71,7 @@ Mindwtr unterstützt natürlichsprachige Schnelleingaben direkt im Aufgabenfeld.
 | `/due:date`        | `Report /due:friday`       | Legt das Fälligkeitsdatum fest    |
 | `/review:date`     | `Task /review:next week`   | Legt das Wiedervorlagedatum fest  |
 | `/energy:<level>`  | `Task /energy:low`         | Legt die Energiestufe fest (`low`, `medium`, `high`) |
+| `/priority:<level>` | `Task /priority:high`     | Legt die Priorität fest (`low`, `medium`, `high`, `urgent`) |
 | `/note:text`       | `Task /note:remember X`    | Fügt eine Beschreibung hinzu      |
 | `/status`          | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Legt den Status fest |
 

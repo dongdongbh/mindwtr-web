@@ -71,6 +71,7 @@ Mindwtr supports natural language quick-add. Type directly in the task input. Th
 | `/due:date`        | `Report /due:friday`       | Sets due date         |
 | `/review:date`     | `Task /review:next week`   | Sets review date      |
 | `/energy:<level>`  | `Task /energy:low`         | Sets energy level (`low`, `medium`, `high`) |
+| `/priority:<level>` | `Task /priority:high`     | Sets priority (`low`, `medium`, `high`, `urgent`) |
 | `/note:text`       | `Task /note:remember X`    | Adds description      |
 | `/status`          | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Sets status |
 

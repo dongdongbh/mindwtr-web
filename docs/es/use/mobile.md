@@ -263,6 +263,7 @@ Mindwtr analiza lenguaje natural al añadir tareas:
 | `/area:<name>` | `/area:Personal` | Asigna a un área (sin espacios) |
 | `/due:date`  | `/due:friday`     | Establece la fecha de vencimiento |
 | `/energy:<level>` | `/energy:medium` | Establece el nivel de energía (`low`, `medium`, `high`) |
+| `/priority:<level>` | `/priority:high` | Establece la prioridad (`low`, `medium`, `high`, `urgent`) |
 | `/note:text` | `/note:call back` | Añade una descripción   |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Establece el estado |
 

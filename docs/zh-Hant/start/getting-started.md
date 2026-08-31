@@ -71,6 +71,7 @@ Mindwtr 支援自然語言快速新增，直接在任務輸入欄中輸入即可
 | `/due:date` | `Report /due:friday` | 設定截止日期 |
 | `/review:date` | `Task /review:next week` | 設定回顧日期 |
 | `/energy:<level>` | `Task /energy:low` | 設定精力程度（`low`、`medium`、`high`） |
+| `/priority:<level>` | `Task /priority:high`     | 設定優先順序（`low`、`medium`、`high`、`urgent`） |
 | `/note:text` | `Task /note:remember X` | 加入描述 |
 | `/status` | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | 設定狀態 |
 

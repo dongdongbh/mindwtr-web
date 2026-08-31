@@ -308,6 +308,7 @@ Yes! Mindwtr supports quick-add syntax:
 - `%Person`: Set the Assigned to person (`%"Full Name"` for new multi-word names)
 - `/due:date`: Set due date (today, tomorrow, friday, next week, etc.)
 - `/energy:low`, `/energy:medium`, or `/energy:high`: Set energy level
+- `/priority:low`, `/priority:medium`, `/priority:high`, or `/priority:urgent`: Set priority
 - `/note:text`: Add description
 - `/status`: Set status (`/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox`)
 - `+ProjectName`: Assign to project

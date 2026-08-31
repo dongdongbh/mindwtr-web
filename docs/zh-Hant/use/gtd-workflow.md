@@ -72,7 +72,7 @@ Sort receipts /energy:low
 標題在處理精靈的每一步都可以編輯，並且能辨識與收集時相同的快速新增語法：
 
 - `@context`, `#tag`, `!Area`, `+Existing Project`, `%Person`
-- `/energy:`, `/start:`, `/due:`, `/review:`, `/note:`, `/link:`
+- `/energy:`, `/priority:`, `/start:`, `/due:`, `/review:`, `/note:`, `/link:`
 
 輸入的情境與標籤會加到你已選取的項目上，不會取代它們。處理時會忽略 `/waiting` 之類的狀態指令——狀態由你在工作流程中選擇的去向決定。若 `+Name` 沒有對應的既有專案，它會留在標題中；處理過程絕不會因為一個指令而建立專案。
 

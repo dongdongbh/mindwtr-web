@@ -240,6 +240,7 @@ iOS-Kurzbefehlsbeispiel:
 | `/area:<name>` | `/area:Personal` | Bereich zuweisen (ohne Leerzeichen) |
 | `/due:date` | `/due:friday` | Fälligkeitsdatum |
 | `/energy:<level>` | `/energy:medium` | Energie (`low`, `medium`, `high`) |
+| `/priority:<level>` | `/priority:high` | Priorität (`low`, `medium`, `high`, `urgent`) |
 | `/note:text` | `/note:call back` | Beschreibung |
 | `/status` | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Status |
 

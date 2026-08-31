@@ -72,7 +72,7 @@ Erfassen Sie alles. Filtern, bewerten und organisieren Sie noch nicht. Holen Sie
 Der Titel bleibt in jedem Schritt des Assistenten bearbeitbar und versteht dieselbe Schnell-hinzufügen-Syntax wie die Erfassung:
 
 - `@context`, `#tag`, `!Area`, `+Existing Project`, `%Person`
-- `/energy:`, `/start:`, `/due:`, `/review:`, `/note:`, `/link:`
+- `/energy:`, `/priority:`, `/start:`, `/due:`, `/review:`, `/note:`, `/link:`
 
 Eingetippte Kontexte und Schlagwörter kommen zu den bereits ausgewählten hinzu, sie ersetzen sie nie. Ein Statusbefehl wie `/waiting` wird beim Klären ignoriert — über den Status entscheidet das Ziel, das Sie im Arbeitsablauf wählen. Ein `+Name`, zu dem es kein Projekt gibt, bleibt im Titel stehen; beim Klären entsteht aus einem Befehl nie ein Projekt.
 

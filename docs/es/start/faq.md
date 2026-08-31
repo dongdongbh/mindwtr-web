@@ -308,6 +308,7 @@ Los registros son exclusivamente locales y ocultan las credenciales habituales (
 - `%Person`: establece la persona asignada (`%"Full Name"` para nombres nuevos de varias palabras)
 - `/due:date`: establece la fecha límite (today, tomorrow, friday, next week, etc.)
 - `/energy:low`, `/energy:medium` o `/energy:high`: establece el nivel de energía
+- `/priority:low`, `/priority:medium`, `/priority:high` o `/priority:urgent`: establece la prioridad
 - `/note:text`: añade una descripción
 - `/status`: establece el estado (`/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox`)
 - `+ProjectName`: asigna un proyecto

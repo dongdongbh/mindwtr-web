@@ -149,6 +149,8 @@ Use the Board search field to narrow visible cards by title, notes, project, con
 
 ### 📊 Timeline
 
+Timeline is off by default: turn it on in **Settings → GTD → Features → Timeline view** to add it to the sidebar.
+
 Read-only overview of dated work across time. Each task with dates is drawn as a horizontal bar running from its start date to its due date, colored by its project — or by its area when the project has no color of its own.
 
 - Tasks with only a start date, or only a due date, show a small marker on that day

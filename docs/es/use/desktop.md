@@ -149,6 +149,8 @@ Usa el campo de búsqueda del Tablero para limitar las tarjetas visibles por tí
 
 ### 📊 Línea de tiempo
 
+La Línea de tiempo está desactivada de forma predeterminada: actívala en **Ajustes → GTD → Funciones → Vista de línea de tiempo** para que aparezca en la barra lateral.
+
 Vista de solo lectura del trabajo con fechas. Cada tarea con fechas se dibuja como una barra horizontal que va de su fecha de inicio a su fecha de vencimiento, coloreada según su proyecto o, si el proyecto no tiene color propio, según su área.
 
 - Las tareas que solo tienen fecha de inicio, o solo fecha de vencimiento, muestran una pequeña marca en ese día

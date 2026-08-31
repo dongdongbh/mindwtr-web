@@ -149,6 +149,8 @@ Utilisez le champ de recherche du Tableau pour limiter les cartes visibles selon
 
 ### 📊 Chronologie
 
+La Chronologie est désactivée par défaut : activez-la dans **Paramètres → GTD → Fonctionnalités → Vue Chronologie** pour qu’elle apparaisse dans la barre latérale.
+
 Vue en lecture seule des tâches datées. Chaque tâche ayant des dates est représentée par une barre horizontale allant de sa date de début à son échéance, colorée selon son projet — ou selon son domaine lorsque le projet n’a pas de couleur propre.
 
 - Les tâches qui n’ont qu’une date de début, ou qu’une échéance, affichent un petit repère sur ce jour

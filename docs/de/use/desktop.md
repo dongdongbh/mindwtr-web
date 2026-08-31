@@ -149,6 +149,8 @@ Das Board-Suchfeld filtert sichtbare Karten nach Titel, Notizen, Projekt, Kontex
 
 ### 📊 Zeitleiste
 
+Die Zeitleiste ist standardmäßig deaktiviert: Aktivieren Sie sie unter **Einstellungen → GTD → Funktionen → Zeitleistenansicht**, damit sie in der Seitenleiste erscheint.
+
 Schreibgeschützter Überblick über terminierte Arbeit. Jede Aufgabe mit Datum erscheint als waagerechter Balken vom Startdatum bis zum Fälligkeitsdatum, eingefärbt nach ihrem Projekt – oder nach ihrem Bereich, wenn das Projekt keine eigene Farbe hat.
 
 - Aufgaben mit nur einem Startdatum oder nur einem Fälligkeitsdatum zeigen eine kleine Markierung an diesem Tag

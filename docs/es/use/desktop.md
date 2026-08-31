@@ -554,6 +554,7 @@ Abre Ajustes desde la barra lateral.
 - **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués (Brasil), ruso, alemán, japonés, persa, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo, sueco
 - **Atajos de teclado**: preajuste Estándar, Vim o Emacs
 - **Abrir al iniciar**: inicia Mindwtr automáticamente al iniciar sesión
+- **Vistas de la barra lateral**: oculta las entradas de la barra lateral que no uses, como Algún día/Tal vez, Calendario o Tablero. Bandeja de entrada y Proyectos siempre quedan visibles. La elección se aplica solo a este dispositivo; las vistas ocultas conservan sus datos y siguen siendo accesibles desde la búsqueda.
 
 ### Notificaciones
 

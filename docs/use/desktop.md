@@ -554,6 +554,7 @@ Access Settings from the sidebar.
 - **Language**: English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese (Brazil), Russian, German, Japanese, Persian, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech, Swedish
 - **Keyboard Shortcuts**: Standard, Vim, or Emacs preset
 - **Launch at Startup**: Start Mindwtr automatically when you sign in
+- **Sidebar views**: Hide sidebar entries you don't use, such as Someday/Maybe, Calendar, or Board. Inbox and Projects always stay visible. The choice applies to this device only, and hidden views keep their data and are still reachable from search.
 
 ### Notifications
 

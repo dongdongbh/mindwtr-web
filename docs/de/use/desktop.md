@@ -549,6 +549,7 @@ In jeder Voreinstellung setzt `s` plus Buchstabe direkt den Status (`si` Postein
 - **Sprache**: Englisch, Chinesisch (vereinfacht/traditionell), Hindi, Spanisch, Arabisch, Französisch, Portugiesisch (Brasilien), Russisch, Deutsch, Japanisch, Persisch, Vietnamesisch, Türkisch, Koreanisch, Italienisch, Polnisch, Niederländisch, Tschechisch, Schwedisch
 - **Tastenkürzel**: Standard, Vim oder Emacs
 - **Beim Systemstart öffnen**: Mindwtr nach der Anmeldung automatisch starten
+- **Ansichten der Seitenleiste**: Blenden Sie Einträge der Seitenleiste aus, die Sie nicht nutzen, etwa Irgendwann/Vielleicht, Kalender oder Board. Posteingang und Projekte bleiben immer sichtbar. Die Auswahl gilt nur für dieses Gerät; ausgeblendete Ansichten behalten ihre Daten und bleiben über die Suche erreichbar.
 
 ### Benachrichtigungen
 

@@ -554,6 +554,7 @@ Accédez aux Paramètres depuis la barre latérale.
 - **Langue** : anglais, chinois (simplifié), chinois (traditionnel), hindi, espagnol, arabe, français, portugais (Brésil), russe, allemand, japonais, persan, vietnamien, turc, coréen, italien, polonais, néerlandais, tchèque, suédois
 - **Raccourcis clavier** : préréglage Standard, Vim ou Emacs
 - **Lancer au démarrage** : démarrer Mindwtr automatiquement lors de votre connexion
+- **Vues de la barre latérale** : masquez les entrées de la barre latérale que vous n'utilisez pas, comme Un jour/Peut-être, Calendrier ou Tableau. Boîte de réception et Projets restent toujours visibles. Le choix ne s'applique qu'à cet appareil ; les vues masquées conservent leurs données et restent accessibles depuis la recherche.
 
 ### Notifications
 

@@ -52,7 +52,7 @@
 
 ### 想看影片導覽？
 
-[Mindwtr 的 YouTube 頻道](https://www.youtube.com/@mindwtr)上有兩部英文教學，完整示範從收集到每週回顧的整套流程，也涵蓋設定與同步。
+[Mindwtr 影片導覽播放清單](https://youtube.com/playlist?list=PLLwV6zeTfB_k)中有兩部英文教學，完整示範從收集到每週回顧的整套流程，也涵蓋設定與同步。
 
 - [Mindwtr Desktop Demo & Tutorial — Complete Local-First GTD Workflow](https://youtu.be/c-1Fxx5gFlo)（約 23 分鐘）
 - [Mindwtr Mobile Demo & Tutorial: Complete Local-First GTD Workflow](https://youtu.be/FApCFhViwJE)（約 26 分鐘）

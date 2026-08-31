@@ -30,6 +30,16 @@ La aplicación móvil usa pestañas inferiores para los flujos principales y una
 | 📝 **Revisión**    | Revisión diaria y semanal            |
 | ☰ **Menú**         | Accede a Proyectos, Tablero, Calendario, etc. |
 
+Los accesos rápidos se pueden personalizar. En este clip, Revisión se sustituye por Proyectos; después, Proyectos aparece tanto en la navegación inferior como en el Menú.
+
+<figure class="docs-demo">
+  <video controls playsinline preload="none" width="720" height="1616" poster="/assets/screenshots/articles/quick-access-projects-mobile-poster.webp">
+    <source src="/assets/screenshots/articles/quick-access-projects-mobile.mp4" type="video/mp4">
+    Tu navegador no admite el vídeo de navegación móvil de Mindwtr.
+  </video>
+  <figcaption>Personaliza los accesos rápidos, sustituye Revisión por Proyectos y abre la vista Proyectos desde la navegación actualizada.</figcaption>
+</figure>
+
 ### Pestaña Menú
 
 Toca la pestaña **Menú** para acceder a más vistas:

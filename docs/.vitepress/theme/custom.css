@@ -208,3 +208,29 @@ body,
   border: 1px solid var(--vp-c-divider);
   background: var(--vp-c-bg-soft);
 }
+
+.docs-demo {
+  max-width: 22rem;
+  margin: 1.5rem auto;
+}
+
+.docs-demo video {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 72vh;
+  margin-inline: auto;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 16px;
+  background: var(--vp-c-bg-alt);
+  box-shadow: var(--vp-shadow-2);
+}
+
+.docs-demo figcaption {
+  margin: 0.75rem 0.5rem 0;
+  color: var(--vp-c-text-2);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: center;
+}

@@ -30,6 +30,16 @@ L’application mobile utilise des onglets inférieurs pour les principaux flux 
 | 📝 **Revue**   | Revue quotidienne et hebdomadaire           |
 | ☰ **Menu**     | Accéder aux Projets, au Tableau, au Calendrier, etc. |
 
+Les raccourcis d’accès rapide sont personnalisables. Dans cette vidéo, Revue est remplacée par Projets ; Projets apparaît ensuite dans la navigation inférieure et dans le Menu.
+
+<figure class="docs-demo">
+  <video controls playsinline preload="none" width="720" height="1616" poster="/assets/screenshots/articles/quick-access-projects-mobile-poster.webp">
+    <source src="/assets/screenshots/articles/quick-access-projects-mobile.mp4" type="video/mp4">
+    Votre navigateur ne prend pas en charge la vidéo de navigation mobile de Mindwtr.
+  </video>
+  <figcaption>Personnalisez les raccourcis d’accès rapide, remplacez Revue par Projets, puis ouvrez la vue Projets depuis la navigation mise à jour.</figcaption>
+</figure>
+
 ### Onglet Menu
 
 Touchez l’onglet **Menu** pour accéder aux vues supplémentaires :

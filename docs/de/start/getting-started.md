@@ -52,7 +52,7 @@ Bei einer Neuinstallation fragt Mindwtr, ob Sie neu beginnen, eine Sicherung imp
 
 ### Lieber eine Video-Anleitung?
 
-Zwei englischsprachige Tutorials auf dem [YouTube-Kanal von Mindwtr](https://www.youtube.com/@mindwtr) zeigen den gesamten Arbeitsablauf, vom Erfassen bis zum Wochenrückblick, dazu Einstellungen und Synchronisierung.
+Zwei englischsprachige Tutorials in der [Mindwtr-Playlist mit Video-Anleitungen](https://youtube.com/playlist?list=PLLwV6zeTfB_k) zeigen den gesamten Arbeitsablauf, vom Erfassen bis zum Wochenrückblick, dazu Einstellungen und Synchronisierung.
 
 - [Mindwtr Desktop Demo & Tutorial — Complete Local-First GTD Workflow](https://youtu.be/c-1Fxx5gFlo) (etwa 23 Minuten)
 - [Mindwtr Mobile Demo & Tutorial: Complete Local-First GTD Workflow](https://youtu.be/FApCFhViwJE) (etwa 26 Minuten)

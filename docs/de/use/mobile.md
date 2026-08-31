@@ -30,6 +30,16 @@ Die App verwendet untere Tabs für zentrale Abläufe und eine Menüseite für we
 | 📝 **Durchsicht** | Tägliche Durchsicht + Wochenrückblick |
 | ☰ **Menü** | Projekte, Board, Kalender usw. öffnen |
 
+Die Schnellzugriffsplätze lassen sich anpassen. In diesem Clip wird „Durchsicht“ durch „Projekte“ ersetzt; anschließend erscheint „Projekte“ sowohl in der unteren Navigation als auch im Menü.
+
+<figure class="docs-demo">
+  <video controls playsinline preload="none" width="720" height="1616" poster="/assets/screenshots/articles/quick-access-projects-mobile-poster.webp">
+    <source src="/assets/screenshots/articles/quick-access-projects-mobile.mp4" type="video/mp4">
+    Ihr Browser unterstützt das Mindwtr-Video zur mobilen Navigation nicht.
+  </video>
+  <figcaption>Schnellzugriff anpassen: „Durchsicht“ durch „Projekte“ ersetzen und die Projektansicht über die aktualisierte Navigation öffnen.</figcaption>
+</figure>
+
 ### Tab „Menü“
 
 Tippen Sie auf **Menü**, um weitere Ansichten zu öffnen:

@@ -30,6 +30,16 @@ Mindwtr 行動版在 iPhone 與 Android 上提供完整的 GTD 引導流程：�
 | 📝 **回顧**        | 每日 + 每週回顧                |
 | ☰ **選單**         | 開啟專案、看板、行事曆等       |
 
+「快速存取」欄位可以自訂。在這段影片中，「回顧」會改為「專案」；接著，「專案」會同時出現在底部導覽與「選單」中。
+
+<figure class="docs-demo">
+  <video controls playsinline preload="none" width="720" height="1616" poster="/assets/screenshots/articles/quick-access-projects-mobile-poster.webp">
+    <source src="/assets/screenshots/articles/quick-access-projects-mobile.mp4" type="video/mp4">
+    您的瀏覽器不支援 Mindwtr 行動端導覽影片。
+  </video>
+  <figcaption>自訂「快速存取」，將「回顧」改為「專案」，再從更新後的導覽開啟「專案」檢視。</figcaption>
+</figure>
+
 ### 選單分頁
 
 點選**選單**分頁即可開啟其他檢視：

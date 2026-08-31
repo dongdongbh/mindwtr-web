@@ -30,6 +30,16 @@ Mindwtr 移动应用在 iPhone 和 Android 上提供完整的 GTD 引导流程�
 | 📝 **回顾**  | 每日 + 每周回顾                |
 | ☰ **菜单**     | 访问项目、看板、日历等。 |
 
+“快速访问”栏位可以自定义。在此视频中，“回顾”被替换为“项目”；随后，“项目”会同时出现在底部导航和“菜单”中。
+
+<figure class="docs-demo">
+  <video controls playsinline preload="none" width="720" height="1616" poster="/assets/screenshots/articles/quick-access-projects-mobile-poster.webp">
+    <source src="/assets/screenshots/articles/quick-access-projects-mobile.mp4" type="video/mp4">
+    您的浏览器不支持 Mindwtr 移动端导航视频。
+  </video>
+  <figcaption>自定义“快速访问”，将“回顾”替换为“项目”，再从更新后的导航中打开“项目”视图。</figcaption>
+</figure>
+
 ### 菜单标签页
 
 轻点**菜单**标签页可访问其他视图：

@@ -52,7 +52,7 @@ Lors d’une nouvelle installation, Mindwtr vous propose de partir de zéro, d�
 
 ### Vous préférez une visite en vidéo ?
 
-Deux tutoriels en anglais sur la [chaîne YouTube de Mindwtr](https://www.youtube.com/@mindwtr) parcourent tout le flux de travail, de la capture à la revue hebdomadaire, ainsi que les réglages et la synchronisation.
+Deux tutoriels en anglais dans la [playlist des visites vidéo de Mindwtr](https://youtube.com/playlist?list=PLLwV6zeTfB_k) parcourent tout le flux de travail, de la capture à la revue hebdomadaire, ainsi que les réglages et la synchronisation.
 
 - [Mindwtr Desktop Demo & Tutorial — Complete Local-First GTD Workflow](https://youtu.be/c-1Fxx5gFlo) (environ 23 minutes)
 - [Mindwtr Mobile Demo & Tutorial: Complete Local-First GTD Workflow](https://youtu.be/FApCFhViwJE) (environ 26 minutes)

@@ -52,7 +52,7 @@ On a fresh install, Mindwtr asks whether you want to start fresh, import a backu
 
 ### Prefer a video walkthrough?
 
-Two tutorials on the [Mindwtr YouTube channel](https://www.youtube.com/@mindwtr) cover the whole workflow, from capture through the Weekly Review, plus settings and sync.
+Two tutorials in the [Mindwtr video walkthrough playlist](https://youtube.com/playlist?list=PLLwV6zeTfB_k) cover the whole workflow, from capture through the Weekly Review, plus settings and sync.
 
 - [Mindwtr Desktop Demo & Tutorial — Complete Local-First GTD Workflow](https://youtu.be/c-1Fxx5gFlo) (about 23 minutes)
 - [Mindwtr Mobile Demo & Tutorial: Complete Local-First GTD Workflow](https://youtu.be/FApCFhViwJE) (about 26 minutes)

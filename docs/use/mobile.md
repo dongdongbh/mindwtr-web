@@ -30,6 +30,16 @@ The mobile app uses bottom tabs for core flows and a Menu page for additional vi
 | 📝 **Review**  | Daily + weekly review                |
 | ☰ **Menu**     | Access Projects, Board, Calendar, etc. |
 
+Quick Access slots are customizable. In this clip, Review is changed to Projects; Projects then appears in both the bottom navigation and the Menu.
+
+<figure class="docs-demo">
+  <video controls playsinline preload="none" width="720" height="1616" poster="/assets/screenshots/articles/quick-access-projects-mobile-poster.webp">
+    <source src="/assets/screenshots/articles/quick-access-projects-mobile.mp4" type="video/mp4">
+    Your browser does not support the Mindwtr mobile navigation video.
+  </video>
+  <figcaption>Customize Quick Access, replace Review with Projects, and open the Projects view from the updated navigation.</figcaption>
+</figure>
+
 ### Menu Tab
  
 Tap the **Menu** tab to access additional views:

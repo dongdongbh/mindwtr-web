@@ -473,6 +473,7 @@ Aufgaben sortieren nach:
 - Fälligkeitsdatum
 - Startdatum
 - Wiedervorlagedatum
+- Zeitschätzung (kürzeste zuerst, Aufgaben ohne Schätzung am Ende; sichtbar, solange Zeitschätzungen aktiviert sind)
 - Titel (alphabetisch)
 - Erstellt (älteste/neueste)
 - Abschlussdatum (nur Erledigt) – neueste zuerst, nie abgeschlossene Aufgaben am Ende

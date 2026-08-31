@@ -476,6 +476,7 @@ Usa el desplegable de ordenación para ordenar las tareas por:
 - Fecha de vencimiento
 - Fecha de inicio
 - Fecha de revisión
+- Estimación de tiempo (las más cortas primero, con las que no tienen estimación al final; aparece mientras Estimaciones de tiempo esté activado)
 - Título (alfabéticamente)
 - Creación (más antiguas/más recientes)
 - Fecha de finalización (solo Hecho): más recientes primero, con las nunca completadas al final

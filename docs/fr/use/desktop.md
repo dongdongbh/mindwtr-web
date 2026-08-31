@@ -476,6 +476,7 @@ Utilisez la liste déroulante de tri pour classer les tâches par :
 - Échéance
 - Date de début
 - Date de revue
+- Estimation de temps (les plus courtes d’abord, celles sans estimation à la fin ; visible tant que les Estimations de temps sont activées)
 - Titre (ordre alphabétique)
 - Date de création (de la plus ancienne à la plus récente ou inversement)
 - Date d’achèvement (Terminé uniquement) — les plus récentes d’abord, celles jamais terminées à la fin

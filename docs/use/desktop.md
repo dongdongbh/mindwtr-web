@@ -476,6 +476,7 @@ Use the sort dropdown to order tasks by:
 - Due date
 - Start date
 - Review date
+- Time estimate (shortest first, tasks without an estimate last; shown while Time estimates is enabled)
 - Title (alphabetical)
 - Created (oldest/newest)
 - Completion date (Done only) — newest first, with anything never completed last

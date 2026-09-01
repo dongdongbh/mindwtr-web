@@ -295,7 +295,7 @@ Automatic retries after backend failures start after about one minute and increa
 
 ### Sync on Phones and Battery
 
-On Android and iOS the triggers above apply with two differences. Mindwtr syncs when you leave the app and again when you return to it if the last sync is older than 30 seconds. For WebDAV, self-hosted cloud, Dropbox and iCloud it also registers a scheduled background job that the system runs at most every 15 minutes, also while the app is closed; File Sync never registers that job and only syncs while the app is open. After each automatic cycle the app waits at least nine times the length of that cycle before starting the next one (minimum 5 seconds, maximum 5 minutes), so a large library syncs less often rather than continuously.
+On Android and iOS the triggers above apply with two differences. Mindwtr syncs when you leave the app and again when you return to it if the last sync is older than 30 seconds. For WebDAV, self-hosted cloud, Dropbox and iCloud it also registers a scheduled background job that the system runs at most every 15 minutes by default, also while the app is closed; File Sync never registers that job and only syncs while the app is open. After each automatic cycle the app waits at least nine times the length of that cycle before starting the next one (minimum 5 seconds, maximum 5 minutes), so a large library syncs less often rather than continuously.
 
 The cost of one cycle grows with the size of your library and with how much changed. Sync encryption is not a battery factor: encrypting or decrypting the document takes a few milliseconds per cycle, and the deliberately slow key derivation runs only when you set, change or enter the passphrase.
 
@@ -303,7 +303,7 @@ If sync still uses more battery than you want:
 
 - **Restrict background usage** for Mindwtr in the Android battery settings. This stops only the scheduled job; syncing while the app is open is unaffected. It is safe for your data: every cycle is one complete read, merge and write, and a cycle the system interrupts simply runs again from the start the next time the app is open.
 - **Use File Sync** with a sync app of your choice if you do not need Mindwtr itself to sync in the background.
-- **Turn off automatic sync triggers you do not need** is not available yet; tell us on GitHub if you want a setting for the scheduled job.
+- **Change the scheduled job** in **Settings → Sync → Background sync**: Off, every 15 minutes (the default and the platform minimum), every hour, or every 6 hours. It applies to WebDAV, self-hosted cloud, Dropbox and iCloud, is set per device, and does not change syncing while the app is open. With it Off, edits from other devices arrive the next time you open the app.
 
 ### Settings Sync Options
 

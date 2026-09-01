@@ -147,6 +147,15 @@ Pour connecter vos clients Mindwtr (bureau ou mobile) à ce Cloud auto-hébergé
 
 Pour HTTP sur un réseau local privé, utilisez une adresse locale ou privée telle que `http://192.168.1.20:8787`. Pour les URL publiques, utilisez la configuration HTTPS avec Caddy décrite ci-dessus.
 
+### Préremplir les réglages de synchronisation de l'application web
+
+Un nouveau navigateur ouvrant la PWA peut arriver avec l'URL du cloud déjà remplie, de sorte qu'il ne reste qu'à saisir le jeton :
+
+- **Même domaine (recommandé) :** quand l'application et l'API cloud partagent un domaine (comme dans la configuration HTTPS avec Caddy), l'application web détecte le cloud sur sa propre origine automatiquement. Rien à configurer.
+- **Domaines séparés :** définissez `MINDWTR_DEFAULT_CLOUD_URL` sur le conteneur `mindwtr-app` avec l'URL publique du cloud, par exemple sous Kubernetes ou dans tout déploiement où l'application et l'API vivent sur des hôtes différents.
+
+La valeur ne fait que préremplir le formulaire de configuration. Elle n'écrase jamais une URL déjà configurée, et la synchronisation reste désactivée tant que la personne n'enregistre pas avec son jeton.
+
 ### Synchronisation Dropbox et PWA Docker
 
 L’image Docker `mindwtr-app` sert la version navigateur/PWA. La synchronisation OAuth native avec Dropbox n’est pas disponible dans cet environnement d’exécution, car la connexion Dropbox est implémentée par les applications natives de bureau et mobiles. Ajouter `VITE_DROPBOX_APP_KEY` ou `DROPBOX_APP_KEY` via `.env`, `env_file`, l’environnement d’exécution Compose ou un argument de construction Docker n’activera pas Dropbox dans Docker.

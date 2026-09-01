@@ -147,6 +147,15 @@ cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w 50 | head -n 1
 
 若是私人 LAN HTTP，請使用 `http://192.168.1.20:8787` 等本機／私人位址。公用 URL 請使用上述 Caddy HTTPS 設定。
 
+### 預置網頁應用程式的同步設定
+
+新瀏覽器開啟 PWA 時，可以讓雲端 URL 已經填好，使用者只需輸入權杖：
+
+- **同一網域（推薦）：** 當應用程式與雲端 API 共用一個網域（Caddy HTTPS 方案即如此）時，網頁應用程式會自動在自身來源上偵測雲端，無需任何設定。
+- **不同網域：** 在 `mindwtr-app` 容器上設定 `MINDWTR_DEFAULT_CLOUD_URL` 為雲端的公開 URL，適用於 Kubernetes 等應用程式與 API 部署在不同主機的情境。
+
+該值只用於預填設定表單。它絕不會覆蓋瀏覽器中已設定的 URL，在使用者以權杖儲存之前同步保持關閉。
+
 ### Dropbox 同步與 Docker PWA
 
 Docker `mindwtr-app` image 提供瀏覽器／PWA 組建。此 runtime 無法使用原生 Dropbox OAuth 同步，因為 Dropbox 連線是由原生桌面版及行動版應用程式實作。透過 `.env`、`env_file`、compose runtime environment 或 Docker build argument 加入 `VITE_DROPBOX_APP_KEY` 或 `DROPBOX_APP_KEY`，都不會在 Docker 中啟用 Dropbox。

@@ -147,6 +147,15 @@ Para conectar tus clientes de Mindwtr (de escritorio o móviles) a esta nube aut
 
 Para HTTP en una LAN privada, usa una dirección local o privada como `http://192.168.1.20:8787`. Para URL públicas, usa la configuración HTTPS con Caddy descrita arriba.
 
+### Preconfigurar los ajustes de sincronización de la aplicación web
+
+Un navegador nuevo que abra la PWA puede llegar con la URL de la nube ya rellenada, de modo que solo haya que introducir el token:
+
+- **Mismo dominio (recomendado):** cuando la aplicación y la API de la nube comparten un dominio (como en la configuración HTTPS con Caddy), la aplicación web detecta la nube en su propio origen automáticamente. Nada que configurar.
+- **Dominios separados:** define `MINDWTR_DEFAULT_CLOUD_URL` en el contenedor `mindwtr-app` con la URL pública de la nube, por ejemplo en Kubernetes o en cualquier despliegue donde la aplicación y la API vivan en hosts distintos.
+
+El valor solo rellena el formulario de configuración. Nunca sobrescribe una URL ya configurada, y la sincronización sigue desactivada hasta que la persona guarde con su token.
+
 ### Sincronización con Dropbox y la PWA de Docker
 
 La imagen de Docker `mindwtr-app` sirve la compilación para navegador/PWA. La sincronización OAuth nativa con Dropbox no está disponible en este entorno de ejecución porque la conexión con Dropbox está implementada por las aplicaciones nativas de escritorio y móviles. Añadir `VITE_DROPBOX_APP_KEY` o `DROPBOX_APP_KEY` mediante `.env`, `env_file`, el entorno de ejecución de Compose o un argumento de compilación de Docker no habilitará Dropbox en Docker.

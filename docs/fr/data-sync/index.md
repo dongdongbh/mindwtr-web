@@ -293,6 +293,18 @@ Mindwtr se synchronise automatiquement dans les situations suivantes :
 
 Après un échec du service de synchronisation, les nouvelles tentatives automatiques commencent au bout d’une minute environ et peuvent attendre jusqu’à dix minutes si les échecs se répètent. Le fournisseur peut imposer un autre délai. La synchronisation manuelle reste disponible.
 
+### Synchronisation sur mobile et batterie
+
+Sur Android et iOS, les déclencheurs ci-dessus s’appliquent avec deux différences. Mindwtr se synchronise lorsque vous quittez l’application, puis de nouveau lorsque vous y revenez si la dernière synchronisation date de plus de 30 secondes. Pour WebDAV, le cloud auto-hébergé, Dropbox et iCloud, l’application enregistre en plus une tâche planifiée en arrière-plan que le système exécute au maximum toutes les 15 minutes, y compris lorsque l’application est fermée ; la synchronisation de fichiers n’enregistre jamais cette tâche et ne synchronise que lorsque l’application est ouverte. Après chaque cycle automatique, l’application attend au moins neuf fois la durée de ce cycle avant de démarrer le suivant (minimum 5 secondes, maximum 5 minutes), de sorte qu’un volume de données important se synchronise moins souvent plutôt qu’en continu.
+
+Le coût d’un cycle augmente avec le volume de vos données et avec l’ampleur des modifications. Le chiffrement de la synchronisation n’est pas un facteur de consommation : chiffrer ou déchiffrer le document prend quelques millisecondes par cycle, et la dérivation de clé, volontairement lente, ne s’exécute que lorsque vous définissez, changez ou saisissez la phrase secrète.
+
+Si la synchronisation consomme toujours plus de batterie que vous ne le souhaitez :
+
+- **Restreignez l’utilisation en arrière-plan** de Mindwtr dans les réglages de batterie d’Android. Cela n’arrête que la tâche planifiée ; la synchronisation pendant que l’application est ouverte n’est pas affectée. C’est sans risque pour vos données : chaque cycle est une lecture, une fusion et une écriture complètes, et un cycle interrompu par le système reprend simplement depuis le début à la prochaine ouverture de l’application.
+- **Utilisez la synchronisation de fichiers** avec l’application de synchronisation de votre choix si vous n’avez pas besoin que Mindwtr se synchronise lui-même en arrière-plan.
+- **Désactiver les déclencheurs automatiques dont vous n’avez pas besoin** n’est pas encore possible ; dites-le-nous sur GitHub si vous souhaitez un réglage pour la tâche planifiée.
+
 ### Options de synchronisation des réglages
 
 Mindwtr peut synchroniser certaines préférences entre les appareils. Configurez-les dans **Réglages → Synchronisation → Options de synchronisation des réglages**.

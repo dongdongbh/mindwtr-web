@@ -292,6 +292,18 @@ Mindwtr synchronisiert in folgenden Situationen automatisch:
 
 Automatische Wiederholungsversuche nach Backend-Fehlern beginnen nach etwa einer Minute und verlängern sich bei wiederholten Fehlern auf bis zu zehn Minuten. Vom Anbieter vorgegebene Wartezeiten können davon abweichen. Die manuelle Synchronisierung bleibt verfügbar.
 
+### Synchronisierung auf Mobilgeräten und Akkuverbrauch
+
+Unter Android und iOS gelten die oben genannten Auslöser mit zwei Unterschieden. Mindwtr synchronisiert beim Verlassen der App und erneut bei der Rückkehr, sofern die letzte Synchronisierung länger als 30 Sekunden zurückliegt. Für WebDAV, die selbst gehostete Cloud, Dropbox und iCloud wird zusätzlich ein geplanter Hintergrundauftrag registriert, den das System höchstens alle 15 Minuten ausführt, auch bei geschlossener App; die Dateisynchronisierung registriert diesen Auftrag nie und synchronisiert nur, solange die App geöffnet ist. Nach jedem automatischen Durchlauf wartet die App mindestens das Neunfache der Dauer dieses Durchlaufs, bevor der nächste beginnt (mindestens 5 Sekunden, höchstens 5 Minuten). Ein großer Datenbestand wird dadurch seltener statt fortlaufend synchronisiert.
+
+Der Aufwand eines Durchlaufs wächst mit dem Umfang Ihrer Daten und mit der Menge der Änderungen. Die Sync-Verschlüsselung fällt für den Akku nicht ins Gewicht: Das Ver- und Entschlüsseln des Dokuments dauert wenige Millisekunden pro Durchlauf, und die absichtlich langsame Schlüsselableitung läuft nur, wenn Sie die Passphrase festlegen, ändern oder eingeben.
+
+Wenn die Synchronisierung weiterhin mehr Akku verbraucht als gewünscht:
+
+- **Hintergrundnutzung einschränken** für Mindwtr in den Android-Akkueinstellungen. Das stoppt nur den geplanten Auftrag; die Synchronisierung bei geöffneter App bleibt unberührt. Für Ihre Daten ist das unbedenklich: Jeder Durchlauf ist ein vollständiges Lesen, Zusammenführen und Schreiben, und ein vom System unterbrochener Durchlauf beginnt beim nächsten Öffnen der App einfach von vorn.
+- **Dateisynchronisierung verwenden** zusammen mit einer Synchronisierungs-App Ihrer Wahl, wenn Mindwtr selbst nicht im Hintergrund synchronisieren muss.
+- **Nicht benötigte automatische Auslöser abschalten** ist noch nicht möglich; schreiben Sie uns auf GitHub, wenn Sie eine Einstellung für den geplanten Auftrag wünschen.
+
 ### Synchronisierte Einstellungen
 
 Mindwtr kann ausgewählte Einstellungen zwischen Geräten synchronisieren. Die Konfiguration erfolgt unter **Einstellungen → Synchronisierung → Synchronisierte Einstellungen**.

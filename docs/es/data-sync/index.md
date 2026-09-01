@@ -293,6 +293,18 @@ Mindwtr se sincroniza automáticamente en las situaciones siguientes:
 
 Los reintentos automáticos tras fallos del backend empiezan al cabo de un minuto y aumentan hasta diez minutos si los fallos se repiten. El proveedor puede indicar otro tiempo de espera. La sincronización manual sigue disponible.
 
+### Sincronización en el móvil y batería
+
+En Android y iOS se aplican los disparadores anteriores con dos diferencias. Mindwtr sincroniza al salir de la aplicación y otra vez al volver a ella si la última sincronización tiene más de 30 segundos. Para WebDAV, la nube autoalojada, Dropbox e iCloud también registra una tarea programada en segundo plano que el sistema ejecuta como máximo cada 15 minutos, incluso con la aplicación cerrada; la sincronización de archivos nunca registra esa tarea y solo sincroniza mientras la aplicación está abierta. Después de cada ciclo automático, la aplicación espera al menos nueve veces la duración de ese ciclo antes de empezar el siguiente (mínimo 5 segundos, máximo 5 minutos), de modo que un volumen de datos grande se sincroniza con menos frecuencia en lugar de continuamente.
+
+El coste de un ciclo crece con el tamaño de tus datos y con la cantidad de cambios. El cifrado de la sincronización no influye en la batería: cifrar o descifrar el documento lleva unos milisegundos por ciclo, y la derivación de clave, deliberadamente lenta, solo se ejecuta cuando defines, cambias o introduces la frase de contraseña.
+
+Si la sincronización sigue gastando más batería de la que quieres:
+
+- **Restringe el uso en segundo plano** de Mindwtr en los ajustes de batería de Android. Esto detiene solo la tarea programada; la sincronización con la aplicación abierta no se ve afectada. Es seguro para tus datos: cada ciclo es una lectura, una fusión y una escritura completas, y un ciclo que el sistema interrumpa simplemente vuelve a ejecutarse desde el principio la próxima vez que la aplicación esté abierta.
+- **Usa la sincronización de archivos** con la aplicación de sincronización que prefieras si no necesitas que Mindwtr sincronice por su cuenta en segundo plano.
+- **Desactivar los disparadores automáticos que no necesitas** todavía no es posible; dinos en GitHub si quieres un ajuste para la tarea programada.
+
 ### Opciones de sincronización de ajustes
 
 Mindwtr puede sincronizar determinadas preferencias entre dispositivos. Configúralas en **Ajustes → Sincronización → Opciones de sincronización de ajustes**.

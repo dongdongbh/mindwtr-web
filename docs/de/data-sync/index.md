@@ -717,6 +717,7 @@ Aktiviert wird sie unter **Einstellungen → Synchronisierung → Verschlüsselu
 
 Lesen Sie dies, bevor Sie sie aktivieren:
 
+- **WebDAV braucht einen Server, der bedingte Schreibvorgänge durchsetzt.** Vor dem Aktivieren prüft Mindwtr, ob der Server starke ETags liefert und ein Anlegen oder Ersetzen mit fehlgeschlagener Vorbedingung ablehnt. Server, die solche Schreibvorgänge trotzdem annehmen, können keine verschlüsselte Synchronisierung hosten; das Aktivieren wird dort abgelehnt, die unverschlüsselte Synchronisierung funktioniert weiter. Bekannt dafür, diese Prüfung nicht zu bestehen: Fastmail, Koofr, Jianguoyun, dufs. Nextcloud setzt sie durch.
 - **Zuerst jedes Gerät aktualisieren.** Versionen ohne Unterstützung für Verschlüsselung können einen verschlüsselten Sync-Ort nicht lesen. Ihre lokalen Daten bleiben unversehrt und werden ganz normal zusammengeführt, sobald die Geräte aktualisiert und entsperrt sind.
 - **Die Passphrase lässt sich nicht wiederherstellen.** Notieren Sie sie oder bewahren Sie sie in einem Passwortmanager auf. Geht sie verloren, sind die synchronisierten Kopien nie wieder lesbar; die bereits auf Ihren Geräten liegenden Daten bleiben lesbar.
 - **Frühere Versionen beim Anbieter bleiben, wie sie sind.** Der Versionsverlauf, den Dropbox, Ihr WebDAV-Server oder Ihr Datei-Sync-Werkzeug aus der Zeit vor der Verschlüsselung aufbewahrt hat, bleibt mit dem alten Schlüssel oder als Klartext lesbar.

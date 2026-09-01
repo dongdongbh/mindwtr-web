@@ -716,6 +716,7 @@ Se activa en **Ajustes → Sincronización → Cifrado**, apartado que aparece m
 
 Léelo antes de activarlo:
 
+- **WebDAV necesita un servidor que aplique escrituras condicionales.** Antes de activarlo, Mindwtr comprueba que el servidor devuelva ETags fuertes y rechace una creación o sustitución cuya condición previa falle. Los servidores que aceptan esas escrituras de todos modos no pueden alojar la sincronización cifrada y la activación se rechaza allí; la sincronización sin cifrar sigue funcionando. Se sabe que no superan esta comprobación: Fastmail, Koofr, Jianguoyun, dufs. Nextcloud la aplica.
 - **Actualiza primero todos los dispositivos.** Las versiones sin soporte de cifrado no pueden leer un destino de sincronización cifrado. Sus datos locales están a salvo y se fusionan con normalidad en cuanto se actualizan y se desbloquean.
 - **La frase de contraseña no se puede recuperar.** Anótala o guárdala en un gestor de contraseñas. Si se pierde, las copias sincronizadas no se podrán volver a leer nunca; los datos que ya están en tus dispositivos siguen siendo legibles.
 - **Las versiones anteriores que guarda el proveedor se quedan como están.** El historial de versiones que Dropbox, tu servidor WebDAV o tu herramienta de sincronización de archivos conservara de antes del cifrado sigue siendo legible con la clave antigua o como texto plano.

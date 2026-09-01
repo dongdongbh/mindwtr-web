@@ -716,6 +716,7 @@ Turn it on in **Settings → Sync → Encryption**, which appears while one of t
 
 Read these before you enable it:
 
+- **WebDAV needs a server that enforces conditional writes.** Before enabling, Mindwtr checks that the server returns strong ETags and refuses a create or replace whose precondition fails. Servers that accept such writes anyway cannot host encrypted sync and enabling is refused there; plain sync keeps working. Known to fail this check: Fastmail, Koofr, Jianguoyun, dufs. Nextcloud enforces it.
 - **Update every device first.** Versions without encryption support cannot read an encrypted sync location. Their local data is safe and merges in normally once they are updated and unlocked.
 - **The passphrase cannot be recovered.** Write it down or keep it in a password manager. If it is lost, the synced copies can never be read again; the data already on your devices stays readable.
 - **Earlier versions kept by the provider stay as they are.** Whatever version history Dropbox, your WebDAV server, or your file-sync tool retained from before encryption remains readable with the old key or as plain text.

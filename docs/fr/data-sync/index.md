@@ -716,6 +716,7 @@ Activez-le dans **Réglages → Synchronisation → Chiffrement**, une section q
 
 À lire avant de l'activer :
 
+- **WebDAV a besoin d'un serveur qui applique les écritures conditionnelles.** Avant l'activation, Mindwtr vérifie que le serveur renvoie des ETags forts et refuse une création ou un remplacement dont la précondition échoue. Les serveurs qui acceptent malgré tout ces écritures ne peuvent pas héberger la synchronisation chiffrée et l'activation y est refusée ; la synchronisation en clair continue de fonctionner. Connus pour échouer à cette vérification : Fastmail, Koofr, Jianguoyun, dufs. Nextcloud l'applique.
 - **Mettez d'abord à jour chaque appareil.** Les versions sans prise en charge du chiffrement ne peuvent pas lire une destination de synchronisation chiffrée. Leurs données locales restent intactes et fusionnent normalement une fois l'appareil mis à jour et déverrouillé.
 - **La phrase secrète est irrécupérable.** Notez-la ou conservez-la dans un gestionnaire de mots de passe. Si elle est perdue, les copies synchronisées ne pourront plus jamais être lues ; les données déjà présentes sur vos appareils restent lisibles.
 - **Les versions antérieures conservées par le fournisseur restent en l'état.** L'historique de versions que Dropbox, votre serveur WebDAV ou votre outil de synchronisation de fichiers a conservé d'avant le chiffrement reste lisible avec l'ancienne clé ou en clair.

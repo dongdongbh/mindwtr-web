@@ -45,6 +45,7 @@ MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 | --- | --- |
 | Linux | `~/.local/share/mindwtr/logs/mindwtr.log` |
 | Windows | `%APPDATA%/mindwtr/logs/mindwtr.log` |
+| Windows (Microsoft Store) | `%LOCALAPPDATA%/Packages/<package>/LocalCache/Roaming/mindwtr/logs/mindwtr.log` |
 | macOS | `~/Library/Application Support/mindwtr/logs/mindwtr.log` |
 
 ---

@@ -97,6 +97,7 @@ Resultados de varios pasos que contienen tareas relacionadas.
 - **Referencias en proyectos**: las tareas de referencia aparecen en una sección de Referencia debajo de la lista de tareas del proyecto, incluidas las referencias cuyas etiquetas coinciden con las del proyecto, de modo que una misma referencia puede aparecer en varios proyectos
 - **Notas de apoyo**: añade notas de planificación y material de referencia
 - **Secciones**: agrupaciones opcionales de tareas dentro de un proyecto (fases, hitos o líneas de trabajo). Las secciones son encabezados dentro de un proyecto, no subtareas ni proyectos independientes. Un proyecto con secciones también puede mostrarlas como columnas contiguas — el conmutador **Columnas** junto a Ordenar — con arrastre entre columnas para cambiar de sección y desplazamiento manteniendo pulsado el botón central del ratón; la elección se recuerda por proyecto en este dispositivo.
+- **Fecha de inicio y fecha de vencimiento**: un proyecto puede llevar sus propias fechas de inicio y vencimiento, junto a la fecha de revisión en los detalles del proyecto. Juntas dan al proyecto un tramo en la Línea de tiempo
 - **Fecha de revisión**: define fechas de seguimiento para revisar el proyecto
 - **Archivar**: completar un proyecto significa archivarlo; sus tareas restantes se completan con él y **Reactivar** lo deshace
 - **Duplicar**: haz clic derecho en un proyecto de la barra lateral, o usa **Duplicar** en la cabecera del proyecto, para copiar el proyecto entero con sus secciones y tareas. La copia empieza de cero: consulta [Listas reutilizables](/es/use/reusable-lists)
@@ -155,10 +156,11 @@ Vista de solo lectura del trabajo con fechas. Cada tarea con fechas se dibuja co
 
 - Las tareas que solo tienen fecha de inicio, o solo fecha de vencimiento, muestran una pequeña marca en ese día
 - Las tareas sin fechas no aparecen aquí
+- Un proyecto con fecha de inicio o de vencimiento recibe su propia barra estrecha encima de sus tareas; si solo se define una de las dos, la barra llega hasta el inicio más temprano o el vencimiento más tardío de esas tareas
 - Una línea vertical marca hoy, y el botón **Hoy** vuelve a ese punto
 - Tres niveles de zoom —día, semana y mes— cambian detalle por alcance
 
-Haz clic en una barra para abrir la tarea. La Línea de tiempo solo muestra: arrastrar una barra no cambia las fechas. Edita la fecha de inicio y la de vencimiento en el editor de tareas.
+Haz clic en una barra para abrir la tarea, o en el nombre de un proyecto para abrir el proyecto. La Línea de tiempo solo muestra: arrastrar una barra no cambia las fechas. Edita la fecha de inicio y la de vencimiento en el editor de tareas, y las fechas propias de un proyecto en sus detalles.
 
 ### ✅ Terminadas
 

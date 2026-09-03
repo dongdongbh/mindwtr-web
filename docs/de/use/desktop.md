@@ -97,6 +97,7 @@ Mehrstufige Ergebnisse mit zusammengehörigen Aufgaben.
 - **Referenzen in Projekten**: Referenzaufgaben erscheinen in einem Referenz-Abschnitt unter der Aufgabenliste des Projekts — auch Referenzen, deren Tags mit den Projekt-Tags übereinstimmen, sodass eine Referenz in mehreren Projekten auftauchen kann
 - **Begleitnotizen**: Planungsnotizen und Referenzmaterial hinzufügen
 - **Abschnitte**: Optionale Aufgabengruppen innerhalb eines Projekts (Phasen, Meilensteine, Arbeitsstränge), keine Unteraufgaben oder separaten Projekte. Ein Projekt mit Abschnitten kann sie auch als nebeneinanderliegende Spalten anzeigen — der **Spalten**-Umschalter neben Sortieren — mit Ziehen zwischen Spalten zum Abschnittswechsel und gedrückter mittlerer Maustaste zum Schwenken; die Wahl wird pro Projekt auf diesem Gerät gemerkt.
+- **Startdatum und Fälligkeitsdatum**: Ein Projekt kann eigene Start- und Fälligkeitsdaten tragen, neben dem Wiedervorlagedatum in den Projektdetails. Zusammen geben sie dem Projekt einen Zeitraum auf der Zeitleiste
 - **Wiedervorlagedatum**: Tickler-Daten für die Projektdurchsicht
 - **Archivieren**: Ein Projekt wird durch Archivieren abgeschlossen; übrige Aufgaben werden mit abgeschlossen, **Reaktivieren** macht dies rückgängig.
 - **Duplizieren**: Klicken Sie mit der rechten Maustaste auf ein Projekt in der Seitenleiste oder verwenden Sie **Duplizieren** in der Projektkopfzeile, um das ganze Projekt samt Abschnitten und Aufgaben zu kopieren. Die Kopie startet frisch — siehe [Wiederverwendbare Listen](/de/use/reusable-lists).
@@ -155,10 +156,11 @@ Schreibgeschützter Überblick über terminierte Arbeit. Jede Aufgabe mit Datum 
 
 - Aufgaben mit nur einem Startdatum oder nur einem Fälligkeitsdatum zeigen eine kleine Markierung an diesem Tag
 - Aufgaben ohne Datum erscheinen hier nicht
+- Ein Projekt mit Startdatum oder Fälligkeitsdatum erhält einen eigenen schmalen Balken über seinen Aufgaben; ist nur eines von beiden gesetzt, reicht der Balken bis zum frühesten Start- oder spätesten Fälligkeitsdatum dieser Aufgaben
 - Eine senkrechte Linie markiert heute, und die Schaltfläche **Heute** springt dorthin zurück
 - Drei Zoomstufen – Tag, Woche und Monat – wechseln zwischen Detailgrad und Zeitraum
 
-Ein Klick auf einen Balken öffnet die Aufgabe. Die Zeitleiste zeigt nur an: Das Ziehen eines Balkens ändert keine Daten. Start- und Fälligkeitsdatum bearbeiten Sie im Aufgabeneditor.
+Ein Klick auf einen Balken öffnet die Aufgabe, ein Klick auf einen Projektnamen das Projekt. Die Zeitleiste zeigt nur an: Das Ziehen eines Balkens ändert keine Daten. Start- und Fälligkeitsdatum bearbeiten Sie im Aufgabeneditor, die eigenen Daten eines Projekts in dessen Details.
 
 ### ✅ Erledigt
 

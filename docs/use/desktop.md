@@ -97,6 +97,7 @@ Multi-step outcomes containing related tasks.
 - **References in projects**: reference tasks show in a References section below the project's task list — including references whose tags match the project's tags, so one reference can appear in several projects
 - **Support notes**: Add planning notes and reference material
 - **Sections**: Optional task groupings inside a project (phases, milestones, sub-workstreams). Sections are headings inside one project, not subtasks or separate projects. A sectioned project can also show its sections as side-by-side columns — the **Columns** toggle next to Sort — with drag between columns to change section and a held middle mouse button to pan; the choice is remembered per project on this device.
+- **Start date and due date**: A project can carry its own start and due dates, alongside the review date in the project details. Together they give the project a span on the Timeline
 - **Review date**: Set tickler dates for project review
 - **Archive**: Completing a project means archiving it — remaining tasks are completed with it, and **Reactivate** undoes it
 - **Duplicate**: Right-click a project in the sidebar, or use **Duplicate** in the project header, to copy the whole project with its sections and tasks. The copy starts fresh — see [Reusable Lists](/use/reusable-lists)
@@ -155,10 +156,11 @@ Read-only overview of dated work across time. Each task with dates is drawn as a
 
 - Tasks with only a start date, or only a due date, show a small marker on that day
 - Tasks without dates don't appear here
+- A project with a start date or a due date gets its own slim bar above its tasks; when only one of the two is set, the bar reaches to the earliest start or latest due date among those tasks
 - A vertical line marks today, and the **Today** button jumps back to it
 - Three zoom levels — day, week, and month — trade detail for range
 
-Click a bar to open the task. Timeline only displays: dragging a bar does not change dates. Edit start and due dates in the task editor.
+Click a bar to open the task, or a project's name to open the project. Timeline only displays: dragging a bar does not change dates. Edit start and due dates in the task editor, and a project's own dates in its details.
 
 ### ✅ Done
 

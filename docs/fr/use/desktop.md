@@ -97,6 +97,7 @@ Résultats en plusieurs étapes contenant des tâches liées.
 - **Références dans les projets** : les tâches de référence apparaissent dans une section Référence sous la liste des tâches du projet — y compris les références dont les étiquettes correspondent à celles du projet, si bien qu'une même référence peut apparaître dans plusieurs projets
 - **Notes d’accompagnement** : ajoutez des notes de planification et des documents de référence
 - **Sections** : regroupements facultatifs de tâches au sein d’un projet (phases, jalons, sous-chantiers). Les sections sont des titres à l’intérieur d’un seul projet, pas des sous-tâches ni des projets distincts. Un projet à sections peut aussi les afficher en colonnes côte à côte — le bouton **Colonnes** à côté de Trier — avec glisser entre colonnes pour changer de section et défilement au bouton central maintenu ; le choix est mémorisé par projet sur cet appareil.
+- **Date de début et échéance** : un projet peut porter ses propres date de début et échéance, à côté de la date de revue dans les détails du projet. Ensemble, elles donnent au projet une période sur la Chronologie
 - **Date de revue** : définissez des dates de rappel pour la revue du projet
 - **Archiver** : terminer un projet signifie l’archiver — les tâches restantes sont terminées avec lui, et **Réactiver** annule cette action
 - **Dupliquer** : faites un clic droit sur un projet dans la barre latérale, ou utilisez **Dupliquer** dans l’en-tête du projet, pour copier tout le projet avec ses sections et ses tâches. La copie repart à zéro — voir [Listes réutilisables](/fr/use/reusable-lists)
@@ -155,10 +156,11 @@ Vue en lecture seule des tâches datées. Chaque tâche ayant des dates est repr
 
 - Les tâches qui n’ont qu’une date de début, ou qu’une échéance, affichent un petit repère sur ce jour
 - Les tâches sans dates n’apparaissent pas ici
+- Un projet ayant une date de début ou une échéance reçoit sa propre barre fine au-dessus de ses tâches ; si une seule des deux est définie, la barre va jusqu’au début le plus tôt ou à l’échéance la plus tardive de ces tâches
 - Une ligne verticale marque aujourd’hui, et le bouton **Aujourd’hui** y ramène
 - Trois niveaux de zoom — jour, semaine et mois — arbitrent entre détail et période
 
-Cliquez sur une barre pour ouvrir la tâche. La Chronologie se contente d’afficher : faire glisser une barre ne modifie pas les dates. Modifiez la date de début et l’échéance dans l’éditeur de tâches.
+Cliquez sur une barre pour ouvrir la tâche, ou sur le nom d’un projet pour ouvrir le projet. La Chronologie se contente d’afficher : faire glisser une barre ne modifie pas les dates. Modifiez la date de début et l’échéance dans l’éditeur de tâches, et les dates propres d’un projet dans ses détails.
 
 ### ✅ Terminé
 

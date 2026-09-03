@@ -107,6 +107,7 @@ Die Antwort enthält `taskTotal`, `projectTotal` und die tatsächlich verwendete
 
 ```text
 GET /v1/attachments/:path
+HEAD /v1/attachments/:path
 PUT /v1/attachments/:path
 DELETE /v1/attachments/:path
 

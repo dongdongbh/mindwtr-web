@@ -107,6 +107,7 @@ La réponse comprend `taskTotal`, `projectTotal` et les valeurs effectives des c
 
 ```text
 GET /v1/attachments/:path
+HEAD /v1/attachments/:path
 PUT /v1/attachments/:path
 DELETE /v1/attachments/:path
 

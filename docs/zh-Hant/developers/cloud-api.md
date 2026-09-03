@@ -107,6 +107,7 @@ GET /v1/search?query=<text>
 
 ```text
 GET /v1/attachments/:path
+HEAD /v1/attachments/:path
 PUT /v1/attachments/:path
 DELETE /v1/attachments/:path
 

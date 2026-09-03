@@ -156,7 +156,7 @@ Schreibgeschützter Überblick über terminierte Arbeit. Jede Aufgabe mit Datum 
 
 - Aufgaben mit nur einem Startdatum oder nur einem Fälligkeitsdatum zeigen eine kleine Markierung an diesem Tag
 - Aufgaben ohne Datum erscheinen hier nicht
-- Ein Projekt mit Startdatum oder Fälligkeitsdatum erhält einen eigenen schmalen Balken über seinen Aufgaben; ist nur eines von beiden gesetzt, reicht der Balken bis zum frühesten Start- oder spätesten Fälligkeitsdatum dieser Aufgaben
+- Ein Projekt mit Startdatum oder Fälligkeitsdatum erhält einen eigenen schmalen Balken über seinen Aufgaben, auch bevor diese Aufgaben eigene Daten haben; ist nur eines von beiden gesetzt, reicht der Balken bis zum frühesten Start- oder spätesten Fälligkeitsdatum dieser Aufgaben
 - Eine senkrechte Linie markiert heute, und die Schaltfläche **Heute** springt dorthin zurück
 - Drei Zoomstufen – Tag, Woche und Monat – wechseln zwischen Detailgrad und Zeitraum
 

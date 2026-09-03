@@ -60,6 +60,14 @@ Abfrageparameter für Listen:
 
 Beim Erstellen werden entweder `title` oder die Schnelleingabe `input` sowie optional `props` akzeptiert. Patch akzeptiert Aufgabenfelder, die von der Cloud-Validierungsschicht unterstützt werden, und erhöht die Metadaten der Synchronisierungsrevision.
 
+## Erfassung
+
+```text
+POST /v1/capture
+```
+
+Die Erfassung erstellt eine Aufgabe im Posteingang aus einer Transkription, einer Audioaufnahme oder beidem, gesendet als Multipart-Formulardaten, als JSON oder als reiner Text. Die Felder, die Antworten und die Einrichtung des Pebble Index 01 stehen unter [Erfassungs-Webhook](/de/power-users/capture-webhook).
+
 ## Projekte, Bereiche und Abschnitte
 
 ```text

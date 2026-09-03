@@ -74,6 +74,7 @@ export default {
       overview: "概览",
       aiAssistant: "AI 助手",
       appleShortcuts: "Apple 快捷指令",
+      captureWebhook: "收集 Webhook",
       emailCapture: "邮件收集",
       jiraCapture: "Jira 收集",
       localApi: "本地 API",

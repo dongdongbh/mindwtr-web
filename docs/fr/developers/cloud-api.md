@@ -60,6 +60,14 @@ Paramètres de requête de la liste :
 
 La création accepte soit `title`, soit l’`input` d’ajout rapide, ainsi que des `props` facultatives. La modification accepte les champs de tâche pris en charge par la couche de validation du cloud et incrémente les métadonnées de révision de synchronisation.
 
+## Capture
+
+```text
+POST /v1/capture
+```
+
+La capture crée une tâche dans la boîte de réception à partir d'une transcription, d'un enregistrement audio ou des deux, envoyés en données de formulaire multipart, en JSON ou en texte brut. Consultez [Webhook de capture](/fr/power-users/capture-webhook) pour les champs, les réponses et la configuration du Pebble Index 01.
+
 ## Projets, domaines et sections
 
 ```text

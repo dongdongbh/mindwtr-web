@@ -60,6 +60,14 @@ List query parameters:
 
 Create accepts either `title` or quick-add `input`, plus optional `props`. Patch accepts task fields supported by the cloud validation layer and bumps sync revision metadata.
 
+## Capture
+
+```text
+POST /v1/capture
+```
+
+Capture creates an Inbox task from a transcription, an audio recording, or both, sent as multipart form data, JSON, or plain text. See [Capture webhook](/power-users/capture-webhook) for the fields, the responses, and the Pebble Index 01 setup.
+
 ## Projects, Areas, and Sections
 
 ```text

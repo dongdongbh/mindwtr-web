@@ -72,6 +72,7 @@ export const SIDEBAR_SECTIONS = [
       ["overview", "/power-users/"],
       ["aiAssistant", "/power-users/ai-assistant"],
       ["appleShortcuts", "/power-users/apple-shortcuts"],
+      ["captureWebhook", "/power-users/capture-webhook"],
       ["emailCapture", "/power-users/email-capture"],
       ["jiraCapture", "/power-users/jira-capture"],
       ["localApi", "/power-users/local-api"],

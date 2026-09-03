@@ -74,6 +74,7 @@ export default {
       overview: "Introducción",
       aiAssistant: "Asistente de IA",
       appleShortcuts: "Atajos de Apple",
+      captureWebhook: "Webhook de captura",
       emailCapture: "Captura por correo electrónico",
       jiraCapture: "Captura desde Jira",
       localApi: "API local",

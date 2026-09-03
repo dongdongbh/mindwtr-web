@@ -74,6 +74,7 @@ export default {
       overview: "Überblick",
       aiAssistant: "KI-Assistent",
       appleShortcuts: "Apple-Kurzbefehle",
+      captureWebhook: "Erfassungs-Webhook",
       emailCapture: "Aufgaben per E-Mail erfassen",
       jiraCapture: "Aufgaben aus Jira erfassen",
       localApi: "Lokale API",

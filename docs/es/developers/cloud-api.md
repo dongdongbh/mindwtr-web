@@ -60,6 +60,14 @@ Parámetros de lista:
 
 La creación acepta `title` o un `input` de adición rápida, además de `props` opcional. El parche acepta campos compatibles con la validación de nube y aumenta los metadatos de revisión.
 
+## Captura
+
+```text
+POST /v1/capture
+```
+
+La captura crea una tarea en la bandeja de entrada a partir de una transcripción, una grabación de audio o ambas, enviadas como datos de formulario multiparte, como JSON o como texto plano. Consulta [Webhook de captura](/es/power-users/capture-webhook) para ver los campos, las respuestas y la configuración del Pebble Index 01.
+
 ## Proyectos, áreas y secciones
 
 ```text

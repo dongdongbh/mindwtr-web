@@ -60,6 +60,14 @@ POST /v1/tasks/:id/archive
 
 建立時可接受 `title` 或快速新增的 `input`，以及選用的 `props`。修補操作接受雲端驗證層支援的任務欄位，並提高同步修訂版中繼資料。
 
+## 收集
+
+```text
+POST /v1/capture
+```
+
+收集端點可以用轉錄文字、錄音或兩者一起建立一筆收集箱任務，請求內容可以是多部分表單資料、JSON 或純文字。欄位、回應以及 Pebble Index 01 的設定方式，請見[收集 Webhook](/zh-Hant/power-users/capture-webhook)。
+
 ## 專案、領域與區段
 
 ```text

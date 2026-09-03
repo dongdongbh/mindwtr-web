@@ -382,8 +382,8 @@ Las herramientas de escritura funcionan tanto con la base de datos local como co
 - **`mindwtr_complete_task`**: Marca una tarea como completada.
 - **`mindwtr_delete_task`**: Elimina una tarea de forma lógica.
 - **`mindwtr_restore_task`**: Restaura una tarea eliminada de forma lógica.
-- **`mindwtr_add_project`**: Crea un proyecto nuevo, incluidos `dueDate` y `reviewAt` opcionales.
-- **`mindwtr_update_project`**: Actualiza un proyecto, incluidos `dueDate` y `reviewAt` opcionales.
+- **`mindwtr_add_project`**: Crea un proyecto nuevo, incluidos `startDate`, `dueDate` y `reviewAt` opcionales.
+- **`mindwtr_update_project`**: Actualiza un proyecto, incluidos `startDate`, `dueDate` y `reviewAt` opcionales.
 - **`mindwtr_delete_project`**: Elimina un proyecto de forma lógica.
 - **`mindwtr_add_section`**: Crea una sección dentro de un proyecto.
 - **`mindwtr_update_section`**: Actualiza una sección de un proyecto.
@@ -706,7 +706,7 @@ Si necesitas más de 500 tareas, pagina con `limit` + `offset` en lugar de esper
 
 **Notas**
 
-- Usa `null` para borrar campos que admiten valores nulos. Esto se aplica a campos de tarea como `projectId`, `dueDate`, `startTime`, `contexts` y `tags`; campos de proyecto como `areaId`, `dueDate`, `reviewAt` y `supportNotes`; el campo `description` de las secciones; los campos `color` e `icon` de las áreas; y los campos `note` y `referenceLink` de las personas.
+- Usa `null` para borrar campos que admiten valores nulos. Esto se aplica a campos de tarea como `projectId`, `dueDate`, `startTime`, `contexts` y `tags`; campos de proyecto como `areaId`, `startDate`, `dueDate`, `reviewAt` y `supportNotes`; el campo `description` de las secciones; los campos `color` e `icon` de las áreas; y los campos `note` y `referenceLink` de las personas.
 
 **Ejemplo**
 
@@ -746,6 +746,7 @@ Si necesitas más de 500 tareas, pagina con `limit` + `offset` en lugar de esper
 - `areaId`: string or `null`
 - `isSequential`: boolean (opcional)
 - `isFocused`: boolean (opcional)
+- `startDate`: ISO string or `null`
 - `dueDate`: ISO string or `null`
 - `reviewAt`: ISO string or `null`
 - `supportNotes`: string or `null`
@@ -755,7 +756,7 @@ Si necesitas más de 500 tareas, pagina con `limit` + `offset` en lugar de esper
 **Campos de entrada**
 
 - `id`: string (UUID del proyecto)
-- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `dueDate`, `reviewAt`, `supportNotes`
+- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`
 
 ### `mindwtr_delete_project` (escritura)
 

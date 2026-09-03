@@ -382,8 +382,8 @@ Les outils d’écriture fonctionnent avec la base locale comme avec un système
 - **`mindwtr_complete_task`** : marquer une tâche comme terminée.
 - **`mindwtr_delete_task`** : supprimer logiquement une tâche.
 - **`mindwtr_restore_task`** : restaurer une tâche supprimée logiquement.
-- **`mindwtr_add_project`** : créer un projet, notamment avec les champs facultatifs `dueDate` et `reviewAt`.
-- **`mindwtr_update_project`** : mettre à jour un projet, notamment avec les champs facultatifs `dueDate` et `reviewAt`.
+- **`mindwtr_add_project`** : créer un projet, notamment avec les champs facultatifs `startDate`, `dueDate` et `reviewAt`.
+- **`mindwtr_update_project`** : mettre à jour un projet, notamment avec les champs facultatifs `startDate`, `dueDate` et `reviewAt`.
 - **`mindwtr_delete_project`** : supprimer logiquement un projet.
 - **`mindwtr_add_section`** : créer une section dans un projet.
 - **`mindwtr_update_section`** : mettre à jour une section de projet.
@@ -706,7 +706,7 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 
 **Remarques**
 
-- Utilisez `null` pour effacer les champs acceptant une valeur nulle. Cela s’applique aux champs de tâche comme `projectId`, `dueDate`, `startTime`, `contexts` et `tags` ; aux champs de projet comme `areaId`, `dueDate`, `reviewAt` et `supportNotes` ; à `description` pour les sections ; à `color` et `icon` pour les domaines ; ainsi qu’à `note` et `referenceLink` pour les personnes.
+- Utilisez `null` pour effacer les champs acceptant une valeur nulle. Cela s’applique aux champs de tâche comme `projectId`, `dueDate`, `startTime`, `contexts` et `tags` ; aux champs de projet comme `areaId`, `startDate`, `dueDate`, `reviewAt` et `supportNotes` ; à `description` pour les sections ; à `color` et `icon` pour les domaines ; ainsi qu’à `note` et `referenceLink` pour les personnes.
 
 **Exemple**
 
@@ -746,6 +746,7 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 - `areaId` : chaîne ou `null`
 - `isSequential` : booléen (facultatif)
 - `isFocused` : booléen (facultatif)
+- `startDate` : chaîne ISO ou `null`
 - `dueDate` : chaîne ISO ou `null`
 - `reviewAt` : chaîne ISO ou `null`
 - `supportNotes` : chaîne ou `null`
@@ -755,7 +756,7 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 **Champs d’entrée**
 
 - `id` : chaîne (UUID du projet)
-- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `dueDate`, `reviewAt`, `supportNotes`
+- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`
 
 ### `mindwtr_delete_project` (écriture)
 

@@ -382,8 +382,8 @@ Write tools work against both the local database and a self-hosted Cloud backend
 - **`mindwtr_complete_task`**: Mark a task as done.
 - **`mindwtr_delete_task`**: Soft-delete a task.
 - **`mindwtr_restore_task`**: Restore a soft-deleted task.
-- **`mindwtr_add_project`**: Create a new project, including optional `dueDate` and `reviewAt`.
-- **`mindwtr_update_project`**: Update a project, including optional `dueDate` and `reviewAt`.
+- **`mindwtr_add_project`**: Create a new project, including optional `startDate`, `dueDate`, and `reviewAt`.
+- **`mindwtr_update_project`**: Update a project, including optional `startDate`, `dueDate`, and `reviewAt`.
 - **`mindwtr_delete_project`**: Soft-delete a project.
 - **`mindwtr_add_section`**: Create a section inside a project.
 - **`mindwtr_update_section`**: Update a project section.
@@ -706,7 +706,7 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 
 **Notes**
 
-- Use `null` to clear nullable fields. This applies to task fields such as `projectId`, `dueDate`, `startTime`, `contexts`, and `tags`; project fields such as `areaId`, `dueDate`, `reviewAt`, and `supportNotes`; section `description`; area `color` and `icon`; and person `note` and `referenceLink`.
+- Use `null` to clear nullable fields. This applies to task fields such as `projectId`, `dueDate`, `startTime`, `contexts`, and `tags`; project fields such as `areaId`, `startDate`, `dueDate`, `reviewAt`, and `supportNotes`; section `description`; area `color` and `icon`; and person `note` and `referenceLink`.
 
 **Example**
 
@@ -746,6 +746,7 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 - `areaId`: string or `null`
 - `isSequential`: boolean (optional)
 - `isFocused`: boolean (optional)
+- `startDate`: ISO string or `null`
 - `dueDate`: ISO string or `null`
 - `reviewAt`: ISO string or `null`
 - `supportNotes`: string or `null`
@@ -755,7 +756,7 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 **Input fields**
 
 - `id`: string (project UUID)
-- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `dueDate`, `reviewAt`, `supportNotes`
+- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`
 
 ### `mindwtr_delete_project` (write)
 

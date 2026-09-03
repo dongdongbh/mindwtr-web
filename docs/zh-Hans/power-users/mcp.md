@@ -382,8 +382,8 @@ node apps/mcp-server/dist/cli.js --db "/path/to/mindwtr.db"
 - **`mindwtr_complete_task`**：将任务标记为已完成。
 - **`mindwtr_delete_task`**：软删除任务。
 - **`mindwtr_restore_task`**：恢复软删除任务。
-- **`mindwtr_add_project`**：创建新项目，包括可选的 `dueDate` 和 `reviewAt`。
-- **`mindwtr_update_project`**：更新项目，包括可选的 `dueDate` 和 `reviewAt`。
+- **`mindwtr_add_project`**：创建新项目，包括可选的 `startDate`、`dueDate` 和 `reviewAt`。
+- **`mindwtr_update_project`**：更新项目，包括可选的 `startDate`、`dueDate` 和 `reviewAt`。
 - **`mindwtr_delete_project`**：软删除项目。
 - **`mindwtr_add_section`**：在项目内创建分区。
 - **`mindwtr_update_section`**：更新项目分区。
@@ -706,7 +706,7 @@ Schema 说明：
 
 **说明**
 
-- 使用 `null` 清除可为空的字段。这适用于 `projectId`、`dueDate`、`startTime`、`contexts` 和 `tags` 等任务字段；`areaId`、`dueDate`、`reviewAt` 和 `supportNotes` 等项目字段；分区的 `description`；领域的 `color` 和 `icon`；以及人员的 `note` 和 `referenceLink`。
+- 使用 `null` 清除可为空的字段。这适用于 `projectId`、`dueDate`、`startTime`、`contexts` 和 `tags` 等任务字段；`areaId`、`startDate`、`dueDate`、`reviewAt` 和 `supportNotes` 等项目字段；分区的 `description`；领域的 `color` 和 `icon`；以及人员的 `note` 和 `referenceLink`。
 
 **示例**
 
@@ -746,6 +746,7 @@ Schema 说明：
 - `areaId`：string 或 `null`
 - `isSequential`：boolean（可选）
 - `isFocused`：boolean（可选）
+- `startDate`：ISO string 或 `null`
 - `dueDate`：ISO string 或 `null`
 - `reviewAt`：ISO string 或 `null`
 - `supportNotes`：string 或 `null`
@@ -755,7 +756,7 @@ Schema 说明：
 **输入字段**
 
 - `id`：string（项目 UUID）
-- `title`、`color`、`status`、`areaId`、`isSequential`、`isFocused`、`dueDate`、`reviewAt`、`supportNotes`
+- `title`、`color`、`status`、`areaId`、`isSequential`、`isFocused`、`startDate`、`dueDate`、`reviewAt`、`supportNotes`
 
 ### `mindwtr_delete_project`（写入）
 

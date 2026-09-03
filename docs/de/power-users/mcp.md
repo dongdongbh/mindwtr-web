@@ -382,8 +382,8 @@ Schreibwerkzeuge funktionieren sowohl mit der lokalen Datenbank als auch einem s
 - **`mindwtr_complete_task`**: Markiert eine Aufgabe als erledigt.
 - **`mindwtr_delete_task`**: Löscht eine Aufgabe vorläufig.
 - **`mindwtr_restore_task`**: Stellt eine vorläufig gelöschte Aufgabe wieder her.
-- **`mindwtr_add_project`**: Erstellt ein neues Projekt, einschließlich optionalem `dueDate` und `reviewAt`.
-- **`mindwtr_update_project`**: Aktualisiert ein Projekt, einschließlich optionalem `dueDate` und `reviewAt`.
+- **`mindwtr_add_project`**: Erstellt ein neues Projekt, einschließlich optionalem `startDate`, `dueDate` und `reviewAt`.
+- **`mindwtr_update_project`**: Aktualisiert ein Projekt, einschließlich optionalem `startDate`, `dueDate` und `reviewAt`.
 - **`mindwtr_delete_project`**: Löscht ein Projekt vorläufig.
 - **`mindwtr_add_section`**: Erstellt einen Abschnitt innerhalb eines Projekts.
 - **`mindwtr_update_section`**: Aktualisiert einen Projektabschnitt.
@@ -706,7 +706,7 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 
 **Hinweise**
 
-- Verwenden Sie `null`, um nullable Felder zu leeren. Dies gilt für Aufgabenfelder wie `projectId`, `dueDate`, `startTime`, `contexts` und `tags`; Projektfelder wie `areaId`, `dueDate`, `reviewAt` und `supportNotes`; `description` von Abschnitten; `color` und `icon` von Bereichen sowie `note` und `referenceLink` von Personen.
+- Verwenden Sie `null`, um nullable Felder zu leeren. Dies gilt für Aufgabenfelder wie `projectId`, `dueDate`, `startTime`, `contexts` und `tags`; Projektfelder wie `areaId`, `startDate`, `dueDate`, `reviewAt` und `supportNotes`; `description` von Abschnitten; `color` und `icon` von Bereichen sowie `note` und `referenceLink` von Personen.
 
 **Beispiel**
 
@@ -746,6 +746,7 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 - `areaId`: string or `null`
 - `isSequential`: boolean (optional)
 - `isFocused`: boolean (optional)
+- `startDate`: ISO string or `null`
 - `dueDate`: ISO string or `null`
 - `reviewAt`: ISO string or `null`
 - `supportNotes`: string or `null`
@@ -755,7 +756,7 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 **Eingabefelder**
 
 - `id`: string (project UUID)
-- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `dueDate`, `reviewAt`, `supportNotes`
+- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`
 
 ### `mindwtr_delete_project` (write)
 

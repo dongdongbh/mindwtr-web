@@ -66,7 +66,7 @@ Pebble Index 01 的應用程式傳送語音筆記時使用的正是這種格式�
 
 這些都不是 Pebble 專屬的。任何能送出 HTTP POST 的工具，用法都一樣：
 
-- **iOS 捷徑**：一個「取得 URL 內容」動作，方法為 POST，帶上請求標頭與一個文字欄位
+- **iOS 與 Apple Watch 捷徑**：一個「取得 URL 內容」動作，方法為 POST，帶上請求標頭與一個文字欄位。請參閱 Apple 捷徑頁面上的[從 Apple Watch 收集](/zh-Hant/power-users/apple-shortcuts#從-apple-watch-收集)做法
 - **Android 自動化應用程式**（例如 Tasker）：一個 HTTP 請求動作，使用相同的網址與請求標頭
 - **Home Assistant**：一個 `rest_command`，傳送自動化或語音助理結果中的文字
 - **Shell 指令碼與 cron 工作**：上面的 curl 指令，並把權杖放在環境變數中

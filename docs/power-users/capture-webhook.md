@@ -66,7 +66,7 @@ The Pebble Index 01 app sends voice notes in exactly this format, and it lets yo
 
 Nothing here is Pebble-specific. Anything that can make an HTTP POST works the same way:
 
-- **iOS Shortcuts**: a *Get contents of URL* action, method POST, with the header and a text field
+- **iOS and Apple Watch Shortcuts**: a *Get contents of URL* action, method POST, with the header and a text field. See the [Capture from Apple Watch](/power-users/apple-shortcuts#capture-from-apple-watch) recipe on the Apple Shortcuts page
 - **Android automation apps** such as Tasker: an HTTP Request action with the same URL and header
 - **Home Assistant**: a `rest_command` that posts the text of an automation or a voice assistant result
 - **Shell scripts and cron jobs**: the curl commands above, with the token in an environment variable

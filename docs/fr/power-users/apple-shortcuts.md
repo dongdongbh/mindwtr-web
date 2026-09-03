@@ -16,7 +16,7 @@ Surfaces prises en charge :
 | Siri | Oui |
 | Spotlight / raccourcis suggérés | Oui |
 | Bouton Action exécutant un raccourci | Oui |
-| Actions directes sur Apple Watch | Non, pas dans la v1 |
+| Actions directes sur Apple Watch | Via un raccourci et le webhook de capture auto-hébergé ; pas d’actions natives sur la montre |
 | CarPlay | Non, pas dans la v1 |
 
 ## Actions
@@ -119,6 +119,20 @@ Les résultats proviennent d’un instantané que Mindwtr tient à jour pendant 
 
 Cette méthode est utile pour capturer rapidement une idée en marchant, pendant un trajet ou en passant d’une app à une autre. La reconnaissance vocale de Siri peut encore manquer des mots dans certains environnements ; vérifiez donc la capture avant de l’enregistrer.
 
+### Capturer depuis Apple Watch
+
+Mindwtr n’a pas d’app pour la montre, mais un raccourci exécuté sur la montre peut envoyer le texte directement à votre propre serveur : vous capturez sans sortir le téléphone. Cette méthode nécessite le [webhook de capture auto-hébergé](/fr/power-users/capture-webhook).
+
+1. Dans l’app **Raccourcis** d’Apple sur l’iPhone, créez un raccourci et nommez-le « Capture to Mindwtr ».
+2. Ajoutez **Dicter du texte**.
+3. Ajoutez **Obtenir le contenu de l’URL** et indiquez l’URL `https://your-server.example/v1/capture`, en remplaçant l’exemple par l’adresse de votre serveur.
+4. Réglez **Méthode** sur **POST**.
+5. Ajoutez un en-tête nommé `Authorization` avec la valeur `Bearer <token>`, en utilisant l’un des jetons de votre serveur.
+6. Réglez **Corps de la requête** sur **Texte** et transmettez-y le texte dicté. Pour envoyer du JSON à la place, utilisez un champ `transcription` contenant le texte dicté et un champ `client` réglé sur Apple Watch.
+7. Ouvrez les détails du raccourci et activez **Afficher sur l’Apple Watch**.
+8. Lancez-le sur la montre depuis l’app **Raccourcis**, une complication ou la pile intelligente. Le même raccourci fonctionne aussi sur l’iPhone, via Siri ou le bouton Action.
+9. Le texte dicté devient une tâche de la boîte de réception et parvient à vos autres appareils à la synchronisation suivante.
+
 ### Ouvrir Focus avec le bouton Action
 
 1. Créez un raccourci utilisant **Ouvrir une liste Mindwtr**.
@@ -150,7 +164,7 @@ La prise en charge des Raccourcis par Mindwtr n’inclut pas encore :
 
 - D’actions de modification, d’achèvement, de duplication, de suppression ou de traitement par lots.
 - De planification de tâches récurrentes ou de rappels depuis Raccourcis (les dates d’échéance et de début sont sans heure).
-- De prise en charge de l’Apple Watch ou de CarPlay.
+- D’app native pour l’Apple Watch, ni de CarPlay.
 
 Les actions d’écriture au-delà de la capture sont la prochaine étape, bâties sur les entités de tâche introduites en v2 ; elles nécessitent une conception soigneuse, car les modifications et les écritures en arrière-plan doivent préserver la synchronisation locale d’abord et les règles du flux GTD de Mindwtr.
 

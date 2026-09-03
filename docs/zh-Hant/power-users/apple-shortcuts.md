@@ -16,7 +16,7 @@ Mindwtr 透過原生 App Intents，在 iPhone 及 iPad 上支援 Apple 捷徑，
 | Siri | 是 |
 | Spotlight／建議的捷徑 | 是 |
 | 透過動作按鈕執行捷徑 | 是 |
-| Apple Watch 直接動作 | 否，v1 不支援 |
+| Apple Watch 直接動作 | 透過捷徑與自架的收集 webhook；沒有原生手錶動作 |
 | CarPlay | 否，v1 不支援 |
 
 ## 動作
@@ -119,6 +119,20 @@ Mindwtr 透過原生 App Intents，在 iPhone 及 iPad 上支援 Apple 捷徑，
 
 這適合在步行、通勤或切換應用程式時快速收集。在某些環境中，Siri 語音辨識仍可能聽錯字詞，因此請先檢視收集內容再儲存。
 
+### 從 Apple Watch 收集
+
+Mindwtr 沒有手錶 app，但在手錶上執行的捷徑可以直接把文字送到你自己的伺服器，不必拿出手機也能收集。這條路徑需要[自架的收集 webhook](/zh-Hant/power-users/capture-webhook)。
+
+1. 在 iPhone 上開啟 Apple 的**捷徑** app，建立一個捷徑並命名為「Capture to Mindwtr」。
+2. 新增**聽寫文字**。
+3. 新增**取得 URL 內容**，並將 URL 設為 `https://your-server.example/v1/capture`，以你自己的伺服器位址取代範例位址。
+4. 將**方法**設為 **POST**。
+5. 新增名為 `Authorization` 的標頭，值為 `Bearer <token>`，並使用你伺服器的其中一組權杖。
+6. 將**要求內容**設為**文字**，並傳入聽寫的文字。若要改送 JSON，請使用 `transcription` 欄位存放聽寫文字，再加上值為 Apple Watch 的 `client` 欄位。
+7. 開啟捷徑的詳細資訊，開啟**在 Apple Watch 上顯示**。
+8. 在手錶上透過**捷徑** app、錶面複雜功能或智慧型堆疊執行它。同一個捷徑也可在 iPhone 上透過 Siri 或動作按鈕執行。
+9. 聽寫的文字會成為收集箱中的任務，並在下次同步時送達你的其他裝置。
+
 ### 從動作按鈕開啟專注檢視
 
 1. 使用 **Open Mindwtr List** 建立捷徑。
@@ -150,7 +164,7 @@ Mindwtr 的捷徑支援尚未包含：
 
 - 編輯、完成、複製、刪除或批次動作。
 - 從「捷徑」設定重複任務或提醒排程（截止日期與開始日期只含日期）。
-- Apple Watch 或 CarPlay 支援。
+- 原生 Apple Watch app，以及 CarPlay。
 
 收集以外的寫入動作是接下來的規劃，將建立在 v2 導入的任務實體之上；這些仍需仔細設計，因為編輯及背景寫入必須維持 Mindwtr 的在地優先同步及 GTD 工作流程規則。
 

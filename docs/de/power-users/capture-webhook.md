@@ -66,7 +66,7 @@ Die App des Pebble Index 01 sendet Sprachnotizen genau in diesem Format und erla
 
 Nichts davon ist auf Pebble beschränkt. Alles, was ein HTTP-POST senden kann, funktioniert genauso:
 
-- **iOS-Kurzbefehle**: eine Aktion *Inhalte von URL abfragen*, Methode POST, mit dem Header und einem Textfeld
+- **iOS- und Apple-Watch-Kurzbefehle**: eine Aktion *Inhalte von URL abfragen*, Methode POST, mit dem Header und einem Textfeld. Siehe das Rezept [Von der Apple Watch erfassen](/de/power-users/apple-shortcuts#von-der-apple-watch-erfassen) auf der Seite zu Apple-Kurzbefehlen
 - **Android-Automatisierungs-Apps** wie Tasker: eine HTTP-Request-Aktion mit derselben URL und demselben Header
 - **Home Assistant**: ein `rest_command`, das den Text einer Automatisierung oder einer Sprachassistenten-Antwort sendet
 - **Shell-Skripte und Cronjobs**: die curl-Befehle von oben, mit dem Token in einer Umgebungsvariablen

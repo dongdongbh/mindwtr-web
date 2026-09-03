@@ -16,7 +16,7 @@ Unterstützte Oberflächen:
 | Siri | Ja |
 | Spotlight/vorgeschlagene Kurzbefehle | Ja |
 | Ausführen eines Kurzbefehls über die Aktionstaste | Ja |
-| Direkte Aktionen auf der Apple Watch | Nein, nicht in v1 |
+| Direkte Aktionen auf der Apple Watch | Über einen Kurzbefehl und den selbst gehosteten Erfassungs-Webhook; keine nativen Watch-Aktionen |
 | CarPlay | Nein, nicht in v1 |
 
 ## Aktionen
@@ -119,6 +119,20 @@ Ab iOS 18 erscheinen Mindwtr-Aufgaben in der Spotlight-Suche. Wenn Sie eine davo
 
 Dies eignet sich für die schnelle Erfassung beim Gehen, Pendeln oder Wechseln zwischen Apps. Die Spracherkennung von Siri kann in manchen Umgebungen weiterhin Wörter verfehlen. Prüfen Sie die Erfassung daher vor dem Speichern.
 
+### Von der Apple Watch erfassen
+
+Mindwtr hat keine Watch-App, aber ein Kurzbefehl, der auf der Uhr läuft, kann direkt an Ihren eigenen Server senden. So erfassen Sie etwas, ohne das Telefon hervorzuholen. Dieser Weg benötigt den [selbst gehosteten Erfassungs-Webhook](/de/power-users/capture-webhook).
+
+1. Erstellen Sie in Apples App **Kurzbefehle** auf dem iPhone einen Kurzbefehl mit dem Namen „Capture to Mindwtr“.
+2. Fügen Sie **Text diktieren** hinzu.
+3. Fügen Sie **Inhalte von URL abfragen** hinzu und setzen Sie die URL auf `https://your-server.example/v1/capture`, mit Ihrer eigenen Serveradresse anstelle des Beispiels.
+4. Setzen Sie **Methode** auf **POST**.
+5. Fügen Sie einen Header namens `Authorization` mit dem Wert `Bearer <token>` hinzu und verwenden Sie eines der Token Ihres Servers.
+6. Setzen Sie **Anfragetext** auf **Text** und übergeben Sie den diktierten Text. Für JSON verwenden Sie stattdessen ein Feld `transcription` mit dem diktierten Text und ein Feld `client` mit dem Wert Apple Watch.
+7. Öffnen Sie die Details des Kurzbefehls und aktivieren Sie **Auf Apple Watch anzeigen**.
+8. Führen Sie ihn auf der Uhr über die App **Kurzbefehle**, eine Komplikation oder den Smart Stack aus. Derselbe Kurzbefehl läuft auch auf dem iPhone, per Siri oder über die Aktionstaste.
+9. Der diktierte Text wird zu einer Aufgabe im Posteingang und erreicht Ihre anderen Geräte bei der nächsten Synchronisierung.
+
 ### Fokus über die Aktionstaste öffnen
 
 1. Erstellen Sie einen Kurzbefehl mit **Mindwtr-Liste öffnen**.
@@ -150,7 +164,7 @@ Die Kurzbefehl-Unterstützung von Mindwtr enthält noch nicht:
 
 - Aktionen zum Bearbeiten, Abschließen, Duplizieren, Löschen oder zur Stapelverarbeitung
 - Planung wiederkehrender Aufgaben oder Erinnerungen aus Kurzbefehle (Fälligkeits- und Startdatum sind reine Datumsangaben)
-- Unterstützung für Apple Watch oder CarPlay
+- Eine native Apple-Watch-App und CarPlay
 
 Schreibende Aktionen über die Erfassung hinaus sind als Nächstes geplant, aufbauend auf den mit v2 eingeführten Aufgaben-Entitäten. Sie müssen sorgfältig entworfen werden, da Bearbeitungen und Schreibvorgänge im Hintergrund die Local-First-Synchronisierung und die GTD-Ablaufregeln von Mindwtr erhalten müssen.
 

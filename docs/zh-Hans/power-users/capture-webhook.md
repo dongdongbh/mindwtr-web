@@ -66,7 +66,7 @@ Pebble Index 01 的应用发送语音笔记时用的正是这种格式，而且�
 
 这些都不是 Pebble 专用的。任何能发出 HTTP POST 的工具用法都一样：
 
-- **iOS 快捷指令**：一个「获取 URL 内容」操作，方法为 POST，带上请求头和一个文本字段
+- **iOS 和 Apple Watch 快捷指令**：一个「获取 URL 内容」操作，方法为 POST，带上请求头和一个文本字段。请参阅 Apple 快捷指令页面上的[从 Apple Watch 记录](/zh-Hans/power-users/apple-shortcuts#从-apple-watch-记录)配方
 - **Android 自动化应用**（例如 Tasker）：一个 HTTP 请求操作，使用相同的地址和请求头
 - **Home Assistant**：一个 `rest_command`，发送自动化或语音助手结果中的文字
 - **Shell 脚本与 cron 任务**：上面的 curl 命令，把令牌放在环境变量里

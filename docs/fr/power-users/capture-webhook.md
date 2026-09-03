@@ -66,7 +66,7 @@ L'application du Pebble Index 01 envoie les notes vocales exactement dans ce for
 
 Rien de tout cela n'est propre à Pebble. Tout ce qui peut faire un POST HTTP fonctionne de la même façon :
 
-- **Raccourcis iOS** : une action *Obtenir le contenu de l'URL*, méthode POST, avec l'en-tête et un champ de texte
+- **Raccourcis iOS et Apple Watch** : une action *Obtenir le contenu de l'URL*, méthode POST, avec l'en-tête et un champ de texte. Consultez la recette [Capturer depuis Apple Watch](/fr/power-users/apple-shortcuts#capturer-depuis-apple-watch) sur la page des Raccourcis Apple
 - **Applications d'automatisation Android** comme Tasker : une action de requête HTTP avec la même URL et le même en-tête
 - **Home Assistant** : un `rest_command` qui envoie le texte d'une automatisation ou d'une réponse de l'assistant vocal
 - **Scripts shell et tâches cron** : les commandes curl ci-dessus, avec le jeton dans une variable d'environnement

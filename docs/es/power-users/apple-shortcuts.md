@@ -14,7 +14,7 @@ Atajos está disponible en compilaciones iOS que incluyan la integración App In
 | Siri | Sí |
 | Spotlight / atajos sugeridos | Sí |
 | Botón Acción que ejecuta un atajo | Sí |
-| Acciones directas de Apple Watch | No, no en v1 |
+| Acciones directas de Apple Watch | Mediante un atajo y el webhook de captura autoalojado; sin acciones nativas en el reloj |
 | CarPlay | No, no en v1 |
 
 ## Acciones
@@ -111,6 +111,20 @@ En iOS 18 y posteriores, las tareas de Mindwtr aparecen en la búsqueda de Spotl
 
 Resulta útil al caminar, desplazarte o cambiar de aplicación. Siri puede reconocer mal algunas palabras según el entorno, así que revisa la captura antes de guardarla.
 
+### Capturar desde el Apple Watch
+
+Mindwtr no tiene aplicación para el reloj, pero un atajo que se ejecuta en el reloj puede enviar el texto directamente a tu propio servidor, así capturas sin sacar el teléfono. Esta vía necesita el [webhook de captura autoalojado](/es/power-users/capture-webhook).
+
+1. En la aplicación **Atajos** de Apple del iPhone, crea un atajo y llámalo «Capture to Mindwtr».
+2. Añade **Dictar texto**.
+3. Añade **Obtener contenido de URL** y pon como URL `https://your-server.example/v1/capture`, con la dirección de tu servidor en lugar del ejemplo.
+4. Define **Método** como **POST**.
+5. Añade una cabecera llamada `Authorization` con el valor `Bearer <token>`, usando uno de los tokens de tu servidor.
+6. Define **Cuerpo de la solicitud** como **Texto** y pásale el texto dictado. Para enviar JSON, usa un campo `transcription` con el texto dictado y un campo `client` con el valor Apple Watch.
+7. Abre los detalles del atajo y activa **Mostrar en Apple Watch**.
+8. Ejecútalo en el reloj desde la aplicación **Atajos**, una complicación o la pila inteligente. El mismo atajo también funciona en el iPhone, desde Siri o el botón Acción.
+9. El texto dictado se convierte en una tarea de la Bandeja de entrada y llega a tus otros dispositivos en la siguiente sincronización.
+
 ### Abrir Foco con el botón Acción
 
 1. Crea un atajo con **Abrir una lista de Mindwtr**.
@@ -142,7 +156,7 @@ La compatibilidad con Atajos de Mindwtr todavía no incluye:
 
 - acciones para editar, completar, duplicar, eliminar o trabajar por lotes;
 - planificación desde Atajos de tareas recurrentes o recordatorios (las fechas límite y de inicio son solo fecha);
-- compatibilidad con Apple Watch o CarPlay.
+- una aplicación nativa para Apple Watch y CarPlay.
 
 Las acciones de escritura más allá de la captura son lo siguiente en la lista, apoyadas en las entidades de tarea que introdujo la v2; requieren un diseño cuidadoso para que las ediciones y escrituras en segundo plano respeten la sincronización local-first y las reglas GTD.
 

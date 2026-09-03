@@ -16,7 +16,7 @@ Mindwtr 通过 iPhone 和 iPad 上的原生 App Intents 支持 Apple 快捷指�
 | Siri | 是 |
 | Spotlight / 建议的快捷指令 | 是 |
 | 通过操作按钮运行快捷指令 | 是 |
-| Apple Watch 直接操作 | 否，v1 不支持 |
+| Apple Watch 直接操作 | 通过快捷指令和自托管的记录 webhook 实现；没有原生手表操作 |
 | CarPlay | 否，v1 不支持 |
 
 ## 操作
@@ -119,6 +119,20 @@ Swift 不会直接写入任务，因此任务创建始终通过 Mindwtr 现有�
 
 这适合在步行、通勤或切换应用时快速记录。Siri 语音识别在某些环境中仍可能听错，请在保存前检查记录。
 
+### 从 Apple Watch 记录
+
+Mindwtr 没有手表应用，但在手表上运行的快捷指令可以直接把文本发送到你自己的服务器，这样不用掏出手机也能记录。这条路径需要[自托管的记录 webhook](/zh-Hans/power-users/capture-webhook)。
+
+1. 在 iPhone 上打开 Apple 的**快捷指令**应用，新建一个快捷指令，命名为“Capture to Mindwtr”。
+2. 添加**听写文本**。
+3. 添加**获取 URL 内容**，把 URL 设为 `https://your-server.example/v1/capture`，并用你自己的服务器地址替换示例地址。
+4. 把**方法**设为 **POST**。
+5. 添加一个名为 `Authorization` 的请求头，值为 `Bearer <token>`，使用你服务器的其中一个令牌。
+6. 把**请求体**设为**文本**，并传入听写文本。若要改发 JSON，请使用一个 `transcription` 字段存放听写文本，再加一个值为 Apple Watch 的 `client` 字段。
+7. 打开快捷指令的详细信息，开启**在 Apple Watch 上显示**。
+8. 在手表上通过**快捷指令**应用、表盘复杂功能或智能叠放运行它。同一个快捷指令也可在 iPhone 上通过 Siri 或操作按钮运行。
+9. 听写文本会成为收集箱中的一个任务，并在下次同步时到达你的其他设备。
+
 ### 通过操作按钮打开专注
 
 1. 使用**打开 Mindwtr 清单**创建快捷指令。
@@ -150,7 +164,7 @@ Mindwtr 的快捷指令支持暂不包含：
 
 - 编辑、完成、复制、删除或批量操作。
 - 从快捷指令设置重复任务或提醒（截止日期和开始日期只含日期）。
-- Apple Watch 或 CarPlay 支持。
+- 原生 Apple Watch 应用，以及 CarPlay。
 
 记录之外的写入操作是接下来的计划，将基于第 2 版引入的任务实体构建；它们需要谨慎设计，因为编辑和后台写入必须保持 Mindwtr 的本地优先同步与 GTD 工作流程规则。
 

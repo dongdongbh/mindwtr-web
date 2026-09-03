@@ -16,7 +16,7 @@ Supported surfaces:
 | Siri | Yes |
 | Spotlight / suggested shortcuts | Yes |
 | Action Button running a shortcut | Yes |
-| Apple Watch direct actions | No, not in v1 |
+| Apple Watch direct actions | Through a shortcut and the self-hosted capture webhook; no native watch actions |
 | CarPlay | No, not in v1 |
 
 ## Actions
@@ -119,6 +119,20 @@ On iOS 18 and later, Mindwtr tasks appear in Spotlight search. Opening one takes
 
 This is useful for quick capture while walking, commuting, or moving between apps. Siri voice recognition can still miss words in some environments, so review the capture before saving.
 
+### Capture from Apple Watch
+
+Mindwtr has no watch app, but a shortcut that runs on the watch can post straight to your own server, so you can capture without taking out the phone. This recipe needs the [self-hosted capture webhook](/power-users/capture-webhook).
+
+1. In Apple's **Shortcuts** app on the iPhone, create a shortcut and name it "Capture to Mindwtr".
+2. Add **Dictate Text**.
+3. Add **Get Contents of URL** and set the URL to `https://your-server.example/v1/capture`, with your own server address in place of the example.
+4. Set **Method** to **POST**.
+5. Add a header named `Authorization` with the value `Bearer <token>`, using one of your server's tokens.
+6. Set **Request Body** to **Text** and pass the dictated text into it. To send JSON instead, use a `transcription` field holding the dictated text and a `client` field set to Apple Watch.
+7. Open the shortcut details and turn on **Show on Apple Watch**.
+8. Run it on the watch from the **Shortcuts** app, a watch face complication, or the Smart Stack. The same shortcut also runs on the iPhone, from Siri or the Action button.
+9. The dictated text becomes a task in the Inbox, and it reaches your other devices on the next sync.
+
 ### Open Focus from the Action Button
 
 1. Create a shortcut using **Open Mindwtr List**.
@@ -150,7 +164,7 @@ Mindwtr's Shortcuts support does not yet include:
 
 - Edit, complete, duplicate, delete, or batch actions.
 - Recurring-task or reminder scheduling from Shortcuts (due and start dates are date-only).
-- Apple Watch or CarPlay support.
+- A native Apple Watch app, and CarPlay.
 
 Write actions beyond capture are planned next, built on the task entities introduced in v2 — they need careful design because edits and background writes must preserve Mindwtr's local-first sync and GTD workflow rules.
 

@@ -330,6 +330,8 @@ Star tasks as today's priorities up to your configured Focus limit:
 - **Desktop:** Click the star icon
 - **Mobile:** Tap the star badge
 
+Today's Focus shows every starred task in your library, even ones the current view would otherwise hide: tasks in another area, tasks in a project that is on hold or Someday/Maybe, and tasks whose start date is still in the future. The Focus limit counts every starred task, so a hidden one would take up a slot you could not see or clear. Saved Filters, the filter chips, and the search box do still narrow this list, because they are visible on screen and easy to undo.
+
 ---
 
 ## Daily Workflow

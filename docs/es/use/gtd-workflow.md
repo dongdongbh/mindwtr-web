@@ -330,6 +330,8 @@ Destaca tareas como prioridades de hoy hasta alcanzar el límite de Enfoque conf
 - **Escritorio:** haz clic en el icono de estrella
 - **Móvil:** toca la insignia de estrella
 
+Enfoque de hoy muestra todas las tareas destacadas de tu biblioteca, incluso las que la vista actual ocultaría: tareas de otra Área, tareas de un proyecto en pausa o en Algún día/Quizá, y tareas cuya fecha de inicio todavía está en el futuro. El límite de Enfoque cuenta todas las tareas destacadas, así que una tarea oculta ocuparía un lugar que no podrías ver ni liberar. Los Filtros guardados, los chips de filtro y el cuadro de búsqueda sí siguen acotando esta lista, porque están a la vista en la pantalla y son fáciles de deshacer.
+
 ---
 
 ## Flujo de trabajo diario

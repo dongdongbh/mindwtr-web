@@ -334,6 +334,8 @@ Markieren Sie bis zu Ihrem festgelegten Fokuslimit Aufgaben mit einem Stern als 
 - **Desktop:** Klicken Sie auf das Sternsymbol.
 - **Mobilgeräte:** Tippen Sie auf die Sternplakette.
 
+Der heutige Fokus zeigt jede mit Stern markierte Aufgabe Ihrer Sammlung, auch solche, die die aktuelle Ansicht sonst ausblenden würde: Aufgaben aus einem anderen Bereich, Aufgaben in einem pausierten Projekt oder einem Projekt unter „Irgendwann/Vielleicht“ und Aufgaben, deren Startdatum noch in der Zukunft liegt. Das Fokuslimit zählt jede markierte Aufgabe mit, deshalb würde eine ausgeblendete Aufgabe einen Platz belegen, den Sie weder sehen noch freigeben könnten. Gespeicherte Filter, die Filter-Chips und das Suchfeld schränken diese Liste weiterhin ein, denn sie sind auf dem Bildschirm sichtbar und lassen sich leicht rückgängig machen.
+
 ---
 
 ## Täglicher Arbeitsablauf

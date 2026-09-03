@@ -330,6 +330,8 @@ Marquez d’une étoile les tâches prioritaires du jour jusqu’à la limite Fo
 - **Ordinateur :** cliquez sur l’icône en forme d’étoile
 - **Mobile :** touchez le badge en forme d’étoile
 
+Focus du jour affiche toutes les tâches marquées d’une étoile dans votre bibliothèque, même celles que la vue actuelle masquerait : les tâches d’un autre Domaine, les tâches d’un projet en pause ou classé Un jour/Peut-être, et les tâches dont la date de début est encore à venir. La limite Focus compte toutes les tâches marquées, donc une tâche masquée occuperait une place que vous ne pourriez ni voir ni libérer. Les Filtres enregistrés, les puces de filtre et le champ de recherche restreignent quand même cette liste, car ils sont visibles à l’écran et faciles à annuler.
+
 ---
 
 ## Flux quotidien

@@ -14,25 +14,7 @@ Mindwtr 是一款跨平台 GTD 應用程式，包含：
 - **雲端同步** — Node.js（Bun）同步伺服器
 - **共用核心** — TypeScript 商業邏輯套件
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                       User Interface                      │
-├─────────────────────────────┬───────────────────────────┤
-│      Desktop (Tauri)        │      Mobile (Expo)        │
-│   React + Vite + Tailwind   │  React Native + NativeWind│
-├─────────────────────────────┴───────────────────────────┤
-│                     @mindwtr/core                        │
-│ Zustand Store · Types · i18n Loader/Locales · Sync Core │
-├─────────────────────────────┬───────────────────────────┤
-│    Tauri FS (Rust)          │   SQLite + JSON backup    │
-│    SQLite + JSON backup     │     App storage           │
-└──────────────┬──────────────┴───────────────────────────┘
-               │
-┌──────────────▼──────────────┐
-│        Cloud / Sync         │
-│   WebDAV / Local / Server   │
-└─────────────────────────────┘
-```
+桌面應用程式、行動應用程式和 MCP 伺服器共用同一個 core 套件，其中包含狀態、任務規則和同步合併邏輯。每台裝置都有自己的 SQLite 資料庫，同步會把它的快照寫到你選擇的目標：File Sync 資料夾、WebDAV 伺服器、Dropbox、自行託管的 Mindwtr Cloud 或 iCloud。在同步週期執行之前，任何資料都不會離開裝置；對於前三個目標，還可以先用可選的密語把它封裝起來。
 
 ## 設計取捨
 
@@ -40,20 +22,11 @@ Mindwtr 是一款跨平台 GTD 應用程式，包含：
 - **強制執行 SQLite 外部索引鍵**以確保有效記錄完整性；軟刪除／墓碑修復仍在共用應用程式邏輯中進行。
 - **永久刪除雖少見但確實存在**。`sections.projectId` 使用 `ON DELETE CASCADE`，任務／專案／領域參照則大多使用 `ON DELETE SET NULL`。
 
-### 系統圖（Mermaid）
+### 系統圖
 
-```mermaid
-flowchart LR
-    Desktop["Desktop App<br/>Tauri + React"] --> Core["@mindwtr/core"]
-    Mobile["Mobile App<br/>Expo + RN"] --> Core
-    Core --> LocalDB[("SQLite")]
-    Core --> JSON[("data.json")]
-    Core --> Sync["Sync Backends"]
-    Sync --> WebDAV["WebDAV"]
-    Sync --> File["File Sync"]
-    Sync --> Cloud["Self-hosted Cloud"]
-    MCP["MCP Server<br/>mindwtr-mcp"] --> Core
-```
+![Mindwtr 的組成方式：兩個應用程式和 MCP 伺服器都呼叫共用的 core 套件，core 套件寫入本機 SQLite 資料庫，同步週期再從這裡寫到你選擇的同步目標。](/assets/diagrams/mindwtr-architecture.svg)
+
+[開啟互動式圖表](/assets/diagrams/mindwtr-architecture.html)
 
 ---
 

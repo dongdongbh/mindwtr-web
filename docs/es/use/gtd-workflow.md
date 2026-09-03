@@ -19,6 +19,10 @@ Mindwtr se corresponde directamente con los conceptos de GTD:
 | Calendario      | Vista Calendario (tareas con fechas límite)   |
 | Revisión semanal | Asistente de revisión                          |
 
+![Cómo se mueve el trabajo en Mindwtr: una captura por atajo, menú compartir o correo llega a la Bandeja de entrada, el asistente de procesamiento decide qué es cada elemento, y este pasa a Próximas acciones, En espera, Algún día/Quizá, Referencia o a un proyecto. La revisión semanal comprueba que cada proyecto tenga una próxima acción, y Enfoque contiene las tareas marcadas para hoy.](/assets/diagrams/gtd-workflow.svg)
+
+[Abrir el diagrama interactivo](/assets/diagrams/gtd-workflow.html)
+
 ---
 
 ## Patrones
@@ -153,6 +157,10 @@ Hechas y Archivadas son estados cerrados, pero cumplen funciones distintas:
 - **Archivadas** es el historial guardado. Las tareas archivadas se ocultan de las listas de tareas normales, pero siguen disponibles en la vista Archivadas para buscar, restaurar o eliminar permanentemente. La vista Archivadas también muestra los proyectos archivados tras un selector Tareas | Proyectos, donde se pueden restaurar o eliminar.
 - **Archivado automático** puede mover tareas de Hechas a Archivadas después de un número determinado de días. Configúralo como **Nunca** si quieres que Hechas conserve todas las tareas completadas indefinidamente.
 
+![La vida de una tarea: entra en la Bandeja de entrada, pasa a Siguiente cuando la aclaras y puede quedar aparcada en En espera, Algún día/Quizá o Referencia. Al completarla queda Hecha, el archivado automático la deja como Archivada, y al borrarla va a la Papelera antes de desaparecer para siempre.](/assets/diagrams/task-lifecycle.svg)
+
+[Abrir el diagrama interactivo](/assets/diagrams/task-lifecycle.html)
+
 ### Secciones de Algún día/Quizá
 
 Usa secciones con nombre para dividir una lista larga de Algún día/Quizá en temas como Viajes, Libros o Casa. Crea una sección al asignar una tarea, o gestiona los nombres y el orden en **Ajustes → Gestionar → Secciones de Algún día**. La primera sección activa la agrupación; las decisiones posteriores se conservan. Eliminar o renombrar una sección no elimina sus tareas, y las asignaciones se sincronizan con los dispositivos compatibles.
@@ -190,6 +198,10 @@ Crea proyectos para resultados que requieren varios pasos:
    - **Paralelo:** todas las tareas aparecen en la vista Enfoque
 
 Eliminar un proyecto o un área conserva sus tareas. Mindwtr desvincula ese trabajo y lo deja sin asignar en lugar de eliminarlo en cascada.
+
+![La vida de un proyecto: un proyecto nuevo pasa a Activo cuando tiene una próxima acción, puede pausarse como En espera o Algún día, se señala cuando no tiene próxima acción, y termina como Archivado o en la Papelera.](/assets/diagrams/project-lifecycle.svg)
+
+[Abrir el diagrama interactivo](/assets/diagrams/project-lifecycle.html)
 
 #### Secciones de proyectos
 

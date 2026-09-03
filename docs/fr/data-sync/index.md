@@ -55,6 +55,10 @@ Mindwtr prend directement en charge cinq backends de synchronisation :
 - **WebDAV** : tout point de terminaison WebDAV compatible
 - **Mindwtr Cloud (auto-hébergé)** : votre propre point de terminaison `apps/cloud`
 
+![Configurer la synchronisation : choisissez un backend dans les Réglages, saisissez le dossier, l'URL du serveur ou la connexion, puis appuyez sur Enregistrer, ce qui teste la destination. WebDAV demande en plus un test d'écriture et la phrase secrète est facultative. Les branches latérales montrent une configuration refusée, une synchronisation en pause et une nouvelle tentative.](/assets/diagrams/sync-setup.svg)
+
+[Ouvrir le diagramme interactif](/assets/diagrams/sync-setup.html)
+
 ### Vue d’ensemble
 
 | Backend | Plateformes | Effort de configuration | Vitesse relative | Gestion des conflits | Idéal pour |

@@ -19,6 +19,10 @@ Mindwtr correspond directement aux concepts de GTD :
 | Calendrier | Vue Calendrier (tâches ayant des dates d’échéance) |
 | Revue hebdomadaire | Assistant de revue |
 
+![Comment le travail circule dans Mindwtr : une capture par raccourci, menu de partage ou e-mail arrive dans la Boîte de réception, l'assistant de traitement décide de ce qu'est chaque élément, puis celui-ci part vers Prochaines actions, En attente, Un jour/Peut-être, Références ou un projet. La revue hebdomadaire vérifie que chaque projet a une prochaine action, et Focus contient les tâches marquées pour aujourd'hui.](/assets/diagrams/gtd-workflow.svg)
+
+[Ouvrir le diagramme interactif](/assets/diagrams/gtd-workflow.html)
+
 ---
 
 ## Modèles
@@ -153,6 +157,10 @@ Terminées et Archivées sont deux états fermés, mais ils remplissent des rôl
 - **Archivées** est l’historique classé. Les tâches archivées sont masquées dans les listes de tâches normales, mais restent disponibles dans la vue Archivées pour être recherchées, restaurées ou supprimées définitivement. La vue Archivées liste aussi les projets archivés derrière un sélecteur Tâches | Projets, où ils peuvent être restaurés ou supprimés.
 - **Archivage automatique** peut déplacer les tâches Terminées vers Archivées après un nombre de jours défini. Réglez-le sur **Jamais** si vous souhaitez que Terminées conserve indéfiniment toutes les tâches achevées.
 
+![La vie d'une tâche : elle entre dans la Boîte de réception, devient Suivante quand vous la clarifiez, et peut être mise de côté dans En attente, Un jour/Peut-être ou Références. La terminer la fait passer à Terminée, l'archivage automatique la classe en Archivée, et la supprimer l'envoie à la Corbeille avant sa disparition définitive.](/assets/diagrams/task-lifecycle.svg)
+
+[Ouvrir le diagramme interactif](/assets/diagrams/task-lifecycle.html)
+
 ### Sections Un jour/Peut-être
 
 Utilisez des sections nommées pour diviser une longue liste Un jour/Peut-être en thèmes comme Voyages, Livres ou Maison. Créez une section pendant l’attribution d’une tâche, ou gérez les noms et l’ordre sous **Réglages → Gérer → Sections Un jour**. La première section active le regroupement ; vos choix suivants restent inchangés. Supprimer ou renommer une section ne supprime pas ses tâches, et les attributions se synchronisent avec les appareils compatibles.
@@ -190,6 +198,10 @@ Créez des projets pour les résultats en plusieurs étapes :
    - **Parallèle :** toutes les tâches apparaissent dans la vue Focus
 
 La suppression d’un projet ou d’un domaine conserve ses tâches. Mindwtr détache ce travail et le laisse sans attribution au lieu d’effectuer une suppression en cascade.
+
+![La vie d'un projet : un nouveau projet devient Actif dès qu'il a une prochaine action, peut être mis en pause en En attente ou Un jour, est signalé quand il n'a plus de prochaine action, et se termine en Archivé ou à la Corbeille.](/assets/diagrams/project-lifecycle.svg)
+
+[Ouvrir le diagramme interactif](/assets/diagrams/project-lifecycle.html)
 
 #### Sections de projet
 

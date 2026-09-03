@@ -1,0 +1,350 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "One Sync Cycle, Step by Step",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "happy",
+        "label": "The full cycle",
+        "focus": [
+          "flush",
+          "setup",
+          "fastcheck",
+          "readremote",
+          "merge",
+          "writelocal",
+          "writeremote",
+          "publish"
+        ],
+        "note": "The path a cycle takes when there really is something to exchange."
+      },
+      {
+        "id": "cheap",
+        "label": "Doing nothing cheaply",
+        "focus": [
+          "setup",
+          "fastcheck",
+          "earlyexit"
+        ],
+        "note": "Most cycles stop here, before any large download."
+      },
+      {
+        "id": "safety",
+        "label": "Safety rails",
+        "focus": [
+          "fence",
+          "writelocal",
+          "writeremote",
+          "requeue"
+        ],
+        "note": "The lease, the marker and the retry that keep two devices from overwriting each other."
+      }
+    ],
+    "legend": {
+      "mode": "auto",
+      "entries": {
+        "frontend": {
+          "label": "What you see"
+        },
+        "backend": {
+          "label": "On-device step"
+        },
+        "security": {
+          "label": "Gate or lock"
+        },
+        "database": {
+          "label": "Local database"
+        },
+        "external": {
+          "label": "Remote storage"
+        },
+        "messagebus": {
+          "label": "Retry later"
+        }
+      }
+    }
+  },
+  "lanes": [
+    {
+      "id": "device",
+      "label": "On this device"
+    },
+    {
+      "id": "remote",
+      "label": "At the sync location"
+    },
+    {
+      "id": "exits",
+      "label": "The cycle stops here",
+      "variant": "exception"
+    }
+  ],
+  "phases": [
+    {
+      "id": "prepare",
+      "label": "Prepare",
+      "fromCol": 0,
+      "toCol": 1
+    },
+    {
+      "id": "decide",
+      "label": "Read and merge",
+      "fromCol": 2,
+      "toCol": 3,
+      "variant": "emphasis"
+    },
+    {
+      "id": "commit",
+      "label": "Write and report",
+      "fromCol": 4,
+      "toCol": 5
+    }
+  ],
+  "mainPath": [
+    "flush",
+    "setup",
+    "fastcheck",
+    "readremote",
+    "merge",
+    "writelocal",
+    "writeremote",
+    "attach",
+    "publish"
+  ],
+  "nodes": [
+    {
+      "id": "flush",
+      "lane": "device",
+      "col": 0,
+      "type": "backend",
+      "label": "Flush saves",
+      "sublabel": "unsaved edits are stored",
+      "width": 132
+    },
+    {
+      "id": "setup",
+      "lane": "device",
+      "col": 1,
+      "type": "security",
+      "label": "Set up",
+      "sublabel": "backend and key check",
+      "width": 132
+    },
+    {
+      "id": "fastcheck",
+      "lane": "device",
+      "col": 2,
+      "type": "backend",
+      "label": "Check first",
+      "sublabel": "compare fingerprints",
+      "width": 132
+    },
+    {
+      "id": "merge",
+      "lane": "device",
+      "col": 3,
+      "type": "backend",
+      "label": "Merge",
+      "sublabel": "higher revision wins",
+      "tag": "tombstones kept",
+      "width": 132
+    },
+    {
+      "id": "writelocal",
+      "lane": "device",
+      "col": 4,
+      "type": "database",
+      "label": "Save locally",
+      "sublabel": "marked not yet uploaded",
+      "width": 132
+    },
+    {
+      "id": "publish",
+      "lane": "device",
+      "col": 5,
+      "type": "frontend",
+      "label": "Report",
+      "sublabel": "status and conflicts",
+      "width": 132
+    },
+    {
+      "id": "readremote",
+      "lane": "remote",
+      "col": 2,
+      "type": "external",
+      "label": "Read the copy",
+      "sublabel": "with its ETag",
+      "width": 132
+    },
+    {
+      "id": "fence",
+      "lane": "remote",
+      "col": 3,
+      "type": "security",
+      "label": "Write lease",
+      "sublabel": "one writer at a time",
+      "tag": "renewed every 20s",
+      "width": 132
+    },
+    {
+      "id": "writeremote",
+      "lane": "remote",
+      "col": 4,
+      "type": "external",
+      "label": "Upload",
+      "sublabel": "refused if it moved",
+      "width": 132
+    },
+    {
+      "id": "attach",
+      "lane": "remote",
+      "col": 5,
+      "type": "external",
+      "label": "Attachments",
+      "sublabel": "upload and download",
+      "width": 132
+    },
+    {
+      "id": "earlyexit",
+      "lane": "exits",
+      "col": 2,
+      "type": "security",
+      "label": "Stop here",
+      "sublabel": "off, or nothing changed",
+      "width": 132
+    },
+    {
+      "id": "requeue",
+      "lane": "exits",
+      "col": 4,
+      "type": "messagebus",
+      "label": "Run again soon",
+      "sublabel": "the next cycle retries",
+      "width": 132
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-flush-setup",
+      "from": "flush",
+      "to": "setup",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-setup-off",
+      "from": "setup",
+      "to": "earlyexit",
+      "label": "sync is off",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "e-setup-check",
+      "from": "setup",
+      "to": "fastcheck",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-check-exit",
+      "from": "fastcheck",
+      "to": "earlyexit",
+      "label": "nothing changed",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "e-check-read",
+      "from": "fastcheck",
+      "to": "readremote",
+      "label": "something differs",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-read-merge",
+      "from": "readremote",
+      "to": "merge",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-read-lease",
+      "from": "readremote",
+      "to": "fence",
+      "label": "claim the lease",
+      "role": "branch",
+      "variant": "security"
+    },
+    {
+      "id": "e-merge-local",
+      "from": "merge",
+      "to": "writelocal",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-local-remote",
+      "from": "writelocal",
+      "to": "writeremote",
+      "label": "then upload",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-lease-remote",
+      "from": "fence",
+      "to": "writeremote",
+      "label": "lease held",
+      "role": "branch",
+      "variant": "dashed"
+    },
+    {
+      "id": "e-remote-requeue",
+      "from": "writeremote",
+      "to": "requeue",
+      "label": "another device won",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "e-remote-attach",
+      "from": "writeremote",
+      "to": "attach",
+      "variant": "emphasis"
+    },
+    {
+      "id": "e-attach-publish",
+      "from": "attach",
+      "to": "publish",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Most cycles stop early",
+      "items": [
+        "A fingerprint is a short digest of a file. Two matching digests mean the file did not change.",
+        "The check compares this device's own digests first, and on phones the whole remote copy second.",
+        "When both sides match, the cycle ends without a download or an upload."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Why the local save comes first",
+      "items": [
+        "The merged result is saved on the device and marked as not yet uploaded.",
+        "If the upload then fails, the marker survives a crash and the next cycle retries the same data.",
+        "Retries back off from 5 seconds to 5 minutes, and after 12 attempts sync reports an error."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Two devices, one remote copy",
+      "items": [
+        "A lease file at the sync location lets only one device change the remote at a time.",
+        "The upload also carries the tag the copy had when it was read, so a stale write is refused.",
+        "A refused write, or an edit made on this device mid-cycle, simply requeues the cycle."
+      ]
+    }
+  ]
+}

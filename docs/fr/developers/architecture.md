@@ -14,25 +14,7 @@ Mindwtr est une application GTD multiplateforme comprenant :
 - **Synchronisation Cloud** — serveur de synchronisation Node.js (Bun)
 - **Cœur partagé** — package de logique métier TypeScript
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                       User Interface                      │
-├─────────────────────────────┬───────────────────────────┤
-│      Desktop (Tauri)        │      Mobile (Expo)        │
-│   React + Vite + Tailwind   │  React Native + NativeWind│
-├─────────────────────────────┴───────────────────────────┤
-│                     @mindwtr/core                        │
-│ Zustand Store · Types · i18n Loader/Locales · Sync Core │
-├─────────────────────────────┬───────────────────────────┤
-│    Tauri FS (Rust)          │   SQLite + JSON backup    │
-│    SQLite + JSON backup     │     App storage           │
-└──────────────┬──────────────┴───────────────────────────┘
-               │
-┌──────────────▼──────────────┐
-│        Cloud / Sync         │
-│   WebDAV / Local / Server   │
-└─────────────────────────────┘
-```
+L'application de bureau, l'application mobile et le serveur MCP partagent un seul paquet core qui contient l'état, les règles des tâches et la fusion de synchronisation. Chaque appareil garde sa propre base SQLite, et la synchronisation en écrit un instantané vers la destination choisie : un dossier File Sync, un serveur WebDAV, Dropbox, un Mindwtr Cloud auto-hébergé ou iCloud. Rien ne quitte l'appareil avant qu'un cycle de synchronisation ne s'exécute, et pour les trois premières destinations une phrase secrète facultative le scelle au préalable.
 
 ## Compromis de conception
 
@@ -40,20 +22,11 @@ Mindwtr est une application GTD multiplateforme comprenant :
 - **Les clés étrangères SQLite sont appliquées** pour garantir l’intégrité des enregistrements actifs, tandis que la réparation des suppressions réversibles et des pierres tombales reste effectuée dans la logique partagée de l’application.
 - **Les suppressions définitives sont rares, mais réelles**. `sections.projectId` utilise `ON DELETE CASCADE`, tandis que les références des tâches, projets et domaines utilisent principalement `ON DELETE SET NULL`.
 
-### Diagramme du système (Mermaid)
+### Diagramme du système
 
-```mermaid
-flowchart LR
-    Desktop["Desktop App<br/>Tauri + React"] --> Core["@mindwtr/core"]
-    Mobile["Mobile App<br/>Expo + RN"] --> Core
-    Core --> LocalDB[("SQLite")]
-    Core --> JSON[("data.json")]
-    Core --> Sync["Sync Backends"]
-    Sync --> WebDAV["WebDAV"]
-    Sync --> File["File Sync"]
-    Sync --> Cloud["Self-hosted Cloud"]
-    MCP["MCP Server<br/>mindwtr-mcp"] --> Core
-```
+![Comment Mindwtr s'assemble : les deux applications et le serveur MCP appellent le paquet core partagé, qui enregistre dans une base SQLite locale, et le cycle de synchronisation écrit ensuite vers la destination choisie.](/assets/diagrams/mindwtr-architecture.svg)
+
+[Ouvrir le diagramme interactif](/assets/diagrams/mindwtr-architecture.html)
 
 ---
 

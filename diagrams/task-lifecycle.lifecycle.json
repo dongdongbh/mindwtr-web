@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "diagram_type": "lifecycle",
+  "meta": {
+    "title": "The life of a task",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1040,
+      660
+    ],
+    "legend": {
+      "mode": "auto",
+      "entries": {
+        "start": {
+          "label": "Where it enters"
+        },
+        "active": {
+          "label": "You can act on it"
+        },
+        "waiting": {
+          "label": "Parked, still open"
+        },
+        "success": {
+          "label": "Completed"
+        },
+        "neutral": {
+          "label": "Filed or reference"
+        },
+        "failure": {
+          "label": "Removed"
+        }
+      }
+    }
+  },
+  "lanes": [
+    {
+      "id": "main",
+      "label": "Open and closed"
+    },
+    {
+      "id": "parked",
+      "label": "Parked, still open"
+    },
+    {
+      "id": "terminal",
+      "label": "Removed"
+    }
+  ],
+  "states": [
+    {
+      "id": "inbox",
+      "type": "start",
+      "label": "Inbox",
+      "sublabel": "not clarified yet",
+      "lane": "main",
+      "col": 0,
+      "step": "01",
+      "tag": "capture"
+    },
+    {
+      "id": "next",
+      "type": "active",
+      "label": "Next",
+      "sublabel": "ready to do",
+      "lane": "main",
+      "col": 1,
+      "step": "02",
+      "tag": "action"
+    },
+    {
+      "id": "done",
+      "type": "success",
+      "label": "Done",
+      "sublabel": "recently completed",
+      "lane": "main",
+      "col": 2,
+      "step": "03",
+      "tag": "closed"
+    },
+    {
+      "id": "archived",
+      "type": "neutral",
+      "label": "Archived",
+      "sublabel": "filed history",
+      "lane": "main",
+      "col": 3,
+      "step": "04",
+      "tag": "closed"
+    },
+    {
+      "id": "waiting",
+      "type": "waiting",
+      "label": "Waiting For",
+      "sublabel": "someone else owes it",
+      "lane": "parked",
+      "col": 0,
+      "tag": "delegated"
+    },
+    {
+      "id": "someday",
+      "type": "waiting",
+      "label": "Someday/Maybe",
+      "sublabel": "not committed yet",
+      "lane": "parked",
+      "col": 1,
+      "tag": "incubate"
+    },
+    {
+      "id": "reference",
+      "type": "neutral",
+      "label": "Reference",
+      "sublabel": "information only",
+      "lane": "parked",
+      "col": 2,
+      "tag": "no action"
+    },
+    {
+      "id": "trash",
+      "type": "failure",
+      "label": "Trash",
+      "sublabel": "deleted, still recoverable",
+      "lane": "terminal",
+      "col": 0,
+      "tag": "undo"
+    },
+    {
+      "id": "purged",
+      "type": "failure",
+      "label": "Gone for good",
+      "sublabel": "just a deletion record",
+      "lane": "terminal",
+      "col": 1,
+      "tag": "final"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "clarify",
+      "from": "inbox",
+      "to": "next",
+      "label": "clarify it",
+      "labelDy": -30
+    },
+    {
+      "id": "complete",
+      "from": "next",
+      "to": "done",
+      "route": "straight",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "file",
+      "from": "done",
+      "to": "archived",
+      "route": "straight",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "auto-archive after N days",
+      "labelDy": -30
+    },
+    {
+      "id": "delegate",
+      "from": "next",
+      "to": "waiting"
+    },
+    {
+      "id": "replied",
+      "from": "waiting",
+      "to": "next"
+    },
+    {
+      "id": "defer",
+      "from": "next",
+      "to": "someday",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "channelY": 228
+    },
+    {
+      "id": "activate",
+      "from": "someday",
+      "to": "next",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "channelY": 250,
+      "label": "activate it in a review",
+      "labelDy": 14
+    },
+    {
+      "id": "keep",
+      "from": "next",
+      "to": "reference",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "channelY": 206
+    },
+    {
+      "id": "delete",
+      "from": "next",
+      "to": "trash"
+    },
+    {
+      "id": "undo",
+      "from": "trash",
+      "to": "next"
+    },
+    {
+      "id": "purge",
+      "from": "trash",
+      "to": "purged",
+      "label": "delete forever",
+      "labelDy": -60
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Seven statuses",
+      "items": [
+        "Inbox, next, waiting, someday, reference, done, archived",
+        "Done is recent; Archived is filed history",
+        "A date never changes a status on its own"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Both directions",
+      "items": [
+        "Reopening a Done task sends it back to Next",
+        "Completing a repeating task creates the next one",
+        "Completing a task clears its Focus star"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Deleting waits",
+      "items": [
+        "Delete goes to Trash and offers Undo",
+        "Delete forever leaves only a deletion record",
+        "That record is kept for 90 days, then it goes"
+      ]
+    }
+  ]
+}

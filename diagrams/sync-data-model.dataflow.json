@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "What Sync Moves, And What It Never Sends",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1000,
+      500
+    ],
+    "views": [
+      {
+        "id": "document",
+        "label": "The sync document",
+        "focus": [
+          "store",
+          "sqlite",
+          "prepare",
+          "encrypt",
+          "datajson"
+        ],
+        "note": "One file carries every task, project, area, person and shared setting."
+      },
+      {
+        "id": "files",
+        "label": "Attachment files",
+        "focus": [
+          "attachfiles",
+          "encrypt",
+          "blobs"
+        ],
+        "note": "Attached files travel beside the document, one file each."
+      },
+      {
+        "id": "stays",
+        "label": "What stays here",
+        "focus": [
+          "store",
+          "devicelocal",
+          "prepare"
+        ],
+        "note": "Two different kinds of local-only data: never in the document, and stripped from it."
+      }
+    ],
+    "legend": {
+      "mode": "auto",
+      "entries": {
+        "emphasis": {
+          "label": "the main path"
+        },
+        "default": {
+          "label": "also moves"
+        },
+        "security": {
+          "label": "never leaves this device"
+        },
+        "database": {
+          "label": "stored here"
+        }
+      }
+    }
+  },
+  "stages": [
+    {
+      "label": "In the app"
+    },
+    {
+      "label": "Saved on this device"
+    },
+    {
+      "label": "Prepared to send"
+    },
+    {
+      "label": "At the sync location"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "store",
+      "type": "frontend",
+      "label": "The store",
+      "sublabel": "tasks and projects in memory",
+      "stage": 0,
+      "row": 1,
+      "width": 150
+    },
+    {
+      "id": "sqlite",
+      "type": "database",
+      "label": "SQLite database",
+      "sublabel": "the copy the app reads",
+      "stage": 1,
+      "row": 0,
+      "tag": "always plain",
+      "width": 150
+    },
+    {
+      "id": "attachfiles",
+      "type": "database",
+      "label": "Attached files",
+      "sublabel": "in the app's own folder",
+      "stage": 1,
+      "row": 1,
+      "width": 150
+    },
+    {
+      "id": "devicelocal",
+      "type": "security",
+      "label": "Device-only data",
+      "sublabel": "hidden views, window size",
+      "stage": 1,
+      "row": 2,
+      "tag": "never sent",
+      "width": 150
+    },
+    {
+      "id": "prepare",
+      "type": "backend",
+      "label": "Strip and check",
+      "sublabel": "removes local-only fields",
+      "stage": 2,
+      "row": 0,
+      "width": 150
+    },
+    {
+      "id": "encrypt",
+      "type": "security",
+      "label": "Passphrase seal",
+      "sublabel": "AES-256-GCM",
+      "stage": 2,
+      "row": 1,
+      "tag": "optional",
+      "width": 150
+    },
+    {
+      "id": "datajson",
+      "type": "external",
+      "label": "data.json",
+      "sublabel": "data.json.enc when locked",
+      "stage": 3,
+      "row": 0,
+      "width": 150
+    },
+    {
+      "id": "blobs",
+      "type": "external",
+      "label": "Attachment copies",
+      "sublabel": "same names, sealed bytes",
+      "stage": 3,
+      "row": 1,
+      "width": 150
+    }
+  ],
+  "flows": [
+    {
+      "id": "f-store-db",
+      "from": "store",
+      "to": "sqlite",
+      "label": "every change",
+      "classification": "all your data",
+      "variant": "emphasis"
+    },
+    {
+      "id": "f-store-local",
+      "from": "store",
+      "to": "devicelocal",
+      "label": "view and window choices",
+      "classification": "stays on this device",
+      "variant": "security"
+    },
+    {
+      "id": "f-db-prepare",
+      "from": "sqlite",
+      "to": "prepare",
+      "label": "one whole snapshot",
+      "classification": "tasks, projects, areas, people",
+      "variant": "emphasis",
+      "labelDy": 78
+    },
+    {
+      "id": "f-prepare-seal",
+      "from": "prepare",
+      "to": "encrypt",
+      "label": "cleaned snapshot",
+      "classification": "no keys, no file paths",
+      "variant": "emphasis",
+      "labelDy": 49,
+      "labelDx": 40
+    },
+    {
+      "id": "f-files-seal",
+      "from": "attachfiles",
+      "to": "encrypt",
+      "label": "file bytes",
+      "classification": "only changed files",
+      "labelDy": 78
+    },
+    {
+      "id": "f-seal-doc",
+      "from": "encrypt",
+      "to": "datajson",
+      "label": "the data file",
+      "classification": "sealed if a passphrase is set",
+      "variant": "emphasis",
+      "labelDy": 24,
+      "labelDx": 84
+    },
+    {
+      "id": "f-seal-blobs",
+      "from": "encrypt",
+      "to": "blobs",
+      "label": "one file each",
+      "classification": "sealed if a passphrase is set",
+      "labelDy": 74,
+      "route": "straight"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "One document, one file per attachment",
+      "items": [
+        "The document holds every task, project, area and person.",
+        "It is a full snapshot each time, not a list of changes.",
+        "Attached files travel beside it, one file each."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Removed before sending",
+      "items": [
+        "The path and size of your own copy of an attached file.",
+        "AI keys and local model paths. Secrets are never synced.",
+        "Any settings group you switched off, in both directions."
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Never in the document",
+      "items": [
+        "Hidden sidebar views, and your window size and position.",
+        "The passphrase. Each device keeps its key in the keychain.",
+        "A lease file beside them names who may write, and holds no data."
+      ]
+    }
+  ]
+}

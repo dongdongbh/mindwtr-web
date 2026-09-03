@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "diagram_type": "lifecycle",
+  "meta": {
+    "title": "The life of a project",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1040,
+      660
+    ],
+    "legend": {
+      "mode": "auto",
+      "entries": {
+        "start": {
+          "label": "A new project"
+        },
+        "active": {
+          "label": "Running"
+        },
+        "waiting": {
+          "label": "Paused"
+        },
+        "success": {
+          "label": "Finished and filed"
+        },
+        "failure": {
+          "label": "Stuck or removed"
+        }
+      }
+    }
+  },
+  "lanes": [
+    {
+      "id": "main",
+      "label": "Project states"
+    },
+    {
+      "id": "paused",
+      "label": "Paused or stuck"
+    },
+    {
+      "id": "terminal",
+      "label": "Removed"
+    }
+  ],
+  "states": [
+    {
+      "id": "created",
+      "type": "start",
+      "label": "New project",
+      "sublabel": "a name and one outcome",
+      "lane": "main",
+      "col": 0,
+      "step": "01",
+      "tag": "create"
+    },
+    {
+      "id": "active",
+      "type": "active",
+      "label": "Active",
+      "sublabel": "has a next action",
+      "lane": "main",
+      "col": 2,
+      "step": "02",
+      "tag": "working"
+    },
+    {
+      "id": "archived",
+      "type": "success",
+      "label": "Archived",
+      "sublabel": "finished and filed",
+      "lane": "main",
+      "col": 4,
+      "step": "03",
+      "tag": "closed"
+    },
+    {
+      "id": "needs_next",
+      "type": "failure",
+      "label": "No next action",
+      "sublabel": "the review asks for one",
+      "lane": "paused",
+      "col": 0,
+      "tag": "stuck"
+    },
+    {
+      "id": "waiting_p",
+      "type": "waiting",
+      "label": "Waiting",
+      "sublabel": "blocked on someone",
+      "lane": "paused",
+      "col": 1,
+      "tag": "paused"
+    },
+    {
+      "id": "someday_p",
+      "type": "waiting",
+      "label": "Someday",
+      "sublabel": "not committed yet",
+      "lane": "paused",
+      "col": 2,
+      "tag": "paused"
+    },
+    {
+      "id": "trash_p",
+      "type": "failure",
+      "label": "Trash",
+      "sublabel": "deleted, recoverable",
+      "lane": "terminal",
+      "col": 1,
+      "tag": "undo"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "start",
+      "from": "created",
+      "to": "active",
+      "label": "add its first next action"
+    },
+    {
+      "id": "stall",
+      "from": "active",
+      "to": "needs_next"
+    },
+    {
+      "id": "unstall",
+      "from": "needs_next",
+      "to": "active"
+    },
+    {
+      "id": "block",
+      "from": "active",
+      "to": "waiting_p"
+    },
+    {
+      "id": "unblock",
+      "from": "waiting_p",
+      "to": "active"
+    },
+    {
+      "id": "park",
+      "from": "active",
+      "to": "someday_p",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "channelY": 228
+    },
+    {
+      "id": "unpark",
+      "from": "someday_p",
+      "to": "active",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "channelY": 250
+    },
+    {
+      "id": "finish",
+      "from": "active",
+      "to": "archived",
+      "label": "archive it",
+      "route": "straight",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "bin",
+      "from": "archived",
+      "to": "trash_p",
+      "label": "delete it",
+      "fromSide": "bottom",
+      "toSide": "right",
+      "via": [
+        [
+          710,
+          204
+        ],
+        [
+          800,
+          204
+        ],
+        [
+          800,
+          479
+        ]
+      ],
+      "labelSegment": 2
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Four states",
+      "items": [
+        "Active, Waiting, Someday, Archived",
+        "You choose the first three yourself",
+        "Archiving completes the project's open tasks"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Keeping it moving",
+      "items": [
+        "No next action and no waiting task means stuck",
+        "Sections split one project into phases",
+        "A review date brings it back on your chosen day"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Reuse and removal",
+      "items": [
+        "Duplicate a project to reuse it as a template",
+        "Deleting a project keeps its tasks",
+        "Sequential projects show the first open task only"
+      ]
+    }
+  ]
+}

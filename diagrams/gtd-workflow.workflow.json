@@ -1,0 +1,254 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "How work moves through Mindwtr",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "legend": {
+      "mode": "auto",
+      "entries": {
+        "frontend": {
+          "label": "A list in the app"
+        },
+        "backend": {
+          "label": "Holds several items"
+        },
+        "security": {
+          "label": "A decision step"
+        }
+      }
+    }
+  },
+  "lanes": [
+    {
+      "id": "decide",
+      "label": "Capture, clarify, review"
+    },
+    {
+      "id": "organize",
+      "label": "Organize"
+    },
+    {
+      "id": "engage",
+      "label": "Engage"
+    }
+  ],
+  "phases": [
+    {
+      "id": "collect",
+      "label": "Collect",
+      "fromCol": 0,
+      "toCol": 1
+    },
+    {
+      "id": "decide",
+      "label": "Decide",
+      "fromCol": 2,
+      "toCol": 3,
+      "variant": "emphasis"
+    },
+    {
+      "id": "act",
+      "label": "Act",
+      "fromCol": 4,
+      "toCol": 5
+    }
+  ],
+  "mainPath": [
+    "quick_capture",
+    "inbox",
+    "process",
+    "next_actions",
+    "focus"
+  ],
+  "nodes": [
+    {
+      "id": "quick_capture",
+      "lane": "decide",
+      "col": 0,
+      "type": "frontend",
+      "label": "Quick capture",
+      "sublabel": "hotkey, share sheet, email",
+      "width": 126
+    },
+    {
+      "id": "inbox",
+      "lane": "decide",
+      "col": 1,
+      "type": "backend",
+      "label": "Inbox",
+      "sublabel": "nothing sorted yet",
+      "tag": "one place",
+      "width": 110
+    },
+    {
+      "id": "process",
+      "lane": "decide",
+      "col": 2,
+      "type": "security",
+      "label": "Process Inbox",
+      "sublabel": "is it actionable?",
+      "tag": "wizard",
+      "width": 126
+    },
+    {
+      "id": "project",
+      "lane": "decide",
+      "col": 3,
+      "type": "backend",
+      "label": "Project",
+      "sublabel": "more than one step",
+      "width": 122
+    },
+    {
+      "id": "review",
+      "lane": "decide",
+      "col": 5,
+      "type": "security",
+      "label": "Weekly Review",
+      "sublabel": "walk every list",
+      "tag": "weekly",
+      "width": 126
+    },
+    {
+      "id": "someday",
+      "lane": "organize",
+      "col": 2,
+      "type": "frontend",
+      "label": "Someday/Maybe",
+      "sublabel": "not committed yet",
+      "width": 130
+    },
+    {
+      "id": "reference",
+      "lane": "organize",
+      "col": 3,
+      "type": "frontend",
+      "label": "Reference",
+      "sublabel": "information only",
+      "width": 110
+    },
+    {
+      "id": "waiting",
+      "lane": "organize",
+      "col": 4,
+      "type": "frontend",
+      "label": "Waiting For",
+      "sublabel": "someone else owes it",
+      "width": 118
+    },
+    {
+      "id": "next_actions",
+      "lane": "organize",
+      "col": 5,
+      "type": "frontend",
+      "label": "Next actions",
+      "sublabel": "ready to do",
+      "width": 122
+    },
+    {
+      "id": "focus",
+      "lane": "engage",
+      "col": 5,
+      "type": "frontend",
+      "label": "Focus",
+      "sublabel": "today's starred tasks",
+      "tag": "Focus limit",
+      "width": 118
+    }
+  ],
+  "edges": [
+    {
+      "from": "quick_capture",
+      "to": "inbox",
+      "label": "capture it"
+    },
+    {
+      "from": "inbox",
+      "to": "process",
+      "label": "one item at a time"
+    },
+    {
+      "from": "process",
+      "to": "someday",
+      "label": "not now",
+      "role": "branch"
+    },
+    {
+      "from": "process",
+      "to": "reference",
+      "label": "just information",
+      "role": "branch"
+    },
+    {
+      "from": "process",
+      "to": "waiting",
+      "label": "delegate it",
+      "role": "branch",
+      "route": "drop",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "from": "process",
+      "to": "next_actions",
+      "label": "a single step",
+      "variant": "emphasis"
+    },
+    {
+      "from": "process",
+      "to": "project",
+      "label": "many steps",
+      "role": "branch"
+    },
+    {
+      "from": "project",
+      "to": "review",
+      "label": "check it has a next action",
+      "role": "branch"
+    },
+    {
+      "from": "review",
+      "to": "next_actions",
+      "label": "promote what is ready",
+      "role": "branch"
+    },
+    {
+      "from": "next_actions",
+      "to": "focus",
+      "label": "star it for today",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "One way in",
+      "items": [
+        "Every capture lands in the Inbox",
+        "Process Inbox is the only way out of it",
+        "A next action is one visible physical step",
+        "Email too: watch an IMAP folder, share it, or POST it"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "The lists",
+      "items": [
+        "Waiting For is work another person owes you",
+        "Someday is not committed; Reference is information",
+        "A project is one outcome with several steps"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Every week",
+      "items": [
+        "The review walks all of these lists in turn",
+        "It flags a project with no next action",
+        "The Focus limit caps today's starred tasks"
+      ]
+    }
+  ]
+}

@@ -2,6 +2,10 @@
 
 Mindwtr Cloud expose une petite API utilisant des jetons Bearer pour la synchronisation, l’automatisation des tâches et le transfert de pièces jointes. Elle est conçue pour les déploiements auto-hébergés et utilise le même espace de noms de jetons que le backend cloud auto-hébergé.
 
+![Les deux portes d'accès aux données Mindwtr : un assistant IA appelle le serveur MCP, qui exécute le paquet core partagé ; les applications envoient un jeton bearer au serveur cloud auto-hébergé, qui sert le document de synchronisation, les points d'accès aux enregistrements, les pièces jointes et un flux de calendrier. Seul le contrôle de santé ne demande aucun jeton.](/assets/diagrams/api-surface.svg)
+
+[Ouvrir le diagramme interactif](/assets/diagrams/api-surface.html)
+
 ## Authentification
 
 Envoyez un jeton Bearer avec chaque requête `/v1/*` :

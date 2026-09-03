@@ -14,25 +14,7 @@ Mindwtr ist eine plattformübergreifende GTD-Anwendung mit:
 - **Cloud-Synchronisierung** — Node.js-Synchronisierungsserver (Bun)
 - **Gemeinsamer Core** — TypeScript-Paket mit Geschäftslogik
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                       User Interface                      │
-├─────────────────────────────┬───────────────────────────┤
-│      Desktop (Tauri)        │      Mobile (Expo)        │
-│   React + Vite + Tailwind   │  React Native + NativeWind│
-├─────────────────────────────┴───────────────────────────┤
-│                     @mindwtr/core                        │
-│ Zustand Store · Types · i18n Loader/Locales · Sync Core │
-├─────────────────────────────┬───────────────────────────┤
-│    Tauri FS (Rust)          │   SQLite + JSON backup    │
-│    SQLite + JSON backup     │     App storage           │
-└──────────────┬──────────────┴───────────────────────────┘
-               │
-┌──────────────▼──────────────┐
-│        Cloud / Sync         │
-│   WebDAV / Local / Server   │
-└─────────────────────────────┘
-```
+Die Desktop-App, die App für Mobilgeräte und der MCP-Server teilen sich ein Core-Paket, das den Zustand, die Aufgabenregeln und die Synchronisierungszusammenführung enthält. Jedes Gerät hat seine eigene SQLite-Datenbank, und die Synchronisierung schreibt eine Momentaufnahme davon an das gewählte Ziel: einen File-Sync-Ordner, einen WebDAV-Server, Dropbox, eine selbst gehostete Mindwtr Cloud oder iCloud. Nichts verlässt das Gerät, bevor ein Synchronisierungszyklus läuft, und bei den ersten drei Zielen verschließt eine optionale Passphrase die Daten vorher.
 
 ## Designabwägungen
 
@@ -40,20 +22,11 @@ Mindwtr ist eine plattformübergreifende GTD-Anwendung mit:
 - **SQLite-Fremdschlüssel werden durchgesetzt**, um die Integrität aktiver Datensätze zu gewährleisten; die Reparatur von vorläufigen Löschungen/Tombstones erfolgt weiterhin in der gemeinsamen Anwendungslogik.
 - **Endgültige Löschungen sind selten, kommen aber vor**. `sections.projectId` verwendet `ON DELETE CASCADE`, während Aufgaben-/Projekt-/Bereichsreferenzen überwiegend `ON DELETE SET NULL` verwenden.
 
-### Systemdiagramm (Mermaid)
+### Systemdiagramm
 
-```mermaid
-flowchart LR
-    Desktop["Desktop App<br/>Tauri + React"] --> Core["@mindwtr/core"]
-    Mobile["Mobile App<br/>Expo + RN"] --> Core
-    Core --> LocalDB[("SQLite")]
-    Core --> JSON[("data.json")]
-    Core --> Sync["Sync Backends"]
-    Sync --> WebDAV["WebDAV"]
-    Sync --> File["File Sync"]
-    Sync --> Cloud["Self-hosted Cloud"]
-    MCP["MCP Server<br/>mindwtr-mcp"] --> Core
-```
+![So passt Mindwtr zusammen: Die beiden Apps und der MCP-Server rufen das gemeinsame Core-Paket auf, das in eine lokale SQLite-Datenbank schreibt, und der Sync-Zyklus schreibt von dort an das gewählte Sync-Ziel.](/assets/diagrams/mindwtr-architecture.svg)
+
+[Interaktives Diagramm öffnen](/assets/diagrams/mindwtr-architecture.html)
 
 ---
 

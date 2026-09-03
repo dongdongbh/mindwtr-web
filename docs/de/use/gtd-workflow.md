@@ -19,6 +19,10 @@ Mindwtr bildet GTD-Konzepte direkt ab:
 | Kalender | Kalenderansicht (Aufgaben mit Fälligkeitsdaten) |
 | Wochenrückblick | Durchsichtsassistent |
 
+![Wie Arbeit durch Mindwtr läuft: Eine Erfassung per Tastenkürzel, Teilen-Menü oder E-Mail landet im Posteingang, der Verarbeitungsassistent entscheidet, was der Eintrag ist, und der Eintrag geht nach Nächste Schritte, Warten, Irgendwann/Vielleicht, Referenz oder in ein Projekt. Der Wochenrückblick prüft, dass jedes Projekt einen nächsten Schritt hat, und Fokus enthält die heute markierten Aufgaben.](/assets/diagrams/gtd-workflow.svg)
+
+[Interaktives Diagramm öffnen](/assets/diagrams/gtd-workflow.html)
+
 ---
 
 ## Muster
@@ -153,6 +157,10 @@ Mindwtr legt das Projekt an, macht Ihre Erfassung zu dessen erster nächster Akt
 - **Archiviert** ist abgelegte Historie. Archivierte Aufgaben sind in normalen Aufgabenlisten ausgeblendet, bleiben aber in der Ansicht „Archiviert“ zum Suchen, Wiederherstellen oder endgültigen Löschen verfügbar. Die Ansicht „Archiviert“ zeigt hinter einem Umschalter „Aufgaben | Projekte“ auch archivierte Projekte, die sich dort wiederherstellen oder löschen lassen.
 - **Automatisch archivieren** kann erledigte Aufgaben nach einer festgelegten Anzahl von Tagen nach „Archiviert“ verschieben. Wählen Sie **Nie**, wenn „Erledigt“ alle abgeschlossenen Aufgaben unbegrenzt behalten soll.
 
+![Das Leben einer Aufgabe: Sie kommt in den Posteingang, wird beim Klären zu „Nächster Schritt“ und kann in Warten, Irgendwann/Vielleicht oder Referenz geparkt werden. Abschließen macht sie zu Erledigt, automatisches Archivieren legt sie als Archiviert ab, und Löschen verschiebt sie in den Papierkorb, bevor sie endgültig verschwindet.](/assets/diagrams/task-lifecycle.svg)
+
+[Interaktives Diagramm öffnen](/assets/diagrams/task-lifecycle.html)
+
 ### Abschnitte für Irgendwann/Vielleicht
 
 Mit benannten Abschnitten gliedern Sie eine lange Irgendwann/Vielleicht-Liste nach Themen wie Reisen, Bücher oder Zuhause. Erstellen Sie einen Abschnitt beim Zuweisen einer Aufgabe oder verwalten Sie Namen und Reihenfolge unter **Einstellungen → Verwalten → Irgendwann-Abschnitte**. Der erste Abschnitt aktiviert die Gruppierung; spätere Gruppierungsentscheidungen bleiben erhalten. Das Löschen oder Umbenennen eines Abschnitts löscht keine Aufgaben, und die Zuordnungen werden mit unterstützten Geräten synchronisiert.
@@ -190,6 +198,10 @@ Erstellen Sie Projekte für mehrstufige Ergebnisse:
    - **Parallel:** Alle Aufgaben erscheinen in „Fokus“.
 
 Beim Löschen eines Projekts oder Bereichs bleiben dessen Aufgaben erhalten. Mindwtr hebt die Zuweisung der Arbeit auf, statt sie ebenfalls zu löschen.
+
+![Das Leben eines Projekts: Ein neues Projekt wird aktiv, sobald es einen nächsten Schritt hat, kann als Warten oder Irgendwann pausiert werden, wird markiert, wenn es keinen nächsten Schritt hat, und endet als Archiviert oder im Papierkorb.](/assets/diagrams/project-lifecycle.svg)
+
+[Interaktives Diagramm öffnen](/assets/diagrams/project-lifecycle.html)
 
 #### Projektabschnitte
 

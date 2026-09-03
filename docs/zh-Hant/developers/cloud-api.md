@@ -2,6 +2,10 @@
 
 Mindwtr Cloud 提供一套精簡的 bearer token API，用於同步、任務自動化與附件傳輸。它是為自行託管部署而設計，並使用與自行託管雲端後端相同的 token 命名空間。
 
+![存取 Mindwtr 資料的兩條通道：AI 助理呼叫 MCP 伺服器，由它執行共用的 core 套件；應用程式則帶著 bearer token 存取自行託管的雲端伺服器，雲端伺服器提供同步文件、記錄端點、附件和行事曆訂閱。只有健康檢查不需要 token。](/assets/diagrams/api-surface.svg)
+
+[開啟互動式圖表](/assets/diagrams/api-surface.html)
+
 ## 驗證身分
 
 每個 `/v1/*` 請求都要傳送 bearer token：

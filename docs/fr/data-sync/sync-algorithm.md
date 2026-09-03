@@ -4,11 +4,19 @@ Mindwtr utilise une synchronisation locale avant tout avec une gestion détermin
 
 Cette page est la référence technique de fusion pour la maintenance et le débogage. Pour la configuration des backends, les étapes de récupération et les conseils d’exploitation destinés aux utilisateurs, consultez [Données et synchronisation](/fr/data-sync/).
 
+![Un cycle de synchronisation dans l'ordre : vider les enregistrements en attente, préparer, vérifier s'il y a des changements, lire la copie distante, fusionner, enregistrer en local, téléverser sous un bail d'écriture, transférer les fichiers joints et rendre compte. Les branches latérales montrent l'arrêt anticipé quand rien n'a changé et la reprise quand un autre appareil a écrit en premier.](/assets/diagrams/sync-cycle.svg)
+
+[Ouvrir le diagramme interactif](/assets/diagrams/sync-cycle.html)
+
 ## Entrées et sorties
 
 - Entrée A : instantané local (`tasks`, `projects`, `sections`, `areas`, `people`, `settings`)
 - Entrée B : instantané distant (même structure)
 - Sortie : instantané fusionné + statistiques de fusion (`conflicts`, `clockSkew`, `timestampAdjustments`, `futureTimestampClamps`, `conflictIds`, `conflictReasonCounts`, `conflictSamples`, `timestampAdjustmentIds`, `futureTimestampClampIds`) ainsi que des journaux de diagnostic de synchronisation de taille limitée.
+
+![Ce que la synchronisation déplace : le store enregistre chaque modification dans la base SQLite locale, une étape retire les champs propres à l'appareil, un scellement facultatif par phrase secrète s'applique, et le résultat part sous forme de fichier de données plus une copie par fichier joint. Les vues de barre latérale masquées et la taille de la fenêtre n'entrent jamais dans le document.](/assets/diagrams/sync-data-model.svg)
+
+[Ouvrir le diagramme interactif](/assets/diagrams/sync-data-model.html)
 
 ## Transport fondé sur des instantanés
 

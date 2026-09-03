@@ -58,6 +58,14 @@ Build- und Linkprüfungen aus. Wenn eine übersetzte Formulierung falsch klingt,
 verwenden Sie den Bearbeitungslink der Seite oder öffnen Sie ein Issue mit der
 korrigierten Formulierung.
 
+## Was beim Pushen ausgeführt wird
+
+GitHub Actions führt die folgenden Prüfungen bei jedem Push und jedem Pull Request im App-Repository aus. Das Pushen eines Versions-Tags startet stattdessen den Veröffentlichungslauf.
+
+![Was GitHub Actions ausführt, in drei Spuren: Jeder Push und jeder Pull Request führt Regel- und Typprüfungen, Unit-Tests für jedes Paket sowie Browser-Tests und Geschwindigkeitsbudgets aus, und alle müssen bestehen; native Kompilierungen und die Abhängigkeitsprüfung laufen nur, wenn sie zutreffen; das Pushen eines Versions-Tags validiert die Veröffentlichung, baut jede Plattform und veröffentlicht sie.](/assets/diagrams/ci-pipeline.svg)
+
+[Interaktives Diagramm öffnen](/assets/diagrams/ci-pipeline.html)
+
 ## Lizenz
 
 Mindwtr steht unter der AGPL-3.0. Beiträge werden unter derselben Lizenz angenommen.

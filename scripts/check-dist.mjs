@@ -150,7 +150,12 @@ if (findings.length === 0) {
     site.origin = origin;
     site.redirects = loadRedirects(site);
     site.files = walk(site.dist);
-    for (const file of site.files.filter((f) => f.endsWith(".html"))) {
+    // Standalone HTML artifacts under /assets/ (the generated diagram viewers)
+    // are assets, not pages: they carry no site chrome, social metadata, or
+    // sitemap entry. Links to them still resolve through the filesystem below.
+    for (const file of site.files.filter(
+      (f) => f.endsWith(".html") && !pagePath(site, f).startsWith("/assets/")
+    )) {
       const html = readFileSync(file, "utf8");
       const ids = new Set([...html.matchAll(/\sid="([^"]*)"/g)].map((m) => m[1]));
       const path = pagePath(site, file);

@@ -55,6 +55,10 @@ Mindwtr directly supports five sync backends:
 - **WebDAV**: any compatible WebDAV endpoint
 - **Mindwtr Cloud (Self-Hosted)**: your own `apps/cloud` endpoint
 
+![Setting up sync: pick a backend in Settings, enter the folder, server URL or sign-in, then press Save, which tests the target. WebDAV also needs a write test and a passphrase is optional. Side branches show a refused setup, a paused sync and a retry.](/assets/diagrams/sync-setup.svg)
+
+[Open the interactive diagram](/assets/diagrams/sync-setup.html)
+
 ### At a glance
 
 | Backend | Platforms | Setup effort | Relative speed | Conflict handling | Best for |

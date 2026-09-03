@@ -19,6 +19,10 @@ Mindwtr maps directly to GTD concepts:
 | Calendar      | Calendar view (tasks with due dates)   |
 | Weekly Review | Review wizard                          |
 
+![How work moves through Mindwtr: a hotkey, share sheet or email capture lands in the Inbox, Process Inbox decides what each item is, and the item goes to Next actions, Waiting For, Someday/Maybe, Reference or a project. The Weekly Review checks that every project has a next action, and Focus holds today's starred tasks.](/assets/diagrams/gtd-workflow.svg)
+
+[Open the interactive diagram](/assets/diagrams/gtd-workflow.html)
+
 ---
 
 ## Patterns
@@ -153,6 +157,10 @@ Done and Archived are both closed states, but they serve different jobs:
 - **Archived** is filed history. Archived tasks are hidden from normal task lists, but stay available in the Archived view for search, restore, or permanent deletion. The Archived view also lists archived projects behind a Tasks | Projects switch, where they can be restored or deleted.
 - **Auto-Archive** can move Done tasks to Archived after a set number of days. Set it to **Never** if you want Done to keep all completed tasks indefinitely.
 
+![The life of a task: it enters the Inbox, becomes Next when you clarify it, and can be parked in Waiting For, Someday/Maybe or Reference. Completing it makes it Done, auto-archive files it as Archived, and deleting it moves it to Trash before it is gone for good.](/assets/diagrams/task-lifecycle.svg)
+
+[Open the interactive diagram](/assets/diagrams/task-lifecycle.html)
+
 ### Someday/Maybe sections
 
 Use named sections to break a long Someday/Maybe list into themes such as Trips, Books, or Home. Create a section while assigning a Someday task, or manage names and order under **Settings → Manage → Someday sections**. The first section turns grouping on; later grouping choices remain yours. Deleting or renaming a section does not delete its tasks, and the section assignments sync with supported devices.
@@ -190,6 +198,10 @@ Create projects for multi-step outcomes:
    - **Parallel:** All tasks show in Focus view
 
 Deleting a project or area keeps its tasks. Mindwtr detaches that work to unassigned instead of cascading deletion.
+
+![The life of a project: a new project becomes Active once it has a next action, can be paused as Waiting or Someday, is flagged when it has no next action, and ends as Archived or in the Trash.](/assets/diagrams/project-lifecycle.svg)
+
+[Open the interactive diagram](/assets/diagrams/project-lifecycle.html)
 
 #### Project Sections
 

@@ -55,6 +55,10 @@ Mindwtr 直接支持五种同步后端：
 - **WebDAV**：任何兼容的 WebDAV 端点
 - **Mindwtr Cloud（自托管）**：你自己的 `apps/cloud` 端点
 
+![设置同步：在设置中选择一种后端，填入文件夹、服务器地址或登录信息，然后点击保存，保存会测试目标。WebDAV 还需要一次写入测试，密码短语是可选的。旁支显示被拒绝的设置、暂停的同步和稍后重试。](/assets/diagrams/sync-setup.svg)
+
+[打开交互式图表](/assets/diagrams/sync-setup.html)
+
 ### 概览
 
 | 后端 | 平台 | 设置难度 | 相对速度 | 冲突处理 | 最适合 |

@@ -14,25 +14,7 @@ Mindwtr is a cross-platform GTD application with:
 - **Cloud Sync** — Node.js (Bun) sync server
 - **Shared core** — TypeScript business logic package
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                       User Interface                      │
-├─────────────────────────────┬───────────────────────────┤
-│      Desktop (Tauri)        │      Mobile (Expo)        │
-│   React + Vite + Tailwind   │  React Native + NativeWind│
-├─────────────────────────────┴───────────────────────────┤
-│                     @mindwtr/core                        │
-│ Zustand Store · Types · i18n Loader/Locales · Sync Core │
-├─────────────────────────────┬───────────────────────────┤
-│    Tauri FS (Rust)          │   SQLite + JSON backup    │
-│    SQLite + JSON backup     │     App storage           │
-└──────────────┬──────────────┴───────────────────────────┘
-               │
-┌──────────────▼──────────────┐
-│        Cloud / Sync         │
-│   WebDAV / Local / Server   │
-└─────────────────────────────┘
-```
+The desktop app, the phone app and the MCP server all share one core package that holds the state, the task rules and the sync merge. Each device keeps its own SQLite database, and sync writes a snapshot of it to the target you chose: a File Sync folder, a WebDAV server, Dropbox, a self-hosted Mindwtr Cloud, or iCloud. Nothing leaves the device until a sync cycle runs, and for the first three targets an optional passphrase seals it first.
 
 ## Design Trade-offs
 
@@ -40,20 +22,11 @@ Mindwtr is a cross-platform GTD application with:
 - **SQLite foreign keys are enforced** for live-record integrity, while soft-delete/tombstone repair still happens in shared application logic.
 - **Hard deletes are rare but real**. `sections.projectId` uses `ON DELETE CASCADE`, while task/project/area references mostly use `ON DELETE SET NULL`.
 
-### System Diagram (Mermaid)
+### System Diagram
 
-```mermaid
-flowchart LR
-    Desktop["Desktop App<br/>Tauri + React"] --> Core["@mindwtr/core"]
-    Mobile["Mobile App<br/>Expo + RN"] --> Core
-    Core --> LocalDB[("SQLite")]
-    Core --> JSON[("data.json")]
-    Core --> Sync["Sync Backends"]
-    Sync --> WebDAV["WebDAV"]
-    Sync --> File["File Sync"]
-    Sync --> Cloud["Self-hosted Cloud"]
-    MCP["MCP Server<br/>mindwtr-mcp"] --> Core
-```
+![How Mindwtr fits together: the two apps and the MCP server call the shared core package, which saves to a local SQLite database, and the sync cycle writes from there to the sync target you chose.](/assets/diagrams/mindwtr-architecture.svg)
+
+[Open the interactive diagram](/assets/diagrams/mindwtr-architecture.html)
 
 ---
 

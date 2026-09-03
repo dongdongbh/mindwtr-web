@@ -54,6 +54,14 @@ agents to update each static Markdown set, then run the shared build and link
 checks. If translated wording sounds wrong, use the page's edit link or open an
 issue with the corrected wording.
 
+## What runs when you push
+
+GitHub Actions runs the checks below on every push and pull request in the app repository. Pushing a version tag starts the release run instead.
+
+![What GitHub Actions runs, in three lanes: every push and pull request runs rule and type checks, unit tests for every package, browser tests and speed budgets, and all of them must pass; native compiles and the dependency audit run only when they apply; pushing a version tag validates the release, builds every platform and publishes it.](/assets/diagrams/ci-pipeline.svg)
+
+[Open the interactive diagram](/assets/diagrams/ci-pipeline.html)
+
 ## License
 
 Mindwtr is AGPL-3.0. Contributions are accepted under the same license.

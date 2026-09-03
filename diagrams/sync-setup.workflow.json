@@ -1,0 +1,239 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Setting up sync",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "legend": {
+      "mode": "auto",
+      "entries": {
+        "frontend": {
+          "label": "Settings screen"
+        },
+        "external": {
+          "label": "Your folder or server"
+        },
+        "security": {
+          "label": "Check or problem"
+        },
+        "backend": {
+          "label": "Sync running"
+        }
+      }
+    }
+  },
+  "lanes": [
+    {
+      "id": "setup",
+      "label": "Set it up"
+    },
+    {
+      "id": "checks",
+      "label": "Checks before sync starts"
+    },
+    {
+      "id": "trouble",
+      "label": "If it stops",
+      "variant": "exception"
+    }
+  ],
+  "phases": [
+    {
+      "id": "choose",
+      "label": "Choose",
+      "fromCol": 0,
+      "toCol": 1
+    },
+    {
+      "id": "prove",
+      "label": "Prove it works",
+      "fromCol": 2,
+      "toCol": 4,
+      "variant": "emphasis"
+    },
+    {
+      "id": "live",
+      "label": "Live",
+      "fromCol": 5,
+      "toCol": 5
+    }
+  ],
+  "mainPath": [
+    "pick",
+    "details",
+    "save",
+    "syncing"
+  ],
+  "nodes": [
+    {
+      "id": "pick",
+      "lane": "setup",
+      "col": 0,
+      "type": "frontend",
+      "label": "Settings, Sync",
+      "sublabel": "pick one backend",
+      "width": 126
+    },
+    {
+      "id": "details",
+      "lane": "setup",
+      "col": 1,
+      "type": "external",
+      "label": "Enter details",
+      "sublabel": "folder, URL or sign-in",
+      "width": 134
+    },
+    {
+      "id": "save",
+      "lane": "setup",
+      "col": 2,
+      "type": "security",
+      "label": "Save",
+      "sublabel": "the app tests it",
+      "tag": "one step",
+      "width": 118
+    },
+    {
+      "id": "webdav_check",
+      "lane": "checks",
+      "col": 2,
+      "type": "security",
+      "label": "WebDAV test",
+      "sublabel": "strong ETag needed",
+      "width": 130
+    },
+    {
+      "id": "encryption",
+      "lane": "checks",
+      "col": 4,
+      "type": "security",
+      "label": "Passphrase",
+      "sublabel": "optional, AES-256-GCM",
+      "width": 126
+    },
+    {
+      "id": "syncing",
+      "lane": "setup",
+      "col": 5,
+      "type": "backend",
+      "label": "Sync is on",
+      "sublabel": "Last sync shows when",
+      "tag": "automatic",
+      "width": 134
+    },
+    {
+      "id": "refused",
+      "lane": "trouble",
+      "col": 2,
+      "type": "security",
+      "label": "Setup refused",
+      "sublabel": "server not safe enough",
+      "width": 134
+    },
+    {
+      "id": "locked",
+      "lane": "trouble",
+      "col": 4,
+      "type": "security",
+      "label": "Sync paused",
+      "sublabel": "asks for the passphrase",
+      "width": 134
+    },
+    {
+      "id": "offline",
+      "lane": "trouble",
+      "col": 5,
+      "type": "security",
+      "label": "Retry later",
+      "sublabel": "1 to 10 minutes apart",
+      "width": 134
+    }
+  ],
+  "edges": [
+    {
+      "from": "pick",
+      "to": "details",
+      "label": "choose the kind"
+    },
+    {
+      "from": "details",
+      "to": "save",
+      "label": "enter the details"
+    },
+    {
+      "from": "save",
+      "to": "webdav_check",
+      "label": "WebDAV only",
+      "role": "branch"
+    },
+    {
+      "from": "save",
+      "to": "encryption",
+      "label": "if you turn it on",
+      "role": "branch"
+    },
+    {
+      "from": "save",
+      "to": "syncing",
+      "label": "the test passes",
+      "variant": "emphasis"
+    },
+    {
+      "from": "webdav_check",
+      "to": "refused",
+      "label": "no strong ETag",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "from": "encryption",
+      "to": "locked",
+      "label": "a device has no passphrase",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "from": "syncing",
+      "to": "offline",
+      "label": "cannot reach it",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "from": "encryption",
+      "to": "syncing",
+      "label": "encrypted before upload",
+      "role": "branch"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "One backend",
+      "items": [
+        "File, WebDAV, Dropbox, self-hosted Cloud or iCloud",
+        "Save is when the app really tries the target",
+        "Last sync is when the last full cycle finished"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Optional passphrase",
+      "items": [
+        "Encrypts the file and attachments before upload",
+        "Covers File Sync, WebDAV and Dropbox only",
+        "It cannot be recovered, so write it down first"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "When it stops",
+      "items": [
+        "WebDAV needs a server that enforces conditions",
+        "A wrong passphrase never changes stored files",
+        "Phones can sync in the background, 15 min to 6 h"
+      ]
+    }
+  ]
+}

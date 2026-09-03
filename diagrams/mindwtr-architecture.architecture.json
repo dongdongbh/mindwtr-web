@@ -1,0 +1,422 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "How Mindwtr Is Put Together",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/dongdongbh/Mindwtr",
+      "revision": "fec304e7c1e47d940f5b955b8edd10c1453d2a65"
+    },
+    "viewBox": [
+      1260,
+      624
+    ],
+    "views": [
+      {
+        "id": "edit-path",
+        "label": "One task edit",
+        "focus": [
+          "desktop",
+          "core",
+          "db",
+          "syncrun"
+        ],
+        "note": "Follow a single change from the screen to the local database and into a sync cycle."
+      },
+      {
+        "id": "clients",
+        "label": "The three clients",
+        "focus": [
+          "desktop",
+          "mobile",
+          "mcp",
+          "core"
+        ],
+        "note": "Desktop, phone and the MCP server all call the same shared core package."
+      },
+      {
+        "id": "remotes",
+        "label": "Where copies are stored",
+        "focus": [
+          "syncrun",
+          "crypto",
+          "files",
+          "webdav",
+          "dropbox",
+          "cloud",
+          "icloud"
+        ],
+        "note": "Five sync targets. Only the first three can be sealed with a passphrase."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "mcp",
+      "type": "backend",
+      "label": "MCP server",
+      "sublabel": "mindwtr-mcp, for AI tools",
+      "pos": [
+        40,
+        70
+      ],
+      "size": [
+        190,
+        66
+      ],
+      "sources": [
+        {
+          "path": "apps/mcp-server/src/index.ts",
+          "label": "tool definitions"
+        }
+      ]
+    },
+    {
+      "id": "desktop",
+      "type": "frontend",
+      "label": "Desktop app",
+      "sublabel": "Tauri: React and Rust",
+      "pos": [
+        40,
+        200
+      ],
+      "size": [
+        190,
+        66
+      ],
+      "sources": [
+        {
+          "path": "apps/desktop/src-tauri/src/lib.rs",
+          "label": "Rust side"
+        }
+      ]
+    },
+    {
+      "id": "mobile",
+      "type": "frontend",
+      "label": "Phone app",
+      "sublabel": "Expo React Native",
+      "pos": [
+        40,
+        330
+      ],
+      "size": [
+        190,
+        66
+      ],
+      "sources": [
+        {
+          "path": "apps/mobile/lib/background-sync-task.ts",
+          "label": "background sync"
+        }
+      ]
+    },
+    {
+      "id": "core",
+      "type": "backend",
+      "label": "@mindwtr/core",
+      "sublabel": "store, quick add, merge rules",
+      "pos": [
+        360,
+        200
+      ],
+      "size": [
+        190,
+        66
+      ],
+      "sources": [
+        {
+          "path": "packages/core/src/store.ts",
+          "label": "Zustand store"
+        }
+      ]
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "Local database",
+      "sublabel": "SQLite on every device",
+      "pos": [
+        360,
+        380
+      ],
+      "size": [
+        190,
+        66
+      ],
+      "sources": [
+        {
+          "path": "packages/core/src/sqlite-adapter.ts",
+          "label": "storage adapter"
+        }
+      ]
+    },
+    {
+      "id": "syncrun",
+      "type": "backend",
+      "label": "Sync cycle",
+      "sublabel": "one shared state machine",
+      "pos": [
+        680,
+        380
+      ],
+      "size": [
+        190,
+        66
+      ],
+      "sources": [
+        {
+          "path": "packages/core/src/sync-run.ts",
+          "line": 65,
+          "label": "ADR 0014"
+        }
+      ]
+    },
+    {
+      "id": "crypto",
+      "type": "security",
+      "label": "Passphrase lock",
+      "sublabel": "AES-256-GCM",
+      "pos": [
+        680,
+        176
+      ],
+      "size": [
+        190,
+        66
+      ],
+      "tag": "off by default",
+      "sources": [
+        {
+          "path": "packages/core/src/sync-crypto.ts",
+          "line": 1,
+          "label": "MWENC1 format"
+        }
+      ]
+    },
+    {
+      "id": "files",
+      "type": "external",
+      "label": "File Sync folder",
+      "sublabel": "Syncthing, a drive, Nextcloud",
+      "pos": [
+        1000,
+        56
+      ],
+      "size": [
+        190,
+        66
+      ]
+    },
+    {
+      "id": "webdav",
+      "type": "external",
+      "label": "WebDAV server",
+      "sublabel": "Nextcloud, ownCloud, others",
+      "pos": [
+        1000,
+        162
+      ],
+      "size": [
+        190,
+        66
+      ]
+    },
+    {
+      "id": "dropbox",
+      "type": "external",
+      "label": "Dropbox",
+      "sublabel": "app folder",
+      "pos": [
+        1000,
+        268
+      ],
+      "size": [
+        190,
+        66
+      ]
+    },
+    {
+      "id": "cloud",
+      "type": "cloud",
+      "label": "Mindwtr Cloud",
+      "sublabel": "you host it, it merges too",
+      "pos": [
+        1000,
+        390
+      ],
+      "size": [
+        190,
+        66
+      ],
+      "sources": [
+        {
+          "path": "apps/cloud/src/server.ts",
+          "label": "sync server"
+        }
+      ]
+    },
+    {
+      "id": "icloud",
+      "type": "cloud",
+      "label": "iCloud",
+      "sublabel": "CloudKit, Apple devices only",
+      "pos": [
+        1000,
+        500
+      ],
+      "size": [
+        190,
+        66
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "security-group",
+      "label": "Stays on your device",
+      "wraps": [
+        "mcp",
+        "desktop",
+        "mobile",
+        "core",
+        "db",
+        "syncrun",
+        "crypto"
+      ],
+      "pad": 22
+    },
+    {
+      "kind": "region",
+      "label": "Storage you pick and control",
+      "wraps": [
+        "files",
+        "webdav",
+        "dropbox",
+        "cloud",
+        "icloud"
+      ],
+      "pad": 22
+    }
+  ],
+  "connections": [
+    {
+      "id": "desktop-edit",
+      "from": "desktop",
+      "to": "core",
+      "label": "edits a task",
+      "variant": "emphasis"
+    },
+    {
+      "id": "mobile-edit",
+      "from": "mobile",
+      "to": "core",
+      "label": "edits a task",
+      "variant": "emphasis",
+      "fromSide": "right",
+      "toSide": "bottom",
+      "labelSegment": 0
+    },
+    {
+      "id": "mcp-edit",
+      "from": "mcp",
+      "to": "core",
+      "label": "reads and writes",
+      "fromSide": "right",
+      "toSide": "top"
+    },
+    {
+      "id": "core-save",
+      "from": "core",
+      "to": "db",
+      "label": "saves the change",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 30,
+      "labelDx": -90
+    },
+    {
+      "id": "db-read",
+      "from": "db",
+      "to": "syncrun",
+      "label": "reads the snapshot",
+      "variant": "emphasis",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "seal",
+      "from": "syncrun",
+      "to": "crypto",
+      "label": "seals the data file",
+      "variant": "security",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "to-files",
+      "from": "crypto",
+      "to": "files"
+    },
+    {
+      "id": "to-webdav",
+      "from": "crypto",
+      "to": "webdav"
+    },
+    {
+      "id": "to-dropbox",
+      "from": "crypto",
+      "to": "dropbox"
+    },
+    {
+      "id": "to-cloud",
+      "from": "syncrun",
+      "to": "cloud",
+      "label": "PUT /v1/data",
+      "fromSide": "right",
+      "toSide": "left",
+      "labelDx": 30
+    },
+    {
+      "id": "to-icloud",
+      "from": "syncrun",
+      "to": "icloud",
+      "label": "CloudKit records",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "left"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "One shared core",
+      "items": [
+        "Desktop, phone and the MCP server all call @mindwtr/core, so a rule is written once.",
+        "MCP is the Model Context Protocol: it lets an AI assistant call the app's tools.",
+        "Every device keeps its own SQLite database. That copy is the one the app reads."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "What a sync cycle does",
+      "items": [
+        "It reads the saved snapshot, fetches the remote copy, and merges the two by revision number.",
+        "The merged result is written back to the local database first, then uploaded.",
+        "A snapshot is the whole data file, not a list of changes. That is a deliberate choice (ADR 0008)."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "The passphrase lock",
+      "items": [
+        "Turning it on encrypts the data file, its backups, and attachments before they leave the device.",
+        "It covers File Sync, WebDAV and Dropbox only.",
+        "It does not cover Mindwtr Cloud, iCloud, or the database on your own device."
+      ]
+    }
+  ]
+}

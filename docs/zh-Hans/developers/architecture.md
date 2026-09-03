@@ -14,25 +14,7 @@ Mindwtr 是一款跨平台 GTD 应用，包含：
 - **云同步** — Node.js（Bun）同步服务器
 - **共享核心** — TypeScript 业务逻辑包
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                       User Interface                      │
-├─────────────────────────────┬───────────────────────────┤
-│      Desktop (Tauri)        │      Mobile (Expo)        │
-│   React + Vite + Tailwind   │  React Native + NativeWind│
-├─────────────────────────────┴───────────────────────────┤
-│                     @mindwtr/core                        │
-│ Zustand Store · Types · i18n Loader/Locales · Sync Core │
-├─────────────────────────────┬───────────────────────────┤
-│    Tauri FS (Rust)          │   SQLite + JSON backup    │
-│    SQLite + JSON backup     │     App storage           │
-└──────────────┬──────────────┴───────────────────────────┘
-               │
-┌──────────────▼──────────────┐
-│        Cloud / Sync         │
-│   WebDAV / Local / Server   │
-└─────────────────────────────┘
-```
+桌面应用、手机应用和 MCP 服务器共用同一个 core 包，其中包含状态、任务规则和同步合并逻辑。每台设备都有自己的 SQLite 数据库，同步会把它的快照写到你选择的目标：File Sync 文件夹、WebDAV 服务器、Dropbox、自行托管的 Mindwtr Cloud 或 iCloud。在同步周期运行之前，任何数据都不会离开设备；对于前三个目标，还可以先用可选的口令把它封装起来。
 
 ## 设计权衡
 
@@ -40,20 +22,11 @@ Mindwtr 是一款跨平台 GTD 应用，包含：
 - **SQLite 外键约束已启用**，以保证有效记录的完整性；软删除/墓碑记录的修复仍由共享应用逻辑处理。
 - **硬删除很少见，但确实存在**。`sections.projectId` 使用 `ON DELETE CASCADE`，而任务、项目和领域的引用大多使用 `ON DELETE SET NULL`。
 
-### 系统图（Mermaid）
+### 系统图
 
-```mermaid
-flowchart LR
-    Desktop["Desktop App<br/>Tauri + React"] --> Core["@mindwtr/core"]
-    Mobile["Mobile App<br/>Expo + RN"] --> Core
-    Core --> LocalDB[("SQLite")]
-    Core --> JSON[("data.json")]
-    Core --> Sync["Sync Backends"]
-    Sync --> WebDAV["WebDAV"]
-    Sync --> File["File Sync"]
-    Sync --> Cloud["Self-hosted Cloud"]
-    MCP["MCP Server<br/>mindwtr-mcp"] --> Core
-```
+![Mindwtr 的组成方式：两个应用和 MCP 服务器都调用共享的 core 包，core 包写入本地 SQLite 数据库，同步周期再从这里写到你选择的同步目标。](/assets/diagrams/mindwtr-architecture.svg)
+
+[打开交互式图表](/assets/diagrams/mindwtr-architecture.html)
 
 ---
 

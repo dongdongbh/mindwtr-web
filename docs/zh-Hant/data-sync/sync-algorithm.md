@@ -4,11 +4,19 @@ Mindwtr 採用在地優先同步，並以確定性方式處理衝突。
 
 本頁是供維護與除錯使用的技術合併參考。面向使用者的後端設定、復原步驟與操作指南，請參閱[資料與同步](/zh-Hant/data-sync/)。
 
+![一次同步週期的順序：寫出待儲存的編輯、完成設定、檢查是否有變化、讀取遠端副本、合併、先儲存到本機、在寫入租約下上傳、傳輸附件檔案，最後回報結果。旁支顯示兩種情況：沒有變化時提前結束，以及其他裝置先寫入時重新排隊。](/assets/diagrams/sync-cycle.svg)
+
+[開啟互動式圖表](/assets/diagrams/sync-cycle.html)
+
 ## 輸入與輸出
 
 - 輸入 A：本機快照（`tasks`、`projects`、`sections`、`areas`、`people`、`settings`）
 - 輸入 B：遠端快照（相同形狀）
 - 輸出：合併快照 + 合併統計（`conflicts`、`clockSkew`、`timestampAdjustments`、`futureTimestampClamps`、`conflictIds`、`conflictReasonCounts`、`conflictSamples`、`timestampAdjustmentIds`、`futureTimestampClampIds`），另加有界同步診斷日誌。
+
+![同步會搬運什麼：倉庫把每次變動儲存到本機 SQLite 資料庫，隨後一步會剝掉只屬於本裝置的欄位，可選的密語封裝再執行，結果會以資料檔案加上每個附件一份副本送出。隱藏的側邊欄檢視和視窗大小從不進入該文件。](/assets/diagrams/sync-data-model.svg)
+
+[開啟互動式圖表](/assets/diagrams/sync-data-model.html)
 
 ## 快照式傳輸
 

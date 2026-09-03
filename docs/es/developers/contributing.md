@@ -42,6 +42,14 @@ La guía de contribución web define los idiomas compatibles, el proceso de trad
 
 El inglés es la fuente de la documentación completa en alemán, español, francés, chino simplificado y chino tradicional. El mantenimiento usa agentes especializados por idioma para actualizar cada conjunto Markdown estático y después ejecuta las comprobaciones compartidas de compilación y enlaces. Si una traducción suena mal, usa el enlace de edición de la página o abre una incidencia con la corrección.
 
+## Qué se ejecuta al hacer push
+
+GitHub Actions ejecuta las comprobaciones siguientes en cada push y en cada pull request del repositorio de la aplicación. Publicar una etiqueta de versión inicia en su lugar la ejecución de publicación.
+
+![Qué ejecuta GitHub Actions, en tres carriles: cada push y cada pull request ejecuta comprobaciones de reglas y tipos, pruebas unitarias de cada paquete, pruebas de navegador y presupuestos de velocidad, y todas deben pasar; las compilaciones nativas y la auditoría de dependencias solo se ejecutan cuando corresponde; publicar una etiqueta de versión valida la entrega, construye cada plataforma y la publica.](/assets/diagrams/ci-pipeline.svg)
+
+[Abrir el diagrama interactivo](/assets/diagrams/ci-pipeline.html)
+
 ## Licencia
 
 Mindwtr usa AGPL-3.0. Las contribuciones se aceptan bajo la misma licencia.

@@ -4,11 +4,19 @@ Mindwtr verwendet eine Local-first-Synchronisierung mit deterministischer Konfli
 
 Diese Seite ist die technische Zusammenführungsreferenz für Wartung und Fehlersuche. Einrichtung von Backends, Wiederherstellungsschritte und betriebliche Hinweise für Benutzer finden Sie unter [Daten und Synchronisierung](/de/data-sync/).
 
+![Ein Synchronisierungszyklus der Reihe nach: Speichern erzwingen, einrichten, auf Änderungen prüfen, entfernte Kopie lesen, zusammenführen, lokal speichern, unter einer Schreibsperre hochladen, Anhangsdateien übertragen und Ergebnis melden. Nebenzweige zeigen den frühen Abbruch, wenn sich nichts geändert hat, und den erneuten Versuch, wenn ein anderes Gerät zuerst geschrieben hat.](/assets/diagrams/sync-cycle.svg)
+
+[Interaktives Diagramm öffnen](/assets/diagrams/sync-cycle.html)
+
 ## Eingaben und Ausgaben
 
 - Eingabe A: lokale Momentaufnahme (`tasks`, `projects`, `sections`, `areas`, `people`, `settings`)
 - Eingabe B: entfernte Momentaufnahme (gleiche Struktur)
 - Ausgabe: zusammengeführte Momentaufnahme + Zusammenführungsstatistik (`conflicts`, `clockSkew`, `timestampAdjustments`, `futureTimestampClamps`, `conflictIds`, `conflictReasonCounts`, `conflictSamples`, `timestampAdjustmentIds`, `futureTimestampClampIds`) sowie begrenzte Synchronisierungsdiagnoseprotokolle
+
+![Was die Synchronisierung bewegt: Der Store speichert jede Änderung in der lokalen SQLite-Datenbank, ein Schritt entfernt gerätelokale Felder, ein optionaler Passphrasen-Verschluss läuft, und das Ergebnis geht als Datendatei plus je eine Kopie pro Anhangsdatei hinaus. Ausgeblendete Seitenleistenansichten und Fenstergröße gelangen nie in das Dokument.](/assets/diagrams/sync-data-model.svg)
+
+[Interaktives Diagramm öffnen](/assets/diagrams/sync-data-model.html)
 
 ## Momentaufnahmebasierter Transport
 

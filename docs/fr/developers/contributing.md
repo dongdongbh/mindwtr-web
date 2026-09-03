@@ -42,6 +42,14 @@ Le guide de contribution au site définit les langues prises en charge, le dépl
 
 L’anglais est la source des documentations complètes en allemand, espagnol, français, chinois simplifié et chinois traditionnel. Les responsables utilisent des agents de programmation spécialisés par langue pour mettre à jour chaque ensemble Markdown statique, puis exécutent les vérifications communes de compilation et de liens. Si une traduction vous semble incorrecte, utilisez le lien de modification de la page ou ouvrez un ticket avec le texte corrigé.
 
+## Ce qui s'exécute quand vous poussez
+
+GitHub Actions exécute les vérifications ci-dessous à chaque push et à chaque pull request du dépôt de l'application. Pousser une étiquette de version lance à la place l'exécution de publication.
+
+![Ce que GitHub Actions exécute, en trois couloirs : chaque push et chaque pull request lance les vérifications de règles et de types, les tests unitaires de chaque paquet, les tests navigateur et les budgets de vitesse, et tous doivent passer ; les compilations natives et l'audit des dépendances ne s'exécutent que si elles s'appliquent ; pousser une étiquette de version valide la livraison, construit chaque plateforme et la publie.](/assets/diagrams/ci-pipeline.svg)
+
+[Ouvrir le diagramme interactif](/assets/diagrams/ci-pipeline.html)
+
 ## Licence
 
 Mindwtr est sous licence AGPL-3.0. Les contributions sont acceptées sous la même licence.

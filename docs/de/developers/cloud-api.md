@@ -2,6 +2,10 @@
 
 Mindwtr Cloud stellt eine kleine Bearer-Token-API für Synchronisierung, Aufgabenautomatisierung und Anhangsübertragung bereit. Sie ist für selbst gehostete Bereitstellungen ausgelegt und verwendet denselben Token-Namensraum wie das selbst gehostete Cloud-Backend.
 
+![Die zwei Wege zu Mindwtr-Daten: Ein KI-Assistent ruft den MCP-Server auf, der das gemeinsame Core-Paket ausführt; die Apps senden ein Bearer-Token an den selbst gehosteten Cloud-Server, der das Synchronisierungsdokument, Datensatz-Endpunkte, Anhänge und einen Kalender-Feed bereitstellt. Nur die Zustandsprüfung benötigt kein Token.](/assets/diagrams/api-surface.svg)
+
+[Interaktives Diagramm öffnen](/assets/diagrams/api-surface.html)
+
 ## Authentifizierung
 
 Senden Sie bei jeder `/v1/*`-Anfrage ein Bearer-Token:

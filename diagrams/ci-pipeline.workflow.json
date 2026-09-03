@@ -1,0 +1,319 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "What GitHub Actions Runs",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "legend": {
+      "mode": "auto",
+      "entries": {
+        "frontend": {
+          "label": "What starts it"
+        },
+        "backend": {
+          "label": "A group of jobs"
+        },
+        "security": {
+          "label": "A gate"
+        },
+        "messagebus": {
+          "label": "A filter"
+        },
+        "cloud": {
+          "label": "Goes public"
+        }
+      }
+    },
+    "views": [
+      {
+        "id": "everychange",
+        "label": "Every change",
+        "focus": [
+          "push",
+          "checks",
+          "unit",
+          "e2eperf",
+          "green"
+        ],
+        "note": "The jobs that run on every push and every pull request to main."
+      },
+      {
+        "id": "conditional",
+        "label": "Only sometimes",
+        "focus": [
+          "push",
+          "audit",
+          "nativechanges",
+          "nativebuild"
+        ],
+        "note": "Native compiles run only when native files change. The audit also runs on a schedule."
+      },
+      {
+        "id": "release",
+        "label": "Tag to download",
+        "focus": [
+          "tag",
+          "validate",
+          "build",
+          "publish"
+        ],
+        "note": "Pushing a version tag starts the release run."
+      }
+    ]
+  },
+  "lanes": [
+    {
+      "id": "main",
+      "label": "Every push and pull request"
+    },
+    {
+      "id": "extra",
+      "label": "Only when it applies"
+    },
+    {
+      "id": "release",
+      "label": "When a version tag is pushed"
+    }
+  ],
+  "phases": [
+    {
+      "id": "check",
+      "label": "Check",
+      "fromCol": 0,
+      "toCol": 2,
+      "variant": "emphasis"
+    },
+    {
+      "id": "prove",
+      "label": "Prove",
+      "fromCol": 3,
+      "toCol": 4
+    },
+    {
+      "id": "ship",
+      "label": "Ship",
+      "fromCol": 5,
+      "toCol": 5
+    }
+  ],
+  "mainPath": [
+    "push",
+    "checks",
+    "unit",
+    "e2eperf",
+    "green"
+  ],
+  "nodes": [
+    {
+      "id": "push",
+      "lane": "main",
+      "col": 0,
+      "type": "frontend",
+      "label": "Push or PR",
+      "sublabel": "onto main",
+      "width": 132
+    },
+    {
+      "id": "checks",
+      "lane": "main",
+      "col": 1,
+      "type": "backend",
+      "label": "Rules and types",
+      "sublabel": "types, lint, locales",
+      "width": 132
+    },
+    {
+      "id": "unit",
+      "lane": "main",
+      "col": 2,
+      "type": "backend",
+      "label": "Unit tests",
+      "sublabel": "core, apps, servers",
+      "width": 132
+    },
+    {
+      "id": "e2eperf",
+      "lane": "main",
+      "col": 3,
+      "type": "backend",
+      "label": "Browser and speed",
+      "sublabel": "Playwright, budgets",
+      "width": 132
+    },
+    {
+      "id": "green",
+      "lane": "main",
+      "col": 4,
+      "type": "security",
+      "label": "All green",
+      "sublabel": "every job must pass",
+      "width": 132
+    },
+    {
+      "id": "audit",
+      "lane": "extra",
+      "col": 0,
+      "type": "security",
+      "label": "Dependency audit",
+      "sublabel": "bun audit, cargo audit",
+      "width": 132
+    },
+    {
+      "id": "nativechanges",
+      "lane": "extra",
+      "col": 1,
+      "type": "messagebus",
+      "label": "Path filter",
+      "sublabel": "which platform changed",
+      "width": 132
+    },
+    {
+      "id": "nativebuild",
+      "lane": "extra",
+      "col": 2,
+      "type": "backend",
+      "label": "Compile native",
+      "sublabel": "per platform",
+      "width": 132
+    },
+    {
+      "id": "tag",
+      "lane": "release",
+      "col": 2,
+      "type": "frontend",
+      "label": "A version tag",
+      "sublabel": "v1.2.3 or v1.2.3-rc.1",
+      "width": 132
+    },
+    {
+      "id": "validate",
+      "lane": "release",
+      "col": 3,
+      "type": "security",
+      "label": "Validate",
+      "sublabel": "version, notes, store",
+      "width": 132
+    },
+    {
+      "id": "build",
+      "lane": "release",
+      "col": 4,
+      "type": "backend",
+      "label": "Build everything",
+      "sublabel": "one job per platform",
+      "width": 132
+    },
+    {
+      "id": "publish",
+      "lane": "release",
+      "col": 5,
+      "type": "cloud",
+      "label": "Publish",
+      "sublabel": "GitHub, stores, Docker",
+      "width": 132
+    }
+  ],
+  "edges": [
+    {
+      "id": "c-push-checks",
+      "from": "push",
+      "to": "checks",
+      "variant": "emphasis"
+    },
+    {
+      "id": "c-checks-unit",
+      "from": "checks",
+      "to": "unit",
+      "variant": "emphasis"
+    },
+    {
+      "id": "c-unit-e2e",
+      "from": "unit",
+      "to": "e2eperf",
+      "variant": "emphasis"
+    },
+    {
+      "id": "c-e2e-green",
+      "from": "e2eperf",
+      "to": "green",
+      "variant": "emphasis"
+    },
+    {
+      "id": "c-push-audit",
+      "from": "push",
+      "to": "audit",
+      "label": "and on a schedule",
+      "role": "branch",
+      "variant": "dashed"
+    },
+    {
+      "id": "c-push-native",
+      "from": "push",
+      "to": "nativechanges",
+      "label": "native files touched",
+      "role": "branch"
+    },
+    {
+      "id": "c-native-build",
+      "from": "nativechanges",
+      "to": "nativebuild",
+      "label": "only that platform"
+    },
+    {
+      "id": "c-native-green",
+      "from": "nativebuild",
+      "to": "green",
+      "label": "must pass too",
+      "role": "branch",
+      "variant": "dashed"
+    },
+    {
+      "id": "c-tag-validate",
+      "from": "tag",
+      "to": "validate",
+      "variant": "emphasis"
+    },
+    {
+      "id": "c-validate-build",
+      "from": "validate",
+      "to": "build",
+      "variant": "emphasis"
+    },
+    {
+      "id": "c-build-publish",
+      "from": "build",
+      "to": "publish",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "On every push and pull request",
+      "items": [
+        "One job checks types, lint, translation coverage and store text in every package.",
+        "Separate jobs test the core package, the desktop app, the phone app, the cloud server and the MCP server.",
+        "A browser test run and a set of speed budgets for very large task lists finish the round."
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Work that is skipped when it can be",
+      "items": [
+        "Native compiles for macOS, Windows, Android and iOS start only when files for that platform changed.",
+        "The dependency audit also runs on its own schedule, not only on a change.",
+        "Everything that did run has to pass before a change lands on main."
+      ]
+    },
+    {
+      "dot": "orange",
+      "title": "From a tag to a download",
+      "items": [
+        "Pushing a version tag starts one run. A release candidate tag starts the pre-release version of it.",
+        "A validation job checks the version, the release notes and the store text before anything is built.",
+        "Each platform builds in its own job, then one step publishes the GitHub release, the app stores, Docker images and the Linux repositories."
+      ]
+    }
+  ]
+}

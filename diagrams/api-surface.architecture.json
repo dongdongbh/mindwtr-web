@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "The Two Ways In: Cloud API and MCP",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/dongdongbh/Mindwtr",
+      "revision": "fec304e7c1e47d940f5b955b8edd10c1453d2a65"
+    },
+    "viewBox": [
+      1120,
+      524
+    ],
+    "views": [
+      {
+        "id": "cloudapi",
+        "label": "The cloud API",
+        "focus": [
+          "apps",
+          "auth",
+          "health",
+          "data",
+          "records",
+          "attach",
+          "calendar"
+        ],
+        "note": "Every path under /v1 needs a token. Only the health check does not."
+      },
+      {
+        "id": "mcpside",
+        "label": "The MCP server",
+        "focus": [
+          "ai",
+          "mcp",
+          "core"
+        ],
+        "note": "An AI assistant reaches your tasks through tools, not through the screen."
+      },
+      {
+        "id": "shared",
+        "label": "One set of rules",
+        "focus": [
+          "mcp",
+          "core",
+          "auth",
+          "data"
+        ],
+        "note": "Both doors end up running the same core package."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "ai",
+      "type": "external",
+      "label": "AI assistant",
+      "sublabel": "Claude, ChatGPT, others",
+      "pos": [
+        40,
+        50
+      ],
+      "size": [
+        210,
+        62
+      ]
+    },
+    {
+      "id": "mcp",
+      "type": "backend",
+      "label": "MCP server",
+      "sublabel": "tools for tasks and projects",
+      "pos": [
+        450,
+        50
+      ],
+      "size": [
+        210,
+        62
+      ],
+      "sources": [
+        {
+          "path": "apps/mcp-server/src/index.ts",
+          "label": "tool list"
+        }
+      ]
+    },
+    {
+      "id": "core",
+      "type": "backend",
+      "label": "@mindwtr/core",
+      "sublabel": "the same rules as the apps",
+      "pos": [
+        860,
+        50
+      ],
+      "size": [
+        210,
+        62
+      ],
+      "sources": [
+        {
+          "path": "apps/mcp-server/src/core-adapter.ts",
+          "label": "core adapter"
+        }
+      ]
+    },
+    {
+      "id": "apps",
+      "type": "frontend",
+      "label": "Mindwtr apps",
+      "sublabel": "desktop and phone",
+      "pos": [
+        40,
+        230
+      ],
+      "size": [
+        210,
+        62
+      ]
+    },
+    {
+      "id": "auth",
+      "type": "security",
+      "label": "Bearer token",
+      "sublabel": "one data set per token",
+      "pos": [
+        450,
+        230
+      ],
+      "size": [
+        210,
+        62
+      ],
+      "tag": "Authorization header",
+      "sources": [
+        {
+          "path": "apps/cloud/src/server-auth.ts",
+          "label": "token check"
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "type": "cloud",
+      "label": "Health check",
+      "sublabel": "GET /health",
+      "pos": [
+        40,
+        420
+      ],
+      "size": [
+        170,
+        58
+      ]
+    },
+    {
+      "id": "data",
+      "type": "cloud",
+      "label": "Sync document",
+      "sublabel": "/v1/data",
+      "pos": [
+        255,
+        420
+      ],
+      "size": [
+        170,
+        58
+      ],
+      "tag": "server merges"
+    },
+    {
+      "id": "records",
+      "type": "cloud",
+      "label": "Records",
+      "sublabel": "tasks, projects, areas",
+      "pos": [
+        470,
+        420
+      ],
+      "size": [
+        170,
+        58
+      ],
+      "tag": "and search"
+    },
+    {
+      "id": "attach",
+      "type": "cloud",
+      "label": "Attachments",
+      "sublabel": "/v1/attachments",
+      "pos": [
+        685,
+        420
+      ],
+      "size": [
+        170,
+        58
+      ]
+    },
+    {
+      "id": "calendar",
+      "type": "cloud",
+      "label": "Calendar feed",
+      "sublabel": "/v1/calendar",
+      "pos": [
+        900,
+        420
+      ],
+      "size": [
+        170,
+        58
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Mindwtr Cloud, the server you host",
+      "wraps": [
+        "health",
+        "data",
+        "records",
+        "attach",
+        "calendar"
+      ],
+      "pad": 20
+    }
+  ],
+  "connections": [
+    {
+      "id": "ai-mcp",
+      "from": "ai",
+      "to": "mcp",
+      "label": "asks in plain words",
+      "variant": "emphasis"
+    },
+    {
+      "id": "mcp-core",
+      "from": "mcp",
+      "to": "core",
+      "label": "reads and writes",
+      "variant": "emphasis"
+    },
+    {
+      "id": "mcp-cloud",
+      "from": "mcp",
+      "to": "auth",
+      "label": "or a cloud address instead",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 48
+    },
+    {
+      "id": "apps-auth",
+      "from": "apps",
+      "to": "auth",
+      "label": "every call carries a token",
+      "variant": "emphasis"
+    },
+    {
+      "id": "apps-health",
+      "from": "apps",
+      "to": "health",
+      "label": "no token needed",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "auth-data",
+      "from": "auth",
+      "to": "data",
+      "variant": "emphasis"
+    },
+    {
+      "id": "auth-records",
+      "from": "auth",
+      "to": "records"
+    },
+    {
+      "id": "auth-attach",
+      "from": "auth",
+      "to": "attach"
+    },
+    {
+      "id": "auth-calendar",
+      "from": "auth",
+      "to": "calendar"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "The cloud API",
+      "items": [
+        "Every path under /v1 needs a bearer token. The token names the data set it may touch.",
+        "Sending the whole document to /v1/data is not an overwrite. The server merges it in.",
+        "Records covers tasks, projects, sections and areas, plus a search endpoint over tasks and projects."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "The MCP server",
+      "items": [
+        "MCP is the Model Context Protocol. It lets an assistant call tools instead of clicking the app.",
+        "There is one tool per action: add, get, list, change, delete, complete and restore.",
+        "By default it reads the local database. Pointed at a cloud address it stays read-only until you allow writes."
+      ]
+    },
+    {
+      "dot": "orange",
+      "title": "One set of rules",
+      "items": [
+        "Both doors run the same core package, so quick-add text and validation behave the same everywhere.",
+        "The calendar feed is the one exception: the token sits in the link, so a calendar app can read it.",
+        "The attachment endpoints also clean up files the document no longer refers to."
+      ]
+    }
+  ]
+}

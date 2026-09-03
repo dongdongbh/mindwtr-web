@@ -2,6 +2,10 @@
 
 Mindwtr Cloud 提供一套小型 bearer-token API，用于同步、任务自动化和附件传输。它面向自托管部署，并与自托管云端后端使用相同的令牌命名空间。
 
+![访问 Mindwtr 数据的两条通道：AI 助手调用 MCP 服务器，由它运行共享的 core 包；应用则带着 bearer token 访问自行托管的云服务器，云服务器提供同步文档、记录端点、附件和日历订阅。只有健康检查不需要 token。](/assets/diagrams/api-surface.svg)
+
+[打开交互式图表](/assets/diagrams/api-surface.html)
+
 ## 认证
 
 每个 `/v1/*` 请求都需发送 bearer token：

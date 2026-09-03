@@ -4,11 +4,19 @@ Mindwtr uses local-first synchronization with deterministic conflict handling.
 
 This page is the technical merge reference for maintainers and debugging. For user-facing backend setup, recovery steps, and operational guidance, see [Data and Sync](/data-sync/).
 
+![One sync cycle in order: flush saves, set up, check for changes, read the remote copy, merge, save locally, upload under a write lease, move attachment files, and report. Side branches show the early stop when nothing changed and the retry when another device wrote first.](/assets/diagrams/sync-cycle.svg)
+
+[Open the interactive diagram](/assets/diagrams/sync-cycle.html)
+
 ## Inputs and Outputs
 
 - Input A: local snapshot (`tasks`, `projects`, `sections`, `areas`, `people`, `settings`)
 - Input B: remote snapshot (same shape)
 - Output: merged snapshot + merge stats (`conflicts`, `clockSkew`, `timestampAdjustments`, `futureTimestampClamps`, `conflictIds`, `conflictReasonCounts`, `conflictSamples`, `timestampAdjustmentIds`, `futureTimestampClampIds`) plus bounded sync diagnostics logs.
+
+![What sync moves: the store saves every change into the local SQLite database, a step strips device-only fields, an optional passphrase seal runs, and the result leaves as the data file plus one copy per attached file. Hidden sidebar views and window size never enter the document.](/assets/diagrams/sync-data-model.svg)
+
+[Open the interactive diagram](/assets/diagrams/sync-data-model.html)
 
 ## Snapshot-Based Transport
 

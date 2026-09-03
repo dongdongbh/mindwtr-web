@@ -4,11 +4,19 @@ Mindwtr 采用本地优先同步，并以确定性方式处理冲突。
 
 本页是供维护者与调试工作使用的技术合并参考。有关面向用户的后端设置、恢复步骤和操作指南，请参阅[数据与同步](/zh-Hans/data-sync/)。
 
+![一次同步周期的顺序：写出待保存的编辑、完成设置、检查是否有变化、读取远端副本、合并、先保存到本地、在写入租约下上传、传输附件文件，最后报告结果。旁支显示两种情况：没有变化时提前结束，以及其他设备先写入时重新排队。](/assets/diagrams/sync-cycle.svg)
+
+[打开交互式图表](/assets/diagrams/sync-cycle.html)
+
 ## 输入与输出
 
 - 输入 A：本地快照（`tasks`、`projects`、`sections`、`areas`、`people`、`settings`）
 - 输入 B：远程快照（结构相同）
 - 输出：合并后的快照 + 合并统计信息（`conflicts`、`clockSkew`、`timestampAdjustments`、`futureTimestampClamps`、`conflictIds`、`conflictReasonCounts`、`conflictSamples`、`timestampAdjustmentIds`、`futureTimestampClampIds`），以及有上限的同步诊断日志。
+
+![同步会搬运什么：仓库把每次改动保存到本地 SQLite 数据库，随后一步会剥掉只属于本设备的字段，可选的口令封装再运行，结果作为数据文件外加每个附件一份副本发送出去。隐藏的侧边栏视图和窗口大小从不进入该文档。](/assets/diagrams/sync-data-model.svg)
+
+[打开交互式图表](/assets/diagrams/sync-data-model.html)
 
 ## 基于快照的传输
 

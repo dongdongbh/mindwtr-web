@@ -29,23 +29,11 @@ pamac install mindwtr-bin
 
 ### Arch Linux (AUR, Build from Source)
 
-[![AUR mindwtr Version](https://img.shields.io/aur/version/mindwtr?logo=arch-linux&logoColor=white&color=1793d1&label=mindwtr)](https://aur.archlinux.org/packages/mindwtr)
-
-Use the source-built AUR package if you prefer to build locally:
-
-```bash
-# Using yay
-yay -S mindwtr
-
-# Using paru
-paru -S mindwtr
-```
-
-[AUR package: mindwtr](https://aur.archlinux.org/packages/mindwtr)
+A source-built package, `mindwtr`, also exists on the AUR. It is maintained by the community, not by the Mindwtr project, and it is not part of the Mindwtr release pipeline. Use `mindwtr-bin` unless you need to build locally.
 
 #### Verify the official AUR packages
 
-Mindwtr recognizes exactly three AUR identities: `mindwtr-bin` (stable prebuilt), `mindwtr` (stable source build), and [`mindwtr-beta-bin`](/start/beta-channels) (prerelease). Their package source must point to `github.com/dongdongbh/Mindwtr`; the maintainer or co-maintainer must include `dongdongbh`. Review every `PKGBUILD` and `.SRCINFO` change before building. New release checksum manifests are signed by key fingerprint `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`.
+Mindwtr publishes exactly two AUR identities: `mindwtr-bin` (stable prebuilt) and [`mindwtr-beta-bin`](/start/beta-channels) (prerelease). Their package source must point to `github.com/dongdongbh/Mindwtr`, and the maintainer must be `dongdongbh`. Review every `PKGBUILD` and `.SRCINFO` change before building. New release checksum manifests are signed by key fingerprint `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`.
 
 ### Debian / Ubuntu
 

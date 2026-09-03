@@ -520,15 +520,15 @@ sudo apt install libwebkit2gtk-4.1-0
 
 ### Warum ist die AUR-Installation oder das Build-Verzeichnis so groß?
 
-Verwenden Sie auf Arch-basierten Distributionen `mindwtr-bin`, sofern Sie nicht ausdrücklich aus dem Quellcode bauen möchten:
+Verwenden Sie auf Arch-basierten Distributionen `mindwtr-bin`:
 
 ```bash
 yay -S mindwtr-bin
 ```
 
-`mindwtr-bin` installiert das vorgefertigte GitHub-Release-Paket und sollte der kleine, schnelle AUR-Weg sein. Das Quellpaket `mindwtr` baut die Desktop-App lokal und muss Build-Abhängigkeiten für eine Tauri-, Rust-, Bun- und React-App herunterladen. Dadurch kann der Build erheblich mehr Speicherplatz belegen.
+`mindwtr-bin` installiert das vorgefertigte GitHub-Release-Paket und ist der kleine, schnelle AUR-Weg. Das Quellpaket `mindwtr` wird von der Community gepflegt, nicht vom Mindwtr-Projekt. Es baut die Desktop-App lokal und muss Build-Abhängigkeiten für eine Tauri-, Rust-, Bun- und React-App herunterladen, wodurch der Build erheblich mehr Speicherplatz belegen kann.
 
-Das Quellpaket soll das Archiv des Release-Tags statt des gesamten Git-Verlaufs abrufen. Wenn ein AUR-Helfer einen sehr großen Git-Checkout herunterlädt, prüfen Sie, ob Sie für den Binärpaketweg `mindwtr-bin` installiert haben, oder melden Sie das Verhalten des Quellpakets, damit das AUR-Rezept korrigiert werden kann.
+Wenn ein AUR-Helfer einen sehr großen Git-Checkout herunterlädt, prüfen Sie, ob Sie `mindwtr-bin` installiert haben. Fragen zum Quellpaket richten Sie über dessen AUR-Seite an den Maintainer des Pakets.
 
 ### App stürzt beim Start ab (Mobilgeräte)
 

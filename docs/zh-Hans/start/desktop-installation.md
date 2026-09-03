@@ -29,23 +29,11 @@ pamac install mindwtr-bin
 
 ### Arch Linux（AUR，从源码构建）
 
-[![AUR mindwtr 版本](https://img.shields.io/aur/version/mindwtr?logo=arch-linux&logoColor=white&color=1793d1&label=mindwtr)](https://aur.archlinux.org/packages/mindwtr)
-
-如果你希望在本地构建，请使用源码构建的 AUR 软件包：
-
-```bash
-# 使用 yay
-yay -S mindwtr
-
-# 使用 paru
-paru -S mindwtr
-```
-
-[AUR 软件包：mindwtr](https://aur.archlinux.org/packages/mindwtr)
+AUR 上还有一个从源码构建的软件包 `mindwtr`。它由社区维护，不由 Mindwtr 项目维护，也不属于 Mindwtr 的发布流程。除非你需要在本地构建，否则请使用 `mindwtr-bin`。
 
 #### 验证官方 AUR 软件包
 
-Mindwtr 只认可三个 AUR 软件包标识：`mindwtr-bin`（稳定版预构建包）、`mindwtr`（稳定版源码构建包）和 [`mindwtr-beta-bin`](/zh-Hans/start/beta-channels)（预发布版）。软件包源必须指向 `github.com/dongdongbh/Mindwtr`，维护者或共同维护者中必须包含 `dongdongbh`。构建前请检查 `PKGBUILD` 和 `.SRCINFO` 的每项变更。新的发布校验和清单使用指纹为 `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D` 的密钥签名。
+Mindwtr 只发布两个 AUR 软件包标识：`mindwtr-bin`（稳定版预构建包）和 [`mindwtr-beta-bin`](/zh-Hans/start/beta-channels)（预发布版）。软件包源必须指向 `github.com/dongdongbh/Mindwtr`，维护者必须是 `dongdongbh`。构建前请检查 `PKGBUILD` 和 `.SRCINFO` 的每项变更。新的发布校验和清单使用指纹为 `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D` 的密钥签名。
 
 ### Debian / Ubuntu
 

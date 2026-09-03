@@ -94,7 +94,7 @@ RC 工作流程為 `.github/workflows/release-rc.yml`。
 
 穩定版 `release.yml` 仍是穩定版發布工作流程。其防護會阻止預發布標籤發布至僅限穩定版的管道，例如 Google Play 正式環境、Microsoft Store、Snap stable、Linux APT/RPM 儲存庫、Flathub stable、AUR stable、Scoop、winget、Homebrew 或 Chocolatey。
 
-Flathub beta 需要 `flathub/tech.dongdongbh.mindwtr` 中的 beta 分支與權限。穩定版在完成乾淨容器驗證與擁有權檢查後，由 `release.yml` 發布 AUR `mindwtr-bin` 與 `mindwtr` 套件。RC 建置透過 `update-aur-beta.yml` 發布 `mindwtr-beta-bin`，並執行相同的安全檢查。如果 AUR 在維護期間停用推送，請在恢復推送後重新執行該管道。受 `aur-publish` Environment 保護的 `publish-aur.yml` 工作流程只用於復原經過審核的穩定版 `mindwtr` 來源套件提案；它不會發布二進位或 beta 套件。
+Flathub beta 需要 `flathub/tech.dongdongbh.mindwtr` 中的 beta 分支與權限。穩定版在完成乾淨容器驗證與擁有權檢查後，由 `release.yml` 發布 AUR `mindwtr-bin` 套件。從原始碼建置的 `mindwtr` 套件由社群維護，不屬於發行流程。RC 建置透過 `update-aur-beta.yml` 發布 `mindwtr-beta-bin`，並執行相同的安全檢查。如果 AUR 在維護期間停用推送，請在恢復推送後重新執行該管道。受 `aur-publish` Environment 保護的 `publish-aur.yml` 工作流程只用於復原經過審核的穩定版 `mindwtr` 來源套件提案；它不會發布二進位或 beta 套件。
 
 由於上傳至 Play 測試會耗用一個 Android `versionCode`，每個上傳至 Play 的 RC 都需要新的 `versionCode`。RC 工作流程會在 Android 建置開始前解析一次該代碼，接著 Play 建置與 Android FOSS 建置會使用相同的預檢輸出並平行執行。工作流程會上傳一個 AAB，並將相同的 versionCode 指派至每個已設定的測試群組。目前最終穩定版流程也應使用具有更高 `versionCode` 的全新正式環境上傳，或者未來的穩定版提升工作流程應提升已測試的 Play 建置。除非穩定版工作流程已能提升現有建置，否則不得為 Android `versionCode` 已上傳至 Play 的最終穩定版本加上標籤。
 

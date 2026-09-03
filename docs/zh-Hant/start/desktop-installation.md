@@ -29,23 +29,11 @@ pamac install mindwtr-bin
 
 ### Arch Linux（AUR，從原始碼建置）
 
-[![AUR mindwtr Version](https://img.shields.io/aur/version/mindwtr?logo=arch-linux&logoColor=white&color=1793d1&label=mindwtr)](https://aur.archlinux.org/packages/mindwtr)
-
-若偏好在本機建置，請使用從原始碼建置的 AUR 套件：
-
-```bash
-# Using yay
-yay -S mindwtr
-
-# Using paru
-paru -S mindwtr
-```
-
-[AUR 套件：mindwtr](https://aur.archlinux.org/packages/mindwtr)
+AUR 上另有一個從原始碼建置的套件 `mindwtr`。它由社群維護，並非由 Mindwtr 專案維護，也不屬於 Mindwtr 的發行流程。除非你需要在本機建置，否則請使用 `mindwtr-bin`。
 
 #### 驗證官方 AUR 套件
 
-Mindwtr 僅認可三個 AUR 套件識別：`mindwtr-bin`（穩定版預先建置套件）、`mindwtr`（穩定版原始碼建置套件）及 [`mindwtr-beta-bin`](/zh-Hant/start/beta-channels)（預發行版）。套件來源必須指向 `github.com/dongdongbh/Mindwtr`，維護者或共同維護者中必須包含 `dongdongbh`。建置前請檢查 `PKGBUILD` 與 `.SRCINFO` 的每項變更。新的發行校驗和資訊清單使用指紋為 `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D` 的金鑰簽署。
+Mindwtr 僅發行兩個 AUR 套件識別：`mindwtr-bin`（穩定版預先建置套件）與 [`mindwtr-beta-bin`](/zh-Hant/start/beta-channels)（預發行版）。套件來源必須指向 `github.com/dongdongbh/Mindwtr`，維護者必須是 `dongdongbh`。建置前請檢查 `PKGBUILD` 與 `.SRCINFO` 的每項變更。新的發行校驗和資訊清單使用指紋為 `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D` 的金鑰簽署。
 
 ### Debian / Ubuntu
 

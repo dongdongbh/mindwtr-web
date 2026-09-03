@@ -8,7 +8,7 @@
 
 | 平台 | 安装方式 |
 | --- | --- |
-| **Arch Linux** | `mindwtr-bin` 预构建 AUR 包，或 `mindwtr` 源码构建 AUR 包 |
+| **Arch Linux** | `mindwtr-bin` 预构建 AUR 包（另有社区维护的 `mindwtr` 源码包） |
 | **Debian/Ubuntu** | 添加 APT 仓库（推荐），或从 [Releases](https://github.com/dongdongbh/Mindwtr/releases) 下载 `.deb` |
 | **Fedora/RHEL** | 添加 DNF 仓库（推荐），或从 [Releases](https://github.com/dongdongbh/Mindwtr/releases) 下载 `.rpm` |
 | **Flatpak** | 从 [Flathub](https://flathub.org/apps/tech.dongdongbh.mindwtr) 安装 |

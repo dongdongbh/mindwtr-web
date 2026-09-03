@@ -8,7 +8,7 @@ Bienvenue dans Mindwtr ! Ce guide vous aidera à être rapidement opérationnel.
 
 | Plateforme | Installation |
 | --- | --- |
-| **Arch Linux** | Paquet AUR précompilé `mindwtr-bin` ou paquet AUR `mindwtr` compilé depuis les sources |
+| **Arch Linux** | Paquet AUR précompilé `mindwtr-bin` (un paquet source `mindwtr` maintenu par la communauté existe aussi) |
 | **Debian/Ubuntu** | Ajoutez le dépôt APT, recommandé, ou téléchargez le `.deb` depuis [Releases](https://github.com/dongdongbh/Mindwtr/releases) |
 | **Fedora/RHEL** | Ajoutez le dépôt DNF, recommandé, ou téléchargez le `.rpm` depuis [Releases](https://github.com/dongdongbh/Mindwtr/releases) |
 | **Flatpak** | Installez depuis [Flathub](https://flathub.org/apps/tech.dongdongbh.mindwtr) |

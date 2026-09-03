@@ -528,15 +528,15 @@ sudo apt install libwebkit2gtk-4.1-0
 
 ### ¿Por qué ocupa tanto el directorio de instalación o compilación de AUR?
 
-Usa `mindwtr-bin` en las distribuciones basadas en Arch, a menos que quieras específicamente compilar desde el código fuente:
+Usa `mindwtr-bin` en las distribuciones basadas en Arch:
 
 ```bash
 yay -S mindwtr-bin
 ```
 
-`mindwtr-bin` instala el paquete precompilado de GitHub Releases y debería ser la vía pequeña y rápida de AUR. El paquete de código fuente, `mindwtr`, compila localmente la aplicación de escritorio y debe descargar las dependencias de compilación de una aplicación Tauri, Rust, Bun y React. Esto puede usar mucho más espacio en disco durante la compilación.
+`mindwtr-bin` instala el paquete precompilado de GitHub Releases y es la vía pequeña y rápida de AUR. El paquete de código fuente, `mindwtr`, lo mantiene la comunidad, no el proyecto Mindwtr. Compila localmente la aplicación de escritorio y debe descargar las dependencias de compilación de una aplicación Tauri, Rust, Bun y React, lo que puede usar mucho más espacio en disco durante la compilación.
 
-El paquete de código fuente está pensado para obtener el archivo de la etiqueta de la versión en lugar de todo el historial de Git. Si un auxiliar de AUR parece descargar un repositorio de Git muy grande, comprueba que instalaste `mindwtr-bin` para usar la vía del paquete binario o informa del comportamiento del paquete de código fuente para que pueda corregirse la receta de AUR.
+Si un auxiliar de AUR parece descargar un repositorio de Git muy grande, comprueba que instalaste `mindwtr-bin`. Las preguntas sobre el paquete de código fuente van a su mantenedor de AUR a través de la página del paquete en AUR.
 
 ### La aplicación se cierra al iniciarse (dispositivos móviles)
 

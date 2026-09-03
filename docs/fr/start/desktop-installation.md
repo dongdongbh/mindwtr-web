@@ -29,23 +29,11 @@ pamac install mindwtr-bin
 
 ### Arch Linux (AUR, compilation depuis les sources)
 
-[![Version AUR de mindwtr](https://img.shields.io/aur/version/mindwtr?logo=arch-linux&logoColor=white&color=1793d1&label=mindwtr)](https://aur.archlinux.org/packages/mindwtr)
-
-Utilisez le paquet AUR compilé depuis les sources si vous préférez effectuer la compilation localement :
-
-```bash
-# Using yay
-yay -S mindwtr
-
-# Using paru
-paru -S mindwtr
-```
-
-[Paquet AUR : mindwtr](https://aur.archlinux.org/packages/mindwtr)
+Un paquet compilé depuis les sources, `mindwtr`, existe également sur l’AUR. Il est maintenu par la communauté, pas par le projet Mindwtr, et il ne fait pas partie du processus de publication de Mindwtr. Utilisez `mindwtr-bin`, sauf si vous devez compiler localement.
 
 #### Vérifier les paquets AUR officiels
 
-Mindwtr reconnaît exactement trois identités AUR : `mindwtr-bin` (binaire stable), `mindwtr` (compilation stable depuis les sources) et [`mindwtr-beta-bin`](/fr/start/beta-channels) (préversion). La source du paquet doit pointer vers `github.com/dongdongbh/Mindwtr`, et `dongdongbh` doit figurer comme mainteneur ou co-mainteneur. Vérifiez chaque modification de `PKGBUILD` et `.SRCINFO` avant la compilation. Les nouveaux manifestes de sommes de contrôle sont signés avec la clé `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`.
+Mindwtr publie exactement deux identités AUR : `mindwtr-bin` (binaire stable) et [`mindwtr-beta-bin`](/fr/start/beta-channels) (préversion). La source du paquet doit pointer vers `github.com/dongdongbh/Mindwtr`, et le mainteneur doit être `dongdongbh`. Vérifiez chaque modification de `PKGBUILD` et `.SRCINFO` avant la compilation. Les nouveaux manifestes de sommes de contrôle sont signés avec la clé `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`.
 
 ### Debian / Ubuntu
 

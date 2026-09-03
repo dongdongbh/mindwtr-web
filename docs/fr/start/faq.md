@@ -528,15 +528,15 @@ sudo apt install libwebkit2gtk-4.1-0
 
 ### Pourquoi le dossier d’installation ou de compilation AUR est-il si volumineux ?
 
-Utilisez `mindwtr-bin` sur les distributions basées sur Arch, sauf si vous souhaitez expressément compiler depuis les sources :
+Utilisez `mindwtr-bin` sur les distributions basées sur Arch :
 
 ```bash
 yay -S mindwtr-bin
 ```
 
-`mindwtr-bin` installe le paquet précompilé de la version GitHub et devrait constituer la méthode AUR légère et rapide. Le paquet source, `mindwtr`, compile l’application de bureau localement et doit télécharger les dépendances de compilation d’une application Tauri, Rust, Bun et React. Cela peut utiliser beaucoup plus d’espace disque pendant la compilation.
+`mindwtr-bin` installe le paquet précompilé de la version GitHub et constitue la méthode AUR légère et rapide. Le paquet source, `mindwtr`, est maintenu par la communauté, pas par le projet Mindwtr. Il compile l’application de bureau localement et doit télécharger les dépendances de compilation d’une application Tauri, Rust, Bun et React, ce qui peut utiliser beaucoup plus d’espace disque pendant la compilation.
 
-Le paquet source est censé récupérer l’archive de l’étiquette de version plutôt que l’intégralité de l’historique Git. Si un outil AUR semble télécharger une copie Git très volumineuse, vérifiez que vous avez installé `mindwtr-bin` pour utiliser le paquet binaire, ou signalez le comportement du paquet source afin que la recette AUR puisse être corrigée.
+Si un outil AUR semble télécharger une copie Git très volumineuse, vérifiez que vous avez installé `mindwtr-bin`. Les questions sur le paquet source vont à son mainteneur AUR, via la page AUR du paquet.
 
 ### L’application plante au démarrage (mobile)
 

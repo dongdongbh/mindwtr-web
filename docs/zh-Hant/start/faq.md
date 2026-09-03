@@ -526,15 +526,15 @@ sudo apt install libwebkit2gtk-4.1-0
 
 ### 為什麼 AUR 安裝或建置目錄這麼大？
 
-除非明確想從原始碼建置，否則 Arch 系列發行版請使用 `mindwtr-bin`：
+Arch 系列發行版請使用 `mindwtr-bin`：
 
 ```bash
 yay -S mindwtr-bin
 ```
 
-`mindwtr-bin` 會安裝預先建置的 GitHub 發行套件，應是體積小且快速的 AUR 路徑。原始碼套件 `mindwtr` 會在本機建置桌面應用程式，必須下載 Tauri、Rust、Bun 與 React 應用程式的建置相依套件，建置期間可能使用大量磁碟空間。
+`mindwtr-bin` 會安裝預先建置的 GitHub 發行套件，是體積小且快速的 AUR 路徑。原始碼套件 `mindwtr` 由社群維護，並非由 Mindwtr 專案維護。它會在本機建置桌面應用程式，必須下載 Tauri、Rust、Bun 與 React 應用程式的建置相依套件，建置期間可能使用大量磁碟空間。
 
-原始碼套件應擷取發行標籤封存，而不是完整 Git 歷史。如果 AUR helper 似乎下載了非常大的 Git checkout，請確認二進位套件路徑安裝的是 `mindwtr-bin`；或回報原始碼套件行為，讓 AUR 配方得以修正。
+如果 AUR helper 似乎下載了非常大的 Git checkout，請確認你安裝的是 `mindwtr-bin`。有關原始碼套件的問題，請透過該套件的 AUR 頁面詢問它的 AUR 維護者。
 
 ### 應用程式啟動時當機（行動版）
 

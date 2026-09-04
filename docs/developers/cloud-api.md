@@ -66,7 +66,7 @@ Create accepts either `title` or quick-add `input`, plus optional `props`. Patch
 POST /v1/capture
 ```
 
-Capture creates an Inbox task from a transcription, an audio recording, or both, sent as multipart form data, JSON, or plain text. See [Capture webhook](/power-users/capture-webhook) for the fields, the responses, and the Pebble Index 01 setup.
+Capture creates an Inbox task from a transcription, an audio recording, or both. The body can be multipart form data, JSON, or plain text, but only multipart form data can carry audio. See [Capture webhook](/power-users/capture-webhook) for the fields, the responses, and the Pebble Index 01 setup.
 
 ## Projects, Areas, and Sections
 

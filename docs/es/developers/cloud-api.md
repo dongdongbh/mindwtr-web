@@ -66,7 +66,7 @@ La creación acepta `title` o un `input` de adición rápida, además de `props`
 POST /v1/capture
 ```
 
-La captura crea una tarea en la bandeja de entrada a partir de una transcripción, una grabación de audio o ambas, enviadas como datos de formulario multiparte, como JSON o como texto plano. Consulta [Webhook de captura](/es/power-users/capture-webhook) para ver los campos, las respuestas y la configuración del Pebble Index 01.
+La captura crea una tarea en la bandeja de entrada a partir de una transcripción, una grabación de audio o ambas. El cuerpo puede enviarse como datos de formulario multiparte, como JSON o como texto plano, pero solo los datos de formulario multiparte pueden llevar audio. Consulta [Webhook de captura](/es/power-users/capture-webhook) para ver los campos, las respuestas y la configuración del Pebble Index 01.
 
 ## Proyectos, áreas y secciones
 

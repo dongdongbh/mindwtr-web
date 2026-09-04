@@ -10,7 +10,7 @@ Cela nécessite le [serveur cloud auto-hébergé](/fr/power-users/docker-deploym
 POST /v1/capture
 ```
 
-Chaque requête porte le même jeton bearer que le reste de l'API, dans un en-tête `Authorization: Bearer <token>`. Le corps peut être `multipart/form-data`, `application/json` avec les mêmes noms de champs, ou `text/plain`, où tout le corps est la transcription. Les champs inconnus sont ignorés.
+Chaque requête porte le même jeton bearer que le reste de l'API, dans un en-tête `Authorization: Bearer <token>`. Le corps peut être `multipart/form-data`, `application/json` avec les mêmes noms de champs, ou `text/plain`, où tout le corps est la transcription. Seul `multipart/form-data` peut transporter de l'audio : les requêtes JSON et texte brut ne contiennent que du texte, et un champ `audio` placé dans le JSON est ignoré. Les champs inconnus sont ignorés.
 
 ### Texte seul
 
@@ -37,7 +37,7 @@ curl -X POST https://your-server.example/v1/capture \
 | Champ | Effet |
 | --- | --- |
 | `transcription` | Le texte capturé. La première ligne devient le titre de la tâche et le texte complet devient la description. `text` et `title` sont acceptés comme autres noms du même champ. |
-| `audio` | L'enregistrement à joindre à la tâche. Il se synchronise vers vos appareils comme n'importe quelle autre pièce jointe. |
+| `audio` | L'enregistrement à joindre à la tâche. Il se synchronise vers vos appareils comme n'importe quelle autre pièce jointe. Il n'est lu que dans une requête `multipart/form-data`. |
 | `recordedAt` | Le moment de la capture, en millisecondes depuis l'époque ou sous forme d'horodatage ISO 8601. Il devient la date de création de la tâche s'il est valide et pas dans le futur. |
 | `client` | Une courte étiquette pour l'appareil ou l'application qui a envoyé la capture. Elle est notée à la fin de la description sous la forme `Captured with <client>`. |
 
@@ -50,7 +50,7 @@ Envoyez au moins l'un des champs `transcription` et `audio`. L'enregistrement pe
 | `201` | La tâche a été créée. Le corps de la réponse est la nouvelle tâche. |
 | `400` | Ni transcription ni fichier audio n'a été envoyé. |
 | `401` | Le jeton est absent ou incorrect. |
-| `413` | Le fichier audio dépasse la taille maximale des pièces jointes du serveur. |
+| `413` | La requête dépasse la taille maximale du serveur : un fichier audio au-delà de la limite des pièces jointes, ou une transcription au-delà de la limite de texte. |
 | `415` | Le type du fichier audio n'est pas pris en charge. |
 
 ## Pebble Index 01

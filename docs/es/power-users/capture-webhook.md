@@ -10,7 +10,7 @@ Esto necesita el [servidor en la nube autoalojado](/es/power-users/docker-deploy
 POST /v1/capture
 ```
 
-Cada solicitud lleva el mismo token de portador que el resto de la API, en una cabecera `Authorization: Bearer <token>`. El cuerpo puede ser `multipart/form-data`, `application/json` con los mismos nombres de campo, o `text/plain`, donde todo el cuerpo es la transcripción. Los campos desconocidos se ignoran.
+Cada solicitud lleva el mismo token de portador que el resto de la API, en una cabecera `Authorization: Bearer <token>`. El cuerpo puede ser `multipart/form-data`, `application/json` con los mismos nombres de campo, o `text/plain`, donde todo el cuerpo es la transcripción. Solo `multipart/form-data` puede llevar audio: las solicitudes JSON y de texto plano son solo de texto, y un campo `audio` dentro del JSON se ignora. Los campos desconocidos se ignoran.
 
 ### Solo texto
 
@@ -37,7 +37,7 @@ curl -X POST https://your-server.example/v1/capture \
 | Campo | Qué hace |
 | --- | --- |
 | `transcription` | El texto capturado. La primera línea se convierte en el título de la tarea y el texto completo pasa a la descripción. `text` y `title` se aceptan como otros nombres del mismo campo. |
-| `audio` | La grabación que se adjunta a la tarea. Se sincroniza con tus dispositivos como cualquier otro adjunto. |
+| `audio` | La grabación que se adjunta a la tarea. Se sincroniza con tus dispositivos como cualquier otro adjunto. Solo se lee de una solicitud `multipart/form-data`. |
 | `recordedAt` | Cuándo se hizo la captura, en milisegundos desde la época o como marca de tiempo ISO 8601. Pasa a ser la hora de creación de la tarea cuando es válida y no está en el futuro. |
 | `client` | Una etiqueta corta para el dispositivo o la aplicación que envió la captura. Se anota al final de la descripción como `Captured with <client>`. |
 
@@ -50,7 +50,7 @@ Envía al menos uno de los campos `transcription` y `audio`. La grabación puede
 | `201` | La tarea se creó. El cuerpo de la respuesta es la tarea nueva. |
 | `400` | No se envió ni transcripción ni archivo de audio. |
 | `401` | Falta el token o es incorrecto. |
-| `413` | El archivo de audio supera el límite de tamaño de adjuntos del servidor. |
+| `413` | La solicitud supera el límite de tamaño del servidor: un audio por encima del límite de adjuntos, o una transcripción por encima del límite de texto. |
 | `415` | El tipo del archivo de audio no es compatible. |
 
 ## Pebble Index 01

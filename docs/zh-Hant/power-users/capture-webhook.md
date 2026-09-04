@@ -10,7 +10,7 @@
 POST /v1/capture
 ```
 
-每個請求都要帶上與 API 其他部分相同的 bearer 權杖，放在 `Authorization: Bearer <token>` 請求標頭中。請求內容可以是 `multipart/form-data`、使用相同欄位名稱的 `application/json`，或是 `text/plain`（此時整個請求內容就是轉錄文字）。未知欄位會被忽略。
+每個請求都要帶上與 API 其他部分相同的 bearer 權杖，放在 `Authorization: Bearer <token>` 請求標頭中。請求內容可以是 `multipart/form-data`、使用相同欄位名稱的 `application/json`，或是 `text/plain`（此時整個請求內容就是轉錄文字）。只有 `multipart/form-data` 能夾帶音訊：JSON 與純文字請求只包含文字，JSON 中的 `audio` 欄位會被忽略。未知欄位會被忽略。
 
 ### 只傳送文字
 
@@ -37,7 +37,7 @@ curl -X POST https://your-server.example/v1/capture \
 | 欄位 | 作用 |
 | --- | --- |
 | `transcription` | 收集到的文字。第一行會成為任務標題，全文則進入描述。`text` 與 `title` 也是同一個欄位的名稱。 |
-| `audio` | 要附加到任務上的錄音。它會像其他附件一樣同步到你的裝置。 |
+| `audio` | 要附加到任務上的錄音。它會像其他附件一樣同步到你的裝置。只有 `multipart/form-data` 請求中的錄音才會被讀取。 |
 | `recordedAt` | 錄製的時間，可使用毫秒時間戳記或 ISO 8601 時間格式。只要它有效且不在未來，就會成為任務的建立時間。 |
 | `client` | 傳送這次收集的裝置或應用程式的簡短名稱。它會以 `Captured with <client>` 的形式寫在描述結尾。 |
 
@@ -50,7 +50,7 @@ curl -X POST https://your-server.example/v1/capture \
 | `201` | 任務已建立。回應內容就是這筆新任務。 |
 | `400` | 既沒有轉錄文字，也沒有音訊檔案。 |
 | `401` | 權杖遺漏或錯誤。 |
-| `413` | 音訊檔案超過伺服器的附件大小上限。 |
+| `413` | 請求超過伺服器的大小上限：音訊超過附件大小上限，或轉錄文字超過文字大小上限。 |
 | `415` | 不支援這種音訊檔案類型。 |
 
 ## Pebble Index 01

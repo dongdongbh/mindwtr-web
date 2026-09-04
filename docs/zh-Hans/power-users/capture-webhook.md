@@ -10,7 +10,7 @@
 POST /v1/capture
 ```
 
-每个请求都要带上与 API 其余部分相同的 bearer 令牌，放在 `Authorization: Bearer <token>` 请求头中。请求体可以是 `multipart/form-data`、带有相同字段名的 `application/json`，或者 `text/plain`（此时整个请求体就是转写文本）。未知字段会被忽略。
+每个请求都要带上与 API 其余部分相同的 bearer 令牌，放在 `Authorization: Bearer <token>` 请求头中。请求体可以是 `multipart/form-data`、带有相同字段名的 `application/json`，或者 `text/plain`（此时整个请求体就是转写文本）。只有 `multipart/form-data` 能携带音频：JSON 和纯文本请求只包含文本，JSON 里的 `audio` 字段会被忽略。未知字段会被忽略。
 
 ### 只发送文字
 
@@ -37,7 +37,7 @@ curl -X POST https://your-server.example/v1/capture \
 | 字段 | 作用 |
 | --- | --- |
 | `transcription` | 收集到的文字。第一行成为任务标题，全文进入描述。`text` 和 `title` 也是同一个字段的名称。 |
-| `audio` | 要附加到任务上的录音。它会像其他附件一样同步到你的设备。 |
+| `audio` | 要附加到任务上的录音。它会像其他附件一样同步到你的设备。只有 `multipart/form-data` 请求中的录音才会被读取。 |
 | `recordedAt` | 录制的时间，可用毫秒时间戳或 ISO 8601 时间格式。只要它有效且不在将来，就会成为任务的创建时间。 |
 | `client` | 发送这次收集的设备或应用的简短名称。它会以 `Captured with <client>` 的形式写在描述末尾。 |
 
@@ -50,7 +50,7 @@ curl -X POST https://your-server.example/v1/capture \
 | `201` | 任务已创建。响应体就是这条新任务。 |
 | `400` | 既没有转写文本，也没有音频文件。 |
 | `401` | 令牌缺失或错误。 |
-| `413` | 音频文件超过了服务器的附件大小上限。 |
+| `413` | 请求超过了服务器的大小上限：音频超过附件大小上限，或者转写文本超过文本大小上限。 |
 | `415` | 不支持这种音频文件类型。 |
 
 ## Pebble Index 01

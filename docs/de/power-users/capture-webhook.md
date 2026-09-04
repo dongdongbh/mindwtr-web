@@ -10,7 +10,7 @@ Dafür brauchen Sie den [selbst gehosteten Cloud-Server](/de/power-users/docker-
 POST /v1/capture
 ```
 
-Jede Anfrage trägt denselben Bearer-Token wie der Rest der API, in einem `Authorization: Bearer <token>`-Header. Der Inhalt kann `multipart/form-data` sein, `application/json` mit denselben Feldnamen oder `text/plain`, wobei der gesamte Inhalt die Transkription ist. Unbekannte Felder werden ignoriert.
+Jede Anfrage trägt denselben Bearer-Token wie der Rest der API, in einem `Authorization: Bearer <token>`-Header. Der Inhalt kann `multipart/form-data` sein, `application/json` mit denselben Feldnamen oder `text/plain`, wobei der gesamte Inhalt die Transkription ist. Nur `multipart/form-data` kann Audio übertragen: JSON- und Klartext-Anfragen enthalten nur Text, und ein `audio`-Feld innerhalb von JSON wird ignoriert. Unbekannte Felder werden ignoriert.
 
 ### Nur Text
 
@@ -37,7 +37,7 @@ curl -X POST https://your-server.example/v1/capture \
 | Feld | Wirkung |
 | --- | --- |
 | `transcription` | Der erfasste Text. Die erste Zeile wird zum Aufgabentitel, der vollständige Text wird zur Beschreibung. `text` und `title` werden als weitere Namen für dasselbe Feld akzeptiert. |
-| `audio` | Die Aufnahme, die an die Aufgabe angehängt wird. Sie wird wie jeder andere Anhang auf Ihre Geräte synchronisiert. |
+| `audio` | Die Aufnahme, die an die Aufgabe angehängt wird. Sie wird wie jeder andere Anhang auf Ihre Geräte synchronisiert. Sie wird nur aus einer `multipart/form-data`-Anfrage gelesen. |
 | `recordedAt` | Der Zeitpunkt der Aufnahme, als Millisekunden seit der Epoche oder als ISO-8601-Zeitstempel. Er wird zur Erstellungszeit der Aufgabe, sofern er gültig ist und nicht in der Zukunft liegt. |
 | `client` | Eine kurze Bezeichnung für das Gerät oder die App, die die Erfassung gesendet hat. Sie wird am Ende der Beschreibung als `Captured with <client>` vermerkt. |
 
@@ -50,7 +50,7 @@ Senden Sie mindestens eines der Felder `transcription` und `audio`. Die Aufnahme
 | `201` | Die Aufgabe wurde erstellt. Der Antwortinhalt ist die neue Aufgabe. |
 | `400` | Es wurde weder eine Transkription noch eine Audiodatei gesendet. |
 | `401` | Der Token fehlt oder ist falsch. |
-| `413` | Die Audiodatei ist größer als das Anhanglimit des Servers. |
+| `413` | Die Anfrage überschreitet das Größenlimit des Servers: entweder eine Audiodatei über dem Anhanglimit oder eine Transkription über dem Textlimit. |
 | `415` | Der Typ der Audiodatei wird nicht unterstützt. |
 
 ## Pebble Index 01

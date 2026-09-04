@@ -66,7 +66,7 @@ POST /v1/tasks/:id/archive
 POST /v1/capture
 ```
 
-收集端点可以用转写文本、录音或两者一起创建一条收集箱任务，请求体可以是多部分表单数据、JSON 或纯文本。字段、响应以及 Pebble Index 01 的设置方法，请见[收集 Webhook](/zh-Hans/power-users/capture-webhook)。
+收集端点可以用转写文本、录音或两者一起创建一条收集箱任务。请求体可以是多部分表单数据、JSON 或纯文本，但只有多部分表单数据能携带音频。字段、响应以及 Pebble Index 01 的设置方法，请见[收集 Webhook](/zh-Hans/power-users/capture-webhook)。
 
 ## 项目、领域与分区
 

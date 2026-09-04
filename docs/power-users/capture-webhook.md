@@ -10,7 +10,7 @@ This needs the [self-hosted cloud server](/power-users/docker-deployment). If yo
 POST /v1/capture
 ```
 
-Every request carries the same bearer token as the rest of the API, in an `Authorization: Bearer <token>` header. The body can be `multipart/form-data`, `application/json` with the same field names, or `text/plain`, where the whole body is the transcription. Unknown fields are ignored.
+Every request carries the same bearer token as the rest of the API, in an `Authorization: Bearer <token>` header. The body can be `multipart/form-data`, `application/json` with the same field names, or `text/plain`, where the whole body is the transcription. Only `multipart/form-data` can carry audio: JSON and plain-text requests are text only, and an `audio` field inside JSON is ignored. Unknown fields are ignored.
 
 ### Text only
 
@@ -37,7 +37,7 @@ curl -X POST https://your-server.example/v1/capture \
 | Field | What it does |
 | --- | --- |
 | `transcription` | The captured text. The first line becomes the task title, and the full text becomes the description. `text` and `title` are accepted as other names for the same field. |
-| `audio` | The recording to attach to the task. It syncs to your devices like any other attachment. |
+| `audio` | The recording to attach to the task. It syncs to your devices like any other attachment. It is only read from a `multipart/form-data` request. |
 | `recordedAt` | When the capture happened, as epoch milliseconds or an ISO 8601 timestamp. It becomes the task's creation time when it is valid and not in the future. |
 | `client` | A short label for the device or app that sent the capture. It is noted at the end of the description as `Captured with <client>`. |
 
@@ -50,7 +50,7 @@ Send at least one of `transcription` and `audio`. The recording can be m4a, mp4,
 | `201` | The task was created. The response body is the new task. |
 | `400` | Neither a transcription nor an audio file was sent. |
 | `401` | The token is missing or wrong. |
-| `413` | The audio file is larger than the server's attachment size limit. |
+| `413` | The request is over the server's size limit: an audio upload above the attachment limit, or a transcription above the text limit. |
 | `415` | The audio file type is not supported. |
 
 ## Pebble Index 01

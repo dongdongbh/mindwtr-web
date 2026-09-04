@@ -627,6 +627,12 @@ Assurez-vous que les notifications sont activées :
 2. Activez les **Notifications**
 3. Autorisez les alertes et les sons selon vos préférences
 
+### Rappels qui arrivent en retard sur Android
+
+À partir d’Android 12, le système peut refuser les « alarmes exactes » à une application. Sans elles, un rappel peut arriver jusqu’à une minute après l’heure que vous avez fixée. Dans ce cas, Mindwtr ajoute dans **Paramètres → Notifications** une ligne intitulée **Les rappels peuvent arriver en retard**, accompagnée d’un bouton **Autoriser**. Les paramètres Pomodoro affichent la même ligne tant que l’alerte de fin est activée.
+
+Touchez **Autoriser** pour ouvrir l’écran d’autorisation Android de Mindwtr. Vous pouvez aussi y accéder par les **Paramètres → Applications → Mindwtr → Alarmes et rappels** de l’appareil. Dès que l’autorisation est accordée, Mindwtr replanifie ses rappels en alarmes exactes sans redémarrer l’application, et la ligne disparaît. Avant Android 12, la ligne n’apparaît pas, car toutes les alarmes y sont déjà exactes.
+
 ---
 
 ## Paramètres

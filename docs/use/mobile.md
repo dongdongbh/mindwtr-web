@@ -627,6 +627,12 @@ Make sure notifications are enabled:
 2. Enable **Notifications**
 3. Allow alerts and sounds as desired
 
+### Reminders arriving late on Android
+
+Android 12 and later can hold back "exact alarms" from an app. Without them a reminder can arrive up to a minute after the time you set. When that happens, Mindwtr adds a row to **Settings → Notifications** titled **Reminders may arrive late**, with an **Allow** button beside it. The Pomodoro settings show the same row while the completion alert is on.
+
+Tap **Allow** to open the Android permission screen for Mindwtr. You can also reach it at device **Settings → Apps → Mindwtr → Alarms & reminders**. As soon as the permission is granted, Mindwtr reschedules its reminders as exact alarms without restarting the app, and the row goes away. The row never appears before Android 12, where every alarm is already exact.
+
 ---
 
 ## Settings

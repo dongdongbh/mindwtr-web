@@ -565,6 +565,12 @@ Erinnerungen werden auf dem Telefon geplant; es gibt keinen Push-Server. Wenn Si
 2. **Benachrichtigungen** aktivieren
 3. Warnungen und Töne nach Wunsch erlauben
 
+### Verspätete Erinnerungen unter Android
+
+Ab Android 12 kann das System einer App „exakte Alarme“ verwehren. Ohne sie kann eine Erinnerung bis zu eine Minute nach der eingestellten Zeit eintreffen. In diesem Fall zeigt Mindwtr unter **Einstellungen → Benachrichtigungen** eine Zeile mit dem Titel **Erinnerungen kommen möglicherweise zu spät** und daneben eine Schaltfläche **Zulassen**. Dieselbe Zeile erscheint in den Pomodoro-Einstellungen, solange der Abschlusshinweis aktiviert ist.
+
+Tippen Sie auf **Zulassen**, um den Android-Berechtigungsbildschirm für Mindwtr zu öffnen. Sie erreichen ihn auch über die Geräte-**Einstellungen → Apps → Mindwtr → Wecker und Erinnerungen**. Sobald die Berechtigung erteilt ist, plant Mindwtr die Erinnerungen ohne Neustart als exakte Alarme neu, und die Zeile verschwindet. Vor Android 12 erscheint die Zeile nicht, denn dort ist bereits jeder Alarm exakt.
+
 ---
 
 ## Einstellungen

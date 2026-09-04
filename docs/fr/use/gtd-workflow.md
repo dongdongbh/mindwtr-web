@@ -123,6 +123,10 @@ flowchart TD
 **Associer un projet ?** (Facultatif)
 - Associez les tâches liées à un projet
 
+Lorsque vous choisissez **Référence**, la même étape propose les sélecteurs **Domaine** et **Projet** : la note est ainsi classée au bon endroit sans seconde modification. Dès que vous choisissez un projet, le sélecteur de domaine disparaît, car le projet décide déjà de l’emplacement de la note.
+
+**Référence** figure également dans le menu de statut de chaque ligne de tâche et dans l’éditeur de tâche : une tâche peut donc devenir une note de référence à tout moment, et pas seulement pendant le traitement de la boîte de réception.
+
 ### Exemple concret : une course en deux étapes
 
 Un avis de rappel de sécurité arrive pour votre voiture. Vous capturez **Avis de rappel pour la voiture**, qui atterrit dans la boîte de réception. Le traiter demande deux actions — appeler le concessionnaire, puis y amener la voiture —, il devient donc un projet plutôt qu’une tâche unique. Cliquez sur **Traiter la Boîte de réception**, puis :

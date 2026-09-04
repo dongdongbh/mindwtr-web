@@ -123,6 +123,10 @@ flowchart TD
 **Einem Projekt zuweisen?** (Optional)
 - Verknüpfen Sie zusammengehörige Aufgaben mit einem Projekt.
 
+Wenn Sie **Referenz** wählen, bietet derselbe Schritt die Auswahl für **Bereich** und **Projekt** an, sodass die Notiz ohne zweiten Bearbeitungsschritt am richtigen Ort landet. Sobald Sie ein Projekt wählen, entfällt die Bereichsauswahl, denn das Projekt bestimmt bereits, wo die Notiz liegt.
+
+**Referenz** steht außerdem im Statusmenü jeder Aufgabenzeile und im Aufgabeneditor zur Auswahl. Eine Aufgabe kann also jederzeit zu einer Referenznotiz werden, nicht nur beim Verarbeiten des Posteingangs.
+
 ### Praxisbeispiel: Eine Besorgung in zwei Schritten
 
 Für Ihr Auto trifft ein Rückrufschreiben ein. Sie erfassen **Rückruf für das Auto**, und der Eintrag landet im Posteingang. Die Erledigung besteht aus zwei Handlungen — beim Autohaus anrufen und später das Auto hinbringen —, deshalb wird daraus beim Verarbeiten ein Projekt statt einer einzelnen Aufgabe. Klicken Sie auf **Posteingang verarbeiten** und dann:

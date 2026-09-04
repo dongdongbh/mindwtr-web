@@ -123,6 +123,10 @@ flowchart TD
 **¿Asignar un proyecto?** (Opcional)
 - Vincula las tareas relacionadas a un proyecto
 
+Cuando eliges **Referencia**, el mismo paso ofrece los selectores de **Área** y **Proyecto**, así que la nota queda archivada donde corresponde sin una segunda edición. Si eliges un proyecto, el selector de área desaparece, porque el proyecto ya decide dónde vive la nota.
+
+**Referencia** también aparece en el menú de estado de cada fila de tarea y en el editor de tareas, de modo que una tarea puede convertirse en nota de referencia en cualquier momento, no solo mientras procesas la bandeja de entrada.
+
 ### Ejemplo práctico: un recado de dos pasos
 
 Llega un aviso de revisión de seguridad para tu coche. Capturas **Aviso de revisión del coche** y el elemento aparece en la Bandeja de entrada. Resolverlo implica dos acciones — llamar al concesionario y después llevar el coche —, así que al procesarlo se convierte en un proyecto en lugar de una sola tarea. Pulsa **Procesar Bandeja** y luego:

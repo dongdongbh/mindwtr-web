@@ -423,7 +423,7 @@ Configurez les notifications dans les Paramètres :
 - Ces liens servent uniquement à la navigation ; ils ne synchronisent pas l’état d’achèvement entre les tâches
 - Les cases à cocher Markdown de la description ne sont que des notes ; elles n’ont aucun effet sur la liste de contrôle de la tâche
 - Collez un texte de plusieurs lignes dans un élément de liste de contrôle pour créer un élément par ligne (les puces, la numérotation et les marqueurs `[x]` sont reconnus)
-- Attribuez la tâche à un projet
+- Attribuez la tâche à un projet depuis l’éditeur ou depuis le menu `⋯` d’une ligne de tâche : **Projet…** la déplace dans un projet ou l’en retire
 
 ### Propriétés des tâches
 

@@ -423,7 +423,7 @@ Configura las notificaciones en Ajustes:
 - Esos enlaces solo sirven para navegar; no sincronizan el estado de finalización entre tareas
 - Las casillas Markdown de la descripción son solo notas; no afectan a la lista de comprobación de la tarea
 - Pega texto de varias líneas en un elemento de la lista para crear un elemento por línea (se reconocen viñetas, numeración y marcadores `[x]`)
-- Asigna la tarea a un proyecto
+- Asigna la tarea a un proyecto desde el editor o desde el menú `⋯` de una fila de tarea: **Proyecto…** la mueve a un proyecto o la saca del que tiene
 
 ### Propiedades de las tareas
 

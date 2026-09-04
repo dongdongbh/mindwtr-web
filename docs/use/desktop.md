@@ -423,7 +423,7 @@ Configure notifications in Settings:
 - Those links are navigational only; they do not sync completion state between tasks
 - Markdown checkboxes in the description are notes-only; they do not affect the task checklist
 - Paste multi-line text into a checklist item to create one item per line (bullets, numbering, and `[x]` markers are recognized)
-- Assign to a project
+- Assign to a project from the editor, or from a task row's `⋯` menu — pick **Project…** to move the task into a project or out of the one it is in
 
 ### Task Properties
 

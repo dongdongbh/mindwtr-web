@@ -123,6 +123,10 @@ flowchart TD
 **Assign a project?** (Optional)
 - Link related tasks to a project
 
+When you choose **Reference**, the same step offers the **Area** and **Project** pickers, so the note is filed where it belongs without a second edit. Pick a project and the Area picker steps aside, because the project already decides where the note lives.
+
+**Reference** is also listed in the status menu on every task row and in the task editor, so a task can become a reference note at any time, not only while you are processing the Inbox.
+
 ### Worked Example: A Two-Step Errand
 
 A safety recall notice arrives for your car. You capture **Car safety recall notice**, which lands in the Inbox. Handling it takes two actions — call the dealer, then take the car in — so during processing it becomes a project rather than a single task. Click **Process Inbox**, then:

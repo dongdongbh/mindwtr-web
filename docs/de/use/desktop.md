@@ -425,7 +425,7 @@ In den Einstellungen:
 - Links dienen nur der Navigation und synchronisieren keinen Abschlussstatus
 - Markdown-Kontrollkästchen in Beschreibungen sind reine Notizen und beeinflussen die Aufgabencheckliste nicht
 - Mehrzeiligen Text in einen Checklistenpunkt einfügen, um je Zeile einen Punkt zu erstellen (Aufzählungen, Nummerierungen und `[x]` werden erkannt)
-- Projekt zuweisen
+- Ein Projekt im Editor zuweisen oder im `⋯`-Menü einer Aufgabenzeile: **Projekt…** verschiebt die Aufgabe in ein Projekt oder aus ihrem Projekt heraus
 
 ### Aufgabeneigenschaften
 

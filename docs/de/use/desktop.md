@@ -157,7 +157,7 @@ Schreibgeschützter Überblick über terminierte Arbeit. Jede Aufgabe mit Datum 
 - Aufgaben mit nur einem Startdatum oder nur einem Fälligkeitsdatum zeigen eine kleine Markierung an diesem Tag
 - Aufgaben ohne Datum erscheinen hier nicht
 - Ein Projekt mit Startdatum oder Fälligkeitsdatum erhält einen eigenen durchgezogenen Balken, dicker als die Aufgabenbalken, über seinen Aufgaben, auch bevor diese Aufgaben eigene Daten haben; ist nur eines von beiden gesetzt, reicht der Balken bis zum frühesten Start- oder spätesten Fälligkeitsdatum dieser Aufgaben
-- Eine senkrechte Linie markiert heute, und die Schaltfläche **Heute** springt dorthin zurück
+- Eine senkrechte Linie markiert heute; die Ansicht öffnet darauf zentriert, zentriert beim Wechsel des Zooms erneut, und die Schaltfläche **Heute** springt dorthin zurück
 - Drei Zoomstufen – Tag, Woche und Monat – wechseln zwischen Detailgrad und Zeitraum
 
 Ein Klick auf einen Balken öffnet die Aufgabe, ein Klick auf einen Projektnamen das Projekt. Die Zeitleiste zeigt nur an: Das Ziehen eines Balkens ändert keine Daten. Start- und Fälligkeitsdatum bearbeiten Sie im Aufgabeneditor, die eigenen Daten eines Projekts in dessen Details.

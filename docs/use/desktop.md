@@ -157,7 +157,7 @@ Read-only overview of dated work across time. Each task with dates is drawn as a
 - Tasks with only a start date, or only a due date, show a small marker on that day
 - Tasks without dates don't appear here
 - A project with a start date or a due date gets its own solid bar, thicker than the task bars, above its tasks, even before any of those tasks have dates of their own; when only one of the two is set, the bar reaches to the earliest start or latest due date among those tasks
-- A vertical line marks today, and the **Today** button jumps back to it
+- A vertical line marks today; the view opens centered on it, re-centers when you change the zoom, and the **Today** button jumps back to it
 - Three zoom levels — day, week, and month — trade detail for range
 
 Click a bar to open the task, or a project's name to open the project. Timeline only displays: dragging a bar does not change dates. Edit start and due dates in the task editor, and a project's own dates in its details.

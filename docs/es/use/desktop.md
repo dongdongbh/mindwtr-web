@@ -157,7 +157,7 @@ Vista de solo lectura del trabajo con fechas. Cada tarea con fechas se dibuja co
 - Las tareas que solo tienen fecha de inicio, o solo fecha de vencimiento, muestran una pequeña marca en ese día
 - Las tareas sin fechas no aparecen aquí
 - Un proyecto con fecha de inicio o de vencimiento recibe su propia barra sólida, más gruesa que las barras de tareas, encima de sus tareas, incluso antes de que esas tareas tengan fechas propias; si solo se define una de las dos, la barra llega hasta el inicio más temprano o el vencimiento más tardío de esas tareas
-- Una línea vertical marca hoy, y el botón **Hoy** vuelve a ese punto
+- Una línea vertical marca hoy; la vista se abre centrada en ese punto, vuelve a centrarse al cambiar el zoom, y el botón **Hoy** vuelve a él
 - Tres niveles de zoom —día, semana y mes— cambian detalle por alcance
 
 Haz clic en una barra para abrir la tarea, o en el nombre de un proyecto para abrir el proyecto. La Línea de tiempo solo muestra: arrastrar una barra no cambia las fechas. Edita la fecha de inicio y la de vencimiento en el editor de tareas, y las fechas propias de un proyecto en sus detalles.

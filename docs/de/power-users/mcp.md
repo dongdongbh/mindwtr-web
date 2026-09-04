@@ -377,13 +377,13 @@ Für den Schreibzugriff wird ausschließlich `--write` unterstützt (keine alter
 
 Schreibwerkzeuge funktionieren sowohl mit der lokalen Datenbank als auch einem selbst gehosteten Cloud-Backend, mit zwei Ausnahmen im Cloud-Modus: Werkzeuge zum Schreiben von Personen und `mindwtr_restore_task` geben dort einen eindeutigen Fehler zurück, weil die Cloud-API noch keine Endpunkte dafür besitzt.
 
-- **`mindwtr_add_task`**: Erstellt eine neue Aufgabe. Unterstützt natürlichsprachliches `quickAdd` (z. B. „Buy milk @errands /due:tomorrow“).
-- **`mindwtr_update_task`**: Aktualisiert eine vorhandene Aufgabe einschließlich Planungsfeldern wie `dueDate`, `startTime`, `reviewAt` und `isFocusedToday` (Felder können mit `null` geleert werden).
+- **`mindwtr_add_task`**: Erstellt eine neue Aufgabe. Unterstützt natürlichsprachliches `quickAdd` (z. B. „Buy milk @errands /due:tomorrow“). Unterstützt außerdem Link-Anhänge über `attachments`.
+- **`mindwtr_update_task`**: Aktualisiert eine vorhandene Aufgabe einschließlich Planungsfeldern wie `dueDate`, `startTime`, `reviewAt` und `isFocusedToday` (Felder können mit `null` geleert werden). `attachments` setzt die Link-Anhänge: Die übergebene Liste ist die vollständige Liste der Links, nicht aufgeführte Links werden entfernt, Dateianhänge bleiben unberührt, und `null` entfernt alle Links.
 - **`mindwtr_complete_task`**: Markiert eine Aufgabe als erledigt.
 - **`mindwtr_delete_task`**: Löscht eine Aufgabe vorläufig.
 - **`mindwtr_restore_task`**: Stellt eine vorläufig gelöschte Aufgabe wieder her.
-- **`mindwtr_add_project`**: Erstellt ein neues Projekt, einschließlich optionalem `startDate`, `dueDate` und `reviewAt`.
-- **`mindwtr_update_project`**: Aktualisiert ein Projekt, einschließlich optionalem `startDate`, `dueDate` und `reviewAt`.
+- **`mindwtr_add_project`**: Erstellt ein neues Projekt, einschließlich optionalem `startDate`, `dueDate` und `reviewAt`. Nimmt außerdem Link-Anhänge über `attachments` entgegen.
+- **`mindwtr_update_project`**: Aktualisiert ein Projekt, einschließlich optionalem `startDate`, `dueDate` und `reviewAt`. Link-Anhänge in `attachments` folgen derselben Regel der vollständigen Liste wie beim Aktualisieren einer Aufgabe.
 - **`mindwtr_delete_project`**: Löscht ein Projekt vorläufig.
 - **`mindwtr_add_section`**: Erstellt einen Abschnitt innerhalb eines Projekts.
 - **`mindwtr_update_section`**: Aktualisiert einen Projektabschnitt.
@@ -686,7 +686,7 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 - `energyLevel`: `low | medium | high`
 - `assignedTo`: string
 - `timeEstimate`: `5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
-- Weitere beschreibbare Felder: `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`
+- Weitere beschreibbare Felder: `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `attachments`
 
 **Beispiel**
 
@@ -701,7 +701,7 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 **Eingabefelder**
 
 - `id`: string (task UUID)
-- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`
+- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`, `attachments`
 - `recurrence`: Wiederholungsobjekt, RFC-5545-RRULE-Zeichenfolge oder `null` zum Leeren
 
 **Hinweise**
@@ -756,7 +756,7 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 **Eingabefelder**
 
 - `id`: string (project UUID)
-- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`
+- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`, `attachments`
 
 ### `mindwtr_delete_project` (write)
 

@@ -377,13 +377,13 @@ Seul `--write` permet l’accès en écriture (aucun autre alias).
 
 Les outils d’écriture fonctionnent avec la base locale comme avec un système Cloud auto-hébergé, à deux exceptions près en mode Cloud : les outils d’écriture des personnes et `mindwtr_restore_task` renvoient une erreur explicite, car l’API Cloud ne possède pas encore de points de terminaison pour ces opérations.
 
-- **`mindwtr_add_task`** : créer une tâche. Prend en charge `quickAdd` en langage naturel (par exemple « Buy milk @errands /due:tomorrow »).
-- **`mindwtr_update_task`** : mettre à jour une tâche existante, notamment des champs de planification comme `dueDate`, `startTime`, `reviewAt` et `isFocusedToday` (les champs peuvent être effacés avec `null`).
+- **`mindwtr_add_task`** : créer une tâche. Prend en charge `quickAdd` en langage naturel (par exemple « Buy milk @errands /due:tomorrow »). Prend aussi en charge les pièces jointes de type lien via `attachments`.
+- **`mindwtr_update_task`** : mettre à jour une tâche existante, notamment des champs de planification comme `dueDate`, `startTime`, `reviewAt` et `isFocusedToday` (les champs peuvent être effacés avec `null`). `attachments` définit les pièces jointes de type lien : la liste transmise est la liste complète des liens, les liens omis sont supprimés, les pièces jointes de type fichier ne sont jamais modifiées, et `null` supprime tous les liens.
 - **`mindwtr_complete_task`** : marquer une tâche comme terminée.
 - **`mindwtr_delete_task`** : supprimer logiquement une tâche.
 - **`mindwtr_restore_task`** : restaurer une tâche supprimée logiquement.
-- **`mindwtr_add_project`** : créer un projet, notamment avec les champs facultatifs `startDate`, `dueDate` et `reviewAt`.
-- **`mindwtr_update_project`** : mettre à jour un projet, notamment avec les champs facultatifs `startDate`, `dueDate` et `reviewAt`.
+- **`mindwtr_add_project`** : créer un projet, notamment avec les champs facultatifs `startDate`, `dueDate` et `reviewAt`. Accepte aussi les pièces jointes de type lien via `attachments`.
+- **`mindwtr_update_project`** : mettre à jour un projet, notamment avec les champs facultatifs `startDate`, `dueDate` et `reviewAt`. Les pièces jointes de type lien dans `attachments` suivent la même règle de liste complète que lors de la mise à jour d’une tâche.
 - **`mindwtr_delete_project`** : supprimer logiquement un projet.
 - **`mindwtr_add_section`** : créer une section dans un projet.
 - **`mindwtr_update_section`** : mettre à jour une section de projet.
@@ -686,7 +686,7 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 - `energyLevel` : `low | medium | high`
 - `assignedTo` : chaîne
 - `timeEstimate` : `5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
-- Autres champs modifiables : `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`
+- Autres champs modifiables : `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `attachments`
 
 **Exemple**
 
@@ -701,7 +701,7 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 **Champs d’entrée**
 
 - `id` : chaîne (UUID de la tâche)
-- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`
+- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`, `attachments`
 - `recurrence` : objet de récurrence, chaîne RRULE RFC 5545 ou `null` pour l’effacer
 
 **Remarques**
@@ -756,7 +756,7 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 **Champs d’entrée**
 
 - `id` : chaîne (UUID du projet)
-- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`
+- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`, `attachments`
 
 ### `mindwtr_delete_project` (écriture)
 

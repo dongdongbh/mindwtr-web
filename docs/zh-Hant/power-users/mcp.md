@@ -377,13 +377,13 @@ node apps/mcp-server/dist/cli.js --db "/path/to/mindwtr.db"
 
 寫入工具可用於本機資料庫及自行託管的 Cloud 後端，但 Cloud 模式有兩項例外：人員寫入工具及 `mindwtr_restore_task` 會傳回明確錯誤，因為 Cloud API 目前尚無相應端點。
 
-- **`mindwtr_add_task`**：建立新任務。支援自然語言 `quickAdd`（例如「Buy milk @errands /due:tomorrow」）。
-- **`mindwtr_update_task`**：更新現有任務，包括 `dueDate`、`startTime`、`reviewAt` 及 `isFocusedToday` 等排程欄位（支援使用 `null` 清除欄位）。
+- **`mindwtr_add_task`**：建立新任務。支援自然語言 `quickAdd`（例如「Buy milk @errands /due:tomorrow」）。同時支援透過 `attachments` 新增連結附件。
+- **`mindwtr_update_task`**：更新現有任務，包括 `dueDate`、`startTime`、`reviewAt` 及 `isFocusedToday` 等排程欄位（支援使用 `null` 清除欄位）。`attachments` 用於設定連結附件：你傳入的清單就是連結的完整集合，未列出的連結會被移除，檔案附件不受影響，傳入 `null` 會清除所有連結。
 - **`mindwtr_complete_task`**：將任務標記為已完成。
 - **`mindwtr_delete_task`**：軟刪除任務。
 - **`mindwtr_restore_task`**：還原已軟刪除的任務。
-- **`mindwtr_add_project`**：建立新專案，可選用 `startDate`、`dueDate` 及 `reviewAt`。
-- **`mindwtr_update_project`**：更新專案，可選用 `startDate`、`dueDate` 及 `reviewAt`。
+- **`mindwtr_add_project`**：建立新專案，可選用 `startDate`、`dueDate` 及 `reviewAt`。也可以透過 `attachments` 新增連結附件。
+- **`mindwtr_update_project`**：更新專案，可選用 `startDate`、`dueDate` 及 `reviewAt`。`attachments` 中的連結附件遵循與更新任務時相同的完整清單規則。
 - **`mindwtr_delete_project`**：軟刪除專案。
 - **`mindwtr_add_section`**：在專案內建立分區。
 - **`mindwtr_update_section`**：更新專案分區。
@@ -686,7 +686,7 @@ Schema 注意事項：
 - `energyLevel`：`low | medium | high`
 - `assignedTo`：string
 - `timeEstimate`：`5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
-- 其他可寫欄位：`areaId`、`reviewAt`、`taskMode`、`relativeStartOffset`、`showFutureRecurrence`、`pushCount`、`checklist`、`textDirection`、`location`、`isFocusedToday`、`timeSpentMinutes`、`suppressMindwtrReminders`、`repeatReminderMinutes`
+- 其他可寫欄位：`areaId`、`reviewAt`、`taskMode`、`relativeStartOffset`、`showFutureRecurrence`、`pushCount`、`checklist`、`textDirection`、`location`、`isFocusedToday`、`timeSpentMinutes`、`suppressMindwtrReminders`、`repeatReminderMinutes`、`attachments`
 
 **範例**
 
@@ -701,7 +701,7 @@ Schema 注意事項：
 **輸入欄位**
 
 - `id`：string（task UUID）
-- `title`、`status`、`projectId`、`sectionId`、`areaId`、`dueDate`、`startTime`、`contexts`、`tags`、`description`、`priority`、`energyLevel`、`assignedTo`、`timeEstimate`、`reviewAt`、`taskMode`、`relativeStartOffset`、`showFutureRecurrence`、`pushCount`、`checklist`、`textDirection`、`location`、`isFocusedToday`、`timeSpentMinutes`、`suppressMindwtrReminders`、`repeatReminderMinutes`、`order`、`boardOrder`、`focusOrder`
+- `title`、`status`、`projectId`、`sectionId`、`areaId`、`dueDate`、`startTime`、`contexts`、`tags`、`description`、`priority`、`energyLevel`、`assignedTo`、`timeEstimate`、`reviewAt`、`taskMode`、`relativeStartOffset`、`showFutureRecurrence`、`pushCount`、`checklist`、`textDirection`、`location`、`isFocusedToday`、`timeSpentMinutes`、`suppressMindwtrReminders`、`repeatReminderMinutes`、`order`、`boardOrder`、`focusOrder`、`attachments`
 - `recurrence`：重複規則物件、RFC 5545 RRULE 字串，或使用 `null` 清除
 
 **注意事項**
@@ -756,7 +756,7 @@ Schema 注意事項：
 **輸入欄位**
 
 - `id`：string（project UUID）
-- `title`、`color`、`status`、`areaId`、`isSequential`、`isFocused`、`startDate`、`dueDate`、`reviewAt`、`supportNotes`
+- `title`、`color`、`status`、`areaId`、`isSequential`、`isFocused`、`startDate`、`dueDate`、`reviewAt`、`supportNotes`、`attachments`
 
 ### `mindwtr_delete_project`（寫入）
 

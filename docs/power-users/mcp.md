@@ -377,13 +377,13 @@ Only `--write` is supported for write access (no alternate aliases).
 
 Write tools work against both the local database and a self-hosted Cloud backend, with two Cloud-mode exceptions: person write tools and `mindwtr_restore_task` return a clear error in Cloud mode because the Cloud API has no endpoints for them yet.
 
-- **`mindwtr_add_task`**: Create a new task. Supports natural language `quickAdd` (e.g., "Buy milk @errands /due:tomorrow").
-- **`mindwtr_update_task`**: Update an existing task, including scheduling fields like `dueDate`, `startTime`, `reviewAt`, and `isFocusedToday` (supports clearing fields with `null`).
+- **`mindwtr_add_task`**: Create a new task. Supports natural language `quickAdd` (e.g., "Buy milk @errands /due:tomorrow"). Link attachments can be attached with `attachments`.
+- **`mindwtr_update_task`**: Update an existing task, including scheduling fields like `dueDate`, `startTime`, `reviewAt`, and `isFocusedToday` (supports clearing fields with `null`). `attachments` sets the link attachments: the list you pass is the complete set of links, links you leave out are removed, file attachments are never touched, and `null` clears every link.
 - **`mindwtr_complete_task`**: Mark a task as done.
 - **`mindwtr_delete_task`**: Soft-delete a task.
 - **`mindwtr_restore_task`**: Restore a soft-deleted task.
-- **`mindwtr_add_project`**: Create a new project, including optional `startDate`, `dueDate`, and `reviewAt`.
-- **`mindwtr_update_project`**: Update a project, including optional `startDate`, `dueDate`, and `reviewAt`.
+- **`mindwtr_add_project`**: Create a new project, including optional `startDate`, `dueDate`, and `reviewAt`. It also accepts link attachments through `attachments`.
+- **`mindwtr_update_project`**: Update a project, including optional `startDate`, `dueDate`, and `reviewAt`. Link attachments in `attachments` follow the same complete-list rule as when updating a task.
 - **`mindwtr_delete_project`**: Soft-delete a project.
 - **`mindwtr_add_section`**: Create a section inside a project.
 - **`mindwtr_update_section`**: Update a project section.
@@ -686,7 +686,7 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 - `energyLevel`: `low | medium | high`
 - `assignedTo`: string
 - `timeEstimate`: `5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
-- Additional writable fields: `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`
+- Additional writable fields: `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `attachments`
 
 **Example**
 
@@ -701,7 +701,7 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 **Input fields**
 
 - `id`: string (task UUID)
-- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`
+- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`, `attachments`
 - `recurrence`: recurrence object, RFC 5545 RRULE string, or `null` to clear it
 
 **Notes**
@@ -756,7 +756,7 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 **Input fields**
 
 - `id`: string (project UUID)
-- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`
+- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`, `attachments`
 
 ### `mindwtr_delete_project` (write)
 

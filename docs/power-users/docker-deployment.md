@@ -33,9 +33,12 @@ You do not need to clone the repository. The official images are published on GH
 
 4. **Access the services**:
    - **PWA (Web App):** Open `http://localhost:5173` in your browser.
-   - **Cloud Health Check:** Open `http://localhost:8787/health`.
+   - **Cloud liveness check:** Open `http://localhost:8787/health`.
+   - **Cloud storage readiness:** Open `http://localhost:8787/ready`.
    - **Self-Hosted URL for local testing:** `http://localhost:8787`
    - **REST API Base URL:** `http://localhost:8787/v1`
+
+`/health` only reports that the cloud server is answering HTTP requests. `/ready` also verifies that the configured data directory is writable, so it is the one to check when you want to know the server can store your data. The Compose health check uses `/ready`, and falls back to `/health` on older images that do not have it yet.
 
 To build the images from source instead, clone the repository and run `docker compose -f docker/compose.yaml up --build -d` from its root. See [Building Manually](#building-manually) below.
 
@@ -72,6 +75,7 @@ Check the server:
 
 ```bash
 curl https://mindwtr.example.com/health
+curl https://mindwtr.example.com/ready
 ```
 
 In Mindwtr Settings -> Sync -> Self-Hosted, set the Self-Hosted URL to:
@@ -121,10 +125,23 @@ MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
 
 `MINDWTR_CLOUD_TOKEN` is still accepted for backward compatibility, but deprecated.
 
-For Docker secrets, you can mount a file and point to it instead:
+For a file-backed Docker secret, remove `MINDWTR_CLOUD_AUTH_TOKENS` from your `.env` file, put the token in a host file only its owner can read, and start Compose with the `docker/compose.secrets.yaml` overlay. `MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST` must be an absolute host path:
 
-```yaml
-MINDWTR_CLOUD_AUTH_TOKENS_FILE: /run/secrets/mindwtr_cloud_tokens
+```bash
+printf '%s\n' 'replace_with_a_token_at_least_20_characters_long' > /absolute/path/mindwtr-cloud-tokens
+chmod 600 /absolute/path/mindwtr-cloud-tokens
+MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST=/absolute/path/mindwtr-cloud-tokens \
+  docker compose -f docker/compose.yaml -f docker/compose.secrets.yaml up -d
+```
+
+The overlay mounts that file read-only at `/run/secrets/mindwtr_cloud_tokens` and sets `MINDWTR_CLOUD_AUTH_TOKENS_FILE` for you, so the token bytes never reach the rendered Compose environment. Keep the host file at mode `0600`. The server still refuses to start when neither the inline setting nor a readable token file provides a valid token.
+
+The same overlay works with the Caddy HTTPS stack. Remove the inline token from `docker/.env.https.local`, then run:
+
+```bash
+MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST=/absolute/path/mindwtr-cloud-tokens \
+  docker compose --env-file docker/.env.https.local \
+    -f docker/compose.https.yaml -f docker/compose.secrets.yaml up -d
 ```
 
 **Generating a Token:**

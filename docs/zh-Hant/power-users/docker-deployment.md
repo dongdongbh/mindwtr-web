@@ -33,9 +33,12 @@ Mindwtr 正式支援使用 Docker 執行：
 
 4. **存取服務**：
    - **PWA（網頁版）**：在瀏覽器中開啟 `http://localhost:5173`。
-   - **Cloud 健康狀態檢查**：開啟 `http://localhost:8787/health`。
+   - **Cloud 存活檢查**：開啟 `http://localhost:8787/health`。
+   - **Cloud 儲存就緒檢查**：開啟 `http://localhost:8787/ready`。
    - **供本機測試的自行託管 URL：**`http://localhost:8787`
    - **REST API Base URL：**`http://localhost:8787/v1`
+
+`/health` 只表示 Cloud 伺服器能夠回應 HTTP 要求。`/ready` 還會檢查所設定的資料目錄是否可寫入，因此想確認伺服器能否真正儲存資料時應查看這個位址。Compose 的健康狀態檢查使用 `/ready`；若映像較舊、尚未提供該端點，則會退回 `/health`。
 
 若您想從原始碼組建映像，請 clone 儲存庫並在其根目錄執行 `docker compose -f docker/compose.yaml up --build -d`。請參閱下方的[手動組建](#手動組建)。
 
@@ -72,6 +75,7 @@ docker compose --env-file docker/.env.https.local -f docker/compose.https.yaml u
 
 ```bash
 curl https://mindwtr.example.com/health
+curl https://mindwtr.example.com/ready
 ```
 
 在 Mindwtr 的設定 -> 同步 -> 自行託管中，將自行託管 URL 設為：
@@ -121,10 +125,23 @@ MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
 
 為維持向後相容，目前仍接受 `MINDWTR_CLOUD_TOKEN`，但已棄用。
 
-若使用 Docker secrets，可掛載檔案並改為指向該檔案：
+若要使用以檔案為基礎的 Docker secret，請從 `.env` 檔案中移除 `MINDWTR_CLOUD_AUTH_TOKENS`，將 token 存放在只有擁有者可讀取的主機檔案中，並以 `docker/compose.secrets.yaml` 疊加檔啟動 Compose。`MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST` 必須是主機上的絕對路徑：
 
-```yaml
-MINDWTR_CLOUD_AUTH_TOKENS_FILE: /run/secrets/mindwtr_cloud_tokens
+```bash
+printf '%s\n' 'replace_with_a_token_at_least_20_characters_long' > /absolute/path/mindwtr-cloud-tokens
+chmod 600 /absolute/path/mindwtr-cloud-tokens
+MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST=/absolute/path/mindwtr-cloud-tokens \
+  docker compose -f docker/compose.yaml -f docker/compose.secrets.yaml up -d
+```
+
+疊加檔會將該檔案以唯讀方式掛載到 `/run/secrets/mindwtr_cloud_tokens`，並自動設定 `MINDWTR_CLOUD_AUTH_TOKENS_FILE`，因此 token 內容不會進入產生的 Compose 環境。請讓主機檔案維持 `0600` 權限。若直接寫入的設定與可讀取的 token 檔案都未提供有效 token，伺服器仍會拒絕啟動。
+
+同一個疊加檔也適用於 Caddy HTTPS 組合。請從 `docker/.env.https.local` 中移除直接寫入的 token，然後執行：
+
+```bash
+MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST=/absolute/path/mindwtr-cloud-tokens \
+  docker compose --env-file docker/.env.https.local \
+    -f docker/compose.https.yaml -f docker/compose.secrets.yaml up -d
 ```
 
 **產生 Token：**

@@ -33,9 +33,12 @@ Vous n’avez pas besoin de cloner le dépôt. Les images officielles sont publi
 
 4. **Accédez aux services** :
    - **PWA (application web) :** ouvrez `http://localhost:5173` dans votre navigateur.
-   - **Contrôle d’intégrité du Cloud :** ouvrez `http://localhost:8787/health`.
+   - **Contrôle de disponibilité du Cloud :** ouvrez `http://localhost:8787/health`.
+   - **Contrôle de l’espace de stockage du Cloud :** ouvrez `http://localhost:8787/ready`.
    - **URL auto-hébergée pour les tests locaux :** `http://localhost:8787`
    - **URL de base de l’API REST :** `http://localhost:8787/v1`
+
+`/health` indique seulement que le serveur cloud répond aux requêtes HTTP. `/ready` vérifie en plus que le répertoire de données configuré est accessible en écriture : c’est donc l’adresse à consulter pour savoir si le serveur peut réellement enregistrer vos données. Le contrôle d’intégrité de Compose utilise `/ready` et revient à `/health` sur les images plus anciennes qui n’en disposent pas encore.
 
 Pour construire les images depuis les sources, clonez le dépôt et exécutez `docker compose -f docker/compose.yaml up --build -d` depuis sa racine. Voir [Construction manuelle](#construction-manuelle) ci-dessous.
 
@@ -72,6 +75,7 @@ Vérifiez le serveur :
 
 ```bash
 curl https://mindwtr.example.com/health
+curl https://mindwtr.example.com/ready
 ```
 
 Dans Mindwtr, sous Réglages -> Synchronisation -> Auto-hébergé, définissez l’URL auto-hébergée sur :
@@ -121,10 +125,23 @@ MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
 
 `MINDWTR_CLOUD_TOKEN` reste accepté pour la rétrocompatibilité, mais il est obsolète.
 
-Pour les secrets Docker, vous pouvez monter un fichier et le référencer à la place :
+Pour un secret Docker basé sur un fichier, retirez `MINDWTR_CLOUD_AUTH_TOKENS` de votre fichier `.env`, placez le jeton dans un fichier de l’hôte que seul son propriétaire peut lire, puis démarrez Compose avec la surcouche `docker/compose.secrets.yaml`. `MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST` doit être un chemin absolu sur l’hôte :
 
-```yaml
-MINDWTR_CLOUD_AUTH_TOKENS_FILE: /run/secrets/mindwtr_cloud_tokens
+```bash
+printf '%s\n' 'replace_with_a_token_at_least_20_characters_long' > /absolute/path/mindwtr-cloud-tokens
+chmod 600 /absolute/path/mindwtr-cloud-tokens
+MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST=/absolute/path/mindwtr-cloud-tokens \
+  docker compose -f docker/compose.yaml -f docker/compose.secrets.yaml up -d
+```
+
+La surcouche monte ce fichier en lecture seule sur `/run/secrets/mindwtr_cloud_tokens` et définit `MINDWTR_CLOUD_AUTH_TOKENS_FILE` à votre place ; le jeton n’arrive donc jamais dans l’environnement Compose généré. Laissez le fichier de l’hôte en mode `0600`. Le serveur refuse toujours de démarrer si ni le réglage écrit directement ni un fichier de jeton lisible ne fournit un jeton valide.
+
+La même surcouche fonctionne avec la pile HTTPS de Caddy. Retirez le jeton écrit directement dans `docker/.env.https.local`, puis exécutez :
+
+```bash
+MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST=/absolute/path/mindwtr-cloud-tokens \
+  docker compose --env-file docker/.env.https.local \
+    -f docker/compose.https.yaml -f docker/compose.secrets.yaml up -d
 ```
 
 **Générer un jeton :**

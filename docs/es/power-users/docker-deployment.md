@@ -33,9 +33,12 @@ No necesitas clonar el repositorio. Las imágenes oficiales se publican en GHCR,
 
 4. **Accede a los servicios**:
    - **PWA (aplicación web):** Abre `http://localhost:5173` en tu navegador.
-   - **Comprobación de estado de Cloud:** Abre `http://localhost:8787/health`.
+   - **Comprobación de disponibilidad de Cloud:** Abre `http://localhost:8787/health`.
+   - **Comprobación de almacenamiento de Cloud:** Abre `http://localhost:8787/ready`.
    - **URL autoalojada para pruebas locales:** `http://localhost:8787`
    - **URL base de la API REST:** `http://localhost:8787/v1`
+
+`/health` solo indica que el servidor cloud responde a las solicitudes HTTP. `/ready` comprueba además que el directorio de datos configurado se pueda escribir, así que es el que debes consultar para saber si el servidor puede guardar tus datos. La comprobación de estado de Compose usa `/ready` y recurre a `/health` en imágenes antiguas que todavía no lo tienen.
 
 Si prefieres compilar las imágenes desde el código fuente, clona el repositorio y ejecuta `docker compose -f docker/compose.yaml up --build -d` desde su raíz. Consulta [Compilación manual](#compilacion-manual) más abajo.
 
@@ -72,6 +75,7 @@ Comprueba el servidor:
 
 ```bash
 curl https://mindwtr.example.com/health
+curl https://mindwtr.example.com/ready
 ```
 
 En Ajustes de Mindwtr -> Sincronización -> Autoalojado, establece la URL autoalojada en:
@@ -121,10 +125,23 @@ MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
 
 `MINDWTR_CLOUD_TOKEN` sigue siendo compatible por retrocompatibilidad, pero está obsoleto.
 
-Para usar secretos de Docker, puedes montar un archivo y apuntar a él:
+Para usar un secreto de Docker basado en archivo, quita `MINDWTR_CLOUD_AUTH_TOKENS` de tu archivo `.env`, guarda el token en un archivo del host que solo pueda leer su propietario e inicia Compose con la superposición `docker/compose.secrets.yaml`. `MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST` debe ser una ruta absoluta del host:
 
-```yaml
-MINDWTR_CLOUD_AUTH_TOKENS_FILE: /run/secrets/mindwtr_cloud_tokens
+```bash
+printf '%s\n' 'replace_with_a_token_at_least_20_characters_long' > /absolute/path/mindwtr-cloud-tokens
+chmod 600 /absolute/path/mindwtr-cloud-tokens
+MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST=/absolute/path/mindwtr-cloud-tokens \
+  docker compose -f docker/compose.yaml -f docker/compose.secrets.yaml up -d
+```
+
+La superposición monta ese archivo en modo de solo lectura en `/run/secrets/mindwtr_cloud_tokens` y define `MINDWTR_CLOUD_AUTH_TOKENS_FILE` por ti, de modo que el token nunca llega al entorno de Compose generado. Mantén el archivo del host con permisos `0600`. El servidor sigue negándose a arrancar si ni la opción escrita directamente ni un archivo de token legible aportan un token válido.
+
+La misma superposición funciona con el conjunto HTTPS de Caddy. Quita el token escrito directamente en `docker/.env.https.local` y ejecuta:
+
+```bash
+MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST=/absolute/path/mindwtr-cloud-tokens \
+  docker compose --env-file docker/.env.https.local \
+    -f docker/compose.https.yaml -f docker/compose.secrets.yaml up -d
 ```
 
 **Generar un token:**

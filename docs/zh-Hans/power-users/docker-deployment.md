@@ -33,9 +33,12 @@ Mindwtr 为运行以下服务提供官方 Docker 支持：
 
 4. **访问服务**：
    - **PWA（Web 应用）**：在浏览器中打开 `http://localhost:5173`。
-   - **云端健康检查**：打开 `http://localhost:8787/health`。
+   - **云端存活检查**：打开 `http://localhost:8787/health`。
+   - **云端存储就绪检查**：打开 `http://localhost:8787/ready`。
    - **用于本地测试的自托管 URL：**`http://localhost:8787`
    - **REST API 基础 URL：**`http://localhost:8787/v1`
+
+`/health` 只说明云端服务器能够响应 HTTP 请求。`/ready` 还会检查配置的数据目录是否可写，因此想确认服务器能否真正保存数据时应查看它。Compose 的健康检查使用 `/ready`；如果镜像较旧、还没有该端点，则回退到 `/health`。
 
 如果你想从源码构建镜像，请克隆仓库并在其根目录运行 `docker compose -f docker/compose.yaml up --build -d`。参见下方的[手动构建](#手动构建)。
 
@@ -72,6 +75,7 @@ docker compose --env-file docker/.env.https.local -f docker/compose.https.yaml u
 
 ```bash
 curl https://mindwtr.example.com/health
+curl https://mindwtr.example.com/ready
 ```
 
 在 Mindwtr 的“设置 -> 同步 -> 自托管”中，将自托管 URL 设为：
@@ -121,10 +125,23 @@ MINDWTR_CLOUD_AUTH_TOKENS=your_token_here
 
 为了向后兼容，仍接受 `MINDWTR_CLOUD_TOKEN`，但该变量已弃用。
 
-对于 Docker secrets，你可以挂载文件并改为指向该文件：
+如果要使用基于文件的 Docker secret，请从 `.env` 文件中删除 `MINDWTR_CLOUD_AUTH_TOKENS`，把令牌保存到只有所有者可读的主机文件中，并使用 `docker/compose.secrets.yaml` 叠加文件启动 Compose。`MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST` 必须是主机上的绝对路径：
 
-```yaml
-MINDWTR_CLOUD_AUTH_TOKENS_FILE: /run/secrets/mindwtr_cloud_tokens
+```bash
+printf '%s\n' 'replace_with_a_token_at_least_20_characters_long' > /absolute/path/mindwtr-cloud-tokens
+chmod 600 /absolute/path/mindwtr-cloud-tokens
+MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST=/absolute/path/mindwtr-cloud-tokens \
+  docker compose -f docker/compose.yaml -f docker/compose.secrets.yaml up -d
+```
+
+该叠加文件会把这个文件以只读方式挂载到 `/run/secrets/mindwtr_cloud_tokens`，并自动设置 `MINDWTR_CLOUD_AUTH_TOKENS_FILE`，因此令牌内容不会进入生成的 Compose 环境。请让主机文件保持 `0600` 权限。如果直接写入的设置和可读的令牌文件都没有提供有效令牌，服务器仍会拒绝启动。
+
+同一个叠加文件也适用于 Caddy HTTPS 组合。请从 `docker/.env.https.local` 中删除直接写入的令牌，然后运行：
+
+```bash
+MINDWTR_CLOUD_AUTH_TOKENS_FILE_HOST=/absolute/path/mindwtr-cloud-tokens \
+  docker compose --env-file docker/.env.https.local \
+    -f docker/compose.https.yaml -f docker/compose.secrets.yaml up -d
 ```
 
 **生成令牌：**

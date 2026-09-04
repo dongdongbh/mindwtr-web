@@ -156,7 +156,7 @@ Vue en lecture seule des tâches datées. Chaque tâche ayant des dates est repr
 
 - Les tâches qui n’ont qu’une date de début, ou qu’une échéance, affichent un petit repère sur ce jour
 - Les tâches sans dates n’apparaissent pas ici
-- Un projet ayant une date de début ou une échéance reçoit sa propre barre fine au-dessus de ses tâches, même avant que ces tâches aient leurs propres dates ; si une seule des deux est définie, la barre va jusqu’au début le plus tôt ou à l’échéance la plus tardive de ces tâches
+- Un projet ayant une date de début ou une échéance reçoit sa propre barre pleine, plus épaisse que les barres de tâches, au-dessus de ses tâches, même avant que ces tâches aient leurs propres dates ; si une seule des deux est définie, la barre va jusqu’au début le plus tôt ou à l’échéance la plus tardive de ces tâches
 - Une ligne verticale marque aujourd’hui, et le bouton **Aujourd’hui** y ramène
 - Trois niveaux de zoom — jour, semaine et mois — arbitrent entre détail et période
 

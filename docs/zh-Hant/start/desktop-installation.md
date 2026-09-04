@@ -33,7 +33,7 @@ AUR 上另有一個從原始碼建置的套件 `mindwtr`。它由社群維護，
 
 #### 驗證官方 AUR 套件
 
-Mindwtr 僅發行兩個 AUR 套件識別：`mindwtr-bin`（穩定版預先建置套件）與 [`mindwtr-beta-bin`](/zh-Hant/start/beta-channels)（預發行版）。套件來源必須指向 `github.com/dongdongbh/Mindwtr`，維護者必須是 `dongdongbh`。建置前請檢查 `PKGBUILD` 與 `.SRCINFO` 的每項變更。新的發行校驗和資訊清單使用指紋為 `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D` 的金鑰簽署。
+Mindwtr 目前發行兩個 AUR 套件識別：`mindwtr-bin`（穩定版預先建置套件）與 [`mindwtr-beta-bin`](/zh-Hant/start/beta-channels)（預發行版）。第三個名稱 `mindwtr-bin-beta` 是舊的測試版識別，在更名過渡期間仍會使用同一批已簽署的發行成品更新。套件來源必須指向 `github.com/dongdongbh/Mindwtr`，維護者必須是 `dongdongbh`。建置前請檢查 `PKGBUILD` 與 `.SRCINFO` 的每項變更。新的發行校驗和資訊清單使用指紋為 `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D` 的金鑰簽署。
 
 ### Debian / Ubuntu
 

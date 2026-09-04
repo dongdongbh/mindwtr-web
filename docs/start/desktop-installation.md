@@ -33,7 +33,7 @@ A source-built package, `mindwtr`, also exists on the AUR. It is maintained by t
 
 #### Verify the official AUR packages
 
-Mindwtr publishes exactly two AUR identities: `mindwtr-bin` (stable prebuilt) and [`mindwtr-beta-bin`](/start/beta-channels) (prerelease). Their package source must point to `github.com/dongdongbh/Mindwtr`, and the maintainer must be `dongdongbh`. Review every `PKGBUILD` and `.SRCINFO` change before building. New release checksum manifests are signed by key fingerprint `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`.
+Mindwtr publishes two current AUR identities: `mindwtr-bin` (stable prebuilt) and [`mindwtr-beta-bin`](/start/beta-channels) (prerelease). A third name, `mindwtr-bin-beta`, is the previous beta identity; it is still updated from the same signed release artifacts while the rename is in progress. Their package source must point to `github.com/dongdongbh/Mindwtr`, and the maintainer must be `dongdongbh`. Review every `PKGBUILD` and `.SRCINFO` change before building. New release checksum manifests are signed by key fingerprint `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`.
 
 ### Debian / Ubuntu
 

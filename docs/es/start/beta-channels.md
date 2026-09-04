@@ -38,6 +38,15 @@ Página del paquete:
 
 - [mindwtr-beta-bin en AUR](https://aur.archlinux.org/packages/mindwtr-beta-bin)
 
+Si instalaste la beta antes del cambio de nombre, tienes el paquete anterior `mindwtr-bin-beta`. Sigue recibiendo las mismas actualizaciones durante la transición, pero puedes cambiar al nombre actual cuando quieras:
+
+```bash
+sudo pacman -R mindwtr-bin-beta
+paru -S mindwtr-beta-bin
+```
+
+Quitar el paquete no borra tus datos de Mindwtr.
+
 Para volver a la versión estable, instala `mindwtr-bin`.
 
 ## Linux: beta de Flathub

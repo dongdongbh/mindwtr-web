@@ -38,6 +38,15 @@ yay -S mindwtr-beta-bin
 
 - [AUR 上的 mindwtr-beta-bin](https://aur.archlinux.org/packages/mindwtr-beta-bin)
 
+如果你在改名之前安装过测试版，那么现在用的是旧包 `mindwtr-bin-beta`。它在过渡期间仍会收到相同的更新，但你随时可以换成当前的名称：
+
+```bash
+sudo pacman -R mindwtr-bin-beta
+paru -S mindwtr-beta-bin
+```
+
+卸载软件包不会删除你的 Mindwtr 数据。
+
 要返回稳定版，请改为安装 `mindwtr-bin`。
 
 ## Linux - Flathub Beta

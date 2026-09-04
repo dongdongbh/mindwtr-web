@@ -33,7 +33,7 @@ Im AUR gibt es außerdem ein aus dem Quellcode gebautes Paket namens `mindwtr`. 
 
 #### Offizielle AUR-Pakete prüfen
 
-Mindwtr veröffentlicht genau zwei AUR-Paketnamen: `mindwtr-bin` (vorgefertigte stabile Version) und [`mindwtr-beta-bin`](/de/start/beta-channels) (Vorabversion). Die Paketquelle muss auf `github.com/dongdongbh/Mindwtr` verweisen, und der Maintainer muss `dongdongbh` sein. Prüfen Sie jede Änderung an `PKGBUILD` und `.SRCINFO` vor dem Build. Neue Prüfsummen-Manifeste werden mit dem Schlüssel `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D` signiert.
+Mindwtr veröffentlicht zwei aktuelle AUR-Paketnamen: `mindwtr-bin` (vorgefertigte stabile Version) und [`mindwtr-beta-bin`](/de/start/beta-channels) (Vorabversion). Ein dritter Name, `mindwtr-bin-beta`, ist die frühere Beta-Kennung; er wird während der laufenden Umbenennung weiterhin aus denselben signierten Release-Artefakten aktualisiert. Die Paketquelle muss auf `github.com/dongdongbh/Mindwtr` verweisen, und der Maintainer muss `dongdongbh` sein. Prüfen Sie jede Änderung an `PKGBUILD` und `.SRCINFO` vor dem Build. Neue Prüfsummen-Manifeste werden mit dem Schlüssel `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D` signiert.
 
 ### Debian / Ubuntu
 

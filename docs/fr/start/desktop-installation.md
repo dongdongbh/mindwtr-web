@@ -33,7 +33,7 @@ Un paquet compilé depuis les sources, `mindwtr`, existe également sur l’AUR.
 
 #### Vérifier les paquets AUR officiels
 
-Mindwtr publie exactement deux identités AUR : `mindwtr-bin` (binaire stable) et [`mindwtr-beta-bin`](/fr/start/beta-channels) (préversion). La source du paquet doit pointer vers `github.com/dongdongbh/Mindwtr`, et le mainteneur doit être `dongdongbh`. Vérifiez chaque modification de `PKGBUILD` et `.SRCINFO` avant la compilation. Les nouveaux manifestes de sommes de contrôle sont signés avec la clé `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`.
+Mindwtr publie deux identités AUR actuelles : `mindwtr-bin` (binaire stable) et [`mindwtr-beta-bin`](/fr/start/beta-channels) (préversion). Un troisième nom, `mindwtr-bin-beta`, correspond à l'ancienne identité bêta ; il continue d'être mis à jour à partir des mêmes artefacts de publication signés pendant le changement de nom. La source du paquet doit pointer vers `github.com/dongdongbh/Mindwtr`, et le mainteneur doit être `dongdongbh`. Vérifiez chaque modification de `PKGBUILD` et `.SRCINFO` avant la compilation. Les nouveaux manifestes de sommes de contrôle sont signés avec la clé `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D`.
 
 ### Debian / Ubuntu
 

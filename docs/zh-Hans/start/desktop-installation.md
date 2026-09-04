@@ -33,7 +33,7 @@ AUR 上还有一个从源码构建的软件包 `mindwtr`。它由社区维护，
 
 #### 验证官方 AUR 软件包
 
-Mindwtr 只发布两个 AUR 软件包标识：`mindwtr-bin`（稳定版预构建包）和 [`mindwtr-beta-bin`](/zh-Hans/start/beta-channels)（预发布版）。软件包源必须指向 `github.com/dongdongbh/Mindwtr`，维护者必须是 `dongdongbh`。构建前请检查 `PKGBUILD` 和 `.SRCINFO` 的每项变更。新的发布校验和清单使用指纹为 `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D` 的密钥签名。
+Mindwtr 目前发布两个 AUR 软件包标识：`mindwtr-bin`（稳定版预构建包）和 [`mindwtr-beta-bin`](/zh-Hans/start/beta-channels)（预发布版）。第三个名称 `mindwtr-bin-beta` 是旧的测试版标识，在改名过渡期间仍会用同一批已签名的发布产物更新。软件包源必须指向 `github.com/dongdongbh/Mindwtr`，维护者必须是 `dongdongbh`。构建前请检查 `PKGBUILD` 和 `.SRCINFO` 的每项变更。新的发布校验和清单使用指纹为 `0358 999B BE70 4F58 8B90 9497 9E55 3245 CB17 047D` 的密钥签名。
 
 ### Debian / Ubuntu
 

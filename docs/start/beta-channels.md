@@ -38,6 +38,15 @@ Package page:
 
 - [mindwtr-beta-bin on AUR](https://aur.archlinux.org/packages/mindwtr-beta-bin)
 
+If you installed the beta before the rename, you are on the legacy package `mindwtr-bin-beta`. It still receives the same updates during the transition, but you can switch to the current name at any time:
+
+```bash
+sudo pacman -R mindwtr-bin-beta
+paru -S mindwtr-beta-bin
+```
+
+Removing the package does not remove your Mindwtr data.
+
 To go back to stable, install `mindwtr-bin` instead.
 
 ## Linux - Flathub Beta

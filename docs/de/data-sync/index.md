@@ -743,6 +743,18 @@ Ein Gerät ohne die Passphrase pausiert die automatische Synchronisierung und fr
 
 Nicht abgedeckt von der Sync-Verschlüsselung sind die selbst gehostete Mindwtr Cloud, iCloud/CloudKit und die lokale Datenbank der App auf dem jeweiligen Gerät.
 
+Wer einen eigenen Server betreibt und nicht möchte, dass dieser die Aufgaben lesen kann, wählt zwischen der selbst gehosteten Mindwtr Cloud und einem WebDAV-Server mit Sync-Verschlüsselung. Die Mindwtr Cloud liest die Aufgabendaten, um zusammenzuführen, zu erfassen, den Kalender-Feed zu veröffentlichen und MCP bereitzustellen; verschlüsseltes WebDAV lässt den Server blind und verzichtet auf diese Extras.
+
+| | Selbst gehostete Mindwtr Cloud | WebDAV mit Sync-Verschlüsselung |
+| --- | :---: | :---: |
+| Sync zwischen Geräten | Ja | Ja |
+| Anhänge | Ja | Ja |
+| Server kann Aufgaben nicht lesen | Nein | Ja |
+| Erfassungs-Endpunkt | Ja | Nein |
+| Kalender-Feed vom Server | Ja | Nein |
+| MCP vom Server | Ja | Nein |
+
+
 ### Schutz gespeicherter Daten
 
 Wo die Sync-Verschlüsselung nicht greift, kommt der Schutz ruhender Daten vom Gerät, Server oder Anbieter, der die Daten hält:

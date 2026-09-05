@@ -742,6 +742,18 @@ Un appareil qui n'a pas la phrase secrète met la synchronisation automatique en
 
 Le chiffrement de la synchronisation ne couvre ni le Mindwtr Cloud auto-hébergé, ni iCloud/CloudKit, ni la base de données locale de l'application sur chaque appareil.
 
+Si vous gérez votre propre serveur et ne voulez pas qu'il puisse lire vos tâches, le choix se fait entre le Mindwtr Cloud auto-hébergé et un serveur WebDAV avec chiffrement de la synchronisation. Le Mindwtr Cloud lit les données des tâches pour fusionner, capturer, publier le flux de calendrier et servir MCP ; le WebDAV chiffré laisse le serveur aveugle et renonce à ces extras.
+
+| | Mindwtr Cloud auto-hébergé | WebDAV avec chiffrement de la synchronisation |
+| --- | :---: | :---: |
+| Synchronisation entre appareils | Oui | Oui |
+| Pièces jointes | Oui | Oui |
+| Le serveur ne peut pas lire les tâches | Non | Oui |
+| Point de capture | Oui | Non |
+| Flux de calendrier depuis le serveur | Oui | Non |
+| MCP depuis le serveur | Oui | Non |
+
+
 ### Protection du stockage
 
 Là où le chiffrement de la synchronisation ne s'applique pas, la protection au repos vient de l'appareil, du serveur ou du fournisseur qui détient les données :

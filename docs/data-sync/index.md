@@ -742,6 +742,18 @@ A device that does not have the passphrase pauses automatic sync and asks for it
 
 Sync encryption does not cover self-hosted Mindwtr Cloud, iCloud/CloudKit, or the app's own local database on each device.
 
+If you run your own server and do not want it to be able to read your tasks, the choice is between self-hosted Mindwtr Cloud and a WebDAV server with sync encryption. Mindwtr Cloud reads the task data to merge, capture, publish the calendar feed and serve MCP; encrypted WebDAV keeps the server blind and gives up those extras.
+
+| | Self-hosted Mindwtr Cloud | WebDAV with sync encryption |
+| --- | :---: | :---: |
+| Sync between devices | Yes | Yes |
+| Attachments | Yes | Yes |
+| Server cannot read tasks | No | Yes |
+| Capture endpoint | Yes | No |
+| Calendar feed from the server | Yes | No |
+| MCP from the server | Yes | No |
+
+
 ### Storage Protection
 
 Where sync encryption does not apply, protection at rest comes from the device, server, or provider that holds the data:

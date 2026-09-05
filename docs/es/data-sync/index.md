@@ -742,6 +742,18 @@ Un dispositivo que no tenga la frase de contraseña pausa la sincronización aut
 
 El cifrado de la sincronización no cubre la nube Mindwtr autoalojada, iCloud/CloudKit ni la base de datos local de la aplicación en cada dispositivo.
 
+Si administras tu propio servidor y no quieres que pueda leer tus tareas, la elección está entre la nube Mindwtr autoalojada y un servidor WebDAV con cifrado de la sincronización. La nube Mindwtr lee los datos de las tareas para fusionar, capturar, publicar el feed de calendario y servir MCP; WebDAV cifrado mantiene al servidor a ciegas y renuncia a esos extras.
+
+| | Nube Mindwtr autoalojada | WebDAV con cifrado de la sincronización |
+| --- | :---: | :---: |
+| Sincronización entre dispositivos | Sí | Sí |
+| Adjuntos | Sí | Sí |
+| El servidor no puede leer las tareas | No | Sí |
+| Punto de captura | Sí | No |
+| Feed de calendario desde el servidor | Sí | No |
+| MCP desde el servidor | Sí | No |
+
+
 ### Protección del almacenamiento
 
 Donde no llega el cifrado de la sincronización, la protección en reposo depende del dispositivo, servidor o proveedor que guarda los datos:

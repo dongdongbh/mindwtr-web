@@ -60,7 +60,7 @@ What it keeps: the project's notes, area, tags, colour, and status, plus its who
 
 - **Mobile:** Task editor → **Duplicate task** or **Reset checklist**
 - **Desktop:** Task actions menu. Completed rows in **Done** and **Archived** also have a copy button that appears when you hover them.
-- **Projects:** desktop — right-click a project in the sidebar, or use **Duplicate** in the project header. Mobile — swipe a project row to the right, or use **Duplicate** in the project detail sheet.
+- **Projects:** desktop — right-click a project in the sidebar, or use **Duplicate** in the project header's **...** menu. Mobile — swipe a project row to the right, or use **Duplicate** in the project detail sheet.
 
 ## Which One To Choose
 

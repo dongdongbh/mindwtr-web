@@ -100,7 +100,7 @@ Résultats en plusieurs étapes contenant des tâches liées.
 - **Date de début et échéance** : un projet peut porter ses propres date de début et échéance, à côté de la date de revue dans les détails du projet. Ensemble, elles donnent au projet une période sur la Chronologie
 - **Date de revue** : définissez des dates de rappel pour la revue du projet
 - **Archiver** : terminer un projet signifie l’archiver — les tâches restantes sont terminées avec lui, et **Réactiver** annule cette action
-- **Dupliquer** : faites un clic droit sur un projet dans la barre latérale, ou utilisez **Dupliquer** dans l’en-tête du projet, pour copier tout le projet avec ses sections et ses tâches. La copie repart à zéro — voir [Listes réutilisables](/fr/use/reusable-lists)
+- **Dupliquer** : faites un clic droit sur un projet dans la barre latérale, ou utilisez **Dupliquer** dans le menu **...** de l’en-tête du projet, pour copier tout le projet avec ses sections et ses tâches. La copie repart à zéro — voir [Listes réutilisables](/fr/use/reusable-lists)
 
 Le champ **Section du projet** de l’éditeur de tâche affecte une tâche à l’une des sections de son projet actuel. Il n’a de valeur utile qu’une fois la tâche rattachée à un projet comportant des sections.
 

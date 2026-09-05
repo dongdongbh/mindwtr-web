@@ -63,7 +63,7 @@ Ce qui est conservé : les notes, le domaine, les étiquettes, la couleur et le 
 
 - **Mobile :** éditeur de tâche → **Dupliquer la tâche** ou **Réinitialiser la liste de contrôle**
 - **Ordinateur :** menu des actions de la tâche. Les lignes terminées dans **Terminé** et **Archivé** affichent aussi un bouton de copie au survol.
-- **Projets :** sur ordinateur, faites un clic droit sur un projet dans la barre latérale ou utilisez **Dupliquer** dans l’en-tête du projet. Sur mobile, faites glisser la ligne du projet vers la droite ou utilisez **Dupliquer** dans la fiche de détail du projet.
+- **Projets :** sur ordinateur, faites un clic droit sur un projet dans la barre latérale ou utilisez **Dupliquer** dans le menu **...** de l’en-tête du projet. Sur mobile, faites glisser la ligne du projet vers la droite ou utilisez **Dupliquer** dans la fiche de détail du projet.
 
 ## Laquelle choisir ?
 

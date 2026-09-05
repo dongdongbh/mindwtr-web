@@ -205,7 +205,7 @@ Les étapes ultérieures d’un projet séquentiel ne sont pas des **Référence
 
 ### Comment marquer un projet comme terminé ?
 
-**Archivez-le** : dans Mindwtr, l’archivage permet de terminer un projet. Ouvrez le projet et utilisez le bouton **Archiver** (dans l’en-tête du projet sur ordinateur, sous **Actions** dans les détails du projet sur mobile). Toutes les tâches inachevées sont terminées avec lui, et **Réactiver** restaure l’ensemble si vous l’avez archivé trop tôt. Lorsque vous terminez la dernière action d’un projet, l’invite « Quelle est la prochaine action ? » propose également directement de **Terminer le projet** ; vous aurez donc rarement besoin de chercher le bouton. Sinon, un projet dont toutes les tâches sont terminées reste actif jusqu’à ce que vous clôturiez vous-même le résultat, ce qui constitue un rappel utile pendant la revue hebdomadaire.
+**Archivez-le** : dans Mindwtr, l’archivage permet de terminer un projet. Ouvrez le projet et utilisez **Archiver** (dans le menu **...** de l’en-tête du projet sur ordinateur, sous **Actions** dans les détails du projet sur mobile). Toutes les tâches inachevées sont terminées avec lui, et **Réactiver** restaure l’ensemble si vous l’avez archivé trop tôt. Lorsque vous terminez la dernière action d’un projet, l’invite « Quelle est la prochaine action ? » propose également directement de **Terminer le projet** ; vous aurez donc rarement besoin de chercher le bouton. Sinon, un projet dont toutes les tâches sont terminées reste actif jusqu’à ce que vous clôturiez vous-même le résultat, ce qui constitue un rappel utile pendant la revue hebdomadaire.
 
 ### Puis-je transformer une tâche en projet ?
 

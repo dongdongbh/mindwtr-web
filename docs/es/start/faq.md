@@ -205,7 +205,7 @@ Los pasos posteriores de un proyecto secuencial no son de **Referencia**. Refere
 
 ### ¿Cómo marco un proyecto como terminado?
 
-**Archívalo**: archivar es la forma de completar un proyecto en Mindwtr. Abre el proyecto y usa el botón **Archivar** (en el encabezado del proyecto en escritorio, bajo **Acciones** en los detalles del proyecto en dispositivos móviles). Las tareas sin terminar se completan con él y **Reactivar** lo restaura todo si lo archivaste demasiado pronto. Cuando terminas la última acción de un proyecto, el mensaje «¿Cuál es la próxima acción?» también ofrece directamente **Completar proyecto**, por lo que rara vez tendrás que buscar el botón. Un proyecto con todas sus tareas terminadas permanece activo hasta que cierres tú mismo el resultado, lo que sirve como recordatorio útil durante la revisión semanal.
+**Archívalo**: archivar es la forma de completar un proyecto en Mindwtr. Abre el proyecto y usa **Archivar** (en el menú **...** del encabezado del proyecto en escritorio, bajo **Acciones** en los detalles del proyecto en dispositivos móviles). Las tareas sin terminar se completan con él y **Reactivar** lo restaura todo si lo archivaste demasiado pronto. Cuando terminas la última acción de un proyecto, el mensaje «¿Cuál es la próxima acción?» también ofrece directamente **Completar proyecto**, por lo que rara vez tendrás que buscar el botón. Un proyecto con todas sus tareas terminadas permanece activo hasta que cierres tú mismo el resultado, lo que sirve como recordatorio útil durante la revisión semanal.
 
 ### ¿Puedo convertir una tarea en un proyecto?
 

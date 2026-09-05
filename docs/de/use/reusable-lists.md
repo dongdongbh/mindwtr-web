@@ -63,7 +63,7 @@ Erhalten bleiben: Notizen, Bereich, Schlagwörter, Farbe und Status des Projekts
 
 - **Mobilgeräte:** Aufgaben-Editor → **Aufgabe duplizieren** oder **Checkliste zurücksetzen**
 - **Desktop:** Aktionsmenü der Aufgabe. Erledigte Zeilen in **Erledigt** und **Archiviert** zeigen beim Überfahren mit der Maus zusätzlich eine Kopieren-Schaltfläche.
-- **Projekte:** Desktop — Rechtsklick auf ein Projekt in der Seitenleiste oder **Duplizieren** in der Projektkopfzeile. Mobilgeräte — Projektzeile nach rechts wischen oder **Duplizieren** in der Projektdetailansicht.
+- **Projekte:** Desktop — Rechtsklick auf ein Projekt in der Seitenleiste oder **Duplizieren** im **...**-Menü der Projektkopfzeile. Mobilgeräte — Projektzeile nach rechts wischen oder **Duplizieren** in der Projektdetailansicht.
 
 ## Welche Variante passt?
 

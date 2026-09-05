@@ -100,7 +100,7 @@ Multi-step outcomes containing related tasks.
 - **Start date and due date**: A project can carry its own start and due dates, alongside the review date in the project details. Together they give the project a span on the Timeline
 - **Review date**: Set tickler dates for project review
 - **Archive**: Completing a project means archiving it — remaining tasks are completed with it, and **Reactivate** undoes it
-- **Duplicate**: Right-click a project in the sidebar, or use **Duplicate** in the project header, to copy the whole project with its sections and tasks. The copy starts fresh — see [Reusable Lists](/use/reusable-lists)
+- **Duplicate**: Right-click a project in the sidebar, or use **Duplicate** in the project header's **...** menu, to copy the whole project with its sections and tasks. The copy starts fresh — see [Reusable Lists](/use/reusable-lists)
 
 The **Project Section** field in the task editor assigns a task to one of the sections in its current project. It only has a useful value after the task belongs to a project that has sections.
 

@@ -100,7 +100,7 @@ Mehrstufige Ergebnisse mit zusammengehörigen Aufgaben.
 - **Startdatum und Fälligkeitsdatum**: Ein Projekt kann eigene Start- und Fälligkeitsdaten tragen, neben dem Wiedervorlagedatum in den Projektdetails. Zusammen geben sie dem Projekt einen Zeitraum auf der Zeitleiste
 - **Wiedervorlagedatum**: Tickler-Daten für die Projektdurchsicht
 - **Archivieren**: Ein Projekt wird durch Archivieren abgeschlossen; übrige Aufgaben werden mit abgeschlossen, **Reaktivieren** macht dies rückgängig.
-- **Duplizieren**: Klicken Sie mit der rechten Maustaste auf ein Projekt in der Seitenleiste oder verwenden Sie **Duplizieren** in der Projektkopfzeile, um das ganze Projekt samt Abschnitten und Aufgaben zu kopieren. Die Kopie startet frisch — siehe [Wiederverwendbare Listen](/de/use/reusable-lists).
+- **Duplizieren**: Klicken Sie mit der rechten Maustaste auf ein Projekt in der Seitenleiste oder verwenden Sie **Duplizieren** im **...**-Menü der Projektkopfzeile, um das ganze Projekt samt Abschnitten und Aufgaben zu kopieren. Die Kopie startet frisch — siehe [Wiederverwendbare Listen](/de/use/reusable-lists).
 
 Das Feld **Projektabschnitt** im Aufgabeneditor weist eine Aufgabe einem Abschnitt ihres aktuellen Projekts zu. Es ist erst sinnvoll, wenn die Aufgabe zu einem Projekt mit Abschnitten gehört.
 

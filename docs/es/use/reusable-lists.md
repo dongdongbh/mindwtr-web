@@ -63,7 +63,7 @@ Lo que se conserva: las notas, el área, las etiquetas, el color y el estado del
 
 - **Dispositivos móviles:** editor de tareas → **Duplicar tarea** o **Restablecer lista de comprobación**.
 - **Escritorio:** menú de acciones de la tarea. Las filas completadas en **Hecho** y **Archivado** también muestran un botón de copiar al pasar el cursor.
-- **Proyectos:** en escritorio, haz clic derecho en un proyecto de la barra lateral o usa **Duplicar** en la cabecera del proyecto. En móvil, desliza la fila del proyecto hacia la derecha o usa **Duplicar** en la ficha de detalle del proyecto.
+- **Proyectos:** en escritorio, haz clic derecho en un proyecto de la barra lateral o usa **Duplicar** en el menú **...** de la cabecera del proyecto. En móvil, desliza la fila del proyecto hacia la derecha o usa **Duplicar** en la ficha de detalle del proyecto.
 
 ## Qué opción elegir
 

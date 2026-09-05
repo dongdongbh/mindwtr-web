@@ -100,7 +100,7 @@ Resultados de varios pasos que contienen tareas relacionadas.
 - **Fecha de inicio y fecha de vencimiento**: un proyecto puede llevar sus propias fechas de inicio y vencimiento, junto a la fecha de revisión en los detalles del proyecto. Juntas dan al proyecto un tramo en la Línea de tiempo
 - **Fecha de revisión**: define fechas de seguimiento para revisar el proyecto
 - **Archivar**: completar un proyecto significa archivarlo; sus tareas restantes se completan con él y **Reactivar** lo deshace
-- **Duplicar**: haz clic derecho en un proyecto de la barra lateral, o usa **Duplicar** en la cabecera del proyecto, para copiar el proyecto entero con sus secciones y tareas. La copia empieza de cero: consulta [Listas reutilizables](/es/use/reusable-lists)
+- **Duplicar**: haz clic derecho en un proyecto de la barra lateral, o usa **Duplicar** en el menú **...** de la cabecera del proyecto, para copiar el proyecto entero con sus secciones y tareas. La copia empieza de cero: consulta [Listas reutilizables](/es/use/reusable-lists)
 
 El campo **Sección del proyecto** del editor asigna una tarea a una de las secciones de su proyecto actual. Solo tiene un valor útil cuando la tarea pertenece a un proyecto que contiene secciones.
 

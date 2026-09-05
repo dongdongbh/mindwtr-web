@@ -22,7 +22,7 @@ Mindwtr admite la integración con calendarios en dos direcciones: leer calendar
 ## Vistas
 
 - **Vista de día**: cuadrícula horaria con tareas programadas, fechas límite y eventos externos.
-- **Vista de semana**: cuadrícula para revisar un intervalo de planificación de varios días, con siete días de forma predeterminada.
+- **Vista de semana**: cuadrícula para revisar un intervalo de planificación de varios días, con siete días de forma predeterminada en el escritorio y cinco en el móvil.
 - **Vista de mes**: resumen con indicadores de fechas límite, tareas programadas y eventos.
 - **Vista de agenda**: lista móvil de 60 días con próximas fechas límite, tareas programadas y eventos externos.
 

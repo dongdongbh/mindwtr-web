@@ -22,7 +22,7 @@ Mindwtr supports calendar integration in two directions: reading external calend
 ## Views
 
 - **Day view**: time grid with scheduled tasks, deadlines, and external events.
-- **Week view**: planning grid for scanning a multi-day planning window, showing seven days by default.
+- **Week view**: planning grid for scanning a multi-day planning window, showing seven days by default on desktop and five on mobile.
 - **Month view**: overview with markers for deadlines, scheduled tasks, and events.
 - **Schedule view**: rolling 60-day list for upcoming deadlines, scheduled tasks, and external events.
 

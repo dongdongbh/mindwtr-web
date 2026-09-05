@@ -22,7 +22,7 @@ Mindwtr unterstützt die Kalenderintegration in zwei Richtungen: externe Kalende
 ## Ansichten
 
 - **Tagesansicht**: Zeitraster mit geplanten Aufgaben, Fristen und externen Terminen.
-- **Wochenansicht**: Planungsraster für einen mehrtägigen Planungszeitraum, standardmäßig mit sieben Tagen.
+- **Wochenansicht**: Planungsraster für einen mehrtägigen Planungszeitraum, standardmäßig mit sieben Tagen auf dem Desktop und fünf auf Mobilgeräten.
 - **Monatsansicht**: Überblick mit Markierungen für Fristen, geplante Aufgaben und Termine.
 - **Terminplanansicht**: Fortlaufende 60-Tage-Liste für anstehende Fristen, geplante Aufgaben und externe Termine.
 

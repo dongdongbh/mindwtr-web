@@ -95,6 +95,8 @@ Alternativ verwenden Sie Umgebungsvariablen in der Konfiguration eines MCP-Clien
 
 Der Cloud-Modus liest den aktuellen Schnappschuss von `/v1/data` aus Ihrem selbst gehosteten Cloud-Server und stellt Lesewerkzeuge für Aufgaben, Projekte, Abschnitte, Bereiche und Personen bereit. Mit `--write` laufen Schreibvorgänge für Aufgaben, Projekte, Abschnitte und Bereiche über die ressourcenspezifischen [REST-Endpunkte](../developers/cloud-api.md) des Cloud-Servers (`POST /v1/tasks`, `PATCH /v1/tasks/:id` usw.). Dadurch erhält jede Änderung dieselbe Validierung und Revisionsverfolgung wie Änderungen aus Ihren Apps. Ohne `--write` geben Schreibwerkzeuge `read_only` zurück. Personenänderungen und die Wiederherstellung gelöschter Aufgaben sind im Cloud-Modus noch nicht verfügbar. Verwenden Sie dafür das lokale Datenbankbackend.
 
+Das Aktualisieren von Link-Anhängen über MCP im Cloud-Modus erfordert Mindwtr Cloud 1.2.8 oder neuer. Der Helfer verwendet bedingte Schreibzugriffe, um Datei-Anhänge zu erhalten, die ein anderer Client geändert hat, und versucht die Aktualisierung bei gleichzeitigen Änderungen bis zu dreimal. Liefert dein Server keinen `ETag` für den Datensatz, aktualisiere ihn zuerst; der Helfer lehnt die Änderung ab, ohne zu schreiben. Änderungen einzelner anderer Felder und das Erstellen von Aufgaben oder Projekten funktionieren wie bisher.
+
 Dies ist nicht der blockierte gehostete Mehrmandanten-Connector. Sie betreiben den Cloud-Server und das MCP-Hilfsprogramm weiterhin selbst; Mindwtr betreibt keinen Dienst, der die Aufgabendaten aller Benutzer speichert.
 
 Für eine globale Installation verwenden Sie stattdessen:

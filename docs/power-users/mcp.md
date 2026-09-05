@@ -95,6 +95,8 @@ Or use environment variables in an MCP client configuration:
 
 Cloud mode reads the current `/v1/data` snapshot from your self-hosted Cloud server and exposes read tools for tasks, projects, sections, areas, and people. With `--write`, task, project, section, and area writes go through the Cloud server's per-resource [REST endpoints](../developers/cloud-api.md) (`POST /v1/tasks`, `PATCH /v1/tasks/:id`, and so on), so every edit gets the same validation and revision tracking as edits from your apps. Without `--write`, write tools return `read_only`. Person edits and restoring deleted tasks are not available in Cloud mode yet. Use the local database backend for those.
 
+Updating link attachments through Cloud-backed MCP requires Mindwtr Cloud 1.2.8 or later. The helper uses conditional writes to preserve file attachments changed by another client and retries concurrent changes up to three attempts. If your server does not provide an entity `ETag`, upgrade it before updating links; the helper refuses the update without writing. Scalar-only edits and creating tasks or projects retain their existing behavior.
+
 This is not the blocked hosted multi-tenant connector. You still run the Cloud server and the MCP helper yourself; Mindwtr is not operating a service that stores everyone's task data.
 
 For a global install instead:

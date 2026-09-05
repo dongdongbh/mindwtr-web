@@ -60,6 +60,8 @@ Parámetros de lista:
 
 La creación acepta `title` o un `input` de adición rápida, además de `props` opcional. El parche acepta campos compatibles con la validación de nube y aumenta los metadatos de revisión.
 
+Mindwtr Cloud 1.2.8 y versiones posteriores devuelven un `ETag` fuerte en `GET /v1/tasks/:id` y `GET /v1/projects/:id`. Para actualizar la versión que leíste, envía esa etiqueta en `If-Match` con el `PATCH` correspondiente. El servidor comprueba el registro actual dentro de su bloqueo de escritura y devuelve `412 Precondition Failed` sin escribir si el registro cambió, incluso si solo cambió un adjunto. Vuelve a leer el registro y reconstruye la actualización antes de reintentar. Si omites `If-Match`, se mantiene el comportamiento anterior de actualización incondicional.
+
 ## Captura
 
 ```text

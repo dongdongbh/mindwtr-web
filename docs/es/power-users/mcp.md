@@ -95,6 +95,8 @@ O usa variables de entorno en la configuración de un cliente MCP:
 
 El modo Cloud lee la instantánea actual de `/v1/data` desde tu servidor Cloud autoalojado y expone herramientas de lectura para tareas, proyectos, secciones, áreas y personas. Con `--write`, las escrituras de tareas, proyectos, secciones y áreas pasan por los [endpoints REST](/es/developers/cloud-api) por recurso del servidor Cloud (`POST /v1/tasks`, `PATCH /v1/tasks/:id`, etc.), por lo que cada edición recibe la misma validación y seguimiento de revisiones que las ediciones realizadas desde tus aplicaciones. Sin `--write`, las herramientas de escritura devuelven `read_only`. La edición de personas y la restauración de tareas eliminadas aún no están disponibles en el modo Cloud. Usa el backend de base de datos local para esas operaciones.
 
+Actualizar enlaces adjuntos mediante MCP en modo Cloud requiere Mindwtr Cloud 1.2.8 o posterior. El asistente usa escrituras condicionales para conservar los archivos adjuntos que otro cliente haya cambiado y realiza hasta tres intentos ante cambios concurrentes. Si el servidor no proporciona un `ETag` del registro, actualízalo antes de modificar los enlaces; el asistente rechaza la actualización sin escribir. Las modificaciones de otros campos y la creación de tareas o proyectos mantienen su comportamiento anterior.
+
 Este no es el conector multiusuario alojado que está bloqueado. Sigues ejecutando tú mismo el servidor Cloud y el asistente MCP; Mindwtr no opera un servicio que almacene los datos de tareas de todo el mundo.
 
 Si prefieres una instalación global:

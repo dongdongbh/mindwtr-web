@@ -60,6 +60,8 @@ Paramètres de requête de la liste :
 
 La création accepte soit `title`, soit l’`input` d’ajout rapide, ainsi que des `props` facultatives. La modification accepte les champs de tâche pris en charge par la couche de validation du cloud et incrémente les métadonnées de révision de synchronisation.
 
+Mindwtr Cloud 1.2.8 et les versions suivantes renvoient un `ETag` fort pour `GET /v1/tasks/:id` et `GET /v1/projects/:id`. Pour modifier la version que vous avez lue, transmettez cette valeur dans `If-Match` avec le `PATCH` correspondant. Le serveur vérifie le contenu actuel sous son verrou d’écriture et renvoie `412 Precondition Failed` sans écrire si le contenu a changé, y compris si seule une pièce jointe a changé. Relisez le contenu et reconstruisez votre modification avant de réessayer. Sans `If-Match`, le comportement précédent de modification sans condition reste inchangé.
+
 ## Capture
 
 ```text

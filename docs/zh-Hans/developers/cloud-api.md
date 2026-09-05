@@ -60,6 +60,8 @@ POST /v1/tasks/:id/archive
 
 创建操作接受 `title` 或快速添加 `input`，以及可选的 `props`。Patch 接受云端验证层支持的任务字段，并推进同步修订元数据。
 
+Mindwtr Cloud 1.2.8 及更高版本会在 `GET /v1/tasks/:id` 和 `GET /v1/projects/:id` 的响应中返回强 `ETag`。要更新刚读取的版本，请在对应的 `PATCH` 请求中通过 `If-Match` 发送该标签。服务器会在写锁内检查当前记录；如果记录已改变，即使只改变了附件，也会返回 `412 Precondition Failed`，不执行写入。请重新读取记录并重新构建更新后再试。省略 `If-Match` 时，仍使用原有的无条件更新行为。
+
 ## 收集
 
 ```text

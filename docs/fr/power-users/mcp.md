@@ -95,6 +95,8 @@ Vous pouvez aussi utiliser des variables d’environnement dans la configuration
 
 Le mode Cloud lit l’instantané `/v1/data` actuel depuis votre serveur Cloud auto-hébergé et expose des outils de lecture pour les tâches, projets, sections, domaines et personnes. Avec `--write`, les écritures de tâches, projets, sections et domaines passent par les [points de terminaison REST](/fr/developers/cloud-api) propres à chaque ressource du serveur Cloud (`POST /v1/tasks`, `PATCH /v1/tasks/:id`, etc.) : chaque modification bénéficie ainsi de la même validation et du même suivi des révisions que celles effectuées depuis vos applications. Sans `--write`, les outils d’écriture renvoient `read_only`. La modification des personnes et la restauration des tâches supprimées ne sont pas encore disponibles en mode Cloud. Utilisez le système local de base de données pour ces opérations.
 
+La modification des liens joints via MCP en mode Cloud nécessite Mindwtr Cloud 1.2.8 ou une version ultérieure. L’outil utilise des écritures conditionnelles pour conserver les fichiers joints modifiés par un autre client et effectue jusqu’à trois tentatives en cas de modifications simultanées. Si votre serveur ne fournit pas de `ETag` pour l’élément, mettez-le à jour avant de modifier les liens ; l’outil refuse la modification sans écrire. La modification des autres champs et la création de tâches ou de projets conservent leur comportement précédent.
+
 Il ne s’agit pas du connecteur mutualisé hébergé qui est bloqué. Vous exécutez toujours vous-même le serveur Cloud et l’utilitaire MCP ; Mindwtr n’exploite pas de service stockant les données de tâches de tout le monde.
 
 Pour une installation globale :

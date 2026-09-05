@@ -32,7 +32,7 @@ Utilisez cette configuration pour :
 
 - **OpenAI officiel :** laissez **URL de base personnalisée** vide et utilisez votre clé OpenAI ;
 - **serveurs locaux :** llama.cpp, Ollama, LM Studio, LocalAI, vLLM et équivalents ;
-- **fournisseurs hébergés compatibles avec OpenAI :** par exemple GLM ou d’autres services exposant un point de terminaison compatible.
+- **fournisseurs hébergés compatibles avec OpenAI :** par exemple xAI (Grok), GLM ou d’autres services exposant un point de terminaison compatible.
 
 1. Si nécessaire, démarrez un point de terminaison compatible avec OpenAI ou obtenez-y un accès.
 2. Dans **Paramètres → Assistant IA** sur ordinateur ou **Menu → Paramètres → Avancé → Assistant IA** sur mobile :
@@ -58,6 +58,13 @@ Exemple pour un service GLM hébergé :
 - **Modèle** : l’identifiant GLM exposé, par exemple `GLM-4.7`
 - **URL de base personnalisée** : l’URL compatible avec OpenAI du fournisseur
 - **Clé d’API** : votre clé chez ce fournisseur, si elle est requise
+
+Exemple pour xAI (Grok) :
+
+- **Fournisseur** : `OpenAI`
+- **Modèle** : un identifiant de modèle Grok issu de la liste des modèles xAI, par exemple `grok-4.6`
+- **URL de base personnalisée** : `https://api.x.ai/v1`
+- **Clé d’API** : votre clé d’API xAI
 
 ## Fonctionnalités
 

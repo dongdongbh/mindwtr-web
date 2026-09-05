@@ -32,7 +32,7 @@ Mindwtr 可以连接任何提供 **OpenAI 兼容 Chat Completions API** 的服�
 
 - **官方 OpenAI**：将**自定义基础 URL**留空，并使用你的 OpenAI API 密钥。
 - **本地服务器**：llama.cpp、Ollama、LM Studio、LocalAI、vLLM 等。
-- **托管的 OpenAI 兼容服务**：例如 GLM，或其他提供 OpenAI 兼容端点的厂商。
+- **托管的 OpenAI 兼容服务**：例如 xAI（Grok）、GLM，或其他提供 OpenAI 兼容端点的厂商。
 
 1. 如有需要，启动 OpenAI 兼容端点或取得其访问权限。
 2. 在桌面端的**设置 → AI 助手**或移动端的**菜单 → 设置 → 高级 → AI 助手**中：
@@ -58,6 +58,13 @@ GLM 类托管端点示例：
 - **模型**：服务提供方公开的 GLM 模型 ID，例如 `GLM-4.7`
 - **自定义基础 URL**：服务提供方的 OpenAI 兼容基础 URL
 - **API 密钥**：服务提供方要求时填写其密钥
+
+xAI（Grok）示例：
+
+- **服务提供方**：`OpenAI`
+- **模型**：xAI 模型列表中的 Grok 模型 ID，例如 `grok-4.6`
+- **自定义基础 URL**：`https://api.x.ai/v1`
+- **API 密钥**：你的 xAI API 密钥
 
 ## 功能
 

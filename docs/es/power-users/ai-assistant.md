@@ -32,7 +32,7 @@ Usa esta configuración para:
 
 - **OpenAI oficial:** deja vacía **URL base personalizada** y usa tu clave de OpenAI.
 - **Servidores locales:** llama.cpp, Ollama, LM Studio, LocalAI, vLLM y similares.
-- **Proveedores alojados compatibles con OpenAI:** por ejemplo, GLM u otros que expongan un endpoint compatible.
+- **Proveedores alojados compatibles con OpenAI:** por ejemplo, xAI (Grok), GLM u otros que expongan un endpoint compatible.
 
 1. Si hace falta, inicia u obtén acceso a un endpoint compatible.
 2. En **Ajustes → Asistente de IA** en escritorio o en **Menú → Ajustes → Avanzado → Asistente de IA** en móvil:
@@ -58,6 +58,13 @@ Ejemplo para endpoints alojados al estilo GLM:
 - **Modelo:** el identificador GLM expuesto, como `GLM-4.7`.
 - **URL base personalizada:** la URL base compatible con OpenAI.
 - **Clave de API:** la clave del proveedor, si la exige.
+
+Ejemplo para xAI (Grok):
+
+- **Proveedor:** `OpenAI`.
+- **Modelo:** un identificador de modelo Grok de la lista de modelos de xAI, como `grok-4.6`.
+- **URL base personalizada:** `https://api.x.ai/v1`.
+- **Clave de API:** tu clave de API de xAI.
 
 ## Funciones
 

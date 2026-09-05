@@ -32,7 +32,7 @@ Verwenden Sie diese Einrichtung für:
 
 - **Offizielles OpenAI**: Lassen Sie **Benutzerdefinierte Basis-URL** leer und verwenden Sie Ihren OpenAI-API-Schlüssel.
 - **Lokale Server**: llama.cpp, Ollama, LM Studio, LocalAI, vLLM und ähnliche.
-- **Gehostete OpenAI-kompatible Anbieter**: beispielsweise GLM oder andere Anbieter mit einem OpenAI-kompatiblen Endpunkt.
+- **Gehostete OpenAI-kompatible Anbieter**: beispielsweise xAI (Grok), GLM oder andere Anbieter mit einem OpenAI-kompatiblen Endpunkt.
 
 1. Starten Sie bei Bedarf einen OpenAI-kompatiblen Endpunkt oder verschaffen Sie sich Zugriff darauf.
 2. Auf dem Desktop unter **Einstellungen → KI-Assistent** oder auf Mobilgeräten unter **Menü → Einstellungen → Erweitert → KI-Assistent**:
@@ -57,6 +57,13 @@ Beispiel für gehostete Endpunkte im GLM-Stil:
 - **Modell**: die von Ihrem Anbieter bereitgestellte GLM-Modell-ID, etwa `GLM-4.7`
 - **Benutzerdefinierte Basis-URL**: die OpenAI-kompatible Basis-URL Ihres Anbieters
 - **API-Schlüssel**: falls erforderlich, der Schlüssel Ihres Anbieters
+
+Beispiel für xAI (Grok):
+
+- **Anbieter**: `OpenAI`
+- **Modell**: eine Grok-Modell-ID aus der Modellliste von xAI, etwa `grok-4.6`
+- **Benutzerdefinierte Basis-URL**: `https://api.x.ai/v1`
+- **API-Schlüssel**: Ihr xAI-API-Schlüssel
 
 ## Funktionen
 

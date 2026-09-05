@@ -32,7 +32,7 @@ Use this setup for:
 
 - **Official OpenAI**: leave **Custom base URL** blank and use your OpenAI API key.
 - **Local servers**: llama.cpp, Ollama, LM Studio, LocalAI, vLLM, and similar.
-- **Hosted OpenAI-compatible providers**: for example GLM or other vendors that expose an OpenAI-compatible endpoint.
+- **Hosted OpenAI-compatible providers**: for example xAI (Grok), GLM, or other vendors that expose an OpenAI-compatible endpoint.
 
 1. If needed, start or obtain access to an OpenAI-compatible endpoint.
 2. In **Settings → AI assistant** on desktop or **Menu → Settings → Advanced → AI assistant** on mobile:
@@ -57,6 +57,13 @@ Example for GLM-style hosted endpoints:
 - **Model**: the GLM model id exposed by your provider, such as `GLM-4.7`
 - **Custom base URL**: your provider's OpenAI-compatible base URL
 - **API key**: your provider key if required
+
+Example for xAI (Grok):
+
+- **Provider**: `OpenAI`
+- **Model**: a Grok model id from xAI's model list, such as `grok-4.6`
+- **Custom base URL**: `https://api.x.ai/v1`
+- **API key**: your xAI API key
 
 ## Features
 

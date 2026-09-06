@@ -18,11 +18,11 @@ Die Desktop-App besitzt eine Seitenleistennavigation mit allen GTD-Ansichten und
 
 Wenn Sie das Fälligkeitsdatum einer Aufgabe wiederholt nach hinten verschieben, zeigt die Zeile nach der dritten Verschiebung neben dem Datum eine kleine Sanduhr mit der Anzahl. Sie erinnert daran, dass die Aufgabe möglicherweise erneut geklärt, delegiert oder verworfen werden sollte, statt sie erneut aufzuschieben.
 
-Die meisten Aufgabenlisten verwenden dieselbe Steuerungszeile zum Auswählen, Filtern, Sortieren, Gruppieren, Anzeigen von Details und Umschalten der Listendichte (Komfortabel, Kompakt oder Verdichtet). Mit **Gruppieren** ordnen Sie Posteingang, Nächste Aktionen, Warten, Irgendwann/Vielleicht, Referenz, Erledigt, Archiviert und andere Listen nach Metadaten wie Kontext, Bereich, Projekt oder Tag. Erledigt und Archiviert bieten zusätzlich die Gruppierung **Abschlussdatum** – Heute, Gestern, Letzte 7 Tage, danach je eine Überschrift pro Kalendermonat für ältere Aufgaben (Januar 2026, Dezember 2025, …) und Nicht abgeschlossen – auf Basis Ihrer lokalen Kalendertage, sodass sich beide Listen wie ein Protokoll des Erledigten lesen. Leere Gruppen werden ausgeblendet, die Sammelgruppe ohne Zuordnung (Kein Projekt, Kein Kontext, Allgemein usw.) steht am Ende, und jede Gruppenüberschrift lässt sich einklappen — jede Liste merkt sich pro Gruppierung auf diesem Gerät, welche Gruppen eingeklappt sind.
+Die meisten Aufgabenlisten verwenden dieselbe Steuerungszeile zum Auswählen, Filtern, Sortieren, Gruppieren, Anzeigen von Details und Umschalten der Listendichte (Komfortabel, Kompakt oder Verdichtet). Mit **Gruppieren** ordnen Sie Eingang, Nächste Aktionen, Warten, Irgendwann/Vielleicht, Referenz, Erledigt, Archiviert und andere Listen nach Metadaten wie Kontext, Bereich, Projekt oder Tag. Erledigt und Archiviert bieten zusätzlich die Gruppierung **Abschlussdatum** – Heute, Gestern, Letzte 7 Tage, danach je eine Überschrift pro Kalendermonat für ältere Aufgaben (Januar 2026, Dezember 2025, …) und Nicht abgeschlossen – auf Basis Ihrer lokalen Kalendertage, sodass sich beide Listen wie ein Protokoll des Erledigten lesen. Leere Gruppen werden ausgeblendet, die Sammelgruppe ohne Zuordnung (Kein Projekt, Kein Kontext, Allgemein usw.) steht am Ende, und jede Gruppenüberschrift lässt sich einklappen — jede Liste merkt sich pro Gruppierung auf diesem Gerät, welche Gruppen eingeklappt sind.
 
-**Fokus**, **Posteingang**, **Nächste Aktionen**, **Warten** und **Irgendwann/Vielleicht** merken sich jeweils ihre eigene **Gruppieren**-Auswahl; wenn Sie „Fokus“ nach Projekt gruppieren, bleibt der Posteingang also unverändert. Beim ersten Start nach dem Update wird die bisher gemeinsame Gruppierung auf alle fünf Listen übertragen, danach sind sie voneinander unabhängig.
+**Fokus**, **Eingang**, **Nächste Aktionen**, **Warten** und **Irgendwann/Vielleicht** merken sich jeweils ihre eigene **Gruppieren**-Auswahl; wenn Sie „Fokus“ nach Projekt gruppieren, bleibt der Eingang also unverändert. Beim ersten Start nach dem Update wird die bisher gemeinsame Gruppierung auf alle fünf Listen übertragen, danach sind sie voneinander unabhängig.
 
-Ziehen Sie eine Aufgabe in der Seitenleiste auf **Posteingang**, **Irgendwann/Vielleicht**, **Warten**, **Referenz**, **Erledigt** oder **Archiviert**, um ihren Status zu ändern; die Meldung bietet **Rückgängig**. Der **Papierkorb** ist kein Ablageziel. Ziehen Sie die Aufgabe auf **Kalender** oder halten Sie sie beim Ziehen kurz darüber, um den heutigen Tag zu öffnen. Aus der Terminplanansicht wechselt Mindwtr in die Wochenansicht, damit Sie die Aufgabe auf einem Tag und einer Uhrzeit ablegen können.
+Ziehen Sie eine Aufgabe in der Seitenleiste auf **Eingang**, **Irgendwann/Vielleicht**, **Warten**, **Referenz**, **Erledigt** oder **Archiviert**, um ihren Status zu ändern; die Meldung bietet **Rückgängig**. Der **Papierkorb** ist kein Ablageziel. Ziehen Sie die Aufgabe auf **Kalender** oder halten Sie sie beim Ziehen kurz darüber, um den heutigen Tag zu öffnen. Aus der Terminplanansicht wechselt Mindwtr in die Wochenansicht, damit Sie die Aufgabe auf einem Tag und einer Uhrzeit ablegen können.
 
 ## Fokusmodus
 
@@ -51,14 +51,14 @@ Unter macOS bringt die Desktop-App ein eigenes Widget mit.
 
 ## Ansichten
 
-### 📥 Posteingang
+### 📥 Eingang
 
 Ihre Erfassungszone. Alle neuen Aufgaben landen vor der Verarbeitung hier.
 
 - **Aufgaben hinzufügen** über das untere Eingabefeld
 - **Syntax für „Schnell hinzufügen“** wird unterstützt (siehe [Erste Schritte](/de/start/getting-started))
-- Verwenden Sie den Stern neben dem Eingabefeld, wenn eine neue Aufgabe direkt in **Heutiger Fokus** landen soll. Derselbe Stern befindet sich in der Kopfzeile des Aufgabeneditors. Das Markieren gilt als Klärung: Eine markierte Erfassung wird als **Nächste Aktion** statt als Posteingangseintrag erstellt. Wird eine markierte Aufgabe zurück in den Posteingang verschoben, verliert sie den Stern.
-- **Posteingang verarbeiten** mit dem Klärungsablauf
+- Verwenden Sie den Stern neben dem Eingabefeld, wenn eine neue Aufgabe direkt in **Heutiger Fokus** landen soll. Derselbe Stern befindet sich in der Kopfzeile des Aufgabeneditors. Das Markieren gilt als Klärung: Eine markierte Erfassung wird als **Nächste Aktion** statt als Eingangseintrag erstellt. Wird eine markierte Aufgabe zurück in den Eingang verschoben, verliert sie den Stern.
+- **Eingang verarbeiten** mit dem Klärungsablauf
 - **Gedankensammlung** führt durch typische Lebens-/Arbeitsbereiche, wenn Sie eine geführte Erfassung statt eines leeren Feldes wünschen.
 
 ### 🎯 Fokus
@@ -138,7 +138,7 @@ Ein Rechtsklick auf eine Aufgabe im Kalender öffnet die üblichen Aufgabenaktio
 
 Kanban-Board mit Ziehen und Ablegen:
 
-- **Posteingang**: Unverarbeitete Einträge
+- **Eingang**: Unverarbeitete Einträge
 - **Nächste Aktionen**: Arbeitsbereit
 - **Warten**: Delegierte Einträge
 - **Irgendwann/Vielleicht**: Zurückgestellte Einträge
@@ -172,11 +172,11 @@ Wählen Sie **Auswählen**, um Aufgaben zu markieren, oder **Alle auswählen**, 
 
 ### 📦 Archiviert
 
-Abgelegte abgeschlossene Aufgaben. Sie sind in normalen Listen ausgeblendet, können hier aber gesucht oder wiederhergestellt werden. Klicken Sie auf den Titel einer Aufgabe, um Notizen, Teilaufgaben und Anhänge schreibgeschützt zu öffnen, ohne sie wiederherzustellen. Klicken Sie zur Korrektur auf den Zeitstempel **Abgeschlossen**, oder nutzen Sie die Wiederherstellen-Aktion der Zeile, um die Aufgabe zurück in den Posteingang zu schicken. Ein Umschalter „Aufgaben | Projekte“ oben zeigt stattdessen archivierte Projekte: Wiederherstellen reaktiviert das Projekt (samt der mit ihm abgeschlossenen Aufgaben), Löschen verschiebt es in den Papierkorb. Klicken Sie auf den Namen eines archivierten Projekts, um es schreibgeschützt in Projekte zu öffnen, samt der mit ihm abgeschlossenen Aufgaben.
+Abgelegte abgeschlossene Aufgaben. Sie sind in normalen Listen ausgeblendet, können hier aber gesucht oder wiederhergestellt werden. Klicken Sie auf den Titel einer Aufgabe, um Notizen, Teilaufgaben und Anhänge schreibgeschützt zu öffnen, ohne sie wiederherzustellen. Klicken Sie zur Korrektur auf den Zeitstempel **Abgeschlossen**, oder nutzen Sie die Wiederherstellen-Aktion der Zeile, um die Aufgabe zurück in den Eingang zu schicken. Ein Umschalter „Aufgaben | Projekte“ oben zeigt stattdessen archivierte Projekte: Wiederherstellen reaktiviert das Projekt (samt der mit ihm abgeschlossenen Aufgaben), Löschen verschiebt es in den Papierkorb. Klicken Sie auf den Namen eines archivierten Projekts, um es schreibgeschützt in Projekte zu öffnen, samt der mit ihm abgeschlossenen Aufgaben.
 
 Archiviert nutzt dieselbe Steuerungszeile wie die übrigen Aufgabenlisten: **Filter** grenzt nach Kontext, Tag, Priorität und Zeitaufwand ein, und **Sortieren** wie **Gruppieren** bieten **Abschlussdatum** an, da hier ausschließlich abgeschlossene Arbeit liegt. Standardmäßig stehen die neuesten Abschlüsse oben. Filterauswahlen gelten für alle Aufgabenlisten gemeinsam, ein anderswo gewählter Kontext grenzt also auch diese Liste ein.
 
-Wählen Sie **Auswählen**, um Aufgaben zu markieren, oder **Alle auswählen**. Sie können die Auswahl zurück nach Erledigt verschieben, ohne den Abschlusszeitpunkt zu ändern, sie im Posteingang wiederherstellen oder in den Papierkorb verschieben. Mindwtr löscht Aufgaben nur aus dem Papierkorb endgültig.
+Wählen Sie **Auswählen**, um Aufgaben zu markieren, oder **Alle auswählen**. Sie können die Auswahl zurück nach Erledigt verschieben, ohne den Abschlusszeitpunkt zu ändern, sie im Eingang wiederherstellen oder in den Papierkorb verschieben. Mindwtr löscht Aufgaben nur aus dem Papierkorb endgültig.
 
 ### 🗑️ Papierkorb
 
@@ -186,13 +186,13 @@ Gelöschte Aufgaben und Projekte, neueste zuerst. Stellen Sie Einträge wieder h
 
 Geführter GTD-Durchsichtsassistent:
 
-1. Posteingang verarbeiten
+1. Eingang verarbeiten
 2. Kalender prüfen
 3. Bei „Warten“ nachfassen
 4. Projekte prüfen
 5. Irgendwann/Vielleicht prüfen
 
-Verwenden Sie im Rückblick **Posteingang verarbeiten**, bevor Sie mit Kalender, Warten, Projekten und Irgendwann fortfahren.
+Verwenden Sie im Rückblick **Eingang verarbeiten**, bevor Sie mit Kalender, Warten, Projekten und Irgendwann fortfahren.
 
 Ausführliche Hinweise enthält der [Wochenrückblick](/de/use/weekly-review).
 
@@ -225,7 +225,7 @@ Checklisten als Vorlagen:
 - Klicken Sie auf eine Aufgabe, um eine **schreibgeschützte Ansicht** aller Details zu öffnen.
 - Drücken Sie **Bearbeiten** (oder `e`), um in den Bearbeitungsmodus zu wechseln.
 - Der Editor beginnt minimalistisch. **Weitere Optionen** zeigt erweiterte Felder.
-- **Projektabschnitt** organisiert Aufgaben innerhalb eines unterteilten Projekts. Bei Posteingangsaufgaben, nicht zugewiesenen Aufgaben oder Projekten ohne Abschnitte leer lassen.
+- **Projektabschnitt** organisiert Aufgaben innerhalb eines unterteilten Projekts. Bei Eingangsaufgaben, nicht zugewiesenen Aufgaben oder Projekten ohne Abschnitte leer lassen.
 - Status, Priorität und Energiestufe verwenden Pillensteuerungen statt Auswahlmenüs.
 - Öffnen Sie den Kalender eines Datumsfelds, um neben der Monatsansicht Schnelloptionen zu wählen: **Heute**, **Morgen**, **+2 Tage**, **+3 Tage**, **Nächste Woche**, **Nächster Monat** und **Kein Datum**.
 - Unter **Einstellungen → GTD → Layout des Aufgabeneditors** wählen Sie zwischen seitlicher Vorschau und zentriertem Pop-up.
@@ -295,7 +295,7 @@ Erfassen Sie Aufgaben von überall auf dem Desktop, ohne das Fenster zu wechseln
 
 1. Globales Kürzel drücken (`Ctrl+Alt+M`)
 2. Aufgabe mit der Schnell-hinzufügen-Syntax eingeben
-3. Mit `Enter` zum Posteingang hinzufügen
+3. Mit `Enter` zum Eingang hinzufügen
 4. Arbeit fortsetzen
 
 Ändern oder deaktivieren Sie das Kürzel unter **Einstellungen → Allgemein → Eingabe → Globales Kürzel für „Schnell hinzufügen“**.
@@ -313,7 +313,7 @@ Klicken Sie für sofortige Erfassung auf das Taskleistensymbol:
 
 - Eingabe für „Schnell hinzufügen“ erscheint
 - Natürlichsprachliche Syntax verwenden
-- Aufgabe landet direkt im Posteingang
+- Aufgabe landet direkt im Eingang
 
 ### Kürzel im Dialog „Aufgabe hinzufügen“
 
@@ -518,7 +518,7 @@ Die vollständige Liste enthält [Desktop-Tastenkürzel](/de/use/keyboard-shortc
 **Kurzreferenz (Standard):**
 - `/`: Suche öffnen
 - `?`: Kürzelhilfe
-- `gi`: Posteingang
+- `gi`: Eingang
 - `gn`: Nächstes
 - `gf`: Fokus
 - `j/k`: Auswahl abwärts/aufwärts
@@ -538,7 +538,7 @@ Die vollständige Liste enthält [Desktop-Tastenkürzel](/de/use/keyboard-shortc
 
 `Ctrl+Z` / `Cmd+Z` macht in jeder Voreinstellung den letzten Abschluss oder die letzte Löschung rückgängig.
 
-In jeder Voreinstellung setzt `s` plus Buchstabe direkt den Status (`si` Posteingang, `sn` Nächstes, `sw` Warten, `ss` Irgendwann, `sd` Erledigt, `sa` Archiviert) und zeigt eine Rückgängigmeldung. `Insert` springt zur Aufgabeneingabe oder öffnet „Schnell hinzufügen“.
+In jeder Voreinstellung setzt `s` plus Buchstabe direkt den Status (`si` Eingang, `sn` Nächstes, `sw` Warten, `ss` Irgendwann, `sd` Erledigt, `sa` Archiviert) und zeigt eine Rückgängigmeldung. `Insert` springt zur Aufgabeneingabe oder öffnet „Schnell hinzufügen“.
 
 ---
 
@@ -551,7 +551,7 @@ In jeder Voreinstellung setzt `s` plus Buchstabe direkt den Status (`si` Postein
 - **Sprache**: Englisch, Chinesisch (vereinfacht/traditionell), Hindi, Spanisch, Arabisch, Französisch, Portugiesisch (Brasilien), Russisch, Deutsch, Japanisch, Persisch, Vietnamesisch, Türkisch, Koreanisch, Italienisch, Polnisch, Niederländisch, Tschechisch, Schwedisch
 - **Tastenkürzel**: Standard, Vim oder Emacs
 - **Beim Systemstart öffnen**: Mindwtr nach der Anmeldung automatisch starten
-- **Ansichten der Seitenleiste**: Blenden Sie Einträge der Seitenleiste aus, die Sie nicht nutzen, etwa Irgendwann/Vielleicht, Kalender oder Board. Posteingang und Projekte bleiben immer sichtbar. Die Auswahl gilt nur für dieses Gerät; ausgeblendete Ansichten behalten ihre Daten und bleiben über die Suche erreichbar.
+- **Ansichten der Seitenleiste**: Blenden Sie Einträge der Seitenleiste aus, die Sie nicht nutzen, etwa Irgendwann/Vielleicht, Kalender oder Board. Eingang und Projekte bleiben immer sichtbar. Die Auswahl gilt nur für dieses Gerät; ausgeblendete Ansichten behalten ihre Daten und bleiben über die Suche erreichbar.
 
 ### Benachrichtigungen
 
@@ -576,7 +576,7 @@ In jeder Voreinstellung setzt `s` plus Buchstabe direkt den Status (`si` Postein
 - **Zeitschätzungsvoreinstellungen**: Legen Sie fest, welche Zeitschätzungen im Aufgabeneditor erscheinen.
   - Optionen: 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 4h+
   - Standard: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
-- **Posteingangsverarbeitung**: Geführten Lernablauf behalten oder standardmäßig **Schnell** für einen kompakten Bildschirm verwenden
+- **Eingangsverarbeitung**: Geführten Lernablauf behalten oder standardmäßig **Schnell** für einen kompakten Bildschirm verwenden
   - 2-Minuten-Regel, frühe Projektfrage, Kontexte/Tags, Planung und Referenzangebot konfigurieren
 - **Layout des Aufgabeneditors**: Standardfelder, Abschnitte und Reihenfolge festlegen
   - Öffnungsstil **Seitliche Vorschau** oder **Pop-up**

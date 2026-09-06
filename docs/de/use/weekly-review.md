@@ -44,22 +44,22 @@ Mindwtr bietet einen geführten Wochenrückblick. Sie erreichen ihn über:
 - **Desktop:** Wochenrückblick in der Seitenleiste
 - **Mobilgeräte:** Tab „Durchsicht“ oder Navigationsmenü
 
-### Schritt 1: Posteingang verarbeiten
+### Schritt 1: Eingang verarbeiten
 
-**Ziel:** Posteingang null
+**Ziel:** Eingang null
 
-Prüfen Sie jeden Posteingangseintrag:
+Prüfen Sie jeden Eingangseintrag:
 1. Ist eine Handlung erforderlich?
 2. Was ist die nächste Aktion?
 3. Klären und organisieren
 
 **In Mindwtr:**
-- Anzahl der Posteingangseinträge ansehen
+- Anzahl der Eingangseinträge ansehen
 - Einträge im Klärungsablauf verarbeiten
-- Im Rückblickschritt **Posteingang verarbeiten** verwenden und zum Rückblick zurückkehren, sobald der Posteingang leer ist
-- Ist der Posteingang leer, aber Ihr Kopf nicht, verwenden Sie vor dem Fortfahren die **Gedankensammlung** des Rückblicks
+- Im Rückblickschritt **Eingang verarbeiten** verwenden und zum Rückblick zurückkehren, sobald der Eingang leer ist
+- Ist der Eingang leer, aber Ihr Kopf nicht, verwenden Sie vor dem Fortfahren die **Gedankensammlung** des Rückblicks
 - Auch der mobile Wochenrückblick zeigt im Ablauf eine Erinnerung an die Gedankensammlung, sodass Sie vor dem Verlassen von „Klarheit schaffen“ eine geführte Erfassung beginnen können
-- Posteingang vollständig leeren
+- Eingang vollständig leeren
 
 ### Schritt 2: Veraltete Einträge
 
@@ -139,7 +139,7 @@ Prüfen Sie jeden Posteingangseintrag:
 
 Zuerst erscheint ein kurzer Rückblick auf die vergangene Woche: wie viele Aktionen Sie seit dem eingestellten Wochenbeginn erledigt haben und wie viele Projekte dadurch vorangekommen sind, dass eine ihrer Aufgaben erledigt wurde. Ist das Feld „Zeitschätzung“ aktiv, zählt der Rückblick zusätzlich, wie viele dieser erledigten Aufgaben eine Schätzung hatten, und summiert diese Schätzungen; bei aktiver „Aufgewendeter Zeit“ kommt die auf denselben Aufgaben erfasste Zeit hinzu, also die dort eingetragene Zeit und nicht die im Lauf der Woche aufgewendete. Wurde nichts erledigt, entfällt der Rückblick.
 
-Der Abschlussbildschirm zeigt eine kurze Zusammenfassung des Systemzustands: ob der Posteingang leer ist, ob jedes aktive Projekt eine nächste Aktion besitzt und wie viele Einträge unter „Warten“ seit mehr als zwei Wochen unverändert sind. Jede Zeile folgt denselben Regeln wie die Rückblickschritte; Zeilen ohne Meldung bleiben ausgeblendet.
+Der Abschlussbildschirm zeigt eine kurze Zusammenfassung des Systemzustands: ob der Eingang leer ist, ob jedes aktive Projekt eine nächste Aktion besitzt und wie viele Einträge unter „Warten“ seit mehr als zwei Wochen unverändert sind. Jede Zeile folgt denselben Regeln wie die Rückblickschritte; Zeilen ohne Meldung bleiben ausgeblendet.
 
 ---
 
@@ -160,8 +160,8 @@ Sie entscheiden immer selbst, welche Vorschläge angewendet werden.
 ### Klarheit schaffen
 
 - [ ] Lose Papiere und Materialien sammeln
-- [ ] Physischen Posteingang verarbeiten
-- [ ] E-Mail-Posteingang verarbeiten
+- [ ] Physischen Eingang verarbeiten
+- [ ] E-Mail-Eingang verarbeiten
 - [ ] Notizen und Sprachnachrichten verarbeiten
 - [ ] Kopf leeren (alle übrigen Gedanken erfassen)
 

@@ -9,12 +9,12 @@ Es geht nicht um Ordnung um ihrer selbst willen. Wenige Minuten schließen die L
 Die Standardreihenfolge lautet:
 
 1. Heute und Kalender
-2. Posteingang, sofern aktuelle Einträge vorhanden sind
+2. Eingang, sofern aktuelle Einträge vorhanden sind
 3. Warten
 4. Heutiger Fokus, sofern aktiviert
 5. Abschluss
 
-Posteingang und Warten stehen bewusst vor dem Fokus: Neue Einträge werden zuerst geklärt. Aufgaben, auf die Sie gewartet haben, können nach Wegfall der Blockade zu „Nächstes“ wechseln und bei der Wahl des heutigen Fokus berücksichtigt werden. Leere Schritte werden übersprungen.
+Eingang und Warten stehen bewusst vor dem Fokus: Neue Einträge werden zuerst geklärt. Aufgaben, auf die Sie gewartet haben, können nach Wegfall der Blockade zu „Nächstes“ wechseln und bei der Wahl des heutigen Fokus berücksichtigt werden. Leere Schritte werden übersprungen.
 
 ## Einstellungen
 
@@ -24,7 +24,7 @@ Der Fokus-Schritt wird gesteuert durch:
 settings.gtd.dailyReview.includeFocusStep
 ```
 
-Desktop- und Mobil-App zeigen dies in den GTD-Einstellungen als „Fokus-Schritt einbeziehen“ an. Der Schritt ist standardmäßig sichtbar. Setzen Sie den Wert auf `false`, um den kürzeren Ablauf Heute/Posteingang/Warten zu verwenden.
+Desktop- und Mobil-App zeigen dies in den GTD-Einstellungen als „Fokus-Schritt einbeziehen“ an. Der Schritt ist standardmäßig sichtbar. Setzen Sie den Wert auf `false`, um den kürzeren Ablauf Heute/Eingang/Warten zu verwenden.
 
 Verwandte Einstellungen:
 

@@ -40,7 +40,7 @@ Auf dem Desktop:
 3. Wählen Sie Ihren Vault-Ordner. In Obsidian registrierte Vaults werden automatisch erkannt und zur Auswahl mit einem Klick angeboten; für alles Weitere können Sie weiterhin manuell navigieren.
 4. Aktivieren Sie die Integration.
 5. Begrenzen Sie das Einlesen optional auf bestimmte Ordner.
-6. Legen Sie optional die Posteingangsdatei für eingebettete Aufgaben fest; Standard ist `Mindwtr/Inbox.md`.
+6. Legen Sie optional die Eingangsdatei für eingebettete Aufgaben fest; Standard ist `Mindwtr/Inbox.md`.
 7. Wählen Sie optional, ob archivierte TaskNotes-Dateien einbezogen werden sollen.
 8. Wählen Sie optional das Format für neue Aufgaben: `auto`, `inline` oder `tasknotes`.
 9. Speichern Sie und führen Sie einmal **Vault erneut einlesen** aus.
@@ -151,7 +151,7 @@ Mindwtr formatiert weder die gesamte Datei neu noch schreibt es unbeteiligte Fel
 
 Neue Obsidian-Aufgaben können auf zwei Arten erstellt werden:
 
-- `inline`: eine neue Zeile `- [ ] ...` an die konfigurierte Posteingangsnotiz anhängen
+- `inline`: eine neue Zeile `- [ ] ...` an die konfigurierte Eingangsnotiz anhängen
 - `tasknotes`: eine neue TaskNotes-Markdown-Datei erstellen
 - `auto`: dem erkannten Importmodus des Vaults folgen
 

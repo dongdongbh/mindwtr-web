@@ -1,6 +1,6 @@
 # Erfassungs-Webhook
 
-Der Erfassungs-Webhook macht aus einer Sprachnotiz oder einem kurzen Text eine Aufgabe im Posteingang. Jedes Gerät, jede App und jedes Skript, das eine HTTP-Anfrage senden kann, schickt den Text und wahlweise eine Audioaufnahme an Ihren eigenen Cloud-Server. Der Server erstellt die Aufgabe, hängt die Aufnahme an, und Ihre Geräte holen bei der nächsten Synchronisierung beides ab.
+Der Erfassungs-Webhook macht aus einer Sprachnotiz oder einem kurzen Text eine Aufgabe im Eingang. Jedes Gerät, jede App und jedes Skript, das eine HTTP-Anfrage senden kann, schickt den Text und wahlweise eine Audioaufnahme an Ihren eigenen Cloud-Server. Der Server erstellt die Aufgabe, hängt die Aufnahme an, und Ihre Geräte holen bei der nächsten Synchronisierung beides ab.
 
 Dafür brauchen Sie den [selbst gehosteten Cloud-Server](/de/power-users/docker-deployment). Wenn Sie Mindwtr ohne Server nutzen, erfassen Sie stattdessen über das Teilen-Menü des Telefons oder über Siri.
 
@@ -60,7 +60,7 @@ Die App des Pebble Index 01 sendet Sprachnotizen genau in diesem Format und erla
 1. Öffnen Sie die Pebble-App auf Ihrem Telefon und gehen Sie zu den Webhook-Einstellungen für Sprachnotizen
 2. Setzen Sie die Webhook-URL auf `https://your-server.example/v1/capture`, mit Ihrer eigenen Serveradresse anstelle des Beispiels
 3. Fügen Sie einen Anfrage-Header namens `Authorization` mit dem Wert `Bearer <token>` hinzu und verwenden Sie einen Token Ihres Servers
-4. Nehmen Sie eine Notiz auf der Uhr auf. Sie erreicht Ihren Posteingang bei der nächsten Synchronisierung, mit der Transkription als Aufgabe und der Aufnahme als Anhang
+4. Nehmen Sie eine Notiz auf der Uhr auf. Sie erreicht Ihren Eingang bei der nächsten Synchronisierung, mit der Transkription als Aufgabe und der Aufnahme als Anhang
 
 ## Weitere Geräte und Automatisierungen
 

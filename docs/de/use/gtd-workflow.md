@@ -10,7 +10,7 @@ Mindwtr bildet GTD-Konzepte direkt ab:
 
 | GTD-Konzept | Mindwtr-Funktion |
 | ------------- | -------------------------------------- |
-| Posteingang | Ansicht „Posteingang“ |
+| Eingang | Ansicht „Eingang“ |
 | Klären | Verarbeitungsassistent |
 | Nächste Aktionen | Fokusansicht für verfügbare Aktionen; Kontexte/Projekte/Suche für den vollständigen Bestand |
 | Projekte | Ansicht „Projekte“ |
@@ -19,7 +19,7 @@ Mindwtr bildet GTD-Konzepte direkt ab:
 | Kalender | Kalenderansicht (Aufgaben mit Fälligkeitsdaten) |
 | Wochenrückblick | Durchsichtsassistent |
 
-![Wie Arbeit durch Mindwtr läuft: Eine Erfassung per Tastenkürzel, Teilen-Menü oder E-Mail landet im Posteingang, der Verarbeitungsassistent entscheidet, was der Eintrag ist, und der Eintrag geht nach Nächste Schritte, Warten, Irgendwann/Vielleicht, Referenz oder in ein Projekt. Der Wochenrückblick prüft, dass jedes Projekt einen nächsten Schritt hat, und Fokus enthält die heute markierten Aufgaben.](/assets/diagrams/gtd-workflow.svg)
+![Wie Arbeit durch Mindwtr läuft: Eine Erfassung per Tastenkürzel, Teilen-Menü oder E-Mail landet im Eingang, der Verarbeitungsassistent entscheidet, was der Eintrag ist, und der Eintrag geht nach Nächste Schritte, Warten, Irgendwann/Vielleicht, Referenz oder in ein Projekt. Der Wochenrückblick prüft, dass jedes Projekt einen nächsten Schritt hat, und Fokus enthält die heute markierten Aufgaben.](/assets/diagrams/gtd-workflow.svg)
 
 [Interaktives Diagramm öffnen](/assets/diagrams/gtd-workflow.html)
 
@@ -40,12 +40,12 @@ Mit diesen Mustern bleibt das System leicht:
 
 ---
 
-## 1. Erfassen (Posteingang)
+## 1. Erfassen (Eingang)
 
 ### Schnellerfassung
 
 - **Desktop:** Geben Sie die Aufgabe im unteren Eingabefeld ein oder verwenden Sie das app-interne Kürzel `a`. Auch `o` öffnet „Aufgabe hinzufügen“.
-- **Mobilgeräte:** Tippen Sie auf das Eingabefeld im Tab „Posteingang“.
+- **Mobilgeräte:** Tippen Sie auf das Eingabefeld im Tab „Eingang“.
 - **Gedankensammlung:** Verwenden Sie geführte Fragen, wenn Sie offene Vorgänge aus Beruf, Zuhause, Personen, Besorgungen und Irgendwann-Ideen sammeln möchten.
 
 ### Syntax für „Schnell hinzufügen“
@@ -68,8 +68,8 @@ Erfassen Sie alles. Filtern, bewerten und organisieren Sie noch nicht. Holen Sie
 
 ### Verarbeitung beginnen
 
-- **Desktop:** Klicken Sie auf „Posteingang verarbeiten“.
-- **Mobilgeräte:** Tippen Sie auf „Posteingang verarbeiten“.
+- **Desktop:** Klicken Sie auf „Eingang verarbeiten“.
+- **Mobilgeräte:** Tippen Sie auf „Eingang verarbeiten“.
 
 ### Den Titel verfeinern
 
@@ -109,7 +109,7 @@ flowchart TD
 - Ja → Fortfahren oder **Später beginnen**, um einer bereits entschiedenen Aktion ein Startdatum zu geben und sie nach „Nächste Aktionen“ zu legen
 
 **Mehr als ein Schritt?**
-- Ja → Wandeln Sie die Erfassung in ein Projekt um: Benennen Sie es und legen Sie die nächste Aktion fest. Fügen Sie beliebig viele weitere Aktionen hinzu. Sie landen mit bereits zugewiesenem Projekt wieder im Posteingang, sodass jede ihren eigenen Klärungsdurchlauf erhält.
+- Ja → Wandeln Sie die Erfassung in ein Projekt um: Benennen Sie es und legen Sie die nächste Aktion fest. Fügen Sie beliebig viele weitere Aktionen hinzu. Sie landen mit bereits zugewiesenem Projekt wieder im Eingang, sodass jede ihren eigenen Klärungsdurchlauf erhält.
 - Nein → Als einzelne Aktion fortfahren
 
 **Dauert es weniger als 2 Minuten?**
@@ -125,11 +125,11 @@ flowchart TD
 
 Wenn Sie **Referenz** wählen, bietet derselbe Schritt die Auswahl für **Bereich** und **Projekt** an, sodass die Notiz ohne zweiten Bearbeitungsschritt am richtigen Ort landet. Sobald Sie ein Projekt wählen, entfällt die Bereichsauswahl, denn das Projekt bestimmt bereits, wo die Notiz liegt.
 
-**Referenz** steht außerdem im Statusmenü jeder Aufgabenzeile und im Aufgabeneditor zur Auswahl. Eine Aufgabe kann also jederzeit zu einer Referenznotiz werden, nicht nur beim Verarbeiten des Posteingangs.
+**Referenz** steht außerdem im Statusmenü jeder Aufgabenzeile und im Aufgabeneditor zur Auswahl. Eine Aufgabe kann also jederzeit zu einer Referenznotiz werden, nicht nur beim Verarbeiten des Eingangs.
 
 ### Praxisbeispiel: Eine Besorgung in zwei Schritten
 
-Für Ihr Auto trifft ein Rückrufschreiben ein. Sie erfassen **Rückruf für das Auto**, und der Eintrag landet im Posteingang. Die Erledigung besteht aus zwei Handlungen — beim Autohaus anrufen und später das Auto hinbringen —, deshalb wird daraus beim Verarbeiten ein Projekt statt einer einzelnen Aufgabe. Klicken Sie auf **Posteingang verarbeiten** und dann:
+Für Ihr Auto trifft ein Rückrufschreiben ein. Sie erfassen **Rückruf für das Auto**, und der Eintrag landet im Eingang. Die Erledigung besteht aus zwei Handlungen — beim Autohaus anrufen und später das Auto hinbringen —, deshalb wird daraus beim Verarbeiten ein Projekt statt einer einzelnen Aufgabe. Klicken Sie auf **Eingang verarbeiten** und dann:
 
 1. Zuerst erscheint **Die Aufgabe präzisieren**. Formulieren Sie die Erfassung um, falls sie unklar ist, und klicken Sie auf **Nächste**.
 2. **Ist dies ausführbar?** Klicken Sie auf **Ja, es ist ausführbar**.
@@ -138,7 +138,7 @@ Für Ihr Auto trifft ein Rückrufschreiben ein. Sie erfassen **Rückruf für das
 5. Klicken Sie auf **Weitere Aktion hinzufügen** und tragen Sie den Folgeschritt ein: *Auto zum Rückruftermin bringen*.
 6. Klicken Sie auf **Ein Projekt erstellen & Nächste Aktion hinzufügen**.
 
-Mindwtr legt das Projekt an, macht Ihre Erfassung zu dessen erster nächster Aktion und schickt den Folgeschritt mit bereits zugewiesenem Projekt zurück in den Posteingang, sodass Sie ihn eigenständig klären — samt Termin, sobald Sie ihn kennen. Anschließend geht die Verarbeitung mit dem nächsten Posteingangseintrag weiter. Ist ein späterer Schritt heute noch nicht absehbar, lassen Sie ihn weg und erfassen ihn nach dem Anruf; das Projekt hält das Ergebnis sichtbar, bis nichts mehr zu tun ist.
+Mindwtr legt das Projekt an, macht Ihre Erfassung zu dessen erster nächster Aktion und schickt den Folgeschritt mit bereits zugewiesenem Projekt zurück in den Eingang, sodass Sie ihn eigenständig klären — samt Termin, sobald Sie ihn kennen. Anschließend geht die Verarbeitung mit dem nächsten Eingangseintrag weiter. Ist ein späterer Schritt heute noch nicht absehbar, lassen Sie ihn weg und erfassen ihn nach dem Anruf; das Projekt hält das Ergebnis sichtbar, bis nichts mehr zu tun ist.
 
 ---
 
@@ -148,7 +148,7 @@ Mindwtr legt das Projekt an, macht Ihre Erfassung zu dessen erster nächster Akt
 
 | Status | Bedeutung | Ansicht |
 | ---------- | ------------------ | ------------- |
-| `inbox` | Noch nicht verarbeitet | Posteingang |
+| `inbox` | Noch nicht verarbeitet | Eingang |
 | `next` | Als Nächstes ausführbar | Fokus |
 | `waiting` | Delegiert/blockiert | Warten |
 | `someday` | Zukunft/vielleicht | Irgendwann/Vielleicht |
@@ -161,7 +161,7 @@ Mindwtr legt das Projekt an, macht Ihre Erfassung zu dessen erster nächster Akt
 - **Archiviert** ist abgelegte Historie. Archivierte Aufgaben sind in normalen Aufgabenlisten ausgeblendet, bleiben aber in der Ansicht „Archiviert“ zum Suchen, Wiederherstellen oder endgültigen Löschen verfügbar. Die Ansicht „Archiviert“ zeigt hinter einem Umschalter „Aufgaben | Projekte“ auch archivierte Projekte, die sich dort wiederherstellen oder löschen lassen.
 - **Automatisch archivieren** kann erledigte Aufgaben nach einer festgelegten Anzahl von Tagen nach „Archiviert“ verschieben. Wählen Sie **Nie**, wenn „Erledigt“ alle abgeschlossenen Aufgaben unbegrenzt behalten soll.
 
-![Das Leben einer Aufgabe: Sie kommt in den Posteingang, wird beim Klären zu „Nächster Schritt“ und kann in Warten, Irgendwann/Vielleicht oder Referenz geparkt werden. Abschließen macht sie zu Erledigt, automatisches Archivieren legt sie als Archiviert ab, und Löschen verschiebt sie in den Papierkorb, bevor sie endgültig verschwindet.](/assets/diagrams/task-lifecycle.svg)
+![Das Leben einer Aufgabe: Sie kommt in den Eingang, wird beim Klären zu „Nächster Schritt“ und kann in Warten, Irgendwann/Vielleicht oder Referenz geparkt werden. Abschließen macht sie zu Erledigt, automatisches Archivieren legt sie als Archiviert ab, und Löschen verschiebt sie in den Papierkorb, bevor sie endgültig verschwindet.](/assets/diagrams/task-lifecycle.svg)
 
 [Interaktives Diagramm öffnen](/assets/diagrams/task-lifecycle.html)
 
@@ -231,13 +231,13 @@ Für Aufgaben mit Fälligkeitszeit können Sie die **Erinnerung wiederholen** na
 
 Mindwtr behandelt Aufgabenstatus und Aufgabendaten getrennt. Der Status ist der von Ihnen gewählte GTD-Zustand, etwa `inbox`, `next`, `waiting` oder `someday`. Daten steuern, wann und warum eine Aufgabe erscheint; das Erreichen eines Datums ändert den Aufgabenstatus nie von selbst.
 
-Beim Bearbeiten gibt es eine bewusste Abkürzung: Wenn Sie einem **Posteingangs**eintrag ein Startdatum geben, gilt er als geklärt – Sie haben entschieden, wann Sie ihn bearbeiten können. Mindwtr verschiebt ihn daher beim Festlegen des Datums nach `next`, genau wie beim Markieren eines Posteingangseintrags mit einem Stern. Wählen Sie bei derselben Bearbeitung einen Status, hat Ihre Auswahl Vorrang. Aufgaben unter `someday` oder `waiting` behalten bei einer Datumszuweisung immer ihren Status: Ein datiertes Irgendwann ist eine Wiedervorlage, ein datiertes Warten eine Nachfass-Erinnerung.
+Beim Bearbeiten gibt es eine bewusste Abkürzung: Wenn Sie einem **Eingangs**eintrag ein Startdatum geben, gilt er als geklärt – Sie haben entschieden, wann Sie ihn bearbeiten können. Mindwtr verschiebt ihn daher beim Festlegen des Datums nach `next`, genau wie beim Markieren eines Eingangseintrags mit einem Stern. Wählen Sie bei derselben Bearbeitung einen Status, hat Ihre Auswahl Vorrang. Aufgaben unter `someday` oder `waiting` behalten bei einer Datumszuweisung immer ihren Status: Ein datiertes Irgendwann ist eine Wiedervorlage, ein datiertes Warten eine Nachfass-Erinnerung.
 
 - Das **Startdatum** ist eine Zurückstellungs-/Verfügbarkeitsschranke. Ein zukünftiger Start blendet die Aufgabe standardmäßig aus „Fokus“ aus. Wenn das Datum eintritt, erscheint die Aufgabe mit ihrem bisherigen Status wieder. Hat der Start eine konkrete Uhrzeit, bleibt die Aufgabe in den nächsten Aktionen bis zu dieser Uhrzeit verborgen – eine ab 17:00 Uhr startbare Aufgabe belegt also nicht schon morgens die Liste; der Abschnitt **Heute** führt sie trotzdem auf, nach Uhrzeit sortiert. Starts an einem anderen Tag innerhalb der nächsten 7 Tage erscheinen weiterhin im Abschnitt **Anstehend** von „Fokus“, sodass eine Zurückstellung nie unangekündigt eintrifft.
 - Das **Wiedervorlagedatum** ist ein Tickler. Wenn das Datum eintritt, zeigt Mindwtr die Aufgabe in Ansichten mit fälligen Durchsichtspunkten an, damit Sie sie neu beurteilen können. Bis zu Ihrer Entscheidung ändert sich nichts.
 - Das **Fälligkeitsdatum** ist eine Frist. Wenn sie näher rückt oder verstreicht, hebt Mindwtr die Aufgabe durch Darstellung, Erinnerungen und Sortierungsdruck hervor; der Status bleibt unverändert.
 
-Einige Verarbeitungsaktionen setzen Status und Daten gemeinsam: Wenn Sie bei der Posteingangsverarbeitung **Später** wählen, wird der Eintrag nach `next` verschoben und erhält ein Startdatum. Das direkte Festlegen eines Startdatums für einen Posteingangseintrag bewirkt dasselbe. Danach steuern Daten nur noch die Sichtbarkeit und ändern nie wieder den Status.
+Einige Verarbeitungsaktionen setzen Status und Daten gemeinsam: Wenn Sie bei der Eingangsverarbeitung **Später** wählen, wird der Eintrag nach `next` verschoben und erhält ein Startdatum. Das direkte Festlegen eines Startdatums für einen Eingangseintrag bewirkt dasselbe. Danach steuern Daten nur noch die Sichtbarkeit und ändern nie wieder den Status.
 
 ### Geplant, aber noch nicht machbar
 
@@ -266,10 +266,10 @@ Verwenden Sie stattdessen ein festes Startdatum, wenn die Arbeit unabhängig von
 
 ### Die Schritte
 
-1. **Posteingang verarbeiten**
-   - Alle Posteingangseinträge klären
-   - Ziel: Posteingang null
-   - Mit der Aktion „Posteingang verarbeiten“ des Rückblicks den normalen Klärungsablauf innerhalb des Wochenrückblicks starten
+1. **Eingang verarbeiten**
+   - Alle Eingangseinträge klären
+   - Ziel: Eingang null
+   - Mit der Aktion „Eingang verarbeiten“ des Rückblicks den normalen Klärungsablauf innerhalb des Wochenrückblicks starten
 
 2. **Kalender prüfen**
    - Zwei Wochen zurückblicken und verpasste Nachfassaktionen suchen
@@ -352,13 +352,13 @@ Der heutige Fokus zeigt jede mit Stern markierte Aufgabe Ihrer Sammlung, auch so
 
 ### Im Tagesverlauf
 
-1. Erfassen Sie neue Einträge im Posteingang.
+1. Erfassen Sie neue Einträge im Eingang.
 2. Prüfen Sie beim Ortswechsel kontextgefilterte Listen.
 3. Markieren Sie abgeschlossene Aufgaben als erledigt.
 
 ### Tagesende
 
-1. Überfliegen Sie den Posteingang (bei Zeit verarbeiten).
+1. Überfliegen Sie den Eingang (bei Zeit verarbeiten).
 2. Prüfen Sie den morgigen Kalender.
 3. Aktualisieren Sie laufende Aufgaben.
 
@@ -396,7 +396,7 @@ Einrichtungsschritte und Einzelheiten zu den Optionen finden Sie unter [Wiederke
 ### Bauen Sie Gewohnheiten auf
 
 - Wochenrückblick immer zur selben Zeit
-- Regelmäßige Posteingangsverarbeitung
+- Regelmäßige Eingangsverarbeitung
 - Einheitliche Erfassungsmethode
 
 ---

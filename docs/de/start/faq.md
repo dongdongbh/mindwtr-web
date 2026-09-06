@@ -155,7 +155,7 @@ Nicht direkt. Ein vollständiger E-Mail-Client erfordert:
 - **Desktop:** Fügen Sie `message://`- oder E-Mail-Links in eine Aufgabe ein oder ziehen Sie eine E-Mail in Clients, die dies unterstützen, in eine Aufgabennotiz.
 - **Mobilgeräte:** Senden Sie ausgewählte E-Mail-Inhalte über das Teilen-Menü an Mindwtr.
 
-Mindwtr bietet keinen Posteingang `add@mindwtr.com`, weil dafür ein zentraler Server Ihre E-Mails empfangen und speichern müsste.
+Mindwtr bietet keinen Eingang `add@mindwtr.com`, weil dafür ein zentraler Server Ihre E-Mails empfangen und speichern müsste.
 
 ---
 
@@ -206,7 +206,7 @@ Spätere Schritte in einem sequenziellen Projekt sind keine **Referenz**. Refere
 
 ### Kann ich eine Aufgabe in ein Projekt umwandeln?
 
-Ja. Am einfachsten während der Posteingangsverarbeitung: Wenn der geführte Ablauf fragt, ob ein Eintrag mehr als einen Schritt erfordert, antworten Sie mit Ja. Die Erfassung wird zu einem Projekt, das Sie benennen und dessen erste nächste Aktion Sie festlegen. Weitere Aktionen landen mit bereits zugewiesenem Projekt wieder im Posteingang und erhalten jeweils einen eigenen Klärungsdurchlauf. Siehe [GTD-Arbeitsablauf](/de/use/gtd-workflow).
+Ja. Am einfachsten während der Eingangsverarbeitung: Wenn der geführte Ablauf fragt, ob ein Eintrag mehr als einen Schritt erfordert, antworten Sie mit Ja. Die Erfassung wird zu einem Projekt, das Sie benennen und dessen erste nächste Aktion Sie festlegen. Weitere Aktionen landen mit bereits zugewiesenem Projekt wieder im Eingang und erhalten jeweils einen eigenen Klärungsdurchlauf. Siehe [GTD-Arbeitsablauf](/de/use/gtd-workflow).
 
 ### Warum erscheint eine Aufgabe nicht in „Fokus“?
 
@@ -216,7 +216,7 @@ Ja. Am einfachsten während der Posteingangsverarbeitung: Wenn der geführte Abl
 - Sie ist eine **wiederkehrende Aufgabe, deren Datum noch nicht erreicht ist**: Eine wiederkehrende Aufgabe ohne Startdatum wird bis zu ihrem nächsten Fälligkeits- oder Wiedervorlagedatum zurückgestellt — anders als eine einmalige Aufgabe, deren Frist vorab sichtbar bleibt.
 - Sie ist eine **spätere Aufgabe in einem sequenziellen Projekt**; nur die erste verfügbare Aufgabe wird angezeigt.
 - Ein aktiver **Kontextfilter** schließt sie aus.
-- Ihr Status ist nicht ausführbar (Posteingang, Irgendwann, Warten).
+- Ihr Status ist nicht ausführbar (Eingang, Irgendwann, Warten).
 
 Verwenden Sie **Projekte**, **Kontexte** oder die **Suche**, um den vollständigen Aufgabenbestand zu prüfen. Siehe [So sortiert „Fokus“ verfügbare Aktionen](/de/use/gtd-workflow#how-focus-sorts-available-actions).
 
@@ -334,7 +334,7 @@ Eine Aufgabe kann alle drei besitzen: **Bereich: Kunde A**, **Projekt: Website �
 **Mobilgeräte:**
 - Über das Teilen-Menü aus jeder App erfassen
 - Startbildschirm-Widget für Erfassung mit einem Tippen hinzufügen
-- Eingabefeld im Tab „Posteingang“ verwenden
+- Eingabefeld im Tab „Eingang“ verwenden
 
 ---
 
@@ -388,7 +388,7 @@ Installieren Sie die App aus Google Play oder laden Sie die APK von [GitHub Rele
 
 ### Wie erfasse ich Inhalte aus anderen Apps?
 
-Verwenden Sie das **Teilen-Menü**. Tippen Sie beim Anzeigen von Inhalten in einer beliebigen App (Browser, E-Mail, Notizen) auf „Teilen“ und wählen Sie Mindwtr. Mindwtr öffnet die Erfassungsansicht mit dem geteilten Inhalt in der Notiz. Sie können einen Titel ergänzen, Felder anpassen und den Eintrag im Posteingang speichern.
+Verwenden Sie das **Teilen-Menü**. Tippen Sie beim Anzeigen von Inhalten in einer beliebigen App (Browser, E-Mail, Notizen) auf „Teilen“ und wählen Sie Mindwtr. Mindwtr öffnet die Erfassungsansicht mit dem geteilten Inhalt in der Notiz. Sie können einen Titel ergänzen, Felder anpassen und den Eintrag im Eingang speichern.
 
 ### Gibt es ein Widget?
 
@@ -400,7 +400,7 @@ Nein. Der KI-Assistent ist optional und standardmäßig deaktiviert. Mindwtr fun
 
 ### Wie funktionieren Wischaktionen?
 
-Wischen Sie im Posteingang eine Aufgabe nach rechts, um sie als erledigt zu markieren. In anderen Ansichten können andere Wischaktionen verfügbar sein.
+Wischen Sie im Eingang eine Aufgabe nach rechts, um sie als erledigt zu markieren. In anderen Ansichten können andere Wischaktionen verfügbar sein.
 
 ### Wie synchronisiere ich mit dem Desktop?
 

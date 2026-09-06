@@ -7,13 +7,13 @@ Mindwtr unterstützt auf dem Desktop eine tastaturorientierte Bedienung mit den 
 - Wählen Sie Ihre Voreinstellung unter **Einstellungen → Allgemein → Tastenkürzel**.
 - Drücken Sie in der App `?`, um die aktuelle Übersicht für Ihre Voreinstellung zu öffnen. Am Ende der Übersicht steht eine Tabelle zur Syntax von „Schnell hinzufügen“, die alle Tokens aufführt (`/start:`, `/note:`, `@context`, `+Project`, …).
 - Verwenden Sie `/` zum Suchen.
-- Verwenden Sie `gi` für den Posteingang, `gn` für „Nächste Aktionen“ und `gf` für „Fokus“ (im Standard- und Vim-Modus).
+- Verwenden Sie `gi` für den Eingang, `gn` für „Nächste Aktionen“ und `gf` für „Fokus“ (im Standard- und Vim-Modus).
 - Verwenden Sie `a`, um eine Aufgabe hinzuzufügen, während Mindwtr im Fokus ist. Die Taste arbeitet kontextabhängig: Innerhalb eines Projekts öffnet sich der Dialog zum Hinzufügen mit diesem Projekt voreingestellt, und in Ansichten mit einem eigenen Eingabefeld wird stattdessen dieses fokussiert.
 - Mit `j` und `k` bewegen Sie die Auswahl und mit `Enter` öffnen Sie die ausgewählte Aufgabe.
 - Im Standardmodus markiert `e` eine Aufgabe als erledigt, `x` wählt Aufgaben für Stapelaktionen aus, `S` fügt die ausgewählte Aufgabe zum heutigen Fokus hinzu oder entfernt sie daraus, `F2` benennt sie um, `Shift+Enter` bearbeitet, `#` löscht und `z` macht rückgängig.
 - Im Vim-Modus bearbeitet `e`, `x` schaltet „Erledigt“ um und `dd` löscht.
 - Mit `Ctrl+Z` / `Cmd+Z` machen Sie in jeder Voreinstellung den letzten Aufgabenabschluss oder die letzte Löschung rückgängig.
-- Verwenden Sie in jeder Voreinstellung `s` gefolgt von einem Buchstaben, um den Status der ausgewählten Aufgabe festzulegen: `si` Posteingang, `sn` Nächstes, `sw` Warten, `ss` Irgendwann, `sd` Erledigt, `sa` Archiviert. Eine Benachrichtigung bestätigt die Änderung und bietet eine Schaltfläche zum Rückgängigmachen.
+- Verwenden Sie in jeder Voreinstellung `s` gefolgt von einem Buchstaben, um den Status der ausgewählten Aufgabe festzulegen: `si` Eingang, `sn` Nächstes, `sw` Warten, `ss` Irgendwann, `sd` Erledigt, `sa` Archiviert. Eine Benachrichtigung bestätigt die Änderung und bietet eine Schaltfläche zum Rückgängigmachen.
 - Mit `Insert` wechseln Sie zum Eingabefeld zum Hinzufügen einer Aufgabe (in Ansichten ohne dieses Feld wird „Schnell hinzufügen“ geöffnet).
 - Drücken Sie `1`–`9` (außerhalb von Textfeldern), um entsprechend der Reihenfolge in der Seitenleiste zu einem Bereich zu wechseln, oder `0`, um den Bereichsfilter zu entfernen; die Tastenfolge `Shift+A` und danach die Zahl funktioniert weiterhin. Ein einfaches `a` fügt im aktuellen Kontext eine Aufgabe hinzu.
 - Mit `Ctrl+Alt+S` führen Sie auf dem Desktop eine manuelle Synchronisierung aus.

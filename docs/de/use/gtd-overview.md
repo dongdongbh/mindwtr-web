@@ -24,7 +24,7 @@ Holen Sie alles aus Ihrem Kopf in ein vertrauenswürdiges System.
 
 - Schreiben Sie jede Aufgabe, Idee, Verpflichtung und Erinnerung auf.
 - Filtern und organisieren Sie noch nicht. Erfassen Sie zuerst.
-- Verwenden Sie den **Posteingang** als Sammelstelle.
+- Verwenden Sie den **Eingang** als Sammelstelle.
 
 ### 2. Klären
 
@@ -54,7 +54,7 @@ Legen Sie die Dinge dort ab, wo sie hingehören:
 
 Prüfen Sie Ihr System regelmäßig.
 
-- **Tägliche Durchsicht**: Listen, Kalender und Posteingang überfliegen
+- **Tägliche Durchsicht**: Listen, Kalender und Eingang überfliegen
 - **Wochenrückblick**: Alle Listen umfassend prüfen, Posteingänge leeren und Projekte aktualisieren
 
 ### 5. Erledigen
@@ -96,7 +96,7 @@ Mindwtr verwendet ein flexibles „Behältermodell“, damit Sie ohne Reibung or
 
 - **Bereiche** sind dauerhafte Verantwortlichkeiten (z. B. Beruf, Zuhause, Gesundheit).
 - **Projekte** sind Ergebnisse mit einem Ende. Sie können innerhalb eines Bereichs liegen *oder* eigenständig sein.
-- **Aufgaben** können innerhalb eines Projekts, direkt in einem Bereich oder ganz ohne Zuweisung liegen (Posteingang / kein Bereich).
+- **Aufgaben** können innerhalb eines Projekts, direkt in einem Bereich oder ganz ohne Zuweisung liegen (Eingang / kein Bereich).
 
 So können Sie langfristige Verantwortlichkeiten in Bereichen verwalten und gleichzeitig schnelle Aufgaben erfassen, ohne eine Ordnerwahl zu erzwingen.
 

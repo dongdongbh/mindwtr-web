@@ -123,7 +123,7 @@ Sobald zwei oder mehr Kontexte ausgewählt sind, erscheint die Steuerung **Konte
 
 ### Nach Kontexten oder Tags gruppieren
 
-Die Werkzeugleisten von Aufgabenlisten enthalten außerdem eine Steuerung **Gruppieren**. Damit können Sie größere Listen für Posteingang, Warten, Irgendwann/Vielleicht, Referenz, Erledigt oder Nächste Aktionen nach Kontext, Bereich, Projekt oder Tag gruppieren.
+Die Werkzeugleisten von Aufgabenlisten enthalten außerdem eine Steuerung **Gruppieren**. Damit können Sie größere Listen für Eingang, Warten, Irgendwann/Vielleicht, Referenz, Erledigt oder Nächste Aktionen nach Kontext, Bereich, Projekt oder Tag gruppieren.
 
 Die Gruppierung nach Tags ist nützlich, wenn Sie einen tagorientierten Arbeitsablauf bevorzugen und Tags als wichtigste Klassifizierungsebene verwenden.
 

@@ -23,7 +23,7 @@ Unterstützte Oberflächen:
 
 ### In Mindwtr erfassen
 
-Verwenden Sie **In Mindwtr erfassen**, um eine Aufgabe an den Bestätigungsablauf zur Erfassung im Mindwtr-Posteingang zu senden.
+Verwenden Sie **In Mindwtr erfassen**, um eine Aufgabe an den Bestätigungsablauf zur Erfassung im Mindwtr-Eingang zu senden.
 
 Parameter:
 
@@ -50,7 +50,7 @@ Unterstützte Ziele:
 
 | Liste | Öffnet |
 | --- | --- |
-| Posteingang | Posteingang |
+| Eingang | Eingang |
 | Fokus | Fokus/Nächste Aktionen |
 | Warten | Warten |
 | Irgendwann | Irgendwann/Vielleicht |
@@ -58,7 +58,7 @@ Unterstützte Ziele:
 | Durchsicht | Durchsicht |
 | Kalender | Kalender |
 
-Wenn keine Liste konfiguriert ist, verwendet der Kurzbefehl standardmäßig den Posteingang.
+Wenn keine Liste konfiguriert ist, verwendet der Kurzbefehl standardmäßig den Eingang.
 
 ### Zu Mindwtr hinzufügen
 
@@ -71,7 +71,7 @@ Parameter:
 | Aufgabe | Ja | Der Aufgabentitel. Bei einem leeren Titel schlägt der Kurzbefehl fehl. |
 | Notiz | Nein | Wird als Aufgabenbeschreibung hinzugefügt. |
 | Tags | Nein | Kommagetrennte Tags. Mindwtr normalisiert sie zu `#tag`. |
-| Projekt | Nein | Wird anhand des Titels einem aktiven Projekt zugeordnet. Unbekannte oder archivierte Projekte werden ignoriert; die Aufgabe landet dennoch im Posteingang. |
+| Projekt | Nein | Wird anhand des Titels einem aktiven Projekt zugeordnet. Unbekannte oder archivierte Projekte werden ignoriert; die Aufgabe landet dennoch im Eingang. |
 | Fälligkeitsdatum | Nein | Das Fälligkeitsdatum der Aufgabe. Wird als Datum ohne Uhrzeit gespeichert und plant daher von sich aus nie eine Erinnerung. |
 | Startdatum | Nein | Das Startdatum der Aufgabe, wie das Fälligkeitsdatum nur als Datum. |
 
@@ -80,7 +80,7 @@ Der **Aufgabe**-Text unterstützt die vollständige [Schnelleingabe-Syntax](/de/
 Ablauf beim Ausführen:
 
 1. Die Aktion reiht die Erfassung auf dem Gerät ein und wird sofort beendet. Mindwtr bleibt im Hintergrund.
-2. Wenn Mindwtr das nächste Mal geöffnet wird oder in den Vordergrund zurückkehrt, wird die eingereihte Aufgabe über den normalen Store- und Synchronisierungsweg im Posteingang erstellt.
+2. Wenn Mindwtr das nächste Mal geöffnet wird oder in den Vordergrund zurückkehrt, wird die eingereihte Aufgabe über den normalen Store- und Synchronisierungsweg im Eingang erstellt.
 
 Da die Aufgabe erst beim nächsten Öffnen erstellt wird, erscheint sie auf anderen synchronisierten Geräten erst und löst erst dann eine Erinnerung aus, wenn Mindwtr auf diesem iPhone oder iPad erneut ausgeführt wurde. Der Parameter **Projekt** erstellt niemals neue Projekte; ein `+Project` im Aufgabentext folgt jedoch den Schnelleingabe-Regeln und kann eines anlegen.
 
@@ -90,7 +90,7 @@ Verwenden Sie **Mindwtr-Aufgaben abrufen**, um Aufgaben in einen Kurzbefehl einz
 
 | Parameter | Erforderlich | Hinweise |
 | --- | --- | --- |
-| Liste | Ja | Eine von Posteingang, Fokus, Nächste Aktionen, Warten, Irgendwann. |
+| Liste | Ja | Eine von Eingang, Fokus, Nächste Aktionen, Warten, Irgendwann. |
 | Projekt | Nein | Ein aktives Projekt anhand des Titels. Wenn gesetzt, hat es Vorrang vor der Liste. |
 
 Die Ergebnisse stammen aus einer Momentaufnahme, die Mindwtr während der Ausführung pflegt, und sind auf 50 Aufgaben pro Liste oder Projekt begrenzt. Sie geben also den Stand des letzten App-Starts wieder – genauso aktuell wie die Widgets.
@@ -131,7 +131,7 @@ Mindwtr hat keine Watch-App, aber ein Kurzbefehl, der auf der Uhr läuft, kann d
 6. Setzen Sie **Anfragetext** auf **Text** und übergeben Sie den diktierten Text. Für JSON verwenden Sie stattdessen ein Feld `transcription` mit dem diktierten Text und ein Feld `client` mit dem Wert Apple Watch.
 7. Öffnen Sie die Details des Kurzbefehls und aktivieren Sie **Auf Apple Watch anzeigen**.
 8. Führen Sie ihn auf der Uhr über die App **Kurzbefehle**, eine Komplikation oder den Smart Stack aus. Derselbe Kurzbefehl läuft auch auf dem iPhone, per Siri oder über die Aktionstaste.
-9. Der diktierte Text wird zu einer Aufgabe im Posteingang und erreicht Ihre anderen Geräte bei der nächsten Synchronisierung.
+9. Der diktierte Text wird zu einer Aufgabe im Eingang und erreicht Ihre anderen Geräte bei der nächsten Synchronisierung.
 
 ### Fokus über die Aktionstaste öffnen
 

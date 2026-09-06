@@ -50,7 +50,7 @@ Außer `Title` ist jede Spalte optional; Sie brauchen nur die, die Sie tatsächl
 | `Created At` | ein Datum mit Uhrzeit | Der Erstellungszeitpunkt. Bleibt er leer, gilt der Zeitpunkt des Imports. |
 | `Checklist` | durch Zeilenumbrüche oder `\|` getrennte Einträge | Wird zur Checkliste der Aufgabe. Ein Eintrag wie `[x] Buy stamps` beginnt erledigt; `[ ] Buy stamps` und ein bloßes `Buy stamps` beginnen offen. Eine Aufgabe mit Checklisteneinträgen wird zur Listenaufgabe. |
 | `Location` | beliebiger Text | Das Ortsfeld der Aufgabe. |
-| `Order` | eine Zahl | Sortiert die Aufgabe unter ihren Geschwistern im selben Projekt, Bereich oder Posteingang. Zeilen ohne Zahl oder mit gleicher Zahl behalten ihre Reihenfolge aus der Datei. |
+| `Order` | eine Zahl | Sortiert die Aufgabe unter ihren Geschwistern im selben Projekt, Bereich oder Eingang. Zeilen ohne Zahl oder mit gleicher Zahl behalten ihre Reihenfolge aus der Datei. |
 | `ID` | eine beliebige, stabile Kennung | Gibt der Zeile eine dauerhafte Identität für erneute Importe. Ein Wert, der eine frühere Zeile desselben Imports wiederholt, wird mit einer Warnung verworfen. |
 | `Recurrence` | eine Wiederholungsregel wie `FREQ=WEEKLY;BYDAY=MO,TH` | Legt fest, wie die Aufgabe sich wiederholt. Hängen Sie `;X-MINDWTR-STRATEGY=FLUID` an, damit die Wiederholung ab dem Tag der Erledigung statt ab dem Datum zählt. Eine Regel, die Mindwtr nicht ausdrücken kann, wird mit einer Warnung samt Zeilennummer übersprungen, und diese Aufgabe kommt ohne Wiederholung an. |
 
@@ -74,7 +74,7 @@ Draft the agenda,,next,Team Offsite,Programme,Work,@computer,"#offsite, #writing
 Buy a whiteboard,,inbox,,,,@errands,,,,,,offsite-3
 ```
 
-Diese Datei erzeugt einen Bereich, darin ein Projekt mit zwei Abschnitten, zwei Aufgaben in diesem Projekt, eine zweiteilige Checkliste an der ersten davon und eine lose Posteingangsaufgabe.
+Diese Datei erzeugt einen Bereich, darin ein Projekt mit zwei Abschnitten, zwei Aufgaben in diesem Projekt, eine zweiteilige Checkliste an der ersten davon und eine lose Eingangsaufgabe.
 
 ## Importablauf
 
@@ -116,7 +116,7 @@ Mindwtr schreibt genau dieses Format, der Weg führt also in beide Richtungen. *
 Warnungen werden für den gesamten Import gezählt und einmal mit ihrer Anzahl angezeigt, nie einmal pro Zeile. Unlesbare Wiederholungsregeln fügen eine weitere Zeile hinzu, die die ersten drei betroffenen Zeilen nennt:
 
 - unbekannte Spalten wurden ignoriert
-- Status konnten nicht zugeordnet werden und wurden in den Posteingang importiert
+- Status konnten nicht zugeordnet werden und wurden in den Eingang importiert
 - `Section`-Werte wurden ignoriert, weil ihre Zeilen kein `Project` hatten
 - `Recurrence`-Regeln konnten nicht verstanden werden, und diese Aufgaben kamen ohne Wiederholung an
 - Datumswerte konnten nicht gelesen werden und wurden übersprungen
@@ -132,7 +132,7 @@ Warnungen werden für den gesamten Import gezählt und einmal mit ihrer Anzahl a
 
 - Importieren Sie zuerst eine Testdatei mit fünf Zeilen und prüfen Sie die Zuordnung, bevor Sie Hunderte Zeilen übernehmen.
 - Ergänzen Sie eine `ID`-Spalte, falls Sie den Export später verfeinern und erneut importieren könnten.
-- Lassen Sie `Status` leer, wenn es in Ihrer Quelle nichts Entsprechendes gibt. Die Vorgabe legt Projektarbeit unter „Nächste Schritte“ und alles Übrige in den Posteingang, bereit zum Klären.
+- Lassen Sie `Status` leer, wenn es in Ihrer Quelle nichts Entsprechendes gibt. Die Vorgabe legt Projektarbeit unter „Nächste Schritte“ und alles Übrige in den Eingang, bereit zum Klären.
 - Bewahren Sie den Originalexport und den Wiederherstellungspunkt auf, bis Sie das Ergebnis geprüft haben.
 - Importierte Aufgaben mit Status `done` oder `archived` erscheinen in den Ansichten „Erledigt“ und „Archiv“, nicht in der Aufgabenliste ihres Projekts — Projektseiten zeigen nur offene Arbeit.
 

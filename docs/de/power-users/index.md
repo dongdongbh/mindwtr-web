@@ -13,12 +13,12 @@ Jede Integration ist optional und bleibt deaktiviert, bis Sie sie einrichten. Di
 
 ### Apple-Kurzbefehle
 
-Senden Sie Aufgaben über Siri, die Kurzbefehle-App, die Aktionstaste oder eine Automation an Ihren Posteingang und wechseln Sie direkt zu einer GTD-Liste.
+Senden Sie Aufgaben über Siri, die Kurzbefehle-App, die Aktionstaste oder eine Automation an Ihren Eingang und wechseln Sie direkt zu einer GTD-Liste.
 
 | Frage | Antwort |
 | --- | --- |
 | Was sie lesen kann | Nichts. Sie erfasst nur Aufgaben und öffnet Listen. |
-| Was sie ändern kann | Fügt Erfassungen zum Posteingang hinzu. Sie kann Aufgaben weder bearbeiten noch erledigen oder löschen. |
+| Was sie ändern kann | Fügt Erfassungen zum Eingang hinzu. Sie kann Aufgaben weder bearbeiten noch erledigen oder löschen. |
 | Wo sie ausgeführt wird | Auf Ihrem iPhone oder iPad. |
 | Was Ihr Gerät verlässt | Nichts. Erfassungen durchlaufen den normalen Store und die Synchronisierung von Mindwtr; Swift schreibt Aufgaben nie direkt. |
 
@@ -26,12 +26,12 @@ Senden Sie Aufgaben über Siri, die Kurzbefehle-App, die Aktionstaste oder eine 
 
 ### E-Mail-Erfassung
 
-Verknüpfen Sie die Desktop-App mit einem E-Mail-Ordner. Jede dort eingehende Nachricht wird zu einer Aufgabe im Posteingang. Auf dem Telefon können Sie stattdessen eine E-Mail mit Mindwtr teilen.
+Verknüpfen Sie die Desktop-App mit einem E-Mail-Ordner. Jede dort eingehende Nachricht wird zu einer Aufgabe im Eingang. Auf dem Telefon können Sie stattdessen eine E-Mail mit Mindwtr teilen.
 
 | Frage | Antwort |
 | --- | --- |
 | Was sie lesen kann | Den einen E-Mail-Ordner, den Sie angeben. Der Rest Ihres Postfachs bleibt unberührt. |
-| Was sie ändern kann | Erstellt Aufgaben im Posteingang. Ihre E-Mails werden nie verändert, verschoben oder gelöscht. |
+| Was sie ändern kann | Erstellt Aufgaben im Eingang. Ihre E-Mails werden nie verändert, verschoben oder gelöscht. |
 | Wo sie ausgeführt wird | Auf Ihrem Desktop und per direkter IMAP-Verbindung mit Ihrem E-Mail-Anbieter. Es gibt kein Drittanbieter-Relay. |
 | Was Ihr Gerät verlässt | Nichts gelangt an Dritte. Self-Hosted-Rezepte senden nur die von Ihnen zugeordneten Felder an Ihren eigenen Server. |
 
@@ -39,12 +39,12 @@ Verknüpfen Sie die Desktop-App mit einem E-Mail-Ordner. Jede dort eingehende Na
 
 ### Jira und andere Work-Tracker
 
-Lassen Sie Jiras eigene Automatisierung jeden neuen Vorgang in Ihren Posteingang schicken, per E-Mail oder direkt an Ihren selbst gehosteten Server. In der App steckt kein Jira-Client, und die Erfassung ist einseitig.
+Lassen Sie Jiras eigene Automatisierung jeden neuen Vorgang in Ihren Eingang schicken, per E-Mail oder direkt an Ihren selbst gehosteten Server. In der App steckt kein Jira-Client, und die Erfassung ist einseitig.
 
 | Frage | Antwort |
 | --- | --- |
 | Was sie lesen kann | Nichts. Jira schickt Vorgänge hinaus; Mindwtr verbindet sich nie mit Jira. |
-| Was sie ändern kann | Erstellt Aufgaben im Posteingang. Das Erledigen einer Aufgabe berührt den Jira-Vorgang nie. |
+| Was sie ändern kann | Erstellt Aufgaben im Eingang. Das Erledigen einer Aufgabe berührt den Jira-Vorgang nie. |
 | Wo sie ausgeführt wird | In Jiras eigener Automatisierung, die die E-Mail-Erfassung oder Ihren eigenen Server füttert. |
 | Was Ihr Gerät verlässt | Nichts. Ihre Jira-Zugangsdaten bleiben in Jira; Mindwtr speichert kein Tracker-Token. |
 

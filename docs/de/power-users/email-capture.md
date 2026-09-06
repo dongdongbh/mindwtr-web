@@ -1,12 +1,12 @@
 # E-Mail-Erfassung
 
-Wandeln Sie E-Mails in Aufgaben im Posteingang um. Dafür gibt es drei Wege: die integrierte Erfassung aus einem IMAP-Ordner auf dem Desktop, das Teilen-Menü des Telefons für jeden E-Mail-Anbieter und die Cloud-API für selbst gehostete Bereitstellungen.
+Wandeln Sie E-Mails in Aufgaben im Eingang um. Dafür gibt es drei Wege: die integrierte Erfassung aus einem IMAP-Ordner auf dem Desktop, das Teilen-Menü des Telefons für jeden E-Mail-Anbieter und die Cloud-API für selbst gehostete Bereitstellungen.
 
 Verwandte Themen: [Cloud-API](/de/developers/cloud-api), [Docker-Bereitstellung](/de/power-users/docker-deployment)
 
 ## Integriert: einen E-Mail-Ordner mit der Desktop-App überwachen
 
-Verknüpfen Sie Mindwtr Desktop mit einem Ordner in Ihrem eigenen Postfach. Verschieben Sie E-Mails aus einem beliebigen Client dorthin oder leiten Sie sie weiter, und jede Nachricht wird zu einer Aufgabe im Posteingang. Ihre E-Mail gelangt nie auf einen Drittanbieterserver; die Desktop-App kommuniziert per IMAP direkt mit Ihrem E-Mail-Anbieter.
+Verknüpfen Sie Mindwtr Desktop mit einem Ordner in Ihrem eigenen Postfach. Verschieben Sie E-Mails aus einem beliebigen Client dorthin oder leiten Sie sie weiter, und jede Nachricht wird zu einer Aufgabe im Eingang. Ihre E-Mail gelangt nie auf einen Drittanbieterserver; die Desktop-App kommuniziert per IMAP direkt mit Ihrem E-Mail-Anbieter.
 
 Einrichtung unter **Einstellungen → Integrationen → E-Mail-Erfassung**:
 
@@ -32,7 +32,7 @@ Dies funktioniert bereits unter Android und iOS mit jeder E-Mail-App, die Text t
 
 1. Öffnen Sie die E-Mail.
 2. Tippen Sie auf **Teilen** und wählen Sie **Mindwtr**.
-3. Die Erfassungsansicht wird mit dem geteilten Inhalt geöffnet. Speichern Sie ihn im Posteingang.
+3. Die Erfassungsansicht wird mit dem geteilten Inhalt geöffnet. Speichern Sie ihn im Eingang.
 
 Dies ist der schnellste Weg, wenn Sie E-Mails auf dem Telefon verarbeiten. Einzelheiten finden Sie unter [Mobil-App](/de/use/mobile#teilen-menu).
 
@@ -57,7 +57,7 @@ Microsoft-Konten funktionieren am besten über Power Automate, da Microsoft kein
 
 1. Erstellen Sie einen Flow mit dem Auslöser **When a new email arrives**, gefiltert nach einer Kennzeichnung, Kategorie oder einem eigenen Ordner.
 2. Fügen Sie eine **HTTP**-Aktion hinzu: Methode `POST`, die URL `/v1/tasks` Ihres Servers, einen Header `Authorization: Bearer <token>` und einen JSON-Body, der den E-Mail-Betreff `title` und den Absender oder einen Ausschnitt `props.description` zuordnet.
-3. Kennzeichnen Sie eine E-Mail oder verschieben Sie sie in den Ordner. Bei der nächsten Synchronisierung erscheint sie in Ihrem Mindwtr-Posteingang.
+3. Kennzeichnen Sie eine E-Mail oder verschieben Sie sie in den Ordner. Bei der nächsten Synchronisierung erscheint sie in Ihrem Mindwtr-Eingang.
 
 Der Flow läuft in der Microsoft-Cloud, sodass die Erfassung auch bei ausgeschaltetem Computer funktioniert. Nur die von Ihnen zugeordneten Felder verlassen Ihr Postfach.
 
@@ -88,7 +88,7 @@ export default {
 
 Speichern Sie das Token als Worker Secret (`wrangler secret put MINDWTR_TOKEN`) und niemals im Skript. Wird bei einer fehlgeschlagenen Antwort ein Fehler ausgelöst, ist die fehlgeschlagene Zustellung sichtbar und der sendende Server kann es erneut versuchen, statt dass die E-Mail verschwindet. Um den Nachrichtentext in die Beschreibung aufzunehmen, parsen Sie die MIME-Rohdaten mit einer Bibliothek wie [postal-mime](https://github.com/postalsys/postal-mime). Die obige Variante nur mit Betreff benötigt kein Parsing.
 
-Alles, was Sie an diese Adresse weiterleiten, wird zu einer Aufgabe im Posteingang. Halten Sie die Adresse geheim oder fügen Sie im Worker eine Zulassungsliste für Absender hinzu, da jeder, der sie kennt, Aufgaben erstellen kann.
+Alles, was Sie an diese Adresse weiterleiten, wird zu einer Aufgabe im Eingang. Halten Sie die Adresse geheim oder fügen Sie im Worker eine Zulassungsliste für Absender hinzu, da jeder, der sie kennt, Aufgaben erstellen kann.
 
 ### Gmail und alles Weitere: n8n, Zapier, Skripte, Regeln
 

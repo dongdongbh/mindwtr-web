@@ -88,7 +88,7 @@ Die Ansicht **Fokus** ist keine 1:1-Kopie der vollständigen Liste „Nächste A
 
 ## Praktische Muster
 
-- Verwenden Sie `15/3` zum Leeren des Posteingangs, für kleine Verwaltungsaufgaben oder um eine Blockade zu überwinden.
+- Verwenden Sie `15/3` zum Leeren des Eingangs, für kleine Verwaltungsaufgaben oder um eine Blockade zu überwinden.
 - Verwenden Sie `25/5` als täglichen Standardrhythmus für normale nächste Aktionen.
 - Verwenden Sie `50/10` für konzentrierte Projektarbeit, wenn die Aufgabe bereits klar genug zum Beginnen ist.
 - Verwenden Sie eine eigene Voreinstellung, wenn Sie einen anderen Rhythmus benötigen, aber halten Sie ihn einfach.

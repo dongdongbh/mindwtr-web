@@ -581,10 +581,10 @@ Einzelheiten und unterstützte Zuordnungen beschreibt der [OmniFocus-Import](/de
 Auf iPhone und iPad kann Mindwtr unerledigte Apple-Erinnerungen unter **Einstellungen → Daten → Aus Apple Erinnerungen importieren** importieren.
 
 - Die Apple-Erinnerungsliste auswählen, die als Erfassungsquelle dienen soll.
-- Neue unerledigte Erinnerungen zum Mindwtr-**Posteingang** hinzufügen.
+- Neue unerledigte Erinnerungen zum Mindwtr-**Eingang** hinzufügen.
 - Titel und Notizen der Erinnerung als Aufgabentitel und -beschreibung übernehmen.
 - Erledigte, titellose und bereits importierte Erinnerungen überspringen.
-- Importierte Erinnerungen optional aus Apple Erinnerungen löschen, nachdem Mindwtr sie zum Posteingang hinzugefügt hat.
+- Importierte Erinnerungen optional aus Apple Erinnerungen löschen, nachdem Mindwtr sie zum Eingang hinzugefügt hat.
 
 Der Import aus Apple Erinnerungen ist ein einseitiger Importweg und kein Synchronisierungs-Backend.
 

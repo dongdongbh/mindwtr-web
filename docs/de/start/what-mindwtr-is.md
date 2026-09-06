@@ -4,7 +4,7 @@ Mindwtr verwaltet die Verpflichtungen und Aktionen Ihres persönlichen Lebens na
 
 ## Von Grund auf für GTD entwickelt
 
-Posteingang, Projekte, Kontexte, Warten, Irgendwann/Vielleicht und Durchsicht sind grundlegende Bestandteile von Mindwtr. Sie bestimmen den Aufbau der App und sind nicht bloß Bezeichnungen auf einer allgemeinen Aufgabenliste. Wenn Sie etwas erfassen, klären und einordnen, durchlaufen Sie unmittelbar den GTD-Kreislauf. Der [GTD-Überblick](/de/use/gtd-overview) erklärt die Methode; der [GTD-Arbeitsablauf](/de/use/gtd-workflow) zeigt, welcher Schritt zu welcher Ansicht gehört.
+Eingang, Projekte, Kontexte, Warten, Irgendwann/Vielleicht und Durchsicht sind grundlegende Bestandteile von Mindwtr. Sie bestimmen den Aufbau der App und sind nicht bloß Bezeichnungen auf einer allgemeinen Aufgabenliste. Wenn Sie etwas erfassen, klären und einordnen, durchlaufen Sie unmittelbar den GTD-Kreislauf. Der [GTD-Überblick](/de/use/gtd-overview) erklärt die Methode; der [GTD-Arbeitsablauf](/de/use/gtd-workflow) zeigt, welcher Schritt zu welcher Ansicht gehört.
 
 ## Notizen unterstützen die Arbeit
 
@@ -20,7 +20,7 @@ Der tägliche Ablauf besteht aus Erfassen, Klären und Durchsehen. Alles Nötige
 
 > Zeig mir kein Cockpit, wenn ich nur Fahrrad fahren möchte.
 
-Nachsichtig, wenn das Leben chaotisch wird: Das System arbeitet weiter, auch wenn Sie es nicht tun. Wer nach zwei Wochen Abwesenheit zurückkommt, erhält einen machbaren nächsten Schritt und keine Vorwürfe. Ein riesiger Posteingang wird zu einer Verarbeitungssitzung, die Sie abschließen können, und nicht zu einem Urteil. Der Fokus hilft Ihnen, weniger auszuwählen, und verlangt nie, dass Sie alles erledigen. Eine liegengebliebene Aufgabe ist eine Einladung zum Überdenken, kein Versagen. Ein Wochenrückblick lässt sich unterbrechen und später fortsetzen. Wenn Ihnen alles zu viel wird, ignorieren Sie die erweiterten Felder; die App funktioniert trotzdem. Es gibt keine Serien und keine Produktivitätspunkte.
+Nachsichtig, wenn das Leben chaotisch wird: Das System arbeitet weiter, auch wenn Sie es nicht tun. Wer nach zwei Wochen Abwesenheit zurückkommt, erhält einen machbaren nächsten Schritt und keine Vorwürfe. Ein riesiger Eingang wird zu einer Verarbeitungssitzung, die Sie abschließen können, und nicht zu einem Urteil. Der Fokus hilft Ihnen, weniger auszuwählen, und verlangt nie, dass Sie alles erledigen. Eine liegengebliebene Aufgabe ist eine Einladung zum Überdenken, kein Versagen. Ein Wochenrückblick lässt sich unterbrechen und später fortsetzen. Wenn Ihnen alles zu viel wird, ignorieren Sie die erweiterten Felder; die App funktioniert trotzdem. Es gibt keine Serien und keine Produktivitätspunkte.
 
 ## Automatisch ist besser als manuell
 

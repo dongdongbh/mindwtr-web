@@ -452,7 +452,7 @@ Praktische Hinweise:
 2. Festgefahrene Einträge nach Projekt zusammenfassen.
 3. Für ausgewählte Einträge `mindwtr_update_task` aufrufen, um `reviewAt` zu setzen.
 
-### 2) Posteingangssichtung
+### 2) Eingangssichtung
 
 1. `mindwtr_list_tasks` mit `status: "inbox"` und `sortBy: "createdAt"`.
 2. Jede Aufgabe mit `mindwtr_update_task` klassifizieren (`next`, `waiting`, `reference` usw.).

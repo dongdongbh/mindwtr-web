@@ -84,7 +84,7 @@ Mindwtr speichert vor dem Import einen Wiederherstellungsschnappschuss, damit Si
 
 - Beginnen Sie mit einem kleineren OmniFocus-Export, wenn Sie die Zuordnung zunächst prüfen möchten.
 - Wenn Sie den kurzbefehlsbasierten Export verwenden, bewahren Sie `OmniFocus.json` und `metadata.json` gemeinsam in einer ZIP-Datei auf, um den saubersten Import zu erzielen.
-- Wenn Sie sowohl Projektaktionen als auch eigenständige Posteingangsaktionen haben, erhält Mindwtr diese Trennung.
+- Wenn Sie sowohl Projektaktionen als auch eigenständige Eingangsaktionen haben, erhält Mindwtr diese Trennung.
 - Wenn Wiederholungen wichtig sind, verwenden Sie statt CSV bevorzugt den JSON-/ZIP-Weg über Omni Automation.
 - Prüfen Sie importierte Aufgaben mit hoher Priorität, wenn Sie OmniFocus-Markierungen intensiv genutzt haben.
 - Bewahren Sie den Wiederherstellungsschnappschuss auf, bis Sie geprüft haben, ob der Import korrekt aussieht.

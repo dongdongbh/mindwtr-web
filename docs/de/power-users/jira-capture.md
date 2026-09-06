@@ -2,15 +2,15 @@
 
 Mindwtr hat keinen eingebauten Jira-Client, und es ist auch keiner geplant. Eine ordentlich unterstützte Jira-Cloud-Integration würde bedeuten, eine OAuth-Anwendung zu registrieren und zu betreiben und Atlassians API- und Richtlinienänderungen dauerhaft nachzupflegen, für einen Work-Tracker unter vielen. Für eine persönliche GTD-App ist das ein schlechter Tausch.
 
-Vorgänge in den Posteingang zu erfassen ist dagegen genau das, wofür die GTD-Erfassung da ist, und Jiras eigene Automatisierung kann Mindwtr über Bausteine füttern, die es bereits gibt. Diese Seite zeigt drei Rezepte, von No-Code bis zu einem kleinen Skript.
+Vorgänge in den Eingang zu erfassen ist dagegen genau das, wofür die GTD-Erfassung da ist, und Jiras eigene Automatisierung kann Mindwtr über Bausteine füttern, die es bereits gibt. Diese Seite zeigt drei Rezepte, von No-Code bis zu einem kleinen Skript.
 
 Verwandt: [E-Mail-Erfassung](/de/power-users/email-capture), [Lokale API](/de/power-users/local-api), [Cloud-API](/de/developers/cloud-api)
 
-Alle diese Wege sind einseitige Erfassung, keine Synchronisation. Eine erfasste Aufgabe trägt den Vorgangsschlüssel, die Zusammenfassung und einen Link zurück zu Jira; das Erledigen der Aufgabe in Mindwtr ändert den Jira-Vorgang nicht, und Änderungen in Jira berühren bereits erfasste Aufgaben nicht. Sie verarbeiten den erfassten Eintrag wie jeden anderen im Posteingang, und der Link führt Sie zurück, wenn es Zeit ist, in Jira zu arbeiten.
+Alle diese Wege sind einseitige Erfassung, keine Synchronisation. Eine erfasste Aufgabe trägt den Vorgangsschlüssel, die Zusammenfassung und einen Link zurück zu Jira; das Erledigen der Aufgabe in Mindwtr ändert den Jira-Vorgang nicht, und Änderungen in Jira berühren bereits erfasste Aufgaben nicht. Sie verarbeiten den erfassten Eintrag wie jeden anderen im Eingang, und der Link führt Sie zurück, wenn es Zeit ist, in Jira zu arbeiten.
 
 ## Eine E-Mail pro Vorgang, per Jira-Automatisierung
 
-Der No-Code-Weg. Jira schickt Ihnen jeden passenden Vorgang per E-Mail, und Mindwtrs eingebaute [E-Mail-Erfassung](/de/power-users/email-capture) macht aus jeder Nachricht eine Aufgabe im Posteingang. Es gibt nichts Neues zu hosten, und das Postfach puffert Erfassungen, während Ihr Rechner aus ist.
+Der No-Code-Weg. Jira schickt Ihnen jeden passenden Vorgang per E-Mail, und Mindwtrs eingebaute [E-Mail-Erfassung](/de/power-users/email-capture) macht aus jeder Nachricht eine Aufgabe im Eingang. Es gibt nichts Neues zu hosten, und das Postfach puffert Erfassungen, während Ihr Rechner aus ist.
 
 1. Richten Sie die [E-Mail-Erfassung](/de/power-users/email-capture) in Mindwtr Desktop ein, mit einem eigenen überwachten Ordner wie `Mindwtr`
 2. Öffnen Sie in Jira **Projekteinstellungen → Automatisierung** (oder die globale Automatisierung) und erstellen Sie eine Regel
@@ -19,7 +19,7 @@ Der No-Code-Weg. Jira schickt Ihnen jeden passenden Vorgang per E-Mail, und Mind
 5. Fügen Sie eine **E-Mail senden**-Aktion an Ihre eigene Adresse hinzu, mit Betreff <span v-pre>`{{issue.key}} - {{issue.summary}}`</span> und einem Text mit <span v-pre>`{{issue.url}}`</span> sowie allen Feldern, die Sie in der Aufgabenbeschreibung haben möchten
 6. Legen Sie in Ihrem E-Mail-Programm eine Regel an, die diese Nachrichten in den überwachten Ordner verschiebt
 
-Jedes passende Ereignis erzeugt eine E-Mail, und jede E-Mail wird zu einer Posteingangsaufgabe wie `ABC-123 - Fix the login redirect` mit dem Link in der Beschreibung.
+Jedes passende Ereignis erzeugt eine E-Mail, und jede E-Mail wird zu einer Eingangsaufgabe wie `ABC-123 - Fix the login redirect` mit dem Link in der Beschreibung.
 
 Verwenden Sie eine Automatisierungsregel statt eines Abos auf einen gespeicherten Filter: Abos senden periodisch eine Sammelnachricht mit allen aktuellen Treffern, die zu einer einzigen, wenig hilfreichen Aufgabe würde. Die Automatisierung feuert einmal pro Vorgang.
 

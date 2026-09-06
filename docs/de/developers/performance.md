@@ -93,8 +93,8 @@ Verwenden Sie diese Werte als Budgets für die Triage, nicht als feste Produktga
 | Aufgabe erledigen/umschalten | <= 150 ms visuelle Reaktion, <= 500 ms bis Speichern eingereiht | <= 100 ms visuelle Reaktion, <= 300 ms bis Speichern eingereiht | Eingabe bis visuelle Aktualisierung plus Persistenzphase |
 | Aufgabenbearbeitung öffnen/speichern/schließen | <= 300 ms Öffnen, <= 300 ms Speichern/Schließen | <= 200 ms Öffnen, <= 200 ms Speichern/Schließen | Commit-Zeit des Modals/Sheets und Leeren der Speicherwarteschlange |
 | Projekt mit mehr als 100 Aufgaben öffnen | <= 2.000 ms | <= 1.000 ms | Navigation bis zur interaktiven Aufgabenliste |
-| Auswahl öffnen/schließen, während Fokus/Posteingang/Projekte eingebunden ist | <= 200 ms | <= 150 ms | Übergang der Auswahl und Neuberechnung der übergeordneten Ansicht |
-| Zwischen Fokus-, Posteingang- und Projektansicht wechseln | <= 500 ms | <= 300 ms | Routen-/Ansichtswechsel bis zum interaktiven Zustand |
+| Auswahl öffnen/schließen, während Fokus/Eingang/Projekte eingebunden ist | <= 200 ms | <= 150 ms | Übergang der Auswahl und Neuberechnung der übergeordneten Ansicht |
+| Zwischen Fokus-, Eingang- und Projektansicht wechseln | <= 500 ms | <= 300 ms | Routen-/Ansichtswechsel bis zum interaktiven Zustand |
 | Suche während der Eingabe | <= 150 ms p95 pro Tastendruck | <= 100 ms p95 pro Tastendruck | Tastendruck bis zu aktualisierten sichtbaren Ergebnissen |
 
 ### Erfassungsmatrix

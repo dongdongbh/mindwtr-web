@@ -210,7 +210,7 @@ apps/mobile/
 Drawer/Stack Layout
 ├── Tab Navigator
 │   ├── Fokus
-│   ├── Posteingang
+│   ├── Eingang
 │   ├── Erfassen
 │   ├── Schnellzugriff (Projekte, Kalender, Kontexte oder Review)
 │   └── Menü (Links zu anderen Ansichten)

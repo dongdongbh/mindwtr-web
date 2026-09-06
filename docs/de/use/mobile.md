@@ -1,10 +1,10 @@
 ---
-description: "Geführtes GTD auf iPhone und Android: Posteingang Karte für Karte, Zwei-Minuten-Regel, Fokus, tägliche Revision und Wochenrückblick-Assistent."
+description: "Geführtes GTD auf iPhone und Android: Eingang Karte für Karte, Zwei-Minuten-Regel, Fokus, tägliche Revision und Wochenrückblick-Assistent."
 ---
 
 # Benutzerhandbuch: Mobilgeräte
 
-Die mobile Mindwtr-App bietet auf iPhone und Android den vollständigen geführten GTD-Ablauf: Erfassen, kartenweises Abarbeiten des Posteingangs mit der Zwei-Minuten-Regel, Projekte, Fokus, tägliche Revision und den geführten Assistenten für die wöchentliche Revision. Android wird vollständig unterstützt; iOS ist im App Store und als TestFlight-Beta verfügbar. Mindwtr basiert auf React Native und Expo.
+Die mobile Mindwtr-App bietet auf iPhone und Android den vollständigen geführten GTD-Ablauf: Erfassen, kartenweises Abarbeiten des Eingangs mit der Zwei-Minuten-Regel, Projekte, Fokus, tägliche Revision und den geführten Assistenten für die wöchentliche Revision. Android wird vollständig unterstützt; iOS ist im App Store und als TestFlight-Beta verfügbar. Mindwtr basiert auf React Native und Expo.
 
 ## Überblick
 
@@ -16,7 +16,7 @@ Die App verwendet untere Tabs für zentrale Abläufe und eine Menüseite für we
 
 - **Tippen**, um Aufgaben zu öffnen und zu bearbeiten
 - **Wischen** für Schnellaktionen (siehe unten)
-- Über das **Teilen-Menü** Einträge direkt zum Posteingang hinzufügen
+- Über das **Teilen-Menü** Einträge direkt zum Eingang hinzufügen
 
 ## Navigation
 
@@ -24,7 +24,7 @@ Die App verwendet untere Tabs für zentrale Abläufe und eine Menüseite für we
 
 | Tab | Beschreibung |
 | -------------- | ------------------------------------ |
-| 📥 **Posteingang** | Eingehende Einträge erfassen und verarbeiten |
+| 📥 **Eingang** | Eingehende Einträge erfassen und verarbeiten |
 | 🎯 **Fokus** | Tagesdashboard und nächste Aktionen |
 | ➕ **Schnellerfassung** | Aufgabe oder Audionotiz schnell hinzufügen |
 | 📝 **Durchsicht** | Tägliche Durchsicht + Wochenrückblick |
@@ -56,11 +56,11 @@ Tippen Sie auf **Menü**, um weitere Ansichten zu öffnen:
 - 🗑️ **Papierkorb**: gelöschte Aufgaben und Projekte
 - ⚙️ **Einstellungen**: App-Einstellungen
 
-Öffnen Sie **Erledigt** und tippen Sie auf **Auswählen**, um Aufgaben zu markieren. Verwenden Sie dann **Verschieben → Archiviert**, um sie vorzeitig abzulegen. Unter **Archiviert** können Sie mit **Auswählen** oder **Alle auswählen** Aufgaben zurück nach Erledigt verschieben, ohne den Abschlusszeitpunkt zu ändern, sie im Posteingang wiederherstellen oder in den Papierkorb verschieben. Wechseln Sie zu **Projekte**, um archivierte Projekte zu öffnen, wiederherzustellen oder in den Papierkorb zu verschieben. Mindwtr löscht Einträge nur aus dem Papierkorb endgültig.
+Öffnen Sie **Erledigt** und tippen Sie auf **Auswählen**, um Aufgaben zu markieren. Verwenden Sie dann **Verschieben → Archiviert**, um sie vorzeitig abzulegen. Unter **Archiviert** können Sie mit **Auswählen** oder **Alle auswählen** Aufgaben zurück nach Erledigt verschieben, ohne den Abschlusszeitpunkt zu ändern, sie im Eingang wiederherstellen oder in den Papierkorb verschieben. Wechseln Sie zu **Projekte**, um archivierte Projekte zu öffnen, wiederherzustellen oder in den Papierkorb zu verschieben. Mindwtr löscht Einträge nur aus dem Papierkorb endgültig.
 
 **Archiviert** hat ein Suchfeld und eine Schaltfläche **Filter** in der Kopfzeile. Filter grenzt nach Kontext, Tag, Priorität und Zeitaufwand ein und enthält **Sortieren** und **Gruppieren** — beide bieten **Abschlussdatum**, da hier ausschließlich abgeschlossene Arbeit abgelegt ist. Standardmäßig steht der neueste Abschluss oben. Filterauswahlen gelten für alle Aufgabenlisten gemeinsam, ein anderswo gewählter Kontext grenzt also auch diese Liste ein. Suche und Filter gelten für die Seite „Aufgaben“ des Umschalters Aufgaben | Projekte.
 
-Unter **Erledigt** zeigt die Sortierung nach **Abschlussdatum** die neuesten Abschlüsse zuerst. Die Gruppierung nach **Abschlussdatum** teilt die Liste in **Heute**, **Gestern**, **Letzte 7 Tage**, je eine Überschrift pro Kalendermonat für ältere Aufgaben (Januar 2026, Dezember 2025, …) und **Nicht abgeschlossen**; leere Gruppen bleiben ausgeblendet, und die Sammelgruppe ohne Zuordnung steht am Ende. Referenz, Posteingang, Erledigt und Archiviert lassen sich außerdem nach **Kontext** gruppieren. Eine Aufgabe mit mehreren Kontexten erscheint in jeder passenden Gruppe; Aufgaben ohne Kontext stehen am Ende unter **Kein Kontext**. Tippen Sie auf eine Gruppenüberschrift, um die Gruppe einzuklappen — jede Liste merkt sich pro Gruppierung, welche ihrer Gruppen auf diesem Gerät eingeklappt sind, und die Aufgaben einer eingeklappten Gruppe fallen aus **Auswählen** und den Sammelaktionen heraus.
+Unter **Erledigt** zeigt die Sortierung nach **Abschlussdatum** die neuesten Abschlüsse zuerst. Die Gruppierung nach **Abschlussdatum** teilt die Liste in **Heute**, **Gestern**, **Letzte 7 Tage**, je eine Überschrift pro Kalendermonat für ältere Aufgaben (Januar 2026, Dezember 2025, …) und **Nicht abgeschlossen**; leere Gruppen bleiben ausgeblendet, und die Sammelgruppe ohne Zuordnung steht am Ende. Referenz, Eingang, Erledigt und Archiviert lassen sich außerdem nach **Kontext** gruppieren. Eine Aufgabe mit mehreren Kontexten erscheint in jeder passenden Gruppe; Aufgaben ohne Kontext stehen am Ende unter **Kein Kontext**. Tippen Sie auf eine Gruppenüberschrift, um die Gruppe einzuklappen — jede Liste merkt sich pro Gruppierung, welche ihrer Gruppen auf diesem Gerät eingeklappt sind, und die Aufgaben einer eingeklappten Gruppe fallen aus **Auswählen** und den Sammelaktionen heraus.
 
 Öffnen Sie **Papierkorb** und tippen Sie auf **Auswählen**, um mehrere gelöschte Aufgaben und Projekte gemeinsam wiederherzustellen oder endgültig zu löschen. Endgültiges Löschen verlangt immer eine Bestätigung.
 
@@ -119,7 +119,7 @@ Aktivieren Sie für mehrere Erfassungen **Weitere hinzufügen**: Jedes `Enter` s
 2. **Teilen** antippen
 3. **Mindwtr** wählen
 4. Die Erfassungsansicht öffnet sich mit dem Inhalt als Notiz
-5. Titel/Felder anpassen und im Posteingang speichern
+5. Titel/Felder anpassen und im Eingang speichern
 
 Beim Teilen einer Datei (PDF, Bild, Video oder Audioaufnahme) wird sie als Anhang der neuen Aufgabe in Mindwtr kopiert; der Dateiname wird zum Anfangstitel. Bis zu sechs Dateien können gleichzeitig geteilt werden.
 
@@ -127,7 +127,7 @@ Geeignet für:
 - Artikel zum späteren Lesen
 - E-Mails als Aufgaben
 - Links aus dem Browser
-- PDF oder Foto als später zu verarbeitende Posteingangsaufgabe
+- PDF oder Foto als später zu verarbeitende Eingangsaufgabe
 
 ### Startbildschirm-Widget
 
@@ -212,7 +212,7 @@ Hinweise:
 
 ### Apple-Kurzbefehle
 
-Auf iPhone und iPad stellt Mindwtr native Apple-Kurzbefehlsaktionen für Posteingangserfassung und GTD-Ansichten wie Fokus, Warten, Irgendwann, Projekte, Durchsicht und Kalender bereit. Siehe [Apple-Kurzbefehle](/de/power-users/apple-shortcuts).
+Auf iPhone und iPad stellt Mindwtr native Apple-Kurzbefehlsaktionen für Eingangserfassung und GTD-Ansichten wie Fokus, Warten, Irgendwann, Projekte, Durchsicht und Kalender bereit. Siehe [Apple-Kurzbefehle](/de/power-users/apple-shortcuts).
 
 ### URL-Schema-Schnellerfassung
 
@@ -280,7 +280,7 @@ Eine Datums- oder Zeitangabe am Ende der Eingabe wird zum Fälligkeitsdatum: `Gr
 
 ---
 
-## Posteingang
+## Eingang
 
 Ihre Erfassungszone. Verwenden Sie **Gedankensammlung** für geführte Fragen zu Beruf, Zuhause, Personen, Besorgungen und offenen Vorgängen.
 
@@ -292,9 +292,9 @@ Ihre Erfassungszone. Verwenden Sie **Gedankensammlung** für geführte Fragen zu
 4. Aufgabe mit Schnell-hinzufügen-Syntax eingeben
 5. Hinzufügen oder `Enter`
 
-### Posteingang verarbeiten
+### Eingang verarbeiten
 
-**Posteingang verarbeiten** startet den Klärungsablauf:
+**Eingang verarbeiten** startet den Klärungsablauf:
 
 1. **Ist eine Handlung erforderlich?**
    - Ja → weiter
@@ -310,7 +310,7 @@ Ihre Erfassungszone. Verwenden Sie **Gedankensammlung** für geführte Fragen zu
    - Eigene Kontexte hinzufügen
 5. **Projekt zuweisen?** (optional)
    - Projekt wählen/überspringen
-   - Oder **Ja, daraus ein Projekt machen** für mehrere Aktionen: Projekt benennen und nächste Aktion definieren. Weitere Aktionen landen mit Projekt im Posteingang zur eigenen Klärung.
+   - Oder **Ja, daraus ein Projekt machen** für mehrere Aktionen: Projekt benennen und nächste Aktion definieren. Weitere Aktionen landen mit Projekt im Eingang zur eigenen Klärung.
 
 ---
 
@@ -350,7 +350,7 @@ Aufgaben prüfen und Status aktualisieren:
 - schnell erledigen
 - zwischen Aufgaben navigieren
 - im **Auswahlmodus** mehrere Aufgaben organisieren, verschieben, taggen, teilen oder löschen
-- im Wochenrückblick zuerst über **Posteingang verarbeiten** die Erfassungen klären
+- im Wochenrückblick zuerst über **Eingang verarbeiten** die Erfassungen klären
 
 ---
 
@@ -500,7 +500,7 @@ Sequenzielle Projekte können projektweit oder je Abschnitt laufen. Abschnittswe
 
 | Ansicht | Nach rechts | Ergebnis |
 | ---------------- | ----------- | ------------------ |
-| **Posteingang** | Erledigt | Aufgabe abschließen |
+| **Eingang** | Erledigt | Aufgabe abschließen |
 | **Fokus** | Fokus | Fokusstatus umschalten |
 
 Beim Abschluss wird die aktuelle Zeit gespeichert. Wenn Sie früher fertig waren, drücken Sie eine **Erledigt**-Steuerung lange, um die tatsächliche Zeit zu wählen (Wischschaltfläche, Statusmenü, Editor-Chip oder Vorschauplakette). Der Zeitstempel **Abgeschlossen** lässt sich später ebenfalls korrigieren.
@@ -609,7 +609,7 @@ Tippen Sie auf **Zulassen**, um den Android-Berechtigungsbildschirm für Mindwtr
 - Erledigte Aufgaben nach einer festgelegten Anzahl von Tagen archivieren (Standard: 7). Wenn Sie die Verzögerung verkürzen, werden vorhandene Erledigt-Aufgaben, die nun älter als der neue Grenzwert sind, sofort archiviert. Ansonsten läuft die Prüfung bei jedem Start der App, und wenn Sie die Abschlusszeit einer Aufgabe auf einen Zeitpunkt vor dem Grenzwert korrigieren, wird sie sofort archiviert.
 - **Nie** für unbegrenzte Erledigt-Liste
 
-**Posteingangsverarbeitung:**
+**Eingangsverarbeitung:**
 - Mobiler kartenbasierter Ablauf
 - Gemeinsame Einstellungen steuern 2-Minuten-Abkürzung, frühe Projektfrage, Kontexte/Tags, Planung und Referenz
 

@@ -68,7 +68,7 @@ Ab Mindwtr Cloud 1.2.8 liefern `GET /v1/tasks/:id` und `GET /v1/projects/:id` ei
 POST /v1/capture
 ```
 
-Die Erfassung erstellt eine Aufgabe im Posteingang aus einer Transkription, einer Audioaufnahme oder beidem. Der Inhalt kann als Multipart-Formulardaten, als JSON oder als reiner Text gesendet werden, aber nur Multipart-Formulardaten können Audio übertragen. Die Felder, die Antworten und die Einrichtung des Pebble Index 01 stehen unter [Erfassungs-Webhook](/de/power-users/capture-webhook).
+Die Erfassung erstellt eine Aufgabe im Eingang aus einer Transkription, einer Audioaufnahme oder beidem. Der Inhalt kann als Multipart-Formulardaten, als JSON oder als reiner Text gesendet werden, aber nur Multipart-Formulardaten können Audio übertragen. Die Felder, die Antworten und die Einrichtung des Pebble Index 01 stehen unter [Erfassungs-Webhook](/de/power-users/capture-webhook).
 
 ## Projekte, Bereiche und Abschnitte
 

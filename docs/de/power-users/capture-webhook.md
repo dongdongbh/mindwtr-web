@@ -53,13 +53,53 @@ Senden Sie mindestens eines der Felder `transcription` und `audio`. Die Aufnahme
 | `413` | Die Anfrage überschreitet das Größenlimit des Servers: entweder eine Audiodatei über dem Anhanglimit oder eine Transkription über dem Textlimit. |
 | `415` | Der Typ der Audiodatei wird nicht unterstützt. |
 
+## Nur-Erfassungs-Token
+
+Ein Gerät, das nur erfasst, sollte keinen Token besitzen, der alles in Ihrem Konto lesen, ändern und löschen kann. Ein Nur-Erfassungs-Token ist ein zweites Geheimnis für dasselbe Konto. Der Server akzeptiert ihn bei `POST /v1/capture` und sonst nirgends.
+
+Erstellen Sie einen mit Ihrem vollen Token. Das `label` ist optional. Die Antwort zeigt den Token einmal. Der Server speichert ihn nie im Klartext, kopieren Sie ihn also jetzt.
+
+```bash
+curl -X POST https://your-server.example/v1/capture-tokens \
+  -H "Authorization: Bearer $MINDWTR_TOKEN" \
+  -H "Content-Type: application/json" \
+  --data '{"label":"Pebble ring"}'
+```
+
+```json
+{
+  "id": "ct_5f2c9a",
+  "token": "mwcap_...",
+  "label": "Pebble ring",
+  "createdAt": "2026-09-06T10:12:00.000Z"
+}
+```
+
+Listen Sie die Token des Kontos auf. Die Antwort enthält `id`, `label` und `createdAt` für jeden Token und keine Geheimnisse.
+
+```bash
+curl https://your-server.example/v1/capture-tokens \
+  -H "Authorization: Bearer $MINDWTR_TOKEN"
+```
+
+Widerrufen Sie einen über seine `id`.
+
+```bash
+curl -X DELETE https://your-server.example/v1/capture-tokens/<id> \
+  -H "Authorization: Bearer $MINDWTR_TOKEN"
+```
+
+- Ein Nur-Erfassungs-Token funktioniert nur bei `POST /v1/capture`. Dort verhält er sich genau wie der volle Token: gleiche Inhaltsformate, gleiche Antworten, gleiches Ratenlimit wie das Konto. Jede andere Route antwortet mit `403`.
+- Ein Konto kann bis zu 20 Nur-Erfassungs-Token halten.
+- Im Allowlist-Modus hört ein Nur-Erfassungs-Token auf zu funktionieren, wenn der volle Token des Kontos von der Allowlist entfernt wird.
+
 ## Pebble Index 01
 
 Die App des Pebble Index 01 sendet Sprachnotizen genau in diesem Format und erlaubt eigene Anfrage-Header. Deshalb ist kein Zwischencode nötig: Sie füllen nur zwei Einstellungen aus.
 
 1. Öffnen Sie die Pebble-App auf Ihrem Telefon und gehen Sie zu den Webhook-Einstellungen für Sprachnotizen
 2. Setzen Sie die Webhook-URL auf `https://your-server.example/v1/capture`, mit Ihrer eigenen Serveradresse anstelle des Beispiels
-3. Fügen Sie einen Anfrage-Header namens `Authorization` mit dem Wert `Bearer <token>` hinzu und verwenden Sie einen Token Ihres Servers
+3. Fügen Sie einen Anfrage-Header namens `Authorization` mit dem Wert `Bearer <token>` hinzu und verwenden Sie einen Nur-Erfassungs-Token aus dem Abschnitt oben. Ihr voller Token funktioniert auch, aber der Nur-Erfassungs-Token ist die sicherere Wahl für ein Gerät, das nur Notizen aufnimmt
 4. Nehmen Sie eine Notiz auf der Uhr auf. Sie erreicht Ihren Eingang bei der nächsten Synchronisierung, mit der Transkription als Aufgabe und der Aufnahme als Anhang
 
 ## Weitere Geräte und Automatisierungen

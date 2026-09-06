@@ -53,13 +53,53 @@ curl -X POST https://your-server.example/v1/capture \
 | `413` | 請求超過伺服器的大小上限：音訊超過附件大小上限，或轉錄文字超過文字大小上限。 |
 | `415` | 不支援這種音訊檔案類型。 |
 
+## 只能收集的權杖
+
+一台只負責收集的裝置，不應該持有能讀取、修改和刪除你帳號中所有內容的權杖。只能收集的權杖是同一帳號的第二個密鑰。伺服器只在 `POST /v1/capture` 上接受它，其他任何地方都不接受。
+
+用你的完整權杖建立一個。`label` 可以不填。回應只顯示權杖一次。伺服器從不以明文儲存它，所以請立刻複製。
+
+```bash
+curl -X POST https://your-server.example/v1/capture-tokens \
+  -H "Authorization: Bearer $MINDWTR_TOKEN" \
+  -H "Content-Type: application/json" \
+  --data '{"label":"Pebble ring"}'
+```
+
+```json
+{
+  "id": "ct_5f2c9a",
+  "token": "mwcap_...",
+  "label": "Pebble ring",
+  "createdAt": "2026-09-06T10:12:00.000Z"
+}
+```
+
+列出帳號上的權杖。回應中每個權杖都有 `id`、`label` 和 `createdAt`，不含任何密鑰。
+
+```bash
+curl https://your-server.example/v1/capture-tokens \
+  -H "Authorization: Bearer $MINDWTR_TOKEN"
+```
+
+依 `id` 撤銷一個權杖。
+
+```bash
+curl -X DELETE https://your-server.example/v1/capture-tokens/<id> \
+  -H "Authorization: Bearer $MINDWTR_TOKEN"
+```
+
+- 只能收集的權杖只在 `POST /v1/capture` 上有效。在那裡它的行為和完整權杖完全一樣：相同的請求內容格式、相同的回應、與帳號相同的速率限制。其他所有路由都會回傳 `403`。
+- 一個帳號最多可以有 20 個只能收集的權杖。
+- 在允許清單模式下，當帳號的完整權杖從允許清單中移除後，只能收集的權杖也會失效。
+
 ## Pebble Index 01
 
 Pebble Index 01 的應用程式傳送語音筆記時使用的正是這種格式，而且允許你自行加入請求標頭。因此不需要任何中介程式碼：你只要填兩項設定。
 
 1. 在手機上開啟 Pebble 應用程式，進入語音筆記的 Webhook 設定
 2. 將 Webhook 網址設為 `https://your-server.example/v1/capture`，並以你自己的伺服器位址取代範例位址
-3. 新增一個名為 `Authorization` 的請求標頭，值為 `Bearer <token>`，並使用你伺服器上的其中一個權杖
+3. 新增一個名為 `Authorization` 的請求標頭，值為 `Bearer <token>`，並使用上一節建立的只能收集的權杖。完整權杖也能用，但對於只錄筆記的裝置，只能收集的權杖更安全
 4. 在手錶上錄一則筆記。它會在下次同步時抵達收集箱，轉錄文字成為任務，錄音則是附件
 
 ## 其他裝置與自動化

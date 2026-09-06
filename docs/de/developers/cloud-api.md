@@ -72,6 +72,18 @@ POST /v1/capture
 
 Die Erfassung erstellt eine Aufgabe im Eingang aus einer Transkription, einer Audioaufnahme oder beidem. Der Inhalt kann als Multipart-Formulardaten, als JSON oder als reiner Text gesendet werden, aber nur Multipart-Formulardaten können Audio übertragen. Die Felder, die Antworten und die Einrichtung des Pebble Index 01 stehen unter [Erfassungs-Webhook](/de/power-users/capture-webhook).
 
+```text
+POST /v1/capture-tokens
+GET /v1/capture-tokens
+DELETE /v1/capture-tokens/:id
+```
+
+- `POST /v1/capture-tokens` erstellt einen Nur-Erfassungs-Token für das Konto. Der Inhalt ist `{ "label": "Pebble ring" }`, und das Label ist optional. Es antwortet mit `201` und `id`, `token`, `label` und `createdAt`. Der Token wird einmal gezeigt.
+- `GET /v1/capture-tokens` listet die Nur-Erfassungs-Token des Kontos mit `id`, `label` und `createdAt` auf. Keine Geheimnisse.
+- `DELETE /v1/capture-tokens/:id` widerruft einen.
+
+Alle drei brauchen den vollen Bearer-Token. Ein Nur-Erfassungs-Token wird nur bei `POST /v1/capture` akzeptiert und auf jeder anderen Route mit `403` abgelehnt.
+
 ## Projekte, Bereiche und Abschnitte
 
 ```text

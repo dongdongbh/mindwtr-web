@@ -53,13 +53,53 @@ Envía al menos uno de los campos `transcription` y `audio`. La grabación puede
 | `413` | La solicitud supera el límite de tamaño del servidor: un audio por encima del límite de adjuntos, o una transcripción por encima del límite de texto. |
 | `415` | El tipo del archivo de audio no es compatible. |
 
+## Token solo de captura
+
+Un dispositivo que solo captura no debería tener un token que pueda leer, cambiar y borrar todo lo que hay en tu cuenta. Un token solo de captura es un segundo secreto para la misma cuenta. El servidor lo acepta en `POST /v1/capture` y en ningún otro sitio.
+
+Crea uno con tu token completo. El `label` es opcional. La respuesta muestra el token una sola vez. El servidor nunca lo guarda en claro, así que cópialo ahora.
+
+```bash
+curl -X POST https://your-server.example/v1/capture-tokens \
+  -H "Authorization: Bearer $MINDWTR_TOKEN" \
+  -H "Content-Type: application/json" \
+  --data '{"label":"Pebble ring"}'
+```
+
+```json
+{
+  "id": "ct_5f2c9a",
+  "token": "mwcap_...",
+  "label": "Pebble ring",
+  "createdAt": "2026-09-06T10:12:00.000Z"
+}
+```
+
+Lista los tokens de la cuenta. La respuesta lleva `id`, `label` y `createdAt` de cada token, y ningún secreto.
+
+```bash
+curl https://your-server.example/v1/capture-tokens \
+  -H "Authorization: Bearer $MINDWTR_TOKEN"
+```
+
+Revoca uno por su `id`.
+
+```bash
+curl -X DELETE https://your-server.example/v1/capture-tokens/<id> \
+  -H "Authorization: Bearer $MINDWTR_TOKEN"
+```
+
+- Un token solo de captura funciona únicamente en `POST /v1/capture`. Ahí se comporta exactamente igual que el token completo: mismos formatos de cuerpo, mismas respuestas, mismo límite de tasa que la cuenta. Cualquier otra ruta responde `403`.
+- Una cuenta puede tener hasta 20 tokens solo de captura.
+- En modo de lista de permitidos, un token solo de captura deja de funcionar cuando el token completo de la cuenta se quita de la lista.
+
 ## Pebble Index 01
 
 La aplicación del Pebble Index 01 envía notas de voz exactamente en este formato y permite añadir tus propias cabeceras de solicitud. Por eso no hace falta código intermedio: solo rellenas dos ajustes.
 
 1. Abre la aplicación de Pebble en el teléfono y ve a los ajustes de webhook para las notas de voz
 2. Pon la URL del webhook en `https://your-server.example/v1/capture`, con la dirección de tu propio servidor en lugar del ejemplo
-3. Añade una cabecera de solicitud llamada `Authorization` con el valor `Bearer <token>`, usando uno de los tokens de tu servidor
+3. Añade una cabecera de solicitud llamada `Authorization` con el valor `Bearer <token>`, usando un token solo de captura de la sección anterior. Tu token completo también funciona, pero el token solo de captura es la opción más segura para un dispositivo que solo graba notas
 4. Graba una nota en el reloj. Llega a tu bandeja de entrada en la siguiente sincronización, con la transcripción como tarea y la grabación adjunta
 
 ## Otros dispositivos y automatizaciones

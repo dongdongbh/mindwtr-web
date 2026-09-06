@@ -53,13 +53,53 @@ Envoyez au moins l'un des champs `transcription` et `audio`. L'enregistrement pe
 | `413` | La requête dépasse la taille maximale du serveur : un fichier audio au-delà de la limite des pièces jointes, ou une transcription au-delà de la limite de texte. |
 | `415` | Le type du fichier audio n'est pas pris en charge. |
 
+## Jeton de capture seule
+
+Un appareil qui ne fait que capturer ne devrait pas détenir un jeton capable de lire, modifier et supprimer tout le contenu de votre compte. Un jeton de capture seule est un second secret pour le même compte. Le serveur l'accepte sur `POST /v1/capture` et nulle part ailleurs.
+
+Créez-en un avec votre jeton complet. Le `label` est facultatif. La réponse affiche le jeton une seule fois. Le serveur ne le stocke jamais en clair, copiez-le donc maintenant.
+
+```bash
+curl -X POST https://your-server.example/v1/capture-tokens \
+  -H "Authorization: Bearer $MINDWTR_TOKEN" \
+  -H "Content-Type: application/json" \
+  --data '{"label":"Pebble ring"}'
+```
+
+```json
+{
+  "id": "ct_5f2c9a",
+  "token": "mwcap_...",
+  "label": "Pebble ring",
+  "createdAt": "2026-09-06T10:12:00.000Z"
+}
+```
+
+Listez les jetons du compte. La réponse contient `id`, `label` et `createdAt` pour chaque jeton, et aucun secret.
+
+```bash
+curl https://your-server.example/v1/capture-tokens \
+  -H "Authorization: Bearer $MINDWTR_TOKEN"
+```
+
+Révoquez-en un par son `id`.
+
+```bash
+curl -X DELETE https://your-server.example/v1/capture-tokens/<id> \
+  -H "Authorization: Bearer $MINDWTR_TOKEN"
+```
+
+- Un jeton de capture seule ne fonctionne que sur `POST /v1/capture`. Il s'y comporte exactement comme le jeton complet : mêmes formats de corps, mêmes réponses, même limite de débit que le compte. Toute autre route répond `403`.
+- Un compte peut détenir jusqu'à 20 jetons de capture seule.
+- En mode liste d'autorisation, un jeton de capture seule cesse de fonctionner quand le jeton complet du compte est retiré de la liste.
+
 ## Pebble Index 01
 
 L'application du Pebble Index 01 envoie les notes vocales exactement dans ce format et permet d'ajouter vos propres en-têtes de requête. Aucun code intermédiaire n'est donc nécessaire : vous remplissez seulement deux réglages.
 
 1. Ouvrez l'application Pebble sur votre téléphone et allez dans les réglages de webhook des notes vocales
 2. Indiquez comme URL de webhook `https://your-server.example/v1/capture`, avec l'adresse de votre propre serveur à la place de l'exemple
-3. Ajoutez un en-tête de requête nommé `Authorization` avec la valeur `Bearer <token>`, en utilisant l'un des jetons de votre serveur
+3. Ajoutez un en-tête de requête nommé `Authorization` avec la valeur `Bearer <token>`, en utilisant un jeton de capture seule de la section ci-dessus. Votre jeton complet fonctionne aussi, mais le jeton de capture seule est le choix le plus sûr pour un appareil qui ne fait qu'enregistrer des notes
 4. Enregistrez une note sur la montre. Elle arrive dans votre boîte de réception à la prochaine synchronisation, avec la transcription comme tâche et l'enregistrement en pièce jointe
 
 ## Autres appareils et automatisations

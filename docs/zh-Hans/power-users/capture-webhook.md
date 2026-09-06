@@ -53,13 +53,53 @@ curl -X POST https://your-server.example/v1/capture \
 | `413` | 请求超过了服务器的大小上限：音频超过附件大小上限，或者转写文本超过文本大小上限。 |
 | `415` | 不支持这种音频文件类型。 |
 
+## 只能收集的令牌
+
+一台只负责收集的设备，不应该持有能读取、修改和删除你账户里所有内容的令牌。只能收集的令牌是同一账户的第二个密钥。服务器只在 `POST /v1/capture` 上接受它，其他任何地方都不接受。
+
+用你的完整令牌创建一个。`label` 可以不填。响应只显示令牌一次。服务器从不明文保存它，所以请立刻复制。
+
+```bash
+curl -X POST https://your-server.example/v1/capture-tokens \
+  -H "Authorization: Bearer $MINDWTR_TOKEN" \
+  -H "Content-Type: application/json" \
+  --data '{"label":"Pebble ring"}'
+```
+
+```json
+{
+  "id": "ct_5f2c9a",
+  "token": "mwcap_...",
+  "label": "Pebble ring",
+  "createdAt": "2026-09-06T10:12:00.000Z"
+}
+```
+
+列出账户上的令牌。响应里每个令牌都有 `id`、`label` 和 `createdAt`，不含任何密钥。
+
+```bash
+curl https://your-server.example/v1/capture-tokens \
+  -H "Authorization: Bearer $MINDWTR_TOKEN"
+```
+
+按 `id` 撤销一个令牌。
+
+```bash
+curl -X DELETE https://your-server.example/v1/capture-tokens/<id> \
+  -H "Authorization: Bearer $MINDWTR_TOKEN"
+```
+
+- 只能收集的令牌只在 `POST /v1/capture` 上有效。在那里它的行为和完整令牌完全一样：相同的请求体格式、相同的响应、与账户相同的速率限制。其他所有路由都会返回 `403`。
+- 一个账户最多可以有 20 个只能收集的令牌。
+- 在允许列表模式下，当账户的完整令牌从允许列表中移除后，只能收集的令牌也会失效。
+
 ## Pebble Index 01
 
 Pebble Index 01 的应用发送语音笔记时用的正是这种格式，而且允许你自己添加请求头。所以不需要任何中间代码：你只要填两项设置。
 
 1. 在手机上打开 Pebble 应用，进入语音笔记的 Webhook 设置
 2. 把 Webhook 地址设为 `https://your-server.example/v1/capture`，并用你自己的服务器地址替换示例地址
-3. 添加一个名为 `Authorization` 的请求头，值为 `Bearer <token>`，使用你服务器上的一个令牌
+3. 添加一个名为 `Authorization` 的请求头，值为 `Bearer <token>`，使用上一节创建的只能收集的令牌。完整令牌也能用，但对于只录笔记的设备，只能收集的令牌更安全
 4. 在手表上录一条笔记。它会在下一次同步时到达收集箱，转写文本成为任务，录音作为附件
 
 ## 其他设备与自动化

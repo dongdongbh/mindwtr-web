@@ -72,6 +72,18 @@ POST /v1/capture
 
 Capture creates an Inbox task from a transcription, an audio recording, or both. The body can be multipart form data, JSON, or plain text, but only multipart form data can carry audio. See [Capture webhook](/power-users/capture-webhook) for the fields, the responses, and the Pebble Index 01 setup.
 
+```text
+POST /v1/capture-tokens
+GET /v1/capture-tokens
+DELETE /v1/capture-tokens/:id
+```
+
+- `POST /v1/capture-tokens` creates a capture-only token for the account. The body is `{ "label": "Pebble ring" }`, and the label is optional. It returns `201` with `id`, `token`, `label` and `createdAt`. The token is shown once.
+- `GET /v1/capture-tokens` lists the account's capture-only tokens with `id`, `label` and `createdAt`. No secrets.
+- `DELETE /v1/capture-tokens/:id` revokes one.
+
+All three need the full bearer token. A capture-only token is accepted only on `POST /v1/capture` and is rejected with `403` on every other route.
+
 ## Projects, Areas, and Sections
 
 ```text

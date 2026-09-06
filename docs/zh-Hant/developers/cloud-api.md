@@ -72,6 +72,18 @@ POST /v1/capture
 
 收集端點可以用轉錄文字、錄音或兩者一起建立一筆收集箱任務。請求內容可以是多部分表單資料、JSON 或純文字，但只有多部分表單資料能夾帶音訊。欄位、回應以及 Pebble Index 01 的設定方式，請見[收集 Webhook](/zh-Hant/power-users/capture-webhook)。
 
+```text
+POST /v1/capture-tokens
+GET /v1/capture-tokens
+DELETE /v1/capture-tokens/:id
+```
+
+- `POST /v1/capture-tokens` 為帳號建立一個只能收集的權杖。請求內容是 `{ "label": "Pebble ring" }`，label 可以不填。回傳 `201`，帶有 `id`、`token`、`label` 和 `createdAt`。權杖只顯示一次。
+- `GET /v1/capture-tokens` 列出帳號的只能收集的權杖，包含 `id`、`label` 和 `createdAt`。不含密鑰。
+- `DELETE /v1/capture-tokens/:id` 撤銷一個權杖。
+
+這三個端點都需要完整的 bearer 權杖。只能收集的權杖只在 `POST /v1/capture` 上被接受，在其他任何路由上都會被拒絕並回傳 `403`。
+
 ## 專案、領域與區段
 
 ```text

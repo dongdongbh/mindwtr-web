@@ -53,13 +53,53 @@ Send at least one of `transcription` and `audio`. The recording can be m4a, mp4,
 | `413` | The request is over the server's size limit: an audio upload above the attachment limit, or a transcription above the text limit. |
 | `415` | The audio file type is not supported. |
 
+## Capture-only token
+
+A device that only captures should not hold a token that can read, change and delete everything in your account. A capture-only token is a second secret for the same account. The server accepts it on `POST /v1/capture` and nowhere else.
+
+Create one with your full token. The `label` is optional. The response shows the token once. The server never stores it in clear, so copy it now.
+
+```bash
+curl -X POST https://your-server.example/v1/capture-tokens \
+  -H "Authorization: Bearer $MINDWTR_TOKEN" \
+  -H "Content-Type: application/json" \
+  --data '{"label":"Pebble ring"}'
+```
+
+```json
+{
+  "id": "ct_5f2c9a",
+  "token": "mwcap_...",
+  "label": "Pebble ring",
+  "createdAt": "2026-09-06T10:12:00.000Z"
+}
+```
+
+List the tokens on the account. The response has `id`, `label` and `createdAt` for each token, and no secrets.
+
+```bash
+curl https://your-server.example/v1/capture-tokens \
+  -H "Authorization: Bearer $MINDWTR_TOKEN"
+```
+
+Revoke one by its `id`.
+
+```bash
+curl -X DELETE https://your-server.example/v1/capture-tokens/<id> \
+  -H "Authorization: Bearer $MINDWTR_TOKEN"
+```
+
+- A capture-only token works only on `POST /v1/capture`. There it behaves exactly like the full token: same body formats, same responses, same rate limit as the account. Every other route answers `403`.
+- An account can hold up to 20 capture-only tokens.
+- In allowlist mode, a capture-only token stops working when the account's full token is removed from the allowlist.
+
 ## Pebble Index 01
 
 The Pebble Index 01 app sends voice notes in exactly this format, and it lets you add your own request headers. So there is no glue code: you only fill in two settings.
 
 1. Open the Pebble app on your phone and go to the webhook settings for voice notes
 2. Set the webhook URL to `https://your-server.example/v1/capture`, with your own server address in place of the example
-3. Add a request header named `Authorization` with the value `Bearer <token>`, using one of your server's tokens
+3. Add a request header named `Authorization` with the value `Bearer <token>`, using a capture-only token from the section above. Your full token also works, but the capture-only token is the safer choice for a device that only records notes
 4. Record a note on the watch. It reaches your Inbox on the next sync, with the transcription as the task and the recording attached
 
 ## Other devices and automations

@@ -72,6 +72,18 @@ POST /v1/capture
 
 收集端点可以用转写文本、录音或两者一起创建一条收集箱任务。请求体可以是多部分表单数据、JSON 或纯文本，但只有多部分表单数据能携带音频。字段、响应以及 Pebble Index 01 的设置方法，请见[收集 Webhook](/zh-Hans/power-users/capture-webhook)。
 
+```text
+POST /v1/capture-tokens
+GET /v1/capture-tokens
+DELETE /v1/capture-tokens/:id
+```
+
+- `POST /v1/capture-tokens` 为账户创建一个只能收集的令牌。请求体是 `{ "label": "Pebble ring" }`，label 可以不填。返回 `201`，带有 `id`、`token`、`label` 和 `createdAt`。令牌只显示一次。
+- `GET /v1/capture-tokens` 列出账户的只能收集的令牌，包含 `id`、`label` 和 `createdAt`。不含密钥。
+- `DELETE /v1/capture-tokens/:id` 撤销一个令牌。
+
+这三个端点都需要完整的 bearer 令牌。只能收集的令牌只在 `POST /v1/capture` 上被接受，在其他任何路由上都会被拒绝并返回 `403`。
+
 ## 项目、领域与分区
 
 ```text

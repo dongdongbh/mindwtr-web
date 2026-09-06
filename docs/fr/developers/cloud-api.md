@@ -72,6 +72,18 @@ POST /v1/capture
 
 La capture crée une tâche dans la boîte de réception à partir d'une transcription, d'un enregistrement audio ou des deux. Le corps peut être envoyé en données de formulaire multipart, en JSON ou en texte brut, mais seules les données de formulaire multipart peuvent transporter de l'audio. Consultez [Webhook de capture](/fr/power-users/capture-webhook) pour les champs, les réponses et la configuration du Pebble Index 01.
 
+```text
+POST /v1/capture-tokens
+GET /v1/capture-tokens
+DELETE /v1/capture-tokens/:id
+```
+
+- `POST /v1/capture-tokens` crée un jeton de capture seule pour le compte. Le corps est `{ "label": "Pebble ring" }`, et l'étiquette est facultative. Il renvoie `201` avec `id`, `token`, `label` et `createdAt`. Le jeton est affiché une seule fois.
+- `GET /v1/capture-tokens` liste les jetons de capture seule du compte avec `id`, `label` et `createdAt`. Aucun secret.
+- `DELETE /v1/capture-tokens/:id` en révoque un.
+
+Les trois exigent le jeton bearer complet. Un jeton de capture seule n'est accepté que sur `POST /v1/capture` et est rejeté avec `403` sur toute autre route.
+
 ## Projets, domaines et sections
 
 ```text

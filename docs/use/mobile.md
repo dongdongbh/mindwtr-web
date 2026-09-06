@@ -147,6 +147,8 @@ Add the Mindwtr widget to your home screen for quick access:
 3. Find and add the **Mindwtr** widget
 4. Tap the widget to open quick capture or view focus items
 
+On Android, a capture started from the widget ends where you were: after **Save** or **Cancel**, Mindwtr steps back behind the previous screen instead of staying open. The same applies to captures started from the Quick Settings tile, the app shortcut, and the capture notification. **Save & edit** still opens the task inside Mindwtr.
+
 On Android, dated rows show **Today**, a weekday for the coming week, or a compact date. Tasks due today or overdue receive extra emphasis.
 
 ### iOS Lock Screen Widget

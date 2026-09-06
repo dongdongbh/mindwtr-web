@@ -147,6 +147,8 @@ Ajoutez le widget Mindwtr à votre écran d’accueil pour y accéder rapidement
 3. Trouvez et ajoutez le widget **Mindwtr**
 4. Touchez le widget pour ouvrir la capture rapide ou afficher les éléments Focus
 
+Sous Android, une capture lancée depuis le widget se termine là où vous étiez : après **Enregistrer** ou **Annuler**, Mindwtr repasse derrière l’écran précédent au lieu de rester ouvert. Il en va de même pour les captures lancées depuis la tuile des Réglages rapides, le raccourci de l’application et la notification de capture. **Enregistrer et modifier** ouvre toujours la tâche dans Mindwtr.
+
 Sous Android, les libellés d’échéance indiquent **Aujourd’hui**, le jour de la semaine pour les tâches des sept prochains jours, ou une date compacte pour les échéances ultérieures. Les tâches en retard ou à échéance aujourd’hui sont mises en évidence.
 
 ### Widget de l’écran verrouillé iOS

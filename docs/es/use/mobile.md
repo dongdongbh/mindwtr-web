@@ -147,6 +147,8 @@ Añade el widget de Mindwtr a la pantalla de inicio para acceder rápidamente:
 3. Busca y añade el widget **Mindwtr**
 4. Tócalo para abrir la captura rápida o ver los elementos de Foco
 
+En Android, una captura iniciada desde el widget termina donde estabas: tras **Guardar** o **Cancelar**, Mindwtr vuelve a colocarse detrás de la pantalla anterior en lugar de quedarse abierto. Lo mismo ocurre con las capturas iniciadas desde el mosaico de Ajustes rápidos, el acceso directo de la aplicación y la notificación de captura. **Guardar y editar** sigue abriendo la tarea dentro de Mindwtr.
+
 En Android, las etiquetas de vencimiento muestran **Hoy**, el día de la semana para tareas dentro de los próximos siete días o una fecha compacta para fechas posteriores. Las tareas vencidas y las que vencen hoy aparecen destacadas.
 
 ### Widget de la pantalla bloqueada de iOS

@@ -136,6 +136,8 @@ Geeignet für:
 3. **Mindwtr** hinzufügen
 4. Widget für Schnellerfassung oder Fokuseinträge antippen
 
+Auf Android endet eine über das Widget gestartete Erfassung dort, wo Sie waren: Nach **Speichern** oder **Abbrechen** tritt Mindwtr hinter den vorherigen Bildschirm zurück, statt geöffnet zu bleiben. Dasselbe gilt für Erfassungen, die über die Schnelleinstellungskachel, die App-Verknüpfung oder die Erfassungsbenachrichtigung gestartet wurden. **Speichern & bearbeiten** öffnet die Aufgabe weiterhin in Mindwtr.
+
 Auf Android zeigen Fälligkeitsangaben **Heute**, den Wochentag für Aufgaben innerhalb der nächsten Woche oder ein kompaktes Datum für spätere Aufgaben. Überfällige und heute fällige Aufgaben werden hervorgehoben.
 
 ### iOS-Sperrbildschirm-Widget

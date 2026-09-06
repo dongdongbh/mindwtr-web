@@ -60,6 +60,8 @@ Parámetros de lista:
 
 La creación acepta `title` o un `input` de adición rápida, además de `props` opcional. El parche acepta campos compatibles con la validación de nube y aumenta los metadatos de revisión.
 
+Al crear, `props` acepta estos campos de tarea: `status`, `projectId`, `sectionId`, `areaId`, `description`, `priority`, `dueDate`, `startTime`, `relativeStartOffset`, `reviewAt`, `recurrence`, `showFutureRecurrence`, `contexts`, `tags`, `checklist`, `attachments`, `assignedTo`, `location`, `energyLevel`, `timeEstimate`, `timeSpentMinutes`, `taskMode`, `textDirection`, `isFocusedToday`, `pushCount`, `repeatReminderMinutes`, `suppressMindwtrReminders` y `viewSectionIds`. `title` es un campo de nivel superior, no un prop. El parche acepta los mismos campos más `title`, `order`, `orderNum`, `boardOrder` y `focusOrder`. Los campos gestionados por el servidor, como `id`, `createdAt`, `updatedAt`, `completedAt`, `deletedAt` y `rev`, nunca pueden escribirse desde el cliente. Las listas provienen del indicador `cloudWrite` en `packages/core/src/task-sync-schema.ts`, así que ese archivo es la referencia actual.
+
 Mindwtr Cloud 1.2.8 y versiones posteriores devuelven un `ETag` fuerte en `GET /v1/tasks/:id` y `GET /v1/projects/:id`. Para actualizar la versión que leíste, envía esa etiqueta en `If-Match` con el `PATCH` correspondiente. El servidor comprueba el registro actual dentro de su bloqueo de escritura y devuelve `412 Precondition Failed` sin escribir si el registro cambió, incluso si solo cambió un adjunto. Vuelve a leer el registro y reconstruye la actualización antes de reintentar. Si omites `If-Match`, se mantiene el comportamiento anterior de actualización incondicional.
 
 ## Captura

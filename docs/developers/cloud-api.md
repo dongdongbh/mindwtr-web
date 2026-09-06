@@ -60,6 +60,8 @@ List query parameters:
 
 Create accepts either `title` or quick-add `input`, plus optional `props`. Patch accepts task fields supported by the cloud validation layer and bumps sync revision metadata.
 
+On create, `props` accepts these task fields: `status`, `projectId`, `sectionId`, `areaId`, `description`, `priority`, `dueDate`, `startTime`, `relativeStartOffset`, `reviewAt`, `recurrence`, `showFutureRecurrence`, `contexts`, `tags`, `checklist`, `attachments`, `assignedTo`, `location`, `energyLevel`, `timeEstimate`, `timeSpentMinutes`, `taskMode`, `textDirection`, `isFocusedToday`, `pushCount`, `repeatReminderMinutes`, `suppressMindwtrReminders`, and `viewSectionIds`. `title` is a top-level field, not a prop. Patch accepts the same fields plus `title`, `order`, `orderNum`, `boardOrder`, and `focusOrder`. Server-managed fields such as `id`, `createdAt`, `updatedAt`, `completedAt`, `deletedAt`, and `rev` are never client-writable. The lists come from the `cloudWrite` flag in `packages/core/src/task-sync-schema.ts`, so that file is the current reference.
+
 Mindwtr Cloud 1.2.8 and later return a strong `ETag` on `GET /v1/tasks/:id` and `GET /v1/projects/:id`. To update the version you read, send that tag in `If-Match` on the corresponding `PATCH`. The server checks the current record inside its write lock and returns `412 Precondition Failed` without writing if the record changed, including an attachment-only change. Read the record again and rebuild your update before retrying. Omitting `If-Match` keeps the existing unconditional patch behavior.
 
 ## Capture

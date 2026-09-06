@@ -60,6 +60,8 @@ Abfrageparameter für Listen:
 
 Beim Erstellen werden entweder `title` oder die Schnelleingabe `input` sowie optional `props` akzeptiert. Patch akzeptiert Aufgabenfelder, die von der Cloud-Validierungsschicht unterstützt werden, und erhöht die Metadaten der Synchronisierungsrevision.
 
+Beim Erstellen akzeptiert `props` diese Aufgabenfelder: `status`, `projectId`, `sectionId`, `areaId`, `description`, `priority`, `dueDate`, `startTime`, `relativeStartOffset`, `reviewAt`, `recurrence`, `showFutureRecurrence`, `contexts`, `tags`, `checklist`, `attachments`, `assignedTo`, `location`, `energyLevel`, `timeEstimate`, `timeSpentMinutes`, `taskMode`, `textDirection`, `isFocusedToday`, `pushCount`, `repeatReminderMinutes`, `suppressMindwtrReminders` und `viewSectionIds`. `title` ist ein Feld auf oberster Ebene, kein Prop. Patch akzeptiert dieselben Felder sowie `title`, `order`, `orderNum`, `boardOrder` und `focusOrder`. Servergesteuerte Felder wie `id`, `createdAt`, `updatedAt`, `completedAt`, `deletedAt` und `rev` können vom Client nie geschrieben werden. Die Listen stammen aus dem `cloudWrite`-Flag in `packages/core/src/task-sync-schema.ts`; diese Datei ist daher die aktuelle Referenz.
+
 Ab Mindwtr Cloud 1.2.8 liefern `GET /v1/tasks/:id` und `GET /v1/projects/:id` einen starken `ETag`. Um die gelesene Version zu ändern, sende diesen Wert im Header `If-Match` beim zugehörigen `PATCH`. Der Server prüft den aktuellen Datensatz innerhalb seiner Schreibsperre. Hat sich der Datensatz geändert, auch nur ein Anhang, antwortet er mit `412 Precondition Failed`, ohne zu schreiben. Lies den Datensatz erneut und erstelle die Änderung neu, bevor du es noch einmal versuchst. Ohne `If-Match` bleibt das bisherige bedingungslose Patch-Verhalten erhalten.
 
 ## Erfassung

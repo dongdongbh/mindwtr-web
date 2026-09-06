@@ -144,10 +144,10 @@ Add the Mindwtr widget to your home screen for quick access:
 
 1. Long-press on your home screen
 2. Select **Widgets**
-3. Find and add the **Mindwtr** widget
-4. Tap the widget to open quick capture or view focus items
+3. Find **Mindwtr** and add either the **Tasks** widget (inbox count, today's tasks, a **+** button) or the one-cell **Quick capture** button
+4. Tap a task to open it, tap the header to open Focus, or tap **+** to capture
 
-On Android, a capture started from the widget ends where you were: after **Save** or **Cancel**, Mindwtr steps back behind the previous screen instead of staying open. The same applies to captures started from the Quick Settings tile, the app shortcut, and the capture notification. **Save & edit** still opens the task inside Mindwtr.
+On Android, **+** on either widget, the Quick Settings tile, the app shortcut and the capture notification open a small capture window on top of whatever you are doing. **Save** adds the task to the Inbox, shows a short confirmation and closes the window; Mindwtr itself stays in the background, and the task appears the next time you open it. iOS captures through the app as before.
 
 On Android, dated rows show **Today**, a weekday for the coming week, or a compact date. Tasks due today or overdue receive extra emphasis.
 
@@ -167,7 +167,7 @@ On Android, add the Mindwtr capture tile to Quick Settings for one-swipe Inbox c
 
 1. Open Android Quick Settings edit mode.
 2. Add the **Mindwtr** tile.
-3. Tap the tile to open Quick Capture.
+3. Tap the tile to open the same small capture window described under Home Widget.
 
 ### Android Notification Bar Quick Capture
 
@@ -175,7 +175,7 @@ For the fastest capture, one swipe and available from the lock screen, pin a per
 
 1. Open **Settings → Notifications**.
 2. Turn on **Quick capture in notification bar**.
-3. Tap the notification any time to open Quick Capture.
+3. Tap the notification any time to open the same small capture window described under Home Widget.
 
 The notification is silent and stays out of the way at the bottom of the shade. Turn the toggle off to remove it. (Android only; iOS doesn't support persistent notifications, so use the widget or Shortcuts there.)
 

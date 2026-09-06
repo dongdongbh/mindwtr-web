@@ -144,10 +144,10 @@ Añade el widget de Mindwtr a la pantalla de inicio para acceder rápidamente:
 
 1. Mantén pulsada la pantalla de inicio
 2. Selecciona **Widgets**
-3. Busca y añade el widget **Mindwtr**
-4. Tócalo para abrir la captura rápida o ver los elementos de Foco
+3. Busca **Mindwtr** y añade el widget **Tareas** (recuento de la bandeja de entrada, tareas de hoy, un botón **+**) o el botón de una celda **Captura rápida**
+4. Toca una tarea para abrirla, toca el encabezado para abrir Foco o toca **+** para capturar
 
-En Android, una captura iniciada desde el widget termina donde estabas: tras **Guardar** o **Cancelar**, Mindwtr vuelve a colocarse detrás de la pantalla anterior en lugar de quedarse abierto. Lo mismo ocurre con las capturas iniciadas desde el mosaico de Ajustes rápidos, el acceso directo de la aplicación y la notificación de captura. **Guardar y editar** sigue abriendo la tarea dentro de Mindwtr.
+En Android, **+** en cualquiera de los dos widgets, el mosaico de Ajustes rápidos, el acceso directo de la aplicación y la notificación de captura abren una pequeña ventana de captura sobre lo que estés haciendo. **Guardar** añade la tarea a la Bandeja de entrada, muestra una breve confirmación y cierra la ventana; Mindwtr permanece en segundo plano y la tarea aparece la próxima vez que lo abras. iOS captura a través de la aplicación como antes.
 
 En Android, las etiquetas de vencimiento muestran **Hoy**, el día de la semana para tareas dentro de los próximos siete días o una fecha compacta para fechas posteriores. Las tareas vencidas y las que vencen hoy aparecen destacadas.
 
@@ -167,7 +167,7 @@ En Android, añade el mosaico de captura de Mindwtr a Ajustes rápidos para capt
 
 1. Abre el modo de edición de Ajustes rápidos de Android.
 2. Añade el mosaico **Mindwtr**.
-3. Tócalo para abrir Captura rápida.
+3. Tócalo para abrir la misma pequeña ventana de captura descrita en Widget de inicio.
 
 ### Captura rápida desde la barra de notificaciones de Android
 
@@ -175,7 +175,7 @@ Para capturar de la forma más rápida, con un solo deslizamiento y desde la pan
 
 1. Abre **Ajustes → Notificaciones**.
 2. Activa **Captura rápida en la barra de notificaciones**.
-3. Toca la notificación en cualquier momento para abrir Captura rápida.
+3. Toca la notificación en cualquier momento para abrir la misma pequeña ventana de captura descrita en Widget de inicio.
 
 La notificación es silenciosa y permanece discretamente al final del panel. Desactiva el control para quitarla. (Solo Android; iOS no admite notificaciones persistentes, así que allí debes usar el widget o Atajos.)
 

@@ -133,10 +133,10 @@ Geeignet für:
 
 1. Startbildschirm lange drücken
 2. **Widgets** wählen
-3. **Mindwtr** hinzufügen
-4. Widget für Schnellerfassung oder Fokuseinträge antippen
+3. **Mindwtr** suchen und entweder das Widget **Aufgaben** (Eingangszähler, heutige Aufgaben, eine **+**-Schaltfläche) oder die einzellige Schaltfläche **Schnellerfassung** hinzufügen
+4. Aufgabe antippen, um sie zu öffnen, Kopfzeile antippen, um „Fokus“ zu öffnen, oder **+** antippen, um zu erfassen
 
-Auf Android endet eine über das Widget gestartete Erfassung dort, wo Sie waren: Nach **Speichern** oder **Abbrechen** tritt Mindwtr hinter den vorherigen Bildschirm zurück, statt geöffnet zu bleiben. Dasselbe gilt für Erfassungen, die über die Schnelleinstellungskachel, die App-Verknüpfung oder die Erfassungsbenachrichtigung gestartet wurden. **Speichern & bearbeiten** öffnet die Aufgabe weiterhin in Mindwtr.
+Auf Android öffnen **+** auf beiden Widgets, die Schnelleinstellungskachel, die App-Verknüpfung und die Erfassungsbenachrichtigung ein kleines Erfassungsfenster über dem, was Sie gerade tun. **Speichern** legt die Aufgabe im Eingang ab, zeigt kurz eine Bestätigung und schließt das Fenster; Mindwtr selbst bleibt im Hintergrund, und die Aufgabe erscheint beim nächsten Öffnen. iOS erfasst wie bisher über die App.
 
 Auf Android zeigen Fälligkeitsangaben **Heute**, den Wochentag für Aufgaben innerhalb der nächsten Woche oder ein kompaktes Datum für spätere Aufgaben. Überfällige und heute fällige Aufgaben werden hervorgehoben.
 
@@ -154,7 +154,7 @@ Alle öffnen beim Antippen „Fokus“ und folgen dem monochromen Sperrbildschir
 
 1. Bearbeitungsmodus der Android-Schnelleinstellungen öffnen
 2. **Mindwtr**-Kachel hinzufügen
-3. Kachel für Schnellerfassung antippen
+3. Kachel antippen, um dasselbe kleine Erfassungsfenster wie unter „Startbildschirm-Widget“ beschrieben zu öffnen
 
 ### Schnellerfassung in der Android-Benachrichtigungsleiste
 
@@ -162,7 +162,7 @@ Für Erfassung mit einem Wischen, auch vom Sperrbildschirm:
 
 1. **Einstellungen → Benachrichtigungen** öffnen
 2. **Schnellerfassung in der Benachrichtigungsleiste** aktivieren
-3. Benachrichtigung jederzeit antippen
+3. Benachrichtigung jederzeit antippen, um dasselbe kleine Erfassungsfenster wie unter „Startbildschirm-Widget“ beschrieben zu öffnen
 
 Die Benachrichtigung ist lautlos und bleibt unten. Deaktivieren Sie den Schalter zum Entfernen. iOS unterstützt keine dauerhaften Benachrichtigungen; verwenden Sie dort Widget oder Kurzbefehle.
 

@@ -144,10 +144,10 @@ Ajoutez le widget Mindwtr à votre écran d’accueil pour y accéder rapidement
 
 1. Appuyez longuement sur votre écran d’accueil
 2. Sélectionnez **Widgets**
-3. Trouvez et ajoutez le widget **Mindwtr**
-4. Touchez le widget pour ouvrir la capture rapide ou afficher les éléments Focus
+3. Trouvez **Mindwtr** et ajoutez soit le widget **Tâches** (nombre d’éléments dans la boîte de réception, tâches du jour, un bouton **+**), soit le bouton d’une cellule **Capture rapide**
+4. Touchez une tâche pour l’ouvrir, touchez l’en-tête pour ouvrir Focus, ou touchez **+** pour capturer
 
-Sous Android, une capture lancée depuis le widget se termine là où vous étiez : après **Enregistrer** ou **Annuler**, Mindwtr repasse derrière l’écran précédent au lieu de rester ouvert. Il en va de même pour les captures lancées depuis la tuile des Réglages rapides, le raccourci de l’application et la notification de capture. **Enregistrer et modifier** ouvre toujours la tâche dans Mindwtr.
+Sous Android, **+** sur l’un ou l’autre widget, la tuile des Réglages rapides, le raccourci de l’application et la notification de capture ouvrent une petite fenêtre de capture par-dessus ce que vous faites. **Enregistrer** ajoute la tâche à la Boîte de réception, affiche une brève confirmation et ferme la fenêtre ; Mindwtr reste en arrière-plan et la tâche apparaît à la prochaine ouverture. iOS capture via l’application comme avant.
 
 Sous Android, les libellés d’échéance indiquent **Aujourd’hui**, le jour de la semaine pour les tâches des sept prochains jours, ou une date compacte pour les échéances ultérieures. Les tâches en retard ou à échéance aujourd’hui sont mises en évidence.
 
@@ -167,7 +167,7 @@ Sous Android, ajoutez la tuile de capture Mindwtr aux Réglages rapides pour col
 
 1. Ouvrez le mode de modification des Réglages rapides Android.
 2. Ajoutez la tuile **Mindwtr**.
-3. Touchez la tuile pour ouvrir la Capture rapide.
+3. Touchez la tuile pour ouvrir la même petite fenêtre de capture décrite sous Widget de l’écran d’accueil.
 
 ### Capture rapide dans la barre de notifications Android
 
@@ -175,7 +175,7 @@ Pour la capture la plus rapide, accessible d’un seul balayage et depuis l’é
 
 1. Ouvrez **Paramètres → Notifications**.
 2. Activez **Capture rapide dans la barre de notifications**.
-3. Touchez la notification à tout moment pour ouvrir la Capture rapide.
+3. Touchez la notification à tout moment pour ouvrir la même petite fenêtre de capture décrite sous Widget de l’écran d’accueil.
 
 La notification est silencieuse et reste discrète en bas du volet. Désactivez l’option pour la retirer. (Android uniquement ; iOS ne prend pas en charge les notifications persistantes, utilisez donc le widget ou Raccourcis.)
 

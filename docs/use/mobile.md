@@ -144,7 +144,7 @@ Add the Mindwtr widget to your home screen for quick access:
 
 1. Long-press on your home screen
 2. Select **Widgets**
-3. Find **Mindwtr** and add either the **Tasks** widget or the one-cell **Quick capture** button. The Tasks widget shows the inbox count, a **+** button, and your tasks in the same sections as the Focus screen (Today's Focus, Today, Review Due, Next actions, Upcoming), each with its priority colour and its project or area. It uses the default Focus order and no filters.
+3. Find **Mindwtr** and add either the **Tasks** widget or the one-cell **Quick capture** button. The Tasks widget shows the inbox count, a **+** button, and your tasks, each with its priority colour, its project or area, and its due date. On Android, a picker opens when you place the widget: choose Focus (the default, with the same sections as the Focus screen: Today's Focus, Today, Review Due, Next actions, Upcoming, in the default Focus order and with no filters), Inbox, Next Actions, Waiting For, Someday/Maybe, or one project, whose sections become headers. To change the list later, long-press the widget; if your launcher only offers Rename and Remove, remove the widget and add it again. You can add several Tasks widgets with different lists.
 4. Tap a task to open it, tap the header to open Focus, or tap **+** to capture
 
 On Android, **+** on either widget, the Quick Settings tile, the app shortcut and the capture notification open a small capture window on top of whatever you are doing. **Save** adds the task to the Inbox, shows a short confirmation and closes the window; Mindwtr itself stays in the background, and the task appears the next time you open it. iOS captures through the app as before.

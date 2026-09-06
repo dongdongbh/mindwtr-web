@@ -39,7 +39,7 @@ curl -X POST https://your-server.example/v1/capture \
 | `transcription` | El texto capturado. La primera línea se convierte en el título de la tarea y el texto completo pasa a la descripción. `text` y `title` se aceptan como otros nombres del mismo campo. |
 | `audio` | La grabación que se adjunta a la tarea. Se sincroniza con tus dispositivos como cualquier otro adjunto. Solo se lee de una solicitud `multipart/form-data`. |
 | `recordedAt` | Cuándo se hizo la captura, en milisegundos desde la época o como marca de tiempo ISO 8601. Pasa a ser la hora de creación de la tarea cuando es válida y no está en el futuro. |
-| `client` | Una etiqueta corta para el dispositivo o la aplicación que envió la captura. Se anota al final de la descripción como `Captured with <client>`. |
+| `client` | Una etiqueta corta para el dispositivo o la aplicación que envió la captura. Se acepta y se ignora, para que remitentes como la app de Pebble sigan funcionando. |
 
 Envía al menos uno de los campos `transcription` y `audio`. La grabación puede ser m4a, mp4, aac, mp3, wav, ogg o webm.
 

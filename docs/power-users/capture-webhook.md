@@ -39,7 +39,7 @@ curl -X POST https://your-server.example/v1/capture \
 | `transcription` | The captured text. The first line becomes the task title, and the full text becomes the description. `text` and `title` are accepted as other names for the same field. |
 | `audio` | The recording to attach to the task. It syncs to your devices like any other attachment. It is only read from a `multipart/form-data` request. |
 | `recordedAt` | When the capture happened, as epoch milliseconds or an ISO 8601 timestamp. It becomes the task's creation time when it is valid and not in the future. |
-| `client` | A short label for the device or app that sent the capture. It is noted at the end of the description as `Captured with <client>`. |
+| `client` | A short label for the device or app that sent the capture. It is accepted and ignored, so senders such as the Pebble app keep working. |
 
 Send at least one of `transcription` and `audio`. The recording can be m4a, mp4, aac, mp3, wav, ogg, or webm.
 

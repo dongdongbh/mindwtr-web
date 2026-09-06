@@ -39,7 +39,7 @@ curl -X POST https://your-server.example/v1/capture \
 | `transcription` | 收集到的文字。第一行會成為任務標題，全文則進入描述。`text` 與 `title` 也是同一個欄位的名稱。 |
 | `audio` | 要附加到任務上的錄音。它會像其他附件一樣同步到你的裝置。只有 `multipart/form-data` 請求中的錄音才會被讀取。 |
 | `recordedAt` | 錄製的時間，可使用毫秒時間戳記或 ISO 8601 時間格式。只要它有效且不在未來，就會成為任務的建立時間。 |
-| `client` | 傳送這次收集的裝置或應用程式的簡短名稱。它會以 `Captured with <client>` 的形式寫在描述結尾。 |
+| `client` | 傳送這次收集的裝置或應用程式的簡短名稱。伺服器會接受並忽略它，讓 Pebble 應用程式等傳送方仍能正常運作。 |
 
 `transcription` 與 `audio` 至少要傳送一個。錄音可以是 m4a、mp4、aac、mp3、wav、ogg 或 webm。
 

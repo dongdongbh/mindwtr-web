@@ -144,7 +144,7 @@ Ajoutez le widget Mindwtr à votre écran d’accueil pour y accéder rapidement
 
 1. Appuyez longuement sur votre écran d’accueil
 2. Sélectionnez **Widgets**
-3. Trouvez **Mindwtr** et ajoutez soit le widget **Tâches** (nombre d’éléments dans la boîte de réception, tâches du jour, un bouton **+**), soit le bouton d’une cellule **Capture rapide**
+3. Trouvez **Mindwtr** et ajoutez soit le widget **Tâches**, soit le bouton d’une cellule **Capture rapide**. Le widget Tâches affiche le nombre d’éléments dans la boîte de réception, un bouton **+** et vos tâches dans les mêmes sections que l’écran Focus (Focus du jour, Aujourd’hui, Revue due, Prochaines actions, À venir), chacune avec sa couleur de priorité et son projet ou domaine. Il utilise l’ordre Focus par défaut et aucun filtre.
 4. Touchez une tâche pour l’ouvrir, touchez l’en-tête pour ouvrir Focus, ou touchez **+** pour capturer
 
 Sous Android, **+** sur l’un ou l’autre widget, la tuile des Réglages rapides, le raccourci de l’application et la notification de capture ouvrent une petite fenêtre de capture par-dessus ce que vous faites. **Enregistrer** ajoute la tâche à la Boîte de réception, affiche une brève confirmation et ferme la fenêtre ; Mindwtr reste en arrière-plan et la tâche apparaît à la prochaine ouverture. iOS capture via l’application comme avant.

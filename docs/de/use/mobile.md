@@ -133,7 +133,7 @@ Geeignet für:
 
 1. Startbildschirm lange drücken
 2. **Widgets** wählen
-3. **Mindwtr** suchen und entweder das Widget **Aufgaben** (Eingangszähler, heutige Aufgaben, eine **+**-Schaltfläche) oder die einzellige Schaltfläche **Schnellerfassung** hinzufügen
+3. **Mindwtr** suchen und entweder das Widget **Aufgaben** oder die einzellige Schaltfläche **Schnellerfassung** hinzufügen. Das Aufgaben-Widget zeigt den Eingangszähler, eine **+**-Schaltfläche und Ihre Aufgaben in denselben Abschnitten wie der Fokus-Bildschirm (Heutiger Fokus, Heute, Durchsicht fällig, Nächste Aktionen, Anstehend), jeweils mit Prioritätsfarbe und Projekt oder Bereich. Es verwendet die Standard-Fokusreihenfolge und keine Filter.
 4. Aufgabe antippen, um sie zu öffnen, Kopfzeile antippen, um „Fokus“ zu öffnen, oder **+** antippen, um zu erfassen
 
 Auf Android öffnen **+** auf beiden Widgets, die Schnelleinstellungskachel, die App-Verknüpfung und die Erfassungsbenachrichtigung ein kleines Erfassungsfenster über dem, was Sie gerade tun. **Speichern** legt die Aufgabe im Eingang ab, zeigt kurz eine Bestätigung und schließt das Fenster; Mindwtr selbst bleibt im Hintergrund, und die Aufgabe erscheint beim nächsten Öffnen. iOS erfasst wie bisher über die App.

@@ -68,8 +68,8 @@ curl -X POST https://your-server.example/v1/capture-tokens \
 
 ```json
 {
-  "id": "ct_5f2c9a",
-  "token": "mwcap_...",
+  "id": "6f1c2d1e-8a4b-4c3e-9f2a-1b2c3d4e5f60",
+  "token": "mwc_…",
   "label": "Pebble ring",
   "createdAt": "2026-09-06T10:12:00.000Z"
 }

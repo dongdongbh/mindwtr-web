@@ -529,7 +529,7 @@ Abre Proyectos desde **Menú → Proyectos**.
 - Establece el modo secuencial o paralelo
 - Define una fecha de revisión
 - Reordena las tareas del proyecto con el asa de arrastre cuando esté activado el orden personalizado. Soltar una tarea bajo el encabezado de otra sección la mueve a esa sección; soltarla sobre el primer encabezado borra su sección
-- Archiva el proyecto (así se completa un proyecto; las tareas restantes se completan con él y **Reactivar** lo deshace)
+- Completa el proyecto desde **Acciones** en los detalles del proyecto; las tareas restantes se completan con él, el proyecto pasa a la sección **Completados** al final de la lista de proyectos y **Reactivar** lo deshace
 - Duplica el proyecto: desliza su fila hacia la derecha en la lista de proyectos, o usa **Duplicar** en la ficha de detalle, para copiar sus secciones y tareas en una copia nueva (consulta [Listas reutilizables](/es/use/reusable-lists))
 
 El campo **Sección del proyecto** del editor asigna una tarea a una de las secciones de su proyecto actual. Solo importa cuando la tarea pertenece a un proyecto con secciones; de lo contrario, déjalo vacío.

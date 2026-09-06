@@ -202,7 +202,7 @@ Spätere Schritte in einem sequenziellen Projekt sind keine **Referenz**. Refere
 
 ### Wie markiere ich ein Projekt als erledigt?
 
-**Archivieren Sie es** – Archivieren ist in Mindwtr der Projektabschluss. Öffnen Sie das Projekt und verwenden Sie **Archivieren** (auf dem Desktop im **...**-Menü der Projektüberschrift, auf Mobilgeräten unter **Aktionen** in den Projektdetails). Unfertige Aufgaben werden mit abgeschlossen; **Reaktivieren** stellt alles wieder her, falls Sie zu früh archiviert haben. Wenn Sie die letzte Aktion eines Projekts abschließen, bietet die Frage „Was ist die nächste Aktion?“ außerdem direkt **Projekt abschließen** an. Ein Projekt mit ausschließlich erledigten Aufgaben bleibt ansonsten aktiv, bis Sie das Ergebnis selbst schließen – ein hilfreicher Hinweis im Wochenrückblick.
+**Schließen Sie es ab.** Öffnen Sie das Projekt und verwenden Sie **Abschließen** (auf dem Desktop im **...**-Menü der Projektüberschrift, auf Mobilgeräten unter **Aktionen** in den Projektdetails). Unfertige Aufgaben werden mit abgeschlossen, das Projekt wandert in den Abschnitt **Abgeschlossen** am Ende der Projektliste, und **Reaktivieren** stellt alles wieder her, falls Sie zu früh abgeschlossen haben. Ein abgeschlossenes Projekt wird als archiviert gespeichert und erscheint daher auch unter **Projekte** in der Ansicht „Archiviert“. Wenn Sie die letzte Aktion eines Projekts abschließen, bietet die Frage „Was ist die nächste Aktion?“ außerdem direkt **Projekt abschließen** an, sodass Sie die Schaltfläche selten suchen müssen. Ein Projekt mit ausschließlich erledigten Aufgaben bleibt ansonsten aktiv, bis Sie das Ergebnis selbst schließen – ein hilfreicher Hinweis im Wochenrückblick.
 
 ### Kann ich eine Aufgabe in ein Projekt umwandeln?
 

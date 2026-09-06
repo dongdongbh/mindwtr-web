@@ -205,7 +205,7 @@ Later steps in a sequential project are not **Reference**. Reference is for non-
 
 ### How do I mark a project as done?
 
-**Archive it** — archiving is how a project is completed in Mindwtr. Open the project and use **Archive** (in the project header's **...** menu on desktop, under **Actions** in the project details on mobile). Any unfinished tasks are completed along with it, and **Reactivate** restores everything if you archived too early. When you finish a project's last action, the "What's the next action?" prompt also offers **Complete project** directly, so you rarely need to go looking for the button. A project with all tasks done otherwise stays active until you close the outcome yourself, which is a useful prompt during the weekly review.
+**Complete it.** Open the project and use **Complete** (in the project header's **...** menu on desktop, under **Actions** in the project details on mobile). Any unfinished tasks are completed along with it, the project moves to the **Completed** section at the bottom of the Projects list, and **Reactivate** restores everything if you completed it too early. A completed project is stored as archived, so it also appears under **Projects** in the Archived view. When you finish a project's last action, the "What's the next action?" prompt also offers **Complete project** directly, so you rarely need to go looking for the button. A project with all tasks done otherwise stays active until you close the outcome yourself, which is a useful prompt during the weekly review.
 
 ### Can I turn a task into a project?
 

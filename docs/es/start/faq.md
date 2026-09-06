@@ -547,6 +547,12 @@ Prueba a borrar los datos de la aplicación:
 
 Nota: esto elimina los datos locales.
 
+### El texto se corta o las etiquetas desaparecen en Android (fuente personalizada o tamaño de letra mayor)
+
+En algunos teléfonos con Android 11 y una capa del fabricante (por ejemplo ZUI en Lenovo), el último carácter de las etiquetas pequeñas desaparece: «Save» se muestra como «Sav», una fecha como «26-09-05» pierde su último dígito, un contador como «(2)» pierde su paréntesis. Ocurre cuando el teléfono aplica una fuente del sistema personalizada, o un tamaño de letra del sistema mayor, en el momento de dibujar el texto, mientras que Mindwtr midió ese texto con la fuente y el tamaño estándar. Las cajas resultan demasiado estrechas para lo que se dibuja. Android 12 y versiones posteriores gestionan las fuentes mediante el proceso estándar, así que la misma fuente funciona allí.
+
+Para solucionarlo, vuelve a la fuente del sistema predeterminada y al tamaño de letra predeterminado en los ajustes de pantalla del teléfono. No hay ningún ajuste en Mindwtr para esto, porque la aplicación no puede ver la sustitución que hace el teléfono.
+
 ### Las tareas no se sincronizan
 
 1. Comprueba que la carpeta de sincronización sea accesible

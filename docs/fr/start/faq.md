@@ -547,6 +547,12 @@ Essayez d’effacer les données de l’application :
 
 Remarque : cette opération supprime les données locales.
 
+### Le texte est coupé ou des libellés disparaissent sous Android (police personnalisée ou taille de police plus grande)
+
+Sur certains téléphones Android 11 dotés d’une surcouche constructeur (par exemple ZUI sur Lenovo), le dernier caractère des petits libellés disparaît : « Save » s’affiche « Sav », une date comme « 26-09-05 » perd son dernier chiffre, un compteur comme « (2) » perd sa parenthèse. Cela se produit lorsque le téléphone applique une police système personnalisée, ou une taille de police système plus grande, au moment de dessiner le texte, alors que Mindwtr a mesuré ce texte avec la police et la taille standard. Les cadres se retrouvent trop étroits pour ce qui est dessiné. Android 12 et versions ultérieures gèrent les polices via le processus standard, donc la même police y fonctionne.
+
+Pour corriger le problème, remettez la police système par défaut et la taille de police par défaut dans les réglages d’affichage du téléphone. Il n’existe aucun réglage dans Mindwtr pour cela, car l’application ne peut pas voir la substitution effectuée par le téléphone.
+
 ### Les tâches ne se synchronisent pas
 
 1. Vérifiez que le dossier de synchronisation est accessible

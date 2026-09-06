@@ -547,6 +547,12 @@ Try clearing app data:
 
 Note: This deletes local data.
 
+### Text is cut off or labels vanish on Android (custom font or larger font size)
+
+On some Android 11 phones with a manufacturer skin (for example ZUI on Lenovo), the last character of small labels disappears: "Save" shows as "Sav", a date such as "26-09-05" loses its last digit, a count such as "(2)" loses its bracket. It happens when the phone applies a custom system font, or a larger system font size, at the moment it draws text, while Mindwtr measured that text with the standard font and size. The boxes come out too narrow for what is drawn. Android 12 and later handle fonts through the standard pipeline, so the same font works there.
+
+To fix it, switch the phone back to the default system font and the default font size in the display settings. There is no setting in Mindwtr for this, because the app cannot see the substitution the phone makes.
+
 ### Tasks aren't syncing
 
 1. Check that sync folder is accessible

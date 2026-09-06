@@ -539,6 +539,12 @@ Versuchen Sie, die App-Daten zu löschen:
 
 Hinweis: Dadurch werden lokale Daten gelöscht.
 
+### Text wird abgeschnitten oder Beschriftungen verschwinden unter Android (eigene Schriftart oder größere Schriftgröße)
+
+Auf manchen Android-11-Telefonen mit Hersteller-Oberfläche (zum Beispiel ZUI auf Lenovo) verschwindet das letzte Zeichen kleiner Beschriftungen: „Save“ erscheint als „Sav“, ein Datum wie „26-09-05“ verliert seine letzte Ziffer, eine Zählung wie „(2)“ verliert ihre Klammer. Das passiert, wenn das Telefon beim Zeichnen des Textes eine eigene Systemschriftart oder eine größere Systemschriftgröße anwendet, während Mindwtr den Text mit der Standardschriftart und -größe vermessen hat. Die Kästen werden dann zu schmal für das, was gezeichnet wird. Android 12 und neuer verarbeiten Schriftarten über den Standardweg, daher funktioniert dieselbe Schriftart dort.
+
+Zur Behebung stellen Sie in den Anzeigeeinstellungen des Telefons die Standard-Systemschriftart und die Standard-Schriftgröße wieder her. In Mindwtr gibt es dafür keine Einstellung, weil die App die Ersetzung durch das Telefon nicht sehen kann.
+
 ### Aufgaben werden nicht synchronisiert
 
 1. Prüfen Sie, ob der Synchronisierungsordner erreichbar ist.

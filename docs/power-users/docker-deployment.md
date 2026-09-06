@@ -173,6 +173,27 @@ A fresh browser opening the PWA can arrive with the Cloud URL already filled in,
 
 The value only prefills the setup form. It never overwrites a URL a browser already configured, and sync stays off until the person saves with their token.
 
+### Restrict Who Can Open the Hosted Web App
+
+The browser build is a static bundle, and the data it shows lives only in each browser's own storage; the task data and the API are protected by the bearer token on `/v1/*`. Mindwtr therefore has no login screen of its own. If the web app is reachable from the internet and you do not want strangers to open it, put HTTP Basic Auth on the proxy in front of it, on every path except `/v1/*`, so browsers log in once while the desktop and mobile apps keep using their bearer token. With the bundled Caddy, generate a hash with `caddy hash-password` and use:
+
+```
+example.com {
+	@ui not path /v1/*
+	basic_auth @ui {
+		alice <bcrypt hash>
+	}
+	handle /v1/* {
+		reverse_proxy mindwtr-cloud:8787
+	}
+	handle {
+		reverse_proxy mindwtr-app:5173
+	}
+}
+```
+
+With nginx, put `auth_basic` in the `location /` block and leave `location /v1/` without it. Keep `MINDWTR_CLOUD_AUTH_TOKENS` and `MINDWTR_CLOUD_CORS_ORIGIN` set as described above; they are what protects the data, the proxy login only decides who can load the page.
+
 ### Dropbox Sync and the Docker PWA
 
 The Docker `mindwtr-app` image serves the browser/PWA build. Native Dropbox OAuth sync is not available in this runtime because Dropbox connection is implemented by the native desktop and mobile apps. Adding `VITE_DROPBOX_APP_KEY` or `DROPBOX_APP_KEY` through `.env`, `env_file`, compose runtime environment, or a Docker build argument will not enable Dropbox in Docker.

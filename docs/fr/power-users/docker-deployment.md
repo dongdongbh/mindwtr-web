@@ -173,6 +173,27 @@ Un nouveau navigateur ouvrant la PWA peut arriver avec l'URL du cloud déjà rem
 
 La valeur ne fait que préremplir le formulaire de configuration. Elle n'écrase jamais une URL déjà configurée, et la synchronisation reste désactivée tant que la personne n'enregistre pas avec son jeton.
 
+### Restreindre qui peut ouvrir l'application web hébergée
+
+La version navigateur est un bundle statique, et les données qu'elle affiche ne vivent que dans le stockage de chaque navigateur ; les données de tâches et l'API sont protégées par le jeton bearer sur `/v1/*`. Mindwtr n'a donc pas d'écran de connexion propre. Si l'application web est accessible depuis internet et que vous ne voulez pas que des inconnus l'ouvrent, mettez une authentification HTTP Basic sur le proxy placé devant, sur tous les chemins sauf `/v1/*`, afin que les navigateurs se connectent une fois tandis que les applications de bureau et mobiles continuent d'utiliser leur jeton bearer. Avec le Caddy fourni, générez un hachage avec `caddy hash-password` et utilisez :
+
+```
+example.com {
+	@ui not path /v1/*
+	basic_auth @ui {
+		alice <bcrypt hash>
+	}
+	handle /v1/* {
+		reverse_proxy mindwtr-cloud:8787
+	}
+	handle {
+		reverse_proxy mindwtr-app:5173
+	}
+}
+```
+
+Avec nginx, placez `auth_basic` dans le bloc `location /` et laissez `location /v1/` sans. Gardez `MINDWTR_CLOUD_AUTH_TOKENS` et `MINDWTR_CLOUD_CORS_ORIGIN` définis comme décrit plus haut ; ce sont eux qui protègent les données, la connexion au proxy décide seulement qui peut charger la page.
+
 ### Synchronisation Dropbox et PWA Docker
 
 L’image Docker `mindwtr-app` sert la version navigateur/PWA. La synchronisation OAuth native avec Dropbox n’est pas disponible dans cet environnement d’exécution, car la connexion Dropbox est implémentée par les applications natives de bureau et mobiles. Ajouter `VITE_DROPBOX_APP_KEY` ou `DROPBOX_APP_KEY` via `.env`, `env_file`, l’environnement d’exécution Compose ou un argument de construction Docker n’activera pas Dropbox dans Docker.

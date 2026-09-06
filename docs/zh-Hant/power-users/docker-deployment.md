@@ -173,6 +173,27 @@ cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w 50 | head -n 1
 
 該值只用於預填設定表單。它絕不會覆蓋瀏覽器中已設定的 URL，在使用者以權杖儲存之前同步保持關閉。
 
+### 限制誰可以開啟託管的網頁應用程式
+
+瀏覽器版本是一個靜態套件，它顯示的資料只存放在各個瀏覽器自己的儲存空間中；任務資料與 API 由 `/v1/*` 上的 bearer 權杖保護。因此 Mindwtr 沒有自己的登入畫面。如果網頁應用程式可從網際網路存取，而你不希望陌生人開啟它，請在前置代理上對 `/v1/*` 以外的所有路徑啟用 HTTP Basic Auth，這樣瀏覽器只需登入一次，而桌面與行動應用程式繼續使用它們的 bearer 權杖。使用隨附的 Caddy 時，以 `caddy hash-password` 產生雜湊，然後使用：
+
+```
+example.com {
+	@ui not path /v1/*
+	basic_auth @ui {
+		alice <bcrypt hash>
+	}
+	handle /v1/* {
+		reverse_proxy mindwtr-cloud:8787
+	}
+	handle {
+		reverse_proxy mindwtr-app:5173
+	}
+}
+```
+
+使用 nginx 時，把 `auth_basic` 放在 `location /` 區塊中，並讓 `location /v1/` 不帶它。依上文所述保持 `MINDWTR_CLOUD_AUTH_TOKENS` 與 `MINDWTR_CLOUD_CORS_ORIGIN` 的設定；真正保護資料的是它們，代理登入只決定誰可以載入頁面。
+
 ### Dropbox 同步與 Docker PWA
 
 Docker `mindwtr-app` image 提供瀏覽器／PWA 組建。此 runtime 無法使用原生 Dropbox OAuth 同步，因為 Dropbox 連線是由原生桌面版及行動版應用程式實作。透過 `.env`、`env_file`、compose runtime environment 或 Docker build argument 加入 `VITE_DROPBOX_APP_KEY` 或 `DROPBOX_APP_KEY`，都不會在 Docker 中啟用 Dropbox。

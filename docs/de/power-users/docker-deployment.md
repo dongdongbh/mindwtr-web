@@ -173,6 +173,27 @@ Ein neuer Browser, der die PWA öffnet, kann die Cloud-URL bereits ausgefüllt v
 
 Der Wert füllt nur das Einrichtungsformular vor. Er überschreibt nie eine bereits konfigurierte URL, und die Synchronisierung bleibt aus, bis die Person mit ihrem Token speichert.
 
+### Einschränken, wer die gehostete Web-App öffnen darf
+
+Der Browser-Build ist ein statisches Bundle, und die angezeigten Daten liegen nur im Speicher des jeweiligen Browsers; die Aufgabendaten und die API sind durch das Bearer-Token auf `/v1/*` geschützt. Mindwtr hat daher keinen eigenen Anmeldebildschirm. Wenn die Web-App aus dem Internet erreichbar ist und Fremde sie nicht öffnen sollen, richten Sie HTTP Basic Auth auf dem vorgeschalteten Proxy ein, für jeden Pfad außer `/v1/*`. Browser melden sich dann einmal an, während die Desktop- und Mobil-Apps weiter ihr Bearer-Token verwenden. Mit dem mitgelieferten Caddy erzeugen Sie einen Hash mit `caddy hash-password` und verwenden:
+
+```
+example.com {
+	@ui not path /v1/*
+	basic_auth @ui {
+		alice <bcrypt hash>
+	}
+	handle /v1/* {
+		reverse_proxy mindwtr-cloud:8787
+	}
+	handle {
+		reverse_proxy mindwtr-app:5173
+	}
+}
+```
+
+Bei nginx setzen Sie `auth_basic` in den Block `location /` und lassen `location /v1/` ohne diese Angabe. Lassen Sie `MINDWTR_CLOUD_AUTH_TOKENS` und `MINDWTR_CLOUD_CORS_ORIGIN` wie oben beschrieben gesetzt; sie schützen die Daten, die Proxy-Anmeldung entscheidet nur, wer die Seite laden darf.
+
 ### Dropbox-Synchronisierung und die Docker-PWA
 
 Das Docker-Image `mindwtr-app` stellt den Browser-/PWA-Build bereit. Die native Dropbox-OAuth-Synchronisierung ist in dieser Laufzeitumgebung nicht verfügbar, da die Dropbox-Verbindung in den nativen Desktop- und Mobil-Apps implementiert ist. Das Hinzufügen von `VITE_DROPBOX_APP_KEY` oder `DROPBOX_APP_KEY` über `.env`, `env_file`, die Compose-Laufzeitumgebung oder ein Docker-Buildargument aktiviert Dropbox in Docker nicht.

@@ -23,7 +23,7 @@ Mindwtr bildet GTD-Konzepte direkt ab:
 
 ![Wie Arbeit durch Mindwtr läuft: Eine Erfassung per Tastenkürzel, Teilen-Menü oder E-Mail landet im Eingang, der Verarbeitungsassistent entscheidet, was der Eintrag ist, und der Eintrag geht nach Nächste Schritte, Warten, Irgendwann/Vielleicht, Referenz oder in ein Projekt. Der Wochenrückblick prüft, dass jedes Projekt einen nächsten Schritt hat, und Fokus enthält die heute markierten Aufgaben.](/assets/diagrams/gtd-workflow.svg)
 
-[Interaktives Diagramm öffnen](/assets/diagrams/gtd-workflow.html)
+[Interaktives Diagramm öffnen](/assets/diagrams/gtd-workflow.html){target="_self"}
 
 ---
 
@@ -165,7 +165,7 @@ Mindwtr legt das Projekt an, macht Ihre Erfassung zu dessen erster nächster Akt
 
 ![Das Leben einer Aufgabe: Sie kommt in den Eingang, wird beim Klären zu „Nächster Schritt“ und kann in Warten, Irgendwann/Vielleicht oder Referenz geparkt werden. Abschließen macht sie zu Erledigt, automatisches Archivieren legt sie als Archiviert ab, und Löschen verschiebt sie in den Papierkorb, bevor sie endgültig verschwindet.](/assets/diagrams/task-lifecycle.svg)
 
-[Interaktives Diagramm öffnen](/assets/diagrams/task-lifecycle.html)
+[Interaktives Diagramm öffnen](/assets/diagrams/task-lifecycle.html){target="_self"}
 
 ### Abschnitte für Irgendwann/Vielleicht
 
@@ -207,7 +207,7 @@ Beim Löschen eines Projekts oder Bereichs bleiben dessen Aufgaben erhalten. Min
 
 ![Das Leben eines Projekts: Ein neues Projekt wird aktiv, sobald es einen nächsten Schritt hat, kann als Warten oder Irgendwann pausiert werden, wird markiert, wenn es keinen nächsten Schritt hat, und endet als Archiviert oder im Papierkorb.](/assets/diagrams/project-lifecycle.svg)
 
-[Interaktives Diagramm öffnen](/assets/diagrams/project-lifecycle.html)
+[Interaktives Diagramm öffnen](/assets/diagrams/project-lifecycle.html){target="_self"}
 
 #### Projektabschnitte
 

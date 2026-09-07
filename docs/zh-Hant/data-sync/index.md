@@ -57,7 +57,7 @@ Mindwtr 直接支援五種同步後端：
 
 ![設定同步：在設定中選擇一種後端，填入資料夾、伺服器網址或登入資訊，然後按下儲存，儲存會測試目標。WebDAV 還需要一次寫入測試，通行密語是選用的。旁支顯示被拒絕的設定、暫停的同步和稍後重試。](/assets/diagrams/sync-setup.svg)
 
-[開啟互動式圖表](/assets/diagrams/sync-setup.html)
+[開啟互動式圖表](/assets/diagrams/sync-setup.html){target="_self"}
 
 ### 快速比較
 

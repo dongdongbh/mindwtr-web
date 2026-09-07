@@ -6,7 +6,7 @@ Cette page est la référence technique de fusion pour la maintenance et le déb
 
 ![Un cycle de synchronisation dans l'ordre : vider les enregistrements en attente, préparer, vérifier s'il y a des changements, lire la copie distante, fusionner, enregistrer en local, téléverser sous un bail d'écriture, transférer les fichiers joints et rendre compte. Les branches latérales montrent l'arrêt anticipé quand rien n'a changé et la reprise quand un autre appareil a écrit en premier.](/assets/diagrams/sync-cycle.svg)
 
-[Ouvrir le diagramme interactif](/assets/diagrams/sync-cycle.html)
+[Ouvrir le diagramme interactif](/assets/diagrams/sync-cycle.html){target="_self"}
 
 ## Entrées et sorties
 
@@ -16,7 +16,7 @@ Cette page est la référence technique de fusion pour la maintenance et le déb
 
 ![Ce que la synchronisation déplace : le store enregistre chaque modification dans la base SQLite locale, une étape retire les champs propres à l'appareil, un scellement facultatif par phrase secrète s'applique, et le résultat part sous forme de fichier de données plus une copie par fichier joint. Les vues de barre latérale masquées et la taille de la fenêtre n'entrent jamais dans le document.](/assets/diagrams/sync-data-model.svg)
 
-[Ouvrir le diagramme interactif](/assets/diagrams/sync-data-model.html)
+[Ouvrir le diagramme interactif](/assets/diagrams/sync-data-model.html){target="_self"}
 
 ## Transport fondé sur des instantanés
 

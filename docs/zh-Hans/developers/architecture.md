@@ -24,9 +24,9 @@ Mindwtr 是一款跨平台 GTD 应用，包含：
 
 ### 系统图
 
-![Mindwtr 的组成方式：两个应用和 MCP 服务器都调用共享的 core 包，core 包写入本地 SQLite 数据库，同步周期再从这里写到你选择的同步目标。](/assets/diagrams/mindwtr-architecture.svg)
+[![Mindwtr 的组成方式：两个应用和 MCP 服务器都调用共享的 core 包，core 包写入本地 SQLite 数据库，同步周期再从这里写到你选择的同步目标。](/assets/diagrams/mindwtr-architecture.svg)](/assets/diagrams/mindwtr-architecture.html){target="_self"}
 
-[打开交互式图表](/assets/diagrams/mindwtr-architecture.html)
+[打开交互式图表](/assets/diagrams/mindwtr-architecture.html){target="_self"}
 
 ---
 

@@ -64,7 +64,7 @@ GitHub Actions führt die folgenden Prüfungen bei jedem Push und jedem Pull Req
 
 ![Was GitHub Actions ausführt, in drei Spuren: Jeder Push und jeder Pull Request führt Regel- und Typprüfungen, Unit-Tests für jedes Paket sowie Browser-Tests und Geschwindigkeitsbudgets aus, und alle müssen bestehen; native Kompilierungen und die Abhängigkeitsprüfung laufen nur, wenn sie zutreffen; das Pushen eines Versions-Tags validiert die Veröffentlichung, baut jede Plattform und veröffentlicht sie.](/assets/diagrams/ci-pipeline.svg)
 
-[Interaktives Diagramm öffnen](/assets/diagrams/ci-pipeline.html)
+[Interaktives Diagramm öffnen](/assets/diagrams/ci-pipeline.html){target="_self"}
 
 ## Lizenz
 

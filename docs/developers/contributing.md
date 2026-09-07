@@ -60,7 +60,7 @@ GitHub Actions runs the checks below on every push and pull request in the app r
 
 ![What GitHub Actions runs, in three lanes: every push and pull request runs rule and type checks, unit tests for every package, browser tests and speed budgets, and all of them must pass; native compiles and the dependency audit run only when they apply; pushing a version tag validates the release, builds every platform and publishes it.](/assets/diagrams/ci-pipeline.svg)
 
-[Open the interactive diagram](/assets/diagrams/ci-pipeline.html)
+[Open the interactive diagram](/assets/diagrams/ci-pipeline.html){target="_self"}
 
 ## License
 

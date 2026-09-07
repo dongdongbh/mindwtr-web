@@ -24,9 +24,9 @@ La aplicación de escritorio, la aplicación móvil y el servidor MCP comparten 
 
 ### Diagrama del sistema
 
-![Cómo encaja Mindwtr: las dos aplicaciones y el servidor MCP llaman al paquete core compartido, que guarda en una base de datos SQLite local, y desde ahí el ciclo de sincronización escribe en el destino que elijas.](/assets/diagrams/mindwtr-architecture.svg)
+[![Cómo encaja Mindwtr: las dos aplicaciones y el servidor MCP llaman al paquete core compartido, que guarda en una base de datos SQLite local, y desde ahí el ciclo de sincronización escribe en el destino que elijas.](/assets/diagrams/mindwtr-architecture.svg)](/assets/diagrams/mindwtr-architecture.html){target="_self"}
 
-[Abrir el diagrama interactivo](/assets/diagrams/mindwtr-architecture.html)
+[Abrir el diagrama interactivo](/assets/diagrams/mindwtr-architecture.html){target="_self"}
 
 ---
 

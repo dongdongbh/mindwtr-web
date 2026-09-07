@@ -48,7 +48,7 @@ GitHub Actions ejecuta las comprobaciones siguientes en cada push y en cada pull
 
 ![Qué ejecuta GitHub Actions, en tres carriles: cada push y cada pull request ejecuta comprobaciones de reglas y tipos, pruebas unitarias de cada paquete, pruebas de navegador y presupuestos de velocidad, y todas deben pasar; las compilaciones nativas y la auditoría de dependencias solo se ejecutan cuando corresponde; publicar una etiqueta de versión valida la entrega, construye cada plataforma y la publica.](/assets/diagrams/ci-pipeline.svg)
 
-[Abrir el diagrama interactivo](/assets/diagrams/ci-pipeline.html)
+[Abrir el diagrama interactivo](/assets/diagrams/ci-pipeline.html){target="_self"}
 
 ## Licencia
 

@@ -48,7 +48,7 @@ Mindwtr 歡迎目標明確、並能維持產品在地優先 GTD 方向的貢獻�
 
 ![GitHub Actions 會執行什麼，分為三條泳道：每次推送和提取請求都會執行規則與型別檢查、每個套件的單元測試、瀏覽器測試和速度預算，全部必須通過；原生編譯和相依套件稽核只在適用時執行；推送版本標籤會驗證發行內容、建置每個平台並發布。](/assets/diagrams/ci-pipeline.svg)
 
-[開啟互動式圖表](/assets/diagrams/ci-pipeline.html)
+[開啟互動式圖表](/assets/diagrams/ci-pipeline.html){target="_self"}
 
 ## 授權條款
 

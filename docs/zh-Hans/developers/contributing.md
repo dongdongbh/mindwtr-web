@@ -48,7 +48,7 @@ Mindwtr 欢迎目标明确、并能保持产品本地优先 GTD 方向的贡献�
 
 ![GitHub Actions 会运行什么，分为三条泳道：每次推送和拉取请求都会运行规则与类型检查、每个包的单元测试、浏览器测试和速度预算，全部必须通过；原生编译和依赖审计只在适用时运行；推送版本标签会校验发布内容、构建每个平台并发布。](/assets/diagrams/ci-pipeline.svg)
 
-[打开交互式图表](/assets/diagrams/ci-pipeline.html)
+[打开交互式图表](/assets/diagrams/ci-pipeline.html){target="_self"}
 
 ## 许可证
 

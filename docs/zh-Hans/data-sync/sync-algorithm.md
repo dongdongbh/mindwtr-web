@@ -6,7 +6,7 @@ Mindwtr 采用本地优先同步，并以确定性方式处理冲突。
 
 ![一次同步周期的顺序：写出待保存的编辑、完成设置、检查是否有变化、读取远端副本、合并、先保存到本地、在写入租约下上传、传输附件文件，最后报告结果。旁支显示两种情况：没有变化时提前结束，以及其他设备先写入时重新排队。](/assets/diagrams/sync-cycle.svg)
 
-[打开交互式图表](/assets/diagrams/sync-cycle.html)
+[打开交互式图表](/assets/diagrams/sync-cycle.html){target="_self"}
 
 ## 输入与输出
 
@@ -16,7 +16,7 @@ Mindwtr 采用本地优先同步，并以确定性方式处理冲突。
 
 ![同步会搬运什么：仓库把每次改动保存到本地 SQLite 数据库，随后一步会剥掉只属于本设备的字段，可选的口令封装再运行，结果作为数据文件外加每个附件一份副本发送出去。隐藏的侧边栏视图和窗口大小从不进入该文档。](/assets/diagrams/sync-data-model.svg)
 
-[打开交互式图表](/assets/diagrams/sync-data-model.html)
+[打开交互式图表](/assets/diagrams/sync-data-model.html){target="_self"}
 
 ## 基于快照的传输
 

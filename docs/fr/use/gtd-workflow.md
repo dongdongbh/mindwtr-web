@@ -23,7 +23,7 @@ Mindwtr correspond directement aux concepts de GTD :
 
 ![Comment le travail circule dans Mindwtr : une capture par raccourci, menu de partage ou e-mail arrive dans la Boîte de réception, l'assistant de traitement décide de ce qu'est chaque élément, puis celui-ci part vers Prochaines actions, En attente, Un jour/Peut-être, Références ou un projet. La revue hebdomadaire vérifie que chaque projet a une prochaine action, et Focus contient les tâches marquées pour aujourd'hui.](/assets/diagrams/gtd-workflow.svg)
 
-[Ouvrir le diagramme interactif](/assets/diagrams/gtd-workflow.html)
+[Ouvrir le diagramme interactif](/assets/diagrams/gtd-workflow.html){target="_self"}
 
 ---
 
@@ -165,7 +165,7 @@ Terminées et Archivées sont deux états fermés, mais ils remplissent des rôl
 
 ![La vie d'une tâche : elle entre dans la Boîte de réception, devient Suivante quand vous la clarifiez, et peut être mise de côté dans En attente, Un jour/Peut-être ou Références. La terminer la fait passer à Terminée, l'archivage automatique la classe en Archivée, et la supprimer l'envoie à la Corbeille avant sa disparition définitive.](/assets/diagrams/task-lifecycle.svg)
 
-[Ouvrir le diagramme interactif](/assets/diagrams/task-lifecycle.html)
+[Ouvrir le diagramme interactif](/assets/diagrams/task-lifecycle.html){target="_self"}
 
 ### Sections Un jour/Peut-être
 
@@ -207,7 +207,7 @@ La suppression d’un projet ou d’un domaine conserve ses tâches. Mindwtr dé
 
 ![La vie d'un projet : un nouveau projet devient Actif dès qu'il a une prochaine action, peut être mis en pause en En attente ou Un jour, est signalé quand il n'a plus de prochaine action, et se termine en Archivé ou à la Corbeille.](/assets/diagrams/project-lifecycle.svg)
 
-[Ouvrir le diagramme interactif](/assets/diagrams/project-lifecycle.html)
+[Ouvrir le diagramme interactif](/assets/diagrams/project-lifecycle.html){target="_self"}
 
 #### Sections de projet
 

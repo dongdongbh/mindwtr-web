@@ -4,7 +4,7 @@ Mindwtr Cloud expone una pequeña API con token al portador para sincronización
 
 ![Las dos vías hacia los datos de Mindwtr: un asistente de IA llama al servidor MCP, que ejecuta el paquete core compartido; las aplicaciones envían un token bearer al servidor en la nube autoalojado, que sirve el documento de sincronización, los endpoints de registros, los adjuntos y un feed de calendario. Solo la comprobación de estado no necesita token.](/assets/diagrams/api-surface.svg)
 
-[Abrir el diagrama interactivo](/assets/diagrams/api-surface.html)
+[Abrir el diagrama interactivo](/assets/diagrams/api-surface.html){target="_self"}
 
 ## Autenticación
 

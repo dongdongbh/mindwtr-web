@@ -48,7 +48,7 @@ GitHub Actions exécute les vérifications ci-dessous à chaque push et à chaqu
 
 ![Ce que GitHub Actions exécute, en trois couloirs : chaque push et chaque pull request lance les vérifications de règles et de types, les tests unitaires de chaque paquet, les tests navigateur et les budgets de vitesse, et tous doivent passer ; les compilations natives et l'audit des dépendances ne s'exécutent que si elles s'appliquent ; pousser une étiquette de version valide la livraison, construit chaque plateforme et la publie.](/assets/diagrams/ci-pipeline.svg)
 
-[Ouvrir le diagramme interactif](/assets/diagrams/ci-pipeline.html)
+[Ouvrir le diagramme interactif](/assets/diagrams/ci-pipeline.html){target="_self"}
 
 ## Licence
 

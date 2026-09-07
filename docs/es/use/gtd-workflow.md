@@ -23,7 +23,7 @@ Mindwtr se corresponde directamente con los conceptos de GTD:
 
 ![Cómo se mueve el trabajo en Mindwtr: una captura por atajo, menú compartir o correo llega a la Bandeja de entrada, el asistente de procesamiento decide qué es cada elemento, y este pasa a Próximas acciones, En espera, Algún día/Quizá, Referencia o a un proyecto. La revisión semanal comprueba que cada proyecto tenga una próxima acción, y Enfoque contiene las tareas marcadas para hoy.](/assets/diagrams/gtd-workflow.svg)
 
-[Abrir el diagrama interactivo](/assets/diagrams/gtd-workflow.html)
+[Abrir el diagrama interactivo](/assets/diagrams/gtd-workflow.html){target="_self"}
 
 ---
 
@@ -165,7 +165,7 @@ Hechas y Archivadas son estados cerrados, pero cumplen funciones distintas:
 
 ![La vida de una tarea: entra en la Bandeja de entrada, pasa a Siguiente cuando la aclaras y puede quedar aparcada en En espera, Algún día/Quizá o Referencia. Al completarla queda Hecha, el archivado automático la deja como Archivada, y al borrarla va a la Papelera antes de desaparecer para siempre.](/assets/diagrams/task-lifecycle.svg)
 
-[Abrir el diagrama interactivo](/assets/diagrams/task-lifecycle.html)
+[Abrir el diagrama interactivo](/assets/diagrams/task-lifecycle.html){target="_self"}
 
 ### Secciones de Algún día/Quizá
 
@@ -207,7 +207,7 @@ Eliminar un proyecto o un área conserva sus tareas. Mindwtr desvincula ese trab
 
 ![La vida de un proyecto: un proyecto nuevo pasa a Activo cuando tiene una próxima acción, puede pausarse como En espera o Algún día, se señala cuando no tiene próxima acción, y termina como Archivado o en la Papelera.](/assets/diagrams/project-lifecycle.svg)
 
-[Abrir el diagrama interactivo](/assets/diagrams/project-lifecycle.html)
+[Abrir el diagrama interactivo](/assets/diagrams/project-lifecycle.html){target="_self"}
 
 #### Secciones de proyectos
 

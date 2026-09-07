@@ -57,7 +57,7 @@ Mindwtr unterstützt direkt fünf Backends:
 
 ![Synchronisierung einrichten: Wählen Sie in den Einstellungen ein Backend, geben Sie Ordner, Server-URL oder Anmeldung ein und drücken Sie Speichern, was das Ziel testet. WebDAV braucht zusätzlich einen Schreibtest, eine Passphrase ist optional. Nebenzweige zeigen eine abgelehnte Einrichtung, eine pausierte Synchronisierung und einen erneuten Versuch.](/assets/diagrams/sync-setup.svg)
 
-[Interaktives Diagramm öffnen](/assets/diagrams/sync-setup.html)
+[Interaktives Diagramm öffnen](/assets/diagrams/sync-setup.html){target="_self"}
 
 ### Überblick
 

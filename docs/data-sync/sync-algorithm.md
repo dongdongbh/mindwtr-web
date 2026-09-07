@@ -6,7 +6,7 @@ This page is the technical merge reference for maintainers and debugging. For us
 
 ![One sync cycle in order: flush saves, set up, check for changes, read the remote copy, merge, save locally, upload under a write lease, move attachment files, and report. Side branches show the early stop when nothing changed and the retry when another device wrote first.](/assets/diagrams/sync-cycle.svg)
 
-[Open the interactive diagram](/assets/diagrams/sync-cycle.html)
+[Open the interactive diagram](/assets/diagrams/sync-cycle.html){target="_self"}
 
 ## Inputs and Outputs
 
@@ -16,7 +16,7 @@ This page is the technical merge reference for maintainers and debugging. For us
 
 ![What sync moves: the store saves every change into the local SQLite database, a step strips device-only fields, an optional passphrase seal runs, and the result leaves as the data file plus one copy per attached file. Hidden sidebar views and window size never enter the document.](/assets/diagrams/sync-data-model.svg)
 
-[Open the interactive diagram](/assets/diagrams/sync-data-model.html)
+[Open the interactive diagram](/assets/diagrams/sync-data-model.html){target="_self"}
 
 ## Snapshot-Based Transport
 

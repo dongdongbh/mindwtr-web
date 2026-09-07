@@ -24,9 +24,9 @@ L'application de bureau, l'application mobile et le serveur MCP partagent un seu
 
 ### Diagramme du système
 
-![Comment Mindwtr s'assemble : les deux applications et le serveur MCP appellent le paquet core partagé, qui enregistre dans une base SQLite locale, et le cycle de synchronisation écrit ensuite vers la destination choisie.](/assets/diagrams/mindwtr-architecture.svg)
+[![Comment Mindwtr s'assemble : les deux applications et le serveur MCP appellent le paquet core partagé, qui enregistre dans une base SQLite locale, et le cycle de synchronisation écrit ensuite vers la destination choisie.](/assets/diagrams/mindwtr-architecture.svg)](/assets/diagrams/mindwtr-architecture.html){target="_self"}
 
-[Ouvrir le diagramme interactif](/assets/diagrams/mindwtr-architecture.html)
+[Ouvrir le diagramme interactif](/assets/diagrams/mindwtr-architecture.html){target="_self"}
 
 ---
 

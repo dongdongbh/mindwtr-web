@@ -4,7 +4,7 @@ Mindwtr Cloud exposes a small bearer-token API for sync, task automation, and at
 
 ![The two ways into Mindwtr data: an AI assistant calls the MCP server, which runs the shared core package; the apps send a bearer token to the self-hosted cloud server, which serves the sync document, record endpoints, attachments and a calendar feed. Only the health check needs no token.](/assets/diagrams/api-surface.svg)
 
-[Open the interactive diagram](/assets/diagrams/api-surface.html)
+[Open the interactive diagram](/assets/diagrams/api-surface.html){target="_self"}
 
 ## Authentication
 

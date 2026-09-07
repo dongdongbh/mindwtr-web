@@ -23,7 +23,7 @@ Mindwtr 直接對應 GTD 概念：
 
 ![工作在 Mindwtr 中的流轉：透過快捷鍵、分享選單或電子郵件收集的項目落入收集箱，處理精靈判斷它是什麼，接著項目進入下一步行動、等待中、將來/也許、參考或某個專案。每週回顧檢查每個專案都有下一步行動，專注保存今天標星的任務。](/assets/diagrams/gtd-workflow.svg)
 
-[開啟互動式圖表](/assets/diagrams/gtd-workflow.html)
+[開啟互動式圖表](/assets/diagrams/gtd-workflow.html){target="_self"}
 
 ---
 
@@ -165,7 +165,7 @@ Mindwtr 會建立項目，把你收集的內容變成它的第一個下一步行
 
 ![一個任務的一生：它進入收集箱，釐清後成為下一步行動，也可以停放在等待中、將來/也許或參考。完成後變為已完成，自動歸檔會把它放入已歸檔，刪除會先移入垃圾桶，之後才徹底消失。](/assets/diagrams/task-lifecycle.svg)
 
-[開啟互動式圖表](/assets/diagrams/task-lifecycle.html)
+[開啟互動式圖表](/assets/diagrams/task-lifecycle.html){target="_self"}
 
 ### 將來/也許區段
 
@@ -207,7 +207,7 @@ Mindwtr 會建立項目，把你收集的內容變成它的第一個下一步行
 
 ![一個專案的一生：新專案有了下一步行動就變為進行中，可以暫停為等待中或將來，沒有下一步行動時會被標記，最後成為已歸檔或進入垃圾桶。](/assets/diagrams/project-lifecycle.svg)
 
-[開啟互動式圖表](/assets/diagrams/project-lifecycle.html)
+[開啟互動式圖表](/assets/diagrams/project-lifecycle.html){target="_self"}
 
 #### 專案分區
 

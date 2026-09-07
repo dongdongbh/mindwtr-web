@@ -57,7 +57,7 @@ Mindwtr directly supports five sync backends:
 
 ![Setting up sync: pick a backend in Settings, enter the folder, server URL or sign-in, then press Save, which tests the target. WebDAV also needs a write test and a passphrase is optional. Side branches show a refused setup, a paused sync and a retry.](/assets/diagrams/sync-setup.svg)
 
-[Open the interactive diagram](/assets/diagrams/sync-setup.html)
+[Open the interactive diagram](/assets/diagrams/sync-setup.html){target="_self"}
 
 ### At a glance
 

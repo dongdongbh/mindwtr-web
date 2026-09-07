@@ -6,7 +6,7 @@ Esta página es la referencia técnica de fusión para responsables de mantenimi
 
 ![Un ciclo de sincronización en orden: volcar lo pendiente, preparar, comprobar si hay cambios, leer la copia remota, fusionar, guardar en local, subir bajo un permiso de escritura, mover los archivos adjuntos e informar del resultado. Las ramas laterales muestran la parada temprana cuando nada cambió y el reintento cuando otro dispositivo escribió antes.](/assets/diagrams/sync-cycle.svg)
 
-[Abrir el diagrama interactivo](/assets/diagrams/sync-cycle.html)
+[Abrir el diagrama interactivo](/assets/diagrams/sync-cycle.html){target="_self"}
 
 ## Entradas y salidas
 
@@ -16,7 +16,7 @@ Esta página es la referencia técnica de fusión para responsables de mantenimi
 
 ![Qué mueve la sincronización: el almacén guarda cada cambio en la base de datos SQLite local, un paso elimina los campos propios del dispositivo, se aplica un sellado opcional con contraseña y el resultado sale como el archivo de datos más una copia por cada archivo adjunto. Las vistas ocultas de la barra lateral y el tamaño de la ventana nunca entran en el documento.](/assets/diagrams/sync-data-model.svg)
 
-[Abrir el diagrama interactivo](/assets/diagrams/sync-data-model.html)
+[Abrir el diagrama interactivo](/assets/diagrams/sync-data-model.html){target="_self"}
 
 ## Transporte basado en instantáneas
 

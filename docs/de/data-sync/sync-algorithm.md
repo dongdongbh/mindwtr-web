@@ -6,7 +6,7 @@ Diese Seite ist die technische Zusammenführungsreferenz für Wartung und Fehler
 
 ![Ein Synchronisierungszyklus der Reihe nach: Speichern erzwingen, einrichten, auf Änderungen prüfen, entfernte Kopie lesen, zusammenführen, lokal speichern, unter einer Schreibsperre hochladen, Anhangsdateien übertragen und Ergebnis melden. Nebenzweige zeigen den frühen Abbruch, wenn sich nichts geändert hat, und den erneuten Versuch, wenn ein anderes Gerät zuerst geschrieben hat.](/assets/diagrams/sync-cycle.svg)
 
-[Interaktives Diagramm öffnen](/assets/diagrams/sync-cycle.html)
+[Interaktives Diagramm öffnen](/assets/diagrams/sync-cycle.html){target="_self"}
 
 ## Eingaben und Ausgaben
 
@@ -16,7 +16,7 @@ Diese Seite ist die technische Zusammenführungsreferenz für Wartung und Fehler
 
 ![Was die Synchronisierung bewegt: Der Store speichert jede Änderung in der lokalen SQLite-Datenbank, ein Schritt entfernt gerätelokale Felder, ein optionaler Passphrasen-Verschluss läuft, und das Ergebnis geht als Datendatei plus je eine Kopie pro Anhangsdatei hinaus. Ausgeblendete Seitenleistenansichten und Fenstergröße gelangen nie in das Dokument.](/assets/diagrams/sync-data-model.svg)
 
-[Interaktives Diagramm öffnen](/assets/diagrams/sync-data-model.html)
+[Interaktives Diagramm öffnen](/assets/diagrams/sync-data-model.html){target="_self"}
 
 ## Momentaufnahmebasierter Transport
 

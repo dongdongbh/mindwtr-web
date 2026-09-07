@@ -57,7 +57,7 @@ Mindwtr admite directamente cinco backends de sincronización:
 
 ![Configurar la sincronización: elige un backend en Ajustes, introduce la carpeta, la URL del servidor o el inicio de sesión y pulsa Guardar, que prueba el destino. WebDAV necesita además una prueba de escritura y la contraseña es opcional. Las ramas laterales muestran una configuración rechazada, una sincronización en pausa y un reintento.](/assets/diagrams/sync-setup.svg)
 
-[Abrir el diagrama interactivo](/assets/diagrams/sync-setup.html)
+[Abrir el diagrama interactivo](/assets/diagrams/sync-setup.html){target="_self"}
 
 ### De un vistazo
 

@@ -242,6 +242,24 @@ if (findings.length === 0) {
       checkTarget(page, value, attr);
     }
 
+    // VitePress must not intercept links to standalone HTML assets. Those
+    // files are served directly and have no entry in its client-side router.
+    if (page.site.name === "docs") {
+      for (const anchor of tagAttributes(page.html, "a")) {
+        let url;
+        try {
+          url = new URL(decodeEntities(anchor.href ?? ""), `${page.site.origin}${page.path}`);
+        } catch {
+          continue;
+        }
+        if (url.origin !== page.site.origin || !url.pathname.startsWith("/assets/")) continue;
+        const target = resolvePath(page.site, url.pathname);
+        if (target?.endsWith(".html") && !anchor.target) {
+          findings.push(`docs${page.path}: standalone HTML link "${anchor.href}" needs an explicit target to bypass the VitePress router`);
+        }
+      }
+    }
+
     // Social/canonical URLs must exist and point at this page's served URL.
     const metas = tagAttributes(page.html, "meta");
     const metaValue = (key) =>

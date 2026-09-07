@@ -24,9 +24,9 @@ The desktop app, the phone app and the MCP server all share one core package tha
 
 ### System Diagram
 
-![How Mindwtr fits together: the two apps and the MCP server call the shared core package, which saves to a local SQLite database, and the sync cycle writes from there to the sync target you chose.](/assets/diagrams/mindwtr-architecture.svg)
+[![How Mindwtr fits together: the two apps and the MCP server call the shared core package, which saves to a local SQLite database, and the sync cycle writes from there to the sync target you chose.](/assets/diagrams/mindwtr-architecture.svg)](/assets/diagrams/mindwtr-architecture.html){target="_self"}
 
-[Open the interactive diagram](/assets/diagrams/mindwtr-architecture.html)
+[Open the interactive diagram](/assets/diagrams/mindwtr-architecture.html){target="_self"}
 
 ---
 

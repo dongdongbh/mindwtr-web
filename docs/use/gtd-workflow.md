@@ -23,7 +23,7 @@ Mindwtr maps directly to GTD concepts:
 
 ![How work moves through Mindwtr: a hotkey, share sheet or email capture lands in the Inbox, Process Inbox decides what each item is, and the item goes to Next actions, Waiting For, Someday/Maybe, Reference or a project. The Weekly Review checks that every project has a next action, and Focus holds today's starred tasks.](/assets/diagrams/gtd-workflow.svg)
 
-[Open the interactive diagram](/assets/diagrams/gtd-workflow.html)
+[Open the interactive diagram](/assets/diagrams/gtd-workflow.html){target="_self"}
 
 ---
 
@@ -165,7 +165,7 @@ Done and Archived are both closed states, but they serve different jobs:
 
 ![The life of a task: it enters the Inbox, becomes Next when you clarify it, and can be parked in Waiting For, Someday/Maybe or Reference. Completing it makes it Done, auto-archive files it as Archived, and deleting it moves it to Trash before it is gone for good.](/assets/diagrams/task-lifecycle.svg)
 
-[Open the interactive diagram](/assets/diagrams/task-lifecycle.html)
+[Open the interactive diagram](/assets/diagrams/task-lifecycle.html){target="_self"}
 
 ### Someday/Maybe sections
 
@@ -207,7 +207,7 @@ Deleting a project or area keeps its tasks. Mindwtr detaches that work to unassi
 
 ![The life of a project: a new project becomes Active once it has a next action, can be paused as Waiting or Someday, is flagged when it has no next action, and ends as Archived or in the Trash.](/assets/diagrams/project-lifecycle.svg)
 
-[Open the interactive diagram](/assets/diagrams/project-lifecycle.html)
+[Open the interactive diagram](/assets/diagrams/project-lifecycle.html){target="_self"}
 
 #### Project Sections
 

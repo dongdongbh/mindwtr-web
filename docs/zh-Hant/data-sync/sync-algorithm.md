@@ -6,7 +6,7 @@ Mindwtr 採用在地優先同步，並以確定性方式處理衝突。
 
 ![一次同步週期的順序：寫出待儲存的編輯、完成設定、檢查是否有變化、讀取遠端副本、合併、先儲存到本機、在寫入租約下上傳、傳輸附件檔案，最後回報結果。旁支顯示兩種情況：沒有變化時提前結束，以及其他裝置先寫入時重新排隊。](/assets/diagrams/sync-cycle.svg)
 
-[開啟互動式圖表](/assets/diagrams/sync-cycle.html)
+[開啟互動式圖表](/assets/diagrams/sync-cycle.html){target="_self"}
 
 ## 輸入與輸出
 
@@ -16,7 +16,7 @@ Mindwtr 採用在地優先同步，並以確定性方式處理衝突。
 
 ![同步會搬運什麼：倉庫把每次變動儲存到本機 SQLite 資料庫，隨後一步會剝掉只屬於本裝置的欄位，可選的密語封裝再執行，結果會以資料檔案加上每個附件一份副本送出。隱藏的側邊欄檢視和視窗大小從不進入該文件。](/assets/diagrams/sync-data-model.svg)
 
-[開啟互動式圖表](/assets/diagrams/sync-data-model.html)
+[開啟互動式圖表](/assets/diagrams/sync-data-model.html){target="_self"}
 
 ## 快照式傳輸
 

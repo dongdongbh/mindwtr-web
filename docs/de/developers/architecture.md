@@ -24,9 +24,9 @@ Die Desktop-App, die App für Mobilgeräte und der MCP-Server teilen sich ein Co
 
 ### Systemdiagramm
 
-![So passt Mindwtr zusammen: Die beiden Apps und der MCP-Server rufen das gemeinsame Core-Paket auf, das in eine lokale SQLite-Datenbank schreibt, und der Sync-Zyklus schreibt von dort an das gewählte Sync-Ziel.](/assets/diagrams/mindwtr-architecture.svg)
+[![So passt Mindwtr zusammen: Die beiden Apps und der MCP-Server rufen das gemeinsame Core-Paket auf, das in eine lokale SQLite-Datenbank schreibt, und der Sync-Zyklus schreibt von dort an das gewählte Sync-Ziel.](/assets/diagrams/mindwtr-architecture.svg)](/assets/diagrams/mindwtr-architecture.html){target="_self"}
 
-[Interaktives Diagramm öffnen](/assets/diagrams/mindwtr-architecture.html)
+[Interaktives Diagramm öffnen](/assets/diagrams/mindwtr-architecture.html){target="_self"}
 
 ---
 

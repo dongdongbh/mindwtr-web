@@ -379,6 +379,8 @@ Seul `--write` permet l’accès en écriture (aucun autre alias).
 
 Les outils d’écriture fonctionnent avec la base locale comme avec un système Cloud auto-hébergé, à deux exceptions près en mode Cloud : les outils d’écriture des personnes et `mindwtr_restore_task` renvoient une erreur explicite, car l’API Cloud ne possède pas encore de points de terminaison pour ces opérations.
 
+La prochaine version de mindwtr-mcp après 1.1.8 permettra de conserver ou de renommer un lien existant vers un partage réseau lors de la mise à jour d’une tâche ou d’un projet. Gardez son URI strictement identique et réutilisez son identifiant de pièce jointe, ou omettez l’identifiant pour retrouver le lien par son URI. Le lien doit encore être actif sur le même élément. MCP continuera de refuser les nouveaux liens vers des partages réseau, les changements d’URI réseau et la restauration de liens réseau supprimés.
+
 - **`mindwtr_add_task`** : créer une tâche. Prend en charge `quickAdd` en langage naturel (par exemple « Buy milk @errands /due:tomorrow »). Prend aussi en charge les pièces jointes de type lien via `attachments`.
 - **`mindwtr_update_task`** : mettre à jour une tâche existante, notamment des champs de planification comme `dueDate`, `startTime`, `reviewAt` et `isFocusedToday` (les champs peuvent être effacés avec `null`). `attachments` définit les pièces jointes de type lien : la liste transmise est la liste complète des liens, les liens omis sont supprimés, les pièces jointes de type fichier ne sont jamais modifiées, et `null` supprime tous les liens.
 - **`mindwtr_complete_task`** : marquer une tâche comme terminée.

@@ -379,6 +379,8 @@ Solo se admite `--write` para el acceso de escritura (no hay alias alternativos)
 
 Las herramientas de escritura funcionan tanto con la base de datos local como con un backend Cloud autoalojado, con dos excepciones en modo Cloud: las herramientas de escritura de personas y `mindwtr_restore_task` devuelven un error claro en modo Cloud porque la API de Cloud aún no dispone de endpoints para ellas.
 
+La próxima versión de mindwtr-mcp posterior a 1.1.8 permitirá conservar o cambiar el título de un enlace existente a un recurso compartido de red al actualizar una tarea o un proyecto. Mantén la URI exactamente igual y reutiliza el ID del adjunto, u omite el ID para buscar la coincidencia por URI. El enlace debe seguir activo en ese mismo elemento. MCP seguirá rechazando enlaces nuevos a recursos compartidos de red, cambios de sus URI y la restauración de enlaces de red eliminados.
+
 - **`mindwtr_add_task`**: Crea una tarea nueva. Admite lenguaje natural en `quickAdd` (por ejemplo, "Buy milk @errands /due:tomorrow"). También admite adjuntos de enlace mediante `attachments`.
 - **`mindwtr_update_task`**: Actualiza una tarea existente, incluidos campos de programación como `dueDate`, `startTime`, `reviewAt` e `isFocusedToday` (permite borrar campos con `null`). `attachments` define los adjuntos de enlace: la lista que envías es el conjunto completo de enlaces, los enlaces que omitas se eliminan, los adjuntos de archivo nunca se tocan y `null` borra todos los enlaces.
 - **`mindwtr_complete_task`**: Marca una tarea como completada.

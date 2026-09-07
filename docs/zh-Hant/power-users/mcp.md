@@ -379,6 +379,8 @@ node apps/mcp-server/dist/cli.js --db "/path/to/mindwtr.db"
 
 寫入工具可用於本機資料庫及自行託管的 Cloud 後端，但 Cloud 模式有兩項例外：人員寫入工具及 `mindwtr_restore_task` 會傳回明確錯誤，因為 Cloud API 目前尚無相應端點。
 
+1.1.8 之後的下一個 mindwtr-mcp 版本將允許在更新任務或專案時保留既有的網路共用連結，或修改其標題。URI 必須保持完全一致；可以重用附件 ID，也可以省略 ID，透過 URI 比對。該連結必須仍存在於同一個任務或專案中且未被刪除。MCP 仍會拒絕新增網路共用連結、變更網路共用 URI，以及還原已刪除的網路共用連結。
+
 - **`mindwtr_add_task`**：建立新任務。支援自然語言 `quickAdd`（例如「Buy milk @errands /due:tomorrow」）。同時支援透過 `attachments` 新增連結附件。
 - **`mindwtr_update_task`**：更新現有任務，包括 `dueDate`、`startTime`、`reviewAt` 及 `isFocusedToday` 等排程欄位（支援使用 `null` 清除欄位）。`attachments` 用於設定連結附件：你傳入的清單就是連結的完整集合，未列出的連結會被移除，檔案附件不受影響，傳入 `null` 會清除所有連結。
 - **`mindwtr_complete_task`**：將任務標記為已完成。

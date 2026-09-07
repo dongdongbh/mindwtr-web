@@ -379,6 +379,8 @@ Only `--write` is supported for write access (no alternate aliases).
 
 Write tools work against both the local database and a self-hosted Cloud backend, with two Cloud-mode exceptions: person write tools and `mindwtr_restore_task` return a clear error in Cloud mode because the Cloud API has no endpoints for them yet.
 
+The next mindwtr-mcp release after 1.1.8 will allow an existing network-share link to be kept or renamed when updating a task or project. Keep its URI exactly unchanged and reuse its attachment ID, or omit the ID to match by URI. The link must still be live on that same item. MCP continues to reject new network-share links, changed network-share URIs, and restoration of deleted network-share links.
+
 - **`mindwtr_add_task`**: Create a new task. Supports natural language `quickAdd` (e.g., "Buy milk @errands /due:tomorrow"). Link attachments can be attached with `attachments`.
 - **`mindwtr_update_task`**: Update an existing task, including scheduling fields like `dueDate`, `startTime`, `reviewAt`, and `isFocusedToday` (supports clearing fields with `null`). `attachments` sets the link attachments: the list you pass is the complete set of links, links you leave out are removed, file attachments are never touched, and `null` clears every link.
 - **`mindwtr_complete_task`**: Mark a task as done.

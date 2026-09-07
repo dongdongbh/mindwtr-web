@@ -379,6 +379,8 @@ Für den Schreibzugriff wird ausschließlich `--write` unterstützt (keine alter
 
 Schreibwerkzeuge funktionieren sowohl mit der lokalen Datenbank als auch einem selbst gehosteten Cloud-Backend, mit zwei Ausnahmen im Cloud-Modus: Werkzeuge zum Schreiben von Personen und `mindwtr_restore_task` geben dort einen eindeutigen Fehler zurück, weil die Cloud-API noch keine Endpunkte dafür besitzt.
 
+Die nächste mindwtr-mcp-Version nach 1.1.8 erlaubt es, einen vorhandenen Link zu einer Netzwerkfreigabe beim Aktualisieren einer Aufgabe oder eines Projekts beizubehalten oder umzubenennen. Lassen Sie die URI exakt unverändert und verwenden Sie dieselbe Anhang-ID, oder lassen Sie die ID weg, um den Link anhand der URI zuzuordnen. Der Link muss auf demselben Element noch aktiv sein. MCP lehnt neue Links zu Netzwerkfreigaben, geänderte Netzwerkfreigabe-URIs und das Wiederherstellen gelöschter Links zu Netzwerkfreigaben weiterhin ab.
+
 - **`mindwtr_add_task`**: Erstellt eine neue Aufgabe. Unterstützt natürlichsprachliches `quickAdd` (z. B. „Buy milk @errands /due:tomorrow“). Unterstützt außerdem Link-Anhänge über `attachments`.
 - **`mindwtr_update_task`**: Aktualisiert eine vorhandene Aufgabe einschließlich Planungsfeldern wie `dueDate`, `startTime`, `reviewAt` und `isFocusedToday` (Felder können mit `null` geleert werden). `attachments` setzt die Link-Anhänge: Die übergebene Liste ist die vollständige Liste der Links, nicht aufgeführte Links werden entfernt, Dateianhänge bleiben unberührt, und `null` entfernt alle Links.
 - **`mindwtr_complete_task`**: Markiert eine Aufgabe als erledigt.

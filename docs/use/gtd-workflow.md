@@ -399,6 +399,16 @@ For setup steps and option details, see [Recurring Tasks](/use/recurring-tasks).
 
 ---
 
+## Cancelling a commitment
+
+**In the next release after 1.2.8:** Use **Cancel task** or **Cancel project** when you decide not to continue but want to keep the record. Cancelled tasks remain in Archive and search, marked **Cancelled**, and do not count as completed work. Projects appear under **Closed**, distinguished as Completed or Cancelled.
+
+Cancelling a project preserves completed steps and cancels its remaining actions. **Reactivate** restores the actions that were cancelled by that project and have not since been independently changed. Reference material, notes and attachments are kept. You can put a reason in Notes; no reason is required.
+
+For recurring tasks, **Cancel recurring series** archives the current occurrence without generating another one. **Skip occurrence** remains a separate operation.
+
+Before using cancellation with sync, upgrade every device, self-hosted server and automation client that writes your data. Older versions can lose the cancellation marker and interpret the record as completed.
+
 ## See Also
 
 - [GTD Overview](/use/gtd-overview)

@@ -165,6 +165,12 @@ The published `mindwtr-mcp` helper can use a self-hosted Cloud endpoint as a bac
 
 Cloud-backed MCP mode reads `/v1/data` and exposes read tools for tasks, projects, sections, areas, and people. With `--write`, it routes task, project, section, and area mutations through the per-resource REST endpoints above; it stays read-only by default and does not turn Mindwtr Cloud itself into a hosted MCP service.
 
+## `cancelledAt`
+
+**In the next release after 1.2.8:** `cancelledAt` is an optional ISO timestamp with a timezone on Task and Project. Setting it archives the commitment without marking it completed. A cancelled task has no `completedAt` and generates no next recurring occurrence. A project cancellation preserves completed steps and cancels its remaining actions. Upgrade every writer before using this field with sync. See [Cancelling a commitment](/use/gtd-workflow#cancelling-a-commitment).
+
+Use `PATCH /v1/tasks/:id` or `PATCH /v1/projects/:id` with `{ "cancelledAt": "2026-09-07T12:00:00.000Z" }`. An explicit active `status` clears cancellation and reactivates the record; sending `cancelledAt: null` alone only clears the outcome marker. Creation accepts the field in `props`.
+
 ## Related Pages
 
 - [MCP Server](/power-users/mcp)

@@ -399,6 +399,16 @@ Para conocer los pasos de configuración y los detalles de las opciones, consult
 
 ---
 
+## Cancelar un compromiso
+
+**En la próxima versión después de 1.2.8:** usa **Cancelar tarea** o **Cancelar proyecto** cuando decidas no continuar pero quieras conservar el historial. Las tareas canceladas permanecen en el archivo y en la búsqueda, marcadas como **Cancelada**, y no cuentan como trabajo completado. Los proyectos aparecen en **Cerrados**, distinguiendo los completados de los cancelados.
+
+Cancelar un proyecto conserva los pasos completados y cancela las acciones restantes. **Reactivar** restaura las tareas canceladas junto con ese proyecto que no se hayan modificado individualmente después. Se conservan el material de referencia, las notas y los adjuntos. Puedes escribir el motivo en las notas; no es obligatorio.
+
+Para tareas recurrentes, **Cancelar serie recurrente** archiva la repetición actual sin generar otra. **Omitir esta repetición** sigue siendo una acción independiente.
+
+Antes de usar la cancelación con sincronización, actualiza todos los dispositivos, servidores autoalojados y clientes de automatización que escriban tus datos. Las versiones anteriores pueden perder la marca de cancelación e interpretar el registro como completado.
+
 ## Consulta también
 
 - [Resumen de GTD](/es/use/gtd-overview)

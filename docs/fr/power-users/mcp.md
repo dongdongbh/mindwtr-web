@@ -857,6 +857,12 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 - **Logique partagée :** les opérations d’écriture utilisent la bibliothèque partagée `@mindwtr/core` afin de garantir l’application des règles métier.
 - **Maintien en fonctionnement :** en mode stdio, le serveur reste actif tant que stdin est ouvert. En mode HTTP, il reste actif tant que le listener fonctionne.
 
+## `cancelledAt`
+
+**Dans la prochaine version après 1.2.8 :** Task et Project acceptent `cancelledAt`, un horodatage ISO facultatif avec fuseau horaire. Il archive l'engagement comme annulé. La tâche n'a pas de `completedAt` et ne génère pas d'occurrence suivante. Pour un projet, les étapes terminées sont conservées et les actions restantes sont annulées. Mettez à jour tous les clients qui écrivent les données avant la synchronisation. Voir le [flux GTD](/fr/use/gtd-workflow).
+
+`cancelledAt: null` seul efface le marqueur sans réactiver l'élément. Pour le réactiver, définissez explicitement un `status` non archivé.
+
 ## Résolution des problèmes
 
 - **« Command not found »** : utilisez `npx -y mindwtr-mcp` dans les configurations des clients MCP, ou installez le paquet globalement avec `npm install -g mindwtr-mcp`.

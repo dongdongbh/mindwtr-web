@@ -399,6 +399,16 @@ Pour connaître les étapes de configuration et le détail des options, consulte
 
 ---
 
+## Annuler un engagement
+
+**Dans la prochaine version après 1.2.8 :** utilisez **Annuler la tâche** ou **Annuler le projet** pour arrêter un engagement tout en conservant son historique. Les tâches annulées restent dans les archives et la recherche, marquées **Annulée**, et ne comptent pas comme travail accompli. Les projets sont regroupés sous **Clôturés**, avec une distinction entre terminés et annulés.
+
+Annuler un projet conserve les étapes terminées et annule les actions restantes. **Réactiver** restaure les tâches annulées avec ce projet qui n'ont pas été modifiées individuellement depuis. Les références, notes et pièces jointes sont conservées. Vous pouvez expliquer la raison dans les notes, sans obligation.
+
+Pour une tâche récurrente, **Annuler la série récurrente** archive l'occurrence actuelle sans en créer une autre. **Ignorer cette occurrence** reste une action distincte.
+
+Avant d'utiliser l'annulation avec la synchronisation, mettez à jour tous les appareils, serveurs auto-hébergés et clients d'automatisation qui écrivent vos données. Les anciennes versions peuvent perdre le marqueur d'annulation et interpréter l'élément comme terminé.
+
 ## Voir aussi
 
 - [Présentation de GTD](/fr/use/gtd-overview)

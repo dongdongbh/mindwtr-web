@@ -403,6 +403,16 @@ Einrichtungsschritte und Einzelheiten zu den Optionen finden Sie unter [Wiederke
 
 ---
 
+## Eine Verpflichtung abbrechen
+
+**Ab der nächsten Version nach 1.2.8:** Mit **Aufgabe abbrechen** oder **Projekt abbrechen** beenden Sie eine Verpflichtung und behalten ihren Verlauf. Abgebrochene Aufgaben bleiben im Archiv und in der Suche als **Abgebrochen** sichtbar und zählen nicht als erledigte Arbeit. Projekte stehen unter **Geschlossen**, mit getrennten Kennzeichnungen für erledigt und abgebrochen.
+
+Beim Abbrechen eines Projekts bleiben erledigte Schritte erhalten; die übrigen Aktionen werden abgebrochen. **Reaktivieren** stellt die zusammen mit dem Projekt abgebrochenen Aufgaben wieder her, sofern sie danach nicht einzeln geändert wurden. Referenzmaterial, Notizen und Anhänge bleiben erhalten. Ein Grund kann in die Notizen geschrieben werden, ist aber nicht erforderlich.
+
+Bei wiederkehrenden Aufgaben archiviert **Wiederholungsserie abbrechen** die aktuelle Aufgabe, ohne eine weitere zu erzeugen. **Vorkommen überspringen** bleibt eine separate Aktion.
+
+Aktualisieren Sie vor der Nutzung mit Synchronisierung alle Geräte, selbst gehosteten Server und Automatisierungsclients, die Ihre Daten schreiben. Ältere Versionen können die Abbruchkennzeichnung verlieren und den Eintrag als erledigt behandeln.
+
 ## Siehe auch
 
 - [GTD-Überblick](/de/use/gtd-overview)

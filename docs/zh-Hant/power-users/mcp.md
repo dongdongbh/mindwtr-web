@@ -857,6 +857,12 @@ Schema 注意事項：
 - **共用邏輯**：寫入操作使用共用的 `@mindwtr/core` 函式庫，確保套用商業規則。
 - **保持執行**：在 stdio 模式下，只要 stdin 維持開啟，伺服器就會繼續執行；在 HTTP 模式下，只要監聽器執行，伺服器就會繼續執行。
 
+## `cancelledAt`
+
+**1.2.8 之後的下個版本提供：** Task 和 Project 的 `cancelledAt` 是帶時區的可選 ISO 時間戳記。設定它會取消並封存該紀錄。取消的任務沒有 `completedAt`，也不會產生下一次重複任務；取消專案會保留已完成步驟，取消剩餘待辦。同步使用此欄位前，請升級所有會寫入資料的用戶端。詳見 [GTD 工作流程](/zh-Hant/use/gtd-workflow)。
+
+單獨傳送 `cancelledAt: null` 只會清除取消標記，不會重新啟用。重新啟用請明確設定非封存的 `status`。
+
 ## 疑難排解
 
 - **"Command not found"**：在 MCP 用戶端組態中使用 `npx -y mindwtr-mcp`，或使用 `npm install -g mindwtr-mcp` 全域安裝 package。

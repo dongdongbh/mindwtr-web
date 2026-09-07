@@ -857,6 +857,12 @@ Si necesitas más de 500 tareas, pagina con `limit` + `offset` en lugar de esper
 - **Lógica compartida:** Las operaciones de escritura usan la biblioteca compartida `@mindwtr/core` para garantizar que se apliquen las reglas de negocio.
 - **Persistencia:** En modo stdio, el servidor permanece activo mientras stdin esté abierto. En modo HTTP, permanece activo mientras el listener esté en ejecución.
 
+## `cancelledAt`
+
+**En la próxima versión después de 1.2.8:** Task y Project admiten `cancelledAt`, una marca de tiempo ISO opcional con zona horaria. Archiva el compromiso como cancelado. La tarea no tiene `completedAt` ni genera otra repetición. Al cancelar un proyecto se conservan los pasos completados y se cancelan las acciones restantes. Actualiza todos los clientes que escriban datos antes de sincronizar. Consulta el [flujo GTD](/es/use/gtd-workflow).
+
+`cancelledAt: null` por sí solo borra la marca sin reactivar el elemento. Para reactivarlo, establece explícitamente un `status` no archivado.
+
 ## Solución de problemas
 
 - **"Command not found"**: Usa `npx -y mindwtr-mcp` en las configuraciones de los clientes MCP o instala el paquete globalmente con `npm install -g mindwtr-mcp`.

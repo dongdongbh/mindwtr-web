@@ -165,6 +165,12 @@ GET /v1/calendar/:token.ics
 
 以雲端為後端的 MCP 模式會讀取 `/v1/data`，並提供任務、專案、區段、領域與人物的讀取工具。加上 `--write` 後，任務、專案、區段與領域的變更會經由上述各資源的 REST 端點；此模式預設維持唯讀，也不會將 Mindwtr Cloud 本身變成託管式 MCP 服務。
 
+## `cancelledAt`
+
+**1.2.8 之後的下個版本提供：** Task 和 Project 的 `cancelledAt` 是帶時區的可選 ISO 時間戳記。設定它會取消並封存該紀錄。取消的任務沒有 `completedAt`，也不會產生下一次重複任務；取消專案會保留已完成步驟，取消剩餘待辦。同步使用此欄位前，請升級所有會寫入資料的用戶端。詳見 [GTD 工作流程](/zh-Hant/use/gtd-workflow)。
+
+單獨傳送 `cancelledAt: null` 只會清除取消標記，不會重新啟用。重新啟用請明確設定非封存的 `status`。
+
 ## 相關頁面
 
 - [MCP 伺服器](/zh-Hant/power-users/mcp)

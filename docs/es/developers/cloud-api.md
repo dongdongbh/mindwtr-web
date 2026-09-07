@@ -165,6 +165,12 @@ El auxiliar publicado `mindwtr-mcp` puede usar un endpoint Cloud autohospedado c
 
 El modo MCP con nube lee `/v1/data` y ofrece herramientas de lectura para tareas, proyectos, secciones, áreas y personas. Con `--write`, dirige las mutaciones de tareas, proyectos, secciones y áreas a los endpoints REST anteriores. Sigue siendo de solo lectura de forma predeterminada y no convierte Mindwtr Cloud en un servicio MCP alojado.
 
+## `cancelledAt`
+
+**En la próxima versión después de 1.2.8:** Task y Project admiten `cancelledAt`, una marca de tiempo ISO opcional con zona horaria. Archiva el compromiso como cancelado. La tarea no tiene `completedAt` ni genera otra repetición. Al cancelar un proyecto se conservan los pasos completados y se cancelan las acciones restantes. Actualiza todos los clientes que escriban datos antes de sincronizar. Consulta el [flujo GTD](/es/use/gtd-workflow).
+
+`cancelledAt: null` por sí solo borra la marca sin reactivar el elemento. Para reactivarlo, establece explícitamente un `status` no archivado.
+
 ## Páginas relacionadas
 
 - [Servidor MCP](/es/power-users/mcp)

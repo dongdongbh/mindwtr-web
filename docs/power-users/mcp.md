@@ -857,6 +857,12 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 - **Shared Logic:** Write operations use the shared `@mindwtr/core` library to ensure business rules are enforced.
 - **Keep-Alive:** In stdio mode, the server stays alive while stdin is open. In HTTP mode, it stays alive while the listener is running.
 
+## `cancelledAt`
+
+**In the next release after 1.2.8:** `cancelledAt` is an optional ISO timestamp with a timezone on Task and Project. Setting it archives the commitment without marking it completed. A cancelled task has no `completedAt` and generates no next recurring occurrence. A project cancellation preserves completed steps and cancels its remaining actions. Upgrade every writer before using this field with sync. See [Cancelling a commitment](/use/gtd-workflow#cancelling-a-commitment).
+
+The add/update task and project tools accept this field. For example, call `mindwtr_update_task` with the task `id` and `cancelledAt`. Reactivate with an explicit active status. `cancelledAt: null` alone clears the outcome marker without reactivating the item.
+
 ## Troubleshooting
 
 - **"Command not found"**: Use `npx -y mindwtr-mcp` in MCP client configs, or install the package globally with `npm install -g mindwtr-mcp`.

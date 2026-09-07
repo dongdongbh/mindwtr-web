@@ -857,6 +857,12 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 - **Gemeinsame Logik:** Schreibvorgänge verwenden die gemeinsame Bibliothek `@mindwtr/core`, damit Geschäftsregeln durchgesetzt werden.
 - **Keep-Alive:** Im stdio-Modus bleibt der Server aktiv, solange stdin geöffnet ist. Im HTTP-Modus bleibt er aktiv, solange der Listener läuft.
 
+## `cancelledAt`
+
+**Ab der nächsten Version nach 1.2.8:** Task und Project unterstützen `cancelledAt`, einen optionalen ISO-Zeitstempel mit Zeitzone. Er archiviert die Verpflichtung als abgebrochen. Die Aufgabe erhält kein `completedAt` und erzeugt keine weitere Wiederholung. Beim Projekt bleiben erledigte Schritte erhalten; die übrigen Aktionen werden abgebrochen. Aktualisieren Sie vor der Synchronisierung alle schreibenden Clients. Siehe [GTD-Workflow](/de/use/gtd-workflow).
+
+`cancelledAt: null` allein entfernt nur die Abbruchkennzeichnung. Zum Reaktivieren setzen Sie ausdrücklich einen nicht archivierten `status`.
+
 ## Fehlerbehebung
 
 - **„Command not found“**: Verwenden Sie `npx -y mindwtr-mcp` in MCP-Clientkonfigurationen oder installieren Sie das Paket global mit `npm install -g mindwtr-mcp`.

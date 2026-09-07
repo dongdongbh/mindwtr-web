@@ -138,9 +138,24 @@ Mindwtr 提供多种在移动端快速收集任务的方式。
 - 添加网页浏览中的链接
 - 将 PDF 或照片归入收集箱任务，供稍后处理
 
-### Android 自动化收集（Tasker）
+<span id="android-自动化收集tasker"></span>
+
+### Android 自动化收集 {#android-automation-capture}
 
 将在 1.2.8 之后的下个版本中提供。在**设置 → GTD → 收集默认设置**中启用**自动化采集**并复制收集令牌。此设置和令牌仅保存在本机。只将令牌提供给你信任的自动化应用；关闭此设置会撤销令牌，重新启用会生成新令牌。
+
+这是通用的 Android 广播 Intent，不需要 Tasker。任何能发送显式广播并附带 String 类型参数的应用或自动化工具都可以调用。向下列接收器发送指定 Action，将收集文本放入 `text`，将收集令牌放入 `token`：
+
+| 字段 | 值 |
+| --- | --- |
+| Action | `tech.dongdongbh.mindwtr.action.CAPTURE` |
+| Package | `tech.dongdongbh.mindwtr` |
+| Class | `tech.dongdongbh.mindwtr.androidwidget.CaptureIntentReceiver` |
+| Target | `Broadcast Receiver` |
+| `text` (String) | 要收集的文本 |
+| `token` (String) | 你的收集令牌 |
+
+#### Tasker 示例
 
 在 Tasker 中，在获得听写文本的操作之后添加 **Misc → Send Intent**：
 

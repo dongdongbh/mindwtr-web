@@ -129,9 +129,24 @@ Geeignet für:
 - Links aus dem Browser
 - PDF oder Foto als später zu verarbeitende Eingangsaufgabe
 
-### Android-Automatisierung zur Erfassung (Tasker)
+<span id="android-automatisierung-zur-erfassung-tasker"></span>
+
+### Android-Automatisierung zur Erfassung {#android-automation-capture}
 
 Verfügbar in der nächsten Version nach 1.2.8. Aktivieren Sie unter **Einstellungen → GTD → Erfassungs-Standardwerte** die **Automatisierte Erfassung** und kopieren Sie den Erfassungstoken. Einstellung und Token bleiben auf diesem Gerät. Geben Sie den Token nur an vertrauenswürdige Automatisierungs-Apps weiter. Ausschalten widerruft ihn; erneutes Einschalten erzeugt einen neuen Token.
+
+Dies ist ein allgemeiner Android-Broadcast-Intent; Tasker ist nicht erforderlich. Jede App oder Automatisierung, die einen expliziten Broadcast mit String-Extras senden kann, kann ihn verwenden. Senden Sie die folgende Aktion an diesen Empfänger: `text` enthält den erfassten Text, `token` Ihren Erfassungstoken.
+
+| Feld | Wert |
+| --- | --- |
+| Action | `tech.dongdongbh.mindwtr.action.CAPTURE` |
+| Package | `tech.dongdongbh.mindwtr` |
+| Class | `tech.dongdongbh.mindwtr.androidwidget.CaptureIntentReceiver` |
+| Target | `Broadcast Receiver` |
+| `text` (String) | Zu erfassender Text |
+| `token` (String) | Ihr Erfassungstoken |
+
+#### Tasker-Beispiel
 
 Fügen Sie in Tasker nach der Diktataktion **Misc → Send Intent** hinzu:
 

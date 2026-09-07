@@ -137,9 +137,24 @@ Mindwtr 在行動裝置上提供多種快速收集任務的方式。
 - 加入瀏覽網頁時找到的連結
 - 將 PDF 或照片收為日後處理的收集箱任務
 
-### Android 自動化收集（Tasker）
+<span id="android-自動化收集tasker"></span>
+
+### Android 自動化收集 {#android-automation-capture}
 
 將在 1.2.8 之後的下個版本中提供。在**設定 → GTD → 收集默認設置**中啟用**自動化擷取**並複製收集權杖。此設定和權杖僅保存在本機。只將權杖提供給你信任的自動化應用程式；關閉此設定會撤銷權杖，重新啟用會產生新權杖。
+
+這是通用的 Android 廣播 Intent，不需要 Tasker。任何能傳送明確指定接收器的廣播並附帶 String 類型參數的應用程式或自動化工具都可以呼叫。向下列接收器傳送指定 Action，將收集文字放入 `text`，將收集權杖放入 `token`：
+
+| 欄位 | 值 |
+| --- | --- |
+| Action | `tech.dongdongbh.mindwtr.action.CAPTURE` |
+| Package | `tech.dongdongbh.mindwtr` |
+| Class | `tech.dongdongbh.mindwtr.androidwidget.CaptureIntentReceiver` |
+| Target | `Broadcast Receiver` |
+| `text` (String) | 要收集的文字 |
+| `token` (String) | 你的收集權杖 |
+
+#### Tasker 範例
 
 在 Tasker 中，在取得聽寫文字的操作之後加入 **Misc → Send Intent**：
 

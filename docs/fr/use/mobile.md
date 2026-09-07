@@ -138,9 +138,24 @@ Idéal pour :
 - Ajouter des liens pendant la navigation sur le web
 - Classer un PDF ou une photo comme tâche de la Boîte de réception à traiter plus tard
 
-### Capture automatisée sur Android (Tasker)
+<span id="capture-automatisée-sur-android-tasker"></span>
+
+### Capture automatisée sur Android {#android-automation-capture}
 
 Disponible dans la prochaine version après 1.2.8. Dans **Réglages → GTD → Capture defaults**, activez **Capture automatisée** et copiez le jeton de capture. Le réglage et le jeton restent sur cet appareil. Ne transmettez le jeton qu’à des applications d’automatisation de confiance. La désactivation le révoque ; une nouvelle activation crée un nouveau jeton.
+
+Il s’agit d’un intent de broadcast Android général ; Tasker n’est pas nécessaire. Toute application ou automatisation capable d’envoyer un broadcast explicite avec des extras de type String peut l’utiliser. Envoyez l’action suivante à ce récepteur, avec le texte à capturer dans `text` et votre jeton de capture dans `token` :
+
+| Champ | Valeur |
+| --- | --- |
+| Action | `tech.dongdongbh.mindwtr.action.CAPTURE` |
+| Package | `tech.dongdongbh.mindwtr` |
+| Class | `tech.dongdongbh.mindwtr.androidwidget.CaptureIntentReceiver` |
+| Target | `Broadcast Receiver` |
+| `text` (String) | Texte à capturer |
+| `token` (String) | Votre jeton de capture |
+
+#### Exemple avec Tasker
 
 Dans Tasker, ajoutez **Misc → Send Intent** après l’action qui produit votre texte dicté :
 

@@ -138,9 +138,24 @@ Es ideal para:
 - Añadir enlaces mientras navegas por la web
 - Archivar un PDF o una foto como tarea de la Bandeja de entrada para procesarla después
 
-### Captura mediante automatización en Android (Tasker)
+<span id="captura-mediante-automatización-en-android-tasker"></span>
+
+### Captura mediante automatización en Android {#android-automation-capture}
 
 Disponible en la próxima versión después de 1.2.8. En **Ajustes → GTD → Valores predeterminados de captura**, activa **Captura automatizada** y copia el token de captura. El ajuste y el token permanecen en este dispositivo. Compártelo solo con aplicaciones de automatización de confianza. Al desactivar el ajuste se revoca el token; al activarlo de nuevo se genera otro.
+
+Es un intent de difusión general de Android; Tasker no es necesario. Cualquier aplicación o herramienta de automatización que pueda enviar una difusión explícita con extras de tipo String puede usarlo. Envía la siguiente acción a este receptor, con el texto capturado en `text` y tu token de captura en `token`:
+
+| Campo | Valor |
+| --- | --- |
+| Action | `tech.dongdongbh.mindwtr.action.CAPTURE` |
+| Package | `tech.dongdongbh.mindwtr` |
+| Class | `tech.dongdongbh.mindwtr.androidwidget.CaptureIntentReceiver` |
+| Target | `Broadcast Receiver` |
+| `text` (String) | Texto que se va a capturar |
+| `token` (String) | Tu token de captura |
+
+#### Ejemplo con Tasker
 
 En Tasker, añade **Misc → Send Intent** después de la acción que obtiene el dictado:
 

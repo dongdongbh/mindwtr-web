@@ -138,9 +138,24 @@ Great for:
 - Adding links from web browsing
 - Filing a PDF or photo as an Inbox task to process later
 
-### Android automation capture (Tasker)
+<span id="android-automation-capture-tasker"></span>
+
+### Android automation capture {#android-automation-capture}
 
 Available in the next release after 1.2.8. In **Settings → GTD → Capture defaults**, enable **Automation capture** and copy the capture token. This setting and token stay on this device. Give the token only to automation apps you trust; turning the setting off revokes it, and turning it on again creates a new token.
+
+This is a general Android broadcast intent; Tasker is not required. Any app or automation tool that can send an explicit broadcast with String extras can use it. Send the action below to this receiver, with `text` containing the captured text and `token` containing your capture token:
+
+| Field | Value |
+| --- | --- |
+| Action | `tech.dongdongbh.mindwtr.action.CAPTURE` |
+| Package | `tech.dongdongbh.mindwtr` |
+| Class | `tech.dongdongbh.mindwtr.androidwidget.CaptureIntentReceiver` |
+| Target | `Broadcast Receiver` |
+| `text` (String) | Text to capture |
+| `token` (String) | Your capture token |
+
+#### Tasker example
 
 In Tasker, add **Misc → Send Intent** after the action that produces your dictated text:
 

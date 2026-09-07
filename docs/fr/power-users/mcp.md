@@ -280,9 +280,9 @@ Options (toutes ont des variables d'environnement `MINDWTR_MCP_HTTP*` équivalen
 | `--http-host <host>` | `MINDWTR_MCP_HTTP_HOST` | Adresse d'écoute, par défaut `127.0.0.1`. |
 | `--http-port <port>` | `MINDWTR_MCP_HTTP_PORT` | Port d'écoute, par défaut `8722`. |
 
-Le point de terminaison MCP est `POST /mcp` et exige `Authorization: Bearer <token>` à chaque requête. `GET /healthz` renvoie `200 ok` sans authentification pour les contrôles de santé du reverse proxy. Les requêtes sans jeton valide reçoivent `401` ; les corps de plus de 1 MiB reçoivent `413`. En mode HTTP, le serveur reste actif tant qu'il écoute (stdio n'est pas connecté), et le comportement `--write`/lecture seule est inchangé.
+Le point de terminaison MCP est `POST /mcp` et exige `Authorization: Bearer <token>` à chaque requête. `GET /healthz` renvoie `200 ok` sans authentification pour les contrôles de santé du reverse proxy. Les requêtes sans jeton valide reçoivent `401` ; les échecs répétés d’authentification entraînent une réponse `429` avec un en-tête `Retry-After`. Les corps de plus de 1 MiB reçoivent `413`. En mode HTTP, le serveur reste actif tant qu'il écoute (stdio n'est pas connecté), et le comportement `--write`/lecture seule est inchangé.
 
-Aucun TLS ni limitation de débit n'est intégré. Pour exposer le serveur au-delà de localhost, placez un reverse proxy (Caddy, nginx) devant pour le HTTPS et fournissez l'URL `https://` obtenue avec votre jeton au client MCP distant.
+Le serveur n’intègre ni TLS ni limitation de débit pour les requêtes authentifiées. Pour exposer le serveur au-delà de localhost, placez un reverse proxy (Caddy, nginx) devant pour le HTTPS et fournissez l'URL `https://` obtenue avec votre jeton au client MCP distant.
 
 ---
 

@@ -280,9 +280,9 @@ Flags (alle haben `MINDWTR_MCP_HTTP*`-Umgebungsvariablen als Äquivalent):
 | `--http-host <host>` | `MINDWTR_MCP_HTTP_HOST` | Bind-Adresse, Standard `127.0.0.1`. |
 | `--http-port <port>` | `MINDWTR_MCP_HTTP_PORT` | Bind-Port, Standard `8722`. |
 
-Der MCP-Endpunkt ist `POST /mcp` und verlangt bei jeder Anfrage `Authorization: Bearer <token>`. `GET /healthz` liefert ohne Authentifizierung `200 ok` für Reverse-Proxy-Healthchecks. Anfragen ohne gültiges Token erhalten `401`; Anfragekörper über 1 MiB erhalten `413`. Im HTTP-Modus läuft der Server, solange er lauscht (stdio wird nicht verbunden), und das `--write`-/Nur-Lese-Verhalten bleibt unverändert.
+Der MCP-Endpunkt ist `POST /mcp` und verlangt bei jeder Anfrage `Authorization: Bearer <token>`. `GET /healthz` liefert ohne Authentifizierung `200 ok` für Reverse-Proxy-Healthchecks. Anfragen ohne gültiges Token erhalten `401`; wiederholte Authentifizierungsfehler führen zu `429` mit einem `Retry-After`-Header. Anfragekörper über 1 MiB erhalten `413`. Im HTTP-Modus läuft der Server, solange er lauscht (stdio wird nicht verbunden), und das `--write`-/Nur-Lese-Verhalten bleibt unverändert.
 
-Eingebautes TLS oder Rate-Limiting gibt es nicht. Um den Server über localhost hinaus zugänglich zu machen, stellen Sie einen Reverse-Proxy (Caddy, nginx) für HTTPS davor und geben Sie die resultierende `https://`-URL samt Token an den entfernten MCP-Client.
+Eingebautes TLS oder Rate-Limiting für authentifizierte Anfragen gibt es nicht. Um den Server über localhost hinaus zugänglich zu machen, stellen Sie einen Reverse-Proxy (Caddy, nginx) für HTTPS davor und geben Sie die resultierende `https://`-URL samt Token an den entfernten MCP-Client.
 
 ---
 

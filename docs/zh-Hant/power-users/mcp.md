@@ -280,9 +280,9 @@ mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr
 | `--http-host <host>` | `MINDWTR_MCP_HTTP_HOST` | 繫結位址，預設 `127.0.0.1`。 |
 | `--http-port <port>` | `MINDWTR_MCP_HTTP_PORT` | 繫結連接埠，預設 `8722`。 |
 
-MCP 端點為 `POST /mcp`，每個請求都必須帶 `Authorization: Bearer <token>`。`GET /healthz` 不需驗證即回傳 `200 ok`，供反向代理做健康檢查。沒有有效權杖的請求會得到 `401`；超過 1 MiB 的請求主體會得到 `413`。HTTP 模式下伺服器只要在監聽就持續執行（不會連接 stdio），`--write`／唯讀行為維持不變。
+MCP 端點為 `POST /mcp`，每個請求都必須帶 `Authorization: Bearer <token>`。`GET /healthz` 不需驗證即回傳 `200 ok`，供反向代理做健康檢查。沒有有效權杖的請求會得到 `401`；連續驗證失敗會得到 `429`，並附帶 `Retry-After` 回應標頭。超過 1 MiB 的請求主體會得到 `413`。HTTP 模式下伺服器只要在監聽就持續執行（不會連接 stdio），`--write`／唯讀行為維持不變。
 
-伺服器未內建 TLS 或速率限制。若要讓伺服器對 localhost 以外開放，請在前面架一個反向代理（Caddy、nginx）處理 HTTPS，並把取得的 `https://` URL 連同權杖交給遠端 MCP 用戶端。
+伺服器未內建 TLS，也不限制已通過驗證的請求速率。若要讓伺服器對 localhost 以外開放，請在前面架一個反向代理（Caddy、nginx）處理 HTTPS，並把取得的 `https://` URL 連同權杖交給遠端 MCP 用戶端。
 
 ---
 

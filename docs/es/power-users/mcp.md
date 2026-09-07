@@ -280,9 +280,9 @@ Flags (todas tienen variables de entorno `MINDWTR_MCP_HTTP*` equivalentes):
 | `--http-host <host>` | `MINDWTR_MCP_HTTP_HOST` | Dirección de enlace, por defecto `127.0.0.1`. |
 | `--http-port <port>` | `MINDWTR_MCP_HTTP_PORT` | Puerto de enlace, por defecto `8722`. |
 
-El endpoint MCP es `POST /mcp` y exige `Authorization: Bearer <token>` en cada petición. `GET /healthz` devuelve `200 ok` sin autenticación para las comprobaciones de salud del proxy inverso. Las peticiones sin token válido reciben `401`; los cuerpos de más de 1 MiB reciben `413`. En modo HTTP el servidor sigue vivo mientras escucha (stdio no se conecta), y el comportamiento de `--write`/solo lectura no cambia.
+El endpoint MCP es `POST /mcp` y exige `Authorization: Bearer <token>` en cada petición. `GET /healthz` devuelve `200 ok` sin autenticación para las comprobaciones de salud del proxy inverso. Las peticiones sin token válido reciben `401`; los fallos repetidos de autenticación reciben `429` con una cabecera `Retry-After`. Los cuerpos de más de 1 MiB reciben `413`. En modo HTTP el servidor sigue vivo mientras escucha (stdio no se conecta), y el comportamiento de `--write`/solo lectura no cambia.
 
-No hay TLS ni limitación de velocidad integrados. Para exponer el servidor más allá de localhost, coloca delante un proxy inverso (Caddy, nginx) para HTTPS y entrega la URL `https://` resultante junto con tu token al cliente MCP remoto.
+No hay TLS ni limitación de velocidad integrados para las peticiones autenticadas. Para exponer el servidor más allá de localhost, coloca delante un proxy inverso (Caddy, nginx) para HTTPS y entrega la URL `https://` resultante junto con tu token al cliente MCP remoto.
 
 ---
 

@@ -410,15 +410,15 @@ function header(locale: Locale, pageName: string, pagePath: string): string {
   const home = localePath(locale, "index");
   // The homepage scrolls to its own download grid; other pages link back.
   const download = pagePath === home ? "#download" : `${home}#download`;
-  // GitHub is the one header link narrow phones can live without (it stays
-  // in the footer); nav-secondary hides it below 480px.
+  // GitHub stays in the footer when the header gets narrow.
   const links = [
     { href: localePath(locale, "features"), label: t.features },
-    // Docs and GitHub drop out on narrow phones — both are one tap away in the
-    // footer, and a nav CTA that wraps or clips is worse than a shorter nav.
+    // The guides index is English-only; keep it visible in every header.
+    { href: "/guides", label: t.guides, className: "nav-guides" },
+    // Docs and Support remain in the footer when space is tight.
     { href: DOCS_PATH[locale], label: t.docs, className: "nav-tertiary" },
     { href: "https://github.com/dongdongbh/Mindwtr", label: "GitHub", className: "nav-secondary" },
-    { href: localePath(locale, "support"), label: t.support }
+    { href: localePath(locale, "support"), label: t.support, className: "nav-tertiary" }
   ]
     .map((link) => `        ${anchor(link, pagePath)}`)
     .join("\n");
@@ -469,9 +469,6 @@ function footer(locale: Locale, pagePath: string): string {
   const links = [
     { href: localePath(locale, "features"), label: t.features },
     { href: localePath(locale, "gtd"), label: t.gtd },
-    // The guides index is English-only, so every locale's footer points at
-    // the same /guides page.
-    { href: "/guides", label: t.guides },
     { href: DOCS_PATH[locale], label: t.docs },
     { href: "https://github.com/dongdongbh/Mindwtr", label: "GitHub" },
     { href: localePath(locale, "support"), label: t.support },

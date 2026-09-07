@@ -1308,6 +1308,13 @@ h2 {
   }
 }
 
+/* Keep the shared header compact at tablet widths, including longer labels. */
+@media (max-width: 900px) {
+  .site-header nav .nav-secondary {
+    display: none;
+  }
+}
+
 @media (max-width: 720px) {
   .reviews-masonry {
     columns: 1;
@@ -2237,10 +2244,10 @@ main > section:last-child {
   /* 320px is the last width where the CTA still doesn't fit — measured at
      286px of room against 286px of content, so the Download pill clipped its
      own edge (en/fr/de; zh's labels are short enough to survive). Below 360,
-     the header keeps only what a phone actually needs: identity, language, and
-     the one action. Every dropped link is in the footer. */
+     the header keeps identity, Guides, language, and Download.
+     Every dropped link is in the footer. */
   @media (max-width: 360px) {
-    .site-header nav a:not(.nav-download) {
+    .site-header nav a:not(.nav-download):not(.nav-guides) {
       display: none;
     }
   }

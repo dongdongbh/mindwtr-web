@@ -138,16 +138,37 @@ Great for:
 - Adding links from web browsing
 - Filing a PDF or photo as an Inbox task to process later
 
+### Android automation capture (Tasker)
+
+Available in the next release after 1.2.8. In **Settings → GTD → Capture defaults**, enable **Automation capture** and copy the capture token. This setting and token stay on this device. Give the token only to automation apps you trust; turning the setting off revokes it, and turning it on again creates a new token.
+
+In Tasker, add **Misc → Send Intent** after the action that produces your dictated text:
+
+| Field | Value |
+| --- | --- |
+| Action | `tech.dongdongbh.mindwtr.action.CAPTURE` |
+| Package | `tech.dongdongbh.mindwtr` |
+| Class | `tech.dongdongbh.mindwtr.androidwidget.CaptureIntentReceiver` |
+| Target | `Broadcast Receiver` |
+| Extra | `text:(String) %captured_text` |
+| Extra | `token:YOUR_CAPTURE_TOKEN` |
+
+Replace `%captured_text` with your Tasker text variable and `YOUR_CAPTURE_TOKEN` with the copied token. Leave the category, MIME type and data fields empty. Mindwtr Dev uses package `tech.dongdongbh.mindwtr.dev`; the action and class stay the same.
+
+Each accepted capture is queued separately, including repeated text. Open Mindwtr to import the queued captures into Inbox. The intent does not open the app or sync in the background. It accepts nonblank text up to 2,000 characters; it does not accept audio or files. Start by sending two short notes before opening Mindwtr, then check that both arrive. Android force-stop can block broadcasts until you open the app again.
+
+See [Tasker’s intent guide](https://tasker.joaoapps.com/userguide/en/intents.html) for its Send Intent fields.
+
 ### Home Widget
 
 Add the Mindwtr widget to your home screen for quick access:
 
 1. Long-press on your home screen
 2. Select **Widgets**
-3. Find **Mindwtr** and add either the **Tasks** widget or the one-cell **Quick capture** button. The Tasks widget shows a **+** button and your tasks, each with its priority colour, its project or area, and its due date. On Android, a newly added Tasks widget shows Focus, with the inbox count in its header and the same sections as the Focus screen: Today's Focus, Today, Review Due, Next actions, Upcoming. To switch the list, tap the widget's title, which carries a small down arrow. A sheet lists Focus, Inbox, Next Actions, Waiting For, Someday/Maybe and your **Saved Filters**. Tap one and the widget redraws. To show a single project on a widget, save a Focus filter for that project in the app and pick that filter here. This works on every launcher, and some launchers have no edit action of their own for widgets. You can add several Tasks widgets with different lists.
+3. Find **Mindwtr** and add either the **Tasks** widget or the one-cell **Quick capture** button. The Tasks widget shows a **+** button and your tasks, each with its priority colour, its project or area, and its due date. On Android, a newly added Tasks widget shows Focus, with the inbox count in its header and a short view of Today's Focus and Today in the next release after 1.2.8. Review Due, Next actions and Upcoming stay in the app. To switch the list, tap the widget's title, which carries a small down arrow. A sheet lists Focus, Inbox, Next Actions, Waiting For, Someday/Maybe and your **Saved Filters**. Tap one and the widget redraws. To show a single project on a widget, save a Focus filter for that project in the app and pick that filter here. This works on every launcher, and some launchers have no edit action of their own for widgets. You can add several Tasks widgets with different lists.
 4. Tap a task to open a small task sheet, tap the ring at the start of a row to complete it, or tap **+** to capture
 
-On Android, the widget's Focus list mirrors the Focus screen on that phone. The filters you have set there apply to the widget too: contexts, tags, priority, energy, time estimate and a saved filter. The sort you have chosen on the Focus screen applies as well, and the widget updates when you change either. The area you have selected in the app narrows every widget list.
+The widget prioritizes Today's Focus, followed by Today, including overdue tasks. It keeps the existing size limits and does not fill empty space with other next actions. On Android, it follows the Focus screen's filters and sort order. The filters you have set there apply to the widget too: contexts, tags, priority, energy, time estimate and a saved filter. The sort you have chosen on the Focus screen applies as well, and the widget updates when you change either. The area you have selected in the app narrows every widget list.
 
 On Android, tapping a task row opens a small task sheet over your home screen, without starting the app. The sheet shows the title, the project or area, the note, the contexts and tags, the start and due dates, and the priority. **Complete** checks the task off the same way the ring does, with the same short undo window. **Open** takes you to the task in the app.
 

@@ -129,14 +129,35 @@ Geeignet für:
 - Links aus dem Browser
 - PDF oder Foto als später zu verarbeitende Eingangsaufgabe
 
+### Android-Automatisierung zur Erfassung (Tasker)
+
+Verfügbar in der nächsten Version nach 1.2.8. Aktivieren Sie unter **Einstellungen → GTD → Erfassungs-Standardwerte** die **Automatisierte Erfassung** und kopieren Sie den Erfassungstoken. Einstellung und Token bleiben auf diesem Gerät. Geben Sie den Token nur an vertrauenswürdige Automatisierungs-Apps weiter. Ausschalten widerruft ihn; erneutes Einschalten erzeugt einen neuen Token.
+
+Fügen Sie in Tasker nach der Diktataktion **Misc → Send Intent** hinzu:
+
+| Feld | Wert |
+| --- | --- |
+| Action | `tech.dongdongbh.mindwtr.action.CAPTURE` |
+| Package | `tech.dongdongbh.mindwtr` |
+| Class | `tech.dongdongbh.mindwtr.androidwidget.CaptureIntentReceiver` |
+| Target | `Broadcast Receiver` |
+| Extra | `text:(String) %captured_text` |
+| Extra | `token:YOUR_CAPTURE_TOKEN` |
+
+Ersetzen Sie `%captured_text` durch Ihre Textvariable und `YOUR_CAPTURE_TOKEN` durch den kopierten Token. Kategorie, MIME-Typ und Daten bleiben leer. Mindwtr Dev verwendet das Paket `tech.dongdongbh.mindwtr.dev`; Aktion und Klasse bleiben gleich.
+
+Jede angenommene Erfassung wird separat vorgemerkt, auch bei gleichem Text. Beim nächsten Öffnen importiert Mindwtr sie in den Eingang. Der Intent öffnet die App nicht und synchronisiert nicht im Hintergrund. Er akzeptiert nichtleeren Text mit höchstens 2.000 Zeichen, keine Audioaufnahmen oder Dateien. Senden Sie zum Ausprobieren zwei kurze Notizen, bevor Sie Mindwtr öffnen, und prüfen Sie, ob beide ankommen. Nach einem erzwungenen Stopp kann Android Broadcasts bis zum nächsten Öffnen blockieren.
+
+Weitere Angaben zu den Feldern finden Sie in [Taskers Intent-Anleitung](https://tasker.joaoapps.com/userguide/en/intents.html).
+
 ### Startbildschirm-Widget
 
 1. Startbildschirm lange drücken
 2. **Widgets** wählen
-3. **Mindwtr** suchen und entweder das Widget **Aufgaben** oder die einzellige Schaltfläche **Schnellerfassung** hinzufügen. Das Aufgaben-Widget zeigt eine **+**-Schaltfläche und Ihre Aufgaben, jeweils mit Prioritätsfarbe, Projekt oder Bereich und Fälligkeitsdatum. Auf Android zeigt ein neu hinzugefügtes Aufgaben-Widget den Fokus, mit dem Eingangszähler in der Kopfzeile und denselben Abschnitten wie der Fokus-Bildschirm: Heutiger Fokus, Heute, Durchsicht fällig, Nächste Aktionen, Anstehend. Um die Liste zu wechseln, tippen Sie auf den Titel des Widgets; er trägt einen kleinen Pfeil nach unten. Es öffnet sich eine Auswahl mit Fokus, Eingang, Nächste Aktionen, Warten auf, Irgendwann/Vielleicht und Ihren **gespeicherten Filtern**. Tippen Sie einen Eintrag an, und das Widget wird neu gezeichnet. Um ein einzelnes Projekt auf einem Widget zu zeigen, speichern Sie in der App einen Fokus-Filter für dieses Projekt und wählen Sie ihn hier aus. Das funktioniert auf jedem Launcher, und manche Launcher bieten selbst keine Bearbeitungsaktion für Widgets. Sie können mehrere Aufgaben-Widgets mit verschiedenen Listen hinzufügen.
+3. **Mindwtr** suchen und entweder das Widget **Aufgaben** oder die einzellige Schaltfläche **Schnellerfassung** hinzufügen. Das Aufgaben-Widget zeigt eine **+**-Schaltfläche und Ihre Aufgaben, jeweils mit Prioritätsfarbe, Projekt oder Bereich und Fälligkeitsdatum. Auf Android zeigt ein neu hinzugefügtes Aufgaben-Widget den Fokus, mit dem Eingangszähler in der Kopfzeile und ab der nächsten Version nach 1.2.8 einer kurzen Ansicht von Heutiger Fokus und Heute. Durchsicht fällig, Nächste Aktionen und Anstehend bleiben in der App. Um die Liste zu wechseln, tippen Sie auf den Titel des Widgets; er trägt einen kleinen Pfeil nach unten. Es öffnet sich eine Auswahl mit Fokus, Eingang, Nächste Aktionen, Warten auf, Irgendwann/Vielleicht und Ihren **gespeicherten Filtern**. Tippen Sie einen Eintrag an, und das Widget wird neu gezeichnet. Um ein einzelnes Projekt auf einem Widget zu zeigen, speichern Sie in der App einen Fokus-Filter für dieses Projekt und wählen Sie ihn hier aus. Das funktioniert auf jedem Launcher, und manche Launcher bieten selbst keine Bearbeitungsaktion für Widgets. Sie können mehrere Aufgaben-Widgets mit verschiedenen Listen hinzufügen.
 4. Aufgabe antippen, um ein kleines Aufgabenblatt zu öffnen, den Ring am Zeilenanfang antippen, um sie abzuschließen, oder **+** antippen, um zu erfassen
 
-Auf Android zeigt die Fokus-Liste des Widgets dasselbe wie der Fokus-Bildschirm dieses Telefons. Die dort gesetzten Filter gelten auch für das Widget: Kontexte, Tags, Priorität, Energie, Zeitaufwand und ein gespeicherter Filter. Auch die auf dem Fokus-Bildschirm gewählte Sortierung gilt, und das Widget wird aktualisiert, sobald Sie eines von beidem ändern. Der in der App ausgewählte Bereich schränkt jede Widget-Liste ein.
+Das Widget zeigt zuerst Heutiger Fokus, danach Heute einschließlich überfälliger Aufgaben. Die bisherigen Größenbegrenzungen bleiben bestehen; leere Plätze werden nicht mit weiteren nächsten Aktionen gefüllt. Auf Android gelten die Filter und die Sortierung des Fokus-Bildschirms. Die dort gesetzten Filter gelten auch für das Widget: Kontexte, Tags, Priorität, Energie, Zeitaufwand und ein gespeicherter Filter. Auch die auf dem Fokus-Bildschirm gewählte Sortierung gilt, und das Widget wird aktualisiert, sobald Sie eines von beidem ändern. Der in der App ausgewählte Bereich schränkt jede Widget-Liste ein.
 
 Auf Android öffnet ein Tippen auf eine Aufgabenzeile ein kleines Aufgabenblatt über dem Startbildschirm, ohne die App zu starten. Das Blatt zeigt den Titel, das Projekt oder den Bereich, die Notiz, die Kontexte und Tags, das Start- und das Fälligkeitsdatum sowie die Priorität. **Abschließen** hakt die Aufgabe genauso ab wie der Ring, mit demselben kurzen Fenster zum Rückgängigmachen. **Öffnen** bringt Sie zur Aufgabe in der App.
 

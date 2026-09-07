@@ -138,16 +138,37 @@ Es ideal para:
 - Añadir enlaces mientras navegas por la web
 - Archivar un PDF o una foto como tarea de la Bandeja de entrada para procesarla después
 
+### Captura mediante automatización en Android (Tasker)
+
+Disponible en la próxima versión después de 1.2.8. En **Ajustes → GTD → Valores predeterminados de captura**, activa **Captura automatizada** y copia el token de captura. El ajuste y el token permanecen en este dispositivo. Compártelo solo con aplicaciones de automatización de confianza. Al desactivar el ajuste se revoca el token; al activarlo de nuevo se genera otro.
+
+En Tasker, añade **Misc → Send Intent** después de la acción que obtiene el dictado:
+
+| Campo | Valor |
+| --- | --- |
+| Action | `tech.dongdongbh.mindwtr.action.CAPTURE` |
+| Package | `tech.dongdongbh.mindwtr` |
+| Class | `tech.dongdongbh.mindwtr.androidwidget.CaptureIntentReceiver` |
+| Target | `Broadcast Receiver` |
+| Extra | `text:(String) %captured_text` |
+| Extra | `token:YOUR_CAPTURE_TOKEN` |
+
+Sustituye `%captured_text` por tu variable de texto y `YOUR_CAPTURE_TOKEN` por el token copiado. Deja vacíos categoría, tipo MIME y datos. Mindwtr Dev usa el paquete `tech.dongdongbh.mindwtr.dev`; la acción y la clase no cambian.
+
+Cada captura aceptada se guarda por separado, incluso si repite el mismo texto. Abre Mindwtr para importarlas a la bandeja de entrada. El intent no abre la aplicación ni sincroniza en segundo plano. Acepta texto no vacío de hasta 2.000 caracteres, sin audio ni archivos. Prueba enviando dos notas cortas antes de abrir Mindwtr y comprueba que lleguen ambas. Tras forzar la detención, Android puede bloquear las emisiones hasta que vuelvas a abrir la aplicación.
+
+Consulta la [guía de intents de Tasker](https://tasker.joaoapps.com/userguide/en/intents.html) para conocer sus campos.
+
 ### Widget de inicio
 
 Añade el widget de Mindwtr a la pantalla de inicio para acceder rápidamente:
 
 1. Mantén pulsada la pantalla de inicio
 2. Selecciona **Widgets**
-3. Busca **Mindwtr** y añade el widget **Tareas** o el botón de una celda **Captura rápida**. El widget Tareas muestra un botón **+** y tus tareas, cada una con su color de prioridad, su proyecto o área y su fecha de vencimiento. En Android, un widget Tareas recién añadido muestra Foco, con el recuento de la bandeja de entrada en su encabezado y las mismas secciones que la pantalla Foco: Foco de hoy, Hoy, Revisión pendiente, Próximas acciones, Próximas. Para cambiar de lista, toca el título del widget, que lleva una pequeña flecha hacia abajo. Se abre una lista con Foco, Bandeja de entrada, Próximas acciones, En espera, Algún día/Tal vez y tus **filtros guardados**. Toca uno y el widget se vuelve a dibujar. Para mostrar un solo proyecto en un widget, guarda en la aplicación un filtro de Foco para ese proyecto y elígelo aquí. Esto funciona en cualquier lanzador, y algunos lanzadores no ofrecen ninguna acción de edición propia para los widgets. Puedes añadir varios widgets Tareas con listas distintas.
+3. Busca **Mindwtr** y añade el widget **Tareas** o el botón de una celda **Captura rápida**. El widget Tareas muestra un botón **+** y tus tareas, cada una con su color de prioridad, su proyecto o área y su fecha de vencimiento. En Android, un widget Tareas recién añadido muestra Foco, con el recuento de la bandeja de entrada en su encabezado y, en la próxima versión después de 1.2.8, una vista breve de Foco de hoy y Hoy. Revisión pendiente, Próximas acciones y Próximas se quedan en la aplicación. Para cambiar de lista, toca el título del widget, que lleva una pequeña flecha hacia abajo. Se abre una lista con Foco, Bandeja de entrada, Próximas acciones, En espera, Algún día/Tal vez y tus **filtros guardados**. Toca uno y el widget se vuelve a dibujar. Para mostrar un solo proyecto en un widget, guarda en la aplicación un filtro de Foco para ese proyecto y elígelo aquí. Esto funciona en cualquier lanzador, y algunos lanzadores no ofrecen ninguna acción de edición propia para los widgets. Puedes añadir varios widgets Tareas con listas distintas.
 4. Toca una tarea para abrir una pequeña hoja de tarea, toca el anillo al principio de una fila para completarla o toca **+** para capturar
 
-En Android, la lista Foco del widget refleja la pantalla Foco de ese teléfono. Los filtros que has puesto allí también se aplican al widget: contextos, etiquetas, prioridad, energía, tiempo estimado y un filtro guardado. El orden que has elegido en la pantalla Foco se aplica igualmente, y el widget se actualiza cuando cambias cualquiera de los dos. El área que tienes seleccionada en la aplicación acota todas las listas del widget.
+El widget muestra primero Foco de hoy y después Hoy, incluidas las tareas vencidas. Mantiene los límites de tamaño existentes y no llena el espacio vacío con otras próximas acciones. En Android, sigue los filtros y el orden de la pantalla Foco. Los filtros que has puesto allí también se aplican al widget: contextos, etiquetas, prioridad, energía, tiempo estimado y un filtro guardado. El orden que has elegido en la pantalla Foco se aplica igualmente, y el widget se actualiza cuando cambias cualquiera de los dos. El área que tienes seleccionada en la aplicación acota todas las listas del widget.
 
 En Android, tocar una fila de tarea abre una pequeña hoja de tarea sobre la pantalla de inicio, sin iniciar la aplicación. La hoja muestra el título, el proyecto o área, la nota, los contextos y etiquetas, las fechas de inicio y de vencimiento, y la prioridad. **Completar** marca la tarea igual que el anillo, con la misma breve ventana para deshacer. **Abrir** te lleva a la tarea en la aplicación.
 

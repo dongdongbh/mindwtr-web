@@ -138,16 +138,37 @@ Idéal pour :
 - Ajouter des liens pendant la navigation sur le web
 - Classer un PDF ou une photo comme tâche de la Boîte de réception à traiter plus tard
 
+### Capture automatisée sur Android (Tasker)
+
+Disponible dans la prochaine version après 1.2.8. Dans **Réglages → GTD → Capture defaults**, activez **Capture automatisée** et copiez le jeton de capture. Le réglage et le jeton restent sur cet appareil. Ne transmettez le jeton qu’à des applications d’automatisation de confiance. La désactivation le révoque ; une nouvelle activation crée un nouveau jeton.
+
+Dans Tasker, ajoutez **Misc → Send Intent** après l’action qui produit votre texte dicté :
+
+| Champ | Valeur |
+| --- | --- |
+| Action | `tech.dongdongbh.mindwtr.action.CAPTURE` |
+| Package | `tech.dongdongbh.mindwtr` |
+| Class | `tech.dongdongbh.mindwtr.androidwidget.CaptureIntentReceiver` |
+| Target | `Broadcast Receiver` |
+| Extra | `text:(String) %captured_text` |
+| Extra | `token:YOUR_CAPTURE_TOKEN` |
+
+Remplacez `%captured_text` par votre variable de texte et `YOUR_CAPTURE_TOKEN` par le jeton copié. Laissez vides la catégorie, le type MIME et les données. Mindwtr Dev utilise le paquet `tech.dongdongbh.mindwtr.dev` ; l’action et la classe restent identiques.
+
+Chaque capture acceptée est conservée séparément, même si le texte est identique. Ouvrez Mindwtr pour importer les captures dans la boîte de réception. L’intent n’ouvre pas l’application et ne synchronise pas en arrière-plan. Il accepte du texte non vide de 2 000 caractères maximum, sans audio ni fichier. Essayez d’envoyer deux notes courtes avant d’ouvrir Mindwtr, puis vérifiez qu’elles arrivent toutes les deux. Après un arrêt forcé, Android peut bloquer les broadcasts jusqu’à la prochaine ouverture.
+
+Consultez le [guide des intents de Tasker](https://tasker.joaoapps.com/userguide/en/intents.html) pour ses champs.
+
 ### Widget de l’écran d’accueil
 
 Ajoutez le widget Mindwtr à votre écran d’accueil pour y accéder rapidement :
 
 1. Appuyez longuement sur votre écran d’accueil
 2. Sélectionnez **Widgets**
-3. Trouvez **Mindwtr** et ajoutez soit le widget **Tâches**, soit le bouton d’une cellule **Capture rapide**. Le widget Tâches affiche un bouton **+** et vos tâches, chacune avec sa couleur de priorité, son projet ou domaine et sa date d’échéance. Sous Android, un widget Tâches qui vient d’être ajouté affiche Focus, avec le nombre d’éléments de la boîte de réception dans son en-tête et les mêmes sections que l’écran Focus : Focus du jour, Aujourd’hui, Revue due, Prochaines actions, À venir. Pour changer de liste, touchez le titre du widget, qui porte une petite flèche vers le bas. Une liste s’ouvre avec Focus, Boîte de réception, Prochaines actions, En attente, Un jour/Peut-être et vos **filtres enregistrés**. Touchez-en un et le widget se redessine. Pour afficher un seul projet sur un widget, enregistrez dans l’application un filtre Focus pour ce projet et choisissez-le ici. Cela fonctionne sur tous les lanceurs, et certains lanceurs ne proposent aucune action de modification pour les widgets. Vous pouvez ajouter plusieurs widgets Tâches avec des listes différentes.
+3. Trouvez **Mindwtr** et ajoutez soit le widget **Tâches**, soit le bouton d’une cellule **Capture rapide**. Le widget Tâches affiche un bouton **+** et vos tâches, chacune avec sa couleur de priorité, son projet ou domaine et sa date d’échéance. Sous Android, un widget Tâches qui vient d’être ajouté affiche Focus, avec le nombre d’éléments de la boîte de réception dans son en-tête et, dans la prochaine version après 1.2.8, une vue courte de Focus du jour et Aujourd’hui. Revue due, Prochaines actions et À venir restent dans l’application. Pour changer de liste, touchez le titre du widget, qui porte une petite flèche vers le bas. Une liste s’ouvre avec Focus, Boîte de réception, Prochaines actions, En attente, Un jour/Peut-être et vos **filtres enregistrés**. Touchez-en un et le widget se redessine. Pour afficher un seul projet sur un widget, enregistrez dans l’application un filtre Focus pour ce projet et choisissez-le ici. Cela fonctionne sur tous les lanceurs, et certains lanceurs ne proposent aucune action de modification pour les widgets. Vous pouvez ajouter plusieurs widgets Tâches avec des listes différentes.
 4. Touchez une tâche pour ouvrir une petite fiche de tâche, touchez l’anneau au début d’une ligne pour la terminer, ou touchez **+** pour capturer
 
-Sous Android, la liste Focus du widget reprend l’écran Focus de ce téléphone. Les filtres que vous y avez définis s’appliquent aussi au widget : contextes, étiquettes, priorité, énergie, temps estimé et un filtre enregistré. Le tri choisi sur l’écran Focus s’applique également, et le widget se met à jour dès que vous changez l’un ou l’autre. Le domaine sélectionné dans l’application restreint toutes les listes du widget.
+Le widget affiche d’abord Focus du jour, puis Aujourd’hui, y compris les tâches en retard. Il conserve les limites de taille existantes et ne remplit pas les espaces libres avec d’autres prochaines actions. Sous Android, il suit les filtres et le tri de l’écran Focus. Les filtres que vous y avez définis s’appliquent aussi au widget : contextes, étiquettes, priorité, énergie, temps estimé et un filtre enregistré. Le tri choisi sur l’écran Focus s’applique également, et le widget se met à jour dès que vous changez l’un ou l’autre. Le domaine sélectionné dans l’application restreint toutes les listes du widget.
 
 Sous Android, toucher une ligne de tâche ouvre une petite fiche de tâche par-dessus l’écran d’accueil, sans lancer l’application. La fiche affiche le titre, le projet ou domaine, la note, les contextes et étiquettes, les dates de début et d’échéance, ainsi que la priorité. **Terminer** coche la tâche comme le fait l’anneau, avec la même courte fenêtre d’annulation. **Ouvrir** vous emmène à la tâche dans l’application.
 

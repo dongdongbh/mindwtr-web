@@ -308,6 +308,8 @@ In der Ansicht **Fokus** sehen Sie:
 
 <a id="how-focus-sorts-available-actions"></a>
 
+**In der nächsten Version nach 1.2.8:** Mit **Nur Fokus** im Fokus-Kopfbereich auf Desktop und Mobilgeräten bleibt **Heutiger Fokus** geöffnet, während Heute, Zur Überprüfung, Nächste Aktionen, Demnächst und Zu überprüfende Projekte eingeklappt werden. Überschriften und Anzahlen bleiben sichtbar, sodass sich jeder Abschnitt einzeln öffnen lässt. **Abschnitte ausklappen** öffnet alle wieder. Jedes Gerät merkt sich den Zustand. Auf dem Desktop ersetzt dies **Nur die Top 3 anzeigen**, ohne die markierten Aufgaben zu begrenzen oder zu ändern.
+
 ### So sortiert „Fokus“ verfügbare Aktionen
 
 „Fokus“ bestimmt zuerst, ob eine Aufgabe verfügbar ist, und sortiert danach die sichtbaren Aktionen:

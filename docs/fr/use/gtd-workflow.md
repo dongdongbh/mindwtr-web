@@ -304,6 +304,8 @@ Utilisez la vue **Focus** pour voir :
 
 Focus n’est pas une vue d’inventaire complète. Elle tient les tâches dont la date de début est future et les tâches ultérieures des projets séquentiels à l’écart des listes actionnables, afin que celles-ci reflètent les actions disponibles maintenant. Utilisez **Contextes**, **Projets** ou **Recherche** pour examiner toutes les prochaines actions, y compris les éléments reportés ou bloqués.
 
+**Dans la prochaine version après la 1.2.8 :** Utilisez **Focus uniquement** dans l’en-tête de Focus, sur ordinateur ou mobile, pour garder **Focus du jour** ouvert et replier Aujourd’hui, À revoir, Prochaines actions, À venir et Projets à revoir. Les titres et les nombres restent visibles pour rouvrir chaque section séparément. **Développer les sections** les ouvre toutes. Chaque appareil mémorise cet état. Sur ordinateur, ce bouton remplace **Afficher uniquement les 3 premiers**, sans limiter ni modifier les tâches marquées d’une étoile.
+
 ### Comment Focus trie les actions disponibles
 
 Focus détermine d’abord si une tâche est disponible, puis trie les actions visibles :

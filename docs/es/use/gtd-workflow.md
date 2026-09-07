@@ -304,6 +304,8 @@ Usa la vista **Enfoque** para ver:
 
 Enfoque no es una vista de inventario completo. Mantiene las tareas con fecha de inicio futura y las tareas posteriores de proyectos secuenciales fuera de las listas accionables para que reflejen las acciones disponibles ahora. Usa **Contextos**, **Proyectos** o **Búsqueda** cuando necesites consultar todas las próximas acciones, incluidos los elementos aplazados o bloqueados.
 
+**En la próxima versión después de la 1.2.8:** Usa **Solo enfoque** en la cabecera de Enfoque, en escritorio o móvil, para mantener abierto **Enfoque de hoy** y contraer Hoy, Revisión pendiente, Próximas acciones, Próximamente y Proyectos por revisar. Los títulos y las cantidades siguen visibles y permiten abrir cada sección por separado. **Expandir secciones** las abre todas. Cada dispositivo recuerda su estado. En escritorio, sustituye a **Mostrar solo el top 3**, sin limitar ni cambiar las tareas que has marcado con una estrella.
+
 ### Cómo ordena Enfoque las acciones disponibles
 
 Enfoque determina primero si una tarea está disponible y después ordena las acciones visibles:

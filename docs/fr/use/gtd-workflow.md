@@ -217,6 +217,8 @@ Le champ **Section de projet** d’une tâche l’associe à l’une des section
 
 Les projets séquentiels peuvent utiliser une portée au niveau du projet ou de la section. Utilisez la portée de section lorsqu’un projet comporte des phases ou des flux de travail indépendants : Mindwtr affiche la première tâche disponible de chaque section au lieu de bloquer tout le projet derrière une seule tâche. Avec la portée par section, terminer la dernière action suivante d’une section déclenche la question « Quelle est l’action suivante ? » pour cette section, comme après la dernière action du projet entier.
 
+**Dans la prochaine version après 1.2.8 :** **Séquentiel → Entre les sections** suit l’ordre manuel affiché avec le tri **Par défaut** : d’abord les sections, puis les tâches de chaque section, avec **Sans section** en dernier. Déplacer une section ou une tâche modifie cette séquence. Trier l’affichage par titre, priorité ou date ne la modifie pas. **Au sein des sections** sélectionne toujours une tâche par section ; les exceptions existantes pour les tâches marquées, les échéances et les dates de révision restent applicables.
+
 ### Dates d’échéance et rappels
 
 - Définissez une **date d’échéance** pour les délais

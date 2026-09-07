@@ -217,6 +217,8 @@ The **Project Section** field on a task assigns that task to one of its project'
 
 Sequential projects can use a project-wide scope or a section scope. Use section scope when a project has independent phases or workstreams: Mindwtr shows the first available task in each section instead of blocking the whole project behind one task. With section scope, completing a section's last next action asks "What's the next action?" for that section, just as finishing a project's last action does for the whole project.
 
+**In the next release after 1.2.8:** **Sequential → Across Sections** follows the manual order shown with **Default** sorting: section order first, then task order within each section, with **No Section** last. Moving a section or task changes that sequence. Sorting the display by title, priority or date does not change it. **Within Sections** still selects a task independently for each section; existing starred, due-date and review-date exceptions still apply.
+
 ### Due Dates and Reminders
 
 - Set **due date** for deadlines

@@ -217,6 +217,8 @@ El campo **Sección del proyecto** de una tarea asigna esa tarea a una de las se
 
 Los proyectos secuenciales pueden usar un ámbito para todo el proyecto o un ámbito por sección. Usa el ámbito por sección cuando un proyecto tenga fases o líneas de trabajo independientes: Mindwtr muestra la primera tarea disponible de cada sección en lugar de bloquear todo el proyecto detrás de una única tarea. Con el ámbito por sección, al completar la última próxima acción de una sección, Mindwtr pregunta «¿Cuál es la próxima acción?» para esa sección, igual que tras la última acción del proyecto completo.
 
+**En la próxima versión después de 1.2.8:** **Secuencial → Entre secciones** sigue el orden manual que muestra la ordenación **Predeterminada**: primero las secciones y después las tareas de cada sección, con **Sin sección** al final. Mover una sección o tarea cambia la secuencia. Ordenar la vista por título, prioridad o fecha no la cambia. **Dentro de las secciones** sigue seleccionando una tarea por sección; se mantienen las excepciones existentes para tareas destacadas, vencimientos y fechas de revisión.
+
 ### Fechas límite y recordatorios
 
 - Establece una **fecha límite** para los plazos

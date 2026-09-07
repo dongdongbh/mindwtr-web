@@ -12,6 +12,7 @@ export const SIDEBAR_SECTIONS = [
     key: "start",
     items: [
       ["gettingStarted", "/start/getting-started"],
+      ["videoLibrary", "/start/videos"],
       ["whatMindwtrIs", "/start/what-mindwtr-is"],
       ["commitments", "/start/commitments"],
       ["desktopInstallation", "/start/desktop-installation"],

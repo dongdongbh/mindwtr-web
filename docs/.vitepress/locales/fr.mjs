@@ -26,6 +26,7 @@ export default {
   pages: {
     start: {
       gettingStarted: "Bien démarrer",
+      videoLibrary: "Vidéothèque",
       whatMindwtrIs: "Qu’est-ce que Mindwtr ?",
       commitments: "Nos engagements",
       desktopInstallation: "Installation sur ordinateur",

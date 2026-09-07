@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: Datos y sincronización
       link: /es/data-sync/
+    - theme: alt
+      text: Ver vídeos
+      link: /es/start/videos
 features:
   - title: Empieza aquí
     details: Instala Mindwtr en tu equipo o dispositivo móvil, captura tu primera tarea y realiza tu primera revisión.

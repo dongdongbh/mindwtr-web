@@ -234,3 +234,32 @@ body,
   line-height: 1.5;
   text-align: center;
 }
+
+.narrated-video {
+  margin: 1.5rem 0 3rem;
+}
+
+.narrated-video__stage {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 16px;
+  background: #07191c;
+  box-shadow: var(--vp-shadow-2);
+}
+
+.narrated-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #07191c;
+}
+
+.narrated-video figcaption {
+  margin: 0.75rem 0.5rem 0;
+  color: var(--vp-c-text-2);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: center;
+}

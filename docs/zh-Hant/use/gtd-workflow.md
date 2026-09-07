@@ -2,6 +2,8 @@
 
 本指南說明如何使用 Mindwtr 的功能實行 GTD 方法。
 
+想直接看看這套方法如何運作？[觀看附英文旁白的 GTD 操作導覽，以及影片庫中的其他影片](/zh-Hant/start/videos#gtd-workflow)。
+
 ---
 
 ## 概覽

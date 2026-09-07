@@ -2,6 +2,8 @@
 
 Ce guide montre comment mettre en œuvre la méthode GTD à l’aide des fonctionnalités de Mindwtr.
 
+Vous préférez voir la méthode en action ? [Regardez la présentation commentée de GTD et les autres vidéos de la vidéothèque](/fr/start/videos#gtd-workflow).
+
 ---
 
 ## Vue d’ensemble

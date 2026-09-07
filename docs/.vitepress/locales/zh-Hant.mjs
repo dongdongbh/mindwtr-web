@@ -26,6 +26,7 @@ export default {
   pages: {
     start: {
       gettingStarted: "開始使用",
+      videoLibrary: "影片庫",
       whatMindwtrIs: "Mindwtr 是什麼",
       commitments: "我們的承諾",
       desktopInstallation: "桌面版安裝",

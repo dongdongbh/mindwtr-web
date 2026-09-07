@@ -36,3 +36,11 @@ Docs project:
 Set `BUN_VERSION` to `1.3.3` in both Pages projects unless `.bun-version` changes.
 
 Deploy authentication lives in the Cloudflare/GitHub integration. Do not commit Cloudflare tokens, account IDs, local `.dev.vars`, or Wrangler state.
+
+## On-site videos
+
+The homepage introduces Mindwtr, Features contains the feature tour, and the Handbook contains the GTD walkthrough. The docs video library at `/start/videos` brings these together with the desktop and mobile quick tours, with localized navigation and descriptions.
+
+Players serve MP4s directly from each site's `/assets/videos/` path. They use deliberate poster covers and separate English captions, native controls, and `preload="none"` without autoplay or a third-party player. Only the poster is needed before the visitor chooses to play.
+
+Curated delivery files live in `shared-assets/videos/`; original recordings and 4K masters stay in the separate video workspace. See that directory's README for source versions and replacement guidance. Run `bun run check` after changes; its link checks include video sources, caption tracks and posters.

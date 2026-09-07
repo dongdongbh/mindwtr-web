@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: 資料與同步
       link: /zh-Hant/data-sync/
+    - theme: alt
+      text: 觀看影片
+      link: /zh-Hant/start/videos
 features:
   - title: 從這裡開始
     details: 在桌面或行動裝置安裝 Mindwtr，收集第一項任務，並完成第一次回顧。

@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: Données et synchronisation
       link: /fr/data-sync/
+    - theme: alt
+      text: Voir les vidéos
+      link: /fr/start/videos
 features:
   - title: Commencer ici
     details: Installez Mindwtr sur ordinateur ou mobile, capturez votre première tâche et effectuez votre première revue.

@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: Daten und Synchronisierung
       link: /de/data-sync/
+    - theme: alt
+      text: Videos ansehen
+      link: /de/start/videos
 features:
   - title: Hier beginnen
     details: Installieren Sie Mindwtr auf dem Desktop oder Mobilgerät, erfassen Sie Ihre erste Aufgabe und führen Sie Ihre erste Durchsicht durch.

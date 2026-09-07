@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: 数据与同步
       link: /zh-Hans/data-sync/
+    - theme: alt
+      text: 观看视频
+      link: /zh-Hans/start/videos
 features:
   - title: 从这里开始
     details: 在桌面端或移动端安装 Mindwtr，记录第一项任务，并完成第一次回顾。

@@ -26,6 +26,7 @@ export default {
   pages: {
     start: {
       gettingStarted: "开始使用",
+      videoLibrary: "视频库",
       whatMindwtrIs: "Mindwtr 是什么",
       commitments: "你可以信赖什么",
       desktopInstallation: "桌面端安装",

@@ -2,6 +2,8 @@
 
 This guide shows how to implement the GTD methodology using Mindwtr's features.
 
+Prefer to see the method in action? [Watch the narrated GTD walkthrough and the rest of the video library](/start/videos#gtd-workflow).
+
 ---
 
 ## Overview

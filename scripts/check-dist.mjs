@@ -238,7 +238,7 @@ if (findings.length === 0) {
   }
 
   for (const page of pages.values()) {
-    for (const [, attr, value] of page.html.matchAll(/\s(href|src)="([^"]*)"/g)) {
+    for (const [, attr, value] of page.html.matchAll(/\s(href|src|poster)="([^"]*)"/g)) {
       checkTarget(page, value, attr);
     }
 

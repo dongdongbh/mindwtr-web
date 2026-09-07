@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: Data and sync
       link: /data-sync/
+    - theme: alt
+      text: Watch videos
+      link: /start/videos
 features:
   - title: Start here
     details: Install Mindwtr on desktop or mobile, capture your first task, and run your first review.

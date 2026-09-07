@@ -55,6 +55,7 @@ Publiez les builds RC uniquement sur les canaux capables d'accueillir des testeu
 | --- | --- | --- |
 | Tous les téléchargements directs | Préversion GitHub | La version GitHub finale devient la source de téléchargement stable. |
 | iOS | TestFlight | L'App Store reste le canal stable. |
+| Apple Watch | Archive iOS avec Watch dans TestFlight | L’archive stable de l’App Store reste sans Watch ; le flux stable téléverse le build avec Watch dans une tâche distincte après iOS. |
 | Build macOS App Store | TestFlight | Le Mac App Store reste le canal stable. |
 | Build Android Play | Tests internes Google Play et tests ouverts (`beta`) par défaut ; pistes fermées/personnalisées lorsqu'elles sont configurées | La production reçoit ultérieurement un téléversement stable, et la piste de tests internes est actualisée par le flux de travail stable. |
 | Linux Flatpak | Branche bêta Flathub | Les versions stables sont publiées dans les branches stable et bêta afin que les utilisateurs bêta ne soient pas abandonnés. |
@@ -86,13 +87,15 @@ Le flux de travail réutilise, dans la mesure du possible, les mêmes tâches de
 Il publie également les builds destinés aux testeurs sur les canaux adossés aux boutiques qui sont déjà raccordés :
 
 - AAB Android vers Google Play `internal` et les tests ouverts (`beta`) par défaut ; les exécutions manuelles peuvent choisir des pistes de test Play séparées par des virgules ou `none`.
-- Build iOS App Store vers TestFlight avec la soumission à la vérification de l'App Store désactivée.
+- Archive iOS avec Watch vers TestFlight avec la soumission à la vérification de l'App Store désactivée. La tâche iOS de la RC sélectionne cette variante, attend son traitement et distribue ce build précis au groupe de test externe configuré.
 - Build macOS App Store vers TestFlight avec la soumission à la vérification de l'App Store désactivée.
 - Pull requests de mise à jour de la branche bêta Flathub par l'intermédiaire du flux de travail Flathub partagé ; les exécutions manuelles peuvent les désactiver lorsque la configuration du canal n'est pas prête.
 - Lorsque les ressources de la préversion GitHub sont disponibles, le flux compile et valide AUR `mindwtr-beta-bin`, publie les fichiers exacts `PKGBUILD` et `.SRCINFO` dans AUR, puis vérifie le commit Git distant.
 - Mises à jour des dépôts APT/RPM bêta après la création de la préversion GitHub ; les exécutions manuelles peuvent les désactiver.
 
 Le fichier stable `release.yml` reste le flux de travail de publication stable. Il est protégé de façon à ce que les étiquettes de préversion ne publient pas vers des canaux réservés aux versions stables, comme la production Google Play, le Microsoft Store, Snap stable, les dépôts Linux APT/RPM, Flathub stable, AUR stable, Scoop, winget, Homebrew ou Chocolatey.
+
+Le flux de travail iOS réutilisable définit `watch_testflight` sur false par défaut. La publication stable conserve cette valeur et soumet une archive sans app Watch. Une tâche distincte téléverse ensuite l’archive avec Watch dans TestFlight sans modifier ni soumettre la version de production de l’App Store. Elle reçoit directement le numéro du build de production, en choisit un supérieur avant la fin de l’indexation par App Store Connect, attend le traitement et distribue ce build précis au groupe externe configuré. Une récupération stable manuelle peut sélectionner uniquement `run_ios_watch_testflight`. Le téléversement Watch s’arrête si App Store Connect ne peut pas fournir le numéro de build distant.
 
 La bêta Flathub nécessite la branche bêta et les autorisations dans `flathub/tech.dongdongbh.mindwtr`. Les versions stables publient le paquet AUR `mindwtr-bin` depuis `release.yml` après une validation dans un conteneur propre et un contrôle de propriété. Le paquet `mindwtr` compilé depuis les sources est maintenu par la communauté et ne fait pas partie du processus de publication. Les builds RC publient `mindwtr-beta-bin` par `update-aur-beta.yml` avec les mêmes contrôles de sécurité. Si l’AUR désactive les poussées pendant une maintenance, relancez ce canal lorsqu’elles reprennent.
 

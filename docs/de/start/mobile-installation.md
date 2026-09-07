@@ -68,6 +68,8 @@ Die TestFlight-Beta ist ebenfalls unter https://testflight.apple.com/join/7SMJCT
 
 [![TestFlight beta](https://img.shields.io/badge/TestFlight-Beta-0A84FF?logo=apple&logoColor=white)](https://testflight.apple.com/join/7SMJCTSR)
 
+Die Release-Pipeline ist so konfiguriert, dass Apple-Watch-Unterstützung zunächst nur über TestFlight verteilt wird; ein Watch-fähiger Build wurde noch nicht veröffentlicht. Sobald ein solcher Build verfügbar ist, kopple eine Apple Watch mit watchOS 10 oder neuer mit deinem iPhone und installiere Mindwtr über die Watch-App auf dem iPhone. Die Watch-App unterstützt Text- und Audioerfassung, das Abschließen und Verschieben von Fokus-Aufgaben sowie einen verknüpften Pomodoro-Timer. Die stabile App-Store-Version enthält die Watch-App nicht.
+
 ### Möglichkeiten
 
 1. **App Store (empfohlen)**: stabile Version installieren

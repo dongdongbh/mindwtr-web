@@ -55,6 +55,7 @@ Publica compilaciones RC únicamente en canales que puedan admitir personas enca
 | --- | --- | --- |
 | Todas las descargas directas | Prelanzamiento de GitHub | La versión final de GitHub se convierte en la fuente de descarga estable. |
 | iOS | TestFlight | App Store sigue siendo el canal estable. |
+| Apple Watch | Archivo de iOS con Watch en TestFlight | El archivo estable de App Store no incluye Watch; el flujo estable sube la compilación con Watch en un trabajo separado después de iOS. |
 | Compilación para macOS App Store | TestFlight | Mac App Store sigue siendo el canal estable. |
 | Compilación para Android Play | Pruebas internas de Google Play y pruebas abiertas (`beta`) de forma predeterminada; canales cerrados/personalizados cuando estén configurados | Producción recibe posteriormente una subida estable y el flujo de trabajo estable actualiza el canal de pruebas internas. |
 | Linux Flatpak | Rama beta de Flathub | Las versiones estables se publican tanto en la rama estable como en la beta para no dejar atrás a los usuarios de la beta. |
@@ -86,13 +87,15 @@ El flujo de trabajo reutiliza, cuando resulta práctico, los trabajos de compila
 También publica compilaciones para pruebas en los canales respaldados por tiendas que ya están conectados:
 
 - AAB de Android en los canales `internal` y de pruebas abiertas (`beta`) de Google Play de forma predeterminada; las ejecuciones manuales pueden elegir canales de prueba de Play separados por comas o `none`.
-- Compilación de iOS para App Store en TestFlight con el envío para revisión de App Store desactivado.
+- Archivo de iOS con Watch en TestFlight y con el envío para revisión de App Store desactivado. El trabajo de iOS de la RC selecciona esta variante, espera a que se procese y distribuye esa compilación exacta al grupo de pruebas externas configurado.
 - Compilación de macOS para App Store en TestFlight con el envío para revisión de App Store desactivado.
 - Solicitudes de incorporación de cambios para actualizar la rama beta de Flathub mediante el flujo de trabajo compartido de Flathub; las ejecuciones manuales pueden desactivarlo cuando la configuración del canal no esté lista.
 - Cuando existen los recursos del prelanzamiento de GitHub, el flujo compila y valida AUR `mindwtr-beta-bin`, publica los archivos exactos `PKGBUILD` y `.SRCINFO` en AUR y verifica el commit remoto de Git.
 - Actualizaciones de repositorios APT/RPM beta después de que exista el prelanzamiento de GitHub; las ejecuciones manuales pueden desactivarlas.
 
 El flujo estable `release.yml` sigue siendo el flujo de trabajo de lanzamientos estables. Está protegido para que las etiquetas de prelanzamiento no publiquen en canales exclusivamente estables, como producción de Google Play, Microsoft Store, Snap estable, repositorios APT/RPM de Linux, Flathub estable, AUR estable, Scoop, winget, Homebrew o Chocolatey.
+
+El flujo reutilizable de iOS establece `watch_testflight` en false de forma predeterminada. La publicación estable mantiene ese valor y envía un archivo sin la app para Watch. Cuando termina ese trabajo, otro trabajo independiente sube el archivo con Watch a TestFlight sin modificar ni enviar la versión de producción de App Store. Recibe directamente el número de la compilación de producción, elige uno superior antes de que App Store Connect termine de indexarla, espera al procesamiento y distribuye esa compilación exacta al grupo externo configurado. La recuperación estable manual puede seleccionar solo `run_ios_watch_testflight`. La subida de Watch se detiene si App Store Connect no puede proporcionar el número de compilación remoto.
 
 La beta de Flathub requiere la rama beta y permisos en `flathub/tech.dongdongbh.mindwtr`. Los lanzamientos estables publican el paquete de AUR `mindwtr-bin` desde `release.yml` después de validarlo en un contenedor limpio y comprobar la propiedad. El paquete `mindwtr` compilado desde el código fuente lo mantiene la comunidad y no forma parte del proceso de publicación. Las compilaciones RC publican `mindwtr-beta-bin` mediante `update-aur-beta.yml` con las mismas comprobaciones de seguridad. Si AUR desactiva los envíos durante el mantenimiento, vuelve a ejecutar ese canal cuando los habilite.
 

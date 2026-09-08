@@ -43,10 +43,10 @@ Mindwtr fonctionne en arrière-plan pour gérer la synchronisation automatique.
 
 ### Widget macOS
 
-Sur macOS, l’application de bureau apporte son propre widget.
+Sur macOS 14 et versions ultérieures, l’application de bureau apporte son propre widget.
 
 - **Ajoutez-le depuis la galerie de widgets** — cliquez sur la date dans la barre des menus, puis sur **Modifier les widgets** — et choisissez **Mindwtr** en petit, moyen ou grand format. Il affiche les tâches prioritaires du jour et se met à jour dès que cette liste change.
-- **Un clic sur le widget** ouvre l’application de bureau. Le widget Mac est en outre prioritaire sur le widget iPhone que la galerie proposait jusqu’ici via Continuité, lequel ouvrait l’application sur le téléphone.
+- **Cliquez sur la liste des tâches** pour ouvrir l’application de bureau. Dans la prochaine version après la 1.2.8, le widget comportera aussi un bouton **Capture rapide** qui ouvre uniquement le panneau flottant de capture rapide existant, et non la fenêtre principale. Si Mindwtr n’est pas déjà en cours d’exécution, macOS peut le lancer en arrière-plan pour afficher le panneau. Le widget Mac est en outre prioritaire sur le widget iPhone que la galerie proposait jusqu’ici via Continuité, lequel ouvrait l’application sur le téléphone.
 - Le widget est inclus dans la version signée Developer ID (le DMG) ; la version du Mac App Store en bénéficiera lors d’une prochaine livraison.
 
 ## Vues

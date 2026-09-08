@@ -43,10 +43,10 @@ Mindwtr se ejecuta en segundo plano para gestionar la sincronización automátic
 
 ### Widget de macOS
 
-En macOS, la aplicación de escritorio trae su propio widget.
+En macOS 14 y versiones posteriores, la aplicación de escritorio trae su propio widget.
 
 - **Añádelo desde la galería de widgets** — haz clic en la fecha de la barra de menús y luego en **Editar widgets** — y elige **Mindwtr** en tamaño pequeño, mediano o grande. Muestra las tareas del foco de hoy y se actualiza cuando esa lista cambia.
-- **Al hacer clic en el widget** se abre la aplicación de escritorio. El widget de Mac también tiene prioridad sobre el widget del iPhone que la galería ofrecía mediante Continuidad, que abría la aplicación en el teléfono.
+- **Haz clic en la lista de tareas** para abrir la aplicación de escritorio. En la próxima versión después de 1.2.8, el widget también tendrá un botón de **Captura rápida** que abre solo el panel flotante existente de captura rápida, no la ventana principal. Si Mindwtr no está en ejecución, macOS puede iniciarlo en segundo plano para mostrar el panel. El widget de Mac también tiene prioridad sobre el widget del iPhone que la galería ofrecía mediante Continuidad, que abría la aplicación en el teléfono.
 - El widget se incluye en la versión firmada con Developer ID (el DMG); la versión de la Mac App Store lo tendrá en una entrega posterior.
 
 ## Vistas

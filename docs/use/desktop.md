@@ -43,10 +43,10 @@ Mindwtr runs in the background to handle auto-sync.
 
 ### macOS Widget
 
-On macOS the desktop app brings a widget of its own.
+On macOS 14 and later, the desktop app brings a widget of its own.
 
 - **Add it from the widget gallery** — click the date in the menu bar, then **Edit Widgets** — and pick **Mindwtr** in small, medium, or large. It shows today's focus tasks and updates as that list changes.
-- **Clicking the widget** opens the desktop app. The Mac widget also takes precedence over the iPhone widget the gallery used to offer through Continuity, which opened the app on the phone instead.
+- **Click the task list** to open the desktop app. In the next release after 1.2.8, the widget also has a **Quick capture** button that opens only the existing floating Quick Add panel, not the main window. If Mindwtr is not already running, macOS may start it in the background to show the panel. The Mac widget also takes precedence over the iPhone widget the gallery used to offer through Continuity, which opened the app on the phone instead.
 - The widget ships in the signed Developer ID build (the DMG); the Mac App Store build gets it in a later release.
 
 ## Views

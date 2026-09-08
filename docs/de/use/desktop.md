@@ -43,10 +43,10 @@ Mindwtr läuft für die automatische Synchronisierung im Hintergrund.
 
 ### macOS-Widget
 
-Unter macOS bringt die Desktop-App ein eigenes Widget mit.
+Unter macOS 14 oder neuer bringt die Desktop-App ein eigenes Widget mit.
 
 - **Fügen Sie es aus der Widget-Galerie hinzu** — klicken Sie auf das Datum in der Menüleiste, dann auf **Widgets bearbeiten** — und wählen Sie **Mindwtr** in Klein, Mittel oder Groß. Es zeigt die heutigen Fokusaufgaben und aktualisiert sich, sobald sich diese Liste ändert.
-- **Ein Klick auf das Widget** öffnet die Desktop-App. Das Mac-Widget hat außerdem Vorrang vor dem iPhone-Widget, das die Galerie bisher über Continuity anbot und das die App stattdessen auf dem Telefon öffnete.
+- **Klicken Sie auf die Aufgabenliste**, um die Desktop-App zu öffnen. In der nächsten Version nach 1.2.8 erhält das Widget außerdem eine Schaltfläche **Schnellerfassung**, die nur das vorhandene schwebende Schnellerfassungsfenster öffnet, nicht das Hauptfenster. Läuft Mindwtr noch nicht, kann macOS es im Hintergrund starten, um dieses Fenster anzuzeigen. Das Mac-Widget hat außerdem Vorrang vor dem iPhone-Widget, das die Galerie bisher über Continuity anbot und das die App stattdessen auf dem Telefon öffnete.
 - Das Widget ist im signierten Developer-ID-Build (dem DMG) enthalten; der Mac-App-Store-Build erhält es in einer späteren Version.
 
 ## Ansichten

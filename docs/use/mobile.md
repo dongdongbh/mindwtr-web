@@ -277,6 +277,16 @@ Notes:
 
 On iPhone and iPad, Mindwtr exposes native Apple Shortcuts actions for Inbox capture and opening GTD views such as Focus, Waiting, Someday, Projects, Review, and Calendar. See [Apple Shortcuts](/power-users/apple-shortcuts) for setup, examples, and v1 limitations.
 
+### Apple Watch companion (TestFlight)
+
+The TestFlight build includes a native Apple Watch companion tested on a paired physical Watch running watchOS 10 or later. Install Mindwtr on the Watch from the iPhone Watch app after joining TestFlight.
+
+- **Capture:** Tap **Speak** to dictate a task on the Watch, or tap **Record audio** for a longer recording. The iPhone may offer its keyboard as an optional input method; you can ignore that notification and speak on the Watch. Captures enter Mindwtr's local Inbox, so cloud sync is optional.
+- **Focus:** Review Focus tasks, mark one complete, or defer it until tomorrow.
+- **Pomodoro:** Start and control the timer linked to Mindwtr on the iPhone.
+
+The Watch keeps captures queued when the phone is unavailable and delivers them when the connection returns. The stable App Store build does not include the Watch app yet.
+
 ### URL Scheme Quick Capture (iOS Shortcuts / Android Automations)
 
 Mindwtr registers the URL scheme `mindwtr://`, so you can capture tasks from iOS Shortcuts, Tasker, or other automation tools.

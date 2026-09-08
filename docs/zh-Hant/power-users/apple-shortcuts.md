@@ -1,6 +1,6 @@
 # Apple 捷徑
 
-Mindwtr 透過原生 App Intents，在 iPhone 及 iPad 上支援 Apple 捷徑，著重於 GTD 收集循環：快速將未竟事項放入 Mindwtr，再到應用程式內回顧及處理。第 2 版新增了帶日期的靜默收集、將任務讀入捷徑，以及 Spotlight 搜尋。
+Mindwtr 透過 App Intents，在 iPhone、iPad 及原生 Apple Watch App 上支援 Apple 捷徑，著重於 GTD 收集循環：快速將未竟事項放入 Mindwtr，再到應用程式內回顧及處理。第 2 版新增了帶日期的靜默收集、將任務讀入捷徑，以及 Spotlight 搜尋。
 
 這項功能刻意比 Things 成熟的捷徑系統精簡。Mindwtr 會謹慎地擴充動作範圍，以維持可靠性，也絕不繞過 Mindwtr 的一般任務建立、修訂及同步流程。
 
@@ -16,7 +16,7 @@ Mindwtr 透過原生 App Intents，在 iPhone 及 iPad 上支援 Apple 捷徑，
 | Siri | 是 |
 | Spotlight／建議的捷徑 | 是 |
 | 透過動作按鈕執行捷徑 | 是 |
-| Apple Watch 直接動作 | 透過捷徑與自架的收集 webhook；沒有原生手錶動作 |
+| Apple Watch 直接動作 | 支援，可在 TestFlight Watch App 中開啟收集或啟動番茄鐘 |
 | CarPlay | 否，v1 不支援 |
 
 ## 動作
@@ -164,7 +164,7 @@ Mindwtr 的捷徑支援尚未包含：
 
 - 編輯、完成、複製、刪除或批次動作。
 - 從「捷徑」設定重複任務或提醒排程（截止日期與開始日期只含日期）。
-- 原生 Apple Watch app，以及 CarPlay。
+- CarPlay。
 
 收集以外的寫入動作是接下來的規劃，將建立在 v2 導入的任務實體之上；這些仍需仔細設計，因為編輯及背景寫入必須維持 Mindwtr 的在地優先同步及 GTD 工作流程規則。
 

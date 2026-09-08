@@ -23,7 +23,7 @@ features:
     details: Installez Mindwtr sur ordinateur ou mobile, capturez votre première tâche et effectuez votre première revue.
     link: /fr/start/getting-started
   - title: Utiliser Mindwtr
-    details: Découvrez les versions ordinateur et mobile, la méthode GTD, les contextes, les revues, le calendrier, les pièces jointes et les raccourcis.
+    details: Découvrez les versions ordinateur, mobile et Apple Watch, la méthode GTD, les contextes, les revues, le calendrier, les pièces jointes et les raccourcis.
     link: /fr/use/desktop
   - title: Données et synchronisation
     details: Comprenez le stockage local, les sauvegardes, l’algorithme de synchronisation, iCloud, Dropbox, WebDAV, les diagnostics et la synchronisation auto-hébergée.

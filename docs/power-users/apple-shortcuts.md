@@ -1,6 +1,6 @@
 # Apple Shortcuts
 
-Mindwtr supports Apple Shortcuts through native App Intents on iPhone and iPad, focused on the GTD capture loop: get open loops into Mindwtr quickly, then review and process them inside the app. Version 2 adds silent capture with dates, reading tasks into shortcuts, and Spotlight search.
+Mindwtr supports Apple Shortcuts through native App Intents on iPhone, iPad, and the native Apple Watch companion, focused on the GTD capture loop: get open loops into Mindwtr quickly, then review and process them inside the app. Version 2 adds silent capture with dates, reading tasks into shortcuts, and Spotlight search.
 
 This is intentionally smaller than Things' mature Shortcuts system. Mindwtr grows the action set carefully so it stays reliable and never bypasses Mindwtr's normal task creation, revision, and sync paths.
 
@@ -16,7 +16,7 @@ Supported surfaces:
 | Siri | Yes |
 | Spotlight / suggested shortcuts | Yes |
 | Action Button running a shortcut | Yes |
-| Apple Watch direct actions | Through a shortcut and the self-hosted capture webhook; no native watch actions |
+| Apple Watch direct actions | Yes in the TestFlight Watch app: open capture and start Pomodoro |
 | CarPlay | No, not in v1 |
 
 ## Actions
@@ -164,7 +164,7 @@ Mindwtr's Shortcuts support does not yet include:
 
 - Edit, complete, duplicate, delete, or batch actions.
 - Recurring-task or reminder scheduling from Shortcuts (due and start dates are date-only).
-- A native Apple Watch app, and CarPlay.
+- CarPlay.
 
 Write actions beyond capture are planned next, built on the task entities introduced in v2 — they need careful design because edits and background writes must preserve Mindwtr's local-first sync and GTD workflow rules.
 

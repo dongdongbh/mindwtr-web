@@ -277,6 +277,16 @@ Notas:
 
 En iPhone y iPad, Mindwtr ofrece acciones nativas de Atajos de Apple para capturar en la Bandeja de entrada y abrir vistas GTD como Foco, En espera, Algún día, Proyectos, Revisión y Calendario. Consulta [Atajos de Apple](/es/power-users/apple-shortcuts) para ver la configuración, ejemplos y limitaciones de la v1.
 
+### App para Apple Watch (TestFlight)
+
+La compilación de TestFlight incluye una app nativa para Apple Watch probada en un reloj físico enlazado con watchOS 10 o posterior. Después de unirte a TestFlight, instala Mindwtr en el reloj desde la app Watch del iPhone.
+
+- **Capturar:** Toca **Hablar** para dictar una tarea en el reloj o **Grabar audio** para una grabación más larga. El iPhone puede ofrecer su teclado como método de entrada opcional. Puedes ignorar esa notificación y hablar en el reloj. Las capturas llegan a la Bandeja de entrada local de Mindwtr; la sincronización en la nube es opcional.
+- **Foco:** Revisa las tareas de Foco, completa una o aplázala hasta mañana.
+- **Pomodoro:** Inicia y controla el temporizador vinculado con Mindwtr en el iPhone.
+
+El reloj guarda las capturas cuando el iPhone no está disponible y las entrega cuando vuelve la conexión. La versión estable del App Store todavía no incluye la app para Watch.
+
 ### Captura rápida mediante esquema URL (Atajos de iOS/automatizaciones de Android)
 
 Mindwtr registra el esquema URL `mindwtr://`, por lo que puedes capturar tareas desde Atajos de iOS, Tasker u otras herramientas de automatización.

@@ -1,6 +1,6 @@
 # Atajos de Apple
 
-Mindwtr admite Atajos de Apple mediante App Intents nativos en iPhone y iPad, centrados en el ciclo de captura GTD: llevar rápidamente los asuntos pendientes a Mindwtr y después revisarlos y procesarlos dentro de la aplicación. La versión 2 añade captura silenciosa con fechas, lectura de tareas desde los atajos y búsqueda en Spotlight.
+Mindwtr admite Atajos de Apple mediante App Intents nativos en iPhone, iPad y la app nativa para Apple Watch, centrados en el ciclo de captura GTD: llevar rápidamente los asuntos pendientes a Mindwtr y después revisarlos y procesarlos dentro de la aplicación. La versión 2 añade captura silenciosa con fechas, lectura de tareas desde los atajos y búsqueda en Spotlight.
 
 Su alcance es deliberadamente menor que el sistema maduro de Atajos de Things. Mindwtr amplía el conjunto de acciones con cuidado para mantener la fiabilidad y no evitar nunca sus rutas normales de creación, revisión y sincronización.
 
@@ -14,7 +14,7 @@ Atajos está disponible en compilaciones iOS que incluyan la integración App In
 | Siri | Sí |
 | Spotlight / atajos sugeridos | Sí |
 | Botón Acción que ejecuta un atajo | Sí |
-| Acciones directas de Apple Watch | Mediante un atajo y el webhook de captura autoalojado; sin acciones nativas en el reloj |
+| Acciones directas de Apple Watch | Sí, en la app para Watch de TestFlight: abrir la captura e iniciar Pomodoro |
 | CarPlay | No, no en v1 |
 
 ## Acciones
@@ -156,7 +156,7 @@ La compatibilidad con Atajos de Mindwtr todavía no incluye:
 
 - acciones para editar, completar, duplicar, eliminar o trabajar por lotes;
 - planificación desde Atajos de tareas recurrentes o recordatorios (las fechas límite y de inicio son solo fecha);
-- una aplicación nativa para Apple Watch y CarPlay.
+- CarPlay.
 
 Las acciones de escritura más allá de la captura son lo siguiente en la lista, apoyadas en las entidades de tarea que introdujo la v2; requieren un diseño cuidadoso para que las ediciones y escrituras en segundo plano respeten la sincronización local-first y las reglas GTD.
 

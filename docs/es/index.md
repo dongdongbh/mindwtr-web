@@ -23,7 +23,7 @@ features:
     details: Instala Mindwtr en tu equipo o dispositivo móvil, captura tu primera tarea y realiza tu primera revisión.
     link: /es/start/getting-started
   - title: Usar Mindwtr
-    details: Aprende a usar las versiones de escritorio y móvil, el flujo GTD, los contextos, las revisiones, el calendario, los adjuntos y los atajos.
+    details: Aprende a usar las versiones de escritorio, móvil y Apple Watch, el flujo GTD, los contextos, las revisiones, el calendario, los adjuntos y los atajos.
     link: /es/use/desktop
   - title: Datos y sincronización
     details: Conoce los datos locales, las copias de seguridad, el algoritmo de sincronización, iCloud, Dropbox, WebDAV, el diagnóstico y la sincronización autohospedada.

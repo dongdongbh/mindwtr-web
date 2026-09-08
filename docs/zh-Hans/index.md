@@ -23,7 +23,7 @@ features:
     details: 在桌面端或移动端安装 Mindwtr，记录第一项任务，并完成第一次回顾。
     link: /zh-Hans/start/getting-started
   - title: 使用 Mindwtr
-    details: 了解桌面端、移动端、GTD 工作流程、情境、回顾、日历、附件和快捷键。
+    details: 了解桌面端、移动端、Apple Watch、GTD 工作流程、情境、回顾、日历、附件和快捷键。
     link: /zh-Hans/use/desktop
   - title: 数据与同步
     details: 了解本地数据、备份、同步算法、iCloud、Dropbox、WebDAV、诊断和自托管同步。

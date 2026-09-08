@@ -1,6 +1,6 @@
 # Raccourcis Apple
 
-Mindwtr prend en charge les Raccourcis Apple grâce aux App Intents natifs sur iPhone et iPad, en se concentrant sur la boucle de capture GTD : consignez rapidement vos préoccupations dans Mindwtr, puis examinez-les et traitez-les dans l’application. La version 2 ajoute la capture silencieuse avec dates, la lecture des tâches dans les raccourcis et la recherche Spotlight.
+Mindwtr prend en charge les Raccourcis Apple grâce aux App Intents natifs sur iPhone, iPad et dans l’app native pour Apple Watch, en se concentrant sur la boucle de capture GTD : consignez rapidement vos préoccupations dans Mindwtr, puis examinez-les et traitez-les dans l’application. La version 2 ajoute la capture silencieuse avec dates, la lecture des tâches dans les raccourcis et la recherche Spotlight.
 
 Cette intégration est volontairement moins étendue que le système mature de raccourcis de Things. Mindwtr étoffe son jeu d’actions avec prudence, afin de rester fiable et de ne jamais contourner les mécanismes habituels de Mindwtr pour la création, la révision et la synchronisation des tâches.
 
@@ -16,7 +16,7 @@ Surfaces prises en charge :
 | Siri | Oui |
 | Spotlight / raccourcis suggérés | Oui |
 | Bouton Action exécutant un raccourci | Oui |
-| Actions directes sur Apple Watch | Via un raccourci et le webhook de capture auto-hébergé ; pas d’actions natives sur la montre |
+| Actions directes sur Apple Watch | Oui, dans l’app Watch TestFlight : ouvrir la capture et démarrer Pomodoro |
 | CarPlay | Non, pas dans la v1 |
 
 ## Actions
@@ -164,7 +164,7 @@ La prise en charge des Raccourcis par Mindwtr n’inclut pas encore :
 
 - D’actions de modification, d’achèvement, de duplication, de suppression ou de traitement par lots.
 - De planification de tâches récurrentes ou de rappels depuis Raccourcis (les dates d’échéance et de début sont sans heure).
-- D’app native pour l’Apple Watch, ni de CarPlay.
+- De CarPlay.
 
 Les actions d’écriture au-delà de la capture sont la prochaine étape, bâties sur les entités de tâche introduites en v2 ; elles nécessitent une conception soigneuse, car les modifications et les écritures en arrière-plan doivent préserver la synchronisation locale d’abord et les règles du flux GTD de Mindwtr.
 

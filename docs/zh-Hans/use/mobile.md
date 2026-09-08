@@ -277,6 +277,16 @@ adb shell am start -a android.intent.action.VIEW -d 'mindwtr://contexts?token=%4
 
 在 iPhone 和 iPad 上，Mindwtr 提供原生 Apple 快捷指令操作，用于收集到收集箱以及打开专注、等待中、将来、项目、回顾和日历等 GTD 视图。有关设置、示例和 v1 限制，请参阅 [Apple 快捷指令](/zh-Hans/power-users/apple-shortcuts)。
 
+### Apple Watch App（TestFlight）
+
+TestFlight 构建包含原生 Apple Watch App，并已在运行 watchOS 10 或更新版本的配对实体手表上测试。加入 TestFlight 后，请通过 iPhone 上的 Watch App 将 Mindwtr 安装到手表。
+
+- **记录：** 轻点**说话**可直接在手表上听写任务，轻点**录制音频**可进行较长的录音。iPhone 可能会将其键盘作为可选输入方式。你可以忽略该通知，直接对手表说话。记录内容会进入 Mindwtr 的本地收集箱；云同步为可选功能。
+- **专注：** 查看专注任务、完成任务或将其推迟到明天。
+- **番茄钟：** 启动并控制与 iPhone 上 Mindwtr 关联的计时器。
+
+iPhone 不可用时，手表会保留记录内容，并在连接恢复后传送。App Store 稳定版暂不包含 Watch App。
+
 ### URL Scheme 快速收集（iOS 快捷指令 / Android 自动化）
 
 Mindwtr 注册了 URL scheme `mindwtr://`，因此你可以从 iOS 快捷指令、Tasker 或其他自动化工具收集任务。

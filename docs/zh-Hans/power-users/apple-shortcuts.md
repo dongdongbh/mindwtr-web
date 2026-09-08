@@ -1,6 +1,6 @@
 # Apple 快捷指令
 
-Mindwtr 通过 iPhone 和 iPad 上的原生 App Intents 支持 Apple 快捷指令，聚焦 GTD 记录循环：快速把未闭合事项放入 Mindwtr，再在应用内回顾和处理。第 2 版新增了带日期的静默记录、把任务读入快捷指令，以及 Spotlight 搜索。
+Mindwtr 通过 iPhone、iPad 和原生 Apple Watch App 上的 App Intents 支持 Apple 快捷指令，聚焦 GTD 记录循环：快速把未闭合事项放入 Mindwtr，再在应用内回顾和处理。第 2 版新增了带日期的静默记录、把任务读入快捷指令，以及 Spotlight 搜索。
 
 这套功能有意小于 Things 已成熟的快捷指令系统。Mindwtr 会谨慎地扩充操作集，确保可靠，并且绝不绕过 Mindwtr 的常规任务创建、修订和同步路径。
 
@@ -16,7 +16,7 @@ Mindwtr 通过 iPhone 和 iPad 上的原生 App Intents 支持 Apple 快捷指�
 | Siri | 是 |
 | Spotlight / 建议的快捷指令 | 是 |
 | 通过操作按钮运行快捷指令 | 是 |
-| Apple Watch 直接操作 | 通过快捷指令和自托管的记录 webhook 实现；没有原生手表操作 |
+| Apple Watch 直接操作 | 支持，可在 TestFlight Watch App 中打开记录或启动番茄钟 |
 | CarPlay | 否，v1 不支持 |
 
 ## 操作
@@ -164,7 +164,7 @@ Mindwtr 的快捷指令支持暂不包含：
 
 - 编辑、完成、复制、删除或批量操作。
 - 从快捷指令设置重复任务或提醒（截止日期和开始日期只含日期）。
-- 原生 Apple Watch 应用，以及 CarPlay。
+- CarPlay。
 
 记录之外的写入操作是接下来的计划，将基于第 2 版引入的任务实体构建；它们需要谨慎设计，因为编辑和后台写入必须保持 Mindwtr 的本地优先同步与 GTD 工作流程规则。
 

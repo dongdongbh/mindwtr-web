@@ -67,7 +67,7 @@ La beta de TestFlight también está disponible en https://testflight.apple.com/
 
 [![Beta de TestFlight](https://img.shields.io/badge/TestFlight-Beta-0A84FF?logo=apple&logoColor=white)](https://testflight.apple.com/join/7SMJCTSR)
 
-El proceso de publicación está configurado para distribuir la compatibilidad con Apple Watch solo mediante TestFlight al principio; todavía no se ha publicado una compilación con Watch. Cuando haya una disponible, enlaza un Apple Watch con watchOS 10 o posterior con tu iPhone e instala Mindwtr desde la app Watch del iPhone. La app para Watch permite capturar texto y audio, completar o aplazar tareas de Enfoque y usar un temporizador Pomodoro vinculado. La versión estable del App Store no incluye la app para Watch.
+La app nativa para Apple Watch está disponible en la compilación de TestFlight y se ha probado en un reloj físico enlazado. Enlaza un Apple Watch con watchOS 10 o posterior con tu iPhone, instala la última compilación de Mindwtr desde TestFlight y después instala Mindwtr desde la app Watch del iPhone. Desde la muñeca puedes dictar o grabar capturas para la Bandeja de entrada, completar o aplazar tareas de Enfoque y controlar un temporizador Pomodoro vinculado. La versión estable del App Store todavía no incluye la app para Watch.
 
 ### Opciones
 

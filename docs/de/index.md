@@ -23,7 +23,7 @@ features:
     details: Installieren Sie Mindwtr auf dem Desktop oder Mobilgerät, erfassen Sie Ihre erste Aufgabe und führen Sie Ihre erste Durchsicht durch.
     link: /de/start/getting-started
   - title: Mindwtr verwenden
-    details: Lernen Sie Desktop- und Mobil-App, den GTD-Arbeitsablauf, Kontexte, Durchsichten, Kalender, Anhänge und Tastaturkürzel kennen.
+    details: Lernen Sie Desktop-, Mobil- und Apple-Watch-App, den GTD-Arbeitsablauf, Kontexte, Durchsichten, Kalender, Anhänge und Tastaturkürzel kennen.
     link: /de/use/desktop
   - title: Daten und Synchronisierung
     details: Erfahren Sie mehr über lokale Daten, Sicherungen, den Synchronisierungsalgorithmus, iCloud, Dropbox, WebDAV, Diagnose und selbst gehostete Synchronisierung.

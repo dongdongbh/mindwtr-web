@@ -1,6 +1,6 @@
 # Apple-Kurzbefehle
 
-Mindwtr unterstützt Apple-Kurzbefehle auf iPhone und iPad über native App Intents, mit Schwerpunkt auf dem GTD-Erfassungsablauf: offene Punkte schnell in Mindwtr übernehmen und sie anschließend in der App durchsehen und verarbeiten. Version 2 ergänzt die Erfassung im Hintergrund mit Datumsangaben, das Auslesen von Aufgaben in Kurzbefehle und die Spotlight-Suche.
+Mindwtr unterstützt Apple-Kurzbefehle auf iPhone, iPad und in der nativen Apple-Watch-App über App Intents, mit Schwerpunkt auf dem GTD-Erfassungsablauf: offene Punkte schnell in Mindwtr übernehmen und sie anschließend in der App durchsehen und verarbeiten. Version 2 ergänzt die Erfassung im Hintergrund mit Datumsangaben, das Auslesen von Aufgaben in Kurzbefehle und die Spotlight-Suche.
 
 Der Umfang ist bewusst kleiner als das ausgereifte Kurzbefehlsystem von Things. Mindwtr erweitert den Aktionsumfang behutsam, damit die Funktion zuverlässig bleibt und die normalen Abläufe zur Aufgabenerstellung, Revision und Synchronisierung von Mindwtr nie umgeht.
 
@@ -16,7 +16,7 @@ Unterstützte Oberflächen:
 | Siri | Ja |
 | Spotlight/vorgeschlagene Kurzbefehle | Ja |
 | Ausführen eines Kurzbefehls über die Aktionstaste | Ja |
-| Direkte Aktionen auf der Apple Watch | Über einen Kurzbefehl und den selbst gehosteten Erfassungs-Webhook; keine nativen Watch-Aktionen |
+| Direkte Aktionen auf der Apple Watch | Ja, in der TestFlight-Watch-App: Erfassung öffnen und Pomodoro starten |
 | CarPlay | Nein, nicht in v1 |
 
 ## Aktionen
@@ -164,7 +164,7 @@ Die Kurzbefehl-Unterstützung von Mindwtr enthält noch nicht:
 
 - Aktionen zum Bearbeiten, Abschließen, Duplizieren, Löschen oder zur Stapelverarbeitung
 - Planung wiederkehrender Aufgaben oder Erinnerungen aus Kurzbefehle (Fälligkeits- und Startdatum sind reine Datumsangaben)
-- Eine native Apple-Watch-App und CarPlay
+- CarPlay
 
 Schreibende Aktionen über die Erfassung hinaus sind als Nächstes geplant, aufbauend auf den mit v2 eingeführten Aufgaben-Entitäten. Sie müssen sorgfältig entworfen werden, da Bearbeitungen und Schreibvorgänge im Hintergrund die Local-First-Synchronisierung und die GTD-Ablaufregeln von Mindwtr erhalten müssen.
 

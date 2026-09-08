@@ -67,7 +67,7 @@ TestFlight 測試版也可從 https://testflight.apple.com/join/7SMJCTSR 取得�
 
 [![TestFlight beta](https://img.shields.io/badge/TestFlight-Beta-0A84FF?logo=apple&logoColor=white)](https://testflight.apple.com/join/7SMJCTSR)
 
-發布流程已設定為初期只透過 TestFlight 發布 Apple Watch 支援；目前尚未發布包含 Watch 的建置。此類建置發布後，請將執行 watchOS 10 或更新版本的 Apple Watch 與 iPhone 配對，然後透過 iPhone 上的 Watch App 安裝 Mindwtr。Watch App 支援擷取文字與音訊、完成或延後專注任務，以及使用連結的番茄鐘。App Store 穩定版不包含 Watch App。
+原生 Apple Watch App 已透過 TestFlight 提供，並已在配對的實體手錶上測試。請將執行 watchOS 10 或更新版本的 Apple Watch 與 iPhone 配對，安裝最新的 Mindwtr TestFlight 建置，再透過 iPhone 上的 Watch App 安裝 Mindwtr。你可以直接在手腕上說出或錄製收集箱內容、完成或延後專注任務，以及控制連結的番茄鐘。App Store 穩定版暫不包含 Watch App。
 
 ### 選項
 

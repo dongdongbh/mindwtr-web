@@ -23,7 +23,7 @@ features:
     details: 在桌面或行動裝置安裝 Mindwtr，收集第一項任務，並完成第一次回顧。
     link: /zh-Hant/start/getting-started
   - title: 使用 Mindwtr
-    details: 認識桌面版、行動版、GTD 工作流程、情境、回顧、行事曆、附件與快速鍵。
+    details: 認識桌面版、行動版、Apple Watch、GTD 工作流程、情境、回顧、行事曆、附件與快速鍵。
     link: /zh-Hant/use/desktop
   - title: 資料與同步
     details: 瞭解本機資料、備份、同步演算法、iCloud、Dropbox、WebDAV、診斷與自行託管同步。

@@ -23,7 +23,7 @@ features:
     details: Install Mindwtr on desktop or mobile, capture your first task, and run your first review.
     link: /start/getting-started
   - title: Use Mindwtr
-    details: Learn desktop, mobile, GTD workflow, contexts, reviews, calendar, attachments, and shortcuts.
+    details: Learn desktop, mobile, Apple Watch, GTD workflow, contexts, reviews, calendar, attachments, and shortcuts.
     link: /use/desktop
   - title: Data and sync
     details: Understand local data, backups, sync algorithm, iCloud, Dropbox, WebDAV, diagnostics, and self-hosted sync.

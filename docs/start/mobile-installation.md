@@ -67,7 +67,7 @@ TestFlight beta is also available at https://testflight.apple.com/join/7SMJCTSR.
 
 [![TestFlight beta](https://img.shields.io/badge/TestFlight-Beta-0A84FF?logo=apple&logoColor=white)](https://testflight.apple.com/join/7SMJCTSR)
 
-The native Apple Watch companion is available in the TestFlight build and has been tested on a paired physical Watch. Pair an Apple Watch running watchOS 10 or later with your iPhone, install the latest Mindwtr TestFlight build, then install Mindwtr from the Watch app on the iPhone. You can speak or record an Inbox capture, complete or defer Focus tasks, and control a linked Pomodoro timer from your wrist. The stable App Store build does not include the Watch app yet.
+Starting with the next stable App Store release, the iOS app includes a native Apple Watch companion tested on a paired physical Watch. Pair an Apple Watch running watchOS 10 or later with your iPhone, install Mindwtr, then install it from the Watch app on the iPhone. Tap **Speak to Capture** to record audio for iPhone transcription, or tap **Type** to enter text. You can also complete or defer Focus tasks and control a linked Pomodoro timer from your wrist.
 
 ### Options
 

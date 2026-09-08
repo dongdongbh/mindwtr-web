@@ -258,15 +258,15 @@ Hinweise:
 
 Auf iPhone und iPad stellt Mindwtr native Apple-Kurzbefehlsaktionen für Eingangserfassung und GTD-Ansichten wie Fokus, Warten, Irgendwann, Projekte, Durchsicht und Kalender bereit. Siehe [Apple-Kurzbefehle](/de/power-users/apple-shortcuts).
 
-### Apple-Watch-App (TestFlight)
+### Apple-Watch-App
 
-Der TestFlight-Build enthält eine native Apple-Watch-App, die auf einer gekoppelten physischen Watch mit watchOS 10 oder neuer getestet wurde. Installiere Mindwtr nach dem Beitritt zu TestFlight über die Watch-App auf dem iPhone.
+Die native Apple-Watch-App wurde auf einer gekoppelten physischen Watch mit watchOS 10 oder neuer getestet und wird ab dem nächsten stabilen App-Store-Release enthalten sein. Installiere Mindwtr über die Watch-App auf dem iPhone auf der Watch.
 
-- **Erfassen:** Tippe auf **Sprechen**, um eine Aufgabe auf der Watch zu diktieren, oder auf **Audio aufnehmen** für eine längere Aufnahme. Das iPhone kann seine Tastatur als optionale Eingabemethode anbieten. Du kannst diese Mitteilung ignorieren und auf der Watch sprechen. Die Erfassung landet im lokalen Mindwtr-Eingang; Cloud-Synchronisierung ist optional.
+- **Erfassen:** Tippe auf **Sprechen**, um Audio auf der Watch für die Transkription auf dem iPhone aufzunehmen. Tippe auf **Tippen**, um Text einzugeben; das iPhone kann seine Tastatur als optionale Eingabemethode anbieten. Die Erfassung landet im lokalen Mindwtr-Eingang; Cloud-Synchronisierung ist optional.
 - **Fokus:** Prüfe Fokus-Aufgaben, schließe eine ab oder verschiebe sie auf morgen.
 - **Pomodoro:** Starte und steuere den mit Mindwtr auf dem iPhone verknüpften Timer.
 
-Die Watch hält Erfassungen bereit, wenn das iPhone nicht verfügbar ist, und übermittelt sie nach der erneuten Verbindung. Die stabile App-Store-Version enthält die Watch-App noch nicht.
+Die Watch hält Erfassungen bereit, wenn das iPhone nicht verfügbar ist, und übermittelt sie nach der erneuten Verbindung.
 
 ### URL-Schema-Schnellerfassung
 

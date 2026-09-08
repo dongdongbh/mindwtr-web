@@ -14,7 +14,7 @@ Atajos está disponible en compilaciones iOS que incluyan la integración App In
 | Siri | Sí |
 | Spotlight / atajos sugeridos | Sí |
 | Botón Acción que ejecuta un atajo | Sí |
-| Acciones directas de Apple Watch | Sí, en la app para Watch de TestFlight: abrir la captura e iniciar Pomodoro |
+| Acciones directas en Apple Watch | Sí, en la app nativa para Watch: abrir Captura e iniciar Pomodoro. Incluida a partir de la próxima versión estable |
 | CarPlay | No, no en v1 |
 
 ## Acciones

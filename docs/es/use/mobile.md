@@ -277,15 +277,15 @@ Notas:
 
 En iPhone y iPad, Mindwtr ofrece acciones nativas de Atajos de Apple para capturar en la Bandeja de entrada y abrir vistas GTD como Foco, En espera, Algún día, Proyectos, Revisión y Calendario. Consulta [Atajos de Apple](/es/power-users/apple-shortcuts) para ver la configuración, ejemplos y limitaciones de la v1.
 
-### App para Apple Watch (TestFlight)
+### App para Apple Watch
 
-La compilación de TestFlight incluye una app nativa para Apple Watch probada en un reloj físico enlazado con watchOS 10 o posterior. Después de unirte a TestFlight, instala Mindwtr en el reloj desde la app Watch del iPhone.
+La app nativa para Apple Watch se ha probado en un Watch físico enlazado con watchOS 10 o posterior y se incluirá a partir de la próxima versión estable de App Store. Instala Mindwtr en el reloj desde la app Watch del iPhone.
 
-- **Capturar:** Toca **Hablar** para dictar una tarea en el reloj o **Grabar audio** para una grabación más larga. El iPhone puede ofrecer su teclado como método de entrada opcional. Puedes ignorar esa notificación y hablar en el reloj. Las capturas llegan a la Bandeja de entrada local de Mindwtr; la sincronización en la nube es opcional.
+- **Capturar:** Toca **Hablar** para grabar audio en el reloj y transcribirlo en el iPhone. Toca **Escribir** para introducir texto; el iPhone puede ofrecer su teclado como método de entrada opcional. Las capturas llegan a la Bandeja de entrada local de Mindwtr; la sincronización en la nube es opcional.
 - **Foco:** Revisa las tareas de Foco, completa una o aplázala hasta mañana.
 - **Pomodoro:** Inicia y controla el temporizador vinculado con Mindwtr en el iPhone.
 
-El reloj guarda las capturas cuando el iPhone no está disponible y las entrega cuando vuelve la conexión. La versión estable del App Store todavía no incluye la app para Watch.
+El Watch conserva las capturas en cola cuando el iPhone no está disponible y las entrega al restablecerse la conexión.
 
 ### Captura rápida mediante esquema URL (Atajos de iOS/automatizaciones de Android)
 

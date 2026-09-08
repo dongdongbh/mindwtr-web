@@ -277,15 +277,15 @@ Remarques :
 
 Sur iPhone et iPad, Mindwtr propose des actions Raccourcis Apple natives pour la collecte dans la Boîte de réception et l’ouverture de vues GTD telles que Focus, En attente, Un jour, Projets, Revue et Calendrier. Consultez [Raccourcis Apple](/fr/power-users/apple-shortcuts) pour la configuration, des exemples et les limites de la v1.
 
-### App Apple Watch (TestFlight)
+### App Apple Watch
 
-La version TestFlight comprend une app native pour Apple Watch testée sur une montre physique jumelée sous watchOS 10 ou version ultérieure. Après avoir rejoint TestFlight, installez Mindwtr sur la montre depuis l’app Watch de l’iPhone.
+L’app native pour Apple Watch a été testée sur une montre physique jumelée sous watchOS 10 ou version ultérieure et sera incluse à partir de la prochaine version stable de l’App Store. Installez Mindwtr sur la montre depuis l’app Watch de l’iPhone.
 
-- **Capturer :** Touchez **Parler** pour dicter une tâche sur la montre, ou **Enregistrer l’audio** pour un enregistrement plus long. L’iPhone peut proposer son clavier comme méthode de saisie facultative. Vous pouvez ignorer cette notification et parler sur la montre. Les captures arrivent dans la Boîte de réception locale de Mindwtr ; la synchronisation dans le cloud reste facultative.
+- **Capturer :** Touchez **Parler** pour enregistrer l’audio sur la montre et le transcrire sur l’iPhone. Touchez **Saisie** pour entrer du texte ; l’iPhone peut proposer son clavier comme méthode de saisie facultative. Les captures arrivent dans la Boîte de réception locale de Mindwtr ; la synchronisation dans le cloud reste facultative.
 - **Focus :** Consultez les tâches Focus, terminez-en une ou reportez-la à demain.
 - **Pomodoro :** Démarrez et contrôlez le minuteur associé à Mindwtr sur l’iPhone.
 
-La montre conserve les captures lorsque l’iPhone n’est pas disponible et les transmet au retour de la connexion. La version stable de l’App Store n’inclut pas encore l’app Watch.
+L’app conserve les captures sur la montre lorsque l’iPhone n’est pas disponible et les transmet au retour de la connexion.
 
 ### Capture rapide par schéma d’URL (Raccourcis iOS / automatisations Android)
 

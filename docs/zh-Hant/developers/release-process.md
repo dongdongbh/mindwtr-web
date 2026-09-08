@@ -55,7 +55,7 @@ RC 建置只發布至能支援測試人員且不會帶來高額維護成本的�
 | --- | --- | --- |
 | 所有直接下載 | GitHub 預發布版本 | 最終 GitHub 版本會成為穩定版下載來源。 |
 | iOS | TestFlight | App Store 仍為穩定版管道。 |
-| Apple Watch | TestFlight 中包含 Watch 的 iOS 封存 | 穩定版 App Store 封存不包含 Watch；穩定版工作流程會在 iOS 工作後以獨立工作上傳包含 Watch 的建置。 |
+| Apple Watch | TestFlight 中包含 Watch 的 iOS 封存 | 穩定版會將同一個包含 Watch 的 iOS 封存提交 App Store 審核，並透過 TestFlight 發布。 |
 | macOS App Store 建置 | TestFlight | Mac App Store 仍為穩定版管道。 |
 | Android Play 建置 | 預設使用 Google Play 內部測試與公開測試（`beta`）；設定後可使用封閉／自訂測試群組 | 正式環境稍後會收到穩定版上傳，內部測試群組則由穩定版工作流程重新整理。 |
 | Linux Flatpak | Flathub beta 分支 | 穩定版會同時發布至 stable 與 beta 分支，避免 Beta 使用者停留在舊版本。 |
@@ -95,7 +95,7 @@ RC 工作流程為 `.github/workflows/release-rc.yml`。
 
 穩定版 `release.yml` 仍是穩定版發布工作流程。其防護會阻止預發布標籤發布至僅限穩定版的管道，例如 Google Play 正式環境、Microsoft Store、Snap stable、Linux APT/RPM 儲存庫、Flathub stable、AUR stable、Scoop、winget、Homebrew 或 Chocolatey。
 
-可重複使用的 iOS 工作流程將 `watch_testflight` 預設為 false。穩定版正式發布會保留此值，並提交不包含 Watch App 的封存。該工作完成後，獨立工作會將包含 Watch 的封存上傳至 TestFlight，且不會修改或提交 App Store 正式版本。它會直接接收正式版本的建置編號，在 App Store Connect 完成索引前選取更高的編號、等待處理完成，並將這個確切建置發布給已設定的外部測試群組。手動復原穩定版時可只選擇 `run_ios_watch_testflight`。如果 App Store Connect 無法提供遠端建置編號，Watch 上傳會停止。
+可重複使用的 iOS 工作流程會分開控制是否包含 Watch（`include_watch`）與是否僅發布至 TestFlight（`testflight_only`）。臨時呼叫時兩項預設均為 false。RC 工作流程會明確啟用兩項，產生包含 Watch 且僅發布至 TestFlight 的建置，不會修改 App Store 正式版本。穩定版工作流程會包含 Watch，並停用僅限 TestFlight 的路由，因此同一個封存會提交 App Store 審核並透過 TestFlight 發布。手動復原穩定版時選擇 `run_ios_appstore`；不再有獨立的 Watch 上傳工作。
 
 Flathub beta 需要 `flathub/tech.dongdongbh.mindwtr` 中的 beta 分支與權限。穩定版在完成乾淨容器驗證與擁有權檢查後，由 `release.yml` 發布 AUR `mindwtr-bin` 套件。從原始碼建置的 `mindwtr` 套件由社群維護，不屬於發行流程。RC 建置透過 `update-aur-beta.yml` 發布 `mindwtr-beta-bin`，並執行相同的安全檢查。如果 AUR 在維護期間停用推送，請在恢復推送後重新執行該管道。
 

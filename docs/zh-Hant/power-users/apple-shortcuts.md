@@ -16,7 +16,7 @@ Mindwtr 透過 App Intents，在 iPhone、iPad 及原生 Apple Watch App 上支�
 | Siri | 是 |
 | Spotlight／建議的捷徑 | 是 |
 | 透過動作按鈕執行捷徑 | 是 |
-| Apple Watch 直接動作 | 支援，可在 TestFlight Watch App 中開啟收集或啟動番茄鐘 |
+| Apple Watch 直接操作 | 支援，可在原生 Watch App 中開啟記錄或啟動番茄鐘。從下一個穩定版開始包含 |
 | CarPlay | 否，v1 不支援 |
 
 ## 動作

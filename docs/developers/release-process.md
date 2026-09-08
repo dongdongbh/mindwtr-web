@@ -55,7 +55,7 @@ Publish RC builds only to channels that can support testers without creating hig
 | --- | --- | --- |
 | All direct downloads | GitHub prerelease | Final GitHub release becomes the stable download source. |
 | iOS | TestFlight | App Store remains the stable channel. |
-| Apple Watch | Watch-enabled iOS archive in TestFlight | The stable App Store archive stays Watch-free; the stable workflow uploads the Watch-enabled build in a separate post-iOS job. |
+| Apple Watch | Watch-enabled iOS archive in TestFlight | Stable releases submit the same Watch-enabled iOS archive for App Store review and distribute it through TestFlight. |
 | macOS App Store build | TestFlight | Mac App Store remains the stable channel. |
 | Android Play build | Google Play internal testing and open testing (`beta`) by default; closed/custom tracks when configured | Production receives a later stable upload, and the internal test track is refreshed by the stable workflow. |
 | Linux Flatpak | Flathub beta branch | Stable releases publish to both stable and beta branches so beta users are not stranded. |
@@ -95,7 +95,7 @@ It also publishes tester builds to the store-backed channels that are already wi
 
 The stable `release.yml` remains the stable-release workflow. It is guarded so prerelease tags do not publish stable-only channels such as production Google Play, Microsoft Store, Snap stable, Linux APT/RPM repos, Flathub stable, AUR stable, Scoop, winget, Homebrew, or Chocolatey.
 
-The reusable iOS workflow defaults `watch_testflight` to false. Stable production keeps that default and submits an archive with no Watch app. After that job finishes, a separate job uploads the Watch-enabled archive to TestFlight without editing or submitting the production App Store version. It receives the production build number directly, chooses a higher number before App Store Connect indexing completes, waits for processing, and distributes that exact build to the configured external group. Manual stable recovery can select `run_ios_watch_testflight` on its own. A Watch upload stops if App Store Connect cannot provide the remote build number.
+The reusable iOS workflow keeps Watch inclusion (`include_watch`) separate from TestFlight-only routing (`testflight_only`). Both inputs default to false for ad hoc callers. The RC workflow explicitly enables both, producing a Watch-enabled TestFlight build without changing the production App Store version. The stable workflow enables Watch and leaves TestFlight-only routing disabled, so one archive is submitted for App Store review and distributed to TestFlight. Manual stable recovery selects `run_ios_appstore`; there is no separate Watch upload job.
 
 Flathub beta requires the beta branch and permissions in `flathub/tech.dongdongbh.mindwtr`. Stable releases publish the AUR `mindwtr-bin` package from `release.yml` after clean-container validation and ownership checks. The source-built `mindwtr` package is community maintained and is not part of the release pipeline. RC builds publish `mindwtr-beta-bin` through `update-aur-beta.yml` with the same safety checks. If AUR disables pushes during maintenance, rerun that channel after pushes resume.
 

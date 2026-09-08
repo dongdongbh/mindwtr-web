@@ -16,7 +16,7 @@ Unterstützte Oberflächen:
 | Siri | Ja |
 | Spotlight/vorgeschlagene Kurzbefehle | Ja |
 | Ausführen eines Kurzbefehls über die Aktionstaste | Ja |
-| Direkte Aktionen auf der Apple Watch | Ja, in der TestFlight-Watch-App: Erfassung öffnen und Pomodoro starten |
+| Direkte Aktionen auf der Apple Watch | Ja, in der nativen Watch-App: Erfassung öffnen und Pomodoro starten. Ab dem nächsten stabilen Release enthalten |
 | CarPlay | Nein, nicht in v1 |
 
 ## Aktionen

@@ -68,7 +68,7 @@ Die TestFlight-Beta ist ebenfalls unter https://testflight.apple.com/join/7SMJCT
 
 [![TestFlight beta](https://img.shields.io/badge/TestFlight-Beta-0A84FF?logo=apple&logoColor=white)](https://testflight.apple.com/join/7SMJCTSR)
 
-Die native Apple-Watch-App ist im TestFlight-Build verfügbar und wurde auf einer gekoppelten physischen Watch getestet. Kopple eine Apple Watch mit watchOS 10 oder neuer mit deinem iPhone, installiere den neuesten Mindwtr-TestFlight-Build und installiere Mindwtr anschließend über die Watch-App auf dem iPhone. Du kannst am Handgelenk Eingangseinträge einsprechen oder aufnehmen, Fokus-Aufgaben abschließen oder auf morgen verschieben und einen verknüpften Pomodoro-Timer steuern. Die stabile App-Store-Version enthält die Watch-App noch nicht.
+Ab dem nächsten stabilen App-Store-Release enthält die iOS-App eine native Apple-Watch-App, die auf einer gekoppelten physischen Watch getestet wurde. Kopple eine Apple Watch mit watchOS 10 oder neuer mit deinem iPhone, installiere Mindwtr und danach Mindwtr über die Watch-App auf dem iPhone. Tippe auf **Sprechen**, um Audio zur Transkription auf dem iPhone aufzunehmen, oder auf **Tippen**, um Text einzugeben. Außerdem kannst du Fokus-Aufgaben abschließen oder verschieben und einen verknüpften Pomodoro-Timer steuern.
 
 ### Möglichkeiten
 

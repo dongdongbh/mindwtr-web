@@ -16,7 +16,7 @@ Supported surfaces:
 | Siri | Yes |
 | Spotlight / suggested shortcuts | Yes |
 | Action Button running a shortcut | Yes |
-| Apple Watch direct actions | Yes in the TestFlight Watch app: open capture and start Pomodoro |
+| Apple Watch direct actions | Yes in the native Watch app: open capture and start Pomodoro. Included starting with the next stable release |
 | CarPlay | No, not in v1 |
 
 ## Actions

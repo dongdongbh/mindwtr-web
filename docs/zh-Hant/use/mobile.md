@@ -276,15 +276,15 @@ adb shell am start -a android.intent.action.VIEW -d 'mindwtr://contexts?token=%4
 
 在 iPhone 與 iPad 上，Mindwtr 提供原生 Apple 捷徑動作，供收集箱收集，以及開啟「專注」、「等待中」、「將來」、「專案」、「回顧」與「行事曆」等 GTD 檢視。設定、範例與 v1 限制請參閱 [Apple 捷徑](/zh-Hant/power-users/apple-shortcuts)。
 
-### Apple Watch App（TestFlight）
+### Apple Watch App
 
-TestFlight 建置包含原生 Apple Watch App，並已在執行 watchOS 10 或更新版本的配對實體手錶上測試。加入 TestFlight 後，請透過 iPhone 上的 Watch App 將 Mindwtr 安裝到手錶。
+原生 Apple Watch App 已在執行 watchOS 10 或更新版本的配對實體手錶上測試，並將從下一個 App Store 穩定版開始包含。請透過 iPhone 上的 Watch App 將 Mindwtr 安裝到手錶。
 
-- **收集：** 點一下**說話**可直接在手錶上聽寫任務，點一下**錄製音訊**可進行較長的錄音。iPhone 可能會將鍵盤作為選用輸入方式。你可以忽略該通知，直接對手錶說話。收集內容會進入 Mindwtr 的本機收集箱；雲端同步為選用功能。
+- **收集：** 點一下**說話**可在手錶上錄製音訊，並由 iPhone 轉寫。點一下**輸入**可鍵入文字；iPhone 可能會將鍵盤作為選用輸入方式。收集內容會進入 Mindwtr 的本機收集箱；雲端同步為選用功能。
 - **專注：** 查看專注任務、完成任務或將其延後到明天。
 - **番茄鐘：** 啟動並控制與 iPhone 上 Mindwtr 連結的計時器。
 
-iPhone 無法使用時，手錶會保留收集內容，並在連線恢復後傳送。App Store 穩定版暫不包含 Watch App。
+iPhone 無法使用時，手錶會將記錄保留在佇列中，並在連線恢復後傳送。
 
 ### URL Scheme 快速收集（iOS 捷徑／Android 自動化）
 

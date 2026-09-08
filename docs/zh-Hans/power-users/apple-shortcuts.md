@@ -16,7 +16,7 @@ Mindwtr 通过 iPhone、iPad 和原生 Apple Watch App 上的 App Intents 支持
 | Siri | 是 |
 | Spotlight / 建议的快捷指令 | 是 |
 | 通过操作按钮运行快捷指令 | 是 |
-| Apple Watch 直接操作 | 支持，可在 TestFlight Watch App 中打开记录或启动番茄钟 |
+| Apple Watch 直接操作 | 支持，可在原生 Watch App 中打开记录或启动番茄钟。从下一个稳定版开始包含 |
 | CarPlay | 否，v1 不支持 |
 
 ## 操作

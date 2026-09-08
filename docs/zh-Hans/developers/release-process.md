@@ -55,7 +55,7 @@ RC 构建只发布到能够支持测试人员且不会产生高额维护开销�
 | --- | --- | --- |
 | 所有直接下载 | GitHub 预发布版本 | 最终 GitHub 发布版本成为稳定版下载源。 |
 | iOS | TestFlight | App Store 仍为稳定版渠道。 |
-| Apple Watch | TestFlight 中包含 Watch 的 iOS 归档 | 稳定版 App Store 归档不包含 Watch；稳定版工作流在 iOS 作业后通过独立作业上传包含 Watch 的构建。 |
+| Apple Watch | TestFlight 中包含 Watch 的 iOS 归档 | 稳定版会将同一个包含 Watch 的 iOS 归档提交 App Store 审核，并通过 TestFlight 分发。 |
 | macOS App Store 构建 | TestFlight | Mac App Store 仍为稳定版渠道。 |
 | Android Play 构建 | 默认使用 Google Play 内部测试和开放测试（`beta`）；配置后可使用封闭/自定义轨道 | 稍后再向生产轨道上传稳定版，稳定版工作流也会刷新内部测试轨道。 |
 | Linux Flatpak | Flathub beta 分支 | 稳定版会同时发布到 stable 和 beta 分支，使 beta 用户不会滞留在旧版本。 |
@@ -95,7 +95,7 @@ RC 工作流为 `.github/workflows/release-rc.yml`。
 
 稳定版 `release.yml` 仍是稳定版发布工作流。它设有保护措施，确保预发布标签不会发布到仅限稳定版的渠道，例如 Google Play 生产轨道、Microsoft Store、Snap stable、Linux APT/RPM 仓库、Flathub stable、AUR stable、Scoop、winget、Homebrew 或 Chocolatey。
 
-可复用的 iOS 工作流将 `watch_testflight` 默认为 false。稳定版生产发布保留该值，并提交不包含 Watch App 的归档。该作业完成后，独立作业会将包含 Watch 的归档上传到 TestFlight，且不会修改或提交 App Store 生产版本。它会直接接收生产构建号，在 App Store Connect 完成索引前选取更高的编号，等待处理完成，并将这个确切构建分发给已配置的外部测试组。手动恢复稳定版时可只选择 `run_ios_watch_testflight`。如果 App Store Connect 无法提供远程构建号，Watch 上传会停止。
+可复用的 iOS 工作流将是否包含 Watch（`include_watch`）与是否仅发布到 TestFlight（`testflight_only`）分开控制。临时调用时两项默认均为 false。RC 工作流会明确启用两项，生成包含 Watch 且仅发布到 TestFlight 的构建，不会修改 App Store 生产版本。稳定版工作流会包含 Watch，并关闭仅限 TestFlight 的路由，因此同一个归档会提交 App Store 审核并分发到 TestFlight。手动恢复稳定版时选择 `run_ios_appstore`；不再有独立的 Watch 上传作业。
 
 Flathub beta 需要 `flathub/tech.dongdongbh.mindwtr` 中的 beta 分支和权限。稳定版在完成干净容器验证和所有权检查后，由 `release.yml` 发布 AUR `mindwtr-bin` 软件包。源码构建的 `mindwtr` 软件包由社区维护，不属于发布流程。RC 构建通过 `update-aur-beta.yml` 发布 `mindwtr-beta-bin`，并执行相同的安全检查。如果 AUR 在维护期间禁用推送，请在恢复推送后重新运行该渠道。
 

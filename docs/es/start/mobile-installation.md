@@ -67,7 +67,7 @@ La beta de TestFlight también está disponible en https://testflight.apple.com/
 
 [![Beta de TestFlight](https://img.shields.io/badge/TestFlight-Beta-0A84FF?logo=apple&logoColor=white)](https://testflight.apple.com/join/7SMJCTSR)
 
-La app nativa para Apple Watch está disponible en la compilación de TestFlight y se ha probado en un reloj físico enlazado. Enlaza un Apple Watch con watchOS 10 o posterior con tu iPhone, instala la última compilación de Mindwtr desde TestFlight y después instala Mindwtr desde la app Watch del iPhone. Desde la muñeca puedes dictar o grabar capturas para la Bandeja de entrada, completar o aplazar tareas de Enfoque y controlar un temporizador Pomodoro vinculado. La versión estable del App Store todavía no incluye la app para Watch.
+A partir de la próxima versión estable de App Store, la app para iOS incluye una app nativa para Apple Watch probada en un Watch físico enlazado. Enlaza un Apple Watch con watchOS 10 o posterior con tu iPhone, instala Mindwtr y después instálalo desde la app Watch del iPhone. Toca **Hablar** para grabar audio que el iPhone transcribirá, o **Escribir** para introducir texto. También puedes completar o posponer tareas de Enfoque y controlar un temporizador Pomodoro vinculado.
 
 ### Opciones
 

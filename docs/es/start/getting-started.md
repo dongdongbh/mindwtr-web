@@ -40,7 +40,11 @@ Ejecuta la aplicación web (PWA) y el servidor de sincronización autohospedado 
 
 ## Primer inicio
 
-En una instalación nueva, Mindwtr te pregunta si quieres empezar de cero, importar una copia de seguridad o conectar la sincronización. **Empezar de cero** crea el proyecto **Primeros pasos** en tu idioma y lo abre de inmediato para que puedas aprender el flujo de trabajo dentro de la aplicación. En los inicios posteriores, Mindwtr abre de forma predeterminada la vista **Foco**, para mostrar primero los elementos del calendario y las próximas acciones de hoy. Captura trabajo nuevo en la **Bandeja de entrada** siempre que necesites anotar rápidamente una idea.
+En una instalación nueva, la primera opción es **Empezar a usar Mindwtr**. Crea el proyecto **Primeros pasos** en tu idioma y lo abre de inmediato. También puedes importar tareas, conectar la sincronización u omitir la introducción. No necesitas configurar la sincronización ni importar datos para capturar una tarea.
+
+En móvil y escritorio, Primeros pasos ofrece acciones para capturar en la **Bandeja**, abrirla para procesar y abrir **Enfoque**. Las indicaciones sobre proyectos, enfoque y fechas aparecen donde las necesitas. Al descartarlas, se contraen; el control de **Ayuda** permite volver a abrirlas y consultar la sección correspondiente de la guía. Su estado se guarda en el dispositivo y no se sincroniza con las tareas.
+
+En los siguientes inicios, Mindwtr abre **Enfoque** de forma predeterminada. Captura nuevas ideas en la **Bandeja** cuando lo necesites.
 
 ### Flujo de trabajo básico
 

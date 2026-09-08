@@ -40,7 +40,11 @@ Run the web app (PWA) and self-hosted sync server with Docker when you want a br
 
 ## First Launch
 
-On a fresh install, Mindwtr asks whether you want to start fresh, import a backup, or connect sync. **Start Fresh** creates a localized **Getting Started** project and opens it immediately so you can learn the workflow in the app. On later launches, Mindwtr opens the **Focus** view by default so today's calendar items and next actions are visible first. Capture new work into the **Inbox** whenever you need to park an idea quickly.
+On a fresh install, **Start using Mindwtr** is the first choice. It creates a localized **Getting Started** project and opens it immediately. You can also import existing tasks, connect sync, or skip onboarding. Sync and import are optional, not prerequisites for capturing a task.
+
+On mobile and desktop, the Getting Started project includes actions to capture directly to **Inbox**, open Inbox for processing, and open **Focus**. Short contextual hints explain projects, focus, and dates where you use them. Dismiss a hint to collapse it; its **Help** control stays available, with a link to the relevant guide section. Dismissals are stored on that device, not synced with tasks.
+
+On later launches, Mindwtr opens **Focus** by default. Capture new work into **Inbox** whenever you need to park an idea quickly.
 
 ### The Basic Workflow
 

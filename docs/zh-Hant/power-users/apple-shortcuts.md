@@ -121,7 +121,9 @@ Mindwtr 透過 App Intents，在 iPhone、iPad 及原生 Apple Watch App 上支�
 
 ### 從 Apple Watch 收集
 
-Mindwtr 沒有手錶 app，但在手錶上執行的捷徑可以直接把文字送到你自己的伺服器，不必拿出手機也能收集。這條路徑需要[自架的收集 webhook](/zh-Hant/power-users/capture-webhook)。
+使用原生 [Apple Watch App](/zh-Hant/use/mobile#apple-watch-app)，即可在手腕上收集任務。在 iPhone 的 Watch app 中安裝後，點選 **Speak to Capture** 錄音並交由 iPhone 轉寫，或點選 **Type** 輸入文字。無需伺服器或雲端同步。手機暫時無法連線時，手錶會保留記錄，並在恢復連線後傳送。可用版本和安裝步驟請參閱手錶 app 指南。
+
+如果你希望透過手錶上的捷徑將聽寫文字傳送到自己的伺服器，可以使用下方的[自架收集 webhook](/zh-Hant/power-users/capture-webhook) 方案。
 
 1. 在 iPhone 上開啟 Apple 的**捷徑** app，建立一個捷徑並命名為「Capture to Mindwtr」。
 2. 新增**聽寫文字**。

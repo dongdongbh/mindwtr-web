@@ -113,7 +113,9 @@ Resulta útil al caminar, desplazarte o cambiar de aplicación. Siri puede recon
 
 ### Capturar desde el Apple Watch
 
-Mindwtr no tiene aplicación para el reloj, pero un atajo que se ejecuta en el reloj puede enviar el texto directamente a tu propio servidor, así capturas sin sacar el teléfono. Esta vía necesita el [webhook de captura autoalojado](/es/power-users/capture-webhook).
+Usa la [app nativa para Apple Watch](/es/use/mobile#app-para-apple-watch) para capturar desde la muñeca. Instálala desde la app Watch del iPhone y toca **Speak to Capture** para grabar audio que se transcribirá en el iPhone, o **Type** para introducir texto. No necesitas un servidor ni sincronización en la nube. El reloj guarda las capturas mientras el teléfono no está disponible y las envía cuando recupera la conexión. Consulta la guía de la app para conocer la disponibilidad y la configuración.
+
+Para enviar texto dictado a tu propio servidor desde un atajo del reloj, sigue esta receta opcional del [webhook de captura autoalojado](/es/power-users/capture-webhook).
 
 1. En la aplicación **Atajos** de Apple del iPhone, crea un atajo y llámalo «Capture to Mindwtr».
 2. Añade **Dictar texto**.

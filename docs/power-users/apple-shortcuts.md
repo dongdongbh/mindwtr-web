@@ -121,7 +121,9 @@ This is useful for quick capture while walking, commuting, or moving between app
 
 ### Capture from Apple Watch
 
-Mindwtr has no watch app, but a shortcut that runs on the watch can post straight to your own server, so you can capture without taking out the phone. This recipe needs the [self-hosted capture webhook](/power-users/capture-webhook).
+Use the native [Apple Watch companion](/use/mobile#apple-watch-companion) to capture from your wrist. Install it from the iPhone Watch app, then tap **Speak to Capture** to record audio for iPhone transcription, or **Type** to enter text. You do not need a server or cloud sync. The Watch keeps captures queued while the phone is unavailable and delivers them when the connection returns. See the companion guide for availability and setup.
+
+To send dictated text to your own server from a Watch shortcut, use the optional [self-hosted capture webhook](/power-users/capture-webhook) recipe below.
 
 1. In Apple's **Shortcuts** app on the iPhone, create a shortcut and name it "Capture to Mindwtr".
 2. Add **Dictate Text**.

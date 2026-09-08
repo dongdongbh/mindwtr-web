@@ -121,7 +121,9 @@ Dies eignet sich für die schnelle Erfassung beim Gehen, Pendeln oder Wechseln z
 
 ### Von der Apple Watch erfassen
 
-Mindwtr hat keine Watch-App, aber ein Kurzbefehl, der auf der Uhr läuft, kann direkt an Ihren eigenen Server senden. So erfassen Sie etwas, ohne das Telefon hervorzuholen. Dieser Weg benötigt den [selbst gehosteten Erfassungs-Webhook](/de/power-users/capture-webhook).
+Mit der nativen [Apple-Watch-App](/de/use/mobile#apple-watch-app) erfassen Sie Aufgaben am Handgelenk. Installieren Sie sie über die Watch-App auf dem iPhone. Tippen Sie auf **Speak to Capture**, um Audio für die Transkription auf dem iPhone aufzunehmen, oder auf **Type**, um Text einzugeben. Sie benötigen keinen Server und keine Cloud-Synchronisierung. Die Watch speichert Erfassungen zwischen, solange das Telefon nicht erreichbar ist, und überträgt sie, sobald die Verbindung wieder besteht. Verfügbarkeit und Einrichtung finden Sie in der Anleitung zur Watch-App.
+
+Um diktierten Text mit einem Watch-Kurzbefehl an Ihren eigenen Server zu senden, nutzen Sie die folgende optionale Anleitung für den [selbst gehosteten Erfassungs-Webhook](/de/power-users/capture-webhook).
 
 1. Erstellen Sie in Apples App **Kurzbefehle** auf dem iPhone einen Kurzbefehl mit dem Namen „Capture to Mindwtr“.
 2. Fügen Sie **Text diktieren** hinzu.

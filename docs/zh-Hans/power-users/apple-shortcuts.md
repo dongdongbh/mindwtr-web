@@ -121,7 +121,9 @@ Swift 不会直接写入任务，因此任务创建始终通过 Mindwtr 现有�
 
 ### 从 Apple Watch 记录
 
-Mindwtr 没有手表应用，但在手表上运行的快捷指令可以直接把文本发送到你自己的服务器，这样不用掏出手机也能记录。这条路径需要[自托管的记录 webhook](/zh-Hans/power-users/capture-webhook)。
+使用原生 [Apple Watch App](/zh-Hans/use/mobile#apple-watch-app)，即可在手腕上记录任务。在 iPhone 的 Watch 应用中安装后，轻点 **Speak to Capture** 录音并交由 iPhone 转写，或轻点 **Type** 输入文字。无需服务器或云同步。手机暂时无法连接时，手表会保留记录，并在恢复连接后传送。可用版本和安装步骤请参阅手表应用指南。
+
+如果你希望通过手表上的快捷指令将听写文本发送到自己的服务器，可以使用下面的[自托管记录 webhook](/zh-Hans/power-users/capture-webhook) 方案。
 
 1. 在 iPhone 上打开 Apple 的**快捷指令**应用，新建一个快捷指令，命名为“Capture to Mindwtr”。
 2. 添加**听写文本**。

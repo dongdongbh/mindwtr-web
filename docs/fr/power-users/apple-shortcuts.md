@@ -121,7 +121,9 @@ Cette méthode est utile pour capturer rapidement une idée en marchant, pendant
 
 ### Capturer depuis Apple Watch
 
-Mindwtr n’a pas d’app pour la montre, mais un raccourci exécuté sur la montre peut envoyer le texte directement à votre propre serveur : vous capturez sans sortir le téléphone. Cette méthode nécessite le [webhook de capture auto-hébergé](/fr/power-users/capture-webhook).
+Utilisez l’[app native Apple Watch](/fr/use/mobile#app-apple-watch) pour capturer depuis votre poignet. Installez-la depuis l’app Watch de l’iPhone, puis touchez **Speak to Capture** pour enregistrer de l’audio à transcrire sur l’iPhone, ou **Type** pour saisir du texte. Vous n’avez besoin ni d’un serveur ni de synchronisation cloud. La montre conserve les captures lorsque le téléphone est indisponible et les transmet au retour de la connexion. Consultez le guide de l’app pour sa disponibilité et sa configuration.
+
+Pour envoyer du texte dicté à votre propre serveur depuis un raccourci sur la montre, suivez la recette facultative du [webhook de capture auto-hébergé](/fr/power-users/capture-webhook) ci-dessous.
 
 1. Dans l’app **Raccourcis** d’Apple sur l’iPhone, créez un raccourci et nommez-le « Capture to Mindwtr ».
 2. Ajoutez **Dicter du texte**.

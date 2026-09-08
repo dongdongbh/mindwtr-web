@@ -320,6 +320,8 @@ In der Ansicht **Fokus** sehen Sie:
 
 1. **Heutiger Fokus** zeigt Aufgaben, die Sie ausdrücklich für heute fokussiert haben. Sie können sie manuell in die geplante Reihenfolge bringen – auf dem Desktop am Griff ziehen oder auf Mobilgeräten den Umschalter zum Sortieren in der Abschnittsüberschrift verwenden. Die manuelle Reihenfolge gilt bei der Standardsortierung von „Fokus“, wird geräteübergreifend synchronisiert und bleibt erhalten, bis eine Aufgabe „Fokus“ verlässt.
 2. **Heute / Terminplan** zeigt verfügbare `next`-Aufgaben, die überfällig oder heute fällig sind oder heute beginnen – auch mit einer Startzeit später am Tag, wobei diese Zeilen ihre Startzeit anzeigen, bis diese erreicht ist. Sortiert wird nach dem frühesten Fälligkeits-/Startzeitpunkt, dann – bei aktivierten Prioritäten – nach Priorität und schließlich nach dem ältesten Erstellungsdatum.
+
+   **In der nächsten Version nach 1.2.8:** Heute zeigt zuerst die jetzt verfügbaren Aufgaben. Falls Aufgaben erst später am selben Tag beginnen, folgen sie in der Gruppe **Später heute**. Jede Gruppe behält die gewählte Sortierung bei. Zur Startzeit wechselt die Aufgabe in die Hauptliste; eine leere Gruppe verschwindet. Startdaten ohne Uhrzeit bleiben in der Hauptliste. Es gibt keine neue Einstellung; der heutige Fokus und Anstehend bleiben unverändert.
 3. **Nächste Aktionen** zeigt die übrigen verfügbaren `next`-Aufgaben. Die Standardsortierung lautet:
    - bald fällige Aufgaben zuerst, mit dem frühesten Fälligkeitsdatum zuerst (derzeit innerhalb der nächsten 30 Tage fällig)
    - undatierte Aktionen danach

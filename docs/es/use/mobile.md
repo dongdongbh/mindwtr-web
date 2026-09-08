@@ -191,6 +191,8 @@ En Android, tocar el anillo completa la tarea. La fila aparece tachada de inmedi
 
 En Android, **+** en cualquiera de los dos widgets, el mosaico de Ajustes rápidos, el acceso directo de la aplicación y la notificación de captura abren una pequeña ventana de captura sobre lo que estés haciendo. **Guardar** añade la tarea a la Bandeja de entrada, muestra una breve confirmación y cierra la ventana; Mindwtr permanece en segundo plano y la tarea aparece la próxima vez que lo abras. iOS captura a través de la aplicación como antes.
 
+En la próxima versión después de la 1.2.8, activar la transcripción también añade un botón de micrófono a esta ventana nativa de Android. Graba, pulsa Detener y después Guardar; la aplicación principal permanece cerrada. Las grabaciones se guardan en el dispositivo y se transcriben con el proveedor configurado cuando Mindwtr se abre o vuelve al primer plano. F-Droid usa Whisper sin conexión. Si la transcripción falla, la grabación se conserva para otro intento. La grabación se detiene al salir de la ventana y tiene un límite de cinco minutos.
+
 En Android, las etiquetas de vencimiento muestran **Hoy**, el día de la semana para tareas dentro de los próximos siete días o una fecha compacta para fechas posteriores. Las tareas vencidas y las que vencen hoy aparecen destacadas.
 
 ### Widget de la pantalla bloqueada de iOS

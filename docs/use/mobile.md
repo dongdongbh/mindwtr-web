@@ -191,6 +191,8 @@ On Android, tapping the ring completes the task. The row shows struck through st
 
 On Android, **+** on either widget, the Quick Settings tile, the app shortcut and the capture notification open a small capture window on top of whatever you are doing. **Save** adds the task to the Inbox, shows a short confirmation and closes the window; Mindwtr itself stays in the background, and the task appears the next time you open it. iOS captures through the app as before.
 
+In the next release after 1.2.8, enabling speech-to-text also adds a microphone button to this native Android window. Record, tap Stop, then Save; the main app stays closed. Recordings are saved on the device and transcribed with your configured provider when Mindwtr next opens or returns to the foreground. F-Droid uses offline Whisper. Failed transcription keeps the recording for another attempt. Recording stops when you leave the window and is limited to five minutes.
+
 On Android, dated rows show **Today**, a weekday for the coming week, or a compact date. Tasks due today or overdue receive extra emphasis.
 
 ### iOS Lock Screen Widget

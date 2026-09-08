@@ -180,6 +180,8 @@ Auf Android schließt ein Tippen auf den Ring die Aufgabe ab. Die Zeile wird sof
 
 Auf Android öffnen **+** auf beiden Widgets, die Schnelleinstellungskachel, die App-Verknüpfung und die Erfassungsbenachrichtigung ein kleines Erfassungsfenster über dem, was Sie gerade tun. **Speichern** legt die Aufgabe im Eingang ab, zeigt kurz eine Bestätigung und schließt das Fenster; Mindwtr selbst bleibt im Hintergrund, und die Aufgabe erscheint beim nächsten Öffnen. iOS erfasst wie bisher über die App.
 
+In der nächsten Version nach 1.2.8 erscheint bei aktivierter Spracherkennung auch eine Mikrofontaste in diesem nativen Android-Fenster. Nehmen Sie auf, tippen Sie auf Stopp und dann auf Speichern; die Haupt-App bleibt geschlossen. Aufnahmen werden auf dem Gerät gespeichert und beim nächsten Öffnen von Mindwtr oder bei der Rückkehr in den Vordergrund mit dem konfigurierten Anbieter transkribiert. F-Droid verwendet Offline-Whisper. Schlägt die Transkription fehl, bleibt die Aufnahme für einen weiteren Versuch erhalten. Die Aufnahme endet beim Verlassen des Fensters und ist auf fünf Minuten begrenzt.
+
 Auf Android zeigen Fälligkeitsangaben **Heute**, den Wochentag für Aufgaben innerhalb der nächsten Woche oder ein kompaktes Datum für spätere Aufgaben. Überfällige und heute fällige Aufgaben werden hervorgehoben.
 
 ### iOS-Sperrbildschirm-Widget

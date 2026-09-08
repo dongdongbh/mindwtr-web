@@ -191,6 +191,8 @@ Sous Android, toucher l’anneau termine la tâche. La ligne est barrée aussit�
 
 Sous Android, **+** sur l’un ou l’autre widget, la tuile des Réglages rapides, le raccourci de l’application et la notification de capture ouvrent une petite fenêtre de capture par-dessus ce que vous faites. **Enregistrer** ajoute la tâche à la Boîte de réception, affiche une brève confirmation et ferme la fenêtre ; Mindwtr reste en arrière-plan et la tâche apparaît à la prochaine ouverture. iOS capture via l’application comme avant.
 
+Dans la prochaine version après la 1.2.8, l’activation de la transcription ajoute aussi un bouton microphone à cette fenêtre Android native. Enregistrez, appuyez sur Arrêter, puis sur Enregistrer ; l’application principale reste fermée. Les enregistrements sont conservés sur l’appareil et transcrits avec le fournisseur configuré à la prochaine ouverture de Mindwtr ou à son retour au premier plan. F-Droid utilise Whisper hors ligne. Si la transcription échoue, l’enregistrement est conservé pour une nouvelle tentative. L’enregistrement s’arrête lorsque vous quittez la fenêtre et est limité à cinq minutes.
+
 Sous Android, les libellés d’échéance indiquent **Aujourd’hui**, le jour de la semaine pour les tâches des sept prochains jours, ou une date compacte pour les échéances ultérieures. Les tâches en retard ou à échéance aujourd’hui sont mises en évidence.
 
 ### Widget de l’écran verrouillé iOS

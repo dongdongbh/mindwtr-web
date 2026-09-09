@@ -36,6 +36,8 @@ Si una fase termina mientras la ventana de escritorio está en segundo plano, Mi
 
 Cuando termina una sesión de enfoque o un descanso, Mindwtr reproduce un sonido y muestra una notificación. Esto no depende de los recordatorios de tareas. Para trabajar en silencio, desactiva **Ajustes → GTD → Temporizador Pomodoro → Aviso de fin de sesión**.
 
+Desde la próxima versión, este interruptor se llama **Avisar cuando termine el temporizador**. En Android, si falta el permiso necesario para avisar a tiempo, se explica justo debajo, con **Abrir ajustes de Android**. Es ayuda sobre un permiso, no un segundo interruptor. El sonido sigue los ajustes de sonido y notificaciones del dispositivo.
+
 La vinculación con tareas es opcional y está desactivada de forma predeterminada. Activa **Ajustes → GTD → Temporizador Pomodoro → Vincular temporizador a tarea** si quieres ver el selector Tarea del temporizador y la acción **Marcar tarea como terminada** en Foco.
 
 En escritorio y en móvil, el panel se puede plegar: el chevrón de su cabecera lo reduce a una fila fina con el tiempo restante y la fase; en móvil también muestra **En curso** o **En pausa**. El temporizador sigue funcionando. El estado plegado se recuerda en cada dispositivo, no se sincroniza, y empieza desplegado. En escritorio, al pulsar el botón de reproducción de una tarea se vuelve a abrir.

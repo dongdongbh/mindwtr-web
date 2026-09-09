@@ -693,7 +693,7 @@ Asegúrate de que las notificaciones estén activadas:
 
 ### Recordatorios que llegan tarde en Android
 
-A partir de Android 12, el sistema puede negar a una aplicación las «alarmas exactas». Sin ellas, un recordatorio puede llegar hasta un minuto después de la hora que fijaste. Cuando ocurre, Mindwtr añade en **Ajustes → Notificaciones** una fila titulada **Los recordatorios pueden llegar tarde**, con un botón **Permitir** al lado. Los ajustes de Pomodoro muestran la misma fila mientras el aviso de fin esté activado.
+A partir de Android 12, el sistema puede denegar el permiso para programar alarmas exactas. Sin él, Android puede retrasar los recordatorios; no existe un límite de un minuto. Mindwtr muestra **Los recordatorios pueden llegar tarde** en **Ajustes → Notificaciones**, con el botón **Permitir**. Desde la próxima versión, Pomodoro muestra su propia explicación debajo del interruptor de aviso al terminar el temporizador, con una acción para abrir los ajustes de Android. El interruptor decide si recibes avisos; el permiso de Android afecta a su puntualidad. La ayuda solo aparece si los avisos de Pomodoro están activados y falta el permiso.
 
 Toca **Permitir** para abrir la pantalla de permisos de Android para Mindwtr. También puedes llegar a ella en **Ajustes → Aplicaciones → Mindwtr → Alarmas y recordatorios** del dispositivo. En cuanto concedes el permiso, Mindwtr vuelve a programar sus recordatorios como alarmas exactas sin reiniciar la aplicación, y la fila desaparece. En versiones anteriores a Android 12 la fila no aparece, porque allí todas las alarmas ya son exactas.
 

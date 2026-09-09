@@ -34,6 +34,8 @@ Lorsqu’une phase se termine alors que la fenêtre de bureau est en arrière-pl
 
 Lorsqu’une session de concentration ou une pause se termine, Mindwtr joue un son et affiche une notification. Cela ne dépend pas des rappels de tâches. Pour travailler en silence, désactivez **Paramètres → GTD → Minuteur Pomodoro → Alerte de fin de session**.
 
+Dès la prochaine version, cet interrupteur s’appelle **Alerter à la fin du minuteur**. Sur Android, une autorisation manquante pour les alertes ponctuelles est expliquée juste dessous, avec **Ouvrir les paramètres Android**. Il s’agit d’une aide sur une autorisation, pas d’un second interrupteur. Le son respecte toujours les réglages audio et de notification de l’appareil.
+
 L’association à une tâche est facultative et désactivée par défaut. Activez **Paramètres → GTD → Minuteur Pomodoro → Lier le minuteur à une tâche** pour afficher le sélecteur et l’action **Marquer la tâche comme terminée** dans Focus.
 
 Sur ordinateur comme sur mobile, le panneau peut se replier : le chevron de son en-tête le réduit à une fine ligne qui affiche le temps restant et la phase ; sur mobile, elle indique aussi **En cours** ou **En pause**. Le minuteur continue de fonctionner. Cet état est mémorisé par appareil plutôt que synchronisé, et le panneau démarre déplié. Sur ordinateur, le bouton de lecture d’une tâche rouvre le panneau.

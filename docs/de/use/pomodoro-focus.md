@@ -34,6 +34,8 @@ Endet eine Phase, während das Desktopfenster im Hintergrund ist, blinkt Mindwtr
 
 Wenn ein Fokus-Abschnitt oder eine Pause endet, spielt Mindwtr einen Ton ab und zeigt eine Benachrichtigung. Das hängt nicht von den Aufgabenerinnerungen ab. Für stilles Arbeiten schalte **Einstellungen → GTD → Pomodoro-Timer → Hinweis am Ende der Einheit** aus.
 
+Ab der nächsten Version heißt dieser Schalter **Benachrichtigen, wenn der Timer endet**. Unter Android wird eine fehlende Berechtigung für pünktliche Hinweise direkt darunter erklärt, mit **Android-Einstellungen öffnen**. Das ist eine Berechtigungshilfe, kein zweiter Hinweisschalter. Der Benachrichtigungston richtet sich weiterhin nach den Ton- und Benachrichtigungseinstellungen des Geräts.
+
 Die Aufgabenverknüpfung ist optional und standardmäßig deaktiviert. Aktivieren Sie **Einstellungen → GTD → Pomodoro-Zeitgeber → Zeitgeber mit Aufgabe verknüpfen**, wenn Sie in „Fokus“ die Auswahl der Zeitgeberaufgabe und die Aktion **Aufgabe als erledigt markieren** verwenden möchten.
 
 Auf Desktop und Mobilgeräten kann das Feld eingeklappt werden: Der Pfeil in seiner Kopfzeile reduziert es auf eine schmale Zeile mit Restzeit und Phase; auf Mobilgeräten zeigt sie zusätzlich **Läuft** oder **Pausiert**. Der Zeitgeber läuft weiter. Der Einklappzustand wird pro Gerät gespeichert statt synchronisiert, und das Feld startet ausgeklappt. Auf dem Desktop öffnet die Wiedergabeschaltfläche einer Aufgabe das Feld wieder.

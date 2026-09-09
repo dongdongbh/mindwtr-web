@@ -34,7 +34,7 @@ Toutes les colonnes sauf `Title` sont facultatives : n’incluez que celles dont
 | --- | --- | --- |
 | `Title` | tout texte | Obligatoire. Le titre de la tâche. |
 | `Description` | tout texte | La description de la tâche. Les sauts de ligne sont conservés à l’intérieur d’une valeur entre guillemets. |
-| `Status` | `inbox`, `next`, `waiting`, `someday`, `reference`, `done`, `archived` | Insensible à la casse. Laissé vide, le statut devient `done` si `Completed At` est renseigné, sinon `next` si la ligne indique un projet, sinon `inbox`. Une valeur non reconnue devient `inbox` avec un avertissement. |
+| `Status` | `inbox`, `next`, `waiting`, `someday`, `reference`, `done`, `archived` | Insensible à la casse. Laissé vide, le statut devient `archived` si `Cancelled At` est renseigné (à partir de la prochaine version après 1.2.8), sinon `done` si `Completed At` est renseigné, sinon `next` si la ligne indique un projet, sinon `inbox`. Une valeur non reconnue devient `inbox` avec un avertissement. |
 | `Project` | un nom de projet | Crée le projet une seule fois et y place la tâche. Les noms sont comparés sans tenir compte de la casse. |
 | `Section` | un nom de section dans le projet de cette ligne | Exige un `Project` sur la même ligne. Sans lui, la valeur est ignorée avec un avertissement. |
 | `Area` | un nom de domaine | Si la ligne indique un `Project`, le domaine accueille le projet. Sinon, c’est la tâche elle-même qui est classée dans le domaine. |
@@ -46,7 +46,8 @@ Toutes les colonnes sauf `Title` sont facultatives : n’incluez que celles dont
 | `Start Date` | une date, avec ou sans heure | La date de début. La tâche reste hors de Focus jusqu’à son arrivée. |
 | `Due Date` | une date, avec ou sans heure | L’échéance. |
 | `Review Date` | une date, avec ou sans heure | La date de revue, pour réexaminer la tâche plus tard. |
-| `Completed At` | une date avec heure | L’horodatage d’achèvement. Il transforme aussi un `Status` vide en `done`, et il n’est conservé que si le statut obtenu est `done` ou `archived`. |
+| `Completed At` | une date avec heure | L’horodatage de fin. Sans `Cancelled At`, il transforme un `Status` vide en `done`. Il est conservé uniquement pour les tâches `done` ou les tâches `archived` non annulées. |
+| `Cancelled At` | une date avec heure | À partir de la prochaine version après 1.2.8 : l’horodatage d’annulation. Si `Status` est vide, il choisit `archived` avant de prendre en compte `Completed At`. Il est conservé uniquement pour les tâches `archived` ; l’annulation efface `Completed At` et ne génère aucune occurrence suivante. |
 | `Created At` | une date avec heure | L’horodatage de création. Laissé vide, la tâche est créée à la date de l’import. |
 | `Checklist` | des éléments séparés par des sauts de ligne ou par `\|` | Devient la liste de contrôle de la tâche. Un élément écrit `[x] Buy stamps` démarre terminé ; `[ ] Buy stamps` et un simple `Buy stamps` démarrent ouverts. Une tâche pourvue d’éléments de contrôle devient une tâche liste. |
 | `Location` | tout texte | Le champ de lieu de la tâche. |
@@ -59,7 +60,7 @@ Toutes les colonnes sauf `Title` sont facultatives : n’incluez que celles dont
 - Une date seule, comme `2026-09-01`, reste une date simple. Mindwtr ne lui invente pas une heure de minuit.
 - Une date et une heure sans fuseau, comme `2026-09-05 14:30`, conservent exactement cette heure murale.
 - Une valeur terminée par `Z` ou par un décalage tel que `+02:00` est enregistrée comme l’instant précis qu’elle désigne.
-- `Created At` et `Completed At` sont toujours enregistrés comme un instant précis, car ils indiquent quand une chose s’est réellement produite.
+- `Created At`, `Completed At` et `Cancelled At` sont toujours enregistrés comme un instant précis, car ils indiquent quand une chose s’est réellement produite.
 - Une valeur que Mindwtr ne sait pas lire est laissée vide, et l’aperçu indique combien ont été écartées.
 - Les horodatages de style SQL comme `2026-02-21 22:44:00.6390000 +00:00` sont acceptés : les décimales supplémentaires et l’espace avant le décalage sont normalisés automatiquement.
 

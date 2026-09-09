@@ -34,7 +34,7 @@ Todas las columnas salvo `Title` son opcionales: basta con incluir las que realm
 | --- | --- | --- |
 | `Title` | cualquier texto | Obligatoria. El título de la tarea. |
 | `Description` | cualquier texto | La descripción de la tarea. Los saltos de línea se conservan dentro de un valor entrecomillado. |
-| `Status` | `inbox`, `next`, `waiting`, `someday`, `reference`, `done`, `archived` | No distingue mayúsculas. Si se deja vacío, el estado pasa a `done` cuando hay `Completed At`, a `next` cuando la fila indica un proyecto y, si no, a `inbox`. Un valor no reconocido se convierte en `inbox` con un aviso. |
+| `Status` | `inbox`, `next`, `waiting`, `someday`, `reference`, `done`, `archived` | No distingue mayúsculas. Si se deja vacío, el estado pasa a `archived` cuando hay `Cancelled At` (desde la próxima versión posterior a 1.2.8), a `done` cuando hay `Completed At`, a `next` cuando la fila indica un proyecto y, si no, a `inbox`. Un valor no reconocido se convierte en `inbox` con un aviso. |
 | `Project` | el nombre de un proyecto | Crea el proyecto una sola vez y coloca la tarea dentro. Los nombres se comparan sin distinguir mayúsculas. |
 | `Section` | el nombre de una sección del proyecto de esa fila | Necesita un `Project` en la misma fila. Sin él, el valor se ignora con un aviso. |
 | `Area` | el nombre de un área | Si la fila indica un `Project`, el área contiene el proyecto. Si no, la propia tarea se archiva en el área. |
@@ -46,7 +46,8 @@ Todas las columnas salvo `Title` son opcionales: basta con incluir las que realm
 | `Start Date` | una fecha, con hora o sin ella | La fecha de inicio. La tarea permanece fuera de Enfoque hasta que llega. |
 | `Due Date` | una fecha, con hora o sin ella | La fecha límite. |
 | `Review Date` | una fecha, con hora o sin ella | La fecha de revisión para reconsiderar la tarea más adelante. |
-| `Completed At` | una fecha con hora | La marca de finalización. Además convierte un `Status` vacío en `done`, y solo se conserva cuando el estado resultante es `done` o `archived`. |
+| `Completed At` | una fecha con hora | La marca de finalización. Si no hay `Cancelled At`, convierte un `Status` vacío en `done`. Solo se conserva para tareas `done` o `archived` que no estén canceladas. |
+| `Cancelled At` | una fecha con hora | Desde la próxima versión posterior a 1.2.8: la fecha de cancelación. Si `Status` está vacío, elige `archived` antes de considerar `Completed At`. Solo se conserva para tareas `archived`; la cancelación borra `Completed At` y no genera otra repetición. |
 | `Created At` | una fecha con hora | La marca de creación. Si se deja vacía, la tarea se crea con la fecha de la importación. |
 | `Checklist` | elementos separados por saltos de línea o `\|` | Se convierte en la lista de comprobación de la tarea. Un elemento escrito como `[x] Buy stamps` empieza completado; `[ ] Buy stamps` y un simple `Buy stamps` empiezan pendientes. Una tarea con elementos de comprobación se convierte en tarea de lista. |
 | `Location` | cualquier texto | El campo de ubicación de la tarea. |
@@ -59,7 +60,7 @@ Todas las columnas salvo `Title` son opcionales: basta con incluir las que realm
 - Una fecha sin más, como `2026-09-01`, se mantiene como fecha simple. Mindwtr no le inventa una hora de medianoche.
 - Una fecha con hora y sin zona, como `2026-09-05 14:30`, conserva exactamente esa hora de reloj.
 - Un valor terminado en `Z` o con un desplazamiento como `+02:00` se guarda como el instante preciso que indica.
-- `Created At` y `Completed At` se guardan siempre como un instante preciso, porque registran cuándo ocurrió algo realmente.
+- `Created At`, `Completed At` y `Cancelled At` se guardan siempre como un instante preciso, porque registran cuándo ocurrió algo realmente.
 - Un valor que Mindwtr no pueda leer se deja vacío, y la vista previa indica cuántos se omitieron.
 - Se aceptan marcas de tiempo de estilo SQL como `2026-02-21 22:44:00.6390000 +00:00`: los dígitos fraccionarios adicionales y el espacio antes del desfase se normalizan automáticamente.
 

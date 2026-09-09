@@ -34,7 +34,7 @@ Mindwtr 可以导入遵循既定列格式的普通 CSV 文件。对于没有专�
 | --- | --- | --- |
 | `Title` | 任意文本 | 必需，即任务标题。 |
 | `Description` | 任意文本 | 任务描述。位于引号内的值可以保留换行。 |
-| `Status` | `inbox`、`next`、`waiting`、`someday`、`reference`、`done`、`archived` | 忽略大小写。留空时：若设置了 `Completed At`，状态为 `done`；否则该行若指定了项目则为 `next`；再否则为 `inbox`。无法识别的值会变成 `inbox` 并给出警告。 |
+| `Status` | `inbox`、`next`、`waiting`、`someday`、`reference`、`done`、`archived` | 忽略大小写。留空时：若设置了 `Cancelled At`，状态为 `archived`（1.2.8 之后的下一版本起支持）；否则若设置了 `Completed At`，状态为 `done`；否则该行若指定了项目则为 `next`；再否则为 `inbox`。无法识别的值会变成 `inbox` 并给出警告。 |
 | `Project` | 项目名称 | 只创建一次该项目，并把任务放入其中。名称匹配时忽略大小写。 |
 | `Section` | 该行所属项目内的分区名称 | 需要同一行中有 `Project`。缺少时该值会被忽略并给出警告。 |
 | `Area` | 领域名称 | 该行若有 `Project`，则由领域容纳该项目；否则任务本身归入该领域。 |
@@ -46,7 +46,8 @@ Mindwtr 可以导入遵循既定列格式的普通 CSV 文件。对于没有专�
 | `Start Date` | 日期，可带时间 | 开始日期。在该日期到来前，任务不会出现在焦点中。 |
 | `Due Date` | 日期，可带时间 | 截止期限。 |
 | `Review Date` | 日期，可带时间 | 用于日后重新考虑的复查日期。 |
-| `Completed At` | 带时间的日期 | 完成时间戳。它还会把空的 `Status` 变成 `done`，并且只在最终状态为 `done` 或 `archived` 时才保留。 |
+| `Completed At` | 带时间的日期 | 完成时间戳。未设置 `Cancelled At` 时，它会把空的 `Status` 变成 `done`。只在状态为 `done` 或未取消的 `archived` 任务中保留。 |
+| `Cancelled At` | 带时间的日期 | 1.2.8 之后的下一版本起支持：取消时间戳。`Status` 留空时，先按此列设为 `archived`，再考虑 `Completed At`。此值只在状态为 `archived` 时保留；取消会清除 `Completed At`，且不会生成下一次重复任务。 |
 | `Created At` | 带时间的日期 | 创建时间戳。留空时以导入时刻为准。 |
 | `Checklist` | 以换行或 `\|` 分隔的条目 | 成为该任务的检查清单。写成 `[x] Buy stamps` 的条目初始为已完成；`[ ] Buy stamps` 和只写 `Buy stamps` 则为未完成。含检查项的任务会变成清单型任务。 |
 | `Location` | 任意文本 | 任务的地点字段。 |
@@ -59,7 +60,7 @@ Mindwtr 可以导入遵循既定列格式的普通 CSV 文件。对于没有专�
 - 像 `2026-09-01` 这样只有日期的值仍是纯日期，Mindwtr 不会为它补上午夜时间。
 - 像 `2026-09-05 14:30` 这样不带时区的日期时间，会原样保留这一挂钟时间。
 - 以 `Z` 结尾或带 `+02:00` 之类偏移量的值，会按其所指的确切时刻保存。
-- `Created At` 和 `Completed At` 始终按确切时刻保存，因为它们记录的是某件事实际发生的时间。
+- `Created At`、`Completed At` 和 `Cancelled At` 始终按确切时刻保存，因为它们记录的是某件事实际发生的时间。
 - Mindwtr 无法解析的值会留空，预览中会说明跳过了多少个。
 - 接受 SQL 风格的时间戳，例如 `2026-02-21 22:44:00.6390000 +00:00`：多余的小数位和时区偏移前的空格会被自动规范化。
 

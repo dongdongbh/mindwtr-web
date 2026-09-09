@@ -34,7 +34,7 @@ Mindwtr 可以匯入遵循既定欄位格式的一般 CSV 檔案。對於沒有�
 | --- | --- | --- |
 | `Title` | 任意文字 | 必要，即任務標題。 |
 | `Description` | 任意文字 | 任務描述。位於引號內的值可保留換行。 |
-| `Status` | `inbox`、`next`、`waiting`、`someday`、`reference`、`done`、`archived` | 不分大小寫。留空時：若已設定 `Completed At`，狀態為 `done`；否則該列若指定專案則為 `next`；再否則為 `inbox`。無法辨識的值會變成 `inbox` 並提出警告。 |
+| `Status` | `inbox`、`next`、`waiting`、`someday`、`reference`、`done`、`archived` | 不分大小寫。留空時：若已設定 `Cancelled At`，狀態為 `archived`（1.2.8 之後的下一版本起支援）；否則若已設定 `Completed At`，狀態為 `done`；否則該列若指定專案則為 `next`；再否則為 `inbox`。無法辨識的值會變成 `inbox` 並提出警告。 |
 | `Project` | 專案名稱 | 只建立一次該專案，並把任務放入其中。名稱比對時不分大小寫。 |
 | `Section` | 該列所屬專案中的分區名稱 | 需要同一列有 `Project`。若沒有，該值會被忽略並提出警告。 |
 | `Area` | 領域名稱 | 該列若有 `Project`，則由領域容納該專案；否則任務本身歸入該領域。 |
@@ -46,7 +46,8 @@ Mindwtr 可以匯入遵循既定欄位格式的一般 CSV 檔案。對於沒有�
 | `Start Date` | 日期，可含時間 | 開始日期。在該日期到來前，任務不會出現在「專注」中。 |
 | `Due Date` | 日期，可含時間 | 截止期限。 |
 | `Review Date` | 日期，可含時間 | 供日後重新考慮的複查日期。 |
-| `Completed At` | 含時間的日期 | 完成時間戳記。它也會把空白的 `Status` 變成 `done`，而且只有在最終狀態為 `done` 或 `archived` 時才會保留。 |
+| `Completed At` | 含時間的日期 | 完成時間戳記。未設定 `Cancelled At` 時，它會把空白的 `Status` 變成 `done`。只在狀態為 `done` 或未取消的 `archived` 任務中保留。 |
+| `Cancelled At` | 含時間的日期 | 1.2.8 之後的下一版本起支援：取消時間戳記。`Status` 留空時，先依此欄設為 `archived`，再考慮 `Completed At`。此值只在狀態為 `archived` 時保留；取消會清除 `Completed At`，且不會產生下一次重複任務。 |
 | `Created At` | 含時間的日期 | 建立時間戳記。留空時以匯入當下為準。 |
 | `Checklist` | 以換行或 `\|` 分隔的項目 | 成為該任務的檢查清單。寫成 `[x] Buy stamps` 的項目一開始即為已完成；`[ ] Buy stamps` 與只寫 `Buy stamps` 則為未完成。含檢查項目的任務會變成清單型任務。 |
 | `Location` | 任意文字 | 任務的地點欄位。 |
@@ -59,7 +60,7 @@ Mindwtr 可以匯入遵循既定欄位格式的一般 CSV 檔案。對於沒有�
 - 像 `2026-09-01` 這種只有日期的值會維持純日期，Mindwtr 不會替它補上午夜時間。
 - 像 `2026-09-05 14:30` 這種不含時區的日期時間，會原樣保留這個時鐘時間。
 - 以 `Z` 結尾或帶有 `+02:00` 之類位移的值，會依其所指的精確時刻儲存。
-- `Created At` 與 `Completed At` 一律以精確時刻儲存，因為它們記錄的是某件事實際發生的時間。
+- `Created At`、`Completed At` 與 `Cancelled At` 一律以精確時刻儲存，因為它們記錄的是某件事實際發生的時間。
 - Mindwtr 無法解析的值會留空，預覽會說明略過了幾個。
 - 接受 SQL 風格的時間戳記，例如 `2026-02-21 22:44:00.6390000 +00:00`：多餘的小數位和時區偏移前的空格會自動正規化。
 

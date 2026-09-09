@@ -34,7 +34,7 @@ Außer `Title` ist jede Spalte optional; Sie brauchen nur die, die Sie tatsächl
 | --- | --- | --- |
 | `Title` | beliebiger Text | Erforderlich. Der Aufgabentitel. |
 | `Description` | beliebiger Text | Die Aufgabenbeschreibung. Zeilenumbrüche bleiben innerhalb eines Werts in Anführungszeichen erhalten. |
-| `Status` | `inbox`, `next`, `waiting`, `someday`, `reference`, `done`, `archived` | Unabhängig von Groß- und Kleinschreibung. Bleibt das Feld leer, wird der Status zu `done`, wenn `Completed At` gesetzt ist, sonst zu `next`, wenn die Zeile ein Projekt nennt, andernfalls zu `inbox`. Ein nicht erkannter Wert wird mit einer Warnung zu `inbox`. |
+| `Status` | `inbox`, `next`, `waiting`, `someday`, `reference`, `done`, `archived` | Unabhängig von Groß- und Kleinschreibung. Bleibt das Feld leer, wird der Status zu `archived`, wenn `Cancelled At` gesetzt ist (ab der nächsten Version nach 1.2.8), sonst zu `done`, wenn `Completed At` gesetzt ist, sonst zu `next`, wenn die Zeile ein Projekt nennt, andernfalls zu `inbox`. Ein nicht erkannter Wert wird mit einer Warnung zu `inbox`. |
 | `Project` | ein Projektname | Legt das Projekt einmalig an und ordnet die Aufgabe darin ein. Namen werden unabhängig von Groß- und Kleinschreibung abgeglichen. |
 | `Section` | ein Abschnittsname innerhalb des Projekts dieser Zeile | Benötigt ein `Project` in derselben Zeile. Fehlt es, wird der Wert mit einer Warnung ignoriert. |
 | `Area` | ein Bereichsname | Nennt die Zeile ein `Project`, nimmt der Bereich das Projekt auf. Andernfalls wird die Aufgabe selbst im Bereich abgelegt. |
@@ -46,7 +46,8 @@ Außer `Title` ist jede Spalte optional; Sie brauchen nur die, die Sie tatsächl
 | `Start Date` | ein Datum oder Datum mit Uhrzeit | Das Startdatum. Die Aufgabe bleibt bis dahin aus „Fokus“ ausgeblendet. |
 | `Due Date` | ein Datum oder Datum mit Uhrzeit | Die Frist. |
 | `Review Date` | ein Datum oder Datum mit Uhrzeit | Das Wiedervorlagedatum für eine spätere Neubewertung. |
-| `Completed At` | ein Datum mit Uhrzeit | Der Abschlusszeitpunkt. Er macht außerdem einen leeren `Status` zu `done` und wird nur behalten, wenn der resultierende Status `done` oder `archived` ist. |
+| `Completed At` | ein Datum mit Uhrzeit | Der Abschlusszeitpunkt. Ohne `Cancelled At` macht er einen leeren `Status` zu `done`. Er bleibt nur bei `done` oder nicht abgebrochenen Aufgaben mit Status `archived` erhalten. |
+| `Cancelled At` | ein Datum mit Uhrzeit | Ab der nächsten Version nach 1.2.8: der Zeitpunkt des Abbruchs. Bei leerem `Status` wird `archived` gewählt, bevor `Completed At` berücksichtigt wird. Der Wert bleibt nur bei `archived` erhalten; ein Abbruch löscht `Completed At` und erzeugt keine nächste Wiederholung. |
 | `Created At` | ein Datum mit Uhrzeit | Der Erstellungszeitpunkt. Bleibt er leer, gilt der Zeitpunkt des Imports. |
 | `Checklist` | durch Zeilenumbrüche oder `\|` getrennte Einträge | Wird zur Checkliste der Aufgabe. Ein Eintrag wie `[x] Buy stamps` beginnt erledigt; `[ ] Buy stamps` und ein bloßes `Buy stamps` beginnen offen. Eine Aufgabe mit Checklisteneinträgen wird zur Listenaufgabe. |
 | `Location` | beliebiger Text | Das Ortsfeld der Aufgabe. |
@@ -59,7 +60,7 @@ Außer `Title` ist jede Spalte optional; Sie brauchen nur die, die Sie tatsächl
 - Ein reines Datum wie `2026-09-01` bleibt ein reines Datum. Mindwtr erfindet dafür keine Uhrzeit um Mitternacht.
 - Ein Datum mit Uhrzeit ohne Zeitzone, etwa `2026-09-05 14:30`, behält genau diese Uhrzeit als Wanduhrzeit.
 - Ein Wert mit `Z` am Ende oder mit einem Versatz wie `+02:00` wird als der genannte exakte Zeitpunkt gespeichert.
-- `Created At` und `Completed At` werden immer als exakter Zeitpunkt gespeichert, weil sie festhalten, wann etwas tatsächlich geschehen ist.
+- `Created At`, `Completed At` und `Cancelled At` werden immer als exakter Zeitpunkt gespeichert, weil sie festhalten, wann etwas tatsächlich geschehen ist.
 - Einen Wert, den Mindwtr nicht lesen kann, lässt es leer, und die Vorschau nennt die Anzahl der übersprungenen Werte.
 - SQL-Zeitstempel wie `2026-02-21 22:44:00.6390000 +00:00` werden akzeptiert: Die zusätzlichen Nachkommastellen und das Leerzeichen vor dem Offset werden automatisch bereinigt.
 

@@ -34,7 +34,7 @@ Every column except `Title` is optional, and you only need the ones you actually
 | --- | --- | --- |
 | `Title` | any text | Required. The task title. |
 | `Description` | any text | The task description. Line breaks are kept inside a quoted value. |
-| `Status` | `inbox`, `next`, `waiting`, `someday`, `reference`, `done`, `archived` | Case-insensitive. Left empty, the status becomes `done` when `Completed At` is set, otherwise `next` when the row names a project, otherwise `inbox`. A value Mindwtr does not recognize becomes `inbox` with a warning. |
+| `Status` | `inbox`, `next`, `waiting`, `someday`, `reference`, `done`, `archived` | Case-insensitive. Left empty, the status becomes `archived` when `Cancelled At` is set (from the next release after 1.2.8), otherwise `done` when `Completed At` is set, otherwise `next` when the row names a project, otherwise `inbox`. A value Mindwtr does not recognize becomes `inbox` with a warning. |
 | `Project` | a project name | Creates the project once and puts the task in it. Names are matched without regard to case. |
 | `Section` | a section name inside that row's project | Needs a `Project` on the same row. Without one the value is ignored with a warning. |
 | `Area` | an area name | With a `Project` on the row, the area holds the project. Without one, the task itself is filed in the area. |
@@ -46,7 +46,8 @@ Every column except `Title` is optional, and you only need the ones you actually
 | `Start Date` | a date or date and time | The defer date. The task stays out of Focus until it arrives. |
 | `Due Date` | a date or date and time | The deadline. |
 | `Review Date` | a date or date and time | The tickler date for a later reconsideration. |
-| `Completed At` | a date and time | The completion timestamp. It also turns an empty `Status` into `done`, and it is kept only when the resulting status is `done` or `archived`. |
+| `Completed At` | a date and time | The completion timestamp. When `Cancelled At` is absent, it turns an empty `Status` into `done`. It is kept only for `done` or non-cancelled `archived` tasks. |
+| `Cancelled At` | a date and time | From the next release after 1.2.8: the cancellation timestamp. With an empty `Status`, it selects `archived` before `Completed At` is considered. It is kept only for `archived` tasks; cancellation clears `Completed At` and does not generate a recurring occurrence. |
 | `Created At` | a date and time | The creation timestamp. Left empty, the task is created as of the import. |
 | `Checklist` | items separated by line breaks or `\|` | Becomes the task's checklist. An item written as `[x] Buy stamps` starts completed; `[ ] Buy stamps` and a bare `Buy stamps` start open. A task with checklist items becomes a list task. |
 | `Location` | any text | The task's location field. |
@@ -59,7 +60,7 @@ Every column except `Title` is optional, and you only need the ones you actually
 - A date on its own, such as `2026-09-01`, stays a plain date. Mindwtr does not invent a midnight time for it.
 - A date and time with no zone, such as `2026-09-05 14:30`, keeps exactly those wall-clock digits.
 - A value ending in `Z` or an offset such as `+02:00` is stored as the precise instant it names.
-- `Created At` and `Completed At` are always stored as a precise instant, because they record when something really happened.
+- `Created At`, `Completed At` and `Cancelled At` are always stored as a precise instant, because they record when something really happened.
 - A value Mindwtr cannot read is left empty, and the preview reports how many were skipped.
 - SQL-style timestamps such as `2026-02-21 22:44:00.6390000 +00:00` are accepted: the extra fractional digits and the space before the offset are normalized away.
 

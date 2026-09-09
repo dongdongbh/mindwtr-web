@@ -66,6 +66,12 @@ Exemple pour xAI (Grok) :
 - **URL de base personnalisée** : `https://api.x.ai/v1`
 - **Clé d’API** : votre clé d’API xAI
 
+## Modèles lents et délai d’attente
+
+À partir de v1.3.0, ouvrez **Avancé → Délai d’attente** dans les paramètres de l’assistant IA, sur ordinateur ou mobile. Choisissez **30, 60, 120 ou 300 secondes** ; la valeur par défaut reste de 30 secondes. Pour un modèle local lent, essayez d’abord 120 secondes.
+
+Ce délai concerne les réponses de l’assistant IA et de Copilot, pas la transcription ni la récupération de la liste des modèles. Les requêtes annulées ou expirées ne sont pas relancées automatiquement. Les erreurs temporaires de réseau ou de serveur peuvent encore entraîner un nombre limité de nouvelles tentatives. Le délai suit votre préférence actuelle de synchronisation des paramètres IA.
+
 ## Fonctionnalités
 
 ### Clarifier

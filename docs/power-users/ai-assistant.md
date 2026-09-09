@@ -65,6 +65,12 @@ Example for xAI (Grok):
 - **Custom base URL**: `https://api.x.ai/v1`
 - **API key**: your xAI API key
 
+## Slow models and request timeouts
+
+Starting with v1.3.0, open **Advanced → Request timeout** inside the AI assistant settings on desktop or mobile. Choose **30, 60, 120, or 300 seconds**; the default remains 30 seconds. For a slow local model, try 120 seconds first.
+
+This limit covers AI assistant and Copilot responses, not speech transcription or fetching model lists. A timed-out or cancelled request is not retried automatically. Temporary network or server errors may still receive bounded retries. The timeout follows your existing AI-settings sync preference.
+
 ## Features
 
 ### Clarify

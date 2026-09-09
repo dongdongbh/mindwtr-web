@@ -424,6 +424,7 @@ Configure notifications in Settings:
 - Markdown checkboxes in the description are notes-only; they do not affect the task checklist
 - Paste multi-line text into a checklist item to create one item per line (bullets, numbering, and `[x]` markers are recognized)
 - Assign to a project from the editor, or from a task row's `⋯` menu — pick **Project…** to move the task into a project or out of the one it is in
+- **Next release:** In that **Project…** picker, type a new name and choose **Create**. The new project is saved immediately; the task moves only when you choose **Save**. **Cancel** leaves the task unchanged and keeps the project you created.
 
 ### Task Properties
 

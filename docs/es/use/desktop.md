@@ -424,6 +424,7 @@ Configura las notificaciones en Ajustes:
 - Las casillas Markdown de la descripción son solo notas; no afectan a la lista de comprobación de la tarea
 - Pega texto de varias líneas en un elemento de la lista para crear un elemento por línea (se reconocen viñetas, numeración y marcadores `[x]`)
 - Asigna la tarea a un proyecto desde el editor o desde el menú `⋯` de una fila de tarea: **Proyecto…** la mueve a un proyecto o la saca del que tiene
+- **Próxima versión:** En ese selector de **Proyecto…**, escribe un nombre nuevo y elige **Crear**. El proyecto se guarda de inmediato; la tarea solo se mueve al elegir **Guardar**. **Cancelar** deja la tarea sin cambios y conserva el proyecto creado.
 
 ### Propiedades de las tareas
 

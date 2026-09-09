@@ -426,6 +426,7 @@ In den Einstellungen:
 - Markdown-Kontrollkästchen in Beschreibungen sind reine Notizen und beeinflussen die Aufgabencheckliste nicht
 - Mehrzeiligen Text in einen Checklistenpunkt einfügen, um je Zeile einen Punkt zu erstellen (Aufzählungen, Nummerierungen und `[x]` werden erkannt)
 - Ein Projekt im Editor zuweisen oder im `⋯`-Menü einer Aufgabenzeile: **Projekt…** verschiebt die Aufgabe in ein Projekt oder aus ihrem Projekt heraus
+- **Nächste Version:** In dieser **Projekt…**-Auswahl einen neuen Namen eingeben und **Erstellen** wählen. Das neue Projekt wird sofort gespeichert; die Aufgabe wird erst mit **Speichern** zugeordnet. **Abbrechen** lässt die Aufgabe unverändert und behält das erstellte Projekt.
 
 ### Aufgabeneigenschaften
 

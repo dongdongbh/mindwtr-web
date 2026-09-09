@@ -424,6 +424,7 @@ Configurez les notifications dans les Paramètres :
 - Les cases à cocher Markdown de la description ne sont que des notes ; elles n’ont aucun effet sur la liste de contrôle de la tâche
 - Collez un texte de plusieurs lignes dans un élément de liste de contrôle pour créer un élément par ligne (les puces, la numérotation et les marqueurs `[x]` sont reconnus)
 - Attribuez la tâche à un projet depuis l’éditeur ou depuis le menu `⋯` d’une ligne de tâche : **Projet…** la déplace dans un projet ou l’en retire
+- **Prochaine version :** Dans ce sélecteur **Projet…**, saisissez un nouveau nom et choisissez **Créer**. Le projet est enregistré immédiatement ; la tâche n’y est déplacée qu’avec **Enregistrer**. **Annuler** laisse la tâche inchangée et conserve le projet créé.
 
 ### Propriétés des tâches
 

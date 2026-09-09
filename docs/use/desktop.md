@@ -470,6 +470,8 @@ Use the same recurrence sheet to set an end date or an occurrence count when you
 
 ## Bulk Actions
 
+**Next release:** In **Bulk organize**, search for a project or area, or type a new name and choose **Create** without losing your task selection or other form fields. Creation saves and selects the destination; tasks move only after **Apply to selected**. Cancelling the bulk edit leaves your tasks unchanged and keeps any destination you created. If creation fails, your selection and form stay available for retry.
+
 Select multiple tasks to perform batch operations:
 
 1. Click **"Select"** button in the list header

@@ -470,6 +470,8 @@ Usa la misma hoja de recurrencia para establecer una fecha final o un número de
 
 ## Acciones en bloque
 
+**Próxima versión:** En **Organizar en lote**, busca un proyecto o área, o escribe un nombre nuevo y elige **Crear** sin perder la selección de tareas ni los demás campos. Al crear se guarda y selecciona el destino; las tareas solo se mueven al pulsar **Aplicar a las seleccionadas**. Cancelar la edición no cambia las tareas y conserva los destinos creados. Si la creación falla, se mantienen la selección y el formulario para volver a intentarlo.
+
 Selecciona varias tareas para realizar operaciones por lotes:
 
 1. Haz clic en el botón **«Seleccionar»** del encabezado de la lista

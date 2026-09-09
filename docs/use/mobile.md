@@ -66,6 +66,12 @@ Open **Trash** and tap **Select** to manage several deleted tasks and projects. 
 
 ---
 
+## Bulk Actions
+
+**Next release:** In **Bulk organize**, search for a project or area, or type a new name and choose **Create** without losing your task selection or other form fields. Creation saves and selects the destination; tasks move only after **Apply to selected**. Cancelling the bulk edit leaves your tasks unchanged and keeps any destination you created. If creation fails, your selection and form stay available for retry.
+
+---
+
 ## Global Search
 
 Tap the **search icon** in the header to open Global Search.

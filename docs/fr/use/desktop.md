@@ -470,6 +470,8 @@ Utilisez la même feuille de récurrence pour définir une date de fin ou un nom
 
 ## Actions groupées
 
+**Prochaine version :** Dans **Bulk organize**, recherchez un projet ou un domaine, ou saisissez un nouveau nom et choisissez **Créer** sans perdre les tâches sélectionnées ni les autres champs. La création enregistre et sélectionne la destination ; les tâches ne sont déplacées qu’après **Apply to selected**. Annuler la modification laisse les tâches inchangées et conserve les destinations créées. En cas d’échec de création, la sélection et le formulaire restent disponibles pour réessayer.
+
 Sélectionnez plusieurs tâches pour effectuer des opérations par lot :
 
 1. Cliquez sur le bouton **« Sélectionner »** dans l’en-tête de la liste

@@ -66,6 +66,12 @@ Abre **Papelera** y toca **Seleccionar** para gestionar varias tareas y proyecto
 
 ---
 
+## Acciones en bloque
+
+**Próxima versión:** En **Organizar en lote**, busca un proyecto o área, o escribe un nombre nuevo y elige **Crear** sin perder la selección de tareas ni los demás campos. Al crear se guarda y selecciona el destino; las tareas solo se mueven al pulsar **Aplicar a las seleccionadas**. Cancelar la edición no cambia las tareas y conserva los destinos creados. Si la creación falla, se mantienen la selección y el formulario para volver a intentarlo.
+
+---
+
 ## Búsqueda global
 
 Toca el **icono de búsqueda** del encabezado para abrir la Búsqueda global.

@@ -467,6 +467,8 @@ Stellen Sie **Nach Abschluss wiederholen**, Enddatum oder Anzahl im Wiederholung
 
 ## Stapelaktionen
 
+**Nächste Version:** Suche unter **Sammel-Organisation** nach einem Projekt oder Bereich oder gib einen neuen Namen ein und wähle **Erstellen**, ohne die Aufgabenauswahl oder andere Formularfelder zu verlieren. Das Erstellen speichert und wählt das Ziel; erst **Auf Auswahl anwenden** verschiebt die Aufgaben. Beim Abbrechen bleiben die Aufgaben unverändert und erstellte Ziele erhalten. Schlägt das Erstellen fehl, bleiben Auswahl und Formular für einen erneuten Versuch erhalten.
+
 Mehrere Aufgaben gemeinsam bearbeiten:
 
 1. **„Auswählen“** in der Listenkopfzeile anklicken

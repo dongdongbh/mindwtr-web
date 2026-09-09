@@ -66,6 +66,12 @@ Ouvrez la **Corbeille** et touchez **Sélectionner** pour gérer plusieurs tâch
 
 ---
 
+## Actions groupées
+
+**Prochaine version :** Dans **Bulk organize**, recherchez un projet ou un domaine, ou saisissez un nouveau nom et choisissez **Créer** sans perdre les tâches sélectionnées ni les autres champs. La création enregistre et sélectionne la destination ; les tâches ne sont déplacées qu’après **Apply to selected**. Annuler la modification laisse les tâches inchangées et conserve les destinations créées. En cas d’échec de création, la sélection et le formulaire restent disponibles pour réessayer.
+
+---
+
 ## Recherche globale
 
 Touchez l’**icône de recherche** dans l’en-tête pour ouvrir la Recherche globale.

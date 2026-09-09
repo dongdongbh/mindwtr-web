@@ -99,7 +99,7 @@ Mindwtr gives every row a stable identity, so importing the same file twice does
 
 Mindwtr writes this same format, so the round trip is complete. **Settings → Data → Backup → Export CSV** saves your live tasks as one CSV file, on desktop and mobile.
 
-- On desktop, the **Export CSV** button in a task list's toolbar exports only what that list is showing — the rows left after its filters, search and area selection. Collapsed groups are still included: folding a group hides it, it does not exclude it.
+- From the next release, desktop filtered export moves to **More (⋯) → Export current results as CSV**, beside the app name in the sidebar. Use it from task lists, Contexts, saved searches, a project, Focus, Board, or Review. It exports the results after that view's filters, search and area selection, including collapsed groups and rows outside the visible screen. The action is disabled when there are no results or the view does not support filtered export. Full-data export remains in Settings.
 - The `ID` column is always written, so re-importing an export does not duplicate anything: rows whose `ID` matches a task you already have are skipped with a warning. Edits made to an exported file are **not** pushed back in — change those tasks in the app instead. The identity notes above apply directly.
 - Deleted tasks are never exported. The format has no column for them, and such a row would return as a live task on the next import.
 - Recurrence is written as the repeat rule the importer reads back, so repeats survive the round trip. How far a counted series has already run is not written, so an imported repeat starts a fresh series.

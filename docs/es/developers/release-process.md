@@ -61,20 +61,24 @@ Publica compilaciones RC únicamente en canales que puedan admitir personas enca
 | Linux Flatpak | Rama beta de Flathub | Las versiones estables se publican tanto en la rama estable como en la beta para no dejar atrás a los usuarios de la beta. |
 | Arch Linux | AUR `mindwtr-beta-bin` | El lanzamiento estable actualiza el paquete beta persistente. |
 | Debian/Fedora Linux | Repositorios APT/RPM beta | Los paquetes estables permanecen en directorios separados de repositorios estables. |
-| Descarga directa para Windows | Instalador/versión portátil del prelanzamiento de GitHub | Microsoft Store permanece solo en estable salvo que posteriormente se automaticen los paquetes piloto. |
+| Descarga directa para Windows | Instalador/versión portátil del prelanzamiento de GitHub | La versión final de GitHub proporciona las descargas estables. |
+| Windows Microsoft Store | Paquete piloto Mindwtr Beta | Las versiones estables actualizan el piloto configurado y el envío público de la tienda. |
 
 Mantén estos canales solo en estable salvo que exista una necesidad clara y ya se disponga de automatización:
 
 - F-Droid
 - IzzyOnDroid
-- Paquetes piloto de Microsoft Store
 - winget
 - Cask estable de Homebrew
 - Chocolatey
 - Bucket estable de Scoop
 - Repositorios APT/RPM estables
 
-Los paquetes piloto de Microsoft Store siguen siendo una posible incorporación futura.
+Los paquetes piloto usan la variable del repositorio `MSSTORE_FLIGHT_ID` y los secretos existentes `MS_TENANT_ID`, `MS_CLIENT_ID`, `MS_CLIENT_SECRET` y, opcionalmente, `MS_STORE_APP_ID`. El ID predeterminado de la aplicación es `9N0V5B0B6FRX`. Ejecuta `.github/workflows/msstore-flight-id.yml` para consultar el ID del piloto. Los participantes reciben actualizaciones desde la ficha habitual de la tienda.
+
+La entrada RC `run_msstore_flight` está activada de forma predeterminada. Para las RC, el flujo de Windows mantiene `run_msstore=false` y usa únicamente la API de envíos piloto. Rechaza borradores pendientes ajenos, incluido un borrador inicial creado en Partner Center; revísalo y publícalo o descártalo antes de reintentar. No edites en Partner Center los envíos creados mediante la API. El resumen del flujo registra el ID del envío y el estado de procesamiento; la certificación y la instalación por los participantes se comprueban por separado.
+
+Las versiones de paquetes usan `X.Y.(Z*100+N).0` para `X.Y.Z-rc.N`, con números RC de 1–98, y `X.Y.(Z*100+99).0` para la versión estable `X.Y.Z`. Cada componente debe estar entre 0–65535 y el primero debe ser positivo. Por ejemplo, `1.3.0-rc.2` pasa a `1.3.2.0` y la versión estable `1.3.0` a `1.3.99.0`. El cuarto componente permanece en cero para la tienda. Las versiones estables también actualizan el piloto configurado porque las cuentas inscritas siguen asignadas a él. Comprueba que una actualización de la tienda conserva las tareas y los adjuntos.
 
 ### Automatización actual de RC
 
@@ -89,6 +93,7 @@ También publica compilaciones para pruebas en los canales respaldados por tiend
 - AAB de Android en los canales `internal` y de pruebas abiertas (`beta`) de Google Play de forma predeterminada; las ejecuciones manuales pueden elegir canales de prueba de Play separados por comas o `none`.
 - Archivo de iOS con Watch en TestFlight y con el envío para revisión de App Store desactivado. El trabajo de iOS de la RC selecciona esta variante, espera a que se procese y distribuye esa compilación exacta al grupo de pruebas externas configurado.
 - Compilación de macOS para App Store en TestFlight con el envío para revisión de App Store desactivado.
+- MSIX de Windows al piloto Mindwtr Beta de Microsoft Store; las ejecuciones manuales pueden desactivar este canal.
 - Solicitudes de incorporación de cambios para actualizar la rama beta de Flathub mediante el flujo de trabajo compartido de Flathub; las ejecuciones manuales pueden desactivarlo cuando la configuración del canal no esté lista.
 - Cuando existen los recursos del prelanzamiento de GitHub, el flujo compila y valida AUR `mindwtr-beta-bin`, publica los archivos exactos `PKGBUILD` y `.SRCINFO` en AUR y verifica el commit remoto de Git.
 - Actualizaciones de repositorios APT/RPM beta después de que exista el prelanzamiento de GitHub; las ejecuciones manuales pueden desactivarlas.

@@ -61,20 +61,24 @@ Veröffentlichen Sie RC-Builds nur in Kanälen, die Tester ohne hohen Wartungsau
 | Linux Flatpak | Flathub-Beta-Branch | Stabile Releases werden sowohl im stabilen als auch im Beta-Branch veröffentlicht, damit Beta-Benutzer nicht zurückbleiben. |
 | Arch Linux | AUR `mindwtr-beta-bin` | Das stabile Release aktualisiert das dauerhaft bestehende Beta-Paket. |
 | Debian/Fedora Linux | Beta-APT-/RPM-Repositorys | Stabile Pakete verbleiben in getrennten Verzeichnissen der stabilen Repositorys. |
-| Direkter Windows-Download | Installer/portable Version aus dem GitHub-Prerelease | Microsoft Store bleibt ausschließlich stabil, sofern Paket-Flights nicht später automatisiert werden. |
+| Direkter Windows-Download | Installer/portable Version aus dem GitHub-Prerelease | Das endgültige GitHub-Release liefert stabile Downloads. |
+| Windows Microsoft Store | Paket-Flight Mindwtr Beta | Stabile Releases aktualisieren den konfigurierten Flight und die öffentliche Store-Einreichung. |
 
 Halten Sie diese Kanäle ausschließlich stabil, sofern kein klarer Bedarf besteht und die Automatisierung bereits vorhanden ist:
 
 - F-Droid
 - IzzyOnDroid
-- Microsoft-Store-Paket-Flights
 - winget
 - stabiler Homebrew-Cask
 - Chocolatey
 - stabiler Scoop-Bucket
 - stabile APT-/RPM-Repositorys
 
-Microsoft-Store-Paket-Flights bleiben eine mögliche künftige Ergänzung.
+Microsoft-Store-Flights verwenden die Repository-Variable `MSSTORE_FLIGHT_ID` und die vorhandenen Secrets `MS_TENANT_ID`, `MS_CLIENT_ID`, `MS_CLIENT_SECRET` sowie optional `MS_STORE_APP_ID`. Die App-ID ist standardmäßig `9N0V5B0B6FRX`. `.github/workflows/msstore-flight-id.yml` ermittelt die Flight-ID. Angemeldete Tester erhalten Updates über den normalen Store-Eintrag.
+
+Die RC-Eingabe `run_msstore_flight` ist standardmäßig true. Für RCs bleibt `run_msstore=false`; der Windows-Workflow verwendet ausschließlich die Flight-API. Fremde offene Entwürfe werden abgelehnt, einschließlich eines ersten Entwurfs aus Partner Center. Prüfen Sie diesen Flight-Entwurf und veröffentlichen oder verwerfen Sie ihn vor einem erneuten Versuch. Bearbeiten Sie API-erstellte Einreichungen nicht in Partner Center. Die Workflow-Zusammenfassung enthält Einreichungs-ID und Verarbeitungsstatus; Zertifizierung und Installation durch Tester werden getrennt geprüft.
+
+Store-Paketversionen verwenden `X.Y.(Z*100+N).0` für `X.Y.Z-rc.N` mit RC-Nummern 1–98 und `X.Y.(Z*100+99).0` für stabile Versionen `X.Y.Z`. Jede Komponente muss in 0–65535 liegen, die erste muss positiv sein. Beispielsweise wird `1.3.0-rc.2` zu `1.3.2.0` und die stabile Version `1.3.0` zu `1.3.99.0`. Die vierte Komponente bleibt für den Store null. Stabile Releases aktualisieren auch den konfigurierten Flight, da angemeldete Konten diesem zugeordnet bleiben. Prüfen Sie, dass ein Store-Update Aufgaben und Anhänge erhält.
 
 ### Aktuelle RC-Automatisierung
 
@@ -89,6 +93,7 @@ Außerdem veröffentlicht er Tester-Builds in den bereits verbundenen Store-gest
 - Android-AAB standardmäßig in Google Play `internal` und offene Tests (`beta`); manuelle Läufe können kommagetrennte Play-Test-Tracks oder `none` auswählen.
 - Watch-fähiges iOS-Archiv in TestFlight mit deaktivierter Einreichung zur App-Store-Prüfung. Der iOS-Job des RC wählt diese Variante aus, wartet auf die Verarbeitung und verteilt genau diesen Build an die konfigurierte externe Testgruppe.
 - macOS-App-Store-Build in TestFlight mit deaktivierter Einreichung zur App-Store-Prüfung.
+- Windows-MSIX zum Microsoft-Store-Flight Mindwtr Beta; manuelle Läufe können diesen Kanal deaktivieren.
 - Pull Requests zur Aktualisierung des Flathub-Beta-Branches über den gemeinsamen Flathub-Workflow; manuelle Läufe können dies deaktivieren, wenn der Kanal noch nicht bereit ist.
 - Sobald die GitHub-Prerelease-Artefakte vorhanden sind, erstellt und prüft der Workflow AUR `mindwtr-beta-bin`, veröffentlicht die exakten Dateien `PKGBUILD` und `.SRCINFO` im AUR und verifiziert den entfernten Git-Head.
 - Aktualisierungen der Beta-APT-/RPM-Repositorys, nachdem das GitHub-Prerelease vorhanden ist; manuelle Läufe können sie deaktivieren.

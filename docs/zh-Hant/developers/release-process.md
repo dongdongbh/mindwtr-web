@@ -61,20 +61,24 @@ RC 建置只發布至能支援測試人員且不會帶來高額維護成本的�
 | Linux Flatpak | Flathub beta 分支 | 穩定版會同時發布至 stable 與 beta 分支，避免 Beta 使用者停留在舊版本。 |
 | Arch Linux | AUR `mindwtr-beta-bin` | 穩定版發布會重新整理持續性的 Beta 套件。 |
 | Debian/Fedora Linux | Beta APT/RPM 儲存庫 | 穩定版套件會保留在個別的穩定版儲存庫目錄中。 |
-| Windows 直接下載 | GitHub 預發布安裝程式／可攜版 | 除非日後針對套件發行小眾測試版導入自動化，否則 Microsoft Store 只提供穩定版。 |
+| Windows 直接下載 | GitHub 預發布安裝程式／可攜版 | GitHub 正式發行提供穩定版下載。 |
+| Windows Microsoft Store | Mindwtr Beta 套件小眾測試版 | 穩定版會更新已設定的測試版與公開商店提交。 |
 
 除非有明確需求且自動化已就緒，否則下列管道只應保留穩定版：
 
 - F-Droid
 - IzzyOnDroid
-- Microsoft Store 套件發行小眾測試版
 - winget
 - Homebrew 穩定版 cask
 - Chocolatey
 - Scoop 穩定版 bucket
 - 穩定版 APT/RPM 儲存庫
 
-未來仍可能新增 Microsoft Store 套件發行小眾測試版。
+Microsoft Store 測試版使用儲存庫變數 `MSSTORE_FLIGHT_ID`，以及現有的 `MS_TENANT_ID`、`MS_CLIENT_ID`、`MS_CLIENT_SECRET` 和選用的 `MS_STORE_APP_ID` 密鑰。應用程式 ID 預設為 `9N0V5B0B6FRX`。執行 `.github/workflows/msstore-flight-id.yml` 可查詢測試版 ID。已加入的測試人員透過一般商店頁面接收更新。
+
+RC 輸入 `run_msstore_flight` 預設啟用。Windows 工作流程對 RC 保持 `run_msstore=false`，僅呼叫測試版提交 API。它會拒絕不屬於本次上傳的待處理草稿，包括最初在 Partner Center 建立的草稿；重試前請檢查並發布或捨棄該測試版草稿。不要在 Partner Center 編輯 API 建立的提交。工作流程摘要會記錄提交 ID 與接收處理狀態；認證和測試人員安裝仍須分別確認。
+
+商店套件版本將 `X.Y.Z-rc.N` 對應為 `X.Y.(Z*100+N).0`，RC 編號範圍為 1–98；穩定版 `X.Y.Z` 對應為 `X.Y.(Z*100+99).0`。每一段必須在 0–65535 範圍內，第一段必須為正數。例如，`1.3.0-rc.2` 對應 `1.3.2.0`，穩定版 `1.3.0` 對應 `1.3.99.0`。第四段保留給商店，保持為零。穩定版也會更新已設定的測試版，因為加入的帳號仍分配給該測試版。請確認透過商店升級後任務與附件都能保留。
 
 ### 目前的 RC 自動化
 
@@ -89,6 +93,7 @@ RC 工作流程為 `.github/workflows/release-rc.yml`。
 - 預設將 Android AAB 發布至 Google Play `internal` 與公開測試（`beta`）；手動執行可選擇以逗號分隔的 Play 測試群組或 `none`。
 - 將包含 Watch 的 iOS 封存發布至 TestFlight，且停用 App Store 審查提交。RC 的 iOS 工作會選擇此變體、等待處理完成，並將這個確切建置發布給已設定的外部測試群組。
 - 將 macOS App Store 建置發布至 TestFlight，且停用 App Store 審查提交。
+- 將 Windows MSIX 提交至 Microsoft Store 的 Mindwtr Beta 測試版；手動執行時可停用此管道。
 - 透過共用 Flathub 工作流程建立 Flathub beta 分支更新 PR；若管道尚未設定完成，手動執行可停用此項。
 - GitHub 預發布成品存在後，工作流程會建置並驗證 AUR `mindwtr-beta-bin`、將確切的 `PKGBUILD` 與 `.SRCINFO` 發布至 AUR，並驗證遠端 Git 提交。
 - GitHub 預發布版本存在後更新 Beta APT/RPM 儲存庫；手動執行可停用此項。

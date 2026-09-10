@@ -61,20 +61,24 @@ Publish RC builds only to channels that can support testers without creating hig
 | Linux Flatpak | Flathub beta branch | Stable releases publish to both stable and beta branches so beta users are not stranded. |
 | Arch Linux | AUR `mindwtr-beta-bin` | The stable release refreshes the persistent beta package. |
 | Debian/Fedora Linux | Beta APT/RPM repositories | Stable packages remain in separate stable repository directories. |
-| Windows direct download | GitHub prerelease installer/portable | Microsoft Store remains stable-only unless package flights are later automated. |
+| Windows direct download | GitHub prerelease installer/portable | Final GitHub release supplies stable downloads. |
+| Windows Microsoft Store | Mindwtr Beta package flight | Stable releases refresh the configured flight and the public Store submission. |
 
 Keep these stable-only unless there is a clear need and automation is already in place:
 
 - F-Droid
 - IzzyOnDroid
-- Microsoft Store package flights
 - winget
 - Homebrew stable cask
 - Chocolatey
 - Scoop stable bucket
 - stable APT/RPM repos
 
-Microsoft Store package flights remain a possible future addition.
+Microsoft Store flights use repository variable `MSSTORE_FLIGHT_ID` and the existing `MS_TENANT_ID`, `MS_CLIENT_ID`, `MS_CLIENT_SECRET`, and optional `MS_STORE_APP_ID` secrets. The app ID defaults to `9N0V5B0B6FRX`. Run `.github/workflows/msstore-flight-id.yml` to look up the flight ID. Enrolled testers receive updates through the normal Store listing.
+
+The RC input `run_msstore_flight` defaults to true. The Windows workflow keeps `run_msstore=false` for RCs and uses only the flight submission API. It refuses unrelated pending drafts, including an initial draft created in Partner Center; inspect and publish or discard that flight draft before retrying. Do not edit API-created submissions in Partner Center. The workflow summary records the submission ID and ingestion status; certification and installation by testers remain separate checks.
+
+Store package versions use `X.Y.(Z*100+N).0` for `X.Y.Z-rc.N`, with RC numbers 1–98, and `X.Y.(Z*100+99).0` for stable `X.Y.Z`. Every component must fit 0–65535 and the first must be positive. For example, `1.3.0-rc.2` becomes `1.3.2.0`, and stable `1.3.0` becomes `1.3.99.0`. The fourth component stays zero for the Store. Stable releases also update the configured flight because enrolled accounts remain assigned to it. Verify a Store-delivered upgrade preserves tasks and attachments.
 
 ### Current RC Automation
 
@@ -89,6 +93,7 @@ It also publishes tester builds to the store-backed channels that are already wi
 - Android AAB to Google Play `internal` and open testing (`beta`) by default; manual runs can choose comma-separated Play testing tracks or `none`.
 - Watch-enabled iOS archive to TestFlight with App Store review submission disabled. The RC iOS job selects this variant, waits for processing, and distributes that exact build to the configured external testing group.
 - macOS App Store build to TestFlight with App Store review submission disabled.
+- Windows MSIX to the Mindwtr Beta Microsoft Store flight; manual runs can disable this channel.
 - Flathub beta branch update PRs through the shared Flathub workflow; manual runs can disable this when channel setup is not ready.
 - After the GitHub prerelease assets exist, the workflow builds and validates AUR `mindwtr-beta-bin`, publishes the exact `PKGBUILD` and `.SRCINFO` to AUR, and verifies the remote Git head.
 - Beta APT/RPM repository updates after the GitHub prerelease exists; manual runs can disable them.

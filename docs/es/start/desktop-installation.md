@@ -135,6 +135,10 @@ Los paquetes mantenidos por la comunidad (por ejemplo, nixpkgs para NixOS) son b
 
 Instala desde [Microsoft Store](https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare).
 
+### Beta de Microsoft Store
+
+Puedes probar versiones candidatas con la misma instalación de la tienda. Envía el correo de tu cuenta Microsoft de la tienda a [support@mindwtr.app](mailto:support@mindwtr.app), o compártelo en la [discusión de la beta](https://github.com/dongdongbh/Mindwtr/discussions/769), y te añadiré a Mindwtr Beta. Tras la inscripción y publicación del piloto, busca actualizaciones en **Microsoft Store → Biblioteca**. Conserva tu instalación para mantener las tareas y los adjuntos. Consulta [Únete a los canales beta](/es/start/beta-channels) para saber cómo entrar y salir.
+
 ### Winget
 
 [![Versión de Winget](https://img.shields.io/winget/v/dongdongbh.Mindwtr?label=Winget&logo=windows&logoColor=white&color=00D2FF)](https://winstall.app/apps/dongdongbh.Mindwtr)

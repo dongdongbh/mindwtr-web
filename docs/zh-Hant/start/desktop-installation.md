@@ -135,6 +135,10 @@ chmod +x Mindwtr-*.AppImage
 
 從 [Microsoft Store](https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare) 安裝。
 
+### Microsoft Store 測試版
+
+你可以在現有商店安裝上測試候選版本。請將商店中使用的 Microsoft 帳號信箱寄至 [support@mindwtr.app](mailto:support@mindwtr.app)，或在[測試版討論](https://github.com/dongdongbh/Mindwtr/discussions/769)中留言，我會將你加入 Mindwtr Beta。加入群組且測試套件發布後，在 **Microsoft Store → 媒體櫃**中檢查更新。請保留現有安裝，以保留任務與附件。加入和退出的說明請參閱[加入 Beta 管道](/zh-Hant/start/beta-channels)。
+
 ### Winget
 
 [![Winget Version](https://img.shields.io/winget/v/dongdongbh.Mindwtr?label=Winget&logo=windows&logoColor=white&color=00D2FF)](https://winstall.app/apps/dongdongbh.Mindwtr)

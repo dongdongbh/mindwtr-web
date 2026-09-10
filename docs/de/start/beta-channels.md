@@ -26,6 +26,17 @@ Installieren Sie TestFlight und treten Sie anschließend der Mindwtr-Beta bei:
 
 Um TestFlight zu verlassen, entfernen Sie Mindwtr aus TestFlight und installieren die stabile Version erneut aus dem App Store oder Mac App Store.
 
+## Windows – Microsoft-Store-Beta
+
+Um Mindwtr Beta beizutreten, senden Sie die E-Mail-Adresse Ihres Microsoft-Kontos im Store an [support@mindwtr.app](mailto:support@mindwtr.app). Sie können sie auch in der [Beta-Diskussion](https://github.com/dongdongbh/Mindwtr/discussions/769) angeben, wenn Sie sie öffentlich teilen möchten. Ich füge dieses Konto der Testgruppe hinzu.
+
+Nachdem ich Sie hinzugefügt habe und Microsoft den Flight veröffentlicht hat, suchen Sie im Microsoft Store unter **Bibliothek** nach Updates und aktualisieren Mindwtr über den [gewohnten Store-Eintrag](https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare). Gruppenänderungen können bis zu 30 Minuten dauern. Microsoft nennt dies einen *Paket-Flight*: Sie verwenden die normale Store-App, ohne separate TestFlight-App.
+
+Aktualisieren Sie Ihre bestehende Store-Installation, damit Aufgaben und Anhänge erhalten bleiben. Sie müssen Mindwtr weder deinstallieren noch Daten in einen GitHub-Build übertragen. Auch stabile Releases erscheinen in dieser Beta-Gruppe.
+
+Zum Austritt bitten Sie unter derselben Support-Adresse um Entfernung. Der Store stuft eine installierte Beta nicht zurück; Sie erhalten die stabile Version, sobald ein neueres passendes Paket verfügbar ist.
+
+
 ## Linux – AUR-Beta
 
 Unter Arch Linux und davon abgeleiteten Distributionen können Sie das eigene Beta-Paket installieren:

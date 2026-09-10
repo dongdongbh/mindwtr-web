@@ -26,6 +26,17 @@ Install TestFlight, then join the Mindwtr beta:
 
 To leave TestFlight, remove Mindwtr from TestFlight and reinstall the stable version from the App Store or Mac App Store.
 
+## Windows - Microsoft Store Beta
+
+To join Mindwtr Beta, send the email address of the Microsoft account you use in Microsoft Store to [support@mindwtr.app](mailto:support@mindwtr.app), or share it in the [beta discussion](https://github.com/dongdongbh/Mindwtr/discussions/769) if you are comfortable posting it publicly. I will add that account to the testing group.
+
+After I add you and Microsoft publishes the flight, open Microsoft Store, check for updates in **Library**, and update Mindwtr from its [usual Store listing](https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare). Group changes can take up to 30 minutes. Microsoft calls this a *package flight*: you use the regular Store app, with no separate TestFlight app.
+
+Update your existing Store installation to keep your tasks and attachments in place. You do not need to uninstall Mindwtr or move your data to a GitHub build. Stable releases also go to this beta group.
+
+To leave, email the same support address and ask to be removed. The Store will not downgrade an installed beta; you receive stable once a newer eligible package is available.
+
+
 ## Linux - AUR Beta
 
 Arch Linux and derivative users can install the dedicated beta package:

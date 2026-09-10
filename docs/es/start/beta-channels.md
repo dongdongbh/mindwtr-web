@@ -26,6 +26,17 @@ Instala TestFlight y únete a la beta de Mindwtr:
 
 Para salir de TestFlight, elimina Mindwtr de TestFlight y reinstala la versión estable desde App Store o Mac App Store.
 
+## Windows: beta de Microsoft Store
+
+Para unirte a Mindwtr Beta, envía la dirección de correo de la cuenta Microsoft que usas en la tienda a [support@mindwtr.app](mailto:support@mindwtr.app), o compártela en la [discusión de la beta](https://github.com/dongdongbh/Mindwtr/discussions/769) si no te importa publicarla. Añadiré esa cuenta al grupo de pruebas.
+
+Después de que te añada y Microsoft publique el paquete piloto, busca actualizaciones en **Biblioteca** de Microsoft Store y actualiza Mindwtr desde su [ficha habitual](https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare). Los cambios del grupo pueden tardar hasta 30 minutos. Microsoft lo llama *paquete piloto*: usas la tienda habitual, sin una aplicación TestFlight aparte.
+
+Actualiza tu instalación actual de la tienda para conservar tus tareas y adjuntos. No necesitas desinstalar Mindwtr ni trasladar tus datos a una compilación de GitHub. Las versiones estables también llegan a este grupo beta.
+
+Para salir, pide que te retiremos escribiendo a la misma dirección de soporte. La tienda no vuelve a una versión anterior desde una beta instalada; recibirás la estable cuando haya un paquete apto más reciente.
+
+
 ## Linux: beta de AUR
 
 Quienes usen Arch Linux o una distribución derivada pueden instalar el paquete beta específico:

@@ -135,6 +135,10 @@ Community-maintained packages (for example nixpkgs for NixOS) are welcome. The d
 
 Install from the [Microsoft Store](https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare).
 
+### Microsoft Store Beta
+
+You can test release candidates through the same Store installation. Email the Microsoft account address you use in the Store to [support@mindwtr.app](mailto:support@mindwtr.app), or share it in the [beta discussion](https://github.com/dongdongbh/Mindwtr/discussions/769), and I will add you to Mindwtr Beta. After enrollment and flight publication, check **Microsoft Store → Library** for updates. Keep your existing installation so your tasks and attachments stay in place. See [Join the Beta Channels](/start/beta-channels) for enrollment and leaving instructions.
+
 ### Winget
 
 [![Winget Version](https://img.shields.io/winget/v/dongdongbh.Mindwtr?label=Winget&logo=windows&logoColor=white&color=00D2FF)](https://winstall.app/apps/dongdongbh.Mindwtr)

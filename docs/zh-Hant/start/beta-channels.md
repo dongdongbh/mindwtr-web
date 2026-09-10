@@ -26,6 +26,17 @@ Mindwtr 會在正式穩定版發行前，先發布 beta 與候選發行版組建
 
 若要退出 TestFlight，請從 TestFlight 移除 Mindwtr，再從 App Store 或 Mac App Store 重新安裝穩定版。
 
+## Windows - Microsoft Store 測試版
+
+若要加入 Mindwtr Beta，請將你在 Microsoft Store 使用的 Microsoft 帳號信箱寄至 [support@mindwtr.app](mailto:support@mindwtr.app)。如果你願意公開信箱，也可以在[測試版討論](https://github.com/dongdongbh/Mindwtr/discussions/769)中留言。我會將該帳號加入測試群組。
+
+我加入你的帳號且 Microsoft 發布測試套件後，請開啟 Microsoft Store，在**媒體櫃**中檢查更新，透過[原有商店頁面](https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare)更新 Mindwtr。測試群組成員變更可能需要最多 30 分鐘生效。Microsoft 將此功能稱為 *package flight*（套件小眾測試版）；你使用一般商店應用程式，無需另行安裝 TestFlight。
+
+更新現有商店安裝即可保留任務與附件，無需解除安裝 Mindwtr，也無需將資料移至 GitHub 建置。穩定版也會發布至這個測試群組。
+
+若要退出，請寄信至同一支援信箱申請移出群組。商店不會將已安裝的測試版降級；有更高版本的適用穩定套件後，你才會收到穩定版更新。
+
+
 ## Linux - AUR 測試版
 
 Arch Linux 及其衍生版本的使用者可安裝專用的測試版套件：

@@ -84,6 +84,8 @@ Eingetippte Kontexte und Schlagwörter kommen zu den bereits ausgewählten hinzu
 
 Auf dem Desktop steht der Cursor beim Öffnen jedes Eintrags im Titel, am Ende des Textes, damit Ihr erster Tastendruck die Erfassung verfeinert statt sie zu ersetzen.
 
+Beim Verarbeiten eines Eintrags auf dem Desktop oder Mobilgerät sehen Sie unter **Ähnliche Aufgaben** bis zu drei vorhandene Aufgaben mit gleichen oder ähnlich formulierten Titeln, einschließlich erledigter und archivierter Aufgaben. Prüfen Sie Titel und Status, bevor Sie über den aktuellen Eintrag entscheiden. Der Hinweis funktioniert offline bei ausgeschalteter KI und lässt Ihre Aufgaben unverändert.
+
 ### Der Arbeitsablauf
 
 ```mermaid

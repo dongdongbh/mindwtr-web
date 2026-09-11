@@ -84,6 +84,8 @@ Les contextes et les étiquettes saisis s’ajoutent à ceux déjà sélectionn�
 
 Sur ordinateur, le curseur se place dans le titre à l’ouverture de chaque élément, à la fin du texte, pour que votre première frappe affine la capture au lieu de la remplacer.
 
+Pendant le traitement d’un élément sur ordinateur ou mobile, vous voyez sous **Tâches similaires** jusqu’à trois tâches existantes dont les titres sont identiques ou partagent une grande partie de leurs mots, y compris les tâches terminées et archivées. Consultez leurs titres et statuts avant de décider quoi faire de l’élément actuel. Cette indication fonctionne hors ligne avec l’IA désactivée et laisse vos tâches inchangées.
+
 ### Le flux
 
 ```mermaid

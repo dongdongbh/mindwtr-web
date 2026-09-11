@@ -84,6 +84,8 @@ Los contextos y las etiquetas que escribas se suman a los que ya elegiste; nunca
 
 En escritorio el cursor empieza en el título al abrir cada elemento, colocado al final del texto, para que tu primera pulsación afine la captura en lugar de sustituirla.
 
+Al procesar un elemento en escritorio o móvil, verás en **Tareas similares** hasta tres tareas existentes con títulos iguales o con muchas palabras en común, incluidas las completadas y archivadas. Puedes consultar sus títulos y estados antes de decidir qué hacer con el elemento actual. La indicación funciona sin conexión y con la IA desactivada, y deja tus tareas sin cambios.
+
 ### El flujo de trabajo
 
 ```mermaid

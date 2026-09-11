@@ -18,13 +18,23 @@
     <main>
       <section class="support-hero" aria-labelledby="privacy-title">
         <h1 id="privacy-title">Politique de confidentialité</h1>
-        <p class="support-lead">
-          Mindwtr adopte une approche local-first et réduit la collecte de
-          données au minimum. Vos tâches, notes et projets restent sur votre
-          appareil. Voici précisément ce que cela signifie, quelles
-          fonctionnalités utilisent le réseau et comment vous les contrôlez.
-        </p>
+        <p class="support-lead">Découvrez où Mindwtr stocke vos données, quelles fonctions utilisent le réseau et vos choix concernant la synchronisation et les statistiques d’utilisation anonymes.</p>
       </section>
+
+      <nav class="page-contents" aria-label="Sur cette page">
+        <details>
+          <summary>Sur cette page</summary>
+          <ul>
+            <li><a href="#section-1">1. Stockage des données</a></li>
+            <li><a href="#section-2">2. Synchronisation des données</a></li>
+            <li><a href="#section-3">3. Données d’utilisation anonymes (heartbeat)</a></li>
+            <li><a href="#section-4">4. Retours depuis l’appli</a></li>
+            <li><a href="#section-5">5. Services tiers (IA)</a></li>
+            <li><a href="#section-6">6. Sécurité, conservation et suppression</a></li>
+            <li><a href="#section-7">7. Nous contacter</a></li>
+          </ul>
+        </details>
+      </nav>
 
       <section class="legal section-band" aria-labelledby="privacy-title">
         <div class="legal-body">
@@ -44,13 +54,13 @@
             conception.
           </p>
 
-          <h2>1. Stockage des données</h2>
+          <h2 id="section-1">1. Stockage des données</h2>
           <p>
             Toutes les données créées dans l’appli (tâches, projets, notes)
             sont stockées localement sur votre appareil.
           </p>
 
-          <h2>2. Synchronisation des données</h2>
+          <h2 id="section-2">2. Synchronisation des données</h2>
           <p>
             Si vous choisissez d’utiliser les fonctionnalités de
             synchronisation (par exemple File Sync, WebDAV, la synchronisation
@@ -66,7 +76,7 @@
             <li><strong>Autres fournisseurs via File Sync :</strong> iCloud Drive, Google Drive, OneDrive, Syncthing et des outils similaires peuvent toujours être utilisés indirectement par l’intermédiaire de File Sync.</li>
           </ul>
 
-          <h2>3. Données d’utilisation anonymes (heartbeat)</h2>
+          <h2 id="section-3">3. Données d’utilisation anonymes (heartbeat)</h2>
           <p>
             Dans les versions configurées avec le point de terminaison
             heartbeat, Mindwtr peut envoyer un petit événement heartbeat au
@@ -81,7 +91,7 @@
             <li><strong>Désactivation :</strong> les versions compatibles comprennent une option dans les Réglages permettant de désactiver les futures données d’analyse heartbeat. Lorsque cette option est désactivée, Mindwtr envoie un dernier heartbeat anonyme <code>opt_out</code> avec le même identifiant généré par l’appli afin que le serveur cesse de compter cette installation comme active.</li>
           </ul>
 
-          <h2>4. Retours depuis l’appli</h2>
+          <h2 id="section-4">4. Retours depuis l’appli</h2>
           <p>
             Si vous envoyez un retour depuis l’appli (Réglages &rarr; À propos &rarr; Envoyer un retour),
             les informations que vous transmettez nous sont envoyées directement
@@ -95,7 +105,7 @@
             <li><strong>Contrairement au heartbeat,</strong> un retour peut contenir des informations permettant de vous identifier, car c’est vous qui les rédigez &mdash; votre message, ainsi que toute adresse e-mail ou tout journal que vous choisissez d’inclure. Nous les utilisons uniquement pour comprendre votre signalement et y répondre.</li>
           </ul>
 
-          <h2>5. Services tiers (IA)</h2>
+          <h2 id="section-5">5. Services tiers (IA)</h2>
           <p>Si vous utilisez les fonctionnalités d’IA facultatives avec votre propre clé API (BYOK) :</p>
           <ul>
             <li><strong>Données envoyées :</strong> le texte que vous soumettez au traitement par l’IA (par exemple le titre d’une tâche, des notes ou le contenu d’un prompt). Si vous choisissez un fournisseur distant de conversion de la parole en texte, Mindwtr envoie également l’enregistrement vocal dont vous demandez la transcription.</li>
@@ -105,7 +115,7 @@
             <li><strong>Accès du développeur de Mindwtr :</strong> nous ne servons pas d’intermédiaire pour ces requêtes et nous ne collectons ni ne stockons le contenu de ces requêtes adressées à l’IA.</li>
           </ul>
 
-          <h2>6. Sécurité, conservation et suppression</h2>
+          <h2 id="section-6">6. Sécurité, conservation et suppression</h2>
           <ul>
             <li><strong>Sécurité :</strong> nos points de terminaison de données d’analyse et de retours utilisent HTTPS, et l’accès aux éléments transmis et stockés est restreint. Pour les fonctionnalités de synchronisation et d’IA, le transport et le stockage sont également régis par le fournisseur et le point de terminaison que vous choisissez ; utilisez des points de terminaison HTTPS et consultez les paramètres de confidentialité de ce fournisseur.</li>
             <li><strong>Données sur l’appareil :</strong> les tâches, projets, notes, réglages et pièces jointes locales sont conservés jusqu’à ce que vous les supprimiez, effaciez les données de l’appli Mindwtr ou désinstalliez l’appli. Les copies présentes dans les sauvegardes de l’appareil, les dossiers partagés ou les services de synchronisation sont conservées jusqu’à ce que vous les supprimiez par l’intermédiaire de ces services.</li>
@@ -115,7 +125,7 @@
             <li><strong>Demandes de suppression :</strong> vous pouvez nous demander de supprimer les retours contrôlés par le développeur ou d’autres informations que nous pouvons identifier en écrivant à <a href="mailto:support@mindwtr.app?subject=Data%20Deletion%20Request">support@mindwtr.app</a>. Indiquez l’identifiant du rapport de retour ou l’adresse e-mail utilisée dans le rapport, si vous les avez. Les enregistrements de données d’analyse anonymes n’étant liés ni à un compte ni à des coordonnées, il se peut que nous ne puissions pas identifier un enregistrement donné à partir de votre seul nom ou de votre seule adresse e-mail. Nous pouvons conserver certaines informations limitées lorsque la sécurité, la prévention de la fraude ou le respect d’obligations légales l’exigent.</li>
           </ul>
 
-          <h2>7. Nous contacter</h2>
+          <h2 id="section-7">7. Nous contacter</h2>
           <p>
             Pour toute question concernant cette politique de confidentialité,
             écrivez-nous à

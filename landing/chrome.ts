@@ -65,6 +65,8 @@ const DOCS_PATH: Record<Locale, string> = {
 };
 
 interface ChromeStrings {
+  skip: string;
+  compare: string;
   features: string;
   gtd: string;
   guides: string;
@@ -85,6 +87,8 @@ interface ChromeStrings {
 
 const STRINGS: Record<Locale, ChromeStrings> = {
   en: {
+    skip: "Skip to content",
+    compare: "Compare apps",
     features: "Features",
     gtd: "What is GTD",
     guides: "Guides",
@@ -107,6 +111,8 @@ const STRINGS: Record<Locale, ChromeStrings> = {
       "David Allen Company."
   },
   de: {
+    skip: "Zum Inhalt springen",
+    compare: "Apps vergleichen",
     features: "Funktionen",
     gtd: "Was ist GTD",
     guides: "Ratgeber",
@@ -129,6 +135,8 @@ const STRINGS: Record<Locale, ChromeStrings> = {
       "wird von ihr weder unterstützt noch gesponsert."
   },
   es: {
+    skip: "Saltar al contenido",
+    compare: "Comparar apps",
     features: "Funciones",
     gtd: "Qué es GTD",
     guides: "Guías",
@@ -151,6 +159,8 @@ const STRINGS: Record<Locale, ChromeStrings> = {
       "su respaldo o patrocinio."
   },
   fr: {
+    skip: "Aller au contenu",
+    compare: "Comparer les applis",
     // "Fonctionnalités" overflows the sticky header on phones; the page
     // itself still uses the full word.
     features: "Fonctions",
@@ -175,6 +185,8 @@ const STRINGS: Record<Locale, ChromeStrings> = {
       "approuvé ou sponsorisé par elle."
   },
   "zh-Hans": {
+    skip: "跳到正文",
+    compare: "应用对比",
     features: "功能",
     gtd: "什么是 GTD",
     guides: "指南",
@@ -196,6 +208,8 @@ const STRINGS: Record<Locale, ChromeStrings> = {
       "无任何隶属、认可或赞助关系。"
   },
   "zh-Hant": {
+    skip: "跳至正文",
+    compare: "應用程式比較",
     features: "功能",
     gtd: "什麼是 GTD",
     guides: "指南",
@@ -469,6 +483,8 @@ function footer(locale: Locale, pagePath: string): string {
   const links = [
     { href: localePath(locale, "features"), label: t.features },
     { href: localePath(locale, "gtd"), label: t.gtd },
+    { href: "/guides", label: t.guides },
+    { href: "/compare", label: t.compare },
     { href: DOCS_PATH[locale], label: t.docs },
     { href: "https://github.com/dongdongbh/Mindwtr", label: "GitHub" },
     { href: localePath(locale, "support"), label: t.support },
@@ -572,7 +588,8 @@ export function chrome(): Plugin {
             /[ \t]*<\/head>/,
             `${sharedHeadMeta(locale, pageName, pagePath, meta)}  </head>`
           )
-          .replace("<body>", `<body>\n${header(locale, pageName, pagePath)}`)
+          .replace("<body>", `<body>\n<a class="skip-link" href="#main-content">${STRINGS[locale].skip}</a>\n${header(locale, pageName, pagePath)}`)
+          .replace(/<main\b([^>]*)>/, '<main id="main-content" tabindex="-1"$1>')
           .replace(/[ \t]*<\/body>/, `${footer(locale, pagePath)}  </body>`);
       }
     }

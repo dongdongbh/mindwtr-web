@@ -15,19 +15,26 @@
   </head>
   <body>
 
-    <main>
+    <main class="article comparison-guide">
       <section class="support-hero" aria-labelledby="todoist-alt-title">
         <h1 id="todoist-alt-title">An open-source Todoist alternative</h1>
-        <p class="support-lead">
-          Todoist is a good list app. If what you want next is source code you
-          can read, tasks that live on your own disk, and no subscription
-          between you and your own reminders, Mindwtr is built that way from
-          the start. It is completely free — not a free tier, not a trial, no
-          premium plan waiting behind the next feature — and it runs on Linux,
-          macOS, Windows, iOS, and Android without an account. Below is how the
-          two differ, checked against Todoist’s own pages.
-        </p>
+        <p class="support-lead">Mindwtr is a free, open-source alternative for managing your own tasks. It works offline without an account and includes a guided GTD workflow. Compare it with Todoist below, then check what transfers when you import.</p>
       </section>
+
+      <nav class="page-contents" aria-label="On this page">
+        <details>
+          <summary>On this page</summary>
+          <ul>
+            <li><a href="#todoist-alt-table-title">Mindwtr vs Todoist</a></li>
+            <li><a href="#todoist-alt-gain-title">What you get instead of a subscription</a></li>
+            <li><a href="#todoist-alt-gtd-title">A list app versus a whole method</a></li>
+            <li><a href="#todoist-alt-tradeoff-title">What Todoist does better</a></li>
+            <li><a href="#todoist-alt-migrate-title">Moving your Todoist tasks over</a></li>
+            <li><a href="#todoist-alt-faq-title">Common questions</a></li>
+            <li><a href="#todoist-alt-more-title">Keep comparing</a></li>
+          </ul>
+        </details>
+      </nav>
 
       <section class="compare section-band" id="compare" aria-labelledby="todoist-alt-table-title">
         <div class="section-copy">
@@ -118,7 +125,10 @@
           </table>
         </div>
         <div class="compare-notes">
-          <p>
+          <details class="source-details">
+            <summary>Sources and comparison notes · checked <time datetime="2026-08-26">August 26, 2026</time></summary>
+
+            <p>
             <strong>Method.</strong> Checked <time datetime="2026-08-26">August 26, 2026</time>
             against Todoist’s official pricing, download, and help pages. “Full GTD” requires
             first-class Inbox, Next, Waiting, Someday, Review, and sequential projects. “No”
@@ -141,6 +151,10 @@
             <a href="https://www.todoist.com/help/articles/use-todoist-while-offline-4rbaZw">offline mode</a>, and
             <a href="https://www.todoist.com/integrations">integrations</a>.
           </p>
+
+
+          </details>
+
         </div>
       </section>
 
@@ -179,7 +193,7 @@
         <p class="philosophy-lead">
           Todoist is a team product and Mindwtr is not. Shared projects, task
           assignment, comment threads, and the whole Business tier have no
-          equivalent here — if you delegate work, Todoist wins that outright.
+          equivalent here — if you need shared projects and task assignment, Todoist supports those.
           Its integrations directory spans thirteen categories and, in its own
           words, lets you “integrate with thousands of other apps via our
           automation partners”; Mindwtr’s automation is a local API, a CLI, and

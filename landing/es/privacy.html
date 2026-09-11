@@ -18,13 +18,23 @@
     <main>
       <section class="support-hero" aria-labelledby="privacy-title">
         <h1 id="privacy-title">Política de privacidad</h1>
-        <p class="support-lead">
-          Mindwtr prioriza el almacenamiento local y está diseñada para minimizar
-          la recopilación de datos. Tus tareas, notas y proyectos permanecen en
-          tu dispositivo. A continuación se explica exactamente qué significa,
-          qué funciones usan la red y cómo puedes controlarlas.
-        </p>
+        <p class="support-lead">Consulta dónde guarda Mindwtr tus datos, qué funciones usan la red y qué opciones tienes sobre sincronización y análisis de uso anónimos.</p>
       </section>
+
+      <nav class="page-contents" aria-label="En esta página">
+        <details>
+          <summary>En esta página</summary>
+          <ul>
+            <li><a href="#section-1">1. Almacenamiento de datos</a></li>
+            <li><a href="#section-2">2. Sincronización de datos</a></li>
+            <li><a href="#section-3">3. Analíticas de uso anónimas (señal de actividad)</a></li>
+            <li><a href="#section-4">4. Comentarios desde la app</a></li>
+            <li><a href="#section-5">5. Servicios de terceros (IA)</a></li>
+            <li><a href="#section-6">6. Seguridad, conservación y eliminación</a></li>
+            <li><a href="#section-7">7. Contacto</a></li>
+          </ul>
+        </details>
+      </nav>
 
       <section class="legal section-band" aria-labelledby="privacy-title">
         <div class="legal-body">
@@ -43,13 +53,13 @@
             diseño.
           </p>
 
-          <h2>1. Almacenamiento de datos</h2>
+          <h2 id="section-1">1. Almacenamiento de datos</h2>
           <p>
             Todos los datos creados en la app (tareas, proyectos y notas) se
             almacenan localmente en tu dispositivo.
           </p>
 
-          <h2>2. Sincronización de datos</h2>
+          <h2 id="section-2">2. Sincronización de datos</h2>
           <p>
             Si decides usar las funciones de sincronización (por ejemplo,
             Sincronización de archivos, WebDAV, sincronización autoalojada o
@@ -65,7 +75,7 @@
             <li><strong>Otros proveedores mediante Sincronización de archivos:</strong> iCloud Drive, Google Drive, OneDrive, Syncthing y herramientas similares también pueden usarse indirectamente mediante Sincronización de archivos.</li>
           </ul>
 
-          <h2>3. Analíticas de uso anónimas (señal de actividad)</h2>
+          <h2 id="section-3">3. Analíticas de uso anónimas (señal de actividad)</h2>
           <p>
             En las compilaciones configuradas con el endpoint de la señal de
             actividad, Mindwtr puede enviar un pequeño evento de actividad como
@@ -79,7 +89,7 @@
             <li><strong>Desactivación:</strong> las compilaciones compatibles incluyen un control en Ajustes para desactivar las futuras analíticas de actividad. Al desactivarlo, Mindwtr envía una última señal de actividad anónima <code>opt_out</code> con el mismo identificador generado por la app para que el servidor deje de contar esa instalación como activa.</li>
           </ul>
 
-          <h2>4. Comentarios desde la app</h2>
+          <h2 id="section-4">4. Comentarios desde la app</h2>
           <p>
             Si envías comentarios desde la app (Ajustes &rarr; Acerca de &rarr; Enviar comentarios),
             lo que remitas se nos envía directamente a nuestro endpoint de
@@ -92,7 +102,7 @@
             <li><strong>A diferencia de la señal de actividad,</strong> los comentarios pueden contener información que te identifique, porque tú la escribes &mdash; tu mensaje y cualquier dirección de correo electrónico o registro que decidas incluir. Solo la usamos para entender tu informe y responder a él.</li>
           </ul>
 
-          <h2>5. Servicios de terceros (IA)</h2>
+          <h2 id="section-5">5. Servicios de terceros (IA)</h2>
           <p>Si usas las funciones opcionales de IA con tu propia clave de API (BYOK):</p>
           <ul>
             <li><strong>Qué datos se envían:</strong> el texto que remites para que lo procese la IA (por ejemplo, el título de una tarea, notas o el contenido de una solicitud). Si eliges un proveedor remoto de conversión de voz a texto, Mindwtr también envía la grabación de voz que solicitas transcribir.</li>
@@ -102,7 +112,7 @@
             <li><strong>Acceso del desarrollador de Mindwtr:</strong> no canalizamos estas solicitudes mediante un proxy ni recopilamos o almacenamos el contenido de estas solicitudes de IA.</li>
           </ul>
 
-          <h2>6. Seguridad, conservación y eliminación</h2>
+          <h2 id="section-6">6. Seguridad, conservación y eliminación</h2>
           <ul>
             <li><strong>Seguridad:</strong> nuestros endpoints de analíticas y comentarios usan HTTPS, y el acceso a los envíos almacenados está restringido. En el caso de las funciones de sincronización e IA, el transporte y el almacenamiento también se rigen por el proveedor y el endpoint que elijas; usa endpoints HTTPS y revisa los controles de privacidad de ese proveedor.</li>
             <li><strong>Datos en el dispositivo:</strong> las tareas, los proyectos, las notas, los ajustes y los archivos adjuntos locales permanecen hasta que los elimines, borres los datos de la app Mindwtr o desinstales la app. Las copias que haya en las copias de seguridad del dispositivo, las carpetas compartidas o los proveedores de sincronización permanecen hasta que las elimines mediante esos servicios.</li>
@@ -112,7 +122,7 @@
             <li><strong>Solicitudes de eliminación:</strong> puedes pedirnos que eliminemos los comentarios bajo el control del desarrollador u otra información que podamos identificar escribiendo a <a href="mailto:support@mindwtr.app?subject=Data%20Deletion%20Request">support@mindwtr.app</a>. Incluye el identificador del informe de comentarios o la dirección de correo electrónico utilizada en el informe cuando estén disponibles. Como los registros de analíticas anónimas no están conectados a una cuenta ni a información de contacto, es posible que no podamos identificar un registro concreto únicamente a partir de tu nombre o correo electrónico. Podemos conservar información limitada cuando sea necesario por motivos de seguridad, prevención del fraude o cumplimiento legal.</li>
           </ul>
 
-          <h2>7. Contacto</h2>
+          <h2 id="section-7">7. Contacto</h2>
           <p>
             Si tienes alguna pregunta sobre esta Política de privacidad, escribe a
             <a href="mailto:support@mindwtr.app?subject=Privacy%20Policy">support@mindwtr.app</a>

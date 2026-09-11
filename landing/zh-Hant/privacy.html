@@ -18,10 +18,23 @@
     <main>
       <section class="support-hero" aria-labelledby="privacy-title">
         <h1 id="privacy-title">隱私政策</h1>
-        <p class="support-lead">
-          Mindwtr 採用本地優先設計，旨在儘量減少資料收集。你的任務、筆記和專案都留在自己的裝置上。下面將具體說明這意味著什麼、哪些功能會使用網路，以及你如何控制這些功能。
-        </p>
+        <p class="support-lead">了解 Mindwtr 在哪裡儲存資料、哪些功能會使用網路，以及你對同步和匿名使用統計有哪些選擇。</p>
       </section>
+
+      <nav class="page-contents" aria-label="本頁內容">
+        <details>
+          <summary>本頁內容</summary>
+          <ul>
+            <li><a href="#section-1">1. 資料儲存</a></li>
+            <li><a href="#section-2">2. 資料同步</a></li>
+            <li><a href="#section-3">3. 匿名使用情況分析（心跳）</a></li>
+            <li><a href="#section-4">4. 應用內反饋</a></li>
+            <li><a href="#section-5">5. 第三方服務（AI）</a></li>
+            <li><a href="#section-6">6. 安全、保留與刪除</a></li>
+            <li><a href="#section-7">7. 聯絡我們</a></li>
+          </ul>
+        </details>
+      </nav>
 
       <section class="legal section-band" aria-labelledby="privacy-title">
         <div class="legal-body">
@@ -35,12 +48,12 @@
             Mindwtr（「我們」）是一款本地優先應用。我們尊重你的隱私，並致力於從設計上儘量減少資料收集。
           </p>
 
-          <h2>1. 資料儲存</h2>
+          <h2 id="section-1">1. 資料儲存</h2>
           <p>
             在應用內建立的所有資料（任務、專案、筆記）都儲存在你的裝置本地。
           </p>
 
-          <h2>2. 資料同步</h2>
+          <h2 id="section-2">2. 資料同步</h2>
           <p>
             如果你選擇使用同步功能（例如檔案同步、WebDAV、自建同步，或受支援版本中的 Dropbox OAuth），你的資料會直接在你的裝置與你選擇的儲存/同步提供商之間傳輸。我們（開發者）無法存取這些資料。
           </p>
@@ -51,7 +64,7 @@
             <li><strong>透過檔案同步使用其他提供商：</strong>仍可透過檔案同步間接使用 iCloud Drive、Google Drive、OneDrive、Syncthing 及類似工具。</li>
           </ul>
 
-          <h2>3. 匿名使用情況分析（心跳）</h2>
+          <h2 id="section-3">3. 匿名使用情況分析（心跳）</h2>
           <p>
             在配置了心跳端點的版本中，Mindwtr 每天最多可能傳送一次小型心跳事件，幫助我們衡量應用健康狀況和採用情況（例如 DAU/MAU 和各發行渠道的使用情況）。
           </p>
@@ -62,7 +75,7 @@
             <li><strong>選擇停用：</strong>受支援的版本在設定中提供開關，用於停止後續的心跳分析。關閉此項後，Mindwtr 會使用同一個由應用生成的識別碼傳送最後一次匿名 <code>opt_out</code> 心跳，以便伺服器不再將該安裝計為活躍安裝。</li>
           </ul>
 
-          <h2>4. 應用內反饋</h2>
+          <h2 id="section-4">4. 應用內反饋</h2>
           <p>
             如果你從應用內傳送反饋（設定 &rarr; 關於 &rarr; 發送反饋），你提交的內容會直接傳送到我們的反饋端點。只有在你選擇提交反饋時才會傳送。
           </p>
@@ -73,7 +86,7 @@
             <li><strong>與心跳不同，</strong>反饋可能包含可識別你身份的資訊，因為內容由你填寫 &mdash; 包括你的訊息，以及你選擇提供的任何電子郵件地址或日誌。我們只會用這些資訊來了解並回復你的報告。</li>
           </ul>
 
-          <h2>5. 第三方服務（AI）</h2>
+          <h2 id="section-5">5. 第三方服務（AI）</h2>
           <p>如果你使用自己的 API 金鑰（BYOK）啟用可選的 AI 功能：</p>
           <ul>
             <li><strong>傳送的資料：</strong>你提交給 AI 處理的文本（例如任務標題、筆記或提示詞內容）。如果你選擇遠端語音轉文字提供商，Mindwtr 還會發送你要求其轉寫的錄音。</li>
@@ -83,7 +96,7 @@
             <li><strong>Mindwtr 開發者的存取權限：</strong>我們不會代理這些請求，也不會收集或儲存這些 AI 請求的內容。</li>
           </ul>
 
-          <h2>6. 安全、保留與刪除</h2>
+          <h2 id="section-6">6. 安全、保留與刪除</h2>
           <ul>
             <li><strong>安全：</strong>我們的分析和反饋端點使用 HTTPS，並限制對已儲存提交內容的存取。對於同步和 AI 功能，傳輸和儲存還受你所選提供商和端點的約束；請使用 HTTPS 端點，並檢視該提供商的隱私控制措施。</li>
             <li><strong>裝置上的資料：</strong>任務、專案、筆記、設定和本地附件會一直保留，直至你將其刪除、清除 Mindwtr 的應用資料或解除安裝應用。裝置備份、共享資料夾或同步提供商中的副本會一直保留，直至你透過相應服務將其刪除。</li>
@@ -93,7 +106,7 @@
             <li><strong>刪除請求：</strong>你可以傳送電子郵件至 <a href="mailto:support@mindwtr.app?subject=Data%20Deletion%20Request">support@mindwtr.app</a>，要求我們刪除由開發者控制、且我們能夠識別的反饋或其他資訊。如有反饋報告 ID 或報告中使用的電子郵件地址，請一併提供。由於匿名分析記錄並未關聯到帳號或聯絡資訊，我們可能無法僅憑你的姓名或電子郵件地址識別某條特定記錄。出於安全、防止欺詐或遵守法律的要求，我們可能會保留有限的資訊。</li>
           </ul>
 
-          <h2>7. 聯絡我們</h2>
+          <h2 id="section-7">7. 聯絡我們</h2>
           <p>
             如果你對本隱私政策有任何疑問，請傳送電子郵件至
             <a href="mailto:support@mindwtr.app?subject=Privacy%20Policy">support@mindwtr.app</a>

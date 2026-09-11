@@ -560,6 +560,12 @@ h1 .accent {
   font-weight: 600;
 }
 
+.hero-adoption {
+  margin: var(--space-md) 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
 .hero-media {
   display: flex;
   align-items: center;
@@ -1894,6 +1900,19 @@ main > section:last-child {
   margin: 26px 0 0;
 }
 
+.philosophy-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.philosophy-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  min-height: 44px;
+}
+
 /* Feature grid ------------------------------------------------------------ */
 /* Nine cards in a 3x3 was the page's densest block of identical boxes. The
    accent square beside each heading was already doing the marking; the box
@@ -2469,6 +2488,67 @@ main > section:last-child {
   line-height: 1.6;
 }
 
+/* Section shortcuts keep long guides and feature lists easy to browse. */
+.page-contents {
+  width: min(90ch, calc(100% - var(--page-gutter)));
+  margin: var(--space-md) auto var(--space-lg);
+  border-block: 1px solid var(--line-strong);
+}
+
+.page-contents summary {
+  padding-block: var(--space-sm);
+  color: var(--blue-deep);
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.page-contents ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 var(--space-lg);
+  list-style: none;
+  padding: 0 0 var(--space-sm);
+  margin: 0;
+}
+
+.page-contents a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-block: var(--space-xs);
+  color: var(--blue-deep);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
+
+.page-contents a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.skip-link {
+  position: fixed;
+  top: var(--space-xs);
+  left: var(--space-xs);
+  z-index: 1000;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--surface);
+  color: var(--blue-deep);
+  border-radius: var(--radius-small);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (max-width: 720px) {
+  .page-contents ul {
+    grid-template-columns: 1fr;
+  }
+}
+
 .help-grid {
   list-style: none;
   margin: 36px 0 0;
@@ -2698,6 +2778,29 @@ main > section:last-child {
 .article .section-band,
 .article .features-cta {
   width: min(var(--article-measure), calc(100% - var(--page-gutter)));
+}
+
+/* Comparisons keep a wide table while explanations follow the article measure. */
+.comparison-guide .compare.section-band {
+  width: min(var(--page-max), calc(100% - var(--page-gutter)));
+}
+
+.comparison-guide .compare .section-copy,
+.comparison-guide .compare-notes {
+  max-width: var(--article-measure);
+  margin-inline: auto;
+}
+
+.source-details summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding-block: var(--space-sm);
+  color: var(--blue-deep);
+  font-size: 1rem;
+}
+
+.source-details[open] summary {
+  margin-bottom: var(--space-sm);
 }
 
 /* Padding on the top edge only — the space below a section is the last

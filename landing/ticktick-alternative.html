@@ -15,20 +15,26 @@
   </head>
   <body>
 
-    <main>
+    <main class="article comparison-guide">
       <section class="support-hero" aria-labelledby="ticktick-page-title">
         <h1 id="ticktick-page-title">An open-source TickTick alternative</h1>
-        <p class="support-lead">
-          If you came to TickTick for a real GTD system and kept running into
-          the list cap, the task cap, or a filter you can’t save without
-          Premium, Mindwtr is worth a look. It is completely free — no
-          subscription, no premium tier, no trial that ends — open source under
-          AGPL-3.0, and it never asks you to create an account. Your tasks live
-          in a local database on your own device, and sync happens only where
-          you point it. TickTick is a good product; this page is about the parts
-          of it that make people leave.
-        </p>
+        <p class="support-lead">Looking for a personal task manager with no subscription? Mindwtr offers GTD, offline access, and sync you choose. Compare it with TickTick below, including the features you would give up and how to import your tasks.</p>
       </section>
+
+      <nav class="page-contents" aria-label="On this page">
+        <details>
+          <summary>On this page</summary>
+          <ul>
+            <li><a href="#ticktick-table-title">Mindwtr vs TickTick, head to head</a></li>
+            <li><a href="#ticktick-gain-title">What you gain by switching</a></li>
+            <li><a href="#ticktick-local-title">Local-first, still on all your devices</a></li>
+            <li><a href="#ticktick-better-title">What TickTick does better</a></li>
+            <li><a href="#ticktick-migrate-title">Moving your TickTick data across</a></li>
+            <li><a href="#ticktick-faq-title">Common questions</a></li>
+            <li><a href="#ticktick-more-title">Comparing other task managers</a></li>
+          </ul>
+        </details>
+      </nav>
 
       <section class="compare section-band" id="compare" aria-labelledby="ticktick-table-title">
         <div class="section-copy">
@@ -119,7 +125,10 @@
           </table>
         </div>
         <div class="compare-notes">
-          <p>
+          <details class="source-details">
+            <summary>Sources and comparison notes · checked <time datetime="2026-08-26">August 26, 2026</time></summary>
+
+            <p>
             <strong>Method.</strong> Checked <time datetime="2026-08-26">August 26, 2026</time>
             against official TickTick product, pricing, download, and help pages. TickTick
             Premium is listed at US$49.99 per year; the free plan is capped at 9 lists, 99
@@ -140,6 +149,10 @@
             <a href="https://help.ticktick.com/">help center</a>, and
             <a href="https://ticktick.com/tos">terms of service</a>.
           </p>
+
+
+          </details>
+
         </div>
       </section>
 
@@ -197,7 +210,7 @@
       <section class="philosophy section-band" aria-labelledby="ticktick-migrate-title">
         <h2 id="ticktick-migrate-title">Moving your TickTick data across</h2>
         <p class="philosophy-lead">
-          It is one import, and it takes about thirty seconds. In TickTick’s web app, open your avatar → <strong>Settings →
+          In TickTick’s web app, open your avatar → <strong>Settings →
           Account → Backup &amp; Import → Generate Backup</strong> and save the
           file. In Mindwtr, open <strong>Settings → Data → Import from
           TickTick</strong>, choose that CSV or ZIP, check the preview summary,

@@ -4,6 +4,22 @@ Mindwtr besitzt eine integrierte Diagnoseprotokollierung zur Fehlersuche bei Syn
 
 ---
 
+## Mit Beispieldaten aufnehmen
+
+Wähle **Einstellungen → Daten → Sandbox öffnen**, um Mindwtr mit erfundenen Aufgaben und Projekten auszuprobieren. Ein Sandbox-Hinweis bleibt sichtbar und bietet Aktionen zum Zurücksetzen der Beispieldaten und Verlassen der Sandbox. Auf Mobilgeräten stehen dort kurz **Sandbox**, **Zurücksetzen** und **Verlassen**.
+
+Die Option steht bei der Diagnose. Vor dem Öffnen erklärt ein Bestätigungsdialog die Sandbox. Mit **Abbrechen** bleibst du in deinem persönlichen Arbeitsbereich.
+
+Der Beispielarbeitsbereich enthält Aufgaben in verschiedenen Status, Bereiche, Projekte und Abschnitte, wiederkehrende Aufgaben, Checklisten, Notizen, Tags, Kontexte, Personen sowie Beispiele für Termine und Prioritäten. Du kannst sie während einer Aufnahme bearbeiten. Änderungen sind vorübergehend; das Zurücksetzen lädt die ursprünglichen Beispieldaten.
+
+Beispielinhalte gibt es auf Englisch, Deutsch, Französisch, Spanisch, Russisch und vereinfachtem Chinesisch. Sie richten sich nach der App-Sprache; für andere Sprachen wird Englisch verwendet.
+
+Deine persönliche Datenbank bleibt getrennt. Beim Verlassen der Sandbox kehrst du zu ihr zurück. Auch ein Neustart nach dem Öffnen der Sandbox führt zum persönlichen Arbeitsbereich zurück. Vor dem Öffnen werden laufende Synchronisation und lokale Schreibvorgänge abgeschlossen; neue Synchronisationsversuche der App bleiben während des Wechsels gesperrt. Bei Zeitüberschreitung oder einem Speicherfehler bleibst du im persönlichen Arbeitsbereich. Sandbox-Änderungen werden weder synchronisiert noch an Widgets, Uhr, Erinnerungen, externe Kalender oder Erfassungsintegrationen übertragen.
+
+Beispieldaten können Fehler mit bestimmten eigenen Aufgaben, Anhängen oder dem Synchronisierungsverlauf möglicherweise nicht nachstellen. Prüfe Aufnahmen vor dem Teilen: Die Sandbox verbirgt keine Betriebssystembenachrichtigungen oder anderen Apps.
+
+---
+
 ## Debug-Protokollierung aktivieren
 
 ### Desktop

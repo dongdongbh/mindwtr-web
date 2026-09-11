@@ -4,6 +4,22 @@ Mindwtr intègre un journal de diagnostic pour faciliter le dépannage des probl
 
 ---
 
+## Enregistrer avec des données d’exemple
+
+Choisissez **Paramètres → Données → Ouvrir le bac à sable** pour essayer Mindwtr avec des tâches et des projets fictifs. Un bandeau du bac à sable reste visible, avec des actions pour réinitialiser les exemples ou quitter. Sur mobile, il affiche **Bac à sable**, **Réinitialiser** et **Quitter**.
+
+L’option se trouve près des diagnostics. Une confirmation explique le bac à sable avant de l’ouvrir. Choisissez **Annuler** pour rester dans votre espace personnel.
+
+L’espace d’exemple comprend des tâches dans différents états, des domaines, projets et sections, des tâches récurrentes, des listes de contrôle, des notes, des étiquettes, des contextes, des personnes et des exemples de dates et de priorités. Vous pouvez les modifier pendant l’enregistrement. Ces changements sont temporaires ; la réinitialisation recharge les exemples d’origine.
+
+Les exemples sont disponibles en anglais, allemand, français, espagnol, russe et chinois simplifié. Ils suivent la langue de l’application ; l’anglais est utilisé pour les autres langues.
+
+Votre base de données personnelle reste séparée. Quitter le bac à sable vous y ramène ; redémarrer l’application après l’ouverture du bac à sable ramène aussi à l’espace personnel. L’ouverture attend la fin de la synchronisation active et des écritures locales et bloque les nouvelles tentatives de synchronisation pendant le changement. Si le délai est dépassé ou qu’un enregistrement échoue, vous restez dans votre espace personnel. Ses modifications ne sont ni synchronisées ni transmises aux widgets, à la montre, aux rappels, aux calendriers externes ou aux intégrations de capture.
+
+Les exemples peuvent ne pas reproduire un problème lié à vos tâches, pièces jointes ou historique de synchronisation. Vérifiez l’enregistrement avant de le partager : le bac à sable ne masque pas les notifications du système ni les autres applications.
+
+---
+
 ## Activer la journalisation de débogage
 
 ### Ordinateur

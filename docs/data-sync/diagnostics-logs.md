@@ -4,6 +4,22 @@ Mindwtr includes built-in diagnostics logging to help troubleshoot sync and cras
 
 ---
 
+## Record with sample data
+
+Choose **Settings → Data → Open sandbox** to try Mindwtr with fictional tasks and projects. A sandbox banner stays visible, with actions to reset the sample data or exit. On mobile, the compact banner reads **Sandbox**, **Reset**, and **Exit**.
+
+The option is near Diagnostics. A confirmation explains the sandbox before you enter; choose **Cancel** to stay in your personal workspace.
+
+The sample workspace includes tasks in different states, areas, projects and sections, recurring tasks, checklists, notes, tags, contexts, people, and date and priority examples. You can edit the examples while recording. Changes are temporary; resetting reloads the original sample set.
+
+Sample content is available in English, German, French, Spanish, Russian, and Simplified Chinese. It follows your app language, with English used for other languages.
+
+Your personal database stays separate. Exiting the sandbox returns to it, and restarting after the sandbox has opened also returns to your personal workspace. Entry waits for active sync and local writes to finish, and blocks new foreground sync attempts while switching. If the wait times out or a save fails, you stay in your personal workspace. Sandbox edits do not sync or update your widgets, watch, reminders, external calendars, or capture integrations.
+
+Sample data may not reproduce a bug caused by your particular tasks, attachments, or sync history. Review a recording before sharing it: the sandbox does not hide operating-system notifications or other apps.
+
+---
+
 ## Enable debug logging
 
 ### Desktop

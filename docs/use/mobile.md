@@ -182,6 +182,8 @@ See [Tasker’s intent guide](https://tasker.joaoapps.com/userguide/en/intents.h
 
 ### Home Widget
 
+The controls below describe Android. For iOS, see **iOS Home Screen Widget** below.
+
 Add the Mindwtr widget to your home screen for quick access:
 
 1. Long-press on your home screen
@@ -202,6 +204,16 @@ On Android, the capture button on any of the three widgets, the Quick Settings t
 In the next release after 1.2.8, enabling speech-to-text also adds a microphone button to this native Android window. Record, tap Stop, then Save; the main app stays closed. Recordings are saved on the device and transcribed with your configured provider when Mindwtr next opens or returns to the foreground. F-Droid uses offline Whisper. Failed transcription keeps the recording for another attempt. Recording stops when you leave the window and is limited to five minutes.
 
 On Android, dated rows show **Today**, a weekday for the coming week, or a compact date. Tasks due today or overdue receive extra emphasis.
+
+### iOS Home Screen Widget
+
+**Next release:** Choose **Tasks** for the regular widget, available in small, medium and large sizes (plus extra-large on supported iPads), or **Compact** for smaller text and a flat Focus list. Compact has no list picker or check-off rings; medium and larger sizes still link to tasks and quick capture.
+
+**Next release:** The iOS Tasks widget shows Today's Focus and Today, including overdue tasks, with the date, priority rings, project or area labels, and the app's Focus filters and sort order. It does not fill unused space with other next actions.
+
+On iOS 17 and later, long-press a Tasks widget and choose **Edit Widget** to select Focus, Inbox, Next Actions, Waiting For, Someday/Maybe, or a saved filter. Multiple widgets can show different lists. Tap a ring to queue completion; the row stays struck through until Mindwtr next runs and saves the change. Tap the ring again to undo before the app claims it. There is a minimum three-second grace period. Completion and sync happen through the app, not directly from the widget.
+
+Medium and larger widgets link task rows to their task in Mindwtr and **+** to quick capture. The small widget opens Focus when tapped; its rings remain interactive on iOS 17+. On older iOS versions, the widget stays on Focus without inline check-off or list configuration. WidgetKit controls refresh timing. Lock screen widgets are unchanged.
 
 ### iOS Lock Screen Widget
 

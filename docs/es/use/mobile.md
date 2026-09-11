@@ -182,6 +182,8 @@ Consulta la [guía de intents de Tasker](https://tasker.joaoapps.com/userguide/e
 
 ### Widget de inicio
 
+Los controles siguientes corresponden a Android. Para iOS, consulta **Widget de la pantalla de inicio de iOS** más abajo.
+
 Añade el widget de Mindwtr a la pantalla de inicio para acceder rápidamente:
 
 1. Mantén pulsada la pantalla de inicio
@@ -202,6 +204,16 @@ En Android, el botón de captura de cualquiera de los tres widgets, el mosaico d
 En la próxima versión después de la 1.2.8, activar la transcripción también añade un botón de micrófono a esta ventana nativa de Android. Graba, pulsa Detener y después Guardar; la aplicación principal permanece cerrada. Las grabaciones se guardan en el dispositivo y se transcriben con el proveedor configurado cuando Mindwtr se abre o vuelve al primer plano. F-Droid usa Whisper sin conexión. Si la transcripción falla, la grabación se conserva para otro intento. La grabación se detiene al salir de la ventana y tiene un límite de cinco minutos.
 
 En Android, las etiquetas de vencimiento muestran **Hoy**, el día de la semana para tareas dentro de los próximos siete días o una fecha compacta para fechas posteriores. Las tareas vencidas y las que vencen hoy aparecen destacadas.
+
+### Widget de la pantalla de inicio de iOS
+
+**Próxima versión:** Elige **Tareas** para el widget normal, disponible en tamaños pequeño, mediano y grande (también extragrande en iPads compatibles), o **Compacto** para texto más pequeño y una lista plana de Enfoque. Compacto no tiene selector de lista ni anillos para completar; los tamaños mediano y superiores permiten abrir tareas y la captura rápida.
+
+**Próxima versión:** El widget Tareas de iOS muestra el enfoque de hoy y Hoy, incluidas las tareas vencidas, con la fecha, anillos de prioridad, el proyecto o área y los filtros y el orden de Enfoque. No rellena el espacio libre con otras próximas acciones.
+
+En iOS 17 o posterior, mantén pulsado el widget y elige **Editar widget** para seleccionar Enfoque, Bandeja de entrada, Próximas acciones, En espera, Algún día/Tal vez o un filtro guardado. Varios widgets pueden mostrar listas distintas. Toca un anillo para dejar pendiente la finalización; la fila permanece tachada hasta que Mindwtr vuelva a ejecutarse y guarde el cambio. Toca de nuevo para deshacer antes de que la app lo procese. Hay un margen mínimo de tres segundos. La finalización y la sincronización se realizan desde la app.
+
+En los widgets medianos y grandes, tocar una tarea la abre en Mindwtr y **+** abre la captura rápida. El widget pequeño abre Enfoque al tocarlo; sus anillos funcionan desde iOS 17. En versiones anteriores permanece en Enfoque, sin completar tareas ni configurar la lista desde el widget. WidgetKit controla cuándo se actualiza. Los widgets de la pantalla bloqueada no cambian.
 
 ### Widget de la pantalla bloqueada de iOS
 

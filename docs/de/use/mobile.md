@@ -173,6 +173,8 @@ Weitere Angaben zu den Feldern finden Sie in [Taskers Intent-Anleitung](https://
 
 ### Startbildschirm-Widget
 
+Die folgenden Bedienelemente gelten für Android. Für iOS siehe **iOS-Widget auf dem Home-Bildschirm** weiter unten.
+
 1. Startbildschirm lange drücken
 2. **Widgets** wählen
 3. **Mindwtr** suchen und das Widget **Aufgaben**, die einzellige Schaltfläche **Schnellerfassung** oder auf Android ab der nächsten Version nach 1.2.8 das optionale kleinere Widget **Kompakt** hinzufügen. Das Aufgaben-Widget zeigt eine **+**-Schaltfläche und Ihre Aufgaben, jeweils mit Prioritätsfarbe, Projekt oder Bereich und Fälligkeitsdatum. Auf Android zeigt ein neu hinzugefügtes Aufgaben-Widget den Fokus, mit dem Eingangszähler in der Kopfzeile und ab der nächsten Version nach 1.2.8 einer kurzen Ansicht von Heutiger Fokus und Heute. Durchsicht fällig, Nächste Aktionen und Anstehend bleiben in der App. Um die Liste zu wechseln, tippen Sie auf den Titel des Widgets; er trägt einen kleinen Pfeil nach unten. Es öffnet sich eine Auswahl mit Fokus, Eingang, Nächste Aktionen, Warten auf, Irgendwann/Vielleicht und Ihren **gespeicherten Filtern**. Tippen Sie einen Eintrag an, und das Widget wird neu gezeichnet. Um ein einzelnes Projekt auf einem Widget zu zeigen, speichern Sie in der App einen Fokus-Filter für dieses Projekt und wählen Sie ihn hier aus. Das funktioniert auf jedem Launcher, und manche Launcher bieten selbst keine Bearbeitungsaktion für Widgets. Sie können mehrere Aufgaben-Widgets mit verschiedenen Listen hinzufügen.
@@ -191,6 +193,16 @@ Auf Android öffnen die Erfassungsschaltfläche in jedem der drei Widgets, die S
 In der nächsten Version nach 1.2.8 erscheint bei aktivierter Spracherkennung auch eine Mikrofontaste in diesem nativen Android-Fenster. Nehmen Sie auf, tippen Sie auf Stopp und dann auf Speichern; die Haupt-App bleibt geschlossen. Aufnahmen werden auf dem Gerät gespeichert und beim nächsten Öffnen von Mindwtr oder bei der Rückkehr in den Vordergrund mit dem konfigurierten Anbieter transkribiert. F-Droid verwendet Offline-Whisper. Schlägt die Transkription fehl, bleibt die Aufnahme für einen weiteren Versuch erhalten. Die Aufnahme endet beim Verlassen des Fensters und ist auf fünf Minuten begrenzt.
 
 Auf Android zeigen Fälligkeitsangaben **Heute**, den Wochentag für Aufgaben innerhalb der nächsten Woche oder ein kompaktes Datum für spätere Aufgaben. Überfällige und heute fällige Aufgaben werden hervorgehoben.
+
+### iOS-Widget auf dem Home-Bildschirm
+
+**Nächste Version:** Wählen Sie **Aufgaben** für das reguläre Widget in klein, mittel oder groß (zusätzlich extragroß auf unterstützten iPads), oder **Kompakt** für kleinere Schrift und eine flache Fokusliste. Kompakt hat weder Listenauswahl noch Abschlussringe; mittlere und größere Varianten öffnen weiterhin Aufgaben und die Schnellerfassung.
+
+**Nächste Version:** Das iOS-Aufgaben-Widget zeigt Heutiger Fokus und Heute einschließlich überfälliger Aufgaben, mit Datum, Prioritätsringen, Projekt oder Bereich sowie den Filtern und der Sortierung des Fokus-Bildschirms. Freie Plätze werden nicht mit weiteren nächsten Aktionen gefüllt.
+
+Ab iOS 17 wählen Sie durch langes Drücken auf das Aufgaben-Widget und **Widget bearbeiten** zwischen Fokus, Eingang, Nächste Aktionen, Warten auf, Irgendwann/Vielleicht und einem gespeicherten Filter. Mehrere Widgets können unterschiedliche Listen zeigen. Ein Tippen auf einen Ring merkt den Abschluss vor; die Zeile bleibt durchgestrichen, bis Mindwtr wieder läuft und die Änderung speichert. Erneutes Tippen macht dies rückgängig, solange die App den Auftrag noch nicht übernommen hat. Dafür bleiben mindestens drei Sekunden. Abschluss und Synchronisierung erfolgen über die App.
+
+Mittlere und größere Widgets öffnen beim Tippen auf eine Aufgabe diese in Mindwtr; **+** öffnet die Schnellerfassung. Das kleine Widget öffnet beim Tippen Fokus; seine Ringe sind ab iOS 17 bedienbar. Auf älteren iOS-Versionen bleibt das Widget bei Fokus, ohne direktes Abhaken oder Listenauswahl. WidgetKit bestimmt den Aktualisierungszeitpunkt. Sperrbildschirm-Widgets bleiben unverändert.
 
 ### iOS-Sperrbildschirm-Widget
 

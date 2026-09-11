@@ -182,6 +182,8 @@ Consultez le [guide des intents de Tasker](https://tasker.joaoapps.com/userguide
 
 ### Widget de l’écran d’accueil
 
+Les commandes ci-dessous concernent Android. Pour iOS, voir **Widget iOS de l’écran d’accueil** plus bas.
+
 Ajoutez le widget Mindwtr à votre écran d’accueil pour y accéder rapidement :
 
 1. Appuyez longuement sur votre écran d’accueil
@@ -202,6 +204,16 @@ Sous Android, le bouton de capture de chacun des trois widgets, la tuile des Ré
 Dans la prochaine version après la 1.2.8, l’activation de la transcription ajoute aussi un bouton microphone à cette fenêtre Android native. Enregistrez, appuyez sur Arrêter, puis sur Enregistrer ; l’application principale reste fermée. Les enregistrements sont conservés sur l’appareil et transcrits avec le fournisseur configuré à la prochaine ouverture de Mindwtr ou à son retour au premier plan. F-Droid utilise Whisper hors ligne. Si la transcription échoue, l’enregistrement est conservé pour une nouvelle tentative. L’enregistrement s’arrête lorsque vous quittez la fenêtre et est limité à cinq minutes.
 
 Sous Android, les libellés d’échéance indiquent **Aujourd’hui**, le jour de la semaine pour les tâches des sept prochains jours, ou une date compacte pour les échéances ultérieures. Les tâches en retard ou à échéance aujourd’hui sont mises en évidence.
+
+### Widget iOS de l’écran d’accueil
+
+**Prochaine version :** Choisissez **Tâches** pour le widget classique, disponible en petit, moyen et grand format (ainsi qu’extra-large sur les iPad compatibles), ou **Compact** pour un texte plus petit et une liste Focus sans sections. Compact n’a ni choix de liste ni anneaux de clôture ; les formats moyens et grands permettent toujours d’ouvrir les tâches et la capture rapide.
+
+**Prochaine version :** Le widget Tâches iOS affiche le focus du jour et Aujourd’hui, y compris les tâches en retard, avec la date, les anneaux de priorité, le projet ou le domaine, ainsi que les filtres et le tri de Focus. Il ne remplit pas l’espace libre avec d’autres prochaines actions.
+
+À partir d’iOS 17, maintenez le widget appuyé et choisissez **Modifier le widget** pour sélectionner Focus, Boîte de réception, Prochaines actions, En attente, Un jour/Peut-être ou un filtre enregistré. Plusieurs widgets peuvent afficher des listes différentes. Touchez un anneau pour mettre la clôture en attente ; la ligne reste barrée jusqu’à ce que Mindwtr s’exécute à nouveau et enregistre le changement. Touchez de nouveau pour annuler avant que l’app ne prenne la demande en charge. Vous disposez d’au moins trois secondes. La clôture et la synchronisation passent par l’app.
+
+Dans les widgets moyens et grands, toucher une tâche l’ouvre dans Mindwtr et **+** ouvre la capture rapide. Le petit widget ouvre Focus ; ses anneaux sont interactifs à partir d’iOS 17. Sur les versions antérieures, il reste sur Focus, sans clôture directe ni choix de liste. WidgetKit détermine le moment des actualisations. Les widgets de l’écran verrouillé ne changent pas.
 
 ### Widget de l’écran verrouillé iOS
 

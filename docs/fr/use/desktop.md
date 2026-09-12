@@ -24,6 +24,14 @@ La plupart des listes de tâches partagent la même rangée de commandes pour s�
 
 Faites glisser une tâche dans la barre latérale vers **Boîte de réception**, **Un jour/Peut-être**, **En attente**, **Références**, **Terminé** ou **Archivé** pour changer son statut ; la notification propose **Annuler**. La **Corbeille** n’accepte pas les dépôts. Déposez la tâche sur **Calendrier**, ou marquez une pause au-dessus du Calendrier pendant le déplacement, pour ouvrir aujourd’hui. La vue Planning passe à Semaine afin que vous puissiez déposer la tâche sur un jour et une heure.
 
+## Référence
+
+Référence conserve les notes et les documents à consulter. Les lignes et l’éditeur mettent en avant le titre, la description, le projet ou domaine, les personnes, les étiquettes, les pièces jointes et les liens. Les commandes de planification et d’achèvement restent masquées. Utilisez **Convertir en action** lorsqu’une référence devient quelque chose à faire.
+
+La recherche dans Référence retrouve chaque terme séparé par des espaces, n’importe où dans le titre ou la description, sans distinguer les majuscules et les minuscules. Par exemple, `ke 1 2` retrouve `key1 key2 key3`. Les termes sont du texte littéral ; ce champ n’interprète pas la syntaxe de capture rapide ou de recherche avancée.
+
+Activez **Inclure les projets archivés** dans les filtres de Référence pour retrouver les documents de projets terminés ou archivés. Cette option est désactivée au départ et ne s’applique qu’à cette vue sur cet appareil ; les éléments supprimés restent exclus.
+
 ## Mode Focus
 
 Utilisez le mode Focus pour masquer la barre latérale et garder la liste centrée (largeur maximale de 800px).

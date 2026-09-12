@@ -24,6 +24,14 @@ Most task lists share the same control row for selecting tasks, filtering, sorti
 
 Drag a task onto **Inbox**, **Someday/Maybe**, **Waiting For**, **Reference**, **Done**, or **Archived** in the sidebar to change its status; the toast offers **Undo**. **Trash** is not a drop target. Drop the task on **Calendar**, or pause over Calendar while dragging, to open today with the task still in hand. Schedule view switches to Week so you can drop it on a day and time.
 
+## Reference
+
+Reference is for notes and material you want to keep. Its rows and editor emphasize the title, description, project or area, people, tags, attachments, and links. Task scheduling and completion controls stay out of the way. Use **Convert to action** when a reference becomes something to do.
+
+Search within Reference matches every space-separated term anywhere in the title or description, ignoring case. For example, `ke 1 2` matches `key1 key2 key3`. Terms are literal text; this field does not interpret quick-add or advanced search syntax.
+
+Turn on **Include archived projects** in the Reference filters to find material from completed or archived projects. It starts off and applies only to this view on this device; deleted material stays excluded.
+
 ## Focus Mode
 
 Use Focus Mode to hide the sidebar and keep the list centered (800px max width).

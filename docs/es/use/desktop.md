@@ -24,6 +24,14 @@ La mayoría de las listas de tareas comparten la misma fila de controles para se
 
 Arrastra una tarea en la barra lateral hasta **Bandeja de entrada**, **Algún día/Tal vez**, **En espera**, **Referencia**, **Hecho** o **Archivado** para cambiar su estado; el aviso ofrece **Deshacer**. **Papelera** no acepta tareas arrastradas. Suelta la tarea en **Calendario**, o mantenla un momento sobre Calendario mientras la arrastras, para abrir hoy. La vista Agenda cambia a Semana para que puedas soltarla en un día y una hora.
 
+## Referencia
+
+Referencia guarda notas y material de consulta. Las filas y el editor destacan el título, la descripción, el proyecto o área, las personas, las etiquetas, los adjuntos y los enlaces. Los controles de planificación y finalización quedan fuera de la vista. Usa **Convertir en acción** cuando una referencia se convierta en algo que hacer.
+
+La búsqueda dentro de Referencia encuentra todos los términos separados por espacios en cualquier parte del título o la descripción, sin distinguir mayúsculas y minúsculas. Por ejemplo, `ke 1 2` encuentra `key1 key2 key3`. Los términos son texto literal; este campo no interpreta la sintaxis de captura rápida ni de búsqueda avanzada.
+
+Activa **Incluir proyectos archivados** en los filtros de Referencia para encontrar material de proyectos completados o archivados. Empieza desactivado y solo se aplica a esta vista en este dispositivo; el material eliminado sigue excluido.
+
 ## Modo Foco
 
 Usa el modo Foco para ocultar la barra lateral y mantener la lista centrada (anchura máxima de 800 px).

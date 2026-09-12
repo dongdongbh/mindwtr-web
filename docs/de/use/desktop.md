@@ -24,6 +24,14 @@ Die meisten Aufgabenlisten verwenden dieselbe Steuerungszeile zum Auswählen, Fi
 
 Ziehen Sie eine Aufgabe in der Seitenleiste auf **Eingang**, **Irgendwann/Vielleicht**, **Warten**, **Referenz**, **Erledigt** oder **Archiviert**, um ihren Status zu ändern; die Meldung bietet **Rückgängig**. Der **Papierkorb** ist kein Ablageziel. Ziehen Sie die Aufgabe auf **Kalender** oder halten Sie sie beim Ziehen kurz darüber, um den heutigen Tag zu öffnen. Aus der Terminplanansicht wechselt Mindwtr in die Wochenansicht, damit Sie die Aufgabe auf einem Tag und einer Uhrzeit ablegen können.
 
+## Referenz
+
+Referenzen sind Notizen und Materialien zum Aufbewahren. Zeilen und Editor stellen Titel, Beschreibung, Projekt oder Bereich, Personen, Tags, Anhänge und Links in den Vordergrund. Planungs- und Erledigungsfunktionen treten zurück. Mit **In nächste Aktion umwandeln** wird eine Referenz zu einer Aufgabe.
+
+Die Suche in Referenz findet alle durch Leerzeichen getrennten Begriffe an beliebiger Stelle im Titel oder in der Beschreibung, unabhängig von Groß- und Kleinschreibung. Zum Beispiel findet `ke 1 2` den Text `key1 key2 key3`. Begriffe gelten als wörtlicher Text; Schnellerfassungs- und erweiterte Suchsyntax werden hier nicht ausgewertet.
+
+Aktivieren Sie **Archivierte Projekte einbeziehen** in den Referenzfiltern, um Material aus abgeschlossenen oder archivierten Projekten zu finden. Die Option ist anfangs aus und gilt nur für diese Ansicht auf diesem Gerät; gelöschtes Material bleibt ausgeschlossen.
+
 ## Fokusmodus
 
 Der Fokusmodus blendet die Seitenleiste aus und hält die Liste zentriert (maximal 800 px breit).

@@ -68,6 +68,14 @@ Ouvrez la **Corbeille** et touchez **Sélectionner** pour gérer plusieurs tâch
 
 ---
 
+## Référence
+
+Référence conserve les notes et les documents à consulter. Les lignes et l’éditeur mettent en avant le titre, la description, le projet ou domaine, les personnes, les étiquettes, les pièces jointes et les liens. Les commandes de planification et d’achèvement restent masquées. Utilisez **Convertir en action** lorsqu’une référence devient quelque chose à faire.
+
+La recherche dans Référence retrouve chaque terme séparé par des espaces, n’importe où dans le titre ou la description, sans distinguer les majuscules et les minuscules. Par exemple, `ke 1 2` retrouve `key1 key2 key3`. Les termes sont du texte littéral ; ce champ n’interprète pas la syntaxe de capture rapide ou de recherche avancée.
+
+Activez **Inclure les projets archivés** dans les filtres de Référence pour retrouver les documents de projets terminés ou archivés. Cette option est désactivée au départ et ne s’applique qu’à cette vue sur cet appareil ; les éléments supprimés restent exclus.
+
 ## Actions groupées
 
 **Prochaine version :** Dans **Bulk organize**, recherchez un projet ou un domaine, ou saisissez un nouveau nom et choisissez **Créer** sans perdre les tâches sélectionnées ni les autres champs. La création enregistre et sélectionne la destination ; les tâches ne sont déplacées qu’après **Apply to selected**. Annuler la modification laisse les tâches inchangées et conserve les destinations créées. En cas d’échec de création, la sélection et le formulaire restent disponibles pour réessayer.

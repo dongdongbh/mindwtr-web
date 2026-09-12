@@ -68,6 +68,14 @@ Unter **Erledigt** zeigt die Sortierung nach **Abschlussdatum** die neuesten Abs
 
 ---
 
+## Referenz
+
+Referenzen sind Notizen und Materialien zum Aufbewahren. Zeilen und Editor stellen Titel, Beschreibung, Projekt oder Bereich, Personen, Tags, Anhänge und Links in den Vordergrund. Planungs- und Erledigungsfunktionen treten zurück. Mit **In nächste Aktion umwandeln** wird eine Referenz zu einer Aufgabe.
+
+Die Suche in Referenz findet alle durch Leerzeichen getrennten Begriffe an beliebiger Stelle im Titel oder in der Beschreibung, unabhängig von Groß- und Kleinschreibung. Zum Beispiel findet `ke 1 2` den Text `key1 key2 key3`. Begriffe gelten als wörtlicher Text; Schnellerfassungs- und erweiterte Suchsyntax werden hier nicht ausgewertet.
+
+Aktivieren Sie **Archivierte Projekte einbeziehen** in den Referenzfiltern, um Material aus abgeschlossenen oder archivierten Projekten zu finden. Die Option ist anfangs aus und gilt nur für diese Ansicht auf diesem Gerät; gelöschtes Material bleibt ausgeschlossen.
+
 ## Stapelaktionen
 
 **Nächste Version:** Suche unter **Sammel-Organisation** nach einem Projekt oder Bereich oder gib einen neuen Namen ein und wähle **Erstellen**, ohne die Aufgabenauswahl oder andere Formularfelder zu verlieren. Das Erstellen speichert und wählt das Ziel; erst **Auf Auswahl anwenden** verschiebt die Aufgaben. Beim Abbrechen bleiben die Aufgaben unverändert und erstellte Ziele erhalten. Schlägt das Erstellen fehl, bleiben Auswahl und Formular für einen erneuten Versuch erhalten.

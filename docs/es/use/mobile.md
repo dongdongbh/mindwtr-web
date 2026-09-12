@@ -68,6 +68,14 @@ Abre **Papelera** y toca **Seleccionar** para gestionar varias tareas y proyecto
 
 ---
 
+## Referencia
+
+Referencia guarda notas y material de consulta. Las filas y el editor destacan el título, la descripción, el proyecto o área, las personas, las etiquetas, los adjuntos y los enlaces. Los controles de planificación y finalización quedan fuera de la vista. Usa **Convertir en acción** cuando una referencia se convierta en algo que hacer.
+
+La búsqueda dentro de Referencia encuentra todos los términos separados por espacios en cualquier parte del título o la descripción, sin distinguir mayúsculas y minúsculas. Por ejemplo, `ke 1 2` encuentra `key1 key2 key3`. Los términos son texto literal; este campo no interpreta la sintaxis de captura rápida ni de búsqueda avanzada.
+
+Activa **Incluir proyectos archivados** en los filtros de Referencia para encontrar material de proyectos completados o archivados. Empieza desactivado y solo se aplica a esta vista en este dispositivo; el material eliminado sigue excluido.
+
 ## Acciones en bloque
 
 **Próxima versión:** En **Organizar en lote**, busca un proyecto o área, o escribe un nombre nuevo y elige **Crear** sin perder la selección de tareas ni los demás campos. Al crear se guarda y selecciona el destino; las tareas solo se mueven al pulsar **Aplicar a las seleccionadas**. Cancelar la edición no cambia las tareas y conserva los destinos creados. Si la creación falla, se mantienen la selección y el formulario para volver a intentarlo.

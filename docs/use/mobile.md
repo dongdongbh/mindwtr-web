@@ -68,6 +68,14 @@ Open **Trash** and tap **Select** to manage several deleted tasks and projects. 
 
 ---
 
+## Reference
+
+Reference is for notes and material you want to keep. Its rows and editor emphasize the title, description, project or area, people, tags, attachments, and links. Task scheduling and completion controls stay out of the way. Use **Convert to action** when a reference becomes something to do.
+
+Search within Reference matches every space-separated term anywhere in the title or description, ignoring case. For example, `ke 1 2` matches `key1 key2 key3`. Terms are literal text; this field does not interpret quick-add or advanced search syntax.
+
+Turn on **Include archived projects** in the Reference filters to find material from completed or archived projects. It starts off and applies only to this view on this device; deleted material stays excluded.
+
 ## Bulk Actions
 
 **Next release:** In **Bulk organize**, search for a project or area, or type a new name and choose **Create** without losing your task selection or other form fields. Creation saves and selects the destination; tasks move only after **Apply to selected**. Cancelling the bulk edit leaves your tasks unchanged and keeps any destination you created. If creation fails, your selection and form stay available for retry.

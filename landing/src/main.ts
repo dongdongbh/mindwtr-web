@@ -56,16 +56,24 @@ function detectPlatform(): Platform | null {
   const legacy = nav.platform || "";
   const hint = (nav.userAgentData?.platform || "").toLowerCase();
 
+  // iPadOS reports as "MacIntel" with a touch screen.
+  const isIpadOS = legacy === "MacIntel" && nav.maxTouchPoints > 1;
+  if (/iphone|ipad|ipod/i.test(ua) || isIpadOS) return "ios";
+
   // Prefer the platform client hint when Chromium exposes it. It stays
-  // Android even when the browser requests a desktop-shaped user agent.
+  // Android in many embedded and desktop-shaped browser configurations.
   if (hint === "android") return "android";
   if (hint === "windows") return "windows";
   if (hint === "macos") return "mac";
   if (hint === "ios") return "ios";
 
-  // iPadOS reports as "MacIntel" with a touch screen.
-  const isIpadOS = legacy === "MacIntel" && nav.maxTouchPoints > 1;
-  if (/iphone|ipad|ipod/i.test(ua) || isIpadOS) return "ios";
+  // Chromium exposes the mobile bit as a default low-entropy hint. Some
+  // Android scanners reduce the platform and UA to Linux but preserve this
+  // bit, which is enough to recover the Android store without guessing from
+  // screen size or touch support.
+  if (nav.userAgentData?.mobile === true && (!hint || hint === "linux")) {
+    return "android";
+  }
 
   if (/android/i.test(ua)) return "android";
   if (/windows|win32|win64/i.test(ua) || /^win/i.test(legacy)) {
@@ -98,9 +106,18 @@ function applyPlatform(platform: Platform | null): void {
   }
 
   // Linux-shaped desktop mode can also come from an Android browser. Keep the
-  // complete download page neutral instead of sending that ambiguous case to
-  // Flathub or labelling it as a confident Linux recommendation.
-  if (directDownload) return;
+  // complete download page instead of auto-redirecting an actual Linux user.
+  // On a touch-first device, make Google Play one tap away at the top while
+  // retaining the full Linux and cross-platform choices below.
+  if (directDownload) {
+    const touchFirst = navigator.maxTouchPoints > 0
+      || (typeof window.matchMedia === "function" && window.matchMedia("(pointer: coarse)").matches);
+    if (platform === "linux" && touchFirst && cta instanceof HTMLAnchorElement) {
+      cta.textContent = JS_STRINGS[pageLocale()].downloadFor(PLATFORM_LABEL.android);
+      cta.setAttribute("href", DIRECT_STORE_URL.android ?? "#download-android");
+    }
+    return;
+  }
 
   const card = document.querySelector<HTMLElement>(
     `.dl-platform[data-platform="${platform}"]`,

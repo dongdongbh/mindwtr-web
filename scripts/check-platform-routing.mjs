@@ -72,4 +72,34 @@ assert.equal(
   "the modern macOS client hint must use the macOS App Store route",
 );
 
+assert.equal(
+  detectPlatform({
+    userAgent: desktopLinuxUa,
+    platform: "Linux x86_64",
+    maxTouchPoints: 0,
+    userAgentData: { platform: "Windows", mobile: false },
+  }),
+  "windows",
+  "the Windows client hint must use the Microsoft Store route",
+);
+
+for (const platform of ["Win32", "Win64"]) {
+  assert.equal(
+    detectPlatform({ userAgent: "", platform, maxTouchPoints: 0 }),
+    "windows",
+    `${platform} must use the Microsoft Store route`,
+  );
+}
+
+assert.equal(
+  detectPlatform({
+    userAgent:
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/152.0.0.0 Safari/537.36",
+    platform: "",
+    maxTouchPoints: 0,
+  }),
+  "windows",
+  "a Windows user agent must use the Microsoft Store route",
+);
+
 console.log("Platform routing checks passed.");

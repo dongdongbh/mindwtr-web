@@ -10,6 +10,8 @@ The Mindwtr mobile app provides the complete guided GTD workflow on iPhone and A
 
 The mobile app uses bottom tabs for core flows and a Menu page for additional views.
 
+**Next release:** Android navigation adapts to the available app window: roomy windows use a side rail, while narrow or short windows keep compact navigation. Task editors and Quick Capture fit within a usable pane when Android reports a separating or obstructing hinge. There is no foldable mode to enable. Foldable emulator checks cover these layouts; physical Galaxy Z Fold and Z Flip confirmation is still pending.
+
 ---
 
 ## Interaction Patterns

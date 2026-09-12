@@ -10,6 +10,8 @@ La aplicación móvil Mindwtr ofrece el flujo de trabajo GTD guiado completo en 
 
 La aplicación móvil usa pestañas inferiores para los flujos principales y una página Menú para las vistas adicionales.
 
+**Próxima versión:** En Android, la navegación se adapta al espacio disponible en la ventana: las ventanas amplias usan una barra lateral, mientras que las estrechas o de poca altura mantienen la navegación compacta. El editor de tareas y la captura rápida se ajustan a una zona utilizable cuando Android informa de una bisagra que separa u obstruye la pantalla. No hay que activar ningún modo para dispositivos plegables. Estos diseños se han comprobado en emuladores; aún falta confirmarlos en dispositivos Galaxy Z Fold y Z Flip físicos.
+
 ---
 
 ## Patrones de interacción

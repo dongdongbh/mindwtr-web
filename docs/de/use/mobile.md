@@ -10,6 +10,8 @@ Die mobile Mindwtr-App bietet auf iPhone und Android den vollständigen geführt
 
 Die App verwendet untere Tabs für zentrale Abläufe und eine Menüseite für weitere Ansichten.
 
+**Nächste Version:** Unter Android passt sich die Navigation dem verfügbaren App-Fenster an: Geräumige Fenster verwenden eine seitliche Navigationsleiste, schmale oder niedrige Fenster behalten die kompakte Navigation. Aufgabenbearbeitung und Schnellerfassung bleiben in einem nutzbaren Bereich, wenn Android ein trennendes oder verdeckendes Scharnier meldet. Ein eigener Modus für faltbare Geräte muss nicht aktiviert werden. Diese Layouts wurden im Emulator geprüft; die Bestätigung auf physischen Galaxy Z Fold und Z Flip steht noch aus.
+
 ---
 
 ## Interaktionsmuster

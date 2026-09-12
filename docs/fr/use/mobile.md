@@ -10,6 +10,8 @@ L’application mobile Mindwtr offre l’ensemble du flux GTD guidé sur iPhone 
 
 L’application mobile utilise des onglets inférieurs pour les principaux flux et une page Menu pour les vues supplémentaires.
 
+**Prochaine version :** Sur Android, la navigation s’adapte à l’espace disponible dans la fenêtre : les fenêtres spacieuses utilisent une barre latérale, tandis que les fenêtres étroites ou peu hautes conservent une navigation compacte. L’éditeur de tâches et la capture rapide restent dans une zone utilisable lorsqu’Android signale une charnière qui sépare ou masque une partie de l’écran. Aucun mode pour appareil pliable n’est à activer. Ces dispositions ont été contrôlées sur émulateur ; la confirmation sur des Galaxy Z Fold et Z Flip physiques reste à faire.
+
 ---
 
 ## Modes d’interaction

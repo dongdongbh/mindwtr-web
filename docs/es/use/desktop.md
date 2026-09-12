@@ -224,7 +224,7 @@ Usa listas de comprobación como plantillas:
 
 - Haz clic en una tarea para abrir una **vista de solo lectura** con todos los detalles.
 - Pulsa **Editar** (o `e`) para cambiar al modo de edición.
-- El editor empieza mostrando lo mínimo. Usa **Más opciones** para revelar campos avanzados.
+- Las secciones con valores se abren automáticamente al empezar a editar; las vacías siguen tus ajustes de diseño. Puedes contraer cualquier sección durante el resto de esa edición. Al expandir una sección, se desplaza a la vista si hace falta; si es más alta que el espacio disponible, su encabezado permanece visible.
 - **Sección del proyecto** es un campo organizativo para las tareas de un proyecto con secciones. Déjalo vacío en tareas de la Bandeja de entrada, tareas sin asignar o proyectos sin secciones.
 - Estado, Prioridad y Nivel de energía usan controles de pastilla en vez de menús desplegables para agilizar la selección con teclado y puntero.
 - Abre el calendario de un campo de fecha para elegir opciones rápidas junto a la cuadrícula del mes: **Hoy**, **Mañana**, **+2 días**, **+3 días**, **Próxima semana**, **Próximo mes** y **Sin fecha**.

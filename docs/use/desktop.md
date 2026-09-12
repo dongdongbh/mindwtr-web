@@ -224,7 +224,7 @@ Use checklists as templates:
 
 - Click a task to open a **read-only view** of all details.
 - Press **Edit** (or `e`) to switch to edit mode.
-- The editor starts minimal. Use **More options** to reveal advanced fields.
+- Sections with values open automatically when you start editing; empty sections follow your layout defaults. You can collapse any section for the rest of that editing session. Expanding a section scrolls it into view when needed, keeping its header visible if the section is taller than the available space.
 - **Project Section** is an organizational field for tasks inside a sectioned project. Leave it blank for Inbox tasks, unassigned tasks, or projects without sections.
 - Status, Priority, and Energy Level use pill controls instead of dropdowns for faster keyboard and pointer selection.
 - Open a date field's calendar to pick quick suggestions beside the month grid: **Today**, **Tomorrow**, **+2 days**, **+3 days**, **Next week**, **Next month**, and **No date**.

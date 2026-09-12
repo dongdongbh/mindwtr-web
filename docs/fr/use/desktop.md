@@ -224,7 +224,7 @@ Utilisez les listes de contrôle comme modèles :
 
 - Cliquez sur une tâche pour ouvrir une **vue en lecture seule** de tous ses détails.
 - Appuyez sur **Modifier** (ou `e`) pour passer en mode édition.
-- L’éditeur s’ouvre sous une forme minimale. Utilisez **Plus d’options** pour afficher les champs avancés.
+- Les sections contenant des valeurs s’ouvrent automatiquement au début de la modification ; les sections vides suivent vos réglages de mise en page. Vous pouvez replier chaque section pour le reste de cette session de modification. Lorsqu’une section est dépliée, elle défile dans la zone visible si nécessaire ; si elle dépasse l’espace disponible, son en-tête reste visible.
 - **Section du projet** est un champ d’organisation pour les tâches au sein d’un projet divisé en sections. Laissez-le vide pour les tâches de la Boîte de réception, les tâches non attribuées ou les projets sans section.
 - Statut, Priorité et Niveau d’énergie utilisent des boutons en forme de pastille plutôt que des listes déroulantes pour accélérer la sélection au clavier et au pointeur.
 - Ouvrez le calendrier d’un champ de date pour choisir des raccourcis à côté de la grille du mois : **Aujourd’hui**, **Demain**, **+2 jours**, **+3 jours**, **Semaine prochaine**, **Mois prochain** et **Aucune date**.

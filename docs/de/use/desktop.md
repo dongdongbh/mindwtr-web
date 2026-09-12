@@ -224,7 +224,7 @@ Checklisten als Vorlagen:
 
 - Klicken Sie auf eine Aufgabe, um eine **schreibgeschützte Ansicht** aller Details zu öffnen.
 - Drücken Sie **Bearbeiten** (oder `e`), um in den Bearbeitungsmodus zu wechseln.
-- Der Editor beginnt minimalistisch. **Weitere Optionen** zeigt erweiterte Felder.
+- Abschnitte mit Werten öffnen sich automatisch, wenn du mit der Bearbeitung beginnst; leere Abschnitte folgen deinen Layout-Vorgaben. Du kannst jeden Abschnitt für den Rest der Bearbeitung einklappen. Beim Aufklappen wird der Abschnitt bei Bedarf in den sichtbaren Bereich gescrollt. Ist er höher als der verfügbare Platz, bleibt seine Überschrift sichtbar.
 - **Projektabschnitt** organisiert Aufgaben innerhalb eines unterteilten Projekts. Bei Eingangsaufgaben, nicht zugewiesenen Aufgaben oder Projekten ohne Abschnitte leer lassen.
 - Status, Priorität und Energiestufe verwenden Pillensteuerungen statt Auswahlmenüs.
 - Öffnen Sie den Kalender eines Datumsfelds, um neben der Monatsansicht Schnelloptionen zu wählen: **Heute**, **Morgen**, **+2 Tage**, **+3 Tage**, **Nächste Woche**, **Nächster Monat** und **Kein Datum**.

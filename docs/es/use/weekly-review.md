@@ -235,3 +235,11 @@ Si te saltas una semana:
 
 - [Resumen de GTD](/es/use/gtd-overview)
 - [Flujo de trabajo GTD en Mindwtr](/es/use/gtd-workflow)
+
+## Comparte una reflexión
+
+En el último paso de la revisión semanal, elige **Compartir mi reflexión** para ver una tarjeta con la fecha y una nota opcional de hasta 140 caracteres. Elige el estilo Reflexión, Minimalista u Ondas según tu nota. Compartir es opcional y no termina la revisión por ti. No se extrae contenido de tus tareas ni proyectos; la nota se borra al cerrar la vista previa.
+
+En el escritorio, guarda el PNG o cópialo si el portapapeles admite imágenes. En el móvil, usa el menú de compartir del sistema para enviar o guardar la imagen en un destino disponible. Revisa la vista previa antes de compartir.
+
+La imagen, el icono oficial de Mindwtr y el código QR se generan en tu dispositivo sin solicitudes de red. Todas las tarjetas incluyen un QR que lleva a las [descargas de Mindwtr](https://mindwtr.app/get?ref=share) para todas las plataformas. Puedes crear la imagen sin conexión; abrir después la página de descargas requiere conexión a internet y que la web esté accesible.

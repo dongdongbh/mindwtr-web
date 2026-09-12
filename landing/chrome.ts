@@ -24,7 +24,8 @@ const LOCALIZED_PAGES = new Set([
   "donate",
   "support",
   "brand",
-  "privacy"
+  "privacy",
+  "get"
 ]);
 
 const HREFLANG: Record<Locale, string> = {
@@ -259,7 +260,7 @@ const DETECT_SCRIPT = `    <script>
       (function () {
         try {
           if (localStorage.getItem("mindwtr-lang")) return;
-          var page = location.pathname.match(/^\\/(features|gtd|donate|support|brand|privacy)?\\/?$/);
+          var page = location.pathname.match(/^\\/(features|gtd|donate|support|brand|privacy|get)?\\/?$/);
           if (!page) return;
           var offered = ["de", "es", "fr"];
           var langs = navigator.languages || [navigator.language || ""];

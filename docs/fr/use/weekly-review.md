@@ -235,3 +235,11 @@ Si vous manquez une semaine :
 
 - [Présentation de GTD](/fr/use/gtd-overview)
 - [Flux GTD dans Mindwtr](/fr/use/gtd-workflow)
+
+## Partager une réflexion
+
+À la dernière étape de la revue hebdomadaire, choisissez **Partager ma réflexion** pour prévisualiser une carte avec la date et une note facultative de 140 caractères maximum. Choisissez le style Réflexion, Minimaliste ou Ondes selon votre note. Le partage est facultatif et ne termine pas la revue à votre place. Aucun contenu de vos tâches ou projets n’est repris ; la note est effacée à la fermeture de l’aperçu.
+
+Sur ordinateur, enregistrez le PNG ou copiez-le si le presse-papiers accepte les images. Sur mobile, utilisez le menu de partage du système pour envoyer ou enregistrer l’image vers une destination disponible. Vérifiez l’aperçu avant de partager.
+
+L’image, l’icône officielle de Mindwtr et le QR code sont générés sur votre appareil sans requête réseau. Chaque carte comporte un QR code vers les [téléchargements Mindwtr](https://mindwtr.app/get?ref=share) pour toutes les plateformes. Vous pouvez créer l’image hors ligne ; ouvrir ensuite la page de téléchargement nécessite une connexion internet et un site accessible.

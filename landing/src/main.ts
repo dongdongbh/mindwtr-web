@@ -90,7 +90,14 @@ function applyPlatform(platform: Platform | null): void {
     // Anchor at the detected card, not the section wrapper, so a stacked
     // mobile layout scrolls to the visitor's card (e.g. Android, far down the
     // stack) rather than the section top (macOS, first card).
-    if (card) cta.setAttribute("href", `#download-${platform}`);
+    if (card) {
+      // The QR landing page offers the detected store directly, while keeping
+      // every other platform below it. Only fixed, authored links are used.
+      const store = cta.hasAttribute("data-direct-download")
+        ? card.querySelector<HTMLAnchorElement>("a.store-badge")
+        : null;
+      cta.setAttribute("href", store?.getAttribute("href") ?? `#download-${platform}`);
+    }
   }
 }
 

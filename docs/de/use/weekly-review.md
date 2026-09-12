@@ -235,3 +235,11 @@ Falls Sie eine Woche verpassen:
 
 - [GTD-Überblick](/de/use/gtd-overview)
 - [GTD-Arbeitsablauf in Mindwtr](/de/use/gtd-workflow)
+
+## Eine Reflexion teilen
+
+Wähle im letzten Schritt des Wochenrückblicks **Meinen Rückblick teilen**, um eine Karte mit Datum und einer optionalen Notiz mit bis zu 140 Zeichen anzusehen. Wähle den Stil Reflexion, Schlicht oder Wellen passend zu deiner Notiz. Das Teilen ist freiwillig und schließt den Rückblick nicht für dich ab. Inhalte aus Aufgaben oder Projekten werden nicht übernommen; beim Schließen der Vorschau wird die Notiz verworfen.
+
+Auf dem Desktop kannst du das PNG speichern oder kopieren, sofern die Zwischenablage Bilder unterstützt. Auf Mobilgeräten kannst du das Bild über das systemeigene Teilen-Menü an ein verfügbares Ziel senden oder dort speichern. Prüfe die Vorschau vor dem Teilen.
+
+Das Bild mit dem offiziellen Mindwtr-Symbol und QR-Code wird auf deinem Gerät ohne Netzwerkanfrage erstellt. Jede Karte enthält einen QR-Code zu den [Mindwtr-Downloads](https://mindwtr.app/get?ref=share) für alle Plattformen. Du kannst das Bild offline erstellen; um die Downloadseite später zu öffnen, brauchst du eine Internetverbindung und eine erreichbare Website.

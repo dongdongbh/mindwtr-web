@@ -235,3 +235,11 @@ If you miss a week:
 
 - [GTD Overview](/use/gtd-overview)
 - [GTD Workflow in Mindwtr](/use/gtd-workflow)
+
+## Share a reflection
+
+At the final Weekly Review step, choose **Share my reflection** to preview a card with the date and an optional note of up to 140 characters. Choose Reflection, Minimal, or Ripple to suit your note. Sharing is optional and does not finish the review for you. Nothing is pulled from your tasks or projects; the note is cleared when you close the preview.
+
+On desktop, save the PNG or copy it when image clipboard access is available. On mobile, use the system share sheet to send or save the image using an available destination. Check the preview before sharing.
+
+The image, official Mindwtr icon, and QR code are generated on your device without a network request. Every card includes a QR code pointing to [Mindwtr downloads](https://mindwtr.app/get?ref=share) for all platforms. You can create the image offline; opening the download page later requires an internet connection and a reachable website.

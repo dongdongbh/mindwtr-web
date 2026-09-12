@@ -4,6 +4,13 @@ import { initLoopTour } from "./tour";
 
 type Platform = "mac" | "windows" | "linux" | "ios" | "android";
 
+const DIRECT_STORE_URL: Partial<Record<Platform, string>> = {
+  mac: "https://apps.apple.com/app/mindwtr/id6758597144",
+  windows: "https://apps.microsoft.com/detail/9n0v5b0b6frx",
+  ios: "https://apps.apple.com/app/mindwtr/id6758597144",
+  android: "https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr",
+};
+
 /** Display label per platform, used to personalize the hero CTA. */
 const PLATFORM_LABEL: Record<Platform, string> = {
   mac: "macOS",
@@ -43,21 +50,28 @@ function pageLocale(): Locale {
  */
 function detectPlatform(): Platform | null {
   const nav = navigator as Navigator & {
-    userAgentData?: { platform?: string };
+    userAgentData?: { mobile?: boolean; platform?: string };
   };
   const ua = nav.userAgent || "";
   const legacy = nav.platform || "";
   const hint = (nav.userAgentData?.platform || "").toLowerCase();
 
+  // Prefer the platform client hint when Chromium exposes it. It stays
+  // Android even when the browser requests a desktop-shaped user agent.
+  if (hint === "android") return "android";
+  if (hint === "windows") return "windows";
+  if (hint === "macos") return "mac";
+  if (hint === "ios") return "ios";
+
   // iPadOS reports as "MacIntel" with a touch screen.
   const isIpadOS = legacy === "MacIntel" && nav.maxTouchPoints > 1;
   if (/iphone|ipad|ipod/i.test(ua) || isIpadOS) return "ios";
 
-  if (/android/i.test(ua) || hint === "android") return "android";
-  if (/windows|win32|win64/i.test(ua) || hint === "windows" || /^win/i.test(legacy)) {
+  if (/android/i.test(ua)) return "android";
+  if (/windows|win32|win64/i.test(ua) || /^win/i.test(legacy)) {
     return "windows";
   }
-  if (/macintosh|mac os x/i.test(ua) || hint === "macos" || /^mac/i.test(legacy)) {
+  if (/macintosh|mac os x/i.test(ua) || /^mac/i.test(legacy)) {
     return "mac";
   }
   if (/linux|x11|cros/i.test(ua) || hint === "linux" || /linux/i.test(legacy)) {
@@ -67,13 +81,26 @@ function detectPlatform(): Platform | null {
 }
 
 /**
- * Highlight the visitor's platform card and personalize the hero CTA label.
- * The CTA keeps its in-page "#download" target (detect-to-surface, never gate):
- * it scrolls to the grid with the right card already highlighted, so a wrong
- * guess is harmless — every channel stays visible and one click away.
+ * The dedicated QR download page replaces itself with a fixed store URL for
+ * confidently detected platforms. Other pages keep their in-page target and
+ * highlight the matching card, so every download channel remains available.
  */
 function applyPlatform(platform: Platform | null): void {
   if (!platform) return;
+
+  const cta = document.getElementById("primary-download");
+  const directDownload = cta instanceof HTMLAnchorElement && cta.hasAttribute("data-direct-download");
+  const directStore = directDownload ? DIRECT_STORE_URL[platform] : undefined;
+  if (directStore && cta instanceof HTMLAnchorElement) {
+    cta.setAttribute("href", directStore);
+    window.location.replace(directStore);
+    return;
+  }
+
+  // Linux-shaped desktop mode can also come from an Android browser. Keep the
+  // complete download page neutral instead of sending that ambiguous case to
+  // Flathub or labelling it as a confident Linux recommendation.
+  if (directDownload) return;
 
   const card = document.querySelector<HTMLElement>(
     `.dl-platform[data-platform="${platform}"]`,
@@ -84,19 +111,13 @@ function applyPlatform(platform: Platform | null): void {
     if (pill) pill.hidden = false;
   }
 
-  const cta = document.getElementById("primary-download");
   if (cta instanceof HTMLAnchorElement) {
     cta.textContent = JS_STRINGS[pageLocale()].downloadFor(PLATFORM_LABEL[platform]);
     // Anchor at the detected card, not the section wrapper, so a stacked
     // mobile layout scrolls to the visitor's card (e.g. Android, far down the
     // stack) rather than the section top (macOS, first card).
     if (card) {
-      // The QR landing page offers the detected store directly, while keeping
-      // every other platform below it. Only fixed, authored links are used.
-      const store = cta.hasAttribute("data-direct-download")
-        ? card.querySelector<HTMLAnchorElement>("a.store-badge")
-        : null;
-      cta.setAttribute("href", store?.getAttribute("href") ?? `#download-${platform}`);
+      cta.setAttribute("href", `#download-${platform}`);
     }
   }
 }

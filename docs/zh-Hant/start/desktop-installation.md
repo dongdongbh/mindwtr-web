@@ -168,8 +168,8 @@ choco install mindwtr
 若使用 Scoop：
 
 ```powershell
-scoop bucket add mindwtr https://github.com/dongdongbh/homebrew-mindwtr
-scoop install mindwtr
+scoop bucket add extras
+scoop install extras/mindwtr
 ```
 
 ### 安裝程式（.exe）

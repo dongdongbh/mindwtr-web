@@ -403,7 +403,14 @@ Mindwtr sendet Desktop-Benachrichtigungen:
 - **Startzeitwarnungen**
 - **Erinnerungen an wiederkehrende Aufgaben**
 
-Aufgaben mit Fälligkeitszeit können **Erinnerung wiederholen** auf 5, 10, 15, 30 oder 60 Minuten setzen. Bei Aufgaben mit einer Startzeit oder einem Fälligkeitsdatum deaktiviert **Erinnerungen überspringen** die Start- und Fälligkeitserinnerungen; die Aufgabe bleibt in „Fokus“ und den Listen sichtbar.
+Bei Aufgaben mit Fälligkeitszeit kann **Erinnerung wiederholen** nach der ersten Fälligkeitserinnerung alle 5, 10, 15, 30 oder 60 Minuten erneut erinnern. **Erinnerungen überspringen** schaltet Start- und Fälligkeitserinnerungen für diese Aufgabe aus. **Erinnerung wiederholen: Aus** lässt die erste Fälligkeitserinnerung zu.
+
+### Eine Aufgabenerinnerung testen
+
+1. Eine Aufgabe bearbeiten und die **Fälligkeit** auf eine Uhrzeit in wenigen Minuten setzen. **Nur Datum** erzeugt keine zeitgesteuerte Benachrichtigung.
+2. Die Erinnerungsoptionen unter der Fälligkeit öffnen und **Erinnerungen überspringen** deaktivieren. Zeigt die Zusammenfassung **Mindwtr-Erinnerungen aus**, diese Option ausschalten.
+3. Die Aufgabe speichern. Unter **Einstellungen → Benachrichtigungen** Aufgaben- und Fälligkeitserinnerungen aktivieren. Auf macOS Mindwtr auch unter **Systemeinstellungen → Mitteilungen** erlauben.
+4. Bis zur Fälligkeitszeit warten. Wurde die Aufgabe auf einem anderen Gerät geändert, den Computer zuerst die neue Zeit synchronisieren lassen.
 
 ### Einstellungen
 

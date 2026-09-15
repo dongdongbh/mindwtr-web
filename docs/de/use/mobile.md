@@ -658,7 +658,14 @@ Ab v1.3.1: Ordnen Sie Aufgaben direkt in dieser Liste in Irgendwann-Abschnitte e
 - **Startzeitwarnungen**
 - **Erinnerungen an wiederkehrende Aufgaben**
 
-Aufgaben mit einer Fälligkeitszeit können die **Erinnerung wiederholen** nach 5, 10, 15, 30 oder 60 Minuten. Bei Aufgaben mit einer Startzeit oder einem Fälligkeitsdatum deaktiviert **Erinnerungen überspringen** die Start- und Fälligkeitserinnerungen; die Aufgabe bleibt in Fokus und Listen sichtbar.
+Bei Aufgaben mit Fälligkeitszeit kann **Erinnerung wiederholen** nach der ersten Fälligkeitserinnerung alle 5, 10, 15, 30 oder 60 Minuten erneut erinnern. **Erinnerungen überspringen** schaltet Start- und Fälligkeitserinnerungen für diese Aufgabe aus. **Erinnerung wiederholen: Aus** schaltet die erste Fälligkeitserinnerung nicht aus.
+
+### Eine Aufgabenerinnerung testen
+
+1. Eine Aufgabe bearbeiten und die **Fälligkeit** auf eine Uhrzeit in wenigen Minuten setzen. **Nur Datum** erzeugt keine zeitgesteuerte Benachrichtigung.
+2. **Erinnerungen überspringen** prüfen: **Aus** erlaubt Benachrichtigungen für diese Aufgabe, **An** überspringt sie. In älteren Versionen bedeutet der blaue Rahmen um diese Option **An**.
+3. **Speichern** tippen. Unter **Einstellungen → Benachrichtigungen** Aufgaben- und Fälligkeitserinnerungen aktivieren. Auf iOS Mindwtr-Benachrichtigungen auch in den Geräteeinstellungen erlauben.
+4. Bis zur Fälligkeitszeit warten. Wurde die Aufgabe auf einem anderen Gerät geändert, Mindwtr auf diesem Telefon öffnen, damit die neue Zeit vorher synchronisiert wird.
 
 Tippen auf den Benachrichtigungstext öffnet **Durchsicht**.
 

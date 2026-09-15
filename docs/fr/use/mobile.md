@@ -717,7 +717,14 @@ Mindwtr envoie des notifications pour vous aider à rester sur la bonne voie.
 - **Alertes d’heure de début** : vous rappellent quand il est temps de commencer
 - **Rappels de tâches récurrentes** : notifications pour les éléments récurrents
 
-Les tâches avec une heure d’échéance peuvent définir **Répéter le rappel** après 5, 10, 15, 30 ou 60 minutes. Pour les tâches avec une heure de début ou une date d’échéance, **Ignorer les rappels** désactive les rappels de début et d’échéance ; la tâche reste visible dans Focus et les listes.
+Les tâches avec une heure d’échéance peuvent définir **Répéter le rappel** toutes les 5, 10, 15, 30 ou 60 minutes après le premier rappel d’échéance. **Ignorer les rappels** désactive les rappels de début et d’échéance pour cette tâche. **Répéter le rappel : Désactivé** ne désactive pas le premier rappel.
+
+### Tester un rappel de tâche
+
+1. Modifiez une tâche et fixez son **Échéance** à une heure dans quelques minutes. **Date seule** ne programme pas d’alerte à une heure précise.
+2. Vérifiez **Ignorer les rappels** : **Désactivé** permet les alertes de cette tâche ; **Activé** les ignore. Dans les anciennes versions, le contour bleu de cette option signifie **Activé**.
+3. Touchez **Enregistrer**. Dans **Paramètres → Notifications**, activez les notifications de tâches et les rappels d’échéance. Sur iOS, autorisez aussi les notifications Mindwtr dans les réglages de l’appareil.
+4. Attendez l’heure d’échéance. Si vous avez modifié la tâche sur un autre appareil, ouvrez Mindwtr sur ce téléphone pour synchroniser la nouvelle heure avant l’alerte.
 
 Touchez le corps de la notification pour accéder directement à l’écran **Revue**.
 

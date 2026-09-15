@@ -401,7 +401,14 @@ Mindwtr sends desktop notifications to keep you on track:
 - **Start time alerts**: Reminds you when it's time to begin
 - **Recurring task reminders**: Notifications for recurring items
 
-Tasks with a due time can set **Repeat reminder** to 5, 10, 15, 30, or 60 minutes. For tasks with a timed start or due date, **Skip reminders** turns off start and due reminders while the task stays visible in Focus and lists.
+Tasks with a due time can set **Repeat reminder** to 5, 10, 15, 30, or 60 minutes after the due reminder. **Skip reminders** turns off start and due reminders for that task. **Repeat reminder: Off** still allows the first due reminder.
+
+### Test a task reminder
+
+1. Edit a task and set its **Due date** to a time a few minutes ahead. **Date only** does not schedule a timed alert.
+2. Open the reminder options below the due date and leave **Skip reminders** unchecked. If the summary says **Mindwtr reminders off**, turn **Skip reminders** off.
+3. Save the task. In **Settings → Notifications**, enable task notifications and due reminders. On macOS, also allow Mindwtr in **System Settings → Notifications**.
+4. Wait for the due time. If you edited the task on another device, let this computer sync the new time first.
 
 ### Settings
 

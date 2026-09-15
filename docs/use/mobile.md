@@ -717,7 +717,14 @@ Mindwtr sends notifications to keep you on track.
 - **Start time alerts**: Reminds you when it's time to begin
 - **Recurring task reminders**: Notifications for recurring items
 
-Tasks with a due time can set **Repeat reminder** to 5, 10, 15, 30, or 60 minutes. For tasks with a timed start or due date, **Skip reminders** turns off start and due reminders while the task stays visible in Focus and lists.
+Tasks with a due time can set **Repeat reminder** to 5, 10, 15, 30, or 60 minutes after the due reminder. **Skip reminders** turns off start and due reminders for that task. These are separate controls: **Repeat reminder: Off** does not turn off the first due reminder.
+
+### Test a task reminder
+
+1. Edit a task and set its **Due date** to a time a few minutes ahead. **Date only** gives the task a deadline without scheduling a timed alert.
+2. Check **Skip reminders**. **Off** means this task can alert you; **On** means its start and due alerts are skipped. In older versions, a blue outline around **Skip reminders** means it is **On**.
+3. Tap **Save**. In **Settings → Notifications**, make sure task notifications and due reminders are enabled. On iOS, also allow Mindwtr notifications in the device’s Settings.
+4. Wait for the due time. If you changed the task on another device, open Mindwtr on this phone so the new time syncs before the alert.
 
 Tap the notification body to jump directly to the **Review** screen.
 

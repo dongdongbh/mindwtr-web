@@ -717,7 +717,14 @@ Mindwtr envía notificaciones para ayudarte a mantener el rumbo.
 - **Avisos de hora de inicio**: te recuerdan cuándo debes empezar
 - **Recordatorios de tareas recurrentes**: notificaciones de elementos recurrentes
 
-Las tareas con hora de vencimiento pueden configurar **Repetir recordatorio** a los 5, 10, 15, 30 o 60 minutos. En las tareas con hora de inicio o fecha de vencimiento, **Omitir recordatorios** desactiva los recordatorios de inicio y vencimiento; la tarea sigue visible en Foco y en las listas.
+Las tareas con hora de vencimiento pueden configurar **Repetir recordatorio** cada 5, 10, 15, 30 o 60 minutos después del primer aviso de vencimiento. **Omitir recordatorios** desactiva los avisos de inicio y vencimiento de esa tarea. **Repetir recordatorio: Desactivado** no desactiva el primer aviso.
+
+### Probar un recordatorio de tarea
+
+1. Edita una tarea y fija su **Fecha de vencimiento** a una hora dentro de unos minutos. **Solo fecha** no programa una alerta con hora.
+2. Comprueba **Omitir recordatorios**: **Desactivado** permite los avisos de esta tarea; **Activado** los omite. En versiones anteriores, el borde azul de esta opción significa **Activado**.
+3. Toca **Guardar**. En **Ajustes → Notificaciones**, activa las notificaciones de tareas y los avisos de vencimiento. En iOS, permite también las notificaciones de Mindwtr en los ajustes del dispositivo.
+4. Espera a la hora de vencimiento. Si cambiaste la tarea en otro dispositivo, abre Mindwtr en este teléfono para sincronizar la nueva hora antes del aviso.
 
 Toca el cuerpo de la notificación para ir directamente a la pantalla **Revisión**.
 

@@ -163,13 +163,13 @@ choco install mindwtr
 
 ### Scoop
 
-[![Scoop 版本](https://img.shields.io/scoop/v/mindwtr?bucket=https://github.com/dongdongbh/homebrew-mindwtr&label=Scoop&logo=scoop&logoColor=white&color=E6E6E6)](https://github.com/dongdongbh/homebrew-mindwtr)
+[![Scoop 版本](https://img.shields.io/scoop/v/mindwtr?bucket=extras&label=Scoop&logo=scoop&logoColor=white&color=E6E6E6)](https://github.com/ScoopInstaller/Extras/blob/master/bucket/mindwtr.json)
 
 如果你使用 Scoop：
 
 ```powershell
-scoop bucket add mindwtr https://github.com/dongdongbh/homebrew-mindwtr
-scoop install mindwtr
+scoop bucket add extras
+scoop install extras/mindwtr
 ```
 
 ### 安装程序（.exe）

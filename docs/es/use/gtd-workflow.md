@@ -415,7 +415,7 @@ usa **Cancelar tarea** o **Cancelar proyecto** cuando decidas no continuar pero 
 
 Cancelar un proyecto conserva los pasos completados y cancela las acciones restantes. **Reactivar** restaura las tareas canceladas junto con ese proyecto que no se hayan modificado individualmente después. Se conservan el material de referencia, las notas y los adjuntos. Puedes escribir el motivo en las notas; no es obligatorio.
 
-Para tareas recurrentes, **Cancelar serie recurrente** archiva la repetición actual sin generar otra. **Omitir esta repetición** sigue siendo una acción independiente.
+Para tareas recurrentes, **Cancelar serie recurrente** archiva la repetición actual sin generar otra.
 
 Antes de usar la cancelación con sincronización, actualiza todos los dispositivos, servidores autoalojados y clientes de automatización que escriban tus datos. Las versiones anteriores pueden perder la marca de cancelación e interpretar el registro como completado.
 

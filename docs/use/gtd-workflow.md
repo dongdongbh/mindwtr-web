@@ -415,7 +415,7 @@ Use **Cancel task** or **Cancel project** when you decide not to continue but wa
 
 Cancelling a project preserves completed steps and cancels its remaining actions. **Reactivate** restores the actions that were cancelled by that project and have not since been independently changed. Reference material, notes and attachments are kept. You can put a reason in Notes; no reason is required.
 
-For recurring tasks, **Cancel recurring series** archives the current occurrence without generating another one. **Skip occurrence** remains a separate operation.
+For recurring tasks, **Cancel recurring series** archives the current occurrence without generating another one.
 
 Before using cancellation with sync, upgrade every device, self-hosted server and automation client that writes your data. Older versions can lose the cancellation marker and interpret the record as completed.
 

@@ -419,7 +419,7 @@ Mit **Aufgabe abbrechen** oder **Projekt abbrechen** beenden Sie eine Verpflicht
 
 Beim Abbrechen eines Projekts bleiben erledigte Schritte erhalten; die übrigen Aktionen werden abgebrochen. **Reaktivieren** stellt die zusammen mit dem Projekt abgebrochenen Aufgaben wieder her, sofern sie danach nicht einzeln geändert wurden. Referenzmaterial, Notizen und Anhänge bleiben erhalten. Ein Grund kann in die Notizen geschrieben werden, ist aber nicht erforderlich.
 
-Bei wiederkehrenden Aufgaben archiviert **Wiederholungsserie abbrechen** die aktuelle Aufgabe, ohne eine weitere zu erzeugen. **Vorkommen überspringen** bleibt eine separate Aktion.
+Bei wiederkehrenden Aufgaben archiviert **Wiederholungsserie abbrechen** die aktuelle Aufgabe, ohne eine weitere zu erzeugen.
 
 Aktualisieren Sie vor der Nutzung mit Synchronisierung alle Geräte, selbst gehosteten Server und Automatisierungsclients, die Ihre Daten schreiben. Ältere Versionen können die Abbruchkennzeichnung verlieren und den Eintrag als erledigt behandeln.
 

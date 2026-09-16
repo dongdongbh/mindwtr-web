@@ -117,7 +117,9 @@ Los nombres de contextos y etiquetas aceptan letras y números Unicode (incluido
 1. Ve a la pestaña **Próximas acciones** o a **Contextos** desde el menú lateral
 2. Toca un contexto para filtrar
 
-Las fichas de filtro pasan por tres estados: selecciona un contexto o etiqueta una vez para incluirlo, otra vez para excluirlo (se muestra tachado) y una tercera para quitarlo. Las fichas excluidas siempre ocultan sus tareas, sin importar el modo de coincidencia.
+**Vista Contextos (escritorio y móvil):** Selecciona varios contextos o etiquetas para combinarlos. Con dos o más seleccionados, **Todas** exige cada contexto/etiqueta seleccionado y **Cualquiera** incluye las tareas que coinciden con al menos uno. Por ejemplo, selecciona `@alice` y `@bob` con **Cualquiera** para ver tareas de cualquiera de las dos personas. Volver a seleccionar un elemento lo quita; **Sin contexto** es una selección separada y exclusiva.
+
+En los filtros de las listas de tareas, las fichas pasan por tres estados: selecciona un contexto o etiqueta una vez para incluirlo, otra vez para excluirlo (se muestra tachado) y una tercera para quitarlo. Las fichas excluidas siempre ocultan sus tareas, sin importar el modo de coincidencia.
 
 Con dos o más contextos seleccionados aparece el control **Coincidencia de contextos**: **Todas** (el valor predeterminado) muestra las tareas que llevan todos los contextos seleccionados y **Cualquiera** muestra las que llevan al menos uno. Las etiquetas tienen el mismo control como **Coincidencia de etiquetas**.
 

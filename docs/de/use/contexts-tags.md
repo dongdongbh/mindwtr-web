@@ -117,7 +117,9 @@ Kontext- und Tag-Namen akzeptieren Unicode-Buchstaben und -Ziffern (einschließl
 1. Öffnen Sie den Tab **Nächste Aktionen** oder **Kontexte** im Navigationsmenü.
 2. Tippen Sie zum Filtern auf einen Kontext.
 
-Filter-Chips durchlaufen drei Zustände: Einmal auswählen schließt einen Kontext oder Tag ein, ein zweites Mal schließt ihn aus (durchgestrichen dargestellt), ein drittes Mal setzt ihn zurück. Ausgeschlossene Chips blenden ihre Aufgaben immer aus, unabhängig vom Abgleichmodus.
+**Ansicht Kontexte (Desktop und Mobilgeräte):** Wählen Sie mehrere Kontexte oder Tags aus, um sie zu kombinieren. Bei mindestens zwei ausgewählten Einträgen verlangt **Alle** jeden ausgewählten Kontext/Tag; **Beliebig** zeigt Aufgaben mit mindestens einem davon. Wählen Sie beispielsweise `@alice` und `@bob` mit **Beliebig**, um Aufgaben für eine der beiden Personen zu sehen. Erneutes Auswählen entfernt einen Eintrag; **Keine Kontexte** ist eine separate, ausschließliche Auswahl.
+
+In Aufgabenlisten durchlaufen Filter-Chips drei Zustände: Einmal auswählen schließt einen Kontext oder Tag ein, ein zweites Mal schließt ihn aus (durchgestrichen dargestellt), ein drittes Mal setzt ihn zurück. Ausgeschlossene Chips blenden ihre Aufgaben immer aus, unabhängig vom Abgleichmodus.
 
 Sobald zwei oder mehr Kontexte ausgewählt sind, erscheint die Steuerung **Kontextabgleich**: **Alle** (Standard) zeigt Aufgaben mit allen ausgewählten Kontexten, **Beliebig** zeigt Aufgaben mit mindestens einem. Für Tags gibt es dieselbe Steuerung als **Schlagwortabgleich**.
 

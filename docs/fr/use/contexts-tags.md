@@ -117,7 +117,9 @@ Les noms de contextes et de tags acceptent les lettres et chiffres Unicode (y co
 1. Accédez à l’onglet **Prochaines actions** ou à **Contextes** depuis le tiroir
 2. Touchez un contexte pour filtrer
 
-Les pastilles de filtre passent par trois états : sélectionnez un contexte ou un tag une fois pour l’inclure, une deuxième fois pour l’exclure (affiché barré), une troisième pour l’effacer. Les pastilles exclues masquent toujours leurs tâches, quel que soit le mode de correspondance.
+**Vue Contextes (ordinateur et mobile) :** Sélectionnez plusieurs contextes ou tags pour les combiner. À partir de deux éléments sélectionnés, **Tous** exige chaque contexte/tag sélectionné, tandis que **Au moins un** inclut les tâches correspondant à au moins un élément. Par exemple, sélectionnez `@alice` et `@bob` avec **Au moins un** pour voir les tâches concernant l’une ou l’autre personne. Sélectionner à nouveau un élément le retire ; **Aucun contexte** est un choix séparé et exclusif.
+
+Dans les filtres des listes de tâches, les pastilles passent par trois états : sélectionnez un contexte ou un tag une fois pour l’inclure, une deuxième fois pour l’exclure (affiché barré), une troisième pour l’effacer. Les pastilles exclues masquent toujours leurs tâches, quel que soit le mode de correspondance.
 
 Dès que deux contextes ou plus sont sélectionnés, la commande **Correspondance des contextes** apparaît : **Tous** (par défaut) montre les tâches portant tous les contextes sélectionnés, **Au moins un** montre celles qui en portent au moins un. Les tags disposent de la même commande, **Correspondance des tags**.
 

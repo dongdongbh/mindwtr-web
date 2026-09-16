@@ -117,7 +117,9 @@ Context and tag names accept Unicode letters and numbers (including CJK and acce
 1. Go to **Next Actions** tab or **Contexts** from drawer
 2. Tap a context to filter
 
-Filter chips cycle through three states: select a context or tag once to include it, select it again to exclude it (shown struck through), and a third time to clear it. Excluded chips always hide their tasks, whatever the match mode says.
+**Contexts view (desktop and mobile):** Select several contexts or tags to combine them. With two or more selected, choose **All** to require every selected context/tag, or **Any** to include tasks matching at least one. For example, select `@alice` and `@bob` with **Any** to see tasks for either person. Selecting a token again removes it; **No Context** is a separate, exclusive selection.
+
+In task-list filters, chips cycle through three states: select a context or tag once to include it, select it again to exclude it (shown struck through), and a third time to clear it. Excluded chips always hide their tasks, whatever the match mode says.
 
 When two or more contexts are selected, a **Context match** control appears: **All** (the default) shows tasks that carry every selected context, while **Any** shows tasks that carry at least one. Tags get the same control as **Tag match**.
 

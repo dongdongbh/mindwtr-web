@@ -94,6 +94,7 @@ Review each inbox item:
 ### Step 4: Waiting For
 
 **Review delegated items:**
+- Review one person at a time from **Settings -> Manage -> People**: their task count opens Global Search on that person (see [Areas and People](/use/areas-people))
 - Have you received what you're waiting for?
 - Do you need to send a reminder?
 - Update notes with latest status

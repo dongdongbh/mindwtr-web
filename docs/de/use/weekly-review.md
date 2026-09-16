@@ -94,6 +94,7 @@ Prüfen Sie jeden Eingangseintrag:
 ### Schritt 4: Warten
 
 **Delegierte Einträge prüfen:**
+- eine Person nach der anderen über **Einstellungen -> Verwalten -> Personen** prüfen: ihre Aufgabenzahl öffnet die globale Suche zu dieser Person (siehe [Bereiche und Personen](/de/use/areas-people))
 - Haben Sie erhalten, worauf Sie warten?
 - Müssen Sie eine Erinnerung senden?
 - Notizen mit dem neuesten Stand aktualisieren

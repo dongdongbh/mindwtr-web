@@ -94,6 +94,7 @@ Examinez chaque élément de la boîte de réception :
 ### Étape 4 : En attente
 
 **Examinez les éléments délégués :**
+- Passez les personnes une par une depuis **Paramètres -> Gérer -> Personnes** : leur compteur de tâches ouvre la Recherche globale sur cette personne (voir [Domaines et personnes](/fr/use/areas-people))
 - Avez-vous reçu ce que vous attendiez ?
 - Devez-vous envoyer un rappel ?
 - Mettez à jour les notes avec le dernier état

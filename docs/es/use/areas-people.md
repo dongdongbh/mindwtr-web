@@ -72,6 +72,8 @@ En Adición rápida, escribe `%` seguido del nombre: `Ask %Jim for the budget /w
 3. Despliega **Personas**.
 4. Añade una persona, cambia su nombre, añade notas o un enlace de referencia, o elimina una que ya no uses.
 
+La fila de cada persona muestra cuántas tareas le corresponden, contando tanto las tareas asignadas a ella como las que llevan su contexto `@name`. Toca o haz clic en ese recuento para abrir la Búsqueda global con `person:"Nombre"` e incluyendo las tareas completadas, y revisar todo lo de esa persona en una sola lista.
+
 Al eliminar una persona se conservan las tareas. Mindwtr borra el registro guardado de esa persona en vez de eliminar el trabajo.
 
 ### Revisar todas las tareas de una persona

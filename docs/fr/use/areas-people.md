@@ -72,6 +72,8 @@ Dans Ajout rapide, saisissez `%` suivi du nom : `Ask %Jim for the budget /waitin
 3. Développez **Personnes**.
 4. Ajoutez ou renommez une personne, ajoutez des notes ou un lien de référence, ou supprimez une personne devenue inutile.
 
+La ligne de chaque personne indique combien de tâches lui reviennent : celles qui lui sont attribuées et celles qui portent son contexte `@name`. Touchez ou cliquez ce compteur pour ouvrir la Recherche globale sur `person:"Nom"`, tâches terminées comprises, et passer en revue tout ce qui concerne cette personne dans une seule liste.
+
 Supprimer une personne conserve les tâches. Mindwtr efface la fiche enregistrée au lieu de supprimer le travail.
 
 ### Passer en revue toutes les tâches d’une personne

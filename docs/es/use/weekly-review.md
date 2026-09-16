@@ -94,6 +94,7 @@ Revisa cada elemento de la bandeja de entrada:
 ### Paso 4: En espera
 
 **Revisa los elementos delegados:**
+- Revisa a una persona cada vez desde **Ajustes -> Administrar -> Personas**: su recuento de tareas abre la Búsqueda global sobre esa persona (consulta [Áreas y personas](/es/use/areas-people))
 - ¿Has recibido aquello que esperabas?
 - ¿Necesitas enviar un recordatorio?
 - Actualiza las notas con el estado más reciente

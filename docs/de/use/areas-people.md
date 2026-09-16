@@ -72,6 +72,8 @@ Geben Sie in „Schnell hinzufügen“ `%` gefolgt vom Namen ein: `Ask %Jim for 
 3. Klappen Sie **Personen** auf.
 4. Fügen Sie eine Person hinzu, benennen Sie sie um, ergänzen Sie Notizen oder einen Referenzlink oder löschen Sie eine nicht mehr benötigte Person.
 
+In der Zeile jeder Person steht, wie viele Aufgaben zu ihr gehören: sowohl die ihr zugewiesenen Aufgaben als auch Aufgaben mit ihrem Kontext `@name`. Tippen oder klicken Sie auf diese Zahl, um die globale Suche mit `person:"Name"` und einschließlich erledigter Aufgaben zu öffnen und alles zu dieser Person in einer Liste zu prüfen.
+
 Beim Löschen einer Person bleiben die Aufgaben erhalten. Mindwtr entfernt den gespeicherten Personendatensatz, statt die Arbeit zu löschen.
 
 ### Alle Aufgaben zu einer Person durchsehen

@@ -72,6 +72,8 @@ Type `%` followed by the name in Quick Add: `Ask %Jim for the budget /waiting`. 
 3. Expand **People**.
 4. Add a person, rename one, add notes, add a reference link, or delete a person you no longer use.
 
+Each person's row shows how many tasks belong to them, counting both tasks assigned to them and tasks carrying their `@name` context. Tap or click that count to open Global Search on `person:"Name"` with completed tasks included, so you can review everything for that person in one list.
+
 Deleting a Person keeps the tasks. Mindwtr clears that saved person record instead of deleting the work.
 
 ### Review All Tasks for a Person

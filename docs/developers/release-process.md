@@ -96,7 +96,7 @@ The workflow reuses the stable channel build jobs where practical, then creates 
 
 It also publishes tester builds to the store-backed channels that are already wired:
 
-- Android AAB to Google Play `internal` and open testing (`beta`) by default; manual runs can choose comma-separated Play testing tracks or `none`.
+- Android AAB to Google Play `internal` and open testing (`beta`) by default. In manual RC runs, `play_track` selects additional comma-separated testing tracks; `none` means internal-only. Set `run_play_testing=false` to skip Play uploads entirely.
 - Watch-enabled iOS archive to TestFlight with App Store review submission disabled. The RC iOS job selects this variant, waits for processing, and distributes that exact build to the configured external testing group.
 - macOS App Store build to TestFlight with App Store review submission disabled.
 - Windows MSIX to the Mindwtr Beta Microsoft Store flight; manual runs can disable this channel.
@@ -111,6 +111,8 @@ The reusable iOS workflow keeps Watch inclusion (`include_watch`) separate from 
 Flathub beta requires the beta branch and permissions in `flathub/tech.dongdongbh.mindwtr`. Stable releases publish the AUR `mindwtr-bin` package from `release.yml` after clean-container validation and ownership checks. The source-built `mindwtr` package is community maintained and is not part of the release pipeline. RC builds publish `mindwtr-beta-bin` through `update-aur-beta.yml` with the same safety checks. If AUR disables pushes during maintenance, rerun that channel after pushes resume.
 
 Because a Play testing upload consumes an Android `versionCode`, every RC that uploads to Play needs a fresh `versionCode`. The RC workflow resolves that code once before Android builds start, then the Play build and Android FOSS build consume the same preflight output and run in parallel. The workflow uploads one AAB and assigns the same versionCode to every configured testing track. The current final stable flow should also use a fresh production upload with a higher `versionCode`, or a future stable-promotion workflow should promote the already-tested Play build. Do not tag a final stable release with an Android `versionCode` that has already been uploaded to Play unless the stable workflow has been taught to promote that existing build.
+
+Internal testing uses the same standard, non-profileable AAB and `versionCode` as open testing. RC releases assign that one upload to `internal` and `beta` by default; stable releases assign one upload to `production`, `beta`, and `internal`. There is no separate internal AAB or extra internal version code. Keep the standard APK and AAB builds separate. Previously uploaded profileable builds still count toward the live Play version-code maximum.
 
 
 ### Timeline

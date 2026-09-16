@@ -96,7 +96,7 @@ Der Workflow verwendet nach Möglichkeit die Build-Jobs der stabilen Kanäle wie
 
 Außerdem veröffentlicht er Tester-Builds in den bereits verbundenen Store-gestützten Kanälen:
 
-- Android-AAB standardmäßig in Google Play `internal` und offene Tests (`beta`); manuelle Läufe können kommagetrennte Play-Test-Tracks oder `none` auswählen.
+- Android-AAB standardmäßig in Google Play `internal` und offene Tests (`beta`). Bei manuellen RC-Läufen wählt `play_track` zusätzliche, kommagetrennte Test-Tracks aus; `none` bedeutet nur interne Tests. Mit `run_play_testing=false` werden Play-Uploads vollständig übersprungen.
 - Watch-fähiges iOS-Archiv in TestFlight mit deaktivierter Einreichung zur App-Store-Prüfung. Der iOS-Job des RC wählt diese Variante aus, wartet auf die Verarbeitung und verteilt genau diesen Build an die konfigurierte externe Testgruppe.
 - macOS-App-Store-Build in TestFlight mit deaktivierter Einreichung zur App-Store-Prüfung.
 - Windows-MSIX zum Microsoft-Store-Flight Mindwtr Beta; manuelle Läufe können diesen Kanal deaktivieren.
@@ -111,6 +111,8 @@ Der wiederverwendbare iOS-Workflow trennt die Watch-Einbindung (`include_watch`)
 Flathub Beta erfordert den Beta-Branch und Berechtigungen in `flathub/tech.dongdongbh.mindwtr`. Stabile Releases veröffentlichen das AUR-Paket `mindwtr-bin` nach einer Prüfung in einem sauberen Container und einer Eigentumsprüfung über `release.yml`. Das aus dem Quellcode gebaute Paket `mindwtr` wird von der Community gepflegt und ist nicht Teil des Release-Prozesses. RC-Builds veröffentlichen `mindwtr-beta-bin` mit denselben Sicherheitsprüfungen über `update-aur-beta.yml`. Wenn das AUR Pushes während einer Wartung deaktiviert, führen Sie diesen Kanal nach der Freigabe erneut aus.
 
 Da ein Upload in einen Play-Test-Track einen Android-`versionCode` verbraucht, benötigt jeder RC mit Play-Upload einen neuen `versionCode`. Der RC-Workflow ermittelt diesen Code einmal, bevor die Android-Builds beginnen. Anschließend verwenden der Play-Build und der Android-FOSS-Build dieselbe Vorabprüfungsausgabe und laufen parallel. Der Workflow lädt ein AAB hoch und weist allen konfigurierten Test-Tracks denselben versionCode zu. Der aktuelle endgültige Stable-Ablauf sollte ebenfalls einen neuen Production-Upload mit höherem `versionCode` verwenden, oder ein künftiger Stable-Promotion-Workflow sollte den bereits getesteten Play-Build hochstufen. Taggen Sie kein endgültiges Stable-Release mit einem Android-`versionCode`, der bereits zu Play hochgeladen wurde, sofern der Stable-Workflow nicht gelernt hat, diesen vorhandenen Build hochzustufen.
+
+Interne Tests verwenden dasselbe reguläre AAB ohne Profiling-Freigabe und denselben `versionCode` wie offene Tests. RC-Releases weisen diesen einen Upload standardmäßig `internal` und `beta` zu; stabile Releases weisen einen Upload `production`, `beta` und `internal` zu. Es gibt weder ein separates internes AAB noch einen zusätzlichen internen Versionscode. Die regulären APK- und AAB-Builds bleiben getrennt. Früher hochgeladene Profiling-Builds zählen weiterhin zum aktuellen höchsten Versionscode in Play.
 
 ### Zeitplan
 

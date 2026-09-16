@@ -96,7 +96,7 @@ El flujo de trabajo reutiliza, cuando resulta práctico, los trabajos de compila
 
 También publica compilaciones para pruebas en los canales respaldados por tiendas que ya están conectados:
 
-- AAB de Android en los canales `internal` y de pruebas abiertas (`beta`) de Google Play de forma predeterminada; las ejecuciones manuales pueden elegir canales de prueba de Play separados por comas o `none`.
+- AAB de Android en Google Play `internal` y pruebas abiertas (`beta`) de forma predeterminada. En las ejecuciones manuales de RC, `play_track` selecciona canales de prueba adicionales separados por comas; `none` significa solo pruebas internas. Usa `run_play_testing=false` para omitir todas las subidas a Play.
 - Archivo de iOS con Watch en TestFlight y con el envío para revisión de App Store desactivado. El trabajo de iOS de la RC selecciona esta variante, espera a que se procese y distribuye esa compilación exacta al grupo de pruebas externas configurado.
 - Compilación de macOS para App Store en TestFlight con el envío para revisión de App Store desactivado.
 - MSIX de Windows al piloto Mindwtr Beta de Microsoft Store; las ejecuciones manuales pueden desactivar este canal.
@@ -111,6 +111,8 @@ El flujo reutilizable de iOS separa la inclusión de Watch (`include_watch`) del
 La beta de Flathub requiere la rama beta y permisos en `flathub/tech.dongdongbh.mindwtr`. Los lanzamientos estables publican el paquete de AUR `mindwtr-bin` desde `release.yml` después de validarlo en un contenedor limpio y comprobar la propiedad. El paquete `mindwtr` compilado desde el código fuente lo mantiene la comunidad y no forma parte del proceso de publicación. Las compilaciones RC publican `mindwtr-beta-bin` mediante `update-aur-beta.yml` con las mismas comprobaciones de seguridad. Si AUR desactiva los envíos durante el mantenimiento, vuelve a ejecutar ese canal cuando los habilite.
 
 Como una subida a las pruebas de Play consume un `versionCode` de Android, cada RC que se suba a Play necesita un `versionCode` nuevo. El flujo de trabajo de RC determina ese código una sola vez antes de iniciar las compilaciones de Android; después, la compilación de Play y la de Android FOSS consumen la misma salida de comprobación previa y se ejecutan en paralelo. El flujo de trabajo sube un AAB y asigna el mismo versionCode a cada canal de pruebas configurado. El flujo estable final actual también debe utilizar una nueva subida a producción con un `versionCode` superior, o un futuro flujo de promoción a estable debe promocionar la compilación de Play ya probada. No etiquetes una versión estable final con un `versionCode` de Android que ya se haya subido a Play salvo que el flujo estable se haya preparado para promocionar esa compilación existente.
+
+Las pruebas internas usan el mismo AAB estándar, sin perfilado habilitado, y el mismo `versionCode` que las pruebas abiertas. Las versiones RC asignan esa única subida a `internal` y `beta` de forma predeterminada; las versiones estables asignan una única subida a `production`, `beta` e `internal`. No hay un AAB interno independiente ni un código de versión interno adicional. Mantén separadas las compilaciones estándar de APK y AAB. Las compilaciones con perfilado subidas anteriormente siguen contando para el código de versión máximo actual de Play.
 
 
 ### Cronología

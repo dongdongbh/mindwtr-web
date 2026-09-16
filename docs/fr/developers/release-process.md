@@ -96,7 +96,7 @@ Le flux de travail réutilise, dans la mesure du possible, les mêmes tâches de
 
 Il publie également les builds destinés aux testeurs sur les canaux adossés aux boutiques qui sont déjà raccordés :
 
-- AAB Android vers Google Play `internal` et les tests ouverts (`beta`) par défaut ; les exécutions manuelles peuvent choisir des pistes de test Play séparées par des virgules ou `none`.
+- AAB Android vers Google Play `internal` et les tests ouverts (`beta`) par défaut. Pour les RC manuelles, `play_track` sélectionne des pistes de test supplémentaires séparées par des virgules ; `none` signifie tests internes uniquement. Utilisez `run_play_testing=false` pour désactiver tout téléversement vers Play.
 - Archive iOS avec Watch vers TestFlight avec la soumission à la vérification de l'App Store désactivée. La tâche iOS de la RC sélectionne cette variante, attend son traitement et distribue ce build précis au groupe de test externe configuré.
 - Build macOS App Store vers TestFlight avec la soumission à la vérification de l'App Store désactivée.
 - MSIX Windows vers le flight Microsoft Store Mindwtr Beta ; les exécutions manuelles peuvent désactiver ce canal.
@@ -111,6 +111,8 @@ Le flux de travail iOS réutilisable sépare l’inclusion de la Watch (`include
 La bêta Flathub nécessite la branche bêta et les autorisations dans `flathub/tech.dongdongbh.mindwtr`. Les versions stables publient le paquet AUR `mindwtr-bin` depuis `release.yml` après une validation dans un conteneur propre et un contrôle de propriété. Le paquet `mindwtr` compilé depuis les sources est maintenu par la communauté et ne fait pas partie du processus de publication. Les builds RC publient `mindwtr-beta-bin` par `update-aur-beta.yml` avec les mêmes contrôles de sécurité. Si l’AUR désactive les poussées pendant une maintenance, relancez ce canal lorsqu’elles reprennent.
 
 Étant donné qu'un téléversement vers une piste de test Play consomme un `versionCode` Android, chaque RC téléversée vers Play nécessite un nouveau `versionCode`. Le flux de travail RC détermine ce code une seule fois avant le démarrage des builds Android ; le build Play et le build Android FOSS utilisent ensuite le même résultat de prévalidation et s'exécutent en parallèle. Le flux de travail téléverse un AAB et attribue le même versionCode à chaque piste de test configurée. Le processus stable final actuel doit lui aussi utiliser un nouveau téléversement en production avec un `versionCode` supérieur, ou un futur flux de travail de promotion stable doit promouvoir le build Play déjà testé. Ne créez pas d'étiquette de version stable finale avec un `versionCode` Android déjà téléversé sur Play, sauf si le flux de travail stable a été adapté pour promouvoir ce build existant.
+
+Les tests internes utilisent le même AAB standard, sans profilage activé, et le même `versionCode` que les tests ouverts. Les RC affectent cet unique téléversement à `internal` et `beta` par défaut ; les versions stables affectent un unique téléversement à `production`, `beta` et `internal`. Il n’y a ni AAB interne distinct ni code de version interne supplémentaire. Conservez des builds APK et AAB standard séparés. Les anciens builds avec profilage déjà téléversés comptent toujours dans le code de version maximal actuel de Play.
 
 
 ### Calendrier

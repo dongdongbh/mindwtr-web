@@ -96,7 +96,7 @@ RC 工作流程為 `.github/workflows/release-rc.yml`。
 
 它也會將測試人員建置發布至已接通的商店支援管道：
 
-- 預設將 Android AAB 發布至 Google Play `internal` 與公開測試（`beta`）；手動執行可選擇以逗號分隔的 Play 測試群組或 `none`。
+- 預設將 Android AAB 發布至 Google Play `internal` 與公開測試（`beta`）。手動執行 RC 時，`play_track` 選擇以逗號分隔的額外測試群組；`none` 表示僅內部測試。設定 `run_play_testing=false` 可完全略過 Play 上傳。
 - 將包含 Watch 的 iOS 封存發布至 TestFlight，且停用 App Store 審查提交。RC 的 iOS 工作會選擇此變體、等待處理完成，並將這個確切建置發布給已設定的外部測試群組。
 - 將 macOS App Store 建置發布至 TestFlight，且停用 App Store 審查提交。
 - 將 Windows MSIX 提交至 Microsoft Store 的 Mindwtr Beta 測試版；手動執行時可停用此管道。
@@ -111,6 +111,8 @@ RC 工作流程為 `.github/workflows/release-rc.yml`。
 Flathub beta 需要 `flathub/tech.dongdongbh.mindwtr` 中的 beta 分支與權限。穩定版在完成乾淨容器驗證與擁有權檢查後，由 `release.yml` 發布 AUR `mindwtr-bin` 套件。從原始碼建置的 `mindwtr` 套件由社群維護，不屬於發行流程。RC 建置透過 `update-aur-beta.yml` 發布 `mindwtr-beta-bin`，並執行相同的安全檢查。如果 AUR 在維護期間停用推送，請在恢復推送後重新執行該管道。
 
 由於上傳至 Play 測試會耗用一個 Android `versionCode`，每個上傳至 Play 的 RC 都需要新的 `versionCode`。RC 工作流程會在 Android 建置開始前解析一次該代碼，接著 Play 建置與 Android FOSS 建置會使用相同的預檢輸出並平行執行。工作流程會上傳一個 AAB，並將相同的 versionCode 指派至每個已設定的測試群組。目前最終穩定版流程也應使用具有更高 `versionCode` 的全新正式環境上傳，或者未來的穩定版提升工作流程應提升已測試的 Play 建置。除非穩定版工作流程已能提升現有建置，否則不得為 Android `versionCode` 已上傳至 Play 的最終穩定版本加上標籤。
+
+內部測試與開放測試使用同一個未啟用效能分析的標準 AAB，以及相同的 `versionCode`。RC 預設將這一次上傳指派至 `internal` 和 `beta`；穩定版將一次上傳指派至 `production`、`beta` 和 `internal`。不再單獨建置內部測試 AAB，也不再為內部測試額外增加版本代碼。標準 APK 和 AAB 仍維持獨立建置。過去已上傳的效能分析建置所占用的版本代碼，仍須計入 Play 目前的最高版本代碼。
 
 
 ### 時程

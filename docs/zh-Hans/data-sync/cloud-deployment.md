@@ -81,6 +81,14 @@ REST 引用字段必须指向仍然有效的记录。例如，创建或修补项
 | `MINDWTR_CLOUD_MAX_TASK_TITLE_LENGTH` | 云端任务端点接受的任务标题最大长度。 | `500` |
 | `MINDWTR_CLOUD_MAX_TASK_QUICK_ADD_LENGTH` | 云端创建任务接受的快速添加输入最大长度。 | `2000` |
 | `MINDWTR_CLOUD_MAX_ITEMS_PER_COLLECTION` | 每个上传集合中的任务/项目/分区/区域上限。 | `50000` |
+| `MINDWTR_CLOUD_MAX_AREA_NAME_LENGTH` | 云端领域端点接受的领域名称最大长度。更长的名称会返回 `400`。 | `200` |
+
+### 请求日志
+
+| 变量 | 用途 | 默认值 |
+| --- | --- | --- |
+| `MINDWTR_CLOUD_SLOW_REQUEST_MS` | 耗时达到该毫秒数的请求会以警告级别记录。 | `1000` |
+| `MINDWTR_CLOUD_LOG_ALL_REQUESTS` | 记录每一个完成的请求。默认关闭，此时只记录失败和慢请求。 | `false` |
 
 ### 分页与列表整形
 

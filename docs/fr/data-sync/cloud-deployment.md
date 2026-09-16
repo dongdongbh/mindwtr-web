@@ -81,6 +81,14 @@ Facultatif, mais utile :
 | `MINDWTR_CLOUD_MAX_TASK_TITLE_LENGTH` | Longueur maximale du titre d’une tâche acceptée par les points de terminaison cloud des tâches. | `500` |
 | `MINDWTR_CLOUD_MAX_TASK_QUICK_ADD_LENGTH` | Longueur maximale de la saisie d’ajout rapide acceptée lors de la création d’une tâche dans le cloud. | `2000` |
 | `MINDWTR_CLOUD_MAX_ITEMS_PER_COLLECTION` | Nombre maximal de tâches/projets/sections/zones par collection téléversée. | `50000` |
+| `MINDWTR_CLOUD_MAX_AREA_NAME_LENGTH` | Longueur maximale d’un nom de domaine acceptée par les points de terminaison de domaines. Les noms plus longs sont refusés avec `400`. | `200` |
+
+### Journalisation des requêtes
+
+| Variable | Objet | Valeur par défaut |
+| --- | --- | --- |
+| `MINDWTR_CLOUD_SLOW_REQUEST_MS` | Une requête qui dure au moins ce nombre de millisecondes est journalisée en avertissement. | `1000` |
+| `MINDWTR_CLOUD_LOG_ALL_REQUESTS` | Journaliser chaque requête terminée. Désactivé par défaut : seules les erreurs et les requêtes lentes sont journalisées. | `false` |
 
 ### Pagination et mise en forme des listes
 

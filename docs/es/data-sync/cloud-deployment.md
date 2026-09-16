@@ -81,6 +81,14 @@ Opcionales, pero útiles:
 | `MINDWTR_CLOUD_MAX_TASK_TITLE_LENGTH` | Longitud máxima del título de una tarea que aceptan los endpoints de tareas de Cloud. | `500` |
 | `MINDWTR_CLOUD_MAX_TASK_QUICK_ADD_LENGTH` | Longitud máxima de la entrada de añadido rápido que acepta la creación de tareas en Cloud. | `2000` |
 | `MINDWTR_CLOUD_MAX_ITEMS_PER_COLLECTION` | Máximo de tareas/proyectos/secciones/áreas por colección subida. | `50000` |
+| `MINDWTR_CLOUD_MAX_AREA_NAME_LENGTH` | Longitud máxima del nombre de un área que aceptan los endpoints de áreas. Los nombres más largos se rechazan con `400`. | `200` |
+
+### Registro de solicitudes
+
+| Variable | Propósito | Predeterminado |
+| --- | --- | --- |
+| `MINDWTR_CLOUD_SLOW_REQUEST_MS` | Una solicitud que tarda al menos estos milisegundos se registra como advertencia. | `1000` |
+| `MINDWTR_CLOUD_LOG_ALL_REQUESTS` | Registra todas las solicitudes completadas. Desactivado de forma predeterminada, cuando solo se registran los fallos y las solicitudes lentas. | `false` |
 
 ### Paginación y forma de las listas
 

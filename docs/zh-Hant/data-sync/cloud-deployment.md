@@ -81,6 +81,14 @@ REST 參考欄位必須指向使用中記錄。例如，建立或修補專案時
 | `MINDWTR_CLOUD_MAX_TASK_TITLE_LENGTH` | 雲端任務端點接受的任務標題長度上限。 | `500` |
 | `MINDWTR_CLOUD_MAX_TASK_QUICK_ADD_LENGTH` | 透過雲端建立任務時接受的快速新增輸入長度上限。 | `2000` |
 | `MINDWTR_CLOUD_MAX_ITEMS_PER_COLLECTION` | 每個上傳集合的任務／專案／分區／領域數量上限。 | `50000` |
+| `MINDWTR_CLOUD_MAX_AREA_NAME_LENGTH` | 雲端領域端點接受的領域名稱長度上限。更長的名稱會回傳 `400`。 | `200` |
+
+### 要求記錄
+
+| 變數 | 用途 | 預設值 |
+| --- | --- | --- |
+| `MINDWTR_CLOUD_SLOW_REQUEST_MS` | 耗時達到此毫秒數的要求會以警告層級記錄。 | `1000` |
+| `MINDWTR_CLOUD_LOG_ALL_REQUESTS` | 記錄每一個完成的要求。預設關閉，此時只記錄失敗與緩慢的要求。 | `false` |
 
 ### 分頁與清單形狀
 

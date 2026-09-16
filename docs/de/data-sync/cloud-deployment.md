@@ -81,6 +81,14 @@ Optional, aber nützlich:
 | `MINDWTR_CLOUD_MAX_TASK_TITLE_LENGTH` | Maximale Aufgabentitellänge für Cloud-Aufgabenendpunkte. | `500` |
 | `MINDWTR_CLOUD_MAX_TASK_QUICK_ADD_LENGTH` | Maximale Schnell-hinzufügen-Eingabelänge bei Cloud-Aufgabenerstellung. | `2000` |
 | `MINDWTR_CLOUD_MAX_ITEMS_PER_COLLECTION` | Maximale Aufgaben/Projekte/Abschnitte/Bereiche je hochgeladener Sammlung. | `50000` |
+| `MINDWTR_CLOUD_MAX_AREA_NAME_LENGTH` | Maximale Länge eines Bereichsnamens für die Cloud-Bereichsendpunkte. Längere Namen werden mit `400` abgelehnt. | `200` |
+
+### Anfrageprotokollierung
+
+| Variable | Zweck | Standard |
+| --- | --- | --- |
+| `MINDWTR_CLOUD_SLOW_REQUEST_MS` | Eine Anfrage, die mindestens so viele Millisekunden dauert, wird als Warnung protokolliert. | `1000` |
+| `MINDWTR_CLOUD_LOG_ALL_REQUESTS` | Jede abgeschlossene Anfrage protokollieren. Standardmäßig aus, dann werden nur Fehler und langsame Anfragen protokolliert. | `false` |
 
 ### Paginierung und Listengestaltung
 

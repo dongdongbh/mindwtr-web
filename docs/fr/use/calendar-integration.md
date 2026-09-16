@@ -128,7 +128,7 @@ Sur iOS et Android, Mindwtr peut envoyer les tâches planifiées et celles ayant
 - Les tâches avec un `startTime` horaire deviennent des événements horaires. `timeEstimate` est utilisé comme durée de l’événement lorsqu’il est disponible.
 - Les tâches avec un `startTime` sans heure ou uniquement un `dueDate` deviennent des événements sur toute la journée.
 - Les tâches terminées, archivées, de référence ou supprimées sont retirées du calendrier cible.
-- Mindwtr conserve le titre des tâches lors de l’envoi vers un calendrier `Mindwtr` dédié. Si vous choisissez un calendrier partagé comme cible, le titre des événements envoyés est préfixé par `Mindwtr: ` afin qu’ils restent reconnaissables parmi les événements ordinaires.
+- Sur mobile, Mindwtr conserve le titre des tâches dans les calendriers dédiés comme dans les calendriers partagés.
 - La description des tâches devient la note des événements, et l’emplacement des tâches devient celui des événements.
 - Si vous choisissez un calendrier dédié nommé `Mindwtr`, l’application de calendrier peut afficher les éléments Mindwtr avec la couleur propre à ce calendrier.
 
@@ -143,7 +143,7 @@ Configuration :
 Choix de la cible :
 
 - **Calendrier de compte dédié** : idéal pour Google Agenda sur Android ou iCloud/Calendrier Apple sur iOS. Créez un calendrier nommé `Mindwtr` dans ce compte, puis sélectionnez la cible dédiée.
-- **Calendrier de compte partagé** : inscrit les événements dans un calendrier de compte existant et préfixe leur titre par `Mindwtr: `.
+- **Calendrier de compte partagé** : inscrit les événements dans un calendrier de compte existant et conserve le titre des tâches.
 - **Calendrier local dédié** : reste sur l’appareil actuel. Certaines applications de calendrier Android masquent les calendriers locaux, et les cibles locales n’apparaissent pas sur calendar.google.com ni dans d’autres applications web de calendrier liées à un compte.
 - **Calendrier local partagé** : inscrit les événements uniquement dans un calendrier local de l’appareil.
 
@@ -190,7 +190,7 @@ Configuration :
 
 Mindwtr reste en lecture seule et n’effectue pas d’authentification OAuth auprès des fournisseurs des calendriers sources.
 
-Mindwtr masque ses propres calendriers `Mindwtr` cibles dans la liste de lecture afin d’éviter d’importer des copies des événements qu’il a créés.
+Mindwtr masque ses propres calendriers `Mindwtr` cibles dans la liste de lecture. Il reconnaît aussi les événements qu’il a exportés vers des calendriers partagés pour éviter de les afficher à côté des tâches d’origine. Les autres événements de ces calendriers restent visibles.
 
 ### macOS : intégration à Calendrier Apple
 

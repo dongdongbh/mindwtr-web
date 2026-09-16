@@ -128,7 +128,7 @@ On iOS and Android, Mindwtr can push scheduled tasks and tasks with due dates in
 - Tasks with a timed `startTime` become timed events. `timeEstimate` is used as the event duration when available.
 - Tasks with a date-only `startTime` or only a `dueDate` become all-day events.
 - Completed, archived, reference, or deleted tasks are removed from the pushed calendar.
-- Mindwtr preserves task titles when pushing into a dedicated `Mindwtr` calendar. If you choose a shared calendar target, pushed event titles are prefixed with `Mindwtr: ` so they remain recognizable beside normal events.
+- On mobile, Mindwtr preserves task titles in both dedicated and shared calendars.
 - Task descriptions become event notes, and task locations become event locations.
 - If you choose a dedicated calendar named `Mindwtr`, the calendar app can show Mindwtr items with that calendar's own color.
 
@@ -143,7 +143,7 @@ Setup:
 Target choices:
 
 - **Dedicated account calendar**: best for Google Calendar on Android or iCloud/Apple Calendar on iOS. Create a calendar named `Mindwtr` in that account, then select the dedicated target.
-- **Shared account calendar**: writes into an existing account calendar and prefixes event titles with `Mindwtr: `.
+- **Shared account calendar**: writes into an existing account calendar and preserves task titles.
 - **Dedicated local calendar**: stays on the current device. Some Android calendar apps hide local calendars, and local targets will not appear on calendar.google.com or other account calendar web apps.
 - **Shared local calendar**: writes to a local device calendar only.
 
@@ -190,7 +190,7 @@ Setup:
 
 Mindwtr stays read-only and does not perform provider OAuth for calendar sources.
 
-Mindwtr hides its own pushed `Mindwtr` calendars from the read list to avoid importing duplicate copies of the events it created.
+Mindwtr hides its own pushed `Mindwtr` calendars from the read list. It also recognises its exported events in shared calendars so they do not appear again alongside the original tasks. Other events in those calendars remain visible.
 
 ### macOS: Apple Calendar Integration
 

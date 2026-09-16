@@ -128,7 +128,7 @@ En iOS y Android, Mindwtr puede enviar tareas programadas y tareas con fechas l�
 - Las tareas con un `startTime` con hora se convierten en eventos con hora. `timeEstimate` se usa como duración del evento cuando está disponible.
 - Las tareas con un `startTime` que solo contiene una fecha o únicamente un `dueDate` se convierten en eventos de día completo.
 - Las tareas completadas, archivadas, de referencia o eliminadas se quitan del calendario de destino.
-- Mindwtr conserva los títulos de las tareas al enviarlas a un calendario dedicado `Mindwtr`. Si eliges un calendario compartido como destino, los títulos de los eventos enviados reciben el prefijo `Mindwtr: ` para que sigan siendo reconocibles junto a los eventos normales.
+- En dispositivos móviles, Mindwtr conserva los títulos de las tareas tanto en calendarios dedicados como compartidos.
 - Las descripciones de las tareas se convierten en notas de los eventos y las ubicaciones de las tareas se convierten en ubicaciones de los eventos.
 - Si eliges un calendario dedicado llamado `Mindwtr`, la aplicación de calendario puede mostrar los elementos de Mindwtr con el color propio de ese calendario.
 
@@ -143,7 +143,7 @@ Configuración:
 Opciones de destino:
 
 - **Calendario dedicado de una cuenta**: la mejor opción para Google Calendar en Android o iCloud/Apple Calendar en iOS. Crea un calendario llamado `Mindwtr` en esa cuenta y, después, selecciona el destino dedicado.
-- **Calendario compartido de una cuenta**: escribe en un calendario existente de una cuenta y añade el prefijo `Mindwtr: ` a los títulos de los eventos.
+- **Calendario compartido de una cuenta**: escribe en un calendario existente de una cuenta y conserva los títulos de las tareas.
 - **Calendario local dedicado**: permanece en el dispositivo actual. Algunas aplicaciones de calendario de Android ocultan los calendarios locales y los destinos locales no aparecerán en calendar.google.com ni en otras aplicaciones web de calendarios de cuentas.
 - **Calendario local compartido**: escribe únicamente en un calendario local del dispositivo.
 
@@ -190,7 +190,7 @@ Configuración:
 
 Mindwtr permanece en modo de solo lectura y no realiza OAuth del proveedor para las fuentes de calendarios.
 
-Mindwtr oculta de la lista de lectura sus propios calendarios `Mindwtr` de destino para evitar importar copias duplicadas de los eventos que creó.
+Mindwtr oculta de la lista de lectura sus propios calendarios `Mindwtr` de destino. También reconoce los eventos que ha exportado a calendarios compartidos para que no aparezcan de nuevo junto a las tareas originales. Los demás eventos de esos calendarios siguen visibles.
 
 ### macOS: integración con Apple Calendar
 

@@ -128,7 +128,7 @@ Unter iOS und Android kann Mindwtr geplante Aufgaben und Aufgaben mit Fälligkei
 - Aufgaben mit zeitlich festgelegtem `startTime` werden zu Terminen mit Uhrzeit. `timeEstimate` wird, sofern verfügbar, als Termindauer verwendet.
 - Aufgaben mit reinem Datum in `startTime` oder ausschließlich einem `dueDate` werden zu ganztägigen Terminen.
 - Erledigte, archivierte, als Referenz markierte oder gelöschte Aufgaben werden aus dem Zielkalender entfernt.
-- Bei der Übertragung in einen eigenen Kalender namens `Mindwtr` behält Mindwtr die Aufgabentitel bei. Wenn Sie einen gemeinsam verwendeten Zielkalender wählen, wird übertragenen Termintiteln `Mindwtr: ` vorangestellt, damit sie neben normalen Terminen erkennbar bleiben.
+- Auf Mobilgeräten behält Mindwtr die Aufgabentitel sowohl in eigenen als auch in gemeinsam verwendeten Kalendern bei.
 - Aufgabenbeschreibungen werden zu Terminnotizen und Aufgabenorte zu Terminorten.
 - Wenn Sie einen eigenen Kalender namens `Mindwtr` wählen, kann die Kalender-App Mindwtr-Einträge in der eigenen Farbe dieses Kalenders anzeigen.
 
@@ -143,7 +143,7 @@ Einrichtung:
 Zieloptionen:
 
 - **Eigener Kontokalender**: Am besten für Google Kalender unter Android oder iCloud/Apple Kalender unter iOS. Erstellen Sie in diesem Konto einen Kalender namens `Mindwtr` und wählen Sie anschließend das eigene Ziel.
-- **Gemeinsam verwendeter Kontokalender**: Schreibt in einen vorhandenen Kontokalender und stellt Termintiteln `Mindwtr: ` voran.
+- **Gemeinsam verwendeter Kontokalender**: Schreibt in einen vorhandenen Kontokalender und behält die Aufgabentitel bei.
 - **Eigener lokaler Kalender**: Bleibt auf dem aktuellen Gerät. Einige Android-Kalender-Apps blenden lokale Kalender aus. Lokale Ziele erscheinen weder auf calendar.google.com noch in anderen Web-Apps von Kontokalendern.
 - **Gemeinsam verwendeter lokaler Kalender**: Schreibt ausschließlich in einen lokalen Gerätekalender.
 
@@ -190,7 +190,7 @@ Einrichtung:
 
 Mindwtr bleibt schreibgeschützt und führt für Kalenderquellen kein Anbieter-OAuth durch.
 
-Mindwtr blendet die eigenen übertragenen `Mindwtr`-Kalender aus der Leseliste aus, um doppelte Kopien der selbst erstellten Termine zu vermeiden.
+Mindwtr blendet die eigenen übertragenen `Mindwtr`-Kalender aus der Leseliste aus. Es erkennt auch die selbst exportierten Termine in gemeinsam verwendeten Kalendern, damit sie nicht zusätzlich zu den ursprünglichen Aufgaben erscheinen. Andere Termine in diesen Kalendern bleiben sichtbar.
 
 ### macOS: Apple-Kalender-Integration
 

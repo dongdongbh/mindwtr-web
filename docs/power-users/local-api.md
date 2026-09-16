@@ -96,6 +96,8 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 | `POST`   | `/tasks/:id/archive`  | Mark as archived              |
 | `POST`   | `/tasks/:id/restore`  | Restore a soft-deleted task   |
 | `GET`    | `/projects`           | List projects                 |
+| `POST` | `/projects` | Desktop: create project |
+| `PATCH` | `/projects/:id` | Desktop: update project |
 | `GET`    | `/areas`              | List areas                    |
 | `GET`    | `/v1/areas`           | Compatibility alias for areas |
 | `GET`    | `/search?query=...`   | Search tasks + projects       |
@@ -163,6 +165,47 @@ The desktop Local API accepts `isFocusedToday=true`/`1` and `isFocusedToday=fals
 ```
 
 Desktop uses `title` when present, otherwise `input`, and applies explicit `props`. The Bun helper additionally runs `parseQuickAdd` for `input`.
+
+### Desktop project writes
+
+The built-in desktop API supports `POST /projects` and `PATCH /projects/:id`. Project creation requires `title`; `areaId`, `color`, `status`, `isSequential`, and `order` are optional. Updates accept the same editable fields. Both responses contain the saved project as `{ "project": { ... } }`.
+
+Send creation options inside `props`, for example `{ "title": "Plan the move", "props": { "isSequential": true } }`; PATCH fields go directly in the request body. `sequentialScope` accepts `project` or `section`. Project `status` accepts `active`, `someday`, `waiting`, or `archived`. Set `areaId` to `null` to remove the area. Archiving and reactivating a project follow the app’s child-task and section rules. Missing projects return `404`; deleted or purged projects return `409`.
+
+**Create a sequential project:**
+
+```bash
+curl -s -X POST "http://127.0.0.1:3456/projects" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"Plan the move","props":{"isSequential":true}}' | jq .
+```
+
+**Change an existing project to parallel:**
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"isSequential":false}' | jq .
+```
+
+### Desktop task triage
+
+Use `PATCH /tasks/:id` with `status` to move an active task between `inbox`, `next`, `waiting`, `someday`, and `reference`. Continue using the dedicated `/complete`, `/archive`, and `/restore` actions for those operations. Terminal status values are not accepted by PATCH.
+
+PATCH cannot reopen a done or archived task (`409`); reopen it in the app first. Restore a soft-deleted task with `/restore` before triaging it. Purged tasks cannot be triaged.
+
+Moving a task to `inbox`, `next`, `waiting`, or `someday` inside an archived project returns `409`. First reactivate the project with `PATCH /projects/:id` and `{"status":"active"}`, or move the task out of that project in the same task PATCH.
+
+**Move an Inbox task to Next Actions:**
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/tasks/$TASK_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"status":"next"}' | jq .
+```
 
 ---
 

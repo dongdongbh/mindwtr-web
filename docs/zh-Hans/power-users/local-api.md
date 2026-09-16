@@ -96,6 +96,8 @@ Bun 辅助程序同样要求令牌：未设置 `MINDWTR_API_TOKEN` 时会立即�
 | `POST`   | `/tasks/:id/archive`  | 标记为已归档                  |
 | `POST`   | `/tasks/:id/restore`  | 恢复软删除任务                |
 | `GET`    | `/projects`           | 列出项目                      |
+| `POST` | `/projects` | 桌面端：创建项目 |
+| `PATCH` | `/projects/:id` | 桌面端：更新项目 |
 | `GET`    | `/areas`              | 列出领域                      |
 | `GET`    | `/v1/areas`           | 领域端点的兼容别名            |
 | `GET`    | `/search?query=...`   | 搜索任务和项目                |
@@ -163,6 +165,47 @@ Bun 辅助程序同样要求令牌：未设置 `MINDWTR_API_TOKEN` 时会立即�
 ```
 
 桌面端会在存在 `title` 时使用它，否则使用 `input`，并应用明确指定的 `props`。Bun 辅助程序还会对 `input` 运行 `parseQuickAdd`。
+
+### 桌面端项目写入
+
+桌面应用内置 API 支持 `POST /projects` 和 `PATCH /projects/:id`。创建项目时必须提供 `title`；`areaId`、`color`、`status`、`isSequential` 和 `order` 为可选字段。更新时可使用相同的可编辑字段。两种响应都以 `{ "project": { ... } }` 返回已保存的项目。
+
+创建选项放在 `props` 中，例如 `{ "title": "Plan the move", "props": { "isSequential": true } }`；PATCH 字段直接放在请求体中。`sequentialScope` 支持 `project` 或 `section`，项目 `status` 支持 `active`、`someday`、`waiting` 或 `archived`。将 `areaId` 设为 `null` 可移除领域。项目归档和重新激活遵循应用中对子任务和分区的处理规则。项目不存在时返回 `404`，已删除或已永久删除时返回 `409`。
+
+**创建顺序项目:**
+
+```bash
+curl -s -X POST "http://127.0.0.1:3456/projects" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"Plan the move","props":{"isSequential":true}}' | jq .
+```
+
+**将现有项目改为并行:**
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"isSequential":false}' | jq .
+```
+
+### 桌面端任务分类
+
+使用带有 `status` 的 `PATCH /tasks/:id`，可将活动任务在 `inbox`、`next`、`waiting`、`someday` 和 `reference` 之间移动。完成、归档和恢复仍使用对应的 `/complete`、`/archive` 和 `/restore` 操作。PATCH 不接受终结状态。
+
+PATCH 无法重新打开已完成或已归档的任务（返回 `409`）；请先在应用中重新打开。已删除任务需先通过 `/restore` 恢复，再进行分类。已永久删除的任务无法分类。
+
+将已归档项目中的任务改为 `inbox`、`next`、`waiting` 或 `someday` 会返回 `409`。请先通过 `PATCH /projects/:id` 和 `{"status":"active"}` 重新激活项目，或在同一次任务 PATCH 中将任务移出该项目。
+
+**将收集箱任务移至下一步行动:**
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/tasks/$TASK_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"status":"next"}' | jq .
+```
 
 ---
 

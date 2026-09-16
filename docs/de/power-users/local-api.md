@@ -96,6 +96,8 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 | `POST`   | `/tasks/:id/archive`  | Als archiviert markieren             |
 | `POST`   | `/tasks/:id/restore`  | Vorläufig gelöschte Aufgabe wiederherstellen |
 | `GET`    | `/projects`           | Projekte auflisten                   |
+| `POST` | `/projects` | Desktop: Projekt erstellen |
+| `PATCH` | `/projects/:id` | Desktop: Projekt aktualisieren |
 | `GET`    | `/areas`              | Bereiche auflisten                   |
 | `GET`    | `/v1/areas`           | Kompatibilitätsalias für Bereiche    |
 | `GET`    | `/search?query=...`   | Aufgaben und Projekte suchen         |
@@ -163,6 +165,47 @@ Die lokale Desktop-API akzeptiert `isFocusedToday=true`/`1` und `isFocusedToday=
 ```
 
 Desktop verwendet `title`, wenn vorhanden, andernfalls `input`, und wendet ausdrückliche `props` an. Das Bun-Hilfsprogramm führt zusätzlich `parseQuickAdd` für `input` aus.
+
+### Projekte über die Desktop-API schreiben
+
+Die integrierte Desktop-API unterstützt `POST /projects` und `PATCH /projects/:id`. Zum Erstellen ist `title` erforderlich; `areaId`, `color`, `status`, `isSequential` und `order` sind optional. Aktualisierungen akzeptieren dieselben bearbeitbaren Felder. Beide Antworten enthalten das gespeicherte Projekt als `{ "project": { ... } }`.
+
+Sende Erstellungsoptionen in `props`, zum Beispiel `{ "title": "Plan the move", "props": { "isSequential": true } }`; PATCH-Felder stehen direkt im Anfragekörper. `sequentialScope` akzeptiert `project` oder `section`. Der Projektstatus `status` akzeptiert `active`, `someday`, `waiting` oder `archived`. Mit `areaId: null` entfernst du den Bereich. Archivieren und Reaktivieren folgen den Regeln der App für untergeordnete Aufgaben und Abschnitte. Fehlende Projekte liefern `404`, gelöschte oder endgültig entfernte Projekte `409`.
+
+**Ein sequenzielles Projekt erstellen:**
+
+```bash
+curl -s -X POST "http://127.0.0.1:3456/projects" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"Plan the move","props":{"isSequential":true}}' | jq .
+```
+
+**Ein vorhandenes Projekt auf parallel umstellen:**
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"isSequential":false}' | jq .
+```
+
+### Aufgaben über die Desktop-API einordnen
+
+Mit `PATCH /tasks/:id` und `status` kannst du eine aktive Aufgabe zwischen `inbox`, `next`, `waiting`, `someday` und `reference` verschieben. Für Abschließen, Archivieren und Wiederherstellen bleiben die eigenen Aktionen `/complete`, `/archive` und `/restore` zuständig. Endstatuswerte werden von PATCH nicht akzeptiert.
+
+PATCH kann abgeschlossene oder archivierte Aufgaben nicht erneut öffnen (`409`); öffne sie zuerst in der App erneut. Stelle eine gelöschte Aufgabe vor dem Einordnen mit `/restore` wieder her. Endgültig entfernte Aufgaben können nicht eingeordnet werden.
+
+Das Verschieben einer Aufgabe in `inbox`, `next`, `waiting` oder `someday` innerhalb eines archivierten Projekts liefert `409`. Reaktiviere zuerst das Projekt mit `PATCH /projects/:id` und `{"status":"active"}`, oder verschiebe die Aufgabe im selben Aufgaben-PATCH aus diesem Projekt.
+
+**Eine Eingang-Aufgabe zu den nächsten Aktionen verschieben:**
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/tasks/$TASK_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"status":"next"}' | jq .
+```
 
 ---
 

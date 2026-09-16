@@ -96,6 +96,8 @@ El asistente de Bun también requiere un token: sale de inmediato si no se estab
 | `POST`   | `/tasks/:id/archive`  | Marca como archivada              |
 | `POST`   | `/tasks/:id/restore`  | Restaura una tarea eliminada de forma lógica   |
 | `GET`    | `/projects`           | Enumera los proyectos                 |
+| `POST` | `/projects` | Escritorio: crear proyecto |
+| `PATCH` | `/projects/:id` | Escritorio: actualizar proyecto |
 | `GET`    | `/areas`              | Enumera las áreas                    |
 | `GET`    | `/v1/areas`           | Alias de compatibilidad para las áreas |
 | `GET`    | `/search?query=...`   | Busca tareas y proyectos       |
@@ -163,6 +165,47 @@ Aquí `query` es una búsqueda de texto plano: el valor se pasa a minúsculas y 
 ```
 
 En escritorio se usa `title` cuando está presente; de lo contrario, se usa `input`, y se aplican las `props` explícitas. El asistente de Bun ejecuta además `parseQuickAdd` para `input`.
+
+### Escritura de proyectos en escritorio
+
+La API integrada de escritorio admite `POST /projects` y `PATCH /projects/:id`. Para crear un proyecto, `title` es obligatorio; `areaId`, `color`, `status`, `isSequential` y `order` son opcionales. Las actualizaciones aceptan los mismos campos editables. Ambas respuestas contienen el proyecto guardado como `{ "project": { ... } }`.
+
+Envía las opciones de creación dentro de `props`, por ejemplo `{ "title": "Plan the move", "props": { "isSequential": true } }`; los campos PATCH van directamente en el cuerpo. `sequentialScope` acepta `project` o `section`. El `status` del proyecto acepta `active`, `someday`, `waiting` o `archived`. Usa `areaId: null` para quitar el área. Archivar y reactivar un proyecto sigue las reglas de la aplicación para tareas y secciones. Los proyectos inexistentes devuelven `404`; los eliminados o purgados devuelven `409`.
+
+**Crear un proyecto secuencial:**
+
+```bash
+curl -s -X POST "http://127.0.0.1:3456/projects" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"Plan the move","props":{"isSequential":true}}' | jq .
+```
+
+**Cambiar un proyecto existente a paralelo:**
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"isSequential":false}' | jq .
+```
+
+### Clasificación de tareas en escritorio
+
+Usa `PATCH /tasks/:id` con `status` para mover una tarea activa entre `inbox`, `next`, `waiting`, `someday` y `reference`. Sigue usando las acciones específicas `/complete`, `/archive` y `/restore` para esas operaciones. PATCH no acepta estados terminales.
+
+PATCH no puede reabrir una tarea completada o archivada (`409`); vuelve a abrirla primero en la aplicación. Restaura una tarea eliminada con `/restore` antes de clasificarla. Las tareas purgadas no se pueden clasificar.
+
+Mover una tarea a `inbox`, `next`, `waiting` o `someday` dentro de un proyecto archivado devuelve `409`. Reactiva primero el proyecto con `PATCH /projects/:id` y `{"status":"active"}`, o mueve la tarea fuera de ese proyecto en el mismo PATCH de la tarea.
+
+**Mover una tarea de la bandeja de entrada a próximas acciones:**
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/tasks/$TASK_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"status":"next"}' | jq .
+```
 
 ---
 

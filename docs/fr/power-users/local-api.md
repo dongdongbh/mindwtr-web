@@ -96,6 +96,8 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 | `POST`   | `/tasks/:id/archive`   | Marquer comme archivée                   |
 | `POST`   | `/tasks/:id/restore`   | Restaurer une tâche supprimée logiquement |
 | `GET`    | `/projects`            | Répertorier les projets                  |
+| `POST` | `/projects` | Ordinateur : créer un projet |
+| `PATCH` | `/projects/:id` | Ordinateur : modifier un projet |
 | `GET`    | `/areas`               | Répertorier les domaines                 |
 | `GET`    | `/v1/areas`            | Alias de compatibilité pour les domaines |
 | `GET`    | `/search?query=...`    | Rechercher des tâches et des projets     |
@@ -163,6 +165,47 @@ Ici, `query` est une recherche en texte brut : la valeur est mise en minuscules 
 ```
 
 L’application de bureau utilise `title` lorsqu’il est présent, sinon `input`, et applique les `props` explicites. L’utilitaire Bun exécute en plus `parseQuickAdd` pour `input`.
+
+### Écriture des projets sur ordinateur
+
+L’API intégrée à l’application de bureau prend en charge `POST /projects` et `PATCH /projects/:id`. La création exige `title` ; `areaId`, `color`, `status`, `isSequential` et `order` sont facultatifs. Les mises à jour acceptent les mêmes champs modifiables. Les deux réponses contiennent le projet enregistré sous la forme `{ "project": { ... } }`.
+
+Placez les options de création dans `props`, par exemple `{ "title": "Plan the move", "props": { "isSequential": true } }` ; les champs PATCH vont directement dans le corps. `sequentialScope` accepte `project` ou `section`. Le `status` du projet accepte `active`, `someday`, `waiting` ou `archived`. Utilisez `areaId: null` pour retirer le domaine. L’archivage et la réactivation suivent les règles de l’application pour les tâches et sections du projet. Un projet absent renvoie `404` ; un projet supprimé ou purgé renvoie `409`.
+
+**Créer un projet séquentiel:**
+
+```bash
+curl -s -X POST "http://127.0.0.1:3456/projects" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"Plan the move","props":{"isSequential":true}}' | jq .
+```
+
+**Passer un projet existant en mode parallèle:**
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"isSequential":false}' | jq .
+```
+
+### Classement des tâches sur ordinateur
+
+Utilisez `PATCH /tasks/:id` avec `status` pour déplacer une tâche active entre `inbox`, `next`, `waiting`, `someday` et `reference`. Continuez à utiliser les actions dédiées `/complete`, `/archive` et `/restore` pour ces opérations. PATCH n’accepte pas les états terminaux.
+
+PATCH ne peut pas rouvrir une tâche terminée ou archivée (`409`) ; rouvrez-la d’abord dans l’application. Restaurez une tâche supprimée avec `/restore` avant de la classer. Les tâches purgées ne peuvent pas être classées.
+
+Déplacer une tâche vers `inbox`, `next`, `waiting` ou `someday` dans un projet archivé renvoie `409`. Réactivez d’abord le projet avec `PATCH /projects/:id` et `{"status":"active"}`, ou déplacez la tâche hors de ce projet dans le même PATCH de tâche.
+
+**Déplacer une tâche de la boîte de réception vers les prochaines actions:**
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/tasks/$TASK_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"status":"next"}' | jq .
+```
 
 ---
 

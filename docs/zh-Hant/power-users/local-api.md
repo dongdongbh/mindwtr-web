@@ -96,6 +96,8 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 | `POST`   | `/tasks/:id/archive`  | 標記為已封存                 |
 | `POST`   | `/tasks/:id/restore`  | 還原已軟刪除的任務           |
 | `GET`    | `/projects`           | 列出專案                     |
+| `POST` | `/projects` | 桌面版：建立專案 |
+| `PATCH` | `/projects/:id` | 桌面版：更新專案 |
 | `GET`    | `/areas`              | 列出領域                     |
 | `GET`    | `/v1/areas`           | 領域的相容性別名             |
 | `GET`    | `/search?query=...`   | 搜尋任務及專案               |
@@ -163,6 +165,47 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 ```
 
 桌面版有 `title` 時會使用它，否則使用 `input`，並套用明確的 `props`。Bun 輔助工具還會對 `input` 執行 `parseQuickAdd`。
+
+### 桌面版專案寫入
+
+桌面應用程式內建 API 支援 `POST /projects` 和 `PATCH /projects/:id`。建立專案時必須提供 `title`；`areaId`、`color`、`status`、`isSequential` 和 `order` 為選填欄位。更新時可使用相同的可編輯欄位。兩種回應都以 `{ "project": { ... } }` 傳回已儲存的專案。
+
+建立選項放在 `props` 中，例如 `{ "title": "Plan the move", "props": { "isSequential": true } }`；PATCH 欄位直接放在請求本文中。`sequentialScope` 支援 `project` 或 `section`，專案 `status` 支援 `active`、`someday`、`waiting` 或 `archived`。將 `areaId` 設為 `null` 可移除領域。專案封存和重新啟用遵循應用程式中對子任務和區段的處理規則。專案不存在時傳回 `404`，已刪除或已永久刪除時傳回 `409`。
+
+**建立循序專案:**
+
+```bash
+curl -s -X POST "http://127.0.0.1:3456/projects" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"Plan the move","props":{"isSequential":true}}' | jq .
+```
+
+**將現有專案改為平行:**
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"isSequential":false}' | jq .
+```
+
+### 桌面版任務分類
+
+使用含有 `status` 的 `PATCH /tasks/:id`，可將進行中的任務在 `inbox`、`next`、`waiting`、`someday` 和 `reference` 之間移動。完成、封存和還原仍使用對應的 `/complete`、`/archive` 和 `/restore` 操作。PATCH 不接受終止狀態。
+
+PATCH 無法重新開啟已完成或已封存的任務（傳回 `409`）；請先在應用程式中重新開啟。已刪除任務需先透過 `/restore` 還原，再進行分類。已永久刪除的任務無法分類。
+
+將已封存專案中的任務改為 `inbox`、`next`、`waiting` 或 `someday` 會傳回 `409`。請先透過 `PATCH /projects/:id` 和 `{"status":"active"}` 重新啟用專案，或在同一次任務 PATCH 中將任務移出該專案。
+
+**將收件匣任務移至下一步行動:**
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/tasks/$TASK_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"status":"next"}' | jq .
+```
 
 ---
 

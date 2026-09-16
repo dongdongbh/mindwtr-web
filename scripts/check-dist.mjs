@@ -49,6 +49,43 @@ const landingLocalizedPages = [
 ];
 
 const findings = [];
+const socialImagePath = "/assets/screenshots/social-preview.jpg";
+const socialImageSize = { width: 1280, height: 640 };
+
+// Read the JPEG frame header so metadata cannot silently drift from the asset.
+function jpegDimensions(bytes) {
+  if (bytes.length < 4 || bytes.readUInt16BE(0) !== 0xffd8) return null;
+  const frameMarkers = new Set([0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf]);
+  let offset = 2;
+  while (offset + 4 <= bytes.length) {
+    if (bytes[offset++] !== 0xff) return null;
+    while (bytes[offset] === 0xff) offset++;
+    const marker = bytes[offset++];
+    if (marker === 0xda || marker === 0xd9 || offset + 2 > bytes.length) return null;
+    const length = bytes.readUInt16BE(offset);
+    if (length < 2 || offset + length > bytes.length) return null;
+    if (frameMarkers.has(marker)) {
+      if (length < 8) return null;
+      return { width: bytes.readUInt16BE(offset + 5), height: bytes.readUInt16BE(offset + 3) };
+    }
+    offset += length;
+  }
+  return null;
+}
+
+for (const site of Object.values(sites)) {
+  const asset = join(site.dist, socialImagePath.slice(1));
+  if (!existsSync(asset)) {
+    findings.push(`${site.name}: missing social preview JPEG`);
+    continue;
+  }
+  const bytes = readFileSync(asset);
+  const dimensions = jpegDimensions(bytes);
+  if (dimensions?.width !== socialImageSize.width || dimensions?.height !== socialImageSize.height) {
+    findings.push(`${site.name}: social preview must be a ${socialImageSize.width}×${socialImageSize.height} JPEG matching its metadata`);
+  }
+  if (bytes.length > 5_000_000) findings.push(`${site.name}: social preview exceeds LinkedIn's 5 MB limit`);
+}
 
 function walk(dir, out = []) {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
@@ -295,6 +332,11 @@ if (findings.length === 0) {
         "og:description",
         "og:url",
         "og:image",
+        "og:image:secure_url",
+        "og:image:type",
+        "og:image:width",
+        "og:image:height",
+        "og:image:alt",
         "twitter:card",
         "twitter:title",
         "twitter:description",
@@ -304,6 +346,18 @@ if (findings.length === 0) {
         if (!metaValue(key)?.trim()) {
           findings.push(`${page.site.name}${page.path}: missing ${key} metadata`);
         }
+      }
+
+      const expectedImage = `${page.site.origin}${socialImagePath}`;
+      for (const [key, value] of [
+        ["og:image", expectedImage],
+        ["og:image:secure_url", expectedImage],
+        ["twitter:image", expectedImage],
+        ["og:image:type", "image/jpeg"],
+        ["og:image:width", String(socialImageSize.width)],
+        ["og:image:height", String(socialImageSize.height)]
+      ]) {
+        if (metaValue(key) !== value) findings.push(`${page.site.name}${page.path}: ${key} must be "${value}"`);
       }
 
       const description = decodeEntities(metaValue("description") ?? "").trim();
@@ -405,7 +459,7 @@ if (findings.length === 0) {
 
     }
 
-    for (const key of ["og:image", "twitter:image"]) {
+    for (const key of ["og:image", "og:image:secure_url", "twitter:image"]) {
       const value = metaValue(key);
       if (value) checkTarget(page, value, key);
     }

@@ -408,6 +408,8 @@ function sharedHeadMeta(
     <meta property="og:locale" content="${OG_LOCALE[locale]}" />
 ${alternateLocales}    <meta property="og:url" content="${url}" />
     <meta property="og:image" content="${ORIGIN}/assets/screenshots/social-preview.jpg" />
+    <meta property="og:image:secure_url" content="${ORIGIN}/assets/screenshots/social-preview.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="640" />
     <meta property="og:image:alt" content="${t.socialImageAlt}" />

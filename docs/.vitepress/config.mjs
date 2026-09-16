@@ -15,6 +15,8 @@ export default defineConfig({
   head: [
     ["link", { rel: "icon", href: "/assets/brand/icon.png" }],
     ["meta", { property: "og:image", content: "https://docs.mindwtr.app/assets/screenshots/social-preview.jpg" }],
+    ["meta", { property: "og:image:secure_url", content: "https://docs.mindwtr.app/assets/screenshots/social-preview.jpg" }],
+    ["meta", { property: "og:image:type", content: "image/jpeg" }],
     ["meta", { property: "og:image:width", content: "1280" }],
     ["meta", { property: "og:image:height", content: "640" }],
     ["meta", { name: "twitter:card", content: "summary_large_image" }],

@@ -100,7 +100,14 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 | `PATCH` | `/projects/:id` | Desktop: Projekt aktualisieren |
 | `GET`    | `/areas`              | Bereiche auflisten                   |
 | `GET`    | `/v1/areas`           | Kompatibilitätsalias für Bereiche    |
+| `GET`    | `/sections`           | Hilfsprogramm: Abschnitte auflisten, optional `?projectId=` |
+| `POST`   | `/sections`           | Hilfsprogramm: Abschnitt erstellen   |
+| `GET`    | `/sections/:id`       | Hilfsprogramm: Einzelnen Abschnitt abrufen |
+| `PATCH`  | `/sections/:id`       | Hilfsprogramm: Abschnitt aktualisieren |
+| `DELETE` | `/sections/:id`       | Hilfsprogramm: Abschnitt löschen     |
 | `GET`    | `/search?query=...`   | Aufgaben und Projekte suchen         |
+
+Zeilen mit **Desktop** gibt es nur in der lokalen API der Desktop-App. Zeilen mit **Hilfsprogramm** gibt es nur im Bun-Hilfsprogramm, das sie auch unter dem Präfix `/v1/` beantwortet (`/v1/sections`).
 
 Die lokale Desktop-API akzeptiert `isFocusedToday=true`/`1` und `isFocusedToday=false`/`0`. Mit `true` oder `1` liefert sie Aufgaben im **Heutigen Fokus**. Mit `false` oder `0` liefert sie nicht markierte Aufgaben, einschließlich älterer Datensätze ohne dieses Feld. Ohne den Parameter filtert sie die Liste nicht nach diesem Feld. Bei anderen Werten antwortet sie mit `400`.
 

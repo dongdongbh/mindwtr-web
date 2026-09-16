@@ -100,7 +100,14 @@ Bun 辅助程序同样要求令牌：未设置 `MINDWTR_API_TOKEN` 时会立即�
 | `PATCH` | `/projects/:id` | 桌面端：更新项目 |
 | `GET`    | `/areas`              | 列出领域                      |
 | `GET`    | `/v1/areas`           | 领域端点的兼容别名            |
+| `GET`    | `/sections`           | 辅助程序：列出分区，可加 `?projectId=` |
+| `POST`   | `/sections`           | 辅助程序：创建分区            |
+| `GET`    | `/sections/:id`       | 辅助程序：获取单个分区        |
+| `PATCH`  | `/sections/:id`       | 辅助程序：更新分区            |
+| `DELETE` | `/sections/:id`       | 辅助程序：删除分区            |
 | `GET`    | `/search?query=...`   | 搜索任务和项目                |
+
+标注**桌面端**的行只存在于桌面应用的本地 API。标注**辅助程序**的行只存在于 Bun 辅助程序，它同时也在 `/v1/` 前缀下响应这些请求（`/v1/sections`）。
 
 桌面端本地 API 接受 `isFocusedToday=true`/`1` 和 `isFocusedToday=false`/`0`。`true` 或 `1` 返回标记为**今日焦点**的任务；`false` 或 `0` 返回未标记的任务，包括没有该字段的旧记录。省略该参数时，API 不按此字段筛选。其他值会返回 `400`。
 

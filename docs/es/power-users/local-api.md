@@ -100,7 +100,14 @@ El asistente de Bun también requiere un token: sale de inmediato si no se estab
 | `PATCH` | `/projects/:id` | Escritorio: actualizar proyecto |
 | `GET`    | `/areas`              | Enumera las áreas                    |
 | `GET`    | `/v1/areas`           | Alias de compatibilidad para las áreas |
+| `GET`    | `/sections`           | Asistente: enumera las secciones, opcionalmente con `?projectId=` |
+| `POST`   | `/sections`           | Asistente: crea una sección           |
+| `GET`    | `/sections/:id`       | Asistente: obtiene una sección        |
+| `PATCH`  | `/sections/:id`       | Asistente: actualiza una sección      |
+| `DELETE` | `/sections/:id`       | Asistente: elimina una sección        |
 | `GET`    | `/search?query=...`   | Busca tareas y proyectos       |
+
+Las filas marcadas con **Escritorio** solo existen en la API local de la aplicación de escritorio. Las filas marcadas con **Asistente** solo existen en el asistente de Bun, que además las responde con el prefijo `/v1/` (`/v1/sections`).
 
 La API local de escritorio acepta `isFocusedToday=true`/`1` e `isFocusedToday=false`/`0`. Con `true` o `1`, devuelve las tareas del **Foco de hoy**. Con `false` o `0`, devuelve las tareas sin esa marca, incluidos los registros antiguos que no contienen el campo. Si omites el parámetro, la lista no se filtra por este campo. Los demás valores devuelven `400`.
 

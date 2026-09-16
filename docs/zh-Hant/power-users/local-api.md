@@ -100,7 +100,14 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 | `PATCH` | `/projects/:id` | 桌面版：更新專案 |
 | `GET`    | `/areas`              | 列出領域                     |
 | `GET`    | `/v1/areas`           | 領域的相容性別名             |
+| `GET`    | `/sections`           | 輔助工具：列出分區，可加 `?projectId=` |
+| `POST`   | `/sections`           | 輔助工具：建立分區           |
+| `GET`    | `/sections/:id`       | 輔助工具：取得單一分區       |
+| `PATCH`  | `/sections/:id`       | 輔助工具：更新分區           |
+| `DELETE` | `/sections/:id`       | 輔助工具：刪除分區           |
 | `GET`    | `/search?query=...`   | 搜尋任務及專案               |
+
+標示**桌面版**的列只存在於桌面應用程式的本機 API。標示**輔助工具**的列只存在於 Bun 輔助工具，它同時也在 `/v1/` 前綴下回應這些請求（`/v1/sections`）。
 
 桌面版本機 API 接受 `isFocusedToday=true`/`1` 與 `isFocusedToday=false`/`0`。`true` 或 `1` 會傳回標記為**今日焦點**的任務；`false` 或 `0` 會傳回未標記的任務，包括沒有該欄位的舊記錄。省略此參數時，API 不會依此欄位篩選。其他值會傳回 `400`。
 

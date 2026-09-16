@@ -100,7 +100,14 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 | `PATCH` | `/projects/:id` | Ordinateur : modifier un projet |
 | `GET`    | `/areas`               | Répertorier les domaines                 |
 | `GET`    | `/v1/areas`            | Alias de compatibilité pour les domaines |
+| `GET`    | `/sections`            | Utilitaire : répertorier les sections, éventuellement `?projectId=` |
+| `POST`   | `/sections`            | Utilitaire : créer une section           |
+| `GET`    | `/sections/:id`        | Utilitaire : obtenir une section         |
+| `PATCH`  | `/sections/:id`        | Utilitaire : mettre à jour une section   |
+| `DELETE` | `/sections/:id`        | Utilitaire : supprimer une section       |
 | `GET`    | `/search?query=...`    | Rechercher des tâches et des projets     |
+
+Les lignes marquées **Bureau** n’existent que dans l’API locale de l’application de bureau. Les lignes marquées **Utilitaire** n’existent que dans l’utilitaire Bun, qui y répond aussi sous le préfixe `/v1/` (`/v1/sections`).
 
 L’API locale de l’application de bureau accepte `isFocusedToday=true`/`1` et `isFocusedToday=false`/`0`. Avec `true` ou `1`, elle renvoie les tâches des **Priorités du jour**. Avec `false` ou `0`, elle renvoie les tâches non marquées, y compris les anciens enregistrements dépourvus de ce champ. Sans le paramètre, elle ne filtre pas la liste selon ce champ. Pour toute autre valeur, elle répond avec `400`.
 

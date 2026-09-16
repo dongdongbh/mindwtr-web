@@ -100,7 +100,14 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 | `PATCH` | `/projects/:id` | Desktop: update project |
 | `GET`    | `/areas`              | List areas                    |
 | `GET`    | `/v1/areas`           | Compatibility alias for areas |
+| `GET`    | `/sections`           | Helper: list sections, optionally `?projectId=` |
+| `POST`   | `/sections`           | Helper: create section        |
+| `GET`    | `/sections/:id`       | Helper: get single section    |
+| `PATCH`  | `/sections/:id`       | Helper: update section        |
+| `DELETE` | `/sections/:id`       | Helper: delete section        |
 | `GET`    | `/search?query=...`   | Search tasks + projects       |
+
+Rows marked **Desktop** exist only in the desktop app's Local API. Rows marked **Helper** exist only in the Bun helper, which also answers them under a `/v1/` prefix (`/v1/sections`).
 
 The desktop Local API accepts `isFocusedToday=true`/`1` and `isFocusedToday=false`/`0`. With `true` or `1`, it returns tasks marked for Focus Today. With `false` or `0`, it returns unmarked tasks, including older records without the field. Omit the parameter to leave the list unfiltered. Other values return `400`.
 

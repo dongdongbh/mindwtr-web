@@ -374,7 +374,7 @@ node apps/mcp-server/dist/cli.js --db "/path/to/mindwtr.db"
 
 ### 讀取工具
 
-- **`mindwtr_list_tasks`**：使用篩選條件（狀態、專案、日期範圍、搜尋、用於今日專注的 `isFocusedToday`）列出任務。
+- **`mindwtr_list_tasks`**：使用篩選條件（狀態、專案、日期範圍、搜尋、用於今日專注的 `isFocusedToday`、用於 GTD 可執行性的 `view`）列出任務。
 - **`mindwtr_list_projects`**：列出所有專案。
 - **`mindwtr_get_project`**：依 ID 取得特定專案的詳細資料。
 - **`mindwtr_list_sections`**：列出專案分區，也可依專案篩選。
@@ -519,6 +519,8 @@ Schema 注意事項：
 - `search`：string
 - `dueDateFrom`：ISO date 或 datetime string（依日曆日期比較）
 - `dueDateTo`：ISO date 或 datetime string（依日曆日期比較）
+- `isFocusedToday`：boolean
+- `view`：`available | deferred | blocked` —— GTD 可執行性。`available` = 現在就能做（下一步行動，或複查日期已到的任務；所屬專案處於作用中，已過開始日期，且未被循序專案中較早的步驟擋住）。`deferred` = 開始日期仍在未來。`blocked` = 循序專案中較早的步驟占著位置。
 - `sortBy`：`updatedAt | createdAt | dueDate | title | priority`
 - `sortOrder`：`asc | desc`
 

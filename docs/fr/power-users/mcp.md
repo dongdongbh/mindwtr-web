@@ -374,7 +374,7 @@ Seul `--write` permet l’accès en écriture (aucun autre alias).
 
 ### Outils de lecture
 
-- **`mindwtr_list_tasks`** : répertorier les tâches avec des filtres (statut, projet, plage de dates, recherche, `isFocusedToday` pour le focus du jour).
+- **`mindwtr_list_tasks`** : répertorier les tâches avec des filtres (statut, projet, plage de dates, recherche, `isFocusedToday` pour le focus du jour, `view` pour la disponibilité GTD).
 - **`mindwtr_list_projects`** : répertorier tous les projets.
 - **`mindwtr_get_project`** : obtenir les détails d’un projet précis par son ID.
 - **`mindwtr_list_sections`** : répertorier les sections des projets, avec filtrage facultatif par projet.
@@ -519,6 +519,8 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 - `search` : chaîne
 - `dueDateFrom` : chaîne de date ou date-heure ISO (comparée par date calendaire)
 - `dueDateTo` : chaîne de date ou date-heure ISO (comparée par date calendaire)
+- `isFocusedToday` : booléen
+- `view` : `available | deferred | blocked` — Disponibilité GTD. `available` = réalisable dès maintenant (une action suivante, ou une tâche dont la date de revue est arrivée, dans un projet actif, après toute date de début et sans attendre derrière une étape antérieure d’un projet séquentiel). `deferred` = la date de début est encore dans le futur. `blocked` = une étape antérieure d’un projet séquentiel occupe la place.
 - `sortBy` : `updatedAt | createdAt | dueDate | title | priority`
 - `sortOrder` : `asc | desc`
 

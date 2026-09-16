@@ -374,7 +374,7 @@ Only `--write` is supported for write access (no alternate aliases).
 
 ### Read Tools
 
-- **`mindwtr_list_tasks`**: List tasks with filters (status, project, date range, search, `isFocusedToday` for today's focus).
+- **`mindwtr_list_tasks`**: List tasks with filters (status, project, date range, search, `isFocusedToday` for today's focus, `view` for GTD availability).
 - **`mindwtr_list_projects`**: List all projects.
 - **`mindwtr_get_project`**: Get details of a specific project by ID.
 - **`mindwtr_list_sections`**: List project sections, optionally filtered by project.
@@ -519,6 +519,8 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 - `search`: string
 - `dueDateFrom`: ISO date or datetime string (compared by calendar date)
 - `dueDateTo`: ISO date or datetime string (compared by calendar date)
+- `isFocusedToday`: boolean
+- `view`: `available | deferred | blocked` — GTD availability. `available` = actionable right now (a next action, or a task whose review date has come due, in an active project, past any start date, and not waiting behind an earlier step of a sequential project). `deferred` = the start date is still in the future. `blocked` = an earlier step in a sequential project holds the slot.
 - `sortBy`: `updatedAt | createdAt | dueDate | title | priority`
 - `sortOrder`: `asc | desc`
 

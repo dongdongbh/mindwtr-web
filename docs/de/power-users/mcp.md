@@ -374,7 +374,7 @@ Für den Schreibzugriff wird ausschließlich `--write` unterstützt (keine alter
 
 ### Lesewerkzeuge
 
-- **`mindwtr_list_tasks`**: Aufgaben mit Filtern auflisten (Status, Projekt, Datumsbereich, Suche, `isFocusedToday` für den heutigen Fokus).
+- **`mindwtr_list_tasks`**: Aufgaben mit Filtern auflisten (Status, Projekt, Datumsbereich, Suche, `isFocusedToday` für den heutigen Fokus, `view` für die GTD-Verfügbarkeit).
 - **`mindwtr_list_projects`**: Alle Projekte auflisten.
 - **`mindwtr_get_project`**: Details eines bestimmten Projekts anhand der ID abrufen.
 - **`mindwtr_list_sections`**: Projektabschnitte auflisten, optional nach Projekt gefiltert.
@@ -519,6 +519,8 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 - `search`: string
 - `dueDateFrom`: ISO date or datetime string (compared by calendar date)
 - `dueDateTo`: ISO date or datetime string (compared by calendar date)
+- `isFocusedToday`: boolean
+- `view`: `available | deferred | blocked` — GTD-Verfügbarkeit. `available` = jetzt machbar (eine nächste Aktion oder eine Aufgabe, deren Überprüfungsdatum fällig ist, in einem aktiven Projekt, nach einem etwaigen Startdatum und nicht hinter einem früheren Schritt eines sequenziellen Projekts wartend). `deferred` = das Startdatum liegt noch in der Zukunft. `blocked` = ein früherer Schritt eines sequenziellen Projekts belegt den Platz.
 - `sortBy`: `updatedAt | createdAt | dueDate | title | priority`
 - `sortOrder`: `asc | desc`
 

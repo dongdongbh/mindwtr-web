@@ -16,7 +16,7 @@ Android navigation adapts to the available app window: roomy windows use a side 
 
 ## Interaction Patterns
 
-- **Tap** to open and edit tasks.
+- **Tap** to open a task. **Settings → Task editor layout → Open tasks in** decides which tab the tap lands on.
 - **Swipe** for quick actions (see Swipe Actions section below).
 - **Share sheet** adds items directly to your Inbox.
 
@@ -791,6 +791,7 @@ Customize how Mindwtr works for your GTD workflow:
 - The same shared settings can hide or show the 2-minute shortcut, project-first prompt, contexts/tags section, scheduling section, and reference option
 
 **Task Editor Layout:**
+- **Open tasks in** decides which tab a normal task tap opens: **Automatic** (Edit from the Inbox, Preview everywhere else), **Preview**, or **Edit**. A read-only task always opens in Preview, and an explicit edit action always opens Edit. The choice stays on this device and is not synced.
 - Tap a field to toggle visibility (hidden fields still show when they have values)
 - Long-press the drag handle to reorder fields
 - Move fields between sections like **Basic**, **Scheduling**, **Organization**, and **Details**

@@ -16,7 +16,7 @@ En Android, la navegación se adapta al espacio disponible en la ventana: las ve
 
 ## Patrones de interacción
 
-- **Toca** para abrir y editar tareas.
+- **Toca** para abrir una tarea. **Ajustes → Diseño del editor de tareas → Abrir tareas en** decide en qué pestaña cae el toque.
 - **Desliza** para realizar acciones rápidas (consulta la sección Gestos de deslizamiento más abajo).
 - La **hoja para compartir** añade elementos directamente a tu Bandeja de entrada.
 
@@ -791,6 +791,7 @@ Personaliza cómo funciona Mindwtr en tu flujo GTD:
 - Los mismos ajustes compartidos pueden ocultar o mostrar el atajo de 2 minutos, la pregunta inicial por el proyecto, la sección de contextos/etiquetas, la sección de programación y la opción de referencia
 
 **Diseño del editor de tareas:**
+- **Abrir tareas en** decide qué pestaña abre un toque normal sobre una tarea: **Automático** (Editar desde la Bandeja de entrada, Vista previa en el resto), **Vista previa** o **Editar**. Una tarea de solo lectura siempre se abre en Vista previa, y una acción de edición explícita siempre abre Editar. La elección se queda en este dispositivo y no se sincroniza
 - Toca un campo para alternar su visibilidad (los campos ocultos siguen apareciendo cuando tienen valores)
 - Mantén pulsada el asa de arrastre para reordenar campos
 - Mueve campos entre secciones como **Básico**, **Programación**, **Organización** y **Detalles**

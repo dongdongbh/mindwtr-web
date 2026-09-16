@@ -16,7 +16,7 @@ Sur Android, la navigation s’adapte à l’espace disponible dans la fenêtre 
 
 ## Modes d’interaction
 
-- **Touchez** une tâche pour l’ouvrir et la modifier.
+- **Touchez** une tâche pour l’ouvrir. **Réglages → Mise en page de l’éditeur de tâche → Ouvrir les tâches dans** décide de l’onglet atteint par ce geste.
 - **Balayez** pour effectuer des actions rapides (voir la section Actions de balayage ci-dessous).
 - La **feuille de partage** ajoute des éléments directement à votre Boîte de réception.
 
@@ -791,6 +791,7 @@ Personnalisez le fonctionnement de Mindwtr pour votre flux de travail GTD :
 - Les mêmes paramètres partagés peuvent masquer ou afficher le raccourci des 2 minutes, l’invite demandant d’abord le projet, la section des contextes et étiquettes, la section de planification et l’option de référence
 
 **Mise en page de l’éditeur de tâche :**
+- **Ouvrir les tâches dans** décide de l’onglet qu’ouvre un appui normal sur une tâche : **Automatique** (Modifier depuis la Boîte de réception, Aperçu ailleurs), **Aperçu** ou **Modifier**. Une tâche en lecture seule s’ouvre toujours en Aperçu, et une action de modification explicite ouvre toujours Modifier. Ce choix reste sur cet appareil et n’est pas synchronisé
 - Touchez un champ pour basculer sa visibilité (les champs masqués restent affichés lorsqu’ils ont une valeur)
 - Appuyez longuement sur la poignée de déplacement pour réorganiser les champs
 - Déplacez les champs entre des sections telles que **Éléments de base**, **Planification**, **Organisation** et **Détails**

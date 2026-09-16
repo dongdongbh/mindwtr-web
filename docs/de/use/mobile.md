@@ -16,7 +16,7 @@ Unter Android passt sich die Navigation dem verfügbaren App-Fenster an: Geräum
 
 ## Interaktionsmuster
 
-- **Tippen**, um Aufgaben zu öffnen und zu bearbeiten
+- **Tippen**, um eine Aufgabe zu öffnen. **Einstellungen → Layout des Aufgabeneditors → Aufgaben öffnen in** legt fest, auf welchem Tab das Tippen landet
 - **Wischen** für Schnellaktionen (siehe unten)
 - Über das **Teilen-Menü** Einträge direkt zum Eingang hinzufügen
 
@@ -729,6 +729,7 @@ Morgenübersicht und Abenddurchsicht haben eigene Schalter. Sie funktionieren au
 - Gemeinsame Einstellungen steuern 2-Minuten-Abkürzung, frühe Projektfrage, Kontexte/Tags, Planung und Referenz
 
 **Layout des Aufgabeneditors:**
+- **Aufgaben öffnen in** legt fest, welchen Tab ein normales Tippen auf eine Aufgabe öffnet: **Automatisch** (Bearbeiten aus dem Eingang, sonst Vorschau), **Vorschau** oder **Bearbeiten**. Eine schreibgeschützte Aufgabe öffnet immer die Vorschau, eine ausdrückliche Bearbeiten-Aktion immer die Bearbeitung. Die Wahl bleibt auf diesem Gerät und wird nicht synchronisiert
 - Felder ein-/ausblenden (mit Wert bleiben sie sichtbar)
 - Griff lange drücken zum Sortieren
 - Zwischen **Grundlagen**, **Planung**, **Organisation**, **Details** verschieben

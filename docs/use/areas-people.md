@@ -74,6 +74,14 @@ Type `%` followed by the name in Quick Add: `Ask %Jim for the budget /waiting`. 
 
 Deleting a Person keeps the tasks. Mindwtr clears that saved person record instead of deleting the work.
 
+### Review All Tasks for a Person
+
+In **Settings → Manage → People**, select a person's task count to open their combined task list. It includes tasks assigned to that person and tasks with a matching person context, such as `%Alex` and `@Alex`. A task that has both appears once.
+
+You can also search for `person:"Alex"` or `person:"Alex Smith"` and save the search for regular reviews. Names must match exactly, ignoring case and extra spaces; `Alex` does not include `Alexander` or `@Alex/work`. Assignments and contexts keep their existing meanings. If you rename a person, rename their context too to keep the names matched.
+
+The Settings shortcut includes Done and Archived tasks so the results match the count. Turn off **Include Done and Archived tasks** to review current work only.
+
 ## Related Fields
 
 | Field | Use it for | Where to create |

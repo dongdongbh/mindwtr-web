@@ -482,7 +482,13 @@ El editor de tareas tiene dos modos:
 
 Desliza a izquierda o derecha para cambiar entre **Tarea** y **Vista**.
 
-Las tareas centradas en listas de comprobación se abren de forma predeterminada en Vista para marcarlas más rápido.
+**Ajustes → GTD → Editor de tareas → Abrir tareas en** permite elegir el modo inicial en este dispositivo:
+
+- **Automático** (predeterminado): Editar en la bandeja de entrada y Vista previa en las demás listas.
+- **Vista previa**: leer primero la tarea.
+- **Editar**: acceder directamente a los campos. El teclado permanece cerrado hasta tocar un campo.
+
+Android e iOS funcionan igual. Las acciones explícitas de edición siguen abriendo Editar; las tareas de solo lectura permanecen en Vista previa. Cambiar de pestaña en una tarea no modifica esta preferencia.
 
 El editor empieza mostrando lo mínimo. Toca **Más opciones** para revelar campos avanzados; cualquier campo que ya tenga contenido permanece visible.
 
@@ -743,6 +749,9 @@ Toca **Permitir** para abrir la pantalla de permisos de Android para Mindwtr. Ta
 - Activa o desactiva las notificaciones para fechas de vencimiento y horas de inicio
 
 **Resumen diario:**
+
+Los resúmenes de mañana y tarde tienen interruptores independientes. Funcionan aunque los **Recordatorios de tareas** estén desactivados; sigue siendo necesario permitir las notificaciones.
+
 - **Informe matinal**: resumen de tareas que vencen hoy, atrasadas y de Foco
 - **Revisión vespertina**: aviso para revisar y cerrar el día
 - Configura las horas de cada uno

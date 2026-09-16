@@ -74,6 +74,14 @@ Dans Ajout rapide, saisissez `%` suivi du nom : `Ask %Jim for the budget /waitin
 
 Supprimer une personne conserve les tâches. Mindwtr efface la fiche enregistrée au lieu de supprimer le travail.
 
+### Passer en revue toutes les tâches d’une personne
+
+Dans **Paramètres → Gérer → Personnes**, sélectionnez le nombre de tâches d’une personne pour ouvrir sa liste combinée. Elle comprend les tâches attribuées à cette personne et celles portant un contexte correspondant, comme `%Alex` et `@Alex`. Une tâche qui possède les deux apparaît une seule fois.
+
+Vous pouvez aussi rechercher `person:"Alex"` ou `person:"Alex Smith"` et enregistrer la recherche pour vos revues régulières. Les noms doivent correspondre exactement, sans distinction de casse ni d’espaces supplémentaires ; `Alex` n’inclut pas `Alexander` ou `@Alex/work`. Les attributions et les contextes conservent leur sens. Si vous renommez une personne, renommez aussi son contexte pour conserver la correspondance.
+
+L’accès depuis les Paramètres inclut les tâches terminées et archivées afin que les résultats correspondent au nombre affiché. Désactivez **Inclure les tâches terminées et archivées** pour ne revoir que le travail en cours.
+
 ## Champs associés
 
 | Champ | Utilisation | Où le créer |

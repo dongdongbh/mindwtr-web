@@ -449,7 +449,15 @@ Zwei Modi:
 - **Aufgabe**: Felder, Checklisten, Daten, Tags und Kontexte bearbeiten
 - **Ansicht**: aufgeräumte schreibgeschützte Zusammenfassung mit antippbarer Checkliste
 
-Wischen Sie links/rechts zum Wechsel. Checklistenorientierte Aufgaben öffnen standardmäßig die Ansicht.
+Wischen Sie links/rechts zum Wechsel.
+
+Unter **Einstellungen → GTD → Aufgabeneditor → Aufgaben öffnen in** wählen Sie den Startmodus für dieses Gerät:
+
+- **Automatisch** (Standard): im Eingang Bearbeiten, in anderen Listen Vorschau.
+- **Vorschau**: zuerst die Aufgabe lesen.
+- **Bearbeiten**: direkt die Felder anzeigen. Die Tastatur öffnet sich erst beim Antippen eines Feldes.
+
+Android und iOS verhalten sich gleich. Ausdrückliche Bearbeiten-Aktionen öffnen weiterhin den Editor; schreibgeschützte Aufgaben bleiben in der Vorschau. Ein Tabwechsel bei einer Aufgabe ändert diese Einstellung nicht.
 
 Der Editor beginnt minimalistisch; **Weitere Optionen** zeigt erweiterte Felder. Felder mit Inhalt bleiben sichtbar.
 
@@ -681,6 +689,9 @@ Tippen Sie auf **Zulassen**, um den Android-Berechtigungsbildschirm für Mindwtr
 - Benachrichtigungen für Fälligkeitstermine und Startzeiten aktivieren/deaktivieren
 
 **Tägliche Übersicht:**
+
+Morgenübersicht und Abenddurchsicht haben eigene Schalter. Sie funktionieren auch bei ausgeschalteten **Aufgabenerinnerungen**; die Benachrichtigungsberechtigung ist weiterhin erforderlich.
+
 - **Morgenübersicht**: Zusammenfassung der heute fälligen, überfälligen und Fokusaufgaben
 - **Abenddurchsicht**: Aufforderung, den Tag durchzusehen und abzuschließen
 - Zeiten für beide festlegen

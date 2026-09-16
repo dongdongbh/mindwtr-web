@@ -74,6 +74,14 @@ En Adición rápida, escribe `%` seguido del nombre: `Ask %Jim for the budget /w
 
 Al eliminar una persona se conservan las tareas. Mindwtr borra el registro guardado de esa persona en vez de eliminar el trabajo.
 
+### Revisar todas las tareas de una persona
+
+En **Ajustes → Gestionar → Personas**, selecciona el número de tareas de una persona para abrir su lista combinada. Incluye las tareas asignadas a esa persona y las que tienen un contexto coincidente, como `%Alex` y `@Alex`. Una tarea con ambos aparece una sola vez.
+
+También puedes buscar `person:"Alex"` o `person:"Alex Smith"` y guardar la búsqueda para revisiones periódicas. Los nombres deben coincidir exactamente, sin distinguir mayúsculas ni espacios adicionales; `Alex` no incluye `Alexander` ni `@Alex/work`. Las asignaciones y los contextos conservan su significado. Si cambias el nombre de una persona, cambia también su contexto para mantener la coincidencia.
+
+El acceso desde Ajustes incluye las tareas completadas y archivadas para que los resultados coincidan con el número mostrado. Desactiva **Incluir tareas completadas y archivadas** para revisar solo el trabajo actual.
+
 ## Campos relacionados
 
 | Campo | Para qué usarlo | Dónde crearlo |

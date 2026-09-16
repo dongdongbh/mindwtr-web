@@ -577,6 +577,9 @@ In jeder Voreinstellung setzt `s` plus Buchstabe direkt den Status (`si` Eingang
 - Benachrichtigungen für Fälligkeit und Startzeit aktivieren/deaktivieren
 
 **Tägliche Übersicht:**
+
+Morgenübersicht und Abenddurchsicht haben eigene Schalter. Sie funktionieren auch bei ausgeschalteten **Aufgabenerinnerungen**; die Benachrichtigungsberechtigung ist weiterhin erforderlich.
+
 - **Morgenübersicht**: heute fällig, überfällig und Fokusaufgaben
 - **Abenddurchsicht**: Aufforderung zum Tagesabschluss
 - Zeiten festlegen (z. B. 09:00, 20:00)

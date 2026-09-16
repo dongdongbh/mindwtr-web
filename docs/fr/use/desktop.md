@@ -582,6 +582,9 @@ Accédez aux Paramètres depuis la barre latérale.
 - Activez ou désactivez les notifications de tâches pour les échéances et les heures de début
 
 **Résumé quotidien :**
+
+Les résumés du matin et du soir ont leurs propres interrupteurs. Ils fonctionnent même si les **Rappels de tâches** sont désactivés ; l’autorisation de notification reste nécessaire.
+
 - **Briefing matinal** : résumé des tâches à faire aujourd’hui, en retard et dans Focus
 - **Revue du soir** : invitation à faire le point et à terminer la journée
 - Configurez les heures (par ex., 9 h 00, 20 h 00)

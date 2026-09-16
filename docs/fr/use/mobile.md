@@ -482,7 +482,13 @@ L’éditeur de tâche possède deux modes :
 
 Balayez vers la gauche ou la droite pour basculer entre **Tâche** et **Vue**.
 
-Les tâches axées sur une liste de contrôle s’ouvrent par défaut en mode Vue pour permettre une validation plus rapide.
+**Réglages → GTD → Éditeur de tâche → Ouvrir les tâches en** définit le mode initial sur cet appareil :
+
+- **Automatique** (par défaut) : Modification dans la boîte de réception, Aperçu dans les autres listes.
+- **Aperçu** : lire la tâche avant de la modifier.
+- **Modification** : accéder directement aux champs. Le clavier reste fermé jusqu’à ce que vous touchiez un champ.
+
+Le comportement est identique sur Android et iOS. Une action explicite de modification ouvre toujours l’éditeur ; les tâches en lecture seule restent en Aperçu. Changer d’onglet pour une tâche ne modifie pas cette préférence.
 
 L’éditeur s’ouvre sous une forme minimale. Touchez **Plus d’options** pour afficher les champs avancés ; tout champ qui contient déjà une valeur reste visible.
 
@@ -743,6 +749,9 @@ Touchez **Autoriser** pour ouvrir l’écran d’autorisation Android de Mindwtr
 - Activez ou désactivez les notifications pour les échéances et les heures de début
 
 **Résumé quotidien :**
+
+Les résumés du matin et du soir ont leurs propres interrupteurs. Ils fonctionnent même si les **Rappels de tâches** sont désactivés ; l’autorisation de notification reste nécessaire.
+
 - **Briefing matinal** : résumé des tâches à faire aujourd’hui, en retard et dans Focus
 - **Revue du soir** : invitation à faire le point et à terminer la journée
 - Configurez l’heure de chacun

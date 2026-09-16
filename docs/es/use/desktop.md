@@ -582,6 +582,9 @@ Abre Ajustes desde la barra lateral.
 - Activa o desactiva las notificaciones de tareas para fechas de vencimiento y horas de inicio
 
 **Resumen diario:**
+
+Los resúmenes de mañana y tarde tienen interruptores independientes. Funcionan aunque los **Recordatorios de tareas** estén desactivados; sigue siendo necesario permitir las notificaciones.
+
 - **Informe matinal**: resumen de tareas que vencen hoy, atrasadas y de Foco
 - **Revisión vespertina**: aviso para revisar y cerrar el día
 - Configura las horas (p. ej., 9:00 AM, 8:00 PM)

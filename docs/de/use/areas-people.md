@@ -74,6 +74,14 @@ Geben Sie in „Schnell hinzufügen“ `%` gefolgt vom Namen ein: `Ask %Jim for 
 
 Beim Löschen einer Person bleiben die Aufgaben erhalten. Mindwtr entfernt den gespeicherten Personendatensatz, statt die Arbeit zu löschen.
 
+### Alle Aufgaben zu einer Person durchsehen
+
+Wählen Sie unter **Einstellungen → Verwalten → Personen** die Aufgabenanzahl einer Person, um ihre gemeinsame Aufgabenliste zu öffnen. Sie enthält Aufgaben, die dieser Person zugewiesen sind, und Aufgaben mit einem passenden Personenkontext, etwa `%Alex` und `@Alex`. Eine Aufgabe mit beiden Angaben erscheint nur einmal.
+
+Sie können auch nach `person:"Alex"` oder `person:"Alex Smith"` suchen und die Suche für regelmäßige Durchsichten speichern. Namen müssen genau übereinstimmen; Groß- und Kleinschreibung sowie zusätzliche Leerzeichen werden ignoriert. `Alex` umfasst weder `Alexander` noch `@Alex/work`. Zuweisungen und Kontexte behalten ihre bisherige Bedeutung. Wenn Sie eine Person umbenennen, benennen Sie auch ihren Kontext um, damit die Namen weiterhin übereinstimmen.
+
+Der Einstieg aus den Einstellungen schließt erledigte und archivierte Aufgaben ein, damit die Ergebnisse zur Anzahl passen. Deaktivieren Sie **Erledigte und archivierte Aufgaben einschließen**, um nur aktuelle Aufgaben durchzusehen.
+
 ## Verwandte Felder
 
 | Feld | Verwendung | Wo es erstellt wird |

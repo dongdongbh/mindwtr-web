@@ -582,6 +582,9 @@ Access Settings from the sidebar.
 - Enable/disable task notifications for due dates and start times
 
 **Daily Digest:**
+
+Morning and evening digests have their own switches. They work even when **Task Reminders** is off; notification permission is still required.
+
 - **Morning Briefing**: Summary of due today, overdue, and focus tasks
 - **Evening Review**: Prompt to review and wrap up the day
 - Configure times (e.g., 9:00 AM, 8:00 PM)

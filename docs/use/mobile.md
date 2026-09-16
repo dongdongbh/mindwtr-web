@@ -482,7 +482,13 @@ The task editor has two modes:
 
 Swipe left/right to switch between **Task** and **View**.
 
-Checklist-first tasks default to View mode for faster checking.
+**Settings → GTD → Task editor → Open tasks in** controls the opening mode on this device:
+
+- **Automatic** (default): Inbox tasks open in Edit; other lists open in Preview.
+- **Preview**: read the task first.
+- **Edit**: go straight to the fields. The keyboard stays closed until you tap a field.
+
+This works the same on Android and iOS. Explicit Edit actions still open Edit, and read-only tasks stay in Preview. Switching tabs for one task does not change this preference.
 
 The editor starts minimal. Tap **More options** to reveal advanced fields; any field with existing content stays visible.
 
@@ -743,6 +749,9 @@ Tap **Allow** to open the Android permission screen for Mindwtr. You can also re
 - Enable/disable notifications for due dates and start times
 
 **Daily Digest:**
+
+Morning and evening digests have their own switches. They work even when **Task Reminders** is off; notification permission is still required.
+
 - **Morning Briefing**: Summary of due today, overdue, and focus tasks
 - **Evening Review**: Prompt to review and wrap up the day
 - Configure times for each

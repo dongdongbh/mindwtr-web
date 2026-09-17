@@ -78,6 +78,8 @@ Activa **Incluir proyectos archivados** en los filtros de Referencia para encont
 
 ## Acciones en bloque
 
+Para las fechas de inicio, vencimiento y revisión en **Organizar en lote**, toca el calendario o elige **Hoy** o **Mañana**. Las fechas se aplican solo al pulsar **Aplicar a las seleccionadas**, sin añadir hora ni recordatorio. Dejar una fecha vacía (o volver a tocar el atajo seleccionado) conserva la fecha actual de cada tarea.
+
 En **Organizar en lote**, busca un proyecto o área, o escribe un nombre nuevo y elige **Crear** sin perder la selección de tareas ni los demás campos. Al crear se guarda y selecciona el destino; las tareas solo se mueven al pulsar **Aplicar a las seleccionadas**. Cancelar la edición no cambia las tareas y conserva los destinos creados. Si la creación falla, se mantienen la selección y el formulario para volver a intentarlo.
 
 ---

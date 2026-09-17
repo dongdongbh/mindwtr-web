@@ -78,6 +78,8 @@ Activez **Inclure les projets archivés** dans les filtres de Référence pour r
 
 ## Actions groupées
 
+Pour les dates de début, d’échéance et de revue dans **Bulk organize**, touchez le calendrier ou choisissez **Aujourd’hui** ou **Demain**. Les dates ne sont appliquées qu’après **Apply to selected**, sans ajouter d’heure ni de rappel. Un champ vide (ou un second appui sur le raccourci sélectionné) conserve la date actuelle de chaque tâche.
+
 Dans **Bulk organize**, recherchez un projet ou un domaine, ou saisissez un nouveau nom et choisissez **Créer** sans perdre les tâches sélectionnées ni les autres champs. La création enregistre et sélectionne la destination ; les tâches ne sont déplacées qu’après **Apply to selected**. Annuler la modification laisse les tâches inchangées et conserve les destinations créées. En cas d’échec de création, la sélection et le formulaire restent disponibles pour réessayer.
 
 ---

@@ -175,6 +175,8 @@ Mindwtr legt das Projekt an, macht Ihre Erfassung zu dessen erster nächster Akt
 
 Mit benannten Abschnitten gliedern Sie eine lange Irgendwann/Vielleicht-Liste nach Themen wie Reisen, Bücher oder Zuhause. Erstellen Sie einen Abschnitt beim Zuweisen einer Aufgabe oder verwalten Sie Namen und Reihenfolge unter **Einstellungen → Verwalten → Irgendwann-Abschnitte**. Der erste Abschnitt aktiviert die Gruppierung; spätere Gruppierungsentscheidungen bleiben erhalten. Das Löschen oder Umbenennen eines Abschnitts löscht keine Aufgaben, und die Zuordnungen werden mit unterstützten Geräten synchronisiert.
 
+Auf Mobilgeräten steht **Neuer Abschnitt …** neben den Zählern für Irgendwann/Vielleicht. Unter Irgendwann/Vielleicht und Warten auf lässt sich die Projektliste auf Desktop und Mobilgeräten über die Überschrift **Projekte** ein- und ausklappen; die Anzahl bleibt sichtbar. Der vorhandene Bereichsfilter gilt auch für diese Projekte. Das Einklappen ändert nur die aktuelle Ansicht, nicht den Projektstatus oder synchronisierte Daten.
+
 ### Kontexte und Tags
 
 Fügen Sie Kontexte hinzu, um danach zu filtern, wo Sie Aufgaben erledigen können:

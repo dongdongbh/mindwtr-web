@@ -62,6 +62,8 @@ POST /v1/tasks/:id/archive
 
 建立時，`props` 接受以下任務欄位：`status`, `projectId`, `sectionId`, `areaId`, `description`, `priority`, `dueDate`, `startTime`, `relativeStartOffset`, `reviewAt`, `recurrence`, `showFutureRecurrence`, `contexts`, `tags`, `checklist`, `attachments`, `assignedTo`, `location`, `energyLevel`, `timeEstimate`, `timeSpentMinutes`, `taskMode`, `textDirection`, `isFocusedToday`, `pushCount`, `repeatReminderMinutes`, `suppressMindwtrReminders` 和 `viewSectionIds`。`title` 是頂層欄位，不是 prop。修補操作接受相同欄位，另加 `title`, `order`, `orderNum`, `boardOrder` 和 `focusOrder`。由伺服器管理的欄位（如 `id`, `createdAt`, `updatedAt`, `completedAt`, `deletedAt` 和 `rev`）用戶端永遠無法寫入。這些清單來自 `packages/core/src/task-sync-schema.ts` 中的 `cloudWrite` 旗標，因此該檔案是目前的參考依據。
 
+`assignedTo` 是單一人員姓名的字串，例如 `"Alex"`，不是人員 ID 陣列。使用 `null` 或 `""` 清除指派。透過 REST 建立或更新任務時，陣列、物件、數字和布林值會被拒絕，並傳回 HTTP 400。搜尋會忽略已儲存的非字串指派值，不會改寫原始資料。
+
 Mindwtr Cloud 1.2.8 及更新版本會在 `GET /v1/tasks/:id` 和 `GET /v1/projects/:id` 的回應中傳回強 `ETag`。若要更新剛讀取的版本，請在對應的 `PATCH` 請求中透過 `If-Match` 傳送該標籤。伺服器會在寫入鎖內檢查目前記錄；如果記錄已變更，即使只變更了附件，也會傳回 `412 Precondition Failed`，不執行寫入。請重新讀取記錄並重新建立更新後再試。省略 `If-Match` 時，仍使用原有的無條件更新行為。
 
 自動化建立任務時，請把 `status` 放在 `props` 內；沒有截止日期時省略 `dueDate`。`attachments` 必須是附件物件陣列，不能直接傳入 URL 字串。連結附件需要提供 ID、`kind: "link"`、標題、URI 和建立/更新時間，格式如下。為每個新附件產生唯一 ID；編輯同一連結時保留該 ID。如果只需在任務備註中儲存網址，也可以使用 `props.description`。

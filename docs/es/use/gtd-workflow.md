@@ -175,6 +175,8 @@ Hechas y Archivadas son estados cerrados, pero cumplen funciones distintas:
 
 Usa secciones con nombre para dividir una lista larga de Algún día/Quizá en temas como Viajes, Libros o Casa. Crea una sección al asignar una tarea, o gestiona los nombres y el orden en **Ajustes → Gestionar → Secciones de Algún día**. La primera sección activa la agrupación; las decisiones posteriores se conservan. Eliminar o renombrar una sección no elimina sus tareas, y las asignaciones se sincronizan con los dispositivos compatibles.
 
+En móvil, **Nueva sección…** aparece junto a los contadores de Algún día/Quizá. En Algún día/Quizá y En espera, tanto en escritorio como en móvil, pulsa el encabezado **Proyectos** para contraer o expandir la lista; el contador sigue visible. El filtro de áreas existente también filtra estos proyectos. Contraer solo cambia la vista actual, no el estado de los proyectos ni los datos sincronizados.
+
 ### Contextos y etiquetas
 
 Añade contextos para filtrar según dónde puedas realizar las tareas:

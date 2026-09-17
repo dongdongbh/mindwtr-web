@@ -175,6 +175,8 @@ Terminées et Archivées sont deux états fermés, mais ils remplissent des rôl
 
 Utilisez des sections nommées pour diviser une longue liste Un jour/Peut-être en thèmes comme Voyages, Livres ou Maison. Créez une section pendant l’attribution d’une tâche, ou gérez les noms et l’ordre sous **Réglages → Gérer → Sections Un jour**. La première section active le regroupement ; vos choix suivants restent inchangés. Supprimer ou renommer une section ne supprime pas ses tâches, et les attributions se synchronisent avec les appareils compatibles.
 
+Sur mobile, **Nouvelle section…** se trouve à côté des compteurs d’Un jour/Peut-être. Dans Un jour/Peut-être et En attente, sur ordinateur comme sur mobile, sélectionnez l’en-tête **Projets** pour replier ou déplier la liste ; le compteur reste visible. Le filtre de domaines existant s’applique aussi à ces projets. Replier la liste ne change que la vue actuelle, pas le statut des projets ni les données synchronisées.
+
 ### Contextes et tags
 
 Ajoutez des contextes pour filtrer selon l’endroit où vous pouvez effectuer les tâches :

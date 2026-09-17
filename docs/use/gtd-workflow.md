@@ -175,6 +175,8 @@ Done and Archived are both closed states, but they serve different jobs:
 
 Use named sections to break a long Someday/Maybe list into themes such as Trips, Books, or Home. Create a section while assigning a Someday task, or manage names and order under **Settings → Manage → Someday sections**. The first section turns grouping on; later grouping choices remain yours. Deleting or renaming a section does not delete its tasks, and the section assignments sync with supported devices.
 
+On mobile, **New section…** sits beside the Someday/Maybe counts. In Someday/Maybe and Waiting For on desktop and mobile, select the **Projects** heading to collapse or expand the project list; its count stays visible. The existing area filter also filters these projects. Collapsing changes only the current view, not project status or synced data.
+
 ### Contexts and Tags
 
 Add contexts to filter by where you can do tasks:

@@ -150,17 +150,15 @@ Pour OneDrive et Google Drive, la synchronisation de fichiers vous laisse le con
 
 ### Mindwtr peut-il s’intégrer à la messagerie électronique (Gmail/Outlook) ou accepter les e-mails transférés ?
 
-Pas directement. La création d’un client de messagerie complet nécessite :
+Oui. Mindwtr propose trois méthodes de capture des e-mails :
 
-- un accès OAuth à Gmail/Outlook (qui exige désormais des audits de sécurité coûteux)
-- une analyse robuste des formats MIME/HTML et une gestion fiable des pièces jointes
-- une maintenance continue pour tous les fournisseurs
+- **Dossier IMAP sur ordinateur :** dans **Paramètres → Intégrations → Capture d’e-mails**, connectez Gmail, iCloud Mail, Fastmail ou un autre serveur IMAP standard avec un mot de passe d’application. Déplacez ou transférez les messages vers le dossier de votre choix. Tant que Mindwtr est ouvert sur l’ordinateur, l’application consulte ce dossier toutes les cinq minutes et crée une tâche dans la boîte de réception. L’objet devient le titre, et l’expéditeur et le corps du message sont enregistrés dans la description. L’importation est en lecture seule et mémorise les messages déjà capturés.
+- **Feuille de partage sur mobile :** partagez le contenu sélectionné d’un e-mail vers Mindwtr sur Android ou iOS depuis les applications de messagerie qui proposent le partage.
+- **Automatisation auto-hébergée :** si vous exploitez le serveur Mindwtr Cloud, Power Automate ou une autre automatisation de messagerie peut envoyer des tâches à son API. C’est la solution actuelle pour Outlook.com et Microsoft 365.
 
-**Solutions actuelles :**
-- **Ordinateur :** collez des liens `message://` ou des liens vers des e-mails dans une tâche, ou faites glisser un e-mail dans la note d’une tâche depuis les clients qui le permettent.
-- **Mobile :** utilisez la feuille de partage pour envoyer le contenu sélectionné d’un e-mail vers Mindwtr.
+L’intégration de bureau ne prend pas en charge la connexion à Outlook/Microsoft 365, l’OAuth natif de Gmail ou d’Outlook, ni POP3. Mindwtr ne fournit pas non plus d’adresse hébergée telle que `add@mindwtr.com`. La capture des e-mails fonctionne dans un seul sens : elle n’envoie ni ne synchronise les messages, ne crée pas de tâches d’équipe partagées et ne convertit pas les messages en Cci en tâches **En attente**.
 
-Mindwtr ne propose **aucune** boîte de réception `add@mindwtr.com`, car cela nécessiterait un serveur central chargé de recevoir et de stocker vos e-mails.
+Consultez [Capture d’e-mails](/fr/power-users/email-capture) pour la configuration et les options propres à chaque fournisseur.
 
 ---
 

@@ -150,17 +150,15 @@ Para OneDrive/Google Drive, la sincronización de archivos mantiene tus datos ba
 
 ### ¿Puede Mindwtr integrarse con el correo electrónico (Gmail/Outlook) o aceptar correos reenviados?
 
-No directamente. Crear un cliente de correo completo requiere:
+Sí. Mindwtr ofrece tres formas de capturar correo:
 
-- Acceso OAuth a Gmail/Outlook (que ahora exige costosas auditorías de seguridad)
-- Análisis sólido de MIME/HTML y gestión de archivos adjuntos
-- Mantenimiento continuo entre proveedores
+- **Carpeta IMAP en el escritorio:** en **Ajustes → Integraciones → Captura de correo**, conecta Gmail, iCloud Mail, Fastmail u otro servidor IMAP estándar con una contraseña de aplicación. Mueve o reenvía mensajes a la carpeta que elijas. Mientras Mindwtr para escritorio esté abierto, revisa la carpeta cada cinco minutos y crea una tarea en la Bandeja de entrada. El asunto pasa a ser el título, y el remitente y el cuerpo se guardan en la descripción. La importación es de solo lectura y recuerda los mensajes ya capturados.
+- **Hoja para compartir en el móvil:** comparte contenido seleccionado de un correo con Mindwtr en Android o iOS desde aplicaciones de correo que admitan compartir.
+- **Automatización autoalojada:** si ejecutas el servidor de Mindwtr Cloud, Power Automate u otra automatización de correo puede enviar tareas a su API. Esta es la opción actual para Outlook.com y Microsoft 365.
 
-**Alternativas actuales:**
-- **Escritorio:** pega enlaces `message://` o enlaces de correo en una tarea, o arrastra un correo a la nota de una tarea en los clientes que lo admitan.
-- **Dispositivos móviles:** usa la hoja para compartir para enviar el contenido seleccionado de un correo a Mindwtr.
+La integración de escritorio no admite el inicio de sesión de Outlook/Microsoft 365, OAuth nativo de Gmail u Outlook ni POP3. Mindwtr tampoco ofrece una dirección alojada como `add@mindwtr.com`. La captura de correo es unidireccional: no envía ni sincroniza mensajes, no crea tareas compartidas de equipo ni convierte correos con CCO en tareas **En espera**.
 
-Mindwtr **no** ofrece un buzón `add@mindwtr.com` porque eso requeriría un servidor central que recibiera y almacenara tu correo.
+Consulta [Captura de correo](/es/power-users/email-capture) para ver la configuración y las opciones de cada proveedor.
 
 ---
 

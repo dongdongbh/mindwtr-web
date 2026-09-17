@@ -147,17 +147,15 @@ Für OneDrive/Google Drive hält die Dateisynchronisierung Ihre Daten unter Ihre
 
 ### Kann Mindwtr E-Mails (Gmail/Outlook) integrieren oder weitergeleitete E-Mails empfangen?
 
-Nicht direkt. Ein vollständiger E-Mail-Client erfordert:
+Ja. Mindwtr bietet drei Wege zur E-Mail-Erfassung:
 
-- OAuth-Zugriff auf Gmail/Outlook (inzwischen mit kostspieligen Sicherheitsaudits)
-- robuste MIME-/HTML-Auswertung und Anhangsverarbeitung
-- fortlaufende Wartung über Anbieter hinweg
+- **IMAP-Ordner auf dem Desktop:** Verbinden Sie unter **Einstellungen → Integrationen → E-Mail-Erfassung** Gmail, iCloud Mail, Fastmail oder einen anderen Standard-IMAP-Server mit einem App-Passwort. Verschieben Sie E-Mails in den gewählten Ordner oder leiten Sie sie dorthin weiter. Solange Mindwtr Desktop geöffnet ist, prüft die App den Ordner alle fünf Minuten und erstellt eine Eingangsaufgabe. Der Betreff wird zum Titel, Absender und Nachrichtentext werden zur Beschreibung. Der Import ist schreibgeschützt und merkt sich bereits erfasste Nachrichten.
+- **Teilen-Menü auf Mobilgeräten:** Teilen Sie ausgewählte E-Mail-Inhalte aus Mail-Apps, die das Teilen unterstützen, mit Mindwtr auf Android oder iOS.
+- **Selbst gehostete Automatisierung:** Wenn Sie den Mindwtr-Cloud-Server betreiben, können Power Automate oder eine andere E-Mail-Automatisierung Eingangsaufgaben an dessen API senden. Dies ist derzeit der Weg für Outlook.com und Microsoft 365.
 
-**Derzeitige Alternativen:**
-- **Desktop:** Fügen Sie `message://`- oder E-Mail-Links in eine Aufgabe ein oder ziehen Sie eine E-Mail in Clients, die dies unterstützen, in eine Aufgabennotiz.
-- **Mobilgeräte:** Senden Sie ausgewählte E-Mail-Inhalte über das Teilen-Menü an Mindwtr.
+Die integrierte Desktop-Funktion unterstützt keine Outlook-/Microsoft-365-Anmeldung, kein natives Gmail- oder Outlook-OAuth und kein POP3. Mindwtr betreibt auch keine gehostete Adresse wie `add@mindwtr.com`. Die E-Mail-Erfassung funktioniert nur in Richtung Mindwtr: Sie sendet oder synchronisiert keine E-Mails, erstellt keine geteilten Teamaufgaben und wandelt BCC-E-Mails nicht in **Warten auf**-Aufgaben um.
 
-Mindwtr bietet keinen Eingang `add@mindwtr.com`, weil dafür ein zentraler Server Ihre E-Mails empfangen und speichern müsste.
+Die Anleitung [E-Mail-Erfassung](/de/power-users/email-capture) enthält die Einrichtung und anbieterspezifische Optionen.
 
 ---
 

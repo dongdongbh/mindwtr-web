@@ -150,17 +150,15 @@ Mindwtr 现在已在支持的构建中提供原生 **Dropbox OAuth** 同步，�
 
 ### Mindwtr 可以与电子邮件（Gmail/Outlook）集成或接收转发的邮件吗？
 
-不能直接实现。构建完整的电子邮件客户端需要：
+可以。Mindwtr 提供三种邮件收集方式：
 
-- Gmail/Outlook 的 OAuth 访问权限（如今需要昂贵的安全审核）
-- 稳健的 MIME/HTML 解析和附件处理
-- 针对不同提供方持续维护
+- **桌面端 IMAP 文件夹收集**：在**设置 → 集成 → 邮件收集**中，使用应用专用密码连接 Gmail、iCloud Mail、Fastmail 或其他标准 IMAP 服务器。将邮件移动或转发到所选文件夹。Mindwtr 桌面版运行时会每五分钟检查一次该文件夹，并在收集箱中创建任务：邮件主题成为标题，发件人和正文写入描述。导入过程只读，并会记住已收集的邮件。
+- **移动端分享面板**：在 Android 或 iOS 上，从支持分享的邮件应用将选中的邮件内容分享到 Mindwtr。
+- **自托管自动化**：如果你运行 Mindwtr Cloud 服务器，可以使用 Power Automate 或其他邮件自动化工具通过其 API 创建收集箱任务。这是 Outlook.com 和 Microsoft 365 目前可用的方式。
 
-**当前替代方案：**
-- **桌面端**：在任务中粘贴 `message://` 或邮件链接，或者在支持此功能的客户端中将邮件拖入任务备注。
-- **移动端**：使用分享面板将选中的邮件内容发送到 Mindwtr。
+桌面端内置集成不支持 Outlook/Microsoft 365 登录、Gmail 或 Outlook 原生 OAuth，也不支持 POP3。Mindwtr 也不提供 `add@mindwtr.com` 之类的托管地址。邮件收集是单向的：它不会发送或同步邮件，不会创建团队共享任务，也不会自动将密送邮件转换为**等待中**任务。
 
-Mindwtr **不**提供 `add@mindwtr.com` 收件箱，因为这需要中央服务器接收和存储你的电子邮件。
+请参阅[邮件收集](/zh-Hans/power-users/email-capture)，了解设置步骤和各邮件服务商的选项。
 
 ---
 

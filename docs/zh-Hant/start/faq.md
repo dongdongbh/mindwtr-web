@@ -150,17 +150,15 @@ OneDrive/Google Drive 使用檔案同步，既能讓資料保持在你的掌控�
 
 ### Mindwtr 能與電子郵件（Gmail/Outlook）整合，或接收轉寄郵件嗎？
 
-不能直接整合。建置完整電子郵件用戶端需要：
+可以。Mindwtr 提供三種郵件收集方式：
 
-- Gmail/Outlook OAuth 存取權（目前需要昂貴的安全稽核）
-- 可靠的 MIME/HTML 解析與附件處理
-- 持續因應各供應商維護
+- **桌面版 IMAP 資料夾收集**：在**設定 → 整合 → 郵件收集**中，使用應用程式密碼連接 Gmail、iCloud Mail、Fastmail 或其他標準 IMAP 伺服器。將郵件移至或轉寄到所選資料夾。Mindwtr 桌面版開啟時會每五分鐘檢查一次該資料夾，並在收件匣建立任務：郵件主旨成為標題，寄件者和內文寫入描述。匯入程序為唯讀，並會記住已收集的郵件。
+- **行動版分享選單**：在 Android 或 iOS 上，從支援分享的郵件 app 將選取的郵件內容分享到 Mindwtr。
+- **自行託管的自動化**：如果你執行 Mindwtr Cloud 伺服器，可以使用 Power Automate 或其他郵件自動化工具，透過其 API 建立收件匣任務。這是 Outlook.com 和 Microsoft 365 目前可用的方式。
 
-**目前替代方式：**
-- **桌面版**：在任務中貼上 `message://` 或郵件連結；支援的用戶端也可將郵件拖入任務筆記。
-- **行動版**：使用分享選單，將選取的電子郵件內容傳送至 Mindwtr。
+桌面版內建整合不支援 Outlook/Microsoft 365 登入、Gmail 或 Outlook 原生 OAuth，也不支援 POP3。Mindwtr 亦不提供 `add@mindwtr.com` 之類的託管地址。郵件收集是單向的：它不會傳送或同步郵件，不會建立團隊共享任務，也不會自動將密件副本郵件轉換為**等待中**任務。
 
-Mindwtr**不提供** `add@mindwtr.com` 收件匣，因為這需要中央伺服器接收及儲存你的電子郵件。
+請參閱[郵件收集](/zh-Hant/power-users/email-capture)，了解設定步驟和各郵件服務供應商的選項。
 
 ---
 

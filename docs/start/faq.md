@@ -150,17 +150,15 @@ For OneDrive/Google Drive, File Sync keeps your data in your control and avoids 
 
 ### Can Mindwtr integrate with email (Gmail/Outlook) or accept forwarded emails?
 
-Not directly. Building a full email client requires:
+Yes. Mindwtr offers three email capture paths:
 
-- OAuth access to Gmail/Outlook (which now requires costly security audits)
-- Robust MIME/HTML parsing and attachment handling
-- Ongoing maintenance across providers
+- **Desktop IMAP folder capture:** In **Settings → Integrations → Email capture**, connect Gmail, iCloud Mail, Fastmail, or another standard IMAP server with an app password. Move or forward mail into the folder you choose. While Mindwtr Desktop is open, it checks the folder every five minutes and creates an Inbox task with the subject as its title and the sender and body in its description. The import is read-only and remembers messages it has already captured.
+- **Mobile share sheet:** Share selected email content to Mindwtr on Android or iOS from mail apps that support sharing.
+- **Self-hosted automation:** If you run the Mindwtr Cloud server, Power Automate or another mail automation can post Inbox tasks to its API. This is the current route for Outlook.com and Microsoft 365.
 
-**Current alternatives:**
-- **Desktop:** Paste `message://` or mail links in a task, or drag an email into a task note in clients that support it.
-- **Mobile:** Use the share sheet to send selected email content into Mindwtr.
+The built-in desktop integration does not support Outlook/Microsoft 365 sign-in, native Gmail or Outlook OAuth, or POP3. Mindwtr also does not run a hosted address such as `add@mindwtr.com`. Email capture is one-way: it does not send or sync mail, create shared team tasks, or turn BCC mail into **Waiting For** tasks.
 
-Mindwtr does **not** offer an `add@mindwtr.com` inbox because that would require a central server to receive and store your email.
+See [Email Capture](/power-users/email-capture) for setup and provider-specific options.
 
 ---
 

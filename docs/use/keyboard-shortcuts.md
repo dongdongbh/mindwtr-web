@@ -10,7 +10,7 @@ Mindwtr desktop supports keyboard-first use with Standard (Gmail/Todoist-style),
 - Use `gi` for Inbox, `gn` for Next Actions, and `gf` for Focus (Standard and Vim modes).
 - Use `a` to add a task when Mindwtr is focused. It is contextual: inside a project the add dialog opens with that project preset, and views with an inline add field focus it instead.
 - Use `j` and `k` to move selection, and `Enter` to open the selected task.
-- In Projects, use → from the main sidebar to enter the project list, ↑/↓ to choose a project, and → again to enter its tasks. In Vim mode, use `l`, `j`/`k`, and `l`; `h` returns to the main sidebar. Tab also reaches project rows, including in narrow windows.
+- In Projects, use → from the main sidebar to enter the project list, ↑/↓ to choose a project, and → again to enter its tasks. In Vim mode, use `l`, `j`/`k`, and `l`. Use ← or `h` to return from tasks to the project list, then again to the main sidebar. Tab also reaches project rows, including in narrow windows.
 - In Standard mode, use `e` to mark done, `x` to select tasks for batch actions, `S` to add or remove the selected task from today's focus, `F2` to rename it, `Shift+Enter` to edit, `#` to delete, and `z` to undo.
 - In Vim mode, use `e` to edit, `x` to toggle done, and `dd` to delete.
 - Use `Ctrl+Z` / `Cmd+Z` to undo the last task completion or deletion in any preset.

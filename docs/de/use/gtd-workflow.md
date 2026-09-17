@@ -225,6 +225,8 @@ Das Feld **Projektabschnitt** einer Aufgabe weist sie einem Abschnitt ihres Proj
 
 Sequenzielle Projekte können projektweit oder abschnittsweise gelten. Verwenden Sie den Abschnittsumfang, wenn ein Projekt unabhängige Phasen oder Arbeitsstränge besitzt: Mindwtr zeigt dann die erste verfügbare Aufgabe jedes Abschnitts, statt das gesamte Projekt hinter einer Aufgabe zu blockieren. Beim Abschnittsumfang fragt Mindwtr nach Abschluss der letzten nächsten Aktion eines Abschnitts „Was ist die nächste Aktion?“ für diesen Abschnitt, genau wie nach der letzten Aktion des gesamten Projekts.
 
+Mit der nächsten Version bietet dieser Dialog außerdem **Speichern und bearbeiten**. Die Folgeaufgabe wird gespeichert und im Aufgaben-Editor geöffnet. Dort können Sie Daten hinzufügen, optional eine Priorität festlegen oder den Status in Eingang ändern. Standardmäßig ist die neue Aufgabe eine nächste Aktion im selben Projekt und Abschnitt; ausdrückliche Schnellerfassungsbefehle gelten weiterhin. **Nächste Aktion hinzufügen** behält das bisherige Schnellspeicherverhalten bei.
+
 **Sequenziell → Über Abschnitte hinweg** folgt der manuellen Reihenfolge bei **Standardsortierung**: zuerst die Abschnitte, dann die Aufgaben innerhalb jedes Abschnitts; **Ohne Abschnitt** steht zuletzt. Das Verschieben eines Abschnitts oder einer Aufgabe ändert diese Reihenfolge. Eine Anzeige nach Titel, Priorität oder Datum ändert sie nicht. **Innerhalb der Abschnitte** wählt weiterhin für jeden Abschnitt eine Aufgabe aus; die bisherigen Ausnahmen für markierte Aufgaben sowie Fälligkeits- und Überprüfungsdaten bleiben bestehen.
 
 ### Fälligkeitsdaten und Erinnerungen

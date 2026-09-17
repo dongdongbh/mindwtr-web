@@ -403,11 +403,13 @@ La synchronisation mobile exige de sélectionner manuellement un dossier de sync
 
 Sur iOS, certains fournisseurs cloud peuvent ne pas proposer la sélection de dossiers dans Fichiers. Dans ce cas, sélectionnez n’importe quel fichier JSON dans le dossier de synchronisation cible ; Mindwtr déterminera et utilisera le chemin du dossier pour la synchronisation.
 
+Sur Android, choisissez un dossier local sur l’appareil pour la synchronisation de fichiers. Pour utiliser Google Drive, configurez une application distincte de synchronisation de dossiers afin qu’elle réplique le dossier cloud dans ce dossier local, puis sélectionnez le dossier local dans Mindwtr ; ne sélectionnez pas directement l’emplacement cloud Google Drive. Consultez plus haut **Google Drive sur Android (synchronisation de fichiers) et solution de repli Dropbox**. Dropbox et WebDAV sont des solutions directes.
+
 ### 1. Exportez d’abord vos données
 
 1. Accédez à **Réglages → Données**
 2. Touchez **Exporter une sauvegarde**
-3. Enregistrez le fichier dans votre dossier de synchronisation (par exemple Google Drive)
+3. Enregistrez le fichier dans votre dossier de synchronisation. Sur Android, utilisez le même dossier local sur l’appareil que vous sélectionnerez dans Mindwtr
 
 ### 2. Sélectionnez le dossier de synchronisation
 

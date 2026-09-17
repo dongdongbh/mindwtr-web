@@ -401,11 +401,13 @@ Wegen Android-/iOS-Speicherbeschränkungen muss für die mobile Synchronisierung
 
 Manche Cloud-Anbieter bieten unter iOS in „Dateien“ keine Ordnerauswahl an. In diesem Fall eine beliebige JSON-Datei im Zielordner auswählen; Mindwtr ermittelt und verwendet den Ordnerpfad für die Synchronisierung.
 
+Wähle unter Android für die Dateisynchronisierung einen lokalen Ordner auf dem Gerät. Für Google Drive muss eine separate Ordner-Sync-App den Cloud-Ordner mit diesem lokalen Ordner spiegeln. Wähle anschließend in Mindwtr den lokalen Ordner aus, nicht direkt den Google-Drive-Cloudspeicher. Siehe oben **Google Drive unter Android und Dropbox-Dateifallback**. Dropbox oder WebDAV sind direkte Alternativen.
+
 ### 1. Daten zuerst exportieren
 
 1. **Einstellungen → Daten**
 2. **Sicherung exportieren**
-3. Die Datei im Synchronisierungsordner speichern, zum Beispiel in Google Drive
+3. Die Datei im Synchronisierungsordner speichern. Unter Android denselben lokalen Ordner auf dem Gerät verwenden, der anschließend in Mindwtr ausgewählt wird
 
 ### 2. Ordner auswählen
 

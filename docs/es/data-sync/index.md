@@ -403,11 +403,13 @@ La sincronización móvil requiere seleccionar manualmente una carpeta de sincro
 
 En iOS, es posible que algunos proveedores en la nube no permitan seleccionar carpetas en Archivos. En ese caso, selecciona cualquier archivo JSON dentro de la carpeta de sincronización de destino; Mindwtr resolverá y usará la ruta de la carpeta para sincronizar.
 
+En Android, elige una carpeta local del dispositivo para la sincronización de archivos. Para usar Google Drive, haz que una aplicación independiente de sincronización de carpetas refleje la carpeta de la nube en esa carpeta local y selecciona la carpeta local en Mindwtr; no selecciones directamente la ubicación en la nube de Google Drive. Consulta más arriba **Google Drive en Android (sincronización de archivos) y alternativa de sincronización de archivos para Dropbox**. Dropbox o WebDAV son alternativas directas.
+
 ### 1. Exporta primero tus datos
 
 1. Ve a **Ajustes → Datos**
 2. Toca **Exportar copia de seguridad**
-3. Guarda el archivo en tu carpeta de sincronización (p. ej., Google Drive)
+3. Guarda el archivo en tu carpeta de sincronización. En Android, usa la misma carpeta local del dispositivo que seleccionarás en Mindwtr
 
 ### 2. Selecciona la carpeta de sincronización
 

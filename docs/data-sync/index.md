@@ -403,11 +403,13 @@ Mobile sync requires manually selecting a sync folder due to Android/iOS storage
 
 On iOS, some cloud providers may not expose folder selection in Files. In that case, select any JSON file inside the target sync folder; Mindwtr will resolve and use the folder path for sync.
 
+On Android, choose an on-device folder for File Sync. To use Google Drive, have a separate folder-sync app mirror the cloud folder to that local folder, then select the local folder in Mindwtr. Do not select the Google Drive cloud location directly. See **Google Drive on Android (File Sync) and Dropbox File-Sync Fallback** above. Dropbox or WebDAV are direct alternatives.
+
 ### 1. Export Your Data First
 
 1. Go to **Settings → Data**
 2. Tap **Export Backup**
-3. Save the file to your sync folder (e.g., Google Drive)
+3. Save the file to your sync folder. On Android, use the same on-device folder that you will select in Mindwtr
 
 ### 2. Select Sync Folder
 

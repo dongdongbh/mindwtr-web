@@ -418,7 +418,7 @@ Configurez les notifications dans les Paramètres :
 
 **Remarques sur les plateformes :**
 - **macOS** demandera l’autorisation d’envoyer des notifications la première fois que vous les activerez.
-- **Linux** nécessite un démon de notification actif (GNOME/KDE, etc.).
+- **Linux** nécessite un démon de notification actif (GNOME/KDE, etc.). Les paquets natifs, dont `.deb` et AppImage, le contactent directement sans portail de notification ; Flatpak utilise le portail. Si une alerte manque, exportez le journal depuis **Paramètres → Diagnostics** : `Linux desktop notification submitted` signifie que le démon ou portail a accepté la demande, pas qu’une notification s’est affichée. `Linux desktop notification delivery failed` consigne l’échec sans contenu des tâches.
 
 ---
 

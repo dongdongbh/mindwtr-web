@@ -418,7 +418,7 @@ Configura las notificaciones en Ajustes:
 
 **Notas sobre plataformas:**
 - **macOS** solicitará permiso para las notificaciones la primera vez que las actives.
-- **Linux** necesita un demonio de notificaciones en ejecución (GNOME/KDE, etc.).
+- **Linux** necesita un demonio de notificaciones en ejecución (GNOME/KDE, etc.). Los paquetes nativos, incluidos `.deb` y AppImage, se comunican directamente con él y no requieren un portal de notificaciones; Flatpak utiliza el portal. Si falta una alerta, exporta el registro desde **Ajustes → Diagnóstico**: `Linux desktop notification submitted` significa que el demonio o portal aceptó la solicitud, no que se mostrara una alerta. `Linux desktop notification delivery failed` registra el fallo sin contenido de las tareas.
 
 ---
 

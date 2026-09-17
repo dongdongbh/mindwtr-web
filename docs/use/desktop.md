@@ -418,7 +418,7 @@ Configure notifications in Settings:
 
 **Platform notes:**
 - **macOS** will prompt for notification permission the first time you enable it.
-- **Linux** requires a running notification daemon (GNOME/KDE, etc.).
+- **Linux** requires a running notification daemon (GNOME/KDE, etc.). Native packages, including `.deb` and AppImage, contact that daemon directly and do not require a notification portal; Flatpak uses the portal. If an alert is missing, export **Settings → Diagnostics**: `Linux desktop notification submitted` means the daemon or portal acknowledged the request, not that a toast appeared. `Linux desktop notification delivery failed` records the delivery failure without task content.
 
 ---
 

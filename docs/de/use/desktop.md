@@ -420,7 +420,7 @@ In den Einstellungen:
 
 **Plattformhinweise:**
 - **macOS** fragt beim ersten Aktivieren nach der Berechtigung.
-- **Linux** benötigt einen laufenden Benachrichtigungsdienst (GNOME/KDE usw.).
+- **Linux** benötigt einen laufenden Benachrichtigungsdienst (GNOME/KDE usw.). Native Pakete wie `.deb` und AppImage sprechen diesen Dienst direkt an und benötigen kein Benachrichtigungsportal; Flatpak verwendet das Portal. Fehlt eine Meldung, exportiere das Protokoll unter **Einstellungen → Diagnose**: `Linux desktop notification submitted` bestätigt die Annahme durch Dienst oder Portal, nicht die sichtbare Anzeige. `Linux desktop notification delivery failed` protokolliert den Zustellfehler ohne Aufgabeninhalte.
 
 ---
 

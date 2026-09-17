@@ -418,7 +418,7 @@ Mindwtr 会发送桌面通知，帮助你保持进度：
 
 **平台注意事项：**
 - 首次启用通知时，**macOS** 会请求通知权限。
-- **Linux** 需要正在运行的通知守护进程（GNOME/KDE 等）。
+- **Linux** 需要正在运行的通知守护进程（GNOME/KDE 等）。`.deb` 和 AppImage 等原生软件包直接连接该服务，不需要通知门户；Flatpak 使用通知门户。如果提醒未显示，请从**设置 → 诊断**导出日志：`Linux desktop notification submitted` 仅表示服务或门户已确认请求，不代表通知已显示。`Linux desktop notification delivery failed` 记录投递失败，不包含任务内容。
 
 ---
 

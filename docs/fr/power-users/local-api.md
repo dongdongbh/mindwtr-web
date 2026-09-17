@@ -97,7 +97,10 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 | `POST`   | `/tasks/:id/restore`   | Restaurer une tâche supprimée logiquement |
 | `GET`    | `/projects`            | Répertorier les projets                  |
 | `POST` | `/projects` | Ordinateur : créer un projet |
+| `GET` | `/projects/:id` | Ordinateur : obtenir un projet |
 | `PATCH` | `/projects/:id` | Ordinateur : modifier un projet |
+| `DELETE` | `/projects/:id` | Ordinateur : supprimer logiquement un projet |
+| `POST` | `/projects/:id/restore` | Ordinateur : restaurer un projet |
 | `GET`    | `/areas`               | Répertorier les domaines                 |
 | `GET`    | `/v1/areas`            | Alias de compatibilité pour les domaines |
 | `GET`    | `/sections`            | Utilitaire : répertorier les sections, éventuellement `?projectId=` |
@@ -175,9 +178,11 @@ L’application de bureau utilise `title` lorsqu’il est présent, sinon `input
 
 ### Écriture des projets sur ordinateur
 
-L’API intégrée à l’application de bureau prend en charge `POST /projects` et `PATCH /projects/:id`. La création exige `title` ; `areaId`, `color`, `status`, `isSequential` et `order` sont facultatifs. Les mises à jour acceptent les mêmes champs modifiables. Les deux réponses contiennent le projet enregistré sous la forme `{ "project": { ... } }`.
+L’API intégrée à l’application de bureau permet de créer, obtenir, modifier, supprimer logiquement et restaurer des projets. La création exige `title` ; `areaId`, `color`, `status`, `isSequential` et `order` sont facultatifs. Les mises à jour acceptent les mêmes champs modifiables. La création, la lecture, la modification et la restauration renvoient le projet enregistré sous la forme `{ "project": { ... } }` ; la suppression renvoie `{ "ok": true }`.
 
-Placez les options de création dans `props`, par exemple `{ "title": "Plan the move", "props": { "isSequential": true } }` ; les champs PATCH vont directement dans le corps. `sequentialScope` accepte `project` ou `section`. Le `status` du projet accepte `active`, `someday`, `waiting` ou `archived`. Utilisez `areaId: null` pour retirer le domaine. L’archivage et la réactivation suivent les règles de l’application pour les tâches et sections du projet. Un projet absent renvoie `404` ; un projet supprimé ou purgé renvoie `409`.
+Placez les options de création dans `props`, par exemple `{ "title": "Plan the move", "props": { "isSequential": true } }` ; les champs PATCH vont directement dans le corps. `sequentialScope` accepte `project` ou `section`. Le `status` du projet accepte `active`, `someday`, `waiting` ou `archived`. Utilisez `areaId: null` pour retirer le domaine. L’archivage et la réactivation suivent les règles de l’application pour les tâches et sections du projet. Pour PATCH, un projet absent renvoie `404` ; un projet supprimé ou purgé renvoie `409`.
+
+`GET /projects/:id` renvoie également un projet conservé après suppression logique, afin qu’un script puisse l’examiner avant de le restaurer. `DELETE /projects/:id` supprime logiquement le projet et ses sections actives, puis dissocie les tâches actives au lieu de les supprimer ou de modifier leur état. `POST /projects/:id/restore` restaure le projet et les enfants supprimés par la même ancienne cascade, mais ne réassocie pas les tâches dissociées par une suppression actuelle. Répéter la suppression ou la restauration est sans danger et conserve l’état actuel. Les changements de cycle de vie d’un projet purgé renvoient `409`.
 
 **Créer un projet séquentiel:**
 

@@ -97,7 +97,10 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 | `POST`   | `/tasks/:id/restore`  | 還原已軟刪除的任務           |
 | `GET`    | `/projects`           | 列出專案                     |
 | `POST` | `/projects` | 桌面版：建立專案 |
+| `GET` | `/projects/:id` | 桌面版：取得單一專案 |
 | `PATCH` | `/projects/:id` | 桌面版：更新專案 |
+| `DELETE` | `/projects/:id` | 桌面版：軟刪除專案 |
+| `POST` | `/projects/:id/restore` | 桌面版：還原專案 |
 | `GET`    | `/areas`              | 列出領域                     |
 | `GET`    | `/v1/areas`           | 領域的相容性別名             |
 | `GET`    | `/sections`           | 輔助工具：列出分區，可加 `?projectId=` |
@@ -175,9 +178,11 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 
 ### 桌面版專案寫入
 
-桌面應用程式內建 API 支援 `POST /projects` 和 `PATCH /projects/:id`。建立專案時必須提供 `title`；`areaId`、`color`、`status`、`isSequential` 和 `order` 為選填欄位。更新時可使用相同的可編輯欄位。兩種回應都以 `{ "project": { ... } }` 傳回已儲存的專案。
+桌面應用程式內建 API 支援建立、取得、更新、軟刪除及還原專案。建立專案時必須提供 `title`；`areaId`、`color`、`status`、`isSequential` 和 `order` 為選填欄位。更新時可使用相同的可編輯欄位。建立、取得、更新和還原都以 `{ "project": { ... } }` 傳回已儲存的專案；刪除傳回 `{ "ok": true }`。
 
-建立選項放在 `props` 中，例如 `{ "title": "Plan the move", "props": { "isSequential": true } }`；PATCH 欄位直接放在請求本文中。`sequentialScope` 支援 `project` 或 `section`，專案 `status` 支援 `active`、`someday`、`waiting` 或 `archived`。將 `areaId` 設為 `null` 可移除領域。專案封存和重新啟用遵循應用程式中對子任務和區段的處理規則。專案不存在時傳回 `404`，已刪除或已永久刪除時傳回 `409`。
+建立選項放在 `props` 中，例如 `{ "title": "Plan the move", "props": { "isSequential": true } }`；PATCH 欄位直接放在請求本文中。`sequentialScope` 支援 `project` 或 `section`，專案 `status` 支援 `active`、`someday`、`waiting` 或 `archived`。將 `areaId` 設為 `null` 可移除領域。專案封存和重新啟用遵循應用程式中對子任務和區段的處理規則。對 PATCH 而言，專案不存在時傳回 `404`，已刪除或已永久刪除時傳回 `409`。
+
+`GET /projects/:id` 也會傳回仍儲存的軟刪除專案，讓指令碼可在還原前檢查。`DELETE /projects/:id` 會軟刪除專案及其使用中的區段，並解除使用中任務的專案關聯，而不會刪除任務或變更任務狀態。`POST /projects/:id/restore` 會還原專案，以及由同一次舊版串聯刪除的子項，但不會重新關聯目前刪除操作已解除關聯的任務。重複刪除或還原是安全的，不會改變目前狀態。對已永久刪除專案執行生命週期變更會傳回 `409`。
 
 **建立循序專案:**
 

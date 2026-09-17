@@ -97,7 +97,10 @@ El asistente de Bun también requiere un token: sale de inmediato si no se estab
 | `POST`   | `/tasks/:id/restore`  | Restaura una tarea eliminada de forma lógica   |
 | `GET`    | `/projects`           | Enumera los proyectos                 |
 | `POST` | `/projects` | Escritorio: crear proyecto |
+| `GET` | `/projects/:id` | Escritorio: obtener un proyecto |
 | `PATCH` | `/projects/:id` | Escritorio: actualizar proyecto |
+| `DELETE` | `/projects/:id` | Escritorio: eliminar proyecto de forma lógica |
+| `POST` | `/projects/:id/restore` | Escritorio: restaurar proyecto |
 | `GET`    | `/areas`              | Enumera las áreas                    |
 | `GET`    | `/v1/areas`           | Alias de compatibilidad para las áreas |
 | `GET`    | `/sections`           | Asistente: enumera las secciones, opcionalmente con `?projectId=` |
@@ -175,9 +178,11 @@ En escritorio se usa `title` cuando está presente; de lo contrario, se usa `inp
 
 ### Escritura de proyectos en escritorio
 
-La API integrada de escritorio admite `POST /projects` y `PATCH /projects/:id`. Para crear un proyecto, `title` es obligatorio; `areaId`, `color`, `status`, `isSequential` y `order` son opcionales. Las actualizaciones aceptan los mismos campos editables. Ambas respuestas contienen el proyecto guardado como `{ "project": { ... } }`.
+La API integrada de escritorio permite crear, obtener, actualizar, eliminar de forma lógica y restaurar proyectos. Para crear un proyecto, `title` es obligatorio; `areaId`, `color`, `status`, `isSequential` y `order` son opcionales. Las actualizaciones aceptan los mismos campos editables. Crear, obtener, actualizar y restaurar devuelven el proyecto guardado como `{ "project": { ... } }`; eliminar devuelve `{ "ok": true }`.
 
-Envía las opciones de creación dentro de `props`, por ejemplo `{ "title": "Plan the move", "props": { "isSequential": true } }`; los campos PATCH van directamente en el cuerpo. `sequentialScope` acepta `project` o `section`. El `status` del proyecto acepta `active`, `someday`, `waiting` o `archived`. Usa `areaId: null` para quitar el área. Archivar y reactivar un proyecto sigue las reglas de la aplicación para tareas y secciones. Los proyectos inexistentes devuelven `404`; los eliminados o purgados devuelven `409`.
+Envía las opciones de creación dentro de `props`, por ejemplo `{ "title": "Plan the move", "props": { "isSequential": true } }`; los campos PATCH van directamente en el cuerpo. `sequentialScope` acepta `project` o `section`. El `status` del proyecto acepta `active`, `someday`, `waiting` o `archived`. Usa `areaId: null` para quitar el área. Archivar y reactivar un proyecto sigue las reglas de la aplicación para tareas y secciones. En PATCH, los proyectos inexistentes devuelven `404`; los eliminados o purgados devuelven `409`.
+
+`GET /projects/:id` también devuelve un proyecto almacenado que se eliminó de forma lógica, para que un script pueda inspeccionarlo antes de restaurarlo. `DELETE /projects/:id` elimina de forma lógica el proyecto y sus secciones activas, y desvincula las tareas activas en vez de eliminarlas o cambiar su estado. `POST /projects/:id/restore` restaura el proyecto y los elementos secundarios eliminados por la misma cascada antigua, pero no vuelve a vincular las tareas desvinculadas por una eliminación actual. Repetir la eliminación o restauración es seguro y no cambia el estado actual. Los cambios de ciclo de vida de un proyecto purgado devuelven `409`.
 
 **Crear un proyecto secuencial:**
 

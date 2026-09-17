@@ -97,7 +97,10 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 | `POST`   | `/tasks/:id/restore`  | Vorläufig gelöschte Aufgabe wiederherstellen |
 | `GET`    | `/projects`           | Projekte auflisten                   |
 | `POST` | `/projects` | Desktop: Projekt erstellen |
+| `GET` | `/projects/:id` | Desktop: Einzelnes Projekt abrufen |
 | `PATCH` | `/projects/:id` | Desktop: Projekt aktualisieren |
+| `DELETE` | `/projects/:id` | Desktop: Projekt vorläufig löschen |
+| `POST` | `/projects/:id/restore` | Desktop: Projekt wiederherstellen |
 | `GET`    | `/areas`              | Bereiche auflisten                   |
 | `GET`    | `/v1/areas`           | Kompatibilitätsalias für Bereiche    |
 | `GET`    | `/sections`           | Hilfsprogramm: Abschnitte auflisten, optional `?projectId=` |
@@ -175,9 +178,11 @@ Desktop verwendet `title`, wenn vorhanden, andernfalls `input`, und wendet ausdr
 
 ### Projekte über die Desktop-API schreiben
 
-Die integrierte Desktop-API unterstützt `POST /projects` und `PATCH /projects/:id`. Zum Erstellen ist `title` erforderlich; `areaId`, `color`, `status`, `isSequential` und `order` sind optional. Aktualisierungen akzeptieren dieselben bearbeitbaren Felder. Beide Antworten enthalten das gespeicherte Projekt als `{ "project": { ... } }`.
+Die integrierte Desktop-API unterstützt das Erstellen, Abrufen, Aktualisieren, vorläufige Löschen und Wiederherstellen von Projekten. Zum Erstellen ist `title` erforderlich; `areaId`, `color`, `status`, `isSequential` und `order` sind optional. Aktualisierungen akzeptieren dieselben bearbeitbaren Felder. Erstellen, Abrufen, Aktualisieren und Wiederherstellen liefern das gespeicherte Projekt als `{ "project": { ... } }`; Löschen liefert `{ "ok": true }`.
 
-Sende Erstellungsoptionen in `props`, zum Beispiel `{ "title": "Plan the move", "props": { "isSequential": true } }`; PATCH-Felder stehen direkt im Anfragekörper. `sequentialScope` akzeptiert `project` oder `section`. Der Projektstatus `status` akzeptiert `active`, `someday`, `waiting` oder `archived`. Mit `areaId: null` entfernst du den Bereich. Archivieren und Reaktivieren folgen den Regeln der App für untergeordnete Aufgaben und Abschnitte. Fehlende Projekte liefern `404`, gelöschte oder endgültig entfernte Projekte `409`.
+Sende Erstellungsoptionen in `props`, zum Beispiel `{ "title": "Plan the move", "props": { "isSequential": true } }`; PATCH-Felder stehen direkt im Anfragekörper. `sequentialScope` akzeptiert `project` oder `section`. Der Projektstatus `status` akzeptiert `active`, `someday`, `waiting` oder `archived`. Mit `areaId: null` entfernst du den Bereich. Archivieren und Reaktivieren folgen den Regeln der App für untergeordnete Aufgaben und Abschnitte. Bei PATCH liefern fehlende Projekte `404`, gelöschte oder endgültig entfernte Projekte `409`.
+
+`GET /projects/:id` liefert auch ein gespeichertes vorläufig gelöschtes Projekt, damit ein Skript es vor der Wiederherstellung prüfen kann. `DELETE /projects/:id` löscht das Projekt und seine aktiven Abschnitte vorläufig und trennt aktive Aufgaben vom Projekt, statt sie zu löschen oder ihren Status zu ändern. `POST /projects/:id/restore` stellt das Projekt und untergeordnete Einträge wieder her, die durch dieselbe ältere Kaskade gelöscht wurden, verknüpft aber keine durch einen aktuellen Löschvorgang getrennten Aufgaben neu. Wiederholtes Löschen oder Wiederherstellen ist sicher und ändert den aktuellen Zustand nicht. Lebenszyklusänderungen an einem endgültig entfernten Projekt liefern `409`.
 
 **Ein sequenzielles Projekt erstellen:**
 

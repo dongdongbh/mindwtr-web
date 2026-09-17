@@ -97,7 +97,10 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 | `POST`   | `/tasks/:id/restore`  | Restore a soft-deleted task   |
 | `GET`    | `/projects`           | List projects                 |
 | `POST` | `/projects` | Desktop: create project |
+| `GET` | `/projects/:id` | Desktop: get one project |
 | `PATCH` | `/projects/:id` | Desktop: update project |
+| `DELETE` | `/projects/:id` | Desktop: soft-delete project |
+| `POST` | `/projects/:id/restore` | Desktop: restore project |
 | `GET`    | `/areas`              | List areas                    |
 | `GET`    | `/v1/areas`           | Compatibility alias for areas |
 | `GET`    | `/sections`           | Helper: list sections, optionally `?projectId=` |
@@ -175,9 +178,11 @@ Desktop uses `title` when present, otherwise `input`, and applies explicit `prop
 
 ### Desktop project writes
 
-The built-in desktop API supports `POST /projects` and `PATCH /projects/:id`. Project creation requires `title`; `areaId`, `color`, `status`, `isSequential`, and `order` are optional. Updates accept the same editable fields. Both responses contain the saved project as `{ "project": { ... } }`.
+The built-in desktop API supports creating, reading, updating, soft-deleting, and restoring projects. Project creation requires `title`; `areaId`, `color`, `status`, `isSequential`, and `order` are optional. Updates accept the same editable fields. Create, read, update, and restore responses contain the saved project as `{ "project": { ... } }`; delete returns `{ "ok": true }`.
 
-Send creation options inside `props`, for example `{ "title": "Plan the move", "props": { "isSequential": true } }`; PATCH fields go directly in the request body. `sequentialScope` accepts `project` or `section`. Project `status` accepts `active`, `someday`, `waiting`, or `archived`. Set `areaId` to `null` to remove the area. Archiving and reactivating a project follow the app’s child-task and section rules. Missing projects return `404`; deleted or purged projects return `409`.
+Send creation options inside `props`, for example `{ "title": "Plan the move", "props": { "isSequential": true } }`; PATCH fields go directly in the request body. `sequentialScope` accepts `project` or `section`. Project `status` accepts `active`, `someday`, `waiting`, or `archived`. Set `areaId` to `null` to remove the area. Archiving and reactivating a project follow the app’s child-task and section rules. For PATCH, missing projects return `404`, while deleted or purged projects return `409`.
+
+`GET /projects/:id` also returns a stored soft-deleted project, which lets a script inspect it before restoring it. `DELETE /projects/:id` soft-deletes the project and its live sections, and detaches live tasks instead of deleting them or changing their status. `POST /projects/:id/restore` restores the project and any children deleted by the same legacy cascade, but it does not reattach tasks detached by a current delete. Repeating delete or restore is safe and leaves the current state unchanged. Lifecycle changes to a purged project return `409`.
 
 **Create a sequential project:**
 

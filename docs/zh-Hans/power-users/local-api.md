@@ -97,7 +97,10 @@ Bun 辅助程序同样要求令牌：未设置 `MINDWTR_API_TOKEN` 时会立即�
 | `POST`   | `/tasks/:id/restore`  | 恢复软删除任务                |
 | `GET`    | `/projects`           | 列出项目                      |
 | `POST` | `/projects` | 桌面端：创建项目 |
+| `GET` | `/projects/:id` | 桌面端：获取单个项目 |
 | `PATCH` | `/projects/:id` | 桌面端：更新项目 |
+| `DELETE` | `/projects/:id` | 桌面端：软删除项目 |
+| `POST` | `/projects/:id/restore` | 桌面端：恢复项目 |
 | `GET`    | `/areas`              | 列出领域                      |
 | `GET`    | `/v1/areas`           | 领域端点的兼容别名            |
 | `GET`    | `/sections`           | 辅助程序：列出分区，可加 `?projectId=` |
@@ -175,9 +178,11 @@ Bun 辅助程序同样要求令牌：未设置 `MINDWTR_API_TOKEN` 时会立即�
 
 ### 桌面端项目写入
 
-桌面应用内置 API 支持 `POST /projects` 和 `PATCH /projects/:id`。创建项目时必须提供 `title`；`areaId`、`color`、`status`、`isSequential` 和 `order` 为可选字段。更新时可使用相同的可编辑字段。两种响应都以 `{ "project": { ... } }` 返回已保存的项目。
+桌面应用内置 API 支持创建、获取、更新、软删除和恢复项目。创建项目时必须提供 `title`；`areaId`、`color`、`status`、`isSequential` 和 `order` 为可选字段。更新时可使用相同的可编辑字段。创建、获取、更新和恢复都以 `{ "project": { ... } }` 返回已保存的项目；删除返回 `{ "ok": true }`。
 
-创建选项放在 `props` 中，例如 `{ "title": "Plan the move", "props": { "isSequential": true } }`；PATCH 字段直接放在请求体中。`sequentialScope` 支持 `project` 或 `section`，项目 `status` 支持 `active`、`someday`、`waiting` 或 `archived`。将 `areaId` 设为 `null` 可移除领域。项目归档和重新激活遵循应用中对子任务和分区的处理规则。项目不存在时返回 `404`，已删除或已永久删除时返回 `409`。
+创建选项放在 `props` 中，例如 `{ "title": "Plan the move", "props": { "isSequential": true } }`；PATCH 字段直接放在请求体中。`sequentialScope` 支持 `project` 或 `section`，项目 `status` 支持 `active`、`someday`、`waiting` 或 `archived`。将 `areaId` 设为 `null` 可移除领域。项目归档和重新激活遵循应用中对子任务和分区的处理规则。对于 PATCH，项目不存在时返回 `404`，已删除或已永久删除时返回 `409`。
+
+`GET /projects/:id` 也会返回仍存储的软删除项目，便于脚本在恢复前检查。`DELETE /projects/:id` 会软删除项目及其活动分区，并解除活动任务的项目关联，而不会删除任务或更改任务状态。`POST /projects/:id/restore` 会恢复项目以及由同一次旧版级联删除的子项，但不会重新关联当前删除操作已解除关联的任务。重复删除或恢复是安全的，不会改变当前状态。对已永久删除项目执行生命周期变更会返回 `409`。
 
 **创建顺序项目:**
 

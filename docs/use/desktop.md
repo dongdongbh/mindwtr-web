@@ -132,7 +132,7 @@ Track delegated items or tasks waiting on external events.
 
 ### 💭 Someday/Maybe
 
-Coming in v1.3.1: organize tasks into Someday sections directly from this list.
+Organize tasks into Someday sections directly from this list.
 
 - Right-click a task and choose **Move to section…**.
 - Select several tasks to move them together with the same action. The picker includes empty sections, **No section**, and **New section…**.

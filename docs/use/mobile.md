@@ -194,7 +194,7 @@ See [Tasker’s intent guide](https://tasker.joaoapps.com/userguide/en/intents.h
 
 ### Home Widget
 
-In the next release, tapping blank space in a Tasks or Compact widget opens Focus on Android and iOS. Task links, completion controls, list selection and quick capture keep their existing actions.
+Tapping blank space in a Tasks or Compact widget opens Focus on Android and iOS. Task links, completion controls, list selection and quick capture keep their existing actions.
 
 The controls below describe Android. For iOS, see **iOS Home Screen Widget** below.
 
@@ -219,7 +219,7 @@ Enabling speech-to-text also adds a microphone button to this native Android win
 
 On Android, dated rows show **Today**, a weekday for the coming week, or a compact date. Tasks due today or overdue receive extra emphasis.
 
-In the next release, Android Tasks and Compact lists scroll beyond 20 tasks. For a very large list, **View all** at the bottom opens the full selected list in Mindwtr. No task-count setting is needed.
+Android Tasks and Compact lists scroll beyond 20 tasks. For a very large list, **View all** at the bottom opens the full selected list in Mindwtr. No task-count setting is needed.
 
 ### iOS Home Screen Widget
 
@@ -694,7 +694,7 @@ Track items delegated or waiting on external events.
 
 ## Someday/Maybe
 
-Coming in v1.3.1: organize tasks into Someday sections directly from this list.
+Organize tasks into Someday sections directly from this list.
 
 - Open a task’s menu and choose **Move to section…**.
 - Select several tasks to move them together with the same action. The picker includes empty sections, **No section**, and **New section…**.

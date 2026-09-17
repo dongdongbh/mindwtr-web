@@ -4,7 +4,7 @@ Mindwtr enthält einen optionalen KI-Assistenten, der dabei hilft, Aufgaben zu k
 
 ## Datenschutzmodell
 
-- **Local First**: Ihre Daten bleiben auf Ihrem Gerät.
+- **Lokale Speicherung**: Ihre Aufgabendatenbank wird auf Ihrem Gerät gespeichert. Wenn Sie einen optionalen KI-Anbieter verwenden, werden die für die Anfrage benötigten Aufgabeninhalte an den gewählten Anbieter gesendet.
 - **Bei Bedarf**: Anfragen werden nur gesendet, wenn Sie KI-Aktionen verwenden oder Copilot-Vorschläge aktivieren. Beim Öffnen der KI-Einstellungen mit hinterlegtem Schlüssel wird außerdem die aktuelle Modellliste Ihres Anbieters abgefragt, damit die Modellauswahl aktuell bleibt — Aufgabendaten werden dabei nicht übertragen.
 - **Auf das Nötige beschränkt**: Der Assistent erhält nur die benötigten Aufgabendaten.
 
@@ -148,3 +148,11 @@ Setzen Sie den Sprachanbieter auf OpenAI und tragen Sie dann die Basis-URL ein: 
 
 Wenn Sie das Offline-Modell von Whisper verwenden, legen Sie den Sprachcode auf dem Desktop unter **Einstellungen → KI-Assistent → Audiosprache** oder auf Mobilgeräten unter **Menü → Einstellungen → Erweitert → KI-Assistent → Audiosprache** fest.
 Die Liste der Sprachen finden Sie hier: [Whisper-Sprachliste](https://whisper-api.com/docs/languages/).
+
+## Apple-Modellauswertungen (nur Entwicklungsbuilds)
+
+Apple Foundation Models sind noch kein KI-Anbieter in der Produktionsversion. Der iOS-Entwicklungsprototyp bietet auf geeigneten Geräten eine optionale lokale Inbox-Klärung. Vorschläge bleiben bearbeitbar und benötigen eine ausdrückliche Bestätigung; nicht verfügbare Modelle blockieren weder die manuelle Verarbeitung noch lösen sie automatisch Cloud-Anfragen aus.
+
+Ein separat aktivierter Evaluator für Private Cloud Compute (PCC) vergleicht feste synthetische Beispiele mit dem lokalen Modell. Er liest oder überträgt keine Aufgaben, übernimmt keine Vorschläge und ändert keine synchronisierten Einstellungen. Jede PCC-Anfrage benötigt eine ausdrückliche Zustimmung und kann Netzwerkzugriff sowie Apples tägliches Kontingent nutzen; Fehler führen nicht zu automatischen Cloud- oder lokalen Wiederholungen.
+
+Die PCC-Auswertung benötigt mindestens iOS 27, ein geeignetes Gerät und einen korrekt provisionierten, signierten Entwicklungsbuild. Der Zugriff des Teams auf das Entitlement beweist nicht, dass ein Build Anfragen ausführen kann. Produktionsfreigabe, Modellqualität und Tests auf echten Geräten stehen noch aus. Siehe die [Entwickler-Checkliste](https://github.com/dongdongbh/Mindwtr/blob/main/docs/development/apple-pcc-evaluation.md).

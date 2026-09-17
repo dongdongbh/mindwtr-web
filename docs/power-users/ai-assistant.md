@@ -4,7 +4,7 @@ Mindwtr includes an optional AI assistant to help clarify tasks, break them down
 
 ## Privacy Model
 
-- **Local-first**: Your data stays on your device.
+- **Local-first storage**: Your task database is stored on your device. Using an optional AI provider sends the task content needed for that request to the provider you selected.
 - **On-demand**: Requests are only sent when you tap AI actions or enable Copilot suggestions. Opening the AI settings with a key configured also asks your provider for its current model list, so the model picker stays up to date — no task data is included in that request.
 - **Scoped**: The assistant only receives the task data it needs.
 
@@ -148,3 +148,11 @@ Set the speech provider to OpenAI, then fill in the base URL: your server's root
 
 If you use the Whisper offline model, set an explicit language code in **Settings → AI Assistant → Audio language** on desktop or **Menu → Settings → Advanced → AI Assistant → Audio language** on mobile.
 See the language list here: [Whisper language list](https://whisper-api.com/docs/languages/).
+
+## Apple model evaluations (development builds only)
+
+Apple Foundation Models are not a production AI provider yet. The iOS development prototype offers optional on-device Inbox clarification on eligible devices. Suggestions stay editable and require explicit approval; unavailable models do not block manual processing or silently switch to cloud inference.
+
+A separately enabled Private Cloud Compute (PCC) evaluator compares fixed synthetic examples with the on-device baseline. It does not read or upload your tasks, apply suggestions, or change synced settings. Each PCC request requires explicit consent and may use network access and Apple's daily quota; errors never trigger automatic cloud or local retries.
+
+PCC evaluation requires iOS 27 or later, an eligible device, and a correctly provisioned signed development build. Team entitlement access alone is not proof that a build can make requests. Production access, model quality, and physical-device validation remain open. See the [developer evaluation checklist](https://github.com/dongdongbh/Mindwtr/blob/main/docs/development/apple-pcc-evaluation.md).

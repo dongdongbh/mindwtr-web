@@ -4,7 +4,7 @@ Mindwtr incluye un asistente de IA opcional que ayuda a aclarar y dividir tareas
 
 ## Modelo de privacidad
 
-- **Local-first:** tus datos permanecen en tu dispositivo.
+- **Almacenamiento local:** tu base de datos de tareas se guarda en tu dispositivo. Al utilizar un proveedor de IA opcional, el contenido necesario para la solicitud se envía al proveedor que elegiste.
 - **Bajo demanda:** las solicitudes solo se envían cuando pulsas una acción de IA o activas las sugerencias de Copilot. Al abrir los ajustes de IA con una clave configurada también se consulta la lista de modelos actual de tu proveedor, para que el selector de modelos esté al día — esa solicitud no incluye datos de tareas.
 - **Alcance limitado:** el asistente solo recibe los datos de la tarea que necesita.
 
@@ -155,3 +155,11 @@ Configura el proveedor de voz en OpenAI y luego completa la URL base: la raíz d
 ## Códigos de idioma de Whisper
 
 Si usas el modelo Whisper sin conexión, establece el código de idioma en **Ajustes → Asistente de IA → Idioma del audio** en escritorio o en **Menú → Ajustes → Avanzado → Asistente de IA → Idioma del audio** en móvil. Consulta la [lista de idiomas de Whisper](https://whisper-api.com/docs/languages/).
+
+## Evaluaciones de modelos de Apple (solo compilaciones de desarrollo)
+
+Apple Foundation Models aún no es un proveedor de IA en producción. El prototipo de desarrollo de iOS ofrece aclaración opcional de Inbox en el dispositivo, si es compatible. Las sugerencias siguen siendo editables y requieren aprobación explícita; un modelo no disponible no bloquea el procesamiento manual ni cambia silenciosamente a inferencia en la nube.
+
+Un evaluador de Private Cloud Compute (PCC), activado por separado, compara ejemplos sintéticos fijos con el modelo local. No lee ni sube tus tareas, aplica sugerencias ni cambia ajustes sincronizados. Cada solicitud PCC requiere consentimiento explícito y puede usar la red y la cuota diaria de Apple; los errores no provocan reintentos automáticos locales ni en la nube.
+
+La evaluación PCC requiere iOS 27 o posterior, un dispositivo compatible y una compilación de desarrollo firmada con el aprovisionamiento correcto. El acceso del equipo al entitlement no demuestra que una compilación pueda realizar solicitudes. El acceso en producción, la calidad y la validación en dispositivos físicos siguen pendientes. Consulta la [lista de evaluación para desarrolladores](https://github.com/dongdongbh/Mindwtr/blob/main/docs/development/apple-pcc-evaluation.md).

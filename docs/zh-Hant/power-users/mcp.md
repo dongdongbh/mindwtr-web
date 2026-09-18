@@ -1,6 +1,6 @@
 # MCP 伺服器
 
-Mindwtr 提供選用的 **MCP（Model Context Protocol）**伺服器。你可以將 AI agent（例如 **Claude Desktop**、**Claude Code**、**OpenAI Codex** 或 **Gemini CLI**）連接至本機 Mindwtr 資料庫，或自行託管的 Mindwtr Cloud 端點。
+Mindwtr 提供選用的 <strong>MCP（Model Context Protocol）</strong>伺服器。你可以將 AI agent（例如 **Claude Desktop**、**Claude Code**、**OpenAI Codex** 或 **Gemini CLI**）連接至本機 Mindwtr 資料庫，或自行託管的 Mindwtr Cloud 端點。
 
 伺服器預設使用 **stdio**：MCP 用戶端會將它啟動為子程序，並透過 stdin/stdout 使用 JSON-RPC 通訊。它也支援供遠端用戶端選用的已驗證串流 HTTP。
 

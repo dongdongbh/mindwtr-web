@@ -723,7 +723,7 @@ Struktur von `data.json`:
 - Alle Daten werden lokal auf Ihrem Gerät gespeichert.
 - Die Synchronisierung läuft über Ihren eigenen Cloud-Dienst.
 - Aufgaben, Projekte, Notizen, Anhänge und Synchronisierungsinhalte werden nicht an Mindwtr-Server gesendet.
-- Builds mit Heartbeat-Analyse können ein kleines App-Zustandsereignis senden; es enthält keine Aufgaben, Projekte, Notizen, Dateien, KI-Prompts oder Kontoinhalte. Siehe [Datenschutzrichtlinie](https://mindwtr.app/privacy).
+- Builds mit Heartbeat-Analyse können ein kleines App-Zustandsereignis senden; es enthält keine Aufgaben, Projekte, Notizen, Dateien, KI-Prompts oder Kontoinhalte. Es trägt eine zufällige Installationskennung und eine zufällige Profilkennung. Die Profilkennung liegt in deinen synchronisierten Daten, damit deine Geräte als ein Profil statt als mehrere Personen zählen. Siehe [Datenschutzrichtlinie](https://mindwtr.app/privacy).
 - Sie kontrollieren Ihre Daten vollständig.
 
 ## Sicherheit und Verschlüsselung

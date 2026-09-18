@@ -722,7 +722,7 @@ The `data.json` file structure:
 - All data is stored locally on your device
 - Sync happens through your own cloud service
 - Task data, project data, notes, attachments, and sync content are not sent to Mindwtr servers
-- Builds configured with heartbeat analytics may send a small app-health event; it does not include task, project, note, file, AI prompt, or account content. See the [Privacy Policy](https://mindwtr.app/privacy).
+- Builds configured with heartbeat analytics may send a small app-health event; it does not include task, project, note, file, AI prompt, or account content. It carries a random install id and a random profile id. The profile id is stored in your synced data, so your devices count as one profile instead of several people. See the [Privacy Policy](https://mindwtr.app/privacy).
 - You control your data completely
 
 ## Security and Encryption

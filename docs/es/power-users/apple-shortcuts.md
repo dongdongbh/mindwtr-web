@@ -100,6 +100,17 @@ En iOS 18 y posteriores, las tareas de Mindwtr aparecen en la búsqueda de Spotl
 
 ## Atajos de ejemplo
 
+### Captura con un toque sin abrir Mindwtr
+
+Los widgets de iOS no pueden mostrar un campo de texto ni una ventana de captura: un botón de widget solo puede abrir la app o ejecutar una acción sin pantalla. Para conseguir el flujo de Android, un toque y un pequeño aviso sobre lo que estés haciendo, crea este atajo una sola vez:
+
+1. En **Atajos**, crea un atajo nuevo y llámalo «Capturar».
+2. Añade **Pedir entrada** (tipo Texto, mensaje «Tarea»). Toca el micrófono del aviso para dictar en lugar de escribir.
+3. Añade la acción **Add to Mindwtr** de Mindwtr y pasa la entrada a **Task**. La sintaxis de añadido rápido funciona aquí (`/due:tomorrow`, `@phone`, `#tag`).
+4. Colócalo donde estaría el widget: **Añadir a pantalla de inicio** en los detalles del atajo le da un icono junto al widget; **Ajustes → Botón de acción** lo ejecuta con el botón lateral; en iOS 18 puedes añadirlo al Centro de control; **Ajustes → Accesibilidad → Tocar → Tocar atrás** lo ejecuta con un doble toque en la parte trasera del teléfono.
+
+Al ejecutarlo aparece un pequeño aviso de texto, se guarda y vuelves a lo que estabas haciendo. Mindwtr permanece cerrado y la tarea se crea en la Bandeja de entrada la próxima vez que se abre la app, como toda captura con **Add to Mindwtr**. Usa **Capture to Mindwtr** cuando quieras revisar la tarea antes de guardarla.
+
 ### Capturar por voz
 
 1. Abre **Atajos** de Apple.

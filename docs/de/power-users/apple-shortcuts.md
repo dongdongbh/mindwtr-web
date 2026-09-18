@@ -108,6 +108,17 @@ Ab iOS 18 erscheinen Mindwtr-Aufgaben in der Spotlight-Suche. Wenn Sie eine davo
 
 ## Beispielkurzbefehle
 
+### Erfassen mit einem Tipp, ohne Mindwtr zu öffnen
+
+iOS-Widgets können kein Textfeld und kein Erfassungsfenster anzeigen: Ein Widget-Knopf kann nur die App öffnen oder eine Aktion ohne Bildschirm ausführen. Für den Ablauf wie unter Android, ein Tipp und eine kleine Eingabe über der aktuellen App, legen Sie diesen Kurzbefehl einmal an:
+
+1. Erstellen Sie in **Kurzbefehle** einen neuen Kurzbefehl mit dem Namen „Erfassen“.
+2. Fügen Sie **Nach Eingabe fragen** hinzu (Typ Text, Aufforderung „Aufgabe“). Tippen Sie in der Eingabe auf das Mikrofon, um zu diktieren statt zu tippen.
+3. Fügen Sie die Mindwtr-Aktion **Add to Mindwtr** hinzu und übergeben Sie die Eingabe an **Task**. Die Schnelleingabe-Syntax funktioniert hier (`/due:tomorrow`, `@phone`, `#tag`).
+4. Platzieren Sie ihn dort, wo das Widget wäre: **Zum Home-Bildschirm** in den Details des Kurzbefehls legt ein Symbol neben das Widget; **Einstellungen → Aktionstaste** führt ihn mit der Seitentaste aus; unter iOS 18 lässt er sich zum Kontrollzentrum hinzufügen; **Einstellungen → Bedienungshilfen → Tippen → Auf Rückseite tippen** startet ihn mit einem Doppeltipp auf die Rückseite.
+
+Beim Ausführen erscheint eine kleine Texteingabe, die Aufgabe wird gesichert und Sie kehren zur vorherigen App zurück. Mindwtr bleibt geschlossen; die Aufgabe wird beim nächsten Öffnen der App im Eingang angelegt, wie bei jeder Erfassung über **Add to Mindwtr**. Verwenden Sie stattdessen **Capture to Mindwtr**, wenn Sie die Aufgabe vor dem Sichern prüfen möchten.
+
 ### Per Sprache erfassen
 
 1. Öffnen Sie Apples App **Kurzbefehle**.

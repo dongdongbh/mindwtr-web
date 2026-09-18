@@ -144,7 +144,7 @@ Para realizar varias capturas seguidas, activa **Añadir otra** en la hoja de ca
 | --- | --- | --- | --- |
 | Pantalla de captura en la app (texto o audio) | Sí | Sí | Ya estás dentro |
 | Hoja de compartir desde otra app | Sí | Sí | Sí, pantalla de captura |
-| Botón de captura del widget de pantalla de inicio | Sí | Sí | iOS: sí. Android: no, ventana de captura nativa |
+| Botón de captura del widget de pantalla de inicio | Sí | Sí | iOS: sí; para un aviso sin abrir la app, usa el [atajo de captura con un toque](/es/power-users/apple-shortcuts). Android: no, ventana de captura nativa |
 | Micrófono del widget (voz) | No | Sí, con voz a texto activado | No |
 | Mosaico de Ajustes rápidos | No | Sí | No |
 | Captura rápida en la barra de notificaciones | No | Sí | No |

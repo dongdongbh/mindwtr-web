@@ -144,7 +144,7 @@ For capture bursts, turn on the **Add another** switch in the capture sheet: eac
 | --- | --- | --- | --- |
 | Capture screen in the app (text or audio) | Yes | Yes | You are already in it |
 | Share sheet from another app | Yes | Yes | Yes, capture screen |
-| Home screen widget capture button | Yes | Yes | iOS: yes. Android: no, native capture window |
+| Home screen widget capture button | Yes | Yes | iOS: yes; for a prompt without the app, use the [one-tap capture shortcut](/power-users/apple-shortcuts). Android: no, native capture window |
 | Widget microphone (voice) | No | Yes, with speech-to-text on | No |
 | Quick Settings tile | No | Yes | No |
 | Notification bar quick capture | No | Yes | No |
@@ -247,7 +247,7 @@ Tasks and Compact show Today's Focus and Today first, including overdue tasks. W
 
 On iOS 17 and later, long-press a Tasks widget and choose **Edit Widget** to select Focus, Inbox, Next Actions, Waiting For, Someday/Maybe, or a saved filter. Multiple widgets can show different lists; an explicitly selected list other than Focus never falls back to another list. Tap a ring to queue completion and tap again within three seconds to undo. After that window, the row hides and another cached task can fill the space. WidgetKit may delay the visible refresh. The completion stays safely queued until Mindwtr runs and saves it; completion and sync happen through the app, not directly from the widget.
 
-Tap the heading, empty state, or small widget to open the displayed list. Medium and larger widgets link task rows to their task in Mindwtr and **+** to quick capture; small-widget rings remain interactive on iOS 17+. Older iOS versions use the default Today/Next behavior without inline check-off or list configuration. WidgetKit controls refresh timing. Lock screen widgets are unchanged.
+Tap the heading, empty state, or small widget to open the displayed list. Medium and larger widgets link task rows to their task in Mindwtr and **+** to quick capture (iOS widgets cannot show a capture window; for one-tap capture without opening the app, see the [Shortcuts recipe](/power-users/apple-shortcuts)); small-widget rings remain interactive on iOS 17+. Older iOS versions use the default Today/Next behavior without inline check-off or list configuration. WidgetKit controls refresh timing. Lock screen widgets are unchanged.
 
 ### iOS Lock Screen Widget
 

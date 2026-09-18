@@ -108,6 +108,17 @@ On iOS 18 and later, Mindwtr tasks appear in Spotlight search. Opening one takes
 
 ## Example shortcuts
 
+### One-tap capture without opening Mindwtr
+
+iOS widgets cannot show a text field or a capture window: a widget button can only open the app or run an action with no screen. To get the Android-style flow, one tap and a small prompt over whatever you are doing, build this shortcut once:
+
+1. In **Shortcuts**, create a new shortcut and name it "Capture".
+2. Add **Ask for Input** (type Text, prompt "Task"). Tap the microphone in the prompt to dictate instead of typing.
+3. Add Mindwtr's **Add to Mindwtr** action and pass the input into **Task**. Quick-add syntax works here (`/due:tomorrow`, `@phone`, `#tag`).
+4. Put it where the widget would be: **Add to Home Screen** from the shortcut's details gives it an icon next to the widget; **Settings → Action Button** runs it with the side button; on iOS 18 you can add it to Control Center; **Settings → Accessibility → Touch → Back Tap** runs it with a double tap on the back of the phone.
+
+Running it shows a small text prompt, saves, and returns you to what you were doing. Mindwtr stays closed, and the task is created in Inbox the next time the app opens, like every **Add to Mindwtr** capture. Use **Capture to Mindwtr** instead when you want to check the task before it is saved.
+
 ### Capture from voice
 
 1. Open Apple's **Shortcuts** app.

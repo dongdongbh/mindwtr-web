@@ -108,6 +108,17 @@ Les résultats proviennent d’un instantané que Mindwtr tient à jour pendant 
 
 ## Exemples de raccourcis
 
+### Capturer en un tap sans ouvrir Mindwtr
+
+Les widgets iOS ne peuvent afficher ni champ de texte ni fenêtre de capture : un bouton de widget ne peut qu’ouvrir l’app ou lancer une action sans écran. Pour retrouver le fonctionnement d’Android, un tap et une petite invite par-dessus l’app en cours, créez ce raccourci une fois :
+
+1. Dans **Raccourcis**, créez un raccourci et nommez-le « Capturer ».
+2. Ajoutez **Demander une entrée** (type Texte, invite « Tâche »). Touchez le micro de l’invite pour dicter au lieu de taper.
+3. Ajoutez l’action **Add to Mindwtr** de Mindwtr et passez l’entrée dans **Task**. La syntaxe d’ajout rapide fonctionne ici (`/due:tomorrow`, `@phone`, `#tag`).
+4. Placez-le là où serait le widget : **Ajouter à l’écran d’accueil** dans les détails du raccourci lui donne une icône à côté du widget ; **Réglages → Bouton Action** le lance avec le bouton latéral ; sous iOS 18, vous pouvez l’ajouter au centre de contrôle ; **Réglages → Accessibilité → Toucher → Toucher le dos** le lance par un double tap au dos du téléphone.
+
+À l’exécution, une petite invite de texte s’affiche, la tâche est enregistrée et vous revenez à ce que vous faisiez. Mindwtr reste fermé, et la tâche est créée dans la Boîte de réception à la prochaine ouverture de l’app, comme toute capture via **Add to Mindwtr**. Utilisez plutôt **Capture to Mindwtr** si vous voulez vérifier la tâche avant l’enregistrement.
+
 ### Capturer à la voix
 
 1. Ouvrez l’app **Raccourcis** d’Apple.

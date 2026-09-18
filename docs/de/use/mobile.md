@@ -137,7 +137,7 @@ Aktivieren Sie für mehrere Erfassungen **Weitere hinzufügen**: Jedes `Enter` s
 | --- | --- | --- | --- |
 | Erfassungsbildschirm in der App (Text oder Audio) | Ja | Ja | Sie sind bereits darin |
 | Teilen-Menü aus einer anderen App | Ja | Ja | Ja, Erfassungsbildschirm |
-| Erfassungsknopf des Startbildschirm-Widgets | Ja | Ja | iOS: ja. Android: nein, natives Erfassungsfenster |
+| Erfassungsknopf des Startbildschirm-Widgets | Ja | Ja | iOS: ja; für eine Eingabe ohne App nutzen Sie den [Ein-Tipp-Kurzbefehl](/de/power-users/apple-shortcuts). Android: nein, natives Erfassungsfenster |
 | Widget-Mikrofon (Sprache) | Nein | Ja, bei aktivierter Spracherkennung | Nein |
 | Schnelleinstellungen-Kachel | Nein | Ja | Nein |
 | Schnellerfassung in der Benachrichtigungsleiste | Nein | Ja | Nein |

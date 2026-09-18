@@ -144,7 +144,7 @@ Pour les captures en série, activez l’interrupteur **Ajouter une autre** dans
 | --- | --- | --- | --- |
 | Écran de capture dans l’app (texte ou audio) | Oui | Oui | Vous y êtes déjà |
 | Feuille de partage depuis une autre app | Oui | Oui | Oui, écran de capture |
-| Bouton de capture du widget d’écran d’accueil | Oui | Oui | iOS : oui. Android : non, fenêtre de capture native |
+| Bouton de capture du widget d’écran d’accueil | Oui | Oui | iOS : oui ; pour une invite sans ouvrir l’app, utilisez le [raccourci de capture en un tap](/fr/power-users/apple-shortcuts). Android : non, fenêtre de capture native |
 | Micro du widget (voix) | Non | Oui, avec la reconnaissance vocale activée | Non |
 | Tuile des Réglages rapides | Non | Oui | Non |
 | Capture rapide dans la barre de notifications | Non | Oui | Non |

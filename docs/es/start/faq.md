@@ -98,6 +98,7 @@ Mindwtr admite actualmente estas opciones de idioma, enumeradas aproximadamente 
 - Nederlands
 - Čeština
 - Svenska
+- Dansk
 - Magyar
 
 ### ¿Dónde se guardan mis datos?

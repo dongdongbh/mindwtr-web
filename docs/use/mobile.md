@@ -752,7 +752,7 @@ Tap **Allow** to open the Android permission screen for Mindwtr. You can also re
 ### General
 
 - **Appearance**: System, Light, Dark, Material 3 (Light), Material 3 (Dark), E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia, or OLED / Midnight
-- **Language**: English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese (Brazil), Russian, German, Japanese, Persian, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech, Swedish, Hungarian, Ukrainian
+- **Language**: English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese (Brazil), Russian, German, Japanese, Persian, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech, Swedish, Danish, Hungarian, Ukrainian
 
 ### Notifications
 

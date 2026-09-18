@@ -98,6 +98,7 @@ Mindwtr 目前支持以下语言选项，大致按全球使用者总数排列：
 - Nederlands
 - Čeština
 - Svenska
+- Dansk
 - Magyar
 
 ### 我的数据存储在哪里？

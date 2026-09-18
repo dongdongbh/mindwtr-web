@@ -587,6 +587,7 @@ En iPhone y iPad, Mindwtr puede importar recordatorios incompletos de Apple desd
 - Conserva los títulos y las notas de los recordatorios como títulos y descripciones de tareas
 - Omite los recordatorios completados, sin título y ya importados
 - Opcionalmente, puede eliminar los recordatorios importados de Recordatorios de Apple después de que Mindwtr los añada a la Bandeja de entrada
+- **Importar automáticamente**: una vez elegida una lista, este interruptor ejecuta la misma importación cada vez que Mindwtr se abre o vuelve al primer plano, de modo que los recordatorios capturados sobre la marcha llegan a la Bandeja de entrada sin pulsar nada. iOS no permite que las apps lean Recordatorios en segundo plano, así que la comprobación solo ocurre con la app abierta. Aparece un aviso breve cuando se importa algo.
 
 La importación de Recordatorios de Apple es una vía de importación unidireccional, no un backend de sincronización.
 

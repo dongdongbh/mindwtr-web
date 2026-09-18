@@ -587,6 +587,7 @@ Sur iPhone et iPad, Mindwtr peut importer les rappels Apple non terminés depuis
 - Préserve les titres et notes des rappels comme titres et descriptions des tâches
 - Ignore les rappels terminés, sans titre et déjà importés
 - Peut facultativement supprimer les rappels importés de Rappels Apple après leur ajout à la Boîte de réception de Mindwtr
+- **Importer automatiquement** : une fois une liste choisie, cet interrupteur lance la même importation à chaque ouverture de Mindwtr ou retour au premier plan, si bien que les rappels capturés en déplacement arrivent dans la Boîte de réception sans appui manuel. iOS n'autorise pas les apps à lire Rappels en arrière-plan ; la vérification n'a donc lieu que lorsque l'app est ouverte. Un court message s'affiche lorsqu'un élément a été importé.
 
 L’importation depuis Rappels Apple est une procédure d’importation à sens unique, et non un backend de synchronisation.
 

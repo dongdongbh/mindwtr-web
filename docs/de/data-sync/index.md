@@ -588,6 +588,7 @@ Auf iPhone und iPad kann Mindwtr unerledigte Apple-Erinnerungen unter **Einstell
 - Titel und Notizen der Erinnerung als Aufgabentitel und -beschreibung übernehmen.
 - Erledigte, titellose und bereits importierte Erinnerungen überspringen.
 - Importierte Erinnerungen optional aus Apple Erinnerungen löschen, nachdem Mindwtr sie zum Eingang hinzugefügt hat.
+- **Automatisch importieren**: Sobald eine Liste gewählt ist, führt dieser Schalter denselben Import bei jedem Öffnen von Mindwtr oder bei jeder Rückkehr in den Vordergrund aus, sodass unterwegs erfasste Erinnerungen ohne manuelles Tippen im Eingang landen. iOS erlaubt Apps keinen Zugriff auf Erinnerungen im Hintergrund, daher findet die Prüfung nur bei geöffneter App statt. Wurde etwas importiert, erscheint ein kurzer Hinweis.
 
 Der Import aus Apple Erinnerungen ist ein einseitiger Importweg und kein Synchronisierungs-Backend.
 

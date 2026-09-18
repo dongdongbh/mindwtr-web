@@ -587,6 +587,7 @@ On iPhone and iPad, Mindwtr can import incomplete Apple Reminders from **Setting
 - Preserves reminder titles and notes as task titles and descriptions
 - Skips completed, titleless, and already imported reminders
 - Can optionally delete imported reminders from Apple Reminders after Mindwtr adds them to Inbox
+- **Import automatically**: once a list is chosen, this switch runs the same import each time Mindwtr opens or returns to the foreground, so reminders captured on the go land in Inbox without a manual tap. iOS does not let apps read Reminders in the background, so the check happens only when the app is open. A short notice appears when something was imported.
 
 Apple Reminders import is a one-way import path, not a sync backend.
 

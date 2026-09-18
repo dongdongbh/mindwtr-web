@@ -509,6 +509,7 @@ Sí, en iPhone y iPad. Mindwtr puede importar recordatorios incompletos de Apple
 - Elige la lista de Recordatorios desde la que quieres importar
 - Los recordatorios importados se convierten en tareas de Mindwtr
 - Opcionalmente, puedes eliminar los recordatorios de Recordatorios de Apple después de que Mindwtr confirme la importación
+- Activa **Importar automáticamente** para ejecutar la importación cada vez que Mindwtr se abre o vuelve al primer plano
 
 La importación desde Recordatorios de Apple es unidireccional, no una sincronización. Consulta [Importación desde Recordatorios de Apple](/es/data-sync/#importacion-de-recordatorios-de-apple-ios).
 

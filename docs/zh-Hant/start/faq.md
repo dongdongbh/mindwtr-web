@@ -507,6 +507,7 @@ Mindwtr 遵循各平台慣例：
 - 選擇要匯入的「提醒事項」清單
 - 匯入的提醒事項會成為 Mindwtr 任務
 - Mindwtr 確認匯入後，可選擇從 Apple 提醒事項刪除提醒
+- 開啟**自動匯入**後，每次開啟 Mindwtr 或回到前景都會執行匯入
 
 Apple 提醒事項是單向匯入，而非同步。請參閱 [Apple 提醒事項匯入](/zh-Hant/data-sync/#apple-提醒事項匯入-ios)。
 

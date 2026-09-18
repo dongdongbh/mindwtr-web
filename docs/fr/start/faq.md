@@ -509,6 +509,7 @@ Oui, sur iPhone et iPad. Mindwtr peut importer les rappels Apple Reminders incom
 - Choisissez la liste de rappels à importer
 - Les rappels importés deviennent des tâches Mindwtr
 - Vous pouvez choisir de supprimer les rappels d’Apple Reminders après que Mindwtr a confirmé l’importation
+- Activez **Importer automatiquement** pour lancer l’importation à chaque ouverture de Mindwtr ou retour au premier plan
 
 L’importation depuis Apple Reminders est unidirectionnelle ; il ne s’agit pas d’une synchronisation. Consultez [Importation depuis Apple Reminders](/fr/data-sync/#importation-depuis-rappels-apple-ios).
 

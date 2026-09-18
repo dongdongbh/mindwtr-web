@@ -16,7 +16,7 @@ Mindwtr 可以从受支持的应用导入完整导出，但相比把所有旧任
 - [从 Todoist 导入](/zh-Hans/import/todoist) - CSV 导出或 ZIP 备份
 - [从 DGT GTD 导入](/zh-Hans/import/dgt-gtd) - JSON 导出或 ZIP 备份
 - [从 OmniFocus 导入](/zh-Hans/import/omnifocus) - CSV、JSON 或 ZIP 导出
-- [从 Apple 提醒事项导入](/zh-Hans/data-sync/#apple-提醒事项导入-ios) - 仅限 iOS，从所选提醒事项列表导入未完成事项
+- [从 Apple 提醒事项导入](/zh-Hans/data-sync/#apple-提醒事项导入-ios) - 仅限 iOS，从所选提醒事项列表导入未完成事项，可手动导入或在每次打开应用时自动导入
 - [从 Mindwtr CSV 导入](/zh-Hans/import/mindwtr-csv) - 一套有文档说明的 CSV 列格式，适用于所有没有专属导入器的应用
 
 打开**设置 -> 数据**并选择相应的导入操作：Todoist、TickTick、DGT GTD、OmniFocus，或通用的 Mindwtr CSV。Mindwtr 会在添加任何内容前显示预览。

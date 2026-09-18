@@ -509,6 +509,7 @@ Yes, on iPhone and iPad. Mindwtr can import incomplete Apple Reminders from **Se
 - Choose the Reminders list to import from
 - Imported reminders become Mindwtr tasks
 - You can optionally delete reminders from Apple Reminders after Mindwtr confirms the import
+- Turn on **Import automatically** to run the import each time Mindwtr opens or returns to the foreground
 
 Apple Reminders import is one-way import, not sync. See [Apple Reminders Import](/data-sync/#apple-reminders-import-ios).
 

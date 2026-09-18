@@ -501,6 +501,7 @@ Ja, auf iPhone und iPad. Mindwtr importiert unerledigte Apple-Erinnerungen unter
 - Wählen Sie die zu importierende Erinnerungsliste.
 - Importierte Erinnerungen werden zu Mindwtr-Aufgaben.
 - Sie können die Erinnerungen optional aus Apple Erinnerungen löschen, nachdem Mindwtr den Import bestätigt hat.
+- Mit **Automatisch importieren** läuft der Import bei jedem Öffnen von Mindwtr oder bei jeder Rückkehr in den Vordergrund.
 
 Der Import aus Apple Erinnerungen ist ein einseitiger Import, keine Synchronisierung. Siehe [Import aus Apple Erinnerungen](/de/data-sync/#apple-reminders-import-ios).
 

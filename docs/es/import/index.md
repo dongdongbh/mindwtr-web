@@ -16,7 +16,7 @@ Mindwtr ofrece importadores específicos para un pequeño grupo de aplicaciones 
 - [Importar desde Todoist](/es/import/todoist): exportaciones CSV o copias ZIP.
 - [Importar desde DGT GTD](/es/import/dgt-gtd): exportaciones JSON o copias ZIP.
 - [Importar desde OmniFocus](/es/import/omnifocus): exportaciones CSV, JSON o ZIP.
-- [Importar Recordatorios de Apple](/es/data-sync/#importacion-de-recordatorios-de-apple-ios): importación exclusiva de iOS para recordatorios incompletos de una lista seleccionada.
+- [Importar Recordatorios de Apple](/es/data-sync/#importacion-de-recordatorios-de-apple-ios): importación exclusiva de iOS para recordatorios incompletos de una lista seleccionada., manual o automáticamente cada vez que se abre la app
 - [Importar desde CSV de Mindwtr](/es/import/mindwtr-csv): un formato de columnas documentado para cualquier aplicación que no tenga importador propio.
 
 Abre **Ajustes → Datos** y elige la acción de importación correspondiente: Todoist, TickTick, DGT GTD, OmniFocus o el CSV genérico de Mindwtr. Mindwtr muestra una vista previa antes de añadir nada.

@@ -77,6 +77,7 @@ interface ChromeStrings {
   donate: string;
   brand: string;
   privacy: string;
+  terms: string;
   homeAria: string;
   primaryNavAria: string;
   footerAria: string;
@@ -99,6 +100,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
     donate: "Donate",
     brand: "Brand",
     privacy: "Privacy",
+    terms: "Terms",
     homeAria: "Mindwtr home",
     primaryNavAria: "Primary navigation",
     footerAria: "Footer",
@@ -123,6 +125,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
     donate: "Spenden",
     brand: "Marke",
     privacy: "Datenschutz",
+    terms: "Nutzungsbedingungen",
     homeAria: "Mindwtr Startseite",
     primaryNavAria: "Hauptnavigation",
     footerAria: "Fußzeile",
@@ -147,6 +150,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
     donate: "Donar",
     brand: "Marca",
     privacy: "Privacidad",
+    terms: "Términos",
     homeAria: "Inicio de Mindwtr",
     primaryNavAria: "Navegación principal",
     footerAria: "Pie de página",
@@ -173,6 +177,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
     donate: "Faire un don",
     brand: "Marque",
     privacy: "Confidentialité",
+    terms: "Conditions",
     homeAria: "Accueil Mindwtr",
     primaryNavAria: "Navigation principale",
     footerAria: "Pied de page",
@@ -197,6 +202,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
     donate: "捐赠",
     brand: "品牌",
     privacy: "隐私",
+    terms: "条款",
     homeAria: "Mindwtr 首页",
     primaryNavAria: "主导航",
     footerAria: "页脚",
@@ -220,6 +226,7 @@ const STRINGS: Record<Locale, ChromeStrings> = {
     donate: "捐贈",
     brand: "品牌",
     privacy: "隱私",
+    terms: "條款",
     homeAria: "Mindwtr 首頁",
     primaryNavAria: "主導覽",
     footerAria: "頁尾",
@@ -493,7 +500,9 @@ function footer(locale: Locale, pagePath: string): string {
     { href: localePath(locale, "support"), label: t.support },
     { href: localePath(locale, "donate"), label: t.donate },
     { href: localePath(locale, "brand"), label: t.brand },
-    { href: localePath(locale, "privacy"), label: t.privacy }
+    { href: localePath(locale, "privacy"), label: t.privacy },
+    // Legal wording stays English-only, so every locale links the one page.
+    { href: "/terms", label: t.terms }
   ]
     .map((link) => `        ${anchor(link, pagePath)}`)
     .join("\n");

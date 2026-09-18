@@ -131,6 +131,24 @@ Mindwtr bietet mehrere mobile Erfassungswege. Die Erfassungsansicht beginnt mit 
 
 Aktivieren Sie für mehrere Erfassungen **Weitere hinzufügen**: Jedes `Enter` speichert und lässt die Ansicht mit geöffneter Tastatur für die nächste Aufgabe offen. Der Schalter bleibt bis zur Deaktivierung eingeschaltet.
 
+### Erfassungswege im Überblick
+
+| Weg | iOS | Android | Öffnet die App? |
+| --- | --- | --- | --- |
+| Erfassungsbildschirm in der App (Text oder Audio) | Ja | Ja | Sie sind bereits darin |
+| Teilen-Menü aus einer anderen App | Ja | Ja | Ja, Erfassungsbildschirm |
+| Erfassungsknopf des Startbildschirm-Widgets | Ja | Ja | iOS: ja. Android: nein, natives Erfassungsfenster |
+| Widget-Mikrofon (Sprache) | Nein | Ja, bei aktivierter Spracherkennung | Nein |
+| Schnelleinstellungen-Kachel | Nein | Ja | Nein |
+| Schnellerfassung in der Benachrichtigungsleiste | Nein | Ja | Nein |
+| Sprachassistent | Siri über die Kurzbefehle-Aktionen | Gemini/Assistant App Actions | iOS: nein mit „Add to Mindwtr“. Android: ja, Bestätigung |
+| Kurzbefehl „Add to Mindwtr“ (still, Automationen) | Ja | Nein | Nein |
+| Kurzbefehl „Capture to Mindwtr“ (erst prüfen) | Ja | Nein | Ja, Erfassungsbildschirm |
+| Apple Watch (sprechen oder tippen) | Ja | Nein | Nein, Warteschlange zum iPhone |
+| Automations-Broadcast (Tasker und ähnliche) | Nein | Ja | Nein, Warteschlange bis zum Öffnen der App |
+| URL-Schema `mindwtr://capture` | Ja | Ja | Ja, Erfassungsbildschirm |
+| Import aus Apple Erinnerungen (manuell oder automatisch) | Ja | Nein | Läuft beim Öffnen der App |
+
 ### Teilen-Menü
 
 1. In einer App (Browser, E-Mail, Notizen) Inhalt auswählen

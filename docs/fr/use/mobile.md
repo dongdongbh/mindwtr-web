@@ -138,6 +138,24 @@ L’écran de capture donne la priorité à la saisie. L’aide sur la syntaxe e
 
 Pour les captures en série, activez l’interrupteur **Ajouter une autre** dans la feuille de capture : chaque pression sur Entrée enregistre la tâche et garde la feuille ouverte avec le clavier affiché, prête pour la suivante. L’interrupteur reste activé d’une capture à l’autre jusqu’à ce que vous le désactiviez.
 
+### Les méthodes de capture en un coup d’œil
+
+| Méthode | iOS | Android | Ouvre l’app ? |
+| --- | --- | --- | --- |
+| Écran de capture dans l’app (texte ou audio) | Oui | Oui | Vous y êtes déjà |
+| Feuille de partage depuis une autre app | Oui | Oui | Oui, écran de capture |
+| Bouton de capture du widget d’écran d’accueil | Oui | Oui | iOS : oui. Android : non, fenêtre de capture native |
+| Micro du widget (voix) | Non | Oui, avec la reconnaissance vocale activée | Non |
+| Tuile des Réglages rapides | Non | Oui | Non |
+| Capture rapide dans la barre de notifications | Non | Oui | Non |
+| Assistant vocal | Siri, via les actions Raccourcis | App Actions Gemini/Assistant | iOS : non avec « Add to Mindwtr ». Android : oui, confirmation |
+| Raccourci « Add to Mindwtr » (silencieux, automatisations) | Oui | Non | Non |
+| Raccourci « Capture to Mindwtr » (vérifier d’abord) | Oui | Non | Oui, écran de capture |
+| Apple Watch (dicter ou saisir) | Oui | Non | Non, mis en file vers l’iPhone |
+| Diffusion d’automatisation (Tasker et similaires) | Non | Oui | Non, en file jusqu’à l’ouverture de l’app |
+| Schéma d’URL `mindwtr://capture` | Oui | Oui | Oui, écran de capture |
+| Importation depuis Rappels Apple (manuelle ou automatique) | Oui | Non | S’exécute à l’ouverture de l’app |
+
 ### Feuille de partage
 
 Collectez des tâches depuis n’importe quelle application à l’aide de la feuille de partage :

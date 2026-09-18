@@ -138,6 +138,24 @@ La pantalla de captura da prioridad al campo de entrada. La ayuda de sintaxis se
 
 Para realizar varias capturas seguidas, activa **Añadir otra** en la hoja de captura: cada pulsación de Enter guarda la tarea y mantiene abierta la hoja con el teclado visible, lista para la siguiente. El control permanece activo entre capturas hasta que lo desactives.
 
+### Métodos de captura de un vistazo
+
+| Método | iOS | Android | ¿Abre la app? |
+| --- | --- | --- | --- |
+| Pantalla de captura en la app (texto o audio) | Sí | Sí | Ya estás dentro |
+| Hoja de compartir desde otra app | Sí | Sí | Sí, pantalla de captura |
+| Botón de captura del widget de pantalla de inicio | Sí | Sí | iOS: sí. Android: no, ventana de captura nativa |
+| Micrófono del widget (voz) | No | Sí, con voz a texto activado | No |
+| Mosaico de Ajustes rápidos | No | Sí | No |
+| Captura rápida en la barra de notificaciones | No | Sí | No |
+| Asistente de voz | Siri, mediante las acciones de Atajos | App Actions de Gemini/Assistant | iOS: no con «Add to Mindwtr». Android: sí, confirmación |
+| Atajo «Add to Mindwtr» (silencioso, automatizaciones) | Sí | No | No |
+| Atajo «Capture to Mindwtr» (revisar antes) | Sí | No | Sí, pantalla de captura |
+| Apple Watch (hablar o escribir) | Sí | No | No, en cola hacia el iPhone |
+| Difusión de automatización (Tasker y similares) | No | Sí | No, en cola hasta abrir la app |
+| Esquema de URL `mindwtr://capture` | Sí | Sí | Sí, pantalla de captura |
+| Importación de Recordatorios de Apple (manual o automática) | Sí | No | Se ejecuta al abrir la app |
+
 ### Hoja para compartir
 
 Captura tareas desde cualquier aplicación mediante la hoja para compartir:

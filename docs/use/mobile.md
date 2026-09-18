@@ -138,6 +138,24 @@ The capture screen is input-first. The syntax help is tucked behind a small “?
 
 For capture bursts, turn on the **Add another** switch in the capture sheet: each Enter saves the task and keeps the sheet open with the keyboard up, ready for the next one. The switch stays on across captures until you turn it off.
 
+### Capture methods at a glance
+
+| Method | iOS | Android | Opens the app? |
+| --- | --- | --- | --- |
+| Capture screen in the app (text or audio) | Yes | Yes | You are already in it |
+| Share sheet from another app | Yes | Yes | Yes, capture screen |
+| Home screen widget capture button | Yes | Yes | iOS: yes. Android: no, native capture window |
+| Widget microphone (voice) | No | Yes, with speech-to-text on | No |
+| Quick Settings tile | No | Yes | No |
+| Notification bar quick capture | No | Yes | No |
+| Voice assistant | Siri, through the Shortcuts actions | Gemini/Assistant App Actions | iOS: no with "Add to Mindwtr". Android: yes, confirmation |
+| Shortcuts "Add to Mindwtr" (silent, automations) | Yes | No | No |
+| Shortcuts "Capture to Mindwtr" (review first) | Yes | No | Yes, capture screen |
+| Apple Watch (speak or type) | Yes | No | No, queued to the phone |
+| Automation broadcast (Tasker and similar) | No | Yes | No, queued until the app opens |
+| URL scheme `mindwtr://capture` | Yes | Yes | Yes, capture screen |
+| Apple Reminders import (manual or automatic) | Yes | No | Runs when the app opens |
+
 ### Share Sheet
 
 Capture tasks from any app using the share sheet:

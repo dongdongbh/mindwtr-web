@@ -241,6 +241,12 @@ git push origin main --tags
 
 ---
 
+## 分階段商店發布
+
+穩定版會以分階段發布的方式進入 Google Play 與 Microsoft Store：先 5%，再 20%、50%、100%。**Manage Store Rollout** 工作流程（`rollout.yml`）每天執行一次，每次最多推進一個階段，因此一次發布會持續數天。每個商店同時只允許一個進行中的正式發布，所以在推送下一個穩定版標籤之前，必須先完成或停止上一次發布；否則 Play 與 Microsoft Store 的發布工作會失敗，也不會建立 GitHub Release。時程、手動操作與停止方式請見[商店分階段發布](https://github.com/dongdongbh/Mindwtr/blob/main/docs/development/store-rollouts.md)。
+
+---
+
 ## Windows 程式碼簽署
 
 發布工作流程已準備好透過 SignPath Foundation 對 Windows 建置進行 Authenticode 簽署，但目前尚無已發布的下載被確認帶有簽署。待發布憑證與 SignPath 成品設定就緒後，`.github/workflows/release-windows.yml` 中的簽署區塊每次發布會執行兩輪簽署，而且順序很重要：
@@ -271,6 +277,7 @@ git push origin main --tags
 - 主控台中的行動版商店分類仍然正確：Google Play `Productivity > Task Management`，App Store 主要分類為 `Productivity`
 - Google Play 語系內文符合 API 500 字元限制
 - SignPath 成品設定與目前 Windows 兩次提交的簽署流程一致
+- Google Play 與 Microsoft Store 上沒有上一個穩定版留下、仍在進行的正式發布；請先完成或停止它
 
 對於較大的版本，還應驗證：
 

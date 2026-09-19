@@ -241,6 +241,12 @@ git push origin main --tags
 
 ---
 
+## Staged Store Rollouts
+
+Stable releases reach Google Play and the Microsoft Store as staged rollouts: 5%, then 20%, 50%, and 100%. The **Manage Store Rollout** workflow (`rollout.yml`) advances at most one stage per daily run, so a rollout stays open for several days. Each store allows only one open production rollout, so the previous one must be finalized or halted before the next stable tag is pushed; otherwise the Play and Microsoft Store publish jobs fail and no GitHub Release is created. See [Store rollouts](https://github.com/dongdongbh/Mindwtr/blob/main/docs/development/store-rollouts.md) for the schedule, the manual actions, and how to halt.
+
+---
+
 ## Windows Code Signing
 
 The release workflow is prepared to Authenticode-sign Windows builds through SignPath Foundation, but no published download is currently confirmed as signed. The signing block in `.github/workflows/release-windows.yml` runs two signing rounds per release once the release certificate and SignPath artifact configuration are ready, and the order matters:
@@ -271,6 +277,7 @@ At minimum, verify:
 - mobile store categories in the consoles are still correct: Google Play `Productivity > Task Management` and App Store primary category `Productivity`
 - Google Play locale bodies fit the 500-character API limit
 - the SignPath artifact configuration matches the current two-submission Windows signing flow
+- no Google Play or Microsoft Store production rollout from the previous stable release is still open; finalize or halt it first
 
 For larger releases, also verify:
 

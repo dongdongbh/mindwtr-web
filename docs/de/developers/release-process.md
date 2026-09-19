@@ -240,6 +240,12 @@ git push origin main --tags
 
 ---
 
+## Gestaffelte Store-Rollouts
+
+Stabile Releases erreichen Google Play und den Microsoft Store als gestaffelte Rollouts: 5 %, dann 20 %, 50 % und 100 %. Der Workflow **Manage Store Rollout** (`rollout.yml`) schaltet pro täglichem Lauf höchstens eine Stufe weiter, ein Rollout bleibt also mehrere Tage offen. Jeder Store erlaubt nur ein offenes Produktions-Rollout, daher muss das vorherige abgeschlossen oder angehalten sein, bevor das nächste stabile Tag gepusht wird; sonst schlagen die Veröffentlichungs-Jobs für Play und den Microsoft Store fehl und es entsteht kein GitHub-Release. Siehe [Store-Rollouts](https://github.com/dongdongbh/Mindwtr/blob/main/docs/development/store-rollouts.md) für den Zeitplan, die manuellen Aktionen und das Anhalten.
+
+---
+
 ## Windows-Codesignierung
 
 Der Release-Workflow ist für die Authenticode-Signierung von Windows-Builds über SignPath Foundation vorbereitet; derzeit ist jedoch kein veröffentlichter Download als signiert bestätigt. Sobald das Release-Zertifikat und die SignPath-Artefaktkonfiguration bereit sind, führt der Signierblock in `.github/workflows/release-windows.yml` pro Release zwei Signierrunden aus, und die Reihenfolge ist entscheidend:
@@ -270,6 +276,7 @@ Prüfen Sie mindestens:
 - Kategorien der mobilen Stores in den Konsolen sind weiterhin korrekt: Google Play `Productivity > Task Management` und primäre App-Store-Kategorie `Productivity`
 - Gebietsschemainhalte für Google Play halten die API-Grenze von 500 Zeichen ein
 - die SignPath-Artefaktkonfiguration passt zum aktuellen Windows-Signierablauf mit zwei Einreichungen
+- kein Produktions-Rollout des vorherigen stabilen Releases ist bei Google Play oder im Microsoft Store noch offen; schließen Sie es zuerst ab oder halten Sie es an
 
 Prüfen Sie bei größeren Releases außerdem:
 

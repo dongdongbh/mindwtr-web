@@ -241,6 +241,12 @@ git push origin main --tags
 
 ---
 
+## Despliegues escalonados en las tiendas
+
+Los lanzamientos estables llegan a Google Play y a Microsoft Store como despliegues escalonados: 5 %, luego 20 %, 50 % y 100 %. El flujo de trabajo **Manage Store Rollout** (`rollout.yml`) avanza como mucho una etapa por ejecución diaria, así que un despliegue queda abierto varios días. Cada tienda solo admite un despliegue de producción abierto, por lo que el anterior debe finalizarse o detenerse antes de subir la siguiente etiqueta estable; si no, los trabajos de publicación de Play y Microsoft Store fallan y no se crea la versión de GitHub. Consulta [Despliegues en las tiendas](https://github.com/dongdongbh/Mindwtr/blob/main/docs/development/store-rollouts.md) para ver el calendario, las acciones manuales y cómo detenerlo.
+
+---
+
 ## Firma de código en Windows
 
 El flujo de lanzamiento está preparado para firmar las compilaciones de Windows con Authenticode a través de SignPath Foundation, pero actualmente ninguna descarga publicada está confirmada como firmada. Cuando estén listos el certificado de lanzamiento y la configuración de artefactos de SignPath, el bloque de firma de `.github/workflows/release-windows.yml` ejecutará dos rondas de firma por lanzamiento, y el orden importa:
@@ -271,6 +277,7 @@ Como mínimo, verifica:
 - que las categorías de las tiendas móviles en las consolas sigan siendo correctas: Google Play `Productivity > Task Management` y la categoría principal de App Store `Productivity`
 - que el contenido de las configuraciones regionales de Google Play respete el límite de 500 caracteres de la API
 - que la configuración de artefactos de SignPath coincida con el flujo actual de firma de Windows con dos envíos
+- que no siga abierto ningún despliegue de producción del lanzamiento estable anterior en Google Play o Microsoft Store; finalízalo o detenlo primero
 
 Para lanzamientos de mayor envergadura, verifica también:
 

@@ -241,6 +241,12 @@ git push origin main --tags
 
 ---
 
+## Déploiements progressifs sur les boutiques
+
+Les publications stables arrivent sur Google Play et le Microsoft Store sous forme de déploiements progressifs : 5 %, puis 20 %, 50 % et 100 %. Le workflow **Manage Store Rollout** (`rollout.yml`) avance d'une étape au maximum par exécution quotidienne ; un déploiement reste donc ouvert plusieurs jours. Chaque boutique n'accepte qu'un seul déploiement de production ouvert : le précédent doit être finalisé ou arrêté avant de pousser l'étiquette stable suivante, sinon les tâches de publication Play et Microsoft Store échouent et aucune version GitHub n'est créée. Voir [Déploiements sur les boutiques](https://github.com/dongdongbh/Mindwtr/blob/main/docs/development/store-rollouts.md) pour le calendrier, les actions manuelles et la procédure d'arrêt.
+
+---
+
 ## Signature de code Windows
 
 Le workflow de publication est prêt à signer les versions Windows avec Authenticode via SignPath Foundation, mais aucun téléchargement publié n'est actuellement confirmé comme signé. Lorsque le certificat de publication et la configuration des artefacts SignPath seront prêts, le bloc de signature de `.github/workflows/release-windows.yml` exécutera deux tours de signature par publication, et l'ordre compte :
@@ -271,6 +277,7 @@ Vérifiez au minimum que :
 - les catégories des boutiques mobiles dans les consoles sont toujours correctes : Google Play `Productivity > Task Management` et catégorie principale de l'App Store `Productivity`
 - les textes des paramètres régionaux de Google Play respectent la limite de 500 caractères de l'API
 - la configuration des artefacts SignPath correspond au processus de signature Windows actuel à deux soumissions
+- aucun déploiement de production de la publication stable précédente n'est encore ouvert sur Google Play ou le Microsoft Store ; finalisez-le ou arrêtez-le d'abord
 
 Pour les publications plus importantes, vérifiez également :
 

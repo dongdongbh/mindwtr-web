@@ -241,6 +241,12 @@ git push origin main --tags
 
 ---
 
+## 分阶段商店发布
+
+稳定版会以分阶段发布的方式进入 Google Play 和 Microsoft Store：先 5%，再 20%、50%、100%。**Manage Store Rollout** 工作流（`rollout.yml`）每天运行一次，每次最多推进一个阶段，因此一次发布会持续数天。每个商店同时只允许一个进行中的正式发布，所以在推送下一个稳定版标签之前，必须先完成或停止上一次发布；否则 Play 和 Microsoft Store 的发布作业会失败，GitHub Release 也不会创建。日程、手动操作和停止方法见[商店分阶段发布](https://github.com/dongdongbh/Mindwtr/blob/main/docs/development/store-rollouts.md)。
+
+---
+
 ## Windows 代码签名
 
 发布工作流已经准备好通过 SignPath Foundation 对 Windows 构建进行 Authenticode 签名，但目前尚无已发布下载被确认带有签名。待发布证书和 SignPath 工件配置就绪后，`.github/workflows/release-windows.yml` 中的签名段落每次发布会执行两轮签名，而且顺序很重要：
@@ -271,6 +277,7 @@ git push origin main --tags
 - 控制台中的移动应用商店类别仍然正确：Google Play 为 `Productivity > Task Management`，App Store 主类别为 `Productivity`
 - Google Play 各语言区域的正文不超过 500 字符的 API 限制
 - SignPath 工件配置与当前 Windows 两次提交的签名流程一致
+- Google Play 和 Microsoft Store 上没有上一个稳定版留下的、仍在进行的正式发布；先完成或停止它
 
 对于较大的发布，还应验证：
 

@@ -40,6 +40,7 @@ curl -X POST https://your-server.example/v1/capture \
 | `audio` | 要附加到任務上的錄音。它會像其他附件一樣同步到你的裝置。只有 `multipart/form-data` 請求中的錄音才會被讀取。 |
 | `recordedAt` | 錄製的時間，可使用毫秒時間戳記或 ISO 8601 時間格式。只要它有效且不在未來，就會成為任務的建立時間。 |
 | `client` | 傳送這次收集的裝置或應用程式的簡短名稱。伺服器會接受並忽略它，讓 Pebble 應用程式等傳送方仍能正常運作。 |
+| `captureId` | 選用。傳送方為這次收集選定的 UUID，它會成為新任務的 id。重試時再次傳送同一個值，伺服器會回應 `200` 與 `"replayed": true`，不會新增任何內容。格式不正確的值會以 `400` 拒絕。 |
 
 `transcription` 與 `audio` 至少要傳送一個。錄音可以是 m4a、mp4、aac、mp3、wav、ogg 或 webm。
 

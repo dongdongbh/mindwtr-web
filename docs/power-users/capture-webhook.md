@@ -40,6 +40,7 @@ curl -X POST https://your-server.example/v1/capture \
 | `audio` | The recording to attach to the task. It syncs to your devices like any other attachment. It is only read from a `multipart/form-data` request. |
 | `recordedAt` | When the capture happened, as epoch milliseconds or an ISO 8601 timestamp. It becomes the task's creation time when it is valid and not in the future. |
 | `client` | A short label for the device or app that sent the capture. It is accepted and ignored, so senders such as the Pebble app keep working. |
+| `captureId` | Optional. A UUID the sender chooses for this capture; it becomes the new task's id. Send the same value again on a retry and the server answers `200` with `"replayed": true` and adds nothing. A malformed value is rejected with `400`. |
 
 Send at least one of `transcription` and `audio`. The recording can be m4a, mp4, aac, mp3, wav, ogg, or webm.
 

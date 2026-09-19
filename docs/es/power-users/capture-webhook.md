@@ -40,6 +40,7 @@ curl -X POST https://your-server.example/v1/capture \
 | `audio` | La grabación que se adjunta a la tarea. Se sincroniza con tus dispositivos como cualquier otro adjunto. Solo se lee de una solicitud `multipart/form-data`. |
 | `recordedAt` | Cuándo se hizo la captura, en milisegundos desde la época o como marca de tiempo ISO 8601. Pasa a ser la hora de creación de la tarea cuando es válida y no está en el futuro. |
 | `client` | Una etiqueta corta para el dispositivo o la aplicación que envió la captura. Se acepta y se ignora, para que remitentes como la app de Pebble sigan funcionando. |
+| `captureId` | Opcional. Un UUID que elige el remitente para esta captura; pasa a ser el id de la nueva tarea. Si envías el mismo valor en un reintento, el servidor responde `200` con `"replayed": true` y no añade nada. Un valor mal formado se rechaza con `400`. |
 
 Envía al menos uno de los campos `transcription` y `audio`. La grabación puede ser m4a, mp4, aac, mp3, wav, ogg o webm.
 

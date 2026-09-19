@@ -40,6 +40,7 @@ curl -X POST https://your-server.example/v1/capture \
 | `audio` | Die Aufnahme, die an die Aufgabe angehängt wird. Sie wird wie jeder andere Anhang auf Ihre Geräte synchronisiert. Sie wird nur aus einer `multipart/form-data`-Anfrage gelesen. |
 | `recordedAt` | Der Zeitpunkt der Aufnahme, als Millisekunden seit der Epoche oder als ISO-8601-Zeitstempel. Er wird zur Erstellungszeit der Aufgabe, sofern er gültig ist und nicht in der Zukunft liegt. |
 | `client` | Eine kurze Bezeichnung für das Gerät oder die App, die die Erfassung gesendet hat. Sie wird angenommen und ignoriert, damit Sender wie die Pebble-App weiter funktionieren. |
+| `captureId` | Optional. Eine UUID, die der Sender für diese Erfassung wählt; sie wird zur ID der neuen Aufgabe. Wird derselbe Wert bei einem erneuten Versuch noch einmal gesendet, antwortet der Server mit `200` und `"replayed": true` und legt nichts an. Ein fehlerhafter Wert wird mit `400` abgelehnt. |
 
 Senden Sie mindestens eines der Felder `transcription` und `audio`. Die Aufnahme kann m4a, mp4, aac, mp3, wav, ogg oder webm sein.
 

@@ -574,7 +574,7 @@ In jeder Voreinstellung setzt `s` plus Buchstabe direkt den Status (`si` Eingang
 ### Allgemein
 - **Darstellung**: System, Hell, Dunkel, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia oder OLED / Mitternacht
 - **Schriftart**: Wählen Sie eine beliebige auf diesem Computer installierte Schrift oder behalten Sie den App-Standard. Klicken Sie in das Feld, um die Liste zu durchsuchen, oder tippen Sie, um sie einzugrenzen. Die Liste stammt vom Betriebssystem; eine gewählte Schrift, die später deinstalliert wird, fällt auf den Standard zurück.
-- **Sprache**: Englisch, Chinesisch (vereinfacht), Chinesisch (traditionell), Hindi, Spanisch, Arabisch, Französisch, Portugiesisch (Brasilien), Russisch, Deutsch, Japanisch, Persisch, Vietnamesisch, Türkisch, Koreanisch, Italienisch, Polnisch, Niederländisch, Tschechisch, Schwedisch, Ungarisch, Ukrainisch
+- **Sprache**: Englisch, Chinesisch (vereinfacht), Chinesisch (traditionell), Hindi, Spanisch, Arabisch, Französisch, Portugiesisch (Brasilien), Russisch, Deutsch, Japanisch, Persisch, Vietnamesisch, Türkisch, Koreanisch, Italienisch, Polnisch, Niederländisch, Tschechisch, Schwedisch, Dänisch, Ungarisch, Ukrainisch
 - **Tastenkürzel**: Standard, Vim oder Emacs
 - **Beim Systemstart öffnen**: Mindwtr nach der Anmeldung automatisch starten
 - **Ansichten der Seitenleiste**: Blenden Sie Einträge der Seitenleiste aus, die Sie nicht nutzen, etwa Irgendwann/Vielleicht, Kalender oder Board. Eingang und Projekte bleiben immer sichtbar. Die Auswahl gilt nur für dieses Gerät; ausgeblendete Ansichten behalten ihre Daten und bleiben über die Suche erreichbar.

@@ -579,7 +579,7 @@ Abre Ajustes desde la barra lateral.
 ### General
 - **Apariencia**: Sistema, Clara, Oscura, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia u OLED / Medianoche
 - **Fuente**: Elige cualquier fuente instalada en este equipo o mantén la predeterminada de la app. Haz clic en el campo para ver la lista o empieza a escribir para acotarla. La lista proviene del sistema operativo, y una fuente elegida que se desinstale después vuelve a la predeterminada.
-- **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués (Brasil), ruso, alemán, japonés, persa, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo, sueco, húngaro, ucraniano
+- **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués (Brasil), ruso, alemán, japonés, persa, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo, sueco, danés, húngaro, ucraniano
 - **Atajos de teclado**: preajuste Estándar, Vim o Emacs
 - **Abrir al iniciar**: inicia Mindwtr automáticamente al iniciar sesión
 - **Vistas de la barra lateral**: oculta las entradas de la barra lateral que no uses, como Algún día/Tal vez, Calendario o Tablero. Bandeja de entrada y Proyectos siempre quedan visibles. La elección se aplica solo a este dispositivo; las vistas ocultas conservan sus datos y siguen siendo accesibles desde la búsqueda.

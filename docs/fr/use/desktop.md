@@ -579,7 +579,7 @@ Accédez aux Paramètres depuis la barre latérale.
 ### Général
 - **Apparence** : Système, Clair, Sombre, Encre électronique, Nord, Catppuccin Macchiato, Dracula, Sépia ou OLED / Minuit
 - **Police** : Choisissez n’importe quelle police installée sur cet ordinateur, ou gardez celle de l’app par défaut. Cliquez dans le champ pour parcourir la liste ou commencez à taper pour la réduire. La liste vient du système d’exploitation ; une police choisie puis désinstallée retombe sur la police par défaut.
-- **Langue** : anglais, chinois (simplifié), chinois (traditionnel), hindi, espagnol, arabe, français, portugais (Brésil), russe, allemand, japonais, persan, vietnamien, turc, coréen, italien, polonais, néerlandais, tchèque, suédois, hongrois, ukrainien
+- **Langue** : anglais, chinois (simplifié), chinois (traditionnel), hindi, espagnol, arabe, français, portugais (Brésil), russe, allemand, japonais, persan, vietnamien, turc, coréen, italien, polonais, néerlandais, tchèque, suédois, danois, hongrois, ukrainien
 - **Raccourcis clavier** : préréglage Standard, Vim ou Emacs
 - **Lancer au démarrage** : démarrer Mindwtr automatiquement lors de votre connexion
 - **Vues de la barre latérale** : masquez les entrées de la barre latérale que vous n'utilisez pas, comme Un jour/Peut-être, Calendrier ou Tableau. Boîte de réception et Projets restent toujours visibles. Le choix ne s'applique qu'à cet appareil ; les vues masquées conservent leurs données et restent accessibles depuis la recherche.

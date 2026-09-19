@@ -243,9 +243,9 @@ Aktivieren Sie dort **Priorität** und **Zeitschätzung** (und ändern Sie bei B
 
 ### Was ist der Unterschied zwischen erledigten und archivierten Aufgaben?
 
-Verwenden Sie **Erledigt** für kürzlich abgeschlossene Aufgaben. Sie behalten ihr Abschlussdatum, bleiben in der Ansicht „Erledigt“ sichtbar und sind beim täglichen oder wöchentlichen Rückblick nützlich.
+Verwenden Sie **Erledigt** für kürzlich abgeschlossene Aufgaben. Sie behalten ihr Abschlussdatum, bleiben unter **Verlauf → Erledigt** sichtbar und sind beim täglichen oder wöchentlichen Rückblick nützlich.
 
-Verwenden Sie **Archiviert** für abgeschlossene Aufgaben, die Sie ablegen möchten. Sie sind in normalen Aufgabenlisten ausgeblendet und bleiben in der Ansicht „Archiviert“ zum Suchen, Wiederherstellen oder endgültigen Löschen verfügbar. Archivieren löscht die Aufgabe nicht.
+Verwenden Sie **Archiviert** für abgeschlossene Aufgaben, die Sie ablegen möchten. Sie sind in normalen Aufgabenlisten ausgeblendet und bleiben unter **Verlauf → Archiviert** zum Suchen, Wiederherstellen oder endgültigen Löschen verfügbar. Archivieren löscht die Aufgabe nicht.
 
 Behandeln Sie „Erledigt“ als kurzfristiges Abschlussprotokoll und „Archiviert“ als langfristige Historie. **Automatisch archivieren** kann erledigte Aufgaben nach einer gewählten Anzahl von Tagen automatisch archivieren; mit **Nie** bleiben alle Abschlüsse unter „Erledigt“.
 

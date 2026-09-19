@@ -18,11 +18,11 @@ The desktop app features a sidebar navigation with all GTD views and a main cont
 
 If you keep pushing a task's due date later, its row shows a small hourglass badge with the number of postponements (after the third push) next to the due date. The badge is a nudge that the task may need re-clarifying, delegating, or dropping instead of another deferral.
 
-Most task lists share the same control row for selecting tasks, filtering, sorting, grouping, showing details, and switching list density (Comfortable, Compact, or Condensed). Use **Group** to organize Inbox, Next, Waiting, Someday/Maybe, Reference, Done, Archived, and other list views by metadata such as context, area, project, or tag. Done and Archived add a **Completion date** grouping — Today, Yesterday, Previous 7 days, then one heading per calendar month for anything older (January 2026, December 2025, …), and Not completed — using your local calendar days, so each reads as a log of what you finished when. Empty groups are hidden, the ungrouped catch-all (No project, No context, General, and so on) comes last, and every group heading collapses — each list remembers which of its groups are folded per grouping mode on that device.
+Most task lists share the same control row for selecting tasks, filtering, sorting, grouping, and showing details. List density (Comfortable, Compact, or Condensed) is set in **Settings → General → Density**, or cycled with `Ctrl+Shift+C` / `Cmd+Shift+C`. Use **Group** to organize Inbox, Next, Waiting, Someday/Maybe, Reference, Done, Archived, and other list views by metadata such as context, area, project, or tag. Done and Archived add a **Completion date** grouping — Today, Yesterday, Previous 7 days, then one heading per calendar month for anything older (January 2026, December 2025, …), and Not completed — using your local calendar days, so each reads as a log of what you finished when. Empty groups are hidden, the ungrouped catch-all (No project, No context, General, and so on) comes last, and every group heading collapses — each list remembers which of its groups are folded per grouping mode on that device.
 
 **Focus**, **Inbox**, **Next Actions**, **Waiting For**, and **Someday/Maybe** each remember their own **Group** choice, so grouping Focus by project leaves the Inbox as it was. On the first launch after updating, whatever grouping those lists shared carries over to all five, and from then on they are independent.
 
-Drag a task onto **Inbox**, **Someday/Maybe**, **Waiting For**, **Reference**, **Done**, or **Archived** in the sidebar to change its status; the toast offers **Undo**. **Trash** is not a drop target. Drop the task on **Calendar**, or pause over Calendar while dragging, to open today with the task still in hand. Schedule view switches to Week so you can drop it on a day and time.
+Drag a task onto **Inbox**, **Someday/Maybe**, **Waiting For**, **Reference**, or **History** in the sidebar to change its status; dropping it on **History** marks it done, and the toast offers **Undo**. Drag the task over the header of a folded sidebar group, such as **More**, to open that group while you drag. **Trash** is not a drop target. Drop the task on **Calendar**, or pause over Calendar while dragging, to open today with the task still in hand. Schedule view switches to Week so you can drop it on a day and time.
 
 ## Reference
 
@@ -177,6 +177,8 @@ Read-only overview of dated work across time. Each task with dates is drawn as a
 
 Click a bar to open the task, or a project's name to open the project. Timeline only displays: dragging a bar does not change dates. Edit start and due dates in the task editor, and a project's own dates in its details.
 
+**Done** and **Archived** are the two tabs of **History**, in the sidebar's **More** group.
+
 ### ✅ Done
 
 Recently completed tasks. Use this as your short-term completion log for daily or weekly review.
@@ -195,7 +197,7 @@ Choose **Select** to pick tasks or **Select All**. You can move the selection ba
 
 ### 🗑️ Trash
 
-Deleted tasks and projects, newest first. Restore items, delete them permanently, or use **Clear Trash** to empty everything at once. Choose **Select** to pick several tasks and projects (or **Select All**) and restore or permanently delete them in one step. Permanent deletion always asks for confirmation.
+Deleted tasks and projects, newest first. Restore items, delete them permanently, or use **Clear Trash** to empty everything at once. Choose **Select** to pick several tasks and projects (or **Select All**) and restore or permanently delete them in one step. Permanent deletion always asks for confirmation. Items left in Trash are removed for good after 90 days.
 
 ### 📝 Weekly Review
 
@@ -541,7 +543,7 @@ Filtering by a parent context includes all children.
 
 ## Keyboard Shortcuts
 
-Mindwtr supports **Standard** (Gmail/Todoist-style), **Vim**, and **Emacs** keybinding presets. Change in Settings.
+Mindwtr supports **Standard** (Gmail/Todoist-style), **Vim**, and **Emacs** keybinding presets. Change it in **Settings → Advanced → Keyboard and window**.
 
 See [Desktop Keyboard Shortcuts](/use/keyboard-shortcuts) for the complete list.
 
@@ -579,9 +581,8 @@ Access Settings from the sidebar.
 ### General
 - **Appearance**: System, Light, Dark, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia, or OLED / Midnight
 - **Font**: Pick any font installed on this computer, or keep the app default. Click the field to browse the list or start typing to narrow it. The list comes from the operating system, and a chosen font that is later uninstalled falls back to the default.
+- **Density**: Comfortable, Compact, or Condensed list rows
 - **Language**: English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese (Brazil), Russian, German, Japanese, Persian, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech, Swedish, Danish, Hungarian, Ukrainian
-- **Keyboard Shortcuts**: Standard, Vim, or Emacs preset
-- **Launch at Startup**: Start Mindwtr automatically when you sign in
 - **Sidebar views**: Hide sidebar entries you don't use, such as Someday/Maybe, Calendar, or Board. Inbox and Projects always stay visible. The choice applies to this device only, and hidden views keep their data and are still reachable from search.
 
 ### Notifications
@@ -636,6 +637,9 @@ For WebDAV, configure:
 - Username and Password
 
 See [Data and Sync](/data-sync/) for detailed setup.
+
+### Advanced
+- **Keyboard and window**: keyboard shortcut preset (Standard, Vim, or Emacs), window decorations, close behaviour, tray icon, and **Launch at Startup**. Click the card to open it.
 
 ### About
 - Version info

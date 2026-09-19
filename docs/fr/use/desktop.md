@@ -18,11 +18,11 @@ L’application de bureau comporte une barre latérale de navigation avec toutes
 
 Si vous continuez à repousser l’échéance d’une tâche, sa ligne affiche un petit badge en forme de sablier indiquant le nombre de reports (après le troisième report) à côté de l’échéance. Ce badge vous invite à envisager de clarifier à nouveau, déléguer ou abandonner la tâche plutôt que de la reporter encore une fois.
 
-La plupart des listes de tâches partagent la même rangée de commandes pour sélectionner, filtrer, trier et regrouper les tâches, afficher leurs détails et changer la densité de la liste (Confortable, Compact ou Condensé). Utilisez **Grouper** pour organiser la Boîte de réception, les Actions suivantes, En attente, Un jour/Peut-être, Référence, Terminé, Archivés et les autres vues en liste selon des métadonnées telles que le contexte, le domaine, le projet ou l’étiquette. Terminé et Archivés ajoutent un regroupement par **date d’achèvement** — Aujourd’hui, Hier, 7 derniers jours, puis un titre par mois calendaire pour les tâches plus anciennes (janvier 2026, décembre 2025, …) et Non terminé — selon vos jours calendaires locaux, ce qui en fait un journal de ce que vous avez terminé. Les groupes vides sont masqués, le groupe fourre-tout sans attribution (Aucun projet, Aucun contexte, Général, etc.) passe en dernier, et chaque en-tête de groupe se replie : chaque liste retient les groupes repliés par mode de regroupement sur cet appareil.
+La plupart des listes de tâches partagent la même rangée de commandes pour sélectionner, filtrer, trier et regrouper les tâches et afficher leurs détails. La densité de la liste (Confortable, Compact ou Condensé) se règle dans **Paramètres → Général → Densité**, ou s’alterne avec `Ctrl+Shift+C` / `Cmd+Shift+C`. Utilisez **Grouper** pour organiser la Boîte de réception, les Actions suivantes, En attente, Un jour/Peut-être, Référence, Terminé, Archivés et les autres vues en liste selon des métadonnées telles que le contexte, le domaine, le projet ou l’étiquette. Terminé et Archivés ajoutent un regroupement par **date d’achèvement** — Aujourd’hui, Hier, 7 derniers jours, puis un titre par mois calendaire pour les tâches plus anciennes (janvier 2026, décembre 2025, …) et Non terminé — selon vos jours calendaires locaux, ce qui en fait un journal de ce que vous avez terminé. Les groupes vides sont masqués, le groupe fourre-tout sans attribution (Aucun projet, Aucun contexte, Général, etc.) passe en dernier, et chaque en-tête de groupe se replie : chaque liste retient les groupes repliés par mode de regroupement sur cet appareil.
 
 **Focus**, **Boîte de réception**, **Actions suivantes**, **En attente** et **Un jour/Peut-être** retiennent chacune leur propre choix de **Grouper** : regrouper Focus par projet laisse donc la Boîte de réception telle quelle. Au premier lancement après la mise à jour, le regroupement qu’elles partageaient est repris par les cinq listes, puis elles deviennent indépendantes.
 
-Faites glisser une tâche dans la barre latérale vers **Boîte de réception**, **Un jour/Peut-être**, **En attente**, **Références**, **Terminé** ou **Archivé** pour changer son statut ; la notification propose **Annuler**. La **Corbeille** n’accepte pas les dépôts. Déposez la tâche sur **Calendrier**, ou marquez une pause au-dessus du Calendrier pendant le déplacement, pour ouvrir aujourd’hui. La vue Planning passe à Semaine afin que vous puissiez déposer la tâche sur un jour et une heure.
+Faites glisser une tâche dans la barre latérale vers **Boîte de réception**, **Un jour/Peut-être**, **En attente**, **Références** ou **Historique** pour changer son statut ; la déposer sur **Historique** la marque comme terminée, et la notification propose **Annuler**. Faites glisser la tâche sur l’en-tête d’un groupe replié de la barre latérale, comme **Plus**, pour ouvrir ce groupe pendant le déplacement. La **Corbeille** n’accepte pas les dépôts. Déposez la tâche sur **Calendrier**, ou marquez une pause au-dessus du Calendrier pendant le déplacement, pour ouvrir aujourd’hui. La vue Planning passe à Semaine afin que vous puissiez déposer la tâche sur un jour et une heure.
 
 ## Référence
 
@@ -177,6 +177,8 @@ Vue en lecture seule des tâches datées. Chaque tâche ayant des dates est repr
 
 Cliquez sur une barre pour ouvrir la tâche, ou sur le nom d’un projet pour ouvrir le projet. La Chronologie se contente d’afficher : faire glisser une barre ne modifie pas les dates. Modifiez la date de début et l’échéance dans l’éditeur de tâches, et les dates propres d’un projet dans ses détails.
 
+**Terminé** et **Archivés** sont les deux onglets d’**Historique**, dans le groupe **Plus** de la barre latérale.
+
 ### ✅ Terminé
 
 Tâches récemment terminées. Utilisez cette vue comme journal à court terme de vos réalisations pour votre revue quotidienne ou hebdomadaire.
@@ -195,7 +197,7 @@ Choisissez **Sélectionner** pour choisir des tâches ou **Tout sélectionner**.
 
 ### 🗑️ Corbeille
 
-Tâches et projets supprimés, les plus récents en premier. Restaurez des éléments, supprimez-les définitivement ou utilisez **Vider la corbeille** pour tout supprimer en une seule fois. Choisissez **Sélectionner** pour choisir plusieurs tâches et projets (ou **Tout sélectionner**) et les restaurer ou les supprimer définitivement en une seule étape. Toute suppression définitive demande toujours une confirmation.
+Tâches et projets supprimés, les plus récents en premier. Restaurez des éléments, supprimez-les définitivement ou utilisez **Vider la corbeille** pour tout supprimer en une seule fois. Choisissez **Sélectionner** pour choisir plusieurs tâches et projets (ou **Tout sélectionner**) et les restaurer ou les supprimer définitivement en une seule étape. Toute suppression définitive demande toujours une confirmation. Les éléments laissés dans la Corbeille sont supprimés définitivement au bout de 90 jours.
 
 ### 📝 Revue hebdomadaire
 
@@ -541,7 +543,7 @@ Le filtrage par contexte parent inclut tous ses enfants.
 
 ## Raccourcis clavier
 
-Mindwtr prend en charge les préréglages de raccourcis **Standard** (style Gmail/Todoist), **Vim** et **Emacs**. Modifiez-les dans les Paramètres.
+Mindwtr prend en charge les préréglages de raccourcis **Standard** (style Gmail/Todoist), **Vim** et **Emacs**. Modifiez-les dans **Paramètres → Avancé → Clavier et fenêtre**.
 
 Consultez [Raccourcis clavier sur ordinateur](/fr/use/keyboard-shortcuts) pour obtenir la liste complète.
 
@@ -579,9 +581,8 @@ Accédez aux Paramètres depuis la barre latérale.
 ### Général
 - **Apparence** : Système, Clair, Sombre, Encre électronique, Nord, Catppuccin Macchiato, Dracula, Sépia ou OLED / Minuit
 - **Police** : Choisissez n’importe quelle police installée sur cet ordinateur, ou gardez celle de l’app par défaut. Cliquez dans le champ pour parcourir la liste ou commencez à taper pour la réduire. La liste vient du système d’exploitation ; une police choisie puis désinstallée retombe sur la police par défaut.
+- **Densité** : lignes de liste Confortable, Compact ou Condensé
 - **Langue** : anglais, chinois (simplifié), chinois (traditionnel), hindi, espagnol, arabe, français, portugais (Brésil), russe, allemand, japonais, persan, vietnamien, turc, coréen, italien, polonais, néerlandais, tchèque, suédois, danois, hongrois, ukrainien
-- **Raccourcis clavier** : préréglage Standard, Vim ou Emacs
-- **Lancer au démarrage** : démarrer Mindwtr automatiquement lors de votre connexion
 - **Vues de la barre latérale** : masquez les entrées de la barre latérale que vous n'utilisez pas, comme Un jour/Peut-être, Calendrier ou Tableau. Boîte de réception et Projets restent toujours visibles. Le choix ne s'applique qu'à cet appareil ; les vues masquées conservent leurs données et restent accessibles depuis la recherche.
 
 ### Notifications
@@ -636,6 +637,9 @@ Pour WebDAV, configurez :
 - Le nom d’utilisateur et le mot de passe
 
 Consultez [Données et synchronisation](/fr/data-sync/) pour obtenir des instructions détaillées.
+
+### Avancé
+- **Clavier et fenêtre** : préréglage des raccourcis clavier (Standard, Vim ou Emacs), décorations de fenêtre, comportement à la fermeture, icône de la zone de notification et **Lancer au démarrage**. Cliquez sur la carte pour l’ouvrir.
 
 ### À propos
 - Informations sur la version

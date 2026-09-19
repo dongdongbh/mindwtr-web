@@ -53,18 +53,17 @@ Tippen Sie auf **Menü**, um weitere Ansichten zu öffnen:
 - ⏳ **Warten**: delegierte Einträge
 - 💭 **Irgendwann/Vielleicht**: zukünftige Ideen
 - 📚 **Referenz**: Referenzmaterial
-- ✅ **Erledigt**: kürzlich abgeschlossene Aufgaben
-- 📦 **Archiviert**: abgelegte abgeschlossene Aufgaben und Projekte
+- 🕘 **Verlauf**: Registerkarten Erledigt und Archiviert – kürzlich abgeschlossene Aufgaben sowie abgelegte Aufgaben und Projekte
 - 🗑️ **Papierkorb**: gelöschte Aufgaben und Projekte
 - ⚙️ **Einstellungen**: App-Einstellungen
 
-Öffnen Sie **Erledigt** und tippen Sie auf **Auswählen**, um Aufgaben zu markieren. Verwenden Sie dann **Verschieben → Archiviert**, um sie vorzeitig abzulegen. Unter **Archiviert** können Sie mit **Auswählen** oder **Alle auswählen** Aufgaben zurück nach Erledigt verschieben, ohne den Abschlusszeitpunkt zu ändern, sie im Eingang wiederherstellen oder in den Papierkorb verschieben. Wechseln Sie zu **Projekte**, um archivierte Projekte zu öffnen, wiederherzustellen oder in den Papierkorb zu verschieben. Mindwtr löscht Einträge nur aus dem Papierkorb endgültig.
+Öffnen Sie **Verlauf**, bleiben Sie auf der Registerkarte **Erledigt** und tippen Sie auf **Auswählen**, um Aufgaben zu markieren. Verwenden Sie dann **Verschieben → Archiviert**, um sie vorzeitig abzulegen. Unter **Archiviert** können Sie mit **Auswählen** oder **Alle auswählen** Aufgaben zurück nach Erledigt verschieben, ohne den Abschlusszeitpunkt zu ändern, sie im Eingang wiederherstellen oder in den Papierkorb verschieben. Wechseln Sie zu **Projekte**, um archivierte Projekte zu öffnen, wiederherzustellen oder in den Papierkorb zu verschieben. Mindwtr löscht Einträge nur aus dem Papierkorb endgültig.
 
 **Archiviert** hat ein Suchfeld und eine Schaltfläche **Filter** in der Kopfzeile. Filter grenzt nach Kontext, Tag, Priorität und Zeitaufwand ein und enthält **Sortieren** und **Gruppieren** — beide bieten **Abschlussdatum**, da hier ausschließlich abgeschlossene Arbeit abgelegt ist. Standardmäßig steht der neueste Abschluss oben. Filterauswahlen gelten für alle Aufgabenlisten gemeinsam, ein anderswo gewählter Kontext grenzt also auch diese Liste ein. Suche und Filter gelten für die Seite „Aufgaben“ des Umschalters Aufgaben | Projekte.
 
 Unter **Erledigt** zeigt die Sortierung nach **Abschlussdatum** die neuesten Abschlüsse zuerst. Die Gruppierung nach **Abschlussdatum** teilt die Liste in **Heute**, **Gestern**, **Letzte 7 Tage**, je eine Überschrift pro Kalendermonat für ältere Aufgaben (Januar 2026, Dezember 2025, …) und **Nicht abgeschlossen**; leere Gruppen bleiben ausgeblendet, und die Sammelgruppe ohne Zuordnung steht am Ende. Referenz, Eingang, Erledigt und Archiviert lassen sich außerdem nach **Kontext** gruppieren. Eine Aufgabe mit mehreren Kontexten erscheint in jeder passenden Gruppe; Aufgaben ohne Kontext stehen am Ende unter **Kein Kontext**. Tippen Sie auf eine Gruppenüberschrift, um die Gruppe einzuklappen — jede Liste merkt sich pro Gruppierung, welche ihrer Gruppen auf diesem Gerät eingeklappt sind, und die Aufgaben einer eingeklappten Gruppe fallen aus **Auswählen** und den Sammelaktionen heraus.
 
-Öffnen Sie **Papierkorb** und tippen Sie auf **Auswählen**, um mehrere gelöschte Aufgaben und Projekte gemeinsam wiederherzustellen oder endgültig zu löschen. Endgültiges Löschen verlangt immer eine Bestätigung.
+Öffnen Sie **Papierkorb** und tippen Sie auf **Auswählen**, um mehrere gelöschte Aufgaben und Projekte gemeinsam wiederherzustellen oder endgültig zu löschen. Endgültiges Löschen verlangt immer eine Bestätigung. Einträge, die im Papierkorb bleiben, werden nach 90 Tagen endgültig entfernt.
 
 ---
 

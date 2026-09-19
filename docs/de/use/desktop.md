@@ -18,11 +18,11 @@ Die Desktop-App besitzt eine Seitenleistennavigation mit allen GTD-Ansichten und
 
 Wenn Sie das Fälligkeitsdatum einer Aufgabe wiederholt nach hinten verschieben, zeigt die Zeile nach der dritten Verschiebung neben dem Datum eine kleine Sanduhr mit der Anzahl. Sie erinnert daran, dass die Aufgabe möglicherweise erneut geklärt, delegiert oder verworfen werden sollte, statt sie erneut aufzuschieben.
 
-Die meisten Aufgabenlisten verwenden dieselbe Steuerungszeile zum Auswählen, Filtern, Sortieren, Gruppieren, Anzeigen von Details und Umschalten der Listendichte (Komfortabel, Kompakt oder Verdichtet). Mit **Gruppieren** ordnen Sie Eingang, Nächste Aktionen, Warten, Irgendwann/Vielleicht, Referenz, Erledigt, Archiviert und andere Listen nach Metadaten wie Kontext, Bereich, Projekt oder Tag. Erledigt und Archiviert bieten zusätzlich die Gruppierung **Abschlussdatum** – Heute, Gestern, Letzte 7 Tage, danach je eine Überschrift pro Kalendermonat für ältere Aufgaben (Januar 2026, Dezember 2025, …) und Nicht abgeschlossen – auf Basis Ihrer lokalen Kalendertage, sodass sich beide Listen wie ein Protokoll des Erledigten lesen. Leere Gruppen werden ausgeblendet, die Sammelgruppe ohne Zuordnung (Kein Projekt, Kein Kontext, Allgemein usw.) steht am Ende, und jede Gruppenüberschrift lässt sich einklappen — jede Liste merkt sich pro Gruppierung auf diesem Gerät, welche Gruppen eingeklappt sind.
+Die meisten Aufgabenlisten verwenden dieselbe Steuerungszeile zum Auswählen, Filtern, Sortieren, Gruppieren und Anzeigen von Details. Die Listendichte (Komfortabel, Kompakt oder Verdichtet) stellen Sie unter **Einstellungen → Allgemein → Dichte** ein oder schalten sie mit `Ctrl+Shift+C` / `Cmd+Shift+C` weiter. Mit **Gruppieren** ordnen Sie Eingang, Nächste Aktionen, Warten, Irgendwann/Vielleicht, Referenz, Erledigt, Archiviert und andere Listen nach Metadaten wie Kontext, Bereich, Projekt oder Tag. Erledigt und Archiviert bieten zusätzlich die Gruppierung **Abschlussdatum** – Heute, Gestern, Letzte 7 Tage, danach je eine Überschrift pro Kalendermonat für ältere Aufgaben (Januar 2026, Dezember 2025, …) und Nicht abgeschlossen – auf Basis Ihrer lokalen Kalendertage, sodass sich beide Listen wie ein Protokoll des Erledigten lesen. Leere Gruppen werden ausgeblendet, die Sammelgruppe ohne Zuordnung (Kein Projekt, Kein Kontext, Allgemein usw.) steht am Ende, und jede Gruppenüberschrift lässt sich einklappen — jede Liste merkt sich pro Gruppierung auf diesem Gerät, welche Gruppen eingeklappt sind.
 
 **Fokus**, **Eingang**, **Nächste Aktionen**, **Warten** und **Irgendwann/Vielleicht** merken sich jeweils ihre eigene **Gruppieren**-Auswahl; wenn Sie „Fokus“ nach Projekt gruppieren, bleibt der Eingang also unverändert. Beim ersten Start nach dem Update wird die bisher gemeinsame Gruppierung auf alle fünf Listen übertragen, danach sind sie voneinander unabhängig.
 
-Ziehen Sie eine Aufgabe in der Seitenleiste auf **Eingang**, **Irgendwann/Vielleicht**, **Warten**, **Referenz**, **Erledigt** oder **Archiviert**, um ihren Status zu ändern; die Meldung bietet **Rückgängig**. Der **Papierkorb** ist kein Ablageziel. Ziehen Sie die Aufgabe auf **Kalender** oder halten Sie sie beim Ziehen kurz darüber, um den heutigen Tag zu öffnen. Aus der Terminplanansicht wechselt Mindwtr in die Wochenansicht, damit Sie die Aufgabe auf einem Tag und einer Uhrzeit ablegen können.
+Ziehen Sie eine Aufgabe in der Seitenleiste auf **Eingang**, **Irgendwann/Vielleicht**, **Warten**, **Referenz** oder **Verlauf**, um ihren Status zu ändern; beim Ablegen auf **Verlauf** wird sie als erledigt markiert, und die Meldung bietet **Rückgängig**. Ziehen Sie die Aufgabe über die Überschrift einer eingeklappten Gruppe der Seitenleiste, etwa **Mehr**, um diese Gruppe während des Ziehens zu öffnen. Der **Papierkorb** ist kein Ablageziel. Ziehen Sie die Aufgabe auf **Kalender** oder halten Sie sie beim Ziehen kurz darüber, um den heutigen Tag zu öffnen. Aus der Terminplanansicht wechselt Mindwtr in die Wochenansicht, damit Sie die Aufgabe auf einem Tag und einer Uhrzeit ablegen können.
 
 ## Referenz
 
@@ -177,6 +177,8 @@ Schreibgeschützter Überblick über terminierte Arbeit. Jede Aufgabe mit Datum 
 
 Ein Klick auf einen Balken öffnet die Aufgabe, ein Klick auf einen Projektnamen das Projekt. Die Zeitleiste zeigt nur an: Das Ziehen eines Balkens ändert keine Daten. Start- und Fälligkeitsdatum bearbeiten Sie im Aufgabeneditor, die eigenen Daten eines Projekts in dessen Details.
 
+**Erledigt** und **Archiviert** sind die beiden Registerkarten von **Verlauf** in der Gruppe **Mehr** der Seitenleiste.
+
 ### ✅ Erledigt
 
 Kürzlich abgeschlossene Aufgaben als kurzfristiges Abschlussprotokoll für tägliche oder wöchentliche Rückblicke.
@@ -195,7 +197,7 @@ Wählen Sie **Auswählen**, um Aufgaben zu markieren, oder **Alle auswählen**. 
 
 ### 🗑️ Papierkorb
 
-Gelöschte Aufgaben und Projekte, neueste zuerst. Stellen Sie Einträge wieder her, löschen Sie sie endgültig oder leeren Sie alles mit **Papierkorb leeren**. Über **Auswählen** bzw. **Alle auswählen** können mehrere Aufgaben und Projekte gemeinsam wiederhergestellt oder endgültig gelöscht werden. Endgültiges Löschen verlangt immer eine Bestätigung.
+Gelöschte Aufgaben und Projekte, neueste zuerst. Stellen Sie Einträge wieder her, löschen Sie sie endgültig oder leeren Sie alles mit **Papierkorb leeren**. Über **Auswählen** bzw. **Alle auswählen** können mehrere Aufgaben und Projekte gemeinsam wiederhergestellt oder endgültig gelöscht werden. Endgültiges Löschen verlangt immer eine Bestätigung. Einträge, die im Papierkorb bleiben, werden nach 90 Tagen endgültig entfernt.
 
 ### 📝 Wochenrückblick
 
@@ -536,7 +538,7 @@ Ein Filter auf einen übergeordneten Kontext schließt alle Untergruppen ein.
 
 ## Tastenkürzel
 
-Mindwtr unterstützt **Standard** (Gmail-/Todoist-Stil), **Vim** und **Emacs**. Ändern Sie die Voreinstellung in den Einstellungen.
+Mindwtr unterstützt **Standard** (Gmail-/Todoist-Stil), **Vim** und **Emacs**. Ändern Sie die Voreinstellung unter **Einstellungen → Erweitert → Tastatur und Fenster**.
 
 Die vollständige Liste enthält [Desktop-Tastenkürzel](/de/use/keyboard-shortcuts).
 
@@ -574,9 +576,8 @@ In jeder Voreinstellung setzt `s` plus Buchstabe direkt den Status (`si` Eingang
 ### Allgemein
 - **Darstellung**: System, Hell, Dunkel, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia oder OLED / Mitternacht
 - **Schriftart**: Wählen Sie eine beliebige auf diesem Computer installierte Schrift oder behalten Sie den App-Standard. Klicken Sie in das Feld, um die Liste zu durchsuchen, oder tippen Sie, um sie einzugrenzen. Die Liste stammt vom Betriebssystem; eine gewählte Schrift, die später deinstalliert wird, fällt auf den Standard zurück.
+- **Dichte**: Listenzeilen komfortabel, kompakt oder verdichtet
 - **Sprache**: Englisch, Chinesisch (vereinfacht), Chinesisch (traditionell), Hindi, Spanisch, Arabisch, Französisch, Portugiesisch (Brasilien), Russisch, Deutsch, Japanisch, Persisch, Vietnamesisch, Türkisch, Koreanisch, Italienisch, Polnisch, Niederländisch, Tschechisch, Schwedisch, Dänisch, Ungarisch, Ukrainisch
-- **Tastenkürzel**: Standard, Vim oder Emacs
-- **Beim Systemstart öffnen**: Mindwtr nach der Anmeldung automatisch starten
 - **Ansichten der Seitenleiste**: Blenden Sie Einträge der Seitenleiste aus, die Sie nicht nutzen, etwa Irgendwann/Vielleicht, Kalender oder Board. Eingang und Projekte bleiben immer sichtbar. Die Auswahl gilt nur für dieses Gerät; ausgeblendete Ansichten behalten ihre Daten und bleiben über die Suche erreichbar.
 
 ### Benachrichtigungen
@@ -631,6 +632,9 @@ Für WebDAV:
 - Benutzername und Passwort
 
 Ausführliche Einrichtung: [Daten und Synchronisierung](/de/data-sync/).
+
+### Erweitert
+- **Tastatur und Fenster**: Voreinstellung für Tastenkürzel (Standard, Vim oder Emacs), Fensterdekorationen, Schließverhalten, Symbol im Infobereich und **Beim Systemstart öffnen**. Klicken Sie auf die Karte, um sie zu öffnen.
 
 ### Über
 - Versionsinformationen

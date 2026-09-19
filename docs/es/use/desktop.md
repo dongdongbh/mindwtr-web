@@ -18,11 +18,11 @@ La aplicación de escritorio incluye una barra lateral de navegación con todas 
 
 Si sigues posponiendo la fecha de vencimiento de una tarea, su fila muestra junto a ella una pequeña insignia de reloj de arena con el número de aplazamientos (a partir del tercero). La insignia te recuerda que quizá debas volver a aclarar la tarea, delegarla o descartarla en vez de aplazarla otra vez.
 
-La mayoría de las listas de tareas comparten la misma fila de controles para seleccionar tareas, filtrar, ordenar, agrupar, mostrar detalles y cambiar la densidad de la lista (Cómodo, Compacto o Condensado). Usa **Agrupar** para organizar la Bandeja de entrada, Próximas, En espera, Algún día/Tal vez, Referencia, Terminadas, Archivadas y otras vistas de lista por metadatos como contexto, área, proyecto o etiqueta. Terminadas y Archivadas añaden una agrupación por **fecha de finalización** —Hoy, Ayer, Últimos 7 días, después un encabezado por mes natural para lo más antiguo (enero de 2026, diciembre de 2025, …) y Sin completar— según tus días naturales locales, de modo que ambas se leen como un registro de lo que terminaste y cuándo. Los grupos vacíos se ocultan, el grupo general sin asignar (Sin proyecto, Sin contexto, General, etc.) va al final y cada encabezado de grupo se puede plegar: cada lista recuerda qué grupos están plegados por modo de agrupación en ese dispositivo.
+La mayoría de las listas de tareas comparten la misma fila de controles para seleccionar tareas, filtrar, ordenar, agrupar y mostrar detalles. La densidad de la lista (Cómodo, Compacto o Condensado) se ajusta en **Ajustes → General → Densidad**, o se alterna con `Ctrl+Shift+C` / `Cmd+Shift+C`. Usa **Agrupar** para organizar la Bandeja de entrada, Próximas, En espera, Algún día/Tal vez, Referencia, Terminadas, Archivadas y otras vistas de lista por metadatos como contexto, área, proyecto o etiqueta. Terminadas y Archivadas añaden una agrupación por **fecha de finalización** —Hoy, Ayer, Últimos 7 días, después un encabezado por mes natural para lo más antiguo (enero de 2026, diciembre de 2025, …) y Sin completar— según tus días naturales locales, de modo que ambas se leen como un registro de lo que terminaste y cuándo. Los grupos vacíos se ocultan, el grupo general sin asignar (Sin proyecto, Sin contexto, General, etc.) va al final y cada encabezado de grupo se puede plegar: cada lista recuerda qué grupos están plegados por modo de agrupación en ese dispositivo.
 
 **Foco**, **Bandeja de entrada**, **Próximas**, **En espera** y **Algún día/Tal vez** recuerdan cada una su propia opción de **Agrupar**, así que agrupar Foco por proyecto deja la Bandeja de entrada como estaba. En el primer arranque tras la actualización, la agrupación que compartían pasa a las cinco listas y, a partir de ahí, son independientes.
 
-Arrastra una tarea en la barra lateral hasta **Bandeja de entrada**, **Algún día/Tal vez**, **En espera**, **Referencia**, **Hecho** o **Archivado** para cambiar su estado; el aviso ofrece **Deshacer**. **Papelera** no acepta tareas arrastradas. Suelta la tarea en **Calendario**, o mantenla un momento sobre Calendario mientras la arrastras, para abrir hoy. La vista Agenda cambia a Semana para que puedas soltarla en un día y una hora.
+Arrastra una tarea en la barra lateral hasta **Bandeja de entrada**, **Algún día/Tal vez**, **En espera**, **Referencia** o **Historial** para cambiar su estado; al soltarla en **Historial** se marca como hecha, y el aviso ofrece **Deshacer**. Arrastra la tarea sobre el encabezado de un grupo plegado de la barra lateral, como **Más**, para abrir ese grupo mientras arrastras. **Papelera** no acepta tareas arrastradas. Suelta la tarea en **Calendario**, o mantenla un momento sobre Calendario mientras la arrastras, para abrir hoy. La vista Agenda cambia a Semana para que puedas soltarla en un día y una hora.
 
 ## Referencia
 
@@ -177,6 +177,8 @@ Vista de solo lectura del trabajo con fechas. Cada tarea con fechas se dibuja co
 
 Haz clic en una barra para abrir la tarea, o en el nombre de un proyecto para abrir el proyecto. La Línea de tiempo solo muestra: arrastrar una barra no cambia las fechas. Edita la fecha de inicio y la de vencimiento en el editor de tareas, y las fechas propias de un proyecto en sus detalles.
 
+**Terminadas** y **Archivadas** son las dos pestañas de **Historial**, en el grupo **Más** de la barra lateral.
+
 ### ✅ Terminadas
 
 Tareas completadas recientemente. Úsala como registro de finalización a corto plazo para la revisión diaria o semanal.
@@ -195,7 +197,7 @@ Elige **Seleccionar** para escoger tareas o **Seleccionar todo**. Puedes devolve
 
 ### 🗑️ Papelera
 
-Tareas y proyectos eliminados, con los más recientes primero. Restaura elementos, elimínalos permanentemente o usa **Vaciar papelera** para eliminar todo de una vez. Elige **Seleccionar** para escoger varias tareas y proyectos (o **Seleccionar todo**) y restaurarlos o eliminarlos permanentemente en un solo paso. La eliminación permanente siempre pide confirmación.
+Tareas y proyectos eliminados, con los más recientes primero. Restaura elementos, elimínalos permanentemente o usa **Vaciar papelera** para eliminar todo de una vez. Elige **Seleccionar** para escoger varias tareas y proyectos (o **Seleccionar todo**) y restaurarlos o eliminarlos permanentemente en un solo paso. La eliminación permanente siempre pide confirmación. Los elementos que quedan en la Papelera se eliminan definitivamente a los 90 días.
 
 ### 📝 Revisión semanal
 
@@ -541,7 +543,7 @@ Filtrar por un contexto superior incluye todos sus descendientes.
 
 ## Atajos de teclado
 
-Mindwtr admite los preajustes de teclas **Estándar** (estilo Gmail/Todoist), **Vim** y **Emacs**. Cámbialos en Ajustes.
+Mindwtr admite los preajustes de teclas **Estándar** (estilo Gmail/Todoist), **Vim** y **Emacs**. Cámbialos en **Ajustes → Avanzado → Teclado y ventana**.
 
 Consulta [Atajos de teclado de escritorio](/es/use/keyboard-shortcuts) para ver la lista completa.
 
@@ -579,9 +581,8 @@ Abre Ajustes desde la barra lateral.
 ### General
 - **Apariencia**: Sistema, Clara, Oscura, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia u OLED / Medianoche
 - **Fuente**: Elige cualquier fuente instalada en este equipo o mantén la predeterminada de la app. Haz clic en el campo para ver la lista o empieza a escribir para acotarla. La lista proviene del sistema operativo, y una fuente elegida que se desinstale después vuelve a la predeterminada.
+- **Densidad**: filas de lista Cómodo, Compacto o Condensado
 - **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués (Brasil), ruso, alemán, japonés, persa, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo, sueco, danés, húngaro, ucraniano
-- **Atajos de teclado**: preajuste Estándar, Vim o Emacs
-- **Abrir al iniciar**: inicia Mindwtr automáticamente al iniciar sesión
 - **Vistas de la barra lateral**: oculta las entradas de la barra lateral que no uses, como Algún día/Tal vez, Calendario o Tablero. Bandeja de entrada y Proyectos siempre quedan visibles. La elección se aplica solo a este dispositivo; las vistas ocultas conservan sus datos y siguen siendo accesibles desde la búsqueda.
 
 ### Notificaciones
@@ -636,6 +637,9 @@ Para WebDAV, configura:
 - Nombre de usuario y contraseña
 
 Consulta [Datos y sincronización](/es/data-sync/) para ver instrucciones detalladas.
+
+### Avanzado
+- **Teclado y ventana**: preajuste de atajos de teclado (Estándar, Vim o Emacs), decoraciones de ventana, comportamiento al cerrar, icono de bandeja y **Abrir al iniciar**. Haz clic en la tarjeta para abrirla.
 
 ### Acerca de
 - Información de versión

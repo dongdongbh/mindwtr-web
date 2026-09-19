@@ -53,18 +53,17 @@ Toca la pestaña **Menú** para acceder a más vistas:
  - ⏳ **En espera**: elementos delegados
  - 💭 **Algún día/Tal vez**: ideas futuras
  - 📚 **Referencia**: material de referencia
- - ✅ **Terminadas**: tareas completadas recientemente
- - 📦 **Archivadas**: tareas y proyectos completados apartados de las listas normales
+ - 🕘 **Historial**: pestañas Terminadas y Archivadas: tareas completadas recientemente, y tareas y proyectos apartados
  - 🗑️ **Papelera**: tareas y proyectos eliminados
  - ⚙️ **Ajustes**: preferencias de la aplicación
 
-Abre **Terminadas** y toca **Seleccionar** para elegir tareas; después usa **Mover → Archivadas** para archivarlas antes. En **Archivadas**, toca **Seleccionar** o **Seleccionar todo** para devolver tareas a Terminadas sin cambiar su hora de finalización, restaurarlas a la Bandeja de entrada o moverlas a la Papelera. Cambia a **Proyectos** para abrir, restaurar o mover proyectos archivados a la Papelera. Mindwtr solo elimina elementos permanentemente desde la Papelera.
+Abre **Historial**, quédate en la pestaña **Terminadas** y toca **Seleccionar** para elegir tareas; después usa **Mover → Archivadas** para archivarlas antes. En **Archivadas**, toca **Seleccionar** o **Seleccionar todo** para devolver tareas a Terminadas sin cambiar su hora de finalización, restaurarlas a la Bandeja de entrada o moverlas a la Papelera. Cambia a **Proyectos** para abrir, restaurar o mover proyectos archivados a la Papelera. Mindwtr solo elimina elementos permanentemente desde la Papelera.
 
 **Archivadas** tiene un cuadro de búsqueda y un botón **Filtros** en su cabecera. Filtros acota por contexto, etiqueta, prioridad y tiempo estimado, y contiene **Ordenar** y **Agrupar** — ambos ofrecen **Fecha de finalización**, ya que aquí solo se archiva trabajo terminado. De forma predeterminada, primero aparece la finalización más reciente. Las selecciones de filtro se comparten entre las listas de tareas, así que un contexto elegido en otra lista también acota esta. La búsqueda y los filtros se aplican al lado Tareas del selector Tareas | Proyectos.
 
 En **Terminadas**, ordena por **Fecha de finalización** para mostrar primero las tareas completadas más recientes. Agrupa por **Fecha de finalización** para dividir la lista en **Hoy**, **Ayer**, **Últimos 7 días**, un encabezado por mes natural para lo más antiguo (enero de 2026, diciembre de 2025, …) y **Sin completar**; los grupos vacíos permanecen ocultos y el grupo general sin asignar va al final. Referencias, Bandeja de entrada, Terminadas y Archivadas también se pueden agrupar por **Contexto**. Una tarea con varios contextos aparece en cada grupo correspondiente y las tareas sin contexto quedan al final en **Sin contexto**. Toca cualquier encabezado de grupo para plegarlo: cada lista recuerda qué grupos están plegados en cada modo de agrupación en ese dispositivo, y las tareas de un grupo plegado quedan fuera de **Seleccionar** y de las acciones en lote.
 
-Abre **Papelera** y toca **Seleccionar** para gestionar varias tareas y proyectos eliminados. Toca **Seleccionar todo** o elige elementos y después restáuralos o elimínalos permanentemente en un solo paso. La eliminación permanente siempre pide confirmación.
+Abre **Papelera** y toca **Seleccionar** para gestionar varias tareas y proyectos eliminados. Toca **Seleccionar todo** o elige elementos y después restáuralos o elimínalos permanentemente en un solo paso. La eliminación permanente siempre pide confirmación. Los elementos que quedan en la Papelera se eliminan definitivamente a los 90 días.
 
 ---
 

@@ -247,9 +247,9 @@ Activa allí **Prioridad** y **Tiempo estimado** (y reordena los campos si es ne
 
 ### ¿Qué diferencia hay entre las tareas Terminadas y Archivadas?
 
-Usa **Terminada** para las tareas que hayas completado recientemente. Las tareas terminadas conservan su fecha de finalización, siguen visibles en la vista Terminadas y resultan útiles durante la revisión diaria o semanal cuando quieres ver qué has terminado.
+Usa **Terminada** para las tareas que hayas completado recientemente. Las tareas terminadas conservan su fecha de finalización, siguen visibles en **Historial → Terminadas** y resultan útiles durante la revisión diaria o semanal cuando quieres ver qué has terminado.
 
-Usa **Archivada** para las tareas completadas que quieres guardar. Las tareas archivadas se ocultan de las listas de tareas normales y siguen disponibles en la vista Archivadas para buscarlas, restaurarlas o eliminarlas permanentemente. Archivar no elimina la tarea.
+Usa **Archivada** para las tareas completadas que quieres guardar. Las tareas archivadas se ocultan de las listas de tareas normales y siguen disponibles en **Historial → Archivadas** para buscarlas, restaurarlas o eliminarlas permanentemente. Archivar no elimina la tarea.
 
 En la práctica, considera Terminadas como un registro de finalización a corto plazo y Archivadas como un historial a largo plazo. El ajuste **Archivado automático** puede mover automáticamente las tareas Terminadas a Archivadas después del número de días que elijas, o puedes configurarlo como **Nunca** si prefieres conservar todas las tareas completadas en Terminadas.
 

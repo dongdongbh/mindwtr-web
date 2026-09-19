@@ -247,9 +247,9 @@ Activez-y **Priorité** et **Temps estimé** (et réorganisez les champs si néc
 
 ### Quelle est la différence entre les tâches terminées et archivées ?
 
-Utilisez **Terminée** pour les tâches que vous avez achevées récemment. Les tâches terminées conservent leur date d’achèvement, restent visibles dans la vue Terminées et sont utiles pendant la revue quotidienne ou hebdomadaire lorsque vous souhaitez voir ce qui a été accompli.
+Utilisez **Terminée** pour les tâches que vous avez achevées récemment. Les tâches terminées conservent leur date d’achèvement, restent visibles dans **Historique → Terminé** et sont utiles pendant la revue quotidienne ou hebdomadaire lorsque vous souhaitez voir ce qui a été accompli.
 
-Utilisez **Archivée** pour les tâches terminées que vous souhaitez classer. Les tâches archivées sont masquées dans les listes de tâches normales et restent disponibles dans la vue Archivées pour être recherchées, restaurées ou supprimées définitivement. L’archivage ne supprime pas la tâche.
+Utilisez **Archivée** pour les tâches terminées que vous souhaitez classer. Les tâches archivées sont masquées dans les listes de tâches normales et restent disponibles dans **Historique → Archivés** pour être recherchées, restaurées ou supprimées définitivement. L’archivage ne supprime pas la tâche.
 
 En pratique, considérez Terminées comme un journal d’achèvement à court terme et Archivées comme un historique à long terme. Le paramètre **Archivage automatique** peut déplacer automatiquement les tâches terminées vers les archives après un nombre de jours défini, ou vous pouvez le régler sur **Jamais** si vous préférez conserver toutes les tâches achevées dans Terminées.
 

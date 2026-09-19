@@ -53,18 +53,17 @@ Touchez l’onglet **Menu** pour accéder aux vues supplémentaires :
  - ⏳ **En attente** : éléments délégués
  - 💭 **Un jour/Peut-être** : idées pour l’avenir
  - 📚 **Référence** : documents de référence
- - ✅ **Terminé** : tâches récemment terminées
- - 📦 **Archivés** : tâches et projets terminés classés hors des listes normales
+ - 🕘 **Historique** : onglets Terminé et Archivés — tâches récemment terminées, et tâches et projets classés
  - 🗑️ **Corbeille** : tâches et projets supprimés
  - ⚙️ **Paramètres** : préférences de l’application
 
-Ouvrez **Terminé** et touchez **Sélectionner** pour choisir des tâches, puis utilisez **Déplacer → Archivés** pour les classer plus tôt. Dans **Archivés**, touchez **Sélectionner** ou **Tout sélectionner** pour ramener des tâches dans Terminé sans modifier leur heure d’achèvement, les restaurer dans la Boîte de réception ou les déplacer vers la Corbeille. Passez à **Projets** pour ouvrir, restaurer ou déplacer des projets archivés vers la Corbeille. Mindwtr ne supprime définitivement les éléments que depuis la Corbeille.
+Ouvrez **Historique**, restez sur l’onglet **Terminé** et touchez **Sélectionner** pour choisir des tâches, puis utilisez **Déplacer → Archivés** pour les classer plus tôt. Dans **Archivés**, touchez **Sélectionner** ou **Tout sélectionner** pour ramener des tâches dans Terminé sans modifier leur heure d’achèvement, les restaurer dans la Boîte de réception ou les déplacer vers la Corbeille. Passez à **Projets** pour ouvrir, restaurer ou déplacer des projets archivés vers la Corbeille. Mindwtr ne supprime définitivement les éléments que depuis la Corbeille.
 
 **Archivés** dispose d’un champ de recherche et d’un bouton **Filtres** dans son en-tête. Filtres restreint par contexte, étiquette, priorité et temps estimé, et contient **Trier** et **Regrouper** — tous deux proposant **Date d’achèvement**, puisque tout ce qui est classé ici est du travail terminé. Par défaut, l’achèvement le plus récent vient en premier. Les sélections de filtres sont partagées entre les listes de tâches : un contexte choisi ailleurs restreint donc aussi cette liste. La recherche et les filtres s’appliquent au côté Tâches du sélecteur Tâches | Projets.
 
 Dans **Terminé**, triez par **Date d’achèvement** pour afficher d’abord les tâches achevées le plus récemment. Regroupez par **Date d’achèvement** pour diviser la liste en **Aujourd’hui**, **Hier**, **7 derniers jours**, un titre par mois calendaire pour les tâches plus anciennes (janvier 2026, décembre 2025, …) et **Non terminé** ; les groupes vides restent masqués et le groupe fourre-tout sans attribution passe en dernier. Références, Boîte de réception, Terminé et Archivés peuvent aussi être regroupés par **Contexte**. Une tâche avec plusieurs contextes apparaît dans chaque groupe correspondant, tandis que les tâches sans contexte se trouvent à la fin sous **Sans contexte**. Touchez un titre de groupe pour le replier — chaque liste mémorise, pour chaque mode de regroupement, les groupes repliés sur cet appareil, et les tâches d’un groupe replié sortent de **Sélectionner** et des actions groupées.
 
-Ouvrez la **Corbeille** et touchez **Sélectionner** pour gérer plusieurs tâches et projets supprimés. Touchez **Tout sélectionner** ou choisissez des éléments, puis restaurez-les ou supprimez-les définitivement en une seule étape. Toute suppression définitive demande toujours une confirmation.
+Ouvrez la **Corbeille** et touchez **Sélectionner** pour gérer plusieurs tâches et projets supprimés. Touchez **Tout sélectionner** ou choisissez des éléments, puis restaurez-les ou supprimez-les définitivement en une seule étape. Toute suppression définitive demande toujours une confirmation. Les éléments laissés dans la Corbeille sont supprimés définitivement au bout de 90 jours.
 
 ---
 

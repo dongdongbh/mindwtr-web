@@ -235,7 +235,7 @@ En Android, el botón de captura de cualquiera de los tres widgets, el mosaico d
 
 Activar la transcripción también añade un botón de micrófono a esta ventana nativa de Android. Graba, pulsa Detener y después Guardar; la aplicación principal permanece cerrada. Las grabaciones se guardan en el dispositivo y se transcriben con el proveedor configurado cuando Mindwtr se abre o vuelve al primer plano. F-Droid usa Whisper sin conexión. Si la transcripción falla, la grabación se conserva para otro intento. La grabación se detiene al salir de la ventana y tiene un límite de cinco minutos.
 
-En Android, las etiquetas de vencimiento muestran **Hoy**, el día de la semana para tareas dentro de los próximos siete días o una fecha compacta para fechas posteriores. Las tareas vencidas y las que vencen hoy aparecen destacadas.
+En Android, las etiquetas de vencimiento muestran **Hoy**, el día de la semana para tareas dentro de los próximos siete días o una fecha compacta, en el formato de fecha de la app, para fechas posteriores. Las tareas vencidas y las que vencen hoy aparecen destacadas.
 
 En la próxima versión, las listas de los widgets Tareas y Compacto de Android permitirán desplazarse más allá de 20 tareas. Para una lista muy larga, **Ver todo** al final abrirá la lista seleccionada completa en Mindwtr. No hace falta configurar el número de tareas.
 

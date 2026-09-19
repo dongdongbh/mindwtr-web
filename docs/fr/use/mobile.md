@@ -235,7 +235,7 @@ Sous Android, le bouton de capture de chacun des trois widgets, la tuile des Ré
 
 l’activation de la transcription ajoute aussi un bouton microphone à cette fenêtre Android native. Enregistrez, appuyez sur Arrêter, puis sur Enregistrer ; l’application principale reste fermée. Les enregistrements sont conservés sur l’appareil et transcrits avec le fournisseur configuré à la prochaine ouverture de Mindwtr ou à son retour au premier plan. F-Droid utilise Whisper hors ligne. Si la transcription échoue, l’enregistrement est conservé pour une nouvelle tentative. L’enregistrement s’arrête lorsque vous quittez la fenêtre et est limité à cinq minutes.
 
-Sous Android, les libellés d’échéance indiquent **Aujourd’hui**, le jour de la semaine pour les tâches des sept prochains jours, ou une date compacte pour les échéances ultérieures. Les tâches en retard ou à échéance aujourd’hui sont mises en évidence.
+Sous Android, les libellés d’échéance indiquent **Aujourd’hui**, le jour de la semaine pour les tâches des sept prochains jours, ou une date compacte, dans le format de date de l’app, pour les échéances ultérieures. Les tâches en retard ou à échéance aujourd’hui sont mises en évidence.
 
 Dans la prochaine version, les listes des widgets Tâches et Compact d’Android défileront au-delà de 20 tâches. Pour une très longue liste, **Tout afficher** en bas ouvrira la liste sélectionnée complète dans Mindwtr. Aucun réglage du nombre de tâches n’est nécessaire.
 

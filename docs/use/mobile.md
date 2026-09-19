@@ -235,7 +235,7 @@ On Android, the capture button on any of the three widgets, the Quick Settings t
 
 Enabling speech-to-text also adds a microphone button to this native Android window. Record, tap Stop, then Save; the main app stays closed. Recordings are saved on the device and transcribed with your configured provider when Mindwtr next opens or returns to the foreground. F-Droid uses offline Whisper. Failed transcription keeps the recording for another attempt. Recording stops when you leave the window and is limited to five minutes.
 
-On Android, dated rows show **Today**, a weekday for the coming week, or a compact date. Tasks due today or overdue receive extra emphasis.
+On Android, dated rows show **Today**, a weekday for the coming week, or a compact date in the app's date format. Tasks due today or overdue receive extra emphasis.
 
 Android Tasks and Compact lists scroll beyond 20 tasks. For a very large list, **View all** at the bottom opens the full selected list in Mindwtr. No task-count setting is needed.
 

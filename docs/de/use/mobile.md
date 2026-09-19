@@ -224,7 +224,7 @@ Auf Android öffnen die Erfassungsschaltfläche in jedem der drei Widgets, die S
 
 Bei aktivierter Spracherkennung erscheint auch eine Mikrofontaste in diesem nativen Android-Fenster. Nehmen Sie auf, tippen Sie auf Stopp und dann auf Speichern; die Haupt-App bleibt geschlossen. Aufnahmen werden auf dem Gerät gespeichert und beim nächsten Öffnen von Mindwtr oder bei der Rückkehr in den Vordergrund mit dem konfigurierten Anbieter transkribiert. F-Droid verwendet Offline-Whisper. Schlägt die Transkription fehl, bleibt die Aufnahme für einen weiteren Versuch erhalten. Die Aufnahme endet beim Verlassen des Fensters und ist auf fünf Minuten begrenzt.
 
-Auf Android zeigen Fälligkeitsangaben **Heute**, den Wochentag für Aufgaben innerhalb der nächsten Woche oder ein kompaktes Datum für spätere Aufgaben. Überfällige und heute fällige Aufgaben werden hervorgehoben.
+Auf Android zeigen Fälligkeitsangaben **Heute**, den Wochentag für Aufgaben innerhalb der nächsten Woche oder ein kompaktes Datum im Datumsformat der App für spätere Aufgaben. Überfällige und heute fällige Aufgaben werden hervorgehoben.
 
 Ab der nächsten Version lassen sich die Listen der Android-Widgets Aufgaben und Kompakt über 20 Aufgaben hinaus scrollen. Bei sehr langen Listen öffnet **Alle anzeigen** am Ende die vollständige ausgewählte Liste in Mindwtr. Eine Einstellung für die Anzahl der Aufgaben ist nicht nötig.
 

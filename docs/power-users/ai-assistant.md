@@ -126,6 +126,7 @@ Copilot never applies changes without your approval.
 Transcribe voice notes into tasks.
 
 - **Offline (Whisper)**: Download a model (~75MB for Tiny, ~150MB for Base) to transcribe fully offline.
+  The model is downloaded from Hugging Face (huggingface.co). If that host cannot be reached, which is common in mainland China, Mindwtr tries the mirror hf-mirror.com next. Either way the file is checked against its known SHA-256 before it is used. If both fail, try another network, or use a cloud or self-hosted provider instead.
 - **Cloud (OpenAI/Gemini)**: Use your API key for high-accuracy transcription.
 - **Self-hosted (OpenAI-compatible)**: Set a custom base URL under the OpenAI speech provider to transcribe on your own server instead of api.openai.com. Anything serving OpenAI's `/v1/audio/transcriptions` works (whisper.cpp, Speaches, LocalAI, vLLM); an API key is optional there, and the model field accepts your server's own model name.
 - **Modes**:

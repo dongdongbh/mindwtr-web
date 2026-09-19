@@ -126,6 +126,7 @@ Copilot übernimmt Änderungen nie ohne Ihre Zustimmung.
 Transkribiert Sprachnotizen in Aufgaben.
 
 - **Offline (Whisper)**: Laden Sie ein Modell herunter (ca. 75 MB für Tiny, ca. 150 MB für Base), um vollständig offline zu transkribieren.
+  Das Modell wird von Hugging Face (huggingface.co) geladen. Ist dieser Server nicht erreichbar, was in Festlandchina häufig vorkommt, versucht Mindwtr anschließend den Spiegel hf-mirror.com. In beiden Fällen wird die Datei vor der Verwendung mit ihrer bekannten SHA-256-Prüfsumme verglichen. Schlägt beides fehl, versuchen Sie ein anderes Netzwerk oder nutzen Sie einen Cloud- oder selbst gehosteten Anbieter.
 - **Cloud (OpenAI/Gemini)**: Verwenden Sie Ihren API-Schlüssel für eine besonders genaue Transkription.
 - **Selbst gehostet (OpenAI-kompatibel)**: Legen Sie unter dem OpenAI-Sprachanbieter eine benutzerdefinierte Basis-URL fest, um auf Ihrem eigenen Server statt über api.openai.com zu transkribieren. Alles, was OpenAIs `/v1/audio/transcriptions` bereitstellt, funktioniert (whisper.cpp, Speaches, LocalAI, vLLM); ein API-Schlüssel ist dort optional, und das Modellfeld akzeptiert den Modellnamen Ihres Servers.
 - **Modi**:

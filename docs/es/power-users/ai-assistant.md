@@ -133,6 +133,7 @@ Copilot nunca aplica cambios sin tu aprobación.
 Transcribe notas de voz como tareas.
 
 - **Sin conexión (Whisper):** descarga un modelo —unos 75 MB para Tiny o 150 MB para Base— y transcribe totalmente sin conexión.
+  El modelo se descarga de Hugging Face (huggingface.co). Si ese servidor no responde, algo habitual en China continental, Mindwtr prueba después el espejo hf-mirror.com. En ambos casos el archivo se comprueba con su SHA-256 conocido antes de usarlo. Si los dos fallan, prueba otra red o usa un proveedor en la nube o autoalojado.
 - **En la nube (OpenAI/Gemini):** usa tu clave para una transcripción de alta precisión.
 - **Autoalojado (compatible con OpenAI):** configura una URL base personalizada en el proveedor de voz OpenAI para transcribir en tu propio servidor en lugar de api.openai.com. Sirve cualquier servidor que exponga `/v1/audio/transcriptions` de OpenAI (whisper.cpp, Speaches, LocalAI, vLLM); ahí la clave de API es opcional y el campo de modelo acepta el nombre de modelo de tu servidor.
 - **Modos:**

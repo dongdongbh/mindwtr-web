@@ -126,6 +126,7 @@ Copilot 絕不會在未經你核准的情況下套用變更。
 將語音筆記轉錄為任務。
 
 - **離線（Whisper）**：下載模型（Tiny 約 75MB、Base 約 150MB），即可完全離線轉錄。
+  模型從 Hugging Face（huggingface.co）下載。如果無法連上該網站（在中國大陸較常見），Mindwtr 會接著嘗試鏡像站 hf-mirror.com。無論從哪裡下載，檔案在使用前都會以已知的 SHA-256 校驗。如果兩者都失敗，請換一個網路，或改用雲端或自架的語音服務。
 - **雲端（OpenAI/Gemini）**：使用你的 API key 進行高準確度轉錄。
 - **自架伺服器（相容 OpenAI）**：在 OpenAI 語音提供者下設定自訂基礎 URL，即可在你自己的伺服器上轉錄，而不經過 api.openai.com。任何提供 OpenAI `/v1/audio/transcriptions` 介面的伺服器都可以（whisper.cpp、Speaches、LocalAI、vLLM）；此時 API 金鑰為選填，模型欄位也接受你伺服器自己的模型名稱。
 - **模式**：

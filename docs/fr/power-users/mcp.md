@@ -40,11 +40,13 @@ Dans les configurations MCP utilisant `npx`, ajoutez `"--allow-scripts=better-sq
 
 - **Linux :** `~/.local/share/mindwtr/mindwtr.db`
 - **macOS :** `~/Library/Application Support/mindwtr/data/mindwtr.db`
-- **Windows :** `%APPDATA%\mindwtr\mindwtr.db`
+- **Windows :** `%APPDATA%\mindwtr\data\mindwtr.db`
 
 Chemin macOS supplémentaire pour les versions isolées :
 
 - `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/data/mindwtr.db`
+
+Les chemins macOS et Windows ci-dessus valent pour la v1.3.2 et les versions suivantes. Avant la v1.3.2, la base se trouvait directement dans le dossier `mindwtr`, par exemple `%APPDATA%\mindwtr\mindwtr.db`. Sous Linux, rien n’a changé.
 
 Vous pouvez remplacer l’emplacement de la base locale avec :
 
@@ -258,7 +260,7 @@ Antigravity (l'IDE agentique de Google) lit les serveurs MCP locaux dans un fich
         "-y",
         "mindwtr-mcp",
         "--db",
-        "C:\\Users\\YOUR_USERNAME\\AppData\\Roaming\\mindwtr\\mindwtr.db",
+        "C:\\Users\\YOUR_USERNAME\\AppData\\Roaming\\mindwtr\\data\\mindwtr.db",
         "--write"
       ]
     }

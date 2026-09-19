@@ -60,9 +60,11 @@ MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 | Platform | Log file |
 | --- | --- |
 | Linux | `~/.local/share/mindwtr/logs/mindwtr.log` |
-| Windows | `%APPDATA%/mindwtr/logs/mindwtr.log` |
-| Windows (Microsoft Store) | `%LOCALAPPDATA%/Packages/<package>/LocalCache/Roaming/mindwtr/logs/mindwtr.log` |
-| macOS | `~/Library/Application Support/mindwtr/logs/mindwtr.log` |
+| Windows | `%APPDATA%/mindwtr/data/logs/mindwtr.log` |
+| Windows (Microsoft Store) | `%LOCALAPPDATA%/Packages/<package>/LocalCache/Roaming/mindwtr/data/logs/mindwtr.log` |
+| macOS | `~/Library/Application Support/mindwtr/data/logs/mindwtr.log` |
+
+The Windows and macOS rows are for v1.3.2 and later. Before v1.3.2 the `logs` folder sat directly in the `mindwtr` folder, for example `%APPDATA%/mindwtr/logs/mindwtr.log`. Linux did not change.
 
 ---
 

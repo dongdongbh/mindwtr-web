@@ -40,11 +40,13 @@ Fügen Sie in MCP-Konfigurationen mit `npx` den Eintrag `"--allow-scripts=better
 
 - **Linux:** `~/.local/share/mindwtr/mindwtr.db`
 - **macOS:** `~/Library/Application Support/mindwtr/data/mindwtr.db`
-- **Windows:** `%APPDATA%\mindwtr\mindwtr.db`
+- **Windows:** `%APPDATA%\mindwtr\data\mindwtr.db`
 
 Zusätzlicher macOS-Pfad für sandboxed Builds:
 
 - `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/data/mindwtr.db`
+
+Die macOS- und Windows-Pfade oben gelten für v1.3.2 und neuer. Vor v1.3.2 lag die Datenbank direkt im Ordner `mindwtr`, zum Beispiel `%APPDATA%\mindwtr\mindwtr.db`. Unter Linux hat sich nichts geändert.
 
 Sie können den lokalen Datenbankspeicherort überschreiben mit:
 
@@ -258,7 +260,7 @@ Antigravity (Googles agentische IDE) liest lokale MCP-Server aus einer JSON-Konf
         "-y",
         "mindwtr-mcp",
         "--db",
-        "C:\\Users\\YOUR_USERNAME\\AppData\\Roaming\\mindwtr\\mindwtr.db",
+        "C:\\Users\\YOUR_USERNAME\\AppData\\Roaming\\mindwtr\\data\\mindwtr.db",
         "--write"
       ]
     }

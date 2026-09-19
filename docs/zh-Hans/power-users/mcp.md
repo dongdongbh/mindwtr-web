@@ -40,11 +40,13 @@ npm install -g --allow-scripts=better-sqlite3 mindwtr-mcp
 
 - **Linux：**`~/.local/share/mindwtr/mindwtr.db`
 - **macOS：**`~/Library/Application Support/mindwtr/data/mindwtr.db`
-- **Windows：**`%APPDATA%\mindwtr\mindwtr.db`
+- **Windows：**`%APPDATA%\mindwtr\data\mindwtr.db`
 
 沙盒构建在 macOS 上的额外路径：
 
 - `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/data/mindwtr.db`
+
+上面的 macOS 和 Windows 路径适用于 v1.3.2 及更新版本。v1.3.2 之前，数据库直接放在 `mindwtr` 目录里，例如 `%APPDATA%\mindwtr\mindwtr.db`。Linux 没有变化。
 
 你可以通过以下方式覆盖本地数据库位置：
 
@@ -258,7 +260,7 @@ Antigravity（Google 的智能体 IDE）从 JSON 配置文件读取本地 MCP �
         "-y",
         "mindwtr-mcp",
         "--db",
-        "C:\\Users\\YOUR_USERNAME\\AppData\\Roaming\\mindwtr\\mindwtr.db",
+        "C:\\Users\\YOUR_USERNAME\\AppData\\Roaming\\mindwtr\\data\\mindwtr.db",
         "--write"
       ]
     }

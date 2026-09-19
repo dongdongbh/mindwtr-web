@@ -40,11 +40,13 @@ npm install -g --allow-scripts=better-sqlite3 mindwtr-mcp
 
 - **Linux：**`~/.local/share/mindwtr/mindwtr.db`
 - **macOS：**`~/Library/Application Support/mindwtr/data/mindwtr.db`
-- **Windows：**`%APPDATA%\mindwtr\mindwtr.db`
+- **Windows：**`%APPDATA%\mindwtr\data\mindwtr.db`
 
 沙盒化組建的其他 macOS 路徑：
 
 - `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/data/mindwtr.db`
+
+上面的 macOS 和 Windows 路徑適用於 v1.3.2 及更新版本。v1.3.2 之前，資料庫直接放在 `mindwtr` 資料夾裡，例如 `%APPDATA%\mindwtr\mindwtr.db`。Linux 沒有變化。
 
 你可以使用下列方式覆寫本機資料庫位置：
 
@@ -258,7 +260,7 @@ Antigravity（Google 的代理式 IDE）從 JSON 設定檔讀取本機 MCP 伺�
         "-y",
         "mindwtr-mcp",
         "--db",
-        "C:\\Users\\YOUR_USERNAME\\AppData\\Roaming\\mindwtr\\mindwtr.db",
+        "C:\\Users\\YOUR_USERNAME\\AppData\\Roaming\\mindwtr\\data\\mindwtr.db",
         "--write"
       ]
     }

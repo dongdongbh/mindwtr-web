@@ -63,9 +63,11 @@ MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 | 平台 | 日誌檔案 |
 | --- | --- |
 | Linux | `~/.local/share/mindwtr/logs/mindwtr.log` |
-| Windows | `%APPDATA%/mindwtr/logs/mindwtr.log` |
-| Windows (Microsoft Store) | `%LOCALAPPDATA%/Packages/<package>/LocalCache/Roaming/mindwtr/logs/mindwtr.log` |
-| macOS | `~/Library/Application Support/mindwtr/logs/mindwtr.log` |
+| Windows | `%APPDATA%/mindwtr/data/logs/mindwtr.log` |
+| Windows (Microsoft Store) | `%LOCALAPPDATA%/Packages/<package>/LocalCache/Roaming/mindwtr/data/logs/mindwtr.log` |
+| macOS | `~/Library/Application Support/mindwtr/data/logs/mindwtr.log` |
+
+表中的 Windows 和 macOS 列適用於 v1.3.2 及更新版本。v1.3.2 之前，`logs` 資料夾直接放在 `mindwtr` 資料夾裡，例如 `%APPDATA%/mindwtr/logs/mindwtr.log`。Linux 沒有變化。
 
 ---
 

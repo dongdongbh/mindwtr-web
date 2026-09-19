@@ -40,11 +40,13 @@ En las configuraciones MCP con `npx`, añade `"--allow-scripts=better-sqlite3"` 
 
 - **Linux:** `~/.local/share/mindwtr/mindwtr.db`
 - **macOS:** `~/Library/Application Support/mindwtr/data/mindwtr.db`
-- **Windows:** `%APPDATA%\mindwtr\mindwtr.db`
+- **Windows:** `%APPDATA%\mindwtr\data\mindwtr.db`
 
 Ruta adicional de macOS para compilaciones aisladas:
 
 - `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/data/mindwtr.db`
+
+Las rutas de macOS y Windows de arriba son para v1.3.2 y posteriores. Antes de v1.3.2 la base de datos estaba directamente en la carpeta `mindwtr`, por ejemplo `%APPDATA%\mindwtr\mindwtr.db`. En Linux no cambió nada.
 
 Puedes sobrescribir la ubicación de la base de datos local con:
 
@@ -258,7 +260,7 @@ Antigravity (el IDE agéntico de Google) lee los servidores MCP locales de un ar
         "-y",
         "mindwtr-mcp",
         "--db",
-        "C:\\Users\\YOUR_USERNAME\\AppData\\Roaming\\mindwtr\\mindwtr.db",
+        "C:\\Users\\YOUR_USERNAME\\AppData\\Roaming\\mindwtr\\data\\mindwtr.db",
         "--write"
       ]
     }

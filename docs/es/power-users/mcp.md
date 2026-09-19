@@ -39,12 +39,12 @@ En las configuraciones MCP con `npx`, añade `"--allow-scripts=better-sqlite3"` 
 ### Ubicaciones predeterminadas de la base de datos
 
 - **Linux:** `~/.local/share/mindwtr/mindwtr.db`
-- **macOS:** `~/Library/Application Support/mindwtr/mindwtr.db`
+- **macOS:** `~/Library/Application Support/mindwtr/data/mindwtr.db`
 - **Windows:** `%APPDATA%\mindwtr\mindwtr.db`
 
 Ruta adicional de macOS para compilaciones aisladas:
 
-- `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/mindwtr.db`
+- `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/data/mindwtr.db`
 
 Puedes sobrescribir la ubicación de la base de datos local con:
 

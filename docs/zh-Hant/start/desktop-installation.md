@@ -191,6 +191,15 @@ scoop install extras/mindwtr
 - `profile/config/`：`config.toml` 與 `secrets.toml`
 - `profile/webview/`：WebView2 瀏覽器設定檔（快取、本機儲存空間）
 
+**在 Windows 上於可攜版與安裝版之間搬移。** 從 v1.3.2 起，安裝版在 `%APPDATA%\mindwtr` 下也使用同樣的 `config\` 和 `data\` 結構，所以可攜版的兩個子資料夾可以直接複製過去；WebView2 設定檔位於 `%LOCALAPPDATA%\tech.dongdongbh.mindwtr`。複製前請先關閉兩邊的 Mindwtr。
+
+| 可攜版 | 安裝版 |
+| --- | --- |
+| `profile\data\`（`mindwtr.db`、`data.json`、`attachments\`、記錄、快照） | `%APPDATA%\mindwtr\data\` |
+| `profile\config\config.toml` | `%APPDATA%\mindwtr\config\config.toml` |
+| `profile\config\secrets.toml` | 沒有對應檔案：安裝版把密鑰存在 Windows 認證管理員中，搬移後需要重新輸入同步密語、Dropbox 登入或 API 金鑰 |
+| `profile\webview\` | `%LOCALAPPDATA%\tech.dongdongbh.mindwtr\`（只是快取，可以不複製） |
+
 仍須安裝 Windows WebView2。v1.1.0 以前的可攜式組建若曾將附件存於 `AppData\Roaming\mindwtr`，第一次啟動時會將附件移至可攜式設定檔；如果同一部電腦也安裝了 Mindwtr，附件則會改為複製，讓兩種安裝都能繼續運作。
 
 ---
@@ -270,8 +279,8 @@ sha256sum --check --ignore-missing SHA256SUMS
 | 平台        | SQLite DB                                         | 同步 JSON                                        |
 | ----------- | ------------------------------------------------- | ------------------------------------------------ |
 | **Linux**   | `~/.local/share/mindwtr/mindwtr.db`               | `~/.local/share/mindwtr/data.json`               |
-| **Windows** | `%APPDATA%/mindwtr/mindwtr.db`                    | `%APPDATA%/mindwtr/data.json`                    |
-| **macOS**   | `~/Library/Application Support/mindwtr/mindwtr.db` | `~/Library/Application Support/mindwtr/data.json` |
+| **Windows** | `%APPDATA%/mindwtr/data/mindwtr.db`                    | `%APPDATA%/mindwtr/data/data.json`                    |
+| **macOS**   | `~/Library/Application Support/mindwtr/data/mindwtr.db` | `~/Library/Application Support/mindwtr/data/data.json` |
 
 Flatpak 安裝使用 `~/.var/app/tech.dongdongbh.mindwtr/` 下的沙盒 XDG 路徑。你隨時可以在**設定 → 同步 → 本機資料**中查看目前使用的確切路徑。
 
@@ -280,8 +289,10 @@ Flatpak 安裝使用 `~/.var/app/tech.dongdongbh.mindwtr/` 下的沙盒 XDG 路�
 | 平台        | 位置                                           |
 | ----------- | ---------------------------------------------- |
 | **Linux**   | `~/.config/mindwtr/config.toml`                |
-| **Windows** | `%APPDATA%/mindwtr/config.toml`                |
-| **macOS**   | `~/Library/Application Support/mindwtr/config.toml` |
+| **Windows** | `%APPDATA%/mindwtr/config/config.toml`                |
+| **macOS**   | `~/Library/Application Support/mindwtr/config/config.toml` |
+
+v1.3.2 之前，Windows 和 macOS 把這些檔案都直接放在 `mindwtr` 資料夾裡。v1.3.2 首次啟動時會把它們移到 `config/` 和 `data/` 中，資料夾裡的其他內容不會被更動。之後不支援退回舊版本：舊版本只會在原來的位置尋找。
 
 ---
 

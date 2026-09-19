@@ -191,6 +191,15 @@ El modo portátil almacena el estado local junto al ejecutable:
 - `profile/config/` para `config.toml` y `secrets.toml`
 - `profile/webview/` para el perfil del navegador WebView2 (caché, almacenamiento local)
 
+**Pasar de la versión portátil a la instalada en Windows, y al revés.** Desde v1.3.2 la app instalada usa la misma estructura `config\` y `data\` bajo `%APPDATA%\mindwtr`, así que las dos subcarpetas portátiles se copian tal cual; el perfil de WebView2 está en `%LOCALAPPDATA%\tech.dongdongbh.mindwtr`. Cierra Mindwtr en ambos lados antes de copiar.
+
+| Portátil | Instalada |
+| --- | --- |
+| `profile\data\` (`mindwtr.db`, `data.json`, `attachments\`, registros, instantáneas) | `%APPDATA%\mindwtr\data\` |
+| `profile\config\config.toml` | `%APPDATA%\mindwtr\config\config.toml` |
+| `profile\config\secrets.toml` | no es un archivo: la app instalada guarda los secretos en el Administrador de credenciales de Windows; vuelve a introducir la contraseña de sincronización, el inicio de sesión de Dropbox o las claves de API tras el traslado |
+| `profile\webview\` | `%LOCALAPPDATA%\tech.dongdongbh.mindwtr\` (solo caché; se puede omitir) |
+
 Windows WebView2 sigue siendo necesario. Los archivos adjuntos que una compilación portátil anterior a v1.1.0 almacenó en `AppData\Roaming\mindwtr` se trasladan al perfil portátil la primera vez que se inicia; si un Mindwtr instalado comparte el equipo, se copian en su lugar, de modo que ambas instalaciones sigan funcionando.
 
 ---
@@ -270,8 +279,8 @@ Después de la instalación, tus datos se almacenan en:
 | Plataforma  | Base de datos SQLite                           | JSON de sincronización                        |
 | ----------- | --------------------------------------------- | -------------------------------------------- |
 | **Linux**   | `~/.local/share/mindwtr/mindwtr.db`            | `~/.local/share/mindwtr/data.json`           |
-| **Windows** | `%APPDATA%/mindwtr/mindwtr.db`                 | `%APPDATA%/mindwtr/data.json`                |
-| **macOS**   | `~/Library/Application Support/mindwtr/mindwtr.db` | `~/Library/Application Support/mindwtr/data.json` |
+| **Windows** | `%APPDATA%/mindwtr/data/mindwtr.db`                 | `%APPDATA%/mindwtr/data/data.json`                |
+| **macOS**   | `~/Library/Application Support/mindwtr/data/mindwtr.db` | `~/Library/Application Support/mindwtr/data/data.json` |
 
 Las instalaciones de Flatpak usan rutas XDG aisladas bajo `~/.var/app/tech.dongdongbh.mindwtr/`. Siempre puedes comprobar las rutas activas exactas en **Ajustes → Sincronización → Datos locales**.
 
@@ -280,8 +289,10 @@ La configuración se almacena por separado:
 | Plataforma  | Ubicación                                      |
 | ----------- | ---------------------------------------------- |
 | **Linux**   | `~/.config/mindwtr/config.toml`                |
-| **Windows** | `%APPDATA%/mindwtr/config.toml`                |
-| **macOS**   | `~/Library/Application Support/mindwtr/config.toml` |
+| **Windows** | `%APPDATA%/mindwtr/config/config.toml`                |
+| **macOS**   | `~/Library/Application Support/mindwtr/config/config.toml` |
+
+Antes de v1.3.2, Windows y macOS guardaban todos estos archivos directamente en la carpeta `mindwtr`. El primer arranque de v1.3.2 los mueve a `config/` y `data/` y no toca nada más de la carpeta. Volver después a una versión anterior no está soportado: solo mira en el sitio antiguo.
 
 ---
 

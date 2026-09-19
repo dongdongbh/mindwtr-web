@@ -23,16 +23,16 @@ Mindwtr **不**运营托管云服务。同步遵循本地优先并由用户配�
 | 平台 | 数据库 (SQLite) | JSON（同步/备份） |
 | ----------- | -------------------------------------------------- | ------------------------------------------------------ |
 | **Linux**   | `~/.local/share/mindwtr/mindwtr.db`                 | `~/.local/share/mindwtr/data.json`                     |
-| **Windows** | `%APPDATA%/mindwtr/mindwtr.db`                      | `%APPDATA%/mindwtr/data.json`                          |
-| **macOS**   | `~/Library/Application Support/mindwtr/mindwtr.db`  | `~/Library/Application Support/mindwtr/data.json`      |
+| **Windows** | `%APPDATA%/mindwtr/data/mindwtr.db`                      | `%APPDATA%/mindwtr/data/data.json`                          |
+| **macOS**   | `~/Library/Application Support/mindwtr/data/mindwtr.db`  | `~/Library/Application Support/mindwtr/data/data.json`      |
 
 配置单独存储：
 
 | 平台 | 位置 |
 | ----------- | --------------------------------------------- |
 | **Linux**   | `~/.config/mindwtr/config.toml`               |
-| **Windows** | `%APPDATA%/mindwtr/config.toml`               |
-| **macOS**   | `~/Library/Application Support/mindwtr/config.toml` |
+| **Windows** | `%APPDATA%/mindwtr/config/config.toml`               |
+| **macOS**   | `~/Library/Application Support/mindwtr/config/config.toml` |
 
 > 旧版 Tauri 构建在 Linux 上使用 `~/.config/tech.dongdongbh.mindwtr/` 和 `~/.local/share/tech.dongdongbh.mindwtr/`。检测到这些目录时会自动迁移。
 

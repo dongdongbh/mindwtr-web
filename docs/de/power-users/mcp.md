@@ -39,12 +39,12 @@ Fügen Sie in MCP-Konfigurationen mit `npx` den Eintrag `"--allow-scripts=better
 ### Standardspeicherorte der Datenbank
 
 - **Linux:** `~/.local/share/mindwtr/mindwtr.db`
-- **macOS:** `~/Library/Application Support/mindwtr/mindwtr.db`
+- **macOS:** `~/Library/Application Support/mindwtr/data/mindwtr.db`
 - **Windows:** `%APPDATA%\mindwtr\mindwtr.db`
 
 Zusätzlicher macOS-Pfad für sandboxed Builds:
 
-- `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/mindwtr.db`
+- `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/data/mindwtr.db`
 
 Sie können den lokalen Datenbankspeicherort überschreiben mit:
 

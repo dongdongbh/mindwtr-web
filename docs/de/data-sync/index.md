@@ -23,16 +23,16 @@ Die Daten liegen in einer lokalen SQLite-Datenbank mit JSON-Datei für Synchroni
 | Plattform | Datenbank (SQLite) | JSON (Synchronisierung/Sicherung) |
 | ----------- | -------------------------------------------------- | ------------------------------------------------------ |
 | **Linux** | `~/.local/share/mindwtr/mindwtr.db` | `~/.local/share/mindwtr/data.json` |
-| **Windows** | `%APPDATA%/mindwtr/mindwtr.db` | `%APPDATA%/mindwtr/data.json` |
-| **macOS** | `~/Library/Application Support/mindwtr/mindwtr.db` | `~/Library/Application Support/mindwtr/data.json` |
+| **Windows** | `%APPDATA%/mindwtr/data/mindwtr.db` | `%APPDATA%/mindwtr/data/data.json` |
+| **macOS** | `~/Library/Application Support/mindwtr/data/mindwtr.db` | `~/Library/Application Support/mindwtr/data/data.json` |
 
 Konfiguration wird separat gespeichert:
 
 | Plattform | Speicherort |
 | ----------- | --------------------------------------------- |
 | **Linux** | `~/.config/mindwtr/config.toml` |
-| **Windows** | `%APPDATA%/mindwtr/config.toml` |
-| **macOS** | `~/Library/Application Support/mindwtr/config.toml` |
+| **Windows** | `%APPDATA%/mindwtr/config/config.toml` |
+| **macOS** | `~/Library/Application Support/mindwtr/config/config.toml` |
 
 > Ältere Tauri-Builds verwendeten unter Linux `~/.config/tech.dongdongbh.mindwtr/` und `~/.local/share/tech.dongdongbh.mindwtr/`. Erkannte Daten werden automatisch migriert.
 

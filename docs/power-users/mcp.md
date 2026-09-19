@@ -39,12 +39,12 @@ In MCP client configurations using `npx`, add `"--allow-scripts=better-sqlite3"`
 ### Default Database Locations
 
 - **Linux:** `~/.local/share/mindwtr/mindwtr.db`
-- **macOS:** `~/Library/Application Support/mindwtr/mindwtr.db`
+- **macOS:** `~/Library/Application Support/mindwtr/data/mindwtr.db`
 - **Windows:** `%APPDATA%\mindwtr\mindwtr.db`
 
 Additional macOS path for sandboxed builds:
 
-- `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/mindwtr.db`
+- `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/data/mindwtr.db`
 
 You can override the local database location with:
 

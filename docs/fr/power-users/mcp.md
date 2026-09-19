@@ -39,12 +39,12 @@ Dans les configurations MCP utilisant `npx`, ajoutez `"--allow-scripts=better-sq
 ### Emplacements par défaut de la base de données
 
 - **Linux :** `~/.local/share/mindwtr/mindwtr.db`
-- **macOS :** `~/Library/Application Support/mindwtr/mindwtr.db`
+- **macOS :** `~/Library/Application Support/mindwtr/data/mindwtr.db`
 - **Windows :** `%APPDATA%\mindwtr\mindwtr.db`
 
 Chemin macOS supplémentaire pour les versions isolées :
 
-- `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/mindwtr.db`
+- `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/data/mindwtr.db`
 
 Vous pouvez remplacer l’emplacement de la base locale avec :
 

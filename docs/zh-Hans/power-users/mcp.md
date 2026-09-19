@@ -39,12 +39,12 @@ npm install -g --allow-scripts=better-sqlite3 mindwtr-mcp
 ### 默认数据库位置
 
 - **Linux：**`~/.local/share/mindwtr/mindwtr.db`
-- **macOS：**`~/Library/Application Support/mindwtr/mindwtr.db`
+- **macOS：**`~/Library/Application Support/mindwtr/data/mindwtr.db`
 - **Windows：**`%APPDATA%\mindwtr\mindwtr.db`
 
 沙盒构建在 macOS 上的额外路径：
 
-- `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/mindwtr.db`
+- `~/Library/Containers/tech.dongdongbh.mindwtr/Data/Library/Application Support/mindwtr/data/mindwtr.db`
 
 你可以通过以下方式覆盖本地数据库位置：
 

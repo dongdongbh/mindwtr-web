@@ -578,6 +578,7 @@ Access Settings from the sidebar.
 
 ### General
 - **Appearance**: System, Light, Dark, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia, or OLED / Midnight
+- **Font**: Pick any font installed on this computer, or keep the app default. Click the field to browse the list or start typing to narrow it. The list comes from the operating system, and a chosen font that is later uninstalled falls back to the default.
 - **Language**: English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese (Brazil), Russian, German, Japanese, Persian, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech, Swedish, Danish, Hungarian, Ukrainian
 - **Keyboard Shortcuts**: Standard, Vim, or Emacs preset
 - **Launch at Startup**: Start Mindwtr automatically when you sign in

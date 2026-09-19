@@ -578,6 +578,7 @@ Accédez aux Paramètres depuis la barre latérale.
 
 ### Général
 - **Apparence** : Système, Clair, Sombre, Encre électronique, Nord, Catppuccin Macchiato, Dracula, Sépia ou OLED / Minuit
+- **Police** : Choisissez n’importe quelle police installée sur cet ordinateur, ou gardez celle de l’app par défaut. Cliquez dans le champ pour parcourir la liste ou commencez à taper pour la réduire. La liste vient du système d’exploitation ; une police choisie puis désinstallée retombe sur la police par défaut.
 - **Langue** : anglais, chinois (simplifié), chinois (traditionnel), hindi, espagnol, arabe, français, portugais (Brésil), russe, allemand, japonais, persan, vietnamien, turc, coréen, italien, polonais, néerlandais, tchèque, suédois, hongrois, ukrainien
 - **Raccourcis clavier** : préréglage Standard, Vim ou Emacs
 - **Lancer au démarrage** : démarrer Mindwtr automatiquement lors de votre connexion

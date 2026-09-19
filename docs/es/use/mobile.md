@@ -795,12 +795,7 @@ Personaliza cómo funciona Mindwtr en tu flujo GTD:
 
 **Funciones (opcionales):**
 - **Prioridades**: muestra una bandera de prioridad en las tareas
-- **Estimaciones de tiempo**: añade un campo de duración para organizar bloques de tiempo
-
-**Preajustes de estimación de tiempo:**
-- Elige qué estimaciones aparecen en el editor de tareas
-- Opciones: 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 4h+
-- Predeterminado: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
+- **Estimaciones de tiempo**: añade un campo de duración para organizar bloques de tiempo. El editor de tareas muestra las duraciones estándar más la opción **Personalizada**, donde escribes la tuya, por ejemplo `2h30`. No hay ningún ajuste para elegir qué duraciones aparecen.
 
 **Archivado automático:**
 - Mueve automáticamente las tareas Terminadas a Archivadas tras un número de días (predeterminado: 7 días). Al reducir el intervalo, las tareas Terminadas existentes que ya superen el nuevo límite se archivan inmediatamente. Por lo demás, la comprobación se ejecuta cada vez que abres la aplicación, y si corriges la fecha de finalización de una tarea a un momento anterior al límite, se archiva al instante.

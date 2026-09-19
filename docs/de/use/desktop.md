@@ -601,10 +601,7 @@ Morgenübersicht und Abenddurchsicht haben eigene Schalter. Sie funktionieren au
 - **Fokusaufgabenlimit** festlegen
 - **Funktionen**: optionale Signale:
   - **Prioritäten**
-  - **Zeitschätzungen**
-- **Zeitschätzungsvoreinstellungen**: Legen Sie fest, welche Zeitschätzungen im Aufgabeneditor erscheinen.
-  - Optionen: 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 4h+
-  - Standard: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
+  - **Zeitschätzungen**: Der Aufgabeneditor listet die Standarddauern sowie eine Auswahl **Benutzerdefiniert**, in der Sie eine eigene Dauer eingeben, zum Beispiel `2h30`. Es gibt keine Einstellung dafür, welche Dauern aufgeführt werden.
 - **Eingangsverarbeitung**: Geführten Lernablauf behalten oder standardmäßig **Schnell** für einen kompakten Bildschirm verwenden
   - 2-Minuten-Regel, frühe Projektfrage, Kontexte/Tags, Planung und Referenzangebot konfigurieren
 - **Layout des Aufgabeneditors**: Standardfelder, Abschnitte und Reihenfolge festlegen

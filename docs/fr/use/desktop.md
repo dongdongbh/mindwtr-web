@@ -606,10 +606,7 @@ Les résumés du matin et du soir ont leurs propres interrupteurs. Ils fonctionn
 - **Limite de tâches Focus** : choisissez combien de tâches peuvent être marquées pour le Focus du jour
 - **Fonctionnalités** : signaux facultatifs que vous pouvez activer au besoin :
   - **Priorités** : afficher un indicateur de priorité sur les tâches
-  - **Estimations de temps** : ajouter un champ de durée pour la planification par blocs de temps
-- **Préréglages d’estimation de temps** : choisissez les estimations affichées dans l’éditeur de tâche
-  - Options : 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 4h+
-  - Valeurs par défaut : 10m, 30m, 1h, 2h, 3h, 4h, 4h+
+  - **Estimations de temps** : ajouter un champ de durée pour la planification par blocs de temps. L’éditeur de tâche affiche les durées standard ainsi qu’un choix **Personnalisé**, où vous saisissez la vôtre, par exemple `2h30`. Aucun réglage ne permet de choisir les durées affichées.
 - **Traitement de la Boîte de réception** : conservez le traitement guidé de la Boîte de réception pour apprendre la méthode GTD, ou choisissez par défaut le mode **Rapide** pour un flux compact sur un seul écran
   - Choisissez d’afficher ou non le raccourci des 2 minutes, de demander le projet au début, d’inclure les contextes et les étiquettes, d’autoriser la planification et de proposer une référence pendant le traitement
 - **Mise en page de l’éditeur de tâche** : choisissez les champs affichés par défaut, déplacez-les entre les sections et réorganisez-les

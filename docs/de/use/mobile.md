@@ -733,12 +733,7 @@ Morgenübersicht und Abenddurchsicht haben eigene Schalter. Sie funktionieren au
 
 **Optionale Funktionen:**
 - **Prioritäten**
-- **Zeitschätzungen**
-
-**Zeitschätzungsvoreinstellungen:**
-- Festlegen, welche Zeitschätzungen im Aufgabeneditor erscheinen
-- Optionen: 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 4h+
-- Standard: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
+- **Zeitschätzungen**: Der Aufgabeneditor listet die Standarddauern sowie eine Auswahl **Benutzerdefiniert**, in der Sie eine eigene Dauer eingeben, zum Beispiel `2h30`. Es gibt keine Einstellung dafür, welche Dauern aufgeführt werden.
 
 **Automatisch archivieren:**
 - Erledigte Aufgaben nach einer festgelegten Anzahl von Tagen archivieren (Standard: 7). Wenn Sie die Verzögerung verkürzen, werden vorhandene Erledigt-Aufgaben, die nun älter als der neue Grenzwert sind, sofort archiviert. Ansonsten läuft die Prüfung bei jedem Start der App, und wenn Sie die Abschlusszeit einer Aufgabe auf einen Zeitpunkt vor dem Grenzwert korrigieren, wird sie sofort archiviert.

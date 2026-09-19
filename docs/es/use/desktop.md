@@ -606,10 +606,7 @@ Los resúmenes de mañana y tarde tienen interruptores independientes. Funcionan
 - **Límite de tareas de Foco**: elige cuántas tareas se pueden marcar para el Foco de hoy
 - **Funciones**: señales opcionales que puedes activar cuando las necesites:
   - **Prioridades**: muestra una bandera de prioridad en las tareas
-  - **Estimaciones de tiempo**: añade un campo de duración para organizar bloques de tiempo
-- **Preajustes de estimación de tiempo**: elige qué estimaciones aparecen en el editor de tareas
-  - Opciones: 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 4h+
-  - Predeterminado: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
+  - **Estimaciones de tiempo**: añade un campo de duración para organizar bloques de tiempo. El editor de tareas muestra las duraciones estándar más la opción **Personalizada**, donde escribes la tuya, por ejemplo `2h30`. No hay ningún ajuste para elegir qué duraciones aparecen.
 - **Procesamiento de la Bandeja de entrada**: conserva el procesamiento guiado para aprender GTD o cambia el modo predeterminado a **Rápido** para un flujo compacto de una sola pantalla
   - Elige si se muestra el atajo de 2 minutos, se pregunta pronto por el proyecto, se incluyen contextos/etiquetas, se permite programar y se ofrece la opción de referencia durante el procesamiento
 - **Diseño del editor de tareas**: elige qué campos se muestran de forma predeterminada, muévelos entre secciones y ordénalos

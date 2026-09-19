@@ -606,10 +606,7 @@ Morning and evening digests have their own switches. They work even when **Task 
 - **Focus task limit**: Choose how many tasks can be marked for Today's Focus
 - **Features**: Optional signals you can enable when needed:
   - **Priorities**: Show a priority flag on tasks
-  - **Time Estimates**: Add a duration field for time blocking
-- **Time Estimate Presets**: Choose which estimates appear in the task editor
-  - Options: 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 4h+
-  - Default: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
+  - **Time Estimates**: Add a duration field for time blocking. The task editor lists the standard durations plus a **Custom** choice, where you type your own, such as `2h30`. There is no setting for which durations are listed.
 - **Inbox Processing**: Keep guided inbox processing for teaching GTD, or switch the default to **Quick** mode for a compact one-screen flow
   - Choose whether to show the 2-minute shortcut, ask for project early, include contexts/tags, allow scheduling, and offer reference during processing
 - **Task Editor Layout**: Choose which fields are shown by default, move fields between sections, and reorder them

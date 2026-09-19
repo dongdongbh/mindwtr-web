@@ -795,12 +795,7 @@ Customize how Mindwtr works for your GTD workflow:
 
 **Features (Optional):**
 - **Priorities**: Show a priority flag on tasks
-- **Time Estimates**: Add a duration field for time blocking
-
-**Time Estimate Presets:**
-- Choose which time estimates appear in the task editor
-- Options: 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 4h+
-- Default: 10m, 30m, 1h, 2h, 3h, 4h, 4h+
+- **Time Estimates**: Add a duration field for time blocking. The task editor lists the standard durations plus a **Custom** choice, where you type your own, such as `2h30`. There is no setting for which durations are listed.
 
 **Auto-Archive:**
 - Automatically move Done tasks to Archived after a set number of days (default: 7 days). Reducing the delay immediately archives existing Done tasks that are now older than the new limit. Otherwise the check runs every time the app starts, and correcting a task's completion time to something older than the limit files it away straight away.

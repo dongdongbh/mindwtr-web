@@ -795,12 +795,7 @@ Personnalisez le fonctionnement de Mindwtr pour votre flux de travail GTD :
 
 **Fonctionnalités (facultatives) :**
 - **Priorités** : afficher un indicateur de priorité sur les tâches
-- **Estimations de temps** : ajouter un champ de durée pour la planification par blocs de temps
-
-**Préréglages d’estimation de temps :**
-- Choisissez les estimations de temps qui apparaissent dans l’éditeur de tâche
-- Options : 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 4h+
-- Valeurs par défaut : 10m, 30m, 1h, 2h, 3h, 4h, 4h+
+- **Estimations de temps** : ajouter un champ de durée pour la planification par blocs de temps. L’éditeur de tâche affiche les durées standard ainsi qu’un choix **Personnalisé**, où vous saisissez la vôtre, par exemple `2h30`. Aucun réglage ne permet de choisir les durées affichées.
 
 **Archivage automatique :**
 - Déplacez automatiquement les tâches Terminées vers Archivées après un nombre défini de jours (par défaut : 7 jours). Réduire le délai archive immédiatement les tâches déjà Terminées qui dépassent désormais la nouvelle limite. Sinon la vérification a lieu à chaque démarrage de l'application, et si vous corrigez la date d'achèvement d'une tâche à une date antérieure à la limite, elle est archivée aussitôt.

@@ -627,7 +627,7 @@ Los resúmenes de mañana y tarde tienen interruptores independientes. Funcionan
 
 **Opciones de sincronización de ajustes:**
 - Elige qué preferencias se sincronizan entre dispositivos (tema, idioma/formato de fecha, valores GTD predeterminados, URL de calendarios externos, ajustes de IA y Filtros guardados)
-- Las claves de API y las rutas de modelos locales nunca se sincronizan
+- Las claves de API, las URL de endpoints de IA personalizados (incluido el endpoint de voz a texto), los parámetros de petición adicionales y las rutas de modelos locales nunca se sincronizan; un endpoint personalizado se escribe una vez en cada dispositivo
 
 **Estado de sincronización:**
 - El pie de la barra lateral muestra la hora de la última sincronización y el estado conectado/sin conexión

@@ -320,7 +320,7 @@ Mindwtr kann ausgewählte Einstellungen zwischen Geräten synchronisieren. Die K
 - **KI-Einstellungen** (Modelle und Anbieter)
 - **Gespeicherte Filter** (Fokus-Filtervorgaben)
 
-> API-Schlüssel und lokale Modellpfade werden nie synchronisiert.
+> API-Schlüssel, eigene KI-Endpunkt-URLs (auch die für Sprache zu Text), zusätzliche Anfrageparameter und lokale Modellpfade werden nie synchronisiert. Einen eigenen Endpunkt tragen Sie auf jedem Gerät einmal ein.
 > Konflikte werden gruppenweise gelöst. Gleichzeitige Änderungen verschiedener Felder derselben Gruppe können durch die neuere Gruppenänderung überschrieben werden.
 
 ### Zusammenführungsstrategie

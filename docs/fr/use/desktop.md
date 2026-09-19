@@ -627,7 +627,7 @@ Les résumés du matin et du soir ont leurs propres interrupteurs. Ils fonctionn
 
 **Options de synchronisation des paramètres :**
 - Choisissez les préférences à synchroniser entre les appareils (thème, langue/format de date, valeurs GTD par défaut, URL de calendriers externes, paramètres de l’IA, Filtres enregistrés)
-- Les clés API et les chemins de modèles locaux ne sont jamais synchronisés
+- Les clés d’API, les URL de points de terminaison d’IA personnalisés (y compris celui de la reconnaissance vocale), les paramètres de requête supplémentaires et les chemins de modèles locaux ne sont jamais synchronisés ; un point de terminaison personnalisé se saisit une fois sur chaque appareil
 
 **État de la synchronisation :**
 - Le pied de la barre latérale indique l’heure de la dernière synchronisation et l’état en ligne ou hors ligne

@@ -65,7 +65,7 @@ Ne réexaminez l’ADR 0008 que si les fichiers d’instantanés dépassent rég
    - Les modifications simultanées de champs différents au sein du même groupe peuvent toujours être réduites à la mise à jour de groupe la plus récente.
    - Les filtres enregistrés sont fusionnés par `id` de filtre. Les conflits entre filtres enregistrés actifs utilisent strictement la valeur `updatedAt` du filtre ; le départage déterministe ne s’applique que lorsque les horodatages sont identiques ou inutilisables.
    - La désactivation locale d’un groupe dans `syncPreferences` est bidirectionnelle : Mindwtr n’envoie pas ce groupe vers le stockage distant et n’accepte pas les modifications distantes entrantes pour ce groupe.
-   - Les secrets (clés d’API, chemins de modèles locaux) ne sont jamais synchronisés.
+   - Les secrets ne sont jamais synchronisés : clés d’API, URL de points de terminaison d’IA personnalisés (y compris celui de la reconnaissance vocale), paramètres de requête supplémentaires et chemins de modèles locaux. Un point de terminaison personnalisé se saisit une fois sur chaque appareil.
 10. La récupération après une écriture distante est explicite :
    - Les données locales sont d’abord écrites avec `pendingRemoteWriteAt`.
    - Une écriture distante réussie efface l’indicateur.

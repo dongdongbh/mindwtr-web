@@ -65,7 +65,7 @@ Revisit ADR 0008 only if snapshot files regularly exceed 5 MB, sync round-trips 
    - Concurrent edits to different fields inside the same group can still collapse to the newer group update.
    - Saved filters merge by filter `id`. Live-vs-live saved-filter conflicts use the filter `updatedAt` strictly; deterministic tie-break applies only when the timestamps tie or are unusable.
    - A local `syncPreferences` opt-out is bidirectional for that group: Mindwtr does not send that group to remote and does not accept incoming remote changes for it.
-   - Secrets (API keys, local model paths) are never synced.
+   - Secrets are never synced: API keys, custom AI endpoint URLs (including the speech-to-text endpoint), extra request parameters, and local model paths. A custom endpoint is entered once on each device.
 10. Remote-write recovery is explicit:
    - Local data is first written with `pendingRemoteWriteAt`.
    - Remote write clears the flag on success.

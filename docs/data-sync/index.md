@@ -322,7 +322,7 @@ Available options include:
 - **AI settings** (models/providers)
 - **Saved Filters** (Focus filter presets)
 
-> API keys and local model paths are never synced.
+> API keys, custom AI endpoint URLs (including the speech-to-text endpoint), extra request parameters, and local model paths are never synced. Enter a custom endpoint once on each device.
 > Settings conflict resolution is group-based. If two devices edit different fields in the same settings group at nearly the same time, the newer group update can overwrite the older one.
 
 ### Merge Strategy

@@ -322,7 +322,7 @@ Les options disponibles comprennent :
 - **Réglages de l’IA** (modèles/fournisseurs)
 - **Filtres enregistrés** (préréglages de filtres Focus)
 
-> Les clés d’API et les chemins des modèles locaux ne sont jamais synchronisés.
+> Les clés d’API, les URL de points de terminaison d’IA personnalisés (y compris celui de la reconnaissance vocale), les paramètres de requête supplémentaires et les chemins des modèles locaux ne sont jamais synchronisés. Un point de terminaison personnalisé se saisit une fois sur chaque appareil.
 > La résolution des conflits de réglages s’effectue par groupe. Si deux appareils modifient des champs différents du même groupe de réglages presque simultanément, la mise à jour la plus récente du groupe peut écraser l’ancienne.
 
 ### Stratégie de fusion

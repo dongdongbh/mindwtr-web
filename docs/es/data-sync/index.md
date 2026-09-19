@@ -322,7 +322,7 @@ Las opciones disponibles incluyen:
 - **Ajustes de IA** (modelos/proveedores)
 - **Filtros guardados** (preajustes de filtros de Focus)
 
-> Las claves de API y las rutas de modelos locales nunca se sincronizan.
+> Las claves de API, las URL de endpoints de IA personalizados (incluido el endpoint de voz a texto), los parámetros de petición adicionales y las rutas de modelos locales nunca se sincronizan. Un endpoint personalizado se escribe una vez en cada dispositivo.
 > La resolución de conflictos de ajustes se realiza por grupos. Si dos dispositivos editan distintos campos del mismo grupo de ajustes casi al mismo tiempo, la actualización más reciente del grupo puede sobrescribir la anterior.
 
 ### Estrategia de fusión

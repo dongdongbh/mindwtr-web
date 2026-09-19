@@ -65,7 +65,7 @@ Reconsidera ADR 0008 solo si los archivos de instantáneas superan habitualmente
    - Las ediciones simultáneas de distintos campos dentro del mismo grupo aún pueden reducirse a la actualización más reciente del grupo.
    - Los filtros guardados se fusionan por `id` de filtro. Los conflictos entre filtros guardados activos usan estrictamente el `updatedAt` del filtro; el desempate determinista solo se aplica cuando las marcas de tiempo empatan o no se pueden usar.
    - Una exclusión local mediante `syncPreferences` es bidireccional para ese grupo: Mindwtr no envía ese grupo al servidor remoto ni acepta cambios remotos entrantes para él.
-   - Los secretos (claves de API, rutas de modelos locales) nunca se sincronizan.
+   - Los secretos nunca se sincronizan: claves de API, URL de endpoints de IA personalizados (incluido el endpoint de voz a texto), parámetros de petición adicionales y rutas de modelos locales. Un endpoint personalizado se escribe una vez en cada dispositivo.
 10. La recuperación de escrituras remotas es explícita:
    - Primero se escriben los datos locales con `pendingRemoteWriteAt`.
    - La escritura remota borra la marca cuando se completa correctamente.

@@ -834,7 +834,7 @@ Consultez [Données et synchronisation](/fr/data-sync/) pour configurer la synch
 - **Exporter un CSV Mindwtr** : enregistrer un fichier de tâches pour tableur, réimportable sans doublons
 - **Exporter TaskNotes** : enregistrer un Markdown par tâche dans un ZIP pour le module TaskNotes d’Obsidian
 - **Importation depuis Rappels Apple** : choisissez une liste Rappels et importez les rappels incomplets dans la Boîte de réception. Les rappels importés restent dans Rappels Apple, sauf si vous activez **Supprimer les rappels importés** ; ceux qui ont déjà été importés, qui sont terminés ou qui n’ont pas de titre sont ignorés. L’interrupteur **Importer automatiquement** lance l’importation à chaque ouverture de Mindwtr.
-- **Options de synchronisation des paramètres** : choisissez les préférences à synchroniser entre les appareils (thème, langue/format de date, valeurs GTD par défaut, URL de calendriers externes, paramètres de l’IA et Filtres enregistrés). Les clés API et les chemins de modèles locaux ne sont jamais synchronisés.
+- **Options de synchronisation des paramètres** : choisissez les préférences à synchroniser entre les appareils (thème, langue/format de date, valeurs GTD par défaut, URL de calendriers externes, paramètres de l’IA et Filtres enregistrés). Les clés d’API, les URL de points de terminaison d’IA personnalisés (y compris celui de la reconnaissance vocale), les paramètres de requête supplémentaires et les chemins de modèles locaux ne sont jamais synchronisés. Un point de terminaison personnalisé se saisit une fois sur chaque appareil.
 
 **Options GTD :**
 - **Limite de tâches Focus** : choisissez combien de tâches peuvent être marquées pour le Focus du jour.

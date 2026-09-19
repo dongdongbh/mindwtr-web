@@ -627,7 +627,7 @@ Morning and evening digests have their own switches. They work even when **Task 
 
 **Settings sync options:**
 - Choose which preferences sync across devices (theme, language/date format, GTD defaults, external calendar URLs, AI settings, Saved Filters)
-- API keys and local model paths are never synced
+- API keys, custom AI endpoint URLs (including the speech-to-text endpoint), extra request parameters, and local model paths are never synced; enter a custom endpoint once on each device
 
 **Sync status:**
 - Sidebar footer shows last sync time and online/offline status

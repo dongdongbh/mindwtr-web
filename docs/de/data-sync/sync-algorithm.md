@@ -65,7 +65,7 @@ ADR 0008 sollte erst neu bewertet werden, wenn Momentaufnahmedateien regelmäßi
    - Gleichzeitige Änderungen verschiedener Felder derselben Gruppe können weiterhin auf die neuere Gruppenänderung reduziert werden.
    - Gespeicherte Filter werden anhand ihrer Filter-`id` zusammengeführt. Bei Konflikten aktiver gespeicherter Filter wird `updatedAt` strikt verwendet; die deterministische Entscheidung gilt nur bei gleichen oder unbrauchbaren Zeitstempeln.
    - Eine lokale Abwahl in `syncPreferences` wirkt für die Gruppe in beide Richtungen: Mindwtr sendet sie nicht an die Gegenseite und akzeptiert keine eingehenden Änderungen dafür.
-   - Geheimnisse (API-Schlüssel, lokale Modellpfade) werden nie synchronisiert.
+   - Geheimnisse werden nie synchronisiert: API-Schlüssel, eigene KI-Endpunkt-URLs (auch die für Sprache zu Text), zusätzliche Anfrageparameter und lokale Modellpfade. Einen eigenen Endpunkt tragen Sie auf jedem Gerät einmal ein.
 10. Die Wiederherstellung nach fehlgeschlagenem Schreiben auf die Gegenseite ist ausdrücklich geregelt:
    - Lokale Daten werden zuerst mit `pendingRemoteWriteAt` geschrieben.
    - Bei erfolgreichem Schreiben auf die Gegenseite wird das Kennzeichen entfernt.

@@ -622,7 +622,7 @@ Morgenübersicht und Abenddurchsicht haben eigene Schalter. Sie funktionieren au
 
 **Synchronisierte Einstellungen:**
 - Wählen Sie Einstellungen wie Erscheinungsbild, Sprache/Datumsformat, GTD-Standardwerte, externe Kalender-URLs, KI-Einstellungen und gespeicherte Filter.
-- API-Schlüssel und lokale Modellpfade werden nie synchronisiert.
+- API-Schlüssel, eigene KI-Endpunkt-URLs (auch die für Sprache zu Text), zusätzliche Anfrageparameter und lokale Modellpfade werden nie synchronisiert. Einen eigenen Endpunkt tragen Sie auf jedem Gerät einmal ein.
 
 **Status:**
 - Fußzeile der Seitenleiste zeigt letzte Synchronisierung und Online-/Offline-Status.

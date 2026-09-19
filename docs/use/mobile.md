@@ -839,7 +839,7 @@ See [Data and Sync](/data-sync/) for sync setup.
 - **Export Backup**: Save data to a file
 - **Export Mindwtr CSV**: Save a spreadsheet-friendly task export that can be re-imported without duplicating existing tasks
 - **Export TaskNotes**: Save one Markdown file per task in a ZIP for Obsidian's TaskNotes plugin
-- **Apple Reminders import**: Choose a Reminders list and import incomplete reminders into Inbox. Imported reminders remain in Apple Reminders, and already imported, completed, or untitled reminders are skipped. An **Import automatically** switch runs the import each time Mindwtr opens.
+- **Apple Reminders import**: Choose a Reminders list and import incomplete reminders into Inbox. Imported reminders stay in Apple Reminders unless you turn on **Delete imported reminders**; already imported, completed, or untitled reminders are skipped. An **Import automatically** switch runs the import each time Mindwtr opens.
 - **Settings sync options**: Choose which preferences sync across devices (theme, language/date format, GTD defaults, external calendar URLs, AI settings, and Saved Filters). API keys and local model paths are never synced.
 
 **GTD Options:**

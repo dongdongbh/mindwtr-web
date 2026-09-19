@@ -777,7 +777,7 @@ Einrichtung: [Daten und Synchronisierung](/de/data-sync/).
 - **Sicherung exportieren**
 - **Mindwtr-CSV exportieren**: Tabellenfreundliche Aufgabendatei, die ohne Duplikate erneut importiert werden kann
 - **TaskNotes exportieren**: Eine Markdown-Datei pro Aufgabe in einem ZIP für das Obsidian-TaskNotes-Plugin
-- **Apple-Erinnerungen-Import**: Liste wählen und unerledigte Erinnerungen importieren; sie bleiben in Apple Erinnerungen, bereits importierte, erledigte oder titellose werden übersprungen Der Schalter **Automatisch importieren** führt den Import bei jedem Öffnen von Mindwtr aus.
+- **Apple-Erinnerungen-Import**: Liste wählen und unerledigte Erinnerungen importieren; sie bleiben in Apple Erinnerungen, sofern Sie nicht **Importierte Erinnerungen löschen** einschalten. Bereits importierte, erledigte oder titellose werden übersprungen. Der Schalter **Automatisch importieren** führt den Import bei jedem Öffnen von Mindwtr aus.
 - **Synchronisierte Einstellungen**: Darstellung, Sprache/Datumsformat, GTD-Standardwerte, externe Kalender-URLs, KI-Einstellungen, gespeicherte Filter; niemals API-Schlüssel oder lokale Modellpfade
 
 **GTD-Optionen:**

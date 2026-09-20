@@ -477,6 +477,7 @@ The list icon beside **Filters** in the Focus header toggles **Details**: turn i
 - **Context filter**: Tap a context chip to filter the Next list.
 - **Saved Filters**: Save reusable Focus criteria such as projects, contexts, tags, priority, energy level, and time estimates. Tap a saved filter to apply it; tap it again or tap **All** to clear it. To delete a saved filter, long-press its chip and confirm **Delete**. Screen readers also offer a delete action on each saved filter.
 - **Swipe to Focus**: Swipe a task right to toggle "Focus" status (moves it to Today).
+- **Long-press for a start date**: Long-press a task that has no due date to set its start date: **Today**, **Tomorrow**, **Next week**, or a custom date. **Today** files the task under Today without starring it as today's focus. A later date takes it out of the actionable lists until that day.
 - **Quick Status**: Tap the status badge to change status.
 - **Pomodoro (Optional)**: Enable in **Settings → GTD → Features → Pomodoro timer** to show a compact focus/break timer. Leave it as **Timer only**, or turn on **Link timer to task** to show the Timer task picker and **Mark task done** action. Collapse the card to keep the remaining time, phase, and **Running** or **Paused** status visible in a slim row.
 

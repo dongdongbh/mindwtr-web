@@ -477,6 +477,7 @@ El icono de lista junto a **Filtros** en la cabecera de Foco alterna **Detalles*
 - **Filtro de contexto**: toca una pastilla de contexto para filtrar la lista Próximas.
 - **Filtros guardados**: guarda criterios de Foco reutilizables, como proyectos, contextos, etiquetas, prioridad, nivel de energía y estimaciones de tiempo.
 - **Deslizar a Foco**: desliza una tarea hacia la derecha para alternar su estado «Foco» (la mueve a Hoy).
+- **Pulsación larga para una fecha de inicio**: mantén pulsada una tarea sin fecha de vencimiento para fijar su fecha de inicio: **Hoy**, **Mañana**, **Próxima semana** o una fecha personalizada. **Hoy** coloca la tarea en Hoy sin marcarla como foco del día. Una fecha posterior la saca de las listas de acciones hasta ese día.
 - **Estado rápido**: toca la insignia de estado para cambiarlo.
 - **Pomodoro (opcional)**: actívalo en **Ajustes → GTD → Funciones → Temporizador Pomodoro** para mostrar un temporizador compacto de concentración/descanso. Déjalo en **Solo temporizador** o activa **Vincular temporizador a tarea** para mostrar el selector de tarea del temporizador y la acción **Marcar tarea como terminada**. Al contraerlo, una fila estrecha mantiene visibles el tiempo restante, la fase y el estado **En curso** o **En pausa**.
 

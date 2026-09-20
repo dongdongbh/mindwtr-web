@@ -48,7 +48,8 @@ MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 
 ### Escritorio
 
-- La ruta del archivo aparece en **Ajustes → Datos**.
+- Usa **Guardar registro** en **Ajustes → Datos → Diagnósticos** para guardar una copia del registro y adjunta ese archivo (v1.3.2 y posteriores).
+- La ruta del archivo aparece en la misma pantalla; en versiones anteriores, adjunta el archivo de esa ruta.
 - Puedes borrar los registros desde la misma pantalla.
 
 ### Dispositivos móviles

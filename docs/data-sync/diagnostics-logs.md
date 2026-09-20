@@ -46,7 +46,8 @@ MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 ## Share or clear logs
 
 ### Desktop
-- The log file path is shown in **Settings → Data**
+- Use **Save log** in **Settings → Data → Diagnostics** to save a copy of the log, then attach that file (v1.3.2 and later)
+- The log file path is shown on the same screen; on older versions, attach the file at that path
 - You can clear logs from the same screen
 
 ### Mobile

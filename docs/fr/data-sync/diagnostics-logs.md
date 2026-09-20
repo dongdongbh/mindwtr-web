@@ -48,7 +48,8 @@ MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 
 ### Ordinateur
 
-- Le chemin du fichier journal est affiché dans **Paramètres → Données**.
+- Utilisez **Enregistrer le journal** dans **Paramètres → Données → Diagnostic** pour enregistrer une copie du journal, puis joignez ce fichier (v1.3.2 et versions ultérieures).
+- Le chemin du fichier journal est affiché sur le même écran ; avec une version plus ancienne, joignez le fichier situé à cet emplacement.
 - Vous pouvez effacer les journaux depuis le même écran.
 
 ### Mobile

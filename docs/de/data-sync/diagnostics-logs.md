@@ -48,7 +48,8 @@ MINDWTR_DIAGNOSTICS=1 ./src-tauri/target/release/mindwtr
 
 ### Desktop
 
-- Der Pfad der Protokolldatei wird unter **Einstellungen → Daten** angezeigt.
+- Mit **Protokoll speichern** unter **Einstellungen → Daten → Diagnose** speichern Sie eine Kopie des Protokolls und hängen diese Datei an (ab v1.3.2).
+- Der Pfad der Protokolldatei wird auf demselben Bildschirm angezeigt; bei älteren Versionen hängen Sie die Datei unter diesem Pfad an.
 - Dort können Sie die Protokolle auch löschen.
 
 ### Mobilgeräte

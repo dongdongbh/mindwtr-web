@@ -446,7 +446,7 @@ Das Listensymbol neben **Filter** in der Fokus-Kopfzeile schaltet **Details** um
 - **Kontextfilter**: Tippen Sie auf einen Kontextchip, um die Liste der Nächsten Aktionen zu filtern.
 - **Gespeicherte Filter** für Projekte, Kontexte, Tags, Priorität, Energie und Zeitschätzungen
 - **Zum Fokus wischen**: nach rechts wischen, um den Fokusstatus umzuschalten und die Aufgabe nach „Heute“ zu verschieben
-- **Langes Drücken für ein Startdatum**: Drücken Sie lange auf eine Aufgabe ohne Fälligkeitsdatum, um ihr Startdatum zu setzen: **Heute**, **Morgen**, **Nächste Woche** oder ein eigenes Datum. **Heute** ordnet die Aufgabe unter Heute ein, ohne sie als Fokus des Tages zu markieren. Ein späteres Datum nimmt sie bis zu diesem Tag aus den Aktionslisten.
+- **Langes Drücken für ein Startdatum**: Drücken Sie lange auf eine Aufgabe, um ihr Startdatum zu setzen: **Heute**, **Morgen**, **Nächste Woche** oder ein eigenes Datum. **Heute** ordnet die Aufgabe unter Heute ein, ohne sie als Fokus des Tages zu markieren. Ein späteres Datum nimmt sie bis zu diesem Tag aus den Aktionslisten. Einer Aufgabe mit Fälligkeitsdatum werden nur Startdaten bis zu diesem Datum angeboten, und eine heute fällige oder überfällige Aufgabe hat kein Menü.
 - **Schnellstatus**: Statusplakette antippen
 - **Pomodoro (optional)** unter **Einstellungen → GTD → Funktionen → Pomodoro-Zeitgeber**; **Nur Zeitgeber** oder **Zeitgeber mit Aufgabe verknüpfen**, um die Aufgabenauswahl des Zeitgebers und die Aktion **Aufgabe als erledigt markieren** anzuzeigen. Eingeklappt zeigt eine schmale Zeile Restzeit, Phase und den Status **Läuft** oder **Pausiert**.
 

@@ -549,6 +549,16 @@ Prueba a borrar los datos de la aplicación:
 
 Nota: esto elimina los datos locales.
 
+### ¿Cómo hago el texto más grande en el teléfono o la tableta?
+
+Mindwtr en iPhone, iPad y Android sigue el tamaño de texto del dispositivo, así que no hay un ajuste aparte dentro de la app.
+
+En iPhone y iPad puedes agrandar el texto solo en Mindwtr: abre los **Ajustes** del sistema **→ Accesibilidad → Ajustes por app**, toca **Añadir app**, elige **Mindwtr** y ajusta **Texto más grande**. Para cambiar todas las apps a la vez, usa **Ajustes → Pantalla y brillo → Tamaño del texto**.
+
+En Android, cambia el **Tamaño de fuente** en los ajustes de pantalla del sistema. El nombre y el lugar exactos varían según el fabricante, y se aplica a todas las apps.
+
+La app de escritorio tiene su propio ajuste **Tamaño del texto** en **Ajustes → General**.
+
 ### El texto se corta o las etiquetas desaparecen en Android (fuente personalizada o tamaño de letra mayor)
 
 En algunos teléfonos con Android 11 y una capa del fabricante (por ejemplo ZUI en Lenovo), el último carácter de las etiquetas pequeñas desaparece: «Save» se muestra como «Sav», una fecha como «26-09-05» pierde su último dígito, un contador como «(2)» pierde su paréntesis. Ocurre cuando el teléfono aplica una fuente del sistema personalizada, o un tamaño de letra del sistema mayor, en el momento de dibujar el texto, mientras que Mindwtr midió ese texto con la fuente y el tamaño estándar. Las cajas resultan demasiado estrechas para lo que se dibuja. Android 12 y versiones posteriores gestionan las fuentes mediante el proceso estándar, así que la misma fuente funciona allí.

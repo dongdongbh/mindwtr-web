@@ -549,6 +549,16 @@ Try clearing app data:
 
 Note: This deletes local data.
 
+### How do I make the text larger on my phone or tablet?
+
+Mindwtr on iPhone, iPad and Android follows the text size of the device, so there is no separate setting inside the app.
+
+On iPhone and iPad you can make the text larger in Mindwtr only: open the system **Settings → Accessibility → Per-App Settings**, tap **Add App**, choose **Mindwtr**, then set **Larger Text**. To change every app at once, use **Settings → Display & Brightness → Text Size**.
+
+On Android, change **Font size** in the system display settings. The exact name and place differ between phone makers, and it applies to all apps.
+
+The desktop app has its own **Text size** setting in **Settings → General**.
+
 ### Text is cut off or labels vanish on Android (custom font or larger font size)
 
 On some Android 11 phones with a manufacturer skin (for example ZUI on Lenovo), the last character of small labels disappears: "Save" shows as "Sav", a date such as "26-09-05" loses its last digit, a count such as "(2)" loses its bracket. It happens when the phone applies a custom system font, or a larger system font size, at the moment it draws text, while Mindwtr measured that text with the standard font and size. The boxes come out too narrow for what is drawn. Android 12 and later handle fonts through the standard pipeline, so the same font works there.

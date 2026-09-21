@@ -541,6 +541,16 @@ Versuchen Sie, die App-Daten zu löschen:
 
 Hinweis: Dadurch werden lokale Daten gelöscht.
 
+### Wie mache ich den Text auf dem Telefon oder Tablet größer?
+
+Mindwtr auf iPhone, iPad und Android übernimmt die Textgröße des Geräts. Deshalb gibt es in der App keine eigene Einstellung dafür.
+
+Auf iPhone und iPad können Sie den Text nur in Mindwtr vergrößern: Öffnen Sie in den System-**Einstellungen → Bedienungshilfen → App-spezifische Einstellungen**, tippen Sie auf **App hinzufügen**, wählen Sie **Mindwtr** und stellen Sie **Größerer Text** ein. Für alle Apps zugleich nutzen Sie **Einstellungen → Anzeige & Helligkeit → Textgröße**.
+
+Unter Android ändern Sie die **Schriftgröße** in den Anzeigeeinstellungen des Systems. Name und Ort unterscheiden sich je nach Hersteller, und die Änderung gilt für alle Apps.
+
+Die Desktop-App hat eine eigene Einstellung **Textgröße** unter **Einstellungen → Allgemein**.
+
 ### Text wird abgeschnitten oder Beschriftungen verschwinden unter Android (eigene Schriftart oder größere Schriftgröße)
 
 Auf manchen Android-11-Telefonen mit Hersteller-Oberfläche (zum Beispiel ZUI auf Lenovo) verschwindet das letzte Zeichen kleiner Beschriftungen: „Save“ erscheint als „Sav“, ein Datum wie „26-09-05“ verliert seine letzte Ziffer, eine Zählung wie „(2)“ verliert ihre Klammer. Das passiert, wenn das Telefon beim Zeichnen des Textes eine eigene Systemschriftart oder eine größere Systemschriftgröße anwendet, während Mindwtr den Text mit der Standardschriftart und -größe vermessen hat. Die Kästen werden dann zu schmal für das, was gezeichnet wird. Android 12 und neuer verarbeiten Schriftarten über den Standardweg, daher funktioniert dieselbe Schriftart dort.

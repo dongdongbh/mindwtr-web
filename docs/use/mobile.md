@@ -631,6 +631,7 @@ Open Projects from **Menu → Projects**.
 - View all active projects
 - See task count per project
 - Tap to view project details
+- Tap the star on a project to mark it as a priority (up to five). Starred projects move to the top of their area. The rest follow the order set by dragging on desktop, then the name; there is no drag and drop on the phone
 
 ### Project Details
 

@@ -631,6 +631,7 @@ Abre Proyectos desde **Menú → Proyectos**.
 - Consulta todos los proyectos activos
 - Mira el número de tareas de cada proyecto
 - Toca un proyecto para ver sus detalles
+- Toca la estrella de un proyecto para marcarlo como prioritario (cinco como máximo). Los proyectos con estrella pasan al principio de su área. El resto sigue el orden fijado arrastrando en el escritorio y después el nombre; en el teléfono no hay arrastrar y soltar
 
 ### Detalles del proyecto
 

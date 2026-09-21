@@ -631,6 +631,7 @@ Ouvrez les Projets depuis **Menu → Projets**.
 - Affichez tous les projets actifs
 - Consultez le nombre de tâches par projet
 - Touchez un projet pour afficher ses détails
+- Touchez l’étoile d’un projet pour le marquer comme prioritaire (cinq au maximum). Les projets étoilés passent en tête de leur domaine. Les autres suivent l’ordre défini par glisser-déposer sur l’ordinateur, puis le nom ; il n’y a pas de glisser-déposer sur le téléphone
 
 ### Détails du projet
 

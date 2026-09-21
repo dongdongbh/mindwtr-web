@@ -584,6 +584,7 @@ Unter **Menü → Projekte**.
 - aktive Projekte anzeigen
 - Aufgabenanzahl sehen
 - Details antippen
+- Stern antippen, um ein Projekt als Priorität zu markieren (höchstens fünf). Markierte Projekte stehen in ihrem Bereich oben. Die übrigen folgen der auf dem Desktop per Ziehen festgelegten Reihenfolge, dann dem Namen; auf dem Telefon gibt es kein Ziehen und Ablegen
 
 ### Projektdetails
 

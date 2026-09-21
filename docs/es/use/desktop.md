@@ -245,6 +245,7 @@ Usa listas de comprobación como plantillas:
 - **Sección del proyecto** es un campo organizativo para las tareas de un proyecto con secciones. Déjalo vacío en tareas de la Bandeja de entrada, tareas sin asignar o proyectos sin secciones.
 - Estado, Prioridad y Nivel de energía usan controles de pastilla en vez de menús desplegables para agilizar la selección con teclado y puntero.
 - Abre el calendario de un campo de fecha para elegir opciones rápidas junto a la cuadrícula del mes: **Hoy**, **Mañana**, **+2 días**, **+3 días**, **Próxima semana**, **Próximo mes** y **Sin fecha**.
+- El campo de **título** también entiende los tokens de captura rápida. Escribe `@`, `#`, `+`, `!`, `%` o `/` para abrir sugerencias y pulsa `Enter` o `Tab`: la opción va a su campo (contexto, etiqueta, proyecto, área, persona, fecha, estado) y el token sale del título. El texto que escribes sin aceptar una sugerencia se queda en el título tal cual, así que un título como `Review 100% target` es seguro.
 - En **Ajustes → GTD → Diseño del editor de tareas**, elige si el editor de escritorio se abre como panel lateral en línea o como ventana emergente centrada.
 
 ---

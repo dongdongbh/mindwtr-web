@@ -245,6 +245,7 @@ Checklisten als Vorlagen:
 - **Projektabschnitt** organisiert Aufgaben innerhalb eines unterteilten Projekts. Bei Eingangsaufgaben, nicht zugewiesenen Aufgaben oder Projekten ohne Abschnitte leer lassen.
 - Status, Priorität und Energiestufe verwenden Pillensteuerungen statt Auswahlmenüs.
 - Öffnen Sie den Kalender eines Datumsfelds, um neben der Monatsansicht Schnelloptionen zu wählen: **Heute**, **Morgen**, **+2 Tage**, **+3 Tage**, **Nächste Woche**, **Nächster Monat** und **Kein Datum**.
+- Auch das **Titel**-Feld versteht die Schnelleingabe-Tokens. Tippen Sie `@`, `#`, `+`, `!`, `%` oder `/`, um Vorschläge zu öffnen, und drücken Sie dann `Enter` oder `Tab`: Die Auswahl landet in ihrem Feld (Kontext, Tag, Projekt, Bereich, Person, Datum, Status), und das Token verschwindet aus dem Titel. Text, den Sie ohne Übernahme eines Vorschlags tippen, bleibt unverändert im Titel, ein Titel wie `Review 100% target` ist also sicher.
 - Unter **Einstellungen → GTD → Layout des Aufgabeneditors** wählen Sie zwischen seitlicher Vorschau und zentriertem Pop-up.
 
 ---

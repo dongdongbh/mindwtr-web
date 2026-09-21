@@ -245,6 +245,7 @@ Use checklists as templates:
 - **Project Section** is an organizational field for tasks inside a sectioned project. Leave it blank for Inbox tasks, unassigned tasks, or projects without sections.
 - Status, Priority, and Energy Level use pill controls instead of dropdowns for faster keyboard and pointer selection.
 - Open a date field's calendar to pick quick suggestions beside the month grid: **Today**, **Tomorrow**, **+2 days**, **+3 days**, **Next week**, **Next month**, and **No date**.
+- The **title** field understands the quick-add tokens too. Type `@`, `#`, `+`, `!`, `%` or `/` to open suggestions, then press `Enter` or `Tab`: the choice goes into its field (context, tag, project, area, person, date, status) and the token leaves the title. Text you type without accepting a suggestion stays in the title as written, so a title like `Review 100% target` is safe.
 - In **Settings → GTD → Task Editor Layout**, choose whether the desktop editor opens as the inline side peek or a centered pop-up.
 
 ---

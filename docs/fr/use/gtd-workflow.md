@@ -114,6 +114,11 @@ flowchart TD
 - Non → Supprimez, ajoutez comme référence, déplacez vers Un jour/Peut-être, ou **Incubez** : choisissez une date et l’élément revient dans cette clarification pour que vous décidiez à nouveau
 - Oui → Continuez, ou **Commencer plus tard** pour donner une date de début à une action déjà décidée et la classer dans Prochaines actions
 
+**Un jour, Plus tard ou Incubate ?** Les trois mettent un élément de côté, mais différemment :
+- **Un jour** : mis de côté sans date. Vous le retrouvez dans la liste Un jour/Peut-être ou lors de la revue hebdomadaire.
+- **Plus tard** : reste une prochaine action, simplement masquée jusqu’à sa date de début. Ce jour-là, elle apparaît d’elle-même dans Focus et Prochaines actions.
+- **Incubate** : Un jour plus une date de revue. Ce jour-là, l’élément rejoint de nouveau cette passe de clarification, marqué **Back to clarify**, pour que vous décidiez à nouveau. Il reste dans Un jour jusque-là ; il ne retourne jamais dans la Boîte de réception.
+
 **Faut-il plus d’une étape ?**
 - Oui → Transformez la capture en projet : nommez-le et définissez sa prochaine action. Ajoutez autant d’actions supplémentaires que nécessaire. Elles reviennent dans la Boîte de réception avec le projet déjà associé, afin que chacune passe par sa propre clarification
 - Non → Continuez comme une action unique

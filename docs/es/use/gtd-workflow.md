@@ -114,6 +114,11 @@ flowchart TD
 - No → Eliminar, añadir como referencia, mover a Algún día/Quizá o **Incubar**: elige una fecha y el elemento vuelve a esta fase para que decidas de nuevo
 - Sí → Continuar, o **Empezar más tarde** para dar una fecha de inicio a una acción que ya has decidido y archivarla en Próximas acciones
 
+**¿Algún día/Tal vez, Más tarde o Incubar?** Las tres opciones apartan un elemento, pero de forma distinta:
+- **Algún día/Tal vez**: aparcado sin fecha. Lo vuelves a ver en la lista Algún día/Tal vez o en la revisión semanal.
+- **Más tarde**: sigue siendo una próxima acción, solo que oculta hasta su fecha de inicio. Ese día aparece sola en Foco y Próximas acciones.
+- **Incubar**: Algún día/Tal vez más una fecha de revisión. Ese día el elemento vuelve a esta pasada de aclaración, marcado como **Volver a aclarar**, para que decidas de nuevo. Se queda en Algún día/Tal vez hasta entonces; nunca vuelve a la Bandeja de entrada.
+
 **¿Requiere más de un paso?**
 - Sí → Convierte la captura en un proyecto: ponle un nombre y define su próxima acción. Añade tantas acciones posteriores como necesites. Volverán a la Bandeja de entrada con el proyecto ya asociado, de modo que cada una tenga su propia fase de aclaración
 - No → Continuar como una única acción

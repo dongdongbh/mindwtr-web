@@ -114,6 +114,11 @@ flowchart TD
 - No → Delete, add as reference, move to Someday/Maybe, or **Incubate**: pick a date and the item returns to this pass so you can decide again
 - Yes → Continue, or **Start later** to give an action you have already decided on a start date and file it under Next Actions
 
+**Someday, Start later, or Incubate?** All three put an item aside, in different ways:
+- **Someday**: parked with no date. You meet it again in the Someday/Maybe list or the weekly review.
+- **Start later**: still a next action, only hidden until its start date. On that day it shows up in Focus and Next Actions by itself.
+- **Incubate**: Someday plus a review date. On that day the item joins this clarify pass again, marked **Back to clarify**, so you decide once more. It stays in Someday until you do; it never moves back to the Inbox.
+
 **More than one step?**
 - Yes → Turn the capture into a project: name it and define its next action. Add as many further actions as you need. They land back in the Inbox with the project already attached, so each gets its own clarify pass
 - No → Continue as a single action

@@ -114,6 +114,11 @@ flowchart TD
 - Nein → Löschen, als Referenz hinzufügen, nach „Irgendwann/Vielleicht“ verschieben oder **Inkubieren**: Wählen Sie ein Datum, an dem der Eintrag zu diesem Durchlauf zurückkehrt, damit Sie erneut entscheiden können
 - Ja → Fortfahren oder **Später beginnen**, um einer bereits entschiedenen Aktion ein Startdatum zu geben und sie nach „Nächste Aktionen“ zu legen
 
+**Irgendwann, Später beginnen oder Reifen lassen?** Alle drei legen einen Eintrag beiseite, aber auf verschiedene Weise:
+- **Irgendwann**: ohne Datum geparkt. Sie begegnen dem Eintrag wieder in der Liste Irgendwann/Vielleicht oder im Wochenrückblick.
+- **Später beginnen**: weiterhin eine nächste Aktion, nur bis zum Startdatum ausgeblendet. An diesem Tag erscheint sie von selbst in Fokus und Nächste Aktionen.
+- **Reifen lassen**: Irgendwann plus ein Überprüfungsdatum. An diesem Tag kommt der Eintrag wieder in diesen Klärungsdurchgang, markiert mit **Zurück zur Klärung**, damit Sie neu entscheiden. Er bleibt bis dahin in Irgendwann und wandert nie zurück in den Eingang.
+
 **Mehr als ein Schritt?**
 - Ja → Wandeln Sie die Erfassung in ein Projekt um: Benennen Sie es und legen Sie die nächste Aktion fest. Fügen Sie beliebig viele weitere Aktionen hinzu. Sie landen mit bereits zugewiesenem Projekt wieder im Eingang, sodass jede ihren eigenen Klärungsdurchlauf erhält.
 - Nein → Als einzelne Aktion fortfahren

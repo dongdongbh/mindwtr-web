@@ -333,7 +333,7 @@ Starten Sie einen lokalen API-Server für Skripting und Integrationen:
 
 ```bash
 # Start API server (MINDWTR_API_TOKEN is required)
-MINDWTR_API_TOKEN=replace-with-a-strong-token bun mindwtr:api -- --port 4317
+MINDWTR_API_TOKEN=replace-with-a-strong-local-token bun mindwtr:api -- --port 4317
 
 # Without auth - unsafe, isolated compatibility testing only
 bun mindwtr:api -- --port 4317 --dangerously-disable-auth
@@ -364,12 +364,16 @@ Wird keines von beidem angegeben, beendet sich das Hilfsprogramm beim Start. Set
 ```bash
 # Add task via API
 curl -X POST http://localhost:4317/tasks \
+  -H "Authorization: Bearer replace-with-a-strong-local-token" \
   -H "Content-Type: application/json" \
   -d '{"input": "Review PR @work /due:tomorrow"}'
 
 # Complete task
-curl -X POST http://localhost:4317/tasks/<id>/complete
+curl -X POST "http://localhost:4317/tasks/<id>/complete" \
+  -H "Authorization: Bearer replace-with-a-strong-local-token"
 ```
+
+Ersetzen Sie den lokalen Token-Platzhalter im Startbefehl und in den Anfragen durch dasselbe starke Token. Ersetzen Sie `<id>` durch die beim Erstellen zurückgegebene Aufgaben-ID.
 
 ---
 
@@ -379,8 +383,10 @@ Selbst gehostetes Backend für die Cloud-Synchronisierung:
 
 ```bash
 # From monorepo root
-bun run --filter mindwtr-cloud dev -- --port 8787
+MINDWTR_CLOUD_AUTH_TOKENS=replace-with-a-strong-cloud-token bun run --filter mindwtr-cloud dev -- --port 8787
 ```
+
+Ersetzen Sie den Cloud-Token-Platzhalter durch ein starkes Token und verwenden Sie dieses Token in Ihren Clients.
 
 ### Endpunkte
 

@@ -330,7 +330,7 @@ Exécutez un serveur d'API local pour les scripts et les intégrations :
 
 ```bash
 # Démarrer le serveur d'API (MINDWTR_API_TOKEN est obligatoire)
-MINDWTR_API_TOKEN=replace-with-a-strong-token bun mindwtr:api -- --port 4317
+MINDWTR_API_TOKEN=replace-with-a-strong-local-token bun mindwtr:api -- --port 4317
 
 # Sans authentification - non sécurisé, tests de compatibilité isolés uniquement
 bun mindwtr:api -- --port 4317 --dangerously-disable-auth
@@ -361,12 +361,16 @@ Sans l'un ou l'autre, l'utilitaire s'arrête au démarrage. Définissez `MINDWTR
 ```bash
 # Ajouter une tâche via l'API
 curl -X POST http://localhost:4317/tasks \
+  -H "Authorization: Bearer replace-with-a-strong-local-token" \
   -H "Content-Type: application/json" \
   -d '{"input": "Review PR @work /due:tomorrow"}'
 
 # Terminer une tâche
-curl -X POST http://localhost:4317/tasks/<id>/complete
+curl -X POST "http://localhost:4317/tasks/<id>/complete" \
+  -H "Authorization: Bearer replace-with-a-strong-local-token"
 ```
+
+Remplacez le jeton local d’exemple dans la commande de démarrage et les requêtes par le même jeton sécurisé. Remplacez `<id>` par l’identifiant renvoyé lors de la création de la tâche.
 
 ---
 
@@ -376,8 +380,10 @@ Moteur de synchronisation cloud auto-hébergé :
 
 ```bash
 # Depuis la racine du monorepo
-bun run --filter mindwtr-cloud dev -- --port 8787
+MINDWTR_CLOUD_AUTH_TOKENS=replace-with-a-strong-cloud-token bun run --filter mindwtr-cloud dev -- --port 8787
 ```
+
+Remplacez le jeton Cloud d’exemple par un jeton sécurisé et utilisez ce jeton dans vos clients.
 
 ### Points de terminaison
 

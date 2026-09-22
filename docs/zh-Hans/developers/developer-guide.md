@@ -330,7 +330,7 @@ bun mindwtr:cli -- projects
 
 ```bash
 # Start API server (MINDWTR_API_TOKEN is required)
-MINDWTR_API_TOKEN=replace-with-a-strong-token bun mindwtr:api -- --port 4317
+MINDWTR_API_TOKEN=replace-with-a-strong-local-token bun mindwtr:api -- --port 4317
 
 # Without auth - unsafe, isolated compatibility testing only
 bun mindwtr:api -- --port 4317 --dangerously-disable-auth
@@ -361,12 +361,16 @@ bun mindwtr:api -- --port 4317 --dangerously-disable-auth
 ```bash
 # Add task via API
 curl -X POST http://localhost:4317/tasks \
+  -H "Authorization: Bearer replace-with-a-strong-local-token" \
   -H "Content-Type: application/json" \
   -d '{"input": "Review PR @work /due:tomorrow"}'
 
 # Complete task
-curl -X POST http://localhost:4317/tasks/<id>/complete
+curl -X POST "http://localhost:4317/tasks/<id>/complete" \
+  -H "Authorization: Bearer replace-with-a-strong-local-token"
 ```
+
+将启动命令和请求中的本地令牌占位符替换为同一个高强度令牌。将 `<id>` 替换为创建任务时返回的任务 ID。
 
 ---
 
@@ -376,8 +380,10 @@ curl -X POST http://localhost:4317/tasks/<id>/complete
 
 ```bash
 # From monorepo root
-bun run --filter mindwtr-cloud dev -- --port 8787
+MINDWTR_CLOUD_AUTH_TOKENS=replace-with-a-strong-cloud-token bun run --filter mindwtr-cloud dev -- --port 8787
 ```
+
+将 Cloud 令牌占位符替换为高强度令牌，并在客户端中使用该令牌。
 
 ### 端点
 

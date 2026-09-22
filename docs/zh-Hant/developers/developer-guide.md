@@ -329,7 +329,7 @@ bun mindwtr:cli -- projects
 
 ```bash
 # Start API server (MINDWTR_API_TOKEN is required)
-MINDWTR_API_TOKEN=replace-with-a-strong-token bun mindwtr:api -- --port 4317
+MINDWTR_API_TOKEN=replace-with-a-strong-local-token bun mindwtr:api -- --port 4317
 
 # Without auth - unsafe, isolated compatibility testing only
 bun mindwtr:api -- --port 4317 --dangerously-disable-auth
@@ -360,12 +360,16 @@ bun mindwtr:api -- --port 4317 --dangerously-disable-auth
 ```bash
 # Add task via API
 curl -X POST http://localhost:4317/tasks \
+  -H "Authorization: Bearer replace-with-a-strong-local-token" \
   -H "Content-Type: application/json" \
   -d '{"input": "Review PR @work /due:tomorrow"}'
 
 # Complete task
-curl -X POST http://localhost:4317/tasks/<id>/complete
+curl -X POST "http://localhost:4317/tasks/<id>/complete" \
+  -H "Authorization: Bearer replace-with-a-strong-local-token"
 ```
+
+將啟動命令和請求中的本機權杖佔位符替換為同一個高強度權杖。將 `<id>` 替換為建立任務時回傳的任務 ID。
 
 ---
 
@@ -375,8 +379,10 @@ curl -X POST http://localhost:4317/tasks/<id>/complete
 
 ```bash
 # From monorepo root
-bun run --filter mindwtr-cloud dev -- --port 8787
+MINDWTR_CLOUD_AUTH_TOKENS=replace-with-a-strong-cloud-token bun run --filter mindwtr-cloud dev -- --port 8787
 ```
+
+將 Cloud 權杖佔位符替換為高強度權杖，並在用戶端中使用該權杖。
 
 ### 端點
 

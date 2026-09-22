@@ -330,7 +330,7 @@ Ejecuta un servidor de API local para scripts e integraciones:
 
 ```bash
 # Start API server (MINDWTR_API_TOKEN is required)
-MINDWTR_API_TOKEN=replace-with-a-strong-token bun mindwtr:api -- --port 4317
+MINDWTR_API_TOKEN=replace-with-a-strong-local-token bun mindwtr:api -- --port 4317
 
 # Without auth - unsafe, isolated compatibility testing only
 bun mindwtr:api -- --port 4317 --dangerously-disable-auth
@@ -361,12 +361,16 @@ Si no se proporciona ninguno de los dos, el asistente sale al arrancar. Define `
 ```bash
 # Add task via API
 curl -X POST http://localhost:4317/tasks \
+  -H "Authorization: Bearer replace-with-a-strong-local-token" \
   -H "Content-Type: application/json" \
   -d '{"input": "Review PR @work /due:tomorrow"}'
 
 # Complete task
-curl -X POST http://localhost:4317/tasks/<id>/complete
+curl -X POST "http://localhost:4317/tasks/<id>/complete" \
+  -H "Authorization: Bearer replace-with-a-strong-local-token"
 ```
+
+Sustituye el marcador del token local en el comando de inicio y en las solicitudes por el mismo token seguro. Sustituye `<id>` por el ID devuelto al crear la tarea.
 
 ---
 
@@ -376,8 +380,10 @@ Backend de sincronización en la nube autoalojado:
 
 ```bash
 # From monorepo root
-bun run --filter mindwtr-cloud dev -- --port 8787
+MINDWTR_CLOUD_AUTH_TOKENS=replace-with-a-strong-cloud-token bun run --filter mindwtr-cloud dev -- --port 8787
 ```
+
+Sustituye el marcador del token de Cloud por un token seguro y usa ese token en tus clientes.
 
 ### Puntos de acceso
 

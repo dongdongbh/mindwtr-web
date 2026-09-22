@@ -274,6 +274,7 @@ Mindwtr 可以在日历视图中叠加显示外部日历。在 macOS 上，它�
 | `-status:`  | `-status:done`     | 排除某个状态         |
 | `context:`  | `context:@home`    | 按情境筛选           |
 | `tag:`      | `tag:#focused`     | 按标签筛选           |
+| `@` `#` `%` | `@home #focused %Tom` | `context:`、`tag:`、`person:` 的简写 |
 | `assigned:` | `assigned:Tom`     | 按受委派人筛选       |
 | `project:`  | `project:HomeReno` | 按项目名称或 ID 筛选 |
 | `location:` | `location:office`  | 按任务地点筛选       |

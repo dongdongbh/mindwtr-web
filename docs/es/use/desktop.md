@@ -274,6 +274,7 @@ El texto de búsqueda es opcional. Abre **Filtros** para mostrar los elementos q
 | `-status:`  | `-status:done`     | Excluye un estado                   |
 | `context:`  | `context:@home`    | Filtra por contexto                 |
 | `tag:`      | `tag:#focused`     | Filtra por etiqueta                 |
+| `@` `#` `%` | `@home #focused %Tom` | Atajo de `context:`, `tag:` y `person:` |
 | `assigned:` | `assigned:Tom`     | Filtra por persona delegada         |
 | `project:`  | `project:HomeReno` | Filtra por nombre o ID de proyecto  |
 | `location:` | `location:office`  | Filtra por ubicación de la tarea    |

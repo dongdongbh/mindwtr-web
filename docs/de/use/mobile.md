@@ -97,6 +97,7 @@ Die Suche blendet erledigte und archivierte Einträge standardmäßig aus. Bei T
 | `-status:` | `-status:done` | Status ausschließen |
 | `context:` | `context:@home` | Nach Kontext filtern |
 | `tag:` | `tag:#focused` | Nach Tag filtern |
+| `@` `#` `%` | `@home #focused %Tom` | Kurzform für `context:`, `tag:` und `person:` |
 | `assigned:` | `assigned:Tom` | Nach verantwortlicher Person filtern |
 | `project:` | `project:HomeReno` | Nach Projekt filtern |
 | `location:` | `location:office` | Nach Aufgabenort filtern |

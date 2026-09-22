@@ -99,6 +99,7 @@ Android 導覽會依應用程式視窗的可用空間調整：空間充足時使
 | `-status:`  | `-status:done`     | 排除狀態                     |
 | `context:`  | `context:@home`    | 依情境篩選                   |
 | `tag:`      | `tag:#focused`     | 依標籤篩選                   |
+| `@` `#` `%` | `@home #focused %Tom` | `context:`、`tag:`、`person:` 的簡寫 |
 | `assigned:` | `assigned:Tom`     | 依受指派者篩選               |
 | `project:`  | `project:HomeReno` | 依專案篩選                   |
 | `location:` | `location:office`  | 依任務地點篩選               |

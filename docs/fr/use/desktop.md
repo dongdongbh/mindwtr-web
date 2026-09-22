@@ -274,6 +274,7 @@ Le texte de recherche est facultatif. Ouvrez **Filtres** pour afficher les élé
 | `-status:`  | `-status:done`     | Exclure un statut                        |
 | `context:`  | `context:@home`    | Filtrer par contexte                     |
 | `tag:`      | `tag:#focused`     | Filtrer par étiquette                    |
+| `@` `#` `%` | `@home #focused %Tom` | Raccourci de `context:`, `tag:` et `person:` |
 | `assigned:` | `assigned:Tom`     | Filtrer par personne déléguée            |
 | `project:`  | `project:HomeReno` | Filtrer par nom ou identifiant de projet |
 | `location:` | `location:office`  | Filtrer par lieu de la tâche             |

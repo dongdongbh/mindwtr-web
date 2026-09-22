@@ -274,6 +274,7 @@ Suchtext ist optional. Öffnen Sie **Filter**, um passende Einträge nach Status
 | `-status:` | `-status:done` | Status ausschließen |
 | `context:` | `context:@home` | Nach Kontext filtern |
 | `tag:` | `tag:#focused` | Nach Tag filtern |
+| `@` `#` `%` | `@home #focused %Tom` | Kurzform für `context:`, `tag:` und `person:` |
 | `assigned:` | `assigned:Tom` | Nach verantwortlicher Person filtern |
 | `project:` | `project:HomeReno` | Nach Projektname oder ID filtern |
 | `location:` | `location:office` | Nach Aufgabenort filtern |

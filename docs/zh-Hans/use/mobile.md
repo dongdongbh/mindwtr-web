@@ -99,6 +99,7 @@ Android 导航会根据应用窗口的可用空间调整：空间充足时使用
 | `-status:`  | `-status:done`     | 排除某个状态        |
 | `context:`  | `context:@home`    | 按情境筛选       |
 | `tag:`      | `tag:#focused`     | 按标签筛选           |
+| `@` `#` `%` | `@home #focused %Tom` | `context:`、`tag:`、`person:` 的简写 |
 | `assigned:` | `assigned:Tom`     | 按受托人筛选      |
 | `project:`  | `project:HomeReno` | 按项目筛选       |
 | `location:` | `location:office`  | 按任务地点筛选 |

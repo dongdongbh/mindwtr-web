@@ -99,6 +99,7 @@ Use operators for powerful filtering:
 | `-status:`  | `-status:done`     | Exclude a status        |
 | `context:`  | `context:@home`    | Filter by context       |
 | `tag:`      | `tag:#focused`     | Filter by tag           |
+| `@` `#` `%` | `@home #focused %Tom` | Short for `context:`, `tag:` and `person:` |
 | `assigned:` | `assigned:Tom`     | Filter by assignee      |
 | `project:`  | `project:HomeReno` | Filter by project       |
 | `location:` | `location:office`  | Filter by task location |

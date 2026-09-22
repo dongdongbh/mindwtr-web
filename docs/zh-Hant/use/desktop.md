@@ -274,6 +274,7 @@ Mindwtr 可在「行事曆」檢視疊加外部行事曆。macOS 可透過 Event
 | `-status:`  | `-status:done`     | 排除狀態                   |
 | `context:`  | `context:@home`    | 依情境篩選                 |
 | `tag:`      | `tag:#focused`     | 依標籤篩選                 |
+| `@` `#` `%` | `@home #focused %Tom` | `context:`、`tag:`、`person:` 的簡寫 |
 | `assigned:` | `assigned:Tom`     | 依委派受指派者篩選         |
 | `project:`  | `project:HomeReno` | 依專案名稱或 ID 篩選       |
 | `location:` | `location:office`  | 依任務地點篩選             |

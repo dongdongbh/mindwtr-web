@@ -99,6 +99,7 @@ Utilisez des opérateurs pour effectuer des filtrages puissants :
 | `-status:`  | `-status:done`     | Exclure un statut                        |
 | `context:`  | `context:@home`    | Filtrer par contexte                     |
 | `tag:`      | `tag:#focused`     | Filtrer par étiquette                    |
+| `@` `#` `%` | `@home #focused %Tom` | Raccourci de `context:`, `tag:` et `person:` |
 | `assigned:` | `assigned:Tom`     | Filtrer par personne assignée            |
 | `project:`  | `project:HomeReno` | Filtrer par projet                       |
 | `location:` | `location:office`  | Filtrer par lieu de la tâche             |

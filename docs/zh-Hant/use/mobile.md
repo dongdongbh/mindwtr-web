@@ -100,7 +100,7 @@ Android 導覽會依應用程式視窗的可用空間調整：空間充足時使
 | `context:`  | `context:@home`    | 依情境篩選                   |
 | `tag:`      | `tag:#focused`     | 依標籤篩選                   |
 | `@` `#` `%` | `@home #focused %Tom` | `context:`、`tag:`、`person:` 的簡寫 |
-| `assigned:` | `assigned:Tom`     | 依受指派者篩選               |
+| `assigned:` | `assigned:Tom`     | 依人員篩選                   |
 | `project:`  | `project:HomeReno` | 依專案篩選                   |
 | `location:` | `location:office`  | 依任務地點篩選               |
 | `where:`    | `where:office`     | 任務地點別名                 |
@@ -378,7 +378,7 @@ Mindwtr 會在新增任務時解析自然語言：
 | `+Multi Word`     | `+New Project`               | 指派至 "New Project"                      |
 | `+"Quoted Name"`  | `+"New Project" call Bob`    | 引號界定句中多字名稱（領域也可用 `!"Area Name"`） |
 | `!Area`           | `Plan roadmap !Work`         | 指派至領域                                |
-| `%Person`         | `Ask %Jim for budget`        | 設定「指派給」（委派／等待對象）；新建多字名稱使用 `%"Full Name"` |
+| `%Person`         | `Ask %Jim for budget`        | 設定「指派給」（任務牽涉到的人；狀態不變）；新建多字名稱使用 `%"Full Name"` |
 | `/area:<name>`    | `/area:Personal`             | 指派至領域（不能有空格）                  |
 | `/due:date`       | `/due:friday`                | 設定截止日期                              |
 | `/energy:<level>` | `/energy:medium`             | 設定精力程度（`low`、`medium`、`high`）   |
@@ -519,7 +519,7 @@ Android 與 iOS 的行為相同。明確的編輯操作仍會開啟編輯，唯�
 這些連結只供導覽，不會同步任務之間的完成狀態。
 描述中的 Markdown 核取方塊只屬於筆記，不會影響任務檢查清單。
 將多行文字貼入檢查清單項目，會逐行建立一個項目（可辨識項目符號、編號與 `[x]` 標記）。
-**受指派者／人員**欄位會儲存「等待中」、建議與 `assigned:` 搜尋所用的委派對象。可從**設定 → 管理**管理已儲存人員、筆記與參考連結。
+**受指派者／人員**欄位會儲存任務牽涉到的人（已委派、正在等待，或要與之討論），供人員檢視、建議與 `assigned:` 搜尋使用。可從**設定 → 管理**管理已儲存人員、筆記與參考連結。
 
 重複任務支援兩種策略：
 - **固定排程**（固定節奏）

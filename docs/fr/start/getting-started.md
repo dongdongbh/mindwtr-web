@@ -75,7 +75,7 @@ Mindwtr comprend la saisie naturelle dans le champ de tâche. La même syntaxe f
 | `+Multi Word` | `+New Project Name` | Affecte à « New Project Name » |
 | `+"Quoted Name"` | `+"New Project" call Bob` | Les guillemets délimitent un nom composé au milieu d’une phrase, également `!"Area Name"` |
 | `!Area` | `Plan roadmap !Work` | Affecte au domaine |
-| `%Person` | `Ask %Jim for the budget /waiting` | Définit Assigné à, pour une délégation ou En attente |
+| `%Person` | `Ask %Jim for the budget /waiting` | Définit Assigné à (la personne que la tâche implique) ; ajoutez `/waiting` si vous l’attendez |
 | `%"Full Name"` | `%"Jim Smith" send report` | Les guillemets délimitent un nom composé ; les noms connus sont aussi reconnus sans guillemets |
 | `/area:<name>` | `/area:Personal` | Affecte au domaine, sans espaces |
 | `/start:date` | `Task /start:monday` | Définit la date de début |

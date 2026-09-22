@@ -75,7 +75,7 @@ Mindwtr 支持自然语言快速添加。直接在任务输入框中输入即可
 | `+Multi Word` | `+New Project Name` | 分配到 “New Project Name” |
 | `+"Quoted Name"` | `+"New Project" call Bob` | 引号可在句子中间界定多词名称（也支持 `!"Area Name"`） |
 | `!Area` | `Plan roadmap !Work` | 分配到领域 |
-| `%Person` | `Ask %Jim for the budget /waiting` | 设置“分配给”（委派对象/等待事项负责人） |
+| `%Person` | `Ask %Jim for the budget /waiting` | 设置“分配给”（任务涉及的人）；如果你在等待对方，请加上 `/waiting` |
 | `%"Full Name"` | `%"Jim Smith" send report` | 引号界定多词人员名称（已知名称不加引号也可匹配） |
 | `/area:<name>` | `/area:Personal` | 分配到领域（不能有空格） |
 | `/start:date` | `Task /start:monday` | 设置开始日期 |

@@ -275,7 +275,7 @@ Suchtext ist optional. Öffnen Sie **Filter**, um passende Einträge nach Status
 | `context:` | `context:@home` | Nach Kontext filtern |
 | `tag:` | `tag:#focused` | Nach Tag filtern |
 | `@` `#` `%` | `@home #focused %Tom` | Kurzform für `context:`, `tag:` und `person:` |
-| `assigned:` | `assigned:Tom` | Nach verantwortlicher Person filtern |
+| `assigned:` | `assigned:Tom` | Nach Person filtern |
 | `project:` | `project:HomeReno` | Nach Projektname oder ID filtern |
 | `location:` | `location:office` | Nach Aufgabenort filtern |
 | `where:` | `where:office` | Alias für Aufgabenort |
@@ -358,7 +358,7 @@ Mindwtr wertet beim Hinzufügen natürliche Sprache aus:
 | `+Multi Word` | `+New Project` | „New Project“ zuweisen |
 | `+"Quoted Name"` | `+"New Project" call Bob` | Anführungszeichen begrenzen mehrteilige Namen mitten im Satz (auch `!"Area Name"`) |
 | `!Area` | `Plan roadmap !Work` | Bereich zuweisen |
-| `%Person` | `Ask %Jim for budget` | „Zugewiesen an“ festlegen; `%"Full Name"` für neue mehrteilige Namen |
+| `%Person` | `Ask %Jim for budget` | „Zugewiesen an“ festlegen (die Person, die die Aufgabe betrifft; der Status bleibt unverändert); `%"Full Name"` für neue mehrteilige Namen |
 | `/area:<name>` | `/area:Personal` | Bereich zuweisen (ohne Leerzeichen) |
 | `/due:date` | `/due:friday` | Fälligkeitsdatum festlegen |
 | `/energy:<level>` | `/energy:medium` | Energiestufe (`low`, `medium`, `high`) |
@@ -471,7 +471,7 @@ In den Einstellungen:
 | **Beschreibung** | Markdown-Notizen mit Vorschau |
 | **Anhänge** | Dateien und Links |
 | **Ort** | Physischer Ort |
-| **Verantwortliche Person** | Delegierte Person für Warten und Suche `assigned:` |
+| **Verantwortliche Person** | Die Person, die eine Aufgabe betrifft (delegiert, erwartet oder zu besprechen); wird von der Personen-Ansicht und der Suche `assigned:` genutzt |
 | **Projekt** | Übergeordnetes Projekt |
 | **Abschnitt** | Optionale Gruppe in einem Projekt |
 

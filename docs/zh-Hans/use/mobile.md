@@ -100,7 +100,7 @@ Android 导航会根据应用窗口的可用空间调整：空间充足时使用
 | `context:`  | `context:@home`    | 按情境筛选       |
 | `tag:`      | `tag:#focused`     | 按标签筛选           |
 | `@` `#` `%` | `@home #focused %Tom` | `context:`、`tag:`、`person:` 的简写 |
-| `assigned:` | `assigned:Tom`     | 按受托人筛选      |
+| `assigned:` | `assigned:Tom`     | 按人员筛选        |
 | `project:`  | `project:HomeReno` | 按项目筛选       |
 | `location:` | `location:office`  | 按任务地点筛选 |
 | `where:`    | `where:office`     | 任务地点的别名 |
@@ -379,7 +379,7 @@ Mindwtr 会在添加任务时解析自然语言：
 | `+Multi Word` | `+New Project`    | 分配到 "New Project" |
 | `+"Quoted Name"` | `+"New Project" call Bob` | 引号界定句子中间的多词名称（也支持 `!"Area Name"`） |
 | `!Area`       | `Plan roadmap !Work` | 分配到领域       |
-| `%Person`     | `Ask %Jim for budget` | 设置受托人（委派 / 等待中的负责人）；新建多词名称使用 `%"Full Name"` |
+| `%Person`     | `Ask %Jim for budget` | 设置受托人（任务涉及的人；状态不变）；新建多词名称使用 `%"Full Name"` |
 | `/area:<name>` | `/area:Personal` | 分配到领域（不含空格） |
 | `/due:date`  | `/due:friday`     | 设置截止日期      |
 | `/energy:<level>` | `/energy:medium` | 设置精力水平（`low`、`medium`、`high`） |
@@ -520,7 +520,7 @@ Android 与 iOS 的行为相同。明确的编辑操作仍会打开编辑，只�
 这些链接仅用于导航；不会在任务之间同步完成状态。
 描述中的 Markdown 复选框仅作为笔记；不会影响任务清单。
 将多行文本粘贴到清单条目中会按行创建条目（可识别项目符号、编号和 `[x]` 标记）。
-**受托人 / 人物**字段存储用于“等待中”、建议和 `assigned:` 搜索的受托人物。可从**设置 → 管理**中管理已保存的人物、笔记和参考链接。
+**受托人 / 人物**字段存储任务涉及的人（已委派、正在等待，或要与之讨论），用于人员视图、建议和 `assigned:` 搜索。可从**设置 → 管理**中管理已保存的人物、笔记和参考链接。
 
 重复任务支持两种策略：
 - **严格**（固定周期）

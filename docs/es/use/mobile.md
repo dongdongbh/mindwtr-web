@@ -100,7 +100,7 @@ Usa operadores para realizar filtros potentes:
 | `context:`  | `context:@home`    | Filtra por contexto     |
 | `tag:`      | `tag:#focused`     | Filtra por etiqueta     |
 | `@` `#` `%` | `@home #focused %Tom` | Atajo de `context:`, `tag:` y `person:` |
-| `assigned:` | `assigned:Tom`     | Filtra por responsable  |
+| `assigned:` | `assigned:Tom`     | Filtra por persona      |
 | `project:`  | `project:HomeReno` | Filtra por proyecto     |
 | `location:` | `location:office`  | Filtra por ubicación de la tarea |
 | `where:`    | `where:office`     | Alias de ubicación de la tarea |
@@ -379,7 +379,7 @@ Mindwtr analiza lenguaje natural al añadir tareas:
 | `+Multi Word` | `+New Project`    | Asigna a "New Project" |
 | `+"Quoted Name"` | `+"New Project" call Bob` | Las comillas delimitan un nombre de varias palabras dentro de una frase (también `!"Area Name"`) |
 | `!Area`       | `Plan roadmap !Work` | Asigna a un área       |
-| `%Person`     | `Ask %Jim for budget` | Establece Asignada a (persona delegada o responsable de En espera); `%"Full Name"` para nombres nuevos de varias palabras |
+| `%Person`     | `Ask %Jim for budget` | Establece Asignada a (la persona que involucra la tarea; el estado no cambia); `%"Full Name"` para nombres nuevos de varias palabras |
 | `/area:<name>` | `/area:Personal` | Asigna a un área (sin espacios) |
 | `/due:date`  | `/due:friday`     | Establece la fecha de vencimiento |
 | `/energy:<level>` | `/energy:medium` | Establece el nivel de energía (`low`, `medium`, `high`) |
@@ -520,7 +520,7 @@ Escribe `[[` en descripciones de tareas o notas de proyectos para enlazar otra t
 Esos enlaces solo sirven para navegar; no sincronizan el estado de finalización entre tareas.
 Las casillas Markdown de la descripción son solo notas; no afectan a la lista de comprobación de la tarea.
 Pegar texto de varias líneas en un elemento de la lista crea un elemento por línea (se reconocen viñetas, numeración y marcadores `[x]`).
-El campo **Persona asignada** guarda las personas delegadas para En espera, las sugerencias y la búsqueda `assigned:`. Gestiona las personas guardadas, las notas y los enlaces de referencia en **Ajustes → Gestionar**.
+El campo **Persona asignada** guarda la persona que involucra la tarea (delegada, esperada o con quien hablarlo) para la vista Personas, las sugerencias y la búsqueda `assigned:`. Gestiona las personas guardadas, las notas y los enlaces de referencia en **Ajustes → Gestionar**.
 
 Las tareas recurrentes admiten dos estrategias:
 - **Estricta** (cadencia fija)

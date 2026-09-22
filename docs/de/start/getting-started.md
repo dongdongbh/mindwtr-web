@@ -75,7 +75,7 @@ Mindwtr unterstützt natürlichsprachige Schnelleingaben direkt im Aufgabenfeld.
 | `+Multi Word`      | `+New Project Name`        | Weist sie „New Project Name“ zu  |
 | `+"Quoted Name"`  | `+"New Project" call Bob` | Anführungszeichen begrenzen einen mehrteiligen Namen mitten im Satz (auch `!"Area Name"`) |
 | `!Area`            | `Plan roadmap !Work`       | Weist die Aufgabe einem Bereich zu |
-| `%Person`          | `Ask %Jim for the budget /waiting` | Legt „Zugewiesen an“ fest (delegiert/verantwortlich für „Warten“) |
+| `%Person`          | `Ask %Jim for the budget /waiting` | Legt „Zugewiesen an“ fest (die Person, die die Aufgabe betrifft); ergänzen Sie `/waiting`, wenn Sie auf sie warten |
 | `%"Full Name"`    | `%"Jim Smith" send report` | Anführungszeichen begrenzen einen mehrteiligen Personennamen (bekannte Namen werden auch ohne Anführungszeichen erkannt) |
 | `/area:<name>`     | `/area:Personal`           | Weist einen Bereich zu (ohne Leerzeichen) |
 | `/start:date`      | `Task /start:monday`       | Legt das Startdatum fest          |

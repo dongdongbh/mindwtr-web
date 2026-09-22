@@ -275,7 +275,7 @@ El texto de búsqueda es opcional. Abre **Filtros** para mostrar los elementos q
 | `context:`  | `context:@home`    | Filtra por contexto                 |
 | `tag:`      | `tag:#focused`     | Filtra por etiqueta                 |
 | `@` `#` `%` | `@home #focused %Tom` | Atajo de `context:`, `tag:` y `person:` |
-| `assigned:` | `assigned:Tom`     | Filtra por persona delegada         |
+| `assigned:` | `assigned:Tom`     | Filtra por persona                  |
 | `project:`  | `project:HomeReno` | Filtra por nombre o ID de proyecto  |
 | `location:` | `location:office`  | Filtra por ubicación de la tarea    |
 | `where:`    | `where:office`     | Alias de ubicación de la tarea      |
@@ -356,7 +356,7 @@ Mindwtr analiza lenguaje natural al añadir tareas:
 | `+Multi Word` | `+New Project`    | Asigna a "New Project" |
 | `+"Quoted Name"` | `+"New Project" call Bob` | Las comillas delimitan un nombre de varias palabras dentro de una frase (también `!"Area Name"`) |
 | `!Area`       | `Plan roadmap !Work` | Asigna a un área       |
-| `%Person`     | `Ask %Jim for budget` | Establece Asignada a (persona delegada o responsable de En espera); `%"Full Name"` para nombres nuevos de varias palabras |
+| `%Person`     | `Ask %Jim for budget` | Establece Asignada a (la persona que involucra la tarea; el estado no cambia); `%"Full Name"` para nombres nuevos de varias palabras |
 | `/area:<name>` | `/area:Personal` | Asigna a un área (sin espacios) |
 | `/due:date`  | `/due:friday`     | Establece la fecha de vencimiento |
 | `/energy:<level>` | `/energy:medium` | Establece el nivel de energía (`low`, `medium`, `high`) |
@@ -469,7 +469,7 @@ Configura las notificaciones en Ajustes:
 | **Descripción**   | Notas con formato Markdown y vista previa            |
 | **Adjuntos**      | Archivos y enlaces adjuntos a la tarea               |
 | **Ubicación**     | Ubicación física                                     |
-| **Persona asignada** | Persona delegada para En espera y búsquedas `assigned:` |
+| **Persona asignada** | La persona que involucra la tarea (delegada, esperada o con quien hablarlo); la usan la vista Personas y las búsquedas `assigned:` |
 | **Proyecto**      | Asignación al proyecto principal                     |
 | **Sección**       | Grupo opcional dentro de un proyecto                 |
 

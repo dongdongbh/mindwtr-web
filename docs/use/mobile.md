@@ -100,7 +100,7 @@ Use operators for powerful filtering:
 | `context:`  | `context:@home`    | Filter by context       |
 | `tag:`      | `tag:#focused`     | Filter by tag           |
 | `@` `#` `%` | `@home #focused %Tom` | Short for `context:`, `tag:` and `person:` |
-| `assigned:` | `assigned:Tom`     | Filter by assignee      |
+| `assigned:` | `assigned:Tom`     | Filter by person        |
 | `project:`  | `project:HomeReno` | Filter by project       |
 | `location:` | `location:office`  | Filter by task location |
 | `where:`    | `where:office`     | Alias for task location |
@@ -379,7 +379,7 @@ Mindwtr parses natural language when adding tasks:
 | `+Multi Word` | `+New Project`    | Assigns to "New Project" |
 | `+"Quoted Name"` | `+"New Project" call Bob` | Quotes delimit a multi-word name mid-sentence (also `!"Area Name"`) |
 | `!Area`       | `Plan roadmap !Work` | Assigns to area       |
-| `%Person`     | `Ask %Jim for budget` | Sets Assigned to (delegated / waiting-for owner); `%"Full Name"` for new multi-word names |
+| `%Person`     | `Ask %Jim for budget` | Sets Assigned to (the person the task involves; status is unchanged); `%"Full Name"` for new multi-word names |
 | `/area:<name>` | `/area:Personal` | Assigns to area (no spaces) |
 | `/due:date`  | `/due:friday`     | Sets due date      |
 | `/energy:<level>` | `/energy:medium` | Sets energy level (`low`, `medium`, `high`) |
@@ -520,7 +520,7 @@ Type `[[` in task descriptions or project notes to link another task or project 
 Those links are navigational only; they do not sync completion state between tasks.
 Markdown checkboxes in the description are notes-only; they do not affect the task checklist.
 Pasting multi-line text into a checklist item creates one item per line (bullets, numbering, and `[x]` markers are recognized).
-The **Assignee / Person** field stores delegated people for Waiting For, suggestions, and `assigned:` search. Manage saved people, notes, and reference links from **Settings → Manage**.
+The **Assignee / Person** field stores the person a task involves (delegated, waiting on, or to discuss with) for the People view, suggestions, and `assigned:` search. Manage saved people, notes, and reference links from **Settings → Manage**.
 
 Recurring tasks support two strategies:
 - **Strict** (fixed cadence)

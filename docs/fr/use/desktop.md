@@ -275,7 +275,7 @@ Le texte de recherche est facultatif. Ouvrez **Filtres** pour afficher les élé
 | `context:`  | `context:@home`    | Filtrer par contexte                     |
 | `tag:`      | `tag:#focused`     | Filtrer par étiquette                    |
 | `@` `#` `%` | `@home #focused %Tom` | Raccourci de `context:`, `tag:` et `person:` |
-| `assigned:` | `assigned:Tom`     | Filtrer par personne déléguée            |
+| `assigned:` | `assigned:Tom`     | Filtrer par personne                     |
 | `project:`  | `project:HomeReno` | Filtrer par nom ou identifiant de projet |
 | `location:` | `location:office`  | Filtrer par lieu de la tâche             |
 | `where:`    | `where:office`     | Alias du lieu de la tâche                |
@@ -356,7 +356,7 @@ Mindwtr analyse le langage naturel lors de l’ajout de tâches :
 | `+Multi Word` | `+New Project`    | Attribue à « New Project »          |
 | `+"Quoted Name"` | `+"New Project" call Bob` | Les guillemets délimitent un nom composé de plusieurs mots au milieu d’une phrase (également `!"Area Name"`) |
 | `!Area`       | `Plan roadmap !Work` | Attribue à un domaine            |
-| `%Person`     | `Ask %Jim for budget` | Définit la personne assignée (responsable délégué / en attente) ; `%"Full Name"` pour les nouveaux noms composés de plusieurs mots |
+| `%Person`     | `Ask %Jim for budget` | Définit la personne assignée (la personne que la tâche implique ; le statut ne change pas) ; `%"Full Name"` pour les nouveaux noms composés de plusieurs mots |
 | `/area:<name>` | `/area:Personal` | Attribue à un domaine (sans espaces) |
 | `/due:date`  | `/due:friday`     | Définit l’échéance                  |
 | `/energy:<level>` | `/energy:medium` | Définit le niveau d’énergie (`low`, `medium`, `high`) |
@@ -469,7 +469,7 @@ Configurez les notifications dans les Paramètres :
 | **Description**        | Notes au format Markdown avec aperçu                           |
 | **Pièces jointes**     | Fichiers et liens joints à la tâche                            |
 | **Lieu**               | Lieu physique                                                  |
-| **Personne assignée**  | Personne déléguée pour En attente et la recherche `assigned:`  |
+| **Personne assignée**  | La personne que la tâche implique (déléguée, attendue ou avec qui en discuter) ; utilisée par la vue Personnes et la recherche `assigned:` |
 | **Projet**             | Affectation au projet parent                                   |
 | **Section**            | Groupe facultatif au sein d’un projet                          |
 

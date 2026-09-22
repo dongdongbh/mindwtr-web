@@ -75,7 +75,7 @@ Mindwtr 支援自然語言快速新增，直接在任務輸入欄中輸入即可
 | `+Multi Word` | `+New Project Name` | 指派至 "New Project Name" |
 | `+"Quoted Name"` | `+"New Project" call Bob` | 引號界定句子中間的多字名稱（領域亦可寫成 `!"Area Name"`） |
 | `!Area` | `Plan roadmap !Work` | 指派至領域 |
-| `%Person` | `Ask %Jim for the budget /waiting` | 設定「指派給」（委派／等待對象） |
+| `%Person` | `Ask %Jim for the budget /waiting` | 設定「指派給」（任務牽涉到的人）；若你正在等待對方，請加上 `/waiting` |
 | `%"Full Name"` | `%"Jim Smith" send report` | 引號界定多字人名（已知名稱也可不加引號） |
 | `/area:<name>` | `/area:Personal` | 指派至領域（不能有空格） |
 | `/start:date` | `Task /start:monday` | 設定開始日期 |

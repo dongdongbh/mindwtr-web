@@ -75,7 +75,7 @@ Mindwtr supports natural language quick-add. Type directly in the task input. Th
 | `+Multi Word`      | `+New Project Name`        | Assigns to "New Project Name" |
 | `+"Quoted Name"`   | `+"New Project" call Bob`  | Quotes delimit a multi-word name mid-sentence (also `!"Area Name"`) |
 | `!Area`            | `Plan roadmap !Work`       | Assigns to area       |
-| `%Person`          | `Ask %Jim for the budget /waiting` | Sets Assigned to (delegated / waiting-for owner) |
+| `%Person`          | `Ask %Jim for the budget /waiting` | Sets Assigned to (the person the task involves); add `/waiting` when you are waiting on them |
 | `%"Full Name"`     | `%"Jim Smith" send report` | Quotes delimit a multi-word person name (known names also match unquoted) |
 | `/area:<name>`     | `/area:Personal`           | Assigns to area (no spaces) |
 | `/start:date`      | `Task /start:monday`       | Sets start date       |

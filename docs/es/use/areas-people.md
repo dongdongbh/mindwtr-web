@@ -89,7 +89,7 @@ El acceso desde Ajustes incluye las tareas completadas y archivadas para que los
 | Campo | Para qué usarlo | Dónde crearlo |
 | --- | --- | --- |
 | **Área** | Ámbitos de responsabilidad para proyectos y tareas | Selector de área, Ajustes → Administrar → Áreas |
-| **Persona** | Responsable delegado o persona de la que esperas algo | Escribe `%person` en Adición rápida, campo Asignada a, Ajustes → Administrar → Personas |
+| **Persona** | La persona que involucra la tarea: a quien se la delegas, a quien esperas o con quien hablarlo (agenda). Asignar una persona no cambia el estado | Escribe `%person` en Adición rápida, campo Asignada a, Ajustes → Administrar → Personas |
 | **Contexto** | Dónde, con qué herramienta o con quién puedes hacer la tarea | Escribe `@context` en Adición rápida o al editar la tarea |
 | **Etiqueta** | Tema, energía, modo o rótulo de agrupación | Escribe `#tag` en Adición rápida o al editar la tarea |
 

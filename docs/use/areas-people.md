@@ -89,7 +89,7 @@ The Settings shortcut includes Done and Archived tasks so the results match the 
 | Field | Use it for | Where to create |
 | --- | --- | --- |
 | **Area** | Responsibility buckets for projects and tasks | Area picker, Settings -> Manage -> Areas |
-| **Person** | Delegated assignee or waiting-for owner | Type `%person` in Quick Add, Assigned to field, Settings -> Manage -> People |
+| **Person** | The person a task involves: delegated to, waiting on, or to discuss with (agenda). Setting a person does not change the status | Type `%person` in Quick Add, Assigned to field, Settings -> Manage -> People |
 | **Context** | Where, with what tool, or with whom you can do the task | Type `@context` in Quick Add or task edit |
 | **Tag** | Topic, energy, mode, or grouping label | Type `#tag` in Quick Add or task edit |
 

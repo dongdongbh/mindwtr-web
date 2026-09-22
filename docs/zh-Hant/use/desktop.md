@@ -275,7 +275,7 @@ Mindwtr 可在「行事曆」檢視疊加外部行事曆。macOS 可透過 Event
 | `context:`  | `context:@home`    | 依情境篩選                 |
 | `tag:`      | `tag:#focused`     | 依標籤篩選                 |
 | `@` `#` `%` | `@home #focused %Tom` | `context:`、`tag:`、`person:` 的簡寫 |
-| `assigned:` | `assigned:Tom`     | 依委派受指派者篩選         |
+| `assigned:` | `assigned:Tom`     | 依人員篩選                 |
 | `project:`  | `project:HomeReno` | 依專案名稱或 ID 篩選       |
 | `location:` | `location:office`  | 依任務地點篩選             |
 | `where:`    | `where:office`     | 任務地點別名               |
@@ -356,7 +356,7 @@ Mindwtr 會在新增任務時解析自然語言：
 | `+Multi Word`     | `+New Project`               | 指派至 "New Project"                      |
 | `+"Quoted Name"`  | `+"New Project" call Bob`    | 引號界定句中多字名稱（領域也可用 `!"Area Name"`） |
 | `!Area`           | `Plan roadmap !Work`         | 指派至領域                                |
-| `%Person`         | `Ask %Jim for budget`        | 設定「指派給」（委派／等待對象）；新建多字名稱使用 `%"Full Name"` |
+| `%Person`         | `Ask %Jim for budget`        | 設定「指派給」（任務牽涉到的人；狀態不變）；新建多字名稱使用 `%"Full Name"` |
 | `/area:<name>`    | `/area:Personal`             | 指派至領域（不能有空格）                  |
 | `/due:date`       | `/due:friday`                | 設定截止日期                              |
 | `/energy:<level>` | `/energy:medium`             | 設定精力程度（`low`、`medium`、`high`）   |
@@ -469,7 +469,7 @@ Mindwtr 會傳送桌面通知，協助你掌握進度：
 | **描述**          | 可預覽的 Markdown 格式筆記                          |
 | **附件**          | 附加至任務的檔案與連結                              |
 | **地點**          | 實體地點                                            |
-| **受指派者／人員** | 「等待中」與 `assigned:` 搜尋所用的委派對象        |
+| **受指派者／人員** | 任務牽涉到的人（已委派、正在等待，或要與之討論）；供人員檢視與 `assigned:` 搜尋使用 |
 | **專案**          | 上層專案指派                                        |
 | **分區**          | 專案內的選用群組                                    |
 

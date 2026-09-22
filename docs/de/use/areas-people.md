@@ -89,7 +89,7 @@ Der Einstieg aus den Einstellungen schließt erledigte und archivierte Aufgaben 
 | Feld | Verwendung | Wo es erstellt wird |
 | --- | --- | --- |
 | **Bereich** | Verantwortungsgruppen für Projekte und Aufgaben | Bereichsauswahl, Einstellungen → Verwalten → Bereiche |
-| **Person** | Verantwortliche Person für delegierte Aufgaben oder Einträge unter „Warten“ | `%person` in „Schnell hinzufügen“ eingeben, Feld „Zugewiesen an“, Einstellungen → Verwalten → Personen |
+| **Person** | Die Person, die eine Aufgabe betrifft: an sie delegiert, auf sie wartend oder mit ihr zu besprechen (Agenda). Das Festlegen einer Person ändert den Status nicht | `%person` in „Schnell hinzufügen“ eingeben, Feld „Zugewiesen an“, Einstellungen → Verwalten → Personen |
 | **Kontext** | Wo, mit welchem Werkzeug oder mit wem Sie die Aufgabe erledigen können | `@context` in „Schnell hinzufügen“ oder der Aufgabenbearbeitung eingeben |
 | **Tag** | Kennzeichnung für Thema, Energie, Modus oder Gruppierung | `#tag` in „Schnell hinzufügen“ oder der Aufgabenbearbeitung eingeben |
 

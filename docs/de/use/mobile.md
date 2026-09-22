@@ -98,7 +98,7 @@ Die Suche blendet erledigte und archivierte Einträge standardmäßig aus. Bei T
 | `context:` | `context:@home` | Nach Kontext filtern |
 | `tag:` | `tag:#focused` | Nach Tag filtern |
 | `@` `#` `%` | `@home #focused %Tom` | Kurzform für `context:`, `tag:` und `person:` |
-| `assigned:` | `assigned:Tom` | Nach verantwortlicher Person filtern |
+| `assigned:` | `assigned:Tom` | Nach Person filtern |
 | `project:` | `project:HomeReno` | Nach Projekt filtern |
 | `location:` | `location:office` | Nach Aufgabenort filtern |
 | `where:` | `where:office` | Alias für Aufgabenort |
@@ -356,7 +356,7 @@ iOS-Kurzbefehlsbeispiel:
 | `+Multi Word` | `+New Project` | „New Project“ zuweisen |
 | `+"Quoted Name"` | `+"New Project" call Bob` | Anführungszeichen begrenzen mehrteilige Namen (auch `!"Area Name"`) |
 | `!Area` | `Plan roadmap !Work` | Bereich zuweisen |
-| `%Person` | `Ask %Jim for budget` | „Zugewiesen an“ setzen; `%"Full Name"` für neue mehrteilige Namen |
+| `%Person` | `Ask %Jim for budget` | „Zugewiesen an“ setzen (die Person, die die Aufgabe betrifft; der Status bleibt unverändert); `%"Full Name"` für neue mehrteilige Namen |
 | `/area:<name>` | `/area:Personal` | Bereich zuweisen (ohne Leerzeichen) |
 | `/due:date` | `/due:friday` | Fälligkeitsdatum |
 | `/energy:<level>` | `/energy:medium` | Energie (`low`, `medium`, `high`) |
@@ -486,7 +486,7 @@ Der Editor beginnt minimalistisch; **Weitere Optionen** zeigt erweiterte Felder.
 
 Beschreibungs-Markdown unterstützt Listen und Kontrollkästchen (`- item`, `[ ] item`, `[x] item`). `[[` öffnet in Beschreibungen/Projektnotizen die Verknüpfungsauswahl. Links dienen nur der Navigation; Markdown-Kontrollkästchen beeinflussen die Aufgabencheckliste nicht. Mehrzeiliges Einfügen in einen Checklistenpunkt erzeugt einen Punkt je Zeile (Aufzählungen, Nummerierungen, `[x]` werden erkannt).
 
-**Verantwortliche Person** speichert delegierte Personen für Warten, Vorschläge und `assigned:`-Suche. Gespeicherte Personen, Notizen und Referenzlinks verwalten Sie unter **Einstellungen → Verwalten**.
+**Verantwortliche Person** speichert die Person, die eine Aufgabe betrifft (delegiert, erwartet oder zu besprechen), für die Personen-Ansicht, Vorschläge und die `assigned:`-Suche. Gespeicherte Personen, Notizen und Referenzlinks verwalten Sie unter **Einstellungen → Verwalten**.
 
 Wiederholungsstrategien:
 - **Streng** (fester Rhythmus)

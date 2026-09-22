@@ -100,7 +100,7 @@ Utilisez des opérateurs pour effectuer des filtrages puissants :
 | `context:`  | `context:@home`    | Filtrer par contexte                     |
 | `tag:`      | `tag:#focused`     | Filtrer par étiquette                    |
 | `@` `#` `%` | `@home #focused %Tom` | Raccourci de `context:`, `tag:` et `person:` |
-| `assigned:` | `assigned:Tom`     | Filtrer par personne assignée            |
+| `assigned:` | `assigned:Tom`     | Filtrer par personne                     |
 | `project:`  | `project:HomeReno` | Filtrer par projet                       |
 | `location:` | `location:office`  | Filtrer par lieu de la tâche             |
 | `where:`    | `where:office`     | Alias du lieu de la tâche                |
@@ -379,7 +379,7 @@ Mindwtr analyse le langage naturel lors de l’ajout de tâches :
 | `+Multi Word` | `+New Project`    | Attribue à « New Project »          |
 | `+"Quoted Name"` | `+"New Project" call Bob` | Les guillemets délimitent un nom composé de plusieurs mots au milieu d’une phrase (également `!"Area Name"`) |
 | `!Area`       | `Plan roadmap !Work` | Attribue à un domaine            |
-| `%Person`     | `Ask %Jim for budget` | Définit la personne assignée (responsable délégué / en attente) ; `%"Full Name"` pour les nouveaux noms composés de plusieurs mots |
+| `%Person`     | `Ask %Jim for budget` | Définit la personne assignée (la personne que la tâche implique ; le statut ne change pas) ; `%"Full Name"` pour les nouveaux noms composés de plusieurs mots |
 | `/area:<name>` | `/area:Personal` | Attribue à un domaine (sans espaces) |
 | `/due:date`  | `/due:friday`     | Définit l’échéance                  |
 | `/energy:<level>` | `/energy:medium` | Définit le niveau d’énergie (`low`, `medium`, `high`) |
@@ -520,7 +520,7 @@ Saisissez `[[` dans les descriptions de tâches ou les notes de projet pour cré
 Ces liens servent uniquement à la navigation ; ils ne synchronisent pas l’état d’achèvement entre les tâches.
 Les cases à cocher Markdown de la description ne sont que des notes ; elles n’ont aucun effet sur la liste de contrôle de la tâche.
 Coller un texte de plusieurs lignes dans un élément de liste de contrôle crée un élément par ligne (les puces, la numérotation et les marqueurs `[x]` sont reconnus).
-Le champ **Personne assignée** stocke les personnes déléguées pour En attente, les suggestions et la recherche `assigned:`. Gérez les personnes enregistrées, les notes et les liens de référence depuis **Paramètres → Gérer**.
+Le champ **Personne assignée** stocke la personne que la tâche implique (déléguée, attendue ou avec qui en discuter) pour la vue Personnes, les suggestions et la recherche `assigned:`. Gérez les personnes enregistrées, les notes et les liens de référence depuis **Paramètres → Gérer**.
 
 Les tâches récurrentes prennent en charge deux stratégies :
 - **Stricte** (cadence fixe)

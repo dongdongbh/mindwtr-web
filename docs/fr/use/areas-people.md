@@ -89,7 +89,7 @@ L’accès depuis les Paramètres inclut les tâches terminées et archivées af
 | Champ | Utilisation | Où le créer |
 | --- | --- | --- |
 | **Domaine** | Regrouper projets et tâches par responsabilité | Sélecteur de domaine, Paramètres -> Gérer -> Domaines |
-| **Personne** | Attributaire d’une délégation ou personne dont vous attendez quelque chose | `%person` dans Ajout rapide, champ Assigné à, Paramètres -> Gérer -> Personnes |
+| **Personne** | La personne que la tâche implique : à qui elle est déléguée, que vous attendez ou avec qui en discuter (ordre du jour). Définir une personne ne change pas le statut | `%person` dans Ajout rapide, champ Assigné à, Paramètres -> Gérer -> Personnes |
 | **Contexte** | Lieu, outil ou personne nécessaire pour effectuer la tâche | `@context` dans Ajout rapide ou l’éditeur de tâche |
 | **Tag** | Sujet, énergie, mode ou libellé de regroupement | `#tag` dans Ajout rapide ou l’éditeur de tâche |
 

@@ -275,7 +275,7 @@ Search text is optional. Open **Filters** to list matching items by status, scop
 | `context:`  | `context:@home`    | Filter by context             |
 | `tag:`      | `tag:#focused`     | Filter by tag                 |
 | `@` `#` `%` | `@home #focused %Tom` | Short for `context:`, `tag:` and `person:` |
-| `assigned:` | `assigned:Tom`     | Filter by delegated assignee  |
+| `assigned:` | `assigned:Tom`     | Filter by person              |
 | `project:`  | `project:HomeReno` | Filter by project name or ID  |
 | `location:` | `location:office`  | Filter by task location       |
 | `where:`    | `where:office`     | Alias for task location       |
@@ -356,7 +356,7 @@ Mindwtr parses natural language when adding tasks:
 | `+Multi Word` | `+New Project`    | Assigns to "New Project" |
 | `+"Quoted Name"` | `+"New Project" call Bob` | Quotes delimit a multi-word name mid-sentence (also `!"Area Name"`) |
 | `!Area`       | `Plan roadmap !Work` | Assigns to area       |
-| `%Person`     | `Ask %Jim for budget` | Sets Assigned to (delegated / waiting-for owner); `%"Full Name"` for new multi-word names |
+| `%Person`     | `Ask %Jim for budget` | Sets Assigned to (the person the task involves; status is unchanged); `%"Full Name"` for new multi-word names |
 | `/area:<name>` | `/area:Personal` | Assigns to area (no spaces) |
 | `/due:date`  | `/due:friday`     | Sets due date       |
 | `/energy:<level>` | `/energy:medium` | Sets energy level (`low`, `medium`, `high`) |
@@ -469,7 +469,7 @@ Configure notifications in Settings:
 | **Description**   | Markdown-formatted notes with preview               |
 | **Attachments**   | Files and links attached to the task                |
 | **Location**      | Physical location                                   |
-| **Assignee / Person** | Delegated person for Waiting For and `assigned:` search |
+| **Assignee / Person** | The person a task involves (delegated, waiting on, or to discuss with); used by the People view and `assigned:` search |
 | **Project**       | Parent project assignment                           |
 | **Section**       | Optional group within a project                     |
 

@@ -275,7 +275,7 @@ Mindwtr 可以在日历视图中叠加显示外部日历。在 macOS 上，它�
 | `context:`  | `context:@home`    | 按情境筛选           |
 | `tag:`      | `tag:#focused`     | 按标签筛选           |
 | `@` `#` `%` | `@home #focused %Tom` | `context:`、`tag:`、`person:` 的简写 |
-| `assigned:` | `assigned:Tom`     | 按受委派人筛选       |
+| `assigned:` | `assigned:Tom`     | 按人员筛选           |
 | `project:`  | `project:HomeReno` | 按项目名称或 ID 筛选 |
 | `location:` | `location:office`  | 按任务地点筛选       |
 | `where:`    | `where:office`     | 任务地点的别名       |
@@ -356,7 +356,7 @@ Mindwtr 会在添加任务时解析自然语言：
 | `+Multi Word`    | `+New Project`               | 分配到“New Project”                                          |
 | `+"Quoted Name"` | `+"New Project" call Bob`    | 引号用于界定句子中间的多词名称（也适用于 `!"Area Name"`）    |
 | `!Area`          | `Plan roadmap !Work`         | 分配到领域                                                   |
-| `%Person`        | `Ask %Jim for budget`        | 设置“分配给”（委派/等待事项的负责人）；新建多词名称时使用 `%"Full Name"` |
+| `%Person`        | `Ask %Jim for budget`        | 设置“分配给”（任务涉及的人；状态不变）；新建多词名称时使用 `%"Full Name"` |
 | `/area:<name>`   | `/area:Personal`             | 分配到领域（不能有空格）                                     |
 | `/due:date`      | `/due:friday`                | 设置截止日期                                                 |
 | `/energy:<level>` | `/energy:medium`            | 设置精力水平（`low`、`medium`、`high`）                       |
@@ -469,7 +469,7 @@ Mindwtr 会发送桌面通知，帮助你保持进度：
 | **描述**            | 带预览的 Markdown 格式笔记                            |
 | **附件**            | 附加到任务的文件和链接                                |
 | **地点**            | 实际地点                                              |
-| **受委派人 / 人员** | 等待事项的受委派人以及 `assigned:` 搜索中的人员       |
+| **受委派人 / 人员** | 任务涉及的人（已委派、正在等待，或要与之讨论）；用于人员视图和 `assigned:` 搜索 |
 | **项目**            | 父项目分配                                            |
 | **分区**            | 项目内的可选分组                                      |
 

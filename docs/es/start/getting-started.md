@@ -75,7 +75,7 @@ Mindwtr admite lenguaje natural al añadir elementos rápidamente. Escribe direc
 | `+Multi Word` | `+New Project Name` | Asigna a «New Project Name» |
 | `+"Quoted Name"` | `+"New Project" call Bob` | Las comillas delimitan un nombre de varias palabras dentro de una frase (también `!"Area Name"`) |
 | `!Area` | `Plan roadmap !Work` | Asigna al área |
-| `%Person` | `Ask %Jim for the budget /waiting` | Establece Asignada a (persona delegada o responsable de En espera) |
+| `%Person` | `Ask %Jim for the budget /waiting` | Establece Asignada a (la persona que involucra la tarea); añade `/waiting` cuando estés esperándola |
 | `%"Full Name"` | `%"Jim Smith" send report` | Las comillas delimitan el nombre completo de una persona (los nombres conocidos también se reconocen sin comillas) |
 | `/area:<name>` | `/area:Personal` | Asigna al área (sin espacios) |
 | `/start:date` | `Task /start:monday` | Establece la fecha de inicio |

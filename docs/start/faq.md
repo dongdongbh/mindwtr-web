@@ -409,7 +409,7 @@ When enabled, it uses your own API key (BYOK). See [AI Assistant](/power-users/a
 
 ### How do swipe actions work?
 
-In the Inbox, swipe right on a task to mark it as Done. Other views may have different swipe actions.
+On mobile, swipe right on a task to reveal a status action. Tap it to apply the shown action, or long-press it to choose another status, including Done. In the menu, long-press Done to choose a completion time. Swipe left to reveal Delete.
 
 ### How do I sync with desktop?
 

@@ -401,7 +401,7 @@ Nein. Der KI-Assistent ist optional und standardmäßig deaktiviert. Mindwtr fun
 
 ### Wie funktionieren Wischaktionen?
 
-Wischen Sie im Eingang eine Aufgabe nach rechts, um sie als erledigt zu markieren. In anderen Ansichten können andere Wischaktionen verfügbar sein.
+Auf Mobilgeräten wischen Sie eine Aufgabe nach rechts, um eine Statusaktion einzublenden. Tippen Sie darauf, um die angezeigte Aktion auszuführen, oder halten Sie sie gedrückt, um einen anderen Status wie „Erledigt“ zu wählen. Halten Sie im Menü „Erledigt“ gedrückt, um eine Abschlusszeit auszuwählen. Wischen Sie nach links, um „Löschen“ einzublenden.
 
 ### Wie synchronisiere ich mit dem Desktop?
 

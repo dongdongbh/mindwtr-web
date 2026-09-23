@@ -409,7 +409,7 @@ Cuando se activa, usa tu propia clave de API (BYOK). Consulta [Asistente de IA](
 
 ### ¿Cómo funcionan los gestos de deslizamiento?
 
-En la Bandeja de entrada, desliza una tarea hacia la derecha para marcarla como Terminada. Otras vistas pueden tener acciones de deslizamiento diferentes.
+En móvil, desliza una tarea hacia la derecha para mostrar una acción de estado. Tócala para aplicar la acción mostrada o mantenla pulsada para elegir otro estado, incluido Terminada. En el menú, mantén pulsado Terminada para elegir la hora de finalización. Desliza hacia la izquierda para mostrar Eliminar.
 
 ### ¿Cómo sincronizo con el escritorio?
 

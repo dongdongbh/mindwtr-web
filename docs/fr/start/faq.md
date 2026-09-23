@@ -409,7 +409,7 @@ Lorsqu’il est activé, il utilise votre propre clé API (BYOK). Consultez [Ass
 
 ### Comment fonctionnent les gestes de balayage ?
 
-Dans la boîte de réception, balayez une tâche vers la droite pour la marquer comme terminée. Les autres vues peuvent proposer des gestes de balayage différents.
+Sur mobile, balayez une tâche vers la droite pour afficher une action de statut. Touchez-la pour effectuer l’action affichée, ou appuyez longuement dessus pour choisir un autre statut, notamment Terminé. Dans le menu, appuyez longuement sur Terminé pour choisir l’heure d’achèvement. Balayez vers la gauche pour afficher Supprimer.
 
 ### Comment synchroniser avec l’ordinateur ?
 

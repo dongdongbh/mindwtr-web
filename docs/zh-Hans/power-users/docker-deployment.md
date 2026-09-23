@@ -38,7 +38,7 @@ Mindwtr 为运行以下服务提供官方 Docker 支持：
    - **用于本地测试的自托管 URL：**`http://localhost:8787`
    - **REST API 基础 URL：**`http://localhost:8787/v1`
 
-`/health` 只说明云端服务器能够响应 HTTP 请求。`/ready` 还会检查配置的数据目录是否可写，因此想确认服务器能否真正保存数据时应查看它。Compose 的健康检查使用 `/ready`；如果镜像较旧、还没有该端点，则回退到 `/health`。
+`/health` 只说明云端服务器能够响应 HTTP 请求。`/ready` 还会检查配置的数据目录是否可写，因此想确认服务器能否真正保存数据时应查看它。Compose 使用镜像内置的健康检查：当前镜像检查 `/ready`，旧版镜像检查 `/health`。
 
 如果你想从源码构建镜像，请克隆仓库并在其根目录运行 `docker compose -f docker/compose.yaml up --build -d`。参见下方的[手动构建](#手动构建)。
 

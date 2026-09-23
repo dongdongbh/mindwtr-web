@@ -38,7 +38,7 @@ Sie müssen das Repository nicht klonen. Die offiziellen Images werden auf GHCR 
    - **Self-Hosted-URL für lokale Tests:** `http://localhost:8787`
    - **Basis-URL der REST-API:** `http://localhost:8787/v1`
 
-`/health` meldet nur, dass der Cloud-Server HTTP-Anfragen beantwortet. `/ready` prüft zusätzlich, ob das konfigurierte Datenverzeichnis beschreibbar ist; diese Adresse zeigt also, ob der Server Ihre Daten wirklich speichern kann. Die Zustandsprüfung von Compose verwendet `/ready` und fällt bei älteren Images, die diesen Endpunkt noch nicht haben, auf `/health` zurück.
+`/health` meldet nur, dass der Cloud-Server HTTP-Anfragen beantwortet. `/ready` prüft zusätzlich, ob das konfigurierte Datenverzeichnis beschreibbar ist; diese Adresse zeigt also, ob der Server Ihre Daten wirklich speichern kann. Compose verwendet die im Image enthaltene Zustandsprüfung: aktuelle Images prüfen `/ready`, ältere `/health`.
 
 Wenn Sie die Images stattdessen aus dem Quellcode bauen möchten, klonen Sie das Repository und führen Sie in dessen Stammverzeichnis `docker compose -f docker/compose.yaml up --build -d` aus. Siehe [Manuell bauen](#manuell-bauen) weiter unten.
 

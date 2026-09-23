@@ -38,7 +38,7 @@ You do not need to clone the repository. The official images are published on GH
    - **Self-Hosted URL for local testing:** `http://localhost:8787`
    - **REST API Base URL:** `http://localhost:8787/v1`
 
-`/health` only reports that the cloud server is answering HTTP requests. `/ready` also verifies that the configured data directory is writable, so it is the one to check when you want to know the server can store your data. The Compose health check uses `/ready`, and falls back to `/health` on older images that do not have it yet.
+`/health` only reports that the cloud server is answering HTTP requests. `/ready` also verifies that the configured data directory is writable, so it is the one to check when you want to know the server can store your data. Compose uses the image's built-in health check: current images check `/ready`, while older images check `/health`.
 
 To build the images from source instead, clone the repository and run `docker compose -f docker/compose.yaml up --build -d` from its root. See [Building Manually](#building-manually) below.
 

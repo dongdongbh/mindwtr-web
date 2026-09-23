@@ -38,7 +38,7 @@ Mindwtr 正式支援使用 Docker 執行：
    - **供本機測試的自行託管 URL：**`http://localhost:8787`
    - **REST API Base URL：**`http://localhost:8787/v1`
 
-`/health` 只表示 Cloud 伺服器能夠回應 HTTP 要求。`/ready` 還會檢查所設定的資料目錄是否可寫入，因此想確認伺服器能否真正儲存資料時應查看這個位址。Compose 的健康狀態檢查使用 `/ready`；若映像較舊、尚未提供該端點，則會退回 `/health`。
+`/health` 只表示 Cloud 伺服器能夠回應 HTTP 要求。`/ready` 還會檢查所設定的資料目錄是否可寫入，因此想確認伺服器能否真正儲存資料時應查看這個位址。Compose 使用映像內建的健康狀態檢查：目前映像檢查 `/ready`，舊版映像檢查 `/health`。
 
 若您想從原始碼組建映像，請 clone 儲存庫並在其根目錄執行 `docker compose -f docker/compose.yaml up --build -d`。請參閱下方的[手動組建](#手動組建)。
 

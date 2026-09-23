@@ -38,7 +38,7 @@ Vous n’avez pas besoin de cloner le dépôt. Les images officielles sont publi
    - **URL auto-hébergée pour les tests locaux :** `http://localhost:8787`
    - **URL de base de l’API REST :** `http://localhost:8787/v1`
 
-`/health` indique seulement que le serveur cloud répond aux requêtes HTTP. `/ready` vérifie en plus que le répertoire de données configuré est accessible en écriture : c’est donc l’adresse à consulter pour savoir si le serveur peut réellement enregistrer vos données. Le contrôle d’intégrité de Compose utilise `/ready` et revient à `/health` sur les images plus anciennes qui n’en disposent pas encore.
+`/health` indique seulement que le serveur cloud répond aux requêtes HTTP. `/ready` vérifie en plus que le répertoire de données configuré est accessible en écriture : c’est donc l’adresse à consulter pour savoir si le serveur peut réellement enregistrer vos données. Compose utilise le contrôle de santé intégré à l’image : les images actuelles vérifient `/ready`, les anciennes `/health`.
 
 Pour construire les images depuis les sources, clonez le dépôt et exécutez `docker compose -f docker/compose.yaml up --build -d` depuis sa racine. Voir [Construction manuelle](#construction-manuelle) ci-dessous.
 

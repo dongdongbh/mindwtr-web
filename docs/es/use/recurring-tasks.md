@@ -61,6 +61,12 @@ Si una repetición posterior a la finalización también selecciona días de la 
 
 Si terminaste antes una tarea pero solo la marcas como Terminada más tarde, complétala usando la hora real —clic derecho en el botón de completar en escritorio o pulsación larga en **Terminada** en el menú de estado móvil— y la próxima aparición se planificará desde el momento en que la terminaste.
 
+## Omitir una aparición
+
+En una tarea recurrente de calendario fijo con fecha de inicio, vencimiento o revisión, abre el menú de la tarea y elige **Omitir esta repetición**. Mindwtr archiva esa aparición sin marcarla como completada y crea la siguiente tarea programada. Si la serie ha llegado a su límite, no se crea otra tarea. Puedes omitir más fechas perdidas del mismo modo.
+
+No puedes omitir una tarea de **Repetir después de completar**, porque su próxima fecha depende de cuándo completes la tarea actual.
+
 ## Finalizar una recurrencia
 
 Usa **Termina** para controlar cuándo se detiene la serie:
@@ -73,7 +79,7 @@ Usa **Termina** para controlar cuándo se detiene la serie:
 
 ## Vista previa en el calendario
 
-Mindwtr mantiene una sola tarea activa por serie recurrente. Crea la siguiente tarea real cuando completas la actual.
+Mindwtr mantiene una sola tarea activa por serie recurrente. Crea la siguiente tarea real cuando completas la actual u omites una aparición de calendario fijo.
 
 Activa **Mostrar próximas apariciones en el Calendario** si quieres una vista previa de planificación de la serie. El calendario muestra cada aparición dentro del rango visible de mes, semana o agenda: una tarea diaria llena todos los días visibles. Estas vistas previas ayudan a planificar, pero no son tareas activas adicionales.
 

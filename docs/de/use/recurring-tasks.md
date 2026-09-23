@@ -61,6 +61,12 @@ Wenn bei einer Wiederholung nach Abschluss zusätzlich Wochentage oder ein Monat
 
 Wenn Sie eine Aufgabe früher erledigt haben, sie aber erst später als erledigt markieren, schließen Sie sie stattdessen mit dem tatsächlichen Zeitpunkt ab (Rechtsklick auf die Abschlussschaltfläche auf dem Desktop oder langes Drücken auf **Erledigt** im mobilen Statusmenü). Das nächste Vorkommen wird dann ab dem tatsächlichen Abschlusszeitpunkt geplant.
 
+## Ein Vorkommen überspringen
+
+Öffnen Sie bei einer wiederkehrenden Aufgabe mit festem Zeitplan und Start-, Fälligkeits- oder Wiedervorlagedatum das Aufgabenmenü und wählen Sie **Dieses Vorkommen überspringen**. Mindwtr archiviert das Vorkommen ohne Abschluss und erstellt die nächste geplante Aufgabe. Ist die Serie am Ende, wird keine neue Aufgabe erstellt. Weitere verpasste Termine können Sie ebenso überspringen.
+
+Bei **Wiederholung nach Abschluss** ist das Überspringen nicht möglich, da das nächste Datum vom Abschluss der aktuellen Aufgabe abhängt.
+
 ## Eine Wiederholung beenden
 
 Mit **Endet** legen Sie fest, wann die Serie endet:
@@ -73,7 +79,7 @@ Mit **Endet** legen Sie fest, wann die Serie endet:
 
 ## Kalendervorschau
 
-Mindwtr hält für eine wiederkehrende Serie jeweils eine aktive Aufgabe vor. Die nächste tatsächliche Aufgabe wird erstellt, wenn Sie die aktuelle abschließen.
+Mindwtr hält für eine wiederkehrende Serie jeweils eine aktive Aufgabe vor. Die nächste tatsächliche Aufgabe wird erstellt, wenn Sie die aktuelle abschließen oder ein Vorkommen mit festem Zeitplan überspringen.
 
 Aktivieren Sie **Künftige Wiederholungen im Kalender anzeigen**, wenn Sie eine Planungsvorschau der Serie sehen möchten. Der Kalender zeigt jedes Vorkommen im sichtbaren Monats-, Wochen- oder Zeitplanbereich — eine tägliche Aufgabe füllt jeden sichtbaren Tag. Diese Vorschauen helfen bei der Vorausplanung, sind aber keine zusätzlichen aktiven Aufgaben.
 

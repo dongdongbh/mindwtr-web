@@ -61,6 +61,12 @@ Lorsque cette répétition choisit aussi des jours de semaine ou un jour du mois
 
 Si vous avez terminé une tâche plus tôt mais ne la marquez comme terminée que plus tard, renseignez plutôt l’heure réelle : faites un clic droit sur le bouton de fin sur ordinateur ou un appui long sur **Terminé** dans le menu de statut mobile. La prochaine occurrence sera planifiée depuis l’heure d’achèvement réelle.
 
+## Ignorer une occurrence
+
+Pour une tâche récurrente à calendrier fixe avec une date de début, d’échéance ou de révision, ouvrez son menu et choisissez **Ignorer cette occurrence**. Mindwtr archive cette occurrence sans la marquer comme terminée, puis crée la prochaine tâche prévue. Si la série a atteint sa limite, aucune nouvelle tâche n’est créée. Vous pouvez ignorer d’autres dates manquées de la même manière.
+
+Une tâche réglée sur **Répéter après achèvement** ne peut pas être ignorée ainsi, car sa prochaine date dépend de l’achèvement de la tâche actuelle.
+
 ## Fin d’une récurrence
 
 Utilisez **Se termine** pour arrêter la série :
@@ -73,7 +79,7 @@ Utilisez **Se termine** pour arrêter la série :
 
 ## Aperçu dans le calendrier
 
-Mindwtr conserve une seule tâche active par série récurrente. La prochaine tâche réelle est créée lorsque vous terminez la tâche actuelle.
+Mindwtr conserve une seule tâche active par série récurrente. La prochaine tâche réelle est créée lorsque vous terminez la tâche actuelle ou ignorez une occurrence à calendrier fixe.
 
 Activez **Voir les occurrences à venir dans le calendrier** pour obtenir un aperçu de planification de la série. Le calendrier affiche chaque occurrence dans la plage visible (mois, semaine ou planning) — une tâche quotidienne remplit chaque jour visible. Ces aperçus facilitent l’anticipation, mais ne constituent pas des tâches actives supplémentaires.
 

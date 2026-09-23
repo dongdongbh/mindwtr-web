@@ -1,6 +1,6 @@
 # Recurring Tasks
 
-Use recurring tasks for work that should come back after you complete it: reviews, chores, routines, renewals, and maintenance tasks.
+Use recurring tasks for work that should come back on a schedule or after you complete it: reviews, chores, routines, renewals, and maintenance tasks.
 
 Recurrence lives in the task editor. If you are using quick capture, create the task first, then open it for editing.
 
@@ -61,6 +61,12 @@ When an after-completion repeat also picks weekdays or a day of the month, the n
 
 If you finished a task earlier but only mark it Done later, complete it with the actual time instead (right-click the complete button on desktop, or long-press **Done** in the mobile status menu), and the next occurrence is scheduled from when you finished.
 
+## Skip One Occurrence
+
+For a fixed-schedule recurring task with a start, due, or review date, open the task's menu and choose **Skip this occurrence**. Mindwtr archives that occurrence without marking it complete and creates the next scheduled task. If the series has reached its **Ends** limit, no new task is created. You can skip another missed date the same way.
+
+**Repeat after completion** tasks cannot be skipped this way because their next date depends on when the current task is completed.
+
 ## Ending a Recurrence
 
 Use **Ends** to control when the series stops:
@@ -73,7 +79,7 @@ Use **Ends** to control when the series stops:
 
 ## Calendar Preview
 
-Mindwtr keeps one active task for a recurring series. It creates the next real task when you complete the current one.
+Mindwtr keeps one active task for a recurring series. It creates the next real task when you complete the current one or skip a fixed-schedule occurrence.
 
 Turn on **Show future occurrences in Calendar** when you want a planning preview of the series. The calendar paints every occurrence in the visible month, week, or schedule range — a daily task fills every visible day. These previews help you plan ahead, but they are not extra active tasks.
 

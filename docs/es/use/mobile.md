@@ -465,9 +465,9 @@ Tu panel principal para hacer. Foco es un panel de actividad, no un inventario c
 | ------------ | ------------------------------------------------------------------------- |
 | **Hoy**      | Tareas enfocadas para hoy, que vencen hoy/están atrasadas o empiezan hoy, incluso más tarde hoy, y esas filas muestran su hora de inicio hasta que llega |
 | **Próximas** | Próximas acciones disponibles que no están bloqueadas ni aplazadas       |
-| **Próximas** (vista previa) | Vista previa de solo lectura de las acciones que empiezan o se repiten otro día dentro de 7 días |
+| **Próximas** (vista previa) | Acciones que empiezan o se repiten dentro de 7 días; marca con estrella una próxima acción con inicio futuro para añadirla a Foco en su día de inicio |
 
-Foco mantiene las tareas con inicio futuro y las posteriores de los proyectos secuenciales fuera de sus listas accionables para limitarlas a lo que puedes hacer ahora; las tareas aplazadas de la próxima semana siguen viéndose en la vista previa **Próximas**, con la fecha en la que aparecerá cada una. Usa **Contextos**, **Proyectos** o **Buscar** cuando quieras examinar el inventario de tareas más amplio.
+Foco mantiene las tareas con inicio futuro y las posteriores de los proyectos secuenciales fuera de sus listas accionables. Una próxima acción con inicio futuro marcada con estrella permanece en **Próximas** hasta su día de inicio y entonces pasa automáticamente al Foco de hoy, sin ocupar antes un lugar del límite. Las tareas recurrentes sin fecha de inicio siguen siendo solo una vista previa. Usa **Contextos**, **Proyectos** o **Buscar** para examinar un inventario más amplio.
 
 El orden predeterminado de Próximas acciones coloca primero las acciones con vencimiento próximo, después las que no tienen fecha y al final las que vencen en un futuro lejano. Dentro del mismo grupo, Foco usa la prioridad cuando está habilitada, seguida de la hora de inicio, la fecha de creación, el título y el id. Consulta [Flujo GTD en Mindwtr](/es/use/gtd-workflow#como-ordena-enfoque-las-acciones-disponibles) para conocer toda la lógica.
 

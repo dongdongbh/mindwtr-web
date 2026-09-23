@@ -465,9 +465,9 @@ Your primary dashboard for doing. Focus is an Engage dashboard, not a full inven
 | ------------ | ----------------------------------------------------------------------- |
 | **Today**    | Tasks focused for today, due today/overdue, or starting today, including later today, with those rows showing their start time until it arrives |
 | **Next**     | Available next actions that are not blocked or deferred                 |
-| **Upcoming** | Read-only preview of next actions starting or recurring on another day within 7 days |
+| **Upcoming** | Next actions starting or recurring on another day within 7 days; star a future-start Next action to queue it for Focus on its start day |
 
-Focus keeps future-start tasks and later tasks in sequential projects out of its actionable lists so they stay limited to what you can act on now; deferred tasks landing within the next week still show in the **Upcoming** preview, with the date each will appear. Use **Contexts**, **Projects**, or **Search** when you want to inspect the broader task inventory.
+Focus keeps future-start tasks and later tasks in sequential projects out of its actionable lists so they stay limited to what you can act on now. A starred future-start Next action stays in **Upcoming** until its start day, then moves to Today's Focus automatically without using a current Focus slot. Recurring tasks without a start date stay as previews and cannot be starred there. Use **Contexts**, **Projects**, or **Search** when you want to inspect the broader task inventory.
 
 Default Next Actions order is due-soon actions first, undated actions next, and far-future due actions last. Within the same bucket, Focus uses priority when enabled, then start time, creation date, title, and id. See [GTD Workflow in Mindwtr](/use/gtd-workflow#how-focus-sorts-available-actions) for the full logic.
 

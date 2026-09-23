@@ -340,7 +340,7 @@ Mit **Nur Fokus** im Fokus-Kopfbereich auf Desktop und Mobilgeräten bleibt **He
    - undatierte Aktionen danach
    - weit in der Zukunft fällige Aktionen zuletzt, mit dem frühesten Fälligkeitsdatum zuerst
    - innerhalb derselben Gruppe: Priorität (wenn aktiviert), dann Startzeit, ältestes Erstellungsdatum, Titel und ID
-4. **Anstehend** zeigt eine Vorschau auf `next`-Aufgaben, die die Zurückstellung derzeit auf einen anderen Tag zurückhält, die aber innerhalb der nächsten 7 Tage auftauchen – ein zukünftiges Startdatum oder eine wiederkehrende Aufgabe, die auf ihr nächstes Fälligkeits- oder Wiedervorlagedatum wartet. Die Zeilen sind nach dem Tag sortiert, an dem sie erscheinen, und zeigen dieses Datum. Sie sind reine Vorschau, lassen sich also nicht in den heutigen Fokus stern-markieren, und der Abschnitt verschwindet, wenn nichts ansteht.
+4. **Anstehend** zeigt `next`-Aufgaben, die innerhalb der nächsten 7 Tage auftauchen – mit zukünftigem Startdatum oder als wiederkehrende Aufgabe, die auf ihr nächstes Fälligkeits- oder Wiedervorlagedatum wartet. Eine nächste Aktion mit künftigem Start können Sie hier markieren: Sie bleibt bis zum Starttag unter „Anstehend“ und erscheint dann automatisch im heutigen Fokus. Vorgemerkte Sterne belegen heute keinen Fokusplatz. Wiederkehrende Aufgaben ohne Startdatum bleiben reine Vorschau.
 5. **Durchsicht fällig** zeigt Aufgaben mit fälligem Wiedervorlagedatum. Nach der Prüfung können Sie das Wiedervorlagedatum entfernen (**Als geprüft markieren**) oder mit **In 1 Woche prüfen** verschieben – auf dem Desktop im Schnellaktionsmenü der Aufgabe, auf Mobilgeräten durch langes Drücken der Zeile.
 
 Das Startdatum ist das Zurückstellungs-/Planungsdatum von Mindwtr. Eine Aufgabe mit zukünftigem Start bleibt bis zu ihrem Starttag aus den ausführbaren Listen heraus. Der Abschnitt **Anstehend** ist der eingebaute Blick auf die kommende Woche; **Projekte** oder die **Suche** zeigen weiter entfernte Zurückstellungen. Sequenzielle Projekte beschränken „Fokus“ außerdem auf die erste verfügbare Aktion des Projekts oder Abschnitts. Spätere Aktionen bleiben ausgeblendet, bis der vorherige Schritt sie nicht mehr blockiert.
@@ -359,7 +359,7 @@ Markieren Sie bis zu Ihrem festgelegten Fokuslimit Aufgaben mit einem Stern als 
 - **Desktop:** Klicken Sie auf das Sternsymbol.
 - **Mobilgeräte:** Tippen Sie auf die Sternplakette.
 
-Der heutige Fokus zeigt jede mit Stern markierte Aufgabe Ihrer Sammlung, auch solche, die die aktuelle Ansicht sonst ausblenden würde: Aufgaben aus einem anderen Bereich, Aufgaben in einem pausierten Projekt oder einem Projekt unter „Irgendwann/Vielleicht“ und Aufgaben, deren Startdatum noch in der Zukunft liegt. Das Fokuslimit zählt jede markierte Aufgabe mit, deshalb würde eine ausgeblendete Aufgabe einen Platz belegen, den Sie weder sehen noch freigeben könnten. Gespeicherte Filter, die Filter-Chips und das Suchfeld schränken diese Liste weiterhin ein, denn sie sind auf dem Bildschirm sichtbar und lassen sich leicht rückgängig machen.
+Der heutige Fokus zeigt markierte Aufgaben, deren Starttag erreicht ist, auch wenn der aktuelle Bereich sie sonst ausblenden würde. Eine nächste Aktion mit künftigem Start bleibt markiert unter „Anstehend“ und belegt heute keinen Fokusplatz. Gespeicherte Filter, Filter-Chips und das Suchfeld schränken die sichtbare Liste weiterhin ein.
 
 ---
 

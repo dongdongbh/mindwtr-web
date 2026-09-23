@@ -434,9 +434,9 @@ Das zentrale Dashboard zum Erledigen, kein vollständiger Bestand aller `next`-A
 | ------------ | ----------------------------------------------------------------------- |
 | **Heute** | Heute fokussierte, heute fällige/überfällige oder heute beginnende Aufgaben, auch später am Tag, wobei diese Zeilen ihre Startzeit anzeigen, bis diese erreicht ist |
 | **Nächstes** | Verfügbare, nicht blockierte oder zurückgestellte nächste Aktionen |
-| **Anstehend** | Schreibgeschützte Vorschau auf nächste Aktionen, die an einem anderen Tag innerhalb von 7 Tagen starten oder wiederkehren |
+| **Anstehend** | Nächste Aktionen, die innerhalb von 7 Tagen starten oder wiederkehren; ein Stern merkt Aufgaben mit künftigem Start für ihren Starttag vor |
 
-Zukünftig beginnende und spätere Aufgaben sequenzieller Projekte bleiben aus den ausführbaren Listen heraus; zurückgestellte Aufgaben der nächsten Woche erscheinen weiterhin in der Vorschau **Anstehend**, jeweils mit dem Datum, an dem sie auftauchen. Verwenden Sie **Kontexte**, **Projekte** oder die **Suche** für den vollständigen Bestand.
+Zukünftig beginnende und spätere Aufgaben sequenzieller Projekte bleiben aus den ausführbaren Listen heraus. Eine markierte nächste Aktion mit künftigem Start bleibt bis zu ihrem Starttag unter **Anstehend** und wechselt dann automatisch in den heutigen Fokus, ohne vorher einen Fokusplatz zu belegen. Wiederkehrende Aufgaben ohne Startdatum bleiben reine Vorschau. Verwenden Sie **Kontexte**, **Projekte** oder die **Suche** für den vollständigen Bestand.
 
 Standardsortierung: bald fällig, undatiert, weit in der Zukunft fällig; innerhalb einer Gruppe Priorität (wenn aktiviert), Startzeit, Erstellungsdatum, Titel und ID. Siehe [GTD-Arbeitsablauf](/de/use/gtd-workflow#how-focus-sorts-available-actions).
 

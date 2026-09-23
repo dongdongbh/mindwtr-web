@@ -85,7 +85,7 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 | `GET`    | `/tasks`              | List tasks                    |
 | `GET`    | `/tasks?status=next`  | Filter by status              |
 | `GET`    | `/tasks?query=@work`  | Search tasks                  |
-| `GET`    | `/tasks?isFocusedToday=true` | Desktop: filter Focus Today |
+| `GET`    | `/tasks?isFocusedToday=true` | Desktop: filter starred tasks, including queued future starts |
 | `GET`    | `/tasks?all=1`        | Include done/archived         |
 | `GET`    | `/tasks?deleted=1`    | Include soft-deleted          |
 | `POST`   | `/tasks`              | Create task                   |
@@ -112,7 +112,7 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 
 Rows marked **Desktop** exist only in the desktop app's Local API. Rows marked **Helper** exist only in the Bun helper, which also answers them under a `/v1/` prefix (`/v1/sections`).
 
-The desktop Local API accepts `isFocusedToday=true`/`1` and `isFocusedToday=false`/`0`. With `true` or `1`, it returns tasks marked for Focus Today. With `false` or `0`, it returns unmarked tasks, including older records without the field. Omit the parameter to leave the list unfiltered. Other values return `400`.
+The desktop Local API accepts `isFocusedToday=true`/`1` and `isFocusedToday=false`/`0`. With `true` or `1`, it returns starred tasks, including future-start Next actions queued for Focus. With `false` or `0`, it returns unmarked tasks, including older records without the field. Omit the parameter to leave the list unfiltered. Other values return `400`.
 
 `query` here is plain-text matching: the value is lowercased and tested as a substring against the task's title, description, status, tags, contexts, project and area ids, and support notes. It is not the operator language. `status:`, `context:`, `tag:`, `due:<=7d`, quoted phrases and `-negation` belong to the app's search box, the CLI's `--query`, and the MCP server's task listing; sent here they match as literal characters and will usually return nothing.
 

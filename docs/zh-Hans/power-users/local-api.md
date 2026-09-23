@@ -85,7 +85,7 @@ Bun 辅助程序同样要求令牌：未设置 `MINDWTR_API_TOKEN` 时会立即�
 | `GET`    | `/tasks`              | 列出任务                      |
 | `GET`    | `/tasks?status=next`  | 按状态筛选                    |
 | `GET`    | `/tasks?query=@work`  | 搜索任务                      |
-| `GET`    | `/tasks?isFocusedToday=true` | 桌面端：筛选**今日焦点**任务 |
+| `GET`    | `/tasks?isFocusedToday=true` | 桌面端：筛选加星任务，包括排队的未来开始任务 |
 | `GET`    | `/tasks?all=1`        | 包含已完成/已归档任务         |
 | `GET`    | `/tasks?deleted=1`    | 包含软删除任务                |
 | `POST`   | `/tasks`              | 创建任务                      |
@@ -112,7 +112,7 @@ Bun 辅助程序同样要求令牌：未设置 `MINDWTR_API_TOKEN` 时会立即�
 
 标注**桌面端**的行只存在于桌面应用的本地 API。标注**辅助程序**的行只存在于 Bun 辅助程序，它同时也在 `/v1/` 前缀下响应这些请求（`/v1/sections`）。
 
-桌面端本地 API 接受 `isFocusedToday=true`/`1` 和 `isFocusedToday=false`/`0`。`true` 或 `1` 返回标记为**今日焦点**的任务；`false` 或 `0` 返回未标记的任务，包括没有该字段的旧记录。省略该参数时，API 不按此字段筛选。其他值会返回 `400`。
+桌面端本地 API 接受 `isFocusedToday=true`/`1` 和 `isFocusedToday=false`/`0`。`true` 或 `1` 返回加星任务，包括排队等待进入专注的未来开始任务；`false` 或 `0` 返回未标记的任务，包括没有该字段的旧记录。省略该参数时，API 不按此字段筛选。其他值会返回 `400`。
 
 这里的 `query` 是纯文本匹配：该值会转为小写，并作为子串与任务的标题、描述、状态、标签、上下文、项目与领域 ID 以及支持备注进行比较。它不是操作符语言。`status:`、`context:`、`tag:`、`due:<=7d`、引号短语和 `-取反` 属于应用内的搜索框、CLI 的 `--query` 以及 MCP 服务器的任务列表；在这里发送时会按字面字符匹配，通常什么也返回不了。
 

@@ -336,7 +336,7 @@ Focus détermine d’abord si une tâche est disponible, puis trie les actions v
    - ensuite les actions sans date
    - enfin les actions dont l’échéance est plus éloignée, de la date d’échéance la plus proche à la plus lointaine
    - au sein d’une même catégorie : la priorité lorsqu’elle est activée, puis l’heure de début, la date de création la plus ancienne, le titre et l’identifiant
-4. **À venir** donne un aperçu des tâches `next` que le report retient actuellement jusqu’à un autre jour mais qui apparaîtront dans les 7 prochains jours : une date de début future, ou une tâche récurrente qui attend sa prochaine date d’échéance ou de revue. Les lignes sont triées par le jour où elles apparaîtront et affichent cette date ; il s’agit d’un simple aperçu, elles ne peuvent donc pas être étoilées dans le Focus du jour, et la section disparaît lorsque rien n’arrive.
+4. **À venir** montre les tâches `next` qui apparaîtront dans les 7 prochains jours : avec une date de début future ou une récurrence en attente de sa prochaine échéance ou revue. Vous pouvez étoiler une action suivante à début futur : elle reste ici jusqu’à ce jour, puis rejoint automatiquement le Focus du jour sans occuper de place avant. Les tâches récurrentes sans date de début restent un simple aperçu.
 5. **À revoir** affiche les tâches dont la date de revue est arrivée. Après avoir examiné un élément, vous pouvez effacer sa date de revue (**Marquer comme examiné**) ou la reporter avec **Revoir dans 1 semaine**, sur ordinateur depuis le menu d’actions rapides de la tâche et sur mobile en appuyant longuement sur la ligne.
 
 La date de début est le champ de report/date planifiée de Mindwtr. Une tâche dont la date de début est future reste hors des listes actionnables jusqu’au jour de son début ; la section **À venir** est le coup d’œil intégré sur la semaine qui vient, et **Projets** ou la **Recherche** montrent les reports plus lointains. Les projets séquentiels limitent également Focus à la première action disponible du projet ou de la section, de sorte que les actions suivantes restent hors de Focus jusqu’à ce que l’étape précédente cesse de les bloquer.
@@ -355,7 +355,7 @@ Marquez d’une étoile les tâches prioritaires du jour jusqu’à la limite Fo
 - **Ordinateur :** cliquez sur l’icône en forme d’étoile
 - **Mobile :** touchez le badge en forme d’étoile
 
-Focus du jour affiche toutes les tâches marquées d’une étoile dans votre bibliothèque, même celles que la vue actuelle masquerait : les tâches d’un autre Domaine, les tâches d’un projet en pause ou classé Un jour/Peut-être, et les tâches dont la date de début est encore à venir. La limite Focus compte toutes les tâches marquées, donc une tâche masquée occuperait une place que vous ne pourriez ni voir ni libérer. Les Filtres enregistrés, les puces de filtre et le champ de recherche restreignent quand même cette liste, car ils sont visibles à l’écran et faciles à annuler.
+Focus du jour affiche les tâches étoilées dont le jour de début est arrivé, même si le domaine actuel les masquerait autrement. Une action suivante à début futur reste étoilée dans **À venir** et n’occupe pas de place dans Focus aujourd’hui. Les filtres enregistrés, les puces de filtre et la recherche limitent toujours la liste visible.
 
 ---
 

@@ -73,11 +73,11 @@ Votre zone de collecte. Toutes les nouvelles tâches y arrivent avant d’être 
 
 Votre tableau de bord unifié pour l’engagement quotidien. Focus ne constitue pas un inventaire complet de toutes les tâches ayant le statut `next` ; il restreint la liste au travail disponible maintenant.
 
-- **Focus du jour** : tâches prioritaires étoilées pour le travail approfondi, dans la limite Focus que vous avez configurée. Les actions suivantes mises en focus affichent aussi une petite étoile pleine à côté de leur titre dans les listes de tâches et sur le Tableau, pour repérer d'un coup d'œil l'appartenance au Focus.
+- **Focus du jour** : tâches prioritaires étoilées dont le jour de début est arrivé. La limite configurée s’applique aux étoiles ajoutées pour aujourd’hui ; les tâches futures mises en attente ne prennent pas de place aujourd’hui. Les actions suivantes mises en focus affichent aussi une petite étoile pleine à côté de leur titre dans les listes et sur le Tableau.
 - **En retard** : éléments dont l’échéance est dépassée.
 - **À faire aujourd’hui** : tâches dont l’échéance est aujourd’hui ou qui démarrent aujourd’hui, y compris plus tard dans la journée, triées par heure, ces lignes affichant leur heure de début jusqu’à ce qu’elle arrive.
 - **Actions suivantes** : tâches prêtes sans échéance, filtrées par contexte.
-- **À venir** : aperçu en lecture seule des actions suivantes qui démarrent — ou reviennent — un autre jour dans les 7 prochains jours ; chaque ligne indique la date à laquelle elle apparaîtra. La section n’est présente que lorsque quelque chose arrive et ses lignes ne peuvent pas être étoilées.
+- **À venir** : actions suivantes qui démarrent — ou reviennent — un autre jour dans les 7 prochains jours. Vous pouvez étoiler une action suivante dont la date de début est future : elle reste ici jusqu’à ce jour, puis rejoint le Focus du jour. Les tâches récurrentes sans date de début restent un simple aperçu.
 - **Revue à effectuer** : éléments dont la date de rappel est arrivée.
 
 Focus tient les tâches dont la date de début est future et les tâches ultérieures des projets séquentiels à l’écart de ses listes actionnables ; les tâches différées qui arrivent dans la semaine restent visibles dans l’aperçu **À venir**. Utilisez les **Contextes**, les **Projets** ou la **Recherche** lorsque vous devez examiner un inventaire de tâches plus large.

@@ -248,7 +248,7 @@ Mindwtr keeps task status and task dates separate. Status is the GTD state you c
 
 There is one deliberate shortcut at edit time: giving an **Inbox** item a start date counts as clarifying it — you have decided when you can act on it — so Mindwtr moves it to `next` the moment you set the date, the same way starring an Inbox item does. If you pick a status in the same edit, your choice wins, and `someday` or `waiting` tasks always keep their status when you date them: a dated someday is a tickler, a dated waiting-for is a follow-up reminder.
 
-- **Start date** is a defer/availability gate. A future start hides the task from Focus by default. When the date arrives, the task appears again with whatever status it already has. If the start has a specific time, Next Actions keeps the task hidden until that time of day, so a task startable at 5:00 PM does not clutter the morning's list; the **Today** section still lists it, in time order. Starts on another day within the next 7 days are still previewed in the Focus **Upcoming** section, so a deferral never lands unannounced.
+- **Start date** is a defer/availability gate. A future start hides the task from today's actionable lists by default. You can star a future-start Next action in **Upcoming** to queue it for Today's Focus on its start day; it stays in Upcoming until then and uses no current Focus slot. If the start has a specific time, Next Actions keeps the task hidden until that time of day, so a task startable at 5:00 PM does not clutter the morning's list; the **Today** section still lists it, in time order. Starts on another day within the next 7 days are previewed in **Upcoming**.
 - **Review date** is a tickler. When the date arrives, Mindwtr surfaces the task where that view supports review-due items so you can reconsider it; nothing changes until you decide.
 - **Due date** is a deadline. As it approaches or passes, Mindwtr gives the task deadline emphasis through display, reminders, and sorting pressure; status stays unchanged.
 
@@ -313,7 +313,7 @@ Schedule 30-90 minutes weekly, same time, same place.
 ### Choosing What to Work On
 
 Use the **Focus** view to see:
-- Today's focused tasks (starred items)
+- Today's focused tasks (stars whose start day has arrived)
 - Next Actions (context-filtered or general)
 - Overdue items
 - Due today
@@ -336,7 +336,7 @@ Focus first decides whether a task is available, then sorts the visible actions:
    - undated actions next
    - far-future due actions last, earliest due date first
    - within the same bucket: priority when enabled, then start time, oldest creation date, title, and id
-4. **Upcoming** previews `next` tasks the deferral currently holds back until another day but which surface within the next 7 days — a future start date, or a recurring task waiting for its next due or review date. Rows are sorted by the day they will appear and show that date; they are a preview only, so they cannot be starred into Today's Focus, and the section disappears when nothing is coming.
+4. **Upcoming** previews `next` tasks held back until another day but due to surface within the next 7 days — a future start date, or a recurring task waiting for its next due or review date. You can star a future-start Next action here; it remains in Upcoming until its start day, then joins Today's Focus automatically. Queued stars do not use today's Focus slots. Recurring tasks without a start date remain previews only. Rows show the day they will appear, and the section disappears when nothing is coming.
 5. **Review Due** shows tasks whose review date is due. After looking an item over, you can clear its review date (**Mark reviewed**) or push it out with **Review in 1 week**, on desktop from the task's quick-action menu, on mobile by long-pressing the row.
 
 Start date is Mindwtr's defer/planned-date field. A future-start task stays out of the actionable lists until its start day; the **Upcoming** section is the built-in peek ahead for the coming week, and **Projects** or **Search** show deferrals further out. Sequential projects also limit Focus to the first available action for that project or section, so later actions stay out of Focus until the previous step is no longer blocking them.
@@ -355,7 +355,7 @@ Star tasks as today's priorities up to your configured Focus limit:
 - **Desktop:** Click the star icon
 - **Mobile:** Tap the star badge
 
-Today's Focus shows every starred task in your library, even ones the current view would otherwise hide: tasks in another area, tasks in a project that is on hold or Someday/Maybe, and tasks whose start date is still in the future. The Focus limit counts every starred task, so a hidden one would take up a slot you could not see or clear. Saved Filters, the filter chips, and the search box do still narrow this list, because they are visible on screen and easy to undo.
+Today's Focus shows stars whose start day has arrived, even when the current area would otherwise hide the task. A future-start Next action stays starred in Upcoming and does not use a current Focus slot. Saved Filters, filter chips, and search still narrow the visible list.
 
 ---
 

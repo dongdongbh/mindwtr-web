@@ -85,7 +85,7 @@ El asistente de Bun también requiere un token: sale de inmediato si no se estab
 | `GET`    | `/tasks`              | Enumera las tareas                    |
 | `GET`    | `/tasks?status=next`  | Filtra por estado              |
 | `GET`    | `/tasks?query=@work`  | Busca tareas                  |
-| `GET`    | `/tasks?isFocusedToday=true` | Escritorio: filtra por **Foco de hoy** |
+| `GET`    | `/tasks?isFocusedToday=true` | Escritorio: filtra tareas marcadas, incluidas las futuras en espera |
 | `GET`    | `/tasks?all=1`        | Incluye las completadas/archivadas         |
 | `GET`    | `/tasks?deleted=1`    | Incluye las eliminadas de forma lógica          |
 | `POST`   | `/tasks`              | Crea una tarea                   |
@@ -112,7 +112,7 @@ El asistente de Bun también requiere un token: sale de inmediato si no se estab
 
 Las filas marcadas con **Escritorio** solo existen en la API local de la aplicación de escritorio. Las filas marcadas con **Asistente** solo existen en el asistente de Bun, que además las responde con el prefijo `/v1/` (`/v1/sections`).
 
-La API local de escritorio acepta `isFocusedToday=true`/`1` e `isFocusedToday=false`/`0`. Con `true` o `1`, devuelve las tareas del **Foco de hoy**. Con `false` o `0`, devuelve las tareas sin esa marca, incluidos los registros antiguos que no contienen el campo. Si omites el parámetro, la lista no se filtra por este campo. Los demás valores devuelven `400`.
+La API local de escritorio acepta `isFocusedToday=true`/`1` e `isFocusedToday=false`/`0`. Con `true` o `1`, devuelve las tareas marcadas con estrella, incluidas las próximas acciones con inicio futuro en espera de Foco. Con `false` o `0`, devuelve las tareas sin esa marca, incluidos los registros antiguos que no contienen el campo. Si omites el parámetro, la lista no se filtra por este campo. Los demás valores devuelven `400`.
 
 Aquí `query` es una búsqueda de texto plano: el valor se pasa a minúsculas y se comprueba como subcadena contra el título, la descripción, el estado, las etiquetas, los contextos, los identificadores de proyecto y área y las notas de apoyo de la tarea. No es el lenguaje de operadores. `status:`, `context:`, `tag:`, `due:<=7d`, las frases entre comillas y la `-negación` pertenecen al buscador de la aplicación, al `--query` de la CLI y al listado de tareas del servidor MCP; enviados aquí se comparan como caracteres literales y normalmente no devuelven nada.
 

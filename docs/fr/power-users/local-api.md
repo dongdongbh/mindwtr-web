@@ -85,7 +85,7 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 | `GET`    | `/tasks`               | Répertorier les tâches                   |
 | `GET`    | `/tasks?status=next`   | Filtrer par statut                       |
 | `GET`    | `/tasks?query=@work`   | Rechercher des tâches                    |
-| `GET`    | `/tasks?isFocusedToday=true` | Ordinateur : filtrer les **Priorités du jour** |
+| `GET`    | `/tasks?isFocusedToday=true` | Ordinateur : filtrer les tâches étoilées, y compris celles en attente |
 | `GET`    | `/tasks?all=1`         | Inclure les tâches terminées/archivées   |
 | `GET`    | `/tasks?deleted=1`     | Inclure les suppressions logiques        |
 | `POST`   | `/tasks`               | Créer une tâche                          |
@@ -112,7 +112,7 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 
 Les lignes marquées **Bureau** n’existent que dans l’API locale de l’application de bureau. Les lignes marquées **Utilitaire** n’existent que dans l’utilitaire Bun, qui y répond aussi sous le préfixe `/v1/` (`/v1/sections`).
 
-L’API locale de l’application de bureau accepte `isFocusedToday=true`/`1` et `isFocusedToday=false`/`0`. Avec `true` ou `1`, elle renvoie les tâches des **Priorités du jour**. Avec `false` ou `0`, elle renvoie les tâches non marquées, y compris les anciens enregistrements dépourvus de ce champ. Sans le paramètre, elle ne filtre pas la liste selon ce champ. Pour toute autre valeur, elle répond avec `400`.
+L’API locale de l’application de bureau accepte `isFocusedToday=true`/`1` et `isFocusedToday=false`/`0`. Avec `true` ou `1`, elle renvoie les tâches étoilées, y compris les actions suivantes à début futur en attente de Focus. Avec `false` ou `0`, elle renvoie les tâches non marquées, y compris les anciens enregistrements dépourvus de ce champ. Sans le paramètre, elle ne filtre pas la liste selon ce champ. Pour toute autre valeur, elle répond avec `400`.
 
 Ici, `query` est une recherche en texte brut : la valeur est mise en minuscules et testée comme sous-chaîne sur le titre, la description, le statut, les tags, les contextes, les identifiants de projet et de domaine et les notes de suivi de la tâche. Ce n’est pas le langage d’opérateurs. `status:`, `context:`, `tag:`, `due:<=7d`, les expressions entre guillemets et la `-négation` appartiennent au champ de recherche de l’application, au `--query` de la CLI et à la liste de tâches du serveur MCP ; envoyés ici, ils sont comparés comme des caractères littéraux et ne renvoient généralement rien.
 

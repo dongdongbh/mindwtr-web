@@ -336,7 +336,7 @@ Enfoque determina primero si una tarea está disponible y después ordena las ac
    - después las acciones sin fecha
    - al final las acciones con fecha límite en un futuro lejano, empezando por la fecha límite más próxima
    - dentro del mismo grupo: prioridad cuando esté activada, después hora de inicio, fecha de creación más antigua, título e id
-4. **Próximas** previsualiza las tareas `next` que el aplazamiento retiene ahora mismo hasta otro día pero que aparecerán dentro de los próximos 7 días: una fecha de inicio futura, o una tarea recurrente que espera su siguiente fecha de vencimiento o revisión. Las filas se ordenan por el día en que aparecerán y muestran esa fecha; son solo una vista previa, así que no se pueden marcar con estrella para el Foco de hoy, y la sección desaparece cuando no viene nada.
+4. **Próximas** muestra tareas `next` que aparecerán dentro de los próximos 7 días: con fecha de inicio futura o recurrentes que esperan su siguiente fecha de vencimiento o revisión. Puedes marcar con estrella una próxima acción con inicio futuro: permanece aquí hasta su día de inicio y entonces pasa automáticamente al Foco de hoy, sin ocupar antes un lugar del límite. Las tareas recurrentes sin fecha de inicio siguen siendo solo una vista previa.
 5. **Revisión vencida** muestra las tareas cuya fecha de revisión ha llegado. Después de revisar un elemento, puedes borrar su fecha de revisión (**Marcar como revisado**) o aplazarla mediante **Revisar en 1 semana**: en el escritorio, desde el menú de acciones rápidas de la tarea; en el móvil, manteniendo pulsada la fila.
 
 La fecha de inicio es el campo de aplazamiento/fecha planificada de Mindwtr. Una tarea con inicio futuro se queda fuera de las listas accionables hasta su día de inicio; la sección **Próximas** es el vistazo integrado a la semana que viene, y **Proyectos** o **Buscar** muestran los aplazamientos más lejanos. Los proyectos secuenciales también limitan Enfoque a la primera acción disponible para ese proyecto o sección, por lo que las acciones posteriores no aparecen en Enfoque hasta que el paso anterior deja de bloquearlas.
@@ -355,7 +355,7 @@ Destaca tareas como prioridades de hoy hasta alcanzar el límite de Enfoque conf
 - **Escritorio:** haz clic en el icono de estrella
 - **Móvil:** toca la insignia de estrella
 
-Enfoque de hoy muestra todas las tareas destacadas de tu biblioteca, incluso las que la vista actual ocultaría: tareas de otra Área, tareas de un proyecto en pausa o en Algún día/Quizá, y tareas cuya fecha de inicio todavía está en el futuro. El límite de Enfoque cuenta todas las tareas destacadas, así que una tarea oculta ocuparía un lugar que no podrías ver ni liberar. Los Filtros guardados, los chips de filtro y el cuadro de búsqueda sí siguen acotando esta lista, porque están a la vista en la pantalla y son fáciles de deshacer.
+Enfoque de hoy muestra las tareas marcadas con estrella cuyo día de inicio ya ha llegado, incluso si el área actual las ocultaría. Una próxima acción con inicio futuro permanece marcada en **Próximas** y no ocupa un lugar de Foco hoy. Los Filtros guardados, los chips de filtro y la búsqueda siguen acotando la lista visible.
 
 ---
 

@@ -85,7 +85,7 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 | `GET`    | `/tasks`              | 列出任務                     |
 | `GET`    | `/tasks?status=next`  | 依狀態篩選                   |
 | `GET`    | `/tasks?query=@work`  | 搜尋任務                     |
-| `GET`    | `/tasks?isFocusedToday=true` | 桌面版：篩選**今日焦點**任務 |
+| `GET`    | `/tasks?isFocusedToday=true` | 桌面版：篩選加星號任務，包括排隊的未來開始任務 |
 | `GET`    | `/tasks?all=1`        | 包含已完成／已封存項目       |
 | `GET`    | `/tasks?deleted=1`    | 包含已軟刪除項目             |
 | `POST`   | `/tasks`              | 建立任務                     |
@@ -112,7 +112,7 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 
 標示**桌面版**的列只存在於桌面應用程式的本機 API。標示**輔助工具**的列只存在於 Bun 輔助工具，它同時也在 `/v1/` 前綴下回應這些請求（`/v1/sections`）。
 
-桌面版本機 API 接受 `isFocusedToday=true`/`1` 與 `isFocusedToday=false`/`0`。`true` 或 `1` 會傳回標記為**今日焦點**的任務；`false` 或 `0` 會傳回未標記的任務，包括沒有該欄位的舊記錄。省略此參數時，API 不會依此欄位篩選。其他值會傳回 `400`。
+桌面版本機 API 接受 `isFocusedToday=true`/`1` 與 `isFocusedToday=false`/`0`。`true` 或 `1` 會傳回加星號任務，包括排隊等待進入專注的未來開始任務；`false` 或 `0` 會傳回未標記的任務，包括沒有該欄位的舊記錄。省略此參數時，API 不會依此欄位篩選。其他值會傳回 `400`。
 
 這裡的 `query` 是純文字比對：該值會轉為小寫，並以子字串方式比對任務的標題、描述、狀態、標籤、情境、專案與領域 ID 以及支援備註。它不是運算子語言。`status:`、`context:`、`tag:`、`due:<=7d`、引號片語與 `-否定` 屬於應用程式的搜尋框、CLI 的 `--query` 以及 MCP 伺服器的任務列表；在這裡送出時會以字面字元比對，通常不會傳回任何結果。
 

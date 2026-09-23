@@ -73,11 +73,11 @@ Tu zona de captura. Todas las tareas nuevas llegan aquí antes de procesarlas.
 
 Tu panel unificado para la actividad diaria. Foco no es un inventario completo de todas las tareas con estado `next`; limita la lista al trabajo disponible ahora.
 
-- **Foco de hoy**: tareas prioritarias marcadas con estrella para trabajar con concentración, hasta el límite de Foco configurado. Las próximas acciones enfocadas también muestran una pequeña estrella rellena junto a su título en las listas de tareas y en el Tablero, de modo que la pertenencia al Foco se ve de un vistazo.
+- **Foco de hoy**: tareas prioritarias marcadas con estrella cuyo día de inicio ya ha llegado. El límite configurado se aplica a las estrellas añadidas para hoy; las tareas futuras en espera no ocupan un lugar hoy. Las próximas acciones enfocadas también muestran una pequeña estrella rellena junto a su título en las listas y en el Tablero.
 - **Atrasadas**: elementos cuya fecha de vencimiento ya pasó.
 - **Vencen hoy**: tareas que vencen hoy o empiezan hoy, incluidas las que empiezan más tarde hoy, ordenadas por hora, y esas filas muestran su hora de inicio hasta que llega.
 - **Próximas acciones**: tareas listas y sin fecha de vencimiento, filtradas por contexto.
-- **Próximas**: vista previa de solo lectura de las acciones que empezarán —o se repetirán— otro día dentro de los próximos 7 días; cada fila muestra la fecha en la que aparecerá. La sección solo está presente cuando hay algo por llegar y sus filas no se pueden marcar con estrella.
+- **Próximas**: acciones que empezarán —o se repetirán— otro día dentro de los próximos 7 días. Puedes marcar con estrella una próxima acción con inicio futuro: permanecerá aquí hasta su día de inicio y entonces pasará al Foco de hoy. Las tareas recurrentes sin fecha de inicio siguen siendo solo una vista previa.
 - **Revisión pendiente**: elementos con fechas de seguimiento.
 
 Foco mantiene fuera de sus listas accionables las tareas cuya fecha de inicio es futura y las tareas posteriores de los proyectos secuenciales; las tareas aplazadas que llegan durante la próxima semana siguen viéndose en la vista previa **Próximas**. Usa **Contextos**, **Proyectos** o **Buscar** cuando necesites examinar un inventario de tareas más amplio.

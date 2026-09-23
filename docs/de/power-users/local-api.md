@@ -85,7 +85,7 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 | `GET`    | `/tasks`              | Aufgaben auflisten                   |
 | `GET`    | `/tasks?status=next`  | Nach Status filtern                  |
 | `GET`    | `/tasks?query=@work`  | Aufgaben suchen                      |
-| `GET`    | `/tasks?isFocusedToday=true` | Desktop: Nach „Heutiger Fokus“ filtern |
+| `GET`    | `/tasks?isFocusedToday=true` | Desktop: Markierte Aufgaben einschließlich vorgemerkter Starts filtern |
 | `GET`    | `/tasks?all=1`        | Erledigte/archivierte einschließen   |
 | `GET`    | `/tasks?deleted=1`    | Vorläufig gelöschte einschließen     |
 | `POST`   | `/tasks`              | Aufgabe erstellen                    |
@@ -112,7 +112,7 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 
 Zeilen mit **Desktop** gibt es nur in der lokalen API der Desktop-App. Zeilen mit **Hilfsprogramm** gibt es nur im Bun-Hilfsprogramm, das sie auch unter dem Präfix `/v1/` beantwortet (`/v1/sections`).
 
-Die lokale Desktop-API akzeptiert `isFocusedToday=true`/`1` und `isFocusedToday=false`/`0`. Mit `true` oder `1` liefert sie Aufgaben im **Heutigen Fokus**. Mit `false` oder `0` liefert sie nicht markierte Aufgaben, einschließlich älterer Datensätze ohne dieses Feld. Ohne den Parameter filtert sie die Liste nicht nach diesem Feld. Bei anderen Werten antwortet sie mit `400`.
+Die lokale Desktop-API akzeptiert `isFocusedToday=true`/`1` und `isFocusedToday=false`/`0`. Mit `true` oder `1` liefert sie markierte Aufgaben, einschließlich nächster Aktionen mit zukünftigem Start, die für den Fokus vorgemerkt sind. Mit `false` oder `0` liefert sie nicht markierte Aufgaben, einschließlich älterer Datensätze ohne dieses Feld. Ohne den Parameter filtert sie die Liste nicht nach diesem Feld. Bei anderen Werten antwortet sie mit `400`.
 
 `query` ist hier eine reine Textsuche: Der Wert wird in Kleinbuchstaben umgewandelt und als Teilzeichenfolge gegen Titel, Beschreibung, Status, Tags, Kontexte, Projekt- und Bereichs-IDs sowie Support-Notizen der Aufgabe geprüft. Es ist nicht die Operatorsprache. `status:`, `context:`, `tag:`, `due:<=7d`, Ausdrücke in Anführungszeichen und `-Negation` gehören zum Suchfeld der App, zu `--query` der CLI und zur Aufgabenliste des MCP-Servers; hier gesendet werden sie als wörtliche Zeichen verglichen und liefern meist nichts.
 

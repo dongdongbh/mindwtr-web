@@ -28,6 +28,8 @@ Each repeat type can use **Repeat every** to skip intervals. For example, every 
 
 Weekly tasks can choose specific weekdays. Monthly tasks can repeat on one day each month or on several days you pick (such as the 1st and the 16th), or use **Custom** for patterns such as a specific weekday or the last day of the month.
 
+For the last Monday–Friday date of each month, choose **Custom → Last → Weekday (Mon–Fri)**. This skips weekends, but does not account for public holidays. If you sync devices, update them all before using this pattern.
+
 ## Short Months and the End of the Month
 
 Monthly and yearly repeats remember the day of the month you originally set as an anchor. When a month is too short, the date moves to that month's last day, then returns to the anchor as soon as a longer month comes around.

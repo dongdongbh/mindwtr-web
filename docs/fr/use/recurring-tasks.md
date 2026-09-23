@@ -28,6 +28,8 @@ Chaque type propose **Répéter tous les** pour sauter des intervalles, par exem
 
 Les tâches hebdomadaires peuvent cibler des jours précis. Les tâches mensuelles peuvent revenir un jour de chaque mois ou plusieurs jours de votre choix (comme le 1er et le 16), ou employer **Personnalisée** pour des motifs comme un jour précis de la semaine ou le dernier jour du mois.
 
+Pour répéter une tâche le dernier jour du lundi au vendredi de chaque mois, choisissez **Personnalisée → Dernier → Jour de semaine (lun.–ven.)**. Les week-ends sont exclus, mais les jours fériés ne sont pas pris en compte. Si vous synchronisez plusieurs appareils, mettez-les tous à jour avant d’utiliser ce motif.
+
 ## Mois courts et fin de mois
 
 Les répétitions mensuelles et annuelles mémorisent comme ancre le jour du mois défini à l’origine. Quand un mois est trop court, la date se déplace sur son dernier jour, puis revient à l’ancre dès qu’un mois plus long revient.

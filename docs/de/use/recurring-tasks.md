@@ -28,6 +28,8 @@ Bei jeder Wiederholungsart können Sie mit **Alle … wiederholen** Intervalle �
 
 Für wöchentliche Aufgaben lassen sich bestimmte Wochentage auswählen. Monatliche Aufgaben können an einem Tag jedes Monats oder an mehreren selbst gewählten Tagen (etwa am 1. und am 16.) wiederholt werden, oder über **Benutzerdefiniert** nach einem Muster wie einem bestimmten Wochentag oder dem letzten Tag des Monats.
 
+Für den letzten Montag bis Freitag eines Monats wählen Sie **Benutzerdefiniert → Letzter → Wochentag (Mo–Fr)**. Wochenenden werden übersprungen, Feiertage jedoch nicht berücksichtigt. Wenn Sie Geräte synchronisieren, aktualisieren Sie zuerst alle Geräte.
+
 ## Kurze Monate und das Monatsende
 
 Monatliche und jährliche Wiederholungen merken sich den ursprünglich gewählten Tag des Monats als Anker. Ist ein Monat zu kurz, rückt das Datum auf dessen letzten Tag und kehrt zum Anker zurück, sobald wieder ein längerer Monat kommt.

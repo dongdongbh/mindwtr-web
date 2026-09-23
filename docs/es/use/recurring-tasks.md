@@ -28,6 +28,8 @@ Cada tipo permite usar **Repetir cada** para saltar intervalos, por ejemplo, cad
 
 Las tareas semanales pueden elegir días concretos. Las mensuales pueden repetirse un día de cada mes o varios días a su elección (como el 1 y el 16), o usar **Personalizada** para patrones como un día de la semana específico o el último día del mes.
 
+Para repetir una tarea el último día de lunes a viernes de cada mes, elige **Personalizada → Último → Día entre semana (lun.–vie.)**. Se omiten los fines de semana, pero no se tienen en cuenta los festivos. Si sincronizas varios dispositivos, actualízalos todos antes de usar este patrón.
+
 ## Meses cortos y el fin de mes
 
 Las repeticiones mensuales y anuales recuerdan como ancla el día del mes que estableciste originalmente. Cuando un mes es demasiado corto, la fecha pasa a su último día y vuelve al ancla en cuanto llega un mes más largo.

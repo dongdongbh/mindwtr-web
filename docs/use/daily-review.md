@@ -16,6 +16,8 @@ The default order is:
 
 The inbox and Waiting For steps are intentionally before focus: new captures are clarified first, and items you were waiting on can be switched to Next when they unblock, so they are available as candidates when you choose today's focus. Empty steps are skipped.
 
+With a connected calendar, the Today step lists every event for today and tomorrow; scroll to see the rest on busy days.
+
 ## Settings
 
 The focus step is controlled by:

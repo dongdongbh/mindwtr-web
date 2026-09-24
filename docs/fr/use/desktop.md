@@ -11,6 +11,7 @@ L’application de bureau comporte une barre latérale de navigation avec toutes
 ## Modes d’interaction
 
 - Un **simple clic** affiche ou masque les détails d’une tâche.
+- **Prochaine version :** `Ctrl+click` (Windows/Linux) ou `Cmd+click` (macOS) sur le titre d’une tâche ou un espace vide de sa ligne la sélectionne ou la désélectionne sans appuyer d’abord sur **Sélectionner**. Après avoir sélectionné une tâche, `Shift+click` sélectionne la plage jusqu’à une autre tâche. Un clic simple continue d’afficher ou masquer les détails.
 - Un **double clic** sur une tâche ouvre le mode d’édition complet. Pour renommer uniquement le titre sur place, choisissez **Renommer la tâche** dans le menu `⋯` de la tâche (Entrée enregistre, Échap annule).
 - **Cliquez à l’extérieur** d’un éditeur de tâche ouvert pour le fermer si rien n’a été modifié ; dès qu’un champ a été modifié, vous devez utiliser Enregistrer, Annuler ou Échap pour le fermer.
 - Un **clic droit** ouvre les menus contextuels (projets, tâches).
@@ -248,7 +249,7 @@ Utilisez les listes de contrôle comme modèles :
 - Statut, Priorité et Niveau d’énergie utilisent des boutons en forme de pastille plutôt que des listes déroulantes pour accélérer la sélection au clavier et au pointeur.
 - Ouvrez le calendrier d’un champ de date pour choisir des raccourcis à côté de la grille du mois : **Aujourd’hui**, **Demain**, **+2 jours**, **+3 jours**, **Semaine prochaine**, **Mois prochain** et **Aucune date**.
 - Le champ **titre** comprend aussi les jetons de saisie rapide. Tapez `@`, `#`, `+`, `!`, `%` ou `/` pour ouvrir les suggestions, puis appuyez sur `Enter` ou `Tab` : le choix va dans son champ (contexte, étiquette, projet, domaine, personne, date, statut) et le jeton quitte le titre. Le texte saisi sans accepter de suggestion reste tel quel dans le titre, donc un titre comme `Review 100% target` ne risque rien.
-- Dans **Paramètres → GTD → Mise en page de l’éditeur de tâche**, choisissez si l’éditeur sur ordinateur s’ouvre sous forme d’aperçu latéral intégré ou de fenêtre contextuelle centrée.
+- Dans **Paramètres → GTD → Mise en page de l’éditeur de tâche**, choisissez **Dans la ligne** pour modifier la tâche à la place de sa ligne, ou **Fenêtre contextuelle** pour ouvrir un éditeur centré sans déplacer la liste.
 
 ---
 
@@ -503,7 +504,7 @@ Dans **Bulk organize**, recherchez un projet ou un domaine, ou saisissez un nouv
 
 Sélectionnez plusieurs tâches pour effectuer des opérations par lot :
 
-1. Cliquez sur le bouton **« Sélectionner »** dans l’en-tête de la liste
+1. Cliquez sur **« Sélectionner »** dans l’en-tête de la liste ou, dans la prochaine version, sélectionnez avec une touche de modification et un clic
 2. Cliquez sur les tâches pour les sélectionner ou les désélectionner
 3. Utilisez la barre d’actions pour :
    - **Déplacer** : modifier le statut de toutes les tâches sélectionnées
@@ -615,7 +616,7 @@ Les résumés du matin et du soir ont leurs propres interrupteurs. Ils fonctionn
 - **Traitement de la Boîte de réception** : conservez le traitement guidé de la Boîte de réception pour apprendre la méthode GTD, ou choisissez par défaut le mode **Rapide** pour un flux compact sur un seul écran
   - Choisissez d’afficher ou non le raccourci des 2 minutes, de demander le projet au début, d’inclure les contextes et les étiquettes, d’autoriser la planification et de proposer une référence pendant le traitement
 - **Mise en page de l’éditeur de tâche** : choisissez les champs affichés par défaut, déplacez-les entre les sections et réorganisez-les
-  - Choisissez le style d’ouverture de l’éditeur : **Aperçu latéral** pour les modifications intégrées ou **Fenêtre contextuelle** pour une édition ciblée
+  - Choisissez le style d’ouverture : **Dans la ligne** remplace la ligne de la tâche pendant la modification ; **Fenêtre contextuelle** garde la liste en place
   - Vous pouvez déplacer des champs comme **Échéance** vers **Planification** et choisir les sections développées par défaut
 - **Gérer** : gérez vos métadonnées réutilisables depuis un seul endroit
   - Modifiez les **Domaines**, les **Personnes**, les **Contextes** et les **Étiquettes** sans devoir les rechercher dans chaque tâche

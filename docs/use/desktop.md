@@ -11,6 +11,7 @@ The desktop app features a sidebar navigation with all GTD views and a main cont
 ## Interaction Patterns
 
 - **Single click** toggles task details.
+- **Upcoming release:** `Ctrl+click` (Windows/Linux) or `Cmd+click` (macOS) on a task title or empty row space selects or deselects it without pressing **Select** first. After selecting a task, `Shift+click` selects the range to another task. Plain clicks still toggle details.
 - **Double click** on a task opens full edit mode. To rename just the title in place, pick **Rename task** from the task's `⋯` menu (Enter saves, Esc cancels).
 - **Click outside** an open task editor to close it while nothing was changed; once a field was edited, closing requires Save, Cancel, or Esc.
 - **Right click** opens context menus (projects, tasks).
@@ -248,7 +249,7 @@ Use checklists as templates:
 - Status, Priority, and Energy Level use pill controls instead of dropdowns for faster keyboard and pointer selection.
 - Open a date field's calendar to pick quick suggestions beside the month grid: **Today**, **Tomorrow**, **+2 days**, **+3 days**, **Next week**, **Next month**, and **No date**.
 - The **title** field understands the quick-add tokens too. Type `@`, `#`, `+`, `!`, `%` or `/` to open suggestions, then press `Enter` or `Tab`: the choice goes into its field (context, tag, project, area, person, date, status) and the token leaves the title. Text you type without accepting a suggestion stays in the title as written, so a title like `Review 100% target` is safe.
-- In **Settings → GTD → Task Editor Layout**, choose whether the desktop editor opens as the inline side peek or a centered pop-up.
+- In **Settings → GTD → Task Editor Layout**, choose **In-row** to edit where the task row was, or **Pop-up** to open a centered editor without shifting the list.
 
 ---
 
@@ -503,7 +504,7 @@ In **Bulk organize**, search for a project or area, or type a new name and choos
 
 Select multiple tasks to perform batch operations:
 
-1. Click **"Select"** button in the list header
+1. Click **"Select"** in the list header, or use modifier-click selection in the upcoming release
 2. Click tasks to select/deselect them
 3. Use the action bar to:
    - **Move**: Change status for all selected
@@ -615,7 +616,7 @@ Morning and evening digests have their own switches. They work even when **Task 
 - **Inbox Processing**: Keep guided inbox processing for teaching GTD, or switch the default to **Quick** mode for a compact one-screen flow
   - Choose whether to show the 2-minute shortcut, ask for project early, include contexts/tags, allow scheduling, and offer reference during processing
 - **Task Editor Layout**: Choose which fields are shown by default, move fields between sections, and reorder them
-  - Choose the editor opening style: **Side peek** for inline edits or **Pop-up** for focused editing
+  - Choose the editor opening style: **In-row** replaces the task row while editing; **Pop-up** keeps the list in place
   - You can move fields like **Due Date** into **Scheduling** and choose which sections expand by default
 - **Manage**: Maintain your reusable metadata from one place
   - Edit **Areas**, **People**, **Contexts**, and **Tags** without hunting through individual tasks

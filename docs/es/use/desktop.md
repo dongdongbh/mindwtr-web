@@ -11,6 +11,7 @@ La aplicación de escritorio incluye una barra lateral de navegación con todas 
 ## Patrones de interacción
 
 - Un **solo clic** alterna los detalles de la tarea.
+- **Próxima versión:** `Ctrl+click` (Windows/Linux) o `Cmd+click` (macOS) en el título de una tarea o en una zona vacía de su fila la selecciona o deselecciona sin pulsar antes **Seleccionar**. Después de seleccionar una tarea, `Shift+click` selecciona el intervalo hasta otra tarea. Un clic normal sigue alternando los detalles.
 - Un **doble clic** en una tarea abre el modo de edición completo. Para cambiar solo el título en el mismo lugar, elige **Cambiar nombre de la tarea** en el menú `⋯` de la tarea (Enter guarda y Esc cancela).
 - Haz **clic fuera** de un editor de tareas abierto para cerrarlo si no se ha cambiado nada; una vez editado algún campo, para cerrarlo hay que usar Guardar, Cancelar o Esc.
 - El **clic derecho** abre menús contextuales (proyectos y tareas).
@@ -248,7 +249,7 @@ Usa listas de comprobación como plantillas:
 - Estado, Prioridad y Nivel de energía usan controles de pastilla en vez de menús desplegables para agilizar la selección con teclado y puntero.
 - Abre el calendario de un campo de fecha para elegir opciones rápidas junto a la cuadrícula del mes: **Hoy**, **Mañana**, **+2 días**, **+3 días**, **Próxima semana**, **Próximo mes** y **Sin fecha**.
 - El campo de **título** también entiende los tokens de captura rápida. Escribe `@`, `#`, `+`, `!`, `%` o `/` para abrir sugerencias y pulsa `Enter` o `Tab`: la opción va a su campo (contexto, etiqueta, proyecto, área, persona, fecha, estado) y el token sale del título. El texto que escribes sin aceptar una sugerencia se queda en el título tal cual, así que un título como `Review 100% target` es seguro.
-- En **Ajustes → GTD → Diseño del editor de tareas**, elige si el editor de escritorio se abre como panel lateral en línea o como ventana emergente centrada.
+- En **Ajustes → GTD → Diseño del editor de tareas**, elige **En la fila** para editar donde estaba la fila de la tarea, o **Ventana emergente** para abrir un editor centrado sin desplazar la lista.
 
 ---
 
@@ -503,7 +504,7 @@ En **Organizar en lote**, busca un proyecto o área, o escribe un nombre nuevo y
 
 Selecciona varias tareas para realizar operaciones por lotes:
 
-1. Haz clic en el botón **«Seleccionar»** del encabezado de la lista
+1. Haz clic en **«Seleccionar»** en el encabezado de la lista o, en la próxima versión, selecciona con una tecla modificadora y un clic
 2. Haz clic en las tareas para seleccionarlas o anular la selección
 3. Usa la barra de acciones para:
    - **Mover**: cambia el estado de todas las seleccionadas
@@ -615,7 +616,7 @@ Los resúmenes de mañana y tarde tienen interruptores independientes. Funcionan
 - **Procesamiento de la Bandeja de entrada**: conserva el procesamiento guiado para aprender GTD o cambia el modo predeterminado a **Rápido** para un flujo compacto de una sola pantalla
   - Elige si se muestra el atajo de 2 minutos, se pregunta pronto por el proyecto, se incluyen contextos/etiquetas, se permite programar y se ofrece la opción de referencia durante el procesamiento
 - **Diseño del editor de tareas**: elige qué campos se muestran de forma predeterminada, muévelos entre secciones y ordénalos
-  - Elige el estilo de apertura del editor: **Panel lateral** para ediciones en línea o **Ventana emergente** para una edición centrada
+  - Elige el estilo de apertura: **En la fila** sustituye la fila de la tarea al editar; **Ventana emergente** mantiene la lista en su sitio
   - Puedes mover campos como **Fecha de vencimiento** a **Programación** y elegir qué secciones se amplían de forma predeterminada
 - **Gestionar**: mantén tus metadatos reutilizables desde un solo lugar
   - Edita **Áreas**, **Personas**, **Contextos** y **Etiquetas** sin buscarlos en tareas individuales

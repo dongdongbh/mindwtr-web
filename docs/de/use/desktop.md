@@ -11,6 +11,7 @@ Die Desktop-App besitzt eine Seitenleistennavigation mit allen GTD-Ansichten und
 ## Interaktionsmuster
 
 - **Einfachklick** schaltet Aufgabendetails um.
+- **In der kommenden Version:** Mit `Ctrl+click` (Windows/Linux) oder `Cmd+click` (macOS) auf den Aufgabentitel oder eine freie Stelle der Zeile wählen Sie eine Aufgabe aus oder ab, ohne zuerst **Auswählen** zu drücken. Nach der ersten Auswahl markiert `Shift+click` den Bereich bis zu einer anderen Aufgabe. Ein einfacher Klick schaltet weiterhin die Details um.
 - **Doppelklick** auf eine Aufgabe öffnet den vollständigen Bearbeitungsmodus. Um nur den Titel direkt umzubenennen, wählen Sie **Aufgabe umbenennen** im `⋯`-Menü der Aufgabe (`Enter` speichert, `Esc` bricht ab).
 - **Klick außerhalb** eines geöffneten Aufgabeneditors schließt ihn, solange nichts geändert wurde. Nach einer Änderung sind „Speichern“, „Abbrechen“ oder `Esc` erforderlich.
 - **Rechtsklick** öffnet Kontextmenüs (Projekte, Aufgaben).
@@ -248,7 +249,7 @@ Checklisten als Vorlagen:
 - Status, Priorität und Energiestufe verwenden Pillensteuerungen statt Auswahlmenüs.
 - Öffnen Sie den Kalender eines Datumsfelds, um neben der Monatsansicht Schnelloptionen zu wählen: **Heute**, **Morgen**, **+2 Tage**, **+3 Tage**, **Nächste Woche**, **Nächster Monat** und **Kein Datum**.
 - Auch das **Titel**-Feld versteht die Schnelleingabe-Tokens. Tippen Sie `@`, `#`, `+`, `!`, `%` oder `/`, um Vorschläge zu öffnen, und drücken Sie dann `Enter` oder `Tab`: Die Auswahl landet in ihrem Feld (Kontext, Tag, Projekt, Bereich, Person, Datum, Status), und das Token verschwindet aus dem Titel. Text, den Sie ohne Übernahme eines Vorschlags tippen, bleibt unverändert im Titel, ein Titel wie `Review 100% target` ist also sicher.
-- Unter **Einstellungen → GTD → Layout des Aufgabeneditors** wählen Sie zwischen seitlicher Vorschau und zentriertem Pop-up.
+- Unter **Einstellungen → GTD → Layout des Aufgabeneditors** wählen Sie **In der Zeile**, um die Aufgabe an ihrer Stelle in der Liste zu bearbeiten, oder **Pop-up** für einen zentrierten Editor, der die Liste nicht verschiebt.
 
 ---
 
@@ -500,7 +501,7 @@ Suche unter **Sammel-Organisation** nach einem Projekt oder Bereich oder gib ein
 
 Mehrere Aufgaben gemeinsam bearbeiten:
 
-1. **„Auswählen“** in der Listenkopfzeile anklicken
+1. **„Auswählen“** in der Listenkopfzeile anklicken oder in der kommenden Version mit Zusatztaste und Klick auswählen
 2. Aufgaben auswählen/abwählen
 3. In der Aktionsleiste:
    - **Verschieben**: Status aller ausgewählten ändern
@@ -610,7 +611,7 @@ Morgenübersicht und Abenddurchsicht haben eigene Schalter. Sie funktionieren au
 - **Eingangsverarbeitung**: Geführten Lernablauf behalten oder standardmäßig **Schnell** für einen kompakten Bildschirm verwenden
   - 2-Minuten-Regel, frühe Projektfrage, Kontexte/Tags, Planung und Referenzangebot konfigurieren
 - **Layout des Aufgabeneditors**: Standardfelder, Abschnitte und Reihenfolge festlegen
-  - Öffnungsstil **Seitliche Vorschau** oder **Pop-up**
+  - Öffnungsstil: **In der Zeile** ersetzt die Aufgabenzeile beim Bearbeiten; **Pop-up** lässt die Liste an ihrem Platz
   - Felder wie **Fälligkeitsdatum** verschieben und standardmäßig geöffnete Abschnitte wählen
 - **Verwalten**: Wiederverwendbare Metadaten zentral pflegen
   - **Bereiche**, **Personen**, **Kontexte** und **Tags**

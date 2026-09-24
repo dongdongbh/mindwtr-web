@@ -323,6 +323,8 @@ Focus is not a full inventory view. It keeps future-start tasks and later tasks 
 
 Use **Focus only** in the desktop or mobile Focus header to leave **Today's Focus** open and fold Today, Review Due, Next Actions, Upcoming, and Projects to review. Their headings and counts stay visible, so you can reopen a section individually. **Expand sections** opens them all again. Each device remembers its section state. On desktop, this replaces **Show Top 3 Only**; it does not limit or change the tasks you starred.
 
+On desktop, select the **Today's Focus** heading to fold that section independently; its count stays visible.
+
 ### How Focus sorts available actions
 
 Focus first decides whether a task is available, then sorts the visible actions:

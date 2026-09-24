@@ -771,7 +771,7 @@ Toca **Permitir** para abrir la pantalla de permisos de Android para Mindwtr. Ta
 
 ### General
 
-- **Apariencia**: Sistema, Clara, Oscura, Material 3 (Claro), Material 3 (Oscuro), E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia u OLED / Medianoche
+- **Apariencia**: Sistema, Clara, Oscura, Material 3 (Claro), Material 3 (Oscuro), E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia u OLED / Medianoche. Elige **Sistema (Claro / OLED Oscuro)** para usar el tema claro normal en modo claro y OLED en modo oscuro. **OLED / Medianoche** permanece negro en ambos modos.
 - **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués (Brasil), ruso, alemán, japonés, persa, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo, sueco, danés, húngaro, ucraniano
 
 ### Notificaciones

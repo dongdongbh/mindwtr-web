@@ -771,7 +771,7 @@ Touchez **Autoriser** pour ouvrir l’écran d’autorisation Android de Mindwtr
 
 ### Général
 
-- **Apparence** : Système, Clair, Sombre, Material 3 (clair), Material 3 (sombre), Encre électronique, Nord, Catppuccin Macchiato, Dracula, Sépia ou OLED / Minuit
+- **Apparence** : Système, Clair, Sombre, Material 3 (clair), Material 3 (sombre), Encre électronique, Nord, Catppuccin Macchiato, Dracula, Sépia ou OLED / Minuit. **Système (Clair / OLED Sombre)** utilise le thème clair normal en mode clair et le thème OLED en mode sombre. **OLED / Minuit** reste noir quel que soit le mode du système.
 - **Langue** : anglais, chinois (simplifié), chinois (traditionnel), hindi, espagnol, arabe, français, portugais (Brésil), russe, allemand, japonais, persan, vietnamien, turc, coréen, italien, polonais, néerlandais, tchèque, suédois, danois, hongrois, ukrainien
 
 ### Notifications

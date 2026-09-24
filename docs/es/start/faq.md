@@ -354,7 +354,7 @@ Mindwtr admite configuraciones de atajos de Vim y Emacs. Pulsa `?` (Vim) o `Ctrl
 
 ### ¿Cómo cambio el tema?
 
-Ve a Ajustes → Apariencia. Elige Sistema, Claro, Oscuro, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia u OLED / Medianoche.
+Ve a Ajustes → Apariencia. Elige Sistema, Claro, Oscuro, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia u OLED / Medianoche. Elige **Sistema (Claro / OLED Oscuro)** para usar el tema claro normal en modo claro y OLED en modo oscuro. **OLED / Medianoche** permanece negro en ambos modos.
 
 ### ¿Cómo sincronizo con mi teléfono?
 

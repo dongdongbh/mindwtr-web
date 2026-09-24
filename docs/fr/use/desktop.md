@@ -581,7 +581,7 @@ Dans chaque préréglage, `s` suivi d’une lettre définit directement le statu
 Accédez aux Paramètres depuis la barre latérale.
 
 ### Général
-- **Apparence** : Système, Clair, Sombre, Encre électronique, Nord, Catppuccin Macchiato, Dracula, Sépia ou OLED / Minuit
+- **Apparence** : Système, Clair, Sombre, Encre électronique, Nord, Catppuccin Macchiato, Dracula, Sépia ou OLED / Minuit. **Système (Clair / OLED Sombre)** utilise le thème clair normal en mode clair et le thème OLED en mode sombre. **OLED / Minuit** reste noir quel que soit le mode du système.
 - **Police** : Choisissez n’importe quelle police installée sur cet ordinateur, ou gardez celle de l’app par défaut. Cliquez dans le champ pour parcourir la liste ou commencez à taper pour la réduire. La liste vient du système d’exploitation ; une police choisie puis désinstallée retombe sur la police par défaut.
 - **Densité** : lignes de liste Confortable, Compact ou Condensé
 - **Langue** : anglais, chinois (simplifié), chinois (traditionnel), hindi, espagnol, arabe, français, portugais (Brésil), russe, allemand, japonais, persan, vietnamien, turc, coréen, italien, polonais, néerlandais, tchèque, suédois, danois, hongrois, ukrainien

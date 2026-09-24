@@ -576,7 +576,7 @@ In jeder Voreinstellung setzt `s` plus Buchstabe direkt den Status (`si` Eingang
 Über die Seitenleiste öffnen.
 
 ### Allgemein
-- **Darstellung**: System, Hell, Dunkel, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia oder OLED / Mitternacht
+- **Darstellung**: System, Hell, Dunkel, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia oder OLED / Mitternacht. **System (Hell / OLED Dunkel)** verwendet bei hellem Systemdesign das normale helle Design und bei dunklem das OLED-Design. **OLED / Mitternacht** bleibt unabhängig vom Systemdesign schwarz.
 - **Schriftart**: Wählen Sie eine beliebige auf diesem Computer installierte Schrift oder behalten Sie den App-Standard. Klicken Sie in das Feld, um die Liste zu durchsuchen, oder tippen Sie, um sie einzugrenzen. Die Liste stammt vom Betriebssystem; eine gewählte Schrift, die später deinstalliert wird, fällt auf den Standard zurück.
 - **Dichte**: Listenzeilen komfortabel, kompakt oder verdichtet
 - **Sprache**: Englisch, Chinesisch (vereinfacht), Chinesisch (traditionell), Hindi, Spanisch, Arabisch, Französisch, Portugiesisch (Brasilien), Russisch, Deutsch, Japanisch, Persisch, Vietnamesisch, Türkisch, Koreanisch, Italienisch, Polnisch, Niederländisch, Tschechisch, Schwedisch, Dänisch, Ungarisch, Ukrainisch

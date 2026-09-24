@@ -581,7 +581,7 @@ En todos los preajustes, `s` seguida de una letra establece directamente el esta
 Abre Ajustes desde la barra lateral.
 
 ### General
-- **Apariencia**: Sistema, Clara, Oscura, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia u OLED / Medianoche
+- **Apariencia**: Sistema, Clara, Oscura, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia u OLED / Medianoche. Elige **Sistema (Claro / OLED Oscuro)** para usar el tema claro normal en modo claro y OLED en modo oscuro. **OLED / Medianoche** permanece negro en ambos modos.
 - **Fuente**: Elige cualquier fuente instalada en este equipo o mantén la predeterminada de la app. Haz clic en el campo para ver la lista o empieza a escribir para acotarla. La lista proviene del sistema operativo, y una fuente elegida que se desinstale después vuelve a la predeterminada.
 - **Densidad**: filas de lista Cómodo, Compacto o Condensado
 - **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués (Brasil), ruso, alemán, japonés, persa, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo, sueco, danés, húngaro, ucraniano

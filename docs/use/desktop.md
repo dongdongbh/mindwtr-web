@@ -581,7 +581,7 @@ In every preset, `s` followed by a letter sets the selected task's status direct
 Access Settings from the sidebar.
 
 ### General
-- **Appearance**: System, Light, Dark, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia, or OLED / Midnight
+- **Appearance**: System, Light, Dark, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia, or OLED / Midnight. Choose **System (Light / OLED Dark)** for the normal light palette in light mode and OLED in dark mode. **OLED / Midnight** stays black in either mode.
 - **Font**: Pick any font installed on this computer, or keep the app default. Click the field to browse the list or start typing to narrow it. The list comes from the operating system, and a chosen font that is later uninstalled falls back to the default.
 - **Density**: Comfortable, Compact, or Condensed list rows
 - **Language**: English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese (Brazil), Russian, German, Japanese, Persian, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech, Swedish, Danish, Hungarian, Ukrainian

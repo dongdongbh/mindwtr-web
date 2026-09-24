@@ -354,7 +354,7 @@ Mindwtr 支持 Vim 和 Emacs 键位预设。按 `?`（Vim）或 `Ctrl-h`（Emacs
 
 ### 如何更改主题？
 
-前往“设置 → 外观”。选择跟随系统、浅色、深色、电子墨水、Nord、Catppuccin Macchiato、Dracula、复古米黄或 OLED / 午夜。
+前往“设置 → 外观”。选择跟随系统、浅色、深色、电子墨水、Nord、Catppuccin Macchiato、Dracula、复古米黄或 OLED / 午夜。 选择 **跟随系统（浅色 / OLED 深色）** 后，系统为浅色时使用普通浅色主题，为深色时使用 OLED 主题。**OLED / 午夜** 始终为黑色。
 
 ### 如何与手机同步？
 

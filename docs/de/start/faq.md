@@ -347,7 +347,7 @@ Mindwtr unterstützt Vim- und Emacs-Tastenbelegungsvoreinstellungen. Drücken Si
 
 ### Wie ändere ich das Erscheinungsbild?
 
-Öffnen Sie Einstellungen → Darstellung. Wählen Sie System, Hell, Dunkel, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia oder OLED / Mitternacht.
+Öffnen Sie Einstellungen → Darstellung. Wählen Sie System, Hell, Dunkel, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia oder OLED / Mitternacht. **System (Hell / OLED Dunkel)** verwendet bei hellem Systemdesign das normale helle Design und bei dunklem das OLED-Design. **OLED / Mitternacht** bleibt unabhängig vom Systemdesign schwarz.
 
 ### Wie synchronisiere ich mit meinem Telefon?
 

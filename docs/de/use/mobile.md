@@ -711,7 +711,7 @@ Tippen Sie auf **Zulassen**, um den Android-Berechtigungsbildschirm für Mindwtr
 
 ### Allgemein
 
-- **Darstellung**: System, Hell, Dunkel, Material 3 (Hell), Material 3 (Dunkel), E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia oder OLED / Mitternacht
+- **Darstellung**: System, Hell, Dunkel, Material 3 (Hell), Material 3 (Dunkel), E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia oder OLED / Mitternacht. **System (Hell / OLED Dunkel)** verwendet bei hellem Systemdesign das normale helle Design und bei dunklem das OLED-Design. **OLED / Mitternacht** bleibt unabhängig vom Systemdesign schwarz.
 - **Sprache**: Englisch, Chinesisch (vereinfacht), Chinesisch (traditionell), Hindi, Spanisch, Arabisch, Französisch, Portugiesisch (Brasilien), Russisch, Deutsch, Japanisch, Persisch, Vietnamesisch, Türkisch, Koreanisch, Italienisch, Polnisch, Niederländisch, Tschechisch, Schwedisch, Dänisch, Ungarisch, Ukrainisch
 
 ### Benachrichtigungen

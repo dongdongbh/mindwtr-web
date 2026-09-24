@@ -128,6 +128,8 @@ Filter tasks by energy level, mode, or topic:
 
 ### ⏳ Waiting For
 
+In the next release, tasks with an assigned person show their name directly in the Waiting For list, even when extra details are hidden.
+
 Track delegated items or tasks waiting on external events.
 
 ### 💭 Someday/Maybe

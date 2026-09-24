@@ -128,6 +128,8 @@ Filtra tareas por nivel de energía, modo o tema:
 
 ### ⏳ En espera
 
+En la próxima versión, las tareas con una persona asignada mostrarán su nombre directamente en la lista En espera, incluso con los detalles adicionales ocultos.
+
 Controla los elementos delegados o las tareas que esperan acontecimientos externos.
 
 ### 💭 Algún día/Tal vez

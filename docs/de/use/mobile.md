@@ -650,6 +650,8 @@ Beim Abschluss wird die aktuelle Zeit gespeichert. Wenn Sie früher fertig waren
 
 ## Warten
 
+Ab der nächsten Version erscheint der Name der zugewiesenen Person direkt in der Liste „Warten“, auch wenn zusätzliche Details ausgeblendet sind.
+
 - alle wartenden Aufgaben anzeigen
 - Fristen sehen
 - bei Bereitschaft nach „Nächstes“ verschieben

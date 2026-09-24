@@ -703,6 +703,8 @@ Filtrez les tâches par niveau d’énergie, mode ou thème :
 
 ## En attente
 
+Dans la prochaine version, les tâches attribuées à une personne afficheront son nom directement dans la liste En attente, même lorsque les détails supplémentaires sont masqués.
+
 Suivez les éléments délégués ou qui dépendent d’événements externes.
 
 - Affichez toutes les tâches en attente

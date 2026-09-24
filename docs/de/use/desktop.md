@@ -128,6 +128,8 @@ Aufgaben nach Energie, Modus oder Thema filtern:
 
 ### ⏳ Warten
 
+Ab der nächsten Version erscheint der Name der zugewiesenen Person direkt in der Liste „Warten“, auch wenn zusätzliche Details ausgeblendet sind.
+
 Delegierte Einträge oder Aufgaben verfolgen, die auf externe Ereignisse warten.
 
 ### 💭 Irgendwann/Vielleicht

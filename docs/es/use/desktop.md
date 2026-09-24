@@ -572,6 +572,7 @@ Consulta [Atajos de teclado de escritorio](/es/use/keyboard-shortcuts) para ver 
 - `e`: edita la tarea seleccionada
 - `x`: alterna el estado terminado
 - `dd`: elimina la tarea
+- En la próxima versión, `yy` copiará el título de la tarea seleccionada; `yi` copiará el título y la descripción como texto sin formato. Si no hay descripción, `yi` copiará solo el título. Estos atajos funcionan en modo Vim, fuera de campos de texto y diálogos.
 
 `Ctrl+Z` / `Cmd+Z` deshace la última finalización o eliminación de una tarea en todos los preajustes.
 

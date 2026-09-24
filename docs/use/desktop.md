@@ -572,6 +572,7 @@ See [Desktop Keyboard Shortcuts](/use/keyboard-shortcuts) for the complete list.
 - `e`: Edit selected task
 - `x`: Toggle done
 - `dd`: Delete task
+- Upcoming release: `yy` copies the selected task’s title; `yi` copies its title and description as plain text. With no description, `yi` copies only the title. These shortcuts are available in Vim mode, outside text fields and dialogs.
 
 `Ctrl+Z` / `Cmd+Z` undoes the last task completion or deletion in every preset.
 

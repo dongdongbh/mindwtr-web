@@ -567,6 +567,7 @@ Die vollständige Liste enthält [Desktop-Tastenkürzel](/de/use/keyboard-shortc
 - `e`: bearbeiten
 - `x`: erledigt umschalten
 - `dd`: löschen
+- Ab der nächsten Version kopiert `yy` den Titel der ausgewählten Aufgabe; `yi` kopiert Titel und Beschreibung als reinen Text. Ohne Beschreibung kopiert `yi` nur den Titel. Diese Tastenkürzel gelten im Vim-Modus außerhalb von Textfeldern und Dialogen.
 
 `Ctrl+Z` / `Cmd+Z` macht in jeder Voreinstellung den letzten Abschluss oder die letzte Löschung rückgängig.
 

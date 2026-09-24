@@ -13,6 +13,7 @@ Mindwtr desktop supports keyboard-first use with Standard (Gmail/Todoist-style),
 - In Projects, use → from the main sidebar to enter the project list, ↑/↓ to choose a project, and → again to enter its tasks. In Vim mode, use `l`, `j`/`k`, and `l`. Use ← or `h` to return from tasks to the project list, then again to the main sidebar. Tab also reaches project rows, including in narrow windows.
 - In Standard mode, use `e` to mark done, `x` to select tasks for batch actions, `S` to add or remove the selected task from today's focus, `F2` to rename it, `Shift+Enter` to edit, `#` to delete, and `z` to undo.
 - In Vim mode, use `e` to edit, `x` to toggle done, and `dd` to delete.
+- Upcoming release: `yy` copies the selected task’s title; `yi` copies its title and description as plain text. With no description, `yi` copies only the title. These shortcuts are available in Vim mode, outside text fields and dialogs.
 - Use `Ctrl+Z` / `Cmd+Z` to undo the last task completion or deletion in any preset.
 - Use `s` followed by a letter to set the selected task's status in any preset: `si` Inbox, `sn` Next, `sw` Waiting, `ss` Someday, `sd` Done, `sa` Archived. A toast confirms the change with an undo button.
 - Use `Insert` to jump to the add-task input (it opens quick add in views without one).

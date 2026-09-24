@@ -572,6 +572,7 @@ Consultez [Raccourcis clavier sur ordinateur](/fr/use/keyboard-shortcuts) pour o
 - `e` : modifier la tâche sélectionnée
 - `x` : basculer l’état terminé
 - `dd` : supprimer la tâche
+- Dans la prochaine version, `yy` copiera le titre de la tâche sélectionnée ; `yi` copiera son titre et sa description en texte brut. Sans description, `yi` copiera uniquement le titre. Ces raccourcis fonctionnent en mode Vim, hors des champs de texte et des boîtes de dialogue.
 
 `Ctrl+Z` / `Cmd+Z` annule la dernière validation ou suppression de tâche dans chaque préréglage.
 

@@ -313,19 +313,21 @@ Reserva entre 30 y 90 minutos cada semana, a la misma hora y en el mismo lugar.
 ### Elegir en qué trabajar
 
 Usa la vista **Enfoque** para ver:
-- Las tareas prioritarias de hoy (elementos destacados)
-- Próximas acciones (filtradas por contexto o generales)
-- Elementos vencidos
-- Elementos que vencen hoy
-- Próximas acciones que empiezan o se repiten dentro de los próximos 7 días
+- Foco de hoy: tareas marcadas cuyo día de inicio ya ha llegado
+- Hoy: próximas acciones vencidas, que vencen hoy o empiezan hoy
+- Próximas acciones: otras acciones disponibles
+- Revisión pendiente: compromisos abiertos cuya fecha de revisión ha llegado
+- Próximas: acciones que empiezan o se repiten dentro de los próximos 7 días
 
 Enfoque no es una vista de inventario completo. Mantiene las tareas con fecha de inicio futura y las tareas posteriores de proyectos secuenciales fuera de las listas accionables para que reflejen las acciones disponibles ahora. Usa **Contextos**, **Proyectos** o **Búsqueda** cuando necesites consultar todas las próximas acciones, incluidos los elementos aplazados o bloqueados.
 
-Usa **Solo enfoque** en la cabecera de Enfoque, en escritorio o móvil, para mantener abierto **Enfoque de hoy** y contraer Hoy, Revisión pendiente, Próximas acciones, Próximamente y Proyectos por revisar. Los títulos y las cantidades siguen visibles y permiten abrir cada sección por separado. **Expandir secciones** las abre todas. Cada dispositivo recuerda su estado. En escritorio, sustituye a **Mostrar solo el top 3**, sin limitar ni cambiar las tareas que has marcado con una estrella.
+Usa **Solo enfoque** en la cabecera de Enfoque, en escritorio o móvil, para mantener abierto **Enfoque de hoy** y contraer Hoy, Próximas acciones, Revisión pendiente, Próximamente y Proyectos por revisar. Los títulos y las cantidades siguen visibles y permiten abrir cada sección por separado. **Expandir secciones** las abre todas. Cada dispositivo recuerda su estado. En escritorio, sustituye a **Mostrar solo el top 3**, sin limitar ni cambiar las tareas que has marcado con una estrella.
 
 ### Cómo ordena Enfoque las acciones disponibles
 
 Enfoque determina primero si una tarea está disponible y después ordena las acciones visibles:
+
+**Próxima versión:** Las secciones de Foco aparecen en este orden: **Foco de hoy → Hoy → Próximas acciones → Revisión pendiente → Próximas**.
 
 1. **Enfoque de hoy** muestra las tareas que has seleccionado explícitamente para hoy. Puedes organizarlas manualmente en el orden en que piensas trabajar: arrastra el controlador en el escritorio o usa el interruptor de reordenación del encabezado de la sección en el móvil. El orden manual se aplica mientras la ordenación de Enfoque esté en su valor predeterminado, se sincroniza entre dispositivos y una tarea conserva su lugar hasta que sale de Enfoque.
 2. **Hoy / Agenda** muestra las tareas `next` disponibles que están vencidas, vencen hoy o comienzan hoy, incluidas las que empiezan más tarde hoy, y esas filas muestran su hora de inicio hasta que llega. Se ordenan por la fecha/hora de vencimiento o inicio más próxima, después por prioridad cuando las prioridades están activadas y, a continuación, por la fecha de creación más antigua.
@@ -336,12 +338,14 @@ Enfoque determina primero si una tarea está disponible y después ordena las ac
    - después las acciones sin fecha
    - al final las acciones con fecha límite en un futuro lejano, empezando por la fecha límite más próxima
    - dentro del mismo grupo: prioridad cuando esté activada, después hora de inicio, fecha de creación más antigua, título e id
-4. **Próximas** muestra tareas `next` que aparecerán dentro de los próximos 7 días: con fecha de inicio futura o recurrentes que esperan su siguiente fecha de vencimiento o revisión. Puedes marcar con estrella una próxima acción con inicio futuro: permanece aquí hasta su día de inicio y entonces pasa automáticamente al Foco de hoy, sin ocupar antes un lugar del límite. Las tareas recurrentes sin fecha de inicio siguen siendo solo una vista previa.
-5. **Revisión vencida** muestra las tareas cuya fecha de revisión ha llegado. Después de revisar un elemento, puedes borrar su fecha de revisión (**Marcar como revisado**) o aplazarla mediante **Revisar en 1 semana**: en el escritorio, desde el menú de acciones rápidas de la tarea; en el móvil, manteniendo pulsada la fila.
+4. **Revisión vencida** muestra las tareas cuya fecha de revisión ha llegado. Después de revisar un elemento, puedes borrar su fecha de revisión (**Marcar como revisado**) o aplazarla mediante **Revisar en 1 semana**: en el escritorio, desde el menú de acciones rápidas de la tarea; en el móvil, manteniendo pulsada la fila. Revisión pendiente es una lista de recordatorios distinta de la Revisión semanal y de los recordatorios de vencimiento. Una tarea `next` cuya fecha de revisión ha llegado puede seguir aquí; cambiar el orden de las secciones no la mueve.
+5. **Próximas** muestra tareas `next` que aparecerán dentro de los próximos 7 días: con fecha de inicio futura o recurrentes que esperan su siguiente fecha de vencimiento o revisión. Puedes marcar con estrella una próxima acción con inicio futuro: permanece aquí hasta su día de inicio y entonces pasa automáticamente al Foco de hoy, sin ocupar antes un lugar del límite. Las tareas recurrentes sin fecha de inicio siguen siendo solo una vista previa.
 
 La fecha de inicio es el campo de aplazamiento/fecha planificada de Mindwtr. Una tarea con inicio futuro se queda fuera de las listas accionables hasta su día de inicio; la sección **Próximas** es el vistazo integrado a la semana que viene, y **Proyectos** o **Buscar** muestran los aplazamientos más lejanos. Los proyectos secuenciales también limitan Enfoque a la primera acción disponible para ese proyecto o sección, por lo que las acciones posteriores no aparecen en Enfoque hasta que el paso anterior deja de bloquearlas.
 
 La estimación de tiempo y la energía son filtros y opciones de agrupación de Enfoque, no claves de ordenación predeterminadas. Agrupar por contexto, proyecto, área, energía o prioridad cambia los grupos visuales; las tareas de esos grupos conservan la misma disponibilidad y ordenación de próximas acciones.
+
+**Próxima versión:** **Agrupar próximas acciones por** solo agrupa Próximas acciones; no Foco de hoy, Hoy, Revisión pendiente ni Próximas.
 
 ### Filtrar por contexto
 

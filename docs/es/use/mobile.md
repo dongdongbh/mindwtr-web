@@ -461,10 +461,14 @@ Tu panel principal para hacer. Foco es un panel de actividad, no un inventario c
 
 ### Secciones
 
+**Próxima versión:** Foco muestra **Foco de hoy → Hoy → Próximas acciones → Revisión pendiente → Próximas**. **Agrupar próximas acciones por** solo afecta a Próximas acciones.
+
 | Sección      | Contenido                                                                 |
 | ------------ | ------------------------------------------------------------------------- |
-| **Hoy**      | Tareas enfocadas para hoy, que vencen hoy/están atrasadas o empiezan hoy, incluso más tarde hoy, y esas filas muestran su hora de inicio hasta que llega |
-| **Próximas** | Próximas acciones disponibles que no están bloqueadas ni aplazadas       |
+| **Foco de hoy** | Tareas marcadas para hoy cuyo día de inicio ya ha llegado |
+| **Hoy** | Próximas acciones vencidas, que vencen hoy o empiezan hoy, incluso más tarde |
+| **Próximas acciones** | Otras próximas acciones disponibles |
+| **Revisión pendiente** | Compromisos abiertos cuya fecha de revisión ha llegado; esta lista de recordatorios es distinta de la Revisión semanal |
 | **Próximas** (vista previa) | Acciones que empiezan o se repiten dentro de 7 días; marca con estrella una próxima acción con inicio futuro para añadirla a Foco en su día de inicio |
 
 Foco mantiene las tareas con inicio futuro y las posteriores de los proyectos secuenciales fuera de sus listas accionables. Una próxima acción con inicio futuro marcada con estrella permanece en **Próximas** hasta su día de inicio y entonces pasa automáticamente al Foco de hoy, sin ocupar antes un lugar del límite. Las tareas recurrentes sin fecha de inicio siguen siendo solo una vista previa. Usa **Contextos**, **Proyectos** o **Buscar** para examinar un inventario más amplio.

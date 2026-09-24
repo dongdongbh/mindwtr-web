@@ -313,21 +313,23 @@ Schedule 30-90 minutes weekly, same time, same place.
 ### Choosing What to Work On
 
 Use the **Focus** view to see:
-- Today's focused tasks (stars whose start day has arrived)
-- Next Actions (context-filtered or general)
-- Overdue items
-- Due today
-- Upcoming next actions that start or recur within the next 7 days
+- Today's Focus: starred tasks whose start day has arrived
+- Today: next actions overdue, due today, or starting today
+- Next Actions: other available actions
+- Review Due: open commitments whose review date has arrived
+- Upcoming: next actions that start or recur within the next 7 days
 
 Focus is not a full inventory view. It keeps future-start tasks and later tasks in sequential projects out of the actionable lists so they reflect actions that are available now. Use **Contexts**, **Projects**, or **Search** when you need to inspect all next actions, including deferred or blocked items.
 
-Use **Focus only** in the desktop or mobile Focus header to leave **Today's Focus** open and fold Today, Review Due, Next Actions, Upcoming, and Projects to review. Their headings and counts stay visible, so you can reopen a section individually. **Expand sections** opens them all again. Each device remembers its section state. On desktop, this replaces **Show Top 3 Only**; it does not limit or change the tasks you starred.
+Use **Focus only** in the desktop or mobile Focus header to leave **Today's Focus** open and fold Today, Next Actions, Review Due, Upcoming, and Projects to review. Their headings and counts stay visible, so you can reopen a section individually. **Expand sections** opens them all again. Each device remembers its section state. On desktop, this replaces **Show Top 3 Only**; it does not limit or change the tasks you starred.
 
 On desktop, select the **Today's Focus** heading to fold that section independently; its count stays visible.
 
 ### How Focus sorts available actions
 
 Focus first decides whether a task is available, then sorts the visible actions:
+
+**Upcoming release:** Focus sections appear in this order: **Today's Focus → Today → Next Actions → Review Due → Upcoming**.
 
 1. **Today's Focus** shows tasks you explicitly focused for today. You can arrange them by hand into the order you plan to work them — drag the grip handle on desktop, or use the reorder toggle on the section header on mobile. The manual order applies while the Focus sort is at its default, syncs across devices, and a task keeps its place until it leaves Focus.
 2. **Today / Schedule** shows available `next` tasks that are overdue, due today, or start today, including a start timed for later today, with those rows showing their start time until it arrives. These are ordered by the earliest due/start time, then priority when priorities are enabled, then oldest creation date.
@@ -338,12 +340,14 @@ Focus first decides whether a task is available, then sorts the visible actions:
    - undated actions next
    - far-future due actions last, earliest due date first
    - within the same bucket: priority when enabled, then start time, oldest creation date, title, and id
-4. **Upcoming** previews `next` tasks held back until another day but due to surface within the next 7 days — a future start date, or a recurring task waiting for its next due or review date. You can star a future-start Next action here; it remains in Upcoming until its start day, then joins Today's Focus automatically. Queued stars do not use today's Focus slots. Recurring tasks without a start date remain previews only. Rows show the day they will appear, and the section disappears when nothing is coming.
-5. **Review Due** shows tasks whose review date is due. After looking an item over, you can clear its review date (**Mark reviewed**) or push it out with **Review in 1 week**, on desktop from the task's quick-action menu, on mobile by long-pressing the row.
+4. **Review Due** shows tasks whose review date is due. After looking an item over, you can clear its review date (**Mark reviewed**) or push it out with **Review in 1 week**, on desktop from the task's quick-action menu, on mobile by long-pressing the row. Review Due is a reminder queue separate from Weekly Review and due-date reminders. A Next task with a due review date can still appear here; changing the section order does not move it.
+5. **Upcoming** previews `next` tasks held back until another day but due to surface within the next 7 days — a future start date, or a recurring task waiting for its next due or review date. You can star a future-start Next action here; it remains in Upcoming until its start day, then joins Today's Focus automatically. Queued stars do not use today's Focus slots. Recurring tasks without a start date remain previews only. Rows show the day they will appear, and the section disappears when nothing is coming.
 
 Start date is Mindwtr's defer/planned-date field. A future-start task stays out of the actionable lists until its start day; the **Upcoming** section is the built-in peek ahead for the coming week, and **Projects** or **Search** show deferrals further out. Sequential projects also limit Focus to the first available action for that project or section, so later actions stay out of Focus until the previous step is no longer blocking them.
 
 Time estimate and energy are Focus filters and grouping options, not default sort keys. Grouping by context, project, area, energy, or priority changes the visual groups; tasks inside those groups keep the same availability and next-action ordering.
+
+**Upcoming release:** **Group next actions by** groups only the Next Actions section. It does not regroup Today's Focus, Today, Review Due, or Upcoming.
 
 ### Context Filtering
 

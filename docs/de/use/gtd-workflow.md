@@ -315,21 +315,23 @@ Planen Sie wöchentlich 30–90 Minuten zur selben Zeit am selben Ort ein.
 ### Arbeit auswählen
 
 In der Ansicht **Fokus** sehen Sie:
-- heute fokussierte Aufgaben (mit Stern markierte Einträge)
-- Nächste Aktionen (nach Kontext gefiltert oder allgemein)
-- überfällige Einträge
-- heute fällige Einträge
-- anstehende nächste Aktionen, die innerhalb der nächsten 7 Tage starten oder wiederkehren
+- Heutiger Fokus: markierte Aufgaben, deren Starttag erreicht ist
+- Heute: überfällige, heute fällige oder heute beginnende nächste Aktionen
+- Nächste Aktionen: weitere verfügbare Aktionen
+- Durchsicht fällig: offene Verpflichtungen mit fälligem Wiedervorlagedatum
+- Anstehend: nächste Aktionen, die innerhalb der nächsten 7 Tage starten oder wiederkehren
 
 „Fokus“ ist keine vollständige Bestandsansicht. Zukünftig beginnende Aufgaben und spätere Aufgaben sequenzieller Projekte bleiben aus den ausführbaren Listen heraus, damit diese jetzt verfügbare Aktionen zeigen. Verwenden Sie **Kontexte**, **Projekte** oder die **Suche**, um alle nächsten Aktionen einschließlich zurückgestellter oder blockierter Einträge zu prüfen.
 
 <a id="how-focus-sorts-available-actions"></a>
 
-Mit **Nur Fokus** im Fokus-Kopfbereich auf Desktop und Mobilgeräten bleibt **Heutiger Fokus** geöffnet, während Heute, Zur Überprüfung, Nächste Aktionen, Demnächst und Zu überprüfende Projekte eingeklappt werden. Überschriften und Anzahlen bleiben sichtbar, sodass sich jeder Abschnitt einzeln öffnen lässt. **Abschnitte ausklappen** öffnet alle wieder. Jedes Gerät merkt sich den Zustand. Auf dem Desktop ersetzt dies **Nur die Top 3 anzeigen**, ohne die markierten Aufgaben zu begrenzen oder zu ändern.
+Mit **Nur Fokus** im Fokus-Kopfbereich auf Desktop und Mobilgeräten bleibt **Heutiger Fokus** geöffnet, während Heute, Nächste Aktionen, Zur Überprüfung, Demnächst und Zu überprüfende Projekte eingeklappt werden. Überschriften und Anzahlen bleiben sichtbar, sodass sich jeder Abschnitt einzeln öffnen lässt. **Abschnitte ausklappen** öffnet alle wieder. Jedes Gerät merkt sich den Zustand. Auf dem Desktop ersetzt dies **Nur die Top 3 anzeigen**, ohne die markierten Aufgaben zu begrenzen oder zu ändern.
 
 ### So sortiert „Fokus“ verfügbare Aktionen
 
 „Fokus“ bestimmt zuerst, ob eine Aufgabe verfügbar ist, und sortiert danach die sichtbaren Aktionen:
+
+**Kommende Version:** Die Fokus-Abschnitte erscheinen in dieser Reihenfolge: **Heutiger Fokus → Heute → Nächste Aktionen → Durchsicht fällig → Anstehend**.
 
 1. **Heutiger Fokus** zeigt Aufgaben, die Sie ausdrücklich für heute fokussiert haben. Sie können sie manuell in die geplante Reihenfolge bringen – auf dem Desktop am Griff ziehen oder auf Mobilgeräten den Umschalter zum Sortieren in der Abschnittsüberschrift verwenden. Die manuelle Reihenfolge gilt bei der Standardsortierung von „Fokus“, wird geräteübergreifend synchronisiert und bleibt erhalten, bis eine Aufgabe „Fokus“ verlässt.
 2. **Heute / Terminplan** zeigt verfügbare `next`-Aufgaben, die überfällig oder heute fällig sind oder heute beginnen – auch mit einer Startzeit später am Tag, wobei diese Zeilen ihre Startzeit anzeigen, bis diese erreicht ist. Sortiert wird nach dem frühesten Fälligkeits-/Startzeitpunkt, dann – bei aktivierten Prioritäten – nach Priorität und schließlich nach dem ältesten Erstellungsdatum.
@@ -340,12 +342,14 @@ Mit **Nur Fokus** im Fokus-Kopfbereich auf Desktop und Mobilgeräten bleibt **He
    - undatierte Aktionen danach
    - weit in der Zukunft fällige Aktionen zuletzt, mit dem frühesten Fälligkeitsdatum zuerst
    - innerhalb derselben Gruppe: Priorität (wenn aktiviert), dann Startzeit, ältestes Erstellungsdatum, Titel und ID
-4. **Anstehend** zeigt `next`-Aufgaben, die innerhalb der nächsten 7 Tage auftauchen – mit zukünftigem Startdatum oder als wiederkehrende Aufgabe, die auf ihr nächstes Fälligkeits- oder Wiedervorlagedatum wartet. Eine nächste Aktion mit künftigem Start können Sie hier markieren: Sie bleibt bis zum Starttag unter „Anstehend“ und erscheint dann automatisch im heutigen Fokus. Vorgemerkte Sterne belegen heute keinen Fokusplatz. Wiederkehrende Aufgaben ohne Startdatum bleiben reine Vorschau.
-5. **Durchsicht fällig** zeigt Aufgaben mit fälligem Wiedervorlagedatum. Nach der Prüfung können Sie das Wiedervorlagedatum entfernen (**Als geprüft markieren**) oder mit **In 1 Woche prüfen** verschieben – auf dem Desktop im Schnellaktionsmenü der Aufgabe, auf Mobilgeräten durch langes Drücken der Zeile.
+4. **Durchsicht fällig** zeigt Aufgaben mit fälligem Wiedervorlagedatum. Nach der Prüfung können Sie das Wiedervorlagedatum entfernen (**Als geprüft markieren**) oder mit **In 1 Woche prüfen** verschieben – auf dem Desktop im Schnellaktionsmenü der Aufgabe, auf Mobilgeräten durch langes Drücken der Zeile. „Durchsicht fällig“ ist eine Erinnerungswarteschlange, getrennt vom Wochenrückblick und von Fälligkeitserinnerungen. Eine nächste Aktion mit fälligem Wiedervorlagedatum kann weiterhin hier erscheinen; die neue Abschnittsreihenfolge verschiebt sie nicht.
+5. **Anstehend** zeigt `next`-Aufgaben, die innerhalb der nächsten 7 Tage auftauchen – mit zukünftigem Startdatum oder als wiederkehrende Aufgabe, die auf ihr nächstes Fälligkeits- oder Wiedervorlagedatum wartet. Eine nächste Aktion mit künftigem Start können Sie hier markieren: Sie bleibt bis zum Starttag unter „Anstehend“ und erscheint dann automatisch im heutigen Fokus. Vorgemerkte Sterne belegen heute keinen Fokusplatz. Wiederkehrende Aufgaben ohne Startdatum bleiben reine Vorschau.
 
 Das Startdatum ist das Zurückstellungs-/Planungsdatum von Mindwtr. Eine Aufgabe mit zukünftigem Start bleibt bis zu ihrem Starttag aus den ausführbaren Listen heraus. Der Abschnitt **Anstehend** ist der eingebaute Blick auf die kommende Woche; **Projekte** oder die **Suche** zeigen weiter entfernte Zurückstellungen. Sequenzielle Projekte beschränken „Fokus“ außerdem auf die erste verfügbare Aktion des Projekts oder Abschnitts. Spätere Aktionen bleiben ausgeblendet, bis der vorherige Schritt sie nicht mehr blockiert.
 
 Zeitschätzung und Energie sind Fokusfilter und Gruppierungsoptionen, keine Standardsortierschlüssel. Eine Gruppierung nach Kontext, Projekt, Bereich, Energie oder Priorität verändert die sichtbaren Gruppen; innerhalb dieser Gruppen behalten Aufgaben dieselbe Verfügbarkeits- und Nächste-Aktion-Sortierung.
+
+**Kommende Version:** **Nächste Aktionen gruppieren nach** gruppiert nur den Abschnitt „Nächste Aktionen“, nicht „Heutiger Fokus“, „Heute“, „Durchsicht fällig“ oder „Anstehend“.
 
 ### Kontextfilter
 

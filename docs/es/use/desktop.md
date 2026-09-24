@@ -74,12 +74,13 @@ Tu zona de captura. Todas las tareas nuevas llegan aquí antes de procesarlas.
 
 Tu panel unificado para la actividad diaria. Foco no es un inventario completo de todas las tareas con estado `next`; limita la lista al trabajo disponible ahora.
 
+**Próxima versión:** Las secciones de Foco aparecen en este orden: **Foco de hoy → Hoy → Próximas acciones → Revisión pendiente → Próximas**.
+
 - **Foco de hoy**: tareas prioritarias marcadas con estrella cuyo día de inicio ya ha llegado. El límite configurado se aplica a las estrellas añadidas para hoy; las tareas futuras en espera no ocupan un lugar hoy. Las próximas acciones enfocadas también muestran una pequeña estrella rellena junto a su título en las listas y en el Tablero.
-- **Atrasadas**: elementos cuya fecha de vencimiento ya pasó.
-- **Vencen hoy**: tareas que vencen hoy o empiezan hoy, incluidas las que empiezan más tarde hoy, ordenadas por hora, y esas filas muestran su hora de inicio hasta que llega.
-- **Próximas acciones**: tareas listas y sin fecha de vencimiento, filtradas por contexto.
+- **Hoy**: elementos cuya fecha de vencimiento ya pasó; tareas que vencen hoy o empiezan hoy, incluidas las que empiezan más tarde hoy, ordenadas por hora, y esas filas muestran su hora de inicio hasta que llega.
+- **Próximas acciones**: Otras próximas acciones disponibles, incluidas las que tienen fecha de vencimiento, filtradas por contexto.
+- **Revisión pendiente**: Compromisos abiertos cuya fecha de revisión ha llegado; esta lista de recordatorios es distinta de la Revisión semanal.
 - **Próximas**: acciones que empezarán —o se repetirán— otro día dentro de los próximos 7 días. Puedes marcar con estrella una próxima acción con inicio futuro: permanecerá aquí hasta su día de inicio y entonces pasará al Foco de hoy. Las tareas recurrentes sin fecha de inicio siguen siendo solo una vista previa.
-- **Revisión pendiente**: elementos con fechas de seguimiento.
 
 Foco mantiene fuera de sus listas accionables las tareas cuya fecha de inicio es futura y las tareas posteriores de los proyectos secuenciales; las tareas aplazadas que llegan durante la próxima semana siguen viéndose en la vista previa **Próximas**. Usa **Contextos**, **Proyectos** o **Buscar** cuando necesites examinar un inventario de tareas más amplio.
 
@@ -87,7 +88,7 @@ Foco mantiene fuera de sus listas accionables las tareas cuya fecha de inicio es
 
 **Funciones:**
 - **Filtros de contexto**: filtra las Próximas acciones por contexto (por ejemplo, @home o @work) o etiqueta. El selector agrupa contextos y etiquetas para que las listas largas de metadatos sigan siendo fáciles de recorrer.
-- **Agrupar por contexto**: usa el control de agrupación de la lista para agrupar las Próximas acciones por contexto principal; las tareas sin contexto se reúnen en **Sin contexto**.
+- **Agrupar próximas acciones por**: Agrupa solo Próximas acciones por contexto; las tareas sin contexto aparecen bajo **Sin contexto**.
 - **Filtros guardados**: guarda criterios de Foco reutilizables, como proyectos, contextos, etiquetas, prioridad, nivel de energía y estimaciones de tiempo. Haz clic en un filtro guardado para aplicarlo; vuelve a pulsarlo o haz clic en **Todo** para quitarlo. Para eliminarlo, abre su menú **…**, elige **Eliminar** y confirma. Abre **Filtros** para consultar o editar los criterios activos.
 - **Modo Zen**: actívalo para ocultar todo salvo las tareas de Foco de hoy.
 - **Pomodoro (opcional)**: actívalo en **Ajustes → GTD → Funciones → Temporizador Pomodoro** para mostrar un panel de temporizador de concentración/descanso (15/3, 25/5, 50/10 y un preajuste personalizado opcional). Déjalo en **Solo temporizador** o activa **Vincular temporizador a tarea** para mostrar el selector de tarea del temporizador y la acción **Marcar tarea como terminada**.

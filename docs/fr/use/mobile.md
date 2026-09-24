@@ -461,10 +461,14 @@ Votre tableau de bord principal pour agir. Focus est un tableau de bord d’enga
 
 ### Sections
 
+**Prochaine version :** Focus montre **Focus du jour → Aujourd’hui → Prochaines actions → À revoir → À venir**. **Regrouper les prochaines actions par** ne concerne que les Prochaines actions.
+
 | Section      | Contenu                                                                 |
 | ------------ | ----------------------------------------------------------------------- |
-| **Aujourd’hui** | Tâches ciblées aujourd’hui, à échéance aujourd’hui/en retard ou commençant aujourd’hui, y compris plus tard dans la journée, ces lignes affichant leur heure de début jusqu’à ce qu’elle arrive |
-| **Suivantes** | Actions suivantes disponibles qui ne sont ni bloquées ni différées     |
+| **Focus du jour** | Tâches choisies pour aujourd’hui dont le jour de début est arrivé |
+| **Aujourd’hui** | Prochaines actions en retard, dues aujourd’hui ou commençant aujourd’hui, y compris plus tard dans la journée |
+| **Prochaines actions** | Autres prochaines actions disponibles |
+| **À revoir** | Engagements ouverts dont la date de revue est arrivée ; cette liste de rappels est distincte de la revue hebdomadaire |
 | **À venir** | Actions qui démarrent ou reviennent sous 7 jours ; étoilez une action suivante à début futur pour la placer dans Focus le jour venu |
 
 Focus tient les tâches à début futur et les étapes ultérieures des projets séquentiels à l’écart de ses listes actionnables. Une action suivante étoilée avec un début futur reste dans **À venir** jusqu’à son jour de début, puis rejoint automatiquement le Focus du jour sans occuper de place avant. Les tâches récurrentes sans date de début restent un simple aperçu. Utilisez les **Contextes**, les **Projets** ou la **Recherche** pour examiner un inventaire plus large.

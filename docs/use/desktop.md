@@ -74,12 +74,13 @@ Your capture zone. All new tasks land here before processing.
 
 Your unified dashboard for daily engagement. Focus is not a full inventory of every task with status `next`; it narrows the list to work that is available now.
 
+**Upcoming release:** Focus sections appear in this order: **Today's Focus → Today → Next Actions → Review Due → Upcoming**.
+
 - **Today's Focus**: Starred priority tasks whose start day has arrived. The configured limit applies to stars added for today; queued future-start stars use no current slots. Focused Next tasks also show a small filled star beside their title in task lists and on the Board.
-- **Overdue**: Past due items.
-- **Due Today**: Tasks due today or starting today, including those that start later today, sorted by time, with those rows showing their start time until it arrives.
-- **Next Actions**: Ready tasks without due dates, filtered by context.
+- **Today**: Past due items; tasks due today or starting today, including those that start later today, sorted by time, with those rows showing their start time until it arrives.
+- **Next Actions**: Other available next actions, including actions with due dates, filtered by context.
+- **Review Due**: Open commitments whose review date has arrived; this reminder queue is separate from Weekly Review.
 - **Upcoming**: Next actions that start — or recur — on another day within the next 7 days, each showing the date it will appear. Star a future-start Next action here to queue it for Today's Focus on its start day. Recurring tasks without a start date remain previews only.
-- **Review Due**: Items with tickler dates.
 
 Focus keeps future-start tasks and later tasks in sequential projects out of its actionable lists; deferred tasks landing within the next week still show in the **Upcoming** preview. Use **Contexts**, **Projects**, or **Search** when you need to inspect broader task inventory.
 
@@ -87,7 +88,7 @@ Focus keeps future-start tasks and later tasks in sequential projects out of its
 
 **Features:**
 - **Context Filters**: Filter Next Actions by context (e.g., @home, @work) or tag. The filter picker groups contexts and tags so long metadata lists stay scannable.
-- **Group by Context**: Use the list grouping control to group Next Actions by primary context, with context-less tasks collected under **No context**.
+- **Group next actions by**: Group only Next Actions by context; tasks without a context appear under **No context**.
 - **Saved Filters**: Save reusable Focus criteria such as projects, contexts, tags, priority, energy level, and time estimates. Click a saved filter to apply it; click it again or click **All** to clear it. To delete one, open its **…** menu, choose **Delete**, and confirm. Open **Filters** to inspect or edit the active filter criteria.
 - **Zen Mode**: Toggle to hide everything except Today's Focus tasks.
 - **Pomodoro (Optional)**: Enable in **Settings → GTD → Features → Pomodoro timer** to show a focus/break timer panel (15/3, 25/5, 50/10, plus one optional custom preset). Leave it as **Timer only**, or turn on **Link timer to task** to show the Timer task picker and **Mark task done** action.

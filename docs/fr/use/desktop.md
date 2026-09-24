@@ -74,12 +74,13 @@ Votre zone de collecte. Toutes les nouvelles tâches y arrivent avant d’être 
 
 Votre tableau de bord unifié pour l’engagement quotidien. Focus ne constitue pas un inventaire complet de toutes les tâches ayant le statut `next` ; il restreint la liste au travail disponible maintenant.
 
+**Prochaine version :** Les sections Focus apparaissent dans cet ordre : **Focus du jour → Aujourd’hui → Prochaines actions → À revoir → À venir**.
+
 - **Focus du jour** : tâches prioritaires étoilées dont le jour de début est arrivé. La limite configurée s’applique aux étoiles ajoutées pour aujourd’hui ; les tâches futures mises en attente ne prennent pas de place aujourd’hui. Les actions suivantes mises en focus affichent aussi une petite étoile pleine à côté de leur titre dans les listes et sur le Tableau.
-- **En retard** : éléments dont l’échéance est dépassée.
-- **À faire aujourd’hui** : tâches dont l’échéance est aujourd’hui ou qui démarrent aujourd’hui, y compris plus tard dans la journée, triées par heure, ces lignes affichant leur heure de début jusqu’à ce qu’elle arrive.
-- **Actions suivantes** : tâches prêtes sans échéance, filtrées par contexte.
+- **Aujourd’hui**: éléments dont l’échéance est dépassée; tâches dont l’échéance est aujourd’hui ou qui démarrent aujourd’hui, y compris plus tard dans la journée, triées par heure, ces lignes affichant leur heure de début jusqu’à ce qu’elle arrive.
+- **Actions suivantes** : Autres prochaines actions disponibles, y compris celles avec une échéance, filtrées par contexte.
+- **Revue à effectuer** : Engagements ouverts dont la date de revue est arrivée ; cette liste de rappels est distincte de la revue hebdomadaire.
 - **À venir** : actions suivantes qui démarrent — ou reviennent — un autre jour dans les 7 prochains jours. Vous pouvez étoiler une action suivante dont la date de début est future : elle reste ici jusqu’à ce jour, puis rejoint le Focus du jour. Les tâches récurrentes sans date de début restent un simple aperçu.
-- **Revue à effectuer** : éléments dont la date de rappel est arrivée.
 
 Focus tient les tâches dont la date de début est future et les tâches ultérieures des projets séquentiels à l’écart de ses listes actionnables ; les tâches différées qui arrivent dans la semaine restent visibles dans l’aperçu **À venir**. Utilisez les **Contextes**, les **Projets** ou la **Recherche** lorsque vous devez examiner un inventaire de tâches plus large.
 
@@ -87,7 +88,7 @@ Focus tient les tâches dont la date de début est future et les tâches ultéri
 
 **Fonctionnalités :**
 - **Filtres de contexte** : filtrez les Actions suivantes par contexte (par ex., @home, @work) ou par étiquette. Le sélecteur de filtres regroupe les contextes et les étiquettes afin que les longues listes de métadonnées restent faciles à parcourir.
-- **Grouper par contexte** : utilisez la commande de regroupement de la liste pour regrouper les Actions suivantes selon leur contexte principal, les tâches sans contexte étant rassemblées sous **Aucun contexte**.
+- **Regrouper les prochaines actions par** : regroupe uniquement les Prochaines actions par contexte ; les tâches sans contexte figurent sous **Aucun contexte**.
 - **Filtres enregistrés** : enregistrez des critères Focus réutilisables tels que les projets, contextes, étiquettes, priorités, niveaux d’énergie et estimations de temps. Cliquez sur un filtre enregistré pour l’appliquer ; cliquez à nouveau dessus ou sur **Tous** pour le désactiver. Pour le supprimer, ouvrez son menu **…**, choisissez **Supprimer**, puis confirmez. Ouvrez **Filtres** pour consulter ou modifier les critères actifs.
 - **Mode Zen** : activez-le pour tout masquer à l’exception des tâches du Focus du jour.
 - **Pomodoro (facultatif)** : activez-le dans **Paramètres → GTD → Fonctionnalités → Minuteur Pomodoro** pour afficher un panneau de minuteur de concentration/pause (15/3, 25/5, 50/10, ainsi qu’un préréglage personnalisé facultatif). Laissez-le sur **Minuteur uniquement**, ou activez **Lier le minuteur à la tâche** pour afficher le sélecteur de tâche du Minuteur et l’action **Marquer la tâche comme terminée**.

@@ -313,19 +313,21 @@ Planifiez 30 à 90 minutes chaque semaine, au même moment et au même endroit.
 ### Choisir sur quoi travailler
 
 Utilisez la vue **Focus** pour voir :
-- les tâches sur lesquelles vous vous concentrez aujourd’hui (éléments marqués d’une étoile)
-- les Prochaines actions (filtrées par contexte ou générales)
-- les éléments en retard
-- les éléments dus aujourd’hui
-- les prochaines actions à venir qui démarrent ou reviennent dans les 7 prochains jours
+- Focus du jour : tâches étoilées dont le jour de début est arrivé
+- Aujourd’hui : prochaines actions en retard, dues aujourd’hui ou commençant aujourd’hui
+- Prochaines actions : autres actions disponibles
+- À revoir : engagements ouverts dont la date de revue est arrivée
+- À venir : actions qui démarrent ou reviennent dans les 7 prochains jours
 
 Focus n’est pas une vue d’inventaire complète. Elle tient les tâches dont la date de début est future et les tâches ultérieures des projets séquentiels à l’écart des listes actionnables, afin que celles-ci reflètent les actions disponibles maintenant. Utilisez **Contextes**, **Projets** ou **Recherche** pour examiner toutes les prochaines actions, y compris les éléments reportés ou bloqués.
 
-Utilisez **Focus uniquement** dans l’en-tête de Focus, sur ordinateur ou mobile, pour garder **Focus du jour** ouvert et replier Aujourd’hui, À revoir, Prochaines actions, À venir et Projets à revoir. Les titres et les nombres restent visibles pour rouvrir chaque section séparément. **Développer les sections** les ouvre toutes. Chaque appareil mémorise cet état. Sur ordinateur, ce bouton remplace **Afficher uniquement les 3 premiers**, sans limiter ni modifier les tâches marquées d’une étoile.
+Utilisez **Focus uniquement** dans l’en-tête de Focus, sur ordinateur ou mobile, pour garder **Focus du jour** ouvert et replier Aujourd’hui, Prochaines actions, À revoir, À venir et Projets à revoir. Les titres et les nombres restent visibles pour rouvrir chaque section séparément. **Développer les sections** les ouvre toutes. Chaque appareil mémorise cet état. Sur ordinateur, ce bouton remplace **Afficher uniquement les 3 premiers**, sans limiter ni modifier les tâches marquées d’une étoile.
 
 ### Comment Focus trie les actions disponibles
 
 Focus détermine d’abord si une tâche est disponible, puis trie les actions visibles :
+
+**Prochaine version :** Les sections Focus apparaissent dans cet ordre : **Focus du jour → Aujourd’hui → Prochaines actions → À revoir → À venir**.
 
 1. **Focus du jour** affiche les tâches que vous avez explicitement choisies pour aujourd’hui. Vous pouvez les classer manuellement dans l’ordre où vous prévoyez de travailler : faites glisser la poignée sur ordinateur, ou utilisez le bouton de réorganisation dans l’en-tête de la section sur mobile. L’ordre manuel s’applique lorsque le tri de Focus est réglé sur sa valeur par défaut, se synchronise entre les appareils et conserve la place d’une tâche jusqu’à ce qu’elle quitte Focus.
 2. **Aujourd’hui/Planning** affiche les tâches `next` disponibles qui sont en retard, dues aujourd’hui ou qui commencent aujourd’hui, y compris avec une heure de début plus tard dans la journée, ces lignes affichant leur heure de début jusqu’à ce qu’elle arrive. Elles sont classées selon l’heure de début/d’échéance la plus proche, puis selon la priorité lorsque les priorités sont activées, puis selon la date de création la plus ancienne.
@@ -336,12 +338,14 @@ Focus détermine d’abord si une tâche est disponible, puis trie les actions v
    - ensuite les actions sans date
    - enfin les actions dont l’échéance est plus éloignée, de la date d’échéance la plus proche à la plus lointaine
    - au sein d’une même catégorie : la priorité lorsqu’elle est activée, puis l’heure de début, la date de création la plus ancienne, le titre et l’identifiant
-4. **À venir** montre les tâches `next` qui apparaîtront dans les 7 prochains jours : avec une date de début future ou une récurrence en attente de sa prochaine échéance ou revue. Vous pouvez étoiler une action suivante à début futur : elle reste ici jusqu’à ce jour, puis rejoint automatiquement le Focus du jour sans occuper de place avant. Les tâches récurrentes sans date de début restent un simple aperçu.
-5. **À revoir** affiche les tâches dont la date de revue est arrivée. Après avoir examiné un élément, vous pouvez effacer sa date de revue (**Marquer comme examiné**) ou la reporter avec **Revoir dans 1 semaine**, sur ordinateur depuis le menu d’actions rapides de la tâche et sur mobile en appuyant longuement sur la ligne.
+4. **À revoir** affiche les tâches dont la date de revue est arrivée. Après avoir examiné un élément, vous pouvez effacer sa date de revue (**Marquer comme examiné**) ou la reporter avec **Revoir dans 1 semaine**, sur ordinateur depuis le menu d’actions rapides de la tâche et sur mobile en appuyant longuement sur la ligne. La section À revoir est une liste de rappels distincte de la revue hebdomadaire et des rappels d’échéance. Une tâche `next` dont la date de revue est arrivée peut encore y figurer ; le nouvel ordre des sections ne la déplace pas.
+5. **À venir** montre les tâches `next` qui apparaîtront dans les 7 prochains jours : avec une date de début future ou une récurrence en attente de sa prochaine échéance ou revue. Vous pouvez étoiler une action suivante à début futur : elle reste ici jusqu’à ce jour, puis rejoint automatiquement le Focus du jour sans occuper de place avant. Les tâches récurrentes sans date de début restent un simple aperçu.
 
 La date de début est le champ de report/date planifiée de Mindwtr. Une tâche dont la date de début est future reste hors des listes actionnables jusqu’au jour de son début ; la section **À venir** est le coup d’œil intégré sur la semaine qui vient, et **Projets** ou la **Recherche** montrent les reports plus lointains. Les projets séquentiels limitent également Focus à la première action disponible du projet ou de la section, de sorte que les actions suivantes restent hors de Focus jusqu’à ce que l’étape précédente cesse de les bloquer.
 
 L’estimation du temps et l’énergie sont des filtres et des options de regroupement dans Focus, pas des clés de tri par défaut. Le regroupement par contexte, projet, domaine, énergie ou priorité modifie les groupes visuels ; les tâches au sein de ces groupes conservent le même ordre de disponibilité et de prochaines actions.
+
+**Prochaine version :** **Regrouper les prochaines actions par** ne regroupe que les Prochaines actions, pas le Focus du jour, Aujourd’hui, À revoir ou À venir.
 
 ### Filtrer par contexte
 

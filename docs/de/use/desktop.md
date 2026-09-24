@@ -74,12 +74,13 @@ Ihre Erfassungszone. Alle neuen Aufgaben landen vor der Verarbeitung hier.
 
 Ihr gemeinsames Dashboard für das tägliche Erledigen. „Fokus“ ist kein vollständiger Bestand aller Aufgaben mit Status `next`, sondern beschränkt die Liste auf jetzt verfügbare Arbeit.
 
-- **Heutiger Fokus**: Mit Stern markierte Prioritätsaufgaben, deren Starttag erreicht ist. Das Fokuslimit gilt für Aufgaben, die Sie heute hinzufügen; vorgemerkte Aufgaben mit zukünftigem Start belegen heute keinen Platz. Fokussierte Nächste Aktionen zeigen zudem einen kleinen ausgefüllten Stern neben ihrem Titel in Aufgabenlisten und auf dem Board.
-- **Überfällig**: Einträge nach ihrem Fälligkeitsdatum
-- **Heute fällig**: heute fällige oder heute beginnende Aufgaben, auch solche, die erst später am Tag starten, nach Uhrzeit sortiert, wobei diese Zeilen ihre Startzeit anzeigen, bis diese erreicht ist
-- **Nächste Aktionen**: ausführbare Aufgaben ohne Fälligkeitsdatum, nach Kontext gefiltert
+**Kommende Version:** Die Fokus-Abschnitte erscheinen in dieser Reihenfolge: **Heutiger Fokus → Heute → Nächste Aktionen → Durchsicht fällig → Anstehend**.
+
+- **Heutiger Fokus**: Weitere verfügbare nächste Aktionen, auch mit Fälligkeitsdatum, nach Kontext gefiltert.
+- **Heute**: Offene Verpflichtungen mit fälligem Wiedervorlagedatum. Der Wochenrückblick prüft weiterhin offene Verpflichtungen und Projekte; Fälligkeitstermine und Erinnerungen bleiben getrennt.
+- **Nächste Aktionen**: Weitere verfügbare nächste Aktionen, auch mit Fälligkeitsdatum, nach Kontext gefiltert.
+- **Durchsicht fällig**: Offene Verpflichtungen mit fälligem Wiedervorlagedatum; diese Erinnerungswarteschlange ist vom Wochenrückblick getrennt.
 - **Anstehend**: nächste Aktionen, die innerhalb der nächsten 7 Tage an einem anderen Tag starten oder wiederkehren. Markieren Sie eine nächste Aktion mit künftigem Start hier mit einem Stern: Sie bleibt bis zu ihrem Starttag in „Anstehend“ und wechselt dann in den heutigen Fokus. Wiederkehrende Aufgaben ohne Startdatum bleiben reine Vorschau.
-- **Durchsicht fällig**: Einträge mit Tickler-Datum
 
 „Fokus“ hält Aufgaben mit zukünftigem Start und spätere Aufgaben sequenzieller Projekte aus seinen ausführbaren Listen heraus; zurückgestellte Aufgaben, die innerhalb der nächsten Woche anstehen, erscheinen weiterhin in der Vorschau **Anstehend**. Verwenden Sie **Kontexte**, **Projekte** oder die **Suche** für einen größeren Aufgabenbestand.
 
@@ -87,7 +88,7 @@ Ihr gemeinsames Dashboard für das tägliche Erledigen. „Fokus“ ist kein vol
 
 **Funktionen:**
 - **Kontextfilter**: Nächste Aktionen nach Kontext (z. B. @home, @work) oder Tag filtern. Die Auswahl gruppiert Kontexte und Tags, damit lange Metadatenlisten übersichtlich bleiben.
-- **Nach Kontext gruppieren**: Nächste Aktionen nach ihrem primären Kontext gruppieren; Aufgaben ohne Kontext erscheinen unter **Kein Kontext**.
+- **Nächste Aktionen gruppieren nach**: Nur Nächste Aktionen nach Kontext gruppieren; Aufgaben ohne Kontext erscheinen unter **Kein Kontext**.
 - **Gespeicherte Filter**: Wiederverwendbare Fokusbedingungen wie Projekte, Kontexte, Tags, Priorität, Energie und Zeitschätzung speichern. Klicken Sie auf einen gespeicherten Filter, um ihn anzuwenden; klicken Sie erneut darauf oder auf **Alle**, um ihn aufzuheben. Zum Löschen öffnen Sie sein **…**-Menü, wählen **Löschen** und bestätigen. Unter **Filter** können Sie die aktiven Filterbedingungen prüfen oder bearbeiten.
 - **Zen-Modus**: Alles außer den Aufgaben im heutigen Fokus ausblenden.
 - **Pomodoro (optional)**: Unter **Einstellungen → GTD → Funktionen → Pomodoro-Zeitgeber** ein Fokus-/Pausenfeld aktivieren (15/3, 25/5, 50/10 und eine optionale eigene Voreinstellung). Belassen Sie es bei **Nur Zeitgeber** oder aktivieren Sie **Zeitgeber mit Aufgabe verknüpfen** für Aufgabenauswahl und **Aufgabe als erledigt markieren**.

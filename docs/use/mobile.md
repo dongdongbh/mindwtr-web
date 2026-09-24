@@ -461,10 +461,14 @@ Your primary dashboard for doing. Focus is an Engage dashboard, not a full inven
 
 ### Sections
 
-| Section      | Content                                                                 |
-| ------------ | ----------------------------------------------------------------------- |
-| **Today**    | Tasks focused for today, due today/overdue, or starting today, including later today, with those rows showing their start time until it arrives |
-| **Next**     | Available next actions that are not blocked or deferred                 |
+**Upcoming release:** Focus sections appear in this order: **Today's Focus → Today → Next Actions → Review Due → Upcoming**. **Group next actions by** affects only Next Actions.
+
+| Section | Content |
+| --- | --- |
+| **Today's Focus** | Starred tasks chosen for today whose start day has arrived |
+| **Today** | Next actions due today, overdue, or starting today, including later today |
+| **Next Actions** | Other available next actions |
+| **Review Due** | Open commitments whose review date has arrived; this reminder queue is separate from Weekly Review |
 | **Upcoming** | Next actions starting or recurring on another day within 7 days; star a future-start Next action to queue it for Focus on its start day |
 
 Focus keeps future-start tasks and later tasks in sequential projects out of its actionable lists so they stay limited to what you can act on now. A starred future-start Next action stays in **Upcoming** until its start day, then moves to Today's Focus automatically without using a current Focus slot. Recurring tasks without a start date stay as previews and cannot be starred there. Use **Contexts**, **Projects**, or **Search** when you want to inspect the broader task inventory.

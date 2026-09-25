@@ -422,7 +422,6 @@ Les tâches avec une heure d’échéance peuvent régler **Répéter le rappel*
 
 Configurez les notifications dans les Paramètres :
 - Activez ou désactivez les notifications
-- Définissez le délai d’anticipation du rappel
 
 **Remarques sur les plateformes :**
 - **macOS** demandera l’autorisation d’envoyer des notifications la première fois que vous les activerez.

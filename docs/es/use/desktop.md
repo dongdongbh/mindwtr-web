@@ -422,7 +422,6 @@ Las tareas con hora de vencimiento pueden configurar **Recordatorio repetido** c
 
 Configura las notificaciones en Ajustes:
 - Activa o desactiva las notificaciones
-- Establece el tiempo de antelación del recordatorio
 
 **Notas sobre plataformas:**
 - **macOS** solicitará permiso para las notificaciones la primera vez que las actives.

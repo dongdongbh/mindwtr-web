@@ -422,7 +422,6 @@ Tasks with a due time can set **Repeat reminder** to 5, 10, 15, 30, or 60 minute
 
 Configure notifications in Settings:
 - Enable/disable notifications
-- Set reminder lead time
 
 **Platform notes:**
 - **macOS** will prompt for notification permission the first time you enable it.

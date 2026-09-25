@@ -424,7 +424,6 @@ Bei Aufgaben mit Fälligkeitszeit kann **Erinnerung wiederholen** nach der erste
 
 In den Einstellungen:
 - Benachrichtigungen aktivieren/deaktivieren
-- Erinnerungsvorlauf festlegen
 
 **Plattformhinweise:**
 - **macOS** fragt beim ersten Aktivieren nach der Berechtigung.

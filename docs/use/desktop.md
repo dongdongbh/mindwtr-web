@@ -491,6 +491,8 @@ When you complete a recurring task, Mindwtr automatically creates the next insta
 - **Ends: Never / On date / After N occurrences**: choose whether the series runs forever, stops on a specific date, or stops after a fixed number of occurrences.
   `After N occurrences` counts the current task as part of the series total.
 
+In task lists, the recurrence icon stays visible when details are hidden; the full schedule description appears in the task details.
+
 Mindwtr keeps one active instance of a recurring task. The Calendar shows that current instance when it has a due date or start time; future occurrences are not pre-filled until the current one is completed unless **Show future occurrences in Calendar** is enabled for a planning-only preview.
 
 You can toggle this in the task editor recurrence field using **Repeat after completion**.

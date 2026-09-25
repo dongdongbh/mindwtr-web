@@ -497,6 +497,8 @@ Wiederholungsstrategien:
 - **Nach Abschluss wiederholen**
 - **Endet: Nie / Am Datum / Nach N Vorkommen**
 
+In Aufgabenlisten bleibt das Wiederholungssymbol auch bei ausgeblendeten Details sichtbar; die vollständige Beschreibung des Wiederholungsplans erscheint in den Aufgabendetails.
+
 Mindwtr hält eine aktive Instanz. Der Kalender zeigt diese aktive Instanz, wenn sie ein Fälligkeitsdatum oder eine Startzeit hat. Zukünftige Vorkommen werden bis zum Abschluss nicht vorab angelegt, außer als Planungsvorschau mit **Künftige Wiederholungen im Kalender anzeigen**. Im Wiederholungsfeld können Sie Strategie, Vorschau und Serienende festlegen.
 
 ### Anhänge

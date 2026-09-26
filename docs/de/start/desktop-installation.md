@@ -104,6 +104,8 @@ sudo snap install mindwtr
 
 ### AppImage (universell)
 
+[![AppImage](https://img.shields.io/badge/AppImage-Download-2A6DB2?logo=appimage&logoColor=white)](https://appimage.github.io/Mindwtr/)
+
 [Eintrag im AppImage-Katalog](https://appimage.github.io/Mindwtr/)
 
 Funktioniert auf den meisten Linux-Distributionen:

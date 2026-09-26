@@ -104,6 +104,8 @@ sudo snap install mindwtr
 
 ### AppImage（通用）
 
+[![AppImage](https://img.shields.io/badge/AppImage-Download-2A6DB2?logo=appimage&logoColor=white)](https://appimage.github.io/Mindwtr/)
+
 [AppImage 應用程式目錄](https://appimage.github.io/Mindwtr/)
 
 可在大多數 Linux 發行版上運作：

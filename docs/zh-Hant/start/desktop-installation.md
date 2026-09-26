@@ -104,6 +104,8 @@ sudo snap install mindwtr
 
 ### AppImage（通用）
 
+[AppImage 應用程式目錄](https://appimage.github.io/Mindwtr/)
+
 可在大多數 Linux 發行版上運作：
 
 ```bash

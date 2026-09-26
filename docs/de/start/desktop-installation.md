@@ -104,6 +104,8 @@ sudo snap install mindwtr
 
 ### AppImage (universell)
 
+[Eintrag im AppImage-Katalog](https://appimage.github.io/Mindwtr/)
+
 Funktioniert auf den meisten Linux-Distributionen:
 
 ```bash

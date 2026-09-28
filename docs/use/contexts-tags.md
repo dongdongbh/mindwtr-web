@@ -107,6 +107,8 @@ Context and tag names accept Unicode letters and numbers (including CJK and acce
 1. Open task editor
 2. Add contexts in the Contexts field (comma-separated)
 
+Upcoming release: As you type a context name in Quick Add or the task editor, matches can include contexts on retained completed or archived tasks. Initial suggestions stay short; deleted tasks do not supply suggestions. Active context filters are unchanged.
+
 ### Filtering by Context
 
 **Desktop:**

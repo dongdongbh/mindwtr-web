@@ -107,6 +107,8 @@ Kontext- und Tag-Namen akzeptieren Unicode-Buchstaben und -Ziffern (einschließl
 1. Öffnen Sie den Aufgabeneditor.
 2. Fügen Sie im Feld „Kontexte“ Kontexte hinzu (durch Kommas getrennt).
 
+In einer kommenden Version: Wenn Sie beim Schnellhinzufügen oder im Aufgabeneditor einen Kontextnamen eingeben, können passende Namen auch von aufbewahrten erledigten oder archivierten Aufgaben vorgeschlagen werden. Die ersten Vorschläge bleiben knapp; gelöschte Aufgaben liefern keine Vorschläge. Aktive Kontextfilter bleiben unverändert.
+
 ### Nach Kontext filtern
 
 **Desktop:**

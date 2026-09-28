@@ -107,6 +107,8 @@ Les noms de contextes et de tags acceptent les lettres et chiffres Unicode (y co
 1. Ouvrez l’éditeur de tâche
 2. Ajoutez les contextes dans le champ Contextes (séparés par des virgules)
 
+Prochaine version : lorsque vous saisissez un nom de contexte dans l’ajout rapide ou l’éditeur de tâche, les correspondances peuvent aussi inclure les contextes de tâches terminées ou archivées qui sont encore conservées. Les premières suggestions restent limitées ; les tâches supprimées ne fournissent pas de suggestions. Les filtres de contexte actifs ne changent pas.
+
 ### Filtrer par contexte
 
 **Ordinateur :**

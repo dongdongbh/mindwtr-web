@@ -107,6 +107,8 @@ Los nombres de contextos y etiquetas aceptan letras y números Unicode (incluido
 1. Abre el editor de tareas
 2. Añade contextos en el campo Contextos (separados por comas)
 
+Próxima versión: Al escribir el nombre de un contexto en Añadir rápido o en el editor de tareas, las coincidencias también pueden incluir contextos de tareas completadas o archivadas que se conservan. Las sugerencias iniciales siguen siendo breves; las tareas eliminadas no aportan sugerencias. Los filtros de contexto activos no cambian.
+
 ### Filtrar por contexto
 
 **Escritorio:**

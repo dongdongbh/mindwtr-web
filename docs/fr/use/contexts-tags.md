@@ -193,6 +193,8 @@ Lorsque vous filtrez par contexte parent, tous ses enfants sont inclus :
 | `@work` | `@work`, `@work/meetings`, `@work/calls` |
 | `#health` | `#health`, `#health/fitness`, `#health/diet` |
 
+Prochaine version : dans Contextes, un filtre parent comme `@tools` est proposé lorsque des tâches du périmètre actuel utilisent `@tools/excavator`, même si aucune tâche ne porte le libellé parent lui-même. Un filtre sélectionné reste visible et peut être désélectionné lorsqu’il ne donne aucun résultat. Les branches non sélectionnées disparaissent des choix lorsqu’elles ne contiennent plus de tâches admissibles.
+
 Cela permet de filtrer à un niveau général tout en conservant une organisation précise.
 
 ### Avantages

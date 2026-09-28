@@ -193,6 +193,8 @@ Cuando filtras por un contexto superior, se incluyen todos sus elementos secunda
 | `@work`   | `@work`, `@work/meetings`, `@work/calls`     |
 | `#health` | `#health`, `#health/fitness`, `#health/diet` |
 
+Próxima versión: En Contextos, se ofrece un filtro padre como `@tools` cuando las tareas del ámbito actual usan `@tools/excavator`, aunque ninguna tarea lleve la etiqueta padre. Un filtro seleccionado sigue visible y se puede deseleccionar cuando no hay resultados. Las ramas no seleccionadas desaparecen de las opciones cuando no tienen tareas que cumplan los criterios.
+
 Esto permite filtrar a alto nivel y mantener al mismo tiempo una organización específica.
 
 ### Ventajas

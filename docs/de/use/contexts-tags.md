@@ -193,6 +193,8 @@ Wenn Sie nach einem übergeordneten Kontext filtern, werden alle Untergruppen ei
 | `@work` | `@work`, `@work/meetings`, `@work/calls` |
 | `#health` | `#health`, `#health/fitness`, `#health/diet` |
 
+In einer kommenden Version: In Kontexte wird ein übergeordneter Filter wie `@tools` angeboten, wenn Aufgaben im aktuellen Bereich `@tools/excavator` verwenden, auch wenn keine Aufgabe das übergeordnete Label selbst trägt. Ein ausgewählter Filter bleibt bei null Ergebnissen sichtbar und lässt sich abwählen. Nicht ausgewählte Zweige verschwinden aus der Auswahl, wenn sie keine passenden Aufgaben mehr enthalten.
+
 So können Sie grob filtern und dennoch eine genaue Organisation beibehalten.
 
 ### Vorteile

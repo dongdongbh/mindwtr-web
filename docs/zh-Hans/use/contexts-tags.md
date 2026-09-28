@@ -193,6 +193,8 @@ Review contract @legal
 | `@work` | `@work`、`@work/meetings`、`@work/calls` |
 | `#health` | `#health`、`#health/fitness`、`#health/diet` |
 
+即将发布：在情境视图中，只要当前范围内的任务使用 `@tools/excavator`，就会提供 `@tools` 等父级筛选项，即使没有任务直接使用父级标签。已选筛选项在结果为零时仍会显示，并可取消选择。未选中的分支在没有符合条件的任务时会从选项中隐藏。
+
 这样既能进行宽泛的高层级筛选，又能保持具体的组织结构。
 
 ### 优点

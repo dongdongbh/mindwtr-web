@@ -193,6 +193,8 @@ Review contract @legal
 | `@work`   | `@work`、`@work/meetings`、`@work/calls`     |
 | `#health` | `#health`、`#health/fitness`、`#health/diet` |
 
+即將推出：在情境檢視中，只要目前範圍內的任務使用 `@tools/excavator`，就會提供 `@tools` 等父層篩選項目，即使沒有任務直接使用父層標籤。已選取的篩選項目在結果為零時仍會顯示，並可取消選取。未選取的分支在沒有符合條件的任務時會從選項中隱藏。
+
 如此既能維持具體分類，也能從較高層級進行篩選。
 
 ### 優點

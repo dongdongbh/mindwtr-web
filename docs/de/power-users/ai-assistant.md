@@ -24,6 +24,8 @@ Konfigurieren Sie den Assistenten auf dem Desktop unter **Einstellungen → KI-A
 - Schlussfolgerungsaufwand/Thinking-Budget (anbieterabhängig)
 - optionaler Schalter **„Denken aktivieren“** für Claude/Gemini (fügt erweitertes Schlussfolgern hinzu)
 
+**Kommende Version:** KI-Assistent und Copilot verwenden für generierte Texte die vorhandene App-Sprache; wird diese nicht unterstützt, verwenden sie Englisch. Es gibt keine separate KI-Spracheinstellung; bestehende Kontext- und Tagnamen bleiben unverändert. Für die Sprachtranskription gilt weiterhin die eigene Einstellung **Audiosprache**.
+
 ## OpenAI-kompatible Endpunkte (lokal oder gehostet)
 
 Mindwtr kann mit jedem Dienst kommunizieren, der eine **OpenAI-kompatible Chat Completions API** bereitstellt. Dazu gehören lokale Server und einige gehostete Anbieter.

@@ -29,10 +29,12 @@ Mindwtr lets you attach files and links to **tasks** and **projects**. Attachmen
 - Use **Add attachment** to pick a file or add a link.
 - Audio notes are added automatically if you record voice capture and **Save audio attachments** is enabled.
 
+**Upcoming release:** **Add link** on desktop and mobile will accept multiple links pasted at once, one per line. Paste URLs on mobile; desktop also accepts local file paths. Blank lines are ignored, and links keep their pasted order. If any line is invalid, no links are added; an error shows that line and the pasted text stays so you can fix it. In a task draft, use **Save** or **Cancel** as usual. A single desktop file path may still contain spaces.
+
 ### Copies vs. links
 
 - **Add file** stores a copy of the file inside Mindwtr's own storage. The attachment keeps working even if the original file is later moved, renamed, or deleted. Removing the attachment deletes Mindwtr's copy, not your original file.
-- **Add link** stores a pointer. Paste a URL or a local file path (or use **Link to file…** on desktop to browse for one) when you want to reference a file without copying it. A path link breaks if the file moves, which is expected of a link.
+- **Add link** stores a pointer. Paste a URL, or on desktop a local file path (or use **Link to file…** to browse for one), when you want to reference a file without copying it. A path link breaks if the file moves, which is expected of a link.
 - Each attachment row shows which one it is: a paperclip means Mindwtr holds a copy of the file, a link icon means it is a pointer (the tooltip shows the full target).
 - File attachments added on desktop before v1.1.0 reference the original path instead of holding a copy (they show the link icon); re-attach a file to convert it into a copy.
 - **Attachment files are not inside a JSON backup.** The backup stores each attachment's metadata and path only; on desktop the copies themselves live in an `attachments` folder beside `mindwtr.db`, and you have to copy that folder separately. See [Backup and Restore](/data-sync/backup-restore).

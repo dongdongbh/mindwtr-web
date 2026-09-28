@@ -29,10 +29,12 @@ Mindwtr permet de joindre des fichiers et des liens aux **tâches** et aux **pro
 - Utilisez **Ajouter une pièce jointe** pour choisir un fichier ou ajouter un lien.
 - Les notes audio sont ajoutées automatiquement lorsque vous effectuez une capture vocale et que **Enregistrer les pièces jointes audio** est activé.
 
+**Prochaine version :** **Ajouter un lien** permettra de coller plusieurs liens à la fois sur ordinateur et mobile, à raison d’un lien par ligne. Collez des URL sur mobile ; l’ordinateur accepte aussi les chemins de fichiers locaux. Les lignes vides sont ignorées et les liens gardent leur ordre. Si une ligne est invalide, aucun lien n’est ajouté ; un message d’erreur indique cette ligne et le texte collé reste disponible pour la corriger. Dans un brouillon de tâche, utilisez **Enregistrer** ou **Annuler** comme d’habitude. Un chemin de fichier seul peut toujours contenir des espaces sur ordinateur.
+
 ### Copies et liens
 
 - **Ajouter un fichier** enregistre une copie dans le stockage propre à Mindwtr. La pièce jointe continue de fonctionner même si l’original est déplacé, renommé ou supprimé. Retirer la pièce jointe supprime la copie de Mindwtr, pas votre fichier d’origine.
-- **Ajouter un lien** enregistre un pointeur. Collez une URL ou le chemin d’un fichier local — ou utilisez **Lier à un fichier…** sur ordinateur — pour référencer un fichier sans le copier. Le lien vers un chemin cesse de fonctionner si le fichier est déplacé, comme attendu.
+- **Ajouter un lien** enregistre un pointeur. Collez une URL ou, sur ordinateur, le chemin d’un fichier local — vous pouvez aussi utiliser **Lier à un fichier…** — pour référencer un fichier sans le copier. Le lien vers un chemin cesse de fonctionner si le fichier est déplacé, comme attendu.
 - Chaque ligne précise sa nature : un trombone indique que Mindwtr possède une copie, une icône de lien qu’il s’agit d’un pointeur. L’infobulle affiche la cible complète.
 - Les pièces jointes ajoutées sur ordinateur avant la v1.1.0 pointent vers leur emplacement d’origine au lieu d’être copiées et affichent l’icône de lien. Joignez de nouveau le fichier pour en faire une copie.
 - **Les fichiers joints ne sont pas dans une sauvegarde JSON.** La sauvegarde n’enregistre que les métadonnées et le chemin de chaque pièce jointe ; sur ordinateur, les copies elles-mêmes se trouvent dans un dossier `attachments` à côté de `mindwtr.db`, et vous devez copier ce dossier séparément. Voir [Sauvegarde et restauration](/fr/data-sync/backup-restore).

@@ -29,10 +29,12 @@ Mindwtr permite adjuntar archivos y enlaces a **tareas** y **proyectos**. Los ad
 - Usa **Añadir adjunto** para elegir un archivo o añadir un enlace.
 - Las notas de audio se añaden automáticamente si grabas una captura de voz y está activado **Guardar adjuntos de audio**.
 
+**Próxima versión:** **Añadir enlace** permitirá pegar varios enlaces a la vez en escritorio y móvil, uno por línea. Pega URL en móvil; el escritorio también admite rutas de archivo locales. Se omiten las líneas vacías y los enlaces conservan el orden. Si alguna línea no es válida, no se añade ningún enlace; un error señala esa línea y el texto pegado permanece para que puedas corregirla. En un borrador de tarea, usa **Guardar** o **Cancelar** como siempre. Una ruta de archivo individual en escritorio puede seguir conteniendo espacios.
+
 ### Copias y enlaces
 
 - **Añadir archivo** guarda una copia en el almacenamiento propio de Mindwtr. El adjunto seguirá funcionando aunque el original se mueva, cambie de nombre o se elimine. Al quitar el adjunto se borra la copia de Mindwtr, no el archivo original.
-- **Añadir enlace** guarda una referencia. Pega una URL o una ruta local —o usa **Enlazar a archivo…** en el escritorio— cuando quieras hacer referencia a un archivo sin copiarlo. Si el archivo se mueve, el enlace a la ruta deja de funcionar, como es de esperar.
+- **Añadir enlace** guarda una referencia. Pega una URL o, en escritorio, una ruta local —también puedes usar **Enlazar a archivo…**— cuando quieras hacer referencia a un archivo sin copiarlo. Si el archivo se mueve, el enlace a la ruta deja de funcionar, como es de esperar.
 - Cada fila indica el tipo: un clip significa que Mindwtr guarda una copia; un icono de enlace indica que es una referencia y su descripción emergente muestra el destino completo.
 - Los adjuntos añadidos en escritorio antes de v1.1.0 hacen referencia a la ruta original en vez de guardar una copia y muestran el icono de enlace. Vuelve a adjuntarlos para convertirlos en copias.
 - **Los archivos adjuntos no están dentro de una copia de seguridad JSON.** La copia guarda solo los metadatos y la ruta de cada adjunto; en escritorio, las copias en sí viven en una carpeta `attachments` junto a `mindwtr.db` y tienes que copiar esa carpeta aparte. Consulta [Copia de seguridad y restauración](/es/data-sync/backup-restore).

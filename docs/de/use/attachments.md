@@ -29,10 +29,12 @@ Mit Mindwtr können Sie Dateien und Links an **Aufgaben** und **Projekte** anhä
 - Verwenden Sie **Anhang hinzufügen**, um eine Datei auszuwählen oder einen Link hinzuzufügen.
 - Audionotizen werden automatisch hinzugefügt, wenn Sie eine Spracherfassung aufnehmen und **Audioanhänge speichern** aktiviert ist.
 
+**Kommende Version:** **Link hinzufügen** wird auf Desktop und Mobilgeräten mehrere zugleich eingefügte Links akzeptieren, einen pro Zeile. Auf Mobilgeräten fügen Sie URLs ein; der Desktop akzeptiert auch lokale Dateipfade. Leere Zeilen werden ignoriert, und die Links behalten ihre Reihenfolge. Ist eine Zeile ungültig, wird kein Link hinzugefügt; eine Fehlermeldung zeigt diese Zeile an und der eingefügte Text bleibt zum Korrigieren erhalten. Verwenden Sie bei einem Aufgabenentwurf wie gewohnt **Speichern** oder **Abbrechen**. Ein einzelner Dateipfad darf auf dem Desktop weiterhin Leerzeichen enthalten.
+
 ### Kopien und Links
 
 - **Datei hinzufügen** speichert eine Kopie der Datei im eigenen Speicher von Mindwtr. Der Anhang funktioniert weiter, wenn die Originaldatei später verschoben, umbenannt oder gelöscht wird. Beim Entfernen des Anhangs wird die Kopie von Mindwtr gelöscht, nicht Ihre Originaldatei.
-- **Link hinzufügen** speichert einen Verweis. Fügen Sie eine URL oder einen lokalen Dateipfad ein (oder verwenden Sie auf dem Desktop **Mit Datei verknüpfen …**, um eine auszuwählen), wenn Sie auf eine Datei verweisen möchten, ohne sie zu kopieren. Ein Pfadlink funktioniert nicht mehr, wenn die Datei verschoben wird – das ist bei einem Link zu erwarten.
+- **Link hinzufügen** speichert einen Verweis. Fügen Sie eine URL ein oder auf dem Desktop einen lokalen Dateipfad (oder verwenden Sie dort **Mit Datei verknüpfen …**, um eine auszuwählen), wenn Sie auf eine Datei verweisen möchten, ohne sie zu kopieren. Ein Pfadlink funktioniert nicht mehr, wenn die Datei verschoben wird – das ist bei einem Link zu erwarten.
 - Jede Anhangszeile zeigt den Typ: Eine Büroklammer bedeutet, dass Mindwtr eine Kopie der Datei besitzt, ein Linksymbol kennzeichnet einen Verweis (der Tooltip zeigt das vollständige Ziel).
 - Vor v1.1.0 auf dem Desktop hinzugefügte Dateianhänge verweisen auf den ursprünglichen Pfad, statt eine Kopie zu enthalten (sie zeigen das Linksymbol). Hängen Sie die Datei erneut an, um sie in eine Kopie umzuwandeln.
 - **Anhangsdateien stecken nicht in einer JSON-Sicherung.** Die Sicherung speichert nur die Metadaten und den Pfad jedes Anhangs; auf dem Desktop liegen die Kopien selbst in einem Ordner `attachments` neben `mindwtr.db`, den Sie separat kopieren müssen. Siehe [Sicherung und Wiederherstellung](/de/data-sync/backup-restore).

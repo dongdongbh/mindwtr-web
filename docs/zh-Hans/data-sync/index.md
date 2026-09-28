@@ -392,6 +392,8 @@ Mindwtr 会在开始同步前检查服务器的写入安全性。服务器必须
 
 > **Linux 说明**：如果你的桌面会话未提供 Secret Service 密钥环（例如 `org.freedesktop.secrets` 不可用），Mindwtr 会回退到 `~/.config/mindwtr/secrets.toml` 中的本地密钥存储。
 
+> **Flatpak（即将发布的 v1.3.3）：** 凭据通过 Secret 门户保存在本地加密存储中，不再需要直接访问主机密钥环。已有的明文备用凭据仅在加密写入并验证成功后才会清除。如果你曾通过 Flatseal 开启密钥环访问，并将凭据仅保存在主机密钥环中，需要重新连接一次 Dropbox 或重新输入相应密码；原有密钥环条目不会被删除。如果门户不可用或访问被拒绝，Mindwtr 会继续使用本地明文备用存储并显示警告。v1.3.2 尚不包含此更改。
+
 > **提示**：对于 Nextcloud，URL 格式为：
 > `https://your-server.com/remote.php/dav/files/USERNAME/path/to/folder`
 >

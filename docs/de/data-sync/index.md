@@ -390,6 +390,8 @@ Mindwtr prüft die Schreibsicherheit des Servers, bevor die Synchronisierung beg
 
 > **Linux-Hinweis:** Ohne Secret-Service-Schlüsselbund (`org.freedesktop.secrets`) verwendet Mindwtr lokale Geheimnisspeicherung in `~/.config/mindwtr/secrets.toml`.
 
+> **Flatpak (v1.3.3, in Vorbereitung):** Zugangsdaten werden über das Secret-Portal in einem verschlüsselten lokalen Speicher abgelegt. Direkter Zugriff auf den Schlüsselbund des Hosts ist nicht erforderlich. Vorhandene Klartextkopien werden erst nach einem überprüften verschlüsselten Schreibvorgang entfernt. Wenn Sie den Schlüsselbundzugriff zuvor über Flatseal aktiviert und Zugangsdaten nur dort gespeichert haben, verbinden Sie Dropbox einmal neu oder geben Sie die betroffenen Passwörter erneut ein. Die alten Einträge werden nicht gelöscht. Ist das Portal nicht verfügbar oder wird der Zugriff abgelehnt, nutzt Mindwtr weiterhin den lokalen Klartextspeicher und zeigt eine Warnung. Diese Änderung ist in v1.3.2 noch nicht enthalten.
+
 > **Tipp:** Nextcloud-URL:
 > `https://your-server.com/remote.php/dav/files/USERNAME/path/to/folder`
 >

@@ -392,6 +392,8 @@ Mindwtr vérifie la sécurité des écritures du serveur avant de lancer la sync
 
 > **Remarque pour Linux :** si votre session de bureau ne fournit pas de trousseau Secret Service (par exemple si `org.freedesktop.secrets` n’est pas disponible), Mindwtr utilise à la place un stockage local des secrets dans `~/.config/mindwtr/secrets.toml`.
 
+> **Flatpak (v1.3.3, à venir) :** Les identifiants utilisent le portail Secret et un stockage local chiffré, sans accès direct au trousseau de l’hôte. Les copies locales en clair ne sont supprimées qu’après vérification de l’écriture chiffrée. Si vous aviez activé l’accès au trousseau dans Flatseal et enregistré les identifiants uniquement dans ce trousseau, reconnectez Dropbox ou saisissez à nouveau les mots de passe concernés une fois. Les anciennes entrées ne sont pas supprimées. Si le portail est indisponible ou si l’accès est refusé, Mindwtr conserve son stockage local en clair et affiche un avertissement. Cette modification n’est pas incluse dans v1.3.2.
+
 > **Conseil :** pour Nextcloud, le format de l’URL est :
 > `https://your-server.com/remote.php/dav/files/USERNAME/path/to/folder`
 >

@@ -141,5 +141,6 @@ Regla práctica:
 
 - El mejor lugar para informar de un error o pedir ayuda es una [incidencia de GitHub](https://github.com/dongdongbh/Mindwtr/issues), ya que permite hacer seguimiento de todo.
 - ¿Ya estás en la aplicación? Usa **Enviar comentarios** en la página **Ajustes → Acerca de**.
+- ¿Quieres compartir capturas de pantalla o grabaciones? Usa el [espacio de ejemplo del entorno de prueba](/es/data-sync/diagnostics-logs#grabar-con-datos-de-ejemplo) para que tus tareas no aparezcan en ellas.
 - Para una consulta privada, escribe a [support@mindwtr.app](mailto:support@mindwtr.app).
 - Consulta las [preguntas frecuentes](/es/start/faq) o lee la guía completa del [flujo de trabajo GTD en Mindwtr](/es/use/gtd-workflow).

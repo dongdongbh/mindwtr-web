@@ -12,7 +12,7 @@ Die Option steht bei der Diagnose. Vor dem Öffnen erklärt ein Bestätigungsdia
 
 Der Beispielarbeitsbereich enthält Aufgaben in verschiedenen Status, Bereiche, Projekte und Abschnitte, wiederkehrende Aufgaben, Checklisten, Notizen, Tags, Kontexte, Personen sowie Beispiele für Termine und Prioritäten. Du kannst sie während einer Aufnahme bearbeiten. Änderungen sind vorübergehend; das Zurücksetzen lädt die ursprünglichen Beispieldaten.
 
-In den Sandbox-Einstellungen kannst du vorübergehend die Aufgabenbearbeitung, Anzeige sowie Datums- und Zeitformate ändern. Auf dem Desktop lässt sich festlegen, wie der Editor geöffnet wird; auf Mobilgeräten stehen Layout-Vorlagen für den Editor bereit. Diese Einstellungen werden beim Verlassen verworfen. Synchronisierung, Integrationen und Gerätesteuerung sind in der Sandbox nicht verfügbar.
+In Versionen nach v1.3.2 kannst du in den Sandbox-Einstellungen vorübergehend die Aufgabenbearbeitung, Anzeige sowie Datums- und Zeitformate ändern. Auf dem Desktop lässt sich festlegen, wie der Editor geöffnet wird; auf Mobilgeräten stehen Layout-Vorlagen für den Editor bereit. Diese Einstellungen werden beim Verlassen verworfen. Synchronisierung, Integrationen und Gerätesteuerung sind in der Sandbox nicht verfügbar.
 
 Beispielinhalte gibt es auf Englisch, Deutsch, Französisch, Spanisch, Russisch und vereinfachtem Chinesisch. Sie richten sich nach der App-Sprache; für andere Sprachen wird Englisch verwendet.
 

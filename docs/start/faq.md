@@ -65,6 +65,10 @@ If you're reporting a bug, please include your **platform** and **app version** 
 
 If Mindwtr is useful to you, support options are listed on the [Support page](https://mindwtr.app/support).
 
+### How can I share UI feedback without showing my tasks?
+
+On desktop or mobile, open **Settings → Data → Open sandbox** to work with fictional tasks and projects. You can edit the samples for screenshots or recordings, then **Reset** them or **Exit** back to your workspace. See [Record with sample data](/data-sync/diagnostics-logs#record-with-sample-data) for details, including temporary settings in newer builds. Check the capture before sharing: the sandbox does not hide operating-system notifications or other apps.
+
 ### Can I open multiple windows?
 
 Not currently. The desktop app is single-window to keep the local-first SQLite data model safe and consistent. Multi-window support is a common request, but not available yet.

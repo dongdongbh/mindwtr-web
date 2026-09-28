@@ -12,7 +12,7 @@ The option is near Diagnostics. A confirmation explains the sandbox before you e
 
 The sample workspace includes tasks in different states, areas, projects and sections, recurring tasks, checklists, notes, tags, contexts, people, and date and priority examples. You can edit the examples while recording. Changes are temporary; resetting reloads the original sample set.
 
-Sandbox Settings also lets you temporarily change task editor, display, and date/time preferences. Desktop includes the editor opening mode; mobile includes editor layout presets. These settings are discarded when you exit. Sync, integrations, and device controls are unavailable in the sandbox.
+In builds after v1.3.2, Sandbox Settings also lets you temporarily change task editor, display, and date/time preferences. Desktop includes the editor opening mode; mobile includes editor layout presets. These settings are discarded when you exit. Sync, integrations, and device controls are unavailable in the sandbox.
 
 Sample content is available in English, German, French, Spanish, Russian, and Simplified Chinese. It follows your app language, with English used for other languages.
 

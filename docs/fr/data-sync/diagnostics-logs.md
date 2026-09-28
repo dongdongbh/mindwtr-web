@@ -12,6 +12,8 @@ L’option se trouve près des diagnostics. Une confirmation explique le bac à 
 
 L’espace d’exemple comprend des tâches dans différents états, des domaines, projets et sections, des tâches récurrentes, des listes de contrôle, des notes, des étiquettes, des contextes, des personnes et des exemples de dates et de priorités. Vous pouvez les modifier pendant l’enregistrement. Ces changements sont temporaires ; la réinitialisation recharge les exemples d’origine.
 
+Dans les versions postérieures à v1.3.2, les réglages du bac à sable permettent aussi de modifier temporairement les préférences de l’éditeur de tâches, d’affichage et de date et heure. Sur ordinateur, ils comprennent le mode d’ouverture de l’éditeur ; sur mobile, les dispositions de l’éditeur. Ces réglages sont abandonnés en quittant le bac à sable. La synchronisation, les intégrations et les commandes de l’appareil n’y sont pas disponibles.
+
 Les exemples sont disponibles en anglais, allemand, français, espagnol, russe et chinois simplifié. Ils suivent la langue de l’application ; l’anglais est utilisé pour les autres langues.
 
 Votre base de données personnelle reste séparée. Quitter le bac à sable vous y ramène ; redémarrer l’application après l’ouverture du bac à sable ramène aussi à l’espace personnel. L’ouverture attend la fin de la synchronisation active et des écritures locales et bloque les nouvelles tentatives de synchronisation pendant le changement. Si le délai est dépassé ou qu’un enregistrement échoue, vous restez dans votre espace personnel. Ses modifications ne sont ni synchronisées ni transmises aux widgets, à la montre, aux rappels, aux calendriers externes ou aux intégrations de capture.

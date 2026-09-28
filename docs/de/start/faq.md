@@ -65,6 +65,10 @@ Geben Sie bei Fehlerberichten bitte **Plattform** und **App-Version** (Einstellu
 
 Wenn Mindwtr Ihnen nützt, finden Sie Unterstützungsmöglichkeiten auf der [Supportseite](https://mindwtr.app/support).
 
+### Wie kann ich Feedback zur Oberfläche teilen, ohne meine Aufgaben zu zeigen?
+
+Öffnen Sie auf dem Desktop oder Mobilgerät **Einstellungen → Daten → Sandbox öffnen**, um mit erfundenen Aufgaben und Projekten zu arbeiten. Sie können die Beispiele für Screenshots oder Aufnahmen bearbeiten und danach mit **Zurücksetzen** neu laden oder mit **Verlassen** zu Ihrem Arbeitsbereich zurückkehren. Weitere Informationen, auch zu vorübergehenden Einstellungen in neueren Versionen, stehen unter [Mit Beispieldaten aufnehmen](/de/data-sync/diagnostics-logs#mit-beispieldaten-aufnehmen). Prüfen Sie die Aufnahme vor dem Teilen: Die Sandbox blendet Betriebssystembenachrichtigungen oder andere Apps nicht aus.
+
 ### Kann ich mehrere Fenster öffnen?
 
 Derzeit nicht. Die Desktop-App verwendet ein einzelnes Fenster, damit das Local-first-SQLite-Datenmodell sicher und konsistent bleibt. Mehrfensterunterstützung wird häufig gewünscht, ist aber noch nicht verfügbar.

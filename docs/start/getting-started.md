@@ -137,5 +137,6 @@ Practical rule:
 
 - The best place to report a bug or ask for help is a [GitHub issue](https://github.com/dongdongbh/Mindwtr/issues). It keeps everything trackable.
 - Already in the app? Use **Send feedback** on the **Settings → About** page.
+- Sharing screenshots or recordings? Use the [sandbox sample workspace](/data-sync/diagnostics-logs#record-with-sample-data) so your own tasks stay out of the capture.
 - For a private question, email [support@mindwtr.app](mailto:support@mindwtr.app).
 - Browse the [FAQ](/start/faq) or read the full [GTD Workflow in Mindwtr](/use/gtd-workflow) guide.

@@ -65,6 +65,10 @@ Si vous signalez un bug, veuillez indiquer votre **plateforme** et la **version 
 
 Si Mindwtr vous est utile, les différentes manières de soutenir le projet sont présentées sur la [page Soutenir](https://mindwtr.app/support).
 
+### Comment partager des retours sur l’interface sans montrer mes tâches ?
+
+Sur ordinateur ou mobile, ouvrez **Paramètres → Données → Ouvrir le bac à sable** pour travailler avec des tâches et projets fictifs. Vous pouvez modifier les exemples pour des captures d’écran ou des enregistrements, puis les **Réinitialiser** ou **Quitter** le bac à sable pour revenir à votre espace personnel. Consultez [Enregistrer avec des données d’exemple](/fr/data-sync/diagnostics-logs#enregistrer-avec-des-donnees-d-exemple) pour plus de détails, y compris les réglages temporaires des versions récentes. Vérifiez la capture avant de la partager : le bac à sable ne masque pas les notifications du système ni les autres applications.
+
 ### Puis-je ouvrir plusieurs fenêtres ?
 
 Pas pour le moment. L’application de bureau ne comporte qu’une fenêtre afin de préserver la sûreté et la cohérence du modèle de données SQLite local-first. La prise en charge de plusieurs fenêtres est souvent demandée, mais n’est pas encore disponible.

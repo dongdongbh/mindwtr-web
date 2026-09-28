@@ -65,6 +65,10 @@ Si informas de un error, incluye tu **plataforma** y la **versión de la aplicac
 
 Si Mindwtr te resulta útil, las opciones de apoyo figuran en la [página de apoyo](https://mindwtr.app/support).
 
+### ¿Cómo puedo compartir comentarios sobre la interfaz sin mostrar mis tareas?
+
+En escritorio o móvil, abre **Ajustes → Datos → Abrir entorno de prueba** para trabajar con tareas y proyectos ficticios. Puedes editar los ejemplos para capturas de pantalla o grabaciones, y después **Reiniciar** los datos o **Salir** a tu espacio personal. Consulta [Grabar con datos de ejemplo](/es/data-sync/diagnostics-logs#grabar-con-datos-de-ejemplo) para más detalles, incluidos los ajustes temporales de versiones posteriores. Revisa la captura antes de compartirla: el entorno de prueba no oculta las notificaciones del sistema ni otras aplicaciones.
+
 ### ¿Puedo abrir varias ventanas?
 
 Actualmente no. La aplicación de escritorio usa una sola ventana para mantener seguro y coherente el modelo de datos SQLite local-first. La compatibilidad con varias ventanas es una solicitud habitual, pero aún no está disponible.

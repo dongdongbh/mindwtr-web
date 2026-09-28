@@ -12,6 +12,8 @@ La opción está junto a Diagnóstico. Antes de entrar, un diálogo explica el e
 
 El espacio de ejemplo incluye tareas en distintos estados, áreas, proyectos y secciones, tareas recurrentes, listas de verificación, notas, etiquetas, contextos, personas y ejemplos de fechas y prioridades. Puedes editarlos mientras grabas. Los cambios son temporales; al restablecer se carga el conjunto original.
 
+En compilaciones posteriores a v1.3.2, los ajustes del entorno de prueba también permiten cambiar temporalmente las preferencias del editor de tareas, la visualización y los formatos de fecha y hora. En escritorio incluyen el modo de apertura del editor; en móvil, los diseños del editor. Estos ajustes se descartan al salir. La sincronización, las integraciones y los controles del dispositivo no están disponibles en el entorno de prueba.
+
 Los ejemplos están disponibles en inglés, alemán, francés, español, ruso y chino simplificado. Siguen el idioma de la aplicación; para otros idiomas se usa el inglés.
 
 Tu base de datos personal se mantiene separada. Al salir vuelves a ella, y reiniciar la aplicación después de abrir el entorno de prueba también devuelve el espacio personal. Antes de entrar, la aplicación espera a que terminen la sincronización activa y las escrituras locales, y bloquea nuevos intentos de sincronización durante el cambio. Si se agota el tiempo de espera o falla un guardado, sigues en tu espacio personal. Sus cambios no se sincronizan ni actualizan widgets, reloj, recordatorios, calendarios externos o integraciones de captura.

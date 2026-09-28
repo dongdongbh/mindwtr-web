@@ -141,5 +141,6 @@ Mindwtr 使用四种不同的分组工具。请各取所长：
 
 - 报告错误或寻求帮助的最佳位置是 [GitHub issue](https://github.com/dongdongbh/Mindwtr/issues)，便于持续跟踪。
 - 已在应用中？使用**设置 → 关于**页面上的**发送反馈**。
+- 要分享截图或录屏？使用[沙盒示例工作区](/zh-Hans/data-sync/diagnostics-logs#使用示例数据录屏)，避免自己的任务出现在画面中。
 - 私密问题请发送邮件至 [support@mindwtr.app](mailto:support@mindwtr.app)。
 - 浏览[常见问题](/zh-Hans/start/faq)，或阅读完整的[Mindwtr 中的 GTD 工作流](/zh-Hans/use/gtd-workflow)指南。

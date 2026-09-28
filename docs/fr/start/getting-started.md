@@ -141,5 +141,6 @@ Règle pratique :
 
 - Le meilleur endroit pour signaler un bogue ou demander de l’aide est un [ticket GitHub](https://github.com/dongdongbh/Mindwtr/issues), afin que le suivi reste visible.
 - Dans l’application, utilisez **Envoyer des commentaires** sur la page **Paramètres → À propos**.
+- Vous partagez des captures d’écran ou des enregistrements ? Utilisez l’[espace d’exemple du bac à sable](/fr/data-sync/diagnostics-logs#enregistrer-avec-des-donnees-d-exemple) pour ne pas montrer vos tâches.
 - Pour une question privée, écrivez à [support@mindwtr.app](mailto:support@mindwtr.app).
 - Consultez la [FAQ](/fr/start/faq) ou le guide complet du [flux GTD dans Mindwtr](/fr/use/gtd-workflow).

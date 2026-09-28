@@ -141,5 +141,6 @@ Praktische Faustregel:
 
 - Fehler und Hilfefragen melden Sie am besten in einem [GitHub-Issue](https://github.com/dongdongbh/Mindwtr/issues). So bleibt alles nachvollziehbar.
 - Sie sind bereits in der App? Verwenden Sie **Feedback senden** unter **Einstellungen → Über**.
+- Möchten Sie Screenshots oder Aufnahmen teilen? Nutzen Sie den [Sandbox-Beispielarbeitsbereich](/de/data-sync/diagnostics-logs#mit-beispieldaten-aufnehmen), damit Ihre eigenen Aufgaben nicht in der Aufnahme erscheinen.
 - Für vertrauliche Fragen schreiben Sie an [support@mindwtr.app](mailto:support@mindwtr.app).
 - Durchsuchen Sie die [FAQ](/de/start/faq) oder lesen Sie den vollständigen Leitfaden zum [GTD-Arbeitsablauf in Mindwtr](/de/use/gtd-workflow).

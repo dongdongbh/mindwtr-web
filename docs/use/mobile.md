@@ -519,6 +519,8 @@ This works the same on Android and iOS. Explicit Edit actions still open Edit, a
 
 The editor starts minimal. Tap **More options** to reveal advanced fields; any field with existing content stays visible.
 
+Tap the **Focus** star in the mobile editor to choose whether a task belongs in Today's Focus. The change takes effect when you tap **Save**; leaving the editor without saving discards it. If the task has a future start date, saving the star queues it for that day without using one of today's Focus slots. A due date alone does not defer it.
+
 Description markdown supports unordered lists and task checkboxes (`- item`, `[ ] item`, `[x] item`).
 Type `[[` in task descriptions or project notes to link another task or project from the link picker sheet.
 Those links are navigational only; they do not sync completion state between tasks.

@@ -519,6 +519,8 @@ Le comportement est identique sur Android et iOS. Une action explicite de modifi
 
 L’éditeur s’ouvre sous une forme minimale. Touchez **Plus d’options** pour afficher les champs avancés ; tout champ qui contient déjà une valeur reste visible.
 
+Touchez l’étoile **Focus** dans l’éditeur mobile pour ajouter ou retirer une tâche du Focus du jour. Le changement prend effet avec **Enregistrer** ; quitter l’éditeur sans enregistrer l’annule. Si la tâche a une date de début future, l’étoile la réserve pour ce jour sans prendre de place dans le Focus d’aujourd’hui. Une date d’échéance seule ne la reporte pas.
+
 Le Markdown de la description prend en charge les listes non ordonnées et les cases à cocher de tâches (`- item`, `[ ] item`, `[x] item`).
 Saisissez `[[` dans les descriptions de tâches ou les notes de projet pour créer un lien vers une autre tâche ou un autre projet depuis la feuille de sélection de liens.
 Ces liens servent uniquement à la navigation ; ils ne synchronisent pas l’état d’achèvement entre les tâches.

@@ -61,7 +61,7 @@ On desktop:
 
 1. Choose a date or open a time slot.
 2. Pick **New** to create a scheduled task, or **Existing** to schedule an unscheduled task.
-3. Set start and end times. Mindwtr checks the slot against scheduled tasks and visible external events.
+3. Set start and end times. Mindwtr checks the slot against scheduled tasks and enabled external events.
 4. Save the task, or adjust timing later from the task editor, day view, or selected-day list.
 
 On wide desktop layouts, **Plan next actions** lists unscheduled next actions for the selected day, including due-but-unscheduled actions. Use it to place a next action into the calendar without opening search. Due dates remain deadlines; scheduling adds a `startTime`.
@@ -72,7 +72,7 @@ On mobile:
 
 1. Open **Calendar -> Schedule Tasks** from the day view.
 2. Select an existing task.
-3. Mindwtr finds the earliest free slot for that day, avoiding visible external events and scheduled tasks.
+3. Mindwtr finds the earliest free slot for that day, avoiding enabled external events and scheduled tasks.
 
 Use the mobile scheduling panel the same way: it is for choosing unscheduled work while you are already looking at the day, then assigning a concrete start time.
 
@@ -114,6 +114,10 @@ External calendar visibility is a local display preference:
 - Settings-synced external calendar subscriptions follow your sync settings.
 - The per-calendar show/hide state in the Calendar view is stored on the current device.
 - Hidden calendars are still available in Settings; they are just excluded from the visible planning surface and free-slot checks on that device.
+
+Use **Show in Areas** in external calendar settings to choose one or more Areas for a calendar; the default is **All areas**. The global Area filter then limits which events appear in Calendar. It does not turn calendars off, remove subscriptions, change task export, or affect free-slot and conflict checks: an event hidden by the Area filter still blocks that time.
+
+Area choices for ICS subscriptions sync with external calendar settings when that settings group is enabled. Device-calendar Area choices stay on this device. Category calendars split from an ICS feed inherit the feed's choice. Deleted Areas are ignored; if none of a calendar's chosen Areas remain, it appears in **All areas** again.
 
 A subscribed `.ics` feed often holds several logical calendars, told apart by each event's `CATEGORIES` field. Mindwtr splits such a feed automatically: every category becomes its own calendar in the Calendar view, with its own colour and its own show/hide toggle. An event that lists several categories belongs to the first one. Feeds that use `CATEGORIES` as free-form tags are left alone — past eight distinct categories the feed stays a single calendar. Either way the feed keeps one row in Settings, since that is where its URL and Remove button live.
 

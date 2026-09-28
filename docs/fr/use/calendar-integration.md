@@ -61,7 +61,7 @@ Sur ordinateur :
 
 1. Choisissez une date ou ouvrez un créneau horaire.
 2. Choisissez **Nouveau** pour créer une tâche planifiée, ou **Existant** pour planifier une tâche qui ne l’est pas encore.
-3. Définissez les heures de début et de fin. Mindwtr vérifie le créneau par rapport aux tâches planifiées et aux événements externes visibles.
+3. Définissez les heures de début et de fin. Mindwtr vérifie le créneau par rapport aux tâches planifiées et aux événements externes activés.
 4. Enregistrez la tâche, ou modifiez ses horaires plus tard depuis l’éditeur de tâche, la vue Jour ou la liste du jour sélectionné.
 
 Sur les mises en page larges pour ordinateur, **Planifier les prochaines actions** répertorie les prochaines actions non planifiées pour le jour sélectionné, y compris celles qui ont une échéance mais ne sont pas planifiées. Utilisez cette liste pour placer une prochaine action dans le calendrier sans ouvrir la recherche. Les dates d’échéance restent des échéances ; la planification ajoute un `startTime`.
@@ -72,7 +72,7 @@ Sur mobile :
 
 1. Ouvrez **Calendrier -> Planifier les tâches** depuis la vue Jour.
 2. Sélectionnez une tâche existante.
-3. Mindwtr trouve le premier créneau libre de la journée en évitant les événements externes visibles et les tâches planifiées.
+3. Mindwtr trouve le premier créneau libre de la journée en évitant les événements externes activés et les tâches planifiées.
 
 Utilisez le panneau de planification mobile de la même façon : il sert à choisir un travail non planifié pendant que vous consultez déjà la journée, puis à lui attribuer une heure de début précise.
 
@@ -114,6 +114,10 @@ La visibilité des calendriers externes est une préférence d’affichage local
 - Les abonnements aux calendriers externes synchronisés dans les paramètres suivent vos paramètres de synchronisation.
 - L’état affiché/masqué de chaque calendrier dans la vue Calendrier est enregistré sur l’appareil actuel.
 - Les calendriers masqués restent disponibles dans les Paramètres ; ils sont simplement exclus de la surface de planification visible et de la vérification des créneaux libres sur cet appareil.
+
+Dans les paramètres d’un calendrier externe, **Afficher dans les domaines** permet de choisir un ou plusieurs domaines ; le réglage par défaut est **Tous les domaines**. Le filtre global de domaine limite alors les événements affichés dans Calendrier. Il ne désactive aucun calendrier, ne supprime aucun abonnement et ne change ni l’export des tâches ni la vérification des créneaux libres et des conflits : un événement masqué par ce filtre occupe toujours son créneau.
+
+Le choix des domaines pour les abonnements ICS se synchronise avec les paramètres des calendriers externes si ce groupe de paramètres est activé. Celui des calendriers de l’appareil reste sur cet appareil. Les calendriers par catégorie issus d’un flux ICS héritent du choix du flux. Les domaines supprimés sont ignorés ; si aucun domaine choisi ne subsiste, le calendrier réapparaît dans **Tous les domaines**.
 
 Un abonnement `.ics` contient souvent plusieurs calendriers logiques, distingués par le champ `CATEGORIES` de chaque événement. Mindwtr divise ce flux automatiquement : chaque catégorie devient un calendrier à part dans la vue Calendrier, avec sa propre couleur et son propre bouton afficher/masquer. Un événement portant plusieurs catégories appartient à la première. Les flux qui utilisent `CATEGORIES` comme étiquettes libres sont laissés tels quels : au-delà de huit catégories distinctes, le flux reste un seul calendrier. Dans les deux cas, le flux garde une seule ligne dans les Paramètres, là où se trouvent son URL et son bouton Supprimer.
 

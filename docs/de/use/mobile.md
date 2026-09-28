@@ -488,6 +488,8 @@ Android und iOS verhalten sich gleich. Ausdrückliche Bearbeiten-Aktionen öffne
 
 Der Editor beginnt minimalistisch; **Weitere Optionen** zeigt erweiterte Felder. Felder mit Inhalt bleiben sichtbar.
 
+Mit dem **Fokus**-Stern im mobilen Editor wählen Sie, ob eine Aufgabe zum Fokus des Tages gehört. Erst **Speichern** übernimmt die Änderung; wenn Sie den Editor ohne Speichern verlassen, wird sie verworfen. Bei einem künftigen Startdatum merkt Mindwtr die Markierung für diesen Tag vor, ohne heute einen Fokusplatz zu belegen. Ein Fälligkeitsdatum allein verschiebt die Aufgabe nicht.
+
 Beschreibungs-Markdown unterstützt Listen und Kontrollkästchen (`- item`, `[ ] item`, `[x] item`). `[[` öffnet in Beschreibungen/Projektnotizen die Verknüpfungsauswahl. Links dienen nur der Navigation; Markdown-Kontrollkästchen beeinflussen die Aufgabencheckliste nicht. Mehrzeiliges Einfügen in einen Checklistenpunkt erzeugt einen Punkt je Zeile (Aufzählungen, Nummerierungen, `[x]` werden erkannt).
 
 **Verantwortliche Person** speichert die Person, die eine Aufgabe betrifft (delegiert, erwartet oder zu besprechen), für die Personen-Ansicht, Vorschläge und die `assigned:`-Suche. Gespeicherte Personen, Notizen und Referenzlinks verwalten Sie unter **Einstellungen → Verwalten**.

@@ -61,7 +61,7 @@ En el escritorio:
 
 1. Elige una fecha o abre un intervalo de tiempo.
 2. Elige **Nueva** para crear una tarea programada o **Existente** para programar una tarea sin programar.
-3. Establece las horas de inicio y fin. Mindwtr comprueba el intervalo frente a las tareas programadas y los eventos externos visibles.
+3. Establece las horas de inicio y fin. Mindwtr comprueba el intervalo frente a las tareas programadas y los eventos externos habilitados.
 4. Guarda la tarea o ajusta el horario más tarde desde el editor de tareas, la vista de día o la lista del día seleccionado.
 
 En diseños de escritorio amplios, **Planificar próximas acciones** enumera las próximas acciones sin programar para el día seleccionado, incluidas las acciones vencidas pero no programadas. Úsalo para colocar una próxima acción en el calendario sin abrir la búsqueda. Las fechas límite siguen siendo plazos; programar añade un `startTime`.
@@ -72,7 +72,7 @@ En el móvil:
 
 1. Abre **Calendario -> Programar tareas** desde la vista de día.
 2. Selecciona una tarea existente.
-3. Mindwtr encuentra el primer intervalo libre de ese día, evitando los eventos externos visibles y las tareas programadas.
+3. Mindwtr encuentra el primer intervalo libre de ese día, evitando los eventos externos habilitados y las tareas programadas.
 
 Usa el panel de programación móvil de la misma manera: sirve para elegir trabajo sin programar mientras ya estás consultando el día y, después, asignarle una hora de inicio concreta.
 
@@ -114,6 +114,10 @@ La visibilidad de los calendarios externos es una preferencia de visualización 
 - Las suscripciones a calendarios externos sincronizadas en Ajustes siguen tus ajustes de sincronización.
 - El estado de mostrar/ocultar de cada calendario en la vista Calendario se almacena en el dispositivo actual.
 - Los calendarios ocultos siguen estando disponibles en Ajustes; simplemente se excluyen de la superficie de planificación visible y de las comprobaciones de intervalos libres en ese dispositivo.
+
+En los ajustes de cada calendario externo, **Mostrar en áreas** permite elegir una o varias áreas; el valor predeterminado es **Todas las áreas**. El filtro global de área limita entonces los eventos que se ven en Calendario. No desactiva calendarios, elimina suscripciones ni cambia la exportación de tareas o las comprobaciones de intervalos libres y conflictos: un evento oculto por el filtro de área sigue ocupando ese tiempo.
+
+Las áreas elegidas para suscripciones ICS se sincronizan con los ajustes de calendarios externos si está activado ese grupo de ajustes. Las de los calendarios del dispositivo permanecen en este dispositivo. Los calendarios por categoría derivados de un feed ICS heredan su selección. Las áreas eliminadas se ignoran; si no queda ninguna de las elegidas, el calendario vuelve a mostrarse en **Todas las áreas**.
 
 Una suscripción `.ics` suele contener varios calendarios lógicos, distinguidos por el campo `CATEGORIES` de cada evento. Mindwtr divide ese feed automáticamente: cada categoría se convierte en su propio calendario en la vista Calendario, con su color y su interruptor de mostrar/ocultar. Un evento que indica varias categorías pertenece a la primera. Los feeds que usan `CATEGORIES` como etiquetas libres se dejan intactos: a partir de ocho categorías distintas el feed sigue siendo un único calendario. En ambos casos el feed conserva una sola fila en Ajustes, que es donde están su URL y el botón Eliminar.
 

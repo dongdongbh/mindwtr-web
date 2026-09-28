@@ -61,7 +61,7 @@ Auf dem Desktop:
 
 1. Wählen Sie ein Datum oder öffnen Sie ein Zeitfenster.
 2. Wählen Sie **Neu**, um eine geplante Aufgabe zu erstellen, oder **Vorhanden**, um eine ungeplante Aufgabe einzuplanen.
-3. Legen Sie Beginn und Ende fest. Mindwtr prüft das Zeitfenster auf Überschneidungen mit geplanten Aufgaben und sichtbaren externen Terminen.
+3. Legen Sie Beginn und Ende fest. Mindwtr prüft das Zeitfenster auf Überschneidungen mit geplanten Aufgaben und aktivierten externen Terminen.
 4. Speichern Sie die Aufgabe oder passen Sie ihre Zeit später im Aufgabeneditor, in der Tagesansicht oder in der Liste des ausgewählten Tages an.
 
 In breiten Desktop-Layouts führt **Nächste Aktionen planen** ungeplante nächste Aktionen für den ausgewählten Tag auf, einschließlich fälliger, aber ungeplanter Aktionen. Damit können Sie eine nächste Aktion ohne Suche in den Kalender eintragen. Fälligkeitsdaten bleiben Fristen; durch die Planung wird ein `startTime` ergänzt.
@@ -72,7 +72,7 @@ Auf Mobilgeräten:
 
 1. Öffnen Sie in der Tagesansicht **Kalender → Aufgaben planen**.
 2. Wählen Sie eine vorhandene Aufgabe.
-3. Mindwtr findet das früheste freie Zeitfenster dieses Tages und vermeidet sichtbare externe Termine und geplante Aufgaben.
+3. Mindwtr findet das früheste freie Zeitfenster dieses Tages und vermeidet aktivierte externe Termine und geplante Aufgaben.
 
 Verwenden Sie das mobile Planungsfeld auf dieselbe Weise: Wählen Sie ungeplante Arbeit aus, während Sie bereits den Tag betrachten, und weisen Sie ihr anschließend einen konkreten Startzeitpunkt zu.
 
@@ -114,6 +114,10 @@ Die Sichtbarkeit externer Kalender ist eine lokale Anzeigeeinstellung:
 - Über die Einstellungen synchronisierte externe Kalenderabonnements richten sich nach Ihren Synchronisierungseinstellungen.
 - Der Ein-/Ausblendzustand jedes Kalenders in der Kalenderansicht wird auf dem aktuellen Gerät gespeichert.
 - Ausgeblendete Kalender bleiben in den Einstellungen verfügbar. Sie werden auf diesem Gerät lediglich von der sichtbaren Planungsoberfläche und der Prüfung freier Zeitfenster ausgeschlossen.
+
+Mit **In Bereichen anzeigen** in den Einstellungen eines externen Kalenders wählen Sie einen oder mehrere Bereiche; Standard ist **Alle Bereiche**. Der globale Bereichsfilter begrenzt dann die angezeigten Termine. Er deaktiviert keine Kalender, entfernt keine Abonnements und ändert weder den Aufgabenexport noch die Prüfung freier Zeitfenster oder Überschneidungen: Ein durch den Bereichsfilter ausgeblendeter Termin belegt seine Zeit weiterhin.
+
+Die Bereichsauswahl für ICS-Abonnements wird mit den Einstellungen externer Kalender synchronisiert, sofern diese Einstellungsgruppe aktiviert ist. Die Auswahl für Gerätekalender bleibt auf diesem Gerät. Aus einem ICS-Feed abgeleitete Kategoriekalender übernehmen die Auswahl des Feeds. Gelöschte Bereiche werden ignoriert; bleibt keine gewählte Zuordnung übrig, erscheint der Kalender wieder in **Alle Bereiche**.
 
 Ein abonnierter `.ics`-Feed enthält oft mehrere logische Kalender, die über das Feld `CATEGORIES` jedes Termins unterschieden werden. Mindwtr teilt einen solchen Feed automatisch auf: Jede Kategorie wird in der Kalenderansicht zu einem eigenen Kalender mit eigener Farbe und eigenem Ein-/Ausblendschalter. Ein Termin mit mehreren Kategorien gehört zur ersten davon. Feeds, die `CATEGORIES` als freie Schlagwörter verwenden, bleiben unangetastet: Ab acht verschiedenen Kategorien bleibt der Feed ein einzelner Kalender. In beiden Fällen behält der Feed eine Zeile in den Einstellungen, denn dort liegen seine URL und die Schaltfläche zum Entfernen.
 

@@ -519,6 +519,8 @@ Android e iOS funcionan igual. Las acciones explícitas de edición siguen abrie
 
 El editor empieza mostrando lo mínimo. Toca **Más opciones** para revelar campos avanzados; cualquier campo que ya tenga contenido permanece visible.
 
+Toca la estrella de **Foco** en el editor móvil para incluir o quitar una tarea del Foco de hoy. El cambio se aplica al tocar **Guardar**; si sales sin guardar, se descarta. Si la tarea tiene una fecha de inicio futura, la estrella la reserva para ese día sin ocupar una plaza de Foco hoy. Una fecha de vencimiento por sí sola no la aplaza.
+
 El Markdown de la descripción admite listas no ordenadas y casillas de tareas (`- item`, `[ ] item`, `[x] item`).
 Escribe `[[` en descripciones de tareas o notas de proyectos para enlazar otra tarea o proyecto desde la hoja del selector de enlaces.
 Esos enlaces solo sirven para navegar; no sincronizan el estado de finalización entre tareas.

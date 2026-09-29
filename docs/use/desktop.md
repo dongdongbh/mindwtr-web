@@ -130,7 +130,7 @@ Filter tasks by energy level, mode, or topic:
 
 ### ⏳ Waiting For
 
-In the next release, tasks with an assigned person show their name directly in the Waiting For list, even when extra details are hidden.
+Tasks with an assigned person show their name directly in the Waiting For list, even when extra details are hidden.
 
 Track delegated items or tasks waiting on external events.
 
@@ -506,7 +506,7 @@ In **Bulk organize**, search for a project or area, or type a new name and choos
 
 Select multiple tasks to perform batch operations:
 
-1. Click **"Select"** in the list header, or use modifier-click selection in the upcoming release
+1. Click **"Select"** in the list header, or use modifier-click selection
 2. Click tasks to select/deselect them
 3. Use the action bar to:
    - **Move**: Change status for all selected

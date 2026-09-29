@@ -640,7 +640,8 @@ Ouvrez les Projets depuis **Menu → Projets**.
 - Affichez tous les projets actifs
 - Consultez le nombre de tâches par projet
 - Touchez un projet pour afficher ses détails
-- Touchez l’étoile d’un projet pour le marquer comme prioritaire (cinq au maximum). Les projets étoilés passent en tête de leur domaine. Les autres suivent l’ordre défini par glisser-déposer sur l’ordinateur, puis le nom ; il n’y a pas de glisser-déposer sur le téléphone
+- Touchez l’étoile d’un projet pour le marquer comme prioritaire (cinq au maximum). Les projets étoilés passent en tête de leur domaine
+- Appuyez longuement sur un projet et choisissez **Monter** ou **Descendre** pour changer sa place dans son domaine. Les projets étoilés et non étoilés gardent chacun leur propre ordre. L’ordre se synchronise avec celui défini par glisser-déposer sur l’ordinateur ; il n’y a pas de glisser-déposer sur le téléphone
 
 ### Détails du projet
 

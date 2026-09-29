@@ -194,6 +194,12 @@ Task et Project acceptent `cancelledAt`, un horodatage ISO facultatif avec fusea
 
 `cancelledAt: null` seul efface le marqueur sans réactiver l'élément. Pour le réactiver, définissez explicitement un `status` non archivé.
 
+## Intégrations communautaires
+
+[omarchy-mindwtr](https://github.com/ssalentin/omarchy-mindwtr), créé par ssalentin, est un plugin communautaire pour la barre [Omarchy](https://omarchy.org/). Il propose un panneau de tâches avec navigation au clavier, capture dans la boîte de réception et validation des tâches terminées via l’API REST Cloud.
+
+Il nécessite Omarchy avec Quickshell et un serveur Mindwtr Cloud auto-hébergé accessible avec un jeton Bearer. Consultez le dépôt du plugin pour l’installation, la configuration et l’assistance, ou participez à la [discussion #1308](https://github.com/dongdongbh/Mindwtr/discussions/1308).
+
 ## Pages connexes
 
 - [Serveur MCP](/fr/power-users/mcp)

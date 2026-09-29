@@ -194,6 +194,12 @@ Task y Project admiten `cancelledAt`, una marca de tiempo ISO opcional con zona 
 
 `cancelledAt: null` por sí solo borra la marca sin reactivar el elemento. Para reactivarlo, establece explícitamente un `status` no archivado.
 
+## Integraciones de la comunidad
+
+[omarchy-mindwtr](https://github.com/ssalentin/omarchy-mindwtr), creado por ssalentin, es un complemento de la comunidad para la barra de [Omarchy](https://omarchy.org/). Ofrece un panel de tareas con navegación por teclado, captura en la bandeja de entrada y la posibilidad de completar tareas mediante la API REST de la nube.
+
+Requiere Omarchy con Quickshell y un servidor Mindwtr Cloud autoalojado accesible con un token Bearer. Consulta el repositorio del complemento para la instalación, la configuración y el soporte, o participa en la [discusión #1308](https://github.com/dongdongbh/Mindwtr/discussions/1308).
+
 ## Páginas relacionadas
 
 - [Servidor MCP](/es/power-users/mcp)

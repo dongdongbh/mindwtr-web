@@ -194,6 +194,12 @@ Task 和 Project 的 `cancelledAt` 是帶時區的可選 ISO 時間戳記。設�
 
 單獨傳送 `cancelledAt: null` 只會清除取消標記，不會重新啟用。重新啟用請明確設定非封存的 `status`。
 
+## 社群整合
+
+[omarchy-mindwtr](https://github.com/ssalentin/omarchy-mindwtr) 是 ssalentin 開發並由社群維護的 [Omarchy](https://omarchy.org/) 狀態列外掛。它提供支援鍵盤導覽的任務面板，可透過 Cloud REST API 將任務收集到收件匣並標記任務完成。
+
+使用此外掛需要配備 Quickshell 的 Omarchy，以及可存取的自架 Mindwtr Cloud 伺服器和 Bearer 權杖。安裝、設定及支援資訊請參閱外掛儲存庫，也可以參與[討論 #1308](https://github.com/dongdongbh/Mindwtr/discussions/1308)。
+
 ## 相關頁面
 
 - [MCP 伺服器](/zh-Hant/power-users/mcp)

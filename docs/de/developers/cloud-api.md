@@ -194,6 +194,12 @@ Task und Project unterstützen `cancelledAt`, einen optionalen ISO-Zeitstempel m
 
 `cancelledAt: null` allein entfernt nur die Abbruchkennzeichnung. Zum Reaktivieren setzen Sie ausdrücklich einen nicht archivierten `status`.
 
+## Community-Integrationen
+
+[omarchy-mindwtr](https://github.com/ssalentin/omarchy-mindwtr) von ssalentin ist ein von der Community gepflegtes Plugin für die [Omarchy](https://omarchy.org/)-Leiste. Es bietet ein Aufgabenpanel mit Tastaturnavigation sowie das Erfassen im Eingang und Abschließen von Aufgaben über die Cloud-REST-API.
+
+Vorausgesetzt werden Omarchy mit Quickshell und ein erreichbarer, selbst gehosteter Mindwtr-Cloud-Server mit Bearer-Token. Installation, Konfiguration und Support findest du im Plugin-Repository; zum Austausch gibt es [Diskussion #1308](https://github.com/dongdongbh/Mindwtr/discussions/1308).
+
 ## Verwandte Seiten
 
 - [MCP-Server](/de/power-users/mcp)

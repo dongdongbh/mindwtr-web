@@ -194,6 +194,12 @@ Cloud-backed MCP mode reads `/v1/data` and exposes read tools for tasks, project
 
 Use `PATCH /v1/tasks/:id` or `PATCH /v1/projects/:id` with `{ "cancelledAt": "2026-09-07T12:00:00.000Z" }`. An explicit active `status` clears cancellation and reactivates the record; sending `cancelledAt: null` alone only clears the outcome marker. Creation accepts the field in `props`.
 
+## Community integrations
+
+[omarchy-mindwtr](https://github.com/ssalentin/omarchy-mindwtr), created by ssalentin, is a community-maintained [Omarchy](https://omarchy.org/) bar plugin. It provides a task panel with keyboard navigation, Inbox capture, and task completion through the Cloud REST API.
+
+It requires Omarchy with Quickshell and a reachable self-hosted Mindwtr Cloud server with a bearer token. See the plugin repository for installation, configuration, and support, or join [discussion #1308](https://github.com/dongdongbh/Mindwtr/discussions/1308).
+
 ## Related Pages
 
 - [MCP Server](/power-users/mcp)

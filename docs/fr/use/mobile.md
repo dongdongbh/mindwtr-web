@@ -731,6 +731,7 @@ Suivez les éléments délégués ou qui dépendent d’événements externes.
 - Sélectionnez plusieurs tâches pour les déplacer ensemble avec la même action. Le sélecteur inclut les sections vides, **Aucune section** et **Nouvelle section…**.
 - Utilisez **Nouvelle section…** dans la liste pour créer un titre de section. Avec le regroupement par section Un jour/Peut-être, **Ajouter une tâche** sur un titre crée une tâche dans cette section.
 - Un déplacement enregistré peut être **annulé**. Le statut, le projet, la section du projet et les dates de la tâche sont conservés. Gérez les noms et l’ordre des sections dans **Paramètres → Gérer**.
+- Les projets Un jour peuvent aller dans les mêmes sections. Quand la liste est groupée par section Un jour, appuyez longuement sur la ligne d’un projet et choisissez **Déplacer vers une section…**. Le projet garde ses tâches, ses propres sections et son domaine. Les projets sans section apparaissent sous **Aucune section**.
 
 Laissez mûrir les idées pour l’avenir.
 

@@ -142,6 +142,7 @@ Ab v1.3.1: Ordnen Sie Aufgaben direkt in dieser Liste in Irgendwann-Abschnitte e
 - Wählen Sie mehrere Aufgaben aus, um sie mit derselben Aktion gemeinsam zu verschieben. Die Auswahl enthält leere Abschnitte, **Kein Abschnitt** und **Neuer Abschnitt…**.
 - Erstellen Sie mit **Neuer Abschnitt…** in der Liste eine Überschrift. Bei Gruppierung nach Irgendwann-Abschnitt erstellt **Aufgabe hinzufügen** an einer Überschrift eine Aufgabe in diesem Abschnitt.
 - Nach dem Speichern können Sie die Verschiebung **rückgängig machen**. Status, Projekt, Projektabschnitt und Termine bleiben erhalten. Namen und Reihenfolge der Abschnitte verwalten Sie unter **Einstellungen → Verwalten**.
+- Irgendwann-Projekte lassen sich in dieselben Abschnitte legen. Wenn die Liste nach Irgendwann-Abschnitt gruppiert ist, nutzen Sie **In Abschnitt verschieben…** in einer Projektzeile. Das Projekt behält seine Aufgaben, eigenen Abschnitte und seinen Bereich. Projekte ohne Abschnitt erscheinen unter **Kein Abschnitt**.
 
 Ideen reifen lassen, die Sie später verfolgen möchten.
 

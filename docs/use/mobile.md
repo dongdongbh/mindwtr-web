@@ -731,6 +731,7 @@ Organize tasks into Someday sections directly from this list.
 - Select several tasks to move them together with the same action. The picker includes empty sections, **No section**, and **New section…**.
 - Use **New section…** in the list to create a heading. When grouped by Someday section, use **Add task** on a heading to create a task in that section.
 - A saved move offers **Undo**. Section changes preserve the task’s status, project, project section, and dates. Manage section names and ordering in **Settings → Manage**.
+- Someday projects can go in the same sections. When the list is grouped by Someday section, long-press a project row and choose **Move to section…**. The project keeps its tasks, its own sections and its area. Projects without a section appear under **No section**.
 
 Incubate ideas for the future.
 

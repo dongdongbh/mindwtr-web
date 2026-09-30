@@ -731,6 +731,7 @@ A partir de v1.3.1: organiza tareas en secciones de Algún día directamente des
 - Selecciona varias tareas para moverlas juntas con la misma acción. El selector incluye secciones vacías, **Sin sección** y **Nueva sección…**.
 - Usa **Nueva sección…** en la lista para crear un encabezado. Al agrupar por sección de Algún día, usa **Añadir tarea** en un encabezado para crear una tarea en esa sección.
 - Después de guardar el cambio puedes **Deshacer**. Se conservan el estado, el proyecto, la sección del proyecto y las fechas de la tarea. Gestiona los nombres y el orden de las secciones en **Ajustes → Gestionar**.
+- Los proyectos de Algún día pueden ir en las mismas secciones. Cuando la lista está agrupada por sección de Algún día, mantén pulsada la fila de un proyecto y elige **Mover a sección…**. El proyecto conserva sus tareas, sus propias secciones y su área. Los proyectos sin sección aparecen en **Sin sección**.
 
 Incuba ideas para el futuro.
 

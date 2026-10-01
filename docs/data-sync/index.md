@@ -342,6 +342,8 @@ Clock-skewed future timestamps more than 5 minutes ahead of the merge clock are 
 
 Detailed merge tie-breaks, retry behavior, and conflict examples live in [Sync Algorithm](/data-sync/sync-algorithm). This page keeps the storage and operational overview only.
 
+Archive retention (available from v1.3.4, off by default) is separate from tombstone retention. Expiration removes archived contents from the current library and creates deletion markers dated at the actual deletion time. The default tombstone-retention period remains **90 days**; a parent marker can remain longer while surviving children reference it. Archive retention does not erase existing backups, recovery snapshots, exports, or provider-managed version history. See [Archived on desktop](/use/desktop) or [History on mobile](/use/mobile) for eligibility and confirmation behavior.
+
 ### Conflict Visibility & Clock Skew
 
 After each sync, Mindwtr stores sync stats in settings:

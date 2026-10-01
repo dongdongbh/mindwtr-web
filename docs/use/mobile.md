@@ -57,7 +57,13 @@ Tap the **Menu** tab to access additional views:
  - 🗑️ **Trash**: Deleted tasks and projects
  - ⚙️ **Settings**: App preferences
 
-Open **History**, stay on the **Done** tab, and tap **Select** to choose tasks, then use **Move → Archived** to file them away early. In **Archived**, tap **Select** or **Select All** to move tasks back to Done without changing their completion time, restore them to Inbox, or move them to Trash. Switch to **Projects** to open, restore, or move archived projects to Trash. Mindwtr permanently deletes items only from Trash.
+Open **History**, stay on the **Done** tab, and tap **Select** to choose tasks, then use **Move → Archived** to file them away early. In **Archived**, tap **Select** or **Select All** to move tasks back to Done without changing their completion time, restore them to Inbox, or move them to Trash. Switch to **Projects** to open, restore, or move archived projects to Trash. Manual permanent deletion is available in Trash.
+
+Starting with v1.3.4, **Settings → Data → Archive retention** can automatically remove expired archived tasks and projects. It defaults to **Never**. Choose a positive whole number of days; enabling or shortening the period asks for confirmation and shows the items currently eligible. The policy and resulting deletions sync to your other devices.
+
+The period starts when an item enters Archive, including cancelled items. Older records without a known archive date get a fresh full period when the enabled policy first sees them. Restoring an item ends its archive period; archiving it again starts a new one. Archived tasks in ongoing projects are kept. An archived project is removed together with its contents only when the whole group is eligible; newer or reactivated work and recent edits defer cleanup. Cleanup runs while the app is active and pauses during editing.
+
+This permanently removes contents from the current library. Turning the setting off cannot restore removed items. Minimal deletion markers remain for sync safety; existing backups, recovery snapshots, exports, and provider version history are not erased.
 
 **Archived** has a search box and a **Filters** button in its header. Filters narrows by context, tag, priority, and time estimate, and holds **Sort** and **Group** — both offering **Completion date**, since everything filed here is finished work. The newest completion comes first by default. Filter selections are shared across the task lists, so a context picked elsewhere narrows this list too. Search and filters apply to the Tasks side of the Tasks | Projects switch.
 

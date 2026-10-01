@@ -777,6 +777,8 @@ Android 12 and later can withhold permission to schedule exact alarms. Without t
 
 Tap **Allow** to open the Android permission screen for Mindwtr. You can also reach it at device **Settings → Apps → Mindwtr → Alarms & reminders**. As soon as the permission is granted, Mindwtr reschedules its reminders as exact alarms without restarting the app, and the row goes away. The row never appears before Android 12, where every alarm is already exact.
 
+Starting with v1.3.4, Android discards one-time reminders that arrive more than 24 hours late, including reminders for unfinished tasks. This prevents old alarms from appearing days later after a restart. Reminders delayed by up to 24 hours can still arrive.
+
 ---
 
 ## Settings

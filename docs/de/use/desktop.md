@@ -480,6 +480,8 @@ In den Einstellungen:
 | **Abschnitt** | Optionale Gruppe in einem Projekt |
 
 **Anhänge:** **Link hinzufügen** akzeptiert URLs und lokale Dateipfade (z. B. `/home/user/doc.pdf`, `C:\Users\you\file.txt` oder `file://...`).
+
+**Ordner verknüpfen…** öffnet eine Ordnerauswahl und verknüpft den Ordner mit dem Projekt oder der Aufgabe. Ein Klick öffnet den Ordner im Finder oder Explorer. Die Verknüpfung funktioniert auf dem Computer, auf dem Sie den Ordner gewählt haben.
 Hinweise zu Synchronisierung, Bereinigung und Audionotizen finden Sie unter [Anhänge](/de/use/attachments).
 
 ### Wiederkehrende Aufgaben

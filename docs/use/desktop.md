@@ -478,6 +478,8 @@ Configure notifications in Settings:
 | **Section**       | Optional group within a project                     |
 
 **Attachments:** The **Add link** field accepts both URLs and local file paths (e.g., `/home/user/doc.pdf`, `C:\Users\you\file.txt`, or `file://...`).
+
+**Link folder…** opens a folder picker and links that folder to the project or task. Click it to open the folder in Finder or File Explorer. The link works on the computer where you picked the folder.
 See [Attachments](/use/attachments) for sync, cleanup, and audio notes.
 
 ### Recurring Tasks

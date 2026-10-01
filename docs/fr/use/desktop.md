@@ -478,6 +478,8 @@ Configurez les notifications dans les Paramètres :
 | **Section**            | Groupe facultatif au sein d’un projet                          |
 
 **Pièces jointes :** le champ **Ajouter un lien** accepte à la fois les URL et les chemins de fichiers locaux (par ex., `/home/user/doc.pdf`, `C:\Users\you\file.txt` ou `file://...`).
+
+**Lier un dossier…** ouvre un sélecteur de dossier et lie ce dossier au projet ou à la tâche. Un clic ouvre le dossier dans le Finder ou l’Explorateur de fichiers. Le lien fonctionne sur l’ordinateur où vous avez choisi le dossier.
 Consultez [Pièces jointes](/fr/use/attachments) pour en savoir plus sur la synchronisation, le nettoyage et les notes audio.
 
 ### Tâches récurrentes

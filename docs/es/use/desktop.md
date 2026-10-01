@@ -478,6 +478,8 @@ Configura las notificaciones en Ajustes:
 | **Sección**       | Grupo opcional dentro de un proyecto                 |
 
 **Adjuntos:** el campo **Añadir enlace** acepta tanto URL como rutas de archivo locales (p. ej., `/home/user/doc.pdf`, `C:\Users\you\file.txt` o `file://...`).
+
+**Enlazar carpeta…** abre un selector de carpetas y enlaza esa carpeta al proyecto o a la tarea. Al hacer clic, la carpeta se abre en Finder o en el Explorador de archivos. El enlace funciona en el ordenador donde elegiste la carpeta.
 Consulta [Adjuntos](/es/use/attachments) para obtener información sobre sincronización, limpieza y notas de audio.
 
 ### Tareas recurrentes

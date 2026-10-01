@@ -196,6 +196,12 @@ Choose **Select** to pick tasks or **Select All**, then use **Move → Archived*
 
 Completed tasks that have been filed away. Archived tasks are hidden from normal task lists, but you can search or restore them here. Click a task's title to open its notes, subtasks, and attachments read-only, without restoring it. Click the **Completed** timestamp to correct it, or use the row's restore action to send the task back to the Inbox. A Tasks | Projects switch at the top shows archived projects instead: restoring one reactivates it (bringing back the tasks completed with it), and deleting moves it to the Trash. Click an archived project's name to open it in Projects, read-only, with the tasks that were completed with it.
 
+Starting with v1.3.4, **Settings → Data → Archive retention** can automatically remove expired archived tasks and projects. It defaults to **Never**. Choose a positive whole number of days; enabling or shortening the period asks for confirmation and shows the items currently eligible. The policy and resulting deletions sync to your other devices.
+
+The period starts when an item enters Archive, including cancelled items. Older records without a known archive date get a fresh full period when the enabled policy first sees them. Restoring an item ends its archive period; archiving it again starts a new one. Archived tasks in ongoing projects are kept. An archived project is removed together with its contents only when the whole group is eligible; newer or reactivated work and recent edits defer cleanup. Cleanup runs while the app is active and pauses during editing.
+
+This permanently removes contents from the current library. Turning the setting off cannot restore removed items. Minimal deletion markers remain for sync safety; existing backups, recovery snapshots, exports, and provider version history are not erased.
+
 Archived shares the control row used by the other task lists: **Filters** narrows by context, tag, priority, and time estimate, while **Sort** and **Group** both offer **Completion date**, since everything here is finished work. The newest completion comes first by default. Filter selections are shared across the task lists, so a context picked elsewhere narrows this list too.
 
 Choose **Select** to pick tasks or **Select All**. You can move the selection back to Done without changing its completion time, restore it to Inbox, or move it to Trash. Mindwtr permanently deletes tasks only from Trash.

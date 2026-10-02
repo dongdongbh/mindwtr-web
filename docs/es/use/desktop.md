@@ -10,6 +10,7 @@ La aplicación de escritorio incluye una barra lateral de navegación con todas 
 
 ## Patrones de interacción
 
+- **Próxima versión:** usa **Copiar título** en el menú **Otras opciones** de una tarea, o pulsa `Ctrl+C` / `Cmd+C` con una tarea resaltada. Si hay varias tareas seleccionadas, el atajo copia sus títulos, uno por línea. Un aviso confirma la copia; copiar texto seleccionado o texto dentro de un editor sigue funcionando como siempre.
 - Un **solo clic** alterna los detalles de la tarea.
 - **Próxima versión:** `Ctrl+click` (Windows/Linux) o `Cmd+click` (macOS) en el título de una tarea o en una zona vacía de su fila la selecciona o deselecciona sin pulsar antes **Seleccionar**. Después de seleccionar una tarea, `Shift+click` selecciona el intervalo hasta otra tarea. Un clic normal sigue alternando los detalles.
 - Un **doble clic** en una tarea abre el modo de edición completo. Para cambiar solo el título en el mismo lugar, elige **Cambiar nombre de la tarea** en el menú `⋯` de la tarea (Enter guarda y Esc cancela).

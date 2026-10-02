@@ -665,6 +665,10 @@ Open Projects from **Menu → Projects**.
 - Complete the project from **Actions** in the project details — remaining tasks are completed with it, the project moves to the **Completed** section at the bottom of the project list, and **Reactivate** undoes it
 - Duplicate the project — swipe its row to the right in the project list, or use **Duplicate** in the project detail sheet — to copy its sections and tasks into a fresh copy (see [Reusable Lists](/use/reusable-lists))
 
+Starting with v1.3.4, **Convert to section…** in the project actions menu moves a simple project into another project. Choose the destination and section name, then review the task count before confirming. Project notes become section notes; all non-deleted tasks move with their contents, status, and relative order intact, including completed and archived tasks. The source project moves to Trash. Moved tasks use the destination’s Area; the source project’s color is not carried over. **Undo** restores the original containers without replacing later edits to task contents.
+
+Conversion is limited to active, parallel projects. The source cannot have sections or project metadata that a section cannot retain, such as attachments, dates, tags, a priority star, or a custom task sort. An unavailable action explains what blocks it. Task attachments and dates do not block conversion.
+
 The **Project Section** field in the task editor assigns a task to one of the sections in its current project. It only matters after the task belongs to a project that has sections; otherwise, leave it blank.
 
 ### Sequential vs Parallel

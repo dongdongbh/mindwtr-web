@@ -84,6 +84,8 @@ Your unified dashboard for daily engagement. Focus is not a full inventory of ev
 
 Focus keeps future-start tasks and later tasks in sequential projects out of its actionable lists; deferred tasks landing within the next week still show in the **Upcoming** preview. Use **Contexts**, **Projects**, or **Search** when you need to inspect broader task inventory.
 
+Starting with v1.3.4, **Settings → GTD → Include tasks starting today in Today** controls whether a start date alone puts a task in Today. It is on by default and syncs across devices. Turn it off to let available next actions stay in Next Actions unless another rule puts them in Today or Review Due. Start dates and times still control availability; due dates, Upcoming previews, and manually starred Today's Focus tasks keep their usual behavior.
+
 **Default Next Actions order:** Focus puts due-soon actions first, undated actions next, and far-future due actions last. Within the same bucket it uses priority when enabled, then start time, creation date, title, and id. See [GTD Workflow in Mindwtr](/use/gtd-workflow#how-focus-sorts-available-actions) for the full logic.
 
 **Features:**

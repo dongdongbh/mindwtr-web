@@ -463,6 +463,9 @@ Tap **Process Inbox** to start the clarify workflow:
 
 ## Focus
 
+Starting with v1.3.4, **Settings → GTD → Include tasks starting today in Today** controls whether a start date alone puts a task in Today. It is on by default and syncs across devices. Turn it off to let available next actions stay in Next Actions unless another rule puts them in Today or Review Due. Start dates and times still control availability; due dates, Upcoming previews, and manually starred Today's Focus tasks keep their usual behavior.
+
+
 Your primary dashboard for doing. Focus is an Engage dashboard, not a full inventory of every task with status `next`.
 
 ### Sections

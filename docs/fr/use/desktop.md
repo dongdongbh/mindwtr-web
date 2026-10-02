@@ -10,6 +10,7 @@ L’application de bureau comporte une barre latérale de navigation avec toutes
 
 ## Modes d’interaction
 
+- **Prochaine version :** utilisez **Copier le titre** dans le menu **Autres options** d’une tâche, ou appuyez sur `Ctrl+C` / `Cmd+C` lorsqu’une tâche est surlignée. Si plusieurs tâches sont sélectionnées, le raccourci copie leurs titres, un par ligne. Un message confirme la copie ; la copie du texte sélectionné ou du texte dans un éditeur fonctionne toujours normalement.
 - Un **simple clic** affiche ou masque les détails d’une tâche.
 - **Prochaine version :** `Ctrl+click` (Windows/Linux) ou `Cmd+click` (macOS) sur le titre d’une tâche ou un espace vide de sa ligne la sélectionne ou la désélectionne sans appuyer d’abord sur **Sélectionner**. Après avoir sélectionné une tâche, `Shift+click` sélectionne la plage jusqu’à une autre tâche. Un clic simple continue d’afficher ou masquer les détails.
 - Un **double clic** sur une tâche ouvre le mode d’édition complet. Pour renommer uniquement le titre sur place, choisissez **Renommer la tâche** dans le menu `⋯` de la tâche (Entrée enregistre, Échap annule).

@@ -4,6 +4,7 @@ Mindwtr sur ordinateur permet une utilisation centrée sur le clavier avec les p
 
 ## Prise en main rapide
 
+- **Prochaine version :** utilisez **Copier le titre** dans le menu **Autres options** d’une tâche, ou appuyez sur `Ctrl+C` / `Cmd+C` lorsqu’une tâche est surlignée. Si plusieurs tâches sont sélectionnées, le raccourci copie leurs titres, un par ligne. Un message confirme la copie ; la copie du texte sélectionné ou du texte dans un éditeur fonctionne toujours normalement.
 - Choisissez le préréglage dans **Paramètres -> Général -> Raccourcis clavier**.
 - Appuyez sur `?` pour afficher la fiche des raccourcis actifs. Elle se termine par un tableau de la syntaxe d’ajout rapide qui recense tous les jetons (`/start:`, `/note:`, `@context`, `+Project`, …).
 - Utilisez `/` pour rechercher.

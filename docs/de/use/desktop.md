@@ -149,6 +149,8 @@ Ideen reifen lassen, die Sie später verfolgen möchten.
 
 ### 🗓️ Kalender
 
+In der Tages- und Wochenansicht erscheinen Fristen mit Uhrzeit als **Fällig**-Markierungen zur angegebenen Zeit. Fristen ohne Uhrzeit bleiben im Ganztagsbereich. Eine Aufgabe kann sowohl ihren geplanten Arbeitsblock als auch ihre Frist anzeigen. Fristmarkierungen reservieren keine Zeit und benötigen keine Zeitschätzung. Wähle eine Markierung, um die Aufgabe zu bearbeiten; Markierungen lassen sich weder ziehen noch in der Größe ändern. Monatszellen behalten eine kompakte Aufgabenzeile mit der Fälligkeitszeit.
+
 Zeitbasierte Ansicht von Aufgaben mit Fälligkeitsdaten oder Startzeiten.
 
 In breiten Layouts enthält der Kalender für den ausgewählten Tag ein Feld **Nächste Aktionen planen**. Es zeigt ungeplante nächste Aktionen und fällige, aber ungeplante Aufgaben, damit Sie sie direkt in freie Zeiten legen können. Klappen Sie das Feld ein, um mehr Platz für das Tages-/Wochenraster zu erhalten.

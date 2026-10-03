@@ -596,6 +596,8 @@ Los eventos externos son de solo lectura y no se sincronizan de vuelta con su or
 
 ## Calendario
 
+En las vistas de día y semana, los plazos con hora aparecen como marcadores de **Vencimiento** a esa hora; los plazos sin hora permanecen en la franja de todo el día. Una tarea puede mostrar tanto su bloque de trabajo programado como su vencimiento. Los marcadores no reservan tiempo ni requieren una estimación. Selecciona un marcador para editar la tarea; no se pueden arrastrar ni redimensionar. Las celdas del mes mantienen una fila compacta con la hora de vencimiento.
+
 Vista temporal con funciones de programación.
 
 ### Vistas

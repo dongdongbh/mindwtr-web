@@ -149,6 +149,8 @@ Incuba ideas que quizá quieras llevar a cabo más adelante.
 
 ### 🗓️ Calendario
 
+En las vistas de día y semana, los plazos con hora aparecen como marcadores de **Vencimiento** a esa hora; los plazos sin hora permanecen en la franja de todo el día. Una tarea puede mostrar tanto su bloque de trabajo programado como su vencimiento. Los marcadores no reservan tiempo ni requieren una estimación. Selecciona un marcador para editar la tarea; no se pueden arrastrar ni redimensionar. Las celdas del mes mantienen una fila compacta con la hora de vencimiento.
+
 Vista temporal de las tareas con fechas de vencimiento u horas de inicio.
 
 En diseños anchos, el Calendario incluye un panel **Planificar próximas acciones** para el día seleccionado. Muestra Próximas acciones no programadas y tareas vencidas pero sin programar para que puedas colocarlas en huecos libres sin salir del Calendario. Contrae el panel cuando quieras más espacio para la cuadrícula diaria o semanal.

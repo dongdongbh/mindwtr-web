@@ -155,6 +155,8 @@ Incubate ideas you might want to pursue later.
 
 ### 🗓️ Calendar
 
+In day and week views, deadlines with a time appear as **Due** markers at that time; date-only deadlines stay in the all-day lane. A task can show both its scheduled work block and its deadline. Deadline markers do not reserve time or require an estimate. Select a marker to edit the task; markers cannot be dragged or resized. Month cells keep a compact task row with the due time.
+
 Time-based view of tasks with due dates or start times.
 
 On wide layouts, the Calendar includes a **Plan next actions** panel for the selected day. It surfaces unscheduled Next Actions and due-but-unscheduled tasks so you can place them into open time without leaving Calendar. Collapse the panel when you want more room for the day/week grid.

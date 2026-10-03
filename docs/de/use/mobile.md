@@ -555,6 +555,8 @@ Externe Termine sind schreibgeschützt. Über **Aufgabe erstellen** entsteht ein
 
 ## Kalender
 
+In der Tages- und Wochenansicht erscheinen Fristen mit Uhrzeit als **Fällig**-Markierungen zur angegebenen Zeit. Fristen ohne Uhrzeit bleiben im Ganztagsbereich. Eine Aufgabe kann sowohl ihren geplanten Arbeitsblock als auch ihre Frist anzeigen. Fristmarkierungen reservieren keine Zeit und benötigen keine Zeitschätzung. Wähle eine Markierung, um die Aufgabe zu bearbeiten; Markierungen lassen sich weder ziehen noch in der Größe ändern. Monatszellen behalten eine kompakte Aufgabenzeile mit der Fälligkeitszeit.
+
 ### Ansichten
 
 - **Monatsansicht**: Aufgaben mit Fälligkeitsdaten

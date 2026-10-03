@@ -596,6 +596,8 @@ Les événements externes sont en lecture seule et ne sont pas resynchronisés v
 
 ## Calendrier
 
+Dans les vues jour et semaine, les échéances avec une heure apparaissent comme des repères **Échéance** à cette heure ; celles sans heure restent dans la zone des événements de la journée. Une tâche peut afficher à la fois son créneau de travail et son échéance. Ces repères ne réservent aucun temps et ne nécessitent aucune estimation. Sélectionnez un repère pour modifier la tâche ; il ne peut être ni déplacé par glisser-déposer ni redimensionné. Les cases du mois gardent une ligne compacte avec l’heure d’échéance.
+
 Vue chronologique avec fonctions de planification.
 
 ### Vues

@@ -149,6 +149,8 @@ Laissez mûrir les idées que vous voudrez peut-être poursuivre plus tard.
 
 ### 🗓️ Calendrier
 
+Dans les vues jour et semaine, les échéances avec une heure apparaissent comme des repères **Échéance** à cette heure ; celles sans heure restent dans la zone des événements de la journée. Une tâche peut afficher à la fois son créneau de travail et son échéance. Ces repères ne réservent aucun temps et ne nécessitent aucune estimation. Sélectionnez un repère pour modifier la tâche ; il ne peut être ni déplacé par glisser-déposer ni redimensionné. Les cases du mois gardent une ligne compacte avec l’heure d’échéance.
+
 Vue chronologique des tâches avec des échéances ou des heures de début.
 
 Sur les mises en page larges, le Calendrier comprend un panneau **Planifier les actions suivantes** pour le jour sélectionné. Il présente les Actions suivantes non planifiées et les tâches échues mais non planifiées afin que vous puissiez les placer dans les créneaux libres sans quitter le Calendrier. Réduisez le panneau lorsque vous souhaitez laisser plus de place à la grille du jour ou de la semaine.

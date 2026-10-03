@@ -605,6 +605,8 @@ External events are view-only and are not synced back to their source. Tap an ex
 
 ## Calendar
 
+In day and week views, deadlines with a time appear as **Due** markers at that time; date-only deadlines stay in the all-day lane. A task can show both its scheduled work block and its deadline. Deadline markers do not reserve time or require an estimate. Select a marker to edit the task; markers cannot be dragged or resized. Month cells keep a compact task row with the due time.
+
 Time-based view with scheduling capabilities.
 
 ### Views

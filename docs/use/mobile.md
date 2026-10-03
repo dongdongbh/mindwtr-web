@@ -247,6 +247,8 @@ Android Tasks and Compact lists scroll beyond 20 tasks. For a very large list, *
 
 ### iOS Home Screen Widget
 
+Tasks and Compact widgets show each task’s contexts beneath its title. Long context lists fit on one line and may be shortened; tasks without contexts keep their usual layout.
+
 Choose **Tasks** for the regular widget, available in small, medium and large sizes (plus extra-large on supported iPads), or **Compact** for smaller text and a flat Focus list. Compact has no list picker or check-off rings; medium and larger sizes still link to tasks and quick capture.
 
 Tasks and Compact show Today's Focus and Today first, including overdue tasks. When that list is empty, they show Next Actions instead, with a short Today or Next heading to identify the list. They do not mix Next Actions into a nonempty Today list. Rows adapt to the widget's size and text size. The Tasks widget keeps the date, priority rings, project or area labels, and the app's filters, theme and sort order.

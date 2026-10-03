@@ -396,7 +396,7 @@ Captura tareas con la voz mediante transcripción con IA.
 ### Usar la captura de audio
 
 - **Adición rápida**: cambia el modo de captura a **Audio** (icono de micrófono) en la barra de Adición rápida.
-- **Grabar**: haz clic en el micrófono para comenzar a grabar. Di la tarea con naturalidad.
+- **Grabar**: haz clic en el micrófono para comenzar a grabar. Di la tarea con naturalidad. En el modo Audio de Adición rápida, pulsa Intro para empezar a grabar y vuelve a pulsarlo cuando la grabación esté en marcha para detenerla y guardarla. El botón de grabación conserva el foco del teclado durante el inicio.
 - **Finalizar**: haz clic en detener para transcribir. El texto aparecerá en el campo de entrada.
 - **Editor de tareas**: el campo de descripción tiene su propio botón de micrófono. Graba y transcribe en la descripción con el mismo proveedor y modo de procesamiento.
 - **Adjuntos**: activa «Guardar adjuntos de audio» en **Ajustes → General** para conservar la nota de voz original.

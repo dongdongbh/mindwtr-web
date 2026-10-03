@@ -241,6 +241,8 @@ Dans la prochaine version, les listes des widgets Tâches et Compact d’Android
 
 ### Widget iOS de l’écran d’accueil
 
+Les widgets Tâches et Compact affichent les contextes de chaque tâche sous son titre. Les longues listes de contextes tiennent sur une ligne et peuvent être tronquées ; les tâches sans contexte conservent leur présentation habituelle.
+
 Choisissez **Tâches** pour le widget classique, disponible en petit, moyen et grand format (ainsi qu’extra-large sur les iPad compatibles), ou **Compact** pour un texte plus petit et une liste Focus sans sections. Compact n’a ni choix de liste ni anneaux de clôture ; les formats moyens et grands permettent toujours d’ouvrir les tâches et la capture rapide.
 
 Tâches et Compact affichent d’abord le focus du jour et Aujourd’hui, y compris les tâches en retard. Si cette liste est vide, ils affichent les Prochaines actions ; le titre court Aujourd’hui ou Prochaines indique la liste affichée. Ils ne mélangent pas les prochaines actions à une liste Aujourd’hui non vide. Le nombre de lignes s’adapte à la taille du widget et du texte. Tâches conserve la date, les anneaux de priorité, le projet ou le domaine, ainsi que les filtres, le thème et le tri de l’app.

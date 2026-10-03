@@ -241,6 +241,8 @@ En la próxima versión, las listas de los widgets Tareas y Compacto de Android 
 
 ### Widget de la pantalla de inicio de iOS
 
+Los widgets Tareas y Compacto muestran los contextos de cada tarea debajo del título. Las listas largas de contextos se limitan a una línea y pueden aparecer recortadas; las tareas sin contextos conservan su diseño habitual.
+
 Elige **Tareas** para el widget normal, disponible en tamaños pequeño, mediano y grande (también extragrande en iPads compatibles), o **Compacto** para texto más pequeño y una lista plana de Enfoque. Compacto no tiene selector de lista ni anillos para completar; los tamaños mediano y superiores permiten abrir tareas y la captura rápida.
 
 Tareas y Compacto muestran primero el enfoque de hoy y Hoy, incluidas las tareas vencidas. Si esa lista está vacía, muestran Próximas acciones; el título corto Hoy o Próximas identifica la lista. No mezclan próximas acciones con una lista Hoy que tenga tareas. Las filas se adaptan al tamaño del widget y del texto. Tareas conserva la fecha, los anillos de prioridad, el proyecto o área y los filtros, tema y orden de la app.

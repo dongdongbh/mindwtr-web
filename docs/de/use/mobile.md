@@ -230,6 +230,8 @@ Ab der nächsten Version lassen sich die Listen der Android-Widgets Aufgaben und
 
 ### iOS-Widget auf dem Home-Bildschirm
 
+Die Widgets Aufgaben und Kompakt zeigen die Kontexte einer Aufgabe unter ihrem Titel. Lange Kontextlisten passen in eine Zeile und können gekürzt werden; Aufgaben ohne Kontexte behalten ihr gewohntes Layout.
+
 Wählen Sie **Aufgaben** für das reguläre Widget in klein, mittel oder groß (zusätzlich extragroß auf unterstützten iPads), oder **Kompakt** für kleinere Schrift und eine flache Fokusliste. Kompakt hat weder Listenauswahl noch Abschlussringe; mittlere und größere Varianten öffnen weiterhin Aufgaben und die Schnellerfassung.
 
 Aufgaben und Kompakt zeigen zuerst Heutiger Fokus und Heute einschließlich überfälliger Aufgaben. Ist diese Liste leer, erscheinen stattdessen Nächste Aktionen; die kurze Überschrift Heute oder Nächste zeigt die aktuelle Liste an. Eine nicht leere Heute-Liste wird nicht mit nächsten Aktionen gemischt. Die Zeilenzahl passt sich an Widget- und Schriftgröße an. Das Aufgaben-Widget behält Datum, Prioritätsringe, Projekt oder Bereich sowie Filter, Design und Sortierung der App bei.

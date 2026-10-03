@@ -398,7 +398,7 @@ Aufgaben per Sprache mit KI-gestützter Transkription erfassen.
 ### Audioerfassung verwenden
 
 - **Schnell hinzufügen**: Modus in der Leiste über das Mikrofonsymbol auf **Audio** stellen
-- **Aufnehmen**: Mikrofon anklicken und Aufgabe natürlich sprechen
+- **Aufnehmen**: Mikrofon anklicken und Aufgabe natürlich sprechen Im Audiomodus von Schnell hinzufügen startet die Eingabetaste die Aufnahme. Sobald die Aufnahme läuft, beendet und speichert ein erneuter Druck auf die Eingabetaste sie. Die Aufnahmeschaltfläche behält beim Start den Tastaturfokus.
 - **Beenden**: Stopp anklicken; der Text füllt das Eingabefeld
 - **Aufgabeneditor**: Das Beschreibungsfeld hat eine eigene Mikrofonschaltfläche. Sie nimmt auf und transkribiert mit demselben Anbieter und Verarbeitungsmodus in die Beschreibung.
 - **Anhänge**: **Audioanhänge speichern** unter **Einstellungen → Allgemein** aktivieren, um die Originalaufnahme zu behalten

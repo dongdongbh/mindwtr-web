@@ -396,7 +396,7 @@ Collectez des tâches avec votre voix grâce à la transcription assistée par I
 ### Utiliser la capture audio
 
 - **Ajout rapide** : basculez le mode de capture sur **Audio** (icône de microphone) dans la barre Ajout rapide.
-- **Enregistrer** : cliquez sur le microphone pour commencer l’enregistrement. Énoncez votre tâche naturellement.
+- **Enregistrer** : cliquez sur le microphone pour commencer l’enregistrement. Énoncez votre tâche naturellement. En mode Audio dans Ajout rapide, appuyez sur Entrée pour lancer l’enregistrement, puis à nouveau une fois l’enregistrement commencé pour l’arrêter et le sauvegarder. Le bouton conserve le focus du clavier pendant le démarrage.
 - **Terminer** : cliquez sur Arrêter pour transcrire. Le texte remplira le champ de saisie.
 - **Éditeur de tâche** : le champ de description possède son propre bouton de microphone. Il enregistre et transcrit dans la description avec le même fournisseur et le même mode de traitement.
 - **Pièces jointes** : activez « Enregistrer les pièces jointes audio » dans **Paramètres → Général** pour conserver la note vocale d’origine.

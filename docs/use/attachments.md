@@ -94,3 +94,13 @@ File Sync keeps immutable attachment generations in the shared folder after clea
 - [Data and Sync](/data-sync/)
 - [User Guide Desktop](/use/desktop)
 - [User Guide Mobile](/use/mobile)
+
+## UpNote links
+
+**Upcoming release:** You can add an UpNote note link through **Add link**, or use an explicit Markdown link in a task description or project note:
+
+```md
+[Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)
+```
+
+Mindwtr opens the link only when you click or tap it. UpNote must be installed on that device. If opening fails, Mindwtr offers **Copy link** so you can keep using the original address. Mindwtr stores the link; UpNote manages the note and its synchronization.

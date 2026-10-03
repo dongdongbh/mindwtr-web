@@ -94,3 +94,13 @@ Die Datei-Synchronisierung behält unveränderliche Anhangsgenerationen nach der
 - [Daten und Synchronisierung](/de/data-sync/)
 - [Desktop-Benutzerhandbuch](/de/use/desktop)
 - [Mobiles Benutzerhandbuch](/de/use/mobile)
+
+## UpNote-Links
+
+**Nächste Version:** Sie können einen UpNote-Notizlink über **Link hinzufügen** speichern oder einen ausdrücklichen Markdown-Link in einer Aufgabenbeschreibung oder Projektnotiz verwenden:
+
+```md
+[Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)
+```
+
+Mindwtr öffnet den Link erst beim Anklicken oder Antippen. UpNote muss auf dem Gerät installiert sein. Schlägt das Öffnen fehl, bietet Mindwtr **Link kopieren** an, damit Sie die ursprüngliche Adresse weiterverwenden können. Mindwtr speichert den Link; UpNote verwaltet die Notiz und ihre Synchronisierung.

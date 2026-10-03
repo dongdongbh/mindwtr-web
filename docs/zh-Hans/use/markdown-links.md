@@ -72,3 +72,13 @@ Mindwtr 支持在笔记中使用内部 Markdown 链接交叉引用任务和项�
 
 - [Obsidian 集成](/zh-Hans/power-users/obsidian)
 - [核心 API](/zh-Hans/developers/core-api)
+
+## UpNote 链接
+
+**下一版本：**你可以通过**添加链接**保存 UpNote 笔记链接，也可以在任务描述或项目笔记中使用明确的 Markdown 链接：
+
+```md
+[Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)
+```
+
+Mindwtr 仅在你点击链接时打开它。该设备需要安装 UpNote。如果无法打开，Mindwtr 会提供**复制链接**操作，让你继续使用原始地址。Mindwtr 保存链接；笔记及其同步由 UpNote 管理。

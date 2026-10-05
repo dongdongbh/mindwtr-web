@@ -107,7 +107,7 @@ Les noms de contextes et de tags acceptent les lettres et chiffres Unicode (y co
 1. Ouvrez l’éditeur de tâche
 2. Ajoutez les contextes dans le champ Contextes (séparés par des virgules)
 
-Prochaine version : lorsque vous saisissez un nom de contexte dans l’ajout rapide ou l’éditeur de tâche, les correspondances peuvent aussi inclure les contextes de tâches terminées ou archivées qui sont encore conservées. Les premières suggestions restent limitées ; les tâches supprimées ne fournissent pas de suggestions. Les filtres de contexte actifs ne changent pas.
+Lorsque vous saisissez un nom de contexte dans l’ajout rapide ou l’éditeur de tâche, les correspondances peuvent aussi inclure les contextes de tâches terminées ou archivées qui sont encore conservées. Les premières suggestions restent limitées ; les tâches supprimées ne fournissent pas de suggestions. Les filtres de contexte actifs ne changent pas.
 
 ### Filtrer par contexte
 
@@ -195,7 +195,7 @@ Lorsque vous filtrez par contexte parent, tous ses enfants sont inclus :
 | `@work` | `@work`, `@work/meetings`, `@work/calls` |
 | `#health` | `#health`, `#health/fitness`, `#health/diet` |
 
-Prochaine version : dans Contextes, un filtre parent comme `@tools` est proposé lorsque des tâches du périmètre actuel utilisent `@tools/excavator`, même si aucune tâche ne porte le libellé parent lui-même. Un filtre sélectionné reste visible et peut être désélectionné lorsqu’il ne donne aucun résultat. Les branches non sélectionnées disparaissent des choix lorsqu’elles ne contiennent plus de tâches admissibles.
+Dans Contextes, un filtre parent comme `@tools` est proposé lorsque des tâches du périmètre actuel utilisent `@tools/excavator`, même si aucune tâche ne porte le libellé parent lui-même. Un filtre sélectionné reste visible et peut être désélectionné lorsqu’il ne donne aucun résultat. Les branches non sélectionnées disparaissent des choix lorsqu’elles ne contiennent plus de tâches admissibles.
 
 Cela permet de filtrer à un niveau général tout en conservant une organisation précise.
 

@@ -10,9 +10,9 @@ La aplicación de escritorio incluye una barra lateral de navegación con todas 
 
 ## Patrones de interacción
 
-- **Próxima versión:** usa **Copiar título** en el menú **Otras opciones** de una tarea, o pulsa `Ctrl+C` / `Cmd+C` con una tarea resaltada. Si hay varias tareas seleccionadas, el atajo copia sus títulos, uno por línea. Un aviso confirma la copia; copiar texto seleccionado o texto dentro de un editor sigue funcionando como siempre.
+- usa **Copiar título** en el menú **Otras opciones** de una tarea, o pulsa `Ctrl+C` / `Cmd+C` con una tarea resaltada. Si hay varias tareas seleccionadas, el atajo copia sus títulos, uno por línea. Un aviso confirma la copia; copiar texto seleccionado o texto dentro de un editor sigue funcionando como siempre.
 - Un **solo clic** alterna los detalles de la tarea.
-- **Próxima versión:** `Ctrl+click` (Windows/Linux) o `Cmd+click` (macOS) en el título de una tarea o en una zona vacía de su fila la selecciona o deselecciona sin pulsar antes **Seleccionar**. Después de seleccionar una tarea, `Shift+click` selecciona el intervalo hasta otra tarea. Un clic normal sigue alternando los detalles.
+- `Ctrl+click` (Windows/Linux) o `Cmd+click` (macOS) en el título de una tarea o en una zona vacía de su fila la selecciona o deselecciona sin pulsar antes **Seleccionar**. Después de seleccionar una tarea, `Shift+click` selecciona el intervalo hasta otra tarea. Un clic normal sigue alternando los detalles.
 - Un **doble clic** en una tarea abre el modo de edición completo. Para cambiar solo el título en el mismo lugar, elige **Cambiar nombre de la tarea** en el menú `⋯` de la tarea (Enter guarda y Esc cancela).
 - Haz **clic fuera** de un editor de tareas abierto para cerrarlo si no se ha cambiado nada; una vez editado algún campo, para cerrarlo hay que usar Guardar, Cancelar o Esc.
 - El **clic derecho** abre menús contextuales (proyectos y tareas).
@@ -75,7 +75,7 @@ Tu zona de captura. Todas las tareas nuevas llegan aquí antes de procesarlas.
 
 Tu panel unificado para la actividad diaria. Foco no es un inventario completo de todas las tareas con estado `next`; limita la lista al trabajo disponible ahora.
 
-**Próxima versión:** Las secciones de Foco aparecen en este orden: **Foco de hoy → Hoy → Próximas acciones → Revisión pendiente → Próximas**.
+Las secciones de Foco aparecen en este orden: **Foco de hoy → Hoy → Próximas acciones → Revisión pendiente → Próximas**.
 
 - **Foco de hoy**: tareas prioritarias marcadas con estrella cuyo día de inicio ya ha llegado. El límite configurado se aplica a las estrellas añadidas para hoy; las tareas futuras en espera no ocupan un lugar hoy. Las próximas acciones enfocadas también muestran una pequeña estrella rellena junto a su título en las listas y en el Tablero.
 - **Hoy**: elementos cuya fecha de vencimiento ya pasó; tareas que vencen hoy o empiezan hoy, incluidas las que empiezan más tarde hoy, ordenadas por hora, y esas filas muestran su hora de inicio hasta que llega.
@@ -131,7 +131,7 @@ Filtra tareas por nivel de energía, modo o tema:
 
 ### ⏳ En espera
 
-En la próxima versión, las tareas con una persona asignada mostrarán su nombre directamente en la lista En espera, incluso con los detalles adicionales ocultos.
+Las tareas con una persona asignada muestran su nombre directamente en la lista En espera, incluso con los detalles adicionales ocultos.
 
 Controla los elementos delegados o las tareas que esperan acontecimientos externos.
 
@@ -512,7 +512,7 @@ En **Organizar en lote**, busca un proyecto o área, o escribe un nombre nuevo y
 
 Selecciona varias tareas para realizar operaciones por lotes:
 
-1. Haz clic en **«Seleccionar»** en el encabezado de la lista o, en la próxima versión, selecciona con una tecla modificadora y un clic
+1. Haz clic en **«Seleccionar»** en el encabezado de la lista o, selecciona con una tecla modificadora y un clic
 2. Haz clic en las tareas para seleccionarlas o anular la selección
 3. Usa la barra de acciones para:
    - **Mover**: cambia el estado de todas las seleccionadas
@@ -580,7 +580,7 @@ Consulta [Atajos de teclado de escritorio](/es/use/keyboard-shortcuts) para ver 
 - `e`: edita la tarea seleccionada
 - `x`: alterna el estado terminado
 - `dd`: elimina la tarea
-- En la próxima versión, `yy` copiará el título de la tarea seleccionada; `yi` copiará el título y la descripción como texto sin formato. Si no hay descripción, `yi` copiará solo el título. Estos atajos funcionan en modo Vim, fuera de campos de texto y diálogos.
+- `yy` copia el título de la tarea seleccionada; `yi` copia el título y la descripción como texto sin formato. Si no hay descripción, `yi` copia solo el título. Estos atajos funcionan en modo Vim, fuera de campos de texto y diálogos.
 
 `Ctrl+Z` / `Cmd+Z` deshace la última finalización o eliminación de una tarea en todos los preajustes.
 

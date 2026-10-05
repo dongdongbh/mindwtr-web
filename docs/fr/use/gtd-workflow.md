@@ -230,7 +230,7 @@ Le champ **Section de projet** d’une tâche l’associe à l’une des section
 
 Les projets séquentiels peuvent utiliser une portée au niveau du projet ou de la section. Utilisez la portée de section lorsqu’un projet comporte des phases ou des flux de travail indépendants : Mindwtr affiche la première tâche disponible de chaque section au lieu de bloquer tout le projet derrière une seule tâche. Avec la portée par section, terminer la dernière action suivante d’une section déclenche la question « Quelle est l’action suivante ? » pour cette section, comme après la dernière action du projet entier.
 
-Dans la prochaine version, cette invite propose aussi **Enregistrer et modifier**. Elle enregistre la tâche de suivi et ouvre l’éditeur pour vous permettre d’ajouter des dates, de définir une priorité facultative ou de passer son statut à Boîte de réception. Par défaut, la nouvelle tâche est une action suivante dans le même projet et la même section ; les commandes explicites de capture rapide restent prises en compte. **Ajouter l’action** conserve l’enregistrement rapide actuel.
+Cette invite propose aussi **Enregistrer et modifier**. Elle enregistre la tâche de suivi et ouvre l’éditeur pour vous permettre d’ajouter des dates, de définir une priorité facultative ou de passer son statut à Boîte de réception. Par défaut, la nouvelle tâche est une action suivante dans le même projet et la même section ; les commandes explicites de capture rapide restent prises en compte. **Ajouter l’action** conserve l’enregistrement rapide actuel.
 
 **Séquentiel → Entre les sections** suit l’ordre manuel affiché avec le tri **Par défaut** : d’abord les sections, puis les tâches de chaque section, avec **Sans section** en dernier. Déplacer une section ou une tâche modifie cette séquence. Trier l’affichage par titre, priorité ou date ne la modifie pas. **Au sein des sections** sélectionne toujours une tâche par section ; les exceptions existantes pour les tâches marquées, les échéances et les dates de révision restent applicables.
 
@@ -327,7 +327,7 @@ Utilisez **Focus uniquement** dans l’en-tête de Focus, sur ordinateur ou mobi
 
 Focus détermine d’abord si une tâche est disponible, puis trie les actions visibles :
 
-**Prochaine version :** Les sections Focus apparaissent dans cet ordre : **Focus du jour → Aujourd’hui → Prochaines actions → À revoir → À venir**.
+Les sections Focus apparaissent dans cet ordre : **Focus du jour → Aujourd’hui → Prochaines actions → À revoir → À venir**.
 
 1. **Focus du jour** affiche les tâches que vous avez explicitement choisies pour aujourd’hui. Vous pouvez les classer manuellement dans l’ordre où vous prévoyez de travailler : faites glisser la poignée sur ordinateur, ou utilisez le bouton de réorganisation dans l’en-tête de la section sur mobile. L’ordre manuel s’applique lorsque le tri de Focus est réglé sur sa valeur par défaut, se synchronise entre les appareils et conserve la place d’une tâche jusqu’à ce qu’elle quitte Focus.
 2. **Aujourd’hui/Planning** affiche les tâches `next` disponibles qui sont en retard, dues aujourd’hui ou qui commencent aujourd’hui, y compris avec une heure de début plus tard dans la journée, ces lignes affichant leur heure de début jusqu’à ce qu’elle arrive. Elles sont classées selon l’heure de début/d’échéance la plus proche, puis selon la priorité lorsque les priorités sont activées, puis selon la date de création la plus ancienne.
@@ -345,7 +345,7 @@ La date de début est le champ de report/date planifiée de Mindwtr. Une tâche 
 
 L’estimation du temps et l’énergie sont des filtres et des options de regroupement dans Focus, pas des clés de tri par défaut. Le regroupement par contexte, projet, domaine, énergie ou priorité modifie les groupes visuels ; les tâches au sein de ces groupes conservent le même ordre de disponibilité et de prochaines actions.
 
-**Prochaine version :** **Regrouper les prochaines actions par** ne regroupe que les Prochaines actions, pas le Focus du jour, Aujourd’hui, À revoir ou À venir.
+**Regrouper les prochaines actions par** ne regroupe que les Prochaines actions, pas le Focus du jour, Aujourd’hui, À revoir ou À venir.
 
 ### Filtrer par contexte
 

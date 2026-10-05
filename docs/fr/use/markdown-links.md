@@ -75,7 +75,7 @@ Prepare launch notes for [[project:project-123|Website launch]]
 
 ## Liens UpNote
 
-**Prochaine version :** Vous pourrez ajouter un lien vers une note UpNote avec **Ajouter un lien**, ou utiliser un lien Markdown explicite dans la description d’une tâche ou les notes d’un projet :
+Vous pouvez ajouter un lien vers une note UpNote avec **Ajouter un lien**, ou utiliser un lien Markdown explicite dans la description d’une tâche ou les notes d’un projet :
 
 ```md
 [Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)

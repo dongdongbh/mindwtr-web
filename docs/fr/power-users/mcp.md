@@ -18,9 +18,9 @@ Vous n’avez **pas** besoin d’exécuter toute l’application depuis les sour
 
 Sur ordinateur, l’application affiche le chemin exact des données locales sous **Réglages -> Synchronisation -> Données locales**. Les binaires mobiles n’exposent pas de serveur MCP local.
 
-## MCP intégré sur ordinateur (prochaine version)
+## MCP intégré sur ordinateur
 
-La prochaine version de bureau comprend un serveur MCP géré par l’application dans **Réglages → Intégrations → MCP**. Ce mode ne nécessite ni Node, npm, Bun, ni installation d’un utilitaire séparé. Il est désactivé et en lecture seule par défaut.
+L’application de bureau comprend un serveur MCP géré par l’application dans **Réglages → Intégrations → MCP**. Ce mode ne nécessite ni Node, npm, Bun, ni installation d’un utilitaire séparé. Il est désactivé et en lecture seule par défaut.
 
 Activez l’accès MCP local, puis choisissez **Copier les informations de connexion**. Configurez un client compatible avec Streamable HTTP authentifié avec le point de terminaison ci-dessous et le jeton Bearer des informations copiées. Les formats de configuration varient ; un client limité à stdio nécessite toujours l’utilitaire autonome.
 
@@ -104,7 +104,7 @@ Le paquet est en lecture seule par défaut. Ajoutez `--write` uniquement lorsque
 
 ### Mode API locale de l’application de bureau
 
-> Ce backend sera inclus dans la prochaine version de l’utilitaire MCP. Jusqu’à la publication de ce paquet, compilez l’utilitaire depuis le dépôt et exécutez `node apps/mcp-server/dist/cli.js` avec les options ci-dessous.
+> Nécessite mindwtr-mcp 1.1.11 ou une version ultérieure.
 
 Activez l’**API locale** de l’application de bureau dans les Réglages et copiez son jeton porteur. Laissez l’application et l’API en cours d’exécution. Ce backend utilise les points de terminaison REST de l’application et n’ouvre jamais de base de données ni ne se rabat sur SQLite.
 

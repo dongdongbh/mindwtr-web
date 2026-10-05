@@ -107,7 +107,7 @@ Los nombres de contextos y etiquetas aceptan letras y números Unicode (incluido
 1. Abre el editor de tareas
 2. Añade contextos en el campo Contextos (separados por comas)
 
-Próxima versión: Al escribir el nombre de un contexto en Añadir rápido o en el editor de tareas, las coincidencias también pueden incluir contextos de tareas completadas o archivadas que se conservan. Las sugerencias iniciales siguen siendo breves; las tareas eliminadas no aportan sugerencias. Los filtros de contexto activos no cambian.
+Al escribir el nombre de un contexto en Añadir rápido o en el editor de tareas, las coincidencias también pueden incluir contextos de tareas completadas o archivadas que se conservan. Las sugerencias iniciales siguen siendo breves; las tareas eliminadas no aportan sugerencias. Los filtros de contexto activos no cambian.
 
 ### Filtrar por contexto
 
@@ -195,7 +195,7 @@ Cuando filtras por un contexto superior, se incluyen todos sus elementos secunda
 | `@work`   | `@work`, `@work/meetings`, `@work/calls`     |
 | `#health` | `#health`, `#health/fitness`, `#health/diet` |
 
-Próxima versión: En Contextos, se ofrece un filtro padre como `@tools` cuando las tareas del ámbito actual usan `@tools/excavator`, aunque ninguna tarea lleve la etiqueta padre. Un filtro seleccionado sigue visible y se puede deseleccionar cuando no hay resultados. Las ramas no seleccionadas desaparecen de las opciones cuando no tienen tareas que cumplan los criterios.
+En Contextos, se ofrece un filtro padre como `@tools` cuando las tareas del ámbito actual usan `@tools/excavator`, aunque ninguna tarea lleve la etiqueta padre. Un filtro seleccionado sigue visible y se puede deseleccionar cuando no hay resultados. Las ramas no seleccionadas desaparecen de las opciones cuando no tienen tareas que cumplan los criterios.
 
 Esto permite filtrar a alto nivel y mantener al mismo tiempo una organización específica.
 

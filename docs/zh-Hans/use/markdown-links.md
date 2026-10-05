@@ -75,7 +75,7 @@ Mindwtr 支持在笔记中使用内部 Markdown 链接交叉引用任务和项�
 
 ## UpNote 链接
 
-**下一版本：**你可以通过**添加链接**保存 UpNote 笔记链接，也可以在任务描述或项目笔记中使用明确的 Markdown 链接：
+你可以通过**添加链接**保存 UpNote 笔记链接，也可以在任务描述或项目笔记中使用明确的 Markdown 链接：
 
 ```md
 [Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)

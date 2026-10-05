@@ -10,9 +10,9 @@ Die Desktop-App besitzt eine Seitenleistennavigation mit allen GTD-Ansichten und
 
 ## Interaktionsmuster
 
-- **Nächste Version:** Verwende **Titel kopieren** im Menü **Weitere Optionen** einer Aufgabe oder drücke `Ctrl+C` / `Cmd+C`, wenn eine Aufgabe hervorgehoben ist. Sind mehrere Aufgaben ausgewählt, kopiert das Tastenkürzel ihre Titel zeilenweise. Eine Meldung bestätigt das Kopieren; ausgewählter Text und Text im Editor lassen sich weiterhin wie gewohnt kopieren.
+- Verwende **Titel kopieren** im Menü **Weitere Optionen** einer Aufgabe oder drücke `Ctrl+C` / `Cmd+C`, wenn eine Aufgabe hervorgehoben ist. Sind mehrere Aufgaben ausgewählt, kopiert das Tastenkürzel ihre Titel zeilenweise. Eine Meldung bestätigt das Kopieren; ausgewählter Text und Text im Editor lassen sich weiterhin wie gewohnt kopieren.
 - **Einfachklick** schaltet Aufgabendetails um.
-- **In der kommenden Version:** Mit `Ctrl+click` (Windows/Linux) oder `Cmd+click` (macOS) auf den Aufgabentitel oder eine freie Stelle der Zeile wählen Sie eine Aufgabe aus oder ab, ohne zuerst **Auswählen** zu drücken. Nach der ersten Auswahl markiert `Shift+click` den Bereich bis zu einer anderen Aufgabe. Ein einfacher Klick schaltet weiterhin die Details um.
+- Mit `Ctrl+click` (Windows/Linux) oder `Cmd+click` (macOS) auf den Aufgabentitel oder eine freie Stelle der Zeile wählen Sie eine Aufgabe aus oder ab, ohne zuerst **Auswählen** zu drücken. Nach der ersten Auswahl markiert `Shift+click` den Bereich bis zu einer anderen Aufgabe. Ein einfacher Klick schaltet weiterhin die Details um.
 - **Doppelklick** auf eine Aufgabe öffnet den vollständigen Bearbeitungsmodus. Um nur den Titel direkt umzubenennen, wählen Sie **Aufgabe umbenennen** im `⋯`-Menü der Aufgabe (`Enter` speichert, `Esc` bricht ab).
 - **Klick außerhalb** eines geöffneten Aufgabeneditors schließt ihn, solange nichts geändert wurde. Nach einer Änderung sind „Speichern“, „Abbrechen“ oder `Esc` erforderlich.
 - **Rechtsklick** öffnet Kontextmenüs (Projekte, Aufgaben).
@@ -57,7 +57,7 @@ Unter macOS 14 oder neuer bringt die Desktop-App ein eigenes Widget mit.
 
 - **Fügen Sie es aus der Widget-Galerie hinzu** — klicken Sie auf das Datum in der Menüleiste, dann auf **Widgets bearbeiten** — und wählen Sie **Mindwtr** in Klein, Mittel oder Groß. Es zeigt die heutigen Fokusaufgaben und aktualisiert sich, sobald sich diese Liste ändert.
 - **Klicken Sie auf die Aufgabenliste**, um die Desktop-App zu öffnen. Das Widget erhält außerdem eine Schaltfläche **Schnellerfassung**, die nur das vorhandene schwebende Schnellerfassungsfenster öffnet, nicht das Hauptfenster. Läuft Mindwtr noch nicht, kann macOS es im Hintergrund starten, um dieses Fenster anzuzeigen. Das Mac-Widget hat außerdem Vorrang vor dem iPhone-Widget, das die Galerie bisher über Continuity anbot und das die App stattdessen auf dem Telefon öffnete.
-- Das Widget ist im signierten Developer-ID-Build (dem DMG) enthalten; der Mac-App-Store-Build erhält es in einer späteren Version.
+- Das Widget ist im signierten Developer-ID-Build (dem DMG) und im Mac-App-Store-Build enthalten.
 
 ## Ansichten
 
@@ -75,7 +75,7 @@ Ihre Erfassungszone. Alle neuen Aufgaben landen vor der Verarbeitung hier.
 
 Ihr gemeinsames Dashboard für das tägliche Erledigen. „Fokus“ ist kein vollständiger Bestand aller Aufgaben mit Status `next`, sondern beschränkt die Liste auf jetzt verfügbare Arbeit.
 
-**Kommende Version:** Die Fokus-Abschnitte erscheinen in dieser Reihenfolge: **Heutiger Fokus → Heute → Nächste Aktionen → Durchsicht fällig → Anstehend**.
+Die Fokus-Abschnitte erscheinen in dieser Reihenfolge: **Heutiger Fokus → Heute → Nächste Aktionen → Durchsicht fällig → Anstehend**.
 
 - **Heutiger Fokus**: Weitere verfügbare nächste Aktionen, auch mit Fälligkeitsdatum, nach Kontext gefiltert.
 - **Heute**: Offene Verpflichtungen mit fälligem Wiedervorlagedatum. Der Wochenrückblick prüft weiterhin offene Verpflichtungen und Projekte; Fälligkeitstermine und Erinnerungen bleiben getrennt.
@@ -131,7 +131,7 @@ Aufgaben nach Energie, Modus oder Thema filtern:
 
 ### ⏳ Warten
 
-Ab der nächsten Version erscheint der Name der zugewiesenen Person direkt in der Liste „Warten“, auch wenn zusätzliche Details ausgeblendet sind.
+Es erscheint der Name der zugewiesenen Person direkt in der Liste „Warten“, auch wenn zusätzliche Details ausgeblendet sind.
 
 Delegierte Einträge oder Aufgaben verfolgen, die auf externe Ereignisse warten.
 
@@ -509,7 +509,7 @@ Suche unter **Sammel-Organisation** nach einem Projekt oder Bereich oder gib ein
 
 Mehrere Aufgaben gemeinsam bearbeiten:
 
-1. **„Auswählen“** in der Listenkopfzeile anklicken oder in der kommenden Version mit Zusatztaste und Klick auswählen
+1. **„Auswählen“** in der Listenkopfzeile anklicken oder mit Zusatztaste und Klick auswählen
 2. Aufgaben auswählen/abwählen
 3. In der Aktionsleiste:
    - **Verschieben**: Status aller ausgewählten ändern
@@ -575,7 +575,7 @@ Die vollständige Liste enthält [Desktop-Tastenkürzel](/de/use/keyboard-shortc
 - `e`: bearbeiten
 - `x`: erledigt umschalten
 - `dd`: löschen
-- Ab der nächsten Version kopiert `yy` den Titel der ausgewählten Aufgabe; `yi` kopiert Titel und Beschreibung als reinen Text. Ohne Beschreibung kopiert `yi` nur den Titel. Diese Tastenkürzel gelten im Vim-Modus außerhalb von Textfeldern und Dialogen.
+- kopiert `yy` den Titel der ausgewählten Aufgabe; `yi` kopiert Titel und Beschreibung als reinen Text. Ohne Beschreibung kopiert `yi` nur den Titel. Diese Tastenkürzel gelten im Vim-Modus außerhalb von Textfeldern und Dialogen.
 
 `Ctrl+Z` / `Cmd+Z` macht in jeder Voreinstellung den letzten Abschluss oder die letzte Löschung rückgängig.
 

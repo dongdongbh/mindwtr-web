@@ -18,9 +18,9 @@ You do **not** need to run the whole app from source to use MCP. Use the normal 
 
 On desktop, the app shows the exact local data path in **Settings -> Sync -> Local Data**. Mobile binaries do not expose a local MCP server surface.
 
-## Built-in desktop MCP (next release)
+## Built-in desktop MCP
 
-The next desktop release includes an app-managed MCP server under **Settings → Integrations → MCP**. No Node, npm, Bun, or separate helper installation is needed for this mode. It is disabled and read-only by default.
+The desktop app includes an app-managed MCP server under **Settings → Integrations → MCP**. No Node, npm, Bun, or separate helper installation is needed for this mode. It is disabled and read-only by default.
 
 Enable local MCP access, then choose **Copy connection details**. Configure a client that supports authenticated Streamable HTTP with the endpoint below and the bearer token in the copied details. Client configuration formats vary; a stdio-only client still needs the standalone helper.
 
@@ -104,7 +104,7 @@ The package is read-only by default. Add `--write` only when you explicitly want
 
 ### Desktop Local API mode
 
-> This backend is included in the next MCP helper release. Until that package is published, build the helper from the repository and run `node apps/mcp-server/dist/cli.js` with the options below.
+> Requires mindwtr-mcp 1.1.11 or later.
 
 Enable the desktop app's **Local API** in Settings and copy its bearer token. Keep the app and API running. This backend uses the app's REST endpoints and never opens a database or falls back to SQLite.
 

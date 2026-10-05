@@ -329,7 +329,7 @@ On desktop, select the **Today's Focus** heading to fold that section independen
 
 Focus first decides whether a task is available, then sorts the visible actions:
 
-**Upcoming release:** Focus sections appear in this order: **Today's Focus → Today → Next Actions → Review Due → Upcoming**.
+Focus sections appear in this order: **Today's Focus → Today → Next Actions → Review Due → Upcoming**.
 
 1. **Today's Focus** shows tasks you explicitly focused for today. You can arrange them by hand into the order you plan to work them — drag the grip handle on desktop, or use the reorder toggle on the section header on mobile. The manual order applies while the Focus sort is at its default, syncs across devices, and a task keeps its place until it leaves Focus.
 2. **Today / Schedule** shows available `next` tasks that are overdue, due today, or start today, including a start timed for later today, with those rows showing their start time until it arrives. These are ordered by the earliest due/start time, then priority when priorities are enabled, then oldest creation date.
@@ -347,7 +347,7 @@ Start date is Mindwtr's defer/planned-date field. A future-start task stays out 
 
 Time estimate and energy are Focus filters and grouping options, not default sort keys. Grouping by context, project, area, energy, or priority changes the visual groups; tasks inside those groups keep the same availability and next-action ordering.
 
-**Upcoming release:** **Group next actions by** groups only the Next Actions section. It does not regroup Today's Focus, Today, Review Due, or Upcoming.
+**Group next actions by** groups only the Next Actions section. It does not regroup Today's Focus, Today, Review Due, or Upcoming.
 
 ### Context Filtering
 

@@ -392,7 +392,7 @@ Mindwtr comprueba la seguridad de escritura del servidor antes de iniciar la sin
 
 > **Nota para Linux:** Si tu sesión de escritorio no proporciona un llavero de Secret Service (por ejemplo, `org.freedesktop.secrets` no está disponible), Mindwtr recurre al almacenamiento local de secretos en `~/.config/mindwtr/secrets.toml`.
 
-> **Flatpak (v1.3.3, próxima versión):** Las credenciales usan el portal Secret y un almacén local cifrado, sin acceso directo al llavero del sistema anfitrión. Las copias locales en texto plano solo se eliminan después de verificar la escritura cifrada. Si antes habilitaste el acceso al llavero mediante Flatseal y guardaste las credenciales únicamente allí, vuelve a conectar Dropbox o introduce de nuevo las contraseñas afectadas una vez. Las entradas antiguas no se eliminan. Si el portal no está disponible o se deniega el acceso, Mindwtr conserva el almacenamiento local en texto plano y muestra una advertencia. Este cambio no está incluido en v1.3.2.
+> **Flatpak (v1.3.3):** Las credenciales usan el portal Secret y un almacén local cifrado, sin acceso directo al llavero del sistema anfitrión. Las copias locales en texto plano solo se eliminan después de verificar la escritura cifrada. Si antes habilitaste el acceso al llavero mediante Flatseal y guardaste las credenciales únicamente allí, vuelve a conectar Dropbox o introduce de nuevo las contraseñas afectadas una vez. Las entradas antiguas no se eliminan. Si el portal no está disponible o se deniega el acceso, Mindwtr conserva el almacenamiento local en texto plano y muestra una advertencia. Este cambio no está incluido en v1.3.2.
 
 > **Consejo:** Para Nextcloud, el formato de la URL es:
 > `https://your-server.com/remote.php/dav/files/USERNAME/path/to/folder`

@@ -29,7 +29,7 @@ Mindwtr permite adjuntar archivos y enlaces a **tareas** y **proyectos**. Los ad
 - Usa **Añadir adjunto** para elegir un archivo o añadir un enlace.
 - Las notas de audio se añaden automáticamente si grabas una captura de voz y está activado **Guardar adjuntos de audio**.
 
-**Próxima versión:** **Añadir enlace** permitirá pegar varios enlaces a la vez en escritorio y móvil, uno por línea. Pega URL en móvil; el escritorio también admite rutas de archivo locales. Se omiten las líneas vacías y los enlaces conservan el orden. Si alguna línea no es válida, no se añade ningún enlace; un error señala esa línea y el texto pegado permanece para que puedas corregirla. En un borrador de tarea, usa **Guardar** o **Cancelar** como siempre. Una ruta de archivo individual en escritorio puede seguir conteniendo espacios.
+**Añadir enlace** permite pegar varios enlaces a la vez en escritorio y móvil, uno por línea. Pega URL en móvil; el escritorio también admite rutas de archivo locales. Se omiten las líneas vacías y los enlaces conservan el orden. Si alguna línea no es válida, no se añade ningún enlace; un error señala esa línea y el texto pegado permanece para que puedas corregirla. En un borrador de tarea, usa **Guardar** o **Cancelar** como siempre. Una ruta de archivo individual en escritorio puede seguir conteniendo espacios.
 
 ### Copias y enlaces
 
@@ -97,7 +97,7 @@ La sincronización de archivos conserva generaciones inmutables de los adjuntos 
 
 ## Enlaces de UpNote
 
-**Próxima versión:** Puedes añadir un enlace a una nota de UpNote mediante **Añadir enlace**, o usar un enlace Markdown explícito en la descripción de una tarea o las notas de un proyecto:
+Puedes añadir un enlace a una nota de UpNote mediante **Añadir enlace**, o usar un enlace Markdown explícito en la descripción de una tarea o las notas de un proyecto:
 
 ```md
 [Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)

@@ -75,7 +75,7 @@ Prepare launch notes for [[project:project-123|Website launch]]
 
 ## UpNote-Links
 
-**Nächste Version:** Sie können einen UpNote-Notizlink über **Link hinzufügen** speichern oder einen ausdrücklichen Markdown-Link in einer Aufgabenbeschreibung oder Projektnotiz verwenden:
+Sie können einen UpNote-Notizlink über **Link hinzufügen** speichern oder einen ausdrücklichen Markdown-Link in einer Aufgabenbeschreibung oder Projektnotiz verwenden:
 
 ```md
 [Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)

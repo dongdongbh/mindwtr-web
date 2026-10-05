@@ -18,9 +18,9 @@ El asistente MCP independiente sigue disponible como [`mindwtr-mcp`](https://www
 
 En escritorio, la aplicación muestra la ruta de datos local exacta en **Ajustes -> Sincronización -> Datos locales**. Los binarios móviles no exponen un servidor MCP local.
 
-## MCP integrado en escritorio (próxima versión)
+## MCP integrado en escritorio
 
-La próxima versión de escritorio incluye un servidor MCP gestionado por la aplicación en **Ajustes → Integraciones → MCP**. Este modo no necesita instalar Node, npm, Bun ni un asistente independiente. Está desactivado y es de solo lectura de forma predeterminada.
+La aplicación de escritorio incluye un servidor MCP gestionado por la aplicación en **Ajustes → Integraciones → MCP**. Este modo no necesita instalar Node, npm, Bun ni un asistente independiente. Está desactivado y es de solo lectura de forma predeterminada.
 
 Activa el acceso MCP local y selecciona **Copiar datos de conexión**. Configura un cliente compatible con Streamable HTTP autenticado usando el endpoint siguiente y el token Bearer de los datos copiados. Los formatos de configuración varían; un cliente que solo admita stdio todavía necesita el asistente independiente.
 
@@ -104,7 +104,7 @@ El paquete es de solo lectura de forma predeterminada. Añade `--write` únicame
 
 ### Modo de API local de escritorio
 
-> Este backend se incluirá en la próxima versión del asistente MCP. Hasta que se publique ese paquete, compila el asistente desde el repositorio y ejecuta `node apps/mcp-server/dist/cli.js` con las opciones siguientes.
+> Requiere mindwtr-mcp 1.1.11 o posterior.
 
 Activa la **API local** de la aplicación de escritorio en Ajustes y copia su token de portador. Mantén la aplicación y la API en ejecución. Este backend usa los endpoints REST de la aplicación y nunca abre una base de datos ni recurre a SQLite.
 

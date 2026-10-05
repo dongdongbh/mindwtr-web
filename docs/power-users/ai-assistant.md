@@ -24,7 +24,7 @@ Configure it in **Settings → AI assistant** on desktop or **Menu → Settings 
 - Reasoning effort / thinking budget (provider-dependent)
 - Optional **“Enable thinking”** toggle for Claude/Gemini (adds extended reasoning)
 
-**Upcoming release:** AI assistant and Copilot will use the existing app language for generated prose, falling back to English if that language is unsupported. There is no separate AI language setting; existing context and tag names stay unchanged. Speech transcription continues to use its separate **Audio language** setting.
+AI assistant and Copilot use the existing app language for generated prose, falling back to English if that language is unsupported. There is no separate AI language setting; existing context and tag names stay unchanged. Speech transcription continues to use its separate **Audio language** setting.
 
 ## OpenAI-Compatible Endpoints (Local or Hosted)
 

@@ -4,7 +4,7 @@ Mindwtr unterstützt auf dem Desktop eine tastaturorientierte Bedienung mit den 
 
 ## Schnellstart
 
-- **Nächste Version:** Verwende **Titel kopieren** im Menü **Weitere Optionen** einer Aufgabe oder drücke `Ctrl+C` / `Cmd+C`, wenn eine Aufgabe hervorgehoben ist. Sind mehrere Aufgaben ausgewählt, kopiert das Tastenkürzel ihre Titel zeilenweise. Eine Meldung bestätigt das Kopieren; ausgewählter Text und Text im Editor lassen sich weiterhin wie gewohnt kopieren.
+- Verwende **Titel kopieren** im Menü **Weitere Optionen** einer Aufgabe oder drücke `Ctrl+C` / `Cmd+C`, wenn eine Aufgabe hervorgehoben ist. Sind mehrere Aufgaben ausgewählt, kopiert das Tastenkürzel ihre Titel zeilenweise. Eine Meldung bestätigt das Kopieren; ausgewählter Text und Text im Editor lassen sich weiterhin wie gewohnt kopieren.
 - Wählen Sie Ihre Voreinstellung unter **Einstellungen → Allgemein → Tastenkürzel**.
 - Drücken Sie in der App `?`, um die aktuelle Übersicht für Ihre Voreinstellung zu öffnen. Am Ende der Übersicht steht eine Tabelle zur Syntax von „Schnell hinzufügen“, die alle Tokens aufführt (`/start:`, `/note:`, `@context`, `+Project`, …).
 - Verwenden Sie `/` zum Suchen.
@@ -14,7 +14,7 @@ Mindwtr unterstützt auf dem Desktop eine tastaturorientierte Bedienung mit den 
 - In Projekte gelangen Sie mit → von der Hauptseitenleiste in die Projektliste, wählen mit ↑/↓ ein Projekt und wechseln mit → zu dessen Aufgaben. Im Vim-Modus verwenden Sie `l`, `j`/`k` und erneut `l`. Mit ← oder `h` kehren Sie von den Aufgaben zur Projektliste zurück und mit einem weiteren Tastendruck zur Hauptseitenleiste. Auch mit Tab erreichen Sie die Projektzeilen, selbst in schmalen Fenstern.
 - Im Standardmodus markiert `e` eine Aufgabe als erledigt, `x` wählt Aufgaben für Stapelaktionen aus, `S` fügt die ausgewählte Aufgabe zum heutigen Fokus hinzu oder entfernt sie daraus, `F2` benennt sie um, `Shift+Enter` bearbeitet, `#` löscht und `z` macht rückgängig.
 - Im Vim-Modus bearbeitet `e`, `x` schaltet „Erledigt“ um und `dd` löscht.
-- Ab der nächsten Version kopiert `yy` den Titel der ausgewählten Aufgabe; `yi` kopiert Titel und Beschreibung als reinen Text. Ohne Beschreibung kopiert `yi` nur den Titel. Diese Tastenkürzel gelten im Vim-Modus außerhalb von Textfeldern und Dialogen.
+- kopiert `yy` den Titel der ausgewählten Aufgabe; `yi` kopiert Titel und Beschreibung als reinen Text. Ohne Beschreibung kopiert `yi` nur den Titel. Diese Tastenkürzel gelten im Vim-Modus außerhalb von Textfeldern und Dialogen.
 - Mit `Ctrl+Z` / `Cmd+Z` machen Sie in jeder Voreinstellung den letzten Aufgabenabschluss oder die letzte Löschung rückgängig.
 - Verwenden Sie in jeder Voreinstellung `s` gefolgt von einem Buchstaben, um den Status der ausgewählten Aufgabe festzulegen: `si` Eingang, `sn` Nächstes, `sw` Warten, `ss` Irgendwann, `sd` Erledigt, `sa` Archiviert. Eine Benachrichtigung bestätigt die Änderung und bietet eine Schaltfläche zum Rückgängigmachen.
 - Mit `Insert` wechseln Sie zum Eingabefeld zum Hinzufügen einer Aufgabe (in Ansichten ohne dieses Feld wird „Schnell hinzufügen“ geöffnet).

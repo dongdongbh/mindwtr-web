@@ -18,9 +18,9 @@ Mindwtr 提供可选的 <strong>MCP（Model Context Protocol，模型上下文�
 
 在桌面端，应用会在**设置 -> 同步 -> 本地数据**中显示确切的本地数据路径。移动端二进制文件不公开本地 MCP 服务器接口。
 
-## 桌面端内置 MCP（下一版本）
+## 桌面端内置 MCP
 
-下一桌面版本将在**设置 → 集成 → MCP**中提供由应用管理的 MCP 服务器。此模式无需安装 Node、npm、Bun 或独立辅助程序，默认关闭且仅允许读取。
+桌面应用在**设置 → 集成 → MCP**中提供由应用管理的 MCP 服务器。此模式无需安装 Node、npm、Bun 或独立辅助程序，默认关闭且仅允许读取。
 
 启用本地 MCP 访问，然后选择**复制连接信息**。使用下方端点和复制信息中的 Bearer 令牌配置支持经过身份验证的 Streamable HTTP 的客户端。不同客户端的配置格式不同；仅支持 stdio 的客户端仍需独立辅助程序。
 
@@ -104,7 +104,7 @@ MCP 客户端将服务器作为子进程运行。你需要为客户端指定**�
 
 ### 桌面端 Local API 模式
 
-> 此后端将包含在 MCP 辅助程序的下一个版本中。在该包发布之前，请从仓库构建辅助程序，并使用下列选项运行 `node apps/mcp-server/dist/cli.js`。
+> 需要 mindwtr-mcp 1.1.11 或更新版本。
 
 在设置中启用桌面端应用的 **Local API**，并复制其 bearer token。保持应用和 API 运行。此后端使用应用的 REST 端点，绝不会打开数据库或回退到 SQLite。
 
@@ -454,7 +454,7 @@ node apps/mcp-server/dist/cli.js --db "/path/to/mindwtr.db"
 
 写入工具同时支持本地数据库和自托管 Cloud 后端，但 Cloud 模式有两个例外：人员写入工具和 `mindwtr_restore_task` 会在 Cloud 模式下返回明确错误，因为 Cloud API 尚未提供相应端点。
 
-1.1.8 之后的下一个 mindwtr-mcp 版本将允许在更新任务或项目时保留已有的网络共享链接，或修改其标题。URI 必须保持完全一致；可以复用附件 ID，也可以省略 ID，通过 URI 匹配。该链接必须仍存在于同一个任务或项目中且未被删除。MCP 仍会拒绝新增网络共享链接、更改网络共享 URI，以及恢复已删除的网络共享链接。
+mindwtr-mcp 允许在更新任务或项目时保留已有的网络共享链接，或修改其标题。URI 必须保持完全一致；可以复用附件 ID，也可以省略 ID，通过 URI 匹配。该链接必须仍存在于同一个任务或项目中且未被删除。MCP 仍会拒绝新增网络共享链接、更改网络共享 URI，以及恢复已删除的网络共享链接。
 
 - **`mindwtr_add_task`**：创建新任务。支持自然语言 `quickAdd`（例如“Buy milk @errands /due:tomorrow”）。同时支持通过 `attachments` 添加链接附件。
 - **`mindwtr_update_task`**：更新现有任务，包括 `dueDate`、`startTime`、`reviewAt` 和 `isFocusedToday` 等日程字段（支持使用 `null` 清除字段）。`attachments` 用于设置链接附件：你传入的列表就是链接的完整集合，未列出的链接会被移除，文件附件不受影响，传入 `null` 会清除所有链接。

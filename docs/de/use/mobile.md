@@ -209,7 +209,7 @@ Weitere Angaben zu den Feldern finden Sie in [Taskers Intent-Anleitung](https://
 
 ### Startbildschirm-Widget
 
-Ab der nächsten Version öffnet ein Tippen auf eine freie Fläche im Tasks- oder Compact-Widget unter Android und iOS die Fokus-Ansicht. Aufgabenlinks, Erledigen-Schaltflächen, Listenauswahl und Schnellerfassung behalten ihre bisherigen Funktionen.
+öffnet ein Tippen auf eine freie Fläche im Tasks- oder Compact-Widget unter Android und iOS die Fokus-Ansicht. Aufgabenlinks, Erledigen-Schaltflächen, Listenauswahl und Schnellerfassung behalten ihre bisherigen Funktionen.
 
 Die folgenden Bedienelemente gelten für Android. Für iOS siehe **iOS-Widget auf dem Home-Bildschirm** weiter unten.
 
@@ -232,7 +232,7 @@ Bei aktivierter Spracherkennung erscheint auch eine Mikrofontaste in diesem nati
 
 Auf Android zeigen Fälligkeitsangaben **Heute**, den Wochentag für Aufgaben innerhalb der nächsten Woche oder ein kompaktes Datum im Datumsformat der App für spätere Aufgaben. Überfällige und heute fällige Aufgaben werden hervorgehoben.
 
-Ab der nächsten Version lassen sich die Listen der Android-Widgets Aufgaben und Kompakt über 20 Aufgaben hinaus scrollen. Bei sehr langen Listen öffnet **Alle anzeigen** am Ende die vollständige ausgewählte Liste in Mindwtr. Eine Einstellung für die Anzahl der Aufgaben ist nicht nötig.
+lassen sich die Listen der Android-Widgets Aufgaben und Kompakt über 20 Aufgaben hinaus scrollen. Bei sehr langen Listen öffnet **Alle anzeigen** am Ende die vollständige ausgewählte Liste in Mindwtr. Eine Einstellung für die Anzahl der Aufgaben ist nicht nötig.
 
 ### iOS-Widget auf dem Home-Bildschirm
 
@@ -324,7 +324,7 @@ Auf iPhone und iPad stellt Mindwtr native Apple-Kurzbefehlsaktionen für Eingang
 
 ### Apple-Watch-App
 
-Die native Apple-Watch-App wurde auf einer gekoppelten physischen Watch mit watchOS 10 oder neuer getestet und wird ab dem nächsten stabilen App-Store-Release enthalten sein. Installiere Mindwtr über die Watch-App auf dem iPhone auf der Watch.
+Die native Apple-Watch-App wurde auf einer gekoppelten physischen Watch mit watchOS 10 oder neuer getestet und ist im stabilen App-Store-Build enthalten. Installiere Mindwtr über die Watch-App auf dem iPhone auf der Watch.
 
 - **Erfassen:** Tippe auf **Sprechen**, um Audio auf der Watch für die Transkription auf dem iPhone aufzunehmen. Tippe auf **Tippen**, um Text einzugeben; das iPhone kann seine Tastatur als optionale Eingabemethode anbieten. Die Erfassung landet im lokalen Mindwtr-Eingang; Cloud-Synchronisierung ist optional.
 - **Fokus:** Prüfe Fokus-Aufgaben, schließe eine ab oder verschiebe sie auf morgen.
@@ -438,7 +438,7 @@ Das zentrale Dashboard zum Erledigen, kein vollständiger Bestand aller `next`-A
 
 ### Abschnitte
 
-**Kommende Version:** Die Fokus-Abschnitte erscheinen in dieser Reihenfolge: **Heutiger Fokus → Heute → Nächste Aktionen → Durchsicht fällig → Anstehend**. **Nächste Aktionen gruppieren nach** betrifft nur „Nächste Aktionen“.
+Die Fokus-Abschnitte erscheinen in dieser Reihenfolge: **Heutiger Fokus → Heute → Nächste Aktionen → Durchsicht fällig → Anstehend**. **Nächste Aktionen gruppieren nach** betrifft nur „Nächste Aktionen“.
 
 | Abschnitt | Inhalt |
 | ------------ | ----------------------------------------------------------------------- |
@@ -669,7 +669,7 @@ Beim Abschluss wird die aktuelle Zeit gespeichert. Wenn Sie früher fertig waren
 
 ## Warten
 
-Ab der nächsten Version erscheint der Name der zugewiesenen Person direkt in der Liste „Warten“, auch wenn zusätzliche Details ausgeblendet sind.
+Es erscheint der Name der zugewiesenen Person direkt in der Liste „Warten“, auch wenn zusätzliche Details ausgeblendet sind.
 
 - alle wartenden Aufgaben anzeigen
 - Fristen sehen

@@ -24,7 +24,7 @@ Configúralo en **Ajustes → Asistente de IA** en escritorio o en **Menú → A
 - esfuerzo de razonamiento o presupuesto de pensamiento, según el proveedor;
 - opción **«Activar pensamiento»** para Claude/Gemini, que añade razonamiento extendido.
 
-**Próxima versión:** El asistente de IA y Copilot usarán el idioma actual de la aplicación para el texto que generan; si no se admite, usarán el inglés. No habrá un ajuste de idioma de IA aparte y los nombres existentes de contextos y etiquetas no cambiarán. La transcripción de voz seguirá usando su propio ajuste **Idioma del audio**.
+El asistente de IA y Copilot usan el idioma actual de la aplicación para el texto que generan; si no se admite, usan el inglés. No hay un ajuste de idioma de IA aparte y los nombres existentes de contextos y etiquetas no cambiarán. La transcripción de voz seguirá usando su propio ajuste **Idioma del audio**.
 
 ## Endpoints compatibles con OpenAI (locales o alojados)
 

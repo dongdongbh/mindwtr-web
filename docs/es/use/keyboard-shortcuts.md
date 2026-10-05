@@ -4,7 +4,7 @@ Mindwtr para escritorio permite trabajar principalmente con el teclado mediante 
 
 ## Inicio rápido
 
-- **Próxima versión:** usa **Copiar título** en el menú **Otras opciones** de una tarea, o pulsa `Ctrl+C` / `Cmd+C` con una tarea resaltada. Si hay varias tareas seleccionadas, el atajo copia sus títulos, uno por línea. Un aviso confirma la copia; copiar texto seleccionado o texto dentro de un editor sigue funcionando como siempre.
+- usa **Copiar título** en el menú **Otras opciones** de una tarea, o pulsa `Ctrl+C` / `Cmd+C` con una tarea resaltada. Si hay varias tareas seleccionadas, el atajo copia sus títulos, uno por línea. Un aviso confirma la copia; copiar texto seleccionado o texto dentro de un editor sigue funcionando como siempre.
 - Elige el perfil en **Ajustes → General → Atajos de teclado**.
 - Pulsa `?` para abrir la hoja de atajos del perfil actual. Al final incluye una tabla de sintaxis de adición rápida con todos los tokens (`/start:`, `/note:`, `@context`, `+Project`, …).
 - Usa `/` para buscar.
@@ -14,7 +14,7 @@ Mindwtr para escritorio permite trabajar principalmente con el teclado mediante 
 - En Proyectos, usa → desde la barra lateral principal para entrar en la lista de proyectos, ↑/↓ para elegir uno y → de nuevo para entrar en sus tareas. En modo Vim, usa `l`, `j`/`k` y `l`. Usa ← o `h` para volver de las tareas a la lista de proyectos, y otra vez para volver a la barra lateral principal. Tab también permite llegar a los proyectos, incluso en ventanas estrechas.
 - En el modo Estándar, usa `e` para marcar como terminada, `x` para seleccionar tareas para acciones por lotes, `S` para añadir o quitar la tarea seleccionada del foco de hoy, `F2` para cambiarle el nombre, `Shift+Enter` para editar, `#` para eliminar y `z` para deshacer.
 - En el modo Vim, usa `e` para editar, `x` para alternar el estado terminado y `dd` para eliminar.
-- En la próxima versión, `yy` copiará el título de la tarea seleccionada; `yi` copiará el título y la descripción como texto sin formato. Si no hay descripción, `yi` copiará solo el título. Estos atajos funcionan en modo Vim, fuera de campos de texto y diálogos.
+- `yy` copia el título de la tarea seleccionada; `yi` copia el título y la descripción como texto sin formato. Si no hay descripción, `yi` copia solo el título. Estos atajos funcionan en modo Vim, fuera de campos de texto y diálogos.
 - Usa `Ctrl+Z` / `Cmd+Z` para deshacer la última finalización o eliminación en cualquier perfil.
 - En cualquier perfil, pulsa `s` y después una letra para establecer el estado de la tarea seleccionada: `si` Bandeja de entrada, `sn` Próxima, `sw` En espera, `ss` Algún día, `sd` Terminada y `sa` Archivada. Una notificación confirma el cambio e incluye un botón para deshacerlo.
 - Usa `Insert` para ir al campo de adición de tareas; en las vistas que no lo tengan, abre Adición rápida.

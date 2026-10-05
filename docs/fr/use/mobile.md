@@ -218,7 +218,7 @@ Consultez le [guide des intents de Tasker](https://tasker.joaoapps.com/userguide
 
 ### Widget de l’écran d’accueil
 
-Dans la prochaine version, toucher un espace vide d’un widget Tasks ou Compact ouvrira Focus sur Android et iOS. Les liens vers les tâches, les commandes de validation, la sélection de liste et la capture rapide conserveront leurs actions actuelles.
+Toucher un espace vide d’un widget Tasks ou Compact ouvre Focus sur Android et iOS. Les liens vers les tâches, les commandes de validation, la sélection de liste et la capture rapide conservent leurs actions actuelles.
 
 Les commandes ci-dessous concernent Android. Pour iOS, voir **Widget iOS de l’écran d’accueil** plus bas.
 
@@ -243,7 +243,7 @@ l’activation de la transcription ajoute aussi un bouton microphone à cette fe
 
 Sous Android, les libellés d’échéance indiquent **Aujourd’hui**, le jour de la semaine pour les tâches des sept prochains jours, ou une date compacte, dans le format de date de l’app, pour les échéances ultérieures. Les tâches en retard ou à échéance aujourd’hui sont mises en évidence.
 
-Dans la prochaine version, les listes des widgets Tâches et Compact d’Android défileront au-delà de 20 tâches. Pour une très longue liste, **Tout afficher** en bas ouvrira la liste sélectionnée complète dans Mindwtr. Aucun réglage du nombre de tâches n’est nécessaire.
+Les listes des widgets Tâches et Compact d’Android défilent au-delà de 20 tâches. Pour une très longue liste, **Tout afficher** en bas ouvre la liste sélectionnée complète dans Mindwtr. Aucun réglage du nombre de tâches n’est nécessaire.
 
 ### Widget iOS de l’écran d’accueil
 
@@ -469,7 +469,7 @@ Votre tableau de bord principal pour agir. Focus est un tableau de bord d’enga
 
 ### Sections
 
-**Prochaine version :** Focus montre **Focus du jour → Aujourd’hui → Prochaines actions → À revoir → À venir**. **Regrouper les prochaines actions par** ne concerne que les Prochaines actions.
+Focus montre **Focus du jour → Aujourd’hui → Prochaines actions → À revoir → À venir**. **Regrouper les prochaines actions par** ne concerne que les Prochaines actions.
 
 | Section      | Contenu                                                                 |
 | ------------ | ----------------------------------------------------------------------- |
@@ -722,7 +722,7 @@ Filtrez les tâches par niveau d’énergie, mode ou thème :
 
 ## En attente
 
-Dans la prochaine version, les tâches attribuées à une personne afficheront son nom directement dans la liste En attente, même lorsque les détails supplémentaires sont masqués.
+Les tâches attribuées à une personne affichent son nom directement dans la liste En attente, même lorsque les détails supplémentaires sont masqués.
 
 Suivez les éléments délégués ou qui dépendent d’événements externes.
 

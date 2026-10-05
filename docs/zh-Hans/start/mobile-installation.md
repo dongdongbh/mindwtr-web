@@ -84,7 +84,7 @@ TestFlight 测试版也可通过 https://testflight.apple.com/join/7SMJCTSR 获�
 
 [![TestFlight beta](https://img.shields.io/badge/TestFlight-Beta-0A84FF?logo=apple&logoColor=white)](https://testflight.apple.com/join/7SMJCTSR)
 
-从下一个 App Store 稳定版开始，iOS App 将包含已在配对实体手表上测试的原生 Apple Watch App。将运行 watchOS 10 或更新版本的 Apple Watch 与 iPhone 配对，安装 Mindwtr，然后通过 iPhone 上的 Watch App 将其安装到手表。轻点**说话**可录制音频并由 iPhone 转写，轻点**输入**可键入文字。你还可以完成或推迟专注任务，并控制关联的番茄钟。
+iOS App 包含已在配对实体手表上测试的原生 Apple Watch App。将运行 watchOS 10 或更新版本的 Apple Watch 与 iPhone 配对，安装 Mindwtr，然后通过 iPhone 上的 Watch App 将其安装到手表。轻点**说话**可录制音频并由 iPhone 转写，轻点**输入**可键入文字。你还可以完成或推迟专注任务，并控制关联的番茄钟。
 
 ### 选项
 

@@ -75,7 +75,7 @@ Prepare launch notes for [[project:project-123|Website launch]]
 
 ## UpNote 連結
 
-**下一版本：**你可以透過**新增連結**儲存 UpNote 筆記連結，也可以在任務描述或專案筆記中使用明確的 Markdown 連結：
+你可以透過**新增連結**儲存 UpNote 筆記連結，也可以在任務描述或專案筆記中使用明確的 Markdown 連結：
 
 ```md
 [Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)

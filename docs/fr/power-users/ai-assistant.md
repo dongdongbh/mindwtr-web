@@ -24,7 +24,7 @@ Configurez l’assistant dans **Paramètres → Assistant IA** sur ordinateur ou
 - effort de raisonnement ou budget de réflexion selon le fournisseur ;
 - option facultative **Activer la réflexion** pour Claude et Gemini, qui ajoute un raisonnement étendu.
 
-**Prochaine version :** L’assistant IA et Copilot utiliseront la langue actuelle de l’application pour les textes générés ; si elle n’est pas prise en charge, ils utiliseront l’anglais. Il n’y aura pas de réglage de langue IA distinct, et les noms existants des contextes et des étiquettes resteront inchangés. La transcription vocale conservera son propre réglage **Langue audio**.
+L’assistant IA et Copilot utilisent la langue actuelle de l’application pour les textes générés ; si elle n’est pas prise en charge, ils utilisent l’anglais. Il n’y a pas de réglage de langue IA distinct, et les noms existants des contextes et des étiquettes restent inchangés. La transcription vocale conserve son propre réglage **Langue audio**.
 
 ## Points de terminaison compatibles avec OpenAI, locaux ou hébergés
 

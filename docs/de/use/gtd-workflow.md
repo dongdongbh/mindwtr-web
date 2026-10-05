@@ -230,7 +230,7 @@ Das Feld **Projektabschnitt** einer Aufgabe weist sie einem Abschnitt ihres Proj
 
 Sequenzielle Projekte können projektweit oder abschnittsweise gelten. Verwenden Sie den Abschnittsumfang, wenn ein Projekt unabhängige Phasen oder Arbeitsstränge besitzt: Mindwtr zeigt dann die erste verfügbare Aufgabe jedes Abschnitts, statt das gesamte Projekt hinter einer Aufgabe zu blockieren. Beim Abschnittsumfang fragt Mindwtr nach Abschluss der letzten nächsten Aktion eines Abschnitts „Was ist die nächste Aktion?“ für diesen Abschnitt, genau wie nach der letzten Aktion des gesamten Projekts.
 
-Mit der nächsten Version bietet dieser Dialog außerdem **Speichern und bearbeiten**. Die Folgeaufgabe wird gespeichert und im Aufgaben-Editor geöffnet. Dort können Sie Daten hinzufügen, optional eine Priorität festlegen oder den Status in Eingang ändern. Standardmäßig ist die neue Aufgabe eine nächste Aktion im selben Projekt und Abschnitt; ausdrückliche Schnellerfassungsbefehle gelten weiterhin. **Nächste Aktion hinzufügen** behält das bisherige Schnellspeicherverhalten bei.
+Dieser Dialog bietet außerdem **Speichern und bearbeiten**. Die Folgeaufgabe wird gespeichert und im Aufgaben-Editor geöffnet. Dort können Sie Daten hinzufügen, optional eine Priorität festlegen oder den Status in Eingang ändern. Standardmäßig ist die neue Aufgabe eine nächste Aktion im selben Projekt und Abschnitt; ausdrückliche Schnellerfassungsbefehle gelten weiterhin. **Nächste Aktion hinzufügen** behält das bisherige Schnellspeicherverhalten bei.
 
 **Sequenziell → Über Abschnitte hinweg** folgt der manuellen Reihenfolge bei **Standardsortierung**: zuerst die Abschnitte, dann die Aufgaben innerhalb jedes Abschnitts; **Ohne Abschnitt** steht zuletzt. Das Verschieben eines Abschnitts oder einer Aufgabe ändert diese Reihenfolge. Eine Anzeige nach Titel, Priorität oder Datum ändert sie nicht. **Innerhalb der Abschnitte** wählt weiterhin für jeden Abschnitt eine Aufgabe aus; die bisherigen Ausnahmen für markierte Aufgaben sowie Fälligkeits- und Überprüfungsdaten bleiben bestehen.
 
@@ -331,7 +331,7 @@ Mit **Nur Fokus** im Fokus-Kopfbereich auf Desktop und Mobilgeräten bleibt **He
 
 „Fokus“ bestimmt zuerst, ob eine Aufgabe verfügbar ist, und sortiert danach die sichtbaren Aktionen:
 
-**Kommende Version:** Die Fokus-Abschnitte erscheinen in dieser Reihenfolge: **Heutiger Fokus → Heute → Nächste Aktionen → Durchsicht fällig → Anstehend**.
+Die Fokus-Abschnitte erscheinen in dieser Reihenfolge: **Heutiger Fokus → Heute → Nächste Aktionen → Durchsicht fällig → Anstehend**.
 
 1. **Heutiger Fokus** zeigt Aufgaben, die Sie ausdrücklich für heute fokussiert haben. Sie können sie manuell in die geplante Reihenfolge bringen – auf dem Desktop am Griff ziehen oder auf Mobilgeräten den Umschalter zum Sortieren in der Abschnittsüberschrift verwenden. Die manuelle Reihenfolge gilt bei der Standardsortierung von „Fokus“, wird geräteübergreifend synchronisiert und bleibt erhalten, bis eine Aufgabe „Fokus“ verlässt.
 2. **Heute / Terminplan** zeigt verfügbare `next`-Aufgaben, die überfällig oder heute fällig sind oder heute beginnen – auch mit einer Startzeit später am Tag, wobei diese Zeilen ihre Startzeit anzeigen, bis diese erreicht ist. Sortiert wird nach dem frühesten Fälligkeits-/Startzeitpunkt, dann – bei aktivierten Prioritäten – nach Priorität und schließlich nach dem ältesten Erstellungsdatum.
@@ -349,7 +349,7 @@ Das Startdatum ist das Zurückstellungs-/Planungsdatum von Mindwtr. Eine Aufgabe
 
 Zeitschätzung und Energie sind Fokusfilter und Gruppierungsoptionen, keine Standardsortierschlüssel. Eine Gruppierung nach Kontext, Projekt, Bereich, Energie oder Priorität verändert die sichtbaren Gruppen; innerhalb dieser Gruppen behalten Aufgaben dieselbe Verfügbarkeits- und Nächste-Aktion-Sortierung.
 
-**Kommende Version:** **Nächste Aktionen gruppieren nach** gruppiert nur den Abschnitt „Nächste Aktionen“, nicht „Heutiger Fokus“, „Heute“, „Durchsicht fällig“ oder „Anstehend“.
+**Nächste Aktionen gruppieren nach** gruppiert nur den Abschnitt „Nächste Aktionen“, nicht „Heutiger Fokus“, „Heute“, „Durchsicht fällig“ oder „Anstehend“.
 
 ### Kontextfilter
 

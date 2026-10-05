@@ -392,7 +392,7 @@ Mindwtr 會在開始同步前檢查伺服器的寫入安全性。伺服器必須
 
 > **Linux 注意事項**：如果桌面工作階段沒有提供 Secret Service keyring（例如無法使用 `org.freedesktop.secrets`），Mindwtr 會退回使用 `~/.config/mindwtr/secrets.toml` 中的本機密鑰儲存空間。
 
-> **Flatpak（即將推出的 v1.3.3）：** 憑證透過 Secret 入口網站儲存在本機加密儲存空間，不再需要直接存取主機的鑰匙圈。既有的明文備用憑證僅在加密寫入並驗證成功後才會清除。如果你曾透過 Flatseal 開啟鑰匙圈存取，並將憑證僅儲存在主機鑰匙圈中，需要重新連接一次 Dropbox 或重新輸入相關密碼；原有鑰匙圈項目不會被刪除。如果入口網站無法使用或存取遭拒，Mindwtr 會繼續使用本機明文備用儲存空間並顯示警告。v1.3.2 尚未包含此變更。
+> **Flatpak（v1.3.3）：** 憑證透過 Secret 入口網站儲存在本機加密儲存空間，不再需要直接存取主機的鑰匙圈。既有的明文備用憑證僅在加密寫入並驗證成功後才會清除。如果你曾透過 Flatseal 開啟鑰匙圈存取，並將憑證僅儲存在主機鑰匙圈中，需要重新連接一次 Dropbox 或重新輸入相關密碼；原有鑰匙圈項目不會被刪除。如果入口網站無法使用或存取遭拒，Mindwtr 會繼續使用本機明文備用儲存空間並顯示警告。v1.3.2 尚未包含此變更。
 
 > **提示**：Nextcloud 的 URL 格式為：
 > `https://your-server.com/remote.php/dav/files/USERNAME/path/to/folder`

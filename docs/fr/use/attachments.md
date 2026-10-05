@@ -29,7 +29,7 @@ Mindwtr permet de joindre des fichiers et des liens aux **tâches** et aux **pro
 - Utilisez **Ajouter une pièce jointe** pour choisir un fichier ou ajouter un lien.
 - Les notes audio sont ajoutées automatiquement lorsque vous effectuez une capture vocale et que **Enregistrer les pièces jointes audio** est activé.
 
-**Prochaine version :** **Ajouter un lien** permettra de coller plusieurs liens à la fois sur ordinateur et mobile, à raison d’un lien par ligne. Collez des URL sur mobile ; l’ordinateur accepte aussi les chemins de fichiers locaux. Les lignes vides sont ignorées et les liens gardent leur ordre. Si une ligne est invalide, aucun lien n’est ajouté ; un message d’erreur indique cette ligne et le texte collé reste disponible pour la corriger. Dans un brouillon de tâche, utilisez **Enregistrer** ou **Annuler** comme d’habitude. Un chemin de fichier seul peut toujours contenir des espaces sur ordinateur.
+**Ajouter un lien** permet de coller plusieurs liens à la fois sur ordinateur et mobile, à raison d’un lien par ligne. Collez des URL sur mobile ; l’ordinateur accepte aussi les chemins de fichiers locaux. Les lignes vides sont ignorées et les liens gardent leur ordre. Si une ligne est invalide, aucun lien n’est ajouté ; un message d’erreur indique cette ligne et le texte collé reste disponible pour la corriger. Dans un brouillon de tâche, utilisez **Enregistrer** ou **Annuler** comme d’habitude. Un chemin de fichier seul peut toujours contenir des espaces sur ordinateur.
 
 ### Copies et liens
 
@@ -97,7 +97,7 @@ La synchronisation de fichiers conserve les générations immuables des pièces 
 
 ## Liens UpNote
 
-**Prochaine version :** Vous pourrez ajouter un lien vers une note UpNote avec **Ajouter un lien**, ou utiliser un lien Markdown explicite dans la description d’une tâche ou les notes d’un projet :
+Vous pouvez ajouter un lien vers une note UpNote avec **Ajouter un lien**, ou utiliser un lien Markdown explicite dans la description d’une tâche ou les notes d’un projet :
 
 ```md
 [Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)

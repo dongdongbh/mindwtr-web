@@ -230,7 +230,7 @@ El campo **Sección del proyecto** de una tarea asigna esa tarea a una de las se
 
 Los proyectos secuenciales pueden usar un ámbito para todo el proyecto o un ámbito por sección. Usa el ámbito por sección cuando un proyecto tenga fases o líneas de trabajo independientes: Mindwtr muestra la primera tarea disponible de cada sección en lugar de bloquear todo el proyecto detrás de una única tarea. Con el ámbito por sección, al completar la última próxima acción de una sección, Mindwtr pregunta «¿Cuál es la próxima acción?» para esa sección, igual que tras la última acción del proyecto completo.
 
-En la próxima versión, este aviso también ofrece **Guardar y editar**. Guarda la tarea de seguimiento y abre el editor para que añadas fechas, asignes una prioridad opcional o cambies el estado a Bandeja. Por defecto, la nueva tarea es una siguiente acción en el mismo proyecto y sección; los comandos explícitos de captura rápida siguen aplicándose. **Añadir siguiente acción** conserva el guardado rápido actual.
+Este aviso también ofrece **Guardar y editar**. Guarda la tarea de seguimiento y abre el editor para que añadas fechas, asignes una prioridad opcional o cambies el estado a Bandeja. Por defecto, la nueva tarea es una siguiente acción en el mismo proyecto y sección; los comandos explícitos de captura rápida siguen aplicándose. **Añadir siguiente acción** conserva el guardado rápido actual.
 
 **Secuencial → Entre secciones** sigue el orden manual que muestra la ordenación **Predeterminada**: primero las secciones y después las tareas de cada sección, con **Sin sección** al final. Mover una sección o tarea cambia la secuencia. Ordenar la vista por título, prioridad o fecha no la cambia. **Dentro de las secciones** sigue seleccionando una tarea por sección; se mantienen las excepciones existentes para tareas destacadas, vencimientos y fechas de revisión.
 
@@ -327,7 +327,7 @@ Usa **Solo enfoque** en la cabecera de Enfoque, en escritorio o móvil, para man
 
 Enfoque determina primero si una tarea está disponible y después ordena las acciones visibles:
 
-**Próxima versión:** Las secciones de Foco aparecen en este orden: **Foco de hoy → Hoy → Próximas acciones → Revisión pendiente → Próximas**.
+Las secciones de Foco aparecen en este orden: **Foco de hoy → Hoy → Próximas acciones → Revisión pendiente → Próximas**.
 
 1. **Enfoque de hoy** muestra las tareas que has seleccionado explícitamente para hoy. Puedes organizarlas manualmente en el orden en que piensas trabajar: arrastra el controlador en el escritorio o usa el interruptor de reordenación del encabezado de la sección en el móvil. El orden manual se aplica mientras la ordenación de Enfoque esté en su valor predeterminado, se sincroniza entre dispositivos y una tarea conserva su lugar hasta que sale de Enfoque.
 2. **Hoy / Agenda** muestra las tareas `next` disponibles que están vencidas, vencen hoy o comienzan hoy, incluidas las que empiezan más tarde hoy, y esas filas muestran su hora de inicio hasta que llega. Se ordenan por la fecha/hora de vencimiento o inicio más próxima, después por prioridad cuando las prioridades están activadas y, a continuación, por la fecha de creación más antigua.
@@ -345,7 +345,7 @@ La fecha de inicio es el campo de aplazamiento/fecha planificada de Mindwtr. Una
 
 La estimación de tiempo y la energía son filtros y opciones de agrupación de Enfoque, no claves de ordenación predeterminadas. Agrupar por contexto, proyecto, área, energía o prioridad cambia los grupos visuales; las tareas de esos grupos conservan la misma disponibilidad y ordenación de próximas acciones.
 
-**Próxima versión:** **Agrupar próximas acciones por** solo agrupa Próximas acciones; no Foco de hoy, Hoy, Revisión pendiente ni Próximas.
+**Agrupar próximas acciones por** solo agrupa Próximas acciones; no Foco de hoy, Hoy, Revisión pendiente ni Próximas.
 
 ### Filtrar por contexto
 

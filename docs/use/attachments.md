@@ -29,7 +29,7 @@ Mindwtr lets you attach files and links to **tasks** and **projects**. Attachmen
 - Use **Add attachment** to pick a file or add a link.
 - Audio notes are added automatically if you record voice capture and **Save audio attachments** is enabled.
 
-**Upcoming release:** **Add link** on desktop and mobile will accept multiple links pasted at once, one per line. Paste URLs on mobile; desktop also accepts local file paths. Blank lines are ignored, and links keep their pasted order. If any line is invalid, no links are added; an error shows that line and the pasted text stays so you can fix it. In a task draft, use **Save** or **Cancel** as usual. A single desktop file path may still contain spaces.
+**Add link** on desktop and mobile accepts multiple links pasted at once, one per line. Paste URLs on mobile; desktop also accepts local file paths. Blank lines are ignored, and links keep their pasted order. If any line is invalid, no links are added; an error shows that line and the pasted text stays so you can fix it. In a task draft, use **Save** or **Cancel** as usual. A single desktop file path may still contain spaces.
 
 ### Copies vs. links
 
@@ -97,7 +97,7 @@ File Sync keeps immutable attachment generations in the shared folder after clea
 
 ## UpNote links
 
-**Upcoming release:** You can add an UpNote note link through **Add link**, or use an explicit Markdown link in a task description or project note:
+You can add an UpNote note link through **Add link**, or use an explicit Markdown link in a task description or project note:
 
 ```md
 [Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)

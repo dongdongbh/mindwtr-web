@@ -75,7 +75,7 @@ Prepare launch notes for [[project:project-123|Website launch]]
 
 ## Enlaces de UpNote
 
-**Próxima versión:** Puedes añadir un enlace a una nota de UpNote mediante **Añadir enlace**, o usar un enlace Markdown explícito en la descripción de una tarea o las notas de un proyecto:
+Puedes añadir un enlace a una nota de UpNote mediante **Añadir enlace**, o usar un enlace Markdown explícito en la descripción de una tarea o las notas de un proyecto:
 
 ```md
 [Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)

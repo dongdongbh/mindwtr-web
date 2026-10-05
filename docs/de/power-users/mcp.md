@@ -18,9 +18,9 @@ Sie müssen **nicht** die gesamte App aus dem Quellcode ausführen, um MCP zu ve
 
 Auf dem Desktop zeigt die App den genauen lokalen Datenpfad unter **Einstellungen → Synchronisierung → Lokale Daten** an. Binärdateien für Mobilgeräte stellen keinen lokalen MCP-Server bereit.
 
-## Integriertes Desktop-MCP (nächste Version)
+## Integriertes Desktop-MCP
 
-Die nächste Desktop-Version enthält einen von der App verwalteten MCP-Server unter **Einstellungen → Integrationen → MCP**. Dafür müssen weder Node, npm oder Bun noch ein separates Hilfsprogramm installiert werden. Standardmäßig ist der Server deaktiviert und schreibgeschützt.
+Die Desktop-App enthält einen von der App verwalteten MCP-Server unter **Einstellungen → Integrationen → MCP**. Dafür müssen weder Node, npm oder Bun noch ein separates Hilfsprogramm installiert werden. Standardmäßig ist der Server deaktiviert und schreibgeschützt.
 
 Aktivieren Sie den lokalen MCP-Zugriff und wählen Sie **Verbindungsdaten kopieren**. Konfigurieren Sie einen Client mit Unterstützung für authentifiziertes Streamable HTTP mit dem folgenden Endpunkt und dem Bearer-Token aus den kopierten Daten. Die Konfigurationsformate unterscheiden sich; reine stdio-Clients benötigen weiterhin das eigenständige Hilfsprogramm.
 
@@ -104,7 +104,7 @@ Das Paket ist standardmäßig schreibgeschützt. Fügen Sie `--write` nur hinzu,
 
 ### Local-API-Modus der Desktop-App
 
-> Dieses Backend ist in der nächsten Version des MCP-Hilfsprogramms enthalten. Bis dieses Paket veröffentlicht wird, bauen Sie das Hilfsprogramm aus dem Repository und führen Sie `node apps/mcp-server/dist/cli.js` mit den unten angegebenen Optionen aus.
+> Erfordert mindwtr-mcp 1.1.11 oder neuer.
 
 Aktivieren Sie die **Local API** der Desktop-App in den Einstellungen und kopieren Sie ihr Bearer-Token. Lassen Sie die App und die API laufen. Dieses Backend verwendet die REST-Endpunkte der App und öffnet niemals eine Datenbank oder greift auf SQLite zurück.
 
@@ -454,7 +454,7 @@ Für den Schreibzugriff wird ausschließlich `--write` unterstützt (keine alter
 
 Schreibwerkzeuge funktionieren sowohl mit der lokalen Datenbank als auch einem selbst gehosteten Cloud-Backend, mit zwei Ausnahmen im Cloud-Modus: Werkzeuge zum Schreiben von Personen und `mindwtr_restore_task` geben dort einen eindeutigen Fehler zurück, weil die Cloud-API noch keine Endpunkte dafür besitzt.
 
-Die nächste mindwtr-mcp-Version nach 1.1.8 erlaubt es, einen vorhandenen Link zu einer Netzwerkfreigabe beim Aktualisieren einer Aufgabe oder eines Projekts beizubehalten oder umzubenennen. Lassen Sie die URI exakt unverändert und verwenden Sie dieselbe Anhang-ID, oder lassen Sie die ID weg, um den Link anhand der URI zuzuordnen. Der Link muss auf demselben Element noch aktiv sein. MCP lehnt neue Links zu Netzwerkfreigaben, geänderte Netzwerkfreigabe-URIs und das Wiederherstellen gelöschter Links zu Netzwerkfreigaben weiterhin ab.
+mindwtr-mcp erlaubt es, einen vorhandenen Link zu einer Netzwerkfreigabe beim Aktualisieren einer Aufgabe oder eines Projekts beizubehalten oder umzubenennen. Lassen Sie die URI exakt unverändert und verwenden Sie dieselbe Anhang-ID, oder lassen Sie die ID weg, um den Link anhand der URI zuzuordnen. Der Link muss auf demselben Element noch aktiv sein. MCP lehnt neue Links zu Netzwerkfreigaben, geänderte Netzwerkfreigabe-URIs und das Wiederherstellen gelöschter Links zu Netzwerkfreigaben weiterhin ab.
 
 - **`mindwtr_add_task`**: Erstellt eine neue Aufgabe. Unterstützt natürlichsprachliches `quickAdd` (z. B. „Buy milk @errands /due:tomorrow“). Unterstützt außerdem Link-Anhänge über `attachments`.
 - **`mindwtr_update_task`**: Aktualisiert eine vorhandene Aufgabe einschließlich Planungsfeldern wie `dueDate`, `startTime`, `reviewAt` und `isFocusedToday` (Felder können mit `null` geleert werden). `attachments` setzt die Link-Anhänge: Die übergebene Liste ist die vollständige Liste der Links, nicht aufgeführte Links werden entfernt, Dateianhänge bleiben unberührt, und `null` entfernt alle Links.

@@ -10,9 +10,9 @@ The desktop app features a sidebar navigation with all GTD views and a main cont
 
 ## Interaction Patterns
 
-- **Upcoming release:** use **Copy Title** in a task’s **Other Options** menu, or press `Ctrl+C` / `Cmd+C` with a task highlighted. When multiple tasks are selected, the shortcut copies their titles one per line. A toast confirms the copy; copying selected text or text in an editor still works normally.
+- Use **Copy Title** in a task’s **Other Options** menu, or press `Ctrl+C` / `Cmd+C` with a task highlighted. When multiple tasks are selected, the shortcut copies their titles one per line. A toast confirms the copy; copying selected text or text in an editor still works normally.
 - **Single click** toggles task details.
-- **Upcoming release:** `Ctrl+click` (Windows/Linux) or `Cmd+click` (macOS) on a task title or empty row space selects or deselects it without pressing **Select** first. After selecting a task, `Shift+click` selects the range to another task. Plain clicks still toggle details.
+- `Ctrl+click` (Windows/Linux) or `Cmd+click` (macOS) on a task title or empty row space selects or deselects it without pressing **Select** first. After selecting a task, `Shift+click` selects the range to another task. Plain clicks still toggle details.
 - **Double click** on a task opens full edit mode. To rename just the title in place, pick **Rename task** from the task's `⋯` menu (Enter saves, Esc cancels).
 - **Click outside** an open task editor to close it while nothing was changed; once a field was edited, closing requires Save, Cancel, or Esc.
 - **Right click** opens context menus (projects, tasks).
@@ -57,7 +57,7 @@ On macOS 14 and later, the desktop app brings a widget of its own.
 
 - **Add it from the widget gallery** — click the date in the menu bar, then **Edit Widgets** — and pick **Mindwtr** in small, medium, or large. It shows today's focus tasks and updates as that list changes.
 - **Click the task list** to open the desktop app. The widget also has a **Quick capture** button that opens only the existing floating Quick Add panel, not the main window. If Mindwtr is not already running, macOS may start it in the background to show the panel. The Mac widget also takes precedence over the iPhone widget the gallery used to offer through Continuity, which opened the app on the phone instead.
-- The widget ships in the signed Developer ID build (the DMG); the Mac App Store build gets it in a later release.
+- The widget ships in the signed Developer ID build (the DMG) and the Mac App Store build.
 
 ## Views
 
@@ -75,7 +75,7 @@ Your capture zone. All new tasks land here before processing.
 
 Your unified dashboard for daily engagement. Focus is not a full inventory of every task with status `next`; it narrows the list to work that is available now.
 
-**Upcoming release:** Focus sections appear in this order: **Today's Focus → Today → Next Actions → Review Due → Upcoming**.
+Focus sections appear in this order: **Today's Focus → Today → Next Actions → Review Due → Upcoming**.
 
 - **Today's Focus**: Starred priority tasks whose start day has arrived. The configured limit applies to stars added for today; queued future-start stars use no current slots. Focused Next tasks also show a small filled star beside their title in task lists and on the Board.
 - **Today**: Past due items; tasks due today or starting today, including those that start later today, sorted by time, with those rows showing their start time until it arrives.
@@ -592,7 +592,7 @@ See [Desktop Keyboard Shortcuts](/use/keyboard-shortcuts) for the complete list.
 - `e`: Edit selected task
 - `x`: Toggle done
 - `dd`: Delete task
-- Upcoming release: `yy` copies the selected task’s title; `yi` copies its title and description as plain text. With no description, `yi` copies only the title. These shortcuts are available in Vim mode, outside text fields and dialogs.
+- `yy` copies the selected task’s title; `yi` copies its title and description as plain text. With no description, `yi` copies only the title. These shortcuts are available in Vim mode, outside text fields and dialogs.
 
 `Ctrl+Z` / `Cmd+Z` undoes the last task completion or deletion in every preset.
 

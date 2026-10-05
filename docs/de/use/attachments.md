@@ -29,7 +29,7 @@ Mit Mindwtr können Sie Dateien und Links an **Aufgaben** und **Projekte** anhä
 - Verwenden Sie **Anhang hinzufügen**, um eine Datei auszuwählen oder einen Link hinzuzufügen.
 - Audionotizen werden automatisch hinzugefügt, wenn Sie eine Spracherfassung aufnehmen und **Audioanhänge speichern** aktiviert ist.
 
-**Kommende Version:** **Link hinzufügen** wird auf Desktop und Mobilgeräten mehrere zugleich eingefügte Links akzeptieren, einen pro Zeile. Auf Mobilgeräten fügen Sie URLs ein; der Desktop akzeptiert auch lokale Dateipfade. Leere Zeilen werden ignoriert, und die Links behalten ihre Reihenfolge. Ist eine Zeile ungültig, wird kein Link hinzugefügt; eine Fehlermeldung zeigt diese Zeile an und der eingefügte Text bleibt zum Korrigieren erhalten. Verwenden Sie bei einem Aufgabenentwurf wie gewohnt **Speichern** oder **Abbrechen**. Ein einzelner Dateipfad darf auf dem Desktop weiterhin Leerzeichen enthalten.
+**Link hinzufügen** akzeptiert auf Desktop und Mobilgeräten mehrere zugleich eingefügte Links, einen pro Zeile. Auf Mobilgeräten fügen Sie URLs ein; der Desktop akzeptiert auch lokale Dateipfade. Leere Zeilen werden ignoriert, und die Links behalten ihre Reihenfolge. Ist eine Zeile ungültig, wird kein Link hinzugefügt; eine Fehlermeldung zeigt diese Zeile an und der eingefügte Text bleibt zum Korrigieren erhalten. Verwenden Sie bei einem Aufgabenentwurf wie gewohnt **Speichern** oder **Abbrechen**. Ein einzelner Dateipfad darf auf dem Desktop weiterhin Leerzeichen enthalten.
 
 ### Kopien und Links
 
@@ -97,7 +97,7 @@ Die Datei-Synchronisierung behält unveränderliche Anhangsgenerationen nach der
 
 ## UpNote-Links
 
-**Nächste Version:** Sie können einen UpNote-Notizlink über **Link hinzufügen** speichern oder einen ausdrücklichen Markdown-Link in einer Aufgabenbeschreibung oder Projektnotiz verwenden:
+Sie können einen UpNote-Notizlink über **Link hinzufügen** speichern oder einen ausdrücklichen Markdown-Link in einer Aufgabenbeschreibung oder Projektnotiz verwenden:
 
 ```md
 [Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)

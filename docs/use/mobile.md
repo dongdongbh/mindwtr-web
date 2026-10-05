@@ -478,7 +478,7 @@ Your primary dashboard for doing. Focus is an Engage dashboard, not a full inven
 
 ### Sections
 
-**Upcoming release:** Focus sections appear in this order: **Today's Focus → Today → Next Actions → Review Due → Upcoming**. **Group next actions by** affects only Next Actions.
+Focus sections appear in this order: **Today's Focus → Today → Next Actions → Review Due → Upcoming**. **Group next actions by** affects only Next Actions.
 
 | Section | Content |
 | --- | --- |

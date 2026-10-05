@@ -107,7 +107,7 @@ Context and tag names accept Unicode letters and numbers (including CJK and acce
 1. Open task editor
 2. Add contexts in the Contexts field (comma-separated)
 
-Upcoming release: As you type a context name in Quick Add or the task editor, matches can include contexts on retained completed or archived tasks. Initial suggestions stay short; deleted tasks do not supply suggestions. Active context filters are unchanged.
+As you type a context name in Quick Add or the task editor, matches can include contexts on retained completed or archived tasks. Initial suggestions stay short; deleted tasks do not supply suggestions. Active context filters are unchanged.
 
 ### Filtering by Context
 
@@ -195,7 +195,7 @@ When you filter by a parent context, all children are included:
 | `@work`   | `@work`, `@work/meetings`, `@work/calls`     |
 | `#health` | `#health`, `#health/fitness`, `#health/diet` |
 
-Upcoming release: In Contexts, a parent such as `@tools` is offered when tasks in the current scope use `@tools/excavator`, even if no task has the parent label itself. A selected filter stays visible and clearable when it reaches zero results. Unselected branches disappear from the choices when they have no eligible tasks.
+In Contexts, a parent such as `@tools` is offered when tasks in the current scope use `@tools/excavator`, even if no task has the parent label itself. A selected filter stays visible and clearable when it reaches zero results. Unselected branches disappear from the choices when they have no eligible tasks.
 
 This allows high-level filtering while maintaining specific organization.
 

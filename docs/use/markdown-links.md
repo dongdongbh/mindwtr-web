@@ -75,7 +75,7 @@ Prepare launch notes for [[project:project-123|Website launch]]
 
 ## UpNote links
 
-**Upcoming release:** You can add an UpNote note link through **Add link**, or use an explicit Markdown link in a task description or project note:
+You can add an UpNote note link through **Add link**, or use an explicit Markdown link in a task description or project note:
 
 ```md
 [Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)

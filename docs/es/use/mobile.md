@@ -218,7 +218,7 @@ Consulta la [guía de intents de Tasker](https://tasker.joaoapps.com/userguide/e
 
 ### Widget de inicio
 
-En la próxima versión, tocar un espacio vacío en los widgets Tasks o Compact abrirá Focus en Android e iOS. Los enlaces de tareas, los controles para completar, la selección de listas y la captura rápida conservarán sus acciones actuales.
+Tocar un espacio vacío en los widgets Tasks o Compact abre Focus en Android e iOS. Los enlaces de tareas, los controles para completar, la selección de listas y la captura rápida conservan sus acciones actuales.
 
 Los controles siguientes corresponden a Android. Para iOS, consulta **Widget de la pantalla de inicio de iOS** más abajo.
 
@@ -243,7 +243,7 @@ Activar la transcripción también añade un botón de micrófono a esta ventana
 
 En Android, las etiquetas de vencimiento muestran **Hoy**, el día de la semana para tareas dentro de los próximos siete días o una fecha compacta, en el formato de fecha de la app, para fechas posteriores. Las tareas vencidas y las que vencen hoy aparecen destacadas.
 
-En la próxima versión, las listas de los widgets Tareas y Compacto de Android permitirán desplazarse más allá de 20 tareas. Para una lista muy larga, **Ver todo** al final abrirá la lista seleccionada completa en Mindwtr. No hace falta configurar el número de tareas.
+Las listas de los widgets Tareas y Compacto de Android permiten desplazarse más allá de 20 tareas. Para una lista muy larga, **Ver todo** al final abre la lista seleccionada completa en Mindwtr. No hace falta configurar el número de tareas.
 
 ### Widget de la pantalla de inicio de iOS
 
@@ -469,7 +469,7 @@ Tu panel principal para hacer. Foco es un panel de actividad, no un inventario c
 
 ### Secciones
 
-**Próxima versión:** Foco muestra **Foco de hoy → Hoy → Próximas acciones → Revisión pendiente → Próximas**. **Agrupar próximas acciones por** solo afecta a Próximas acciones.
+Foco muestra **Foco de hoy → Hoy → Próximas acciones → Revisión pendiente → Próximas**. **Agrupar próximas acciones por** solo afecta a Próximas acciones.
 
 | Sección      | Contenido                                                                 |
 | ------------ | ------------------------------------------------------------------------- |
@@ -722,7 +722,7 @@ Filtra tareas por nivel de energía, modo o tema:
 
 ## En espera
 
-En la próxima versión, las tareas con una persona asignada mostrarán su nombre directamente en la lista En espera, incluso con los detalles adicionales ocultos.
+Las tareas con una persona asignada muestran su nombre directamente en la lista En espera, incluso con los detalles adicionales ocultos.
 
 Controla los elementos delegados o que esperan acontecimientos externos.
 

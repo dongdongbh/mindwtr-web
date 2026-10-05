@@ -10,9 +10,9 @@ L’application de bureau comporte une barre latérale de navigation avec toutes
 
 ## Modes d’interaction
 
-- **Prochaine version :** utilisez **Copier le titre** dans le menu **Autres options** d’une tâche, ou appuyez sur `Ctrl+C` / `Cmd+C` lorsqu’une tâche est surlignée. Si plusieurs tâches sont sélectionnées, le raccourci copie leurs titres, un par ligne. Un message confirme la copie ; la copie du texte sélectionné ou du texte dans un éditeur fonctionne toujours normalement.
+- utilisez **Copier le titre** dans le menu **Autres options** d’une tâche, ou appuyez sur `Ctrl+C` / `Cmd+C` lorsqu’une tâche est surlignée. Si plusieurs tâches sont sélectionnées, le raccourci copie leurs titres, un par ligne. Un message confirme la copie ; la copie du texte sélectionné ou du texte dans un éditeur fonctionne toujours normalement.
 - Un **simple clic** affiche ou masque les détails d’une tâche.
-- **Prochaine version :** `Ctrl+click` (Windows/Linux) ou `Cmd+click` (macOS) sur le titre d’une tâche ou un espace vide de sa ligne la sélectionne ou la désélectionne sans appuyer d’abord sur **Sélectionner**. Après avoir sélectionné une tâche, `Shift+click` sélectionne la plage jusqu’à une autre tâche. Un clic simple continue d’afficher ou masquer les détails.
+- `Ctrl+click` (Windows/Linux) ou `Cmd+click` (macOS) sur le titre d’une tâche ou un espace vide de sa ligne la sélectionne ou la désélectionne sans appuyer d’abord sur **Sélectionner**. Après avoir sélectionné une tâche, `Shift+click` sélectionne la plage jusqu’à une autre tâche. Un clic simple continue d’afficher ou masquer les détails.
 - Un **double clic** sur une tâche ouvre le mode d’édition complet. Pour renommer uniquement le titre sur place, choisissez **Renommer la tâche** dans le menu `⋯` de la tâche (Entrée enregistre, Échap annule).
 - **Cliquez à l’extérieur** d’un éditeur de tâche ouvert pour le fermer si rien n’a été modifié ; dès qu’un champ a été modifié, vous devez utiliser Enregistrer, Annuler ou Échap pour le fermer.
 - Un **clic droit** ouvre les menus contextuels (projets, tâches).
@@ -57,7 +57,7 @@ Sur macOS 14 et versions ultérieures, l’application de bureau apporte son pro
 
 - **Ajoutez-le depuis la galerie de widgets** — cliquez sur la date dans la barre des menus, puis sur **Modifier les widgets** — et choisissez **Mindwtr** en petit, moyen ou grand format. Il affiche les tâches prioritaires du jour et se met à jour dès que cette liste change.
 - **Cliquez sur la liste des tâches** pour ouvrir l’application de bureau. Le widget comporte aussi un bouton **Capture rapide** qui ouvre uniquement le panneau flottant de capture rapide existant, et non la fenêtre principale. Si Mindwtr n’est pas déjà en cours d’exécution, macOS peut le lancer en arrière-plan pour afficher le panneau. Le widget Mac est en outre prioritaire sur le widget iPhone que la galerie proposait jusqu’ici via Continuité, lequel ouvrait l’application sur le téléphone.
-- Le widget est inclus dans la version signée Developer ID (le DMG) ; la version du Mac App Store en bénéficiera lors d’une prochaine livraison.
+- Le widget est inclus dans la version signée Developer ID (le DMG) et la version du Mac App Store.
 
 ## Vues
 
@@ -75,7 +75,7 @@ Votre zone de collecte. Toutes les nouvelles tâches y arrivent avant d’être 
 
 Votre tableau de bord unifié pour l’engagement quotidien. Focus ne constitue pas un inventaire complet de toutes les tâches ayant le statut `next` ; il restreint la liste au travail disponible maintenant.
 
-**Prochaine version :** Les sections Focus apparaissent dans cet ordre : **Focus du jour → Aujourd’hui → Prochaines actions → À revoir → À venir**.
+Les sections Focus apparaissent dans cet ordre : **Focus du jour → Aujourd’hui → Prochaines actions → À revoir → À venir**.
 
 - **Focus du jour** : tâches prioritaires étoilées dont le jour de début est arrivé. La limite configurée s’applique aux étoiles ajoutées pour aujourd’hui ; les tâches futures mises en attente ne prennent pas de place aujourd’hui. Les actions suivantes mises en focus affichent aussi une petite étoile pleine à côté de leur titre dans les listes et sur le Tableau.
 - **Aujourd’hui**: éléments dont l’échéance est dépassée; tâches dont l’échéance est aujourd’hui ou qui démarrent aujourd’hui, y compris plus tard dans la journée, triées par heure, ces lignes affichant leur heure de début jusqu’à ce qu’elle arrive.
@@ -131,7 +131,7 @@ Filtrez les tâches par niveau d’énergie, mode ou thème :
 
 ### ⏳ En attente
 
-Dans la prochaine version, les tâches attribuées à une personne afficheront son nom directement dans la liste En attente, même lorsque les détails supplémentaires sont masqués.
+Les tâches attribuées à une personne affichent son nom directement dans la liste En attente, même lorsque les détails supplémentaires sont masqués.
 
 Suivez les éléments délégués ou les tâches qui dépendent d’événements externes.
 
@@ -512,7 +512,7 @@ Dans **Bulk organize**, recherchez un projet ou un domaine, ou saisissez un nouv
 
 Sélectionnez plusieurs tâches pour effectuer des opérations par lot :
 
-1. Cliquez sur **« Sélectionner »** dans l’en-tête de la liste ou, dans la prochaine version, sélectionnez avec une touche de modification et un clic
+1. Cliquez sur **« Sélectionner »** dans l’en-tête de la liste ou, sélectionnez avec une touche de modification et un clic
 2. Cliquez sur les tâches pour les sélectionner ou les désélectionner
 3. Utilisez la barre d’actions pour :
    - **Déplacer** : modifier le statut de toutes les tâches sélectionnées
@@ -580,7 +580,7 @@ Consultez [Raccourcis clavier sur ordinateur](/fr/use/keyboard-shortcuts) pour o
 - `e` : modifier la tâche sélectionnée
 - `x` : basculer l’état terminé
 - `dd` : supprimer la tâche
-- Dans la prochaine version, `yy` copiera le titre de la tâche sélectionnée ; `yi` copiera son titre et sa description en texte brut. Sans description, `yi` copiera uniquement le titre. Ces raccourcis fonctionnent en mode Vim, hors des champs de texte et des boîtes de dialogue.
+- `yy` copie le titre de la tâche sélectionnée ; `yi` copie son titre et sa description en texte brut. Sans description, `yi` copie uniquement le titre. Ces raccourcis fonctionnent en mode Vim, hors des champs de texte et des boîtes de dialogue.
 
 `Ctrl+Z` / `Cmd+Z` annule la dernière validation ou suppression de tâche dans chaque préréglage.
 

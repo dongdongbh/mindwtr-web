@@ -20,17 +20,17 @@ Auf dem Desktop zeigt die App den genauen lokalen Datenpfad unter **Einstellunge
 
 ## Integriertes Desktop-MCP
 
-Die Desktop-App enthält einen von der App verwalteten MCP-Server unter **Einstellungen → Integrationen → MCP**. Dafür müssen weder Node, npm oder Bun noch ein separates Hilfsprogramm installiert werden. Standardmäßig ist der Server deaktiviert und schreibgeschützt.
+Die Desktop-App enthält einen von der App verwalteten MCP-Server unter **Einstellungen → Integrationen → MCP**. Ab der nächsten Desktop-Version läuft dieser Server in Rust im App-Prozess und nutzt dieselben internen Operationen wie die REST Local API, ohne mitgeliefertes Hilfsprogramm oder private HTTP-Brücke. Dafür müssen weder Node, npm oder Bun noch ein separates Hilfsprogramm installiert werden. Standardmäßig ist der Server deaktiviert und schreibgeschützt.
 
 Aktivieren Sie den lokalen MCP-Zugriff und wählen Sie **Verbindungsdaten kopieren**. Konfigurieren Sie einen Client mit Unterstützung für authentifiziertes Streamable HTTP mit dem folgenden Endpunkt und dem Bearer-Token aus den kopierten Daten. Die Konfigurationsformate unterscheiden sich; reine stdio-Clients benötigen weiterhin das eigenständige Hilfsprogramm.
 
 Verbundene KI-Clients können die über diese Werkzeuge bereitgestellten Daten lesen. **Änderungen erlauben** gestattet Bearbeitungen; der KI-Client kann Daten an seinen Anbieter senden. Halten Sie das kopierte Token geheim. Beim Erneuern werden bestehende Verbindungen getrennt und benötigen das neue Token.
 
-Mindwtr muss laufen. Deaktivieren von MCP oder Beenden der App stoppt den Server; beim Minimieren in den Infobereich läuft er weiter. Bei belegtem Port oder gestopptem Hilfsprogramm beheben Sie den Fehler und wählen **Erneut versuchen**. MCP verändert die Einstellungen der öffentlichen Local API nicht. Es unterstützt dieselbe Teilmenge von Operationen wie das unten beschriebene Local-API-Backend.
+Mindwtr muss laufen. Deaktivieren von MCP oder Beenden der App stoppt den Server; beim Minimieren in den Infobereich läuft er weiter. Wenn der Server nicht starten kann, etwa wegen eines belegten Ports, beheben Sie den Fehler und wählen **Erneut versuchen**. MCP verändert die Einstellungen der öffentlichen Local API nicht, und der separate Local-API-Server muss nicht aktiviert sein. Es unterstützt dieselbe Teilmenge von Operationen wie das unten beschriebene Local-API-Backend.
 
 Dieser Endpunkt dient Clients auf demselben Computer. Er bietet keinen entfernten ChatGPT-Zugriff, Tunnel oder gehosteten Dienst. Mobile Apps stellen diesen Server nicht bereit.
 
-Integriertes MCP erfordert auf dem Mac **macOS 13 oder neuer**; die bisherige Mindestversion von Mindwtr bleibt unverändert. **Änderungen erlauben** gestattet das Erstellen, Bearbeiten und Löschen von Aufgaben und Projekten sowie das Abschließen von Aufgaben.
+Ab der nächsten Desktop-Version unterstützt integriertes MCP dieselben Betriebssysteme wie die Desktop-App, ohne separate macOS-Mindestversion. **Änderungen erlauben** gestattet das Erstellen, Bearbeiten und Löschen von Aufgaben und Projekten sowie das Abschließen von Aufgaben.
 
 ```text
 http://127.0.0.1:8722/mcp
@@ -84,7 +84,7 @@ Verwenden Sie für den selbst gehosteten Cloud-Modus:
 
 ## Einrichtung und Konfiguration
 
-MCP-Clients führen den Server als Unterprozess aus. Sie geben ihnen **den Befehl** und übergeben Argumente.
+Beim eigenständigen Hilfsprogramm führen MCP-Clients den Server als Unterprozess aus. Sie geben ihnen **den Befehl** und übergeben Argumente.
 
 Empfohlener installationsfreier Befehl für MCP-Clients:
 

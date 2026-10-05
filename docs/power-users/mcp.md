@@ -20,17 +20,17 @@ On desktop, the app shows the exact local data path in **Settings -> Sync -> Loc
 
 ## Built-in desktop MCP
 
-The desktop app includes an app-managed MCP server under **Settings → Integrations → MCP**. No Node, npm, Bun, or separate helper installation is needed for this mode. It is disabled and read-only by default.
+The desktop app includes an app-managed MCP server under **Settings → Integrations → MCP**. In the next desktop release, this server runs in-process in Rust and shares internal operations with the REST Local API, without a bundled helper or private HTTP bridge. No Node, npm, Bun, or separate helper installation is needed for this mode. It is disabled and read-only by default.
 
 Enable local MCP access, then choose **Copy connection details**. Configure a client that supports authenticated Streamable HTTP with the endpoint below and the bearer token in the copied details. Client configuration formats vary; a stdio-only client still needs the standalone helper.
 
 Connected AI clients can read the data exposed by these tools. **Allow changes** permits edits; your AI client may send that data to its provider. Keep the copied token private. Regenerating it disconnects existing clients, which must be configured with the new token.
 
-Keep Mindwtr running. Disabling MCP or quitting the app stops the server; closing to the tray keeps it running. If the port is occupied or the helper stops, resolve the error and use **Retry**. Enabling MCP does not change your public Local API settings. It supports the same subset of operations as the Local API backend described below.
+Keep Mindwtr running. Disabling MCP or quitting the app stops the server; closing to the tray keeps it running. If the server cannot start, for example because the port is occupied, resolve the error and use **Retry**. Enabling MCP does not change your public Local API settings, and the separate Local API server does not need to be enabled. It supports the same subset of operations as the Local API backend described below.
 
 This endpoint serves clients on the same computer. It does not provide remote ChatGPT access, a tunnel, or a hosted service. Mobile apps do not host this server.
 
-Built-in MCP requires **macOS 13 or later** on Mac; Mindwtr’s existing minimum OS version is unchanged. **Allow changes** permits creating, editing, and deleting tasks and projects, including completing tasks.
+In the next desktop release, built-in MCP supports the same operating systems as the desktop app, with no separate macOS minimum. **Allow changes** permits creating, editing, and deleting tasks and projects, including completing tasks.
 
 ```text
 http://127.0.0.1:8722/mcp
@@ -84,7 +84,7 @@ For self-hosted Cloud mode, use:
 
 ## Setup & Configuration
 
-MCP clients run the server as a subprocess. You point them to **the command** and pass arguments.
+For the standalone helper, MCP clients run the server as a subprocess. You point them to **the command** and pass arguments.
 
 Recommended install-free command for MCP clients:
 

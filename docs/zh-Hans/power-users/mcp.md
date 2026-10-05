@@ -1,6 +1,6 @@
 # MCP 服务器
 
-Mindwtr 提供可选的 <strong>MCP（Model Context Protocol，模型上下文协议）</strong>服务器。它允许你将 AI 智能体（例如 **Claude Desktop**、**Claude Code**、**OpenAI Codex** 或 **Gemini CLI**）连接到本地 Mindwtr 数据库，或连接到自托管的 Mindwtr Cloud 端点。
+Mindwtr 提供可选的 <strong>MCP（Model Context Protocol，模型上下文协议）</strong>服务器。它允许你将 AI 智能体（例如 **Claude Desktop**、**Claude Code**、**OpenAI Codex** 或 **Gemini CLI**）连接到本地 Mindwtr 数据库、桌面端 Local API 或自托管的 Mindwtr Cloud 端点。
 
 服务器默认使用 **stdio**：MCP 客户端将它作为子进程启动，并通过 stdin/stdout 使用 JSON-RPC 通信。它也支持供远程客户端选择使用的身份验证流式 HTTP。
 
@@ -14,7 +14,7 @@ Mindwtr 提供可选的 <strong>MCP（Model Context Protocol，模型上下文�
 
 [![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
-你**无需**从源代码运行整个应用即可使用 MCP。正常使用桌面端应用二进制文件管理任务，然后让 MCP 客户端通过 `npx` 启动 `mindwtr-mcp`，或使用 npm 全局安装它。让辅助程序指向桌面端应用的本地 `mindwtr.db`。
+你**无需**从源代码运行整个应用即可使用 MCP。正常使用桌面端应用二进制文件管理任务，然后让 MCP 客户端通过 `npx` 启动 `mindwtr-mcp`，或使用 npm 全局安装它。让辅助程序指向桌面端应用的本地 `mindwtr.db`，或使用下文的 Local API 后端。
 
 在桌面端，应用会在**设置 -> 同步 -> 本地数据**中显示确切的本地数据路径。移动端二进制文件不公开本地 MCP 服务器接口。
 
@@ -23,11 +23,12 @@ Mindwtr 提供可选的 <strong>MCP（Model Context Protocol，模型上下文�
 ## 要求
 
 - **Node.js 22+**，用于免编译安装：SQLite 依赖为 Node 22 及更高版本提供预构建二进制文件。Node 20 仍可运行服务器，但安装时需要 C++ 构建工具
+- 仅使用 API 的安装可以通过 `--omit=optional` 省略可选的 SQLite 扩展。
 - **npm** 或其他 Node 包运行器，用于已发布的 `mindwtr-mcp` 包
-- 本地模式需要本地 Mindwtr 数据库（`mindwtr.db`），Cloud 模式则需要自托管的 Mindwtr Cloud URL 和 bearer token
+- SQLite 模式需要本地 Mindwtr 数据库（`mindwtr.db`），API 模式需要运行中的桌面端 Local API 及其 bearer token，Cloud 模式则需要自托管的 Mindwtr Cloud URL 和 bearer token
 - 仅当从源码树运行辅助程序时才需要 **Bun**
 
-使用 **npm 12** 时，需要批准 SQLite 依赖的安装脚本；否则，即使安装成功，启动时仍可能因缺少原生绑定而失败。使用 `npx` 或全局安装时，仅允许 `better-sqlite3`：
+在 **SQLite 模式下使用 npm 12** 时，需要批准 SQLite 依赖的安装脚本；否则，即使安装成功，启动时仍可能因缺少原生绑定而失败。使用 `npx` 或全局安装时，仅允许 `better-sqlite3`：
 
 ```bash
 npx --allow-scripts=better-sqlite3 -y mindwtr-mcp --db "/path/to/mindwtr.db"
@@ -80,6 +81,49 @@ MCP 客户端将服务器作为子进程运行。你需要为客户端指定**�
 ```
 
 该包默认为只读。只有在你明确希望 AI 客户端添加、更新、完成或删除 Mindwtr 数据时，才添加 `--write`。
+
+### 桌面端 Local API 模式
+
+> 此后端将包含在 MCP 辅助程序的下一个版本中。在该包发布之前，请从仓库构建辅助程序，并使用下列选项运行 `node apps/mcp-server/dist/cli.js`。
+
+在设置中启用桌面端应用的 **Local API**，并复制其 bearer token。保持应用和 API 运行。此后端使用应用的 REST 端点，绝不会打开数据库或回退到 SQLite。
+
+仅使用 API 安装时，请省略可选的原生 SQLite 扩展：
+
+```bash
+npm install -g --omit=optional mindwtr-mcp
+```
+
+将 MCP 客户端配置为通过环境变量传递令牌，而不是将令牌放在命令行参数中：
+
+```json
+{
+  "command": "mindwtr-mcp",
+  "args": ["--api-url", "http://127.0.0.1:3456"],
+  "env": {
+    "MINDWTR_MCP_API_TOKEN": "<token from desktop settings>"
+  }
+}
+```
+
+使用设置中显示的端口。`MINDWTR_MCP_API_URL` 可以替代 `--api-url`。URL 必须使用字面地址 `127.0.0.1` 或 `[::1]`，不得包含凭据、路径、查询参数或片段；重定向会被拒绝。不要混用 API 和 Cloud/`--db` 选项。在 API 模式下，现有的数据库路径环境变量会被忽略。
+
+除非明确使用 `--write` 启用，否则写入始终禁用。如果应用已关闭或令牌无效，辅助程序会返回错误。超时的写入可能已经到达应用：重试前请检查任务，因为辅助程序不会自动重试写入。
+
+| MCP 功能 | 桌面端 Local API 支持情况 |
+| --- | --- |
+| 列出/获取任务 | 支持，包括丰富的搜索运算符、日期筛选、排序和分页 |
+| 创建任务 | 明确指定标题和字段；不支持 `quickAdd` |
+| 更新/完成/删除/恢复任务 | 通过 API 的相应端点支持；终态变更不能作为普通编辑提交 |
+| 列出/获取/创建/更新/删除项目 | 支持 API 的基本项目字段：标题、颜色、状态、领域和顺序执行行为 |
+| 列出领域 | 支持 |
+| 分区、受管理的人员、领域写入 | 不支持；这些工具在 API 模式下隐藏 |
+| GTD 可执行性 `view` | 不支持，因为 API 不提供所需的分区快照 |
+| 替换附件链接 | 不支持，因为 API 不提供带条件的附件更新 |
+
+其他不支持的字段会在写入之前被拒绝。桌面端 API 的重复任务限制同样适用；某些重复任务必须在应用中完成。此后端不保证与 SQLite/Cloud 工具完全一致。
+
+`--api-url` 选择辅助程序的**数据源**。`--http` 则选择 MCP 客户端如何**连接到辅助程序**；它可用于任何后端，并使用单独的身份验证令牌。
 
 ### 自托管 Cloud 模式
 
@@ -276,7 +320,7 @@ Antigravity（Google 的智能体 IDE）从 JSON 配置文件读取本地 MCP �
 
 > 需要比 1.1.1 更新的 `mindwtr-mcp` 版本（或从源码运行）。
 
-服务器默认使用 stdio。传入 `--http` 后改为提供可流式传输的 HTTP MCP 端点，远程 MCP 客户端即可通过 URL 连接。HTTP 模式对两种后端（本地 SQLite 或自托管 Cloud）都适用。
+服务器默认使用 stdio。传入 `--http` 后改为提供可流式传输的 HTTP MCP 端点，远程 MCP 客户端即可通过 URL 连接。HTTP 模式对三种后端（本地 SQLite、桌面端 Local API 或自托管 Cloud）都适用。
 
 ```bash
 mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"

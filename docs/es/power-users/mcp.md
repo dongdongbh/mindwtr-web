@@ -1,6 +1,6 @@
 # Servidor MCP
 
-Mindwtr ofrece un servidor opcional de **MCP (Model Context Protocol)**. Esto te permite conectar agentes de IA (como **Claude Desktop**, **Claude Code**, **OpenAI Codex** o **Gemini CLI**) a tu base de datos local de Mindwtr o a un endpoint autoalojado de Mindwtr Cloud.
+Mindwtr ofrece un servidor opcional de **MCP (Model Context Protocol)**. Esto te permite conectar agentes de IA (como **Claude Desktop**, **Claude Code**, **OpenAI Codex** o **Gemini CLI**) a tu base de datos local de Mindwtr, a la API local de escritorio o a un endpoint autoalojado de Mindwtr Cloud.
 
 De forma predeterminada, el servidor usa **stdio**: los clientes MCP lo inician como subproceso y se comunican mediante JSON-RPC a través de stdin/stdout. También admite HTTP transmisible autenticado y opcional para clientes remotos.
 
@@ -14,7 +14,7 @@ Los binarios de las aplicaciones de escritorio y móviles incluyen la aplicació
 
 [![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
-**No** necesitas ejecutar toda la aplicación desde el código fuente para usar MCP. Usa el binario normal de la aplicación de escritorio para tus tareas y deja que tu cliente MCP inicie `mindwtr-mcp` con `npx`, o instálalo globalmente con npm. Haz que el asistente apunte al archivo `mindwtr.db` local de la aplicación de escritorio.
+**No** necesitas ejecutar toda la aplicación desde el código fuente para usar MCP. Usa el binario normal de la aplicación de escritorio para tus tareas y deja que tu cliente MCP inicie `mindwtr-mcp` con `npx`, o instálalo globalmente con npm. Haz que el asistente apunte al archivo `mindwtr.db` local de la aplicación de escritorio, o usa el backend de API local que se describe a continuación.
 
 En escritorio, la aplicación muestra la ruta de datos local exacta en **Ajustes -> Sincronización -> Datos locales**. Los binarios móviles no exponen un servidor MCP local.
 
@@ -23,11 +23,12 @@ En escritorio, la aplicación muestra la ruta de datos local exacta en **Ajustes
 ## Requisitos
 
 - **Node.js 22+** para instalaciones sin compilador: la dependencia de SQLite incluye binarios precompilados para Node 22 y versiones posteriores. Node 20 aún puede ejecutar el servidor, pero las instalaciones necesitan herramientas de compilación de C++
+- Las instalaciones que solo usan la API pueden omitir el complemento SQLite opcional con `--omit=optional`.
 - **npm** u otro ejecutor de paquetes de Node para el paquete `mindwtr-mcp` publicado
-- Una base de datos local de Mindwtr (`mindwtr.db`) para el modo local, o una URL autoalojada de Mindwtr Cloud y un token de portador para el modo Cloud
+- Una base de datos local de Mindwtr (`mindwtr.db`) para el modo SQLite, una API local de escritorio en ejecución y su token de portador para el modo API, o una URL autoalojada de Mindwtr Cloud y un token de portador para el modo Cloud
 - **Bun** solo si ejecutas el asistente desde el árbol de código fuente
 
-Con **npm 12**, autoriza el script de instalación de la dependencia SQLite; de lo contrario, una instalación correcta puede fallar al iniciar por la ausencia del módulo nativo. Para `npx` o instalaciones globales, autoriza solo `better-sqlite3`:
+Para el **modo SQLite con npm 12**, autoriza el script de instalación de la dependencia SQLite; de lo contrario, una instalación correcta puede fallar al iniciar por la ausencia del módulo nativo. Para `npx` o instalaciones globales, autoriza solo `better-sqlite3`:
 
 ```bash
 npx --allow-scripts=better-sqlite3 -y mindwtr-mcp --db "/path/to/mindwtr.db"
@@ -80,6 +81,49 @@ Comando recomendado sin instalación para clientes MCP:
 ```
 
 El paquete es de solo lectura de forma predeterminada. Añade `--write` únicamente cuando quieras explícitamente que un cliente de IA añada, actualice, complete o elimine datos de Mindwtr.
+
+### Modo de API local de escritorio
+
+> Este backend se incluirá en la próxima versión del asistente MCP. Hasta que se publique ese paquete, compila el asistente desde el repositorio y ejecuta `node apps/mcp-server/dist/cli.js` con las opciones siguientes.
+
+Activa la **API local** de la aplicación de escritorio en Ajustes y copia su token de portador. Mantén la aplicación y la API en ejecución. Este backend usa los endpoints REST de la aplicación y nunca abre una base de datos ni recurre a SQLite.
+
+Para una instalación que solo use la API, omite el complemento nativo SQLite opcional:
+
+```bash
+npm install -g --omit=optional mindwtr-mcp
+```
+
+Configura tu cliente MCP para pasar el token mediante su entorno, en lugar de incluirlo en los argumentos de la línea de comandos:
+
+```json
+{
+  "command": "mindwtr-mcp",
+  "args": ["--api-url", "http://127.0.0.1:3456"],
+  "env": {
+    "MINDWTR_MCP_API_TOKEN": "<token from desktop settings>"
+  }
+}
+```
+
+Usa el puerto que aparece en Ajustes. `MINDWTR_MCP_API_URL` puede sustituir a `--api-url`. Las URL deben usar literalmente `127.0.0.1` o `[::1]`, sin credenciales, ruta, consulta ni fragmento; se rechazan las redirecciones. No combines las opciones de API con las de Cloud/`--db`. En el modo API se ignoran las variables de entorno existentes para rutas de bases de datos.
+
+Las escrituras permanecen desactivadas salvo que se activen explícitamente con `--write`. Si la aplicación está cerrada o el token no es válido, el asistente devuelve un error. Una escritura cuyo tiempo de espera se haya agotado puede haber llegado a la aplicación: revisa la tarea antes de volver a intentarlo, ya que el asistente no reintenta las escrituras automáticamente.
+
+| Capacidad MCP | Compatibilidad de la API local de escritorio |
+| --- | --- |
+| Listar/obtener tareas | Compatible, incluidos operadores de búsqueda avanzados, filtros de fecha, ordenación y paginación |
+| Crear tareas | Título y campos explícitos; `quickAdd` no está disponible |
+| Actualizar/completar/eliminar/restaurar tareas | Compatible mediante los endpoints correspondientes de la API; los cambios a estados finales no pueden enviarse como ediciones ordinarias |
+| Listar/obtener/crear/actualizar/eliminar proyectos | Compatible con los campos básicos de proyecto de la API: título, color, estado, área y comportamiento secuencial |
+| Listar áreas | Compatible |
+| Secciones, personas gestionadas, escrituras de áreas | No disponibles; estas herramientas se ocultan en el modo API |
+| Disponibilidad GTD `view` | No disponible porque la API no expone la instantánea de secciones necesaria |
+| Sustituir enlaces de adjuntos | No disponible porque la API no proporciona actualizaciones condicionales de adjuntos |
+
+Los demás campos no compatibles se rechazan antes de escribir. También se aplican las limitaciones de recurrencia de la API de escritorio; algunas tareas recurrentes deben completarse en la aplicación. Este backend no garantiza una equivalencia total con las herramientas SQLite/Cloud.
+
+`--api-url` selecciona la **fuente de datos** del asistente. En cambio, `--http` selecciona cómo se conecta un cliente MCP **al asistente**; puede usarse con cualquier backend y tiene un token de autenticación independiente.
 
 ### Modo Cloud autoalojado
 
@@ -276,7 +320,7 @@ Sustituye la ruta por la de tu base de datos local (las rutas de Windows necesit
 
 > Requiere una versión de `mindwtr-mcp` posterior a 1.1.1 (o ejecutar desde el código fuente).
 
-De forma predeterminada, el servidor habla stdio. Pasa `--http` para servir en su lugar un endpoint MCP de HTTP transmisible, de modo que los clientes MCP remotos puedan conectarse por URL. El modo HTTP funciona con ambos backends (SQLite local o Cloud autoalojado).
+De forma predeterminada, el servidor habla stdio. Pasa `--http` para servir en su lugar un endpoint MCP de HTTP transmisible, de modo que los clientes MCP remotos puedan conectarse por URL. El modo HTTP funciona con los tres backends (SQLite local, API local de escritorio o Cloud autoalojado).
 
 ```bash
 mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"

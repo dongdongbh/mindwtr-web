@@ -1,6 +1,6 @@
 # MCP-Server
 
-Mindwtr bietet einen optionalen **MCP-Server (Model Context Protocol)**. Damit können Sie KI-Agenten wie **Claude Desktop**, **Claude Code**, **OpenAI Codex** oder **Gemini CLI** mit Ihrer lokalen Mindwtr-Datenbank oder einem selbst gehosteten Mindwtr-Cloud-Endpunkt verbinden.
+Mindwtr bietet einen optionalen **MCP-Server (Model Context Protocol)**. Damit können Sie KI-Agenten wie **Claude Desktop**, **Claude Code**, **OpenAI Codex** oder **Gemini CLI** mit Ihrer lokalen Mindwtr-Datenbank, der lokalen API der Desktop-App oder einem selbst gehosteten Mindwtr-Cloud-Endpunkt verbinden.
 
 Standardmäßig verwendet der Server **stdio**: MCP-Clients starten ihn als Unterprozess und kommunizieren über JSON-RPC auf stdin/stdout. Für entfernte Clients unterstützt er außerdem optional authentifiziertes Streamable HTTP.
 
@@ -14,7 +14,7 @@ Die Binärdateien der Desktop- und Mobil-App enthalten die Mindwtr-App, derzeit 
 
 [![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
-Sie müssen **nicht** die gesamte App aus dem Quellcode ausführen, um MCP zu verwenden. Verwenden Sie die normale Desktop-App für Ihre Aufgaben und lassen Sie dann Ihren MCP-Client `mindwtr-mcp` über `npx` starten, oder installieren Sie es global mit npm. Verweisen Sie das Hilfsprogramm auf die lokale Datei `mindwtr.db` der Desktop-App.
+Sie müssen **nicht** die gesamte App aus dem Quellcode ausführen, um MCP zu verwenden. Verwenden Sie die normale Desktop-App für Ihre Aufgaben und lassen Sie dann Ihren MCP-Client `mindwtr-mcp` über `npx` starten, oder installieren Sie es global mit npm. Verweisen Sie das Hilfsprogramm auf die lokale Datei `mindwtr.db` der Desktop-App oder verwenden Sie das unten beschriebene Local-API-Backend.
 
 Auf dem Desktop zeigt die App den genauen lokalen Datenpfad unter **Einstellungen → Synchronisierung → Lokale Daten** an. Binärdateien für Mobilgeräte stellen keinen lokalen MCP-Server bereit.
 
@@ -23,11 +23,12 @@ Auf dem Desktop zeigt die App den genauen lokalen Datenpfad unter **Einstellunge
 ## Voraussetzungen
 
 - **Node.js 22+** für Installationen ohne Compiler: Die SQLite-Abhängigkeit liefert vorkompilierte Binärdateien für Node 22 und neuer. Node 20 kann den Server weiterhin ausführen, benötigt für die Installation aber C++-Buildwerkzeuge.
+- Bei reinen API-Installationen können Sie das optionale SQLite-Addon mit `--omit=optional` weglassen.
 - **npm** oder einen anderen Node-Package-Runner für das veröffentlichte Paket `mindwtr-mcp`
-- eine lokale Mindwtr-Datenbank (`mindwtr.db`) für den lokalen Modus oder eine selbst gehostete Mindwtr-Cloud-URL und ein Bearer-Token für den Cloud-Modus
+- eine lokale Mindwtr-Datenbank (`mindwtr.db`) für den SQLite-Modus, eine laufende Local API der Desktop-App und ihr Bearer-Token für den API-Modus oder eine selbst gehostete Mindwtr-Cloud-URL und ein Bearer-Token für den Cloud-Modus
 - **Bun** nur, wenn Sie das Hilfsprogramm aus dem Quellbaum ausführen
 
-Mit **npm 12** müssen Sie das Installationsskript der SQLite-Abhängigkeit freigeben. Sonst kann die Installation erfolgreich sein, der Start aber wegen fehlender nativer Bindings scheitern. Erlauben Sie bei `npx` oder globalen Installationen nur `better-sqlite3`:
+Im **SQLite-Modus mit npm 12** müssen Sie das Installationsskript der SQLite-Abhängigkeit freigeben. Sonst kann die Installation erfolgreich sein, der Start aber wegen fehlender nativer Bindings scheitern. Erlauben Sie bei `npx` oder globalen Installationen nur `better-sqlite3`:
 
 ```bash
 npx --allow-scripts=better-sqlite3 -y mindwtr-mcp --db "/path/to/mindwtr.db"
@@ -80,6 +81,49 @@ Empfohlener installationsfreier Befehl für MCP-Clients:
 ```
 
 Das Paket ist standardmäßig schreibgeschützt. Fügen Sie `--write` nur hinzu, wenn ein KI-Client ausdrücklich Mindwtr-Daten hinzufügen, aktualisieren, erledigen oder löschen können soll.
+
+### Local-API-Modus der Desktop-App
+
+> Dieses Backend ist in der nächsten Version des MCP-Hilfsprogramms enthalten. Bis dieses Paket veröffentlicht wird, bauen Sie das Hilfsprogramm aus dem Repository und führen Sie `node apps/mcp-server/dist/cli.js` mit den unten angegebenen Optionen aus.
+
+Aktivieren Sie die **Local API** der Desktop-App in den Einstellungen und kopieren Sie ihr Bearer-Token. Lassen Sie die App und die API laufen. Dieses Backend verwendet die REST-Endpunkte der App und öffnet niemals eine Datenbank oder greift auf SQLite zurück.
+
+Lassen Sie bei einer reinen API-Installation das optionale native SQLite-Addon weg:
+
+```bash
+npm install -g --omit=optional mindwtr-mcp
+```
+
+Konfigurieren Sie Ihren MCP-Client so, dass er das Token über seine Umgebung übergibt, statt es in Befehlszeilenargumenten anzugeben:
+
+```json
+{
+  "command": "mindwtr-mcp",
+  "args": ["--api-url", "http://127.0.0.1:3456"],
+  "env": {
+    "MINDWTR_MCP_API_TOKEN": "<token from desktop settings>"
+  }
+}
+```
+
+Verwenden Sie den in den Einstellungen angezeigten Port. `MINDWTR_MCP_API_URL` kann `--api-url` ersetzen. URLs müssen die wörtliche Adresse `127.0.0.1` oder `[::1]` verwenden und dürfen keine Zugangsdaten, Pfade, Abfragen oder Fragmente enthalten; Weiterleitungen werden abgelehnt. Kombinieren Sie API-Optionen nicht mit Cloud-/`--db`-Optionen. Vorhandene Umgebungsvariablen für Datenbankpfade werden im API-Modus ignoriert.
+
+Schreibzugriffe bleiben deaktiviert, solange sie nicht ausdrücklich mit `--write` aktiviert werden. Wenn die App geschlossen oder das Token ungültig ist, gibt das Hilfsprogramm einen Fehler zurück. Ein Schreibzugriff mit Zeitüberschreitung kann die App bereits erreicht haben: Prüfen Sie die Aufgabe vor einem erneuten Versuch, da das Hilfsprogramm Schreibzugriffe nicht automatisch wiederholt.
+
+| MCP-Funktion | Unterstützung durch die Local API der Desktop-App |
+| --- | --- |
+| Aufgaben auflisten/abrufen | Unterstützt, einschließlich erweiterter Suchoperatoren, Datumsfilter, Sortierung und Paginierung |
+| Aufgaben erstellen | Expliziter Titel und Felder; `quickAdd` ist nicht verfügbar |
+| Aufgaben aktualisieren/erledigen/löschen/wiederherstellen | Über die entsprechenden API-Endpunkte unterstützt; Änderungen zu einem endgültigen Status können nicht als gewöhnliche Bearbeitungen übermittelt werden |
+| Projekte auflisten/abrufen/erstellen/aktualisieren/löschen | Für die grundlegenden Projektfelder der API unterstützt: Titel, Farbe, Status, Bereich und sequenzielles Verhalten |
+| Bereiche auflisten | Unterstützt |
+| Abschnitte, verwaltete Personen, Schreibzugriffe auf Bereiche | Nicht verfügbar; diese Werkzeuge werden im API-Modus ausgeblendet |
+| GTD-Verfügbarkeit `view` | Nicht verfügbar, da die API den erforderlichen Abschnitts-Snapshot nicht bereitstellt |
+| Anhangslinks ersetzen | Nicht verfügbar, da die API keine bedingten Anhangsaktualisierungen bereitstellt |
+
+Andere nicht unterstützte Felder werden vor einem Schreibzugriff abgelehnt. Auch die Einschränkungen der Desktop-API bei Wiederholungen gelten; einige wiederkehrende Aufgaben müssen in der App erledigt werden. Dieses Backend verspricht keine vollständige Gleichwertigkeit mit den SQLite-/Cloud-Werkzeugen.
+
+`--api-url` wählt die **Datenquelle** des Hilfsprogramms aus. `--http` legt dagegen fest, wie sich ein MCP-Client **mit dem Hilfsprogramm** verbindet; es kann mit jedem Backend verwendet werden und hat ein separates Authentifizierungstoken.
 
 ### Self-Hosted-Cloud-Modus
 
@@ -276,7 +320,7 @@ Ersetzen Sie den Pfad durch den lokalen Datenbankpfad Ihrer Plattform (Windows-P
 
 > Erfordert eine `mindwtr-mcp`-Version neuer als 1.1.1 (oder die Ausführung aus dem Quellcode).
 
-Standardmäßig spricht der Server stdio. Mit `--http` stellt er stattdessen einen Streamable-HTTP-MCP-Endpunkt bereit, sodass sich entfernte MCP-Clients per URL verbinden können. Der HTTP-Modus funktioniert mit beiden Backends (lokale SQLite-Datenbank oder selbst gehostete Cloud).
+Standardmäßig spricht der Server stdio. Mit `--http` stellt er stattdessen einen Streamable-HTTP-MCP-Endpunkt bereit, sodass sich entfernte MCP-Clients per URL verbinden können. Der HTTP-Modus funktioniert mit allen drei Backends (lokale SQLite-Datenbank, Local API der Desktop-App oder selbst gehostete Cloud).
 
 ```bash
 mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"

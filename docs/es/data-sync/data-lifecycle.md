@@ -10,7 +10,7 @@ Como se vuelve a generar, su tamaño puede disminuir entre ejecuciones: los marc
 
 ## Qué lo hace crecer
 
-- Tareas activas, completadas y archivadas; tu historial sigue siendo consultable por diseño.
+- Tareas activas, completadas y archivadas; tu historial sigue siendo consultable de forma predeterminada.
 - Proyectos, secciones, áreas, personas y filtros guardados.
 - **Metadatos** de adjuntos, unos cientos de bytes por archivo; su contenido reside aparte en `attachments/`.
 - Marcadores de elementos eliminados, que permiten que otros dispositivos conozcan las eliminaciones.
@@ -20,6 +20,7 @@ Como se vuelve a generar, su tamaño puede disminuir entre ejecuciones: los marc
 - **Caducidad de marcadores:** los registros de eliminaciones se purgan tras el periodo de conservación, 90 días de forma predeterminada.
 - **Vaciado de la papelera:** «Eliminar para siempre», por elemento o mediante Vaciar todo, quita inmediatamente los datos y solo conserva el marcador hasta que caduque.
 - **Limpieza de adjuntos:** los metadatos huérfanos y las transferencias pendientes antiguas se purgan con un número limitado de reintentos. Ajustes → Datos también incluye una limpieza manual.
+- **Conservación opcional del archivo**: Ajustes → Datos → Conservación del archivo usa **Nunca** de forma predeterminada. Un número entero positivo de días confirmado elimina definitivamente las tareas y proyectos archivados elegibles al vencer ese plazo. Activar o acortar el plazo requiere confirmación; los archivos antiguos recién fechados reciben un periodo completo. Los proyectos activos, contenidos más recientes y cambios simultáneos evitan una limpieza anticipada. El ajuste y los marcadores de eliminación se sincronizan; las copias de seguridad y el historial del proveedor son independientes.
 
 ## Por qué un archivo en vez de separar el archivo histórico
 

@@ -10,7 +10,7 @@ Weil die Datei neu geschrieben wird, kann sie zwischen zwei Läufen *kleiner* we
 
 ## Wodurch die Datei wächst
 
-- Aktive, erledigte und archivierte Aufgaben (Ihr Verlauf bleibt bewusst durchsuchbar)
+- Aktive, erledigte und archivierte Aufgaben (Ihr Verlauf bleibt standardmäßig durchsuchbar)
 - Projekte, Abschnitte, Bereiche, Personen und gespeicherte Filter
 - **Metadaten** von Anhängen (einige hundert Byte pro Anhang; die eigentlichen Dateien liegen getrennt unter `attachments/`)
 - Löschmarkierungen, damit andere Geräte von gelöschten Einträgen erfahren
@@ -20,6 +20,7 @@ Weil die Datei neu geschrieben wird, kann sie zwischen zwei Läufen *kleiner* we
 - **Ablauf von Löschmarkierungen**: Löschdatensätze werden nach der Aufbewahrungsfrist entfernt (standardmäßig 90 Tage).
 - **Leeren des Papierkorbs**: „Endgültig löschen“ (je Eintrag oder „Alle löschen“) entfernt die Daten sofort. Nur die Löschmarkierung bleibt bis zum Ablauf der Frist erhalten.
 - **Bereinigung von Anhängen**: Verwaiste Anhangsmetadaten und veraltete ausstehende Übertragungen werden mit begrenzten Wiederholungsversuchen entfernt. Unter Einstellungen → Daten gibt es auch eine manuelle Bereinigung.
+- **Optionale Archivaufbewahrung**: Einstellungen → Daten → Archivaufbewahrung steht standardmäßig auf **Nie**. Nach Bestätigung einer positiven ganzen Anzahl von Tagen werden geeignete archivierte Aufgaben und Projekte nach diesem Zeitraum endgültig gelöscht. Aktivieren oder Verkürzen erfordert eine Bestätigung; ältere Archive ohne Zeitstempel erhalten zunächst einen vollen Zeitraum. Aktive Projekte, neuere Inhalte und gleichzeitige Änderungen verhindern vorzeitiges Löschen. Einstellung und Löschmarkierungen werden synchronisiert; Backups und Anbieterhistorie bleiben getrennt.
 
 ## Warum eine Datei statt getrennter Archive
 

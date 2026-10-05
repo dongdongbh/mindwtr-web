@@ -10,7 +10,7 @@ Comme il est réécrit, sa taille peut *diminuer* d’une exécution à l’autr
 
 ## Ce qui le fait grossir
 
-- Les tâches actives, terminées et archivées — votre historique reste consultable par conception
+- Les tâches actives, terminées et archivées — votre historique reste consultable par défaut
 - Les projets, sections, domaines, personnes et filtres enregistrés
 - Les **métadonnées** des pièces jointes — quelques centaines d’octets par pièce jointe ; les fichiers eux-mêmes se trouvent séparément dans `attachments/`
 - Les tombstones des éléments supprimés, conservés afin que les autres appareils apprennent leur suppression
@@ -20,6 +20,7 @@ Comme il est réécrit, sa taille peut *diminuer* d’une exécution à l’autr
 - **Expiration des tombstones** : les traces de suppression sont éliminées après la durée de conservation, fixée à 90 jours par défaut.
 - **Purge de la corbeille** : « Supprimer définitivement », par élément ou avec Tout effacer, retire immédiatement les données et ne laisse qu’un tombstone jusqu’à son expiration.
 - **Nettoyage des pièces jointes** : les métadonnées orphelines et les transferts en attente obsolètes sont supprimés avec un nombre limité de nouvelles tentatives. Un nettoyage manuel est également proposé dans Paramètres → Données.
+- **Conservation facultative des archives** : Paramètres → Données → Conservation des archives vaut **Jamais** par défaut. Un nombre entier positif de jours confirmé supprime définitivement les tâches et projets archivés admissibles après ce délai. Activer ou raccourcir le délai demande confirmation ; les anciennes archives nouvellement datées reçoivent une période complète. Les projets actifs, contenus plus récents et modifications simultanées empêchent un nettoyage prématuré. Le réglage et les marqueurs de suppression se synchronisent ; les sauvegardes et l’historique du fournisseur restent séparés.
 
 ## Pourquoi un seul fichier plutôt que des archives séparées
 

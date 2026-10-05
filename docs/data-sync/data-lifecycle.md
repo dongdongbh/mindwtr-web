@@ -10,7 +10,7 @@ Because it is rewritten, its size can go *down* between runs: expired tombstones
 
 ## What makes it grow
 
-- Active, completed, and archived tasks (your history stays searchable by design)
+- Active, completed, and archived tasks (history stays searchable by default)
 - Projects, sections, areas, people, and saved filters
 - Attachment **metadata** (a few hundred bytes per attachment; the file bytes live separately under `attachments/`)
 - Tombstones for deleted items, kept so other devices learn about deletions
@@ -20,6 +20,7 @@ Because it is rewritten, its size can go *down* between runs: expired tombstones
 - **Tombstone expiry**: records of deletions are pruned after the retention window (90 days by default).
 - **Trash purge**: "Delete forever" (per item or Clear all) removes the data immediately and leaves only a tombstone until retention expires.
 - **Attachment cleanup**: orphaned attachment metadata and stale pending transfers are pruned with bounded retries (Settings → Data has a manual cleanup too).
+- **Optional archive retention**: Settings → Data → Archive retention defaults to **Never**. A confirmed positive whole number of days permanently removes eligible archived tasks and projects after that period. Enabling or shortening it requires confirmation; newly dated legacy archives receive a full period, and active projects, newer contents and concurrent edits prevent early cleanup. This setting and deletion markers sync, but backups and provider history are separate.
 
 ## Why one file instead of an archive split
 

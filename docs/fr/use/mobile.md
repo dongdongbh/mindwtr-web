@@ -156,6 +156,12 @@ Pour les captures en série, activez l’interrupteur **Ajouter une autre** dans
 | Schéma d’URL `mindwtr://capture` | Oui | Oui | Oui, écran de capture |
 | Importation depuis Rappels Apple (manuelle ou automatique) | Oui | Non | S’exécute à l’ouverture de l’app |
 
+### Raccourcis du lanceur Android
+
+À partir de v1.3.4, appuyez longuement sur l’icône Mindwtr pour choisir **Capture** ou **Add task…**. **Capture** conserve la petite fenêtre flottante de capture dans la boîte de réception. **Add task…** ouvre Mindwtr directement dans le formulaire de capture existant, où vous pouvez choisir Focus, projet, contextes, dates et autres détails avant d’enregistrer.
+
+Le nouveau raccourci ouvre un brouillon non enregistré ; annuler ne crée aucune tâche. Le rouvrir lorsque le formulaire est déjà ouvert conserve votre brouillon. Focus respecte la limite habituelle de tâches et les filtres du widget ; aucune échéance n’est ajoutée. Les boutons des widgets, la tuile des réglages rapides et la capture depuis les notifications conservent leur fonctionnement léger.
+
 ### Feuille de partage
 
 Collectez des tâches depuis n’importe quelle application à l’aide de la feuille de partage :

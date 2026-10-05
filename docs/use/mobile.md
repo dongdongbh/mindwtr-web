@@ -162,6 +162,12 @@ For capture bursts, turn on the **Add another** switch in the capture sheet: eac
 | URL scheme `mindwtr://capture` | Yes | Yes | Yes, capture screen |
 | Apple Reminders import (manual or automatic) | Yes | No | Runs when the app opens |
 
+### Android launcher shortcuts
+
+Starting with v1.3.4, long-press the Mindwtr app icon to choose **Capture** or **Add task…**. **Capture** keeps the small floating Inbox dialog. **Add task…** opens Mindwtr directly into the existing capture sheet, where you can choose Focus, a project, contexts, dates, and other details before saving.
+
+The new shortcut opens an unsaved draft; cancelling creates no task. Reopening it while the sheet is open preserves your draft. Focus uses the normal task limit and widget filters; it does not add a due date. Widget buttons, the Quick Settings tile, and notification capture keep their lightweight behavior.
+
 ### Share Sheet
 
 Capture tasks from any app using the share sheet:

@@ -149,6 +149,12 @@ Aktivieren Sie für mehrere Erfassungen **Weitere hinzufügen**: Jedes `Enter` s
 | URL-Schema `mindwtr://capture` | Ja | Ja | Ja, Erfassungsbildschirm |
 | Import aus Apple Erinnerungen (manuell oder automatisch) | Ja | Nein | Läuft beim Öffnen der App |
 
+### Android-Startbildschirm-Verknüpfungen
+
+Ab v1.3.4 zeigt langes Drücken auf das Mindwtr-App-Symbol **Capture** und **Add task…** an. **Capture** öffnet weiterhin den kleinen schwebenden Eingangsdialog. **Add task…** öffnet Mindwtr direkt mit dem bestehenden Erfassungsformular, in dem du vor dem Speichern Fokus, Projekt, Kontexte, Termine und weitere Details wählen kannst.
+
+Die neue Verknüpfung öffnet einen ungespeicherten Entwurf; Abbrechen erstellt keine Aufgabe. Erneutes Öffnen bei bereits geöffnetem Formular behält den Entwurf bei. Für Fokus gelten das normale Aufgabenlimit und die Widget-Filter; ein Fälligkeitsdatum wird nicht hinzugefügt. Widget-Schaltflächen, die Schnelleinstellungskachel und die Erfassung über Benachrichtigungen behalten ihr bisheriges Verhalten.
+
 ### Teilen-Menü
 
 1. In einer App (Browser, E-Mail, Notizen) Inhalt auswählen

@@ -2,7 +2,7 @@
 
 Mindwtr 提供可选的 <strong>MCP（Model Context Protocol，模型上下文协议）</strong>服务器。它允许你将 AI 智能体（例如 **Claude Desktop**、**Claude Code**、**OpenAI Codex** 或 **Gemini CLI**）连接到本地 Mindwtr 数据库、桌面端 Local API 或自托管的 Mindwtr Cloud 端点。
 
-服务器默认使用 **stdio**：MCP 客户端将它作为子进程启动，并通过 stdin/stdout 使用 JSON-RPC 通信。它也支持供远程客户端选择使用的身份验证流式 HTTP。
+独立辅助程序默认使用 **stdio**。
 
 > 实现参考：[apps/mcp-server/README.md](https://github.com/dongdongbh/Mindwtr/blob/main/apps/mcp-server/README.md)。如果该 README 与当前服务器代码或生成的 MCP 工具 schema 不一致，以代码和 schema 为准。
 
@@ -10,7 +10,7 @@ Mindwtr 提供可选的 <strong>MCP（Model Context Protocol，模型上下文�
 
 ## 应用二进制文件与 MCP 辅助程序
 
-桌面端和移动端应用二进制文件包含 Mindwtr 应用，但目前**不**包含桌面端启动/停止开关。独立 MCP 辅助程序以 [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) 发布，并已列入公共 [MCP Registry](https://registry.modelcontextprotocol.io/)。
+独立 MCP 辅助程序继续以 [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) 发布，并已列入公共 [MCP Registry](https://registry.modelcontextprotocol.io/)。
 
 [![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
@@ -18,9 +18,29 @@ Mindwtr 提供可选的 <strong>MCP（Model Context Protocol，模型上下文�
 
 在桌面端，应用会在**设置 -> 同步 -> 本地数据**中显示确切的本地数据路径。移动端二进制文件不公开本地 MCP 服务器接口。
 
+## 桌面端内置 MCP（下一版本）
+
+下一桌面版本将在**设置 → 集成 → MCP**中提供由应用管理的 MCP 服务器。此模式无需安装 Node、npm、Bun 或独立辅助程序，默认关闭且仅允许读取。
+
+启用本地 MCP 访问，然后选择**复制连接信息**。使用下方端点和复制信息中的 Bearer 令牌配置支持经过身份验证的 Streamable HTTP 的客户端。不同客户端的配置格式不同；仅支持 stdio 的客户端仍需独立辅助程序。
+
+连接的 AI 客户端可以读取这些工具公开的数据。**允许修改**会开放编辑权限；AI 客户端可能将数据发送给其服务提供商。请妥善保管复制的令牌。重新生成令牌会断开现有客户端，之后需要为其配置新令牌。
+
+请保持 Mindwtr 运行。关闭 MCP 或退出应用会停止服务器；关闭窗口至托盘后仍会运行。如果端口被占用或辅助程序停止，请解决错误后选择**重试**。启用 MCP 不会修改公开 Local API 的设置。它支持的操作范围与下文 Local API 后端相同。
+
+此端点仅供同一台计算机上的客户端使用，不提供远程 ChatGPT 访问、隧道或托管服务。移动应用不运行此服务器。
+
+Mac 上的内置 MCP 需要 **macOS 13 或更高版本**；Mindwtr 原有的最低系统要求不变。**允许修改**可让客户端创建、编辑和删除任务与项目，以及完成任务。
+
+```text
+http://127.0.0.1:8722/mcp
+```
+
 ---
 
 ## 要求
+
+以下要求适用于独立辅助程序。
 
 - **Node.js 22+**，用于免编译安装：SQLite 依赖为 Node 22 及更高版本提供预构建二进制文件。Node 20 仍可运行服务器，但安装时需要 C++ 构建工具
 - 仅使用 API 的安装可以通过 `--omit=optional` 省略可选的 SQLite 扩展。

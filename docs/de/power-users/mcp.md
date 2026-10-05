@@ -2,7 +2,7 @@
 
 Mindwtr bietet einen optionalen **MCP-Server (Model Context Protocol)**. Damit können Sie KI-Agenten wie **Claude Desktop**, **Claude Code**, **OpenAI Codex** oder **Gemini CLI** mit Ihrer lokalen Mindwtr-Datenbank, der lokalen API der Desktop-App oder einem selbst gehosteten Mindwtr-Cloud-Endpunkt verbinden.
 
-Standardmäßig verwendet der Server **stdio**: MCP-Clients starten ihn als Unterprozess und kommunizieren über JSON-RPC auf stdin/stdout. Für entfernte Clients unterstützt er außerdem optional authentifiziertes Streamable HTTP.
+Das eigenständige Hilfsprogramm verwendet standardmäßig **stdio**.
 
 > Implementierungsreferenz: [apps/mcp-server/README.md](https://github.com/dongdongbh/Mindwtr/blob/main/apps/mcp-server/README.md). Falls diese README vom aktuellen Servercode oder den erzeugten MCP-Werkzeugschemas abweicht, sind Code und Schemas maßgeblich.
 
@@ -10,7 +10,7 @@ Standardmäßig verwendet der Server **stdio**: MCP-Clients starten ihn als Unte
 
 ## App-Binärdateien und MCP-Hilfsprogramm
 
-Die Binärdateien der Desktop- und Mobil-App enthalten die Mindwtr-App, derzeit jedoch **keinen** Desktop-Schalter zum Starten oder Stoppen. Das eigenständige MCP-Hilfsprogramm wird als [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) veröffentlicht und ist im öffentlichen [MCP Registry](https://registry.modelcontextprotocol.io/) aufgeführt.
+Das eigenständige MCP-Hilfsprogramm wird weiterhin als [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) veröffentlicht und ist im öffentlichen [MCP Registry](https://registry.modelcontextprotocol.io/) aufgeführt.
 
 [![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
@@ -18,9 +18,29 @@ Sie müssen **nicht** die gesamte App aus dem Quellcode ausführen, um MCP zu ve
 
 Auf dem Desktop zeigt die App den genauen lokalen Datenpfad unter **Einstellungen → Synchronisierung → Lokale Daten** an. Binärdateien für Mobilgeräte stellen keinen lokalen MCP-Server bereit.
 
+## Integriertes Desktop-MCP (nächste Version)
+
+Die nächste Desktop-Version enthält einen von der App verwalteten MCP-Server unter **Einstellungen → Integrationen → MCP**. Dafür müssen weder Node, npm oder Bun noch ein separates Hilfsprogramm installiert werden. Standardmäßig ist der Server deaktiviert und schreibgeschützt.
+
+Aktivieren Sie den lokalen MCP-Zugriff und wählen Sie **Verbindungsdaten kopieren**. Konfigurieren Sie einen Client mit Unterstützung für authentifiziertes Streamable HTTP mit dem folgenden Endpunkt und dem Bearer-Token aus den kopierten Daten. Die Konfigurationsformate unterscheiden sich; reine stdio-Clients benötigen weiterhin das eigenständige Hilfsprogramm.
+
+Verbundene KI-Clients können die über diese Werkzeuge bereitgestellten Daten lesen. **Änderungen erlauben** gestattet Bearbeitungen; der KI-Client kann Daten an seinen Anbieter senden. Halten Sie das kopierte Token geheim. Beim Erneuern werden bestehende Verbindungen getrennt und benötigen das neue Token.
+
+Mindwtr muss laufen. Deaktivieren von MCP oder Beenden der App stoppt den Server; beim Minimieren in den Infobereich läuft er weiter. Bei belegtem Port oder gestopptem Hilfsprogramm beheben Sie den Fehler und wählen **Erneut versuchen**. MCP verändert die Einstellungen der öffentlichen Local API nicht. Es unterstützt dieselbe Teilmenge von Operationen wie das unten beschriebene Local-API-Backend.
+
+Dieser Endpunkt dient Clients auf demselben Computer. Er bietet keinen entfernten ChatGPT-Zugriff, Tunnel oder gehosteten Dienst. Mobile Apps stellen diesen Server nicht bereit.
+
+Integriertes MCP erfordert auf dem Mac **macOS 13 oder neuer**; die bisherige Mindestversion von Mindwtr bleibt unverändert. **Änderungen erlauben** gestattet das Erstellen, Bearbeiten und Löschen von Aufgaben und Projekten sowie das Abschließen von Aufgaben.
+
+```text
+http://127.0.0.1:8722/mcp
+```
+
 ---
 
 ## Voraussetzungen
+
+Diese Voraussetzungen gelten für das eigenständige Hilfsprogramm.
 
 - **Node.js 22+** für Installationen ohne Compiler: Die SQLite-Abhängigkeit liefert vorkompilierte Binärdateien für Node 22 und neuer. Node 20 kann den Server weiterhin ausführen, benötigt für die Installation aber C++-Buildwerkzeuge.
 - Bei reinen API-Installationen können Sie das optionale SQLite-Addon mit `--omit=optional` weglassen.

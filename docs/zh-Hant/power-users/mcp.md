@@ -2,7 +2,7 @@
 
 Mindwtr 提供選用的 <strong>MCP（Model Context Protocol）</strong>伺服器。你可以將 AI agent（例如 **Claude Desktop**、**Claude Code**、**OpenAI Codex** 或 **Gemini CLI**）連接至本機 Mindwtr 資料庫、桌面版 Local API 或自行託管的 Mindwtr Cloud 端點。
 
-伺服器預設使用 **stdio**：MCP 用戶端會將它啟動為子程序，並透過 stdin/stdout 使用 JSON-RPC 通訊。它也支援供遠端用戶端選用的已驗證串流 HTTP。
+獨立輔助工具預設使用 **stdio**。
 
 > 實作參考文件：[apps/mcp-server/README.md](https://github.com/dongdongbh/Mindwtr/blob/main/apps/mcp-server/README.md)。如果該 README 與目前的伺服器程式碼或產生的 MCP 工具 schema 不一致，請以程式碼及 schema 為準。
 
@@ -10,7 +10,7 @@ Mindwtr 提供選用的 <strong>MCP（Model Context Protocol）</strong>伺服�
 
 ## 應用程式 Binary 與 MCP 輔助工具
 
-桌面版與行動版 binary 包含 Mindwtr 應用程式，但目前**不包含**桌面版啟動／停止開關。獨立的 MCP 輔助工具以 [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) 發佈，並已列入公開的 [MCP Registry](https://registry.modelcontextprotocol.io/)。
+獨立 MCP 輔助工具繼續以 [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) 發佈，並已列入公開的 [MCP Registry](https://registry.modelcontextprotocol.io/)。
 
 [![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
@@ -18,9 +18,29 @@ Mindwtr 提供選用的 <strong>MCP（Model Context Protocol）</strong>伺服�
 
 在桌面版中，應用程式會於**設定 -> 同步 -> 本機資料**顯示確切的本機資料路徑。行動版 binary 不提供本機 MCP 伺服器介面。
 
+## 桌面版內建 MCP（下一版本）
+
+下一桌面版本將在**設定 → 整合 → MCP**提供由應用程式管理的 MCP 伺服器。此模式不需要安裝 Node、npm、Bun 或獨立輔助工具，預設停用且僅允許讀取。
+
+啟用本機 MCP 存取，然後選擇**複製連線資訊**。使用下方端點和複製資訊中的 Bearer 權杖，設定支援經過驗證的 Streamable HTTP 的用戶端。不同用戶端的設定格式不同；僅支援 stdio 的用戶端仍需要獨立輔助工具。
+
+連線的 AI 用戶端可以讀取這些工具公開的資料。**允許修改**會開放編輯權限；AI 用戶端可能將資料傳送給其服務供應商。請妥善保管複製的權杖。重新產生權杖會中斷現有用戶端，之後需要為其設定新權杖。
+
+請保持 Mindwtr 執行。停用 MCP 或結束應用程式會停止伺服器；關閉視窗至系統匣後仍會執行。如果連接埠被占用或輔助工具停止，請解決錯誤後選擇**重試**。啟用 MCP 不會修改公開 Local API 的設定。它支援的操作範圍與下文 Local API 後端相同。
+
+此端點僅供同一部電腦上的用戶端使用，不提供遠端 ChatGPT 存取、通道或託管服務。行動應用程式不執行此伺服器。
+
+Mac 上的內建 MCP 需要 **macOS 13 或更新版本**；Mindwtr 原有的最低系統需求不變。**允許修改**可讓用戶端建立、編輯和刪除任務與專案，以及完成任務。
+
+```text
+http://127.0.0.1:8722/mcp
+```
+
 ---
 
 ## 需求
+
+以下需求適用於獨立輔助工具。
 
 - **Node.js 22+**，可免編譯安裝：SQLite 相依套件提供 Node 22 以上版本的預先組建 binary。Node 20 仍可執行伺服器，但安裝時需要 C++ build tools
 - 僅使用 API 的安裝可透過 `--omit=optional` 省略選用的 SQLite 擴充模組。

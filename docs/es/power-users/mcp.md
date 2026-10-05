@@ -2,7 +2,7 @@
 
 Mindwtr ofrece un servidor opcional de **MCP (Model Context Protocol)**. Esto te permite conectar agentes de IA (como **Claude Desktop**, **Claude Code**, **OpenAI Codex** o **Gemini CLI**) a tu base de datos local de Mindwtr, a la API local de escritorio o a un endpoint autoalojado de Mindwtr Cloud.
 
-De forma predeterminada, el servidor usa **stdio**: los clientes MCP lo inician como subproceso y se comunican mediante JSON-RPC a través de stdin/stdout. También admite HTTP transmisible autenticado y opcional para clientes remotos.
+El asistente independiente usa **stdio** de forma predeterminada.
 
 > Referencia de implementación: [apps/mcp-server/README.md](https://github.com/dongdongbh/Mindwtr/blob/main/apps/mcp-server/README.md). Si ese README difiere del código actual del servidor o de los esquemas generados de las herramientas MCP, prevalecen el código y los esquemas.
 
@@ -10,7 +10,7 @@ De forma predeterminada, el servidor usa **stdio**: los clientes MCP lo inician 
 
 ## Binarios de la aplicación frente al asistente MCP
 
-Los binarios de las aplicaciones de escritorio y móviles incluyen la aplicación Mindwtr, pero actualmente **no** incluyen un control de inicio/parada en escritorio. El asistente MCP independiente se publica como [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) y figura en el [Registro MCP](https://registry.modelcontextprotocol.io/) público.
+El asistente MCP independiente sigue disponible como [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) y figura en el [Registro MCP](https://registry.modelcontextprotocol.io/) público.
 
 [![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
@@ -18,9 +18,29 @@ Los binarios de las aplicaciones de escritorio y móviles incluyen la aplicació
 
 En escritorio, la aplicación muestra la ruta de datos local exacta en **Ajustes -> Sincronización -> Datos locales**. Los binarios móviles no exponen un servidor MCP local.
 
+## MCP integrado en escritorio (próxima versión)
+
+La próxima versión de escritorio incluye un servidor MCP gestionado por la aplicación en **Ajustes → Integraciones → MCP**. Este modo no necesita instalar Node, npm, Bun ni un asistente independiente. Está desactivado y es de solo lectura de forma predeterminada.
+
+Activa el acceso MCP local y selecciona **Copiar datos de conexión**. Configura un cliente compatible con Streamable HTTP autenticado usando el endpoint siguiente y el token Bearer de los datos copiados. Los formatos de configuración varían; un cliente que solo admita stdio todavía necesita el asistente independiente.
+
+Los clientes de IA conectados pueden leer los datos expuestos por estas herramientas. **Permitir cambios** permite editarlos; el cliente de IA puede enviar esos datos a su proveedor. Mantén privado el token copiado. Regenerarlo desconecta los clientes existentes, que necesitarán el nuevo token.
+
+Mantén Mindwtr abierto. Desactivar MCP o salir de la aplicación detiene el servidor; cerrar a la bandeja lo mantiene activo. Si el puerto está ocupado o el asistente se detiene, resuelve el error y usa **Reintentar**. Activar MCP no cambia la configuración de la API local pública. Admite el mismo subconjunto de operaciones que el backend de API local descrito a continuación.
+
+Este endpoint sirve a clientes del mismo ordenador. No proporciona acceso remoto desde ChatGPT, un túnel ni un servicio alojado. Las aplicaciones móviles no alojan este servidor.
+
+MCP integrado requiere **macOS 13 o posterior** en Mac; la versión mínima de Mindwtr no cambia. **Permitir cambios** permite crear, editar y eliminar tareas y proyectos, así como completar tareas.
+
+```text
+http://127.0.0.1:8722/mcp
+```
+
 ---
 
 ## Requisitos
+
+Estos requisitos se aplican al asistente independiente.
 
 - **Node.js 22+** para instalaciones sin compilador: la dependencia de SQLite incluye binarios precompilados para Node 22 y versiones posteriores. Node 20 aún puede ejecutar el servidor, pero las instalaciones necesitan herramientas de compilación de C++
 - Las instalaciones que solo usan la API pueden omitir el complemento SQLite opcional con `--omit=optional`.

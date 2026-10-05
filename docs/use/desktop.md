@@ -527,8 +527,8 @@ Select multiple tasks to perform batch operations:
 1. Click **"Select"** in the list header, or use modifier-click selection
 2. Click tasks to select/deselect them
 3. Use the action bar to:
-   - **Move**: Change status for all selected
-   - **Assign Area**: Move all selected tasks under a specific area (or clear the area)
+   - **Status**: Change status for all selected
+   - **Destination**: Choose an existing project, an area directly, or no destination for all selected tasks. Choosing an area moves the tasks out of their projects; choosing no destination clears project, section, and area assignments without changing status. Moving to the same project preserves each task’s section; moving elsewhere clears its old section.
    - **Add Tag**: Add a tag to all selected
    - **Remove Tag**: Remove one or more tags from all selected tasks
    - **Add Context**: Add a context to all selected tasks

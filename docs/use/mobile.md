@@ -162,6 +162,12 @@ For capture bursts, turn on the **Add another** switch in the capture sheet: eac
 | URL scheme `mindwtr://capture` | Yes | Yes | Yes, capture screen |
 | Apple Reminders import (manual or automatic) | Yes | No | Runs when the app opens |
 
+### Android launcher shortcuts
+
+Starting with v1.3.4, long-press the Mindwtr app icon to choose **Capture** or **Add task…**. **Capture** keeps the small floating Inbox dialog. **Add task…** opens Mindwtr directly into the existing capture sheet, where you can choose Focus, a project, contexts, dates, and other details before saving.
+
+The new shortcut opens an unsaved draft; cancelling creates no task. Reopening it while the sheet is open preserves your draft. Focus uses the normal task limit and widget filters; it does not add a due date. Widget buttons, the Quick Settings tile, and notification capture keep their lightweight behavior.
+
 ### Share Sheet
 
 Capture tasks from any app using the share sheet:
@@ -246,6 +252,8 @@ On Android, dated rows show **Today**, a weekday for the coming week, or a compa
 Android Tasks and Compact lists scroll beyond 20 tasks. For a very large list, **View all** at the bottom opens the full selected list in Mindwtr. No task-count setting is needed.
 
 ### iOS Home Screen Widget
+
+Tasks and Compact widgets show each task’s contexts beneath its title. Long context lists fit on one line and may be shortened; tasks without contexts keep their usual layout.
 
 Choose **Tasks** for the regular widget, available in small, medium and large sizes (plus extra-large on supported iPads), or **Compact** for smaller text and a flat Focus list. Compact has no list picker or check-off rings; medium and larger sizes still link to tasks and quick capture.
 
@@ -463,6 +471,9 @@ Tap **Process Inbox** to start the clarify workflow:
 
 ## Focus
 
+Starting with v1.3.4, **Settings → GTD → Include tasks starting today in Today** controls whether a start date alone puts a task in Today. It is on by default and syncs across devices. Turn it off to let available next actions stay in Next Actions unless another rule puts them in Today or Review Due. Start dates and times still control availability; due dates, Upcoming previews, and manually starred Today's Focus tasks keep their usual behavior.
+
+
 Your primary dashboard for doing. Focus is an Engage dashboard, not a full inventory of every task with status `next`.
 
 ### Sections
@@ -602,6 +613,8 @@ External events are view-only and are not synced back to their source. Tap an ex
 
 ## Calendar
 
+In day and week views, deadlines with a time appear as **Due** markers at that time; date-only deadlines stay in the all-day lane. A task can show both its scheduled work block and its deadline. Deadline markers do not reserve time or require an estimate. Select a marker to edit the task; markers cannot be dragged or resized. Month cells keep a compact task row with the due time.
+
 Time-based view with scheduling capabilities.
 
 ### Views
@@ -664,6 +677,10 @@ Open Projects from **Menu → Projects**.
 - Reorder project tasks with the drag handle when custom ordering is enabled. Dropping a task under a different section header moves it into that section, and dropping it above the first header clears its section
 - Complete the project from **Actions** in the project details — remaining tasks are completed with it, the project moves to the **Completed** section at the bottom of the project list, and **Reactivate** undoes it
 - Duplicate the project — swipe its row to the right in the project list, or use **Duplicate** in the project detail sheet — to copy its sections and tasks into a fresh copy (see [Reusable Lists](/use/reusable-lists))
+
+Starting with v1.3.4, **Convert to section…** in the project actions menu moves a simple project into another project. Choose the destination and section name, then review the task count before confirming. Project notes become section notes; all non-deleted tasks move with their contents, status, and relative order intact, including completed and archived tasks. The source project moves to Trash. Moved tasks use the destination’s Area; the source project’s color is not carried over. **Undo** restores the original containers without replacing later edits to task contents.
+
+Conversion is limited to active, parallel projects. The source cannot have sections or project metadata that a section cannot retain, such as attachments, dates, tags, a priority star, or a custom task sort. An unavailable action explains what blocks it. Task attachments and dates do not block conversion.
 
 The **Project Section** field in the task editor assigns a task to one of the sections in its current project. It only matters after the task belongs to a project that has sections; otherwise, leave it blank.
 

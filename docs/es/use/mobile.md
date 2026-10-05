@@ -156,6 +156,12 @@ Para realizar varias capturas seguidas, activa **Añadir otra** en la hoja de ca
 | Esquema de URL `mindwtr://capture` | Sí | Sí | Sí, pantalla de captura |
 | Importación de Recordatorios de Apple (manual o automática) | Sí | No | Se ejecuta al abrir la app |
 
+### Accesos directos del lanzador de Android
+
+A partir de v1.3.4, mantén pulsado el icono de Mindwtr para elegir **Capture** o **Add task…**. **Capture** conserva el pequeño diálogo flotante de la bandeja de entrada. **Add task…** abre Mindwtr directamente en el formulario de captura existente, donde puedes elegir Focus, proyecto, contextos, fechas y otros detalles antes de guardar.
+
+El nuevo acceso abre un borrador sin guardar; cancelar no crea ninguna tarea. Volver a abrirlo mientras el formulario está abierto conserva el borrador. Focus respeta el límite habitual de tareas y los filtros del widget; no añade una fecha de vencimiento. Los botones del widget, el mosaico de ajustes rápidos y la captura desde notificaciones mantienen su comportamiento ligero.
+
 ### Hoja para compartir
 
 Captura tareas desde cualquier aplicación mediante la hoja para compartir:
@@ -240,6 +246,8 @@ En Android, las etiquetas de vencimiento muestran **Hoy**, el día de la semana 
 En la próxima versión, las listas de los widgets Tareas y Compacto de Android permitirán desplazarse más allá de 20 tareas. Para una lista muy larga, **Ver todo** al final abrirá la lista seleccionada completa en Mindwtr. No hace falta configurar el número de tareas.
 
 ### Widget de la pantalla de inicio de iOS
+
+Los widgets Tareas y Compacto muestran los contextos de cada tarea debajo del título. Las listas largas de contextos se limitan a una línea y pueden aparecer recortadas; las tareas sin contextos conservan su diseño habitual.
 
 Elige **Tareas** para el widget normal, disponible en tamaños pequeño, mediano y grande (también extragrande en iPads compatibles), o **Compacto** para texto más pequeño y una lista plana de Enfoque. Compacto no tiene selector de lista ni anillos para completar; los tamaños mediano y superiores permiten abrir tareas y la captura rápida.
 
@@ -595,6 +603,8 @@ Los eventos externos son de solo lectura y no se sincronizan de vuelta con su or
 ---
 
 ## Calendario
+
+En las vistas de día y semana, los plazos con hora aparecen como marcadores de **Vencimiento** a esa hora; los plazos sin hora permanecen en la franja de todo el día. Una tarea puede mostrar tanto su bloque de trabajo programado como su vencimiento. Los marcadores no reservan tiempo ni requieren una estimación. Selecciona un marcador para editar la tarea; no se pueden arrastrar ni redimensionar. Las celdas del mes mantienen una fila compacta con la hora de vencimiento.
 
 Vista temporal con funciones de programación.
 

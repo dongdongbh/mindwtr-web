@@ -94,3 +94,13 @@ Mindwtr 會清理**孤立附件**（不再由任何任務／專案參照的檔�
 - [資料與同步](/zh-Hant/data-sync/)
 - [桌面版使用指南](/zh-Hant/use/desktop)
 - [行動版使用指南](/zh-Hant/use/mobile)
+
+## UpNote 連結
+
+**下一版本：**你可以透過**新增連結**儲存 UpNote 筆記連結，也可以在任務描述或專案筆記中使用明確的 Markdown 連結：
+
+```md
+[Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)
+```
+
+Mindwtr 僅在你點擊連結時開啟它。該裝置需要安裝 UpNote。如果無法開啟，Mindwtr 會提供**複製連結**操作，讓你繼續使用原始位址。Mindwtr 儲存連結；筆記及其同步由 UpNote 管理。

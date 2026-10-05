@@ -149,6 +149,8 @@ Ideen reifen lassen, die Sie später verfolgen möchten.
 
 ### 🗓️ Kalender
 
+In der Tages- und Wochenansicht erscheinen Fristen mit Uhrzeit als **Fällig**-Markierungen zur angegebenen Zeit. Fristen ohne Uhrzeit bleiben im Ganztagsbereich. Eine Aufgabe kann sowohl ihren geplanten Arbeitsblock als auch ihre Frist anzeigen. Fristmarkierungen reservieren keine Zeit und benötigen keine Zeitschätzung. Wähle eine Markierung, um die Aufgabe zu bearbeiten; Markierungen lassen sich weder ziehen noch in der Größe ändern. Monatszellen behalten eine kompakte Aufgabenzeile mit der Fälligkeitszeit.
+
 Zeitbasierte Ansicht von Aufgaben mit Fälligkeitsdaten oder Startzeiten.
 
 In breiten Layouts enthält der Kalender für den ausgewählten Tag ein Feld **Nächste Aktionen planen**. Es zeigt ungeplante nächste Aktionen und fällige, aber ungeplante Aufgaben, damit Sie sie direkt in freie Zeiten legen können. Klappen Sie das Feld ein, um mehr Platz für das Tages-/Wochenraster zu erhalten.
@@ -396,7 +398,7 @@ Aufgaben per Sprache mit KI-gestützter Transkription erfassen.
 ### Audioerfassung verwenden
 
 - **Schnell hinzufügen**: Modus in der Leiste über das Mikrofonsymbol auf **Audio** stellen
-- **Aufnehmen**: Mikrofon anklicken und Aufgabe natürlich sprechen
+- **Aufnehmen**: Mikrofon anklicken und Aufgabe natürlich sprechen Im Audiomodus von Schnell hinzufügen startet die Eingabetaste die Aufnahme. Sobald die Aufnahme läuft, beendet und speichert ein erneuter Druck auf die Eingabetaste sie. Die Aufnahmeschaltfläche behält beim Start den Tastaturfokus.
 - **Beenden**: Stopp anklicken; der Text füllt das Eingabefeld
 - **Aufgabeneditor**: Das Beschreibungsfeld hat eine eigene Mikrofonschaltfläche. Sie nimmt auf und transkribiert mit demselben Anbieter und Verarbeitungsmodus in die Beschreibung.
 - **Anhänge**: **Audioanhänge speichern** unter **Einstellungen → Allgemein** aktivieren, um die Originalaufnahme zu behalten

@@ -85,6 +85,8 @@ Your unified dashboard for daily engagement. Focus is not a full inventory of ev
 
 Focus keeps future-start tasks and later tasks in sequential projects out of its actionable lists; deferred tasks landing within the next week still show in the **Upcoming** preview. Use **Contexts**, **Projects**, or **Search** when you need to inspect broader task inventory.
 
+Starting with v1.3.4, **Settings → GTD → Include tasks starting today in Today** controls whether a start date alone puts a task in Today. It is on by default and syncs across devices. Turn it off to let available next actions stay in Next Actions unless another rule puts them in Today or Review Due. Start dates and times still control availability; due dates, Upcoming previews, and manually starred Today's Focus tasks keep their usual behavior.
+
 **Default Next Actions order:** Focus puts due-soon actions first, undated actions next, and far-future due actions last. Within the same bucket it uses priority when enabled, then start time, creation date, title, and id. See [GTD Workflow in Mindwtr](/use/gtd-workflow#how-focus-sorts-available-actions) for the full logic.
 
 **Features:**
@@ -112,6 +114,10 @@ Multi-step outcomes containing related tasks.
 - **Review date**: Set tickler dates for project review
 - **Complete**: Use **Complete** in the project header's **...** menu when the outcome is reached — remaining tasks are completed with it, the project moves to the **Completed** section at the bottom of the sidebar, and **Reactivate** undoes it
 - **Duplicate**: Right-click a project in the sidebar, or use **Duplicate** in the project header's **...** menu, to copy the whole project with its sections and tasks. The copy starts fresh — see [Reusable Lists](/use/reusable-lists)
+
+Starting with v1.3.4, **Convert to section…** in the project actions menu moves a simple project into another project. Choose the destination and section name, then review the task count before confirming. Project notes become section notes; all non-deleted tasks move with their contents, status, and relative order intact, including completed and archived tasks. The source project moves to Trash. Moved tasks use the destination’s Area; the source project’s color is not carried over. **Undo** restores the original containers without replacing later edits to task contents.
+
+Conversion is limited to active, parallel projects. The source cannot have sections or project metadata that a section cannot retain, such as attachments, dates, tags, a priority star, or a custom task sort. An unavailable action explains what blocks it. Task attachments and dates do not block conversion.
 
 The **Project Section** field in the task editor assigns a task to one of the sections in its current project. It only has a useful value after the task belongs to a project that has sections.
 
@@ -148,6 +154,8 @@ Organize tasks into Someday sections directly from this list.
 Incubate ideas you might want to pursue later.
 
 ### 🗓️ Calendar
+
+In day and week views, deadlines with a time appear as **Due** markers at that time; date-only deadlines stay in the all-day lane. A task can show both its scheduled work block and its deadline. Deadline markers do not reserve time or require an estimate. Select a marker to edit the task; markers cannot be dragged or resized. Month cells keep a compact task row with the due time.
 
 Time-based view of tasks with due dates or start times.
 
@@ -400,7 +408,7 @@ Capture tasks using your voice with AI-powered transcription.
 ### Using Audio Capture
 
 - **Quick Add**: Toggle the capture mode to **Audio** (microphone icon) in the Quick Add bar.
-- **Record**: Click the microphone to start recording. Speak your task naturally.
+- **Record**: Click the microphone to start recording. Speak your task naturally. In Quick Add audio mode, press Enter to start recording, then press Enter again to stop and save once recording has started. The recording button keeps keyboard focus during startup.
 - **Finish**: Click stop to transcribe. The text will populate the input field.
 - **Task editor**: The description field has its own microphone button. It records and transcribes into the description with the same provider and processing mode.
 - **Attachments**: Enable "Save audio attachments" in **Settings → General** to keep the original voice note.
@@ -519,8 +527,8 @@ Select multiple tasks to perform batch operations:
 1. Click **"Select"** in the list header, or use modifier-click selection
 2. Click tasks to select/deselect them
 3. Use the action bar to:
-   - **Move**: Change status for all selected
-   - **Assign Area**: Move all selected tasks under a specific area (or clear the area)
+   - **Status**: Change status for all selected
+   - **Destination**: Choose an existing project, an area directly, or no destination for all selected tasks. Choosing an area moves the tasks out of their projects; choosing no destination clears project, section, and area assignments without changing status. Moving to the same project preserves each task’s section; moving elsewhere clears its old section.
    - **Add Tag**: Add a tag to all selected
    - **Remove Tag**: Remove one or more tags from all selected tasks
    - **Add Context**: Add a context to all selected tasks

@@ -1,8 +1,8 @@
 # MCP 伺服器
 
-Mindwtr 提供選用的 <strong>MCP（Model Context Protocol）</strong>伺服器。你可以將 AI agent（例如 **Claude Desktop**、**Claude Code**、**OpenAI Codex** 或 **Gemini CLI**）連接至本機 Mindwtr 資料庫，或自行託管的 Mindwtr Cloud 端點。
+Mindwtr 提供選用的 <strong>MCP（Model Context Protocol）</strong>伺服器。你可以將 AI agent（例如 **Claude Desktop**、**Claude Code**、**OpenAI Codex** 或 **Gemini CLI**）連接至本機 Mindwtr 資料庫、桌面版 Local API 或自行託管的 Mindwtr Cloud 端點。
 
-伺服器預設使用 **stdio**：MCP 用戶端會將它啟動為子程序，並透過 stdin/stdout 使用 JSON-RPC 通訊。它也支援供遠端用戶端選用的已驗證串流 HTTP。
+獨立輔助工具預設使用 **stdio**。
 
 > 實作參考文件：[apps/mcp-server/README.md](https://github.com/dongdongbh/Mindwtr/blob/main/apps/mcp-server/README.md)。如果該 README 與目前的伺服器程式碼或產生的 MCP 工具 schema 不一致，請以程式碼及 schema 為準。
 
@@ -10,24 +10,45 @@ Mindwtr 提供選用的 <strong>MCP（Model Context Protocol）</strong>伺服�
 
 ## 應用程式 Binary 與 MCP 輔助工具
 
-桌面版與行動版 binary 包含 Mindwtr 應用程式，但目前**不包含**桌面版啟動／停止開關。獨立的 MCP 輔助工具以 [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) 發佈，並已列入公開的 [MCP Registry](https://registry.modelcontextprotocol.io/)。
+獨立 MCP 輔助工具繼續以 [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) 發佈，並已列入公開的 [MCP Registry](https://registry.modelcontextprotocol.io/)。
 
 [![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
-使用 MCP **不需要**從原始碼執行整個應用程式。你可以使用一般桌面版處理任務，再讓 MCP 用戶端透過 `npx` 啟動 `mindwtr-mcp`，或使用 npm 全域安裝。請將輔助工具指向桌面版的本機 `mindwtr.db`。
+使用 MCP **不需要**從原始碼執行整個應用程式。你可以使用一般桌面版處理任務，再讓 MCP 用戶端透過 `npx` 啟動 `mindwtr-mcp`，或使用 npm 全域安裝。請將輔助工具指向桌面版的本機 `mindwtr.db`，或使用下文的 Local API 後端。
 
 在桌面版中，應用程式會於**設定 -> 同步 -> 本機資料**顯示確切的本機資料路徑。行動版 binary 不提供本機 MCP 伺服器介面。
+
+## 桌面版內建 MCP（下一版本）
+
+下一桌面版本將在**設定 → 整合 → MCP**提供由應用程式管理的 MCP 伺服器。此模式不需要安裝 Node、npm、Bun 或獨立輔助工具，預設停用且僅允許讀取。
+
+啟用本機 MCP 存取，然後選擇**複製連線資訊**。使用下方端點和複製資訊中的 Bearer 權杖，設定支援經過驗證的 Streamable HTTP 的用戶端。不同用戶端的設定格式不同；僅支援 stdio 的用戶端仍需要獨立輔助工具。
+
+連線的 AI 用戶端可以讀取這些工具公開的資料。**允許修改**會開放編輯權限；AI 用戶端可能將資料傳送給其服務供應商。請妥善保管複製的權杖。重新產生權杖會中斷現有用戶端，之後需要為其設定新權杖。
+
+請保持 Mindwtr 執行。停用 MCP 或結束應用程式會停止伺服器；關閉視窗至系統匣後仍會執行。如果連接埠被占用或輔助工具停止，請解決錯誤後選擇**重試**。啟用 MCP 不會修改公開 Local API 的設定。它支援的操作範圍與下文 Local API 後端相同。
+
+此端點僅供同一部電腦上的用戶端使用，不提供遠端 ChatGPT 存取、通道或託管服務。行動應用程式不執行此伺服器。
+
+Mac 上的內建 MCP 需要 **macOS 13 或更新版本**；Mindwtr 原有的最低系統需求不變。**允許修改**可讓用戶端建立、編輯和刪除任務與專案，以及完成任務。
+
+```text
+http://127.0.0.1:8722/mcp
+```
 
 ---
 
 ## 需求
 
+以下需求適用於獨立輔助工具。
+
 - **Node.js 22+**，可免編譯安裝：SQLite 相依套件提供 Node 22 以上版本的預先組建 binary。Node 20 仍可執行伺服器，但安裝時需要 C++ build tools
+- 僅使用 API 的安裝可透過 `--omit=optional` 省略選用的 SQLite 擴充模組。
 - **npm** 或其他 Node package runner，用來執行已發佈的 `mindwtr-mcp` package
-- 本機模式需要本機 Mindwtr 資料庫（`mindwtr.db`）；Cloud 模式則需要自行託管的 Mindwtr Cloud URL 及 bearer token
+- SQLite 模式需要本機 Mindwtr 資料庫（`mindwtr.db`）；API 模式需要執行中的桌面版 Local API 及其 bearer token；Cloud 模式則需要自行託管的 Mindwtr Cloud URL 及 bearer token
 - 只有從原始碼樹執行輔助工具時才需要 **Bun**
 
-使用 **npm 12** 時，需要核准 SQLite 相依套件的安裝指令碼；否則，即使安裝成功，啟動時仍可能因缺少原生綁定而失敗。使用 `npx` 或全域安裝時，僅允許 `better-sqlite3`：
+在 **SQLite 模式下使用 npm 12** 時，需要核准 SQLite 相依套件的安裝指令碼；否則，即使安裝成功，啟動時仍可能因缺少原生綁定而失敗。使用 `npx` 或全域安裝時，僅允許 `better-sqlite3`：
 
 ```bash
 npx --allow-scripts=better-sqlite3 -y mindwtr-mcp --db "/path/to/mindwtr.db"
@@ -80,6 +101,49 @@ MCP 用戶端會將伺服器當成子程序執行。請指定**命令**並傳入
 ```
 
 此 package 預設為唯讀。只有明確希望 AI 用戶端新增、更新、完成或刪除 Mindwtr 資料時，才加入 `--write`。
+
+### 桌面版 Local API 模式
+
+> 此後端將包含在 MCP 輔助工具的下一個版本中。在該套件發佈之前，請從儲存庫組建輔助工具，並使用下列選項執行 `node apps/mcp-server/dist/cli.js`。
+
+在設定中啟用桌面版應用程式的 **Local API**，並複製其 bearer token。保持應用程式與 API 執行。此後端使用應用程式的 REST 端點，絕不會開啟資料庫或退回使用 SQLite。
+
+僅使用 API 安裝時，請省略選用的原生 SQLite 擴充模組：
+
+```bash
+npm install -g --omit=optional mindwtr-mcp
+```
+
+將 MCP 用戶端設定為透過環境變數傳遞權杖，而非將權杖放在命令列引數中：
+
+```json
+{
+  "command": "mindwtr-mcp",
+  "args": ["--api-url", "http://127.0.0.1:3456"],
+  "env": {
+    "MINDWTR_MCP_API_TOKEN": "<token from desktop settings>"
+  }
+}
+```
+
+使用設定中顯示的連接埠。`MINDWTR_MCP_API_URL` 可取代 `--api-url`。URL 必須使用字面位址 `127.0.0.1` 或 `[::1]`，不得包含憑證、路徑、查詢參數或片段；重新導向會被拒絕。不要混用 API 與 Cloud/`--db` 選項。在 API 模式下，既有的資料庫路徑環境變數會被忽略。
+
+除非明確使用 `--write` 啟用，否則寫入始終停用。如果應用程式已關閉或權杖無效，輔助工具會傳回錯誤。逾時的寫入可能已到達應用程式：重試前請檢查任務，因為輔助工具不會自動重試寫入。
+
+| MCP 功能 | 桌面版 Local API 支援情況 |
+| --- | --- |
+| 列出／取得任務 | 支援，包括豐富的搜尋運算子、日期篩選、排序與分頁 |
+| 建立任務 | 明確指定標題與欄位；不支援 `quickAdd` |
+| 更新／完成／刪除／還原任務 | 透過 API 的相應端點支援；終態變更不能當作一般編輯提交 |
+| 列出／取得／建立／更新／刪除專案 | 支援 API 的基本專案欄位：標題、顏色、狀態、領域與循序執行行為 |
+| 列出領域 | 支援 |
+| 分區、受管理的人員、領域寫入 | 不支援；這些工具在 API 模式下隱藏 |
+| GTD 可執行性 `view` | 不支援，因為 API 不提供所需的分區快照 |
+| 取代附件連結 | 不支援，因為 API 不提供附帶條件的附件更新 |
+
+其他不支援的欄位會在寫入之前被拒絕。桌面版 API 的重複任務限制同樣適用；某些重複任務必須在應用程式中完成。此後端不保證與 SQLite／Cloud 工具完全一致。
+
+`--api-url` 選擇輔助工具的**資料來源**。`--http` 則選擇 MCP 用戶端如何**連接至輔助工具**；它可用於任何後端，並使用獨立的驗證權杖。
 
 ### 自行託管 Cloud 模式
 
@@ -276,7 +340,7 @@ Antigravity（Google 的代理式 IDE）從 JSON 設定檔讀取本機 MCP 伺�
 
 > 需要比 1.1.1 更新的 `mindwtr-mcp` 版本（或從原始碼執行）。
 
-伺服器預設使用 stdio。傳入 `--http` 後改為提供可串流的 HTTP MCP 端點，遠端 MCP 用戶端即可透過 URL 連線。HTTP 模式對兩種後端（本機 SQLite 或自行託管的 Cloud）皆適用。
+伺服器預設使用 stdio。傳入 `--http` 後改為提供可串流的 HTTP MCP 端點，遠端 MCP 用戶端即可透過 URL 連線。HTTP 模式對三種後端（本機 SQLite、桌面版 Local API 或自行託管的 Cloud）皆適用。
 
 ```bash
 mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"

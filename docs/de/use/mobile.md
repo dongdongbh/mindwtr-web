@@ -149,6 +149,12 @@ Aktivieren Sie für mehrere Erfassungen **Weitere hinzufügen**: Jedes `Enter` s
 | URL-Schema `mindwtr://capture` | Ja | Ja | Ja, Erfassungsbildschirm |
 | Import aus Apple Erinnerungen (manuell oder automatisch) | Ja | Nein | Läuft beim Öffnen der App |
 
+### Android-Startbildschirm-Verknüpfungen
+
+Ab v1.3.4 zeigt langes Drücken auf das Mindwtr-App-Symbol **Capture** und **Add task…** an. **Capture** öffnet weiterhin den kleinen schwebenden Eingangsdialog. **Add task…** öffnet Mindwtr direkt mit dem bestehenden Erfassungsformular, in dem du vor dem Speichern Fokus, Projekt, Kontexte, Termine und weitere Details wählen kannst.
+
+Die neue Verknüpfung öffnet einen ungespeicherten Entwurf; Abbrechen erstellt keine Aufgabe. Erneutes Öffnen bei bereits geöffnetem Formular behält den Entwurf bei. Für Fokus gelten das normale Aufgabenlimit und die Widget-Filter; ein Fälligkeitsdatum wird nicht hinzugefügt. Widget-Schaltflächen, die Schnelleinstellungskachel und die Erfassung über Benachrichtigungen behalten ihr bisheriges Verhalten.
+
 ### Teilen-Menü
 
 1. In einer App (Browser, E-Mail, Notizen) Inhalt auswählen
@@ -229,6 +235,8 @@ Auf Android zeigen Fälligkeitsangaben **Heute**, den Wochentag für Aufgaben in
 Ab der nächsten Version lassen sich die Listen der Android-Widgets Aufgaben und Kompakt über 20 Aufgaben hinaus scrollen. Bei sehr langen Listen öffnet **Alle anzeigen** am Ende die vollständige ausgewählte Liste in Mindwtr. Eine Einstellung für die Anzahl der Aufgaben ist nicht nötig.
 
 ### iOS-Widget auf dem Home-Bildschirm
+
+Die Widgets Aufgaben und Kompakt zeigen die Kontexte einer Aufgabe unter ihrem Titel. Lange Kontextlisten passen in eine Zeile und können gekürzt werden; Aufgaben ohne Kontexte behalten ihr gewohntes Layout.
 
 Wählen Sie **Aufgaben** für das reguläre Widget in klein, mittel oder groß (zusätzlich extragroß auf unterstützten iPads), oder **Kompakt** für kleinere Schrift und eine flache Fokusliste. Kompakt hat weder Listenauswahl noch Abschlussringe; mittlere und größere Varianten öffnen weiterhin Aufgaben und die Schnellerfassung.
 
@@ -554,6 +562,8 @@ Externe Termine sind schreibgeschützt. Über **Aufgabe erstellen** entsteht ein
 ---
 
 ## Kalender
+
+In der Tages- und Wochenansicht erscheinen Fristen mit Uhrzeit als **Fällig**-Markierungen zur angegebenen Zeit. Fristen ohne Uhrzeit bleiben im Ganztagsbereich. Eine Aufgabe kann sowohl ihren geplanten Arbeitsblock als auch ihre Frist anzeigen. Fristmarkierungen reservieren keine Zeit und benötigen keine Zeitschätzung. Wähle eine Markierung, um die Aufgabe zu bearbeiten; Markierungen lassen sich weder ziehen noch in der Größe ändern. Monatszellen behalten eine kompakte Aufgabenzeile mit der Fälligkeitszeit.
 
 ### Ansichten
 

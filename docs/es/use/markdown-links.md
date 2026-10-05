@@ -72,3 +72,13 @@ Prepare launch notes for [[project:project-123|Website launch]]
 
 - [Integración con Obsidian](/es/power-users/obsidian)
 - [API del núcleo](/es/developers/core-api)
+
+## Enlaces de UpNote
+
+**Próxima versión:** Puedes añadir un enlace a una nota de UpNote mediante **Añadir enlace**, o usar un enlace Markdown explícito en la descripción de una tarea o las notas de un proyecto:
+
+```md
+[Meeting notes](upnote://x-callback-url/openNote?noteId=NOTE_ID&new_window=true)
+```
+
+Mindwtr solo abre el enlace al hacer clic o tocarlo. UpNote debe estar instalado en ese dispositivo. Si no se puede abrir, Mindwtr ofrece **Copiar enlace** para conservar la dirección original. Mindwtr guarda el enlace; UpNote gestiona la nota y su sincronización.

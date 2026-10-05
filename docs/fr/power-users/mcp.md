@@ -1,8 +1,8 @@
 # Serveur MCP
 
-Mindwtr fournit un serveur **MCP (Model Context Protocol)** facultatif. Il permet de connecter des agents d’IA (comme **Claude Desktop**, **Claude Code**, **OpenAI Codex** ou **Gemini CLI**) à votre base de données Mindwtr locale ou à un point de terminaison Mindwtr Cloud auto-hébergé.
+Mindwtr fournit un serveur **MCP (Model Context Protocol)** facultatif. Il permet de connecter des agents d’IA (comme **Claude Desktop**, **Claude Code**, **OpenAI Codex** ou **Gemini CLI**) à votre base de données Mindwtr locale, à l’API locale de l’application de bureau ou à un point de terminaison Mindwtr Cloud auto-hébergé.
 
-Par défaut, le serveur utilise **stdio** : les clients MCP le lancent comme sous-processus et communiquent par JSON-RPC sur stdin/stdout. Il prend aussi en charge un transport HTTP diffusé, authentifié et facultatif pour les clients distants.
+L’utilitaire autonome utilise **stdio** par défaut.
 
 > Référence d’implémentation : [apps/mcp-server/README.md](https://github.com/dongdongbh/Mindwtr/blob/main/apps/mcp-server/README.md). Si ce README diffère du code actuel du serveur ou des schémas d’outils MCP générés, le code et les schémas font foi.
 
@@ -10,24 +10,45 @@ Par défaut, le serveur utilise **stdio** : les clients MCP le lancent comme sou
 
 ## Binaires de l’application et utilitaire MCP
 
-Les binaires des applications de bureau et mobiles comprennent l’application Mindwtr, mais ils n’incluent **pas** actuellement de commande de démarrage/arrêt sur ordinateur. L’utilitaire MCP autonome est publié sous le nom [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) et répertorié dans le [registre MCP](https://registry.modelcontextprotocol.io/) public.
+L’utilitaire MCP autonome reste disponible sous le nom [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) et figure dans le [registre MCP](https://registry.modelcontextprotocol.io/) public.
 
 [![npm](https://img.shields.io/npm/v/mindwtr-mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/mindwtr-mcp)
 
-Vous n’avez **pas** besoin d’exécuter toute l’application depuis les sources pour utiliser MCP. Utilisez le binaire normal de l’application de bureau pour vos tâches, puis laissez votre client MCP lancer `mindwtr-mcp` avec `npx`, ou installez-le globalement avec npm. Indiquez à l’utilitaire la base locale `mindwtr.db` de l’application de bureau.
+Vous n’avez **pas** besoin d’exécuter toute l’application depuis les sources pour utiliser MCP. Utilisez le binaire normal de l’application de bureau pour vos tâches, puis laissez votre client MCP lancer `mindwtr-mcp` avec `npx`, ou installez-le globalement avec npm. Indiquez à l’utilitaire la base locale `mindwtr.db` de l’application de bureau, ou utilisez le backend API locale décrit ci-dessous.
 
 Sur ordinateur, l’application affiche le chemin exact des données locales sous **Réglages -> Synchronisation -> Données locales**. Les binaires mobiles n’exposent pas de serveur MCP local.
+
+## MCP intégré sur ordinateur (prochaine version)
+
+La prochaine version de bureau comprend un serveur MCP géré par l’application dans **Réglages → Intégrations → MCP**. Ce mode ne nécessite ni Node, npm, Bun, ni installation d’un utilitaire séparé. Il est désactivé et en lecture seule par défaut.
+
+Activez l’accès MCP local, puis choisissez **Copier les informations de connexion**. Configurez un client compatible avec Streamable HTTP authentifié avec le point de terminaison ci-dessous et le jeton Bearer des informations copiées. Les formats de configuration varient ; un client limité à stdio nécessite toujours l’utilitaire autonome.
+
+Les clients d’IA connectés peuvent lire les données exposées par ces outils. **Autoriser les modifications** permet les changements ; votre client d’IA peut envoyer ces données à son fournisseur. Gardez le jeton copié confidentiel. Sa régénération déconnecte les clients existants, qui doivent recevoir le nouveau jeton.
+
+Gardez Mindwtr ouvert. Désactiver MCP ou quitter l’application arrête le serveur ; la réduction dans la zone de notification le laisse actif. Si le port est occupé ou si l’utilitaire s’arrête, corrigez l’erreur puis choisissez **Réessayer**. Activer MCP ne modifie pas les réglages de l’API locale publique. Il prend en charge le même sous-ensemble d’opérations que le backend API locale décrit ci-dessous.
+
+Ce point de terminaison sert les clients du même ordinateur. Il ne fournit ni accès distant depuis ChatGPT, ni tunnel, ni service hébergé. Les applications mobiles n’hébergent pas ce serveur.
+
+Le MCP intégré nécessite **macOS 13 ou une version ultérieure** sur Mac ; la version minimale de Mindwtr ne change pas. **Autoriser les modifications** permet de créer, modifier et supprimer des tâches et des projets, ainsi que de terminer des tâches.
+
+```text
+http://127.0.0.1:8722/mcp
+```
 
 ---
 
 ## Prérequis
 
+Ces prérequis concernent l’utilitaire autonome.
+
 - **Node.js 22+** pour les installations sans compilation : la dépendance SQLite fournit des binaires précompilés pour Node 22 et versions ultérieures. Node 20 exécute toujours le serveur, mais l’installation nécessite des outils de compilation C++
+- Les installations utilisant uniquement l’API peuvent omettre le module SQLite facultatif avec `--omit=optional`.
 - **npm** ou un autre exécuteur de paquets Node pour le paquet `mindwtr-mcp` publié
-- Une base de données Mindwtr locale (`mindwtr.db`) pour le mode local, ou une URL Mindwtr Cloud auto-hébergée et un jeton porteur pour le mode Cloud
+- Une base de données Mindwtr locale (`mindwtr.db`) pour le mode SQLite, une API locale de l’application de bureau en cours d’exécution et son jeton porteur pour le mode API, ou une URL Mindwtr Cloud auto-hébergée et un jeton porteur pour le mode Cloud
 - **Bun** uniquement si vous exécutez l’utilitaire depuis l’arborescence des sources
 
-Avec **npm 12**, autorisez le script d’installation de la dépendance SQLite : sinon, une installation réussie peut échouer au démarrage faute de module natif. Pour `npx` ou une installation globale, autorisez uniquement `better-sqlite3` :
+Pour le **mode SQLite avec npm 12**, autorisez le script d’installation de la dépendance SQLite : sinon, une installation réussie peut échouer au démarrage faute de module natif. Pour `npx` ou une installation globale, autorisez uniquement `better-sqlite3` :
 
 ```bash
 npx --allow-scripts=better-sqlite3 -y mindwtr-mcp --db "/path/to/mindwtr.db"
@@ -80,6 +101,49 @@ Commande recommandée sans installation pour les clients MCP :
 ```
 
 Le paquet est en lecture seule par défaut. Ajoutez `--write` uniquement lorsque vous souhaitez explicitement qu’un client d’IA ajoute, mette à jour, termine ou supprime des données Mindwtr.
+
+### Mode API locale de l’application de bureau
+
+> Ce backend sera inclus dans la prochaine version de l’utilitaire MCP. Jusqu’à la publication de ce paquet, compilez l’utilitaire depuis le dépôt et exécutez `node apps/mcp-server/dist/cli.js` avec les options ci-dessous.
+
+Activez l’**API locale** de l’application de bureau dans les Réglages et copiez son jeton porteur. Laissez l’application et l’API en cours d’exécution. Ce backend utilise les points de terminaison REST de l’application et n’ouvre jamais de base de données ni ne se rabat sur SQLite.
+
+Pour une installation utilisant uniquement l’API, omettez le module SQLite natif facultatif :
+
+```bash
+npm install -g --omit=optional mindwtr-mcp
+```
+
+Configurez votre client MCP pour transmettre le jeton via son environnement, plutôt que dans les arguments de la ligne de commande :
+
+```json
+{
+  "command": "mindwtr-mcp",
+  "args": ["--api-url", "http://127.0.0.1:3456"],
+  "env": {
+    "MINDWTR_MCP_API_TOKEN": "<token from desktop settings>"
+  }
+}
+```
+
+Utilisez le port affiché dans les Réglages. `MINDWTR_MCP_API_URL` peut remplacer `--api-url`. Les URL doivent utiliser littéralement `127.0.0.1` ou `[::1]`, sans identifiants, chemin, paramètres de requête ni fragment ; les redirections sont refusées. Ne combinez pas les options API et Cloud/`--db`. Les variables d’environnement existantes indiquant le chemin de la base de données sont ignorées en mode API.
+
+Les écritures restent désactivées tant qu’elles ne sont pas explicitement activées avec `--write`. Si l’application est fermée ou le jeton invalide, l’utilitaire renvoie une erreur. Une écriture ayant dépassé le délai d’attente peut avoir atteint l’application : vérifiez la tâche avant de réessayer, car l’utilitaire ne relance pas automatiquement les écritures.
+
+| Fonctionnalité MCP | Prise en charge par l’API locale de l’application de bureau |
+| --- | --- |
+| Lister/obtenir des tâches | Pris en charge, y compris les opérateurs de recherche avancés, les filtres de date, le tri et la pagination |
+| Créer des tâches | Titre et champs explicites ; `quickAdd` n’est pas disponible |
+| Mettre à jour/terminer/supprimer/restaurer des tâches | Pris en charge via les points de terminaison correspondants de l’API ; les changements vers un état final ne peuvent pas être soumis comme de simples modifications |
+| Lister/obtenir/créer/mettre à jour/supprimer des projets | Pris en charge pour les champs de projet de base de l’API : titre, couleur, état, domaine et comportement séquentiel |
+| Lister les domaines | Pris en charge |
+| Sections, personnes gérées, écritures sur les domaines | Indisponibles ; ces outils sont masqués en mode API |
+| Disponibilité GTD `view` | Indisponible car l’API n’expose pas l’instantané des sections requis |
+| Remplacer les liens de pièces jointes | Indisponible car l’API ne fournit pas de mises à jour conditionnelles des pièces jointes |
+
+Les autres champs non pris en charge sont rejetés avant toute écriture. Les limites de récurrence de l’API de bureau s’appliquent également ; certaines tâches récurrentes doivent être terminées dans l’application. Ce backend ne garantit pas une parité complète avec les outils SQLite/Cloud.
+
+`--api-url` sélectionne la **source de données** de l’utilitaire. `--http` sélectionne plutôt la façon dont un client MCP se connecte **à l’utilitaire** ; il peut être utilisé avec n’importe quel backend et dispose d’un jeton d’authentification distinct.
 
 ### Mode Cloud auto-hébergé
 
@@ -276,7 +340,7 @@ Remplacez le chemin par celui de votre base de données locale (les chemins Wind
 
 > Nécessite une version de `mindwtr-mcp` plus récente que 1.1.1 (ou une exécution depuis les sources).
 
-Par défaut, le serveur parle stdio. Passez `--http` pour servir à la place un point de terminaison MCP HTTP en streaming, afin que les clients MCP distants puissent se connecter par URL. Le mode HTTP fonctionne avec les deux backends (SQLite local ou Cloud auto-hébergé).
+Par défaut, le serveur parle stdio. Passez `--http` pour servir à la place un point de terminaison MCP HTTP en streaming, afin que les clients MCP distants puissent se connecter par URL. Le mode HTTP fonctionne avec les trois backends (SQLite local, API locale de l’application de bureau ou Cloud auto-hébergé).
 
 ```bash
 mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"

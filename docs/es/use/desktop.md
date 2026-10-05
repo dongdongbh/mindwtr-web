@@ -149,6 +149,8 @@ Incuba ideas que quizá quieras llevar a cabo más adelante.
 
 ### 🗓️ Calendario
 
+En las vistas de día y semana, los plazos con hora aparecen como marcadores de **Vencimiento** a esa hora; los plazos sin hora permanecen en la franja de todo el día. Una tarea puede mostrar tanto su bloque de trabajo programado como su vencimiento. Los marcadores no reservan tiempo ni requieren una estimación. Selecciona un marcador para editar la tarea; no se pueden arrastrar ni redimensionar. Las celdas del mes mantienen una fila compacta con la hora de vencimiento.
+
 Vista temporal de las tareas con fechas de vencimiento u horas de inicio.
 
 En diseños anchos, el Calendario incluye un panel **Planificar próximas acciones** para el día seleccionado. Muestra Próximas acciones no programadas y tareas vencidas pero sin programar para que puedas colocarlas en huecos libres sin salir del Calendario. Contrae el panel cuando quieras más espacio para la cuadrícula diaria o semanal.
@@ -394,7 +396,7 @@ Captura tareas con la voz mediante transcripción con IA.
 ### Usar la captura de audio
 
 - **Adición rápida**: cambia el modo de captura a **Audio** (icono de micrófono) en la barra de Adición rápida.
-- **Grabar**: haz clic en el micrófono para comenzar a grabar. Di la tarea con naturalidad.
+- **Grabar**: haz clic en el micrófono para comenzar a grabar. Di la tarea con naturalidad. En el modo Audio de Adición rápida, pulsa Intro para empezar a grabar y vuelve a pulsarlo cuando la grabación esté en marcha para detenerla y guardarla. El botón de grabación conserva el foco del teclado durante el inicio.
 - **Finalizar**: haz clic en detener para transcribir. El texto aparecerá en el campo de entrada.
 - **Editor de tareas**: el campo de descripción tiene su propio botón de micrófono. Graba y transcribe en la descripción con el mismo proveedor y modo de procesamiento.
 - **Adjuntos**: activa «Guardar adjuntos de audio» en **Ajustes → General** para conservar la nota de voz original.

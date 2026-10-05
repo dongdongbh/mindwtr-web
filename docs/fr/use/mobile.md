@@ -156,6 +156,12 @@ Pour les captures en série, activez l’interrupteur **Ajouter une autre** dans
 | Schéma d’URL `mindwtr://capture` | Oui | Oui | Oui, écran de capture |
 | Importation depuis Rappels Apple (manuelle ou automatique) | Oui | Non | S’exécute à l’ouverture de l’app |
 
+### Raccourcis du lanceur Android
+
+À partir de v1.3.4, appuyez longuement sur l’icône Mindwtr pour choisir **Capture** ou **Add task…**. **Capture** conserve la petite fenêtre flottante de capture dans la boîte de réception. **Add task…** ouvre Mindwtr directement dans le formulaire de capture existant, où vous pouvez choisir Focus, projet, contextes, dates et autres détails avant d’enregistrer.
+
+Le nouveau raccourci ouvre un brouillon non enregistré ; annuler ne crée aucune tâche. Le rouvrir lorsque le formulaire est déjà ouvert conserve votre brouillon. Focus respecte la limite habituelle de tâches et les filtres du widget ; aucune échéance n’est ajoutée. Les boutons des widgets, la tuile des réglages rapides et la capture depuis les notifications conservent leur fonctionnement léger.
+
 ### Feuille de partage
 
 Collectez des tâches depuis n’importe quelle application à l’aide de la feuille de partage :
@@ -240,6 +246,8 @@ Sous Android, les libellés d’échéance indiquent **Aujourd’hui**, le jour 
 Dans la prochaine version, les listes des widgets Tâches et Compact d’Android défileront au-delà de 20 tâches. Pour une très longue liste, **Tout afficher** en bas ouvrira la liste sélectionnée complète dans Mindwtr. Aucun réglage du nombre de tâches n’est nécessaire.
 
 ### Widget iOS de l’écran d’accueil
+
+Les widgets Tâches et Compact affichent les contextes de chaque tâche sous son titre. Les longues listes de contextes tiennent sur une ligne et peuvent être tronquées ; les tâches sans contexte conservent leur présentation habituelle.
 
 Choisissez **Tâches** pour le widget classique, disponible en petit, moyen et grand format (ainsi qu’extra-large sur les iPad compatibles), ou **Compact** pour un texte plus petit et une liste Focus sans sections. Compact n’a ni choix de liste ni anneaux de clôture ; les formats moyens et grands permettent toujours d’ouvrir les tâches et la capture rapide.
 
@@ -595,6 +603,8 @@ Les événements externes sont en lecture seule et ne sont pas resynchronisés v
 ---
 
 ## Calendrier
+
+Dans les vues jour et semaine, les échéances avec une heure apparaissent comme des repères **Échéance** à cette heure ; celles sans heure restent dans la zone des événements de la journée. Une tâche peut afficher à la fois son créneau de travail et son échéance. Ces repères ne réservent aucun temps et ne nécessitent aucune estimation. Sélectionnez un repère pour modifier la tâche ; il ne peut être ni déplacé par glisser-déposer ni redimensionné. Les cases du mois gardent une ligne compacte avec l’heure d’échéance.
 
 Vue chronologique avec fonctions de planification.
 

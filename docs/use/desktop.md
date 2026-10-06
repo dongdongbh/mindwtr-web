@@ -105,7 +105,7 @@ Multi-step outcomes containing related tasks.
 - **Sequential scope**: Sequential projects can advance project-wide or section-by-section; section scope shows the first available task in each section.
 - **Status**: Active, Waiting, Someday, Archived
 - **Areas of Focus**: Group projects by higher-level areas (e.g., Work, Health) to keep your sidebar organized. Drag a project onto an area to move it there; while dragging, collapsed and empty areas (and **No area**) show up as drop targets too.
-- **Move tasks by drag**: Drag a task from the open project's list onto another project in the sidebar to move it there (it lands after the target's existing tasks), or onto an area header to make it a direct area task. Works in every sort mode; a **Moved to …** toast offers one-click Undo, and archived projects don't accept drops.
+- **Move tasks by drag**: Use the task's drag handle in the open project's list to drag it onto another project in the sidebar to move it there (it lands after the target's existing tasks), or onto an area header to make it a direct area task. Works in every sort mode; a **Moved to …** toast offers one-click Undo, and archived projects don't accept drops.
 - **Project tags**: Tag projects and filter by tag
 - **References in projects**: reference tasks show in a References section below the project's task list — including references whose tags match the project's tags, so one reference can appear in several projects
 - **Support notes**: Add planning notes and reference material
@@ -127,6 +127,8 @@ Filter tasks by location or tool context:
 
 - `@home`, `@work`, `@errands`, `@agendas`
 - `@computer`, `@phone`, `@anywhere`
+
+Drag a task onto a context in this view’s sidebar to **add** that context. Existing contexts stay assigned, so the task can remain in the original filter. Dropping onto a context it already has does nothing. The **Added …** message offers **Undo**; tags, **No context**, and the combined contexts-and-tags filter remain navigation controls. Sorting stays unchanged.
 
 ### 🏷️ Tags
 

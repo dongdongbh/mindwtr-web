@@ -895,3 +895,7 @@ Consulta [Datos y sincronización](/es/data-sync/) para configurar la sincroniza
 - [Atajos de Apple](/es/power-users/apple-shortcuts)
 - [Datos y sincronización](/es/data-sync/)
 - [Flujo GTD en Mindwtr](/es/use/gtd-workflow)
+
+## Crear un proyecto a partir de una lista {#checklist-project-conversion}
+
+Desde v1.3.5 puedes elegir convertir una lista en tareas al crear un proyecto. La opción empieza desmarcada. Consulta [conversión de listas en proyectos](./desktop#checklist-project-conversion) para conocer la información transferida, las restricciones y Deshacer.

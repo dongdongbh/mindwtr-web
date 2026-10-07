@@ -668,3 +668,13 @@ Consulta [Datos y sincronización](/es/data-sync/) para ver instrucciones detall
 - [Instalación de escritorio](/es/start/desktop-installation)
 - [Atajos de teclado de escritorio](/es/use/keyboard-shortcuts)
 - [Datos y sincronización](/es/data-sync/)
+
+## Crear un proyecto a partir de una lista {#checklist-project-conversion}
+
+Desde v1.3.5, al crear un proyecto desde una tarea con lista puedes elegir convertir sus elementos en tareas del proyecto. La opción empieza desmarcada cada vez. Si no la marcas, se conservan la tarea original y su lista dentro del proyecto.
+
+Al marcarla, cada elemento se convierte en una tarea nueva, respetando el orden y las marcas. Los elementos marcados siguen completados sin inventar una fecha de finalización. Notas, adjuntos, fechas de inicio, vencimiento y revisión, y etiquetas pasan al proyecto. Las tareas nuevas conservan etiquetas, contextos, prioridad y energía. No se copia el enfoque. El original va a la papelera. Si ya existe un proyecto con ese nombre en el área, elige otro.
+
+Disponible para tareas de Entrada, Próximas y completadas en proyectos activos. Antes hay que eliminar recurrencias, fechas relativas, recordatorios repetidos, horas con recordatorio, responsables, ubicaciones, estimaciones y tiempo registrado; o dejar la opción desmarcada. El diálogo explica las restricciones.
+
+Deshacer restaura el original y elimina el proyecto y las tareas generadas mientras sigan sin cambios. Las modificaciones posteriores o tareas añadidas impiden sobrescribir trabajo. Tras un fallo de guardado puedes reintentar la misma conversión sin duplicados. No incluye extraer elementos individuales.

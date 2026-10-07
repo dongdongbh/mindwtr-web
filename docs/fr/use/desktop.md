@@ -668,3 +668,13 @@ Consultez [Données et synchronisation](/fr/data-sync/) pour obtenir des instruc
 - [Installation sur ordinateur](/fr/start/desktop-installation)
 - [Raccourcis clavier sur ordinateur](/fr/use/keyboard-shortcuts)
 - [Données et synchronisation](/fr/data-sync/)
+
+## Créer un projet à partir d’une liste {#checklist-project-conversion}
+
+À partir de v1.3.5, créer un projet depuis une tâche contenant une liste propose de transformer ses éléments en tâches du projet. Cette option est décochée à chaque ouverture. Sans la cocher, la tâche originale et sa liste restent dans le projet.
+
+Chaque élément devient une tâche, avec le même ordre et le même état coché. Les éléments cochés restent terminés, sans inventer de date de fin. Notes, pièces jointes, dates de début, échéance et révision, ainsi que les étiquettes passent au projet. Les nouvelles tâches conservent étiquettes, contextes, priorité et énergie. Le focus n’est pas copié. L’original va à la corbeille. Choisissez un autre nom si un projet homonyme existe dans le domaine.
+
+Cette conversion concerne les tâches de la boîte de réception, les prochaines actions et les tâches terminées dans un projet actif. Il faut d’abord retirer récurrence, dates relatives, rappels répétés, heures avec rappel, responsable, lieu, estimation et temps enregistré, ou laisser l’option décochée. Le dialogue explique les restrictions.
+
+Annuler rétablit l’original et retire le projet et les tâches créés tant qu’ils n’ont pas changé. Toute modification ultérieure ou tâche ajoutée empêche d’écraser le travail. Après un échec d’enregistrement, réessayez la même conversion sans doublons. L’extraction d’éléments individuels n’est pas incluse.

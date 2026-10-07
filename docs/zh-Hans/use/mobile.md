@@ -895,3 +895,7 @@ Mindwtr 会发送通知，帮助你保持进度。
 - [Apple 快捷指令](/zh-Hans/power-users/apple-shortcuts)
 - [数据与同步](/zh-Hans/data-sync/)
 - [Mindwtr 中的 GTD 工作流](/zh-Hans/use/gtd-workflow)
+
+## 将清单转换为项目 {#checklist-project-conversion}
+
+从 v1.3.5 起，创建项目时可选择将清单项展开为任务，每次默认关闭。信息转移、限制和撤销规则见[清单转项目](./desktop#checklist-project-conversion)。

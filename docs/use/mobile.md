@@ -910,3 +910,7 @@ See [Data and Sync](/data-sync/) for sync setup.
 - [Apple Shortcuts](/power-users/apple-shortcuts)
 - [Data and Sync](/data-sync/)
 - [GTD Workflow in Mindwtr](/use/gtd-workflow)
+
+## Create a project from a checklist {#checklist-project-conversion}
+
+Project conversion can optionally expand a checklist into tasks from v1.3.5. The choice starts off each time. See [checklist project conversion](./desktop#checklist-project-conversion) for transferred information, restrictions, and Undo.

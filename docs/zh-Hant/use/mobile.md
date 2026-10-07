@@ -894,3 +894,7 @@ Mindwtr 會傳送通知，協助你掌握進度。
 - [Apple 捷徑](/zh-Hant/power-users/apple-shortcuts)
 - [資料與同步](/zh-Hant/data-sync/)
 - [Mindwtr 的 GTD 工作流程](/zh-Hant/use/gtd-workflow)
+
+## 將清單轉換為專案 {#checklist-project-conversion}
+
+從 v1.3.5 起，建立專案時可選擇將清單項目展開為任務，每次預設關閉。資訊轉移、限制和復原規則見[清單轉專案](./desktop#checklist-project-conversion)。

@@ -684,3 +684,13 @@ See [Data and Sync](/data-sync/) for detailed setup.
 - [Desktop Installation](/start/desktop-installation)
 - [Desktop Keyboard Shortcuts](/use/keyboard-shortcuts)
 - [Data and Sync](/data-sync/)
+
+## Create a project from a checklist {#checklist-project-conversion}
+
+From v1.3.5, **Create project from task** offers **Turn checklist items into project tasks** when the task has a checklist. It starts unchecked each time. Leave it off to keep the original task and checklist inside the project.
+
+When selected, each checklist item becomes a task in a new project, preserving order and checked state. Checked items remain done without an invented completion date. Notes, attachments, start/due/review dates, and tags transfer to the project; the new tasks retain tags, contexts, priority, and energy. Focus is not copied. The original task moves to Trash. Choose a different project name if that name already exists in the Area.
+
+Expansion is available for Inbox, Next, and completed tasks, with any parent project active. Recurrence, relative dates, repeating reminders, timed dates with reminders, assignees, locations, time estimates, and recorded time must be cleared first or kept on the original task by leaving expansion off. The dialog explains why expansion is unavailable.
+
+**Undo** restores the original task and removes the generated project/tasks only while they remain unchanged. Later edits or added tasks prevent Undo from overwriting work. A failed save can retry the same conversion without creating duplicates. Individual checklist-item extraction is not included.

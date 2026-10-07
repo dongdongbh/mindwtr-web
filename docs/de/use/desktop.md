@@ -663,3 +663,13 @@ Ausführliche Einrichtung: [Daten und Synchronisierung](/de/data-sync/).
 - [Desktop-Installation](/de/start/desktop-installation)
 - [Desktop-Tastenkürzel](/de/use/keyboard-shortcuts)
 - [Daten und Synchronisierung](/de/data-sync/)
+
+## Aus einer Checkliste ein Projekt erstellen {#checklist-project-conversion}
+
+Ab v1.3.5 bietet „Projekt aus Aufgabe erstellen“ bei einer Checkliste die ausdrückliche Option, deren Einträge in Projektaufgaben umzuwandeln. Sie ist jedes Mal ausgeschaltet. Ohne Auswahl bleiben die ursprüngliche Aufgabe und ihre Checkliste im Projekt erhalten.
+
+Bei Auswahl entsteht pro Eintrag eine Aufgabe im neuen Projekt, mit gleicher Reihenfolge und Erledigt-Markierung. Ein historischer Abschlusszeitpunkt wird nicht erfunden. Notizen, Anhänge, Start-, Fälligkeits- und Prüfdaten sowie Tags gehen an das Projekt; die neuen Aufgaben behalten Tags, Kontexte, Priorität und Energie. Fokus wird nicht kopiert. Das Original kommt in den Papierkorb. Bei einem gleichnamigen Projekt im Bereich ist ein anderer Name nötig.
+
+Unterstützt werden Eingang, nächste Aktionen und erledigte Aufgaben in aktiven Projekten. Wiederholungen, relative Daten, wiederholte Erinnerungen, Uhrzeiten mit Erinnerungen, zuständige Personen, Orte, Zeitschätzungen und erfasste Zeit müssen zuvor entfernt werden; alternativ bleibt die Checkliste zusammen. Der Dialog erklärt die Einschränkung.
+
+„Rückgängig“ stellt das Original wieder her und entfernt die erzeugten Aufgaben und das Projekt, solange sie unverändert sind. Spätere Bearbeitungen oder hinzugefügte Aufgaben verhindern ein Überschreiben. Nach einem Speicherfehler kann dieselbe Umwandlung ohne Duplikate erneut gespeichert werden. Einzelne Checklistenpunkte lassen sich damit nicht separat herauslösen.

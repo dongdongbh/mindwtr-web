@@ -833,3 +833,7 @@ Einrichtung: [Daten und Synchronisierung](/de/data-sync/).
 - [Apple-Kurzbefehle](/de/power-users/apple-shortcuts)
 - [Daten und Synchronisierung](/de/data-sync/)
 - [GTD-Arbeitsablauf in Mindwtr](/de/use/gtd-workflow)
+
+## Aus einer Checkliste ein Projekt erstellen {#checklist-project-conversion}
+
+Ab v1.3.5 kann die Projektumwandlung eine Checkliste ausdrücklich in Aufgaben aufteilen. Die Option ist standardmäßig aus. Details zu Datenübernahme, Grenzen und Rückgängig stehen unter [Checkliste in Projekt umwandeln](./desktop#checklist-project-conversion).

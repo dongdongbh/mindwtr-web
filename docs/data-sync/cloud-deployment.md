@@ -112,6 +112,8 @@ Optional but useful:
 Operational guidance:
 
 - Keep proxy body limits aligned with `MINDWTR_CLOUD_MAX_BODY_BYTES`, `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES`, and `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES`.
+- A reverse proxy in front of the server has its own request body limit, and it must be at least `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES`: nginx `client_max_body_size` (default 1 MB), Caddy `request_body` `max_size`, Traefik buffering `maxRequestBodyBytes`. For nginx, add `client_max_body_size 50m;` to the server block.
+- Leave room in the container's memory limit (`mem_limit: 512m` in the compose files) to parse the largest sync document.
 - Leave `MINDWTR_CLOUD_TRUST_PROXY_HEADERS=false` unless the server is only reachable through your reverse proxy. If you enable it, set `MINDWTR_CLOUD_TRUSTED_PROXY_IPS` to the proxy addresses that are allowed to supply forwarded client IPs.
 - If you rotate from `MINDWTR_CLOUD_TOKEN` to `MINDWTR_CLOUD_AUTH_TOKENS`, remember that token changes also change the namespace key.
 - Avoid `MINDWTR_CLOUD_ALLOW_ANY_TOKEN=true` for public deployments. It is capped by `MINDWTR_CLOUD_ANY_TOKEN_MAX_NAMESPACES`, but fixed token allowlists are still the production model.

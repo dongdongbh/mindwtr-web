@@ -112,6 +112,8 @@ REST 參考欄位必須指向使用中記錄。例如，建立或修補專案時
 操作建議：
 
 - 讓 Proxy 承載資料限制與 `MINDWTR_CLOUD_MAX_BODY_BYTES`、`MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` 及 `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` 保持一致。
+- 伺服器前方的反向 Proxy 有自己的要求本文限制，它必須不小於 `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES`：nginx `client_max_body_size`（預設 1 MB）、Caddy `request_body` `max_size`、Traefik buffering `maxRequestBodyBytes`。nginx 請在 server 區塊中加入 `client_max_body_size 50m;`。
+- 容器的記憶體限制（compose 檔案中的 `mem_limit: 512m`）要保留空間，用於解析最大的同步文件。
 - 除非伺服器只能透過反向 Proxy 存取，否則請保持 `MINDWTR_CLOUD_TRUST_PROXY_HEADERS=false`。若啟用，請將 `MINDWTR_CLOUD_TRUSTED_PROXY_IPS` 設為允許提供轉送用戶端 IP 的 Proxy 位址。
 - 若從 `MINDWTR_CLOUD_TOKEN` 輪替至 `MINDWTR_CLOUD_AUTH_TOKENS`，請記得變更 token 也會變更命名空間鍵。
 - 公開部署請避免設定 `MINDWTR_CLOUD_ALLOW_ANY_TOKEN=true`。雖然它受 `MINDWTR_CLOUD_ANY_TOKEN_MAX_NAMESPACES` 限制，但正式環境模型仍應使用固定 token 允許清單。

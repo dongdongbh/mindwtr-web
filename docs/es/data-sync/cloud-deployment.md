@@ -112,6 +112,8 @@ Opcionales, pero útiles:
 Directrices operativas:
 
 - Mantén los límites de cuerpo del proxy alineados con `MINDWTR_CLOUD_MAX_BODY_BYTES`, `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` y `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES`.
+- Un proxy inverso delante del servidor tiene su propio límite de cuerpo de solicitud, y debe ser al menos `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES`: nginx `client_max_body_size` (1 MB por defecto), Caddy `request_body` `max_size`, buffering de Traefik `maxRequestBodyBytes`. En nginx, añade `client_max_body_size 50m;` al bloque server.
+- Deja espacio en el límite de memoria del contenedor (`mem_limit: 512m` en los archivos compose) para procesar el documento de sincronización más grande.
 - Deja `MINDWTR_CLOUD_TRUST_PROXY_HEADERS=false` salvo que solo se pueda acceder al servidor a través de tu proxy inverso. Si lo activas, configura `MINDWTR_CLOUD_TRUSTED_PROXY_IPS` con las direcciones del proxy a las que se permite proporcionar las IP reenviadas de los clientes.
 - Si migras de `MINDWTR_CLOUD_TOKEN` a `MINDWTR_CLOUD_AUTH_TOKENS`, recuerda que los cambios de token también cambian la clave del espacio de nombres.
 - Evita `MINDWTR_CLOUD_ALLOW_ANY_TOKEN=true` en despliegues públicos. Está limitado por `MINDWTR_CLOUD_ANY_TOKEN_MAX_NAMESPACES`, pero las listas fijas de tokens permitidos siguen siendo el modelo para producción.

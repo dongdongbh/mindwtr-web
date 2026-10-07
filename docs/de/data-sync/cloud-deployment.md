@@ -112,6 +112,8 @@ Optional, aber nützlich:
 Betriebliche Hinweise:
 
 - Stimmen Sie Proxy-Bodygrenzen auf `MINDWTR_CLOUD_MAX_BODY_BYTES`, `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` und `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` ab.
+- Ein Reverse-Proxy vor dem Server hat eine eigene Grenze für den Anfragebody, und sie muss mindestens `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` betragen: nginx `client_max_body_size` (Standard 1 MB), Caddy `request_body` `max_size`, Traefik-Buffering `maxRequestBodyBytes`. Für nginx fügen Sie `client_max_body_size 50m;` in den Server-Block ein.
+- Lassen Sie im Speicherlimit des Containers (`mem_limit: 512m` in den Compose-Dateien) Platz, um das größte Sync-Dokument zu verarbeiten.
 - Lassen Sie `MINDWTR_CLOUD_TRUST_PROXY_HEADERS=false`, sofern der Server nicht ausschließlich über Ihren Reverse-Proxy erreichbar ist. Setzen Sie bei Aktivierung `MINDWTR_CLOUD_TRUSTED_PROXY_IPS` auf die Proxy-Adressen, die Client-IPs weiterleiten dürfen.
 - Beim Wechsel von `MINDWTR_CLOUD_TOKEN` zu `MINDWTR_CLOUD_AUTH_TOKENS` ändert ein Tokenwechsel auch den Namensraumschlüssel.
 - Vermeiden Sie `MINDWTR_CLOUD_ALLOW_ANY_TOKEN=true` in öffentlichen Bereitstellungen. Der Modus ist zwar durch `MINDWTR_CLOUD_ANY_TOKEN_MAX_NAMESPACES` begrenzt, für die Produktion sind jedoch feste Token-Positivlisten vorgesehen.

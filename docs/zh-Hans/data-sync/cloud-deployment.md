@@ -112,6 +112,8 @@ REST 引用字段必须指向仍然有效的记录。例如，创建或修补项
 运维指导：
 
 - 使代理请求体限制与 `MINDWTR_CLOUD_MAX_BODY_BYTES`、`MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` 和 `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` 保持一致。
+- 服务器前面的反向代理有自己的请求体限制，它必须不小于 `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES`：nginx `client_max_body_size`（默认 1 MB）、Caddy `request_body` `max_size`、Traefik buffering `maxRequestBodyBytes`。nginx 请在 server 块中加入 `client_max_body_size 50m;`。
+- 容器的内存限制（compose 文件中的 `mem_limit: 512m`）要留出空间，用于解析最大的同步文档。
 - 除非只能通过反向代理访问服务器，否则请保持 `MINDWTR_CLOUD_TRUST_PROXY_HEADERS=false`。如果启用，请将 `MINDWTR_CLOUD_TRUSTED_PROXY_IPS` 设置为允许提供转发客户端 IP 的代理地址。
 - 如果从 `MINDWTR_CLOUD_TOKEN` 轮换到 `MINDWTR_CLOUD_AUTH_TOKENS`，请记住令牌变更也会改变命名空间键。
 - 公共部署应避免使用 `MINDWTR_CLOUD_ALLOW_ANY_TOKEN=true`。虽然它受 `MINDWTR_CLOUD_ANY_TOKEN_MAX_NAMESPACES` 限制，但固定令牌允许列表仍是生产环境模式。

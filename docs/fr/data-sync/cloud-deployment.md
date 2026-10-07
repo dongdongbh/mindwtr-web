@@ -41,7 +41,7 @@ Configuration minimale de production :
 - `MINDWTR_CLOUD_AUTH_TOKENS` défini avec un ou plusieurs jetons robustes.
 - `MINDWTR_CLOUD_CORS_ORIGIN` défini avec l’origine exacte de votre client.
 - `MINDWTR_CLOUD_DATA_DIR` monté sur un stockage persistant.
-- `MINDWTR_CLOUD_MAX_BODY_BYTES` et `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` adaptés à votre utilisation.
+- `MINDWTR_CLOUD_MAX_BODY_BYTES`, `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` et `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` adaptés à votre utilisation.
 
 Facultatif, mais utile :
 
@@ -75,7 +75,8 @@ Facultatif, mais utile :
 
 | Variable | Rôle | Valeur par défaut |
 | --- | --- | --- |
-| `MINDWTR_CLOUD_MAX_BODY_BYTES` | Taille maximale d’une requête JSON. | `2000000` |
+| `MINDWTR_CLOUD_MAX_BODY_BYTES` | Taille maximale d’une requête JSON vers tous les points de terminaison sauf l’envoi des données de synchronisation (API des tâches, texte de capture, jetons de capture). | `2000000` |
+| `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` | Taille maximale de l’envoi des données de synchronisation (`PUT /v1/data`), qui contient toute la bibliothèque. Un envoi plus grand reçoit `413`. | `50000000`, ou `MINDWTR_CLOUD_MAX_BODY_BYTES` s’il est plus grand |
 | `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` | Taille maximale de téléversement d’une pièce jointe. | `50000000` |
 | `MINDWTR_CLOUD_REQUEST_TIMEOUT_MS` | Délai d’expiration par requête pour les gestionnaires cloud. | `30000` |
 | `MINDWTR_CLOUD_MAX_TASK_TITLE_LENGTH` | Longueur maximale du titre d’une tâche acceptée par les points de terminaison cloud des tâches. | `500` |
@@ -110,7 +111,7 @@ Facultatif, mais utile :
 
 Conseils d’exploitation :
 
-- Maintenez les limites de taille du corps des requêtes du proxy alignées sur `MINDWTR_CLOUD_MAX_BODY_BYTES` et `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES`.
+- Maintenez les limites de taille du corps des requêtes du proxy alignées sur `MINDWTR_CLOUD_MAX_BODY_BYTES`, `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` et `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES`.
 - Laissez `MINDWTR_CLOUD_TRUST_PROXY_HEADERS=false` sauf si le serveur n’est accessible que par votre proxy inverse. Si vous l’activez, définissez `MINDWTR_CLOUD_TRUSTED_PROXY_IPS` avec les adresses des proxys autorisés à fournir les adresses IP transférées des clients.
 - Si vous passez de `MINDWTR_CLOUD_TOKEN` à `MINDWTR_CLOUD_AUTH_TOKENS`, n’oubliez pas que modifier le jeton change également la clé de l’espace de noms.
 - Évitez `MINDWTR_CLOUD_ALLOW_ANY_TOKEN=true` pour les déploiements publics. Ce mode est limité par `MINDWTR_CLOUD_ANY_TOKEN_MAX_NAMESPACES`, mais les listes d’autorisation de jetons fixes restent le modèle de production.

@@ -33,7 +33,7 @@ PUT /v1/data
 
 `GET /v1/data` 回傳已驗證命名空間的快照。若命名空間不存在且允許寫入，伺服器會建立空白快照。
 
-`PUT /v1/data` 會驗證上傳的 `AppData`，以核心同步演算法和現有命名空間合併、驗證合併結果，再將結果寫回。這不是強制覆寫。成功的回應會回傳 `{ ok: true, stats, clockSkewWarning }`，其中 `stats` 的合併統計資料結構與本機同步診斷所用者相同。
+`PUT /v1/data` 會驗證上傳的 `AppData`，以核心同步演算法和現有命名空間合併、驗證合併結果，再將結果寫回。這不是強制覆寫。成功的回應會回傳 `{ ok: true, stats, clockSkewWarning }`，其中 `stats` 的合併統計資料結構與本機同步診斷所用者相同。上傳大小上限為 `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES`（預設 50 MB）；超出時回傳 `413` 與 `{ error, limitBytes }`。
 
 ## 任務
 

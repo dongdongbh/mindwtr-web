@@ -33,7 +33,7 @@ PUT /v1/data
 
 `GET /v1/data` 返回已认证命名空间的快照。如果命名空间不存在且允许写入，服务器会创建空快照。
 
-`PUT /v1/data` 会验证上传的 `AppData`，使用核心同步算法与现有命名空间合并，验证合并结果后再写回。它不是强制覆盖。成功响应返回 `{ ok: true, stats, clockSkewWarning }`，其中 `stats` 与本地同步诊断使用相同的合并统计结构。
+`PUT /v1/data` 会验证上传的 `AppData`，使用核心同步算法与现有命名空间合并，验证合并结果后再写回。它不是强制覆盖。成功响应返回 `{ ok: true, stats, clockSkewWarning }`，其中 `stats` 与本地同步诊断使用相同的合并统计结构。上传大小上限为 `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES`（默认 50 MB）；超出时返回 `413` 和 `{ error, limitBytes }`。
 
 ## 任务
 

@@ -41,7 +41,7 @@ REST 參考欄位必須指向使用中記錄。例如，建立或修補專案時
 - 將 `MINDWTR_CLOUD_AUTH_TOKENS` 設為一個或多個高強度 token。
 - 將 `MINDWTR_CLOUD_CORS_ORIGIN` 設為確切的用戶端 origin。
 - 將 `MINDWTR_CLOUD_DATA_DIR` 掛載至持久化儲存空間。
-- 依使用情況調整 `MINDWTR_CLOUD_MAX_BODY_BYTES` 與 `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES`。
+- 依使用情況調整 `MINDWTR_CLOUD_MAX_BODY_BYTES`、`MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` 與 `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES`。
 
 選用但實用：
 
@@ -75,7 +75,8 @@ REST 參考欄位必須指向使用中記錄。例如，建立或修補專案時
 
 | 變數 | 用途 | 預設值 |
 | --- | --- | --- |
-| `MINDWTR_CLOUD_MAX_BODY_BYTES` | JSON 要求大小上限。 | `2000000` |
+| `MINDWTR_CLOUD_MAX_BODY_BYTES` | 除同步資料上傳外，所有端點（任務 API、擷取文字、擷取權杖）的 JSON 要求大小上限。 | `2000000` |
+| `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` | 同步資料上傳（`PUT /v1/data`）的大小上限，該資料包含整個資料庫。超出時回傳 `413`。 | `50000000`；若 `MINDWTR_CLOUD_MAX_BODY_BYTES` 較大則取其值 |
 | `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` | 附件上傳大小上限。 | `50000000` |
 | `MINDWTR_CLOUD_REQUEST_TIMEOUT_MS` | 雲端處理器的每項要求逾時時間。 | `30000` |
 | `MINDWTR_CLOUD_MAX_TASK_TITLE_LENGTH` | 雲端任務端點接受的任務標題長度上限。 | `500` |
@@ -110,7 +111,7 @@ REST 參考欄位必須指向使用中記錄。例如，建立或修補專案時
 
 操作建議：
 
-- 讓 Proxy 承載資料限制與 `MINDWTR_CLOUD_MAX_BODY_BYTES` 及 `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` 保持一致。
+- 讓 Proxy 承載資料限制與 `MINDWTR_CLOUD_MAX_BODY_BYTES`、`MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` 及 `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` 保持一致。
 - 除非伺服器只能透過反向 Proxy 存取，否則請保持 `MINDWTR_CLOUD_TRUST_PROXY_HEADERS=false`。若啟用，請將 `MINDWTR_CLOUD_TRUSTED_PROXY_IPS` 設為允許提供轉送用戶端 IP 的 Proxy 位址。
 - 若從 `MINDWTR_CLOUD_TOKEN` 輪替至 `MINDWTR_CLOUD_AUTH_TOKENS`，請記得變更 token 也會變更命名空間鍵。
 - 公開部署請避免設定 `MINDWTR_CLOUD_ALLOW_ANY_TOKEN=true`。雖然它受 `MINDWTR_CLOUD_ANY_TOKEN_MAX_NAMESPACES` 限制，但正式環境模型仍應使用固定 token 允許清單。

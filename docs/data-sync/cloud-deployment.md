@@ -41,7 +41,7 @@ Minimum production baseline:
 - `MINDWTR_CLOUD_AUTH_TOKENS` set to one or more strong tokens.
 - `MINDWTR_CLOUD_CORS_ORIGIN` set to your exact client origin.
 - `MINDWTR_CLOUD_DATA_DIR` mounted to persistent storage.
-- `MINDWTR_CLOUD_MAX_BODY_BYTES` and `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` tuned for your usage.
+- `MINDWTR_CLOUD_MAX_BODY_BYTES`, `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES`, and `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` tuned for your usage.
 
 Optional but useful:
 
@@ -75,7 +75,8 @@ Optional but useful:
 
 | Variable | Purpose | Default |
 | --- | --- | --- |
-| `MINDWTR_CLOUD_MAX_BODY_BYTES` | Max JSON request size. | `2000000` |
+| `MINDWTR_CLOUD_MAX_BODY_BYTES` | Max size of a JSON request to every endpoint except the sync data upload (task API, capture text, capture tokens). | `2000000` |
+| `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` | Max size of the sync data upload (`PUT /v1/data`), which holds the whole library. A larger upload gets `413`. | `50000000`, or `MINDWTR_CLOUD_MAX_BODY_BYTES` when that is larger |
 | `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` | Max attachment upload size. | `50000000` |
 | `MINDWTR_CLOUD_REQUEST_TIMEOUT_MS` | Per-request timeout for cloud handlers. | `30000` |
 | `MINDWTR_CLOUD_MAX_TASK_TITLE_LENGTH` | Max task title length accepted by cloud task endpoints. | `500` |
@@ -110,7 +111,7 @@ Optional but useful:
 
 Operational guidance:
 
-- Keep proxy body limits aligned with `MINDWTR_CLOUD_MAX_BODY_BYTES` and `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES`.
+- Keep proxy body limits aligned with `MINDWTR_CLOUD_MAX_BODY_BYTES`, `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES`, and `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES`.
 - Leave `MINDWTR_CLOUD_TRUST_PROXY_HEADERS=false` unless the server is only reachable through your reverse proxy. If you enable it, set `MINDWTR_CLOUD_TRUSTED_PROXY_IPS` to the proxy addresses that are allowed to supply forwarded client IPs.
 - If you rotate from `MINDWTR_CLOUD_TOKEN` to `MINDWTR_CLOUD_AUTH_TOKENS`, remember that token changes also change the namespace key.
 - Avoid `MINDWTR_CLOUD_ALLOW_ANY_TOKEN=true` for public deployments. It is capped by `MINDWTR_CLOUD_ANY_TOKEN_MAX_NAMESPACES`, but fixed token allowlists are still the production model.

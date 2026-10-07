@@ -41,7 +41,7 @@ REST 引用字段必须指向仍然有效的记录。例如，创建或修补项
 - 将 `MINDWTR_CLOUD_AUTH_TOKENS` 设置为一个或多个高强度令牌。
 - 将 `MINDWTR_CLOUD_CORS_ORIGIN` 设置为你的确切客户端来源。
 - 将 `MINDWTR_CLOUD_DATA_DIR` 挂载到持久存储。
-- 根据你的使用情况调整 `MINDWTR_CLOUD_MAX_BODY_BYTES` 和 `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES`。
+- 根据你的使用情况调整 `MINDWTR_CLOUD_MAX_BODY_BYTES`、`MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` 和 `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES`。
 
 可选但实用：
 
@@ -75,7 +75,8 @@ REST 引用字段必须指向仍然有效的记录。例如，创建或修补项
 
 | 变量 | 用途 | 默认值 |
 | --- | --- | --- |
-| `MINDWTR_CLOUD_MAX_BODY_BYTES` | JSON 请求大小上限。 | `2000000` |
+| `MINDWTR_CLOUD_MAX_BODY_BYTES` | 除同步数据上传外，所有端点（任务 API、捕获文本、捕获令牌）的 JSON 请求大小上限。 | `2000000` |
+| `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` | 同步数据上传（`PUT /v1/data`）的大小上限，该数据包含整个资料库。超出时返回 `413`。 | `50000000`；若 `MINDWTR_CLOUD_MAX_BODY_BYTES` 更大则取其值 |
 | `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` | 附件上传大小上限。 | `50000000` |
 | `MINDWTR_CLOUD_REQUEST_TIMEOUT_MS` | 云端处理程序的每请求超时时间。 | `30000` |
 | `MINDWTR_CLOUD_MAX_TASK_TITLE_LENGTH` | 云端任务端点接受的任务标题最大长度。 | `500` |
@@ -110,7 +111,7 @@ REST 引用字段必须指向仍然有效的记录。例如，创建或修补项
 
 运维指导：
 
-- 使代理请求体限制与 `MINDWTR_CLOUD_MAX_BODY_BYTES` 和 `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` 保持一致。
+- 使代理请求体限制与 `MINDWTR_CLOUD_MAX_BODY_BYTES`、`MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` 和 `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` 保持一致。
 - 除非只能通过反向代理访问服务器，否则请保持 `MINDWTR_CLOUD_TRUST_PROXY_HEADERS=false`。如果启用，请将 `MINDWTR_CLOUD_TRUSTED_PROXY_IPS` 设置为允许提供转发客户端 IP 的代理地址。
 - 如果从 `MINDWTR_CLOUD_TOKEN` 轮换到 `MINDWTR_CLOUD_AUTH_TOKENS`，请记住令牌变更也会改变命名空间键。
 - 公共部署应避免使用 `MINDWTR_CLOUD_ALLOW_ANY_TOKEN=true`。虽然它受 `MINDWTR_CLOUD_ANY_TOKEN_MAX_NAMESPACES` 限制，但固定令牌允许列表仍是生产环境模式。

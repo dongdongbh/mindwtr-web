@@ -33,7 +33,7 @@ PUT /v1/data
 
 `GET /v1/data` devuelve la instantánea del espacio autenticado. Si no existe y se permiten escrituras, el servidor crea una vacía.
 
-`PUT /v1/data` valida el `AppData` subido, lo combina con el espacio existente mediante el algoritmo del núcleo, valida el resultado y lo escribe. No fuerza una sobrescritura. Una respuesta correcta devuelve `{ ok: true, stats, clockSkewWarning }`; `stats` usa la misma estructura de estadísticas que el diagnóstico local.
+`PUT /v1/data` valida el `AppData` subido, lo combina con el espacio existente mediante el algoritmo del núcleo, valida el resultado y lo escribe. No fuerza una sobrescritura. Una respuesta correcta devuelve `{ ok: true, stats, clockSkewWarning }`; `stats` usa la misma estructura de estadísticas que el diagnóstico local. La subida puede ocupar hasta `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` (50 MB por defecto); una mayor recibe `413` con `{ error, limitBytes }`.
 
 ## Tareas
 

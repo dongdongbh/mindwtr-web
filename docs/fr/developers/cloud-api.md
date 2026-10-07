@@ -33,7 +33,7 @@ PUT /v1/data
 
 `GET /v1/data` renvoie l’instantané de l’espace de noms authentifié. Si l’espace de noms n’existe pas et que les écritures sont autorisées, le serveur crée un instantané vide.
 
-`PUT /v1/data` valide l’`AppData` téléversé, le fusionne avec l’espace de noms existant à l’aide de l’algorithme de synchronisation du cœur, valide le résultat fusionné, puis le réécrit. Il ne s’agit pas d’un écrasement forcé. Une réponse réussie renvoie `{ ok: true, stats, clockSkewWarning }`, où `stats` possède la même structure de statistiques de fusion que celle utilisée par les diagnostics de synchronisation locale.
+`PUT /v1/data` valide l’`AppData` téléversé, le fusionne avec l’espace de noms existant à l’aide de l’algorithme de synchronisation du cœur, valide le résultat fusionné, puis le réécrit. Il ne s’agit pas d’un écrasement forcé. Une réponse réussie renvoie `{ ok: true, stats, clockSkewWarning }`, où `stats` possède la même structure de statistiques de fusion que celle utilisée par les diagnostics de synchronisation locale. L’envoi peut atteindre `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` (50 Mo par défaut) ; un envoi plus grand reçoit `413` avec `{ error, limitBytes }`.
 
 ## Tâches
 

@@ -41,7 +41,7 @@ Mindestanforderungen für den Produktivbetrieb:
 - `MINDWTR_CLOUD_AUTH_TOKENS` auf ein oder mehrere starke Tokens setzen
 - `MINDWTR_CLOUD_CORS_ORIGIN` auf den exakten Client-Ursprung setzen
 - `MINDWTR_CLOUD_DATA_DIR` in persistenten Speicher einbinden
-- `MINDWTR_CLOUD_MAX_BODY_BYTES` und `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` an die Nutzung anpassen
+- `MINDWTR_CLOUD_MAX_BODY_BYTES`, `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` und `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` an die Nutzung anpassen
 
 Optional, aber nützlich:
 
@@ -75,7 +75,8 @@ Optional, aber nützlich:
 
 | Variable | Zweck | Standard |
 | --- | --- | --- |
-| `MINDWTR_CLOUD_MAX_BODY_BYTES` | Maximale Größe einer JSON-Anfrage. | `2000000` |
+| `MINDWTR_CLOUD_MAX_BODY_BYTES` | Maximale Größe einer JSON-Anfrage an alle Endpunkte außer dem Hochladen der Sync-Daten (Aufgaben-API, Erfassungstext, Erfassungs-Tokens). | `2000000` |
+| `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` | Maximale Größe beim Hochladen der Sync-Daten (`PUT /v1/data`), die die ganze Bibliothek enthalten. Ein größerer Upload erhält `413`. | `50000000` oder `MINDWTR_CLOUD_MAX_BODY_BYTES`, wenn dieser Wert größer ist |
 | `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` | Maximale Größe eines Anhang-Uploads. | `50000000` |
 | `MINDWTR_CLOUD_REQUEST_TIMEOUT_MS` | Zeitlimit je Anfrage für Cloud-Handler. | `30000` |
 | `MINDWTR_CLOUD_MAX_TASK_TITLE_LENGTH` | Maximale Aufgabentitellänge für Cloud-Aufgabenendpunkte. | `500` |
@@ -110,7 +111,7 @@ Optional, aber nützlich:
 
 Betriebliche Hinweise:
 
-- Stimmen Sie Proxy-Bodygrenzen auf `MINDWTR_CLOUD_MAX_BODY_BYTES` und `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` ab.
+- Stimmen Sie Proxy-Bodygrenzen auf `MINDWTR_CLOUD_MAX_BODY_BYTES`, `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` und `MINDWTR_CLOUD_MAX_ATTACHMENT_BYTES` ab.
 - Lassen Sie `MINDWTR_CLOUD_TRUST_PROXY_HEADERS=false`, sofern der Server nicht ausschließlich über Ihren Reverse-Proxy erreichbar ist. Setzen Sie bei Aktivierung `MINDWTR_CLOUD_TRUSTED_PROXY_IPS` auf die Proxy-Adressen, die Client-IPs weiterleiten dürfen.
 - Beim Wechsel von `MINDWTR_CLOUD_TOKEN` zu `MINDWTR_CLOUD_AUTH_TOKENS` ändert ein Tokenwechsel auch den Namensraumschlüssel.
 - Vermeiden Sie `MINDWTR_CLOUD_ALLOW_ANY_TOKEN=true` in öffentlichen Bereitstellungen. Der Modus ist zwar durch `MINDWTR_CLOUD_ANY_TOKEN_MAX_NAMESPACES` begrenzt, für die Produktion sind jedoch feste Token-Positivlisten vorgesehen.

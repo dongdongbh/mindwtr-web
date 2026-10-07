@@ -33,7 +33,7 @@ PUT /v1/data
 
 `GET /v1/data` gibt den Snapshot des authentifizierten Namensraums zurück. Wenn der Namensraum nicht vorhanden ist und Schreibvorgänge zulässig sind, erstellt der Server einen leeren Snapshot.
 
-`PUT /v1/data` validiert die hochgeladenen `AppData`, führt sie mithilfe des Core-Synchronisierungsalgorithmus mit dem vorhandenen Namensraum zusammen, validiert das zusammengeführte Ergebnis und schreibt es zurück. Dies ist kein erzwungenes Überschreiben. Eine erfolgreiche Antwort gibt `{ ok: true, stats, clockSkewWarning }` zurück, wobei `stats` dieselbe Form der Zusammenführungsstatistik hat, die von der lokalen Synchronisierungsdiagnose verwendet wird.
+`PUT /v1/data` validiert die hochgeladenen `AppData`, führt sie mithilfe des Core-Synchronisierungsalgorithmus mit dem vorhandenen Namensraum zusammen, validiert das zusammengeführte Ergebnis und schreibt es zurück. Dies ist kein erzwungenes Überschreiben. Eine erfolgreiche Antwort gibt `{ ok: true, stats, clockSkewWarning }` zurück, wobei `stats` dieselbe Form der Zusammenführungsstatistik hat, die von der lokalen Synchronisierungsdiagnose verwendet wird. Der Upload darf bis zu `MINDWTR_CLOUD_MAX_DATA_BODY_BYTES` groß sein (Standard 50 MB); ein größerer erhält `413` mit `{ error, limitBytes }`.
 
 ## Aufgaben
 

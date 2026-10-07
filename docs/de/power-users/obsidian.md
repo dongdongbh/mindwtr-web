@@ -74,6 +74,28 @@ Importierte eingebettete Aufgaben zeigen:
 - Pfad und Zeilennummer der Quellnotiz
 - die Aktion **In Obsidian öffnen**
 
+### Erforderliches Tag für eingebettete Aufgaben (v1.3.5)
+
+Unter **Einstellungen → Integrationen → Obsidian Vault** können Sie ein erforderliches Tag wie `#task` festlegen. Ein leeres Feld lässt alle unterstützten Kontrollkästchen zu. Beim Speichern eines geänderten Filters wird die Obsidian-Liste neu eingelesen; vollständige Scans und Live-Aktualisierungen verwenden denselben Filter.
+
+Die Groß- und Kleinschreibung wird berücksichtigt: `#task` erfasst auch `#task/work`, aber weder `#tasks` noch `#Task`. Nur Tags in der Kontrollkästchenzeile zählen. Frontmatter-Tags und Dataview-Werte wie `[tags:: task]` reichen nicht aus. Dies ist Mindwtrs Tag-Regel, keine Nachbildung des beliebigen Zeichenkettenfilters des Obsidian-Tasks-Plugins. Dessen Konfiguration wird nicht gelesen.
+
+```md
+---
+tags: [task]
+---
+- [ ] Pack charger
+- [ ] Email venue #task
+- [ ] Call venue #task/work
+- [ ] Read article #tasks
+```
+
+Hier erscheinen nur „Email venue“ und „Call venue“. Quelltext, Tags und Zeilennummern bleiben für das Zurückschreiben des Erledigt-Status erhalten. Das Tag bleibt im Titel sichtbar.
+
+Neue eingebettete Obsidian-Aufgaben aus Mindwtr erhalten das Tag automatisch, sofern das Tag oder ein untergeordnetes Tag noch fehlt. Scans ändern keine vorhandenen Markdown-Tags. TaskNotes bleibt unverändert.
+
+Ein Scan füllt die **Obsidian**-Ansicht. **In Mindwtr übernehmen** erstellt anschließend eine Aufgabe in der Hauptbibliothek. Eine Filteränderung löscht weder bereits übernommene Aufgaben noch Kontrollkästchen in Notizen.
+
 ### TaskNotes
 
 Mindwtr unterstützt außerdem [TaskNotes](https://tasknotes.dev/), das jeweils eine Aufgabe pro Markdown-Datei mit YAML-Frontmatter speichert.

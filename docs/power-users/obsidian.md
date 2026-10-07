@@ -74,6 +74,28 @@ Imported inline tasks show:
 - source note path + line number
 - an **Open in Obsidian** action
 
+### Required inline task tag (v1.3.5)
+
+In **Settings → Integrations → Obsidian Vault**, set **Required inline task tag** to a tag such as `#task`. Leave it empty to keep scanning all supported checkboxes. Saving a changed filter rebuilds the Obsidian task list; full scans and live file updates use the same filter.
+
+Matching is case-sensitive. `#task` matches `#task` and descendants such as `#task/work`, but not `#tasks` or `#Task`. Only tags written on the checkbox line qualify. A note-level frontmatter tag or a Dataview metadata value such as `[tags:: task]` does not make an untagged checkbox qualify. This is Mindwtr's tag rule, not the Obsidian Tasks plugin's arbitrary-string Global Filter; Mindwtr does not read that plugin's configuration.
+
+```md
+---
+tags: [task]
+---
+- [ ] Pack charger
+- [ ] Email venue #task
+- [ ] Call venue #task/work
+- [ ] Read article #tasks
+```
+
+With `#task` required, only “Email venue” and “Call venue” appear. Their original source text, tags and line numbers are preserved for completion write-back. The tag remains visible in the title.
+
+New inline Obsidian tasks created through Mindwtr receive the required tag automatically, unless the text already has that tag or a descendant. Existing Markdown is never retagged during a scan. TaskNotes is unaffected.
+
+Scanning fills Mindwtr's **Obsidian** view. **Bring into Mindwtr** is a separate action that creates a main-library task. Changing this filter never deletes tasks previously brought into Mindwtr or checkboxes in your notes.
+
 ### TaskNotes
 
 Mindwtr also supports [TaskNotes](https://tasknotes.dev/), which stores one task per Markdown file with YAML frontmatter.

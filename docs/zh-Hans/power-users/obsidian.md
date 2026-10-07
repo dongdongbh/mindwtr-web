@@ -74,6 +74,28 @@ Mindwtr 会保留：
 - 源笔记路径 + 行号
 - **在 Obsidian 中打开**操作
 
+### 行内任务必需标签（v1.3.5）
+
+在 **设置 → 集成 → Obsidian Vault** 中，将 **行内任务必需标签** 设为 `#task` 等标签。留空则继续扫描所有受支持的复选框。保存更改后的筛选条件会重新构建 Obsidian 任务列表；完整扫描与实时文件更新使用相同的筛选规则。
+
+匹配区分大小写。`#task` 匹配自身及 `#task/work` 等子标签，但不匹配 `#tasks` 或 `#Task`。只有复选框所在行中的标签有效。笔记 frontmatter 标签或 `[tags:: task]` 等 Dataview 元数据值不会使无标签的复选框符合条件。这是 Mindwtr 的标签规则，不等同于 Obsidian Tasks 插件的任意字符串 Global Filter；Mindwtr 不读取该插件的配置。
+
+```md
+---
+tags: [task]
+---
+- [ ] Pack charger
+- [ ] Email venue #task
+- [ ] Call venue #task/work
+- [ ] Read article #tasks
+```
+
+设置必需标签 `#task` 后，上例只显示“Email venue”和“Call venue”。原始文本、标签和行号保持不变，以便完成操作准确回写。标签仍显示在标题中。
+
+通过 Mindwtr 新建的行内 Obsidian 任务会自动附加必需标签，除非文本已有该标签或其子标签。扫描不会给现有 Markdown 补加标签。TaskNotes 不受影响。
+
+扫描填充的是 **Obsidian** 视图。**导入 Mindwtr** 是单独的操作，会在主任务库中创建任务。更改筛选条件不会删除已导入的任务，也不会删除笔记中的复选框。
+
 ### TaskNotes
 
 Mindwtr 还支持 [TaskNotes](https://tasknotes.dev/)，后者使用 YAML frontmatter 将每个任务存储为单独的 Markdown 文件。

@@ -74,6 +74,28 @@ Mindwtr 會保留：
 - 來源筆記路徑及行號
 - **在 Obsidian 中開啟**動作
 
+### 行內任務必要標籤（v1.3.5）
+
+在 **設定 → 整合 → Obsidian Vault** 中，將 **行內任務必要標籤** 設為 `#task` 等標籤。留空則繼續掃描所有支援的核取方塊。儲存變更後的篩選條件會重新建立 Obsidian 任務清單；完整掃描與即時檔案更新使用相同的篩選規則。
+
+比對區分大小寫。`#task` 符合自身及 `#task/work` 等子標籤，但不符合 `#tasks` 或 `#Task`。只有核取方塊所在行中的標籤有效。筆記 frontmatter 標籤或 `[tags:: task]` 等 Dataview 中繼資料值不會使無標籤的核取方塊符合條件。這是 Mindwtr 的標籤規則，不等同於 Obsidian Tasks 外掛的任意字串 Global Filter；Mindwtr 不讀取該外掛的設定。
+
+```md
+---
+tags: [task]
+---
+- [ ] Pack charger
+- [ ] Email venue #task
+- [ ] Call venue #task/work
+- [ ] Read article #tasks
+```
+
+設定必要標籤 `#task` 後，上例只顯示「Email venue」和「Call venue」。原始文字、標籤和行號保持不變，以便完成操作準確寫回。標籤仍顯示在標題中。
+
+透過 Mindwtr 新增的行內 Obsidian 任務會自動附加必要標籤，除非文字已有該標籤或其子標籤。掃描不會替現有 Markdown 加入標籤。TaskNotes 不受影響。
+
+掃描填入的是 **Obsidian** 檢視。**匯入 Mindwtr** 是獨立操作，會在主任務庫中建立任務。變更篩選條件不會刪除已匯入的任務，也不會刪除筆記中的核取方塊。
+
 ### TaskNotes
 
 Mindwtr 也支援 [TaskNotes](https://tasknotes.dev/)，它以一項任務一份 Markdown 檔案的方式儲存任務，並使用 YAML frontmatter。

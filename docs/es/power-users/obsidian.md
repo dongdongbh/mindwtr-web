@@ -74,6 +74,28 @@ Las tareas en línea importadas muestran:
 - la ruta de la nota de origen y el número de línea
 - una acción **Abrir en Obsidian**
 
+### Etiqueta obligatoria para tareas en línea (v1.3.5)
+
+En **Ajustes → Integraciones → Obsidian Vault**, establece una etiqueta obligatoria como `#task`. Déjala vacía para seguir incluyendo todas las casillas compatibles. Guardar un filtro distinto reconstruye la lista de Obsidian; los escaneos completos y las actualizaciones en vivo usan el mismo filtro.
+
+La coincidencia distingue mayúsculas: `#task` incluye `#task/work`, pero no `#tasks` ni `#Task`. Solo cuentan las etiquetas de la línea de la casilla. Las etiquetas del frontmatter y los valores Dataview como `[tags:: task]` no bastan. Esta es la regla de etiquetas de Mindwtr, no una reproducción del filtro de cadenas arbitrarias del plugin Tasks. Mindwtr no lee su configuración.
+
+```md
+---
+tags: [task]
+---
+- [ ] Pack charger
+- [ ] Email venue #task
+- [ ] Call venue #task/work
+- [ ] Read article #tasks
+```
+
+Aquí solo aparecen «Email venue» y «Call venue». El texto original, las etiquetas y los números de línea se conservan para actualizar la casilla al completar. La etiqueta sigue visible en el título.
+
+Las nuevas tareas en línea creadas desde Mindwtr reciben la etiqueta automáticamente, salvo que ya tengan esa etiqueta o una descendiente. El escaneo nunca modifica las etiquetas del Markdown existente. TaskNotes no se ve afectado.
+
+El escaneo llena la vista **Obsidian**. **Traer a Mindwtr** es una acción separada que crea una tarea en la biblioteca principal. Cambiar el filtro no elimina tareas ya traídas ni casillas de las notas.
+
 ### TaskNotes
 
 Mindwtr también es compatible con [TaskNotes](https://tasknotes.dev/), que almacena una tarea por archivo Markdown con frontmatter YAML.

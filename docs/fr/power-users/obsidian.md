@@ -74,6 +74,28 @@ Les tâches intégrées importées affichent :
 - le chemin de la note source et le numéro de ligne
 - une action **Ouvrir dans Obsidian**
 
+### Étiquette obligatoire pour les tâches intégrées (v1.3.5)
+
+Dans **Paramètres → Intégrations → Obsidian Vault**, définissez une étiquette obligatoire comme `#task`. Laissez le champ vide pour conserver toutes les cases à cocher prises en charge. Enregistrer un filtre différent reconstruit la liste Obsidian ; les analyses complètes et les mises à jour en direct utilisent le même filtre.
+
+La correspondance respecte la casse : `#task` inclut `#task/work`, mais pas `#tasks` ni `#Task`. Seules les étiquettes sur la ligne de la case comptent. Les étiquettes du frontmatter et les valeurs Dataview comme `[tags:: task]` ne suffisent pas. Il s’agit de la règle de Mindwtr, et non d’une reproduction du filtre de chaînes arbitraires du plugin Tasks. Mindwtr ne lit pas sa configuration.
+
+```md
+---
+tags: [task]
+---
+- [ ] Pack charger
+- [ ] Email venue #task
+- [ ] Call venue #task/work
+- [ ] Read article #tasks
+```
+
+Ici, seules « Email venue » et « Call venue » apparaissent. Le texte source, les étiquettes et les numéros de ligne sont conservés pour cocher la bonne ligne. L’étiquette reste visible dans le titre.
+
+Les nouvelles tâches intégrées créées depuis Mindwtr reçoivent automatiquement cette étiquette, sauf si elles portent déjà cette étiquette ou une descendante. Une analyse ne modifie jamais les étiquettes du Markdown existant. TaskNotes reste inchangé.
+
+L’analyse remplit la vue **Obsidian**. **Importer dans Mindwtr** est une action distincte qui crée une tâche dans la bibliothèque principale. Modifier ce filtre ne supprime ni les tâches déjà importées ni les cases dans vos notes.
+
 ### TaskNotes
 
 Mindwtr prend également en charge [TaskNotes](https://tasknotes.dev/), qui stocke une tâche par fichier Markdown avec un frontmatter YAML.

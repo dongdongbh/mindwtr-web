@@ -357,6 +357,10 @@ The native Apple Watch companion supports watchOS 10 or later and has been teste
 
 The Watch keeps captures queued when the phone is unavailable and delivers them when the connection returns.
 
+**From v1.3.5:** Open a Focus task on the Watch to read its description and check or uncheck checklist items. Previously received details remain readable offline. Changes are saved on the Watch for later delivery and applied through the iPhone; open Mindwtr on the iPhone after reconnecting. A delivery acknowledgement does not mean the task has been saved yet.
+
+Checklist changes preserve other items added or reordered on the phone. If an item was renamed, removed, or cannot be identified uniquely, refresh from the iPhone rather than applying the change to another item. List-mode tasks follow the same completion rules as on the phone. Details that exceed the Watch payload limit show a message directing you to the iPhone; the Watch never presents a shortened checklist as complete. Description editing, adding/reordering checklist items, and attachments remain on the phone.
+
 ### URL Scheme Quick Capture (iOS Shortcuts / Android Automations)
 
 Mindwtr registers the URL scheme `mindwtr://`, so you can capture tasks from iOS Shortcuts, Tasker, or other automation tools.

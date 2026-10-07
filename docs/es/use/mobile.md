@@ -351,6 +351,10 @@ La app nativa para Apple Watch se ha probado en un Watch físico enlazado con wa
 
 El Watch conserva las capturas en cola cuando el iPhone no está disponible y las entrega al restablecerse la conexión.
 
+**Desde v1.3.5:** Abre una tarea de Focus en el Watch para leer su descripción y marcar o desmarcar elementos de la lista. Los detalles ya recibidos siguen disponibles sin conexión. Los cambios se guardan en el reloj para procesarlos después en el iPhone; abre Mindwtr en el iPhone al volver a conectar. La confirmación de entrega no significa que la tarea ya se haya guardado.
+
+Los cambios conservan los elementos añadidos o reordenados en el teléfono. Si un elemento cambió de nombre, se eliminó o no puede identificarse de forma única, actualiza desde el iPhone. Las tareas en modo lista siguen las mismas reglas de finalización que en el teléfono. Si los detalles exceden el límite de transferencia, se indica que los abras en el iPhone; nunca se muestra una lista recortada como si estuviera completa. Editar descripciones, añadir o reordenar elementos y usar adjuntos sigue correspondiendo al teléfono.
+
 ### Captura rápida mediante esquema URL (Atajos de iOS/automatizaciones de Android)
 
 Mindwtr registra el esquema URL `mindwtr://`, por lo que puedes capturar tareas desde Atajos de iOS, Tasker u otras herramientas de automatización.

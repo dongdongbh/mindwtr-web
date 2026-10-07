@@ -332,6 +332,10 @@ Die native Apple-Watch-App wurde auf einer gekoppelten physischen Watch mit watc
 
 Die Watch hält Erfassungen bereit, wenn das iPhone nicht verfügbar ist, und übermittelt sie nach der erneuten Verbindung.
 
+**Ab v1.3.5:** Öffne eine Focus-Aufgabe auf der Watch, um ihre Beschreibung zu lesen und Checklistenpunkte abzuhaken oder wieder zu öffnen. Bereits empfangene Details bleiben offline lesbar. Änderungen werden auf der Watch gespeichert und später auf dem iPhone verarbeitet. Öffne Mindwtr nach dem erneuten Verbinden auf dem iPhone. Eine Empfangsbestätigung bedeutet noch nicht, dass die Aufgabe gespeichert wurde.
+
+Andere auf dem iPhone ergänzte oder umsortierte Punkte bleiben erhalten. Umbenannte, entfernte oder nicht eindeutig erkennbare Punkte müssen vom iPhone aktualisiert werden. Aufgaben im Listenmodus folgen denselben Abschlussregeln wie auf dem Telefon. Zu große Details zeigen einen Hinweis zum Öffnen auf dem iPhone; eine gekürzte Checkliste wird nicht als vollständig angezeigt. Beschreibungen bearbeiten, Punkte hinzufügen oder umsortieren und Anhänge bleiben Aufgaben für das Telefon.
+
 ### URL-Schema-Schnellerfassung
 
 Mindwtr registriert `mindwtr://` für iOS-Kurzbefehle, Tasker und andere Automatisierungen.

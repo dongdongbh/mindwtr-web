@@ -351,6 +351,10 @@ adb shell am start -a android.intent.action.VIEW -d 'mindwtr://contexts?token=%4
 
 iPhone 不可用时，手表会将记录保留在队列中，并在连接恢复后发送。
 
+**从 v1.3.5 起：** 在手表上打开 Focus 中的任务，可阅读描述并勾选或取消勾选检查项。已接收的详情可离线阅读；更改先保存在手表上，稍后发送到 iPhone 处理。重新连接后，请在 iPhone 上打开 Mindwtr。送达确认不代表任务已保存。
+
+检查项更改会保留手机上新增或重新排序的其他条目。如果条目已改名、删除或无法唯一识别，请从 iPhone 刷新，避免更改错误的条目。列表模式任务遵循手机端相同的完成规则。详情超过手表传输限制时，会提示在 iPhone 上查看，不会把截短的检查清单当作完整列表显示。编辑描述、新增或排序检查项及附件仍在手机上操作。
+
 ### URL Scheme 快速收集（iOS 快捷指令 / Android 自动化）
 
 Mindwtr 注册了 URL scheme `mindwtr://`，因此你可以从 iOS 快捷指令、Tasker 或其他自动化工具收集任务。

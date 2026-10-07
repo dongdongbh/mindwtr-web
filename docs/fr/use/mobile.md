@@ -351,6 +351,10 @@ L’app native pour Apple Watch a été testée sur une montre physique jumelée
 
 L’app conserve les captures sur la montre lorsque l’iPhone n’est pas disponible et les transmet au retour de la connexion.
 
+**À partir de la v1.3.5 :** Ouvrez une tâche Focus sur la Watch pour lire sa description et cocher ou décocher les éléments de sa checklist. Les détails déjà reçus restent consultables hors ligne. Les modifications sont enregistrées sur la montre puis traitées sur l’iPhone ; ouvrez Mindwtr sur l’iPhone après la reconnexion. Un accusé de réception ne signifie pas encore que la tâche a été enregistrée.
+
+Les éléments ajoutés ou réordonnés sur le téléphone sont conservés. Si un élément a été renommé, supprimé ou ne peut pas être identifié sans ambiguïté, actualisez depuis l’iPhone. Les tâches en mode liste suivent les mêmes règles de clôture que sur le téléphone. Si les détails dépassent la limite de transfert, un message invite à les ouvrir sur l’iPhone ; une checklist tronquée n’est jamais présentée comme complète. La modification des descriptions, l’ajout ou le réordonnancement des éléments et les pièces jointes restent sur le téléphone.
+
 ### Capture rapide par schéma d’URL (Raccourcis iOS / automatisations Android)
 
 Mindwtr enregistre le schéma d’URL `mindwtr://`, ce qui vous permet de collecter des tâches depuis Raccourcis iOS, Tasker ou d’autres outils d’automatisation.

@@ -183,7 +183,9 @@ Use the Board search field to narrow visible cards by title, notes, project, con
 
 Timeline is off by default: turn it on in **Settings → GTD → Features → Timeline view** to add it to the sidebar.
 
-Read-only overview of dated work across time. Each task with dates is drawn as a horizontal bar running from its start date to its due date, colored by its project — or by its area when the project has no color of its own.
+Overview of dated work across time. Each task with dates is drawn as a horizontal bar running from its start date to its due date, colored by its project — or by its area when the project has no color of its own. Status icons appear beside task titles. Bars show the dates currently recorded, not an original plan, time spent, or a time estimate.
+
+Use the **Status** filter to select several statuses. It starts with Inbox, Next, Waiting, and Someday. **Completed** also includes archived completed tasks, but excludes cancelled work; their completed or archived project context stays visible.
 
 - Tasks with only a start date, or only a due date, show a small marker on that day
 - Tasks without dates don't appear here
@@ -191,7 +193,15 @@ Read-only overview of dated work across time. Each task with dates is drawn as a
 - A vertical line marks today; the view opens centered on it, re-centers when you change the zoom, and the **Today** button jumps back to it
 - Three zoom levels — day, week, and month — trade detail for range
 
-Click a bar to open the task, or a project's name to open the project. Timeline only displays: dragging a bar does not change dates. Edit start and due dates in the task editor, and a project's own dates in its details.
+Click a bar to open the task, or a project's name to open the project. To edit dates directly:
+
+- Drag a task bar to shift its existing start and due dates by calendar days. Dragging a one-date marker shifts only that date. Existing clock times are preserved in local time.
+- Drag the left or right edge to adjust an existing start or due date, respectively; this does not create a missing date.
+- A relative start follows its due date using the normal task editor rules, so resizing the due date can move the linked start too. Resizing the start directly replaces that relative link with an explicit date. Existing recurrence rules still apply.
+- A project bar can be moved or resized only when the project is active and has both its own valid start and due dates. Moving it changes only the project's dates, never its tasks. A span inferred from one project date and its tasks is read-only; edit the project's dates in its details.
+- Completed, cancelled, and reference tasks, and tasks in inactive projects, cannot be dragged.
+
+Changes are previewed while dragging and saved on drop. **Escape** cancels a drag; a saved change offers **Undo**. If the same dates change elsewhere during a drag, the drop does not overwrite them. Timeline does not reschedule dependencies or holidays, or support manual row ordering.
 
 **Done** and **Archived** are the two tabs of **History**, in the sidebar's **More** group.
 

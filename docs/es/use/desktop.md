@@ -175,7 +175,9 @@ Usa el campo de búsqueda del Tablero para limitar las tarjetas visibles por tí
 
 La Línea de tiempo está desactivada de forma predeterminada: actívala en **Ajustes → GTD → Funciones → Vista de línea de tiempo** para que aparezca en la barra lateral.
 
-Vista de solo lectura del trabajo con fechas. Cada tarea con fechas se dibuja como una barra horizontal que va de su fecha de inicio a su fecha de vencimiento, coloreada según su proyecto o, si el proyecto no tiene color propio, según su área.
+Vista general del trabajo con fechas. Cada tarea con fechas se dibuja como una barra horizontal que va de su fecha de inicio a su fecha de vencimiento, coloreada según su proyecto o, si el proyecto no tiene color propio, según su área. Los iconos de estado aparecen junto a los títulos. Las barras muestran las fechas guardadas actualmente, no el plan original, el tiempo dedicado ni una estimación de duración.
+
+El filtro **Estado** permite seleccionar varios estados. Inicialmente incluye Bandeja, Siguiente, En espera y Algún día/Tal vez. **Hecho** también incluye tareas completadas archivadas, pero excluye las canceladas; el contexto de sus proyectos completados o archivados sigue visible.
 
 - Las tareas que solo tienen fecha de inicio, o solo fecha de vencimiento, muestran una pequeña marca en ese día
 - Las tareas sin fechas no aparecen aquí
@@ -183,7 +185,15 @@ Vista de solo lectura del trabajo con fechas. Cada tarea con fechas se dibuja co
 - Una línea vertical marca hoy; la vista se abre centrada en ese punto, vuelve a centrarse al cambiar el zoom, y el botón **Hoy** vuelve a él
 - Tres niveles de zoom —día, semana y mes— cambian detalle por alcance
 
-Haz clic en una barra para abrir la tarea, o en el nombre de un proyecto para abrir el proyecto. La Línea de tiempo solo muestra: arrastrar una barra no cambia las fechas. Edita la fecha de inicio y la de vencimiento en el editor de tareas, y las fechas propias de un proyecto en sus detalles.
+Haz clic en una barra para abrir la tarea, o en el nombre de un proyecto para abrir el proyecto. Para editar las fechas directamente:
+
+- Arrastra la barra de una tarea para desplazar sus fechas de inicio y vencimiento existentes por días de calendario. Arrastrar una marca con una sola fecha desplaza únicamente esa fecha. Las horas existentes se conservan en hora local.
+- Arrastra el borde izquierdo o derecho para ajustar la fecha de inicio o vencimiento existente, respectivamente; esto no crea una fecha que falte.
+- Un inicio relativo sigue la fecha de vencimiento según las reglas habituales del editor de tareas; ajustar el vencimiento también puede mover el inicio vinculado. Ajustar directamente el inicio sustituye ese vínculo relativo por una fecha explícita. Las reglas de recurrencia existentes siguen aplicándose.
+- Solo puedes mover o redimensionar la barra de un proyecto activo con sus propias fechas válidas de inicio y vencimiento. Moverla solo cambia las fechas del proyecto, nunca las de sus tareas. Un intervalo deducido de una fecha del proyecto y sus tareas es de solo lectura; edita las fechas del proyecto en sus detalles.
+- No se pueden arrastrar tareas completadas, canceladas o de referencia, ni tareas de proyectos inactivos.
+
+Los cambios se previsualizan al arrastrar y se guardan al soltar. **Escape** cancela el arrastre; un cambio guardado ofrece **Deshacer**. Si las mismas fechas cambian en otro lugar durante el arrastre, soltarlas no sobrescribe esos cambios. La Línea de tiempo no reprograma dependencias ni festivos, ni permite ordenar las filas manualmente.
 
 **Terminadas** y **Archivadas** son las dos pestañas de **Historial**, en el grupo **Más** de la barra lateral.
 

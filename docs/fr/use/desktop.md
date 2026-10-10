@@ -175,7 +175,9 @@ Utilisez le champ de recherche du Tableau pour limiter les cartes visibles selon
 
 La Chronologie est désactivée par défaut : activez-la dans **Paramètres → GTD → Fonctionnalités → Vue Chronologie** pour qu’elle apparaisse dans la barre latérale.
 
-Vue en lecture seule des tâches datées. Chaque tâche ayant des dates est représentée par une barre horizontale allant de sa date de début à son échéance, colorée selon son projet — ou selon son domaine lorsque le projet n’a pas de couleur propre.
+Vue d’ensemble des tâches datées. Chaque tâche ayant des dates est représentée par une barre horizontale allant de sa date de début à son échéance, colorée selon son projet — ou selon son domaine lorsque le projet n’a pas de couleur propre. Les icônes de statut apparaissent à côté des titres. Les barres montrent les dates actuellement enregistrées, pas le plan initial, le temps passé ou une durée estimée.
+
+Le filtre **Statut** permet de sélectionner plusieurs statuts. Au départ, il inclut Boîte de réception, Prochaine action, En attente et Un jour. **Terminé** inclut aussi les tâches terminées archivées, mais exclut les tâches annulées ; leurs projets terminés ou archivés restent visibles pour conserver le contexte.
 
 - Les tâches qui n’ont qu’une date de début, ou qu’une échéance, affichent un petit repère sur ce jour
 - Les tâches sans dates n’apparaissent pas ici
@@ -183,7 +185,15 @@ Vue en lecture seule des tâches datées. Chaque tâche ayant des dates est repr
 - Une ligne verticale marque aujourd’hui ; la vue s’ouvre centrée dessus, se recentre quand vous changez de zoom, et le bouton **Aujourd’hui** y ramène
 - Trois niveaux de zoom — jour, semaine et mois — arbitrent entre détail et période
 
-Cliquez sur une barre pour ouvrir la tâche, ou sur le nom d’un projet pour ouvrir le projet. La Chronologie se contente d’afficher : faire glisser une barre ne modifie pas les dates. Modifiez la date de début et l’échéance dans l’éditeur de tâches, et les dates propres d’un projet dans ses détails.
+Cliquez sur une barre pour ouvrir la tâche, ou sur le nom d’un projet pour ouvrir le projet. Pour modifier les dates directement :
+
+- Faites glisser une barre de tâche pour décaler ses dates de début et d’échéance existantes par jours calendaires. Déplacer un repère avec une seule date ne décale que cette date. Les heures existantes sont conservées en heure locale.
+- Faites glisser le bord gauche ou droit pour ajuster respectivement la date de début ou l’échéance existante ; cela ne crée pas de date manquante.
+- Un début relatif suit l’échéance selon les règles habituelles de l’éditeur de tâches ; ajuster l’échéance peut donc aussi déplacer le début lié. Ajuster directement le début remplace ce lien relatif par une date explicite. Les règles de récurrence existantes restent applicables.
+- Une barre de projet peut être déplacée ou redimensionnée uniquement si le projet est actif et possède ses propres dates de début et d’échéance valides. La déplacer ne modifie que les dates du projet, jamais celles de ses tâches. Une période déduite d’une seule date du projet et de ses tâches est en lecture seule ; modifiez les dates du projet dans ses détails.
+- Les tâches terminées, annulées ou de référence, ainsi que celles des projets inactifs, ne peuvent pas être déplacées.
+
+Les changements sont prévisualisés pendant le déplacement et enregistrés au relâchement. **Échap** annule le déplacement ; un changement enregistré propose **Annuler**. Si les mêmes dates changent ailleurs pendant le déplacement, le relâchement ne les écrase pas. La Chronologie ne replanifie pas les dépendances ou les jours fériés et ne permet pas d’ordonner les lignes manuellement.
 
 **Terminé** et **Archivés** sont les deux onglets d’**Historique**, dans le groupe **Plus** de la barre latérale.
 

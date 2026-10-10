@@ -175,7 +175,9 @@ Das Board-Suchfeld filtert sichtbare Karten nach Titel, Notizen, Projekt, Kontex
 
 Die Zeitleiste ist standardmäßig deaktiviert: Aktivieren Sie sie unter **Einstellungen → GTD → Funktionen → Zeitleistenansicht**, damit sie in der Seitenleiste erscheint.
 
-Schreibgeschützter Überblick über terminierte Arbeit. Jede Aufgabe mit Datum erscheint als waagerechter Balken vom Startdatum bis zum Fälligkeitsdatum, eingefärbt nach ihrem Projekt – oder nach ihrem Bereich, wenn das Projekt keine eigene Farbe hat.
+Überblick über terminierte Arbeit. Jede Aufgabe mit Datum erscheint als waagerechter Balken vom Startdatum bis zum Fälligkeitsdatum, eingefärbt nach ihrem Projekt – oder nach ihrem Bereich, wenn das Projekt keine eigene Farbe hat. Statussymbole stehen neben den Aufgabentiteln. Die Balken zeigen die aktuell gespeicherten Daten, keinen ursprünglichen Plan, Zeitaufwand oder geschätzte Dauer.
+
+Im Filter **Status** können Sie mehrere Status auswählen. Anfangs sind Eingang, Nächstes, Abwarten und Irgendwann ausgewählt. **Erledigt** umfasst auch archivierte erledigte Aufgaben, aber keine abgebrochenen Aufgaben; ihre erledigten oder archivierten Projekte bleiben als Kontext sichtbar.
 
 - Aufgaben mit nur einem Startdatum oder nur einem Fälligkeitsdatum zeigen eine kleine Markierung an diesem Tag
 - Aufgaben ohne Datum erscheinen hier nicht
@@ -183,7 +185,15 @@ Schreibgeschützter Überblick über terminierte Arbeit. Jede Aufgabe mit Datum 
 - Eine senkrechte Linie markiert heute; die Ansicht öffnet darauf zentriert, zentriert beim Wechsel des Zooms erneut, und die Schaltfläche **Heute** springt dorthin zurück
 - Drei Zoomstufen – Tag, Woche und Monat – wechseln zwischen Detailgrad und Zeitraum
 
-Ein Klick auf einen Balken öffnet die Aufgabe, ein Klick auf einen Projektnamen das Projekt. Die Zeitleiste zeigt nur an: Das Ziehen eines Balkens ändert keine Daten. Start- und Fälligkeitsdatum bearbeiten Sie im Aufgabeneditor, die eigenen Daten eines Projekts in dessen Details.
+Ein Klick auf einen Balken öffnet die Aufgabe, ein Klick auf einen Projektnamen das Projekt. So bearbeiten Sie Daten direkt:
+
+- Ziehen Sie einen Aufgabenbalken, um die vorhandenen Start- und Fälligkeitsdaten um Kalendertage zu verschieben. Bei einer Markierung mit nur einem Datum wird nur dieses verschoben. Vorhandene Uhrzeiten bleiben in der Ortszeit erhalten.
+- Ziehen Sie den linken oder rechten Rand, um ein vorhandenes Start- bzw. Fälligkeitsdatum anzupassen; ein fehlendes Datum wird dabei nicht angelegt.
+- Ein relatives Startdatum folgt dem Fälligkeitsdatum nach den üblichen Regeln des Aufgabeneditors; eine Änderung der Fälligkeit kann daher auch den verknüpften Start verschieben. Das direkte Anpassen des Starts ersetzt die relative Verknüpfung durch ein festes Datum. Bestehende Wiederholungsregeln gelten weiterhin.
+- Ein Projektbalken lässt sich nur verschieben oder in der Länge ändern, wenn das Projekt aktiv ist und eigene gültige Start- und Fälligkeitsdaten hat. Das Verschieben ändert nur die Projektdaten, niemals die Aufgaben. Eine aus einem Projektdatum und den Aufgaben abgeleitete Zeitspanne ist schreibgeschützt; bearbeiten Sie die Projektdaten in den Details.
+- Erledigte, abgebrochene und Referenzaufgaben sowie Aufgaben in inaktiven Projekten lassen sich nicht ziehen.
+
+Beim Ziehen sehen Sie eine Vorschau; beim Loslassen wird gespeichert. **Escape** bricht das Ziehen ab; eine gespeicherte Änderung bietet **Rückgängig**. Werden dieselben Daten während des Ziehens anderswo geändert, überschreibt das Loslassen sie nicht. Die Zeitleiste berücksichtigt keine Abhängigkeiten oder Feiertage bei der Terminverschiebung und bietet keine manuelle Zeilenreihenfolge.
 
 **Erledigt** und **Archiviert** sind die beiden Registerkarten von **Verlauf** in der Gruppe **Mehr** der Seitenleiste.
 

@@ -355,6 +355,8 @@ mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr
 | `--http-host <host>` | `MINDWTR_MCP_HTTP_HOST` | 绑定地址，默认 `127.0.0.1`。 |
 | `--http-port <port>` | `MINDWTR_MCP_HTTP_PORT` | 绑定端口，默认 `8722`。 |
 
+桌面应用的内置 MCP 服务器也使用端口 `8722`。如果它已启用，请用 `--http-port` 指定另一个端口，例如 `--http-port 8723`。
+
 MCP 端点为 `POST /mcp`，每个请求都必须携带 `Authorization: Bearer <token>`。`GET /healthz` 无需认证即返回 `200 ok`，供反向代理做健康检查。没有有效令牌的请求返回 `401`；连续认证失败会返回 `429`，并附带 `Retry-After` 响应头。超过 1 MiB 的请求体返回 `413`。HTTP 模式下服务器只要在监听就保持运行（不再连接 stdio），`--write`/只读行为保持不变。
 
 服务器不内置 TLS，也不限制已通过认证的请求速率。若要在 localhost 之外暴露服务器，请在前面放一个反向代理（Caddy、nginx）处理 HTTPS，并把得到的 `https://` URL 和令牌交给远程 MCP 客户端。

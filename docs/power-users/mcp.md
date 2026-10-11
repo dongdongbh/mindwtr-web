@@ -16,7 +16,7 @@ The standalone MCP helper remains available as [`mindwtr-mcp`](https://www.npmjs
 
 You do **not** need to run the whole app from source to use MCP. Use the normal desktop app binary for your tasks, then let your MCP client launch `mindwtr-mcp` with `npx`, or install it globally with npm. Point the helper at the desktop app's local `mindwtr.db`, or use the Local API backend below.
 
-On desktop, the app shows the exact local data path in **Settings -> Sync -> Local Data**. Mobile binaries do not expose a local MCP server surface.
+On desktop, the default database paths are listed under [Default Database Locations](#default-database-locations) below. Mobile binaries do not expose a local MCP server surface.
 
 ## Built-in desktop MCP
 

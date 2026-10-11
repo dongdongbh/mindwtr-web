@@ -16,7 +16,7 @@ Das eigenständige MCP-Hilfsprogramm wird weiterhin als [`mindwtr-mcp`](https://
 
 Sie müssen **nicht** die gesamte App aus dem Quellcode ausführen, um MCP zu verwenden. Verwenden Sie die normale Desktop-App für Ihre Aufgaben und lassen Sie dann Ihren MCP-Client `mindwtr-mcp` über `npx` starten, oder installieren Sie es global mit npm. Verweisen Sie das Hilfsprogramm auf die lokale Datei `mindwtr.db` der Desktop-App oder verwenden Sie das unten beschriebene Local-API-Backend.
 
-Auf dem Desktop zeigt die App den genauen lokalen Datenpfad unter **Einstellungen → Synchronisierung → Lokale Daten** an. Binärdateien für Mobilgeräte stellen keinen lokalen MCP-Server bereit.
+Die Standardpfade der Desktop-Datenbank stehen unten unter [Standardspeicherorte der Datenbank](#standardspeicherorte-der-datenbank). Binärdateien für Mobilgeräte stellen keinen lokalen MCP-Server bereit.
 
 ## Integriertes Desktop-MCP
 

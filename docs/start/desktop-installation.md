@@ -286,7 +286,7 @@ After installation, your data is stored at:
 | **Windows** | `%APPDATA%/mindwtr/data/mindwtr.db`                 | `%APPDATA%/mindwtr/data/data.json`                |
 | **macOS**   | `~/Library/Application Support/mindwtr/data/mindwtr.db` | `~/Library/Application Support/mindwtr/data/data.json` |
 
-Flatpak installs use sandboxed XDG paths under `~/.var/app/tech.dongdongbh.mindwtr/`. You can always check the exact active paths in **Settings → Sync → Local Data**.
+Flatpak installs use sandboxed XDG paths under `~/.var/app/tech.dongdongbh.mindwtr/`. The database is at `~/.var/app/tech.dongdongbh.mindwtr/data/mindwtr/mindwtr.db`.
 
 Config is stored separately:
 

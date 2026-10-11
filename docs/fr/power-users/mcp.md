@@ -16,7 +16,7 @@ L’utilitaire MCP autonome reste disponible sous le nom [`mindwtr-mcp`](https:/
 
 Vous n’avez **pas** besoin d’exécuter toute l’application depuis les sources pour utiliser MCP. Utilisez le binaire normal de l’application de bureau pour vos tâches, puis laissez votre client MCP lancer `mindwtr-mcp` avec `npx`, ou installez-le globalement avec npm. Indiquez à l’utilitaire la base locale `mindwtr.db` de l’application de bureau, ou utilisez le backend API locale décrit ci-dessous.
 
-Sur ordinateur, l’application affiche le chemin exact des données locales sous **Réglages -> Synchronisation -> Données locales**. Les binaires mobiles n’exposent pas de serveur MCP local.
+Sur ordinateur, les chemins par défaut de la base de données figurent plus bas, dans [Emplacements par défaut de la base de données](#emplacements-par-defaut-de-la-base-de-donnees). Les binaires mobiles n’exposent pas de serveur MCP local.
 
 ## MCP intégré sur ordinateur
 

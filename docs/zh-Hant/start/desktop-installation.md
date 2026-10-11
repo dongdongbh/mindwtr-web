@@ -286,7 +286,7 @@ sha256sum --check --ignore-missing SHA256SUMS
 | **Windows** | `%APPDATA%/mindwtr/data/mindwtr.db`                    | `%APPDATA%/mindwtr/data/data.json`                    |
 | **macOS**   | `~/Library/Application Support/mindwtr/data/mindwtr.db` | `~/Library/Application Support/mindwtr/data/data.json` |
 
-Flatpak 安裝使用 `~/.var/app/tech.dongdongbh.mindwtr/` 下的沙盒 XDG 路徑。你隨時可以在**設定 → 同步 → 本機資料**中查看目前使用的確切路徑。
+Flatpak 安裝使用 `~/.var/app/tech.dongdongbh.mindwtr/` 下的沙盒 XDG 路徑。資料庫位於 `~/.var/app/tech.dongdongbh.mindwtr/data/mindwtr/mindwtr.db`。
 
 設定另外儲存於：
 

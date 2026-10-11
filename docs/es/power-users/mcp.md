@@ -16,7 +16,7 @@ El asistente MCP independiente sigue disponible como [`mindwtr-mcp`](https://www
 
 **No** necesitas ejecutar toda la aplicación desde el código fuente para usar MCP. Usa el binario normal de la aplicación de escritorio para tus tareas y deja que tu cliente MCP inicie `mindwtr-mcp` con `npx`, o instálalo globalmente con npm. Haz que el asistente apunte al archivo `mindwtr.db` local de la aplicación de escritorio, o usa el backend de API local que se describe a continuación.
 
-En escritorio, la aplicación muestra la ruta de datos local exacta en **Ajustes -> Sincronización -> Datos locales**. Los binarios móviles no exponen un servidor MCP local.
+En escritorio, las rutas predeterminadas de la base de datos aparecen más abajo, en [Ubicaciones predeterminadas de la base de datos](#ubicaciones-predeterminadas-de-la-base-de-datos). Los binarios móviles no exponen un servidor MCP local.
 
 ## MCP integrado en escritorio
 

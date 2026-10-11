@@ -383,7 +383,7 @@ Mindwtr analiza lenguaje natural al añadir tareas:
 | `/note:text` | `/note:call back` | Añade una descripción    |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Establece el estado |
 
-Desde v1.3.5, `/estimate:5m`, `/estimate:45m` y `/estimate:1h30m` establecen el esfuerzo estimado; `/duration:` es un alias. Los valores personalizados conservan sus minutos exactos. Los comandos válidos se quitan del título; los inválidos o incompletos siguen visibles. El texto normal, como «Ver una charla de 30 minutos», no establece una estimación. Una estimación elegida explícitamente en el formulario de captura tiene prioridad; el editor del calendario conserva la duración seleccionada.
+Desde v1.3.5, `/estimate:5m`, `/estimate:45m` y `/estimate:1h30m` establecen el esfuerzo estimado; `/duration:` es un alias. Los valores personalizados conservan sus minutos exactos. Los comandos válidos se quitan del título; los inválidos o incompletos siguen visibles. El texto normal, como «Ver una charla de 30 minutos», no establece una estimación. Una estimación elegida explícitamente en el formulario de captura tiene prioridad; el editor del calendario conserva la duración seleccionada. Si **Estimaciones de tiempo** está desactivado en Ajustes, `/estimate:` y `/duration:` no se interpretan y se quedan en el título, y la ayuda de sintaxis no los muestra.
 
 **Formatos de fecha:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 

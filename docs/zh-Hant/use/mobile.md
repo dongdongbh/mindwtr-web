@@ -399,7 +399,7 @@ Mindwtr 會在新增任務時解析自然語言：
 | `/note:text`      | `/note:call back`            | 加入描述                                  |
 | `/status`         | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | 設定狀態 |
 
-從 v1.3.5 起，`/estimate:5m`、`/estimate:45m` 和 `/estimate:1h30m` 可設定預計投入時間；`/duration:` 是別名。自訂值保留準確的分鐘數。有效命令會從標題中移除，無效或不完整的命令仍然可見。「看一場 30 分鐘的講座」這類一般文字不會設定估算。在收集表單中明確選擇的估算優先；日曆建立表單保留已選時長。
+從 v1.3.5 起，`/estimate:5m`、`/estimate:45m` 和 `/estimate:1h30m` 可設定預計投入時間；`/duration:` 是別名。自訂值保留準確的分鐘數。有效命令會從標題中移除，無效或不完整的命令仍然可見。「看一場 30 分鐘的講座」這類一般文字不會設定估算。在收集表單中明確選擇的估算優先；日曆建立表單保留已選時長。在設定中關閉**時間估算**後，`/estimate:` 和 `/duration:` 不會被解析，會保留在標題中，語法說明也不再列出它們。
 
 **日期格式**：today、tomorrow、friday、next week、in 3 days、2025-01-15、26.06.、26.06.2026
 

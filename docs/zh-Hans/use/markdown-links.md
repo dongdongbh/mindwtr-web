@@ -59,7 +59,7 @@ mindwtr://open?task=task-id
 
 - 有效的任务链接会打开正确的 Mindwtr 视图并高亮该任务。
 - 有效的项目链接会打开“项目”视图并选中该项目。
-- 外部链接仍支持 `http`、`https`、`mailto` 和 `tel`。
+- 外部链接仍支持 `http`、`https`、`mailto`、`tel` 和 `upnote`。
 
 ## 已删除项目
 

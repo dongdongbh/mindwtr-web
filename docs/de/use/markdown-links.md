@@ -59,7 +59,7 @@ Geben Sie beim Bearbeiten eines unterstützten Markdown-Felds `[[` ein und begin
 
 - Aktive Aufgabenlinks öffnen die passende Mindwtr-Ansicht und markieren die Aufgabe.
 - Aktive Projektlinks öffnen die Projektansicht und wählen das Projekt aus.
-- Externe Links unterstützen weiterhin `http`, `https`, `mailto` und `tel`.
+- Externe Links unterstützen weiterhin `http`, `https`, `mailto`, `tel` und `upnote`.
 
 ## Gelöschte Einträge
 

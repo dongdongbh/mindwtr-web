@@ -59,7 +59,7 @@ mindwtr://open?task=task-id
 
 - 有效的任務連結會開啟 Mindwtr 中正確的檢視並標示該任務。
 - 有效的專案連結會開啟「專案」檢視並選取該專案。
-- 外部連結仍支援 `http`、`https`、`mailto` 與 `tel`。
+- 外部連結仍支援 `http`、`https`、`mailto`、`tel` 與 `upnote`。
 
 ## 已刪除項目
 

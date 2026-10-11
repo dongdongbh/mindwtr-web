@@ -59,7 +59,7 @@ When editing a supported Markdown field, type `[[` and start searching.
 
 - Live task links open the right Mindwtr view and highlight the task.
 - Live project links open the Projects view and select the project.
-- External links still support `http`, `https`, `mailto`, and `tel`.
+- External links still support `http`, `https`, `mailto`, `tel`, and `upnote`.
 
 ## Deleted Items
 

@@ -59,7 +59,7 @@ Dans un champ Markdown compatible, saisissez `[[` puis commencez votre recherche
 
 - Les liens vers des tâches existantes ouvrent la vue Mindwtr correspondante et mettent la tâche en évidence.
 - Les liens vers des projets existants ouvrent la vue Projets et sélectionnent le projet.
-- Les liens externes acceptent toujours `http`, `https`, `mailto` et `tel`.
+- Les liens externes acceptent toujours `http`, `https`, `mailto`, `tel` et `upnote`.
 
 ## Éléments supprimés
 

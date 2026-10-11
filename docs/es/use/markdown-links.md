@@ -59,7 +59,7 @@ Al editar un campo Markdown compatible, escribe `[[` y empieza a buscar.
 
 - Los enlaces a tareas activas abren la vista correcta de Mindwtr y resaltan la tarea.
 - Los enlaces a proyectos activos abren la vista Proyectos y seleccionan el proyecto.
-- Los enlaces externos siguen admitiendo `http`, `https`, `mailto` y `tel`.
+- Los enlaces externos siguen admitiendo `http`, `https`, `mailto`, `tel` y `upnote`.
 
 ## Elementos eliminados
 

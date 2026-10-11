@@ -110,6 +110,8 @@ El asistente de Bun también requiere un token: sale de inmediato si no se estab
 | `DELETE` | `/sections/:id`       | Asistente: elimina una sección        |
 | `GET`    | `/search?query=...`   | Busca tareas y proyectos       |
 
+Desde v1.3.5, la API local de escritorio devuelve `409` (`recurrence_requires_app`) si completar una tarea de calendario fijo con fecha de inicio y sin fecha de vencimiento requiere saltar ocurrencias pasadas. La tarea no cambia; complétala en la aplicación. Las tareas con solo fecha de inicio siguen siendo compatibles si la siguiente ocurrencia aún es vigente o futura.
+
 Las filas marcadas con **Escritorio** solo existen en la API local de la aplicación de escritorio. Las filas marcadas con **Asistente** solo existen en el asistente de Bun, que además las responde con el prefijo `/v1/` (`/v1/sections`).
 
 La API local de escritorio acepta `isFocusedToday=true`/`1` e `isFocusedToday=false`/`0`. Con `true` o `1`, devuelve las tareas marcadas con estrella, incluidas las próximas acciones con inicio futuro en espera de Foco. Con `false` o `0`, devuelve las tareas sin esa marca, incluidos los registros antiguos que no contienen el campo. Si omites el parámetro, la lista no se filtra por este campo. Los demás valores devuelven `400`.

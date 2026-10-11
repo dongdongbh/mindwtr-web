@@ -110,6 +110,8 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 | `DELETE` | `/sections/:id`        | Utilitaire : supprimer une section       |
 | `GET`    | `/search?query=...`    | Rechercher des tâches et des projets     |
 
+À partir de v1.3.5, l’API locale de bureau renvoie `409` (`recurrence_requires_app`) lorsque terminer une tâche à échéancier fixe, avec une date de début mais sans date d’échéance, nécessite de sauter des occurrences passées. La tâche reste inchangée ; terminez-la dans l’application. Les tâches avec seulement une date de début restent prises en charge si la prochaine occurrence est encore actuelle ou future.
+
 Les lignes marquées **Bureau** n’existent que dans l’API locale de l’application de bureau. Les lignes marquées **Utilitaire** n’existent que dans l’utilitaire Bun, qui y répond aussi sous le préfixe `/v1/` (`/v1/sections`).
 
 L’API locale de l’application de bureau accepte `isFocusedToday=true`/`1` et `isFocusedToday=false`/`0`. Avec `true` ou `1`, elle renvoie les tâches étoilées, y compris les actions suivantes à début futur en attente de Focus. Avec `false` ou `0`, elle renvoie les tâches non marquées, y compris les anciens enregistrements dépourvus de ce champ. Sans le paramètre, elle ne filtre pas la liste selon ce champ. Pour toute autre valeur, elle répond avec `400`.

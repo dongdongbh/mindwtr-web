@@ -110,6 +110,8 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 | `DELETE` | `/sections/:id`       | Helper: delete section        |
 | `GET`    | `/search?query=...`   | Search tasks + projects       |
 
+From v1.3.5, the desktop Local API returns `409` (`recurrence_requires_app`) when completing a fixed-schedule task with a start date and no due date would require skipping missed occurrences. The task stays unchanged; complete it in the app. Start-only tasks whose next occurrence is still current or in the future remain supported.
+
 Rows marked **Desktop** exist only in the desktop app's Local API. Rows marked **Helper** exist only in the Bun helper, which also answers them under a `/v1/` prefix (`/v1/sections`).
 
 The desktop Local API accepts `isFocusedToday=true`/`1` and `isFocusedToday=false`/`0`. With `true` or `1`, it returns starred tasks, including future-start Next actions queued for Focus. With `false` or `0`, it returns unmarked tasks, including older records without the field. Omit the parameter to leave the list unfiltered. Other values return `400`.

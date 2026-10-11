@@ -110,6 +110,8 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 | `DELETE` | `/sections/:id`       | Hilfsprogramm: Abschnitt löschen     |
 | `GET`    | `/search?query=...`   | Aufgaben und Projekte suchen         |
 
+Ab v1.3.5 liefert die Desktop-Local-API `409` (`recurrence_requires_app`), wenn beim Abschließen einer Aufgabe mit festem Zeitplan, Startdatum und ohne Fälligkeitsdatum verpasste Wiederholungen übersprungen werden müssten. Die Aufgabe bleibt unverändert; schließe sie in der App ab. Aufgaben nur mit Startdatum werden weiterhin unterstützt, wenn ihre nächste Wiederholung noch aktuell ist oder in der Zukunft liegt.
+
 Zeilen mit **Desktop** gibt es nur in der lokalen API der Desktop-App. Zeilen mit **Hilfsprogramm** gibt es nur im Bun-Hilfsprogramm, das sie auch unter dem Präfix `/v1/` beantwortet (`/v1/sections`).
 
 Die lokale Desktop-API akzeptiert `isFocusedToday=true`/`1` und `isFocusedToday=false`/`0`. Mit `true` oder `1` liefert sie markierte Aufgaben, einschließlich nächster Aktionen mit zukünftigem Start, die für den Fokus vorgemerkt sind. Mit `false` oder `0` liefert sie nicht markierte Aufgaben, einschließlich älterer Datensätze ohne dieses Feld. Ohne den Parameter filtert sie die Liste nicht nach diesem Feld. Bei anderen Werten antwortet sie mit `400`.

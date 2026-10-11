@@ -369,7 +369,7 @@ Um Speicherplatz der Datei-Synchronisierung freizugeben, erstellen Sie zuerst ei
 
 1. **Einstellungen → Synchronisierung**
 2. **Backend = Datei**
-3. **Speicherort ändern**, Ordner wählen
+3. **Durchsuchen …**, Ordner wählen
 4. **Speichern**
 
 Mindwtr synchronisiert anschließend automatisch beim Start und bei Datenänderungen.
@@ -491,8 +491,8 @@ Das gleiche Verfahren gilt. Gleichzeitige Bearbeitung auf mehreren Geräten verm
 
 Für einen lesbaren oder übertragbaren Aufgabenexport öffnen Sie unter **Einstellungen → Daten** den Abschnitt **Sicherung** und wählen:
 
-- **Mindwtr-CSV exportieren** für eine tabellenfreundliche Aufgabendatei, die Mindwtr erneut importieren kann, ohne vorhandene Aufgaben-IDs zu duplizieren.
-- **TaskNotes exportieren** für ein ZIP mit einer Markdown-Datei pro Aufgabe und YAML-Frontmatter, passend für das Obsidian-TaskNotes-Plugin und den Obsidian-Import von Mindwtr.
+- **CSV exportieren** für eine tabellenfreundliche Aufgabendatei, die Mindwtr erneut importieren kann, ohne vorhandene Aufgaben-IDs zu duplizieren.
+- **Als TaskNotes exportieren** für ein ZIP mit einer Markdown-Datei pro Aufgabe und YAML-Frontmatter, passend für das Obsidian-TaskNotes-Plugin und den Obsidian-Import von Mindwtr.
 
 Exporte, Wiederherstellungen und Importe erstellen, sofern unterstützt, eine Wiederherstellungsmomentaufnahme. Nach einem Import, einer Wiederherstellung oder einer Zusammenführung können Sie die Aktion direkt in der Ergebnismeldung **rückgängig machen**.
 

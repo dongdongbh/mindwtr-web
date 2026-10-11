@@ -20,9 +20,9 @@ Die Standardpfade der Desktop-Datenbank stehen unten unter [Standardspeicherorte
 
 ## Integriertes Desktop-MCP
 
-Die Desktop-App enthält einen von der App verwalteten MCP-Server unter **Einstellungen → Integrationen → MCP**. Ab der nächsten Desktop-Version läuft dieser Server in Rust im App-Prozess und nutzt dieselben internen Operationen wie die REST Local API, ohne mitgeliefertes Hilfsprogramm oder private HTTP-Brücke. Dafür müssen weder Node, npm oder Bun noch ein separates Hilfsprogramm installiert werden. Standardmäßig ist der Server deaktiviert und schreibgeschützt.
+Die Desktop-App enthält einen von der App verwalteten MCP-Server unter **Einstellungen → Integrationen → Lokaler MCP-Server (erweitert)**. Ab der nächsten Desktop-Version läuft dieser Server in Rust im App-Prozess und nutzt dieselben internen Operationen wie die REST Local API, ohne mitgeliefertes Hilfsprogramm oder private HTTP-Brücke. Dafür müssen weder Node, npm oder Bun noch ein separates Hilfsprogramm installiert werden. Standardmäßig ist der Server deaktiviert und schreibgeschützt.
 
-Aktivieren Sie den lokalen MCP-Zugriff und wählen Sie **Verbindungsdaten kopieren**. Konfigurieren Sie einen Client mit Unterstützung für authentifiziertes Streamable HTTP mit dem folgenden Endpunkt und dem Bearer-Token aus den kopierten Daten. Die Konfigurationsformate unterscheiden sich; reine stdio-Clients benötigen weiterhin das eigenständige Hilfsprogramm.
+Schalten Sie **Lokalen MCP-Server aktivieren** ein und wählen Sie **Verbindungsdaten kopieren**. Konfigurieren Sie einen Client mit Unterstützung für authentifiziertes Streamable HTTP mit dem folgenden Endpunkt und dem Bearer-Token aus den kopierten Daten. Die Konfigurationsformate unterscheiden sich; reine stdio-Clients benötigen weiterhin das eigenständige Hilfsprogramm.
 
 Verbundene KI-Clients können die über diese Werkzeuge bereitgestellten Daten lesen. **Änderungen erlauben** gestattet Bearbeitungen; der KI-Client kann Daten an seinen Anbieter senden. Halten Sie das kopierte Token geheim. Beim Erneuern werden bestehende Verbindungen getrennt und benötigen das neue Token.
 

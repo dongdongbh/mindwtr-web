@@ -373,7 +373,7 @@ To reclaim File Sync space, first make a filesystem copy of the entire shared Fi
 
 1. Open **Settings → Sync**
 2. Set **Sync Backend** to **File**
-3. Click **Change Location** and select a folder in your sync service
+3. Click **Browse…** and select a folder in your sync service
 4. Click **Save**
 
 Mindwtr will automatically sync on startup and when data changes.
@@ -496,8 +496,8 @@ The same workflow applies. Avoid editing on multiple devices simultaneously to p
 
 For a readable or portable task export, open the **Backup** fold under **Settings → Data** and choose:
 
-- **Export Mindwtr CSV** for a spreadsheet-friendly task file that Mindwtr can safely re-import without duplicating existing task IDs.
-- **Export TaskNotes** for a ZIP containing one Markdown file per task with YAML frontmatter, ready for the Obsidian TaskNotes plugin and compatible with Mindwtr's Obsidian import.
+- **Export CSV** for a spreadsheet-friendly task file that Mindwtr can safely re-import without duplicating existing task IDs.
+- **Export as TaskNotes** for a ZIP containing one Markdown file per task with YAML frontmatter, ready for the Obsidian TaskNotes plugin and compatible with Mindwtr's Obsidian import.
 
 Exports, restores, and imports create a recovery snapshot where supported. After an import, restore, or merge, use **Undo** in the result message to roll back immediately.
 

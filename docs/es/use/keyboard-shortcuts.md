@@ -5,7 +5,7 @@ Mindwtr para escritorio permite trabajar principalmente con el teclado mediante 
 ## Inicio rápido
 
 - usa **Copiar título** en el menú **Otras opciones** de una tarea, o pulsa `Ctrl+C` / `Cmd+C` con una tarea resaltada. Si hay varias tareas seleccionadas, el atajo copia sus títulos, uno por línea. Un aviso confirma la copia; copiar texto seleccionado o texto dentro de un editor sigue funcionando como siempre.
-- Elige el perfil en **Ajustes → General → Atajos de teclado**.
+- Elige el perfil en **Ajustes → Avanzado → Teclado y ventana → Atajos de teclado**.
 - Pulsa `?` para abrir la hoja de atajos del perfil actual. Al final incluye una tabla de sintaxis de adición rápida con todos los tokens (`/start:`, `/note:`, `@context`, `+Project`, …).
 - Usa `/` para buscar.
 - Usa `gi` para Bandeja de entrada, `gn` para Próximas acciones y `gf` para Foco (modos Estándar y Vim).

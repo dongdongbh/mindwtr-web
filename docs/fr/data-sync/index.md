@@ -371,7 +371,7 @@ Pour libérer de l’espace dans le dossier de synchronisation de fichiers, fait
 
 1. Ouvrez **Réglages → Synchronisation**
 2. Définissez **Backend de synchronisation** sur **Fichier**
-3. Cliquez sur **Changer d’emplacement** et sélectionnez un dossier dans votre service de synchronisation
+3. Cliquez sur **Parcourir…** et sélectionnez un dossier dans votre service de synchronisation
 4. Cliquez sur **Enregistrer**
 
 Mindwtr se synchronisera automatiquement au démarrage et lors de la modification des données.
@@ -492,8 +492,8 @@ La même procédure s’applique. Évitez d’effectuer des modifications simult
 
 Pour obtenir un export de tâches lisible ou portable, ouvrez la section **Sauvegarde** sous **Réglages → Données** et choisissez :
 
-- **Exporter un CSV Mindwtr** pour un fichier de tâches adapté aux tableurs que Mindwtr peut réimporter sans dupliquer les identifiants existants.
-- **Exporter TaskNotes** pour un ZIP contenant un fichier Markdown par tâche avec des métadonnées YAML, prêt pour le module TaskNotes d’Obsidian et compatible avec l’import Obsidian de Mindwtr.
+- **Export CSV** pour un fichier de tâches adapté aux tableurs que Mindwtr peut réimporter sans dupliquer les identifiants existants.
+- **Export as TaskNotes** pour un ZIP contenant un fichier Markdown par tâche avec des métadonnées YAML, prêt pour le module TaskNotes d’Obsidian et compatible avec l’import Obsidian de Mindwtr.
 
 Les exports, restaurations et imports créent un instantané de récupération lorsque la plateforme le permet. Après un import, une restauration ou une fusion, utilisez **Annuler** dans le message de résultat pour revenir immédiatement en arrière.
 

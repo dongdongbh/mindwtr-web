@@ -20,13 +20,13 @@ On desktop, the default database paths are listed under [Default Database Locati
 
 ## Built-in desktop MCP
 
-The desktop app includes an app-managed MCP server under **Settings → Integrations → MCP**. In the next desktop release, this server runs in-process in Rust and shares internal operations with the REST Local API, without a bundled helper or private HTTP bridge. No Node, npm, Bun, or separate helper installation is needed for this mode. It is disabled and read-only by default.
+The desktop app includes an app-managed MCP server under **Settings → Integrations → Local MCP server (advanced)**. In the next desktop release, this server runs in-process in Rust and shares internal operations with the REST Local API, without a bundled helper or private HTTP bridge. No Node, npm, Bun, or separate helper installation is needed for this mode. It is disabled and read-only by default.
 
-Enable local MCP access, then choose **Copy connection details**. Configure a client that supports authenticated Streamable HTTP with the endpoint below and the bearer token in the copied details. Client configuration formats vary; a stdio-only client still needs the standalone helper.
+Turn on **Enable local MCP server**, then choose **Copy connection details**. Configure a client that supports authenticated Streamable HTTP with the endpoint below and the bearer token in the copied details. Client configuration formats vary; a stdio-only client still needs the standalone helper.
 
 Connected AI clients can read the data exposed by these tools. **Allow changes** permits edits; your AI client may send that data to its provider. Keep the copied token private. Regenerating it disconnects existing clients, which must be configured with the new token.
 
-Keep Mindwtr running. Disabling MCP or quitting the app stops the server; closing to the tray keeps it running. If the server cannot start, for example because the port is occupied, resolve the error and use **Retry**. Enabling MCP does not change your public Local API settings, and the separate Local API server does not need to be enabled. It supports the same subset of operations as the Local API backend described below.
+Keep Mindwtr running. Disabling MCP or quitting the app stops the server; closing to the tray keeps it running. If the server cannot start, for example because the port is occupied, resolve the error and use **Try again**. Enabling MCP does not change your public Local API settings, and the separate Local API server does not need to be enabled. It supports the same subset of operations as the Local API backend described below.
 
 This endpoint serves clients on the same computer. It does not provide remote ChatGPT access, a tunnel, or a hosted service. Mobile apps do not host this server.
 

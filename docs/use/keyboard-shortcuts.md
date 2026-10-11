@@ -5,7 +5,7 @@ Mindwtr desktop supports keyboard-first use with Standard (Gmail/Todoist-style),
 ## Quick start
 
 - Use **Copy Title** in a task’s **Other Options** menu, or press `Ctrl+C` / `Cmd+C` with a task highlighted. When multiple tasks are selected, the shortcut copies their titles one per line. A toast confirms the copy; copying selected text or text in an editor still works normally.
-- Choose your preset in **Settings -> General -> Keyboard Shortcuts**.
+- Choose your preset in **Settings -> Advanced -> Keyboard and window -> Keyboard Shortcuts**.
 - Press `?` in the app to open the current shortcut sheet for the preset you are using. The sheet ends with a quick-add syntax table listing every token (`/start:`, `/note:`, `@context`, `+Project`, …).
 - Use `/` to search.
 - Use `gi` for Inbox, `gn` for Next Actions, and `gf` for Focus (Standard and Vim modes).

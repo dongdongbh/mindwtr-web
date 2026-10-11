@@ -20,13 +20,13 @@ En escritorio, las rutas predeterminadas de la base de datos aparecen más abajo
 
 ## MCP integrado en escritorio
 
-La aplicación de escritorio incluye un servidor MCP gestionado por la aplicación en **Ajustes → Integraciones → MCP**. En la próxima versión de escritorio, este servidor se ejecuta en Rust dentro del proceso de la aplicación y comparte las operaciones internas con la API REST local, sin un asistente incluido ni un puente HTTP privado. Este modo no necesita instalar Node, npm, Bun ni un asistente independiente. Está desactivado y es de solo lectura de forma predeterminada.
+La aplicación de escritorio incluye un servidor MCP gestionado por la aplicación en **Ajustes → Integraciones → Servidor MCP local (avanzado)**. En la próxima versión de escritorio, este servidor se ejecuta en Rust dentro del proceso de la aplicación y comparte las operaciones internas con la API REST local, sin un asistente incluido ni un puente HTTP privado. Este modo no necesita instalar Node, npm, Bun ni un asistente independiente. Está desactivado y es de solo lectura de forma predeterminada.
 
-Activa el acceso MCP local y selecciona **Copiar datos de conexión**. Configura un cliente compatible con Streamable HTTP autenticado usando el endpoint siguiente y el token Bearer de los datos copiados. Los formatos de configuración varían; un cliente que solo admita stdio todavía necesita el asistente independiente.
+Activa el interruptor **Activar servidor MCP local** y selecciona **Copiar datos de conexión**. Configura un cliente compatible con Streamable HTTP autenticado usando el endpoint siguiente y el token Bearer de los datos copiados. Los formatos de configuración varían; un cliente que solo admita stdio todavía necesita el asistente independiente.
 
 Los clientes de IA conectados pueden leer los datos expuestos por estas herramientas. **Permitir cambios** permite editarlos; el cliente de IA puede enviar esos datos a su proveedor. Mantén privado el token copiado. Regenerarlo desconecta los clientes existentes, que necesitarán el nuevo token.
 
-Mantén Mindwtr abierto. Desactivar MCP o salir de la aplicación detiene el servidor; cerrar a la bandeja lo mantiene activo. Si el servidor no puede iniciarse, por ejemplo porque el puerto está ocupado, resuelve el error y usa **Reintentar**. Activar MCP no cambia la configuración de la API local pública, y no es necesario activar el servidor de API local independiente. Admite el mismo subconjunto de operaciones que el backend de API local descrito a continuación.
+Mantén Mindwtr abierto. Desactivar MCP o salir de la aplicación detiene el servidor; cerrar a la bandeja lo mantiene activo. Si el servidor no puede iniciarse, por ejemplo porque el puerto está ocupado, resuelve el error y usa **Volver a intentar**. Activar MCP no cambia la configuración de la API local pública, y no es necesario activar el servidor de API local independiente. Admite el mismo subconjunto de operaciones que el backend de API local descrito a continuación.
 
 Este endpoint sirve a clientes del mismo ordenador. No proporciona acceso remoto desde ChatGPT, un túnel ni un servicio alojado. Las aplicaciones móviles no alojan este servidor.
 

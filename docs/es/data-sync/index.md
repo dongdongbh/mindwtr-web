@@ -371,7 +371,7 @@ Para recuperar espacio de la sincronización de archivos, haz primero una copia 
 
 1. Abre **Ajustes → Sincronización**
 2. Configura **Backend de sincronización** como **Archivo**
-3. Haz clic en **Cambiar ubicación** y selecciona una carpeta de tu servicio de sincronización
+3. Haz clic en **Examinar…** y selecciona una carpeta de tu servicio de sincronización
 4. Haz clic en **Guardar**
 
 Mindwtr se sincronizará automáticamente al iniciarse y cuando cambien los datos.
@@ -492,8 +492,8 @@ Se aplica el mismo flujo de trabajo. Evita editar simultáneamente en varios dis
 
 Para una exportación de tareas legible o portátil, abre la sección **Copia de seguridad** en **Ajustes → Datos** y elige:
 
-- **Exportar CSV de Mindwtr** para guardar un archivo de tareas apto para hojas de cálculo que Mindwtr puede volver a importar sin duplicar identificadores existentes.
-- **Exportar TaskNotes** para guardar un ZIP con un archivo Markdown por tarea y metadatos YAML, listo para el complemento TaskNotes de Obsidian y compatible con la importación de Obsidian de Mindwtr.
+- **Exportar CSV** para guardar un archivo de tareas apto para hojas de cálculo que Mindwtr puede volver a importar sin duplicar identificadores existentes.
+- **Exportar como TaskNotes** para guardar un ZIP con un archivo Markdown por tarea y metadatos YAML, listo para el complemento TaskNotes de Obsidian y compatible con la importación de Obsidian de Mindwtr.
 
 Las exportaciones, restauraciones e importaciones crean una instantánea de recuperación cuando es posible. Después de importar, restaurar o fusionar, usa **Deshacer** en el mensaje de resultado para revertir la operación de inmediato.
 

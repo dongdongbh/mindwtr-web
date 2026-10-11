@@ -20,9 +20,9 @@ Sur ordinateur, les chemins par défaut de la base de données figurent plus bas
 
 ## MCP intégré sur ordinateur
 
-L’application de bureau comprend un serveur MCP géré par l’application dans **Réglages → Intégrations → MCP**. Dans la prochaine version de bureau, ce serveur s’exécute en Rust dans le processus de l’application et partage les opérations internes avec l’API REST locale, sans utilitaire embarqué ni pont HTTP privé. Ce mode ne nécessite ni Node, npm, Bun, ni installation d’un utilitaire séparé. Il est désactivé et en lecture seule par défaut.
+L’application de bureau comprend un serveur MCP géré par l’application dans **Réglages → Integrations → Serveur MCP local (avancé)**. Dans la prochaine version de bureau, ce serveur s’exécute en Rust dans le processus de l’application et partage les opérations internes avec l’API REST locale, sans utilitaire embarqué ni pont HTTP privé. Ce mode ne nécessite ni Node, npm, Bun, ni installation d’un utilitaire séparé. Il est désactivé et en lecture seule par défaut.
 
-Activez l’accès MCP local, puis choisissez **Copier les informations de connexion**. Configurez un client compatible avec Streamable HTTP authentifié avec le point de terminaison ci-dessous et le jeton Bearer des informations copiées. Les formats de configuration varient ; un client limité à stdio nécessite toujours l’utilitaire autonome.
+Activez l’option **Activer le serveur MCP local**, puis choisissez **Copier les informations de connexion**. Configurez un client compatible avec Streamable HTTP authentifié avec le point de terminaison ci-dessous et le jeton Bearer des informations copiées. Les formats de configuration varient ; un client limité à stdio nécessite toujours l’utilitaire autonome.
 
 Les clients d’IA connectés peuvent lire les données exposées par ces outils. **Autoriser les modifications** permet les changements ; votre client d’IA peut envoyer ces données à son fournisseur. Gardez le jeton copié confidentiel. Sa régénération déconnecte les clients existants, qui doivent recevoir le nouveau jeton.
 

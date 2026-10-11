@@ -381,8 +381,11 @@ Mindwtr wertet beim Hinzufügen natürliche Sprache aus:
 | `/due:date` | `/due:friday` | Fälligkeitsdatum festlegen |
 | `/energy:<level>` | `/energy:medium` | Energiestufe (`low`, `medium`, `high`) |
 | `/priority:<level>` | `/priority:high` | Priorität (`low`, `medium`, `high`, `urgent`) |
+| `/estimate:<duration>` | `/estimate:45m` | Setzt den Zeitbedarf (v1.3.5) |
 | `/note:text` | `/note:call back` | Beschreibung hinzufügen |
 | `/status` | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Status festlegen |
+
+Ab v1.3.5 setzen `/estimate:5m`, `/estimate:45m` und `/estimate:1h30m` den geschätzten Zeitbedarf; `/duration:` ist ein Alias. Eigene Werte behalten ihre genaue Minutenzahl. Gültige Befehle werden aus dem Titel entfernt; ungültige oder unvollständige bleiben sichtbar. Normaler Text wie „Einen 30-minütigen Vortrag ansehen“ setzt keinen Zeitbedarf. Eine ausdrücklich im Erfassungsformular gewählte Schätzung hat Vorrang; die Kalendererfassung behält ihre gewählte Dauer.
 
 **Datumsformate:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 

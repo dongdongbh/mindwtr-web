@@ -22,6 +22,16 @@ Beim Rendern wandelt Mindwtr diese Token außerdem in reguläre Markdown-Links u
 [Website launch](mindwtr://project/project-id)
 ```
 
+## Aufgabenlink oder ID kopieren
+
+Ab v1.3.5 bietet das Aufgabenmenü auf Desktop und Mobilgerät **Aufgabenlink kopieren** und **Aufgaben-ID kopieren**. Das Kopieren ändert keine Daten und speichert keine offenen Bearbeitungen. Der Link zum Öffnen der App hat dieses Format:
+
+```text
+mindwtr://open?task=task-id
+```
+
+Öffne ihn aus einer anderen App, um genau diese Aufgabe in Mindwtr aufzurufen, auch wenn Mindwtr geschlossen ist. Die aktuelle Bibliothek muss die Aufgabe bereits enthalten. Der Link ist ein Verweis, keine öffentliche Freigabe: Er lädt keine Aufgabeninhalte hoch und gewährt niemandem Zugriff. **Aufgaben-ID kopieren** liefert die reine Kennung für Skripte oder eine bereits autorisierte API-/MCP-Verbindung. Die internen Markdown-Verweise oben behalten ihr eigenes Format.
+
 ## Links erstellen
 
 Geben Sie beim Bearbeiten eines unterstützten Markdown-Felds `[[` ein und beginnen Sie zu suchen.

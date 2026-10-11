@@ -102,6 +102,8 @@ El asistente de Bun también requiere un token: sale de inmediato si no se estab
 | `DELETE` | `/projects/:id` | Escritorio: eliminar proyecto de forma lógica |
 | `POST` | `/projects/:id/restore` | Escritorio: restaurar proyecto |
 | `GET`    | `/areas`              | Enumera las áreas                    |
+| `GET` | `/areas/:id` | Escritorio: obtener un área |
+| `PATCH` | `/areas/:id` | Escritorio: actualizar un área |
 | `GET`    | `/v1/areas`           | Alias de compatibilidad para las áreas |
 | `GET`    | `/sections`           | Asistente: enumera las secciones, opcionalmente con `?projectId=` |
 | `POST`   | `/sections`           | Asistente: crea una sección           |
@@ -202,6 +204,21 @@ curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
   -d '{"isSequential":false}' | jq .
+```
+
+### Editar áreas en escritorio
+
+Desde v1.3.5, `GET /areas/:id` y `PATCH /areas/:id` devuelven `{ "area": { ... } }`. Ambos devuelven `404` para áreas desconocidas o eliminadas. Estos endpoints pertenecen a la API integrada de escritorio, no al auxiliar Bun.
+
+PATCH acepta un objeto no vacío que contenga únicamente `name`, `color`, `icon` y `order`. `name` debe ser una cadena no vacía; se recortan los espacios de los extremos. `color` e `icon` aceptan cadenas o `null` para borrar el campo. `order` debe ser un número finito; se permiten fracciones y valores negativos. Los campos desconocidos, tipos inválidos, nombres en blanco y objetos vacíos devuelven `400`.
+
+Si el nombre coincide con otra área no eliminada tras recortar espacios e ignorar mayúsculas y minúsculas, se devuelve `409` sin cambios. La API nunca fusiona áreas implícitamente. Los cambios de nombre y color mantienen el comportamiento de la app para los metadatos de proyectos relacionados y se guardan juntos. Borrar el color del área también restablece el color predeterminado (`#94a3b8`) de sus proyectos vinculados. `order` modifica la posición numérica de esta área; no es una operación de reordenación por lotes. La creación y eliminación de áreas quedan fuera de estos endpoints.
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/areas/$AREA_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"Work","color":"#94a3b8","order":2}' | jq .
 ```
 
 ### Clasificación de tareas en escritorio

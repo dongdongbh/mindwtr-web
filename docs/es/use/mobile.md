@@ -396,8 +396,11 @@ Mindwtr analiza lenguaje natural al añadir tareas:
 | `/due:date`  | `/due:friday`     | Establece la fecha de vencimiento |
 | `/energy:<level>` | `/energy:medium` | Establece el nivel de energía (`low`, `medium`, `high`) |
 | `/priority:<level>` | `/priority:high` | Establece la prioridad (`low`, `medium`, `high`, `urgent`) |
+| `/estimate:<duration>` | `/estimate:45m` | Establece el tiempo estimado (v1.3.5) |
 | `/note:text` | `/note:call back` | Añade una descripción   |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Establece el estado |
+
+Desde v1.3.5, `/estimate:5m`, `/estimate:45m` y `/estimate:1h30m` establecen el esfuerzo estimado; `/duration:` es un alias. Los valores personalizados conservan sus minutos exactos. Los comandos válidos se quitan del título; los inválidos o incompletos siguen visibles. El texto normal, como «Ver una charla de 30 minutos», no establece una estimación. Una estimación elegida explícitamente en el formulario de captura tiene prioridad; el editor del calendario conserva la duración seleccionada.
 
 **Formatos de fecha:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 

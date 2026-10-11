@@ -393,8 +393,11 @@ Mindwtr parses natural language when adding tasks:
 | `/due:date`  | `/due:friday`     | Sets due date       |
 | `/energy:<level>` | `/energy:medium` | Sets energy level (`low`, `medium`, `high`) |
 | `/priority:<level>` | `/priority:high` | Sets priority (`low`, `medium`, `high`, `urgent`) |
+| `/estimate:<duration>` | `/estimate:45m` | Sets the time estimate (v1.3.5) |
 | `/note:text` | `/note:call back` | Adds description    |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Sets status |
+
+From v1.3.5, `/estimate:5m`, `/estimate:45m`, and `/estimate:1h30m` set estimated effort; `/duration:` is an alias. Custom values keep their exact minutes. Successfully parsed commands are removed from the title; invalid or incomplete commands stay visible. Ordinary prose such as “Watch a 30-minute lecture” does not set an estimate. An estimate selected explicitly in a capture form takes precedence; the calendar composer keeps its selected duration.
 
 **Date formats:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 

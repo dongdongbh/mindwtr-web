@@ -102,6 +102,8 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 | `DELETE` | `/projects/:id` | Desktop: soft-delete project |
 | `POST` | `/projects/:id/restore` | Desktop: restore project |
 | `GET`    | `/areas`              | List areas                    |
+| `GET` | `/areas/:id` | Desktop: get one Area |
+| `PATCH` | `/areas/:id` | Desktop: update an Area |
 | `GET`    | `/v1/areas`           | Compatibility alias for areas |
 | `GET`    | `/sections`           | Helper: list sections, optionally `?projectId=` |
 | `POST`   | `/sections`           | Helper: create section        |
@@ -202,6 +204,21 @@ curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
   -d '{"isSequential":false}' | jq .
+```
+
+### Edit Areas on desktop
+
+From v1.3.5, `GET /areas/:id` and `PATCH /areas/:id` return `{ "area": { ... } }`. Both return `404` for unknown or deleted Areas. These endpoints belong to the built-in desktop API, not the Bun helper.
+
+PATCH accepts a nonempty object containing only `name`, `color`, `icon`, and `order`. `name` must be a nonblank string and is trimmed. `color` and `icon` accept strings or `null` to clear the field. `order` must be a finite number; fractional and negative values are allowed. Unknown fields, invalid types, blank names, and an empty patch return `400`.
+
+A name matching another live Area after trimming and case-insensitive comparison returns `409` without changing anything. The API never merges Areas implicitly. Renames and color changes preserve the app’s related-project metadata behavior and are saved together. Clearing an Area’s color also resets its linked projects to the default color (`#94a3b8`). Setting `order` updates this Area’s numeric position; it is not a batch reorder operation. Area creation and deletion are not included.
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/areas/$AREA_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"Work","color":"#94a3b8","order":2}' | jq .
 ```
 
 ### Desktop task triage

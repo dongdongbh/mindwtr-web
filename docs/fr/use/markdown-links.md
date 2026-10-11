@@ -22,6 +22,16 @@ Lors du rendu, Mindwtr normalise aussi ces jetons en liens Markdown ordinaires :
 [Website launch](mindwtr://project/project-id)
 ```
 
+## Copier le lien ou l’ID d’une tâche
+
+À partir de v1.3.5, choisissez **Copier le lien de la tâche** ou **Copier l’ID de la tâche** dans le menu de tâche sur ordinateur ou mobile. La copie ne modifie aucune donnée et n’enregistre pas les modifications en cours dans l’éditeur. Le lien ouvrant l’application utilise ce format :
+
+```text
+mindwtr://open?task=task-id
+```
+
+Ouvrez-le depuis une autre application pour retrouver cette tâche précise dans Mindwtr, même si Mindwtr est fermé. La bibliothèque actuelle doit déjà contenir la tâche. Il s’agit d’une référence, pas d’un lien de partage public : aucun contenu n’est envoyé et aucun accès à vos données n’est accordé. **Copier l’ID de la tâche** fournit l’identifiant pour les scripts ou une connexion API/MCP déjà autorisée. Les références Markdown internes ci-dessus gardent leur propre format.
+
 ## Créer des liens
 
 Dans un champ Markdown compatible, saisissez `[[` puis commencez votre recherche.

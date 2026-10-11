@@ -102,6 +102,8 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 | `DELETE` | `/projects/:id` | Ordinateur : supprimer logiquement un projet |
 | `POST` | `/projects/:id/restore` | Ordinateur : restaurer un projet |
 | `GET`    | `/areas`               | Répertorier les domaines                 |
+| `GET` | `/areas/:id` | Bureau : lire un domaine |
+| `PATCH` | `/areas/:id` | Bureau : modifier un domaine |
 | `GET`    | `/v1/areas`            | Alias de compatibilité pour les domaines |
 | `GET`    | `/sections`            | Utilitaire : répertorier les sections, éventuellement `?projectId=` |
 | `POST`   | `/sections`            | Utilitaire : créer une section           |
@@ -202,6 +204,21 @@ curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
   -d '{"isSequential":false}' | jq .
+```
+
+### Modifier les domaines sur ordinateur
+
+À partir de v1.3.5, `GET /areas/:id` et `PATCH /areas/:id` renvoient `{ "area": { ... } }`. Les deux renvoient `404` pour les domaines inconnus ou supprimés. Ces endpoints appartiennent à l’API intégrée de bureau, pas à l’assistant Bun.
+
+PATCH accepte un objet non vide contenant uniquement `name`, `color`, `icon` et `order`. `name` doit être une chaîne non vide ; les espaces aux extrémités sont supprimés. `color` et `icon` acceptent des chaînes ou `null` pour effacer le champ. `order` doit être un nombre fini ; les valeurs négatives et fractionnaires sont acceptées. Les champs inconnus, types incorrects, noms vides et objets vides renvoient `400`.
+
+Un nom identique à celui d’un autre domaine non supprimé, après suppression des espaces aux extrémités et comparaison insensible à la casse, renvoie `409` sans aucune modification. L’API ne fusionne jamais implicitement les domaines. Les changements de nom et de couleur conservent le comportement de l’app pour les métadonnées des projets associés et sont enregistrés ensemble. Effacer la couleur d’un domaine rétablit aussi la couleur par défaut (`#94a3b8`) de ses projets associés. `order` modifie la position numérique de ce domaine ; ce n’est pas un réordonnancement par lots. La création et la suppression de domaines ne sont pas incluses.
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/areas/$AREA_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"Work","color":"#94a3b8","order":2}' | jq .
 ```
 
 ### Classement des tâches sur ordinateur

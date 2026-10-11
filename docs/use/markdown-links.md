@@ -22,6 +22,16 @@ Mindwtr also normalizes those tokens into regular Markdown links during renderin
 [Website launch](mindwtr://project/project-id)
 ```
 
+## Copy a task link or ID
+
+From v1.3.5, choose **Copy task link** or **Copy task ID** from the task menu on desktop or mobile. Copying is read-only and does not save pending editor changes. The app-opening link uses this format:
+
+```text
+mindwtr://open?task=task-id
+```
+
+Open it from another app to find that exact task in Mindwtr, including when Mindwtr is closed. The current library must already contain the task. This is a reference, not a public sharing link: it uploads no task content and grants nobody access to your data. **Copy task ID** provides the plain identifier for scripts or an already authorized API/MCP connection. Internal Markdown references above remain a separate format.
+
 ## Creating Links
 
 When editing a supported Markdown field, type `[[` and start searching.

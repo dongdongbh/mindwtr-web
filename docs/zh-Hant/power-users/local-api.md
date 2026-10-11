@@ -102,6 +102,8 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 | `DELETE` | `/projects/:id` | 桌面版：軟刪除專案 |
 | `POST` | `/projects/:id/restore` | 桌面版：還原專案 |
 | `GET`    | `/areas`              | 列出領域                     |
+| `GET` | `/areas/:id` | 桌面端：取得單一領域 |
+| `PATCH` | `/areas/:id` | 桌面端：更新領域 |
 | `GET`    | `/v1/areas`           | 領域的相容性別名             |
 | `GET`    | `/sections`           | 輔助工具：列出分區，可加 `?projectId=` |
 | `POST`   | `/sections`           | 輔助工具：建立分區           |
@@ -202,6 +204,21 @@ curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
   -d '{"isSequential":false}' | jq .
+```
+
+### 在桌面端編輯領域
+
+從 v1.3.5 起，`GET /areas/:id` 和 `PATCH /areas/:id` 回傳 `{ "area": { ... } }`。未知或已刪除的領域均回傳 `404`。這些端點屬於桌面應用內建 API，不屬於 Bun 輔助服務。
+
+PATCH 接受僅包含 `name`、`color`、`icon` 和 `order` 的非空物件。`name` 必須是非空白字串，首尾空白會被移除。`color` 和 `icon` 接受字串，也可設為 `null` 以清除欄位。`order` 必須是有限數值，允許小數和負數。未知欄位、無效型別、空白名稱及空物件均回傳 `400`。
+
+移除首尾空白並忽略大小寫後，若名稱與另一個未刪除領域相同，則回傳 `409`，不作任何變更。API 不會隱式合併領域。重新命名和顏色變更會保留應用對關聯專案中繼資料的處理行為，並一併儲存。清除領域顏色也會將關聯專案重設為預設顏色（`#94a3b8`）。設定 `order` 只更新此領域的數值排序位置，並非批次重排操作。不包含領域建立和刪除。
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/areas/$AREA_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"Work","color":"#94a3b8","order":2}' | jq .
 ```
 
 ### 桌面版任務分類

@@ -102,6 +102,8 @@ Bun 辅助程序同样要求令牌：未设置 `MINDWTR_API_TOKEN` 时会立即�
 | `DELETE` | `/projects/:id` | 桌面端：软删除项目 |
 | `POST` | `/projects/:id/restore` | 桌面端：恢复项目 |
 | `GET`    | `/areas`              | 列出领域                      |
+| `GET` | `/areas/:id` | 桌面端：获取单个领域 |
+| `PATCH` | `/areas/:id` | 桌面端：更新领域 |
 | `GET`    | `/v1/areas`           | 领域端点的兼容别名            |
 | `GET`    | `/sections`           | 辅助程序：列出分区，可加 `?projectId=` |
 | `POST`   | `/sections`           | 辅助程序：创建分区            |
@@ -202,6 +204,21 @@ curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
   -d '{"isSequential":false}' | jq .
+```
+
+### 在桌面端编辑领域
+
+从 v1.3.5 起，`GET /areas/:id` 和 `PATCH /areas/:id` 返回 `{ "area": { ... } }`。未知或已删除的领域均返回 `404`。这些端点属于桌面应用内置 API，不属于 Bun 辅助服务。
+
+PATCH 接受仅包含 `name`、`color`、`icon` 和 `order` 的非空对象。`name` 必须是非空白字符串，首尾空白会被移除。`color` 和 `icon` 接受字符串，也可设为 `null` 以清除字段。`order` 必须是有限数值，允许小数和负数。未知字段、无效类型、空白名称及空对象均返回 `400`。
+
+移除首尾空白并忽略大小写后，若名称与另一个未删除领域相同，则返回 `409`，不作任何更改。API 不会隐式合并领域。重命名和颜色更改会保留应用对关联项目元数据的处理行为，并一并保存。清除领域颜色也会将关联项目重置为默认颜色（`#94a3b8`）。设置 `order` 只更新此领域的数值排序位置，并非批量重排操作。不包含领域创建和删除。
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/areas/$AREA_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"Work","color":"#94a3b8","order":2}' | jq .
 ```
 
 ### 桌面端任务分类

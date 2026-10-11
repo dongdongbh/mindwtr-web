@@ -22,6 +22,16 @@ Mindwtr también normaliza esos tokens como enlaces Markdown normales al represe
 [Website launch](mindwtr://project/project-id)
 ```
 
+## Copiar el enlace o ID de una tarea
+
+Desde v1.3.5, elige **Copiar enlace de la tarea** o **Copiar ID de la tarea** en el menú de tareas de escritorio o móvil. Copiar no modifica datos ni guarda cambios pendientes del editor. El enlace que abre la aplicación usa este formato:
+
+```text
+mindwtr://open?task=task-id
+```
+
+Ábrelo desde otra aplicación para encontrar esa tarea exacta en Mindwtr, incluso si Mindwtr está cerrado. La biblioteca actual ya debe contener la tarea. Es una referencia, no un enlace público: no sube contenido ni concede acceso a tus datos. **Copiar ID de la tarea** proporciona el identificador para scripts o una conexión API/MCP ya autorizada. Las referencias Markdown internas anteriores mantienen un formato distinto.
+
 ## Crear enlaces
 
 Al editar un campo Markdown compatible, escribe `[[` y empieza a buscar.

@@ -102,6 +102,8 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 | `DELETE` | `/projects/:id` | Desktop: Projekt vorläufig löschen |
 | `POST` | `/projects/:id/restore` | Desktop: Projekt wiederherstellen |
 | `GET`    | `/areas`              | Bereiche auflisten                   |
+| `GET` | `/areas/:id` | Desktop: einzelnen Bereich lesen |
+| `PATCH` | `/areas/:id` | Desktop: Bereich bearbeiten |
 | `GET`    | `/v1/areas`           | Kompatibilitätsalias für Bereiche    |
 | `GET`    | `/sections`           | Hilfsprogramm: Abschnitte auflisten, optional `?projectId=` |
 | `POST`   | `/sections`           | Hilfsprogramm: Abschnitt erstellen   |
@@ -202,6 +204,21 @@ curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
   -H 'Authorization: Bearer <token>' \
   -H 'Content-Type: application/json' \
   -d '{"isSequential":false}' | jq .
+```
+
+### Bereiche auf dem Desktop bearbeiten
+
+Ab v1.3.5 geben `GET /areas/:id` und `PATCH /areas/:id` `{ "area": { ... } }` zurück. Unbekannte oder gelöschte Bereiche führen bei beiden zu `404`. Diese Endpunkte gehören zur integrierten Desktop-API, nicht zum Bun-Helfer.
+
+PATCH akzeptiert ein nicht leeres Objekt mit ausschließlich `name`, `color`, `icon` und `order`. `name` muss eine nicht leere Zeichenfolge sein; äußere Leerzeichen werden entfernt. `color` und `icon` akzeptieren Zeichenfolgen oder `null` zum Entfernen des Felds. `order` muss eine endliche Zahl sein; negative Werte und Bruchzahlen sind erlaubt. Unbekannte Felder, ungültige Typen, leere Namen und ein leeres Patch-Objekt ergeben `400`.
+
+Entspricht der Name nach dem Entfernen äußerer Leerzeichen und ohne Beachtung der Groß-/Kleinschreibung einem anderen aktiven Bereich, folgt `409` ohne Änderungen. Die API führt Bereiche niemals automatisch zusammen. Umbenennungen und Farbänderungen erhalten das Verhalten der App für Metadaten zugehöriger Projekte und werden gemeinsam gespeichert. Das Entfernen der Bereichsfarbe setzt auch die Farbe zugehöriger Projekte auf den Standardwert (`#94a3b8`) zurück. `order` ändert die numerische Position dieses Bereichs; es ist keine gemeinsame Neuordnung mehrerer Bereiche. Erstellung und Löschung von Bereichen sind nicht enthalten.
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/areas/$AREA_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"Work","color":"#94a3b8","order":2}' | jq .
 ```
 
 ### Aufgaben über die Desktop-API einordnen

@@ -60,6 +60,7 @@ Fügen Sie in MCP-Konfigurationen mit `npx` den Eintrag `"--allow-scripts=better
 ### Standardspeicherorte der Datenbank
 
 - **Linux:** `~/.local/share/mindwtr/mindwtr.db`
+- **Linux (Snap):** `~/snap/mindwtr/current/.local/share/mindwtr/mindwtr.db`
 - **macOS:** `~/Library/Application Support/mindwtr/data/mindwtr.db`
 - **Windows:** `%APPDATA%\mindwtr\data\mindwtr.db`
 

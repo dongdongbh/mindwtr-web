@@ -60,6 +60,7 @@ npm install -g --allow-scripts=better-sqlite3 mindwtr-mcp
 ### 默认数据库位置
 
 - **Linux：**`~/.local/share/mindwtr/mindwtr.db`
+- **Linux（Snap）：**`~/snap/mindwtr/current/.local/share/mindwtr/mindwtr.db`
 - **macOS：**`~/Library/Application Support/mindwtr/data/mindwtr.db`
 - **Windows：**`%APPDATA%\mindwtr\data\mindwtr.db`
 

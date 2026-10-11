@@ -60,6 +60,7 @@ In MCP client configurations using `npx`, add `"--allow-scripts=better-sqlite3"`
 ### Default Database Locations
 
 - **Linux:** `~/.local/share/mindwtr/mindwtr.db`
+- **Linux (Snap):** `~/snap/mindwtr/current/.local/share/mindwtr/mindwtr.db`
 - **macOS:** `~/Library/Application Support/mindwtr/data/mindwtr.db`
 - **Windows:** `%APPDATA%\mindwtr\data\mindwtr.db`
 

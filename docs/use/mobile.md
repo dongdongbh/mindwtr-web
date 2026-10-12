@@ -817,6 +817,7 @@ Starting with v1.3.4, Android discards one-time reminders that arrive more than 
 
 - **Appearance**: System, Light, Dark, Material 3 (Light), Material 3 (Dark), E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia, or OLED / Midnight. Choose **System (Light / OLED Dark)** for the normal light palette in light mode and OLED in dark mode. **OLED / Midnight** stays black in either mode.
 - **Language**: English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese (Brazil), Russian, German, Japanese, Persian, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech, Swedish, Danish, Hungarian, Ukrainian
+- **Date format**: On iOS, **System** uses supported Gregorian short-date preferences from the device. After changing the device preference, return to Mindwtr to refresh task dates and the Settings preview. An explicit format overrides System; unsupported patterns use the locale fallback.
 
 ### Notifications
 

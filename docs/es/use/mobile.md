@@ -802,6 +802,7 @@ Toca **Permitir** para abrir la pantalla de permisos de Android para Mindwtr. Ta
 
 - **Apariencia**: Sistema, Clara, Oscura, Material 3 (Claro), Material 3 (Oscuro), E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia u OLED / Medianoche. Elige **Sistema (Claro / OLED Oscuro)** para usar el tema claro normal en modo claro y OLED en modo oscuro. **OLED / Medianoche** permanece negro en ambos modos.
 - **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués (Brasil), ruso, alemán, japonés, persa, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo, sueco, danés, húngaro, ucraniano
+- **Formato de fecha**: En iOS, **Sistema** usa las preferencias de fecha corta gregoriana compatibles del dispositivo. Tras cambiarlas, vuelve a Mindwtr para actualizar las fechas y la vista previa de Ajustes. Un formato elegido explícitamente tiene prioridad; los patrones no compatibles usan el formato regional.
 
 ### Notificaciones
 

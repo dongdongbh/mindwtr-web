@@ -742,6 +742,7 @@ Tippen Sie auf **Zulassen**, um den Android-Berechtigungsbildschirm für Mindwtr
 
 - **Darstellung**: System, Hell, Dunkel, Material 3 (Hell), Material 3 (Dunkel), E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia oder OLED / Mitternacht. **System (Hell / OLED Dunkel)** verwendet bei hellem Systemdesign das normale helle Design und bei dunklem das OLED-Design. **OLED / Mitternacht** bleibt unabhängig vom Systemdesign schwarz.
 - **Sprache**: Englisch, Chinesisch (vereinfacht), Chinesisch (traditionell), Hindi, Spanisch, Arabisch, Französisch, Portugiesisch (Brasilien), Russisch, Deutsch, Japanisch, Persisch, Vietnamesisch, Türkisch, Koreanisch, Italienisch, Polnisch, Niederländisch, Tschechisch, Schwedisch, Dänisch, Ungarisch, Ukrainisch
+- **Datumsformat**: Unter iOS verwendet **System** unterstützte gregorianische Kurzdatumsformate des Geräts. Nach einer Änderung der Geräteeinstellung aktualisiert die Rückkehr zu Mindwtr die Aufgabendaten und die Vorschau in den Einstellungen. Ein ausdrücklich gewähltes Format hat Vorrang; nicht unterstützte Muster verwenden das Sprachregionsformat.
 
 ### Benachrichtigungen
 

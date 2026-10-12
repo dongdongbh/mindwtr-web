@@ -392,7 +392,9 @@ If the target folder path does not exist yet, Mindwtr will try to create the mis
 
 Mindwtr tests the server's write safety before it starts syncing. The server must return a strong ETag for `data.json` and honor `If-None-Match` and `If-Match` conditions for creates, replacements, and deletes. Saved WebDAV setups without a recorded safety proof run the same test before they sync. If the check fails, Mindwtr stops sync and reports that the server is incompatible; use a server or configuration that supports these conditions before trying again.
 
-> **Linux note:** If your desktop session does not provide a Secret Service keyring (for example `org.freedesktop.secrets` is unavailable), Mindwtr falls back to local secrets storage in `~/.config/mindwtr/secrets.toml`.
+From v1.3.5 on desktop, clear the WebDAV URL and click **Save WebDAV** to remove the saved WebDAV settings and password. If WebDAV is active, sync switches off; another active backend stays selected. Switching backends alone keeps the previous settings for reuse. You do not need to edit configuration or credential-binding files manually.
+
+> **Linux note:** If your desktop session does not provide a Secret Service keyring (for example `org.freedesktop.secrets` is unavailable), Mindwtr falls back to plaintext secrets storage in `~/.config/mindwtr/secrets.toml`, with owner-only file permissions. These credentials are separate from the task database.
 
 > **Flatpak (v1.3.3):** Credentials use the Secret portal and an encrypted local store. Direct access to the host keyring is not required. Existing plaintext fallback credentials are removed only after a verified encrypted write. If you previously enabled keyring access through Flatseal and saved credentials only in the host keyring, reconnect Dropbox or re-enter the affected passwords once; those host entries are not deleted. If the portal is unavailable or access is declined, Mindwtr retains its local plaintext fallback and shows a warning. This change is not included in v1.3.2.
 

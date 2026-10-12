@@ -29,6 +29,8 @@ Enter the WebDAV address, not the browser page address. In Nextcloud, open Files
 
 ## Troubleshooting
 
+From v1.3.5 on desktop, remove saved WebDAV settings by clearing the URL in **Settings → Sync** and clicking **Save WebDAV**. This also clears the saved password. An active WebDAV backend switches off; another active backend is preserved. Switching backends alone retains the previous settings for reuse.
+
 - Confirm the URL points to a writable folder.
 - Check server certificate validity.
 - Confirm upload and overwrite permissions.

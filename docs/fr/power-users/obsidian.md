@@ -74,7 +74,7 @@ Les tâches intégrées importées affichent :
 - le chemin de la note source et le numéro de ligne
 - une action **Ouvrir dans Obsidian**
 
-### Étiquette obligatoire pour les tâches intégrées (v1.3.5)
+### Étiquette obligatoire pour les tâches intégrées
 
 Dans **Paramètres → Intégrations → Obsidian Vault**, définissez une étiquette obligatoire comme `#task`. Laissez le champ vide pour conserver toutes les cases à cocher prises en charge. Enregistrer un filtre différent reconstruit la liste Obsidian ; les analyses complètes et les mises à jour en direct utilisent le même filtre.
 

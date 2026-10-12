@@ -393,11 +393,11 @@ Mindwtr parses natural language when adding tasks:
 | `/due:date`  | `/due:friday`     | Sets due date       |
 | `/energy:<level>` | `/energy:medium` | Sets energy level (`low`, `medium`, `high`) |
 | `/priority:<level>` | `/priority:high` | Sets priority (`low`, `medium`, `high`, `urgent`) |
-| `/estimate:<duration>` | `/estimate:45m` | Sets the time estimate (v1.3.5) |
+| `/estimate:<duration>` | `/estimate:45m` | Sets the time estimate |
 | `/note:text` | `/note:call back` | Adds description    |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Sets status |
 
-From v1.3.5, `/estimate:5m`, `/estimate:45m`, and `/estimate:1h30m` set estimated effort; `/duration:` is an alias. Custom values keep their exact minutes. Successfully parsed commands are removed from the title; invalid or incomplete commands stay visible. Ordinary prose such as “Watch a 30-minute lecture” does not set an estimate. An estimate selected explicitly in a capture form takes precedence; the calendar composer keeps its selected duration. When **Time estimates** is turned off in Settings, `/estimate:` and `/duration:` are not parsed and stay in the title, and the syntax help does not list them.
+`/estimate:5m`, `/estimate:45m`, and `/estimate:1h30m` set estimated effort; `/duration:` is an alias. Custom values keep their exact minutes. Successfully parsed commands are removed from the title; invalid or incomplete commands stay visible. Ordinary prose such as “Watch a 30-minute lecture” does not set an estimate. An estimate selected explicitly in a capture form takes precedence; the calendar composer keeps its selected duration. When **Time estimates** is turned off in Settings, `/estimate:` and `/duration:` are not parsed and stay in the title, and the syntax help does not list them.
 
 **Date formats:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 
@@ -700,7 +700,7 @@ See [Data and Sync](/data-sync/) for detailed setup.
 
 ## Create a project from a checklist {#checklist-project-conversion}
 
-From v1.3.5, **Create project from task** offers **Turn checklist items into project tasks** when the task has a checklist. It starts unchecked each time. Leave it off to keep the original task and checklist inside the project.
+**Create project from task** offers **Turn checklist items into project tasks** when the task has a checklist. It starts unchecked each time. Leave it off to keep the original task and checklist inside the project.
 
 When selected, each checklist item becomes a task in a new project, preserving order and checked state. Checked items remain done without an invented completion date. Notes, attachments, start/due/review dates, and tags transfer to the project; the new tasks retain tags, contexts, priority, and energy. Focus is not copied. The original task moves to Trash. Choose a different project name if that name already exists in the Area.
 

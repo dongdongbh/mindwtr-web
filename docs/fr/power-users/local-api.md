@@ -112,7 +112,7 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 | `DELETE` | `/sections/:id`        | Utilitaire : supprimer une section       |
 | `GET`    | `/search?query=...`    | Rechercher des tâches et des projets     |
 
-À partir de v1.3.5, l’API locale de bureau renvoie `409` (`recurrence_requires_app`) lorsque terminer une tâche à échéancier fixe, avec une date de début mais sans date d’échéance, nécessite de sauter des occurrences passées. La tâche reste inchangée ; terminez-la dans l’application. Les tâches avec seulement une date de début restent prises en charge si la prochaine occurrence est encore actuelle ou future.
+L’API locale de bureau renvoie `409` (`recurrence_requires_app`) lorsque terminer une tâche à échéancier fixe, avec une date de début mais sans date d’échéance, nécessite de sauter des occurrences passées. La tâche reste inchangée ; terminez-la dans l’application. Les tâches avec seulement une date de début restent prises en charge si la prochaine occurrence est encore actuelle ou future.
 
 Les lignes marquées **Bureau** n’existent que dans l’API locale de l’application de bureau. Les lignes marquées **Utilitaire** n’existent que dans l’utilitaire Bun, qui y répond aussi sous le préfixe `/v1/` (`/v1/sections`).
 
@@ -208,7 +208,7 @@ curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
 
 ### Modifier les domaines sur ordinateur
 
-À partir de v1.3.5, `GET /areas/:id` et `PATCH /areas/:id` renvoient `{ "area": { ... } }`. Les deux renvoient `404` pour les domaines inconnus ou supprimés. Ces endpoints appartiennent à l’API intégrée de bureau, pas à l’assistant Bun.
+`GET /areas/:id` et `PATCH /areas/:id` renvoient `{ "area": { ... } }`. Les deux renvoient `404` pour les domaines inconnus ou supprimés. Ces endpoints appartiennent à l’API intégrée de bureau, pas à l’assistant Bun.
 
 PATCH accepte un objet non vide contenant uniquement `name`, `color`, `icon` et `order`. `name` doit être une chaîne non vide ; les espaces aux extrémités sont supprimés. `color` et `icon` acceptent des chaînes ou `null` pour effacer le champ. `order` doit être un nombre fini ; les valeurs négatives et fractionnaires sont acceptées. Les champs inconnus, types incorrects, noms vides et objets vides renvoient `400`.
 

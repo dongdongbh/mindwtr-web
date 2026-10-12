@@ -350,7 +350,7 @@ adb shell am start -a android.intent.action.VIEW -d 'mindwtr://contexts?token=%4
 
 iPhone 無法使用時，手錶會將記錄保留在佇列中，並在連線恢復後傳送。
 
-**自 v1.3.5 起：** 在手錶上開啟 Focus 中的任務，可閱讀描述並勾選或取消勾選檢查項目。已接收的詳情可離線閱讀；變更先儲存在手錶上，稍後傳送至 iPhone 處理。重新連線後，請在 iPhone 上開啟 Mindwtr。送達確認不代表任務已儲存。
+在手錶上開啟 Focus 中的任務，可閱讀描述並勾選或取消勾選檢查項目。已接收的詳情可離線閱讀；變更先儲存在手錶上，稍後傳送至 iPhone 處理。重新連線後，請在 iPhone 上開啟 Mindwtr。送達確認不代表任務已儲存。
 
 檢查項目變更會保留手機上新增或重新排序的其他項目。如果項目已改名、刪除或無法唯一識別，請從 iPhone 重新整理，避免變更錯誤的項目。清單模式任務遵循手機端相同的完成規則。詳情超過手錶傳輸限制時，會提示在 iPhone 上查看，不會把截短的檢查清單當作完整清單顯示。編輯描述、新增或排序檢查項目及附件仍在手機上操作。
 
@@ -395,11 +395,11 @@ Mindwtr 會在新增任務時解析自然語言：
 | `/due:date`       | `/due:friday`                | 設定截止日期                              |
 | `/energy:<level>` | `/energy:medium`             | 設定精力程度（`low`、`medium`、`high`）   |
 | `/priority:<level>` | `/priority:high` | 設定優先順序（`low`、`medium`、`high`、`urgent`） |
-| `/estimate:<duration>` | `/estimate:45m` | 設定時間估算（v1.3.5） |
+| `/estimate:<duration>` | `/estimate:45m` | 設定時間估算 |
 | `/note:text`      | `/note:call back`            | 加入描述                                  |
 | `/status`         | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | 設定狀態 |
 
-從 v1.3.5 起，`/estimate:5m`、`/estimate:45m` 和 `/estimate:1h30m` 可設定預計投入時間；`/duration:` 是別名。自訂值保留準確的分鐘數。有效命令會從標題中移除，無效或不完整的命令仍然可見。「看一場 30 分鐘的講座」這類一般文字不會設定估算。在收集表單中明確選擇的估算優先；日曆建立表單保留已選時長。在設定中關閉**時間估算**後，`/estimate:` 和 `/duration:` 不會被解析，會保留在標題中，語法說明也不再列出它們。
+`/estimate:5m`、`/estimate:45m` 和 `/estimate:1h30m` 可設定預計投入時間；`/duration:` 是別名。自訂值保留準確的分鐘數。有效命令會從標題中移除，無效或不完整的命令仍然可見。「看一場 30 分鐘的講座」這類一般文字不會設定估算。在收集表單中明確選擇的估算優先；日曆建立表單保留已選時長。在設定中關閉**時間估算**後，`/estimate:` 和 `/duration:` 不會被解析，會保留在標題中，語法說明也不再列出它們。
 
 **日期格式**：today、tomorrow、friday、next week、in 3 days、2025-01-15、26.06.、26.06.2026
 
@@ -900,4 +900,4 @@ Mindwtr 會傳送通知，協助你掌握進度。
 
 ## 將清單轉換為專案 {#checklist-project-conversion}
 
-從 v1.3.5 起，建立專案時可選擇將清單項目展開為任務，每次預設關閉。資訊轉移、限制和復原規則見[清單轉專案](./desktop#checklist-project-conversion)。
+建立專案時可選擇將清單項目展開為任務，每次預設關閉。資訊轉移、限制和復原規則見[清單轉專案](./desktop#checklist-project-conversion)。

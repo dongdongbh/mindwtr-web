@@ -351,7 +351,7 @@ L’app native pour Apple Watch a été testée sur une montre physique jumelée
 
 L’app conserve les captures sur la montre lorsque l’iPhone n’est pas disponible et les transmet au retour de la connexion.
 
-**À partir de la v1.3.5 :** Ouvrez une tâche Focus sur la Watch pour lire sa description et cocher ou décocher les éléments de sa checklist. Les détails déjà reçus restent consultables hors ligne. Les modifications sont enregistrées sur la montre puis traitées sur l’iPhone ; ouvrez Mindwtr sur l’iPhone après la reconnexion. Un accusé de réception ne signifie pas encore que la tâche a été enregistrée.
+Ouvrez une tâche Focus sur la Watch pour lire sa description et cocher ou décocher les éléments de sa checklist. Les détails déjà reçus restent consultables hors ligne. Les modifications sont enregistrées sur la montre puis traitées sur l’iPhone ; ouvrez Mindwtr sur l’iPhone après la reconnexion. Un accusé de réception ne signifie pas encore que la tâche a été enregistrée.
 
 Les éléments ajoutés ou réordonnés sur le téléphone sont conservés. Si un élément a été renommé, supprimé ou ne peut pas être identifié sans ambiguïté, actualisez depuis l’iPhone. Les tâches en mode liste suivent les mêmes règles de clôture que sur le téléphone. Si les détails dépassent la limite de transfert, un message invite à les ouvrir sur l’iPhone ; une checklist tronquée n’est jamais présentée comme complète. La modification des descriptions, l’ajout ou le réordonnancement des éléments et les pièces jointes restent sur le téléphone.
 
@@ -396,11 +396,11 @@ Mindwtr analyse le langage naturel lors de l’ajout de tâches :
 | `/due:date`  | `/due:friday`     | Définit l’échéance                  |
 | `/energy:<level>` | `/energy:medium` | Définit le niveau d’énergie (`low`, `medium`, `high`) |
 | `/priority:<level>` | `/priority:high` | Définit la priorité (`low`, `medium`, `high`, `urgent`) |
-| `/estimate:<duration>` | `/estimate:45m` | Définit le temps estimé (v1.3.5) |
+| `/estimate:<duration>` | `/estimate:45m` | Définit le temps estimé |
 | `/note:text` | `/note:call back` | Ajoute une description              |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Définit le statut |
 
-À partir de v1.3.5, `/estimate:5m`, `/estimate:45m` et `/estimate:1h30m` définissent l’effort estimé ; `/duration:` est un alias. Les valeurs personnalisées conservent leur nombre exact de minutes. Les commandes valides sont retirées du titre ; celles qui sont invalides ou incomplètes restent visibles. Un texte ordinaire comme « Regarder une conférence de 30 minutes » ne définit pas d’estimation. Une estimation choisie explicitement dans le formulaire de capture est prioritaire ; le formulaire du calendrier conserve la durée sélectionnée. Lorsque **Estimations de temps** est désactivé dans les paramètres, `/estimate:` et `/duration:` ne sont pas interprétés et restent dans le titre, et l’aide de syntaxe ne les mentionne pas.
+`/estimate:5m`, `/estimate:45m` et `/estimate:1h30m` définissent l’effort estimé ; `/duration:` est un alias. Les valeurs personnalisées conservent leur nombre exact de minutes. Les commandes valides sont retirées du titre ; celles qui sont invalides ou incomplètes restent visibles. Un texte ordinaire comme « Regarder une conférence de 30 minutes » ne définit pas d’estimation. Une estimation choisie explicitement dans le formulaire de capture est prioritaire ; le formulaire du calendrier conserve la durée sélectionnée. Lorsque **Estimations de temps** est désactivé dans les paramètres, `/estimate:` et `/duration:` ne sont pas interprétés et restent dans le titre, et l’aide de syntaxe ne les mentionne pas.
 
 **Formats de date :** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 
@@ -901,4 +901,4 @@ Consultez [Données et synchronisation](/fr/data-sync/) pour configurer la synch
 
 ## Créer un projet à partir d’une liste {#checklist-project-conversion}
 
-À partir de v1.3.5, la création d’un projet peut transformer une liste en tâches sur demande explicite. L’option est décochée par défaut. Voir [conversion d’une liste en projet](./desktop#checklist-project-conversion) pour les données transférées, les restrictions et l’annulation.
+La création d’un projet peut transformer une liste en tâches sur demande explicite. L’option est décochée par défaut. Voir [conversion d’une liste en projet](./desktop#checklist-project-conversion) pour les données transférées, les restrictions et l’annulation.

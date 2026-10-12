@@ -351,7 +351,7 @@ La app nativa para Apple Watch se ha probado en un Watch físico enlazado con wa
 
 El Watch conserva las capturas en cola cuando el iPhone no está disponible y las entrega al restablecerse la conexión.
 
-**Desde v1.3.5:** Abre una tarea de Focus en el Watch para leer su descripción y marcar o desmarcar elementos de la lista. Los detalles ya recibidos siguen disponibles sin conexión. Los cambios se guardan en el reloj para procesarlos después en el iPhone; abre Mindwtr en el iPhone al volver a conectar. La confirmación de entrega no significa que la tarea ya se haya guardado.
+Abre una tarea de Focus en el Watch para leer su descripción y marcar o desmarcar elementos de la lista. Los detalles ya recibidos siguen disponibles sin conexión. Los cambios se guardan en el reloj para procesarlos después en el iPhone; abre Mindwtr en el iPhone al volver a conectar. La confirmación de entrega no significa que la tarea ya se haya guardado.
 
 Los cambios conservan los elementos añadidos o reordenados en el teléfono. Si un elemento cambió de nombre, se eliminó o no puede identificarse de forma única, actualiza desde el iPhone. Las tareas en modo lista siguen las mismas reglas de finalización que en el teléfono. Si los detalles exceden el límite de transferencia, se indica que los abras en el iPhone; nunca se muestra una lista recortada como si estuviera completa. Editar descripciones, añadir o reordenar elementos y usar adjuntos sigue correspondiendo al teléfono.
 
@@ -396,11 +396,11 @@ Mindwtr analiza lenguaje natural al añadir tareas:
 | `/due:date`  | `/due:friday`     | Establece la fecha de vencimiento |
 | `/energy:<level>` | `/energy:medium` | Establece el nivel de energía (`low`, `medium`, `high`) |
 | `/priority:<level>` | `/priority:high` | Establece la prioridad (`low`, `medium`, `high`, `urgent`) |
-| `/estimate:<duration>` | `/estimate:45m` | Establece el tiempo estimado (v1.3.5) |
+| `/estimate:<duration>` | `/estimate:45m` | Establece el tiempo estimado |
 | `/note:text` | `/note:call back` | Añade una descripción   |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Establece el estado |
 
-Desde v1.3.5, `/estimate:5m`, `/estimate:45m` y `/estimate:1h30m` establecen el esfuerzo estimado; `/duration:` es un alias. Los valores personalizados conservan sus minutos exactos. Los comandos válidos se quitan del título; los inválidos o incompletos siguen visibles. El texto normal, como «Ver una charla de 30 minutos», no establece una estimación. Una estimación elegida explícitamente en el formulario de captura tiene prioridad; el editor del calendario conserva la duración seleccionada. Si **Estimaciones de tiempo** está desactivado en Ajustes, `/estimate:` y `/duration:` no se interpretan y se quedan en el título, y la ayuda de sintaxis no los muestra.
+`/estimate:5m`, `/estimate:45m` y `/estimate:1h30m` establecen el esfuerzo estimado; `/duration:` es un alias. Los valores personalizados conservan sus minutos exactos. Los comandos válidos se quitan del título; los inválidos o incompletos siguen visibles. El texto normal, como «Ver una charla de 30 minutos», no establece una estimación. Una estimación elegida explícitamente en el formulario de captura tiene prioridad; el editor del calendario conserva la duración seleccionada. Si **Estimaciones de tiempo** está desactivado en Ajustes, `/estimate:` y `/duration:` no se interpretan y se quedan en el título, y la ayuda de sintaxis no los muestra.
 
 **Formatos de fecha:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 
@@ -901,4 +901,4 @@ Consulta [Datos y sincronización](/es/data-sync/) para configurar la sincroniza
 
 ## Crear un proyecto a partir de una lista {#checklist-project-conversion}
 
-Desde v1.3.5 puedes elegir convertir una lista en tareas al crear un proyecto. La opción empieza desmarcada. Consulta [conversión de listas en proyectos](./desktop#checklist-project-conversion) para conocer la información transferida, las restricciones y Deshacer.
+Puedes elegir convertir una lista en tareas al crear un proyecto. La opción empieza desmarcada. Consulta [conversión de listas en proyectos](./desktop#checklist-project-conversion) para conocer la información transferida, las restricciones y Deshacer.

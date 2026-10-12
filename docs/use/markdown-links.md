@@ -24,7 +24,7 @@ Mindwtr also normalizes those tokens into regular Markdown links during renderin
 
 ## Copy a task link or ID
 
-From v1.3.5, choose **Copy task link** or **Copy task ID** from the task menu on desktop or mobile. Copying is read-only and does not save pending editor changes. The app-opening link uses this format:
+Choose **Copy task link** or **Copy task ID** from the task menu on desktop or mobile. Copying is read-only and does not save pending editor changes. The app-opening link uses this format:
 
 ```text
 mindwtr://open?task=task-id

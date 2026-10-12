@@ -357,7 +357,7 @@ The native Apple Watch companion supports watchOS 10 or later and has been teste
 
 The Watch keeps captures queued when the phone is unavailable and delivers them when the connection returns.
 
-**From v1.3.5:** Open a Focus task on the Watch to read its description and check or uncheck checklist items. Previously received details remain readable offline. Changes are saved on the Watch for later delivery and applied through the iPhone; open Mindwtr on the iPhone after reconnecting. A delivery acknowledgement does not mean the task has been saved yet.
+Open a Focus task on the Watch to read its description and check or uncheck checklist items. Previously received details remain readable offline. Changes are saved on the Watch for later delivery and applied through the iPhone; open Mindwtr on the iPhone after reconnecting. A delivery acknowledgement does not mean the task has been saved yet.
 
 Checklist changes preserve other items added or reordered on the phone. If an item was renamed, removed, or cannot be identified uniquely, refresh from the iPhone rather than applying the change to another item. List-mode tasks follow the same completion rules as on the phone. Details that exceed the Watch payload limit show a message directing you to the iPhone; the Watch never presents a shortened checklist as complete. Description editing, adding/reordering checklist items, and attachments remain on the phone.
 
@@ -402,11 +402,11 @@ Mindwtr parses natural language when adding tasks:
 | `/due:date`  | `/due:friday`     | Sets due date      |
 | `/energy:<level>` | `/energy:medium` | Sets energy level (`low`, `medium`, `high`) |
 | `/priority:<level>` | `/priority:high` | Sets priority (`low`, `medium`, `high`, `urgent`) |
-| `/estimate:<duration>` | `/estimate:45m` | Sets the time estimate (v1.3.5) |
+| `/estimate:<duration>` | `/estimate:45m` | Sets the time estimate |
 | `/note:text` | `/note:call back` | Adds description   |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Sets status |
 
-From v1.3.5, `/estimate:5m`, `/estimate:45m`, and `/estimate:1h30m` set estimated effort; `/duration:` is an alias. Custom values keep their exact minutes. Successfully parsed commands are removed from the title; invalid or incomplete commands stay visible. Ordinary prose such as “Watch a 30-minute lecture” does not set an estimate. An estimate selected explicitly in a capture form takes precedence; the calendar composer keeps its selected duration. When **Time estimates** is turned off in Settings, `/estimate:` and `/duration:` are not parsed and stay in the title, and the syntax help does not list them.
+`/estimate:5m`, `/estimate:45m`, and `/estimate:1h30m` set estimated effort; `/duration:` is an alias. Custom values keep their exact minutes. Successfully parsed commands are removed from the title; invalid or incomplete commands stay visible. Ordinary prose such as “Watch a 30-minute lecture” does not set an estimate. An estimate selected explicitly in a capture form takes precedence; the calendar composer keeps its selected duration. When **Time estimates** is turned off in Settings, `/estimate:` and `/duration:` are not parsed and stay in the title, and the syntax help does not list them.
 
 **Date formats:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 
@@ -916,4 +916,4 @@ See [Data and Sync](/data-sync/) for sync setup.
 
 ## Create a project from a checklist {#checklist-project-conversion}
 
-Project conversion can optionally expand a checklist into tasks from v1.3.5. The choice starts off each time. See [checklist project conversion](./desktop#checklist-project-conversion) for transferred information, restrictions, and Undo.
+Project conversion can optionally expand a checklist into tasks. The choice starts off each time. See [checklist project conversion](./desktop#checklist-project-conversion) for transferred information, restrictions, and Undo.

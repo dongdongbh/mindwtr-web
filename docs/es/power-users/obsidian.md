@@ -74,7 +74,7 @@ Las tareas en línea importadas muestran:
 - la ruta de la nota de origen y el número de línea
 - una acción **Abrir en Obsidian**
 
-### Etiqueta obligatoria para tareas en línea (v1.3.5)
+### Etiqueta obligatoria para tareas en línea
 
 En **Ajustes → Integraciones → Obsidian Vault**, establece una etiqueta obligatoria como `#task`. Déjala vacía para seguir incluyendo todas las casillas compatibles. Guardar un filtro distinto reconstruye la lista de Obsidian; los escaneos completos y las actualizaciones en vivo usan el mismo filtro.
 

@@ -379,11 +379,11 @@ Mindwtr 会在添加任务时解析自然语言：
 | `/due:date`      | `/due:friday`                | 设置截止日期                                                 |
 | `/energy:<level>` | `/energy:medium`            | 设置精力水平（`low`、`medium`、`high`）                       |
 | `/priority:<level>` | `/priority:high` | 设置优先级（`low`、`medium`、`high`、`urgent`） |
-| `/estimate:<duration>` | `/estimate:45m` | 设置时间估算（v1.3.5） |
+| `/estimate:<duration>` | `/estimate:45m` | 设置时间估算 |
 | `/note:text`     | `/note:call back`            | 添加描述                                                     |
 | `/status`        | `/next`、`/waiting`、`/someday`、`/reference`、`/done`、`/archived`、`/inbox` | 设置状态 |
 
-从 v1.3.5 起，`/estimate:5m`、`/estimate:45m` 和 `/estimate:1h30m` 可设置预计投入时间；`/duration:` 是别名。自定义值保留准确的分钟数。有效命令会从标题中移除，无效或不完整的命令仍然可见。“看一场 30 分钟的讲座”这样的普通文字不会设置估算。在收集表单中明确选择的估算优先；日历创建表单保留已选时长。在设置中关闭**时间估算**后，`/estimate:` 和 `/duration:` 不会被解析，会保留在标题中，语法帮助也不再列出它们。
+`/estimate:5m`、`/estimate:45m` 和 `/estimate:1h30m` 可设置预计投入时间；`/duration:` 是别名。自定义值保留准确的分钟数。有效命令会从标题中移除，无效或不完整的命令仍然可见。“看一场 30 分钟的讲座”这样的普通文字不会设置估算。在收集表单中明确选择的估算优先；日历创建表单保留已选时长。在设置中关闭**时间估算**后，`/estimate:` 和 `/duration:` 不会被解析，会保留在标题中，语法帮助也不再列出它们。
 
 **日期格式**：today、tomorrow、friday、next week、in 3 days、2025-01-15、26.06.、26.06.2026
 
@@ -684,7 +684,7 @@ Mindwtr 支持**标准**（Gmail/Todoist 风格）、**Vim** 和 **Emacs** 按�
 
 ## 将清单转换为项目 {#checklist-project-conversion}
 
-从 v1.3.5 起，任务含有清单时，**从任务创建项目**会显示**将清单项转换为项目任务**。该选项每次默认关闭；关闭时，原任务及清单保留在项目中。
+任务含有清单时，**从任务创建项目**会显示**将清单项转换为项目任务**。该选项每次默认关闭；关闭时，原任务及清单保留在项目中。
 
 开启后，每项成为新项目中的一个任务，保留顺序与勾选状态。已勾选项保持完成，不补造完成时间。备注、附件、开始／截止／回顾日期及标签转移到项目；新任务保留标签、情境、优先级和精力。专注标记不复制，原任务移至回收站。领域中已有同名项目时，请换一个名称。
 

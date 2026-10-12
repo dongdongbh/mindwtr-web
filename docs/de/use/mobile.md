@@ -332,7 +332,7 @@ Die native Apple-Watch-App wurde auf einer gekoppelten physischen Watch mit watc
 
 Die Watch hält Erfassungen bereit, wenn das iPhone nicht verfügbar ist, und übermittelt sie nach der erneuten Verbindung.
 
-**Ab v1.3.5:** Öffne eine Focus-Aufgabe auf der Watch, um ihre Beschreibung zu lesen und Checklistenpunkte abzuhaken oder wieder zu öffnen. Bereits empfangene Details bleiben offline lesbar. Änderungen werden auf der Watch gespeichert und später auf dem iPhone verarbeitet. Öffne Mindwtr nach dem erneuten Verbinden auf dem iPhone. Eine Empfangsbestätigung bedeutet noch nicht, dass die Aufgabe gespeichert wurde.
+Öffne eine Focus-Aufgabe auf der Watch, um ihre Beschreibung zu lesen und Checklistenpunkte abzuhaken oder wieder zu öffnen. Bereits empfangene Details bleiben offline lesbar. Änderungen werden auf der Watch gespeichert und später auf dem iPhone verarbeitet. Öffne Mindwtr nach dem erneuten Verbinden auf dem iPhone. Eine Empfangsbestätigung bedeutet noch nicht, dass die Aufgabe gespeichert wurde.
 
 Andere auf dem iPhone ergänzte oder umsortierte Punkte bleiben erhalten. Umbenannte, entfernte oder nicht eindeutig erkennbare Punkte müssen vom iPhone aktualisiert werden. Aufgaben im Listenmodus folgen denselben Abschlussregeln wie auf dem Telefon. Zu große Details zeigen einen Hinweis zum Öffnen auf dem iPhone; eine gekürzte Checkliste wird nicht als vollständig angezeigt. Beschreibungen bearbeiten, Punkte hinzufügen oder umsortieren und Anhänge bleiben Aufgaben für das Telefon.
 
@@ -373,11 +373,11 @@ iOS-Kurzbefehlsbeispiel:
 | `/due:date` | `/due:friday` | Fälligkeitsdatum |
 | `/energy:<level>` | `/energy:medium` | Energie (`low`, `medium`, `high`) |
 | `/priority:<level>` | `/priority:high` | Priorität (`low`, `medium`, `high`, `urgent`) |
-| `/estimate:<duration>` | `/estimate:45m` | Setzt den Zeitbedarf (v1.3.5) |
+| `/estimate:<duration>` | `/estimate:45m` | Setzt den Zeitbedarf |
 | `/note:text` | `/note:call back` | Beschreibung |
 | `/status` | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Status |
 
-Ab v1.3.5 setzen `/estimate:5m`, `/estimate:45m` und `/estimate:1h30m` den geschätzten Zeitbedarf; `/duration:` ist ein Alias. Eigene Werte behalten ihre genaue Minutenzahl. Gültige Befehle werden aus dem Titel entfernt; ungültige oder unvollständige bleiben sichtbar. Normaler Text wie „Einen 30-minütigen Vortrag ansehen“ setzt keinen Zeitbedarf. Eine ausdrücklich im Erfassungsformular gewählte Schätzung hat Vorrang; die Kalendererfassung behält ihre gewählte Dauer. Ist **Zeitabschätzungen** in den Einstellungen ausgeschaltet, werden `/estimate:` und `/duration:` nicht ausgewertet und bleiben im Titel; die Syntaxhilfe führt sie dann nicht auf.
+`/estimate:5m`, `/estimate:45m` und `/estimate:1h30m` setzen den geschätzten Zeitbedarf; `/duration:` ist ein Alias. Eigene Werte behalten ihre genaue Minutenzahl. Gültige Befehle werden aus dem Titel entfernt; ungültige oder unvollständige bleiben sichtbar. Normaler Text wie „Einen 30-minütigen Vortrag ansehen“ setzt keinen Zeitbedarf. Eine ausdrücklich im Erfassungsformular gewählte Schätzung hat Vorrang; die Kalendererfassung behält ihre gewählte Dauer. Ist **Zeitabschätzungen** in den Einstellungen ausgeschaltet, werden `/estimate:` und `/duration:` nicht ausgewertet und bleiben im Titel; die Syntaxhilfe führt sie dann nicht auf.
 
 **Datumsformate:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 
@@ -839,4 +839,4 @@ Einrichtung: [Daten und Synchronisierung](/de/data-sync/).
 
 ## Aus einer Checkliste ein Projekt erstellen {#checklist-project-conversion}
 
-Ab v1.3.5 kann die Projektumwandlung eine Checkliste ausdrücklich in Aufgaben aufteilen. Die Option ist standardmäßig aus. Details zu Datenübernahme, Grenzen und Rückgängig stehen unter [Checkliste in Projekt umwandeln](./desktop#checklist-project-conversion).
+Die Projektumwandlung kann eine Checkliste ausdrücklich in Aufgaben aufteilen. Die Option ist standardmäßig aus. Details zu Datenübernahme, Grenzen und Rückgängig stehen unter [Checkliste in Projekt umwandeln](./desktop#checklist-project-conversion).

@@ -74,7 +74,7 @@ Imported inline tasks show:
 - source note path + line number
 - an **Open in Obsidian** action
 
-### Required inline task tag (v1.3.5)
+### Required inline task tag
 
 In **Settings → Integrations → Obsidian Vault**, set **Required inline task tag** to a tag such as `#task`. Leave it empty to keep scanning all supported checkboxes. Saving a changed filter rebuilds the Obsidian task list; full scans and live file updates use the same filter.
 

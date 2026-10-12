@@ -112,7 +112,7 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 | `DELETE` | `/sections/:id`       | Hilfsprogramm: Abschnitt löschen     |
 | `GET`    | `/search?query=...`   | Aufgaben und Projekte suchen         |
 
-Ab v1.3.5 liefert die Desktop-Local-API `409` (`recurrence_requires_app`), wenn beim Abschließen einer Aufgabe mit festem Zeitplan, Startdatum und ohne Fälligkeitsdatum verpasste Wiederholungen übersprungen werden müssten. Die Aufgabe bleibt unverändert; schließe sie in der App ab. Aufgaben nur mit Startdatum werden weiterhin unterstützt, wenn ihre nächste Wiederholung noch aktuell ist oder in der Zukunft liegt.
+Die Desktop-Local-API liefert `409` (`recurrence_requires_app`), wenn beim Abschließen einer Aufgabe mit festem Zeitplan, Startdatum und ohne Fälligkeitsdatum verpasste Wiederholungen übersprungen werden müssten. Die Aufgabe bleibt unverändert; schließe sie in der App ab. Aufgaben nur mit Startdatum werden weiterhin unterstützt, wenn ihre nächste Wiederholung noch aktuell ist oder in der Zukunft liegt.
 
 Zeilen mit **Desktop** gibt es nur in der lokalen API der Desktop-App. Zeilen mit **Hilfsprogramm** gibt es nur im Bun-Hilfsprogramm, das sie auch unter dem Präfix `/v1/` beantwortet (`/v1/sections`).
 
@@ -208,7 +208,7 @@ curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
 
 ### Bereiche auf dem Desktop bearbeiten
 
-Ab v1.3.5 geben `GET /areas/:id` und `PATCH /areas/:id` `{ "area": { ... } }` zurück. Unbekannte oder gelöschte Bereiche führen bei beiden zu `404`. Diese Endpunkte gehören zur integrierten Desktop-API, nicht zum Bun-Helfer.
+`GET /areas/:id` und `PATCH /areas/:id` geben `{ "area": { ... } }` zurück. Unbekannte oder gelöschte Bereiche führen bei beiden zu `404`. Diese Endpunkte gehören zur integrierten Desktop-API, nicht zum Bun-Helfer.
 
 PATCH akzeptiert ein nicht leeres Objekt mit ausschließlich `name`, `color`, `icon` und `order`. `name` muss eine nicht leere Zeichenfolge sein; äußere Leerzeichen werden entfernt. `color` und `icon` akzeptieren Zeichenfolgen oder `null` zum Entfernen des Felds. `order` muss eine endliche Zahl sein; negative Werte und Bruchzahlen sind erlaubt. Unbekannte Felder, ungültige Typen, leere Namen und ein leeres Patch-Objekt ergeben `400`.
 

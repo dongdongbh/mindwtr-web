@@ -112,7 +112,7 @@ El asistente de Bun también requiere un token: sale de inmediato si no se estab
 | `DELETE` | `/sections/:id`       | Asistente: elimina una sección        |
 | `GET`    | `/search?query=...`   | Busca tareas y proyectos       |
 
-Desde v1.3.5, la API local de escritorio devuelve `409` (`recurrence_requires_app`) si completar una tarea de calendario fijo con fecha de inicio y sin fecha de vencimiento requiere saltar ocurrencias pasadas. La tarea no cambia; complétala en la aplicación. Las tareas con solo fecha de inicio siguen siendo compatibles si la siguiente ocurrencia aún es vigente o futura.
+La API local de escritorio devuelve `409` (`recurrence_requires_app`) si completar una tarea de calendario fijo con fecha de inicio y sin fecha de vencimiento requiere saltar ocurrencias pasadas. La tarea no cambia; complétala en la aplicación. Las tareas con solo fecha de inicio siguen siendo compatibles si la siguiente ocurrencia aún es vigente o futura.
 
 Las filas marcadas con **Escritorio** solo existen en la API local de la aplicación de escritorio. Las filas marcadas con **Asistente** solo existen en el asistente de Bun, que además las responde con el prefijo `/v1/` (`/v1/sections`).
 
@@ -208,7 +208,7 @@ curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
 
 ### Editar áreas en escritorio
 
-Desde v1.3.5, `GET /areas/:id` y `PATCH /areas/:id` devuelven `{ "area": { ... } }`. Ambos devuelven `404` para áreas desconocidas o eliminadas. Estos endpoints pertenecen a la API integrada de escritorio, no al auxiliar Bun.
+`GET /areas/:id` y `PATCH /areas/:id` devuelven `{ "area": { ... } }`. Ambos devuelven `404` para áreas desconocidas o eliminadas. Estos endpoints pertenecen a la API integrada de escritorio, no al auxiliar Bun.
 
 PATCH acepta un objeto no vacío que contenga únicamente `name`, `color`, `icon` y `order`. `name` debe ser una cadena no vacía; se recortan los espacios de los extremos. `color` e `icon` aceptan cadenas o `null` para borrar el campo. `order` debe ser un número finito; se permiten fracciones y valores negativos. Los campos desconocidos, tipos inválidos, nombres en blanco y objetos vacíos devuelven `400`.
 

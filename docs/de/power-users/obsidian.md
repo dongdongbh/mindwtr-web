@@ -74,7 +74,7 @@ Importierte eingebettete Aufgaben zeigen:
 - Pfad und Zeilennummer der Quellnotiz
 - die Aktion **In Obsidian öffnen**
 
-### Erforderliches Tag für eingebettete Aufgaben (v1.3.5)
+### Erforderliches Tag für eingebettete Aufgaben
 
 Unter **Einstellungen → Integrationen → Obsidian Vault** können Sie ein erforderliches Tag wie `#task` festlegen. Ein leeres Feld lässt alle unterstützten Kontrollkästchen zu. Beim Speichern eines geänderten Filters wird die Obsidian-Liste neu eingelesen; vollständige Scans und Live-Aktualisierungen verwenden denselben Filter.
 

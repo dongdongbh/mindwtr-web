@@ -24,7 +24,7 @@ Beim Rendern wandelt Mindwtr diese Token außerdem in reguläre Markdown-Links u
 
 ## Aufgabenlink oder ID kopieren
 
-Ab v1.3.5 bietet das Aufgabenmenü auf Desktop und Mobilgerät **Aufgabenlink kopieren** und **Aufgaben-ID kopieren**. Das Kopieren ändert keine Daten und speichert keine offenen Bearbeitungen. Der Link zum Öffnen der App hat dieses Format:
+Das Aufgabenmenü auf Desktop und Mobilgerät bietet **Aufgabenlink kopieren** und **Aufgaben-ID kopieren**. Das Kopieren ändert keine Daten und speichert keine offenen Bearbeitungen. Der Link zum Öffnen der App hat dieses Format:
 
 ```text
 mindwtr://open?task=task-id

@@ -381,11 +381,11 @@ Mindwtr wertet beim Hinzufügen natürliche Sprache aus:
 | `/due:date` | `/due:friday` | Fälligkeitsdatum festlegen |
 | `/energy:<level>` | `/energy:medium` | Energiestufe (`low`, `medium`, `high`) |
 | `/priority:<level>` | `/priority:high` | Priorität (`low`, `medium`, `high`, `urgent`) |
-| `/estimate:<duration>` | `/estimate:45m` | Setzt den Zeitbedarf (v1.3.5) |
+| `/estimate:<duration>` | `/estimate:45m` | Setzt den Zeitbedarf |
 | `/note:text` | `/note:call back` | Beschreibung hinzufügen |
 | `/status` | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Status festlegen |
 
-Ab v1.3.5 setzen `/estimate:5m`, `/estimate:45m` und `/estimate:1h30m` den geschätzten Zeitbedarf; `/duration:` ist ein Alias. Eigene Werte behalten ihre genaue Minutenzahl. Gültige Befehle werden aus dem Titel entfernt; ungültige oder unvollständige bleiben sichtbar. Normaler Text wie „Einen 30-minütigen Vortrag ansehen“ setzt keinen Zeitbedarf. Eine ausdrücklich im Erfassungsformular gewählte Schätzung hat Vorrang; die Kalendererfassung behält ihre gewählte Dauer. Ist **Zeitabschätzungen** in den Einstellungen ausgeschaltet, werden `/estimate:` und `/duration:` nicht ausgewertet und bleiben im Titel; die Syntaxhilfe führt sie dann nicht auf.
+`/estimate:5m`, `/estimate:45m` und `/estimate:1h30m` setzen den geschätzten Zeitbedarf; `/duration:` ist ein Alias. Eigene Werte behalten ihre genaue Minutenzahl. Gültige Befehle werden aus dem Titel entfernt; ungültige oder unvollständige bleiben sichtbar. Normaler Text wie „Einen 30-minütigen Vortrag ansehen“ setzt keinen Zeitbedarf. Eine ausdrücklich im Erfassungsformular gewählte Schätzung hat Vorrang; die Kalendererfassung behält ihre gewählte Dauer. Ist **Zeitabschätzungen** in den Einstellungen ausgeschaltet, werden `/estimate:` und `/duration:` nicht ausgewertet und bleiben im Titel; die Syntaxhilfe führt sie dann nicht auf.
 
 **Datumsformate:** today, tomorrow, friday, next week, in 3 days, 2025-01-15, 26.06., 26.06.2026
 
@@ -679,7 +679,7 @@ Ausführliche Einrichtung: [Daten und Synchronisierung](/de/data-sync/).
 
 ## Aus einer Checkliste ein Projekt erstellen {#checklist-project-conversion}
 
-Ab v1.3.5 bietet „Projekt aus Aufgabe erstellen“ bei einer Checkliste die ausdrückliche Option, deren Einträge in Projektaufgaben umzuwandeln. Sie ist jedes Mal ausgeschaltet. Ohne Auswahl bleiben die ursprüngliche Aufgabe und ihre Checkliste im Projekt erhalten.
+„Projekt aus Aufgabe erstellen“ bietet bei einer Checkliste die ausdrückliche Option, deren Einträge in Projektaufgaben umzuwandeln. Sie ist jedes Mal ausgeschaltet. Ohne Auswahl bleiben die ursprüngliche Aufgabe und ihre Checkliste im Projekt erhalten.
 
 Bei Auswahl entsteht pro Eintrag eine Aufgabe im neuen Projekt, mit gleicher Reihenfolge und Erledigt-Markierung. Ein historischer Abschlusszeitpunkt wird nicht erfunden. Notizen, Anhänge, Start-, Fälligkeits- und Prüfdaten sowie Tags gehen an das Projekt; die neuen Aufgaben behalten Tags, Kontexte, Priorität und Energie. Fokus wird nicht kopiert. Das Original kommt in den Papierkorb. Bei einem gleichnamigen Projekt im Bereich ist ein anderer Name nötig.
 

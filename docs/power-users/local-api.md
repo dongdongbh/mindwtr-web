@@ -112,7 +112,7 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 | `DELETE` | `/sections/:id`       | Helper: delete section        |
 | `GET`    | `/search?query=...`   | Search tasks + projects       |
 
-From v1.3.5, the desktop Local API returns `409` (`recurrence_requires_app`) when completing a fixed-schedule task with a start date and no due date would require skipping missed occurrences. The task stays unchanged; complete it in the app. Start-only tasks whose next occurrence is still current or in the future remain supported.
+The desktop Local API returns `409` (`recurrence_requires_app`) when completing a fixed-schedule task with a start date and no due date would require skipping missed occurrences. The task stays unchanged; complete it in the app. Start-only tasks whose next occurrence is still current or in the future remain supported.
 
 Rows marked **Desktop** exist only in the desktop app's Local API. Rows marked **Helper** exist only in the Bun helper, which also answers them under a `/v1/` prefix (`/v1/sections`).
 
@@ -208,7 +208,7 @@ curl -s -X PATCH "http://127.0.0.1:3456/projects/$PROJECT_ID" \
 
 ### Edit Areas on desktop
 
-From v1.3.5, `GET /areas/:id` and `PATCH /areas/:id` return `{ "area": { ... } }`. Both return `404` for unknown or deleted Areas. These endpoints belong to the built-in desktop API, not the Bun helper.
+`GET /areas/:id` and `PATCH /areas/:id` return `{ "area": { ... } }`. Both return `404` for unknown or deleted Areas. These endpoints belong to the built-in desktop API, not the Bun helper.
 
 PATCH accepts a nonempty object containing only `name`, `color`, `icon`, and `order`. `name` must be a nonblank string and is trimmed. `color` and `icon` accept strings or `null` to clear the field. `order` must be a finite number; fractional and negative values are allowed. Unknown fields, invalid types, blank names, and an empty patch return `400`.
 

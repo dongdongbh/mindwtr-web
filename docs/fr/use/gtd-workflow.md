@@ -323,6 +323,14 @@ Focus n’est pas une vue d’inventaire complète. Elle tient les tâches dont 
 
 Utilisez **Focus uniquement** dans l’en-tête de Focus, sur ordinateur ou mobile, pour garder **Focus du jour** ouvert et replier Aujourd’hui, Prochaines actions, À revoir, À venir et Projets à revoir. Les titres et les nombres restent visibles pour rouvrir chaque section séparément. **Développer les sections** les ouvre toutes. Chaque appareil mémorise cet état. Sur ordinateur, ce bouton remplace **Afficher uniquement les 3 premiers**, sans limiter ni modifier les tâches marquées d’une étoile.
 
+**Exemple : garder une collecte d’idées de projet facile à gérer**
+
+1. Créez un projet **Réparations à la maison**. Capturez **Vérifier le robinet qui fuit** et **Comparer les couleurs de peinture** comme tâches de la Boîte de réception associées à ce projet, ou gardez les idées encore vagues dans ses notes.
+2. Traitez l’élément concernant le robinet quand vous êtes prêt à agir, faites-en une prochaine action et marquez-le d’une étoile pour aujourd’hui. Laissez l’autre élément dans la Boîte de réception jusqu’à ce que vous décidiez de sa prochaine étape. Un projet auquel vous vous êtes engagé peut contenir des idées non traitées ; elles n’ont pas besoin d’être dans Un jour/Peut-être.
+3. Ouvrez **Priorités du jour** et sélectionnez **Focus uniquement** pour replier les autres sections. Les Prochaines actions sans date sont des options disponibles, pas un engagement à toutes les faire aujourd’hui. Pour les étapes d’un projet qui doivent suivre un ordre, un projet séquentiel affiche normalement une prochaine action à la fois. Les étoiles et les dates d’échéance ou de revue peuvent néanmoins faire apparaître d’autres éléments dans Priorités du jour.
+4. Pour **Nettoyer la cuisine chaque jeudi**, fixez la première **Date de début** au prochain jeudi et choisissez une répétition hebdomadaire le jeudi. La tâche reste hors des listes actionnables de Focus jusqu’à son jour de début ; son achèvement fait passer à l’occurrence suivante. **À venir** peut encore l’afficher en aperçu, et vous pouvez replier cette section. Utilisez la **Date d’échéance** pour une vraie date limite.
+5. Pour reconsidérer une idée plus tard, choisissez **Incuber** et une date de revue. Retrouvez-la dans **Un jour/Peut-être** ou la **Recherche** en attendant. À la date de revue, elle apparaît dans Traiter la boîte de réception sous **De retour pour clarifier** et reste dans Un jour jusqu’à ce que vous décidiez quoi faire ; elle ne devient pas automatiquement une prochaine action. Consultez ces listes avant de la capturer à nouveau.
+
 ### Comment Focus trie les actions disponibles
 
 Focus détermine d’abord si une tâche est disponible, puis trie les actions visibles :

@@ -325,6 +325,14 @@ Use **Focus only** in the desktop or mobile Focus header to leave **Today's Focu
 
 On desktop, select the **Today's Focus** heading to fold that section independently; its count stays visible.
 
+**Example: keep a project brain dump manageable**
+
+1. Create a **Home repairs** project. Capture **Check the leaking tap** and **Compare paint colors** as Inbox tasks assigned to that project, or keep rough ideas in its notes.
+2. Process the leaking-tap item when you are ready to act on it, make it a Next Action, and star it for today. Leave the other item in Inbox until you decide its next step. A committed project can contain unprocessed ideas; they do not have to be Someday/Maybe.
+3. Open Focus and select **Focus only** to fold the other sections. Undated Next Actions are available choices, not a commitment to do all of them today. For ordered project steps, a sequential project normally shows one Next Action at a time. Stars and due or review dates can still bring other items into Focus.
+4. For **Clean the kitchen every Thursday**, set the first **Start** date to the next Thursday and choose a weekly repeat on Thursday. The task stays out of actionable Focus lists until its start day; completing it advances the next occurrence. **Upcoming** may still preview it, and you can fold that section. Use **Due** for a real deadline.
+5. To reconsider an idea later, choose **Incubate** and a review date. Find it in **Someday/Maybe** or **Search** while you wait. On the review date it appears in Process Inbox as **Back to clarify** and stays Someday until you decide what to do; it does not automatically become a Next Action. Check those lists before capturing it again.
+
 ### How Focus sorts available actions
 
 Focus first decides whether a task is available, then sorts the visible actions:

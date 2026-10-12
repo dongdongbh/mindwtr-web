@@ -327,6 +327,14 @@ In der Ansicht **Fokus** sehen Sie:
 
 Mit **Nur Fokus** im Fokus-Kopfbereich auf Desktop und Mobilgeräten bleibt **Heutiger Fokus** geöffnet, während Heute, Nächste Aktionen, Zur Überprüfung, Demnächst und Zu überprüfende Projekte eingeklappt werden. Überschriften und Anzahlen bleiben sichtbar, sodass sich jeder Abschnitt einzeln öffnen lässt. **Abschnitte ausklappen** öffnet alle wieder. Jedes Gerät merkt sich den Zustand. Auf dem Desktop ersetzt dies **Nur die Top 3 anzeigen**, ohne die markierten Aufgaben zu begrenzen oder zu ändern.
 
+**Beispiel: eine Ideensammlung für ein Projekt übersichtlich halten**
+
+1. Erstellen Sie ein Projekt **Reparaturen zu Hause**. Erfassen Sie **Den tropfenden Wasserhahn prüfen** und **Farbtöne vergleichen** als Eingang-Aufgaben, die diesem Projekt zugeordnet sind, oder behalten Sie grobe Ideen in seinen Notizen.
+2. Verarbeiten Sie den Eintrag zum tropfenden Wasserhahn, wenn Sie bereit sind, ihn anzugehen, machen Sie ihn zu einer nächsten Aktion und markieren Sie ihn mit einem Stern für heute. Lassen Sie den anderen Eintrag im Eingang, bis Sie seinen nächsten Schritt entschieden haben. Ein verbindliches Projekt kann unverarbeitete Ideen enthalten; sie müssen nicht nach Irgendwann/Vielleicht.
+3. Öffnen Sie Fokus und wählen Sie **Nur Fokus**, um die anderen Abschnitte einzuklappen. Nächste Aktionen ohne Datum sind verfügbare Möglichkeiten, keine Verpflichtung, sie alle heute zu erledigen. Bei geordneten Projektschritten zeigt ein sequenzielles Projekt normalerweise jeweils eine nächste Aktion. Sterne sowie Fälligkeits- oder Wiedervorlagedaten können dennoch weitere Einträge im Fokus erscheinen lassen.
+4. Für **Jeden Donnerstag die Küche putzen** setzen Sie das erste **Anfangsdatum** auf den nächsten Donnerstag und wählen eine wöchentliche Wiederholung am Donnerstag. Die Aufgabe bleibt bis zu ihrem Starttag aus den ausführbaren Fokus-Listen heraus; beim Abschließen geht sie zur nächsten Wiederholung über. **Anstehend** kann sie weiterhin als Vorschau zeigen, und Sie können diesen Abschnitt einklappen. Nutzen Sie das **Fälligkeitsdatum** für eine echte Frist.
+5. Um eine Idee später erneut zu überdenken, wählen Sie **Reifen lassen** und ein Wiedervorlagedatum. Bis dahin finden Sie sie in **Irgendwann/Vielleicht** oder über die **Suche**. Am Wiedervorlagedatum erscheint sie bei Eingang verarbeiten als **Zurück zur Klärung** und bleibt unter Irgendwann, bis Sie entscheiden, was zu tun ist; sie wird nicht automatisch zu einer nächsten Aktion. Prüfen Sie diese Listen, bevor Sie sie erneut erfassen.
+
 ### So sortiert „Fokus“ verfügbare Aktionen
 
 „Fokus“ bestimmt zuerst, ob eine Aufgabe verfügbar ist, und sortiert danach die sichtbaren Aktionen:

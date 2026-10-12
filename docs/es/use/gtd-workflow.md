@@ -323,6 +323,14 @@ Enfoque no es una vista de inventario completo. Mantiene las tareas con fecha de
 
 Usa **Solo enfoque** en la cabecera de Enfoque, en escritorio o móvil, para mantener abierto **Enfoque de hoy** y contraer Hoy, Próximas acciones, Revisión pendiente, Próximamente y Proyectos por revisar. Los títulos y las cantidades siguen visibles y permiten abrir cada sección por separado. **Expandir secciones** las abre todas. Cada dispositivo recuerda su estado. En escritorio, sustituye a **Mostrar solo el top 3**, sin limitar ni cambiar las tareas que has marcado con una estrella.
 
+**Ejemplo: mantener manejable una lluvia de ideas de un proyecto**
+
+1. Crea un proyecto **Reparaciones del hogar**. Captura **Revisar el grifo que gotea** y **Comparar colores de pintura** como tareas de la Bandeja de entrada asignadas al proyecto, o guarda las ideas iniciales en sus notas.
+2. Procesa el elemento del grifo cuando estés listo para abordarlo, conviértelo en una siguiente acción y márcalo con una estrella para hoy. Deja el otro elemento en la Bandeja de entrada hasta que decidas su siguiente paso. Un proyecto al que te has comprometido puede contener ideas sin procesar; no tienen que estar en Algún día/Tal vez.
+3. Abre Enfoque y selecciona **Solo enfoque** para contraer las demás secciones. Las Siguientes acciones sin fecha son opciones disponibles, no un compromiso de hacerlas todas hoy. Para pasos de un proyecto que deben seguir un orden, un proyecto secuencial normalmente muestra una siguiente acción a la vez. Las estrellas y las fechas de vencimiento o revisión pueden hacer que otros elementos también aparezcan en Enfoque.
+4. Para **Limpiar la cocina cada jueves**, establece la primera **Fecha de inicio** en el próximo jueves y elige una repetición semanal los jueves. La tarea queda fuera de las listas accionables de Enfoque hasta su día de inicio; al completarla se avanza a la siguiente repetición. **Próximas** puede mostrarla como vista previa y puedes contraer esa sección. Usa la **Fecha de vencimiento** para un plazo real.
+5. Para reconsiderar una idea más adelante, elige **Incubar** y una fecha de revisión. Mientras esperas, la encontrarás en **Algún día/Tal vez** o en **Búsqueda**. En la fecha de revisión aparece en Procesar bandeja como **Volver a aclarar** y sigue en Algún día hasta que decidas qué hacer; no se convierte automáticamente en una siguiente acción. Consulta esas listas antes de capturarla otra vez.
+
 ### Cómo ordena Enfoque las acciones disponibles
 
 Enfoque determina primero si una tarea está disponible y después ordena las acciones visibles:

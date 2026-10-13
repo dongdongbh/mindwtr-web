@@ -20,21 +20,43 @@ En escritorio, las rutas predeterminadas de la base de datos aparecen más abajo
 
 ## MCP integrado en escritorio
 
-La aplicación de escritorio incluye un servidor MCP gestionado por la aplicación en **Ajustes → Integraciones → Servidor MCP local (avanzado)**. En la próxima versión de escritorio, este servidor se ejecuta en Rust dentro del proceso de la aplicación y comparte las operaciones internas con la API REST local, sin un asistente incluido ni un puente HTTP privado. Este modo no necesita instalar Node, npm, Bun ni un asistente independiente. Está desactivado y es de solo lectura de forma predeterminada.
+La aplicación de escritorio incluye un servidor MCP en **Ajustes → Integraciones → Servidor MCP local (avanzado)**. Se ejecuta dentro de la aplicación y comparte las operaciones internas con la API local. No se necesita Node, npm, Bun ni un asistente independiente, y el interruptor de la API local puede permanecer desactivado. MCP está desactivado y es de solo lectura de forma predeterminada.
 
-Activa el interruptor **Activar servidor MCP local** y selecciona **Copiar datos de conexión**. Configura un cliente compatible con Streamable HTTP autenticado usando el endpoint siguiente y el token Bearer de los datos copiados. Los formatos de configuración varían; un cliente que solo admita stdio todavía necesita el asistente independiente.
-
-Los clientes de IA conectados pueden leer los datos expuestos por estas herramientas. **Permitir cambios** permite editarlos; el cliente de IA puede enviar esos datos a su proveedor. Mantén privado el token copiado. Regenerarlo desconecta los clientes existentes, que necesitarán el nuevo token.
-
-Mantén Mindwtr abierto. Desactivar MCP o salir de la aplicación detiene el servidor; cerrar a la bandeja lo mantiene activo. Si el servidor no puede iniciarse, por ejemplo porque el puerto está ocupado, resuelve el error y usa **Volver a intentar**. Activar MCP no cambia la configuración de la API local pública, y no es necesario activar el servidor de API local independiente. Admite el mismo subconjunto de operaciones que el backend de API local descrito a continuación.
-
-Este endpoint sirve a clientes del mismo ordenador. No proporciona acceso remoto desde ChatGPT, un túnel ni un servicio alojado. Las aplicaciones móviles no alojan este servidor.
-
-En la próxima versión de escritorio, MCP integrado admite los mismos sistemas operativos que la aplicación de escritorio, sin una versión mínima de macOS adicional. **Permitir cambios** permite crear, editar y eliminar tareas y proyectos, así como completar tareas.
+Activa el servidor y mantén Mindwtr abierto. Cerrar a la bandeja lo mantiene disponible; desactivar MCP o salir de la aplicación lo detiene. Los clientes deben admitir Streamable HTTP autenticado. El endpoint predeterminado es:
 
 ```text
 http://127.0.0.1:8722/mcp
 ```
+
+**Disponible a partir de v1.3.7:** los controles siguientes añaden la copia de la configuración de Codex, un puerto configurable y permisos de escritura separados. Las versiones anteriores usan un puerto fijo y un único interruptor **Permitir cambios**.
+
+### Conectar Codex
+
+Selecciona **Copiar para Codex** y añade el TOML copiado a `~/.codex/config.toml`. Si ese archivo ya contiene `mcp_servers.mindwtr`, reemplaza esa entrada en lugar de añadir una duplicada. Conserva el resto de tu configuración. Mindwtr copia el texto; no edita los archivos de Codex.
+
+La configuración copiada tiene esta estructura, con tu endpoint y token actuales:
+
+```toml
+[mcp_servers.mindwtr]
+url = "http://127.0.0.1:8722/mcp"
+
+[mcp_servers.mindwtr.http_headers]
+Authorization = "Bearer <token from Mindwtr>"
+```
+
+Reinicia o vuelve a conectar tu cliente Codex después de cambiar su configuración. **Copiar datos de conexión** proporciona JSON para los clientes que usan `mcpServers`; los clientes que solo admiten stdio siguen necesitando el asistente independiente.
+
+### Permisos y puerto
+
+**Permitir editar tareas y proyectos** permite crear, editar, completar y restaurar tareas, y crear o editar proyectos. En **Avanzado**, activa **Permitir archivar** y **Permitir eliminar** por separado si los necesitas. Cada permiso es independiente y todos empiezan desactivados en una instalación nueva. Las instalaciones existentes que activaron **Permitir cambios** conservan su permiso de eliminación anterior; puedes desactivarlo sin desactivar la edición. Archivar requiere una nueva autorización explícita.
+
+La herramienta integrada `mindwtr_archive_task` archiva mediante la operación existente de la aplicación. No completa una tarea ni genera su siguiente recurrencia. Una actualización que combine ediciones habituales con cambios de archivo o cancelación requiere ambos permisos. La eliminación es lógica. Estos ajustes se aplican al servidor integrado, no al asistente independiente ni a la API local separada.
+
+**Avanzado** también permite elegir un puerto entre 1024 y 65535. Guárdalo y copia los datos de conexión actualizados para tu cliente. Si otro proceso ocupa el puerto, elige uno libre o resuelve el conflicto y usa **Volver a intentar**. El servidor siempre se vincula a `127.0.0.1`.
+
+Los clientes de IA conectados pueden leer los datos expuestos por estas herramientas y enviarlos a su proveedor. Mantén privado el token copiado. Regenerarlo desconecta los clientes existentes, que necesitarán el nuevo token.
+
+Este endpoint sirve a clientes del mismo ordenador. No proporciona acceso remoto desde ChatGPT, un túnel ni un servicio alojado. Las aplicaciones móviles no lo alojan.
 
 ---
 

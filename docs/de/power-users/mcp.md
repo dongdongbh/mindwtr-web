@@ -20,21 +20,43 @@ Die Standardpfade der Desktop-Datenbank stehen unten unter [Standardspeicherorte
 
 ## Integriertes Desktop-MCP
 
-Die Desktop-App enthält einen von der App verwalteten MCP-Server unter **Einstellungen → Integrationen → Lokaler MCP-Server (erweitert)**. Ab der nächsten Desktop-Version läuft dieser Server in Rust im App-Prozess und nutzt dieselben internen Operationen wie die REST Local API, ohne mitgeliefertes Hilfsprogramm oder private HTTP-Brücke. Dafür müssen weder Node, npm oder Bun noch ein separates Hilfsprogramm installiert werden. Standardmäßig ist der Server deaktiviert und schreibgeschützt.
+Die Desktop-App enthält einen MCP-Server unter **Einstellungen → Integrationen → Lokaler MCP-Server (erweitert)**. Er läuft innerhalb der App und nutzt dieselben internen Operationen wie die Local API. Node, npm, Bun oder ein separates Hilfsprogramm sind nicht erforderlich, und die Local API kann ausgeschaltet bleiben. MCP ist standardmäßig deaktiviert und schreibgeschützt.
 
-Schalten Sie **Lokalen MCP-Server aktivieren** ein und wählen Sie **Verbindungsdaten kopieren**. Konfigurieren Sie einen Client mit Unterstützung für authentifiziertes Streamable HTTP mit dem folgenden Endpunkt und dem Bearer-Token aus den kopierten Daten. Die Konfigurationsformate unterscheiden sich; reine stdio-Clients benötigen weiterhin das eigenständige Hilfsprogramm.
-
-Verbundene KI-Clients können die über diese Werkzeuge bereitgestellten Daten lesen. **Änderungen erlauben** gestattet Bearbeitungen; der KI-Client kann Daten an seinen Anbieter senden. Halten Sie das kopierte Token geheim. Beim Erneuern werden bestehende Verbindungen getrennt und benötigen das neue Token.
-
-Mindwtr muss laufen. Deaktivieren von MCP oder Beenden der App stoppt den Server; beim Minimieren in den Infobereich läuft er weiter. Wenn der Server nicht starten kann, etwa wegen eines belegten Ports, beheben Sie den Fehler und wählen **Erneut versuchen**. MCP verändert die Einstellungen der öffentlichen Local API nicht, und der separate Local-API-Server muss nicht aktiviert sein. Es unterstützt dieselbe Teilmenge von Operationen wie das unten beschriebene Local-API-Backend.
-
-Dieser Endpunkt dient Clients auf demselben Computer. Er bietet keinen entfernten ChatGPT-Zugriff, Tunnel oder gehosteten Dienst. Mobile Apps stellen diesen Server nicht bereit.
-
-Ab der nächsten Desktop-Version unterstützt integriertes MCP dieselben Betriebssysteme wie die Desktop-App, ohne separate macOS-Mindestversion. **Änderungen erlauben** gestattet das Erstellen, Bearbeiten und Löschen von Aufgaben und Projekten sowie das Abschließen von Aufgaben.
+Aktivieren Sie den Server und lassen Sie Mindwtr laufen. Beim Schließen in den Infobereich bleibt er verfügbar; das Deaktivieren von MCP oder Beenden der App stoppt ihn. Clients müssen authentifiziertes Streamable HTTP unterstützen. Der Standardendpunkt lautet:
 
 ```text
 http://127.0.0.1:8722/mcp
 ```
+
+**Verfügbar ab v1.3.7:** Die folgenden Steuerelemente ergänzen das Kopieren der Codex-Konfiguration, einen einstellbaren Port und separate Schreibberechtigungen. Frühere Versionen verwenden einen festen Port und einen einzelnen Schalter **Änderungen erlauben**.
+
+### Codex verbinden
+
+Wählen Sie **Für Codex kopieren** und fügen Sie das kopierte TOML in `~/.codex/config.toml` ein. Wenn diese Datei bereits `mcp_servers.mindwtr` enthält, ersetzen Sie diesen Eintrag, statt einen zweiten hinzuzufügen. Behalten Sie Ihre übrige Konfiguration bei. Mindwtr kopiert den Text; es bearbeitet keine Codex-Dateien.
+
+Die kopierte Konfiguration hat die folgende Form mit Ihrem aktuellen Endpunkt und Token:
+
+```toml
+[mcp_servers.mindwtr]
+url = "http://127.0.0.1:8722/mcp"
+
+[mcp_servers.mindwtr.http_headers]
+Authorization = "Bearer <token from Mindwtr>"
+```
+
+Starten Sie Ihren Codex-Client nach einer Konfigurationsänderung neu oder verbinden Sie ihn erneut. **Verbindungsdaten kopieren** liefert JSON für Clients, die `mcpServers` verwenden; reine stdio-Clients benötigen weiterhin das eigenständige Hilfsprogramm.
+
+### Berechtigungen und Port
+
+**Bearbeiten von Aufgaben und Projekten erlauben** ermöglicht das Erstellen, Bearbeiten, Abschließen und Wiederherstellen von Aufgaben sowie das Erstellen oder Bearbeiten von Projekten. Aktivieren Sie unter **Erweitert** bei Bedarf **Archivieren erlauben** und **Löschen erlauben** separat. Jede Berechtigung ist unabhängig, und bei einer neuen Installation sind alle ausgeschaltet. Bestehende Installationen, in denen **Änderungen erlauben** aktiviert war, behalten ihre bisherige Löschberechtigung; Sie können diese ausschalten, ohne Bearbeitungen zu deaktivieren. Das Archivieren erfordert eine ausdrückliche neue Freigabe.
+
+Das integrierte Werkzeug `mindwtr_archive_task` archiviert über die bestehende Operation der App. Es schließt eine Aufgabe nicht ab und erzeugt nicht deren nächste Wiederholung. Eine Aktualisierung, die gewöhnliche Bearbeitungen mit Änderungen an Archivierung oder Abbruch kombiniert, erfordert beide Berechtigungen. Beim Löschen handelt es sich um eine weiche Löschung. Diese Einstellungen gelten für den integrierten Server, nicht für das eigenständige Hilfsprogramm oder die separate Local API.
+
+Unter **Erweitert** können Sie außerdem einen Port von 1024 bis 65535 wählen. Speichern Sie ihn und kopieren Sie die aktualisierten Verbindungsdaten für Ihren Client. Wenn ein anderer Prozess den Port belegt, wählen Sie einen freien Port oder beheben Sie den Konflikt und wählen Sie **Erneut versuchen**. Der Server bindet immer an `127.0.0.1`.
+
+Verbundene KI-Clients können die über diese Werkzeuge bereitgestellten Daten lesen und an ihren Anbieter senden. Halten Sie das kopierte Token geheim. Beim Erneuern werden bestehende Clients getrennt und benötigen das neue Token.
+
+Dieser Endpunkt dient Clients auf demselben Computer. Er bietet keinen entfernten ChatGPT-Zugriff, Tunnel oder gehosteten Dienst. Mobile Apps stellen ihn nicht bereit.
 
 ---
 

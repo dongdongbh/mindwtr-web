@@ -20,21 +20,43 @@ Sur ordinateur, les chemins par défaut de la base de données figurent plus bas
 
 ## MCP intégré sur ordinateur
 
-L’application de bureau comprend un serveur MCP géré par l’application dans **Réglages → Integrations → Serveur MCP local (avancé)**. Dans la prochaine version de bureau, ce serveur s’exécute en Rust dans le processus de l’application et partage les opérations internes avec l’API REST locale, sans utilitaire embarqué ni pont HTTP privé. Ce mode ne nécessite ni Node, npm, Bun, ni installation d’un utilitaire séparé. Il est désactivé et en lecture seule par défaut.
+L’application de bureau comprend un serveur MCP dans **Réglages → Intégrations → Serveur MCP local (avancé)**. Il s’exécute dans l’application et partage les opérations internes avec l’API locale. Ni Node, npm, Bun, ni utilitaire séparé ne sont nécessaires, et l’API locale peut rester désactivée. MCP est désactivé et en lecture seule par défaut.
 
-Activez l’option **Activer le serveur MCP local**, puis choisissez **Copier les informations de connexion**. Configurez un client compatible avec Streamable HTTP authentifié avec le point de terminaison ci-dessous et le jeton Bearer des informations copiées. Les formats de configuration varient ; un client limité à stdio nécessite toujours l’utilitaire autonome.
-
-Les clients d’IA connectés peuvent lire les données exposées par ces outils. **Autoriser les modifications** permet les changements ; votre client d’IA peut envoyer ces données à son fournisseur. Gardez le jeton copié confidentiel. Sa régénération déconnecte les clients existants, qui doivent recevoir le nouveau jeton.
-
-Gardez Mindwtr ouvert. Désactiver MCP ou quitter l’application arrête le serveur ; la réduction dans la zone de notification le laisse actif. Si le serveur ne peut pas démarrer, par exemple parce que le port est occupé, corrigez l’erreur puis choisissez **Réessayer**. Activer MCP ne modifie pas les réglages de l’API locale publique, et le serveur API locale séparé n’a pas besoin d’être activé. Il prend en charge le même sous-ensemble d’opérations que le backend API locale décrit ci-dessous.
-
-Ce point de terminaison sert les clients du même ordinateur. Il ne fournit ni accès distant depuis ChatGPT, ni tunnel, ni service hébergé. Les applications mobiles n’hébergent pas ce serveur.
-
-Dans la prochaine version de bureau, le MCP intégré prend en charge les mêmes systèmes d’exploitation que l’application de bureau, sans version minimale de macOS supplémentaire. **Autoriser les modifications** permet de créer, modifier et supprimer des tâches et des projets, ainsi que de terminer des tâches.
+Activez le serveur et gardez Mindwtr ouvert. La réduction dans la zone de notification le laisse disponible ; désactiver MCP ou quitter l’application l’arrête. Les clients doivent prendre en charge Streamable HTTP authentifié. Le point de terminaison par défaut est :
 
 ```text
 http://127.0.0.1:8722/mcp
 ```
+
+**Disponible à partir de v1.3.7 :** les commandes ci-dessous ajoutent la copie de la configuration Codex, un port configurable et des autorisations d’écriture distinctes. Les versions précédentes utilisent un port fixe et une seule option **Autoriser les modifications**.
+
+### Connecter Codex
+
+Choisissez **Copier pour Codex** et ajoutez le TOML copié à `~/.codex/config.toml`. Si ce fichier contient déjà `mcp_servers.mindwtr`, remplacez cette entrée au lieu d’en ajouter une seconde. Conservez le reste de votre configuration. Mindwtr copie le texte ; il ne modifie pas les fichiers de Codex.
+
+La configuration copiée a cette forme, avec votre point de terminaison et votre jeton actuels :
+
+```toml
+[mcp_servers.mindwtr]
+url = "http://127.0.0.1:8722/mcp"
+
+[mcp_servers.mindwtr.http_headers]
+Authorization = "Bearer <token from Mindwtr>"
+```
+
+Redémarrez ou reconnectez votre client Codex après avoir modifié sa configuration. **Copier les informations de connexion** fournit du JSON aux clients utilisant `mcpServers` ; les clients limités à stdio nécessitent toujours l’utilitaire autonome.
+
+### Autorisations et port
+
+**Autoriser la modification des tâches et des projets** permet de créer, modifier, terminer et restaurer des tâches, ainsi que de créer ou modifier des projets. Dans **Avancé**, activez séparément **Autoriser l’archivage** et **Autoriser la suppression** si nécessaire. Chaque autorisation est indépendante et toutes sont désactivées lors d’une nouvelle installation. Les installations existantes qui avaient activé **Autoriser les modifications** conservent leur autorisation de suppression précédente ; vous pouvez la désactiver sans désactiver les modifications. L’archivage nécessite une nouvelle autorisation explicite.
+
+L’outil intégré `mindwtr_archive_task` archive à l’aide de l’opération existante de l’application. Il ne termine pas une tâche et ne génère pas sa prochaine récurrence. Une mise à jour combinant des modifications ordinaires et des changements d’archivage ou d’annulation nécessite les deux autorisations. La suppression est logique. Ces réglages s’appliquent au serveur intégré, et non à l’utilitaire autonome ou à l’API locale séparée.
+
+**Avancé** permet aussi de choisir un port entre 1024 et 65535. Enregistrez-le et copiez les informations de connexion actualisées pour votre client. Si un autre processus occupe le port, choisissez un port libre ou résolvez le conflit et utilisez **Réessayer**. Le serveur se lie toujours à `127.0.0.1`.
+
+Les clients d’IA connectés peuvent lire les données exposées par ces outils et les envoyer à leur fournisseur. Gardez le jeton copié confidentiel. Sa régénération déconnecte les clients existants, qui ont besoin du nouveau jeton.
+
+Ce point de terminaison sert les clients du même ordinateur. Il ne fournit ni accès distant depuis ChatGPT, ni tunnel, ni service hébergé. Les applications mobiles ne l’hébergent pas.
 
 ---
 

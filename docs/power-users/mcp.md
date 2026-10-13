@@ -20,21 +20,43 @@ On desktop, the default database paths are listed under [Default Database Locati
 
 ## Built-in desktop MCP
 
-The desktop app includes an app-managed MCP server under **Settings → Integrations → Local MCP server (advanced)**. In the next desktop release, this server runs in-process in Rust and shares internal operations with the REST Local API, without a bundled helper or private HTTP bridge. No Node, npm, Bun, or separate helper installation is needed for this mode. It is disabled and read-only by default.
+The desktop app includes an MCP server under **Settings → Integrations → Local MCP server (advanced)**. It runs inside the app and shares internal operations with the Local API. No Node, npm, Bun, or separate helper is needed, and the Local API switch can stay off. MCP is disabled and read-only by default.
 
-Turn on **Enable local MCP server**, then choose **Copy connection details**. Configure a client that supports authenticated Streamable HTTP with the endpoint below and the bearer token in the copied details. Client configuration formats vary; a stdio-only client still needs the standalone helper.
-
-Connected AI clients can read the data exposed by these tools. **Allow changes** permits edits; your AI client may send that data to its provider. Keep the copied token private. Regenerating it disconnects existing clients, which must be configured with the new token.
-
-Keep Mindwtr running. Disabling MCP or quitting the app stops the server; closing to the tray keeps it running. If the server cannot start, for example because the port is occupied, resolve the error and use **Try again**. Enabling MCP does not change your public Local API settings, and the separate Local API server does not need to be enabled. It supports the same subset of operations as the Local API backend described below.
-
-This endpoint serves clients on the same computer. It does not provide remote ChatGPT access, a tunnel, or a hosted service. Mobile apps do not host this server.
-
-In the next desktop release, built-in MCP supports the same operating systems as the desktop app, with no separate macOS minimum. **Allow changes** permits creating, editing, and deleting tasks and projects, including completing tasks.
+Enable the server and keep Mindwtr running. Closing to the tray keeps it available; disabling MCP or quitting stops it. Clients must support authenticated Streamable HTTP. The default endpoint is:
 
 ```text
 http://127.0.0.1:8722/mcp
 ```
+
+**Available starting with v1.3.7:** the controls below add Codex configuration copying, a configurable port, and separate write permissions. Earlier releases use a fixed port and a single **Allow changes** switch.
+
+### Connect Codex
+
+Choose **Copy for Codex** and add the copied TOML to `~/.codex/config.toml`. If that file already contains `mcp_servers.mindwtr`, replace that entry rather than adding a duplicate. Preserve your other configuration. Mindwtr copies the text; it does not edit Codex's files.
+
+The copied configuration has this shape, with your current endpoint and token:
+
+```toml
+[mcp_servers.mindwtr]
+url = "http://127.0.0.1:8722/mcp"
+
+[mcp_servers.mindwtr.http_headers]
+Authorization = "Bearer <token from Mindwtr>"
+```
+
+Restart or reconnect your Codex client after changing its configuration. **Copy connection details** provides JSON for clients that use `mcpServers`; stdio-only clients still need the standalone helper.
+
+### Permissions and port
+
+**Allow task and project edits** enables creating, editing, completing, and restoring tasks, and creating or editing projects. Under **Advanced**, enable **Allow archiving** and **Allow deletion** separately if needed. Each permission is independent, and all start off on a new installation. Existing installations that enabled **Allow changes** retain their previous deletion permission; you can turn it off without disabling edits. Archiving requires an explicit new grant.
+
+The built-in `mindwtr_archive_task` tool archives through the app's existing operation. It does not complete a task or generate its next recurrence. An update combining ordinary edits with archive/cancellation changes requires both permissions. Deletion is soft deletion. These settings apply to the built-in server, not the standalone helper or separate Local API.
+
+**Advanced** also lets you choose a port from 1024 to 65535. Save it and copy updated connection details for your client. If another process occupies the port, choose a free port or resolve the conflict and use **Try again**. The server always binds to `127.0.0.1`.
+
+Connected AI clients can read the data exposed by these tools and may send it to their provider. Keep the copied token private. Regenerating it disconnects existing clients, which need the new token.
+
+This endpoint is for clients on the same computer. It does not provide remote ChatGPT access, a tunnel, or a hosted service. Mobile apps do not host it.
 
 ---
 

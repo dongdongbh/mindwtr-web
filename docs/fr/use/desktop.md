@@ -193,7 +193,11 @@ Cliquez sur une barre pour ouvrir la tâche, ou sur le nom d’un projet pour ou
 - Une barre de projet peut être déplacée ou redimensionnée uniquement si le projet est actif et possède ses propres dates de début et d’échéance valides. La déplacer ne modifie que les dates du projet, jamais celles de ses tâches. Une période déduite d’une seule date du projet et de ses tâches est en lecture seule ; modifiez les dates du projet dans ses détails.
 - Les tâches terminées, annulées ou de référence, ainsi que celles des projets inactifs, ne peuvent pas être déplacées.
 
-Les changements sont prévisualisés pendant le déplacement et enregistrés au relâchement. **Échap** annule le déplacement ; un changement enregistré propose **Annuler**. Si les mêmes dates changent ailleurs pendant le déplacement, le relâchement ne les écrase pas. La Chronologie ne replanifie pas les dépendances ou les jours fériés et ne permet pas d’ordonner les lignes manuellement.
+Les changements sont prévisualisés pendant le déplacement et enregistrés au relâchement. **Échap** annule le déplacement ; un changement enregistré propose **Annuler**. Si les mêmes dates changent ailleurs pendant le déplacement, le relâchement ne les écrase pas. La Chronologie ne replanifie pas les dépendances ou les jours fériés.
+
+À partir de **v1.3.7**, la Chronologie partage l’ordre des projets et des tâches avec **Projets**. Les groupes de projets suivent l’ordre des domaines et des projets ; les tâches suivent l’ordre des sections de leur projet et le tri choisi. Avec le tri du projet sur **Défaut**, utilisez la poignée de réorganisation de la ligne pour déplacer une tâche dans sa section ou un projet dans son domaine. Lorsque la poignée a le focus, appuyez sur **Espace** pour saisir l’élément, utilisez les flèches pour le déplacer, puis appuyez sur **Espace** pour le déposer ou sur **Échap** pour annuler.
+
+La réorganisation verticale modifie l’ordre partagé, y compris la séquence d’exécution des projets séquentiels, sans changer les dates ni déplacer les tâches vers un autre projet ou une autre section. Les tâches et les projets masqués par les filtres de la Chronologie conservent leur ordre relatif. Le tri explicitement choisi pour un projet est respecté ; passez-le sur Défaut dans Projets pour permettre la réorganisation manuelle des tâches. Les tâches sans projet n’ont pas d’ordre de projet partagé à modifier.
 
 **Terminé** et **Archivés** sont les deux onglets d’**Historique**, dans le groupe **Plus** de la barre latérale.
 

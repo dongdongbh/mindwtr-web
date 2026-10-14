@@ -193,7 +193,11 @@ Haz clic en una barra para abrir la tarea, o en el nombre de un proyecto para ab
 - Solo puedes mover o redimensionar la barra de un proyecto activo con sus propias fechas válidas de inicio y vencimiento. Moverla solo cambia las fechas del proyecto, nunca las de sus tareas. Un intervalo deducido de una fecha del proyecto y sus tareas es de solo lectura; edita las fechas del proyecto en sus detalles.
 - No se pueden arrastrar tareas completadas, canceladas o de referencia, ni tareas de proyectos inactivos.
 
-Los cambios se previsualizan al arrastrar y se guardan al soltar. **Escape** cancela el arrastre; un cambio guardado ofrece **Deshacer**. Si las mismas fechas cambian en otro lugar durante el arrastre, soltarlas no sobrescribe esos cambios. La Línea de tiempo no reprograma dependencias ni festivos, ni permite ordenar las filas manualmente.
+Los cambios se previsualizan al arrastrar y se guardan al soltar. **Escape** cancela el arrastre; un cambio guardado ofrece **Deshacer**. Si las mismas fechas cambian en otro lugar durante el arrastre, soltarlas no sobrescribe esos cambios. La Línea de tiempo no reprograma dependencias ni festivos.
+
+A partir de **v1.3.7**, la Línea de tiempo comparte el orden de proyectos y tareas con **Proyectos**. Los grupos de proyectos siguen el orden de áreas y proyectos; las tareas siguen el orden de las secciones de su proyecto y la clasificación elegida. Con el orden del proyecto en **Predeterminado**, usa el asa de reordenación de la fila para mover una tarea dentro de su sección o un proyecto dentro de su área. Con el asa enfocada, pulsa **Espacio** para recoger el elemento, usa las flechas para moverlo y pulsa **Espacio** para soltarlo o **Escape** para cancelar.
+
+La reordenación vertical cambia el orden compartido, incluida la secuencia de ejecución de los proyectos secuenciales, sin cambiar fechas ni mover tareas a otro proyecto o sección. Las tareas y los proyectos ocultos por los filtros de la Línea de tiempo conservan su orden relativo. Se respeta el orden elegido explícitamente para un proyecto; cámbialo a Predeterminado en Proyectos para habilitar la reordenación manual de tareas. Las tareas sin proyecto no tienen un orden de proyecto compartido que editar.
 
 **Terminadas** y **Archivadas** son las dos pestañas de **Historial**, en el grupo **Más** de la barra lateral.
 

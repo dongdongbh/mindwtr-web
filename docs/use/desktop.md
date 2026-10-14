@@ -201,7 +201,11 @@ Click a bar to open the task, or a project's name to open the project. To edit d
 - A project bar can be moved or resized only when the project is active and has both its own valid start and due dates. Moving it changes only the project's dates, never its tasks. A span inferred from one project date and its tasks is read-only; edit the project's dates in its details.
 - Completed, cancelled, and reference tasks, and tasks in inactive projects, cannot be dragged.
 
-Changes are previewed while dragging and saved on drop. **Escape** cancels a drag; a saved change offers **Undo**. If the same dates change elsewhere during a drag, the drop does not overwrite them. Timeline does not reschedule dependencies or holidays, or support manual row ordering.
+Changes are previewed while dragging and saved on drop. **Escape** cancels a drag; a saved change offers **Undo**. If the same dates change elsewhere during a drag, the drop does not overwrite them. Timeline does not reschedule dependencies or holidays.
+
+Starting with **v1.3.7**, Timeline shares project and task ordering with **Projects**. Project groups follow area and project order; tasks follow their project’s section order and selected sort. With the project sort set to **Default**, use the row’s reorder handle to move a task within its section or a project within its area. With the handle focused, press **Space** to pick up, use the arrow keys to move, and press **Space** to drop or **Escape** to cancel.
+
+Vertical reordering changes the shared order, including the execution sequence of sequential projects, without changing dates or moving tasks into another project or section. Tasks and projects hidden by Timeline filters retain their relative order. A project’s explicit sort choice is respected; switch it to Default in Projects to enable manual task reordering. Tasks without a project have no shared project order to edit.
 
 **Done** and **Archived** are the two tabs of **History**, in the sidebar's **More** group.
 

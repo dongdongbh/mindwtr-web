@@ -768,12 +768,18 @@ Mindwtr envoie des notifications pour vous aider à rester sur la bonne voie.
 - **Alertes d’heure de début** : vous rappellent quand il est temps de commencer
 - **Rappels de tâches récurrentes** : notifications pour les éléments récurrents
 
-Les tâches avec une heure d’échéance peuvent définir **Répéter le rappel** toutes les 5, 10, 15, 30 ou 60 minutes après le premier rappel d’échéance. **Ignorer les rappels** désactive les rappels de début et d’échéance pour cette tâche. **Répéter le rappel : Désactivé** ne désactive pas le premier rappel.
+Les tâches avec une heure d’échéance peuvent répéter le rappel toutes les 5, 10, 15, 30 ou 60 minutes. Désactiver la répétition ne désactive pas le premier rappel.
+
+À partir de **v1.3.7**, **Paramètres → Notifications** propose un réglage par défaut pour les rappels de début/d’échéance : **Envoyer** ou **Ignorer**. Chaque tâche propose **Utiliser le réglage par défaut** (avec son effet actuel), **Envoyer** et **Ignorer**. Les nouvelles tâches suivent le réglage par défaut. Les tâches existantes conservent leur comportement jusqu’à ce que vous choisissiez explicitement le réglage par défaut. Au départ, celui-ci autorise les rappels.
+
+Ignorer retire les rappels de début/d’échéance prévus et leurs répétitions sans effacer l’intervalle. Les rappels de révision, récapitulatifs quotidiens et alertes Pomodoro restent indépendants. Envoyer exige toujours une heure explicite, les notifications de tâche/début/échéance activées et l’autorisation de l’appareil.
+
+Le réglage par défaut se synchronise avec le groupe **GTD**, et le choix individuel avec la tâche. Les interrupteurs de notification de l’appareil restent locaux. Mettez tous les appareils synchronisés à jour : les anciennes versions utilisent la dernière valeur envoyer/ignorer enregistrée, ne suivent pas les changements ultérieurs du réglage par défaut et peuvent perdre l’héritage lors de l’enregistrement d’une tâche.
 
 ### Tester un rappel de tâche
 
 1. Modifiez une tâche et fixez son **Échéance** à une heure dans quelques minutes. **Date seule** ne programme pas d’alerte à une heure précise.
-2. Vérifiez **Ignorer les rappels** : **Désactivé** permet les alertes de cette tâche ; **Activé** les ignore. Dans les anciennes versions, le contour bleu de cette option signifie **Activé**.
+2. Dans les rappels de début/d’échéance, choisissez **Envoyer** (v1.3.7 ou ultérieure). Sur une ancienne version, désactivez **Ignorer les rappels**.
 3. Touchez **Enregistrer**. Dans **Paramètres → Notifications**, activez les notifications de tâches et les rappels d’échéance. Sur iOS, autorisez aussi les notifications Mindwtr dans les réglages de l’appareil.
 4. Attendez l’heure d’échéance. Si vous avez modifié la tâche sur un autre appareil, ouvrez Mindwtr sur ce téléphone pour synchroniser la nouvelle heure avant l’alerte.
 

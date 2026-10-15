@@ -444,12 +444,18 @@ Mindwtr sends desktop notifications to keep you on track:
 - **Start time alerts**: Reminds you when it's time to begin
 - **Recurring task reminders**: Notifications for recurring items
 
-Tasks with a due time can set **Repeat reminder** to 5, 10, 15, 30, or 60 minutes after the due reminder. **Skip reminders** turns off start and due reminders for that task. **Repeat reminder: Off** still allows the first due reminder.
+Tasks with a due time can set **Repeat reminder** to 5, 10, 15, 30, or 60 minutes after the due reminder. **Repeat reminder: Off** still allows the first due reminder.
+
+Starting in **v1.3.7**, **Settings → Notifications → Default task reminders** chooses **Send** or **Skip** for new tasks. Each task has **Start/due reminders**: **Use default** (showing its current effect), **Send**, or **Skip**. Existing tasks keep their previous send/skip behavior until you deliberately choose **Use default**. The initial default is Send.
+
+Skip withdraws pending start/due reminders and their repeats without erasing the repeat interval. Review reminders, daily digests, and Pomodoro alerts are separate. Send still requires an explicit start/due time, enabled task/start/due notifications, and device permission; it does not enable those switches for you.
+
+The default follows the **GTD** settings-sync group; each task's choice syncs with the task. Device notification switches remain local. Upgrade all syncing devices to use inheritance: older versions use the last saved send/skip value, do not follow later default changes, and may lose **Use default** when saving a task.
 
 ### Test a task reminder
 
 1. Edit a task and set its **Due date** to a time a few minutes ahead. **Date only** does not schedule a timed alert.
-2. Open the reminder options below the due date and leave **Skip reminders** unchecked. If the summary says **Mindwtr reminders off**, turn **Skip reminders** off.
+2. In **Start/due reminders**, choose **Send** (v1.3.7 or later). On older versions, turn **Skip reminders** off.
 3. Save the task. In **Settings → Notifications**, enable task notifications and due reminders. On macOS, also allow Mindwtr in **System Settings → Notifications**.
 4. Wait for the due time. If you edited the task on another device, let this computer sync the new time first.
 

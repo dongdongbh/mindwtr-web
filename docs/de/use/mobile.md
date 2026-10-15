@@ -709,12 +709,18 @@ Ab v1.3.1: Ordnen Sie Aufgaben direkt in dieser Liste in Irgendwann-Abschnitte e
 - **Startzeitwarnungen**
 - **Erinnerungen an wiederkehrende Aufgaben**
 
-Bei Aufgaben mit Fälligkeitszeit kann **Erinnerung wiederholen** nach der ersten Fälligkeitserinnerung alle 5, 10, 15, 30 oder 60 Minuten erneut erinnern. **Erinnerungen überspringen** schaltet Start- und Fälligkeitserinnerungen für diese Aufgabe aus. **Erinnerung wiederholen: Aus** schaltet die erste Fälligkeitserinnerung nicht aus.
+Bei Aufgaben mit Fälligkeitszeit kann **Erinnerung wiederholen** nach der ersten Fälligkeitserinnerung alle 5, 10, 15, 30 oder 60 Minuten erneut erinnern. **Aus** lässt die erste Erinnerung weiterhin zu.
+
+Ab **v1.3.7** wählst du unter **Einstellungen → Benachrichtigungen** den Standard für Start-/Fälligkeitserinnerungen: **Senden** oder **Überspringen**. Jede Aufgabe bietet **Standard verwenden** (mit aktueller Wirkung), **Senden** und **Überspringen**. Neue Aufgaben verwenden den Standard; bestehende behalten ihr bisheriges Verhalten, bis du ausdrücklich **Standard verwenden** wählst. Anfangs ist Senden der Standard.
+
+Überspringen entfernt geplante Start-/Fälligkeitserinnerungen und Wiederholungen, behält aber das Wiederholungsintervall. Review-Erinnerungen, tägliche Übersichten und Pomodoro bleiben unabhängig. Senden erfordert weiterhin eine ausdrückliche Uhrzeit, aktivierte Aufgaben-/Start-/Fälligkeitsbenachrichtigungen und die Geräteberechtigung.
+
+Der Standard wird über die Einstellungsgruppe **GTD** synchronisiert, die Aufgabenwahl mit der Aufgabe. Gerätebezogene Benachrichtigungsschalter bleiben lokal. Aktualisiere alle synchronisierenden Geräte: ältere Versionen verwenden den zuletzt gespeicherten Senden/Überspringen-Wert, folgen späteren Standardänderungen nicht und können beim Speichern **Standard verwenden** verlieren.
 
 ### Eine Aufgabenerinnerung testen
 
 1. Eine Aufgabe bearbeiten und die **Fälligkeit** auf eine Uhrzeit in wenigen Minuten setzen. **Nur Datum** erzeugt keine zeitgesteuerte Benachrichtigung.
-2. **Erinnerungen überspringen** prüfen: **Aus** erlaubt Benachrichtigungen für diese Aufgabe, **An** überspringt sie. In älteren Versionen bedeutet der blaue Rahmen um diese Option **An**.
+2. Wähle bei den Start-/Fälligkeitserinnerungen **Senden** (ab v1.3.7). In älteren Versionen **Erinnerungen überspringen** ausschalten.
 3. **Speichern** tippen. Unter **Einstellungen → Benachrichtigungen** Aufgaben- und Fälligkeitserinnerungen aktivieren. Auf iOS Mindwtr-Benachrichtigungen auch in den Geräteeinstellungen erlauben.
 4. Bis zur Fälligkeitszeit warten. Wurde die Aufgabe auf einem anderen Gerät geändert, Mindwtr auf diesem Telefon öffnen, damit die neue Zeit vorher synchronisiert wird.
 

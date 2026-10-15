@@ -24,6 +24,8 @@ Mindwtr también normaliza esos tokens como enlaces Markdown normales al represe
 
 ## Copiar el enlace o ID de una tarea
 
+En móvil, abre una tarea existente desde cualquier lista, incluida Enfoque, y toca **…** en la cabecera de los detalles para encontrar ambas opciones de copia. También están disponibles al ver una tarea de solo lectura.
+
 Elige **Copiar enlace de la tarea** o **Copiar ID de la tarea** en el menú de tareas de escritorio o móvil. Copiar no modifica datos ni guarda cambios pendientes del editor. El enlace que abre la aplicación usa este formato:
 
 ```text

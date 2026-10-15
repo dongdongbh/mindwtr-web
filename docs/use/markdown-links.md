@@ -24,6 +24,8 @@ Mindwtr also normalizes those tokens into regular Markdown links during renderin
 
 ## Copy a task link or ID
 
+On mobile, open an existing task from any list, including Focus, and tap **…** in the task details header to find both copy actions. They are also available when viewing a read-only task.
+
 Choose **Copy task link** or **Copy task ID** from the task menu on desktop or mobile. Copying is read-only and does not save pending editor changes. The app-opening link uses this format:
 
 ```text

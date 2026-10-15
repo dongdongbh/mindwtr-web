@@ -24,6 +24,8 @@ Lors du rendu, Mindwtr normalise aussi ces jetons en liens Markdown ordinaires :
 
 ## Copier le lien ou l’ID d’une tâche
 
+Sur mobile, ouvrez une tâche existante depuis n’importe quelle liste, y compris Focus, puis touchez **…** dans l’en-tête des détails pour accéder aux deux actions de copie. Elles sont aussi disponibles pour les tâches en lecture seule.
+
 Choisissez **Copier le lien de la tâche** ou **Copier l’ID de la tâche** dans le menu de tâche sur ordinateur ou mobile. La copie ne modifie aucune donnée et n’enregistre pas les modifications en cours dans l’éditeur. Le lien ouvrant l’application utilise ce format :
 
 ```text

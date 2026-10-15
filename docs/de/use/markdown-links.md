@@ -24,6 +24,8 @@ Beim Rendern wandelt Mindwtr diese Token außerdem in reguläre Markdown-Links u
 
 ## Aufgabenlink oder ID kopieren
 
+Öffne auf Mobilgeräten eine vorhandene Aufgabe aus einer beliebigen Liste, auch aus Fokus, und tippe in der Kopfzeile der Aufgabendetails auf **…**, um beide Kopieraktionen zu finden. Sie sind auch bei schreibgeschützten Aufgaben verfügbar.
+
 Das Aufgabenmenü auf Desktop und Mobilgerät bietet **Aufgabenlink kopieren** und **Aufgaben-ID kopieren**. Das Kopieren ändert keine Daten und speichert keine offenen Bearbeitungen. Der Link zum Öffnen der App hat dieses Format:
 
 ```text

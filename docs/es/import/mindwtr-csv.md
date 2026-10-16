@@ -22,7 +22,7 @@ Recurre al CSV de Mindwtr cuando tu aplicación no aparezca. Exporta el CSV que 
 - **Comillas:** las habituales de CSV. Encierra un valor entre `"` cuando contenga el delimitador, un salto de línea o una comilla, y escribe una comilla interna como `""`.
 - **Fila de cabecera:** obligatoria. `Title` debe estar presente o la importación se detiene con un error en vez de adivinar.
 - **Nombres de columna:** se reconocen sin distinguir mayúsculas ni orden. Son siempre los nombres en inglés que figuran más abajo, sea cual sea el idioma de la interfaz de Mindwtr.
-- **Columnas desconocidas:** se ignoran y un aviso indica cuántas se omitieron.
+- **Columnas desconocidas:** se ignoran, con un aviso que indica el recuento y las posiciones de las columnas del encabezado.
 - **Filas vacías:** se omiten en silencio. Una fila con contenido pero sin título se omite con un aviso.
 - **Celdas NULL:** una celda que solo contiene `NULL` se trata como vacía. Los archivos CSV exportados desde bases de datos SQL escriben así los valores ausentes.
 
@@ -61,7 +61,7 @@ Todas las columnas salvo `Title` son opcionales: basta con incluir las que realm
 - Una fecha con hora y sin zona, como `2026-09-05 14:30`, conserva exactamente esa hora de reloj.
 - Un valor terminado en `Z` o con un desplazamiento como `+02:00` se guarda como el instante preciso que indica.
 - `Created At`, `Completed At` y `Cancelled At` se guardan siempre como un instante preciso, porque registran cuándo ocurrió algo realmente.
-- Un valor que Mindwtr no pueda leer se deja vacío, y la vista previa indica cuántos se omitieron.
+- Un valor que Mindwtr no puede interpretar se deja vacío, y la vista previa indica el recuento y las posiciones de las celdas afectadas.
 - Se aceptan marcas de tiempo de estilo SQL como `2026-02-21 22:44:00.6390000 +00:00`: los dígitos fraccionarios adicionales y el espacio antes del desfase se normalizan automáticamente.
 
 ISO 8601 (`YYYY-MM-DD`) es la forma más segura de escribirlas. Se intentan otros formatos, pero una columna de la hoja de cálculo con fechas en formato local es el motivo más frecuente de valores omitidos.
@@ -90,10 +90,11 @@ Mindwtr guarda una instantánea de recuperación antes de escribir. Si el result
 
 Mindwtr da a cada fila una identidad estable, así que importar dos veces el mismo archivo no duplica nada.
 
-- Con una columna `ID`, la identidad sigue ese valor, de modo que una reexportación corregida cae sobre las mismas tareas.
-- Sin columna `ID`, la identidad depende de la posición de la fila en el archivo (y, dentro de un ZIP, del archivo del que procede). Reimportar exactamente el mismo archivo es seguro, pero una exportación con filas añadidas o eliminadas ya no encaja y creará duplicados.
-- Las filas que ya existen se omiten, no se actualizan. Una importación nunca sobrescribe una tarea que hayas editado después en la aplicación.
-- Las eliminaciones se respetan. Si borras un proyecto importado y vuelves a importar el archivo, el proyecto no se recrea y sus filas llegan sin él.
+- Con una columna `ID`, la identidad sigue ese valor. Cambiar un título u otro contenido conservando el mismo `ID` no crea una tarea nueva.
+- Sin columna `ID`, la identidad usa una huella del contenido del documento y la posición de la fila (además de su archivo de origen dentro de un ZIP). Al reimportar el mismo archivo, Mindwtr omite sus tareas. Cambiar el contenido del archivo, incluido un título, o añadir o eliminar filas puede crear identidades nuevas y tareas duplicadas.
+- Mindwtr omite las identidades de tareas coincidentes, incluidas las tareas que hayas eliminado. No actualiza tareas existentes ni restaura tareas eliminadas.
+- Si borras un proyecto importado y vuelves a importar el archivo, Mindwtr no recrea el proyecto; las tareas nuevas llegan sin él.
+- Usa valores `ID` nuevos y únicos solo cuando quieras importar copias nuevas. Esto puede duplicar tareas que ya tienes.
 - Si el nombre de un área o un proyecto importado ya pertenece a otro elemento, el nuevo recibe `(Mindwtr CSV)` al final del nombre y un aviso lo indica.
 
 ## Exportar desde Mindwtr
@@ -101,8 +102,8 @@ Mindwtr da a cada fila una identidad estable, así que importar dos veces el mis
 Mindwtr escribe este mismo formato, así que el viaje de ida y vuelta está completo. **Ajustes → Datos → Copia de seguridad → Exportar CSV** guarda tus tareas actuales en un único archivo CSV, tanto en escritorio como en móvil.
 
 - La exportación CSV de escritorio está entre las acciones de selección múltiple. Filtra una lista de tareas o la vista Contextos, pulsa **Seleccionar**, marca las tareas que quieras y elige **Exportar tareas seleccionadas como CSV**. Solo se exportan las tareas seleccionadas, incluidas las que están fuera de la pantalla. Para incluir toda la lista filtrada, despliega los grupos que quieras antes de seleccionar todas las tareas. La exportación no modifica las tareas ni la selección. La exportación completa sigue en Ajustes.
-- La columna `ID` se escribe siempre, así que reimportar un export no duplica nada: las filas cuyo `ID` coincide con una tarea que ya tienes se omiten con un aviso. Los cambios hechos en un archivo exportado **no** se devuelven a la aplicación; edita esas tareas dentro de ella. Las notas sobre identidad de más arriba se aplican tal cual.
-- Las tareas eliminadas nunca se exportan. El formato no tiene columna para ellas y una fila así volvería como tarea activa en la siguiente importación.
+- La columna `ID` se escribe siempre, así que reimportar un archivo exportado omite las tareas coincidentes, incluidas las eliminadas, con un aviso. Los cambios hechos en un archivo exportado **no** se devuelven a la aplicación; edita esas tareas dentro de ella. Las notas sobre identidad de más arriba se aplican tal cual.
+- Las tareas eliminadas no se exportan. CSV no conserva el historial de eliminaciones.
 - La recurrencia se escribe como la regla de repetición que el importador vuelve a leer, así que las repeticiones sobreviven al viaje de ida y vuelta. Cuánto ha avanzado ya una serie contada no se escribe, así que una repetición importada empieza una serie nueva.
 - Para una copia completa con ajustes e historial de elementos eliminados, usa la [copia de seguridad](/es/data-sync/backup-restore) en JSON.
 
@@ -114,7 +115,7 @@ Mindwtr escribe este mismo formato, así que el viaje de ida y vuelta está comp
 
 ## Avisos que puedes ver
 
-Los avisos se cuentan para toda la importación y se muestran una vez con su recuento, nunca uno por fila. Las reglas de repetición ilegibles añaden una línea más que nombra las tres primeras filas afectadas:
+Los avisos se agrupan por tipo con recuentos totales. Los de columnas desconocidas y fechas ilegibles muestran las primeras cinco ubicaciones y cuántas ubicaciones más se omitieron. Los números de entrada, fila y columna empiezan en 1; el encabezado es la fila 1. Las filas cuentan registros CSV, por lo que una celda entrecomillada con saltos de línea sigue en una sola fila. En un ZIP, la ubicación también incluye el número de entrada CSV, sin contar archivos que no sean CSV. Estos detalles omiten los nombres de archivo y el contenido de las celdas. Las reglas de repetición ilegibles añaden una línea que indica las tres primeras filas afectadas:
 
 - se ignoraron columnas desconocidas
 - hubo estados que no se pudieron asignar y se importaron a la Bandeja de entrada

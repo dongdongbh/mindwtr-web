@@ -22,7 +22,7 @@ Greifen Sie zur Mindwtr-CSV, wenn Ihre App nicht aufgeführt ist. Exportieren Si
 - **Anführungszeichen:** übliche CSV-Regeln. Setzen Sie einen Wert in `"`, wenn er das Trennzeichen, einen Zeilenumbruch oder ein Anführungszeichen enthält, und schreiben Sie ein enthaltenes Anführungszeichen als `""`.
 - **Kopfzeile:** erforderlich. `Title` muss vorhanden sein, sonst bricht der Import mit einem Fehler ab, statt zu raten.
 - **Spaltennamen:** werden unabhängig von Groß- und Kleinschreibung und Reihenfolge erkannt. Es sind stets die englischen Namen von unten, in welcher Sprache die Mindwtr-Oberfläche auch eingestellt ist.
-- **Unbekannte Spalten:** werden ignoriert, mit einer Warnung, die deren Anzahl nennt.
+- **Unbekannte Spalten:** werden ignoriert; eine Warnung nennt die Anzahl und die Spaltenpositionen in der Kopfzeile.
 - **Leere Zeilen:** werden stillschweigend übersprungen. Eine Zeile mit Inhalt, aber ohne Titel, wird mit einer Warnung übersprungen.
 - **NULL-Zellen:** Eine Zelle, die nur `NULL` enthält, wird als leer behandelt. Aus SQL-Datenbanken exportierte CSV-Dateien schreiben fehlende Werte auf diese Weise.
 
@@ -61,7 +61,7 @@ Außer `Title` ist jede Spalte optional; Sie brauchen nur die, die Sie tatsächl
 - Ein Datum mit Uhrzeit ohne Zeitzone, etwa `2026-09-05 14:30`, behält genau diese Uhrzeit als Wanduhrzeit.
 - Ein Wert mit `Z` am Ende oder mit einem Versatz wie `+02:00` wird als der genannte exakte Zeitpunkt gespeichert.
 - `Created At`, `Completed At` und `Cancelled At` werden immer als exakter Zeitpunkt gespeichert, weil sie festhalten, wann etwas tatsächlich geschehen ist.
-- Einen Wert, den Mindwtr nicht lesen kann, lässt es leer, und die Vorschau nennt die Anzahl der übersprungenen Werte.
+- Einen Wert, den Mindwtr nicht lesen kann, lässt es leer. Die Vorschau nennt die Anzahl und die Positionen der betroffenen Zellen.
 - SQL-Zeitstempel wie `2026-02-21 22:44:00.6390000 +00:00` werden akzeptiert: Die zusätzlichen Nachkommastellen und das Leerzeichen vor dem Offset werden automatisch bereinigt.
 
 ISO 8601 (`YYYY-MM-DD`) ist die sicherste Schreibweise. Andere Formate werden versucht, aber eine Tabellenspalte mit landesüblichen Datumsangaben ist der häufigste Grund für übersprungene Werte.
@@ -90,10 +90,11 @@ Mindwtr legt vor dem Schreiben einen Wiederherstellungspunkt an. Falls das Ergeb
 
 Mindwtr gibt jeder Zeile eine stabile Identität. Wird dieselbe Datei zweimal importiert, entsteht daher nichts doppelt.
 
-- Mit einer `ID`-Spalte folgt die Identität diesem Wert, sodass ein korrigierter erneuter Export dieselben Aufgaben trifft.
-- Ohne `ID`-Spalte richtet sich die Identität nach der Position der Zeile in der Datei (und innerhalb eines ZIP zusätzlich nach der Herkunftsdatei). Exakt dieselbe Datei lässt sich gefahrlos erneut importieren, aber ein Export mit eingefügten oder entfernten Zeilen passt nicht mehr zusammen und erzeugt Duplikate.
-- Bereits vorhandene Zeilen werden übersprungen, nicht aktualisiert. Ein Import überschreibt niemals eine Aufgabe, die Sie inzwischen in der App bearbeitet haben.
-- Löschungen werden respektiert. Wenn Sie ein importiertes Projekt löschen und die Datei erneut importieren, wird das Projekt nicht neu angelegt, und seine Zeilen kommen ohne dieses Projekt an.
+- Mit einer `ID`-Spalte folgt die Identität diesem Wert. Wenn Sie den Titel oder andere Inhalte ändern und dieselbe `ID` behalten, entsteht keine neue Aufgabe.
+- Ohne `ID`-Spalte verwendet die Identität einen Fingerabdruck des Dokumentinhalts und die Position der Zeile (sowie die Herkunftsdatei innerhalb eines ZIP). Beim erneuten Import derselben Datei überspringt Mindwtr deren Aufgaben. Änderungen am Dateiinhalt, auch an einem Titel, sowie eingefügte oder entfernte Zeilen können neue Identitäten und doppelte Aufgaben erzeugen.
+- Mindwtr überspringt passende Aufgabenidentitäten, auch bei gelöschten Aufgaben. Vorhandene Aufgaben werden nicht aktualisiert und gelöschte Aufgaben nicht wiederhergestellt.
+- Wenn Sie ein importiertes Projekt löschen und die Datei erneut importieren, legt Mindwtr das Projekt nicht neu an; neue Aufgaben kommen ohne dieses Projekt an.
+- Verwenden Sie neue, eindeutige `ID`-Werte nur, wenn Sie neue Kopien importieren möchten. Dadurch können bereits vorhandene Aufgaben doppelt entstehen.
 - Gehört der Name eines importierten Bereichs oder Projekts bereits zu etwas anderem, erhält der neue Eintrag den Zusatz `(Mindwtr CSV)` im Namen, und eine Warnung weist darauf hin.
 
 ## Export aus Mindwtr
@@ -101,8 +102,8 @@ Mindwtr gibt jeder Zeile eine stabile Identität. Wird dieselbe Datei zweimal im
 Mindwtr schreibt genau dieses Format, der Weg führt also in beide Richtungen. **Einstellungen → Daten → Sicherung → CSV exportieren** speichert Ihre aktuellen Aufgaben als eine CSV-Datei, auf dem Desktop wie auf dem Mobilgerät.
 
 - Sie finden den CSV-Export auf dem Desktop bei den Aktionen für die Mehrfachauswahl. Filtern Sie eine Aufgabenliste oder die Kontextansicht, klicken Sie auf **Auswählen**, markieren Sie die gewünschten Aufgaben und wählen Sie **Ausgewählte Aufgaben als CSV exportieren**. Nur markierte Aufgaben werden exportiert, auch außerhalb des sichtbaren Ausschnitts. Für die gesamte gefilterte Liste klappen Sie zuerst die gewünschten Gruppen auf und wählen dann alle Aufgaben aus. Der Export verändert weder Aufgaben noch Auswahl. Der vollständige Export bleibt in den Einstellungen.
-- Die Spalte `ID` wird immer geschrieben, daher verdoppelt ein erneuter Import nichts: Zeilen, deren `ID` zu einer vorhandenen Aufgabe passt, werden mit einer Warnung übersprungen. Änderungen an einer exportierten Datei werden **nicht** zurückgespielt — bearbeiten Sie diese Aufgaben stattdessen in der App. Die Hinweise zur Identität oben gelten unverändert.
-- Gelöschte Aufgaben werden nie exportiert. Das Format hat keine Spalte dafür, und eine solche Zeile käme beim nächsten Import als aktive Aufgabe zurück.
+- Die Spalte `ID` wird immer geschrieben. Beim erneuten Import überspringt Mindwtr passende Aufgaben, auch gelöschte, mit einer Warnung. Änderungen an einer exportierten Datei werden **nicht** zurückgespielt — bearbeiten Sie diese Aufgaben stattdessen in der App. Die Hinweise zur Identität oben gelten unverändert.
+- Gelöschte Aufgaben werden nicht exportiert. CSV bewahrt keinen Löschverlauf auf.
 - Wiederholungen werden als die Regel geschrieben, die der Importer wieder einliest, der Rundweg erhält sie also. Wie weit eine gezählte Serie schon gelaufen ist, wird nicht geschrieben, eine importierte Wiederholung beginnt daher eine neue Serie.
 - Für eine vollständige Kopie samt Einstellungen und Löschverlauf verwenden Sie stattdessen die JSON-[Sicherung](/de/data-sync/backup-restore).
 
@@ -114,7 +115,7 @@ Mindwtr schreibt genau dieses Format, der Weg führt also in beide Richtungen. *
 
 ## Mögliche Warnungen
 
-Warnungen werden für den gesamten Import gezählt und einmal mit ihrer Anzahl angezeigt, nie einmal pro Zeile. Unlesbare Wiederholungsregeln fügen eine weitere Zeile hinzu, die die ersten drei betroffenen Zeilen nennt:
+Warnungen werden nach Typ mit Gesamtanzahl zusammengefasst. Bei unbekannten Spalten und unlesbaren Datumswerten zeigen sie die ersten fünf Positionen und die Anzahl weiterer ausgelassener Positionen. Eintrags-, Zeilen- und Spaltennummern beginnen bei 1; die Kopfzeile ist Zeile 1. Zeilen zählen CSV-Datensätze, sodass eine mehrzeilige Zelle in Anführungszeichen in einer Zeile bleibt. Bei ZIP-Dateien enthält die Position auch die Nummer des CSV-Eintrags; Nicht-CSV-Dateien zählen nicht mit. Diese Angaben enthalten keine Dateinamen oder Zellinhalte. Unlesbare Wiederholungsregeln ergänzen eine Zeile mit den ersten drei betroffenen Zeilen:
 
 - unbekannte Spalten wurden ignoriert
 - Status konnten nicht zugeordnet werden und wurden in den Eingang importiert

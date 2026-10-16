@@ -22,7 +22,7 @@ Passez par le CSV Mindwtr lorsque votre application n’y figure pas. Exportez l
 - **Guillemets :** les règles CSV habituelles. Encadrez une valeur par `"` lorsqu’elle contient le séparateur, un saut de ligne ou un guillemet, et écrivez un guillemet interne `""`.
 - **Ligne d’en-tête :** obligatoire. `Title` doit être présent, sinon l’import s’arrête sur une erreur au lieu de deviner.
 - **Noms de colonnes :** reconnus sans tenir compte de la casse ni de l’ordre. Ce sont toujours les noms anglais ci-dessous, quelle que soit la langue de l’interface Mindwtr.
-- **Colonnes inconnues :** ignorées, avec un avertissement indiquant combien ont été écartées.
+- **Colonnes inconnues :** ignorées, avec un avertissement qui indique leur nombre et leur position dans l’en-tête.
 - **Lignes vides :** ignorées sans bruit. Une ligne qui a du contenu mais pas de titre est ignorée avec un avertissement.
 - **Cellules NULL :** une cellule ne contenant que `NULL` est traitée comme vide. Les fichiers CSV exportés depuis des bases SQL écrivent ainsi les valeurs manquantes.
 
@@ -61,7 +61,7 @@ Toutes les colonnes sauf `Title` sont facultatives : n’incluez que celles dont
 - Une date et une heure sans fuseau, comme `2026-09-05 14:30`, conservent exactement cette heure murale.
 - Une valeur terminée par `Z` ou par un décalage tel que `+02:00` est enregistrée comme l’instant précis qu’elle désigne.
 - `Created At`, `Completed At` et `Cancelled At` sont toujours enregistrés comme un instant précis, car ils indiquent quand une chose s’est réellement produite.
-- Une valeur que Mindwtr ne sait pas lire est laissée vide, et l’aperçu indique combien ont été écartées.
+- Une valeur que Mindwtr ne sait pas lire reste vide. L’aperçu indique le nombre de valeurs écartées et la position des cellules concernées.
 - Les horodatages de style SQL comme `2026-02-21 22:44:00.6390000 +00:00` sont acceptés : les décimales supplémentaires et l’espace avant le décalage sont normalisés automatiquement.
 
 ISO 8601 (`YYYY-MM-DD`) est l’écriture la plus sûre. D’autres formats sont tentés, mais une colonne de tableur restée au format de date local est la cause la plus fréquente de valeurs écartées.
@@ -90,10 +90,11 @@ Mindwtr enregistre un instantané de récupération avant d’écrire. Si le ré
 
 Mindwtr attribue à chaque ligne une identité stable : importer deux fois le même fichier ne duplique donc rien.
 
-- Avec une colonne `ID`, l’identité suit cette valeur, si bien qu’un export corrigé retombe sur les mêmes tâches.
-- Sans colonne `ID`, l’identité repose sur la position de la ligne dans le fichier (et, dans un ZIP, sur le fichier dont elle provient). Réimporter exactement le même fichier est sans danger, mais un export où des lignes ont été insérées ou supprimées ne correspond plus et créera des doublons.
-- Les lignes déjà présentes sont ignorées, non mises à jour. Un import n’écrase jamais une tâche que vous avez modifiée depuis dans l’application.
-- Les suppressions sont respectées. Si vous supprimez un projet importé puis réimportez le fichier, le projet n’est pas recréé et ses lignes arrivent sans lui.
+- Avec une colonne `ID`, l’identité suit cette valeur. Modifier un titre ou un autre contenu tout en conservant le même `ID` ne crée pas de nouvelle tâche.
+- Sans colonne `ID`, l’identité utilise une empreinte du contenu du document et la position de la ligne (ainsi que son fichier source dans un ZIP). Mindwtr ignore les tâches lors du réimport du même fichier. Modifier le contenu du fichier, y compris un titre, ou ajouter ou supprimer des lignes peut créer de nouvelles identités et des tâches en double.
+- Mindwtr ignore les tâches dont l’identité correspond, y compris celles que vous avez supprimées. Il ne met pas à jour les tâches existantes et ne restaure pas les tâches supprimées.
+- Si vous supprimez un projet importé puis réimportez le fichier, Mindwtr ne recrée pas ce projet ; les nouvelles tâches arrivent sans lui.
+- Utilisez de nouveaux `ID` uniques uniquement pour importer de nouvelles copies. Cela peut dupliquer des tâches que vous avez déjà.
 - Si le nom d’un domaine ou d’un projet importé appartient déjà à autre chose, le nouvel élément reçoit `(Mindwtr CSV)` à la fin de son nom et un avertissement le signale.
 
 ## Exporter depuis Mindwtr
@@ -101,8 +102,8 @@ Mindwtr attribue à chaque ligne une identité stable : importer deux fois le m�
 Mindwtr écrit ce même format : l’aller-retour est donc complet. **Réglages → Données → Sauvegarde → Exporter en CSV** enregistre vos tâches actuelles dans un seul fichier CSV, sur ordinateur comme sur mobile.
 
 - L’export CSV sur ordinateur est disponible parmi les actions de sélection multiple. Filtrez une liste de tâches ou la vue Contextes, cliquez sur **Sélectionner**, cochez les tâches voulues, puis choisissez **Exporter les tâches sélectionnées en CSV**. Seules les tâches sélectionnées sont exportées, y compris celles hors écran. Pour inclure toute la liste filtrée, dépliez les groupes souhaités avant de tout sélectionner. L’export ne modifie ni les tâches ni la sélection. L’export complet reste dans les paramètres.
-- La colonne `ID` est toujours écrite : réimporter un export ne duplique rien, les lignes dont l’`ID` correspond à une tâche existante sont ignorées avec un avertissement. Les modifications apportées à un fichier exporté ne sont **pas** réinjectées — modifiez ces tâches dans l’application. Les remarques sur l’identité ci-dessus s’appliquent telles quelles.
-- Les tâches supprimées ne sont jamais exportées. Le format n’a pas de colonne pour elles et une telle ligne reviendrait comme tâche active au prochain import.
+- La colonne `ID` est toujours écrite : lors du réimport, Mindwtr ignore les tâches correspondantes, y compris celles supprimées, avec un avertissement. Les modifications apportées à un fichier exporté ne sont **pas** réinjectées — modifiez ces tâches dans l’application. Les remarques sur l’identité ci-dessus s’appliquent telles quelles.
+- Les tâches supprimées ne sont pas exportées. Le CSV ne conserve pas l’historique des suppressions.
 - La récurrence est écrite sous la forme de la règle de répétition que l’importateur relit : les répétitions survivent donc à l’aller-retour. L’avancement d’une série comptée n’est pas écrit, une répétition importée démarre donc une nouvelle série.
 - Pour une copie complète incluant les réglages et l’historique des éléments supprimés, utilisez plutôt la [sauvegarde](/fr/data-sync/backup-restore) JSON.
 
@@ -114,7 +115,7 @@ Mindwtr écrit ce même format : l’aller-retour est donc complet. **Réglages 
 
 ## Avertissements possibles
 
-Les avertissements sont comptés pour l’ensemble de l’import et affichés une seule fois avec leur nombre, jamais ligne par ligne. Les règles de répétition illisibles ajoutent une ligne supplémentaire nommant les trois premières lignes concernées :
+Les avertissements sont regroupés par type avec un total. Ceux concernant les colonnes inconnues et les dates illisibles indiquent les cinq premières positions et le nombre de positions supplémentaires omises. Les numéros d’entrée, de ligne et de colonne commencent à 1 ; l’en-tête est la ligne 1. Les lignes comptent les enregistrements CSV : une cellule entre guillemets contenant des sauts de ligne reste donc sur une seule ligne. Dans un ZIP, la position comprend aussi le numéro de l’entrée CSV, sans compter les fichiers non CSV. Ces détails omettent les noms de fichiers et le contenu des cellules. Les règles de répétition illisibles ajoutent une ligne indiquant les trois premières lignes concernées :
 
 - des colonnes inconnues ont été ignorées
 - des statuts n’ont pas pu être associés et ont été importés dans la Boîte de réception

@@ -22,7 +22,7 @@ Reach for Mindwtr CSV when your app is not listed. Export whatever CSV it produc
 - **Quoting:** standard CSV. Wrap a value in `"` when it contains the delimiter, a line break, or a quote character, and write an embedded quote as `""`.
 - **Header row:** required. `Title` must be present, or the import stops with an error instead of guessing.
 - **Column names:** matched without regard to case or order. They are always the English names below, whatever language the Mindwtr interface is set to.
-- **Unknown columns:** ignored, with a warning that tells you how many were skipped.
+- **Unknown columns:** ignored, with a warning showing the count and header column locations.
 - **Empty rows:** skipped silently. A row that has other content but no title is skipped with a warning.
 - **NULL cells:** a cell containing only `NULL` is treated as empty. CSV files exported from SQL databases write missing values that way.
 
@@ -61,7 +61,7 @@ Every column except `Title` is optional, and you only need the ones you actually
 - A date and time with no zone, such as `2026-09-05 14:30`, keeps exactly those wall-clock digits.
 - A value ending in `Z` or an offset such as `+02:00` is stored as the precise instant it names.
 - `Created At`, `Completed At` and `Cancelled At` are always stored as a precise instant, because they record when something really happened.
-- A value Mindwtr cannot read is left empty, and the preview reports how many were skipped.
+- A value Mindwtr cannot read is left empty, and the preview reports the count and affected cell locations.
 - SQL-style timestamps such as `2026-02-21 22:44:00.6390000 +00:00` are accepted: the extra fractional digits and the space before the offset are normalized away.
 
 ISO 8601 (`YYYY-MM-DD`) is the safest thing to write. Other formats are attempted, but a spreadsheet column still holding locale-specific dates is the most common reason values get skipped.
@@ -90,10 +90,11 @@ Mindwtr saves a recovery snapshot before it writes. If the result is not what yo
 
 Mindwtr gives every row a stable identity, so importing the same file twice does not duplicate anything.
 
-- With an `ID` column, the identity follows that value, so a corrected re-export lands on the same tasks.
-- Without an `ID` column, the identity falls back to the row's position in the file (and, inside a ZIP, the file it came from). Re-importing the very same file is safe, but an export with rows inserted or removed no longer lines up and will create duplicates.
-- Rows that already exist are skipped rather than updated. An import never overwrites a task you have edited in the app since.
-- Deletions are respected. If you delete an imported project and then import the file again, the project is not recreated and its rows arrive without it.
+- With an `ID` column, the identity follows that value. Changing a title or other content while keeping the same `ID` does not create a new task.
+- Without an `ID` column, the identity uses a fingerprint of the document content and the row’s position (plus its source file inside a ZIP). Re-importing the same file skips its tasks. Changing the file content, including a title, or inserting or removing rows can create new identities and duplicate tasks.
+- Mindwtr skips matching task identities, including tasks you have deleted. It does not update existing tasks or restore deleted tasks.
+- If you delete an imported project and then import the file again, Mindwtr does not recreate that project; any new tasks arrive without it.
+- Use new, unique `ID` values only when you intend to import new copies. This can duplicate tasks you already have.
 - If the name of an imported area or project already belongs to something else, the new one gets `(Mindwtr CSV)` appended to its name and a warning says so.
 
 ## Exporting From Mindwtr
@@ -101,8 +102,8 @@ Mindwtr gives every row a stable identity, so importing the same file twice does
 Mindwtr writes this same format, so the round trip is complete. **Settings → Data → Backup → Export CSV** saves your live tasks as one CSV file, on desktop and mobile.
 
 - Desktop CSV export is available in the bulk-selection actions. Filter a task list or Contexts view, choose **Select**, select the tasks you want, then choose **Export selected tasks as CSV**. Only selected tasks are exported, including selected rows outside the visible screen. To include the whole filtered list, expand the groups you want before using **Select all**. Export does not change your tasks or selection. Full-data export remains in Settings.
-- The `ID` column is always written, so re-importing an export does not duplicate anything: rows whose `ID` matches a task you already have are skipped with a warning. Edits made to an exported file are **not** pushed back in — change those tasks in the app instead. The identity notes above apply directly.
-- Deleted tasks are never exported. The format has no column for them, and such a row would return as a live task on the next import.
+- The `ID` column is always written, so re-importing an export skips matching tasks, including deleted tasks, with a warning. Edits made to an exported file are **not** pushed back in — change those tasks in the app instead. The identity notes above apply directly.
+- Deleted tasks are not exported. CSV does not preserve deletion history.
 - Recurrence is written as the repeat rule the importer reads back, so repeats survive the round trip. How far a counted series has already run is not written, so an imported repeat starts a fresh series.
 - For a complete copy including settings and deleted-item history, use the JSON [backup](/data-sync/backup-restore) instead.
 
@@ -114,7 +115,7 @@ Mindwtr writes this same format, so the round trip is complete. **Settings → D
 
 ## Warnings You May See
 
-Warnings are counted for the whole import and shown once with their count, never once per row. Unreadable repeat rules add one further line naming the first three rows that carried one:
+Warnings are grouped by type with total counts. Unknown-column and unreadable-date warnings show the first five locations and how many further locations were omitted. Entry, row, and column numbers start at 1; the header is row 1. Rows count CSV records, so a quoted multiline cell stays in one row. ZIP locations also include the CSV entry number, excluding non-CSV files. These details omit file names and cell contents. Unreadable repeat rules add a line naming the first three affected rows:
 
 - unknown columns were ignored
 - statuses could not be mapped and were imported to Inbox

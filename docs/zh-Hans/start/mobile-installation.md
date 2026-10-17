@@ -38,6 +38,16 @@ Mindwtr 已在 [Google Play](https://play.google.com/store/apps/details?id=tech.
 2. 下载最新 APK（例如 `mindwtr-<version>.apk`）
 3. 在设备上打开 APK
 
+**鸿蒙适配**
+
+Mindwtr 目前没有鸿蒙原生版。上面的 APK 下载方式适用于支持 Android APK、且满足 Mindwtr 运行要求的设备；不能将 Android 安装包当作 HarmonyOS 5 及更新版本的原生应用安装。
+
+部分鸿蒙设备可以通过卓易通等兼容环境运行 Android 应用，具体范围以[华为的安装说明](https://consumer.huawei.com/cn/support/content/zh-cn16061787/)和兼容环境实际支持为准。Mindwtr 尚未验证这些环境中的运行、通知、后台同步和小组件行为，因此不将其列为已支持的平台。
+
+鸿蒙原生版需要单独适配界面、系统接口和打包流程，并投入真机测试与持续维护。发布到应用市场还需要按具体渠道准备主体认证、可能需要的企业资质、APP 备案及相关网络资源、软件著作权或其他权属材料，并完成隐私合规和上架审核；具体以[华为上架要求](https://developer.huawei.com/consumer/cn/app/submit)为准。下文也介绍了国内应用市场分发的相关工作。
+
+如果用户需求足够，并有足够的开发、真机测试、上架协助或资金支持，我们会推进鸿蒙适配。目前没有确定的发布时间表。欢迎在[鸿蒙支持讨论 #1393](https://github.com/dongdongbh/Mindwtr/discussions/1393)中补充设备型号、系统版本和愿意提供的帮助；捐赠不保证某项适配或具体发布时间。
+
 **中国大陆厂商应用商店**
 
 Mindwtr 暂未上架小米、OPPO、vivo 等中国大陆厂商的应用商店。这说的是商店分发渠道：使用这些品牌的手机，只要设备满足 Android 版本等运行要求，你仍可通过上面的官方 APK 安装。系统可能要求你确认安装来源，操作见下文。

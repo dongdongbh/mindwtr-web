@@ -96,6 +96,8 @@ Focus tient les tâches dont la date de début est future et les tâches ultéri
 - **Mode Zen** : activez-le pour tout masquer à l’exception des tâches du Focus du jour.
 - **Pomodoro (facultatif)** : activez-le dans **Paramètres → GTD → Fonctionnalités → Minuteur Pomodoro** pour afficher un panneau de minuteur de concentration/pause (15/3, 25/5, 50/10, ainsi qu’un préréglage personnalisé facultatif). Laissez-le sur **Minuteur uniquement**, ou activez **Lier le minuteur à la tâche** pour afficher le sélecteur de tâche du Minuteur et l’action **Marquer la tâche comme terminée**.
 
+**Dates des tâches (v1.3.7, pas encore publiée).** Dans **Filtres → Dates des tâches**, choisissez **Aujourd’hui**, **7 prochains jours**, **14 prochains jours**, **30 prochains jours** ou **Toutes les dates à venir**. Une tâche correspond si sa date de début, d’échéance ou de revue se trouve dans cette période. Les périodes incluent aujourd’hui et suivent les jours du calendrier local ; toutes les dates à venir comprend aujourd’hui et les dates ultérieures. **À tout moment** retire cette condition. Les autres filtres et les règles de visibilité de la vue restent applicables. La section À venir de Focus ne change pas et les événements de calendrier sont exclus.
+
 ### 📁 Projets
 
 Résultats en plusieurs étapes contenant des tâches liées.

@@ -476,6 +476,10 @@ Das Listensymbol neben **Filter** in der Fokus-Kopfzeile schaltet **Details** um
 - **Schnellstatus**: Statusplakette antippen
 - **Pomodoro (optional)** unter **Einstellungen → GTD → Funktionen → Pomodoro-Zeitgeber**; **Nur Zeitgeber** oder **Zeitgeber mit Aufgabe verknüpfen**, um die Aufgabenauswahl des Zeitgebers und die Aktion **Aufgabe als erledigt markieren** anzuzeigen. Eingeklappt zeigt eine schmale Zeile Restzeit, Phase und den Status **Läuft** oder **Pausiert**.
 
+**Aufgabendaten (v1.3.7, noch nicht veröffentlicht).** Wähle unter **Filter → Aufgabendaten** **Heute**, **Nächste 7 Tage**, **Nächste 14 Tage**, **Nächste 30 Tage** oder **Alle kommenden**. Eine Aufgabe passt, wenn ihr Start-, Fälligkeits- oder Review-Datum im Zeitraum liegt. Die Zeiträume schließen heute ein und verwenden lokale Kalendertage; Alle kommenden umfasst heute und spätere Daten. **Jederzeit** entfernt die Bedingung. Andere Filter und die normalen Sichtbarkeitsregeln der Ansicht gelten weiterhin. Der Bereich „Demnächst“ in Fokus bleibt unverändert; Kalenderereignisse sind nicht enthalten.
+
+Speichere den Filter in Fokus und wähle ihn unter **Gespeicherte Filter** im Android-Aufgabenwidget oder unter **Widget bearbeiten** ab iOS 17. Das Widget zeigt passende unerledigte Aufgaben innerhalb seiner normalen Bereichs- und Projektauswahl. Öffne Mindwtr, um die zwischengespeicherte Liste nach einem Tageswechsel oder der Synchronisierung zu aktualisieren. Aktualisiere Geräte, die den Filter verwenden: Ältere App-Versionen wenden die neue Datumsbedingung nicht an.
+
 ---
 
 ## Durchsicht

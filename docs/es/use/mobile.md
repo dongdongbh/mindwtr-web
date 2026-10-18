@@ -507,6 +507,10 @@ El icono de lista junto a **Filtros** en la cabecera de Foco alterna **Detalles*
 - **Estado rápido**: toca la insignia de estado para cambiarlo.
 - **Pomodoro (opcional)**: actívalo en **Ajustes → GTD → Funciones → Temporizador Pomodoro** para mostrar un temporizador compacto de concentración/descanso. Déjalo en **Solo temporizador** o activa **Vincular temporizador a tarea** para mostrar el selector de tarea del temporizador y la acción **Marcar tarea como terminada**. Al contraerlo, una fila estrecha mantiene visibles el tiempo restante, la fase y el estado **En curso** o **En pausa**.
 
+**Fechas de tareas (v1.3.7, aún no publicada).** En **Filtros → Fechas de tareas**, elige **Hoy**, **Próximos 7 días**, **Próximos 14 días**, **Próximos 30 días** o **Todas las próximas**. Una tarea coincide si su fecha de inicio, vencimiento o revisión está dentro del intervalo. Los intervalos incluyen hoy y usan días del calendario local; Todas las próximas incluye hoy y las fechas posteriores. **Cualquier fecha** elimina esta condición. Los demás filtros y las reglas de visibilidad de la vista siguen vigentes. Esto no cambia la sección Próximas de Focus ni incluye eventos de calendario.
+
+Guarda el filtro en Focus y selecciónalo en **Filtros guardados** del widget Tareas de Android o en **Editar widget** en iOS 17 o posterior. El widget muestra las tareas pendientes que coinciden dentro de su selección habitual de áreas y proyectos. Abre Mindwtr para actualizar la lista en caché cuando pasen los días o después de sincronizar. Actualiza los dispositivos que usen el filtro: las versiones anteriores no aplican esta nueva condición de fecha.
+
 ---
 
 ## Revisión

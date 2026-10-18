@@ -516,6 +516,10 @@ The list icon beside **Filters** in the Focus header toggles **Details**: turn i
 - **Quick Status**: Tap the status badge to change status.
 - **Pomodoro (Optional)**: Enable in **Settings → GTD → Features → Pomodoro timer** to show a compact focus/break timer. Leave it as **Timer only**, or turn on **Link timer to task** to show the Timer task picker and **Mark task done** action. Collapse the card to keep the remaining time, phase, and **Running** or **Paused** status visible in a slim row.
 
+**Task dates (v1.3.7, not yet released).** In **Filters → Task dates**, choose **Today**, **Next 7 days**, **Next 14 days**, **Next 30 days**, or **All upcoming**. A task matches if its start, due, or review date falls in the range. Rolling ranges include today and use local calendar days; All upcoming includes today and later dates. Choose **Any time** to remove this condition. Other filters and the view’s normal visibility rules still apply; this does not change Focus’s Upcoming section or include calendar events.
+
+Save the filter in Focus, then select it under **Saved Filters** in the Android Tasks widget chooser or iOS 17+ **Edit Widget**. The widget shows matching unfinished tasks within its normal area and project scope. Open Mindwtr to refresh the cached list as days pass or after syncing. Update devices that use the filter: older app versions do not apply the new date condition.
+
 ---
 
 ## Review

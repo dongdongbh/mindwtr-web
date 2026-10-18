@@ -96,6 +96,8 @@ Foco mantiene fuera de sus listas accionables las tareas cuya fecha de inicio es
 - **Modo Zen**: actívalo para ocultar todo salvo las tareas de Foco de hoy.
 - **Pomodoro (opcional)**: actívalo en **Ajustes → GTD → Funciones → Temporizador Pomodoro** para mostrar un panel de temporizador de concentración/descanso (15/3, 25/5, 50/10 y un preajuste personalizado opcional). Déjalo en **Solo temporizador** o activa **Vincular temporizador a tarea** para mostrar el selector de tarea del temporizador y la acción **Marcar tarea como terminada**.
 
+**Fechas de tareas (v1.3.7, aún no publicada).** En **Filtros → Fechas de tareas**, elige **Hoy**, **Próximos 7 días**, **Próximos 14 días**, **Próximos 30 días** o **Todas las próximas**. Una tarea coincide si su fecha de inicio, vencimiento o revisión está dentro del intervalo. Los intervalos incluyen hoy y usan días del calendario local; Todas las próximas incluye hoy y las fechas posteriores. **Cualquier fecha** elimina esta condición. Los demás filtros y las reglas de visibilidad de la vista siguen vigentes. Esto no cambia la sección Próximas de Focus ni incluye eventos de calendario.
+
 ### 📁 Proyectos
 
 Resultados de varios pasos que contienen tareas relacionadas.

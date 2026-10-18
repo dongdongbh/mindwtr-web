@@ -96,6 +96,8 @@ Die Fokus-Abschnitte erscheinen in dieser Reihenfolge: **Heutiger Fokus → Heut
 - **Zen-Modus**: Alles außer den Aufgaben im heutigen Fokus ausblenden.
 - **Pomodoro (optional)**: Unter **Einstellungen → GTD → Funktionen → Pomodoro-Zeitgeber** ein Fokus-/Pausenfeld aktivieren (15/3, 25/5, 50/10 und eine optionale eigene Voreinstellung). Belassen Sie es bei **Nur Zeitgeber** oder aktivieren Sie **Zeitgeber mit Aufgabe verknüpfen** für Aufgabenauswahl und **Aufgabe als erledigt markieren**.
 
+**Aufgabendaten (v1.3.7, noch nicht veröffentlicht).** Wähle unter **Filter → Aufgabendaten** **Heute**, **Nächste 7 Tage**, **Nächste 14 Tage**, **Nächste 30 Tage** oder **Alle kommenden**. Eine Aufgabe passt, wenn ihr Start-, Fälligkeits- oder Review-Datum im Zeitraum liegt. Die Zeiträume schließen heute ein und verwenden lokale Kalendertage; Alle kommenden umfasst heute und spätere Daten. **Jederzeit** entfernt die Bedingung. Andere Filter und die normalen Sichtbarkeitsregeln der Ansicht gelten weiterhin. Der Bereich „Demnächst“ in Fokus bleibt unverändert; Kalenderereignisse sind nicht enthalten.
+
 ### 📁 Projekte
 
 Mehrstufige Ergebnisse mit zusammengehörigen Aufgaben.

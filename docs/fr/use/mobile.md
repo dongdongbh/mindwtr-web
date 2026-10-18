@@ -507,6 +507,10 @@ L’icône de liste à côté de **Filtres** dans l’en-tête de Focus bascule 
 - **Statut rapide** : touchez le badge de statut pour modifier le statut.
 - **Pomodoro (facultatif)** : activez-le dans **Paramètres → GTD → Fonctionnalités → Minuteur Pomodoro** pour afficher un minuteur compact de concentration/pause. Laissez-le sur **Minuteur uniquement**, ou activez **Lier le minuteur à la tâche** pour afficher le sélecteur de tâche du Minuteur et l’action **Marquer la tâche comme terminée**. Une fois replié, une ligne étroite garde visibles le temps restant, la phase et l’état **En cours** ou **En pause**.
 
+**Dates des tâches (v1.3.7, pas encore publiée).** Dans **Filtres → Dates des tâches**, choisissez **Aujourd’hui**, **7 prochains jours**, **14 prochains jours**, **30 prochains jours** ou **Toutes les dates à venir**. Une tâche correspond si sa date de début, d’échéance ou de revue se trouve dans cette période. Les périodes incluent aujourd’hui et suivent les jours du calendrier local ; toutes les dates à venir comprend aujourd’hui et les dates ultérieures. **À tout moment** retire cette condition. Les autres filtres et les règles de visibilité de la vue restent applicables. La section À venir de Focus ne change pas et les événements de calendrier sont exclus.
+
+Enregistrez le filtre dans Focus, puis sélectionnez-le dans les **Filtres enregistrés** du widget Tâches Android ou dans **Modifier le widget** à partir d’iOS 17. Le widget affiche les tâches inachevées correspondantes dans son périmètre habituel de domaines et de projets. Ouvrez Mindwtr pour actualiser la liste en cache au fil des jours ou après une synchronisation. Mettez à jour les appareils utilisant ce filtre : les anciennes versions n’appliquent pas cette nouvelle condition de date.
+
 ---
 
 ## Revue

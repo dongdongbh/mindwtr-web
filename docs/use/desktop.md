@@ -98,6 +98,8 @@ Starting with v1.3.4, **Settings → GTD → Include tasks starting today in Tod
 - **Zen Mode**: Toggle to hide everything except Today's Focus tasks.
 - **Pomodoro (Optional)**: Enable in **Settings → GTD → Features → Pomodoro timer** to show a focus/break timer panel (15/3, 25/5, 50/10, plus one optional custom preset). Leave it as **Timer only**, or turn on **Link timer to task** to show the Timer task picker and **Mark task done** action.
 
+**Task dates (v1.3.7, not yet released).** In **Filters → Task dates**, choose **Today**, **Next 7 days**, **Next 14 days**, **Next 30 days**, or **All upcoming**. A task matches if its start, due, or review date falls in the range. Rolling ranges include today and use local calendar days; All upcoming includes today and later dates. Choose **Any time** to remove this condition. Other filters and the view’s normal visibility rules still apply; this does not change Focus’s Upcoming section or include calendar events.
+
 ### 📁 Projects
 
 Multi-step outcomes containing related tasks.

@@ -276,6 +276,8 @@ Usa listas de comprobación como plantillas:
 - El campo de **título** también entiende los tokens de captura rápida. Escribe `@`, `#`, `+`, `!`, `%` o `/` para abrir sugerencias y pulsa `Enter` o `Tab`: la opción va a su campo (contexto, etiqueta, proyecto, área, persona, fecha, estado) y el token sale del título. El texto que escribes sin aceptar una sugerencia se queda en el título tal cual, así que un título como `Review 100% target` es seguro.
 - En **Ajustes → GTD → Diseño del editor de tareas**, elige **En la fila** para editar donde estaba la fila de la tarea, o **Ventana emergente** para abrir un editor centrado sin desplazar la lista.
 
+Desde **v1.3.7**, el editor **Ventana emergente** ofrece más espacio para **Detalles** a la izquierda y muestra las propiedades de la tarea a la derecha en ventanas anchas. En ventanas estrechas, el título, los detalles y las propiedades se apilan verticalmente. Las propiedades mantienen las secciones configuradas y su comportamiento al expandirlas o contraerlas, mientras **Guardar** y **Cancelar** permanecen visibles. El editor en la fila y el diálogo de tareas del Calendario conservan su diseño.
+
 ---
 
 ## Integración con calendarios

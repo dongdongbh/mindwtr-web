@@ -290,6 +290,8 @@ Use checklists as templates:
 - The **title** field understands the quick-add tokens too. Type `@`, `#`, `+`, `!`, `%` or `/` to open suggestions, then press `Enter` or `Tab`: the choice goes into its field (context, tag, project, area, person, date, status) and the token leaves the title. Text you type without accepting a suggestion stays in the title as written, so a title like `Review 100% target` is safe.
 - In **Settings → GTD → Task Editor Layout**, choose **In-row** to edit where the task row was, or **Pop-up** to open a centered editor without shifting the list.
 
+Starting with **v1.3.7**, the **Pop-up** editor gives **Details** more room on the left and puts task properties on the right in wide windows. In narrow windows, the title, Details and properties stack vertically. Properties keep your configured sections and expand/collapse behavior, while **Save** and **Cancel** stay visible. The in-row editor and Calendar task dialog keep their existing layouts.
+
 ---
 
 ## Calendar Integration

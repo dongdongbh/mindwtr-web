@@ -276,6 +276,8 @@ Checklisten als Vorlagen:
 - Auch das **Titel**-Feld versteht die Schnelleingabe-Tokens. Tippen Sie `@`, `#`, `+`, `!`, `%` oder `/`, um Vorschläge zu öffnen, und drücken Sie dann `Enter` oder `Tab`: Die Auswahl landet in ihrem Feld (Kontext, Tag, Projekt, Bereich, Person, Datum, Status), und das Token verschwindet aus dem Titel. Text, den Sie ohne Übernahme eines Vorschlags tippen, bleibt unverändert im Titel, ein Titel wie `Review 100% target` ist also sicher.
 - Unter **Einstellungen → GTD → Layout des Aufgabeneditors** wählen Sie **In der Zeile**, um die Aufgabe an ihrer Stelle in der Liste zu bearbeiten, oder **Pop-up** für einen zentrierten Editor, der die Liste nicht verschiebt.
 
+Ab **v1.3.7** bietet der **Pop-up**-Editor in breiten Fenstern links mehr Platz für **Details** und zeigt rechts die Aufgabeneigenschaften. In schmalen Fenstern stehen Titel, Details und Eigenschaften untereinander. Die Eigenschaften behalten Ihre konfigurierten Abschnitte und das Auf- und Zuklappverhalten bei; **Speichern** und **Abbrechen** bleiben sichtbar. Der Editor in der Zeile und der Aufgabendialog im Kalender behalten ihre bisherigen Layouts.
+
 ---
 
 ## Kalenderintegration

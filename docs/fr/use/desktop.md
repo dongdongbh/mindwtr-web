@@ -276,6 +276,8 @@ Utilisez les listes de contrôle comme modèles :
 - Le champ **titre** comprend aussi les jetons de saisie rapide. Tapez `@`, `#`, `+`, `!`, `%` ou `/` pour ouvrir les suggestions, puis appuyez sur `Enter` ou `Tab` : le choix va dans son champ (contexte, étiquette, projet, domaine, personne, date, statut) et le jeton quitte le titre. Le texte saisi sans accepter de suggestion reste tel quel dans le titre, donc un titre comme `Review 100% target` ne risque rien.
 - Dans **Paramètres → GTD → Mise en page de l’éditeur de tâche**, choisissez **Dans la ligne** pour modifier la tâche à la place de sa ligne, ou **Fenêtre contextuelle** pour ouvrir un éditeur centré sans déplacer la liste.
 
+À partir de la **v1.3.7**, l’éditeur **Fenêtre contextuelle** offre plus de place aux **Détails** à gauche et affiche les propriétés de la tâche à droite dans les fenêtres larges. Dans les fenêtres étroites, le titre, les détails et les propriétés s’empilent verticalement. Les propriétés conservent vos sections configurées et leur comportement de dépliage et de repliage ; **Enregistrer** et **Annuler** restent visibles. L’éditeur dans la ligne et la boîte de dialogue de tâche du Calendrier conservent leur disposition.
+
 ---
 
 ## Intégration du calendrier

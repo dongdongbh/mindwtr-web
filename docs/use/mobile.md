@@ -791,6 +791,12 @@ Skip withdraws pending start/due reminders and their repeats without erasing the
 
 The default follows the **GTD** settings-sync group; each task's choice syncs with the task. Device notification switches remain local. Upgrade all syncing devices to use inheritance: older versions use the last saved send/skip value, do not follow later default changes, and may lose **Use default** when saving a task.
 
+### App icon badge on iPhone and iPad
+
+**From v1.3.7 (not yet released).** Turn on **Settings → Notifications → App icon badge** to show one combined count of tasks due today and overdue on this device. It is off by default, applies only to this device, and works independently of task reminders. The count uses due dates, not start dates, and excludes completed, cancelled, deleted and reference tasks, and tasks in archived or deleted projects.
+
+The badge updates after task changes, when you return to Mindwtr, and at local midnight while the app is running. It may be outdated while the app is closed; updates from another device appear after they sync to this device. Allow badges for Mindwtr in iOS Settings if prompted.
+
 ### Test a task reminder
 
 1. Edit a task and set its **Due date** to a time a few minutes ahead. **Date only** gives the task a deadline without scheduling a timed alert.

@@ -719,6 +719,12 @@ Ab **v1.3.7** wählst du unter **Einstellungen → Benachrichtigungen** den Stan
 
 Der Standard wird über die Einstellungsgruppe **GTD** synchronisiert, die Aufgabenwahl mit der Aufgabe. Gerätebezogene Benachrichtigungsschalter bleiben lokal. Aktualisiere alle synchronisierenden Geräte: ältere Versionen verwenden den zuletzt gespeicherten Senden/Überspringen-Wert, folgen späteren Standardänderungen nicht und können beim Speichern **Standard verwenden** verlieren.
 
+### App-Symbolkennzeichen auf iPhone und iPad
+
+**Ab v1.3.7 (noch nicht veröffentlicht).** Aktiviere **Einstellungen → Benachrichtigungen → App-Symbolkennzeichen**, um die gemeinsame Anzahl der heute fälligen und überfälligen Aufgaben auf diesem Gerät anzuzeigen. Die Option ist standardmäßig aus, gilt nur für dieses Gerät und funktioniert unabhängig von Aufgabenerinnerungen. Gezählt wird nach Fälligkeitsdatum, nicht nach Startdatum; erledigte, abgebrochene, gelöschte und Referenzaufgaben sowie Aufgaben in archivierten oder gelöschten Projekten sind ausgeschlossen.
+
+Die Zahl wird nach Aufgabenänderungen, bei der Rückkehr zu Mindwtr und um lokale Mitternacht aktualisiert, solange die App läuft. Bei geschlossener App kann sie veraltet sein; Änderungen von anderen Geräten erscheinen nach der Synchronisierung auf diesem Gerät. Erlaube Kennzeichen für Mindwtr in den iOS-Einstellungen, wenn du dazu aufgefordert wirst.
+
 ### Eine Aufgabenerinnerung testen
 
 1. Eine Aufgabe bearbeiten und die **Fälligkeit** auf eine Uhrzeit in wenigen Minuten setzen. **Nur Datum** erzeugt keine zeitgesteuerte Benachrichtigung.

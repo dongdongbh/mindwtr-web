@@ -778,6 +778,12 @@ Omitir retira los avisos de inicio/vencimiento pendientes y sus repeticiones sin
 
 El valor predeterminado se sincroniza mediante el grupo **GTD**, y la elección individual con la tarea. Los interruptores de notificaciones del dispositivo siguen siendo locales. Actualiza todos los dispositivos sincronizados: las versiones antiguas usan el último valor enviar/omitir guardado, no siguen cambios posteriores del valor predeterminado y pueden perder la herencia al guardar una tarea.
 
+### Insignia del icono en iPhone y iPad
+
+**Desde v1.3.7 (aún no publicada).** Activa **Ajustes → Notificaciones → Insignia del icono de la app** para mostrar un único total de tareas que vencen hoy o están atrasadas en este dispositivo. Está desactivada por defecto, solo se aplica a este dispositivo y funciona independientemente de los recordatorios de tareas. El recuento usa fechas de vencimiento, no de inicio, y excluye las tareas completadas, canceladas, eliminadas y de referencia, así como las tareas de proyectos archivados o eliminados.
+
+La insignia se actualiza tras los cambios en las tareas, al volver a Mindwtr y a medianoche local mientras la app está en ejecución. Puede quedar desactualizada con la app cerrada; los cambios de otro dispositivo aparecen después de sincronizarse con este. Si se te solicita, permite las insignias de Mindwtr en los Ajustes de iOS.
+
 ### Probar un recordatorio de tarea
 
 1. Edita una tarea y fija su **Fecha de vencimiento** a una hora dentro de unos minutos. **Solo fecha** no programa una alerta con hora.

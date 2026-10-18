@@ -778,6 +778,12 @@ Ignorer retire les rappels de début/d’échéance prévus et leurs répétitio
 
 Le réglage par défaut se synchronise avec le groupe **GTD**, et le choix individuel avec la tâche. Les interrupteurs de notification de l’appareil restent locaux. Mettez tous les appareils synchronisés à jour : les anciennes versions utilisent la dernière valeur envoyer/ignorer enregistrée, ne suivent pas les changements ultérieurs du réglage par défaut et peuvent perdre l’héritage lors de l’enregistrement d’une tâche.
 
+### Pastille sur l’icône sur iPhone et iPad
+
+**À partir de v1.3.7 (pas encore publiée).** Activez **Paramètres → Notifications → Pastille sur l’icône de l’app** pour afficher le nombre total de tâches dues aujourd’hui et en retard sur cet appareil. Cette option est désactivée par défaut, ne concerne que cet appareil et fonctionne indépendamment des rappels de tâches. Le compteur utilise les dates d’échéance, pas les dates de début, et exclut les tâches terminées, annulées, supprimées et de référence, ainsi que les tâches des projets archivés ou supprimés.
+
+La pastille se met à jour après les modifications des tâches, à votre retour dans Mindwtr et à minuit, heure locale, tant que l’app fonctionne. Le nombre peut être périmé lorsque l’app est fermée ; les modifications d’un autre appareil apparaissent après leur synchronisation sur cet appareil. Si cela vous est demandé, autorisez les pastilles pour Mindwtr dans les Réglages iOS.
+
 ### Tester un rappel de tâche
 
 1. Modifiez une tâche et fixez son **Échéance** à une heure dans quelques minutes. **Date seule** ne programme pas d’alerte à une heure précise.

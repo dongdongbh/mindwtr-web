@@ -770,7 +770,9 @@ Mindwtr envoie des notifications pour vous aider à rester sur la bonne voie.
 - **Alertes d’heure de début** : vous rappellent quand il est temps de commencer
 - **Rappels de tâches récurrentes** : notifications pour les éléments récurrents
 
-Les tâches avec une heure d’échéance peuvent répéter le rappel toutes les 5, 10, 15, 30 ou 60 minutes. Désactiver la répétition ne désactive pas le premier rappel.
+La **répétition du rappel** nécessite une heure d’échéance explicite. Choisissez 5, 10, 15, 30 ou 60 minutes entre les alertes, avec un maximum de huit rappels supplémentaires dans les deux heures suivant l’échéance. Les rappels ne se poursuivent pas indéfiniment jusqu’à l’achèvement. Désactiver la répétition ne désactive pas le premier rappel.
+
+**Reporter (Snooze)** décale l’alerte actuelle. **Ignorer (Dismiss)** ferme la notification actuelle sans annuler les rappels suivants de la série. Pour arrêter les rappels de début/d’échéance d’une tâche et leurs répétitions sans modifier ses dates, choisissez **Rappels de début/d’échéance → Ignorer** dans l’éditeur de tâche.
 
 À partir de **v1.3.7**, **Paramètres → Notifications** propose un réglage par défaut pour les rappels de début/d’échéance : **Envoyer** ou **Ignorer**. Chaque tâche propose **Utiliser le réglage par défaut** (avec son effet actuel), **Envoyer** et **Ignorer**. Les nouvelles tâches suivent le réglage par défaut. Les tâches existantes conservent leur comportement jusqu’à ce que vous choisissiez explicitement le réglage par défaut. Au départ, celui-ci autorise les rappels.
 

@@ -711,7 +711,9 @@ Ab v1.3.1: Ordnen Sie Aufgaben direkt in dieser Liste in Irgendwann-Abschnitte e
 - **Startzeitwarnungen**
 - **Erinnerungen an wiederkehrende Aufgaben**
 
-Bei Aufgaben mit Fälligkeitszeit kann **Erinnerung wiederholen** nach der ersten Fälligkeitserinnerung alle 5, 10, 15, 30 oder 60 Minuten erneut erinnern. **Aus** lässt die erste Erinnerung weiterhin zu.
+**Erinnerung wiederholen** erfordert eine ausdrückliche Fälligkeitszeit. Wähle 5, 10, 15, 30 oder 60 Minuten zwischen den Benachrichtigungen. Innerhalb von zwei Stunden nach der Fälligkeit gibt es höchstens acht zusätzliche Erinnerungen. Sie werden nicht unbegrenzt bis zur Erledigung wiederholt. **Aus** lässt die erste Fälligkeitserinnerung weiterhin zu.
+
+**Schlummern (Snooze)** verschiebt die aktuelle Benachrichtigung. **Schließen (Dismiss)** entfernt sie, ohne zukünftige Erinnerungen der Wiederholungsfolge abzubrechen. Um die Start-/Fälligkeitserinnerungen einer Aufgabe samt Wiederholungen zu stoppen, ohne ihre Daten zu ändern, wähle im Aufgabeneditor **Start-/Fälligkeitserinnerungen → Überspringen**.
 
 Ab **v1.3.7** wählst du unter **Einstellungen → Benachrichtigungen** den Standard für Start-/Fälligkeitserinnerungen: **Senden** oder **Überspringen**. Jede Aufgabe bietet **Standard verwenden** (mit aktueller Wirkung), **Senden** und **Überspringen**. Neue Aufgaben verwenden den Standard; bestehende behalten ihr bisheriges Verhalten, bis du ausdrücklich **Standard verwenden** wählst. Anfangs ist Senden der Standard.
 

@@ -783,7 +783,9 @@ Mindwtr sends notifications to keep you on track.
 - **Start time alerts**: Reminds you when it's time to begin
 - **Recurring task reminders**: Notifications for recurring items
 
-Tasks with a due time can set **Repeat reminder** to 5, 10, 15, 30, or 60 minutes after the due reminder. **Repeat reminder: Off** still allows the first due reminder.
+**Repeat reminder** requires an explicit due time. Choose 5, 10, 15, 30, or 60 minutes between alerts, with at most eight additional reminders within two hours after the due time. Repeats do not continue indefinitely until completion. **Repeat reminder: Off** still allows the first due reminder.
+
+**Snooze** postpones the current alert. **Dismiss** closes the current notification; it does not cancel future reminders in the repeat sequence. To stop a task’s start/due reminders and their repeats without changing its dates, set **Start/due reminders → Skip** in the task editor.
 
 Starting in **v1.3.7**, **Settings → Notifications → Default task reminders** chooses **Send** or **Skip** for new tasks. Each task has **Start/due reminders**: **Use default** (showing its current effect), **Send**, or **Skip**. Existing tasks keep their previous send/skip behavior until you deliberately choose **Use default**. The initial default is Send.
 

@@ -26,6 +26,8 @@ La plupart des listes de tâches partagent la même rangée de commandes pour s�
 
 Faites glisser une tâche dans la barre latérale vers **Boîte de réception**, **Un jour/Peut-être**, **En attente**, **Références** ou **Historique** pour changer son statut ; la déposer sur **Historique** la marque comme terminée, et la notification propose **Annuler**. Faites glisser la tâche sur l’en-tête d’un groupe replié de la barre latérale, comme **Plus**, pour ouvrir ce groupe pendant le déplacement. La **Corbeille** n’accepte pas les dépôts. Déposez la tâche sur **Calendrier**, ou marquez une pause au-dessus du Calendrier pendant le déplacement, pour ouvrir aujourd’hui. La vue Planning passe à Semaine afin que vous puissiez déposer la tâche sur un jour et une heure.
 
+Depuis la v1.3.7, survoler brièvement Dates, Déplacer vers, Contextes ou Priorité dans le menu d’une tâche ouvre le panneau correspondant. Le clic et le clavier restent disponibles. Ouvrir explicitement une date de début ou d’échéance ouvre aussi le calendrier ; modifier la date et l’heure nécessite toujours **Enregistrer**. Le survol n’applique aucune modification et ne remplace pas un brouillon modifié.
+
 ## Référence
 
 Référence conserve les notes et les documents à consulter. Les lignes et l’éditeur mettent en avant le titre, la description, le projet ou domaine, les personnes, les étiquettes, les pièces jointes et les liens. Les commandes de planification et d’achèvement restent masquées. Utilisez **Convertir en action** lorsqu’une référence devient quelque chose à faire.
@@ -234,6 +236,10 @@ Assistant de revue GTD guidée comprenant les étapes suivantes :
 Utilisez l’action **Traiter la Boîte de réception** dans la revue pour vider les éléments collectés avant de poursuivre avec le calendrier, les éléments en attente, les projets et les éléments « un jour ».
 
 Consultez [Revue hebdomadaire](/fr/use/weekly-review) pour obtenir des conseils détaillés.
+
+Depuis la v1.3.7, les cartes de concentration de la revue quotidienne affichent les dates de début et d’échéance, avec l’étoile comme action principale. Dans l’étape des projets de la revue hebdomadaire, vous pouvez terminer un projet sans quitter la revue. S’il reste des tâches inachevées, la confirmation précise qu’elles seront également terminées ; l’absence de prochaine action ne termine jamais automatiquement un projet.
+
+
 
 ---
 
@@ -674,6 +680,8 @@ Pour WebDAV, configurez :
 - Le nom d’utilisateur et le mot de passe
 
 Consultez [Données et synchronisation](/fr/data-sync/) pour obtenir des instructions détaillées.
+
+Depuis la v1.3.7, la bannière de synchronisation HTTP peut être masquée pour cette destination sur cet appareil. Une autre destination affiche de nouveau l’avertissement, et les paramètres de synchronisation continuent d’indiquer l’utilisation de HTTP. Masquer la bannière n’autorise pas les connexions non sécurisées et ne chiffre pas la connexion.
 
 ### Avancé
 - **Clavier et fenêtre** : préréglage des raccourcis clavier (Standard, Vim ou Emacs), décorations de fenêtre, comportement à la fermeture, icône de la zone de notification et **Lancer au démarrage**. Cliquez sur la carte pour l’ouvrir.

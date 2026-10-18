@@ -26,6 +26,8 @@ La mayoría de las listas de tareas comparten la misma fila de controles para se
 
 Arrastra una tarea en la barra lateral hasta **Bandeja de entrada**, **Algún día/Tal vez**, **En espera**, **Referencia** o **Historial** para cambiar su estado; al soltarla en **Historial** se marca como hecha, y el aviso ofrece **Deshacer**. Arrastra la tarea sobre el encabezado de un grupo plegado de la barra lateral, como **Más**, para abrir ese grupo mientras arrastras. **Papelera** no acepta tareas arrastradas. Suelta la tarea en **Calendario**, o mantenla un momento sobre Calendario mientras la arrastras, para abrir hoy. La vista Agenda cambia a Semana para que puedas soltarla en un día y una hora.
 
+Desde v1.3.7, mantener brevemente el puntero sobre Fechas, Mover a, Contextos o Prioridad en el menú de una tarea abre su panel. El clic y el teclado siguen funcionando. Al abrir expresamente una fecha de inicio o vencimiento, también se abre el calendario; los cambios de fecha y hora siguen requiriendo **Guardar**. Pasar el puntero no aplica cambios ni sustituye un borrador editado.
+
 ## Referencia
 
 Referencia guarda notas y material de consulta. Las filas y el editor destacan el título, la descripción, el proyecto o área, las personas, las etiquetas, los adjuntos y los enlaces. Los controles de planificación y finalización quedan fuera de la vista. Usa **Convertir en acción** cuando una referencia se convierta en algo que hacer.
@@ -234,6 +236,10 @@ Asistente de revisión GTD con estos pasos:
 Usa la acción **Procesar Bandeja de entrada** de la revisión para vaciar los elementos capturados antes de continuar con el calendario, En espera, los proyectos y la revisión de Algún día.
 
 Consulta [Revisión semanal](/es/use/weekly-review) para obtener instrucciones detalladas.
+
+Desde v1.3.7, las tarjetas de Enfoque de la revisión diaria muestran las fechas de inicio y vencimiento, manteniendo la estrella como acción principal. En el paso de proyectos de la revisión semanal puedes completar un proyecto sin salir de la revisión. Si quedan tareas pendientes, la confirmación explica que también se completarán; la ausencia de una próxima acción nunca completa un proyecto automáticamente.
+
+
 
 ---
 
@@ -674,6 +680,8 @@ Para WebDAV, configura:
 - Nombre de usuario y contraseña
 
 Consulta [Datos y sincronización](/es/data-sync/) para ver instrucciones detalladas.
+
+Desde v1.3.7, puedes ocultar el aviso de sincronización HTTP para ese destino en este dispositivo. Un destino distinto vuelve a mostrar el aviso, y los ajustes de sincronización siguen indicando el uso de HTTP. Ocultar el aviso no habilita conexiones inseguras ni cifra la conexión.
 
 ### Avanzado
 - **Teclado y ventana**: preajuste de atajos de teclado (Estándar, Vim o Emacs), decoraciones de ventana, comportamiento al cerrar, icono de bandeja y **Abrir al iniciar**. Haz clic en la tarjeta para abrirla.

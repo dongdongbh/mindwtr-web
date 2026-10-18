@@ -26,6 +26,8 @@ Die meisten Aufgabenlisten verwenden dieselbe Steuerungszeile zum Auswählen, Fi
 
 Ziehen Sie eine Aufgabe in der Seitenleiste auf **Eingang**, **Irgendwann/Vielleicht**, **Warten**, **Referenz** oder **Verlauf**, um ihren Status zu ändern; beim Ablegen auf **Verlauf** wird sie als erledigt markiert, und die Meldung bietet **Rückgängig**. Ziehen Sie die Aufgabe über die Überschrift einer eingeklappten Gruppe der Seitenleiste, etwa **Mehr**, um diese Gruppe während des Ziehens zu öffnen. Der **Papierkorb** ist kein Ablageziel. Ziehen Sie die Aufgabe auf **Kalender** oder halten Sie sie beim Ziehen kurz darüber, um den heutigen Tag zu öffnen. Aus der Terminplanansicht wechselt Mindwtr in die Wochenansicht, damit Sie die Aufgabe auf einem Tag und einer Uhrzeit ablegen können.
 
+Ab v1.3.7 öffnet kurzes Verweilen mit der Maus über Datum, Verschieben, Kontexten oder Priorität im Aufgabenmenü den jeweiligen Bereich. Klicks und Tastaturbedienung bleiben verfügbar. Beim gezielten Öffnen eines Start- oder Fälligkeitsdatums öffnet sich auch der Kalender; Änderungen an Datum und Uhrzeit erfordern weiterhin **Speichern**. Verweilen übernimmt keine Änderungen und ersetzt keinen bearbeiteten Entwurf.
+
 ## Referenz
 
 Referenzen sind Notizen und Materialien zum Aufbewahren. Zeilen und Editor stellen Titel, Beschreibung, Projekt oder Bereich, Personen, Tags, Anhänge und Links in den Vordergrund. Planungs- und Erledigungsfunktionen treten zurück. Mit **In nächste Aktion umwandeln** wird eine Referenz zu einer Aufgabe.
@@ -234,6 +236,10 @@ Geführter GTD-Durchsichtsassistent:
 Verwenden Sie im Rückblick **Eingang verarbeiten**, bevor Sie mit Kalender, Warten, Projekten und Irgendwann fortfahren.
 
 Ausführliche Hinweise enthält der [Wochenrückblick](/de/use/weekly-review).
+
+Ab v1.3.7 zeigen die Fokus-Karten im täglichen Review Start- und Fälligkeitsdaten; der Stern bleibt die Hauptaktion. Im Projektschritt des wöchentlichen Reviews kannst du ein Projekt abschließen, ohne den Review zu verlassen. Gibt es noch unerledigte Aufgaben, erklärt die Bestätigung, dass auch diese abgeschlossen werden. Eine fehlende nächste Aktion schließt ein Projekt nie automatisch ab.
+
+
 
 ---
 
@@ -669,6 +675,8 @@ Für WebDAV:
 - Benutzername und Passwort
 
 Ausführliche Einrichtung: [Daten und Synchronisierung](/de/data-sync/).
+
+Ab v1.3.7 lässt sich das HTTP-Synchronisierungsbanner für dieses Ziel auf diesem Gerät ausblenden. Bei einem anderen Ziel erscheint die Warnung erneut; die Synchronisierungseinstellungen weisen weiterhin auf HTTP hin. Das Ausblenden erlaubt keine unsicheren Verbindungen und verschlüsselt die Verbindung nicht.
 
 ### Erweitert
 - **Tastatur und Fenster**: Voreinstellung für Tastenkürzel (Standard, Vim oder Emacs), Fensterdekorationen, Schließverhalten, Symbol im Infobereich und **Beim Systemstart öffnen**. Klicken Sie auf die Karte, um sie zu öffnen.

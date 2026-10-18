@@ -26,6 +26,8 @@ Most task lists share the same control row for selecting tasks, filtering, sorti
 
 Drag a task onto **Inbox**, **Someday/Maybe**, **Waiting For**, **Reference**, or **History** in the sidebar to change its status; dropping it on **History** marks it done, and the toast offers **Undo**. Drag the task over the header of a folded sidebar group, such as **More**, to open that group while you drag. **Trash** is not a drop target. Drop the task on **Calendar**, or pause over Calendar while dragging, to open today with the task still in hand. Schedule view switches to Week so you can drop it on a day and time.
 
+From v1.3.7, hovering briefly over Dates, Move to, Contexts, or Priority in a task menu opens its panel. Click and keyboard navigation still work. Opening a start or due date deliberately also opens its calendar; changing a date and time still requires **Save**. Hovering does not apply changes or replace an edited draft.
+
 ## Reference
 
 Reference is for notes and material you want to keep. Its rows and editor emphasize the title, description, project or area, people, tags, attachments, and links. Task scheduling and completion controls stay out of the way. Use **Convert to action** when a reference becomes something to do. Existing checklist items appear as a plain list in Reference and remain editable. Their saved checked states return if you convert the reference back to an action.
@@ -248,6 +250,10 @@ Guided GTD review wizard with steps:
 Use the **Process Inbox** action in the review to clear captured items before continuing through calendar, waiting-for, projects, and someday review.
 
 See [Weekly Review](/use/weekly-review) for detailed guidance.
+
+From v1.3.7, Daily Review’s Focus cards show start and due dates while keeping the star as the main action. In Weekly Review’s project step, you can complete a project without leaving the review. If unfinished tasks remain, confirmation explains that completing the project also completes those tasks; a missing next action alone never completes a project.
+
+
 
 ---
 
@@ -690,6 +696,8 @@ For WebDAV, configure:
 - Username and Password
 
 See [Data and Sync](/data-sync/) for detailed setup.
+
+From v1.3.7, the HTTP sync banner can be dismissed for that destination on this device. A different destination shows the warning again, and Sync settings still indicates HTTP use. Dismissal does not enable insecure connections or encrypt the connection.
 
 ### Advanced
 - **Keyboard and window**: keyboard shortcut preset (Standard, Vim, or Emacs), window decorations, close behaviour, tray icon, and **Launch at Startup**. Click the card to open it.

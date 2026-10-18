@@ -95,6 +95,8 @@ La tâche suivante reste hors de Focus et des Prochaines actions jusqu’à sa d
 
 Cette règle s’applique à toute tâche récurrente dès sa création, et pas seulement à l’occurrence suivante après un achèvement. Une tâche ponctuelle avec une échéance reste visible avant sa date pour que vous puissiez vous y mettre en avance, tandis qu’une tâche récurrente traite cette même date comme le jour où elle doit réapparaître — deux tâches partageant la même échéance peuvent donc se comporter différemment dans Focus lorsque l’une d’elles se répète. Pour faire apparaître une tâche récurrente avant sa date, donnez-lui une date de début : elle apparaît dans Focus et les Prochaines actions à partir de ce jour tout en conservant son échéance.
 
+À partir de v1.3.7, les tâches récurrentes ordinaires avec une liste proposent **Réinitialiser la liste pour la prochaine occurrence**, activé par défaut, dans son éditeur. Désactivez cette option pour conserver les cases cochées ou non à la prochaine occurrence, même si vous en ignorez une. Ce réglage ne modifie pas la liste actuelle. Chaque occurrence reçoit une copie indépendante ; les modifications ultérieures ne changent pas les autres occurrences déjà créées. Cocher toute la liste ne termine pas automatiquement une routine ordinaire. Les tâches en mode liste sont toujours réinitialisées. Mettez à jour toutes les applications et le serveur auto-hébergé : les anciennes versions peuvent perdre ce réglage ou réinitialiser la progression lors de la répétition.
+
 ## Pages associées
 
 - [Flux GTD dans Mindwtr](/fr/use/gtd-workflow)

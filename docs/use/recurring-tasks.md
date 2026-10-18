@@ -85,7 +85,7 @@ Turn on **Show future occurrences in Calendar** when you want a planning preview
 
 ## What Happens When You Complete It
 
-When you complete a recurring task, Mindwtr creates the next task with the same title, project, area, contexts, tags, notes, reminders, and other task details. Checklist items are reset for the next occurrence.
+When you complete a recurring task, Mindwtr creates the next task with the same title, project, area, contexts, tags, notes, reminders, and other task details. By default, checklist items are reset for the next occurrence.
 
 If the task has a due date, start date, or review date, Mindwtr advances those fields according to the recurrence rule. Date-only values stay date-only.
 
@@ -94,6 +94,8 @@ Before v1.3.5, a fixed-schedule task with a start date and no due date advanced 
 The next task stays out of Focus and Next actions until its date arrives. A future start date defers it as usual, and a recurring task without a start date is deferred until its next date (the earlier of its due and review dates). A next occurrence scheduled for a future day therefore stays out of those lists. Deferred occurrences remain visible in **Projects** and **Search**.
 
 This rule applies to every recurring task from the moment it exists, not only to the next occurrence after a completion. A one-off task with a due date stays visible ahead of its deadline so you can work on it early, but a recurring task treats that same date as the day it should reappear — so two tasks with the same due date can behave differently in Focus when one of them repeats. To surface a recurring task before its date, give it a start date: it appears in Focus and Next actions from that day while keeping its deadline.
+
+From v1.3.7, an ordinary recurring task with checklist items has **Reset checklist for the next occurrence**, enabled by default, in its checklist editor. Turn it off to carry checked and unchecked states into the next occurrence, including when you skip one. Changing this setting does not change the current checklist. Each occurrence gets an independent copy: later edits do not rewrite earlier or already-created occurrences. A fully checked checklist does not automatically complete an ordinary routine. List-mode tasks always reset. Use updated apps on every device and an updated self-hosted server: older versions can drop this preference or reset progress when creating the next occurrence.
 
 ## Related Pages
 

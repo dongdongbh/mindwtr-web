@@ -95,6 +95,8 @@ La tarea siguiente no aparece en Foco ni en Próximas acciones hasta que llega s
 
 Esta regla se aplica a toda tarea recurrente desde el momento en que existe, no solo a la siguiente aparición tras completarla. Una tarea puntual con fecha límite sigue visible antes de su vencimiento para que puedas adelantarla, pero una tarea recurrente trata esa misma fecha como el día en que debe reaparecer — así que dos tareas con la misma fecha límite pueden comportarse de forma distinta en Foco cuando una de ellas se repite. Para que una tarea recurrente aparezca antes de su fecha, asígnale una fecha de inicio: aparecerá en Foco y en Próximas acciones desde ese día sin perder su fecha límite.
 
+Desde v1.3.7, las tareas recurrentes normales con lista incluyen **Restablecer la lista para la próxima repetición**, activado por defecto, en el editor de la lista. Desactívalo para conservar el estado de los elementos en la siguiente repetición, incluso al omitir una. Cambiar esta opción no modifica la lista actual. Cada repetición recibe una copia independiente; los cambios posteriores no modifican otras repeticiones ya creadas. Marcar toda la lista no completa automáticamente una rutina normal. Las tareas en modo lista siempre se restablecen. Actualiza las aplicaciones en todos los dispositivos y el servidor autoalojado: las versiones anteriores pueden perder la opción o restablecer el progreso al crear la siguiente repetición.
+
 ## Páginas relacionadas
 
 - [Flujo de trabajo GTD en Mindwtr](/es/use/gtd-workflow)

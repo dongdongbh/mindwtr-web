@@ -156,6 +156,8 @@ Para realizar varias capturas seguidas, activa **Añadir otra** en la hoja de ca
 | Esquema de URL `mindwtr://capture` | Sí | Sí | Sí, pantalla de captura |
 | Importación de Recordatorios de Apple (manual o automática) | Sí | No | Se ejecuta al abrir la app |
 
+Desde la v1.3.7, la captura rápida dentro de la aplicación muestra una descripción opcional de varias líneas justo debajo del título, sin abrir **Más**. La ventana flotante de Android también admite descripciones, incluso junto con audio. En la descripción, Intro añade un salto de línea; las fechas y los comandos permanecen como texto. La captura solo con título y el pegado de varias tareas en el campo del título no cambian.
+
 ### Accesos directos del lanzador de Android
 
 A partir de v1.3.4, mantén pulsado el icono de Mindwtr para elegir **Capture** o **Add task…**. **Capture** conserva el pequeño diálogo flotante de la bandeja de entrada. **Add task…** abre Mindwtr directamente en el formulario de captura existente, donde puedes elegir Focus, proyecto, contextos, fechas y otros detalles antes de guardar.

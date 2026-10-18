@@ -162,6 +162,8 @@ For capture bursts, turn on the **Add another** switch in the capture sheet: eac
 | URL scheme `mindwtr://capture` | Yes | Yes | Yes, capture screen |
 | Apple Reminders import (manual or automatic) | Yes | No | Runs when the app opens |
 
+From v1.3.7, the in-app capture sheet shows an optional multiline description directly below the title, without opening **More**. Android’s floating capture window also accepts a description, including alongside audio. Enter in the description adds a line break; dates and commands typed there remain note text. Title-only capture and the title field’s existing bulk-paste behavior are unchanged.
+
 ### Android launcher shortcuts
 
 Starting with v1.3.4, long-press the Mindwtr app icon to choose **Capture** or **Add task…**. **Capture** keeps the small floating Inbox dialog. **Add task…** opens Mindwtr directly into the existing capture sheet, where you can choose Focus, a project, contexts, dates, and other details before saving.

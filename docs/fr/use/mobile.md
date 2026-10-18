@@ -156,6 +156,8 @@ Pour les captures en série, activez l’interrupteur **Ajouter une autre** dans
 | Schéma d’URL `mindwtr://capture` | Oui | Oui | Oui, écran de capture |
 | Importation depuis Rappels Apple (manuelle ou automatique) | Oui | Non | S’exécute à l’ouverture de l’app |
 
+À partir de la v1.3.7, la saisie rapide dans l’application affiche une description facultative sur plusieurs lignes directement sous le titre, sans ouvrir **Plus**. La fenêtre flottante Android accepte aussi une description, y compris avec un enregistrement audio. Dans la description, Entrée ajoute un saut de ligne ; les dates et commandes restent du texte. La saisie avec un titre seul et le collage de plusieurs tâches dans le champ du titre restent inchangés.
+
 ### Raccourcis du lanceur Android
 
 À partir de v1.3.4, appuyez longuement sur l’icône Mindwtr pour choisir **Capture** ou **Add task…**. **Capture** conserve la petite fenêtre flottante de capture dans la boîte de réception. **Add task…** ouvre Mindwtr directement dans le formulaire de capture existant, où vous pouvez choisir Focus, projet, contextes, dates et autres détails avant d’enregistrer.

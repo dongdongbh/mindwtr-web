@@ -149,6 +149,8 @@ Aktivieren Sie für mehrere Erfassungen **Weitere hinzufügen**: Jedes `Enter` s
 | URL-Schema `mindwtr://capture` | Ja | Ja | Ja, Erfassungsbildschirm |
 | Import aus Apple Erinnerungen (manuell oder automatisch) | Ja | Nein | Läuft beim Öffnen der App |
 
+Ab v1.3.7 zeigt die Schnellerfassung in der App eine optionale mehrzeilige Beschreibung direkt unter dem Titel, ohne **Mehr** zu öffnen. Auch das schwebende Android-Erfassungsfenster unterstützt Beschreibungen, einschließlich zusammen mit Audio. Die Eingabetaste fügt in der Beschreibung einen Zeilenumbruch ein; Datumsangaben und Befehle bleiben Notiztext. Die Erfassung nur mit Titel und das bisherige Einfügen mehrerer Aufgaben im Titelfeld bleiben unverändert.
+
 ### Android-Startbildschirm-Verknüpfungen
 
 Ab v1.3.4 zeigt langes Drücken auf das Mindwtr-App-Symbol **Capture** und **Add task…** an. **Capture** öffnet weiterhin den kleinen schwebenden Eingangsdialog. **Add task…** öffnet Mindwtr direkt mit dem bestehenden Erfassungsformular, in dem du vor dem Speichern Fokus, Projekt, Kontexte, Termine und weitere Details wählen kannst.

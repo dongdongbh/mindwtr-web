@@ -30,7 +30,7 @@ Depuis la v1.3.7, survoler brièvement Dates, Déplacer vers, Contextes ou Prior
 
 ## Référence
 
-Référence conserve les notes et les documents à consulter. Les lignes et l’éditeur mettent en avant le titre, la description, le projet ou domaine, les personnes, les étiquettes, les pièces jointes et les liens. Les commandes de planification et d’achèvement restent masquées. Utilisez **Convertir en action** lorsqu’une référence devient quelque chose à faire.
+Référence conserve les notes et les documents à consulter. Les lignes et l’éditeur mettent en avant le titre, la description, le projet ou domaine, les personnes, les étiquettes, les pièces jointes et les liens. Les commandes de planification et d’achèvement restent masquées. Utilisez **Convertir en action** lorsqu’une référence devient quelque chose à faire. La liste d’une référence comporte des cases à cocher : cochez une entrée pour l’enregistrer, par exemple un film que vous avez vu. Si vous cochez toutes les entrées, l’élément reste dans Référence ; il n’est jamais marqué comme terminé et n’entre jamais dans Focus. Les coches sont conservées si vous convertissez la référence en action.
 
 La recherche dans Référence retrouve chaque terme séparé par des espaces, n’importe où dans le titre ou la description, sans distinguer les majuscules et les minuscules. Par exemple, `ke 1 2` retrouve `key1 key2 key3`. Les termes sont du texte littéral ; ce champ n’interprète pas la syntaxe de capture rapide ou de recherche avancée.
 

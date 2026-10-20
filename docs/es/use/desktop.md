@@ -30,7 +30,7 @@ Desde v1.3.7, mantener brevemente el puntero sobre Fechas, Mover a, Contextos o 
 
 ## Referencia
 
-Referencia guarda notas y material de consulta. Las filas y el editor destacan el título, la descripción, el proyecto o área, las personas, las etiquetas, los adjuntos y los enlaces. Los controles de planificación y finalización quedan fuera de la vista. Usa **Convertir en acción** cuando una referencia se convierta en algo que hacer.
+Referencia guarda notas y material de consulta. Las filas y el editor destacan el título, la descripción, el proyecto o área, las personas, las etiquetas, los adjuntos y los enlaces. Los controles de planificación y finalización quedan fuera de la vista. Usa **Convertir en acción** cuando una referencia se convierta en algo que hacer. La lista de una referencia tiene casillas: marca una entrada para registrarla, por ejemplo una película que ya has visto. Si marcas todas las entradas, el elemento permanece en Referencia; nunca se marca como hecho ni entra en Focus. Las marcas se conservan si conviertes la referencia en una acción.
 
 La búsqueda dentro de Referencia encuentra todos los términos separados por espacios en cualquier parte del título o la descripción, sin distinguir mayúsculas y minúsculas. Por ejemplo, `ke 1 2` encuentra `key1 key2 key3`. Los términos son texto literal; este campo no interpreta la sintaxis de captura rápida ni de búsqueda avanzada.
 

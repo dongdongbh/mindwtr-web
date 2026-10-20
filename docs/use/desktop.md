@@ -580,6 +580,7 @@ Use the sort dropdown to order tasks by:
 - Due date
 - Start date
 - Review date
+- Priority (highest first, tasks without a priority last; shown while Priorities is enabled; not offered in Done, Archive or as a project's own sort)
 - Time estimate (shortest first, tasks without an estimate last; shown while Time estimates is enabled)
 - Title (alphabetical)
 - Created (oldest/newest)

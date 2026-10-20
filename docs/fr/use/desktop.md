@@ -564,6 +564,7 @@ Utilisez la liste déroulante de tri pour classer les tâches par :
 - Échéance
 - Date de début
 - Date de revue
+- Priorité (les plus hautes d’abord, celles sans priorité à la fin ; visible tant que les Priorités sont activées ; non proposé dans Terminé, Archivés ni comme tri propre à un projet)
 - Estimation de temps (les plus courtes d’abord, celles sans estimation à la fin ; visible tant que les Estimations de temps sont activées)
 - Titre (ordre alphabétique)
 - Date de création (de la plus ancienne à la plus récente ou inversement)

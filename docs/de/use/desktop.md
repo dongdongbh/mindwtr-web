@@ -561,6 +561,7 @@ Aufgaben sortieren nach:
 - Fälligkeitsdatum
 - Startdatum
 - Wiedervorlagedatum
+- Priorität (höchste zuerst, Aufgaben ohne Priorität am Ende; sichtbar, solange Prioritäten aktiviert sind; nicht verfügbar in Erledigt, Archiviert oder als eigene Sortierung eines Projekts)
 - Zeitschätzung (kürzeste zuerst, Aufgaben ohne Schätzung am Ende; sichtbar, solange Zeitschätzungen aktiviert sind)
 - Titel (alphabetisch)
 - Erstellt (älteste/neueste)

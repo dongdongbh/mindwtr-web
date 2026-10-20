@@ -564,6 +564,7 @@ Usa el desplegable de ordenación para ordenar las tareas por:
 - Fecha de vencimiento
 - Fecha de inicio
 - Fecha de revisión
+- Prioridad (las más altas primero, con las tareas sin prioridad al final; aparece mientras Prioridades esté activado; no se ofrece en Hecho, Archivadas ni como orden propio de un proyecto)
 - Estimación de tiempo (las más cortas primero, con las que no tienen estimación al final; aparece mientras Estimaciones de tiempo esté activado)
 - Título (alfabéticamente)
 - Creación (más antiguas/más recientes)

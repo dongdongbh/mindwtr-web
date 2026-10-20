@@ -45,6 +45,12 @@ Wählen Sie mehrere Bereiche aus, um sie gemeinsam zu sehen, oder schließen Sie
 
 **Der Eingang bleibt auf Desktop und Mobilgeräten bereichsübergreifend.** Seine Liste, Anzahl und die Warteschlange von **Eingang verarbeiten** umfassen unabhängig vom Bereichsfilter Einträge aus allen Bereichen, auch solche ohne Bereich. Dasselbe gilt für die Eingangsanzahl und den Verarbeitungsschritt im Rückblick. Der Eingang zeigt **Alle Bereiche** an; beim Öffnen bleiben Ihre Filterauswahl für andere Ansichten und bereits zugewiesene Aufgabenbereiche erhalten.
 
+Ab v1.3.7 filtert die Bereichsauswahl auch **Heutiger Fokus**. Ausgeblendete Aufgaben behalten ihren Stern und zählen weiterhin zum globalen Fokuslimit. Die Kopfzeile zeigt die gesamte Auswahl und die Anzahl der durch den Bereichsfilter ausgeblendeten Aufgaben. Lösche die Bereichsauswahl, um sie wieder anzuzeigen. Der Filter ändert weder den Aufgabenstatus noch die Fokuszuordnung.
+
+### Projektfarben
+
+Ab v1.3.7 kannst du in den Projekteinstellungen eine optionale **Farbe** wählen. Mit **Bereichsfarbe verwenden** folgt das Projekt seinem aktuellen Bereich. Eine eigene Farbe bleibt beim Umfärben des Bereichs oder beim Verschieben des Projekts erhalten; wähle erneut **Bereichsfarbe verwenden**, um die Vererbung wiederherzustellen. Dies ändert Projektmarkierungen, nicht Prioritäts- oder Überfälligkeitswarnungen. Aktualisiere alle synchronisierenden Geräte: ältere Versionen können eigene Farben beim Bearbeiten eines Projekts verlieren.
+
 ## Personen
 
 Personen sind wiederverwendbare Namen von Verantwortlichen für delegierte Aufgaben, Einträge unter „Warten“ und personenbezogene Suchen. Sie können außerdem Notizen und Referenzlinks enthalten, etwa eine E-Mail-Adresse, eine Kontaktseite oder einen Obsidian-Link.

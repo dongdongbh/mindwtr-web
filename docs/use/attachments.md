@@ -11,6 +11,14 @@ Mindwtr lets you attach files and links to **tasks** and **projects**. Attachmen
 - **Audio notes** (when "Save audio attachments" is enabled)
 - **Obsidian notes** on desktop, when the Obsidian integration is enabled
 
+### Browser / PWA
+
+From v1.3.7, online browser uploads work with **self-hosted Mindwtr Cloud** when sync encryption is off. You can select or drop files into a task, paste an image into Quick Add, or paste an image into a task description. Other backends remain unsupported; Mindwtr does not switch your backend or disable encryption.
+
+Files are held in the draft until **Save**, with a **50 MiB per-file limit**; your server or proxy may impose a smaller limit. If an upload fails, keep the draft open and retry or remove that file. Text-only capture still works offline. Closing the tab loses unsaved file selections. A failed task sync does not make draft cleanup delete files already referenced by the saved task.
+
+After saving, sync and open the attachment on another updated device. Cross-origin deployments must allow authenticated uploads through CORS, including PUT and its request headers. Interrupted saves can leave unused server files; do not run server orphan cleanup until all devices have synced, because it cannot see references saved only on an offline device.
+
 ---
 
 ## Add attachments

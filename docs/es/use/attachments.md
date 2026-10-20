@@ -11,6 +11,14 @@ Mindwtr permite adjuntar archivos y enlaces a **tareas** y **proyectos**. Los ad
 - **Notas de audio** (cuando está activado «Guardar adjuntos de audio»).
 - **Notas de Obsidian** en el escritorio, cuando está habilitada la integración con Obsidian.
 
+### Navegador / PWA
+
+Desde v1.3.7, las cargas en línea desde el navegador funcionan con **Mindwtr Cloud autoalojado** y el cifrado de sincronización desactivado. Puedes seleccionar o arrastrar archivos a una tarea y pegar imágenes en Captura rápida o en la descripción. Otros backends siguen sin admitirlo; Mindwtr no cambia el backend ni desactiva el cifrado.
+
+Los archivos permanecen en el borrador hasta **Guardar**, con un límite de **50 MiB por archivo**; el servidor o proxy puede imponer uno menor. Si falla una carga, mantén abierto el borrador y reintenta o elimina ese archivo. La captura de texto sigue funcionando sin conexión. Cerrar la pestaña pierde los archivos seleccionados sin guardar. Un fallo de sincronización no hace que la limpieza del borrador borre archivos ya referenciados por una tarea guardada.
+
+Sincroniza y abre el adjunto en otro dispositivo actualizado. Las instalaciones entre orígenes distintos necesitan CORS para cargas autenticadas, incluido PUT y sus cabeceras. Un guardado interrumpido puede dejar archivos sin usar en el servidor. No limpies archivos huérfanos hasta que todos los dispositivos hayan sincronizado: el servidor no conoce las referencias guardadas solo en un dispositivo sin conexión.
+
 ---
 
 ## Añadir adjuntos

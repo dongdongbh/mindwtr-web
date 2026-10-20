@@ -153,7 +153,11 @@ El contexto se añadirá y estará disponible para filtrar.
 
 ### Gestionar contextos y etiquetas guardados
 
-Cuando quieras ordenar o cambiar el nombre de metadatos reutilizables:
+Desde **v1.3.7**, puedes crear contextos y etiquetas antes de asignarlos a una tarea. Abre **Ajustes → Gestionar** y elige **Añadir** en **Contextos** o **Etiquetas**. Los nombres nuevos introducidos al guardar una tarea también se recuerdan. Los nombres guardados siguen disponibles en el autocompletado cuando se elimina su última asignación; cancelar un borrador no guarda sus nombres nuevos.
+
+Los contextos y etiquetas guardados se sincronizan entre dispositivos actualizados. Actualiza todos los dispositivos antes de depender de este catálogo: las versiones anteriores pueden omitirlo al subir los datos de sincronización.
+
+Para ordenar o cambiar el nombre de metadatos reutilizables:
 
 - Abre **Ajustes → Gestionar**
 - Edita **Contextos**, **Etiquetas**, **Áreas** y **Personas** desde un mismo lugar

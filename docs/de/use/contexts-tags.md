@@ -103,6 +103,8 @@ Research topic #focused @computer
 ```
 Kontext- und Tag-Namen akzeptieren Unicode-Buchstaben und -Ziffern (einschließlich CJK-Zeichen und Buchstaben mit Akzent).
 
+Schreiben Sie einen verschachtelten Kontext oder Tag als ein Wort mit Schrägstrichen, zum Beispiel `@person/todd`. Setzen Sie einen Namen mit Leerzeichen in Anführungszeichen, zum Beispiel `@"Two words"` oder `#"two words"`.
+
 **Aufgabe bearbeiten:**
 1. Öffnen Sie den Aufgabeneditor.
 2. Fügen Sie im Feld „Kontexte“ Kontexte hinzu (durch Kommas getrennt).
@@ -119,7 +121,7 @@ Wenn Sie beim Schnellhinzufügen oder im Aufgabeneditor einen Kontextnamen einge
 1. Öffnen Sie den Tab **Nächste Aktionen** oder **Kontexte** im Navigationsmenü.
 2. Tippen Sie zum Filtern auf einen Kontext.
 
-**Ansicht Kontexte (Desktop und Mobilgeräte):** Wählen Sie mehrere Kontexte oder Tags aus, um sie zu kombinieren. Bei mindestens zwei ausgewählten Einträgen verlangt **Alle** jeden ausgewählten Kontext/Tag; **Beliebig** zeigt Aufgaben mit mindestens einem davon. Wählen Sie beispielsweise `@alice` und `@bob` mit **Beliebig**, um Aufgaben für eine der beiden Personen zu sehen. Erneutes Auswählen entfernt einen Eintrag; **Keine Kontexte** ist eine separate, ausschließliche Auswahl.
+**Ansicht Kontexte (Desktop und Mobilgeräte):** Tippen oder klicken Sie auf einen Kontext oder Tag, um nur dessen Aufgaben zu sehen. Um einen weiteren zur Auswahl hinzuzufügen, drücken Sie auf Mobilgeräten lange auf seinen Chip oder klicken Sie ihn auf dem Desktop mit Strg an (unter macOS mit Cmd). Dieselbe Geste auf einem ausgewählten Chip entfernt ihn. Bei mindestens zwei ausgewählten Einträgen verlangt **Alle** jeden ausgewählten Kontext/Tag; **Beliebig** zeigt Aufgaben mit mindestens einem davon. Wählen Sie beispielsweise `@alice` und `@bob` mit **Beliebig**, um Aufgaben für eine der beiden Personen zu sehen. Tippen oder klicken Sie erneut auf den einzigen ausgewählten Chip, um die Auswahl aufzuheben. **Keine Kontexte** ist eine separate, ausschließliche Auswahl.
 
 In Aufgabenlisten durchlaufen Filter-Chips drei Zustände: Einmal auswählen schließt einen Kontext oder Tag ein, ein zweites Mal schließt ihn aus (durchgestrichen dargestellt), ein drittes Mal setzt ihn zurück. Ausgeschlossene Chips blenden ihre Aufgaben immer aus, unabhängig vom Abgleichmodus.
 
@@ -200,6 +202,8 @@ Wenn Sie nach einem übergeordneten Kontext filtern, werden alle Untergruppen ei
 | `#health` | `#health`, `#health/fitness`, `#health/diet` |
 
 In Kontexte wird ein übergeordneter Filter wie `@tools` angeboten, wenn Aufgaben im aktuellen Bereich `@tools/excavator` verwenden, auch wenn keine Aufgabe das übergeordnete Label selbst trägt. Ein ausgewählter Filter bleibt bei null Ergebnissen sichtbar und lässt sich abwählen. Nicht ausgewählte Zweige verschwinden aus der Auswahl, wenn sie keine passenden Aufgaben mehr enthalten.
+
+Nutzen Sie einen übergeordneten Kontext für eine Art von Kontext, zum Beispiel `@person/todd`, `@person/emma` und `@place/bank`. Wählen Sie `@person`, um die Aufgaben für alle Personen zu sehen. In Kontexte zeigt ein untergeordneter Eintrag direkt nach seinem übergeordneten Eintrag nur den letzten Teil, zum Beispiel `/todd`.
 
 So können Sie grob filtern und dennoch eine genaue Organisation beibehalten.
 

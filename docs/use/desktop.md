@@ -132,6 +132,8 @@ Filter tasks by location or tool context:
 - `@home`, `@work`, `@errands`, `@agendas`
 - `@computer`, `@phone`, `@anywhere`
 
+Click a context or tag to show only its tasks. Ctrl-click another one (Cmd-click on macOS) to add it to the selection. With two or more selected, choose **All** or **Any**. Click the only selected one again to clear the selection.
+
 Drag a task onto a context in this view’s sidebar to **add** that context. Existing contexts stay assigned, so the task can remain in the original filter. Dropping onto a context it already has does nothing. The **Added …** message offers **Undo**; tags, **No context**, and the combined contexts-and-tags filter remain navigation controls. Sorting stays unchanged.
 
 ### 🏷️ Tags
@@ -396,11 +398,11 @@ Mindwtr parses natural language when adding tasks:
 
 | Syntax       | Example           | Result              |
 | ------------ | ----------------- | ------------------- |
-| `@context`   | `@home`           | Adds context        |
+| `@context`   | `@home`           | Adds context; `@person/todd` adds a nested one |
 | `#tag`       | `#focused`        | Adds tag            |
 | `+Project`   | `+HomeReno`       | Assigns to project  |
 | `+Multi Word` | `+New Project`    | Assigns to "New Project" |
-| `+"Quoted Name"` | `+"New Project" call Bob` | Quotes delimit a multi-word name mid-sentence (also `!"Area Name"`) |
+| `+"Quoted Name"` | `+"New Project" call Bob` | Quotes delimit a multi-word name mid-sentence (also `!"Area Name"`, `@"Two words"` and `#"two words"`) |
 | `!Area`       | `Plan roadmap !Work` | Assigns to area       |
 | `%Person`     | `Ask %Jim for budget` | Sets Assigned to (the person the task involves; status is unchanged); `%"Full Name"` for new multi-word names |
 | `/area:<name>` | `/area:Personal` | Assigns to area (no spaces) |
@@ -643,7 +645,7 @@ In every preset, `s` followed by a letter sets the selected task's status direct
 Access Settings from the sidebar.
 
 ### General
-- **Appearance**: System, Light, Dark, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia, or OLED / Midnight. Choose **System (Light / OLED Dark)** for the normal light palette in light mode and OLED in dark mode. **OLED / Midnight** stays black in either mode.
+- **Appearance**: System, Light, Dark, E-Ink, Nord, Catppuccin Macchiato, Dracula, Gruvbox Light, Gruvbox Dark, Sepia, or OLED / Midnight. Choose **System (Light / OLED Dark)** for the normal light palette in light mode and OLED in dark mode. **OLED / Midnight** stays black in either mode.
 - **Font**: Pick any font installed on this computer, or keep the app default. Click the field to browse the list or start typing to narrow it. The list comes from the operating system, and a chosen font that is later uninstalled falls back to the default.
 - **Density**: Comfortable, Compact, or Condensed list rows
 - **Language**: English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese (Brazil), Russian, German, Japanese, Persian, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech, Swedish, Danish, Hungarian, Ukrainian

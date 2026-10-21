@@ -103,6 +103,8 @@ Investigar un tema #focused @computer
 ```
 Los nombres de contextos y etiquetas aceptan letras y números Unicode (incluidos caracteres CJK y caracteres acentuados).
 
+Escribe un contexto o una etiqueta anidados como una sola palabra con barras, por ejemplo `@person/todd`. Pon entre comillas un nombre con espacios, por ejemplo `@"Two words"` o `#"two words"`.
+
 **Editar tarea:**
 1. Abre el editor de tareas
 2. Añade contextos en el campo Contextos (separados por comas)
@@ -119,7 +121,7 @@ Al escribir el nombre de un contexto en Añadir rápido o en el editor de tareas
 1. Ve a la pestaña **Próximas acciones** o a **Contextos** desde el menú lateral
 2. Toca un contexto para filtrar
 
-**Vista Contextos (escritorio y móvil):** Selecciona varios contextos o etiquetas para combinarlos. Con dos o más seleccionados, **Todas** exige cada contexto/etiqueta seleccionado y **Cualquiera** incluye las tareas que coinciden con al menos uno. Por ejemplo, selecciona `@alice` y `@bob` con **Cualquiera** para ver tareas de cualquiera de las dos personas. Volver a seleccionar un elemento lo quita; **Sin contexto** es una selección separada y exclusiva.
+**Vista Contextos (escritorio y móvil):** Toca o haz clic en un contexto o una etiqueta para ver solo sus tareas. Para añadir otro a la selección, mantén pulsada su pastilla en el móvil o haz Ctrl-clic en el escritorio (Cmd-clic en macOS). El mismo gesto sobre una pastilla seleccionada la quita. Con dos o más seleccionados, **Todas** exige cada contexto/etiqueta seleccionado y **Cualquiera** incluye las tareas que coinciden con al menos uno. Por ejemplo, selecciona `@alice` y `@bob` con **Cualquiera** para ver tareas de cualquiera de las dos personas. Para borrar la selección, toca o haz clic de nuevo en la única pastilla seleccionada. **Sin contexto** es una selección separada y exclusiva.
 
 En los filtros de las listas de tareas, las fichas pasan por tres estados: selecciona un contexto o etiqueta una vez para incluirlo, otra vez para excluirlo (se muestra tachado) y una tercera para quitarlo. Las fichas excluidas siempre ocultan sus tareas, sin importar el modo de coincidencia.
 
@@ -200,6 +202,8 @@ Cuando filtras por un contexto superior, se incluyen todos sus elementos secunda
 | `#health` | `#health`, `#health/fitness`, `#health/diet` |
 
 En Contextos, se ofrece un filtro padre como `@tools` cuando las tareas del ámbito actual usan `@tools/excavator`, aunque ninguna tarea lleve la etiqueta padre. Un filtro seleccionado sigue visible y se puede deseleccionar cuando no hay resultados. Las ramas no seleccionadas desaparecen de las opciones cuando no tienen tareas que cumplan los criterios.
+
+Usa un padre para nombrar un tipo de contexto, por ejemplo `@person/todd`, `@person/emma` y `@place/bank`. Selecciona `@person` para ver las tareas de todas las personas. En Contextos, un hijo que aparece justo después de su padre muestra solo su última parte, por ejemplo `/todd`.
 
 Esto permite filtrar a alto nivel y mantener al mismo tiempo una organización específica.
 

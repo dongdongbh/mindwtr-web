@@ -103,6 +103,8 @@ Research topic #focused @computer
 ```
 Context and tag names accept Unicode letters and numbers (including CJK and accented characters).
 
+Write a nested context or tag as one word with slashes, such as `@person/todd`. Put a name with spaces in quotes, such as `@"Two words"` or `#"two words"`.
+
 **Edit task:**
 1. Open task editor
 2. Add contexts in the Contexts field (comma-separated)
@@ -119,7 +121,7 @@ As you type a context name in Quick Add or the task editor, matches can include 
 1. Go to **Next Actions** tab or **Contexts** from drawer
 2. Tap a context to filter
 
-**Contexts view (desktop and mobile):** Select several contexts or tags to combine them. With two or more selected, choose **All** to require every selected context/tag, or **Any** to include tasks matching at least one. For example, select `@alice` and `@bob` with **Any** to see tasks for either person. Selecting a token again removes it; **No Context** is a separate, exclusive selection.
+**Contexts view (desktop and mobile):** Tap or click a context or tag to show only its tasks. To add another one to the selection, long-press its chip on mobile, or Ctrl-click it on desktop (Cmd-click on macOS). The same gesture on a selected chip removes it. With two or more selected, choose **All** to require every selected context/tag, or **Any** to include tasks matching at least one. For example, select `@alice` and `@bob` with **Any** to see tasks for either person. To clear the selection, tap or click the only selected chip again. **No Context** is a separate, exclusive selection.
 
 In task-list filters, chips cycle through three states: select a context or tag once to include it, select it again to exclude it (shown struck through), and a third time to clear it. Excluded chips always hide their tasks, whatever the match mode says.
 
@@ -200,6 +202,8 @@ When you filter by a parent context, all children are included:
 | `#health` | `#health`, `#health/fitness`, `#health/diet` |
 
 In Contexts, a parent such as `@tools` is offered when tasks in the current scope use `@tools/excavator`, even if no task has the parent label itself. A selected filter stays visible and clearable when it reaches zero results. Unselected branches disappear from the choices when they have no eligible tasks.
+
+Use a parent to name a type of context, such as `@person/todd`, `@person/emma` and `@place/bank`. Select `@person` to see the tasks for every person. In Contexts, a child listed right after its parent shows only its last part, such as `/todd`.
 
 This allows high-level filtering while maintaining specific organization.
 

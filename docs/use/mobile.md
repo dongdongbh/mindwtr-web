@@ -251,7 +251,7 @@ On Android, tapping a task row in Tasks or Compact opens a small task sheet over
 
 On Android, tapping a ring in the Tasks widget crosses out the row immediately. Tap it again within about three seconds to undo. After this window, the row disappears from Tasks and Compact, making room for the remaining tasks without opening the app. The completion stays saved on the device until the next background sync or the next time Mindwtr opens, whichever comes first; Mindwtr then applies it and syncs it to your other devices.
 
-**Widget capture status (v1.3.7, not yet released).** When the Android Tasks widget shows **Inbox**, **Next Actions**, **Waiting For** or **Someday/Maybe**, its capture window starts with that status, which you can change before saving. **Focus**, **Upcoming**, saved filters, contexts and tags default to Inbox; the widget does not assign other properties automatically. Explicit quick-add metadata can override the inferred default; your explicit status-picker choice takes precedence. Compact, the standalone Quick Capture widget, the tile, notification and Capture shortcut still default to Inbox.
+**Widget capture status (v1.3.7, not yet released).** When the Android Tasks widget shows **Inbox**, **Next Actions**, **Waiting For** or **Someday/Maybe**, its capture window starts with that status, which you can change before saving. **Focus**, **Upcoming**, saved filters, contexts and tags default to Inbox. A widget that shows one context or tag opens its capture window with that context or tag already typed in. You can edit or delete it before saving. The widget does not assign other properties automatically. Explicit quick-add metadata can override the inferred default; your explicit status-picker choice takes precedence. Compact, the standalone Quick Capture widget, the tile, notification and Capture shortcut still default to Inbox.
 
 On Android, the capture button on any of the three widgets, the Quick Settings tile, the app shortcut and the capture notification open the same native floating capture window on top of whatever you are doing, without opening the main app. **Save** safely queues the capture, shows a short confirmation and closes the window. The chosen status stays with text and audio captures until import; the task may not appear in its list until then. For text captures, Mindwtr then imports the task in the background and syncs it to your other devices, without opening the app. If Android does not allow that background run, the task appears the next time you open Mindwtr. iOS captures through the app as before.
 
@@ -401,11 +401,11 @@ Mindwtr parses natural language when adding tasks:
 
 | Syntax       | Example           | Result             |
 | ------------ | ----------------- | ------------------ |
-| `@context`   | `@home`           | Adds context       |
+| `@context`   | `@home`           | Adds context; `@person/todd` adds a nested one |
 | `#tag`       | `#focused`        | Adds tag           |
 | `+Project`   | `+HomeReno`       | Assigns to project |
 | `+Multi Word` | `+New Project`    | Assigns to "New Project" |
-| `+"Quoted Name"` | `+"New Project" call Bob` | Quotes delimit a multi-word name mid-sentence (also `!"Area Name"`) |
+| `+"Quoted Name"` | `+"New Project" call Bob` | Quotes delimit a multi-word name mid-sentence (also `!"Area Name"`, `@"Two words"` and `#"two words"`) |
 | `!Area`       | `Plan roadmap !Work` | Assigns to area       |
 | `%Person`     | `Ask %Jim for budget` | Sets Assigned to (the person the task involves; status is unchanged); `%"Full Name"` for new multi-word names |
 | `/area:<name>` | `/area:Personal` | Assigns to area (no spaces) |
@@ -733,6 +733,8 @@ Completing a task stamps the current time. If you actually finished earlier, lon
 
 Browse and filter tasks by context.
 
+Tap a context or tag to show only its tasks. Long-press another chip to add it to the selection. With two or more selected, choose **All** or **Any**. Tap the only selected chip again to clear the selection. For nested contexts such as `@person/todd`, see [Contexts and Tags](/use/contexts-tags).
+
 ### Location Contexts
 
 - `@home`: Tasks to do at home
@@ -843,9 +845,10 @@ Starting with v1.3.4, Android discards one-time reminders that arrive more than 
 
 ### General
 
-- **Appearance**: System, Light, Dark, Material 3 (Light), Material 3 (Dark), E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia, or OLED / Midnight. Choose **System (Light / OLED Dark)** for the normal light palette in light mode and OLED in dark mode. **OLED / Midnight** stays black in either mode.
+- **Appearance**: System, Light, Dark, Material 3 (Light), Material 3 (Dark), E-Ink, Nord, Catppuccin Macchiato, Dracula, Gruvbox Light, Gruvbox Dark, Sepia, or OLED / Midnight. Choose **System (Light / OLED Dark)** for the normal light palette in light mode and OLED in dark mode. **OLED / Midnight** stays black in either mode.
 - **Language**: English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese (Brazil), Russian, German, Japanese, Persian, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech, Swedish, Danish, Hungarian, Ukrainian
 - **Date format**: On iOS, **System** uses supported Gregorian short-date preferences from the device. After changing the device preference, return to Mindwtr to refresh task dates and the Settings preview. An explicit format overrides System; unsupported patterns use the locale fallback.
+- **App lock**: Asks for your device lock (fingerprint, face or passcode) when you open Mindwtr or return to it. It protects what the app shows, not the database on the phone. While App lock is on, **Require unlock** sets how long Mindwtr can stay in the background before it asks again: **Immediately** (the default), **After 1 minute**, **After 5 minutes** or **After 15 minutes**. Opening Mindwtr after it was closed always asks. This setting stays on this phone. It does not sync, and restoring a backup does not change it.
 
 ### Notifications
 

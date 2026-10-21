@@ -69,11 +69,11 @@ Mindwtr unterstützt natürlichsprachige Schnelleingaben direkt im Aufgabenfeld.
 
 | Syntax             | Beispiel                   | Ergebnis                         |
 | ------------------ | -------------------------- | -------------------------------- |
-| `@context`         | `Buy milk @errands`        | Fügt den Kontext @errands hinzu  |
+| `@context`         | `Buy milk @errands`        | Fügt den Kontext @errands hinzu; `@person/todd` fügt einen verschachtelten Kontext hinzu |
 | `#tag`             | `Research topic #creative` | Fügt den Tag #creative hinzu     |
 | `+Project`         | `Call vendor +HomeReno`    | Weist die Aufgabe einem Projekt zu |
 | `+Multi Word`      | `+New Project Name`        | Weist sie „New Project Name“ zu  |
-| `+"Quoted Name"`  | `+"New Project" call Bob` | Anführungszeichen begrenzen einen mehrteiligen Namen mitten im Satz (auch `!"Area Name"`) |
+| `+"Quoted Name"`  | `+"New Project" call Bob` | Anführungszeichen begrenzen einen mehrteiligen Namen mitten im Satz (auch `!"Area Name"`, `@"Two words"` und `#"two words"`) |
 | `!Area`            | `Plan roadmap !Work`       | Weist die Aufgabe einem Bereich zu |
 | `%Person`          | `Ask %Jim for the budget /waiting` | Legt „Zugewiesen an“ fest (die Person, die die Aufgabe betrifft); ergänzen Sie `/waiting`, wenn Sie auf sie warten |
 | `%"Full Name"`    | `%"Jim Smith" send report` | Anführungszeichen begrenzen einen mehrteiligen Personennamen (bekannte Namen werden auch ohne Anführungszeichen erkannt) |

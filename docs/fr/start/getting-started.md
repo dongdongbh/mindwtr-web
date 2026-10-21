@@ -69,11 +69,11 @@ Mindwtr comprend la saisie naturelle dans le champ de tâche. La même syntaxe f
 
 | Syntaxe | Exemple | Résultat |
 | --- | --- | --- |
-| `@context` | `Buy milk @errands` | Ajoute le contexte @errands |
+| `@context` | `Buy milk @errands` | Ajoute le contexte @errands ; `@person/todd` ajoute un contexte imbriqué |
 | `#tag` | `Research topic #creative` | Ajoute le tag #creative |
 | `+Project` | `Call vendor +HomeReno` | Affecte au projet |
 | `+Multi Word` | `+New Project Name` | Affecte à « New Project Name » |
-| `+"Quoted Name"` | `+"New Project" call Bob` | Les guillemets délimitent un nom composé au milieu d’une phrase, également `!"Area Name"` |
+| `+"Quoted Name"` | `+"New Project" call Bob` | Les guillemets délimitent un nom composé au milieu d’une phrase, également `!"Area Name"`, `@"Two words"` et `#"two words"` |
 | `!Area` | `Plan roadmap !Work` | Affecte au domaine |
 | `%Person` | `Ask %Jim for the budget /waiting` | Définit Assigné à (la personne que la tâche implique) ; ajoutez `/waiting` si vous l’attendez |
 | `%"Full Name"` | `%"Jim Smith" send report` | Les guillemets délimitent un nom composé ; les noms connus sont aussi reconnus sans guillemets |

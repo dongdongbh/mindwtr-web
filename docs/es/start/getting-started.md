@@ -69,11 +69,11 @@ Mindwtr admite lenguaje natural al añadir elementos rápidamente. Escribe direc
 
 | Sintaxis | Ejemplo | Resultado |
 | --- | --- | --- |
-| `@context` | `Buy milk @errands` | Añade el contexto @errands |
+| `@context` | `Buy milk @errands` | Añade el contexto @errands; `@person/todd` añade uno anidado |
 | `#tag` | `Research topic #creative` | Añade la etiqueta #creative |
 | `+Project` | `Call vendor +HomeReno` | Asigna al proyecto |
 | `+Multi Word` | `+New Project Name` | Asigna a «New Project Name» |
-| `+"Quoted Name"` | `+"New Project" call Bob` | Las comillas delimitan un nombre de varias palabras dentro de una frase (también `!"Area Name"`) |
+| `+"Quoted Name"` | `+"New Project" call Bob` | Las comillas delimitan un nombre de varias palabras dentro de una frase (también `!"Area Name"`, `@"Two words"` y `#"two words"`) |
 | `!Area` | `Plan roadmap !Work` | Asigna al área |
 | `%Person` | `Ask %Jim for the budget /waiting` | Establece Asignada a (la persona que involucra la tarea); añade `/waiting` cuando estés esperándola |
 | `%"Full Name"` | `%"Jim Smith" send report` | Las comillas delimitan el nombre completo de una persona (los nombres conocidos también se reconocen sin comillas) |

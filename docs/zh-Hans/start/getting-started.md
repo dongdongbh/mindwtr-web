@@ -69,11 +69,11 @@ Mindwtr 支持自然语言快速添加。直接在任务输入框中输入即可
 
 | 语法 | 示例 | 结果 |
 | --- | --- | --- |
-| `@context` | `Buy milk @errands` | 添加 @errands 情境 |
+| `@context` | `Buy milk @errands` | 添加 @errands 情境；`@person/todd` 添加嵌套情境 |
 | `#tag` | `Research topic #creative` | 添加 #creative 标签 |
 | `+Project` | `Call vendor +HomeReno` | 分配到项目 |
 | `+Multi Word` | `+New Project Name` | 分配到 “New Project Name” |
-| `+"Quoted Name"` | `+"New Project" call Bob` | 引号可在句子中间界定多词名称（也支持 `!"Area Name"`） |
+| `+"Quoted Name"` | `+"New Project" call Bob` | 引号可在句子中间界定多词名称（也支持 `!"Area Name"`）；情境和标签用 `@"Two words"` 和 `#"two words"` |
 | `!Area` | `Plan roadmap !Work` | 分配到领域 |
 | `%Person` | `Ask %Jim for the budget /waiting` | 设置“分配给”（任务涉及的人）；如果你在等待对方，请加上 `/waiting` |
 | `%"Full Name"` | `%"Jim Smith" send report` | 引号界定多词人员名称（已知名称不加引号也可匹配） |

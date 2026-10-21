@@ -234,7 +234,7 @@ Auf Android öffnet ein Tippen auf eine Aufgabenzeile in Aufgaben oder Kompakt e
 
 Auf Android wird die Zeile beim Tippen auf den Ring im Aufgaben-Widget sofort durchgestrichen. Tippen Sie innerhalb von etwa drei Sekunden erneut darauf, um den Abschluss rückgängig zu machen. Danach verschwindet die Zeile aus den Widgets Aufgaben und Kompakt und schafft Platz für die übrigen Aufgaben, ohne die App zu öffnen. Der Abschluss bleibt auf dem Gerät gespeichert, bis zur nächsten Hintergrundsynchronisierung oder bis Mindwtr das nächste Mal geöffnet wird, je nachdem, was zuerst eintritt; Mindwtr übernimmt ihn dann und synchronisiert ihn mit Ihren anderen Geräten.
 
-**Status bei der Widget-Erfassung (v1.3.7, noch nicht veröffentlicht).** Zeigt das Android-Widget Aufgaben **Eingang**, **Nächste Aktionen**, **Warten auf** oder **Irgendwann/Vielleicht**, beginnt sein Erfassungsfenster mit diesem Status, den Sie vor dem Speichern ändern können. **Fokus**, **Anstehend**, gespeicherte Filter, Kontexte und Tags verwenden standardmäßig Eingang; andere Eigenschaften weist das Widget nicht automatisch zu. Explizite Schnellerfassungsangaben können den abgeleiteten Standard überschreiben; Ihre ausdrückliche Wahl im Statusfeld hat Vorrang. Kompakt, das eigenständige Schnellerfassungs-Widget, die Kachel, die Benachrichtigung und die Capture-Verknüpfung verwenden weiterhin standardmäßig Eingang.
+**Status bei der Widget-Erfassung (v1.3.7, noch nicht veröffentlicht).** Zeigt das Android-Widget Aufgaben **Eingang**, **Nächste Aktionen**, **Warten auf** oder **Irgendwann/Vielleicht**, beginnt sein Erfassungsfenster mit diesem Status, den Sie vor dem Speichern ändern können. **Fokus**, **Anstehend**, gespeicherte Filter, Kontexte und Tags verwenden standardmäßig Eingang. Ein Widget, das einen einzelnen Kontext oder Tag zeigt, öffnet sein Erfassungsfenster mit diesem Kontext oder Tag bereits eingetragen. Sie können ihn vor dem Speichern ändern oder löschen. Andere Eigenschaften weist das Widget nicht automatisch zu. Explizite Schnellerfassungsangaben können den abgeleiteten Standard überschreiben; Ihre ausdrückliche Wahl im Statusfeld hat Vorrang. Kompakt, das eigenständige Schnellerfassungs-Widget, die Kachel, die Benachrichtigung und die Capture-Verknüpfung verwenden weiterhin standardmäßig Eingang.
 
 Auf Android öffnen die Erfassungsschaltfläche in jedem der drei Widgets, die Schnelleinstellungskachel, die App-Verknüpfung und die Erfassungsbenachrichtigung dasselbe native schwebende Erfassungsfenster über dem, was Sie gerade tun, ohne die Haupt-App zu öffnen. **Speichern** legt die Erfassung sicher in der Warteschlange ab, zeigt kurz eine Bestätigung und schließt das Fenster. Der gewählte Status bleibt bei Text- und Audioerfassungen bis zum Import erhalten; erst dann erscheint die Aufgabe möglicherweise in ihrer Liste. Bei Texterfassungen übernimmt Mindwtr die Aufgabe danach im Hintergrund und synchronisiert sie mit Ihren anderen Geräten, ohne die App zu öffnen. Lässt Android diesen Hintergrundlauf nicht zu, erscheint die Aufgabe beim nächsten Öffnen von Mindwtr. iOS erfasst wie bisher über die App.
 
@@ -372,11 +372,11 @@ iOS-Kurzbefehlsbeispiel:
 
 | Syntax | Beispiel | Ergebnis |
 | ------------ | ----------------- | ------------------ |
-| `@context` | `@home` | Kontext hinzufügen |
+| `@context` | `@home` | Kontext hinzufügen; `@person/todd` fügt einen verschachtelten Kontext hinzu |
 | `#tag` | `#focused` | Tag hinzufügen |
 | `+Project` | `+HomeReno` | Projekt zuweisen |
 | `+Multi Word` | `+New Project` | „New Project“ zuweisen |
-| `+"Quoted Name"` | `+"New Project" call Bob` | Anführungszeichen begrenzen mehrteilige Namen (auch `!"Area Name"`) |
+| `+"Quoted Name"` | `+"New Project" call Bob` | Anführungszeichen begrenzen mehrteilige Namen (auch `!"Area Name"`, `@"Two words"` und `#"two words"`) |
 | `!Area` | `Plan roadmap !Work` | Bereich zuweisen |
 | `%Person` | `Ask %Jim for budget` | „Zugewiesen an“ setzen (die Person, die die Aufgabe betrifft; der Status bleibt unverändert); `%"Full Name"` für neue mehrteilige Namen |
 | `/area:<name>` | `/area:Personal` | Bereich zuweisen (ohne Leerzeichen) |
@@ -669,6 +669,8 @@ Beim Abschluss wird die aktuelle Zeit gespeichert. Wenn Sie früher fertig waren
 
 ## Kontexte
 
+Tippen Sie auf einen Kontext oder Tag, um nur dessen Aufgaben zu sehen. Drücken Sie lange auf einen weiteren Chip, um ihn zur Auswahl hinzuzufügen. Bei mindestens zwei ausgewählten Einträgen wählen Sie **Alle** oder **Beliebig**. Tippen Sie erneut auf den einzigen ausgewählten Chip, um die Auswahl aufzuheben. Verschachtelte Kontexte wie `@person/todd` beschreibt [Kontexte und Tags](/de/use/contexts-tags).
+
 ### Ortskontexte
 
 - `@home`: zu Hause
@@ -768,9 +770,10 @@ Tippen Sie auf **Zulassen**, um den Android-Berechtigungsbildschirm für Mindwtr
 
 ### Allgemein
 
-- **Darstellung**: System, Hell, Dunkel, Material 3 (Hell), Material 3 (Dunkel), E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia oder OLED / Mitternacht. **System (Hell / OLED Dunkel)** verwendet bei hellem Systemdesign das normale helle Design und bei dunklem das OLED-Design. **OLED / Mitternacht** bleibt unabhängig vom Systemdesign schwarz.
+- **Darstellung**: System, Hell, Dunkel, Material 3 (Hell), Material 3 (Dunkel), E-Ink, Nord, Catppuccin Macchiato, Dracula, Gruvbox Light, Gruvbox Dark, Sepia oder OLED / Mitternacht. **System (Hell / OLED Dunkel)** verwendet bei hellem Systemdesign das normale helle Design und bei dunklem das OLED-Design. **OLED / Mitternacht** bleibt unabhängig vom Systemdesign schwarz.
 - **Sprache**: Englisch, Chinesisch (vereinfacht), Chinesisch (traditionell), Hindi, Spanisch, Arabisch, Französisch, Portugiesisch (Brasilien), Russisch, Deutsch, Japanisch, Persisch, Vietnamesisch, Türkisch, Koreanisch, Italienisch, Polnisch, Niederländisch, Tschechisch, Schwedisch, Dänisch, Ungarisch, Ukrainisch
 - **Datumsformat**: Unter iOS verwendet **System** unterstützte gregorianische Kurzdatumsformate des Geräts. Nach einer Änderung der Geräteeinstellung aktualisiert die Rückkehr zu Mindwtr die Aufgabendaten und die Vorschau in den Einstellungen. Ein ausdrücklich gewähltes Format hat Vorrang; nicht unterstützte Muster verwenden das Sprachregionsformat.
+- **App-Sperre**: Verlangt die Gerätesperre (Fingerabdruck, Gesicht oder Code), wenn Sie Mindwtr öffnen oder zur App zurückkehren. Sie schützt die Ansicht der App, nicht die Datenbank auf dem Telefon. Bei aktiver App-Sperre legt **Entsperren verlangen** fest, wie lange Mindwtr im Hintergrund bleiben darf, bevor es erneut fragt: **Sofort** (Standard), **Nach 1 Minute**, **Nach 5 Minuten** oder **Nach 15 Minuten**. Wenn Sie Mindwtr nach dem Schließen öffnen, fragt es immer. Diese Einstellung bleibt auf diesem Telefon. Sie wird nicht synchronisiert, und das Wiederherstellen einer Sicherung ändert sie nicht.
 
 ### Benachrichtigungen
 

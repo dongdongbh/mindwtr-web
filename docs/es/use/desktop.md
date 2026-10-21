@@ -126,6 +126,8 @@ Filtra tareas por contexto de ubicación o herramienta:
 - `@home`, `@work`, `@errands`, `@agendas`
 - `@computer`, `@phone`, `@anywhere`
 
+Haz clic en un contexto o una etiqueta para ver solo sus tareas. Haz Ctrl-clic en otro (Cmd-clic en macOS) para añadirlo a la selección. Con dos o más seleccionados, elige **Todas** o **Cualquiera**. Haz clic de nuevo en el único seleccionado para borrar la selección.
+
 ### 🏷️ Etiquetas
 
 Filtra tareas por nivel de energía, modo o tema:
@@ -382,11 +384,11 @@ Mindwtr analiza lenguaje natural al añadir tareas:
 
 | Sintaxis       | Ejemplo           | Resultado              |
 | -------------- | ----------------- | ---------------------- |
-| `@context`   | `@home`           | Añade un contexto        |
+| `@context`   | `@home`           | Añade un contexto; `@person/todd` añade uno anidado |
 | `#tag`       | `#focused`        | Añade una etiqueta       |
 | `+Project`   | `+HomeReno`       | Asigna a un proyecto     |
 | `+Multi Word` | `+New Project`    | Asigna a "New Project" |
-| `+"Quoted Name"` | `+"New Project" call Bob` | Las comillas delimitan un nombre de varias palabras dentro de una frase (también `!"Area Name"`) |
+| `+"Quoted Name"` | `+"New Project" call Bob` | Las comillas delimitan un nombre de varias palabras dentro de una frase (también `!"Area Name"`, `@"Two words"` y `#"two words"`) |
 | `!Area`       | `Plan roadmap !Work` | Asigna a un área       |
 | `%Person`     | `Ask %Jim for budget` | Establece Asignada a (la persona que involucra la tarea; el estado no cambia); `%"Full Name"` para nombres nuevos de varias palabras |
 | `/area:<name>` | `/area:Personal` | Asigna a un área (sin espacios) |
@@ -627,7 +629,7 @@ En todos los preajustes, `s` seguida de una letra establece directamente el esta
 Abre Ajustes desde la barra lateral.
 
 ### General
-- **Apariencia**: Sistema, Clara, Oscura, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia u OLED / Medianoche. Elige **Sistema (Claro / OLED Oscuro)** para usar el tema claro normal en modo claro y OLED en modo oscuro. **OLED / Medianoche** permanece negro en ambos modos.
+- **Apariencia**: Sistema, Clara, Oscura, E-Ink, Nord, Catppuccin Macchiato, Dracula, Gruvbox Light, Gruvbox Dark, Sepia u OLED / Medianoche. Elige **Sistema (Claro / OLED Oscuro)** para usar el tema claro normal en modo claro y OLED en modo oscuro. **OLED / Medianoche** permanece negro en ambos modos.
 - **Fuente**: Elige cualquier fuente instalada en este equipo o mantén la predeterminada de la app. Haz clic en el campo para ver la lista o empieza a escribir para acotarla. La lista proviene del sistema operativo, y una fuente elegida que se desinstale después vuelve a la predeterminada.
 - **Densidad**: filas de lista Cómodo, Compacto o Condensado
 - **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués (Brasil), ruso, alemán, japonés, persa, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo, sueco, danés, húngaro, ucraniano

@@ -69,11 +69,11 @@ Mindwtr supports natural language quick-add. Type directly in the task input. Th
 
 | Syntax             | Example                    | Result                |
 | ------------------ | -------------------------- | --------------------- |
-| `@context`         | `Buy milk @errands`        | Adds @errands context |
+| `@context`         | `Buy milk @errands`        | Adds @errands context; `@person/todd` adds a nested one |
 | `#tag`             | `Research topic #creative` | Adds #creative tag    |
 | `+Project`         | `Call vendor +HomeReno`    | Assigns to project    |
 | `+Multi Word`      | `+New Project Name`        | Assigns to "New Project Name" |
-| `+"Quoted Name"`   | `+"New Project" call Bob`  | Quotes delimit a multi-word name mid-sentence (also `!"Area Name"`) |
+| `+"Quoted Name"`   | `+"New Project" call Bob`  | Quotes delimit a multi-word name mid-sentence (also `!"Area Name"`, `@"Two words"` and `#"two words"`) |
 | `!Area`            | `Plan roadmap !Work`       | Assigns to area       |
 | `%Person`          | `Ask %Jim for the budget /waiting` | Sets Assigned to (the person the task involves); add `/waiting` when you are waiting on them |
 | `%"Full Name"`     | `%"Jim Smith" send report` | Quotes delimit a multi-word person name (known names also match unquoted) |

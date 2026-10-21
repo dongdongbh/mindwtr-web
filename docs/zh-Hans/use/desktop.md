@@ -126,6 +126,8 @@ Mindwtr 会在后台运行，以处理自动同步。
 - `@home`、`@work`、`@errands`、`@agendas`
 - `@computer`、`@phone`、`@anywhere`
 
+点击一个情境或标签，只显示它的任务。按住 Ctrl 点击另一个（macOS 上按住 Cmd 点击）可把它加入选择。选中两个或更多项目后，选择**全部**或**任一**。再次点击唯一选中的项目即可清除选择。
+
 ### 🏷️ 标签
 
 按精力水平、模式或主题筛选任务：
@@ -382,11 +384,11 @@ Mindwtr 会在添加任务时解析自然语言：
 
 | 语法             | 示例                         | 结果                                                         |
 | ---------------- | ---------------------------- | ------------------------------------------------------------ |
-| `@context`       | `@home`                      | 添加情境                                                     |
+| `@context`       | `@home`                      | 添加情境；`@person/todd` 添加嵌套情境 |
 | `#tag`           | `#focused`                   | 添加标签                                                     |
 | `+Project`       | `+HomeReno`                  | 分配到项目                                                   |
 | `+Multi Word`    | `+New Project`               | 分配到“New Project”                                          |
-| `+"Quoted Name"` | `+"New Project" call Bob`    | 引号用于界定句子中间的多词名称（也适用于 `!"Area Name"`）    |
+| `+"Quoted Name"` | `+"New Project" call Bob`    | 引号用于界定句子中间的多词名称（也适用于 `!"Area Name"`）；情境和标签用 `@"Two words"` 和 `#"two words"` |
 | `!Area`          | `Plan roadmap !Work`         | 分配到领域                                                   |
 | `%Person`        | `Ask %Jim for budget`        | 设置“分配给”（任务涉及的人；状态不变）；新建多词名称时使用 `%"Full Name"` |
 | `/area:<name>`   | `/area:Personal`             | 分配到领域（不能有空格）                                     |
@@ -627,7 +629,7 @@ Mindwtr 支持**标准**（Gmail/Todoist 风格）、**Vim** 和 **Emacs** 按�
 从侧边栏进入“设置”。
 
 ### 通用
-- **外观**：跟随系统、浅色、深色、电子墨水、Nord、Catppuccin Macchiato、Dracula、复古米黄或 OLED / 午夜. 选择 **跟随系统（浅色 / OLED 深色）** 后，系统为浅色时使用普通浅色主题，为深色时使用 OLED 主题。**OLED / 午夜** 始终为黑色。
+- **外观**：跟随系统、浅色、深色、电子墨水、Nord、Catppuccin Macchiato、Dracula、Gruvbox Light、Gruvbox Dark、复古米黄或 OLED / 午夜. 选择 **跟随系统（浅色 / OLED 深色）** 后，系统为浅色时使用普通浅色主题，为深色时使用 OLED 主题。**OLED / 午夜** 始终为黑色。
 - **字体**：从这台电脑上已安装的字体中任选一种，或保留应用默认字体。点击输入框可浏览列表，输入文字可快速筛选。列表来自操作系统；所选字体之后被卸载时会回退到默认字体。
 - **密度**：列表行采用舒适、紧凑或密集
 - **语言**：英语、简体中文、繁体中文、印地语、西班牙语、阿拉伯语、法语、葡萄牙语（巴西）、俄语、德语、日语、波斯语、越南语、土耳其语、韩语、意大利语、波兰语、荷兰语、捷克语、瑞典语、丹麦语、匈牙利语、乌克兰语

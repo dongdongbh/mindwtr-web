@@ -245,7 +245,7 @@ En Android, tocar una fila de tarea en Tareas o Compacto abre una pequeña ficha
 
 En Android, tocar el anillo del widget Tareas tacha la fila de inmediato. Tócalo de nuevo en unos tres segundos para deshacer. Después, la fila desaparece de Tareas y Compacto y deja espacio para las tareas restantes, sin abrir la aplicación. La finalización queda guardada en el dispositivo hasta la siguiente sincronización en segundo plano o hasta que vuelvas a abrir Mindwtr, lo que ocurra primero; entonces Mindwtr la aplica y la sincroniza con tus otros dispositivos.
 
-**Estado de captura del widget (v1.3.7, aún no publicada).** Si el widget Tareas de Android muestra **Bandeja de entrada**, **Próximas acciones**, **En espera** o **Algún día/Tal vez**, su ventana de captura empieza con ese estado, que puedes cambiar antes de guardar. **Foco**, **Próximas**, los filtros guardados, los contextos y las etiquetas usan Bandeja de entrada por defecto; el widget no asigna otras propiedades automáticamente. Los metadatos explícitos de captura rápida pueden sustituir el estado inferido; tu elección explícita en el selector de estado tiene prioridad. Compacto, el widget independiente Captura rápida, el mosaico, la notificación y el acceso directo Capture siguen usando Bandeja de entrada por defecto.
+**Estado de captura del widget (v1.3.7, aún no publicada).** Si el widget Tareas de Android muestra **Bandeja de entrada**, **Próximas acciones**, **En espera** o **Algún día/Tal vez**, su ventana de captura empieza con ese estado, que puedes cambiar antes de guardar. **Foco**, **Próximas**, los filtros guardados, los contextos y las etiquetas usan Bandeja de entrada por defecto. Un widget que muestra un solo contexto o una sola etiqueta abre su ventana de captura con ese contexto o esa etiqueta ya escritos. Puedes editarlos o borrarlos antes de guardar. El widget no asigna otras propiedades automáticamente. Los metadatos explícitos de captura rápida pueden sustituir el estado inferido; tu elección explícita en el selector de estado tiene prioridad. Compacto, el widget independiente Captura rápida, el mosaico, la notificación y el acceso directo Capture siguen usando Bandeja de entrada por defecto.
 
 En Android, el botón de captura de cualquiera de los tres widgets, el mosaico de Ajustes rápidos, el acceso directo de la aplicación y la notificación de captura abren la misma ventana nativa flotante sobre lo que estés haciendo, sin abrir la aplicación principal. **Guardar** deja la captura a salvo en la cola, muestra una breve confirmación y cierra la ventana. El estado elegido se conserva en las capturas de texto y audio hasta la importación; puede que la tarea no aparezca en su lista hasta entonces. Para las capturas de texto, después Mindwtr importa la tarea en segundo plano y la sincroniza con tus otros dispositivos, sin abrir la aplicación. Si Android no permite esa ejecución en segundo plano, la tarea aparece la próxima vez que abras Mindwtr. iOS captura a través de la aplicación como antes.
 
@@ -395,11 +395,11 @@ Mindwtr analiza lenguaje natural al añadir tareas:
 
 | Sintaxis       | Ejemplo           | Resultado             |
 | -------------- | ----------------- | --------------------- |
-| `@context`   | `@home`           | Añade un contexto       |
+| `@context`   | `@home`           | Añade un contexto; `@person/todd` añade uno anidado |
 | `#tag`       | `#focused`        | Añade una etiqueta      |
 | `+Project`   | `+HomeReno`       | Asigna a un proyecto    |
 | `+Multi Word` | `+New Project`    | Asigna a "New Project" |
-| `+"Quoted Name"` | `+"New Project" call Bob` | Las comillas delimitan un nombre de varias palabras dentro de una frase (también `!"Area Name"`) |
+| `+"Quoted Name"` | `+"New Project" call Bob` | Las comillas delimitan un nombre de varias palabras dentro de una frase (también `!"Area Name"`, `@"Two words"` y `#"two words"`) |
 | `!Area`       | `Plan roadmap !Work` | Asigna a un área       |
 | `%Person`     | `Ask %Jim for budget` | Establece Asignada a (la persona que involucra la tarea; el estado no cambia); `%"Full Name"` para nombres nuevos de varias palabras |
 | `/area:<name>` | `/area:Personal` | Asigna a un área (sin espacios) |
@@ -720,6 +720,8 @@ Completar una tarea registra la hora actual. Si en realidad terminaste antes, ma
 
 Explora y filtra tareas por contexto.
 
+Toca un contexto o una etiqueta para ver solo sus tareas. Mantén pulsada otra pastilla para añadirla a la selección. Con dos o más seleccionados, elige **Todas** o **Cualquiera**. Toca de nuevo la única pastilla seleccionada para borrar la selección. Para contextos anidados como `@person/todd`, consulta [Contextos y etiquetas](/es/use/contexts-tags).
+
 ### Contextos de ubicación
 
 - `@home`: tareas para hacer en casa
@@ -828,9 +830,10 @@ Toca **Permitir** para abrir la pantalla de permisos de Android para Mindwtr. Ta
 
 ### General
 
-- **Apariencia**: Sistema, Clara, Oscura, Material 3 (Claro), Material 3 (Oscuro), E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia u OLED / Medianoche. Elige **Sistema (Claro / OLED Oscuro)** para usar el tema claro normal en modo claro y OLED en modo oscuro. **OLED / Medianoche** permanece negro en ambos modos.
+- **Apariencia**: Sistema, Clara, Oscura, Material 3 (Claro), Material 3 (Oscuro), E-Ink, Nord, Catppuccin Macchiato, Dracula, Gruvbox Light, Gruvbox Dark, Sepia u OLED / Medianoche. Elige **Sistema (Claro / OLED Oscuro)** para usar el tema claro normal en modo claro y OLED en modo oscuro. **OLED / Medianoche** permanece negro en ambos modos.
 - **Idioma**: inglés, chino (simplificado), chino (tradicional), hindi, español, árabe, francés, portugués (Brasil), ruso, alemán, japonés, persa, vietnamita, turco, coreano, italiano, polaco, neerlandés, checo, sueco, danés, húngaro, ucraniano
 - **Formato de fecha**: En iOS, **Sistema** usa las preferencias de fecha corta gregoriana compatibles del dispositivo. Tras cambiarlas, vuelve a Mindwtr para actualizar las fechas y la vista previa de Ajustes. Un formato elegido explícitamente tiene prioridad; los patrones no compatibles usan el formato regional.
+- **Bloqueo de la app**: pide el bloqueo del dispositivo (huella, rostro o código) al abrir Mindwtr o al volver a la app. Protege lo que muestra la app, no la base de datos del teléfono. Con el bloqueo activado, **Pedir desbloqueo** define cuánto tiempo puede estar Mindwtr en segundo plano antes de volver a pedirlo: **Inmediatamente** (predeterminado), **Después de 1 minuto**, **Después de 5 minutos** o **Después de 15 minutos**. Si abres Mindwtr después de cerrarlo, siempre lo pide. Este ajuste se queda en este teléfono. No se sincroniza, y restaurar una copia de seguridad no lo cambia.
 
 ### Notificaciones
 

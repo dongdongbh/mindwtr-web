@@ -69,11 +69,11 @@ Mindwtr 支援自然語言快速新增，直接在任務輸入欄中輸入即可
 
 | 語法 | 範例 | 結果 |
 | --- | --- | --- |
-| `@context` | `Buy milk @errands` | 加入 @errands 情境 |
+| `@context` | `Buy milk @errands` | 加入 @errands 情境；`@person/todd` 加入巢狀情境 |
 | `#tag` | `Research topic #creative` | 加入 #creative 標籤 |
 | `+Project` | `Call vendor +HomeReno` | 指派至專案 |
 | `+Multi Word` | `+New Project Name` | 指派至 "New Project Name" |
-| `+"Quoted Name"` | `+"New Project" call Bob` | 引號界定句子中間的多字名稱（領域亦可寫成 `!"Area Name"`） |
+| `+"Quoted Name"` | `+"New Project" call Bob` | 引號界定句子中間的多字名稱（領域亦可寫成 `!"Area Name"`）；情境和標籤用 `@"Two words"` 和 `#"two words"` |
 | `!Area` | `Plan roadmap !Work` | 指派至領域 |
 | `%Person` | `Ask %Jim for the budget /waiting` | 設定「指派給」（任務牽涉到的人）；若你正在等待對方，請加上 `/waiting` |
 | `%"Full Name"` | `%"Jim Smith" send report` | 引號界定多字人名（已知名稱也可不加引號） |

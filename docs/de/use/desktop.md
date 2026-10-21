@@ -126,6 +126,8 @@ Aufgaben nach Orts- oder Werkzeugkontext filtern:
 - `@home`, `@work`, `@errands`, `@agendas`
 - `@computer`, `@phone`, `@anywhere`
 
+Klicken Sie auf einen Kontext oder Tag, um nur dessen Aufgaben zu sehen. Klicken Sie einen weiteren mit Strg an (unter macOS mit Cmd), um ihn zur Auswahl hinzuzufügen. Bei mindestens zwei ausgewählten Einträgen wählen Sie **Alle** oder **Beliebig**. Klicken Sie erneut auf den einzigen ausgewählten Eintrag, um die Auswahl aufzuheben.
+
 ### 🏷️ Tags
 
 Aufgaben nach Energie, Modus oder Thema filtern:
@@ -384,11 +386,11 @@ Mindwtr wertet beim Hinzufügen natürliche Sprache aus:
 
 | Syntax | Beispiel | Ergebnis |
 | ------------ | ----------------- | ------------------- |
-| `@context` | `@home` | Kontext hinzufügen |
+| `@context` | `@home` | Kontext hinzufügen; `@person/todd` fügt einen verschachtelten Kontext hinzu |
 | `#tag` | `#focused` | Tag hinzufügen |
 | `+Project` | `+HomeReno` | Projekt zuweisen |
 | `+Multi Word` | `+New Project` | „New Project“ zuweisen |
-| `+"Quoted Name"` | `+"New Project" call Bob` | Anführungszeichen begrenzen mehrteilige Namen mitten im Satz (auch `!"Area Name"`) |
+| `+"Quoted Name"` | `+"New Project" call Bob` | Anführungszeichen begrenzen mehrteilige Namen mitten im Satz (auch `!"Area Name"`, `@"Two words"` und `#"two words"`) |
 | `!Area` | `Plan roadmap !Work` | Bereich zuweisen |
 | `%Person` | `Ask %Jim for budget` | „Zugewiesen an“ festlegen (die Person, die die Aufgabe betrifft; der Status bleibt unverändert); `%"Full Name"` für neue mehrteilige Namen |
 | `/area:<name>` | `/area:Personal` | Bereich zuweisen (ohne Leerzeichen) |
@@ -622,7 +624,7 @@ In jeder Voreinstellung setzt `s` plus Buchstabe direkt den Status (`si` Eingang
 Über die Seitenleiste öffnen.
 
 ### Allgemein
-- **Darstellung**: System, Hell, Dunkel, E-Ink, Nord, Catppuccin Macchiato, Dracula, Sepia oder OLED / Mitternacht. **System (Hell / OLED Dunkel)** verwendet bei hellem Systemdesign das normale helle Design und bei dunklem das OLED-Design. **OLED / Mitternacht** bleibt unabhängig vom Systemdesign schwarz.
+- **Darstellung**: System, Hell, Dunkel, E-Ink, Nord, Catppuccin Macchiato, Dracula, Gruvbox Light, Gruvbox Dark, Sepia oder OLED / Mitternacht. **System (Hell / OLED Dunkel)** verwendet bei hellem Systemdesign das normale helle Design und bei dunklem das OLED-Design. **OLED / Mitternacht** bleibt unabhängig vom Systemdesign schwarz.
 - **Schriftart**: Wählen Sie eine beliebige auf diesem Computer installierte Schrift oder behalten Sie den App-Standard. Klicken Sie in das Feld, um die Liste zu durchsuchen, oder tippen Sie, um sie einzugrenzen. Die Liste stammt vom Betriebssystem; eine gewählte Schrift, die später deinstalliert wird, fällt auf den Standard zurück.
 - **Dichte**: Listenzeilen komfortabel, kompakt oder verdichtet
 - **Sprache**: Englisch, Chinesisch (vereinfacht), Chinesisch (traditionell), Hindi, Spanisch, Arabisch, Französisch, Portugiesisch (Brasilien), Russisch, Deutsch, Japanisch, Persisch, Vietnamesisch, Türkisch, Koreanisch, Italienisch, Polnisch, Niederländisch, Tschechisch, Schwedisch, Dänisch, Ungarisch, Ukrainisch

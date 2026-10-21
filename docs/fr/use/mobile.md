@@ -245,7 +245,7 @@ Sous Android, toucher une ligne de tâche dans Tâches ou Compact ouvre une peti
 
 Sous Android, toucher l’anneau du widget Tâches barre aussitôt la ligne. Touchez-le de nouveau dans les trois secondes environ pour annuler. Ensuite, la ligne disparaît de Tâches et Compact et laisse la place aux tâches restantes, sans ouvrir l’application. La clôture reste enregistrée sur l’appareil jusqu’à la prochaine synchronisation en arrière-plan ou la prochaine ouverture de Mindwtr, selon ce qui arrive en premier ; Mindwtr l’applique alors et la synchronise avec vos autres appareils.
 
-**Statut de capture du widget (v1.3.7, pas encore publiée).** Quand le widget Tâches Android affiche **Boîte de réception**, **Prochaines actions**, **En attente** ou **Un jour/Peut-être**, sa fenêtre de capture propose ce statut, modifiable avant l’enregistrement. **Focus**, **À venir**, les filtres enregistrés, les contextes et les étiquettes utilisent Boîte de réception par défaut ; le widget n’attribue pas automatiquement d’autres propriétés. Les métadonnées explicites de capture rapide peuvent remplacer le statut déduit ; votre choix explicite dans le sélecteur de statut est prioritaire. Compact, le widget Capture rapide autonome, la tuile, la notification et le raccourci Capture utilisent toujours Boîte de réception par défaut.
+**Statut de capture du widget (v1.3.7, pas encore publiée).** Quand le widget Tâches Android affiche **Boîte de réception**, **Prochaines actions**, **En attente** ou **Un jour/Peut-être**, sa fenêtre de capture propose ce statut, modifiable avant l’enregistrement. **Focus**, **À venir**, les filtres enregistrés, les contextes et les étiquettes utilisent Boîte de réception par défaut. Un widget qui affiche un seul contexte ou une seule étiquette ouvre sa fenêtre de capture avec ce contexte ou cette étiquette déjà saisi. Vous pouvez le modifier ou le supprimer avant l’enregistrement. Le widget n’attribue pas automatiquement d’autres propriétés. Les métadonnées explicites de capture rapide peuvent remplacer le statut déduit ; votre choix explicite dans le sélecteur de statut est prioritaire. Compact, le widget Capture rapide autonome, la tuile, la notification et le raccourci Capture utilisent toujours Boîte de réception par défaut.
 
 Sous Android, le bouton de capture de chacun des trois widgets, la tuile des Réglages rapides, le raccourci de l’application et la notification de capture ouvrent la même fenêtre native flottante par-dessus ce que vous faites, sans ouvrir l’application principale. **Enregistrer** conserve la capture dans la file d’attente, affiche une brève confirmation et ferme la fenêtre. Le statut choisi reste associé aux captures de texte et audio jusqu’à leur importation ; la tâche peut n’apparaître dans sa liste qu’à ce moment-là. Pour les captures de texte, Mindwtr importe ensuite la tâche en arrière-plan et la synchronise avec vos autres appareils, sans ouvrir l’application. Si Android n’autorise pas cette exécution en arrière-plan, la tâche apparaît à la prochaine ouverture de Mindwtr. iOS capture via l’application comme avant.
 
@@ -395,11 +395,11 @@ Mindwtr analyse le langage naturel lors de l’ajout de tâches :
 
 | Syntaxe      | Exemple           | Résultat                            |
 | ------------ | ----------------- | ----------------------------------- |
-| `@context`   | `@home`           | Ajoute un contexte                  |
+| `@context`   | `@home`           | Ajoute un contexte ; `@person/todd` ajoute un contexte imbriqué |
 | `#tag`       | `#focused`        | Ajoute une étiquette                |
 | `+Project`   | `+HomeReno`       | Attribue à un projet                |
 | `+Multi Word` | `+New Project`    | Attribue à « New Project »          |
-| `+"Quoted Name"` | `+"New Project" call Bob` | Les guillemets délimitent un nom composé de plusieurs mots au milieu d’une phrase (également `!"Area Name"`) |
+| `+"Quoted Name"` | `+"New Project" call Bob` | Les guillemets délimitent un nom composé de plusieurs mots au milieu d’une phrase (également `!"Area Name"`, `@"Two words"` et `#"two words"`) |
 | `!Area`       | `Plan roadmap !Work` | Attribue à un domaine            |
 | `%Person`     | `Ask %Jim for budget` | Définit la personne assignée (la personne que la tâche implique ; le statut ne change pas) ; `%"Full Name"` pour les nouveaux noms composés de plusieurs mots |
 | `/area:<name>` | `/area:Personal` | Attribue à un domaine (sans espaces) |
@@ -720,6 +720,8 @@ Terminer une tâche enregistre l’heure actuelle. Si vous l’avez en réalité
 
 Parcourez et filtrez les tâches par contexte.
 
+Touchez un contexte ou une étiquette pour n’afficher que ses tâches. Appuyez longuement sur une autre pastille pour l’ajouter à la sélection. À partir de deux éléments sélectionnés, choisissez **Tous** ou **Au moins un**. Touchez à nouveau la seule pastille sélectionnée pour vider la sélection. Pour les contextes imbriqués comme `@person/todd`, consultez [Contextes et tags](/fr/use/contexts-tags).
+
 ### Contextes de lieu
 
 - `@home` : tâches à effectuer à la maison
@@ -828,9 +830,10 @@ Touchez **Autoriser** pour ouvrir l’écran d’autorisation Android de Mindwtr
 
 ### Général
 
-- **Apparence** : Système, Clair, Sombre, Material 3 (clair), Material 3 (sombre), Encre électronique, Nord, Catppuccin Macchiato, Dracula, Sépia ou OLED / Minuit. **Système (Clair / OLED Sombre)** utilise le thème clair normal en mode clair et le thème OLED en mode sombre. **OLED / Minuit** reste noir quel que soit le mode du système.
+- **Apparence** : Système, Clair, Sombre, Material 3 (clair), Material 3 (sombre), Encre électronique, Nord, Catppuccin Macchiato, Dracula, Gruvbox Light, Gruvbox Dark, Sépia ou OLED / Minuit. **Système (Clair / OLED Sombre)** utilise le thème clair normal en mode clair et le thème OLED en mode sombre. **OLED / Minuit** reste noir quel que soit le mode du système.
 - **Langue** : anglais, chinois (simplifié), chinois (traditionnel), hindi, espagnol, arabe, français, portugais (Brésil), russe, allemand, japonais, persan, vietnamien, turc, coréen, italien, polonais, néerlandais, tchèque, suédois, danois, hongrois, ukrainien
 - **Format de date** : Sur iOS, **Système** utilise les préférences compatibles de date courte grégorienne de l’appareil. Après les avoir modifiées, revenez dans Mindwtr pour actualiser les dates et l’aperçu des réglages. Un format choisi explicitement est prioritaire ; les formats non pris en charge utilisent le format régional.
+- **Verrouillage de l’app** : demande le verrouillage de l’appareil (empreinte, visage ou code) quand vous ouvrez Mindwtr ou y revenez. Il protège ce que l’app affiche, pas la base de données du téléphone. Quand le verrouillage est activé, **Demander le déverrouillage** fixe combien de temps Mindwtr peut rester en arrière-plan avant de redemander : **Immédiatement** (par défaut), **Après 1 minute**, **Après 5 minutes** ou **Après 15 minutes**. Si vous ouvrez Mindwtr après l’avoir fermé, il demande toujours le déverrouillage. Ce réglage reste sur ce téléphone. Il n’est pas synchronisé, et la restauration d’une sauvegarde ne le modifie pas.
 
 ### Notifications
 

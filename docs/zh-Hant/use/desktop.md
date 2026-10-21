@@ -126,6 +126,8 @@ Mindwtr 會在背景執行，以處理自動同步。
 - `@home`、`@work`、`@errands`、`@agendas`
 - `@computer`、`@phone`、`@anywhere`
 
+點擊一個情境或標籤，只顯示它的任務。按住 Ctrl 點擊另一個（macOS 上按住 Cmd 點擊）可把它加入選取。選取兩個以上項目後，選擇**全部**或**任一**。再次點擊唯一選取的項目即可清除選取。
+
 ### 🏷️ 標籤
 
 依精力程度、模式或主題篩選任務：
@@ -382,11 +384,11 @@ Mindwtr 會在新增任務時解析自然語言：
 
 | 語法              | 範例                         | 結果                                      |
 | ----------------- | ---------------------------- | ----------------------------------------- |
-| `@context`        | `@home`                      | 加入情境                                  |
+| `@context`        | `@home`                      | 加入情境；`@person/todd` 加入巢狀情境 |
 | `#tag`            | `#focused`                   | 加入標籤                                  |
 | `+Project`        | `+HomeReno`                  | 指派至專案                                |
 | `+Multi Word`     | `+New Project`               | 指派至 "New Project"                      |
-| `+"Quoted Name"`  | `+"New Project" call Bob`    | 引號界定句中多字名稱（領域也可用 `!"Area Name"`） |
+| `+"Quoted Name"`  | `+"New Project" call Bob`    | 引號界定句中多字名稱（領域也可用 `!"Area Name"`）；情境和標籤用 `@"Two words"` 和 `#"two words"` |
 | `!Area`           | `Plan roadmap !Work`         | 指派至領域                                |
 | `%Person`         | `Ask %Jim for budget`        | 設定「指派給」（任務牽涉到的人；狀態不變）；新建多字名稱使用 `%"Full Name"` |
 | `/area:<name>`    | `/area:Personal`             | 指派至領域（不能有空格）                  |
@@ -626,7 +628,7 @@ Mindwtr 支援**標準**（Gmail/Todoist 風格）、**Vim** 與 **Emacs** 按�
 從側邊欄開啟設定。
 
 ### 一般
-- **外觀**：跟隨系統、淺色、深色、電子墨水、Nord、Catppuccin Macchiato、Dracula、復古米黃或 OLED / 午夜. 選擇 **跟隨系統（淺色 / OLED 深色）** 後，系統為淺色時使用一般淺色主題，為深色時使用 OLED 主題。**OLED / 午夜** 始終為黑色。
+- **外觀**：跟隨系統、淺色、深色、電子墨水、Nord、Catppuccin Macchiato、Dracula、Gruvbox Light、Gruvbox Dark、復古米黃或 OLED / 午夜. 選擇 **跟隨系統（淺色 / OLED 深色）** 後，系統為淺色時使用一般淺色主題，為深色時使用 OLED 主題。**OLED / 午夜** 始終為黑色。
 - **字型**：從這台電腦上已安裝的字型中任選一種，或保留 App 預設字型。點一下欄位可瀏覽清單，輸入文字可快速篩選。清單來自作業系統；所選字型之後被移除時會回到預設字型。
 - **密度**：清單列採用舒適、緊湊或密集
 - **語言**：英文、簡體中文、繁體中文、印地文、西班牙文、阿拉伯文、法文、葡萄牙文（巴西）、俄文、德文、日文、波斯文、越南文、土耳其文、韓文、義大利文、波蘭文、荷蘭文、捷克文、瑞典文、丹麥文、匈牙利文、烏克蘭文

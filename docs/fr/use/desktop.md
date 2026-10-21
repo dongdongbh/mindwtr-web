@@ -126,6 +126,8 @@ Filtrez les tâches selon le lieu ou l’outil :
 - `@home`, `@work`, `@errands`, `@agendas`
 - `@computer`, `@phone`, `@anywhere`
 
+Cliquez sur un contexte ou une étiquette pour n’afficher que ses tâches. Faites Ctrl-clic sur un autre élément (Cmd-clic sur macOS) pour l’ajouter à la sélection. À partir de deux éléments sélectionnés, choisissez **Tous** ou **Au moins un**. Cliquez à nouveau sur le seul élément sélectionné pour vider la sélection.
+
 ### 🏷️ Étiquettes
 
 Filtrez les tâches par niveau d’énergie, mode ou thème :
@@ -382,11 +384,11 @@ Mindwtr analyse le langage naturel lors de l’ajout de tâches :
 
 | Syntaxe      | Exemple           | Résultat                            |
 | ------------ | ----------------- | ----------------------------------- |
-| `@context`   | `@home`           | Ajoute un contexte                  |
+| `@context`   | `@home`           | Ajoute un contexte ; `@person/todd` ajoute un contexte imbriqué |
 | `#tag`       | `#focused`        | Ajoute une étiquette                |
 | `+Project`   | `+HomeReno`       | Attribue à un projet                |
 | `+Multi Word` | `+New Project`    | Attribue à « New Project »          |
-| `+"Quoted Name"` | `+"New Project" call Bob` | Les guillemets délimitent un nom composé de plusieurs mots au milieu d’une phrase (également `!"Area Name"`) |
+| `+"Quoted Name"` | `+"New Project" call Bob` | Les guillemets délimitent un nom composé de plusieurs mots au milieu d’une phrase (également `!"Area Name"`, `@"Two words"` et `#"two words"`) |
 | `!Area`       | `Plan roadmap !Work` | Attribue à un domaine            |
 | `%Person`     | `Ask %Jim for budget` | Définit la personne assignée (la personne que la tâche implique ; le statut ne change pas) ; `%"Full Name"` pour les nouveaux noms composés de plusieurs mots |
 | `/area:<name>` | `/area:Personal` | Attribue à un domaine (sans espaces) |
@@ -627,7 +629,7 @@ Dans chaque préréglage, `s` suivi d’une lettre définit directement le statu
 Accédez aux Paramètres depuis la barre latérale.
 
 ### Général
-- **Apparence** : Système, Clair, Sombre, Encre électronique, Nord, Catppuccin Macchiato, Dracula, Sépia ou OLED / Minuit. **Système (Clair / OLED Sombre)** utilise le thème clair normal en mode clair et le thème OLED en mode sombre. **OLED / Minuit** reste noir quel que soit le mode du système.
+- **Apparence** : Système, Clair, Sombre, Encre électronique, Nord, Catppuccin Macchiato, Dracula, Gruvbox Light, Gruvbox Dark, Sépia ou OLED / Minuit. **Système (Clair / OLED Sombre)** utilise le thème clair normal en mode clair et le thème OLED en mode sombre. **OLED / Minuit** reste noir quel que soit le mode du système.
 - **Police** : Choisissez n’importe quelle police installée sur cet ordinateur, ou gardez celle de l’app par défaut. Cliquez dans le champ pour parcourir la liste ou commencez à taper pour la réduire. La liste vient du système d’exploitation ; une police choisie puis désinstallée retombe sur la police par défaut.
 - **Densité** : lignes de liste Confortable, Compact ou Condensé
 - **Langue** : anglais, chinois (simplifié), chinois (traditionnel), hindi, espagnol, arabe, français, portugais (Brésil), russe, allemand, japonais, persan, vietnamien, turc, coréen, italien, polonais, néerlandais, tchèque, suédois, danois, hongrois, ukrainien

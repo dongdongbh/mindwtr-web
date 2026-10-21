@@ -103,6 +103,8 @@ Rechercher le sujet #focused @computer
 ```
 Les noms de contextes et de tags acceptent les lettres et chiffres Unicode (y compris les caractères CJK et accentués).
 
+Écrivez un contexte ou un tag imbriqué comme un seul mot avec des barres obliques, par exemple `@person/todd`. Mettez entre guillemets un nom qui contient des espaces, par exemple `@"Two words"` ou `#"two words"`.
+
 **Modifier une tâche :**
 1. Ouvrez l’éditeur de tâche
 2. Ajoutez les contextes dans le champ Contextes (séparés par des virgules)
@@ -119,7 +121,7 @@ Lorsque vous saisissez un nom de contexte dans l’ajout rapide ou l’éditeur 
 1. Accédez à l’onglet **Prochaines actions** ou à **Contextes** depuis le tiroir
 2. Touchez un contexte pour filtrer
 
-**Vue Contextes (ordinateur et mobile) :** Sélectionnez plusieurs contextes ou tags pour les combiner. À partir de deux éléments sélectionnés, **Tous** exige chaque contexte/tag sélectionné, tandis que **Au moins un** inclut les tâches correspondant à au moins un élément. Par exemple, sélectionnez `@alice` et `@bob` avec **Au moins un** pour voir les tâches concernant l’une ou l’autre personne. Sélectionner à nouveau un élément le retire ; **Aucun contexte** est un choix séparé et exclusif.
+**Vue Contextes (ordinateur et mobile) :** Touchez ou cliquez sur un contexte ou un tag pour n’afficher que ses tâches. Pour en ajouter un autre à la sélection, appuyez longuement sur sa pastille sur mobile, ou faites Ctrl-clic sur ordinateur (Cmd-clic sur macOS). Le même geste sur une pastille sélectionnée la retire. À partir de deux éléments sélectionnés, **Tous** exige chaque contexte/tag sélectionné, tandis que **Au moins un** inclut les tâches correspondant à au moins un élément. Par exemple, sélectionnez `@alice` et `@bob` avec **Au moins un** pour voir les tâches concernant l’une ou l’autre personne. Pour vider la sélection, touchez ou cliquez à nouveau sur la seule pastille sélectionnée. **Aucun contexte** est un choix séparé et exclusif.
 
 Dans les filtres des listes de tâches, les pastilles passent par trois états : sélectionnez un contexte ou un tag une fois pour l’inclure, une deuxième fois pour l’exclure (affiché barré), une troisième pour l’effacer. Les pastilles exclues masquent toujours leurs tâches, quel que soit le mode de correspondance.
 
@@ -200,6 +202,8 @@ Lorsque vous filtrez par contexte parent, tous ses enfants sont inclus :
 | `#health` | `#health`, `#health/fitness`, `#health/diet` |
 
 Dans Contextes, un filtre parent comme `@tools` est proposé lorsque des tâches du périmètre actuel utilisent `@tools/excavator`, même si aucune tâche ne porte le libellé parent lui-même. Un filtre sélectionné reste visible et peut être désélectionné lorsqu’il ne donne aucun résultat. Les branches non sélectionnées disparaissent des choix lorsqu’elles ne contiennent plus de tâches admissibles.
+
+Utilisez un parent pour nommer un type de contexte, par exemple `@person/todd`, `@person/emma` et `@place/bank`. Sélectionnez `@person` pour voir les tâches de toutes les personnes. Dans Contextes, un enfant placé juste après son parent n’affiche que sa dernière partie, par exemple `/todd`.
 
 Cela permet de filtrer à un niveau général tout en conservant une organisation précise.
 

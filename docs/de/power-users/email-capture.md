@@ -26,6 +26,24 @@ Hinweise zu Anbietern:
 - **Fastmail und übliche IMAP-Server**: Erstellen Sie ein App-Passwort und verwenden Sie den IMAP-Host Ihres Anbieters.
 - **Outlook.com und Microsoft 365**: Microsoft hat die passwortbasierte IMAP-Anmeldung deaktiviert. Verwenden Sie stattdessen das [Power-Automate-Rezept](#outlook-und-microsoft-365-power-automate).
 
+## Gmail-Prototyp: Testversionen für Desktop und Mobilgeräte
+
+Die Gmail-Erfassung steht nur in vom Projektbetreuer konfigurierten Testversionen für vorgesehene Testkonten zur Verfügung. In veröffentlichten Versionen ist sie nicht allgemein aktiviert. Die Google-Verifizierung für den Produktivbetrieb und die Prüfung der Datenflüsse aus E-Mails stehen noch aus. Den Fortschritt finden Sie unter [#1326](https://github.com/dongdongbh/Mindwtr/issues/1326).
+
+Öffnen Sie auf dem Desktop **Einstellungen → Integrationen → Gmail**. In der Android- oder iOS-App öffnen Sie **Einstellungen → GTD → Erfassungs-Standardwerte → Gmail**. Verbinden Sie sich über die Google-Autorisierung, prüfen Sie das verbundene Konto und wählen Sie ein vorhandenes Gmail-Label. Erstellen Sie das Label bei Bedarf zuerst in Gmail. Verbinden oder Auswählen importiert noch nichts: Bestätigen Sie mit **Erfassung starten / Label speichern**. **Jetzt prüfen** fordert eine Prüfung an.
+
+Auf dem Desktop prüft Mindwtr, solange die App geöffnet ist. Auf Mobilgeräten erfolgen Prüfungen beim Öffnen oder Zurückkehren zur App und in Abständen, solange sie im Vordergrund bleibt. Im Hintergrund oder nach dem Schließen pausieren sie. Markierte E-Mails warten auf die nächste Prüfung. Android-FOSS-Versionen enthalten die Google-Autorisierung für diese Funktion nicht.
+
+Google gewährt über `gmail.readonly` schreibgeschützten Zugriff auf das **gesamte Postfach**; das gewählte Label filtert den Import. Mindwtr sendet, ändert, verschiebt oder löscht keine E-Mails, ändert keine Labels und importiert keine Dateianhänge. Der Betreff wird zum Aufgabentitel; Absender und längenbegrenzter Nachrichtentext werden zur Beschreibung.
+
+Die Autorisierung erfolgt im nativen Plattformcode. Desktop und iOS speichern Zugangsdaten im sicheren Speicher des Betriebssystems. Android verwendet den Google-Autorisierungsdienst des Geräts und speichert das ausgewählte Konto lokal. Token gelangen nicht in JavaScript, Aufgabendaten, Synchronisierung oder gewöhnliche Backups und Exporte. Eine getrennte lokale Datenbank speichert kontobezogene Nachrichten-Importbelege erst nach dem Speichern der Aufgabendaten. Diese Belege werden nicht synchronisiert.
+
+Importierter E-Mail-Text ist gewöhnlicher Aufgabeninhalt. Für ihn gelten Ihre vorhandene Synchronisierungs-, Backup-, Export- und optionale KI-Konfiguration sowie Ihre Einwilligungen. Das Trennen löscht keine bereits bei diesen Diensten gespeicherten Kopien. Die Google-Richtlinienprüfung dieser nachgelagerten Datenflüsse bleibt Voraussetzung für die allgemeine Verfügbarkeit.
+
+Das erneute Verbinden desselben Postfachs oder ein Labelwechsel erhält den Duplikatschutz sowie Aufgabenänderungen und aufbewahrte Löschvermerke. Beim Trennen bleiben importierte Aufgaben und Importbelege erhalten. Wenn Sie das Geräteprofil zurücksetzen und auch die Aufgaben samt Löschvermerken endgültig entfernen, können alte markierte E-Mails erneut importiert werden. Entfernen Sie vorher deren Label. Eine umbenannte Postfachadresse gilt in diesem Prototyp als anderes Konto.
+
+Das Trennen beendet die weitere Erfassung und entfernt die lokale Verbindung, bevor Mindwtr versucht, den Google-Zugriff zu widerrufen. Ein laufender Speichervorgang kann noch abgeschlossen werden. Löschen Sie unerwünschte Aufgaben, entfernte Kopien, Backups und Exporte separat. Kann Google den Widerruf nicht bestätigen, entfernen Sie Mindwtr in den Berechtigungen Ihres Google-Kontos. Der Widerruf kann auch auf einem anderen Gerät eine erneute Verbindung erfordern. Verbinden Sie sich erneut und bestätigen Sie ein Label, um fortzufahren.
+
 ## Eine E-Mail vom Telefon teilen
 
 Dies funktioniert bereits unter Android und iOS mit jeder E-Mail-App, die Text teilen kann (Outlook, Gmail, Apple Mail und andere):

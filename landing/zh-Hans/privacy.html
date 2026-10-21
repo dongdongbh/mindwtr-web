@@ -27,6 +27,7 @@
           <ul>
             <li><a href="#section-1">1. 数据存储</a></li>
             <li><a href="#section-2">2. 数据同步</a></li>
+            <li><a href="#gmail-capture">Gmail 采集（原型）</a></li>
             <li><a href="#section-3">3. 匿名使用情况分析（心跳）</a></li>
             <li><a href="#section-4">4. 应用内反馈</a></li>
             <li><a href="#section-5">5. 第三方服务（AI）</a></li>
@@ -38,7 +39,7 @@
 
       <section class="legal section-band" aria-labelledby="privacy-title">
         <div class="legal-body">
-          <p class="legal-updated">最后更新于 2026 年 9 月 14 日</p>
+          <p class="legal-updated">最后更新于 2026 年 10 月 20 日</p>
 
           <p>
             本页面是英文隐私政策的翻译。请参阅<a href="/privacy">英文隐私政策</a>；如果有任何内容看起来不清楚或不正确，请发送邮件至 <a href="mailto:support@mindwtr.app">support@mindwtr.app</a>，或在 <a href="https://github.com/dongdongbh/mindwtr-web/issues">GitHub 上提交 issue</a>。
@@ -63,6 +64,16 @@
             <li><strong>FOSS 版本：</strong>FOSS 发行版中可能会禁用 Dropbox OAuth。</li>
             <li><strong>通过文件同步使用其他提供商：</strong>仍可通过文件同步间接使用 iCloud Drive、Google Drive、OneDrive、Syncthing 及类似工具。</li>
           </ul>
+
+          <h3 id="gmail-capture">Gmail 采集（原型）</h3>
+          <p>Gmail 采集仅供维护者配置的测试版本和指定测试账号使用，尚未在正式发行版本中普遍开放。Google 生产环境验证及邮件衍生数据流审查仍未完成；进展请见 <a href="https://github.com/dongdongbh/Mindwtr/issues/1326">#1326</a>。</p>
+          <p>桌面应用打开时会运行检查。移动端会在打开或返回 Mindwtr 时检查，并在应用保持前台时定期检查；进入后台或关闭后暂停。带标签的邮件会等待下次检查。Android FOSS 版本不包含此功能所需的 Google 授权。</p>
+          <p>Google 通过 <code>gmail.readonly</code> 授予<strong>整个邮箱</strong>的只读访问权限，所选标签仅用于筛选导入内容。Mindwtr 不会发送、更改、移动或删除邮件，不会更改标签，也不会导入文件附件。主题成为任务标题；发件人和有长度限制的正文成为描述。</p>
+          <p>授权由平台原生代码处理。桌面端和 iOS 将凭据保存在操作系统安全存储中；Android 使用设备上的 Google 授权服务，并在本地保留所选账号。令牌不会进入 JavaScript、任务数据、同步或普通备份与导出。独立的设备本地数据库仅在任务保存成功后记录按账号区分的邮件导入记录；这些记录不会同步。</p>
+          <p>导入的邮件文本属于普通任务内容，遵循你已有的同步、备份、导出和可选 AI 配置及授权。断开连接不会删除这些服务中已有的副本。对这些后续数据流完成 Google 政策审查，仍是普遍开放此功能的前提。</p>
+          <p>重新连接同一邮箱或更改标签，会保留防重复记录、任务编辑和仍保留的删除记录。断开连接会保留已导入任务及导入记录。如果重置设备配置，同时彻底清除任务及其删除记录，带标签的旧邮件可能再次导入；请先移除其标签。在此原型中，更名后的邮箱地址视为另一个账号。</p>
+          <p>断开连接会先停止后续采集并移除本地连接，再尝试撤销 Google 访问权限。已开始的保存可能继续完成。请单独删除不需要的任务、远程副本、备份和导出。如果 Google 无法确认撤销，请在 Google 账号权限中移除 Mindwtr。撤销也可能导致其他设备需要重新连接；重新连接并确认标签后即可恢复。</p>
+          <p>请求直接从设备发送至 Google。我们不会通过 Mindwtr 服务器中转 Gmail 邮件，也不会将 Gmail 访问用于广告或与该功能无关的模型训练。在普遍开放前，我们必须按<a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">Google Workspace 用户数据政策</a>及其中的 Limited Use 要求审查后续用途。此原型说明不代表生产环境审查已通过。</p>
 
           <h2 id="section-3">3. 匿名使用情况分析（心跳）</h2>
           <p>

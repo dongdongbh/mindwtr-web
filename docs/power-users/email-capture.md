@@ -26,6 +26,24 @@ Provider notes:
 - **Fastmail and standard IMAP servers**: create an app password; use your provider's IMAP host
 - **Outlook.com and Microsoft 365**: Microsoft has switched off password-based IMAP, so use the [Power Automate recipe](#outlook-and-microsoft-365-power-automate) instead
 
+## Gmail prototype: desktop and mobile test builds
+
+Gmail capture is available only in maintainer-configured test builds for designated test accounts. It is not generally enabled in release builds. Google production verification and review of email-derived data flows are still open; follow [#1326](https://github.com/dongdongbh/Mindwtr/issues/1326) for progress.
+
+On desktop, open **Settings → Integrations → Gmail**. In the Android or iOS mobile app, open **Settings → GTD → Capture defaults → Gmail**. Connect with Google's authorization screen, check the connected account, and choose an existing Gmail label. Create the label in Gmail first if needed. Connecting or selecting a label imports nothing: choose **Start capture / save label** to confirm. **Check now** requests a check.
+
+Desktop checks run while Mindwtr is open. Mobile checks run when you open or return to Mindwtr and periodically while it stays in the foreground; they pause when the app moves to the background or closes. Labelled mail waits for the next check. Android FOSS builds do not include Google authorization for this feature.
+
+Google grants read-only access to the **whole mailbox** through `gmail.readonly`; your selected label filters what Mindwtr imports. Mindwtr does not send, change, move, or delete email, change labels, or import file attachments. The subject becomes the task title; sender and bounded message text become the description.
+
+Authorization stays in native platform code. Desktop and iOS keep credentials in the operating system's secure store; Android uses the device's Google authorization service and keeps the selected account locally. Tokens stay outside JavaScript, task data, sync, and ordinary backups/exports. A separate device-local database stores account-scoped message receipts only after task data is saved. These receipts do not sync.
+
+Imported email text is ordinary task data. It follows your existing sync, backup, export, and optional AI configuration and consent. Disconnect does not erase copies already stored with those services. Google policy review of these downstream paths remains a prerequisite for general availability.
+
+Reconnecting the same mailbox or changing labels preserves duplicate prevention, task edits, and retained deletions. Disconnect keeps the imported tasks and receipt history. If you reset the device profile and also purge the tasks and their deletion records, old labelled mail can be imported again; remove its label first. A renamed mailbox address counts as a different account in this prototype.
+
+Disconnect stops further capture and removes the local connection before attempting Google access revocation. A save already in progress may finish. Delete unwanted tasks, remote copies, backups, and exports separately. If Google cannot confirm revocation, remove Mindwtr in your Google Account permissions. Revocation can require reconnecting on another device; reconnect and confirm a label to resume.
+
 ## Share an email from your phone
 
 Works today on Android and iOS with any mail app that can share text (Outlook, Gmail, Apple Mail, and others):

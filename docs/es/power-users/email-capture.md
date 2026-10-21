@@ -26,6 +26,24 @@ Notas por proveedor:
 - **Fastmail y servidores IMAP estándar:** crea una contraseña de aplicación y usa el host IMAP del proveedor.
 - **Outlook.com y Microsoft 365:** Microsoft ha desactivado IMAP con contraseña; usa la [receta de Power Automate](#outlook-y-microsoft-365-power-automate).
 
+## Prototipo de Gmail: versiones de prueba para escritorio y móvil
+
+La captura de Gmail solo está disponible en versiones de prueba configuradas por el responsable del proyecto para cuentas de prueba designadas. No está activada de forma general en las versiones publicadas. La verificación de Google para producción y la revisión de los flujos de datos derivados de los correos siguen pendientes; consulta [#1326](https://github.com/dongdongbh/Mindwtr/issues/1326).
+
+En escritorio, abre **Ajustes → Integraciones → Gmail**. En la aplicación de Android o iOS, abre **Ajustes → GTD → Valores predeterminados de captura → Gmail**. Conecta desde la pantalla de autorización de Google, comprueba la cuenta y elige una etiqueta existente. Créala primero en Gmail si hace falta. Conectar o elegir una etiqueta no importa nada: confirma con **Iniciar captura / guardar etiqueta**. **Comprobar ahora** solicita una comprobación.
+
+En escritorio, las comprobaciones funcionan mientras Mindwtr está abierto. En móvil, se ejecutan al abrir la aplicación o volver a ella y a intervalos mientras sigue en primer plano; se pausan al pasar a segundo plano o cerrarla. Los correos etiquetados esperan a la siguiente comprobación. Las versiones FOSS de Android no incluyen la autorización de Google para esta función.
+
+Google concede acceso de solo lectura a **todo el buzón** mediante `gmail.readonly`; la etiqueta elegida filtra la importación. Mindwtr no envía, modifica, mueve ni elimina correos, no cambia etiquetas y no importa archivos adjuntos. El asunto se convierte en el título de la tarea; el remitente y el texto del mensaje, con un límite de longitud, se convierten en su descripción.
+
+La autorización permanece en el código nativo de la plataforma. Escritorio e iOS guardan las credenciales en el almacén seguro del sistema operativo; Android usa el servicio de autorización de Google del dispositivo y guarda localmente la cuenta elegida. Los tokens no llegan a JavaScript, los datos de tareas, la sincronización ni las copias de seguridad y exportaciones habituales. Una base de datos local separada guarda los registros de mensajes importados por cuenta solo después de guardar las tareas. Estos registros no se sincronizan.
+
+El texto del correo importado es contenido de tareas normal. Sigue tu configuración y consentimiento existentes de sincronización, copias de seguridad, exportación e IA opcional. Desconectar no elimina las copias ya guardadas en esos servicios. La revisión de estos flujos posteriores según las políticas de Google sigue siendo un requisito para la disponibilidad general.
+
+Volver a conectar el mismo buzón o cambiar de etiqueta conserva la prevención de duplicados, las tareas editadas y los registros de eliminación retenidos. Desconectar conserva las tareas importadas y el historial de importación. Si restableces el perfil del dispositivo y también eliminas definitivamente las tareas y sus registros de eliminación, los correos antiguos etiquetados pueden volver a importarse; quítales la etiqueta antes. Una dirección de buzón renombrada cuenta como otra cuenta en este prototipo.
+
+Desconectar detiene las capturas posteriores y elimina la conexión local antes de intentar revocar el acceso en Google. Un guardado ya iniciado puede terminar. Elimina las tareas no deseadas, las copias remotas, las copias de seguridad y las exportaciones por separado. Si Google no puede confirmar la revocación, elimina Mindwtr en los permisos de tu cuenta de Google. También puede ser necesario volver a conectar otro dispositivo; reconecta y confirma una etiqueta para reanudar.
+
 ## Compartir un correo desde el teléfono
 
 Funciona en Android e iOS con cualquier aplicación de correo que comparta texto, como Outlook, Gmail o Apple Mail:

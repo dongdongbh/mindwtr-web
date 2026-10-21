@@ -27,6 +27,7 @@
           <ul>
             <li><a href="#section-1">1. Datenspeicherung</a></li>
             <li><a href="#section-2">2. Datensynchronisierung</a></li>
+            <li><a href="#gmail-capture">Gmail-Erfassung (Prototyp)</a></li>
             <li><a href="#section-3">3. Anonyme Nutzungsanalyse (Heartbeat)</a></li>
             <li><a href="#section-4">4. Feedback in der App</a></li>
             <li><a href="#section-5">5. Dienste von Drittanbietern (KI)</a></li>
@@ -38,7 +39,7 @@
 
       <section class="legal section-band" aria-labelledby="privacy-title">
         <div class="legal-body">
-          <p class="legal-updated">Zuletzt aktualisiert am 14. September 2026</p>
+          <p class="legal-updated">Zuletzt aktualisiert am 20. Oktober 2026</p>
 
           <p>
             Diese Seite ist eine Übersetzung der <a href="/privacy">englischen Datenschutzrichtlinie</a>. Wenn dir etwas unklar oder fehlerhaft erscheint, schreib uns bitte an <a href="mailto:support@mindwtr.app">support@mindwtr.app</a> oder eröffne ein Issue unter <a href="https://github.com/dongdongbh/mindwtr-web/issues">GitHub</a>.
@@ -71,6 +72,16 @@
             <li><strong>FOSS-Builds:</strong> Dropbox OAuth kann in FOSS-Distributionen deaktiviert sein.</li>
             <li><strong>Andere Anbieter über die Dateisynchronisierung:</strong> iCloud Drive, Google Drive, OneDrive, Syncthing und ähnliche Werkzeuge können weiterhin indirekt über die Dateisynchronisierung verwendet werden.</li>
           </ul>
+
+          <h3 id="gmail-capture">Gmail-Erfassung (Prototyp)</h3>
+          <p>Die Gmail-Erfassung steht nur in vom Projektbetreuer konfigurierten Testversionen für vorgesehene Testkonten zur Verfügung. In veröffentlichten Versionen ist sie nicht allgemein aktiviert. Die Google-Verifizierung für den Produktivbetrieb und die Prüfung der Datenflüsse aus E-Mails stehen noch aus. Den Fortschritt finden Sie unter <a href="https://github.com/dongdongbh/Mindwtr/issues/1326">#1326</a>.</p>
+          <p>Auf dem Desktop prüft Mindwtr, solange die App geöffnet ist. Auf Mobilgeräten erfolgen Prüfungen beim Öffnen oder Zurückkehren zur App und in Abständen, solange sie im Vordergrund bleibt. Im Hintergrund oder nach dem Schließen pausieren sie. Markierte E-Mails warten auf die nächste Prüfung. Android-FOSS-Versionen enthalten die Google-Autorisierung für diese Funktion nicht.</p>
+          <p>Google gewährt über <code>gmail.readonly</code> schreibgeschützten Zugriff auf das <strong>gesamte Postfach</strong>; das gewählte Label filtert den Import. Mindwtr sendet, ändert, verschiebt oder löscht keine E-Mails, ändert keine Labels und importiert keine Dateianhänge. Der Betreff wird zum Aufgabentitel; Absender und längenbegrenzter Nachrichtentext werden zur Beschreibung.</p>
+          <p>Die Autorisierung erfolgt im nativen Plattformcode. Desktop und iOS speichern Zugangsdaten im sicheren Speicher des Betriebssystems. Android verwendet den Google-Autorisierungsdienst des Geräts und speichert das ausgewählte Konto lokal. Token gelangen nicht in JavaScript, Aufgabendaten, Synchronisierung oder gewöhnliche Backups und Exporte. Eine getrennte lokale Datenbank speichert kontobezogene Nachrichten-Importbelege erst nach dem Speichern der Aufgabendaten. Diese Belege werden nicht synchronisiert.</p>
+          <p>Importierter E-Mail-Text ist gewöhnlicher Aufgabeninhalt. Für ihn gelten Ihre vorhandene Synchronisierungs-, Backup-, Export- und optionale KI-Konfiguration sowie Ihre Einwilligungen. Das Trennen löscht keine bereits bei diesen Diensten gespeicherten Kopien. Die Google-Richtlinienprüfung dieser nachgelagerten Datenflüsse bleibt Voraussetzung für die allgemeine Verfügbarkeit.</p>
+          <p>Das erneute Verbinden desselben Postfachs oder ein Labelwechsel erhält den Duplikatschutz sowie Aufgabenänderungen und aufbewahrte Löschvermerke. Beim Trennen bleiben importierte Aufgaben und Importbelege erhalten. Wenn Sie das Geräteprofil zurücksetzen und auch die Aufgaben samt Löschvermerken endgültig entfernen, können alte markierte E-Mails erneut importiert werden. Entfernen Sie vorher deren Label. Eine umbenannte Postfachadresse gilt in diesem Prototyp als anderes Konto.</p>
+          <p>Das Trennen beendet die weitere Erfassung und entfernt die lokale Verbindung, bevor Mindwtr versucht, den Google-Zugriff zu widerrufen. Ein laufender Speichervorgang kann noch abgeschlossen werden. Löschen Sie unerwünschte Aufgaben, entfernte Kopien, Backups und Exporte separat. Kann Google den Widerruf nicht bestätigen, entfernen Sie Mindwtr in den Berechtigungen Ihres Google-Kontos. Der Widerruf kann auch auf einem anderen Gerät eine erneute Verbindung erfordern. Verbinden Sie sich erneut und bestätigen Sie ein Label, um fortzufahren.</p>
+          <p>Anfragen gehen direkt von Ihrem Gerät an Google. Wir leiten Gmail-Nachrichten nicht über einen Mindwtr-Server und nutzen den Gmail-Zugriff nicht für Werbung oder sachfremdes Modelltraining. Vor der allgemeinen Verfügbarkeit müssen wir nachgelagerte Datenflüsse anhand der <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">Google-Richtlinie für Workspace-Nutzerdaten</a> einschließlich der Limited-Use-Anforderungen prüfen. Diese Prototypbeschreibung bedeutet nicht, dass die Produktionsprüfung bestanden ist.</p>
 
           <h2 id="section-3">3. Anonyme Nutzungsanalyse (Heartbeat)</h2>
           <p>

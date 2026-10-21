@@ -26,6 +26,24 @@ Remarques par fournisseur :
 - **Fastmail et serveurs IMAP standards :** créez un mot de passe d’application et utilisez l’hôte IMAP du fournisseur.
 - **Outlook.com et Microsoft 365 :** Microsoft a désactivé l’IMAP par mot de passe ; utilisez plutôt l’[automatisation Power Automate](#outlook-et-microsoft-365-power-automate).
 
+## Prototype Gmail : versions de test pour ordinateur et mobile
+
+La capture Gmail est réservée aux versions de test configurées par le responsable du projet pour des comptes de test désignés. Elle n’est pas activée de manière générale dans les versions publiées. La vérification Google pour la production et l’examen des flux de données issus des e-mails restent ouverts ; suivez [#1326](https://github.com/dongdongbh/Mindwtr/issues/1326).
+
+Sur ordinateur, ouvrez **Paramètres → Intégrations → Gmail**. Dans l’application Android ou iOS, ouvrez **Paramètres → GTD → Valeurs par défaut de capture → Gmail**. Connectez-vous via l’écran d’autorisation Google, vérifiez le compte et choisissez un libellé Gmail existant. Créez-le d’abord dans Gmail si nécessaire. La connexion ou le choix d’un libellé n’importe rien : confirmez avec **Démarrer la capture / enregistrer le libellé**. **Vérifier maintenant** demande une vérification.
+
+Sur ordinateur, les vérifications fonctionnent tant que Mindwtr reste ouvert. Sur mobile, elles ont lieu à l’ouverture ou au retour dans l’application et à intervalles réguliers tant qu’elle reste au premier plan. Elles s’arrêtent en arrière-plan ou après fermeture. Les e-mails portant le libellé attendent la prochaine vérification. Les versions FOSS pour Android n’incluent pas l’autorisation Google pour cette fonction.
+
+Google accorde un accès en lecture seule à **toute la boîte mail** via `gmail.readonly` ; le libellé choisi filtre l’importation. Mindwtr n’envoie, ne modifie, ne déplace et ne supprime aucun e-mail, ne change aucun libellé et n’importe pas les pièces jointes. L’objet devient le titre de la tâche ; l’expéditeur et le texte du message, limité en longueur, deviennent sa description.
+
+Le code natif de la plateforme gère l’autorisation. Sur ordinateur et iOS, les identifiants restent dans le stockage sécurisé du système ; Android utilise le service d’autorisation Google de l’appareil et conserve localement le compte choisi. Les jetons ne passent pas dans JavaScript, les données de tâches, la synchronisation ou les sauvegardes et exports ordinaires. Une base de données locale distincte conserve les reçus d’importation par compte après l’enregistrement des tâches. Ces reçus ne se synchronisent pas.
+
+Le texte importé devient du contenu de tâche ordinaire. Il suit votre configuration et vos consentements existants pour la synchronisation, les sauvegardes, les exports et l’IA facultative. La déconnexion ne supprime pas les copies déjà stockées auprès de ces services. L’examen de ces flux selon les règles Google reste une condition de disponibilité générale.
+
+Reconnecter la même boîte mail ou changer de libellé conserve la prévention des doublons, les tâches modifiées et les traces de suppression retenues. La déconnexion conserve les tâches importées et les reçus d’importation. Si vous réinitialisez le profil de l’appareil et supprimez aussi les tâches et leurs traces de suppression, les anciens e-mails portant le libellé peuvent être réimportés ; retirez d’abord leur libellé. Une adresse de boîte mail renommée compte comme un autre compte dans ce prototype.
+
+La déconnexion arrête les captures suivantes et supprime la connexion locale avant de tenter la révocation auprès de Google. Un enregistrement en cours peut se terminer. Supprimez séparément les tâches indésirables, les copies distantes, les sauvegardes et les exports. Si Google ne peut pas confirmer la révocation, retirez Mindwtr dans les autorisations de votre compte Google. Une reconnexion peut aussi devenir nécessaire sur un autre appareil ; reconnectez-vous et confirmez un libellé pour reprendre.
+
 ## Partager un e-mail depuis le téléphone
 
 Cette méthode fonctionne sur Android et iOS avec toute application de courrier capable de partager du texte, notamment Outlook, Gmail et Apple Mail :

@@ -651,8 +651,11 @@ Unter **Menü → Projekte**.
 | -------------- | ---------------------------------------------------- |
 | **Sequenziell** | Nur erste verfügbare Projektaufgabe in „Fokus“ |
 | **Parallel** | Alle verfügbaren Projektaufgaben können erscheinen |
+| **Pro Abschnitt** | Jeder Abschnitt ist parallel oder sequenziell; in **Abschnitte** festlegen |
 
 Sequenzielle Projekte können projektweit oder je Abschnitt laufen. Abschnittsweise wird die erste verfügbare Aufgabe jedes Abschnitts gezeigt.
+
+Ab v1.3.7 stellen Sie den **Ablaufmodus** des Projekts auf **Pro Abschnitt**. Öffnen Sie dann die Projektdetails, gehen Sie zu **Abschnitte** und tippen Sie in einer Abschnittszeile auf die Ablaufschaltfläche, um den Abschnitt parallel oder sequenziell zu machen. Ein kleines Etikett neben dem Abschnittsnamen zeigt die Wahl, nur im Modus „Pro Abschnitt“. Ein sequenzieller Abschnitt bietet nur seine erste verfügbare Aufgabe an, mit denselben Regeln wie sequenzielle Projekte: Ein erster Schritt im Status „Warten“ belegt den Platz, und „Fokus“ kann trotzdem eine markierte oder fällige Aufgabe zeigen. Ein paralleler Abschnitt und Aufgaben ohne Abschnitt bieten alle ihre Aufgaben an. Abschnitte warten nie aufeinander, und die Reihenfolge der Abschnitte schafft keine Abhängigkeit. Beim Wechsel von **Sequenziell → Innerhalb von Abschnitten** starten alle Abschnitte sequenziell; beim Wechsel von Parallel oder **Sequenziell → Über Abschnitte hinweg** starten sie parallel. Die Wahl je Abschnitt bleibt erhalten, wenn Sie in einen anderen Modus und zurück wechseln. Ältere App-Versionen (1.3.6 und früher) zeigen ein Projekt mit „Pro Abschnitt“ als parallel.
 
 ---
 

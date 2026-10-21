@@ -234,6 +234,8 @@ Dieser Dialog bietet außerdem **Speichern und bearbeiten**. Die Folgeaufgabe wi
 
 **Sequenziell → Über Abschnitte hinweg** folgt der manuellen Reihenfolge bei **Standardsortierung**: zuerst die Abschnitte, dann die Aufgaben innerhalb jedes Abschnitts; **Ohne Abschnitt** steht zuletzt. Das Verschieben eines Abschnitts oder einer Aufgabe ändert diese Reihenfolge. Eine Anzeige nach Titel, Priorität oder Datum ändert sie nicht. **Innerhalb der Abschnitte** wählt weiterhin für jeden Abschnitt eine Aufgabe aus; die bisherigen Ausnahmen für markierte Aufgaben sowie Fälligkeits- und Überprüfungsdaten bleiben bestehen.
 
+Ab v1.3.7 kann der **Ablaufmodus** eines Projekts auch **Pro Abschnitt** sein: Jeder Abschnitt ist parallel oder sequenziell, und Aufgaben ohne Abschnitt sind parallel. Abschnitte warten nie aufeinander. Die Schritte stehen unter [Desktop](/de/use/desktop) und [Mobil](/de/use/mobile).
+
 ### Fälligkeitsdaten und Erinnerungen
 
 - Legen Sie das **Fälligkeitsdatum** für Fristen fest.

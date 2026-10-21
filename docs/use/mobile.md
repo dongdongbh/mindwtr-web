@@ -701,7 +701,7 @@ Open Projects from **Menu → Projects**.
 
 Starting with v1.3.4, **Convert to section…** in the project actions menu moves a simple project into another project. Choose the destination and section name, then review the task count before confirming. Project notes become section notes; all non-deleted tasks move with their contents, status, and relative order intact, including completed and archived tasks. The source project moves to Trash. Moved tasks use the destination’s Area; the source project’s color is not carried over. **Undo** restores the original containers without replacing later edits to task contents.
 
-Conversion requires active projects. Parallel projects can be converted into parallel destinations. Starting with v1.3.7, a sequential project can also be converted into a destination already set to **Sequential → Within sections**: the new section keeps its task sequence, while other sections continue independently. Conversion never changes the destination’s flow mode. The source cannot have sections or project metadata that a section cannot retain, such as attachments, dates, tags, a priority star, or a custom task sort. Task attachments and dates do not block conversion. **Undo** also restores the source project’s sequential mode and task order.
+Conversion requires active projects. Parallel projects can be converted into parallel destinations. Starting with v1.3.7, a sequential project can also be converted into a destination already set to **Sequential → Within sections**: the new section keeps its task sequence, while other sections continue independently. A sequential project converted into a **Per section** destination becomes a Sequential section. Conversion never changes the destination’s flow mode. The source cannot have sections or project metadata that a section cannot retain, such as attachments, dates, tags, a priority star, or a custom task sort. Task attachments and dates do not block conversion. **Undo** also restores the source project’s sequential mode and task order.
 
 The **Project Section** field in the task editor assigns a task to one of the sections in its current project. It only matters after the task belongs to a project that has sections; otherwise, leave it blank.
 
@@ -711,8 +711,11 @@ The **Project Section** field in the task editor assigns a task to one of the se
 | -------------- | ---------------------------------------------------- |
 | **Sequential** | Only the first available project task appears in Focus |
 | **Parallel**   | All available project tasks can appear in Focus        |
+| **Per section** | Each section is Parallel or Sequential; set it in **Sections** |
 
 Sequential projects can run project-wide or section-by-section. Section-scoped sequencing shows the first available task in each project section, so separate phases or workstreams can move forward in parallel without making every task visible.
+
+Starting with v1.3.7, set the project's **Flow Mode** to **Per section**. Then open the project details, go to **Sections**, and tap the flow button on a section row to make it Parallel or Sequential. A small label next to the section name shows the choice, only in Per section mode. A Sequential section offers only its first available task, with the same rules as Sequential projects: a Waiting first step holds the slot, and Focus may still show a starred or due task. A Parallel section, and tasks with no section, offer all their tasks. Sections never wait for each other, and section order creates no dependency. Switching from **Sequential → Within sections** starts every section as Sequential; switching from Parallel or **Sequential → Across sections** starts them as Parallel. Section choices are kept if you switch to another mode and back. Older app versions (1.3.6 and earlier) show a Per section project as Parallel.
 
 ---
 

@@ -698,8 +698,11 @@ El campo **Sección del proyecto** del editor asigna una tarea a una de las secc
 | -------------- | ---------------------------------------------------------- |
 | **Secuencial** | Solo aparece en Foco la primera tarea disponible del proyecto |
 | **Paralelo**   | Todas las tareas disponibles del proyecto pueden aparecer en Foco |
+| **Por sección** | Cada sección es paralela o secuencial; se define en **Secciones** |
 
 Los proyectos secuenciales pueden avanzar en todo el proyecto o sección por sección. La secuenciación por secciones muestra la primera tarea disponible de cada sección, de modo que distintas fases o líneas de trabajo pueden avanzar en paralelo sin hacer visibles todas las tareas.
+
+Desde la v1.3.7, pon el **Modo de flujo** del proyecto en **Por sección**. Después abre los detalles del proyecto, ve a **Secciones** y toca el botón de flujo en la fila de una sección para hacerla paralela o secuencial. Una pequeña etiqueta junto al nombre de la sección muestra la elección, solo en el modo Por sección. Una sección secuencial ofrece solo su primera tarea disponible, con las mismas reglas que los proyectos secuenciales: un primer paso En espera ocupa el puesto, y Foco aún puede mostrar una tarea marcada con estrella o con fecha de vencimiento. Una sección paralela, y las tareas sin sección, ofrecen todas sus tareas. Las secciones nunca se esperan entre sí, y el orden de las secciones no crea dependencias. Al cambiar desde **Secuencial → Dentro de secciones**, todas las secciones empiezan como secuenciales; al cambiar desde Paralelo o **Secuencial → Entre secciones**, empiezan como paralelas. La elección de cada sección se conserva si cambias a otro modo y vuelves. Las versiones anteriores de la app (1.3.6 y anteriores) muestran un proyecto Por sección como paralelo.
 
 ---
 

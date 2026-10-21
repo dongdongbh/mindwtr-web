@@ -698,8 +698,11 @@ Le champ **Section du projet** de l’éditeur de tâche affecte une tâche à l
 | -------------- | ------------------------------------------------------------- |
 | **Séquentiel** | Seule la première tâche disponible du projet apparaît dans Focus |
 | **Parallèle**  | Toutes les tâches disponibles du projet peuvent apparaître dans Focus |
+| **Par section** | Chaque section est parallèle ou séquentielle ; à régler dans **Sections** |
 
 Les projets séquentiels peuvent fonctionner à l’échelle du projet ou section par section. Le séquençage par section affiche la première tâche disponible de chaque section du projet, afin que des phases ou des chantiers distincts puissent progresser en parallèle sans rendre toutes les tâches visibles.
+
+À partir de la v1.3.7, réglez le **Mode de déroulement** du projet sur **Par section**. Ouvrez ensuite les détails du projet, allez dans **Sections** et touchez le bouton de déroulement sur la ligne d’une section pour la rendre parallèle ou séquentielle. Une petite étiquette à côté du nom de la section indique le choix, uniquement en mode Par section. Une section séquentielle ne propose que sa première tâche disponible, avec les mêmes règles que les projets séquentiels : une première étape En attente garde la place, et Focus peut quand même afficher une tâche étoilée ou échue. Une section parallèle, ainsi que les tâches sans section, proposent toutes leurs tâches. Les sections n’attendent jamais les unes les autres, et l’ordre des sections ne crée aucune dépendance. Quand vous passez depuis **Séquentiel → Dans les sections**, toutes les sections démarrent en séquentiel ; depuis Parallèle ou **Séquentiel → Entre différentes sections**, elles démarrent en parallèle. Le choix de chaque section est conservé si vous passez à un autre mode puis revenez. Les anciennes versions de l’app (1.3.6 et antérieures) affichent un projet Par section comme parallèle.
 
 ---
 

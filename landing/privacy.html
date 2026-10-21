@@ -27,7 +27,7 @@
           <ul>
             <li><a href="#section-1">1. Data storage</a></li>
             <li><a href="#section-2">2. Data sync</a></li>
-            <li><a href="#gmail-capture">Gmail capture (prototype)</a></li>
+            <li><a href="#gmail-capture">Gmail capture</a></li>
             <li><a href="#section-3">3. Anonymous usage analytics (heartbeat)</a></li>
             <li><a href="#section-4">4. In-app feedback</a></li>
             <li><a href="#section-5">5. Third-party services (AI)</a></li>
@@ -39,7 +39,7 @@
 
       <section class="legal section-band" aria-labelledby="privacy-title">
         <div class="legal-body">
-          <p class="legal-updated">Last updated 20 October 2026</p>
+          <p class="legal-updated">Last updated 21 October 2026</p>
 
           <p>
             Mindwtr (“we”, “our”, or “us”) is designed as a local-first
@@ -68,15 +68,11 @@
             <li><strong>Other providers via File Sync:</strong> iCloud Drive, Google Drive, OneDrive, Syncthing, and similar tools can still be used indirectly through File Sync.</li>
           </ul>
 
-          <h3 id="gmail-capture">Gmail capture (prototype)</h3>
-          <p>Gmail capture is available only in maintainer-configured test builds for designated test accounts. It is not generally enabled in release builds. Google production verification and review of email-derived data flows are still open; follow <a href="https://github.com/dongdongbh/Mindwtr/issues/1326">#1326</a> for progress.</p>
-          <p>Desktop checks run while Mindwtr is open. Mobile checks run when you open or return to Mindwtr and periodically while it stays in the foreground; they pause when the app moves to the background or closes. Labelled mail waits for the next check. Android FOSS builds do not include Google authorization for this feature.</p>
-          <p>Google grants read-only access to the <strong>whole mailbox</strong> through <code>gmail.readonly</code>; your selected label filters what Mindwtr imports. Mindwtr does not send, change, move, or delete email, change labels, or import file attachments. The subject becomes the task title; sender and bounded message text become the description.</p>
-          <p>Authorization stays in native platform code. Desktop and iOS keep credentials in the operating system's secure store; Android uses the device's Google authorization service and keeps the selected account locally. Tokens stay outside JavaScript, task data, sync, and ordinary backups/exports. A separate device-local database stores account-scoped message receipts only after task data is saved. These receipts do not sync.</p>
-          <p>Imported email text is ordinary task data. It follows your existing sync, backup, export, and optional AI configuration and consent. Disconnect does not erase copies already stored with those services. Google policy review of these downstream paths remains a prerequisite for general availability.</p>
-          <p>Reconnecting the same mailbox or changing labels preserves duplicate prevention, task edits, and retained deletions. Disconnect keeps the imported tasks and receipt history. If you reset the device profile and also purge the tasks and their deletion records, old labelled mail can be imported again; remove its label first. A renamed mailbox address counts as a different account in this prototype.</p>
-          <p>Disconnect stops further capture and removes the local connection before attempting Google access revocation. A save already in progress may finish. Delete unwanted tasks, remote copies, backups, and exports separately. If Google cannot confirm revocation, remove Mindwtr in your Google Account permissions. Revocation can require reconnecting on another device; reconnect and confirm a label to resume.</p>
-          <p>Requests go directly from your device to Google. We do not route Gmail messages through a Mindwtr server or use Gmail access for advertising or unrelated model training. Before general availability, we must review downstream uses against the <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">Google Workspace user data policy</a>, including its Limited Use requirements. This prototype disclosure does not mean that production review has passed.</p>
+          <h3 id="gmail-capture">Gmail capture</h3>
+          <p>Gmail capture for desktop and mobile is under Google review and remains limited to designated test accounts in configured test builds. Public availability awaits approval and completion of our review of email-derived data flows. Follow <a href="https://github.com/dongdongbh/Mindwtr/issues/1326">#1326</a> for updates.</p>
+          <p><strong>Access:</strong> Google grants read-only access to the <strong>whole mailbox</strong> through <code>gmail.readonly</code>. Your selected label filters imports: subjects become task titles; sender and bounded message text become descriptions. Mindwtr does not send, modify, or delete email, change labels, or import attachments.</p>
+          <p><strong>Storage and sharing:</strong> Gmail requests go directly from your device to Google, not through a Mindwtr server. Authorization stays in native platform code; desktop and iOS use secure system storage, and Android uses Google’s authorization service. Tokens remain outside task data, sync, and ordinary backups/exports. Device-local import receipts prevent duplicates and do not sync. Imported email becomes task data and may enter your configured sync, backups, exports, and optional AI under your existing consent. We do not use Gmail access for advertising or unrelated model training; downstream uses remain subject to review against the <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">Google Workspace user data policy</a>, including Limited Use.</p>
+          <p><strong>Disconnect and deletion:</strong> Disconnect stops future capture and removes the local connection before attempting Google revocation; an in-progress save may finish. Imported tasks and receipts remain. Delete unwanted tasks, remote copies, backups, and exports separately. If revocation fails, remove Mindwtr in your Google Account permissions. Revocation may require reconnecting on other devices.</p>
 
           <h2 id="section-3">3. Anonymous usage analytics (heartbeat)</h2>
           <p>

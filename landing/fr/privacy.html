@@ -27,7 +27,7 @@
           <ul>
             <li><a href="#section-1">1. Stockage des données</a></li>
             <li><a href="#section-2">2. Synchronisation des données</a></li>
-            <li><a href="#gmail-capture">Capture Gmail (prototype)</a></li>
+            <li><a href="#gmail-capture">Capture Gmail</a></li>
             <li><a href="#section-3">3. Données d’utilisation anonymes (heartbeat)</a></li>
             <li><a href="#section-4">4. Retours depuis l’appli</a></li>
             <li><a href="#section-5">5. Services tiers (IA)</a></li>
@@ -39,7 +39,7 @@
 
       <section class="legal section-band" aria-labelledby="privacy-title">
         <div class="legal-body">
-          <p class="legal-updated">Dernière mise à jour le 20 octobre 2026</p>
+          <p class="legal-updated">Dernière mise à jour le 21 octobre 2026</p>
 
           <p>
             Ceci est une traduction de la <a href="/privacy">politique de confidentialité en anglais</a>.
@@ -77,15 +77,11 @@
             <li><strong>Autres fournisseurs via File Sync :</strong> iCloud Drive, Google Drive, OneDrive, Syncthing et des outils similaires peuvent toujours être utilisés indirectement par l’intermédiaire de File Sync.</li>
           </ul>
 
-          <h3 id="gmail-capture">Capture Gmail (prototype)</h3>
-          <p>La capture Gmail est réservée aux versions de test configurées par le responsable du projet pour des comptes de test désignés. Elle n’est pas activée de manière générale dans les versions publiées. La vérification Google pour la production et l’examen des flux de données issus des e-mails restent ouverts ; suivez <a href="https://github.com/dongdongbh/Mindwtr/issues/1326">#1326</a>.</p>
-          <p>Sur ordinateur, les vérifications fonctionnent tant que Mindwtr reste ouvert. Sur mobile, elles ont lieu à l’ouverture ou au retour dans l’application et à intervalles réguliers tant qu’elle reste au premier plan. Elles s’arrêtent en arrière-plan ou après fermeture. Les e-mails portant le libellé attendent la prochaine vérification. Les versions FOSS pour Android n’incluent pas l’autorisation Google pour cette fonction.</p>
-          <p>Google accorde un accès en lecture seule à <strong>toute la boîte mail</strong> via <code>gmail.readonly</code> ; le libellé choisi filtre l’importation. Mindwtr n’envoie, ne modifie, ne déplace et ne supprime aucun e-mail, ne change aucun libellé et n’importe pas les pièces jointes. L’objet devient le titre de la tâche ; l’expéditeur et le texte du message, limité en longueur, deviennent sa description.</p>
-          <p>Le code natif de la plateforme gère l’autorisation. Sur ordinateur et iOS, les identifiants restent dans le stockage sécurisé du système ; Android utilise le service d’autorisation Google de l’appareil et conserve localement le compte choisi. Les jetons ne passent pas dans JavaScript, les données de tâches, la synchronisation ou les sauvegardes et exports ordinaires. Une base de données locale distincte conserve les reçus d’importation par compte après l’enregistrement des tâches. Ces reçus ne se synchronisent pas.</p>
-          <p>Le texte importé devient du contenu de tâche ordinaire. Il suit votre configuration et vos consentements existants pour la synchronisation, les sauvegardes, les exports et l’IA facultative. La déconnexion ne supprime pas les copies déjà stockées auprès de ces services. L’examen de ces flux selon les règles Google reste une condition de disponibilité générale.</p>
-          <p>Reconnecter la même boîte mail ou changer de libellé conserve la prévention des doublons, les tâches modifiées et les traces de suppression retenues. La déconnexion conserve les tâches importées et les reçus d’importation. Si vous réinitialisez le profil de l’appareil et supprimez aussi les tâches et leurs traces de suppression, les anciens e-mails portant le libellé peuvent être réimportés ; retirez d’abord leur libellé. Une adresse de boîte mail renommée compte comme un autre compte dans ce prototype.</p>
-          <p>La déconnexion arrête les captures suivantes et supprime la connexion locale avant de tenter la révocation auprès de Google. Un enregistrement en cours peut se terminer. Supprimez séparément les tâches indésirables, les copies distantes, les sauvegardes et les exports. Si Google ne peut pas confirmer la révocation, retirez Mindwtr dans les autorisations de votre compte Google. Une reconnexion peut aussi devenir nécessaire sur un autre appareil ; reconnectez-vous et confirmez un libellé pour reprendre.</p>
-          <p>Les requêtes vont directement de votre appareil à Google. Nous ne faisons pas transiter les messages Gmail par un serveur Mindwtr et n’utilisons pas cet accès pour la publicité ou l’entraînement de modèles sans rapport avec la fonction. Avant la disponibilité générale, nous devons examiner les usages suivants au regard des <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">règles Google Workspace sur les données utilisateur</a>, y compris les exigences Limited Use. Cette description du prototype ne signifie pas que l’examen de production est terminé.</p>
+          <h3 id="gmail-capture">Capture Gmail</h3>
+          <p>La capture Gmail sur ordinateur et mobile est en cours d’examen par Google et reste réservée aux comptes de test désignés dans des versions de test configurées. La disponibilité générale attend l’approbation et la fin de notre examen des flux de données issus des e-mails. Suivez <a href="https://github.com/dongdongbh/Mindwtr/issues/1326">#1326</a>.</p>
+          <p><strong>Accès :</strong> Google accorde un accès en lecture seule à <strong>toute la boîte mail</strong> via <code>gmail.readonly</code>. Le libellé choisi filtre les importations : l’objet devient le titre de la tâche ; l’expéditeur et le texte limité du message deviennent sa description. Mindwtr n’envoie, ne modifie ni ne supprime les e-mails, ne change aucun libellé et n’importe pas les pièces jointes.</p>
+          <p><strong>Stockage et partage :</strong> Les requêtes vont directement de l’appareil à Google, sans serveur Mindwtr. L’autorisation reste dans le code natif ; ordinateur et iOS utilisent le stockage sécurisé du système, Android le service d’autorisation Google. Les jetons restent hors des tâches, de la synchronisation et des sauvegardes/exports ordinaires. Les reçus locaux d’importation évitent les doublons et ne se synchronisent pas. Les e-mails importés deviennent des données de tâches et peuvent entrer dans la synchronisation, les sauvegardes, les exports et l’IA facultative selon votre configuration et vos consentements existants. Nous n’utilisons pas l’accès Gmail pour la publicité ou l’entraînement de modèles sans rapport avec la fonction. Les usages suivants restent soumis à un examen selon les <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">règles Google Workspace sur les données utilisateur</a>, y compris Limited Use.</p>
+          <p><strong>Déconnexion et suppression :</strong> La déconnexion arrête les captures futures et supprime la connexion locale avant de tenter la révocation Google ; un enregistrement en cours peut se terminer. Les tâches importées et les reçus restent conservés. Supprimez séparément les tâches, copies distantes, sauvegardes et exports indésirables. Si la révocation échoue, retirez Mindwtr dans les autorisations de votre compte Google. Les autres appareils peuvent nécessiter une reconnexion.</p>
 
           <h2 id="section-3">3. Données d’utilisation anonymes (heartbeat)</h2>
           <p>

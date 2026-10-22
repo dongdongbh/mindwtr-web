@@ -26,7 +26,7 @@ Die meisten Aufgabenlisten verwenden dieselbe Steuerungszeile zum Auswählen, Fi
 
 Ziehen Sie eine Aufgabe in der Seitenleiste auf **Eingang**, **Irgendwann/Vielleicht**, **Warten**, **Referenz** oder **Verlauf**, um ihren Status zu ändern; beim Ablegen auf **Verlauf** wird sie als erledigt markiert, und die Meldung bietet **Rückgängig**. Ziehen Sie die Aufgabe über die Überschrift einer eingeklappten Gruppe der Seitenleiste, etwa **Mehr**, um diese Gruppe während des Ziehens zu öffnen. Der **Papierkorb** ist kein Ablageziel. Ziehen Sie die Aufgabe auf **Kalender** oder halten Sie sie beim Ziehen kurz darüber, um den heutigen Tag zu öffnen. Aus der Terminplanansicht wechselt Mindwtr in die Wochenansicht, damit Sie die Aufgabe auf einem Tag und einer Uhrzeit ablegen können.
 
-Ab v1.3.7 öffnet kurzes Verweilen mit der Maus über Datum, Verschieben, Kontexten oder Priorität im Aufgabenmenü den jeweiligen Bereich. Klicks und Tastaturbedienung bleiben verfügbar. Beim gezielten Öffnen eines Start- oder Fälligkeitsdatums öffnet sich auch der Kalender; Änderungen an Datum und Uhrzeit erfordern weiterhin **Speichern**. Verweilen übernimmt keine Änderungen und ersetzt keinen bearbeiteten Entwurf.
+Kurzes Verweilen mit der Maus über Datum, Verschieben, Kontexten oder Priorität im Aufgabenmenü öffnet den jeweiligen Bereich. Klicks und Tastaturbedienung bleiben verfügbar. Beim gezielten Öffnen eines Start- oder Fälligkeitsdatums öffnet sich auch der Kalender; Änderungen an Datum und Uhrzeit erfordern weiterhin **Speichern**. Verweilen übernimmt keine Änderungen und ersetzt keinen bearbeiteten Entwurf.
 
 ## Referenz
 
@@ -96,7 +96,7 @@ Die Fokus-Abschnitte erscheinen in dieser Reihenfolge: **Heutiger Fokus → Heut
 - **Zen-Modus**: Alles außer den Aufgaben im heutigen Fokus ausblenden.
 - **Pomodoro (optional)**: Unter **Einstellungen → GTD → Funktionen → Pomodoro-Zeitgeber** ein Fokus-/Pausenfeld aktivieren (15/3, 25/5, 50/10 und eine optionale eigene Voreinstellung). Belassen Sie es bei **Nur Zeitgeber** oder aktivieren Sie **Zeitgeber mit Aufgabe verknüpfen** für Aufgabenauswahl und **Aufgabe als erledigt markieren**.
 
-**Aufgabendaten (v1.3.7, noch nicht veröffentlicht).** Wähle unter **Filter → Aufgabendaten** **Heute**, **Nächste 7 Tage**, **Nächste 14 Tage**, **Nächste 30 Tage** oder **Alle kommenden**. Eine Aufgabe passt, wenn ihr Start-, Fälligkeits- oder Review-Datum im Zeitraum liegt. Die Zeiträume schließen heute ein und verwenden lokale Kalendertage; Alle kommenden umfasst heute und spätere Daten. **Jederzeit** entfernt die Bedingung. Andere Filter und die normalen Sichtbarkeitsregeln der Ansicht gelten weiterhin. Der Bereich „Demnächst“ in Fokus bleibt unverändert; Kalenderereignisse sind nicht enthalten.
+**Aufgabendaten.** Wähle unter **Filter → Aufgabendaten** **Heute**, **Nächste 7 Tage**, **Nächste 14 Tage**, **Nächste 30 Tage** oder **Alle kommenden**. Eine Aufgabe passt, wenn ihr Start-, Fälligkeits- oder Review-Datum im Zeitraum liegt. Die Zeiträume schließen heute ein und verwenden lokale Kalendertage; Alle kommenden umfasst heute und spätere Daten. **Jederzeit** entfernt die Bedingung. Andere Filter und die normalen Sichtbarkeitsregeln der Ansicht gelten weiterhin. Der Bereich „Demnächst“ in Fokus bleibt unverändert; Kalenderereignisse sind nicht enthalten.
 
 ### 📁 Projekte
 
@@ -105,7 +105,7 @@ Mehrstufige Ergebnisse mit zusammengehörigen Aufgaben.
 - **Sequenzieller Modus**: Nur die erste verfügbare Projektaufgabe erscheint in „Fokus“. In der Projektansicht ist die verfügbare Aufgabe hervorgehoben, wartende Aufgaben erscheinen abgeblendet.
 - **Paralleler Modus**: Alle verfügbaren Projektaufgaben können in „Fokus“ erscheinen.
 - **Sequenzieller Umfang**: Projektweit oder abschnittsweise; der Abschnittsumfang zeigt die erste verfügbare Aufgabe jedes Abschnitts.
-- **Modus „Pro Abschnitt“**: Ab v1.3.7 stellen Sie den **Ablaufmodus** des Projekts auf **Pro Abschnitt**, damit jeder Abschnitt parallel oder sequenziell läuft. Öffnen Sie das **⋯**-Menü eines Abschnitts und wählen Sie **Ablaufmodus → Parallel** oder **Sequenziell**. Ein kleines Etikett neben dem Abschnittsnamen zeigt die Wahl, nur im Modus „Pro Abschnitt“. Ein sequenzieller Abschnitt bietet nur seine erste verfügbare Aufgabe an, mit denselben Regeln wie sequenzielle Projekte: Ein erster Schritt im Status „Warten“ belegt den Platz, und „Fokus“ kann trotzdem eine markierte oder fällige Aufgabe zeigen. Ein paralleler Abschnitt und Aufgaben ohne Abschnitt bieten alle ihre Aufgaben an. Abschnitte warten nie aufeinander, und die Reihenfolge der Abschnitte schafft keine Abhängigkeit. Beim Wechsel von **Sequenziell → Innerhalb von Abschnitten** starten alle Abschnitte sequenziell; beim Wechsel von Parallel oder **Sequenziell → Über Abschnitte hinweg** starten sie parallel. Die Wahl je Abschnitt bleibt erhalten, wenn Sie in einen anderen Modus und zurück wechseln. Ältere App-Versionen (1.3.6 und früher) zeigen ein Projekt mit „Pro Abschnitt“ als parallel.
+- **Modus „Pro Abschnitt“**: Stellen Sie den **Ablaufmodus** des Projekts auf **Pro Abschnitt**, damit jeder Abschnitt parallel oder sequenziell läuft. Öffnen Sie das **⋯**-Menü eines Abschnitts und wählen Sie **Ablaufmodus → Parallel** oder **Sequenziell**. Ein kleines Etikett neben dem Abschnittsnamen zeigt die Wahl, nur im Modus „Pro Abschnitt“. Ein sequenzieller Abschnitt bietet nur seine erste verfügbare Aufgabe an, mit denselben Regeln wie sequenzielle Projekte: Ein erster Schritt im Status „Warten“ belegt den Platz, und „Fokus“ kann trotzdem eine markierte oder fällige Aufgabe zeigen. Ein paralleler Abschnitt und Aufgaben ohne Abschnitt bieten alle ihre Aufgaben an. Abschnitte warten nie aufeinander, und die Reihenfolge der Abschnitte schafft keine Abhängigkeit. Beim Wechsel von **Sequenziell → Innerhalb von Abschnitten** starten alle Abschnitte sequenziell; beim Wechsel von Parallel oder **Sequenziell → Über Abschnitte hinweg** starten sie parallel. Die Wahl je Abschnitt bleibt erhalten, wenn Sie in einen anderen Modus und zurück wechseln. Ältere App-Versionen (1.3.6 und früher) zeigen ein Projekt mit „Pro Abschnitt“ als parallel.
 - **Status**: Aktiv, Warten, Irgendwann, Archiviert
 - **Fokusbereiche**: Projekte nach übergeordneten Bereichen (z. B. Beruf, Gesundheit) gruppieren. Ziehen Sie ein Projekt auf einen Bereich; beim Ziehen erscheinen auch eingeklappte und leere Bereiche sowie **Kein Bereich** als Ziele.
 - **Aufgaben durch Ziehen verschieben**: Ziehen Sie eine Aufgabe aus der geöffneten Projektliste auf ein anderes Projekt in der Seitenleiste (sie landet hinter dessen vorhandenen Aufgaben) oder auf eine Bereichsüberschrift, um sie zur direkten Bereichsaufgabe zu machen. Dies funktioniert in jeder Sortierung. Eine Meldung **Verschoben nach …** bietet Rückgängig; archivierte Projekte nehmen keine Aufgaben an.
@@ -202,7 +202,7 @@ Ein Klick auf einen Balken öffnet die Aufgabe, ein Klick auf einen Projektnamen
 
 Beim Ziehen sehen Sie eine Vorschau; beim Loslassen wird gespeichert. **Escape** bricht das Ziehen ab; eine gespeicherte Änderung bietet **Rückgängig**. Werden dieselben Daten während des Ziehens anderswo geändert, überschreibt das Loslassen sie nicht. Die Zeitleiste berücksichtigt keine Abhängigkeiten oder Feiertage bei der Terminverschiebung.
 
-Ab **v1.3.7** teilt die Zeitleiste die Reihenfolge von Projekten und Aufgaben mit **Projekte**. Projektgruppen folgen der Bereichs- und Projektreihenfolge; Aufgaben folgen der Abschnittsreihenfolge ihres Projekts und der gewählten Sortierung. Bei der Projektsortierung **Standard** können Sie mit dem Sortiergriff einer Zeile eine Aufgabe innerhalb ihres Abschnitts oder ein Projekt innerhalb seines Bereichs verschieben. Wenn der Griff fokussiert ist, drücken Sie die **Leertaste** zum Aufnehmen, bewegen das Element mit den Pfeiltasten und drücken die **Leertaste** zum Ablegen oder **Escape** zum Abbrechen.
+Die Zeitleiste teilt die Reihenfolge von Projekten und Aufgaben mit **Projekte**. Projektgruppen folgen der Bereichs- und Projektreihenfolge; Aufgaben folgen der Abschnittsreihenfolge ihres Projekts und der gewählten Sortierung. Bei der Projektsortierung **Standard** können Sie mit dem Sortiergriff einer Zeile eine Aufgabe innerhalb ihres Abschnitts oder ein Projekt innerhalb seines Bereichs verschieben. Wenn der Griff fokussiert ist, drücken Sie die **Leertaste** zum Aufnehmen, bewegen das Element mit den Pfeiltasten und drücken die **Leertaste** zum Ablegen oder **Escape** zum Abbrechen.
 
 Das vertikale Umsortieren ändert die gemeinsame Reihenfolge, einschließlich der Ausführungsreihenfolge sequenzieller Projekte, ohne Daten zu ändern oder Aufgaben in ein anderes Projekt oder einen anderen Abschnitt zu verschieben. Durch Zeitleistenfilter ausgeblendete Aufgaben und Projekte behalten ihre relative Reihenfolge. Eine ausdrücklich gewählte Projektsortierung wird berücksichtigt; wechseln Sie in Projekte zu Standard, um Aufgaben manuell umzusortieren. Aufgaben ohne Projekt haben keine gemeinsame Projektreihenfolge, die sich bearbeiten lässt.
 
@@ -242,7 +242,7 @@ Verwenden Sie im Rückblick **Eingang verarbeiten**, bevor Sie mit Kalender, War
 
 Ausführliche Hinweise enthält der [Wochenrückblick](/de/use/weekly-review).
 
-Ab v1.3.7 zeigen die Fokus-Karten im täglichen Review Start- und Fälligkeitsdaten; der Stern bleibt die Hauptaktion. Im Projektschritt des wöchentlichen Reviews kannst du ein Projekt abschließen, ohne den Review zu verlassen. Gibt es noch unerledigte Aufgaben, erklärt die Bestätigung, dass auch diese abgeschlossen werden. Eine fehlende nächste Aktion schließt ein Projekt nie automatisch ab.
+Die Fokus-Karten im täglichen Review zeigen Start- und Fälligkeitsdaten; der Stern bleibt die Hauptaktion. Im Projektschritt des wöchentlichen Reviews kannst du ein Projekt abschließen, ohne den Review zu verlassen. Gibt es noch unerledigte Aufgaben, erklärt die Bestätigung, dass auch diese abgeschlossen werden. Eine fehlende nächste Aktion schließt ein Projekt nie automatisch ab.
 
 
 
@@ -281,7 +281,7 @@ Checklisten als Vorlagen:
 - Auch das **Titel**-Feld versteht die Schnelleingabe-Tokens. Tippen Sie `@`, `#`, `+`, `!`, `%` oder `/`, um Vorschläge zu öffnen, und drücken Sie dann `Enter` oder `Tab`: Die Auswahl landet in ihrem Feld (Kontext, Tag, Projekt, Bereich, Person, Datum, Status), und das Token verschwindet aus dem Titel. Text, den Sie ohne Übernahme eines Vorschlags tippen, bleibt unverändert im Titel, ein Titel wie `Review 100% target` ist also sicher.
 - Unter **Einstellungen → GTD → Layout des Aufgabeneditors** wählen Sie **In der Zeile**, um die Aufgabe an ihrer Stelle in der Liste zu bearbeiten, oder **Pop-up** für einen zentrierten Editor, der die Liste nicht verschiebt.
 
-Ab **v1.3.7** bietet der **Pop-up**-Editor in breiten Fenstern links mehr Platz für **Details** und zeigt rechts die Aufgabeneigenschaften. In schmalen Fenstern stehen Titel, Details und Eigenschaften untereinander. Die Eigenschaften behalten Ihre konfigurierten Abschnitte und das Auf- und Zuklappverhalten bei; **Speichern** und **Abbrechen** bleiben sichtbar. Der Editor in der Zeile und der Aufgabendialog im Kalender behalten ihre bisherigen Layouts.
+Der **Pop-up**-Editor bietet in breiten Fenstern links mehr Platz für **Details** und zeigt rechts die Aufgabeneigenschaften. In schmalen Fenstern stehen Titel, Details und Eigenschaften untereinander. Die Eigenschaften behalten Ihre konfigurierten Abschnitte und das Auf- und Zuklappverhalten bei; **Speichern** und **Abbrechen** bleiben sichtbar. Der Editor in der Zeile und der Aufgabendialog im Kalender behalten ihre bisherigen Layouts.
 
 ---
 
@@ -447,7 +447,7 @@ Mindwtr sendet Desktop-Benachrichtigungen:
 
 Bei Aufgaben mit Fälligkeitszeit kann **Erinnerung wiederholen** nach der ersten Fälligkeitserinnerung alle 5, 10, 15, 30 oder 60 Minuten erneut erinnern. **Aus** lässt die erste Erinnerung weiterhin zu.
 
-Ab **v1.3.7** wählst du unter **Einstellungen → Benachrichtigungen** den Standard für Start-/Fälligkeitserinnerungen: **Senden** oder **Überspringen**. Jede Aufgabe bietet **Standard verwenden** (mit aktueller Wirkung), **Senden** und **Überspringen**. Neue Aufgaben verwenden den Standard; bestehende behalten ihr bisheriges Verhalten, bis du ausdrücklich **Standard verwenden** wählst. Anfangs ist Senden der Standard.
+Unter **Einstellungen → Benachrichtigungen** wählst du den Standard für Start-/Fälligkeitserinnerungen: **Senden** oder **Überspringen**. Jede Aufgabe bietet **Standard verwenden** (mit aktueller Wirkung), **Senden** und **Überspringen**. Neue Aufgaben verwenden den Standard; bestehende behalten ihr bisheriges Verhalten, bis du ausdrücklich **Standard verwenden** wählst. Anfangs ist Senden der Standard.
 
 Überspringen entfernt geplante Start-/Fälligkeitserinnerungen und Wiederholungen, behält aber das Wiederholungsintervall. Review-Erinnerungen, tägliche Übersichten und Pomodoro bleiben unabhängig. Senden erfordert weiterhin eine ausdrückliche Uhrzeit, aktivierte Aufgaben-/Start-/Fälligkeitsbenachrichtigungen und die Geräteberechtigung.
 
@@ -456,7 +456,7 @@ Der Standard wird über die Einstellungsgruppe **GTD** synchronisiert, die Aufga
 ### Eine Aufgabenerinnerung testen
 
 1. Eine Aufgabe bearbeiten und die **Fälligkeit** auf eine Uhrzeit in wenigen Minuten setzen. **Nur Datum** erzeugt keine zeitgesteuerte Benachrichtigung.
-2. Wähle bei den Start-/Fälligkeitserinnerungen **Senden** (ab v1.3.7). In älteren Versionen **Erinnerungen überspringen** ausschalten.
+2. Wähle bei den Start-/Fälligkeitserinnerungen **Senden**. In 1.3.6 und früher **Erinnerungen überspringen** ausschalten.
 3. Die Aufgabe speichern. Unter **Einstellungen → Benachrichtigungen** Aufgaben- und Fälligkeitserinnerungen aktivieren. Auf macOS Mindwtr auch unter **Systemeinstellungen → Mitteilungen** erlauben.
 4. Bis zur Fälligkeitszeit warten. Wurde die Aufgabe auf einem anderen Gerät geändert, den Computer zuerst die neue Zeit synchronisieren lassen.
 
@@ -684,7 +684,7 @@ Für WebDAV:
 
 Ausführliche Einrichtung: [Daten und Synchronisierung](/de/data-sync/).
 
-Ab v1.3.7 lässt sich das HTTP-Synchronisierungsbanner für dieses Ziel auf diesem Gerät ausblenden. Bei einem anderen Ziel erscheint die Warnung erneut; die Synchronisierungseinstellungen weisen weiterhin auf HTTP hin. Das Ausblenden erlaubt keine unsicheren Verbindungen und verschlüsselt die Verbindung nicht.
+Das HTTP-Synchronisierungsbanner lässt sich für dieses Ziel auf diesem Gerät ausblenden. Bei einem anderen Ziel erscheint die Warnung erneut; die Synchronisierungseinstellungen weisen weiterhin auf HTTP hin. Das Ausblenden erlaubt keine unsicheren Verbindungen und verschlüsselt die Verbindung nicht.
 
 ### Erweitert
 - **Tastatur und Fenster**: Voreinstellung für Tastenkürzel (Standard, Vim oder Emacs), Fensterdekorationen, Schließverhalten, Symbol im Infobereich und **Beim Systemstart öffnen**. Klicken Sie auf die Karte, um sie zu öffnen.

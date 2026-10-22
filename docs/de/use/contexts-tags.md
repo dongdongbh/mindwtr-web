@@ -155,7 +155,7 @@ Der Kontext wird hinzugefügt und steht zum Filtern zur Verfügung.
 
 ### Gespeicherte Kontexte und Tags verwalten
 
-Ab **v1.3.7** können Sie Kontexte und Tags erstellen, bevor Sie sie einer Aufgabe zuweisen. Öffnen Sie **Einstellungen → Verwalten** und wählen Sie unter **Kontexte** oder **Tags** die Option **Hinzufügen**. Neue Namen werden auch beim Speichern einer Aufgabe gemerkt. Gespeicherte Namen bleiben in der Autovervollständigung verfügbar, wenn ihre letzte Zuweisung entfernt wird; beim Abbrechen eines Entwurfs werden keine neuen Namen gespeichert.
+Sie können Kontexte und Tags erstellen, bevor Sie sie einer Aufgabe zuweisen. Öffnen Sie **Einstellungen → Verwalten** und wählen Sie unter **Kontexte** oder **Tags** die Option **Hinzufügen**. Neue Namen werden auch beim Speichern einer Aufgabe gemerkt. Gespeicherte Namen bleiben in der Autovervollständigung verfügbar, wenn ihre letzte Zuweisung entfernt wird; beim Abbrechen eines Entwurfs werden keine neuen Namen gespeichert.
 
 Gespeicherte Kontexte und Tags werden zwischen aktualisierten Geräten synchronisiert. Aktualisieren Sie alle Geräte, bevor Sie sich auf diesen Katalog verlassen: Ältere App-Versionen können ihn beim Hochladen der Synchronisierungsdaten auslassen.
 

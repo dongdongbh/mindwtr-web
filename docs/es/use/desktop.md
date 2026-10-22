@@ -26,7 +26,7 @@ La mayoría de las listas de tareas comparten la misma fila de controles para se
 
 Arrastra una tarea en la barra lateral hasta **Bandeja de entrada**, **Algún día/Tal vez**, **En espera**, **Referencia** o **Historial** para cambiar su estado; al soltarla en **Historial** se marca como hecha, y el aviso ofrece **Deshacer**. Arrastra la tarea sobre el encabezado de un grupo plegado de la barra lateral, como **Más**, para abrir ese grupo mientras arrastras. **Papelera** no acepta tareas arrastradas. Suelta la tarea en **Calendario**, o mantenla un momento sobre Calendario mientras la arrastras, para abrir hoy. La vista Agenda cambia a Semana para que puedas soltarla en un día y una hora.
 
-Desde v1.3.7, mantener brevemente el puntero sobre Fechas, Mover a, Contextos o Prioridad en el menú de una tarea abre su panel. El clic y el teclado siguen funcionando. Al abrir expresamente una fecha de inicio o vencimiento, también se abre el calendario; los cambios de fecha y hora siguen requiriendo **Guardar**. Pasar el puntero no aplica cambios ni sustituye un borrador editado.
+Mantener brevemente el puntero sobre Fechas, Mover a, Contextos o Prioridad en el menú de una tarea abre su panel. El clic y el teclado siguen funcionando. Al abrir expresamente una fecha de inicio o vencimiento, también se abre el calendario; los cambios de fecha y hora siguen requiriendo **Guardar**. Pasar el puntero no aplica cambios ni sustituye un borrador editado.
 
 ## Referencia
 
@@ -96,7 +96,7 @@ Foco mantiene fuera de sus listas accionables las tareas cuya fecha de inicio es
 - **Modo Zen**: actívalo para ocultar todo salvo las tareas de Foco de hoy.
 - **Pomodoro (opcional)**: actívalo en **Ajustes → GTD → Funciones → Temporizador Pomodoro** para mostrar un panel de temporizador de concentración/descanso (15/3, 25/5, 50/10 y un preajuste personalizado opcional). Déjalo en **Solo temporizador** o activa **Vincular temporizador a tarea** para mostrar el selector de tarea del temporizador y la acción **Marcar tarea como terminada**.
 
-**Fechas de tareas (v1.3.7, aún no publicada).** En **Filtros → Fechas de tareas**, elige **Hoy**, **Próximos 7 días**, **Próximos 14 días**, **Próximos 30 días** o **Todas las próximas**. Una tarea coincide si su fecha de inicio, vencimiento o revisión está dentro del intervalo. Los intervalos incluyen hoy y usan días del calendario local; Todas las próximas incluye hoy y las fechas posteriores. **Cualquier fecha** elimina esta condición. Los demás filtros y las reglas de visibilidad de la vista siguen vigentes. Esto no cambia la sección Próximas de Focus ni incluye eventos de calendario.
+**Fechas de tareas.** En **Filtros → Fechas de tareas**, elige **Hoy**, **Próximos 7 días**, **Próximos 14 días**, **Próximos 30 días** o **Todas las próximas**. Una tarea coincide si su fecha de inicio, vencimiento o revisión está dentro del intervalo. Los intervalos incluyen hoy y usan días del calendario local; Todas las próximas incluye hoy y las fechas posteriores. **Cualquier fecha** elimina esta condición. Los demás filtros y las reglas de visibilidad de la vista siguen vigentes. Esto no cambia la sección Próximas de Focus ni incluye eventos de calendario.
 
 ### 📁 Proyectos
 
@@ -105,7 +105,7 @@ Resultados de varios pasos que contienen tareas relacionadas.
 - **Modo secuencial**: solo aparece en Foco la primera tarea disponible del proyecto; en la vista del proyecto, la tarea disponible se resalta y las tareas en cola se muestran atenuadas
 - **Modo paralelo**: todas las tareas disponibles del proyecto pueden aparecer en Foco
 - **Ámbito secuencial**: los proyectos secuenciales pueden avanzar en todo el proyecto o sección por sección; el ámbito por sección muestra la primera tarea disponible de cada sección.
-- **Modo por sección**: desde la v1.3.7, pon el **Modo de flujo** del proyecto en **Por sección** para que cada sección sea paralela o secuencial. Abre el menú **⋯** de una sección y elige **Modo de flujo → Paralelo** o **Secuencial**. Una pequeña etiqueta junto al nombre de la sección muestra la elección, solo en el modo Por sección. Una sección secuencial ofrece solo su primera tarea disponible, con las mismas reglas que los proyectos secuenciales: un primer paso En espera ocupa el puesto, y Foco aún puede mostrar una tarea marcada con estrella o con fecha de vencimiento. Una sección paralela, y las tareas sin sección, ofrecen todas sus tareas. Las secciones nunca se esperan entre sí, y el orden de las secciones no crea dependencias. Al cambiar desde **Secuencial → Dentro de secciones**, todas las secciones empiezan como secuenciales; al cambiar desde Paralelo o **Secuencial → Entre secciones**, empiezan como paralelas. La elección de cada sección se conserva si cambias a otro modo y vuelves. Las versiones anteriores de la app (1.3.6 y anteriores) muestran un proyecto Por sección como paralelo.
+- **Modo por sección**: pon el **Modo de flujo** del proyecto en **Por sección** para que cada sección sea paralela o secuencial. Abre el menú **⋯** de una sección y elige **Modo de flujo → Paralelo** o **Secuencial**. Una pequeña etiqueta junto al nombre de la sección muestra la elección, solo en el modo Por sección. Una sección secuencial ofrece solo su primera tarea disponible, con las mismas reglas que los proyectos secuenciales: un primer paso En espera ocupa el puesto, y Foco aún puede mostrar una tarea marcada con estrella o con fecha de vencimiento. Una sección paralela, y las tareas sin sección, ofrecen todas sus tareas. Las secciones nunca se esperan entre sí, y el orden de las secciones no crea dependencias. Al cambiar desde **Secuencial → Dentro de secciones**, todas las secciones empiezan como secuenciales; al cambiar desde Paralelo o **Secuencial → Entre secciones**, empiezan como paralelas. La elección de cada sección se conserva si cambias a otro modo y vuelves. Las versiones anteriores de la app (1.3.6 y anteriores) muestran un proyecto Por sección como paralelo.
 - **Estado**: Activo, En espera, Algún día, Archivado
 - **Áreas de enfoque**: agrupa los proyectos por áreas de nivel superior (por ejemplo, Trabajo o Salud) para mantener organizada la barra lateral. Arrastra un proyecto a un área para moverlo; mientras arrastras, las áreas contraídas y vacías (y **Sin área**) también aparecen como destinos.
 - **Mover tareas arrastrando**: arrastra una tarea desde la lista del proyecto abierto hasta otro proyecto de la barra lateral para moverla allí (queda después de las tareas existentes del destino), o hasta el encabezado de un área para convertirla en tarea directa de esa área. Funciona con cualquier ordenación; un aviso **Movida a…** permite Deshacer con un clic, y los proyectos archivados no aceptan elementos.
@@ -202,7 +202,7 @@ Haz clic en una barra para abrir la tarea, o en el nombre de un proyecto para ab
 
 Los cambios se previsualizan al arrastrar y se guardan al soltar. **Escape** cancela el arrastre; un cambio guardado ofrece **Deshacer**. Si las mismas fechas cambian en otro lugar durante el arrastre, soltarlas no sobrescribe esos cambios. La Línea de tiempo no reprograma dependencias ni festivos.
 
-A partir de **v1.3.7**, la Línea de tiempo comparte el orden de proyectos y tareas con **Proyectos**. Los grupos de proyectos siguen el orden de áreas y proyectos; las tareas siguen el orden de las secciones de su proyecto y la clasificación elegida. Con el orden del proyecto en **Predeterminado**, usa el asa de reordenación de la fila para mover una tarea dentro de su sección o un proyecto dentro de su área. Con el asa enfocada, pulsa **Espacio** para recoger el elemento, usa las flechas para moverlo y pulsa **Espacio** para soltarlo o **Escape** para cancelar.
+La Línea de tiempo comparte el orden de proyectos y tareas con **Proyectos**. Los grupos de proyectos siguen el orden de áreas y proyectos; las tareas siguen el orden de las secciones de su proyecto y la clasificación elegida. Con el orden del proyecto en **Predeterminado**, usa el asa de reordenación de la fila para mover una tarea dentro de su sección o un proyecto dentro de su área. Con el asa enfocada, pulsa **Espacio** para recoger el elemento, usa las flechas para moverlo y pulsa **Espacio** para soltarlo o **Escape** para cancelar.
 
 La reordenación vertical cambia el orden compartido, incluida la secuencia de ejecución de los proyectos secuenciales, sin cambiar fechas ni mover tareas a otro proyecto o sección. Las tareas y los proyectos ocultos por los filtros de la Línea de tiempo conservan su orden relativo. Se respeta el orden elegido explícitamente para un proyecto; cámbialo a Predeterminado en Proyectos para habilitar la reordenación manual de tareas. Las tareas sin proyecto no tienen un orden de proyecto compartido que editar.
 
@@ -242,7 +242,7 @@ Usa la acción **Procesar Bandeja de entrada** de la revisión para vaciar los e
 
 Consulta [Revisión semanal](/es/use/weekly-review) para obtener instrucciones detalladas.
 
-Desde v1.3.7, las tarjetas de Enfoque de la revisión diaria muestran las fechas de inicio y vencimiento, manteniendo la estrella como acción principal. En el paso de proyectos de la revisión semanal puedes completar un proyecto sin salir de la revisión. Si quedan tareas pendientes, la confirmación explica que también se completarán; la ausencia de una próxima acción nunca completa un proyecto automáticamente.
+Las tarjetas de Enfoque de la revisión diaria muestran las fechas de inicio y vencimiento, manteniendo la estrella como acción principal. En el paso de proyectos de la revisión semanal puedes completar un proyecto sin salir de la revisión. Si quedan tareas pendientes, la confirmación explica que también se completarán; la ausencia de una próxima acción nunca completa un proyecto automáticamente.
 
 
 
@@ -281,7 +281,7 @@ Usa listas de comprobación como plantillas:
 - El campo de **título** también entiende los tokens de captura rápida. Escribe `@`, `#`, `+`, `!`, `%` o `/` para abrir sugerencias y pulsa `Enter` o `Tab`: la opción va a su campo (contexto, etiqueta, proyecto, área, persona, fecha, estado) y el token sale del título. El texto que escribes sin aceptar una sugerencia se queda en el título tal cual, así que un título como `Review 100% target` es seguro.
 - En **Ajustes → GTD → Diseño del editor de tareas**, elige **En la fila** para editar donde estaba la fila de la tarea, o **Ventana emergente** para abrir un editor centrado sin desplazar la lista.
 
-Desde **v1.3.7**, el editor **Ventana emergente** ofrece más espacio para **Detalles** a la izquierda y muestra las propiedades de la tarea a la derecha en ventanas anchas. En ventanas estrechas, el título, los detalles y las propiedades se apilan verticalmente. Las propiedades mantienen las secciones configuradas y su comportamiento al expandirlas o contraerlas, mientras **Guardar** y **Cancelar** permanecen visibles. El editor en la fila y el diálogo de tareas del Calendario conservan su diseño.
+El editor **Ventana emergente** ofrece más espacio para **Detalles** a la izquierda y muestra las propiedades de la tarea a la derecha en ventanas anchas. En ventanas estrechas, el título, los detalles y las propiedades se apilan verticalmente. Las propiedades mantienen las secciones configuradas y su comportamiento al expandirlas o contraerlas, mientras **Guardar** y **Cancelar** permanecen visibles. El editor en la fila y el diálogo de tareas del Calendario conservan su diseño.
 
 ---
 
@@ -445,7 +445,7 @@ Mindwtr envía notificaciones de escritorio para ayudarte a mantener el rumbo:
 
 Las tareas con hora de vencimiento pueden repetir el aviso cada 5, 10, 15, 30 o 60 minutos. Desactivar la repetición no desactiva el primer aviso.
 
-Desde **v1.3.7**, **Ajustes → Notificaciones** permite elegir el valor predeterminado para los recordatorios de inicio/vencimiento: **Enviar** u **Omitir**. Cada tarea ofrece **Usar valor predeterminado** (mostrando su efecto actual), **Enviar** y **Omitir**. Las tareas nuevas usan el valor predeterminado; las existentes conservan su comportamiento hasta que elijas usarlo expresamente. Inicialmente, el valor predeterminado permite los recordatorios.
+**Ajustes → Notificaciones** permite elegir el valor predeterminado para los recordatorios de inicio/vencimiento: **Enviar** u **Omitir**. Cada tarea ofrece **Usar valor predeterminado** (mostrando su efecto actual), **Enviar** y **Omitir**. Las tareas nuevas usan el valor predeterminado; las existentes conservan su comportamiento hasta que elijas usarlo expresamente. Inicialmente, el valor predeterminado permite los recordatorios.
 
 Omitir retira los avisos de inicio/vencimiento pendientes y sus repeticiones sin borrar el intervalo. Los recordatorios de revisión, resúmenes diarios y avisos Pomodoro son independientes. Enviar sigue requiriendo una hora explícita, las notificaciones de tareas/inicio/vencimiento activadas y el permiso del dispositivo.
 
@@ -454,7 +454,7 @@ El valor predeterminado se sincroniza mediante el grupo **GTD**, y la elección 
 ### Probar un recordatorio de tarea
 
 1. Edita una tarea y fija su **Fecha de vencimiento** a una hora dentro de unos minutos. **Solo fecha** no programa una alerta con hora.
-2. En los recordatorios de inicio/vencimiento, elige **Enviar** (v1.3.7 o posterior). En versiones anteriores, desactiva **Omitir recordatorios**.
+2. En los recordatorios de inicio/vencimiento, elige **Enviar**. En la 1.3.6 y anteriores, desactiva **Omitir recordatorios**.
 3. Guarda la tarea. En **Ajustes → Notificaciones**, activa las notificaciones de tareas y los avisos de vencimiento. En macOS, permite también Mindwtr en **Ajustes del Sistema → Notificaciones**.
 4. Espera a la hora de vencimiento. Si editaste la tarea en otro dispositivo, deja que este ordenador sincronice la nueva hora primero.
 
@@ -689,7 +689,7 @@ Para WebDAV, configura:
 
 Consulta [Datos y sincronización](/es/data-sync/) para ver instrucciones detalladas.
 
-Desde v1.3.7, puedes ocultar el aviso de sincronización HTTP para ese destino en este dispositivo. Un destino distinto vuelve a mostrar el aviso, y los ajustes de sincronización siguen indicando el uso de HTTP. Ocultar el aviso no habilita conexiones inseguras ni cifra la conexión.
+Puedes ocultar el aviso de sincronización HTTP para ese destino en este dispositivo. Un destino distinto vuelve a mostrar el aviso, y los ajustes de sincronización siguen indicando el uso de HTTP. Ocultar el aviso no habilita conexiones inseguras ni cifra la conexión.
 
 ### Avanzado
 - **Teclado y ventana**: preajuste de atajos de teclado (Estándar, Vim o Emacs), decoraciones de ventana, comportamiento al cerrar, icono de bandeja y **Abrir al iniciar**. Haz clic en la tarjeta para abrirla.

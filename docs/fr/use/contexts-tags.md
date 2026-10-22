@@ -155,7 +155,7 @@ Le contexte sera ajouté et pourra être utilisé comme filtre.
 
 ### Gérer les contextes et les tags enregistrés
 
-À partir de **v1.3.7**, vous pouvez créer des contextes et des tags avant de les attribuer à une tâche. Ouvrez **Paramètres → Gérer**, puis choisissez **Ajouter** sous **Contextes** ou **Tags**. Les nouveaux noms saisis lors de l’enregistrement d’une tâche sont également conservés. Ils restent disponibles dans l’autocomplétion après le retrait de leur dernière attribution ; annuler un brouillon n’enregistre pas ses nouveaux noms.
+Vous pouvez créer des contextes et des tags avant de les attribuer à une tâche. Ouvrez **Paramètres → Gérer**, puis choisissez **Ajouter** sous **Contextes** ou **Tags**. Les nouveaux noms saisis lors de l’enregistrement d’une tâche sont également conservés. Ils restent disponibles dans l’autocomplétion après le retrait de leur dernière attribution ; annuler un brouillon n’enregistre pas ses nouveaux noms.
 
 Les contextes et tags enregistrés sont synchronisés entre les appareils à jour. Mettez tous les appareils à jour avant de vous appuyer sur ce catalogue : les anciennes versions peuvent l’omettre lors de l’envoi des données de synchronisation.
 

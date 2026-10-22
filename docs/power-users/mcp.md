@@ -28,7 +28,7 @@ Enable the server and keep Mindwtr running. Closing to the tray keeps it availab
 http://127.0.0.1:8722/mcp
 ```
 
-**Available starting with v1.3.7:** the controls below add Codex configuration copying, a configurable port, and separate write permissions. Earlier releases use a fixed port and a single **Allow changes** switch.
+The controls below add Codex configuration copying, a configurable port, and separate write permissions. Earlier releases use a fixed port and a single **Allow changes** switch.
 
 ### Connect Codex
 

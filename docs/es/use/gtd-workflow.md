@@ -234,7 +234,7 @@ Este aviso también ofrece **Guardar y editar**. Guarda la tarea de seguimiento 
 
 **Secuencial → Entre secciones** sigue el orden manual que muestra la ordenación **Predeterminada**: primero las secciones y después las tareas de cada sección, con **Sin sección** al final. Mover una sección o tarea cambia la secuencia. Ordenar la vista por título, prioridad o fecha no la cambia. **Dentro de las secciones** sigue seleccionando una tarea por sección; se mantienen las excepciones existentes para tareas destacadas, vencimientos y fechas de revisión.
 
-Desde la v1.3.7, el **Modo de flujo** de un proyecto también puede ser **Por sección**: cada sección es paralela o secuencial, y las tareas sin sección son paralelas. Las secciones nunca se esperan entre sí. Consulta los pasos en [Escritorio](/es/use/desktop) o [Móvil](/es/use/mobile).
+El **Modo de flujo** de un proyecto también puede ser **Por sección**: cada sección es paralela o secuencial, y las tareas sin sección son paralelas. Las secciones nunca se esperan entre sí. Consulta los pasos en [Escritorio](/es/use/desktop) o [Móvil](/es/use/mobile).
 
 ### Fechas límite y recordatorios
 

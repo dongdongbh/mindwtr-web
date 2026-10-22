@@ -45,11 +45,11 @@ Sélectionnez plusieurs domaines pour les voir ensemble, ou excluez-en un pour v
 
 **La Boîte de réception reste unifiée sur ordinateur et mobile.** Sa liste, son compteur et la file de **Traiter la boîte de réception** incluent les éléments de tous les domaines, y compris ceux sans domaine, quel que soit le filtre. Le compteur et l’étape de traitement de la boîte de réception dans la Revue suivent la même règle. La boîte affiche **Tous les domaines** ; son ouverture conserve le filtre des autres vues et les domaines déjà attribués aux tâches.
 
-À partir de v1.3.7, la sélection des domaines filtre aussi **Le focus du jour**. Les tâches masquées conservent leur étoile et comptent toujours dans la limite globale du Focus. L’en-tête indique la sélection totale et le nombre de tâches masquées par le filtre des domaines ; effacez cette sélection pour les revoir. Le filtre ne change ni le statut des tâches ni leur présence dans le Focus.
+La sélection des domaines filtre aussi **Le focus du jour**. Les tâches masquées conservent leur étoile et comptent toujours dans la limite globale du Focus. L’en-tête indique la sélection totale et le nombre de tâches masquées par le filtre des domaines ; effacez cette sélection pour les revoir. Le filtre ne change ni le statut des tâches ni leur présence dans le Focus.
 
 ### Couleurs des projets
 
-À partir de v1.3.7, les paramètres du projet proposent une **Couleur** facultative. Gardez **Utiliser la couleur du domaine** pour suivre le domaine actuel, ou choisissez une couleur propre au projet. Celle-ci reste inchangée si le domaine change de couleur ou si le projet est déplacé ; choisissez de nouveau **Utiliser la couleur du domaine** pour rétablir l’héritage. Seuls les repères du projet changent, pas les avertissements de priorité ou de retard. Mettez à jour tous les appareils synchronisés : les anciennes versions peuvent perdre la couleur propre lors de la modification du projet.
+Les paramètres du projet proposent une **Couleur** facultative. Gardez **Utiliser la couleur du domaine** pour suivre le domaine actuel, ou choisissez une couleur propre au projet. Celle-ci reste inchangée si le domaine change de couleur ou si le projet est déplacé ; choisissez de nouveau **Utiliser la couleur du domaine** pour rétablir l’héritage. Seuls les repères du projet changent, pas les avertissements de priorité ou de retard. Mettez à jour tous les appareils synchronisés : les anciennes versions peuvent perdre la couleur propre lors de la modification du projet.
 
 ## Personnes
 

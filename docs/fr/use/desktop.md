@@ -26,7 +26,7 @@ La plupart des listes de tâches partagent la même rangée de commandes pour s�
 
 Faites glisser une tâche dans la barre latérale vers **Boîte de réception**, **Un jour/Peut-être**, **En attente**, **Références** ou **Historique** pour changer son statut ; la déposer sur **Historique** la marque comme terminée, et la notification propose **Annuler**. Faites glisser la tâche sur l’en-tête d’un groupe replié de la barre latérale, comme **Plus**, pour ouvrir ce groupe pendant le déplacement. La **Corbeille** n’accepte pas les dépôts. Déposez la tâche sur **Calendrier**, ou marquez une pause au-dessus du Calendrier pendant le déplacement, pour ouvrir aujourd’hui. La vue Planning passe à Semaine afin que vous puissiez déposer la tâche sur un jour et une heure.
 
-Depuis la v1.3.7, survoler brièvement Dates, Déplacer vers, Contextes ou Priorité dans le menu d’une tâche ouvre le panneau correspondant. Le clic et le clavier restent disponibles. Ouvrir explicitement une date de début ou d’échéance ouvre aussi le calendrier ; modifier la date et l’heure nécessite toujours **Enregistrer**. Le survol n’applique aucune modification et ne remplace pas un brouillon modifié.
+Survoler brièvement Dates, Déplacer vers, Contextes ou Priorité dans le menu d’une tâche ouvre le panneau correspondant. Le clic et le clavier restent disponibles. Ouvrir explicitement une date de début ou d’échéance ouvre aussi le calendrier ; modifier la date et l’heure nécessite toujours **Enregistrer**. Le survol n’applique aucune modification et ne remplace pas un brouillon modifié.
 
 ## Référence
 
@@ -96,7 +96,7 @@ Focus tient les tâches dont la date de début est future et les tâches ultéri
 - **Mode Zen** : activez-le pour tout masquer à l’exception des tâches du Focus du jour.
 - **Pomodoro (facultatif)** : activez-le dans **Paramètres → GTD → Fonctionnalités → Minuteur Pomodoro** pour afficher un panneau de minuteur de concentration/pause (15/3, 25/5, 50/10, ainsi qu’un préréglage personnalisé facultatif). Laissez-le sur **Minuteur uniquement**, ou activez **Lier le minuteur à la tâche** pour afficher le sélecteur de tâche du Minuteur et l’action **Marquer la tâche comme terminée**.
 
-**Dates des tâches (v1.3.7, pas encore publiée).** Dans **Filtres → Dates des tâches**, choisissez **Aujourd’hui**, **7 prochains jours**, **14 prochains jours**, **30 prochains jours** ou **Toutes les dates à venir**. Une tâche correspond si sa date de début, d’échéance ou de revue se trouve dans cette période. Les périodes incluent aujourd’hui et suivent les jours du calendrier local ; toutes les dates à venir comprend aujourd’hui et les dates ultérieures. **À tout moment** retire cette condition. Les autres filtres et les règles de visibilité de la vue restent applicables. La section À venir de Focus ne change pas et les événements de calendrier sont exclus.
+**Dates des tâches.** Dans **Filtres → Dates des tâches**, choisissez **Aujourd’hui**, **7 prochains jours**, **14 prochains jours**, **30 prochains jours** ou **Toutes les dates à venir**. Une tâche correspond si sa date de début, d’échéance ou de revue se trouve dans cette période. Les périodes incluent aujourd’hui et suivent les jours du calendrier local ; toutes les dates à venir comprend aujourd’hui et les dates ultérieures. **À tout moment** retire cette condition. Les autres filtres et les règles de visibilité de la vue restent applicables. La section À venir de Focus ne change pas et les événements de calendrier sont exclus.
 
 ### 📁 Projets
 
@@ -105,7 +105,7 @@ Résultats en plusieurs étapes contenant des tâches liées.
 - **Mode séquentiel** : seule la première tâche disponible du projet apparaît dans Focus ; dans la vue du projet, la tâche disponible est mise en évidence et les tâches en attente apparaissent estompées
 - **Mode parallèle** : toutes les tâches disponibles du projet peuvent apparaître dans Focus
 - **Portée séquentielle** : les projets séquentiels peuvent avancer à l’échelle du projet ou section par section ; la portée par section affiche la première tâche disponible de chaque section.
-- **Mode par section** : à partir de la v1.3.7, réglez le **Mode de déroulement** du projet sur **Par section** pour rendre chaque section parallèle ou séquentielle. Ouvrez le menu **⋯** d’une section et choisissez **Mode de déroulement → Parallèle** ou **Séquentiel**. Une petite étiquette à côté du nom de la section indique le choix, uniquement en mode Par section. Une section séquentielle ne propose que sa première tâche disponible, avec les mêmes règles que les projets séquentiels : une première étape En attente garde la place, et Focus peut quand même afficher une tâche étoilée ou échue. Une section parallèle, ainsi que les tâches sans section, proposent toutes leurs tâches. Les sections n’attendent jamais les unes les autres, et l’ordre des sections ne crée aucune dépendance. Quand vous passez depuis **Séquentiel → Dans les sections**, toutes les sections démarrent en séquentiel ; depuis Parallèle ou **Séquentiel → Entre différentes sections**, elles démarrent en parallèle. Le choix de chaque section est conservé si vous passez à un autre mode puis revenez. Les anciennes versions de l’app (1.3.6 et antérieures) affichent un projet Par section comme parallèle.
+- **Mode par section** : réglez le **Mode de déroulement** du projet sur **Par section** pour rendre chaque section parallèle ou séquentielle. Ouvrez le menu **⋯** d’une section et choisissez **Mode de déroulement → Parallèle** ou **Séquentiel**. Une petite étiquette à côté du nom de la section indique le choix, uniquement en mode Par section. Une section séquentielle ne propose que sa première tâche disponible, avec les mêmes règles que les projets séquentiels : une première étape En attente garde la place, et Focus peut quand même afficher une tâche étoilée ou échue. Une section parallèle, ainsi que les tâches sans section, proposent toutes leurs tâches. Les sections n’attendent jamais les unes les autres, et l’ordre des sections ne crée aucune dépendance. Quand vous passez depuis **Séquentiel → Dans les sections**, toutes les sections démarrent en séquentiel ; depuis Parallèle ou **Séquentiel → Entre différentes sections**, elles démarrent en parallèle. Le choix de chaque section est conservé si vous passez à un autre mode puis revenez. Les anciennes versions de l’app (1.3.6 et antérieures) affichent un projet Par section comme parallèle.
 - **Statut** : Actif, En attente, Un jour, Archivé
 - **Domaines de responsabilité** : regroupez les projets par domaines de niveau supérieur (par ex., Travail, Santé) pour organiser votre barre latérale. Faites glisser un projet sur un domaine pour l’y déplacer ; pendant le glissement, les domaines réduits et vides (ainsi que **Aucun domaine**) apparaissent également comme cibles de dépôt.
 - **Déplacer des tâches par glisser-déposer** : faites glisser une tâche depuis la liste du projet ouvert sur un autre projet dans la barre latérale pour l’y déplacer (elle se place après les tâches existantes de la cible), ou sur l’en-tête d’un domaine pour en faire une tâche directement rattachée à ce domaine. Cela fonctionne dans tous les modes de tri ; une notification **Déplacée vers…** permet d’annuler en un clic, et les projets archivés n’acceptent pas les dépôts.
@@ -202,7 +202,7 @@ Cliquez sur une barre pour ouvrir la tâche, ou sur le nom d’un projet pour ou
 
 Les changements sont prévisualisés pendant le déplacement et enregistrés au relâchement. **Échap** annule le déplacement ; un changement enregistré propose **Annuler**. Si les mêmes dates changent ailleurs pendant le déplacement, le relâchement ne les écrase pas. La Chronologie ne replanifie pas les dépendances ou les jours fériés.
 
-À partir de **v1.3.7**, la Chronologie partage l’ordre des projets et des tâches avec **Projets**. Les groupes de projets suivent l’ordre des domaines et des projets ; les tâches suivent l’ordre des sections de leur projet et le tri choisi. Avec le tri du projet sur **Défaut**, utilisez la poignée de réorganisation de la ligne pour déplacer une tâche dans sa section ou un projet dans son domaine. Lorsque la poignée a le focus, appuyez sur **Espace** pour saisir l’élément, utilisez les flèches pour le déplacer, puis appuyez sur **Espace** pour le déposer ou sur **Échap** pour annuler.
+La Chronologie partage l’ordre des projets et des tâches avec **Projets**. Les groupes de projets suivent l’ordre des domaines et des projets ; les tâches suivent l’ordre des sections de leur projet et le tri choisi. Avec le tri du projet sur **Défaut**, utilisez la poignée de réorganisation de la ligne pour déplacer une tâche dans sa section ou un projet dans son domaine. Lorsque la poignée a le focus, appuyez sur **Espace** pour saisir l’élément, utilisez les flèches pour le déplacer, puis appuyez sur **Espace** pour le déposer ou sur **Échap** pour annuler.
 
 La réorganisation verticale modifie l’ordre partagé, y compris la séquence d’exécution des projets séquentiels, sans changer les dates ni déplacer les tâches vers un autre projet ou une autre section. Les tâches et les projets masqués par les filtres de la Chronologie conservent leur ordre relatif. Le tri explicitement choisi pour un projet est respecté ; passez-le sur Défaut dans Projets pour permettre la réorganisation manuelle des tâches. Les tâches sans projet n’ont pas d’ordre de projet partagé à modifier.
 
@@ -242,7 +242,7 @@ Utilisez l’action **Traiter la Boîte de réception** dans la revue pour vider
 
 Consultez [Revue hebdomadaire](/fr/use/weekly-review) pour obtenir des conseils détaillés.
 
-Depuis la v1.3.7, les cartes de concentration de la revue quotidienne affichent les dates de début et d’échéance, avec l’étoile comme action principale. Dans l’étape des projets de la revue hebdomadaire, vous pouvez terminer un projet sans quitter la revue. S’il reste des tâches inachevées, la confirmation précise qu’elles seront également terminées ; l’absence de prochaine action ne termine jamais automatiquement un projet.
+Les cartes de concentration de la revue quotidienne affichent les dates de début et d’échéance, avec l’étoile comme action principale. Dans l’étape des projets de la revue hebdomadaire, vous pouvez terminer un projet sans quitter la revue. S’il reste des tâches inachevées, la confirmation précise qu’elles seront également terminées ; l’absence de prochaine action ne termine jamais automatiquement un projet.
 
 
 
@@ -281,7 +281,7 @@ Utilisez les listes de contrôle comme modèles :
 - Le champ **titre** comprend aussi les jetons de saisie rapide. Tapez `@`, `#`, `+`, `!`, `%` ou `/` pour ouvrir les suggestions, puis appuyez sur `Enter` ou `Tab` : le choix va dans son champ (contexte, étiquette, projet, domaine, personne, date, statut) et le jeton quitte le titre. Le texte saisi sans accepter de suggestion reste tel quel dans le titre, donc un titre comme `Review 100% target` ne risque rien.
 - Dans **Paramètres → GTD → Mise en page de l’éditeur de tâche**, choisissez **Dans la ligne** pour modifier la tâche à la place de sa ligne, ou **Fenêtre contextuelle** pour ouvrir un éditeur centré sans déplacer la liste.
 
-À partir de la **v1.3.7**, l’éditeur **Fenêtre contextuelle** offre plus de place aux **Détails** à gauche et affiche les propriétés de la tâche à droite dans les fenêtres larges. Dans les fenêtres étroites, le titre, les détails et les propriétés s’empilent verticalement. Les propriétés conservent vos sections configurées et leur comportement de dépliage et de repliage ; **Enregistrer** et **Annuler** restent visibles. L’éditeur dans la ligne et la boîte de dialogue de tâche du Calendrier conservent leur disposition.
+L’éditeur **Fenêtre contextuelle** offre plus de place aux **Détails** à gauche et affiche les propriétés de la tâche à droite dans les fenêtres larges. Dans les fenêtres étroites, le titre, les détails et les propriétés s’empilent verticalement. Les propriétés conservent vos sections configurées et leur comportement de dépliage et de repliage ; **Enregistrer** et **Annuler** restent visibles. L’éditeur dans la ligne et la boîte de dialogue de tâche du Calendrier conservent leur disposition.
 
 ---
 
@@ -445,7 +445,7 @@ Mindwtr envoie des notifications sur le bureau pour vous aider à rester sur la 
 
 Les tâches avec une heure d’échéance peuvent répéter le rappel toutes les 5, 10, 15, 30 ou 60 minutes. Désactiver la répétition ne désactive pas le premier rappel.
 
-À partir de **v1.3.7**, **Paramètres → Notifications** propose un réglage par défaut pour les rappels de début/d’échéance : **Envoyer** ou **Ignorer**. Chaque tâche propose **Utiliser le réglage par défaut** (avec son effet actuel), **Envoyer** et **Ignorer**. Les nouvelles tâches suivent le réglage par défaut. Les tâches existantes conservent leur comportement jusqu’à ce que vous choisissiez explicitement le réglage par défaut. Au départ, celui-ci autorise les rappels.
+**Paramètres → Notifications** propose un réglage par défaut pour les rappels de début/d’échéance : **Envoyer** ou **Ignorer**. Chaque tâche propose **Utiliser le réglage par défaut** (avec son effet actuel), **Envoyer** et **Ignorer**. Les nouvelles tâches suivent le réglage par défaut. Les tâches existantes conservent leur comportement jusqu’à ce que vous choisissiez explicitement le réglage par défaut. Au départ, celui-ci autorise les rappels.
 
 Ignorer retire les rappels de début/d’échéance prévus et leurs répétitions sans effacer l’intervalle. Les rappels de révision, récapitulatifs quotidiens et alertes Pomodoro restent indépendants. Envoyer exige toujours une heure explicite, les notifications de tâche/début/échéance activées et l’autorisation de l’appareil.
 
@@ -454,7 +454,7 @@ Le réglage par défaut se synchronise avec le groupe **GTD**, et le choix indiv
 ### Tester un rappel de tâche
 
 1. Modifiez une tâche et fixez son **Échéance** à une heure dans quelques minutes. **Date seule** ne programme pas d’alerte à une heure précise.
-2. Dans les rappels de début/d’échéance, choisissez **Envoyer** (v1.3.7 ou ultérieure). Sur une ancienne version, désactivez **Ignorer les rappels**.
+2. Dans les rappels de début/d’échéance, choisissez **Envoyer**. Dans la version 1.3.6 et antérieures, désactivez **Ignorer les rappels**.
 3. Enregistrez la tâche. Dans **Paramètres → Notifications**, activez les notifications de tâches et les rappels d’échéance. Sur macOS, autorisez aussi Mindwtr dans **Réglages Système → Notifications**.
 4. Attendez l’heure d’échéance. Si vous avez modifié la tâche sur un autre appareil, laissez d’abord cet ordinateur synchroniser la nouvelle heure.
 
@@ -689,7 +689,7 @@ Pour WebDAV, configurez :
 
 Consultez [Données et synchronisation](/fr/data-sync/) pour obtenir des instructions détaillées.
 
-Depuis la v1.3.7, la bannière de synchronisation HTTP peut être masquée pour cette destination sur cet appareil. Une autre destination affiche de nouveau l’avertissement, et les paramètres de synchronisation continuent d’indiquer l’utilisation de HTTP. Masquer la bannière n’autorise pas les connexions non sécurisées et ne chiffre pas la connexion.
+La bannière de synchronisation HTTP peut être masquée pour cette destination sur cet appareil. Une autre destination affiche de nouveau l’avertissement, et les paramètres de synchronisation continuent d’indiquer l’utilisation de HTTP. Masquer la bannière n’autorise pas les connexions non sécurisées et ne chiffre pas la connexion.
 
 ### Avancé
 - **Clavier et fenêtre** : préréglage des raccourcis clavier (Standard, Vim ou Emacs), décorations de fenêtre, comportement à la fermeture, icône de la zone de notification et **Lancer au démarrage**. Cliquez sur la carte pour l’ouvrir.

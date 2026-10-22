@@ -28,7 +28,7 @@ Activa el servidor y mantén Mindwtr abierto. Cerrar a la bandeja lo mantiene di
 http://127.0.0.1:8722/mcp
 ```
 
-**Disponible a partir de v1.3.7:** los controles siguientes añaden la copia de la configuración de Codex, un puerto configurable y permisos de escritura separados. Las versiones anteriores usan un puerto fijo y un único interruptor **Permitir cambios**.
+Los controles siguientes añaden la copia de la configuración de Codex, un puerto configurable y permisos de escritura separados. Las versiones anteriores usan un puerto fijo y un único interruptor **Permitir cambios**.
 
 ### Conectar Codex
 

@@ -45,11 +45,11 @@ Select several areas to see them together, or exclude one to see everything exce
 
 **Inbox stays unified on desktop and mobile.** Its list, count, and **Process Inbox** queue include items from every area, including **No area**, regardless of the area filter. The Inbox count and processing step in Review follow the same rule. Inbox shows **All areas**; opening it keeps your filter selection for other views and preserves any areas already assigned to tasks.
 
-From v1.3.7, Area selection also filters **Today's Focus**. Hidden tasks stay starred and still occupy the global Focus limit. The Focus header shows the total selection and how many tasks are hidden by the Area filter; clearing the Area selection reveals them again. Filtering does not change task status or Focus membership.
+Area selection also filters **Today's Focus**. Hidden tasks stay starred and still occupy the global Focus limit. The Focus header shows the total selection and how many tasks are hidden by the Area filter; clearing the Area selection reveals them again. Filtering does not change task status or Focus membership.
 
 ### Project colors
 
-From v1.3.7, project settings offer an optional **Color**. Leave **Use Area color** selected to follow the current Area, or choose an override for that project. An override stays fixed when the Area changes color or the project moves; choosing **Use Area color** again restores inheritance. This changes project identity accents, not priority or overdue warnings. Update all syncing devices before relying on overrides: older versions may drop them when editing a project.
+Project settings offer an optional **Color**. Leave **Use Area color** selected to follow the current Area, or choose an override for that project. An override stays fixed when the Area changes color or the project moves; choosing **Use Area color** again restores inheritance. This changes project identity accents, not priority or overdue warnings. Update all syncing devices before relying on overrides: older versions may drop them when editing a project.
 
 ## People
 

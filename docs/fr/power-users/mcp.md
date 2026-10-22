@@ -28,7 +28,7 @@ Activez le serveur et gardez Mindwtr ouvert. La réduction dans la zone de notif
 http://127.0.0.1:8722/mcp
 ```
 
-**Disponible à partir de v1.3.7 :** les commandes ci-dessous ajoutent la copie de la configuration Codex, un port configurable et des autorisations d’écriture distinctes. Les versions précédentes utilisent un port fixe et une seule option **Autoriser les modifications**.
+Les commandes ci-dessous ajoutent la copie de la configuration Codex, un port configurable et des autorisations d’écriture distinctes. Les versions précédentes utilisent un port fixe et une seule option **Autoriser les modifications**.
 
 ### Connecter Codex
 

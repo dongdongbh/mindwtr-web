@@ -234,7 +234,7 @@ Cette invite propose aussi **Enregistrer et modifier**. Elle enregistre la tâch
 
 **Séquentiel → Entre les sections** suit l’ordre manuel affiché avec le tri **Par défaut** : d’abord les sections, puis les tâches de chaque section, avec **Sans section** en dernier. Déplacer une section ou une tâche modifie cette séquence. Trier l’affichage par titre, priorité ou date ne la modifie pas. **Au sein des sections** sélectionne toujours une tâche par section ; les exceptions existantes pour les tâches marquées, les échéances et les dates de révision restent applicables.
 
-À partir de la v1.3.7, le **Mode de déroulement** d’un projet peut aussi être **Par section** : chaque section est parallèle ou séquentielle, et les tâches sans section sont parallèles. Les sections n’attendent jamais les unes les autres. Les étapes figurent dans [Bureau](/fr/use/desktop) et [Mobile](/fr/use/mobile).
+Le **Mode de déroulement** d’un projet peut aussi être **Par section** : chaque section est parallèle ou séquentielle, et les tâches sans section sont parallèles. Les sections n’attendent jamais les unes les autres. Les étapes figurent dans [Bureau](/fr/use/desktop) et [Mobile](/fr/use/mobile).
 
 ### Dates d’échéance et rappels
 

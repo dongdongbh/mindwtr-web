@@ -13,7 +13,7 @@ Mindwtr permet de joindre des fichiers et des liens aux **tâches** et aux **pro
 
 ### Navigateur / PWA
 
-À partir de v1.3.7, les envois en ligne depuis le navigateur fonctionnent avec **Mindwtr Cloud auto-hébergé**, lorsque le chiffrement de synchronisation est désactivé. Sélectionnez ou déposez des fichiers dans une tâche, ou collez une image dans la capture rapide ou la description. Les autres services restent incompatibles ; Mindwtr ne change pas de service et ne désactive pas le chiffrement.
+Les envois en ligne depuis le navigateur fonctionnent avec **Mindwtr Cloud auto-hébergé**, lorsque le chiffrement de synchronisation est désactivé. Sélectionnez ou déposez des fichiers dans une tâche, ou collez une image dans la capture rapide ou la description. Les autres services restent incompatibles ; Mindwtr ne change pas de service et ne désactive pas le chiffrement.
 
 Les fichiers restent dans le brouillon jusqu’à **Enregistrer**, avec une limite de **50 Mio par fichier** ; le serveur ou proxy peut imposer une limite inférieure. En cas d’échec, gardez le brouillon ouvert et réessayez ou retirez le fichier. La capture de texte fonctionne toujours hors ligne. Fermer l’onglet fait perdre les fichiers sélectionnés non enregistrés. Un échec de synchronisation ne fait pas supprimer par le nettoyage du brouillon les fichiers déjà référencés par une tâche enregistrée.
 

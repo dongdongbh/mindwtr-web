@@ -45,11 +45,11 @@ Selecciona varias áreas para verlas juntas, o excluye una para ver todo lo dem�
 
 **La Bandeja de entrada se mantiene unificada en escritorio y móvil.** Su lista, contador y cola de **Procesar bandeja de entrada** incluyen elementos de todas las áreas, también **Sin área**, independientemente del filtro. El contador y el paso de procesamiento de la bandeja en Revisión siguen la misma regla. La bandeja muestra **Todas las áreas**; al abrirla se conservan el filtro para las demás vistas y las áreas ya asignadas a las tareas.
 
-Desde v1.3.7, la selección de áreas también filtra **El foco de hoy**. Las tareas ocultas conservan su estrella y siguen contando para el límite global de Foco. El encabezado muestra la selección total y cuántas tareas oculta el filtro de áreas; borra la selección de áreas para volver a verlas. Filtrar no cambia el estado de las tareas ni su pertenencia a Foco.
+La selección de áreas también filtra **El foco de hoy**. Las tareas ocultas conservan su estrella y siguen contando para el límite global de Foco. El encabezado muestra la selección total y cuántas tareas oculta el filtro de áreas; borra la selección de áreas para volver a verlas. Filtrar no cambia el estado de las tareas ni su pertenencia a Foco.
 
 ### Colores de proyectos
 
-Desde v1.3.7, los ajustes del proyecto ofrecen un **Color** opcional. Mantén **Usar el color del área** para seguir el área actual o elige un color propio. El color propio se conserva al cambiar el color del área o mover el proyecto; vuelve a elegir **Usar el color del área** para restaurar la herencia. Solo cambia los indicadores del proyecto, no las advertencias de prioridad o vencimiento. Actualiza todos los dispositivos que sincronizan: las versiones antiguas pueden perder el color propio al editar un proyecto.
+Los ajustes del proyecto ofrecen un **Color** opcional. Mantén **Usar el color del área** para seguir el área actual o elige un color propio. El color propio se conserva al cambiar el color del área o mover el proyecto; vuelve a elegir **Usar el color del área** para restaurar la herencia. Solo cambia los indicadores del proyecto, no las advertencias de prioridad o vencimiento. Actualiza todos los dispositivos que sincronizan: las versiones antiguas pueden perder el color propio al editar un proyecto.
 
 ## Personas
 

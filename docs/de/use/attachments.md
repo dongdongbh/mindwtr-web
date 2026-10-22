@@ -13,7 +13,7 @@ Mit Mindwtr können Sie Dateien und Links an **Aufgaben** und **Projekte** anhä
 
 ### Browser / PWA
 
-Ab v1.3.7 funktionieren Online-Uploads im Browser mit **selbst gehosteter Mindwtr Cloud**, wenn die Sync-Verschlüsselung aus ist. Wähle Dateien für eine Aufgabe aus, ziehe sie hinein oder füge ein Bild in Schnellerfassung bzw. Aufgabenbeschreibung ein. Andere Backends bleiben ausgeschlossen; Mindwtr wechselt weder das Backend noch schaltet es die Verschlüsselung aus.
+Online-Uploads im Browser funktionieren mit **selbst gehosteter Mindwtr Cloud**, wenn die Sync-Verschlüsselung aus ist. Wähle Dateien für eine Aufgabe aus, ziehe sie hinein oder füge ein Bild in Schnellerfassung bzw. Aufgabenbeschreibung ein. Andere Backends bleiben ausgeschlossen; Mindwtr wechselt weder das Backend noch schaltet es die Verschlüsselung aus.
 
 Dateien bleiben bis **Speichern** im Entwurf. Das Limit beträgt **50 MiB pro Datei**; Server oder Proxy können ein niedrigeres Limit haben. Bei einem Fehler lasse den Entwurf offen und versuche es erneut oder entferne die Datei. Reiner Text lässt sich weiterhin offline erfassen. Beim Schließen des Tabs gehen ungespeicherte Dateiauswahlen verloren. Ein Sync-Fehler führt nicht dazu, dass die Entwurfsbereinigung bereits von einer gespeicherten Aufgabe verwendete Dateien löscht.
 

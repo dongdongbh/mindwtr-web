@@ -26,7 +26,7 @@ Most task lists share the same control row for selecting tasks, filtering, sorti
 
 Drag a task onto **Inbox**, **Someday/Maybe**, **Waiting For**, **Reference**, or **History** in the sidebar to change its status; dropping it on **History** marks it done, and the toast offers **Undo**. Drag the task over the header of a folded sidebar group, such as **More**, to open that group while you drag. **Trash** is not a drop target. Drop the task on **Calendar**, or pause over Calendar while dragging, to open today with the task still in hand. Schedule view switches to Week so you can drop it on a day and time.
 
-From v1.3.7, hovering briefly over Dates, Move to, Contexts, or Priority in a task menu opens its panel. Click and keyboard navigation still work. Opening a start or due date deliberately also opens its calendar; changing a date and time still requires **Save**. Hovering does not apply changes or replace an edited draft.
+Hovering briefly over Dates, Move to, Contexts, or Priority in a task menu opens its panel. Click and keyboard navigation still work. Opening a start or due date deliberately also opens its calendar; changing a date and time still requires **Save**. Hovering does not apply changes or replace an edited draft.
 
 ## Reference
 
@@ -98,7 +98,7 @@ Starting with v1.3.4, **Settings → GTD → Include tasks starting today in Tod
 - **Zen Mode**: Toggle to hide everything except Today's Focus tasks.
 - **Pomodoro (Optional)**: Enable in **Settings → GTD → Features → Pomodoro timer** to show a focus/break timer panel (15/3, 25/5, 50/10, plus one optional custom preset). Leave it as **Timer only**, or turn on **Link timer to task** to show the Timer task picker and **Mark task done** action.
 
-**Task dates (v1.3.7, not yet released).** In **Filters → Task dates**, choose **Today**, **Next 7 days**, **Next 14 days**, **Next 30 days**, or **All upcoming**. A task matches if its start, due, or review date falls in the range. Rolling ranges include today and use local calendar days; All upcoming includes today and later dates. Choose **Any time** to remove this condition. Other filters and the view’s normal visibility rules still apply; this does not change Focus’s Upcoming section or include calendar events.
+**Task dates.** In **Filters → Task dates**, choose **Today**, **Next 7 days**, **Next 14 days**, **Next 30 days**, or **All upcoming**. A task matches if its start, due, or review date falls in the range. Rolling ranges include today and use local calendar days; All upcoming includes today and later dates. Choose **Any time** to remove this condition. Other filters and the view’s normal visibility rules still apply; this does not change Focus’s Upcoming section or include calendar events.
 
 ### 📁 Projects
 
@@ -107,7 +107,7 @@ Multi-step outcomes containing related tasks.
 - **Sequential mode**: Only the first available project task appears in Focus; in the project view the available action is highlighted and queued tasks render muted
 - **Parallel mode**: All available project tasks can appear in Focus
 - **Sequential scope**: Sequential projects can advance project-wide or section-by-section; section scope shows the first available task in each section.
-- **Per section mode**: Starting with v1.3.7, set the project's **Flow Mode** to **Per section** to make each section Parallel or Sequential. Open a section's **⋯** menu and choose **Flow Mode → Parallel** or **Sequential**. A small label next to the section name shows the choice, only in Per section mode. A Sequential section offers only its first available task, with the same rules as Sequential projects: a Waiting first step holds the slot, and Focus may still show a starred or due task. A Parallel section, and tasks with no section, offer all their tasks. Sections never wait for each other, and section order creates no dependency. Switching from **Sequential → Within sections** starts every section as Sequential; switching from Parallel or **Sequential → Across sections** starts them as Parallel. Section choices are kept if you switch to another mode and back. Older app versions (1.3.6 and earlier) show a Per section project as Parallel.
+- **Per section mode**: Set the project's **Flow Mode** to **Per section** to make each section Parallel or Sequential. Open a section's **⋯** menu and choose **Flow Mode → Parallel** or **Sequential**. A small label next to the section name shows the choice, only in Per section mode. A Sequential section offers only its first available task, with the same rules as Sequential projects: a Waiting first step holds the slot, and Focus may still show a starred or due task. A Parallel section, and tasks with no section, offer all their tasks. Sections never wait for each other, and section order creates no dependency. Switching from **Sequential → Within sections** starts every section as Sequential; switching from Parallel or **Sequential → Across sections** starts them as Parallel. Section choices are kept if you switch to another mode and back. Older app versions (1.3.6 and earlier) show a Per section project as Parallel.
 - **Status**: Active, Waiting, Someday, Archived
 - **Areas of Focus**: Group projects by higher-level areas (e.g., Work, Health) to keep your sidebar organized. Drag a project onto an area to move it there; while dragging, collapsed and empty areas (and **No area**) show up as drop targets too.
 - **Move tasks by drag**: Use the task's drag handle in the open project's list to drag it onto another project in the sidebar to move it there (it lands after the target's existing tasks), or onto an area header to make it a direct area task. Works in every sort mode; a **Moved to …** toast offers one-click Undo, and archived projects don't accept drops.
@@ -122,7 +122,7 @@ Multi-step outcomes containing related tasks.
 
 Starting with v1.3.4, **Convert to section…** in the project actions menu moves a simple project into another project. Choose the destination and section name, then review the task count before confirming. Project notes become section notes; all non-deleted tasks move with their contents, status, and relative order intact, including completed and archived tasks. The source project moves to Trash. Moved tasks use the destination’s Area; the source project’s color is not carried over. **Undo** restores the original containers without replacing later edits to task contents.
 
-Conversion requires active projects. Parallel projects can be converted into parallel destinations. Starting with v1.3.7, a sequential project can also be converted into a destination already set to **Sequential → Within sections**: the new section keeps its task sequence, while other sections continue independently. A sequential project converted into a **Per section** destination becomes a Sequential section. Conversion never changes the destination’s flow mode. The source cannot have sections or project metadata that a section cannot retain, such as attachments, dates, tags, a priority star, or a custom task sort. Task attachments and dates do not block conversion. **Undo** also restores the source project’s sequential mode and task order.
+Conversion requires active projects. Parallel projects can be converted into parallel destinations. A sequential project can also be converted into a destination already set to **Sequential → Within sections**: the new section keeps its task sequence, while other sections continue independently. A sequential project converted into a **Per section** destination becomes a Sequential section. Conversion never changes the destination’s flow mode. The source cannot have sections or project metadata that a section cannot retain, such as attachments, dates, tags, a priority star, or a custom task sort. Task attachments and dates do not block conversion. **Undo** also restores the source project’s sequential mode and task order.
 
 The **Project Section** field in the task editor assigns a task to one of the sections in its current project. It only has a useful value after the task belongs to a project that has sections.
 
@@ -210,7 +210,7 @@ Click a bar to open the task, or a project's name to open the project. To edit d
 
 Changes are previewed while dragging and saved on drop. **Escape** cancels a drag; a saved change offers **Undo**. If the same dates change elsewhere during a drag, the drop does not overwrite them. Timeline does not reschedule dependencies or holidays.
 
-Starting with **v1.3.7**, Timeline shares project and task ordering with **Projects**. Project groups follow area and project order; tasks follow their project’s section order and selected sort. With the project sort set to **Default**, use the row’s reorder handle to move a task within its section or a project within its area. With the handle focused, press **Space** to pick up, use the arrow keys to move, and press **Space** to drop or **Escape** to cancel.
+Timeline shares project and task ordering with **Projects**. Project groups follow area and project order; tasks follow their project’s section order and selected sort. With the project sort set to **Default**, use the row’s reorder handle to move a task within its section or a project within its area. With the handle focused, press **Space** to pick up, use the arrow keys to move, and press **Space** to drop or **Escape** to cancel.
 
 Vertical reordering changes the shared order, including the execution sequence of sequential projects, without changing dates or moving tasks into another project or section. Tasks and projects hidden by Timeline filters retain their relative order. A project’s explicit sort choice is respected; switch it to Default in Projects to enable manual task reordering. Tasks without a project have no shared project order to edit.
 
@@ -256,7 +256,7 @@ Use the **Process Inbox** action in the review to clear captured items before co
 
 See [Weekly Review](/use/weekly-review) for detailed guidance.
 
-From v1.3.7, Daily Review’s Focus cards show start and due dates while keeping the star as the main action. In Weekly Review’s project step, you can complete a project without leaving the review. If unfinished tasks remain, confirmation explains that completing the project also completes those tasks; a missing next action alone never completes a project.
+Daily Review’s Focus cards show start and due dates while keeping the star as the main action. In Weekly Review’s project step, you can complete a project without leaving the review. If unfinished tasks remain, confirmation explains that completing the project also completes those tasks; a missing next action alone never completes a project.
 
 
 
@@ -295,7 +295,7 @@ Use checklists as templates:
 - The **title** field understands the quick-add tokens too. Type `@`, `#`, `+`, `!`, `%` or `/` to open suggestions, then press `Enter` or `Tab`: the choice goes into its field (context, tag, project, area, person, date, status) and the token leaves the title. Text you type without accepting a suggestion stays in the title as written, so a title like `Review 100% target` is safe.
 - In **Settings → GTD → Task Editor Layout**, choose **In-row** to edit where the task row was, or **Pop-up** to open a centered editor without shifting the list.
 
-Starting with **v1.3.7**, the **Pop-up** editor gives **Details** more room on the left and puts task properties on the right in wide windows. In narrow windows, the title, Details and properties stack vertically. Properties keep your configured sections and expand/collapse behavior, while **Save** and **Cancel** stay visible. The in-row editor and Calendar task dialog keep their existing layouts.
+The **Pop-up** editor gives **Details** more room on the left and puts task properties on the right in wide windows. In narrow windows, the title, Details and properties stack vertically. Properties keep your configured sections and expand/collapse behavior, while **Save** and **Cancel** stay visible. The in-row editor and Calendar task dialog keep their existing layouts.
 
 ---
 
@@ -459,7 +459,7 @@ Mindwtr sends desktop notifications to keep you on track:
 
 Tasks with a due time can set **Repeat reminder** to 5, 10, 15, 30, or 60 minutes after the due reminder. **Repeat reminder: Off** still allows the first due reminder.
 
-Starting in **v1.3.7**, **Settings → Notifications → Default task reminders** chooses **Send** or **Skip** for new tasks. Each task has **Start/due reminders**: **Use default** (showing its current effect), **Send**, or **Skip**. Existing tasks keep their previous send/skip behavior until you deliberately choose **Use default**. The initial default is Send.
+**Settings → Notifications → Default task reminders** chooses **Send** or **Skip** for new tasks. Each task has **Start/due reminders**: **Use default** (showing its current effect), **Send**, or **Skip**. Existing tasks keep their previous send/skip behavior until you deliberately choose **Use default**. The initial default is Send.
 
 Skip withdraws pending start/due reminders and their repeats without erasing the repeat interval. Review reminders, daily digests, and Pomodoro alerts are separate. Send still requires an explicit start/due time, enabled task/start/due notifications, and device permission; it does not enable those switches for you.
 
@@ -468,7 +468,7 @@ The default follows the **GTD** settings-sync group; each task's choice syncs wi
 ### Test a task reminder
 
 1. Edit a task and set its **Due date** to a time a few minutes ahead. **Date only** does not schedule a timed alert.
-2. In **Start/due reminders**, choose **Send** (v1.3.7 or later). On older versions, turn **Skip reminders** off.
+2. In **Start/due reminders**, choose **Send**. On 1.3.6 and earlier, turn **Skip reminders** off.
 3. Save the task. In **Settings → Notifications**, enable task notifications and due reminders. On macOS, also allow Mindwtr in **System Settings → Notifications**.
 4. Wait for the due time. If you edited the task on another device, let this computer sync the new time first.
 
@@ -705,7 +705,7 @@ For WebDAV, configure:
 
 See [Data and Sync](/data-sync/) for detailed setup.
 
-From v1.3.7, the HTTP sync banner can be dismissed for that destination on this device. A different destination shows the warning again, and Sync settings still indicates HTTP use. Dismissal does not enable insecure connections or encrypt the connection.
+The HTTP sync banner can be dismissed for that destination on this device. A different destination shows the warning again, and Sync settings still indicates HTTP use. Dismissal does not enable insecure connections or encrypt the connection.
 
 ### Advanced
 - **Keyboard and window**: keyboard shortcut preset (Standard, Vim, or Emacs), window decorations, close behaviour, tray icon, and **Launch at Startup**. Click the card to open it.

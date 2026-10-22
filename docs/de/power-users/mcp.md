@@ -28,7 +28,7 @@ Aktivieren Sie den Server und lassen Sie Mindwtr laufen. Beim Schließen in den 
 http://127.0.0.1:8722/mcp
 ```
 
-**Verfügbar ab v1.3.7:** Die folgenden Steuerelemente ergänzen das Kopieren der Codex-Konfiguration, einen einstellbaren Port und separate Schreibberechtigungen. Frühere Versionen verwenden einen festen Port und einen einzelnen Schalter **Änderungen erlauben**.
+Die folgenden Steuerelemente ergänzen das Kopieren der Codex-Konfiguration, einen einstellbaren Port und separate Schreibberechtigungen. Frühere Versionen verwenden einen festen Port und einen einzelnen Schalter **Änderungen erlauben**.
 
 ### Codex verbinden
 

@@ -234,7 +234,7 @@ This prompt also offers **Save & edit**. It saves the follow-up and opens the ta
 
 **Sequential → Across Sections** follows the manual order shown with **Default** sorting: section order first, then task order within each section, with **No Section** last. Moving a section or task changes that sequence. Sorting the display by title, priority or date does not change it. **Within Sections** still selects a task independently for each section; existing starred, due-date and review-date exceptions still apply.
 
-Starting with v1.3.7, a project's **Flow Mode** can also be **Per section**: each section is Parallel or Sequential, and tasks with no section are Parallel. Sections never wait for each other. See [Desktop](/use/desktop) or [Mobile](/use/mobile) for the steps.
+A project's **Flow Mode** can also be **Per section**: each section is Parallel or Sequential, and tasks with no section are Parallel. Sections never wait for each other. See [Desktop](/use/desktop) or [Mobile](/use/mobile) for the steps.
 
 ### Due Dates and Reminders
 

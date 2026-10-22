@@ -155,7 +155,7 @@ The context will be added and available for filtering.
 
 ### Managing Saved Contexts and Tags
 
-From **v1.3.7**, you can create contexts and tags before assigning them to a task. Open **Settings → Manage**, then choose **Add** under **Contexts** or **Tags**. New names entered while saving a task are also remembered. Saved names remain available in autocomplete after their last assignment is removed; cancelling a draft does not save its new names.
+You can create contexts and tags before assigning them to a task. Open **Settings → Manage**, then choose **Add** under **Contexts** or **Tags**. New names entered while saving a task are also remembered. Saved names remain available in autocomplete after their last assignment is removed; cancelling a draft does not save its new names.
 
 Saved contexts and tags sync between updated devices. Update all devices before relying on this catalogue: older app versions can omit it when uploading sync data.
 

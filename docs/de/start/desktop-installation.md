@@ -102,6 +102,18 @@ sudo snap install mindwtr
 
 [Snap-Store-Eintrag](https://snapcraft.io/mindwtr)
 
+### Nix / NixOS (Community-Paket)
+
+Das [von der Community gepflegte Nix-Flake](https://github.com/TheRealGramdalf/mindwtr-flake) bietet Desktop-, Web- und Cloud-Pakete für `x86_64-linux`. Es wird unabhängig von den offiziellen Mindwtr-Releases gepflegt und vom Maintainer derzeit als experimentell bezeichnet.
+
+Mit aktivierten Nix-Flakes starten Sie die Desktop-App so:
+
+```bash
+nix run github:therealgramdalf/mindwtr-flake
+```
+
+Die README des Flakes beschreibt die NixOS-Konfiguration und Updates. Melden Sie Paketierungs- oder Build-Probleme im [Flake-Repository](https://github.com/TheRealGramdalf/mindwtr-flake/issues).
+
 ### AppImage (universell)
 
 [![AppImage](https://img.shields.io/badge/AppImage-Download-2A6DB2?logo=appimage&logoColor=white)](https://appimage.github.io/Mindwtr/)
@@ -127,7 +139,6 @@ chmod +x Mindwtr-*.AppImage
 
 Verwenden Sie für andere Distributionen das AppImage oder bauen Sie Mindwtr aus dem Quellcode (siehe [Entwicklerhandbuch](/de/developers/developer-guide)).
 
-Von der Community gepflegte Pakete (zum Beispiel nixpkgs für NixOS) sind willkommen. Der Desktop-Build bringt seine TLS-Abhängigkeit mit, daher muss die Paketierung nicht mit einer systemweiten OpenSSL-Version übereinstimmen. Wenn Sie ein Paket pflegen, eröffnen Sie eine Diskussion, damit es hier verlinkt werden kann.
 
 ---
 

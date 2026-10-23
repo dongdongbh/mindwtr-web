@@ -102,6 +102,18 @@ sudo snap install mindwtr
 
 [Snap Store listing](https://snapcraft.io/mindwtr)
 
+### Nix / NixOS (community-maintained)
+
+The [community-maintained Nix flake](https://github.com/TheRealGramdalf/mindwtr-flake) provides desktop, web and Cloud packages for `x86_64-linux`. It is maintained separately from official Mindwtr releases and is currently marked experimental by its maintainer.
+
+With Nix flakes enabled, run the desktop app:
+
+```bash
+nix run github:therealgramdalf/mindwtr-flake
+```
+
+See the flake README for NixOS configuration and updates. Report packaging or build problems in the [flake repository](https://github.com/TheRealGramdalf/mindwtr-flake/issues).
+
 ### AppImage (Universal)
 
 [![AppImage](https://img.shields.io/badge/AppImage-Download-2A6DB2?logo=appimage&logoColor=white)](https://appimage.github.io/Mindwtr/)
@@ -127,7 +139,6 @@ chmod +x Mindwtr-*.AppImage
 
 For other distributions, use the AppImage or build from source (see [Developer Guide](/developers/developer-guide)).
 
-Community-maintained packages (for example nixpkgs for NixOS) are welcome. The desktop build vendors its TLS dependency, so packaging does not need a system OpenSSL match. If you maintain one, open a discussion so it can be linked here.
 
 ---
 

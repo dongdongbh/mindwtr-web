@@ -102,6 +102,18 @@ sudo snap install mindwtr
 
 [Snap Store 頁面](https://snapcraft.io/mindwtr)
 
+### Nix / NixOS（社群維護）
+
+[社群維護的 Nix flake](https://github.com/TheRealGramdalf/mindwtr-flake) 提供適用於 `x86_64-linux` 的桌面、Web 和 Cloud 套件。它獨立於 Mindwtr 官方發布維護，目前維護者將其標記為實驗性。
+
+啟用 Nix flakes 後，可執行桌面應用程式：
+
+```bash
+nix run github:therealgramdalf/mindwtr-flake
+```
+
+NixOS 設定和更新方法請參閱 flake 的 README。套件或建置問題請提交到 [flake 儲存庫](https://github.com/TheRealGramdalf/mindwtr-flake/issues)。
+
 ### AppImage（通用）
 
 [![AppImage](https://img.shields.io/badge/AppImage-Download-2A6DB2?logo=appimage&logoColor=white)](https://appimage.github.io/Mindwtr/)
@@ -127,7 +139,6 @@ chmod +x Mindwtr-*.AppImage
 
 其他發行版請使用 AppImage，或從原始碼建置（請參閱[開發者指南](/zh-Hant/developers/developer-guide)）。
 
-歡迎提供社群維護的套件（例如 NixOS 的 nixpkgs）。桌面組建已隨附其 TLS 相依套件，因此封裝時不必符合系統的 OpenSSL 版本。如果你在維護套件，請提出 discussion，讓我們能在此加入連結。
 
 ---
 

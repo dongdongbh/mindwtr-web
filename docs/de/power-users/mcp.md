@@ -438,6 +438,7 @@ Für den Schreibzugriff wird ausschließlich `--write` unterstützt (keine alter
 | `mindwtr_list_tasks`     | Aufgaben auflisten       | Nein                |
 | `mindwtr_list_projects`  | Projekte auflisten       | Nein                |
 | `mindwtr_get_project`    | Ein Projekt abrufen      | Nein                |
+| `mindwtr_list_view_sections` | Ansichtsabschnitte auflisten | Nein |
 | `mindwtr_list_sections`  | Abschnitte auflisten     | Nein                |
 | `mindwtr_get_section`    | Einen Abschnitt abrufen  | Nein                |
 | `mindwtr_list_areas`     | Bereiche auflisten       | Nein                |
@@ -515,6 +516,7 @@ Verwenden Sie diese Matrix, um zu entscheiden, ob der Server schreibgeschützt o
 | `mindwtr_list_tasks`     | Aufgabenzeilen (gefiltert) | Keine                      | Erlaubt                  | Erlaubt         |
 | `mindwtr_list_projects`  | Projektzeilen            | Keine                        | Erlaubt                  | Erlaubt         |
 | `mindwtr_get_project`    | Einzelnes Projekt nach ID | Keine                       | Erlaubt                  | Erlaubt         |
+| `mindwtr_list_view_sections` | Ansichtsabschnittsdefinitionen | Keine | Erlaubt | Erlaubt |
 | `mindwtr_list_sections`  | Abschnittszeilen         | Keine                        | Erlaubt                  | Erlaubt         |
 | `mindwtr_get_section`    | Einzelner Abschnitt nach ID | Keine                     | Erlaubt                  | Erlaubt         |
 | `mindwtr_list_areas`     | Bereichszeilen           | Keine                        | Erlaubt                  | Erlaubt         |
@@ -675,6 +677,28 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 { "id": "project-uuid" }
 ```
 
+### `mindwtr_list_view_sections`
+
+MCP 1.1.13 unterstützt dies noch nicht; verwende einen Build mit [der Korrektur für #1439](https://github.com/dongdongbh/Mindwtr/issues/1439).
+
+Liest die Abschnitts-IDs und Namen für Irgendwann, Warten und Fokus. Im lokalen Datenbank- und Cloud-Modus verfügbar, auch ohne Schreibrechte; im Local-API-Modus ausgeblendet. Nur Abschnittsdefinitionen werden zurückgegeben, nicht alle Einstellungen. `mindwtr_list_sections` listet weiterhin Projektabschnitte auf.
+
+Optionale Eingabe: `view` (`someday`, `waiting` oder `focus`); ohne Angabe werden alle drei Ansichten aufgelistet. Die Reihenfolge entspricht der Abschnittsreihenfolge in der App.
+
+Die Werkzeuge zum Erstellen und Aktualisieren von Aufgaben und Projekten akzeptieren `viewSectionIds`, etwa `{"someday":"section-uuid"}`. Die Zuordnung ändert den Status nicht. Eine Aktualisierung ersetzt die gesamte Zuordnung: Andere Zuordnungen, die erhalten bleiben sollen, müssen ebenfalls enthalten sein. Ohne das Feld bleibt die Zuordnung unverändert; `{}` oder `null` löscht sie bei einer Aktualisierung. Der Local-API-Modus unterstützt Aufgaben-Zuordnungen, lehnt Projekt-Zuordnungen jedoch ab und kann keine Ansichtsabschnittsdefinitionen auflisten.
+
+```json
+{ "view": "someday" }
+```
+
+```json
+{
+  "viewSections": [
+    { "view": "someday", "id": "section-uuid", "title": "Ideas", "order": 0 }
+  ]
+}
+```
+
 ### `mindwtr_list_sections`
 
 **Eingabefelder**
@@ -792,7 +816,7 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 - `energyLevel`: `low | medium | high`
 - `assignedTo`: string
 - `timeEstimate`: `5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
-- Weitere beschreibbare Felder: `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `attachments`
+- Weitere beschreibbare Felder: `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `viewSectionIds`, `attachments`
 
 **Beispiel**
 
@@ -807,7 +831,7 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 **Eingabefelder**
 
 - `id`: string (task UUID)
-- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`, `attachments`
+- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`, `viewSectionIds`, `attachments`
 - `recurrence`: Wiederholungsobjekt, RFC-5545-RRULE-Zeichenfolge oder `null` zum Leeren
 
 **Hinweise**
@@ -856,13 +880,14 @@ Wenn Sie mehr als 500 Aufgaben benötigen, blättern Sie mit `limit` und `offset
 - `dueDate`: ISO string or `null`
 - `reviewAt`: ISO string or `null`
 - `supportNotes`: string or `null`
+- `viewSectionIds`: `{ "someday": "section-uuid" }`
 
 ### `mindwtr_update_project` (write)
 
 **Eingabefelder**
 
 - `id`: string (project UUID)
-- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`, `attachments`
+- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`, `viewSectionIds`, `attachments`
 
 ### `mindwtr_delete_project` (write)
 

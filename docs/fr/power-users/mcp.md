@@ -438,6 +438,7 @@ Seul `--write` permet l’accès en écriture (aucun autre alias).
 | `mindwtr_list_tasks`    | Répertorier les tâches        | Non             |
 | `mindwtr_list_projects` | Répertorier les projets       | Non             |
 | `mindwtr_get_project`   | Récupérer un projet           | Non             |
+| `mindwtr_list_view_sections` | Lister les sections des vues | Non |
 | `mindwtr_list_sections` | Répertorier les sections      | Non             |
 | `mindwtr_get_section`   | Récupérer une section         | Non             |
 | `mindwtr_list_areas`    | Répertorier les domaines      | Non             |
@@ -515,6 +516,7 @@ Utilisez cette matrice pour décider d’exécuter le serveur en lecture seule o
 | `mindwtr_list_tasks`    | Lignes de tâches (filtrées)   | Aucune                            | Autorisé          | Autorisé       |
 | `mindwtr_list_projects` | Lignes de projets             | Aucune                            | Autorisé          | Autorisé       |
 | `mindwtr_get_project`   | Un projet par ID              | Aucune                            | Autorisé          | Autorisé       |
+| `mindwtr_list_view_sections` | Définitions des sections des vues | Aucune | Autorisé | Autorisé |
 | `mindwtr_list_sections` | Lignes de sections            | Aucune                            | Autorisé          | Autorisé       |
 | `mindwtr_get_section`   | Une section par ID            | Aucune                            | Autorisé          | Autorisé       |
 | `mindwtr_list_areas`    | Lignes de domaines            | Aucune                            | Autorisé          | Autorisé       |
@@ -675,6 +677,28 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 { "id": "project-uuid" }
 ```
 
+### `mindwtr_list_view_sections`
+
+MCP 1.1.13 ne prend pas encore en charge cette fonction ; utilisez une version contenant [le correctif #1439](https://github.com/dongdongbh/Mindwtr/issues/1439).
+
+Lit les identifiants et noms des sections des vues Un jour, En attente et Focus. Disponible en mode base de données locale et Cloud, y compris en lecture seule ; masqué en mode Local API. Seules les définitions de sections sont renvoyées, pas tous les paramètres. `mindwtr_list_sections` continue de lister les sections de projets.
+
+Entrée facultative : `view` (`someday`, `waiting` ou `focus`) ; omettez-la pour lister les trois vues. Les lignes suivent l’ordre des sections dans l’application.
+
+Les outils de création et de mise à jour des tâches et projets acceptent `viewSectionIds`, par exemple `{"someday":"section-uuid"}`. Cette affectation ne change pas le statut. Une mise à jour remplace toute la table d’affectation : incluez les autres affectations à conserver. Omettre le champ conserve sa valeur ; `{}` ou `null` l’efface lors d’une mise à jour. Le mode Local API accepte les affectations de tâches, mais refuse celles des projets et ne peut pas lister les définitions des sections de vues.
+
+```json
+{ "view": "someday" }
+```
+
+```json
+{
+  "viewSections": [
+    { "view": "someday", "id": "section-uuid", "title": "Ideas", "order": 0 }
+  ]
+}
+```
+
 ### `mindwtr_list_sections`
 
 **Champs d’entrée**
@@ -792,7 +816,7 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 - `energyLevel` : `low | medium | high`
 - `assignedTo` : chaîne
 - `timeEstimate` : `5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
-- Autres champs modifiables : `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `attachments`
+- Autres champs modifiables : `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `viewSectionIds`, `attachments`
 
 **Exemple**
 
@@ -807,7 +831,7 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 **Champs d’entrée**
 
 - `id` : chaîne (UUID de la tâche)
-- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`, `attachments`
+- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`, `viewSectionIds`, `attachments`
 - `recurrence` : objet de récurrence, chaîne RRULE RFC 5545 ou `null` pour l’effacer
 
 **Remarques**
@@ -856,13 +880,14 @@ Si vous avez besoin de plus de 500 tâches, utilisez une pagination avec `limit`
 - `dueDate` : chaîne ISO ou `null`
 - `reviewAt` : chaîne ISO ou `null`
 - `supportNotes` : chaîne ou `null`
+- `viewSectionIds`: `{ "someday": "section-uuid" }`
 
 ### `mindwtr_update_project` (écriture)
 
 **Champs d’entrée**
 
 - `id` : chaîne (UUID du projet)
-- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`, `attachments`
+- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`, `viewSectionIds`, `attachments`
 
 ### `mindwtr_delete_project` (écriture)
 

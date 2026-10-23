@@ -438,6 +438,7 @@ node apps/mcp-server/dist/cli.js --db "/path/to/mindwtr.db"
 | `mindwtr_list_tasks`     | 列出任務           | 否             |
 | `mindwtr_list_projects`  | 列出專案           | 否             |
 | `mindwtr_get_project`    | 取得單一專案       | 否             |
+| `mindwtr_list_view_sections` | 列出檢視分區 | 否 |
 | `mindwtr_list_sections`  | 列出分區           | 否             |
 | `mindwtr_get_section`    | 取得單一分區       | 否             |
 | `mindwtr_list_areas`     | 列出領域           | 否             |
@@ -515,6 +516,7 @@ Schema 注意事項：
 | `mindwtr_list_tasks`     | 任務列（已篩選）   | 無               | 允許     | 允許           |
 | `mindwtr_list_projects`  | 專案列             | 無               | 允許     | 允許           |
 | `mindwtr_get_project`    | 依 ID 取得單一專案 | 無               | 允許     | 允許           |
+| `mindwtr_list_view_sections` | 檢視分區定義 | 無 | 允許 | 允許 |
 | `mindwtr_list_sections`  | 分區列             | 無               | 允許     | 允許           |
 | `mindwtr_get_section`    | 依 ID 取得單一分區 | 無               | 允許     | 允許           |
 | `mindwtr_list_areas`     | 領域列             | 無               | 允許     | 允許           |
@@ -675,6 +677,28 @@ Schema 注意事項：
 { "id": "project-uuid" }
 ```
 
+### `mindwtr_list_view_sections`
+
+MCP 1.1.13 尚不支援此功能；請使用包含 [#1439 修正](https://github.com/dongdongbh/Mindwtr/issues/1439)的建置版本。
+
+讀取「將來/也許」「等待」和「專注」檢視的分區 ID 與名稱。支援本機資料庫和 Cloud 模式，包括唯讀模式；在 Local API 模式下隱藏。只回傳分區定義，不暴露全部設定。`mindwtr_list_sections` 仍用於列出專案內的分區。
+
+選用參數：`view`（`someday`、`waiting` 或 `focus`）；省略時列出三個檢視。結果依應用程式中的分區順序排列。
+
+任務和專案的建立、更新工具接受 `viewSectionIds`，例如 `{"someday":"section-uuid"}`。分配分區不會改變狀態。更新會取代整個對應，因此要保留的其他分配也必須一併傳入。省略該欄位會保留原值；更新時使用 `{}` 或 `null` 可清除全部分配。Local API 模式支援任務分配，但會拒絕專案分配，也無法列出檢視分區定義。
+
+```json
+{ "view": "someday" }
+```
+
+```json
+{
+  "viewSections": [
+    { "view": "someday", "id": "section-uuid", "title": "Ideas", "order": 0 }
+  ]
+}
+```
+
 ### `mindwtr_list_sections`
 
 **輸入欄位**
@@ -792,7 +816,7 @@ Schema 注意事項：
 - `energyLevel`：`low | medium | high`
 - `assignedTo`：string
 - `timeEstimate`：`5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
-- 其他可寫欄位：`areaId`、`reviewAt`、`taskMode`、`relativeStartOffset`、`showFutureRecurrence`、`pushCount`、`checklist`、`textDirection`、`location`、`isFocusedToday`、`timeSpentMinutes`、`suppressMindwtrReminders`、`repeatReminderMinutes`、`attachments`
+- 其他可寫欄位：`areaId`、`reviewAt`、`taskMode`、`relativeStartOffset`、`showFutureRecurrence`、`pushCount`、`checklist`、`textDirection`、`location`、`isFocusedToday`、`timeSpentMinutes`、`suppressMindwtrReminders`、`repeatReminderMinutes`、`viewSectionIds`、`attachments`
 
 **範例**
 
@@ -807,7 +831,7 @@ Schema 注意事項：
 **輸入欄位**
 
 - `id`：string（task UUID）
-- `title`、`status`、`projectId`、`sectionId`、`areaId`、`dueDate`、`startTime`、`contexts`、`tags`、`description`、`priority`、`energyLevel`、`assignedTo`、`timeEstimate`、`reviewAt`、`taskMode`、`relativeStartOffset`、`showFutureRecurrence`、`pushCount`、`checklist`、`textDirection`、`location`、`isFocusedToday`、`timeSpentMinutes`、`suppressMindwtrReminders`、`repeatReminderMinutes`、`order`、`boardOrder`、`focusOrder`、`attachments`
+- `title`、`status`、`projectId`、`sectionId`、`areaId`、`dueDate`、`startTime`、`contexts`、`tags`、`description`、`priority`、`energyLevel`、`assignedTo`、`timeEstimate`、`reviewAt`、`taskMode`、`relativeStartOffset`、`showFutureRecurrence`、`pushCount`、`checklist`、`textDirection`、`location`、`isFocusedToday`、`timeSpentMinutes`、`suppressMindwtrReminders`、`repeatReminderMinutes`、`order`、`boardOrder`、`focusOrder`、`viewSectionIds`、`attachments`
 - `recurrence`：重複規則物件、RFC 5545 RRULE 字串，或使用 `null` 清除
 
 **注意事項**
@@ -856,13 +880,14 @@ Schema 注意事項：
 - `dueDate`：ISO string 或 `null`
 - `reviewAt`：ISO string 或 `null`
 - `supportNotes`：string 或 `null`
+- `viewSectionIds`: `{ "someday": "section-uuid" }`
 
 ### `mindwtr_update_project`（寫入）
 
 **輸入欄位**
 
 - `id`：string（project UUID）
-- `title`、`color`、`status`、`areaId`、`isSequential`、`isFocused`、`startDate`、`dueDate`、`reviewAt`、`supportNotes`、`attachments`
+- `title`、`color`、`status`、`areaId`、`isSequential`、`isFocused`、`startDate`、`dueDate`、`reviewAt`、`supportNotes`、`viewSectionIds`、`attachments`
 
 ### `mindwtr_delete_project`（寫入）
 

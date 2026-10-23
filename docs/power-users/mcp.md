@@ -438,6 +438,7 @@ Only `--write` is supported for write access (no alternate aliases).
 | `mindwtr_list_tasks`    | List tasks           | No                 |
 | `mindwtr_list_projects` | List projects        | No                 |
 | `mindwtr_get_project`   | Fetch one project    | No                 |
+| `mindwtr_list_view_sections` | List view sections | No |
 | `mindwtr_list_sections` | List sections        | No                 |
 | `mindwtr_get_section`   | Fetch one section    | No                 |
 | `mindwtr_list_areas`    | List areas           | No                 |
@@ -515,6 +516,7 @@ Use this matrix when deciding whether to run the server in read-only mode or wit
 | `mindwtr_list_tasks`    | Task rows (filtered) | None                | Allowed        | Allowed        |
 | `mindwtr_list_projects` | Project rows         | None                | Allowed        | Allowed        |
 | `mindwtr_get_project`   | Single project by ID | None                | Allowed        | Allowed        |
+| `mindwtr_list_view_sections` | View-section definitions | None | Allowed | Allowed |
 | `mindwtr_list_sections` | Section rows         | None                | Allowed        | Allowed        |
 | `mindwtr_get_section`   | Single section by ID | None                | Allowed        | Allowed        |
 | `mindwtr_list_areas`    | Area rows            | None                | Allowed        | Allowed        |
@@ -675,6 +677,28 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 { "id": "project-uuid" }
 ```
 
+### `mindwtr_list_view_sections`
+
+MCP 1.1.13 does not include this support; use a build containing [the #1439 fix](https://github.com/dongdongbh/Mindwtr/issues/1439).
+
+Read the section IDs and names used by Someday, Waiting and Focus. Available in local database and Cloud modes, including read-only mode; hidden in Local API mode. This returns only section definitions, not all settings. `mindwtr_list_sections` continues to list project sections.
+
+Optional input: `view` (`someday`, `waiting` or `focus`); omit it to list all three views. Rows are ordered using the app’s section order.
+
+Task and project create/update tools accept `viewSectionIds`, for example `{"someday":"section-uuid"}`. This assigns a section without changing status. Updates replace the whole map: include other assignments you want to keep. Omitting the field preserves it; `{}` or `null` clears it on update. Local API mode supports task assignments, but rejects project assignments and cannot list view-section definitions.
+
+```json
+{ "view": "someday" }
+```
+
+```json
+{
+  "viewSections": [
+    { "view": "someday", "id": "section-uuid", "title": "Ideas", "order": 0 }
+  ]
+}
+```
+
 ### `mindwtr_list_sections`
 
 **Input fields**
@@ -792,7 +816,7 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 - `energyLevel`: `low | medium | high`
 - `assignedTo`: string
 - `timeEstimate`: `5min | 10min | 15min | 30min | 1hr | 2hr | 3hr | 4hr | 4hr+`
-- Additional writable fields: `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `attachments`
+- Additional writable fields: `areaId`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `viewSectionIds`, `attachments`
 
 **Example**
 
@@ -807,7 +831,7 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 **Input fields**
 
 - `id`: string (task UUID)
-- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`, `attachments`
+- `title`, `status`, `projectId`, `sectionId`, `areaId`, `dueDate`, `startTime`, `contexts`, `tags`, `description`, `priority`, `energyLevel`, `assignedTo`, `timeEstimate`, `reviewAt`, `taskMode`, `relativeStartOffset`, `showFutureRecurrence`, `pushCount`, `checklist`, `textDirection`, `location`, `isFocusedToday`, `timeSpentMinutes`, `suppressMindwtrReminders`, `repeatReminderMinutes`, `order`, `boardOrder`, `focusOrder`, `viewSectionIds`, `attachments`
 - `recurrence`: recurrence object, RFC 5545 RRULE string, or `null` to clear it
 
 **Notes**
@@ -856,13 +880,14 @@ If you need more than 500 tasks, page with `limit` + `offset` instead of expecti
 - `dueDate`: ISO string or `null`
 - `reviewAt`: ISO string or `null`
 - `supportNotes`: string or `null`
+- `viewSectionIds`: `{ "someday": "section-uuid" }`
 
 ### `mindwtr_update_project` (write)
 
 **Input fields**
 
 - `id`: string (project UUID)
-- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`, `attachments`
+- `title`, `color`, `status`, `areaId`, `isSequential`, `isFocused`, `startDate`, `dueDate`, `reviewAt`, `supportNotes`, `viewSectionIds`, `attachments`
 
 ### `mindwtr_delete_project` (write)
 

@@ -30,6 +30,7 @@ After saving, sync and open the attachment on another updated device. Cross-orig
 - Or drag files from your file manager onto an open task editor to attach them.
 - For links, paste a URL or local file path.
 - In task attachments, **Attach Obsidian Note** appears only after you enable the Obsidian integration.
+- Paste an image, such as a screenshot, into a task description. Mindwtr saves it as an attachment and shows it in the description. On mobile, the image appears under Attachments instead of inside the text.
 
 ### Mobile
 

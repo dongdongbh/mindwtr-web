@@ -30,6 +30,7 @@ Synchronisiere anschließend und öffne den Anhang auf einem anderen aktualisier
 - Oder ziehen Sie Dateien aus Ihrem Dateimanager auf einen geöffneten Aufgabeneditor, um sie anzuhängen.
 - Fügen Sie für Links eine URL oder einen lokalen Dateipfad ein.
 - Bei Aufgabenanhängen erscheint **Obsidian-Notiz anhängen** erst, nachdem Sie die Obsidian-Integration aktiviert haben.
+- Fügen Sie ein Bild, zum Beispiel einen Screenshot, in die Beschreibung einer Aufgabe ein. Mindwtr speichert es als Anhang und zeigt es in der Beschreibung. Auf dem Smartphone erscheint das Bild unter Anhänge statt im Text.
 
 ### Mobilgeräte
 

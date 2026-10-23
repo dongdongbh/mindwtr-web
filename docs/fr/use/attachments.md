@@ -30,6 +30,7 @@ Synchronisez puis ouvrez la pièce jointe sur un autre appareil à jour. Les dé
 - Ou faites glisser des fichiers depuis votre gestionnaire de fichiers sur un éditeur de tâche ouvert pour les joindre.
 - Pour un lien, collez une URL ou le chemin d’un fichier local.
 - Dans les pièces jointes d’une tâche, **Joindre une note Obsidian** n’apparaît qu’après l’activation de l’intégration Obsidian.
+- Collez une image, par exemple une capture d’écran, dans la description d’une tâche. Mindwtr l’enregistre comme pièce jointe et l’affiche dans la description. Sur mobile, l’image apparaît dans les pièces jointes plutôt que dans le texte.
 
 ### Mobile
 

@@ -30,6 +30,7 @@ Sincroniza y abre el adjunto en otro dispositivo actualizado. Las instalaciones 
 - O arrastra archivos desde tu gestor de archivos hasta un editor de tarea abierto para adjuntarlos.
 - Para los enlaces, pega una URL o una ruta de archivo local.
 - En los adjuntos de una tarea, **Adjuntar nota de Obsidian** solo aparece después de habilitar la integración con Obsidian.
+- Pega una imagen, como una captura de pantalla, en la descripción de una tarea. Mindwtr la guarda como adjunto y la muestra en la descripción. En el móvil, la imagen aparece en Adjuntos en lugar de dentro del texto.
 
 ### Dispositivos móviles
 

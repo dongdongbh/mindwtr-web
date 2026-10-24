@@ -228,7 +228,9 @@ See [Tasker’s intent guide](https://tasker.joaoapps.com/userguide/en/intents.h
 
 ### Home Widget
 
-Tapping blank space in a Tasks or Compact widget opens Focus on Android and iOS. Task links, completion controls, list selection and quick capture keep their existing actions.
+Android Tasks blank-space taps now open the selected list; Compact and iOS still open Focus.
+
+From v1.3.8, mixed context, tag and saved-filter lists show status alongside task metadata without changing selection or sorting. Android Tasks configuration offers Default, No grouping, Context, Project and Priority (when enabled). Default follows saved-filter grouping and leaves ordinary lists flat; each widget stores its own choice. iOS honors saved-filter grouping. Groups have one level and cannot collapse inside widgets. The default Focus hierarchy stays unchanged.
 
 The controls below describe Android. For iOS, see **iOS Home Screen Widget** below.
 
@@ -239,7 +241,7 @@ Add the Mindwtr widget to your home screen for quick access:
 3. Find **Mindwtr** and add the **Tasks** widget, the one-cell **Quick capture** button or, on Android, the optional smaller **Compact** widget. The Tasks widget shows a **+** button and your tasks, each with its priority colour, its project or area, and its due date. On Android, a newly added Tasks widget shows Focus, with the inbox count in its header and a short view of Today's Focus and Today. Review Due and Upcoming are not included in the default Focus list. Tap the title to open that list in Mindwtr. To switch the widget's list, tap the separate small down arrow. The header follows the same theme background as the widget body. A sheet lists Focus, Inbox, Next Actions, Waiting For, Someday/Maybe and your **Saved Filters**. Tap one and the widget redraws. To show a single project on a widget, save a Focus filter for that project in the app and pick that filter here. This works on every launcher, and some launchers have no edit action of their own for widgets. You can add several Tasks widgets with different lists. After Mindwtr has run and published its first Android widget snapshot, the standard lists are ready for newly added Tasks widgets and list changes without another app launch. Open Mindwtr once before using widgets and again to refresh their data; widgets do not follow background sync in real time. In 1.3.6 and earlier, Mindwtr publishes saved-filter snapshots on demand.
 4. On a task-list widget, tap a task to open its small native detail sheet. On Tasks, tap the ring at the start of a row to complete it. Use the capture button on any of the three Android widgets to capture a task.
 
-**Upcoming.** Choose **Upcoming** in the Android Tasks list selector or iOS 17+ **Edit Widget**. It mirrors **Focus → Upcoming**: Next actions starting or recurring on another day within the next seven days, with the same area and Focus filters. Each row shows its start/return date. On Android, tap the circle to complete the task, or tap the row for **Complete** and **Open**, just like other task lists. On iOS, Upcoming remains a preview that opens the task without a completion ring. An empty Upcoming list stays empty; the default Focus and Compact widgets are unchanged. From v1.3.8, all lists keep the dates and membership from the same app snapshot when the day changes. Switching lists does not refresh their task data. Open Mindwtr to update Focus, Upcoming and the date header together; Android and WidgetKit may delay displaying the new snapshot.
+**Upcoming.** Choose **Upcoming** in the Android Tasks list selector or iOS 17+ **Edit Widget**. It mirrors **Focus → Upcoming**: Next actions starting or recurring on another day within the next seven days, with the same area and Focus filters. Each row shows its start/return date. On Android, tap the circle to complete the task, or tap the row for **Complete** and **Open**, just like other task lists. On iOS, Upcoming remains a preview that opens the task without a completion ring. An empty Upcoming list stays empty; the default Focus and Compact widgets are unchanged. From v1.3.8, selecting an Android Tasks list requests a local refresh even with sync off. Launcher display may lag. iOS keeps its cached snapshot until Mindwtr publishes an update.
 
 **Contexts and tags.** In the Android Tasks list chooser, select a **Context** or **Tag** directly, without creating a saved filter. These lists include matching unfinished tasks from Inbox, Next Actions, Waiting For and Someday/Maybe, respecting area and project visibility rather than the current Focus criteria. Switching lists does not change your tasks. Mindwtr caches the offered contexts, tags and saved filters together when the app runs; after that refresh, you can switch among them while the app is closed. Open Mindwtr again to refresh new task edits or synced changes. An empty selection stays empty. Compact and iOS widgets are unchanged.
 
@@ -489,6 +491,8 @@ Tap **Process Inbox** to start the clarify workflow:
 ---
 
 ## Focus
+
+In mobile Focus, tap a subgroup heading under Next Actions or Later today to fold its rows. The name and count remain visible, and this device remembers folds separately for each grouping choice.
 
 Starting with v1.3.4, **Settings → GTD → Include tasks starting today in Today** controls whether a start date alone puts a task in Today. It is on by default and syncs across devices. Turn it off to let available next actions stay in Next Actions unless another rule puts them in Today or Review Due. Start dates and times still control availability; due dates, Upcoming previews, and manually starred Today's Focus tasks keep their usual behavior.
 

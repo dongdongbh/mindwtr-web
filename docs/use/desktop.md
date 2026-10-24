@@ -30,7 +30,7 @@ Hovering briefly over Dates, Move to, Contexts, or Priority in a task menu opens
 
 ## Reference
 
-Reference is for notes and material you want to keep. Its rows and editor emphasize the title, description, project or area, people, tags, attachments, and links. Task scheduling and completion controls stay out of the way. Use **Convert to action** when a reference becomes something to do. A reference's list has checkboxes: tick an entry to record it, for example a movie you have watched. Ticking every entry leaves the item in Reference; it is never marked done and never enters Focus. The ticks stay if you convert the reference to an action.
+Reference is for notes and material you want to keep. Its rows and editor emphasize the title, description, project or area, people, tags, attachments, and links. Task scheduling and completion controls stay out of the way. Use **Status** in the editor to switch between Reference and task statuses. You can add checklist items even when the reference has no checklist yet. References have no Focus star. A reference's list has checkboxes: tick an entry to record it, for example a movie you have watched. Ticking every entry leaves the item in Reference; it is never marked done and never enters Focus. The ticks stay if you convert the reference to an action.
 
 Search within Reference matches every space-separated term anywhere in the title or description, ignoring case. For example, `ke 1 2` matches `key1 key2 key3`. Terms are literal text; this field does not interpret quick-add or advanced search syntax.
 

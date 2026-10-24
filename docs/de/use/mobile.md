@@ -730,6 +730,10 @@ Ab v1.3.1: Ordnen Sie Aufgaben direkt in dieser Liste in Irgendwann-Abschnitte e
 - **Startzeitwarnungen**
 - **Erinnerungen an wiederkehrende Aufgaben**
 
+**Voraberinnerung (v1.3.8)** fügt eine Benachrichtigung vor der Fälligkeit hinzu. Wähle im Abschnitt Erinnerungen des Aufgabeneditors 5, 15 oder 30 Minuten, 1 Stunde, 1 Tag, 2 Tage oder 1 Woche vorher. Standardmäßig ist sie aus und benötigt eine Fälligkeit mit ausdrücklicher Uhrzeit; die normale Fälligkeitserinnerung bleibt bestehen. Eine Änderung der Fälligkeit verschiebt auch die Voraberinnerung. Tage und Wochen behalten bei Sommerzeitwechseln dieselbe Ortszeit bei. Liegt der Vorabzeitpunkt beim Einstellen bereits in der Vergangenheit, wird keine Benachrichtigung nachgeholt.
+
+Voraberinnerungen beachten Senden/Überspringen, die Einstellungen für Fälligkeitserinnerungen und die Benachrichtigungsberechtigung. Ohne Fälligkeitszeit werden sie nicht geplant; der gewählte Vorlauf bleibt gespeichert. Aktualisiere alle Geräte, denn ältere Versionen planen keine Voraberinnerungen.
+
 **Erinnerung wiederholen** erfordert eine ausdrückliche Fälligkeitszeit. Wähle 5, 10, 15, 30 oder 60 Minuten zwischen den Benachrichtigungen. Innerhalb von zwei Stunden nach der Fälligkeit gibt es höchstens acht zusätzliche Erinnerungen. Sie werden nicht unbegrenzt bis zur Erledigung wiederholt. **Aus** lässt die erste Fälligkeitserinnerung weiterhin zu.
 
 **Schlummern (Snooze)** verschiebt die aktuelle Benachrichtigung. **Schließen (Dismiss)** entfernt sie, ohne zukünftige Erinnerungen der Wiederholungsfolge abzubrechen. Um die Start-/Fälligkeitserinnerungen einer Aufgabe samt Wiederholungen zu stoppen, ohne ihre Daten zu ändern, wähle im Aufgabeneditor **Start-/Fälligkeitserinnerungen → Überspringen**.

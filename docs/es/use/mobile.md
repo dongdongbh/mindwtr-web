@@ -789,6 +789,10 @@ Mindwtr envía notificaciones para ayudarte a mantener el rumbo.
 - **Avisos de hora de inicio**: te recuerdan cuándo debes empezar
 - **Recordatorios de tareas recurrentes**: notificaciones de elementos recurrentes
 
+**Recordatorio anticipado (v1.3.8)** añade un aviso antes del vencimiento. En Recordatorios, dentro del editor de tareas, elige 5, 15 o 30 minutos, 1 hora, 1 día, 2 días o 1 semana antes. Está desactivado por defecto y requiere una fecha con hora explícita; el aviso habitual al vencer se mantiene. Si cambias el vencimiento, el aviso anticipado también se mueve. Los días y semanas mantienen la misma hora local al cambiar el horario de verano. Si la hora anticipada ya pasó al configurarlo, no se envía un aviso atrasado.
+
+Estos avisos respetan Enviar/Omitir, los ajustes de recordatorios de vencimiento y el permiso de notificaciones. Quitar la hora de vencimiento detiene su programación sin borrar la antelación elegida. Actualiza todos los dispositivos; las versiones anteriores no programan avisos anticipados.
+
 **Repetir recordatorio** requiere una hora de vencimiento explícita. Elige 5, 10, 15, 30 o 60 minutos entre avisos, con un máximo de ocho recordatorios adicionales en las dos horas posteriores al vencimiento. No se repiten indefinidamente hasta completar la tarea. Desactivar la repetición no desactiva el primer aviso.
 
 **Posponer (Snooze)** aplaza el aviso actual. **Descartar (Dismiss)** cierra la notificación actual; no cancela los siguientes avisos de la secuencia. Para detener los recordatorios de inicio/vencimiento de una tarea y sus repeticiones sin cambiar sus fechas, selecciona **Recordatorios de inicio/vencimiento → Omitir** en el editor de tareas.

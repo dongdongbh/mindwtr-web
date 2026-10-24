@@ -457,6 +457,10 @@ Mindwtr sends desktop notifications to keep you on track:
 - **Start time alerts**: Reminds you when it's time to begin
 - **Recurring task reminders**: Notifications for recurring items
 
+**Advance reminder (v1.3.8)** adds one alert before a task’s due time. In the task editor’s Reminders section, choose 5, 15, or 30 minutes, 1 hour, 1 day, 2 days, or 1 week before. It is Off by default and requires a due date with an explicit time; the normal due-time alert remains enabled. Moving the deadline moves the advance alert too. Day and week choices keep the same local clock time across daylight-saving changes. If the advance time has already passed when you set it, no catch-up alert is sent.
+
+Advance alerts follow the task’s Send/Skip choice, due-reminder settings, and notification permission. Clearing the due time stops scheduling them without erasing the chosen lead time. Update all devices to use this option; older versions do not schedule advance alerts.
+
 Tasks with a due time can set **Repeat reminder** to 5, 10, 15, 30, or 60 minutes after the due reminder. **Repeat reminder: Off** still allows the first due reminder.
 
 **Settings → Notifications → Default task reminders** chooses **Send** or **Skip** for new tasks. Each task has **Start/due reminders**: **Use default** (showing its current effect), **Send**, or **Skip**. Existing tasks keep their previous send/skip behavior until you deliberately choose **Use default**. The initial default is Send.

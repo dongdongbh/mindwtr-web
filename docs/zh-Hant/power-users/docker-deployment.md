@@ -175,15 +175,16 @@ cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w 50 | head -n 1
 
 ### 限制誰可以開啟託管的網頁應用程式
 
-瀏覽器版本是一個靜態套件，它顯示的資料只存放在各個瀏覽器自己的儲存空間中；任務資料與 API 由 `/v1/*` 上的 bearer 權杖保護。因此 Mindwtr 沒有自己的登入畫面。如果網頁應用程式可從網際網路存取，而你不希望陌生人開啟它，請在前置代理上對 `/v1/*` 以外的所有路徑啟用 HTTP Basic Auth，這樣瀏覽器只需登入一次，而桌面與行動應用程式繼續使用它們的 bearer 權杖。使用隨附的 Caddy 時，以 `caddy hash-password` 產生雜湊，然後使用：
+瀏覽器版本將任務資料保存在每個瀏覽器的本機儲存空間中。Mindwtr 沒有自己的登入畫面；雲端 API 在 `/v1/*` 上使用 bearer 權杖。若要限制對託管頁面的存取，請在代理上啟用 HTTP Basic Auth。將 `/v1/*`、`/health`、`/ready` 與 `/sw.js` 排除在外，讓原生用戶端、健康檢查與 Service Worker 更新正常運作。使用 Caddy 時，以 `caddy hash-password` 產生雜湊，然後使用：
 
 ```
 example.com {
-	@ui not path /v1/*
+	@ui not path /v1/* /health /ready /sw.js
 	basic_auth @ui {
 		alice <bcrypt hash>
 	}
-	handle /v1/* {
+	@cloud path /v1/* /health /ready
+	handle @cloud {
 		reverse_proxy mindwtr-cloud:8787
 	}
 	handle {
@@ -192,7 +193,23 @@ example.com {
 }
 ```
 
-使用 nginx 時，把 `auth_basic` 放在 `location /` 區塊中，並讓 `location /v1/` 不帶它。依上文所述保持 `MINDWTR_CLOUD_AUTH_TOKENS` 與 `MINDWTR_CLOUD_CORS_ORIGIN` 的設定；真正保護資料的是它們，代理登入只決定誰可以載入頁面。
+保持 `/sw.js` 可公開存取，並將其代理至 `mindwtr-app`；下文支援的僅限連線模式需要這個 URL 傳回 Worker 指令碼，而不是 404。使用 nginx 時，在 `location /` 中啟用 `auth_basic`，在 `location = /sw.js` 中停用它並將該路徑代理至應用程式；讓 `/v1/`、`/health` 與 `/ready` 不經過代理驗證，並將它們轉送至雲端伺服器。
+
+依上文所述保持 `MINDWTR_CLOUD_AUTH_TOKENS` 與 `MINDWTR_CLOUD_CORS_ORIGIN` 的設定。代理驗證控制頁面下載；它不會鎖定已下載至瀏覽器中的任務資料，包括已安裝的 PWA。
+
+### Basic Auth 後的僅限連線模式
+
+在 Firefox 中，既有的 Service Worker 可能導致瀏覽器重新啟動後傳回 `401`，卻不顯示 Basic Auth 登入提示。對於支援此選項的 Docker 映像，在隨附的 `compose.yaml` 旁邊的 `.env` 中加入以下設定，然後執行 `docker compose up -d` 重新建立 `mindwtr-app`：
+
+```dotenv
+MINDWTR_PWA_ENABLED=false
+```
+
+預設值為 `true`，保留正常的 PWA 行為。設為 `false` 後，應用程式會在同一個 `/sw.js` URL 提供一個不攔截請求的空 Worker。它會啟用，但不會強制重新載入頁面或刪除儲存資料。瀏覽器中的任務資料庫會保留，但應用程式介面將無法離線載入；開啟應用程式需要網路連線。
+
+既有的 Worker 應會自動更新，但可能需要一些時間。若要立即恢復，請在瀏覽器開發人員工具中**僅取消註冊此網站的 Mindwtr Service Worker**，關閉該網站的所有 Mindwtr 分頁與已安裝 PWA 的視窗，然後重新開啟。**不要清除網站資料**：這可能會刪除本機儲存的任務。
+
+對於不支援此選項的舊映像，一位回報者測試過一種 Caddy 暫時解法：允許公開存取 `/sw.js`，但讓它傳回 `404`，然後執行相同的手動取消註冊、關閉與重新開啟步驟。這是針對這些映像的已回報暫時解法；使用支援的選項時，應讓應用程式正常提供 `/sw.js`。
 
 ### Dropbox 同步與 Docker PWA
 

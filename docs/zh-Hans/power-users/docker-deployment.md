@@ -175,15 +175,16 @@ cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w 50 | head -n 1
 
 ### 限制谁可以打开托管的网页应用
 
-浏览器版本是一个静态包，它显示的数据只存放在各个浏览器自己的存储中；任务数据和 API 由 `/v1/*` 上的 bearer 令牌保护。因此 Mindwtr 没有自己的登录界面。如果网页应用可从互联网访问，而你不希望陌生人打开它，请在前置代理上对除 `/v1/*` 之外的所有路径启用 HTTP Basic Auth，这样浏览器只需登录一次，而桌面端和移动端应用继续使用它们的 bearer 令牌。使用随附的 Caddy 时，用 `caddy hash-password` 生成哈希，然后使用：
+浏览器版本将任务数据保存在每个浏览器的本地存储中。Mindwtr 没有自己的登录界面；云端 API 在 `/v1/*` 上使用 bearer 令牌。若要限制对托管页面的访问，请在代理上启用 HTTP Basic Auth。将 `/v1/*`、`/health`、`/ready` 和 `/sw.js` 排除在外，让原生客户端、健康检查和 Service Worker 更新正常运行。使用 Caddy 时，用 `caddy hash-password` 生成哈希，然后使用：
 
 ```
 example.com {
-	@ui not path /v1/*
+	@ui not path /v1/* /health /ready /sw.js
 	basic_auth @ui {
 		alice <bcrypt hash>
 	}
-	handle /v1/* {
+	@cloud path /v1/* /health /ready
+	handle @cloud {
 		reverse_proxy mindwtr-cloud:8787
 	}
 	handle {
@@ -192,7 +193,23 @@ example.com {
 }
 ```
 
-使用 nginx 时，把 `auth_basic` 放在 `location /` 块中，并让 `location /v1/` 不带它。按上文所述保持 `MINDWTR_CLOUD_AUTH_TOKENS` 和 `MINDWTR_CLOUD_CORS_ORIGIN` 的设置；真正保护数据的是它们，代理登录只决定谁可以加载页面。
+保持 `/sw.js` 可公开访问，并将其代理到 `mindwtr-app`；下文支持的仅在线模式需要这个 URL 返回 Worker 脚本，而不是 404。使用 nginx 时，在 `location /` 中启用 `auth_basic`，在 `location = /sw.js` 中禁用它并将该路径代理到应用；让 `/v1/`、`/health` 和 `/ready` 不经过代理认证，并将它们转发到云端服务器。
+
+按上文所述保持 `MINDWTR_CLOUD_AUTH_TOKENS` 和 `MINDWTR_CLOUD_CORS_ORIGIN` 的设置。代理认证控制页面下载；它不会锁定已下载到浏览器中的任务数据，包括已安装的 PWA。
+
+### Basic Auth 后的仅在线模式
+
+在 Firefox 中，已有的 Service Worker 可能导致浏览器重启后返回 `401`，却不显示 Basic Auth 登录提示。对于支持此选项的 Docker 镜像，在随附的 `compose.yaml` 旁边的 `.env` 中加入以下设置，然后运行 `docker compose up -d` 重新创建 `mindwtr-app`：
+
+```dotenv
+MINDWTR_PWA_ENABLED=false
+```
+
+默认值是 `true`，保留正常的 PWA 行为。设为 `false` 后，应用会在同一个 `/sw.js` URL 提供一个不拦截请求的空 Worker。它会激活，但不会强制刷新页面或删除存储。浏览器中的任务数据库会保留，但应用界面将无法离线加载；打开应用需要网络连接。
+
+已有的 Worker 应会自动更新，但可能需要一些时间。若要立即恢复，请在浏览器开发者工具中**仅注销此站点的 Mindwtr Service Worker**，关闭该站点的所有 Mindwtr 标签页和已安装 PWA 的窗口，然后重新打开。**不要清除站点数据**：这可能会删除本地保存的任务。
+
+对于不支持此选项的旧镜像，一位报告者测试过一种 Caddy 临时方案：允许公开访问 `/sw.js`，但让它返回 `404`，然后执行相同的手动注销、关闭和重新打开步骤。这是针对这些镜像的已报告临时方案；使用受支持的选项时，应让应用正常提供 `/sw.js`。
 
 ### Dropbox 同步与 Docker PWA
 

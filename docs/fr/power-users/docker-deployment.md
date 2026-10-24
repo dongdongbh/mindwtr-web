@@ -175,15 +175,16 @@ La valeur ne fait que préremplir le formulaire de configuration. Elle n'écrase
 
 ### Restreindre qui peut ouvrir l'application web hébergée
 
-La version navigateur est un bundle statique, et les données qu'elle affiche ne vivent que dans le stockage de chaque navigateur ; les données de tâches et l'API sont protégées par le jeton bearer sur `/v1/*`. Mindwtr n'a donc pas d'écran de connexion propre. Si l'application web est accessible depuis internet et que vous ne voulez pas que des inconnus l'ouvrent, mettez une authentification HTTP Basic sur le proxy placé devant, sur tous les chemins sauf `/v1/*`, afin que les navigateurs se connectent une fois tandis que les applications de bureau et mobiles continuent d'utiliser leur jeton bearer. Avec le Caddy fourni, générez un hachage avec `caddy hash-password` et utilisez :
+La version navigateur stocke les données des tâches localement dans chaque navigateur. Mindwtr n'a pas d'écran de connexion propre ; l'API cloud utilise un jeton bearer sur `/v1/*`. Pour restreindre l'accès à la page hébergée, configurez HTTP Basic Auth sur le proxy. Excluez `/v1/*`, `/health`, `/ready` et `/sw.js` afin que les clients natifs, les contrôles de santé et les mises à jour du service worker continuent de fonctionner. Avec Caddy, générez un hachage avec `caddy hash-password` et utilisez :
 
 ```
 example.com {
-	@ui not path /v1/*
+	@ui not path /v1/* /health /ready /sw.js
 	basic_auth @ui {
 		alice <bcrypt hash>
 	}
-	handle /v1/* {
+	@cloud path /v1/* /health /ready
+	handle @cloud {
 		reverse_proxy mindwtr-cloud:8787
 	}
 	handle {
@@ -192,7 +193,23 @@ example.com {
 }
 ```
 
-Avec nginx, placez `auth_basic` dans le bloc `location /` et laissez `location /v1/` sans. Gardez `MINDWTR_CLOUD_AUTH_TOKENS` et `MINDWTR_CLOUD_CORS_ORIGIN` définis comme décrit plus haut ; ce sont eux qui protègent les données, la connexion au proxy décide seulement qui peut charger la page.
+Laissez `/sw.js` accessible publiquement et transmettez ce chemin à `mindwtr-app` ; l'option de fonctionnement en ligne uniquement décrite ci-dessous nécessite que cette URL renvoie le script du worker, pas une erreur 404. Avec nginx, activez `auth_basic` dans `location /`, désactivez-le dans `location = /sw.js` et transmettez ce chemin à l'application ; laissez `/v1/`, `/health` et `/ready` sans authentification du proxy et dirigez-les vers le serveur cloud.
+
+Gardez `MINDWTR_CLOUD_AUTH_TOKENS` et `MINDWTR_CLOUD_CORS_ORIGIN` configurés comme ci-dessus. L'authentification du proxy contrôle le téléchargement de la page ; elle ne verrouille pas les données des tâches déjà téléchargées dans un navigateur, y compris dans une PWA installée.
+
+### Mode en ligne uniquement derrière Basic Auth
+
+Dans Firefox, un service worker existant peut provoquer une réponse `401` après un redémarrage du navigateur sans afficher la demande d'authentification Basic Auth. Pour les images Docker prenant en charge cette option, ajoutez ceci au fichier `.env` à côté du `compose.yaml` fourni, puis recréez `mindwtr-app` avec `docker compose up -d` :
+
+```dotenv
+MINDWTR_PWA_ENABLED=false
+```
+
+La valeur par défaut est `true`, ce qui conserve le comportement habituel de la PWA. Avec `false`, l'application sert un worker inerte à la même URL `/sw.js`. Il s'active sans intercepter les requêtes, forcer un rechargement ni supprimer de stockage. La base de données des tâches du navigateur est conservée, mais l'interface de l'application ne peut plus se charger hors ligne ; une connexion réseau est nécessaire pour l'ouvrir.
+
+Un worker existant devrait se mettre à jour automatiquement, mais cela peut prendre du temps. Pour rétablir l'accès immédiatement, utilisez les outils de développement du navigateur pour désinscrire **uniquement le service worker de Mindwtr pour ce site**, fermez tous les onglets Mindwtr et toutes les fenêtres de la PWA installée pour ce site, puis rouvrez-le. **N'effacez pas les données du site** : cela peut supprimer les tâches stockées localement.
+
+Pour les anciennes images sans cette option, une personne ayant signalé le problème a testé un contournement Caddy qui laisse `/sw.js` accessible publiquement mais renvoie `404`, suivi des mêmes étapes manuelles de désinscription, fermeture et réouverture. Il s'agit d'un contournement rapporté pour ces images ; avec l'option prise en charge, servez plutôt `/sw.js` depuis l'application.
 
 ### Synchronisation Dropbox et PWA Docker
 

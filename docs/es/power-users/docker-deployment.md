@@ -175,15 +175,16 @@ El valor solo rellena el formulario de configuración. Nunca sobrescribe una URL
 
 ### Restringir quién puede abrir la aplicación web alojada
 
-La versión para navegador es un paquete estático, y los datos que muestra viven solo en el almacenamiento de cada navegador; los datos de tareas y la API están protegidos por el token bearer en `/v1/*`. Por eso Mindwtr no tiene pantalla de inicio de sesión propia. Si la aplicación web es accesible desde internet y no quieres que desconocidos la abran, pon HTTP Basic Auth en el proxy que la precede, en todas las rutas excepto `/v1/*`, de modo que los navegadores inicien sesión una vez mientras las aplicaciones de escritorio y móvil siguen usando su token bearer. Con el Caddy incluido, genera un hash con `caddy hash-password` y usa:
+La versión para navegador guarda los datos de tareas localmente en cada navegador. Mindwtr no tiene pantalla de inicio de sesión propia; la API de la nube usa un token bearer en `/v1/*`. Para restringir el acceso a la página alojada, configura HTTP Basic Auth en el proxy. Excluye `/v1/*`, `/health`, `/ready` y `/sw.js` para que sigan funcionando los clientes nativos, las comprobaciones de estado y las actualizaciones del service worker. Con Caddy, genera un hash con `caddy hash-password` y usa:
 
 ```
 example.com {
-	@ui not path /v1/*
+	@ui not path /v1/* /health /ready /sw.js
 	basic_auth @ui {
 		alice <bcrypt hash>
 	}
-	handle /v1/* {
+	@cloud path /v1/* /health /ready
+	handle @cloud {
 		reverse_proxy mindwtr-cloud:8787
 	}
 	handle {
@@ -192,7 +193,23 @@ example.com {
 }
 ```
 
-Con nginx, pon `auth_basic` en el bloque `location /` y deja `location /v1/` sin él. Mantén `MINDWTR_CLOUD_AUTH_TOKENS` y `MINDWTR_CLOUD_CORS_ORIGIN` configurados como se describe arriba; son lo que protege los datos, el inicio de sesión del proxy solo decide quién puede cargar la página.
+Mantén `/sw.js` accesible públicamente y reenvíalo a `mindwtr-app`; la opción compatible de solo conexión descrita abajo necesita que esta URL devuelva el script del worker, no un 404. Con nginx, activa `auth_basic` en `location /`, desactívalo en `location = /sw.js` y reenvía esa ruta a la app; deja `/v1/`, `/health` y `/ready` sin autenticación del proxy y dirígelos al servidor de la nube.
+
+Mantén `MINDWTR_CLOUD_AUTH_TOKENS` y `MINDWTR_CLOUD_CORS_ORIGIN` configurados como se indica arriba. La autenticación del proxy controla la descarga de la página; no bloquea los datos de tareas ya descargados en un navegador, incluida una PWA instalada.
+
+### Modo solo con conexión detrás de Basic Auth
+
+En Firefox, un service worker existente puede provocar un `401` después de reiniciar el navegador sin mostrar la solicitud de Basic Auth. En las imágenes de Docker compatibles con esta opción, añade lo siguiente a la `.env` junto al `compose.yaml` incluido y vuelve a crear `mindwtr-app` con `docker compose up -d`:
+
+```dotenv
+MINDWTR_PWA_ENABLED=false
+```
+
+El valor predeterminado es `true`, que mantiene el comportamiento normal de la PWA. Con `false`, la app sirve un worker inerte en la misma URL `/sw.js`. Se activa sin interceptar solicitudes, forzar una recarga ni borrar el almacenamiento. Se conserva la base de datos de tareas del navegador, pero la interfaz de la app ya no puede cargarse sin conexión; se necesita una conexión de red para abrirla.
+
+Un worker existente debería actualizarse automáticamente, pero puede tardar. Para recuperarte de inmediato, usa las herramientas de desarrollo del navegador para anular el registro de **solo el service worker de Mindwtr de este sitio**, cierra todas las pestañas de Mindwtr y ventanas de la PWA instalada de ese sitio y vuelve a abrirlo. **No borres los datos del sitio**: eso puede eliminar las tareas guardadas localmente.
+
+Para imágenes antiguas sin esta opción, una persona que informó del problema probó una solución con Caddy que deja `/sw.js` accesible públicamente pero devuelve `404`, seguida de los mismos pasos manuales de anular el registro, cerrar y reabrir. Es una solución provisional reportada para esas imágenes; con la opción compatible, sirve `/sw.js` desde la app.
 
 ### Sincronización con Dropbox y la PWA de Docker
 

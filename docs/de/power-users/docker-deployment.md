@@ -175,15 +175,16 @@ Der Wert füllt nur das Einrichtungsformular vor. Er überschreibt nie eine bere
 
 ### Einschränken, wer die gehostete Web-App öffnen darf
 
-Der Browser-Build ist ein statisches Bundle, und die angezeigten Daten liegen nur im Speicher des jeweiligen Browsers; die Aufgabendaten und die API sind durch das Bearer-Token auf `/v1/*` geschützt. Mindwtr hat daher keinen eigenen Anmeldebildschirm. Wenn die Web-App aus dem Internet erreichbar ist und Fremde sie nicht öffnen sollen, richten Sie HTTP Basic Auth auf dem vorgeschalteten Proxy ein, für jeden Pfad außer `/v1/*`. Browser melden sich dann einmal an, während die Desktop- und Mobil-Apps weiter ihr Bearer-Token verwenden. Mit dem mitgelieferten Caddy erzeugen Sie einen Hash mit `caddy hash-password` und verwenden:
+Der Browser-Build speichert Aufgabendaten lokal in jedem Browser. Mindwtr hat keinen eigenen Anmeldebildschirm; die Cloud-API verwendet ein Bearer-Token auf `/v1/*`. Um den Zugriff auf die gehostete Seite einzuschränken, richten Sie HTTP Basic Auth am Proxy ein. Nehmen Sie `/v1/*`, `/health`, `/ready` und `/sw.js` davon aus, damit native Clients, Zustandsprüfungen und Service-Worker-Updates weiter funktionieren. Erzeugen Sie mit Caddy einen Hash über `caddy hash-password` und verwenden Sie:
 
 ```
 example.com {
-	@ui not path /v1/*
+	@ui not path /v1/* /health /ready /sw.js
 	basic_auth @ui {
 		alice <bcrypt hash>
 	}
-	handle /v1/* {
+	@cloud path /v1/* /health /ready
+	handle @cloud {
 		reverse_proxy mindwtr-cloud:8787
 	}
 	handle {
@@ -192,7 +193,23 @@ example.com {
 }
 ```
 
-Bei nginx setzen Sie `auth_basic` in den Block `location /` und lassen `location /v1/` ohne diese Angabe. Lassen Sie `MINDWTR_CLOUD_AUTH_TOKENS` und `MINDWTR_CLOUD_CORS_ORIGIN` wie oben beschrieben gesetzt; sie schützen die Daten, die Proxy-Anmeldung entscheidet nur, wer die Seite laden darf.
+Lassen Sie `/sw.js` öffentlich zugänglich und leiten Sie den Pfad an `mindwtr-app` weiter. Die unten beschriebene unterstützte Nur-Online-Option benötigt unter dieser URL das Worker-Skript, keinen 404-Fehler. Bei nginx aktivieren Sie `auth_basic` in `location /`, deaktivieren es für `location = /sw.js` und leiten diesen Pfad an die App weiter. Lassen Sie `/v1/`, `/health` und `/ready` ohne Proxy-Authentifizierung und leiten Sie sie an den Cloud-Server weiter.
+
+Lassen Sie `MINDWTR_CLOUD_AUTH_TOKENS` und `MINDWTR_CLOUD_CORS_ORIGIN` wie oben beschrieben gesetzt. Die Proxy-Anmeldung steuert das Herunterladen der Seite; sie sperrt keine bereits im Browser gespeicherten Aufgabendaten, auch nicht in einer installierten PWA.
+
+### Nur-Online-Modus hinter Basic Auth
+
+In Firefox kann ein vorhandener Service Worker nach einem Browserneustart einen `401` verursachen, ohne dass die Basic-Auth-Anmeldung erscheint. Bei Docker-Images mit dieser Option setzen Sie Folgendes in der `.env` neben der mitgelieferten `compose.yaml` und erstellen `mindwtr-app` mit `docker compose up -d` neu:
+
+```dotenv
+MINDWTR_PWA_ENABLED=false
+```
+
+Der Standardwert `true` behält das normale PWA-Verhalten bei. Mit `false` liefert die App unter derselben URL `/sw.js` einen inaktiven Worker aus. Er wird aktiv, ohne Anfragen abzufangen, ein Neuladen zu erzwingen oder Speicher zu löschen. Die Aufgabendatenbank des Browsers bleibt erhalten, aber die App-Oberfläche lässt sich nicht mehr offline laden; zum Öffnen der App ist eine Netzwerkverbindung erforderlich.
+
+Ein vorhandener Worker sollte automatisch aktualisiert werden, was jedoch dauern kann. Für eine sofortige Wiederherstellung melden Sie in den Entwicklerwerkzeugen des Browsers **nur den Service Worker von Mindwtr für diese Website ab**, schließen alle Mindwtr-Tabs und Fenster der installierten PWA für diese Website und öffnen sie erneut. **Löschen Sie keine Website-Daten**: Dabei können lokal gespeicherte Aufgaben verloren gehen.
+
+Für ältere Images ohne diese Option hat ein Betroffener einen Caddy-Workaround getestet: `/sw.js` bleibt öffentlich zugänglich, antwortet jedoch mit `404`; danach folgen dieselben Schritte zum manuellen Abmelden, Schließen und erneuten Öffnen. Dies ist ein gemeldeter Workaround für diese Images. Bei der unterstützten Option muss `/sw.js` stattdessen von der App ausgeliefert werden.
 
 ### Dropbox-Synchronisierung und die Docker-PWA
 

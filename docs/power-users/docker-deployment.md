@@ -175,15 +175,16 @@ The value only prefills the setup form. It never overwrites a URL a browser alre
 
 ### Restrict Who Can Open the Hosted Web App
 
-The browser build is a static bundle, and the data it shows lives only in each browser's own storage; the task data and the API are protected by the bearer token on `/v1/*`. Mindwtr therefore has no login screen of its own. If the web app is reachable from the internet and you do not want strangers to open it, put HTTP Basic Auth on the proxy in front of it, on every path except `/v1/*`, so browsers log in once while the desktop and mobile apps keep using their bearer token. With the bundled Caddy, generate a hash with `caddy hash-password` and use:
+The browser build stores task data locally in each browser. Mindwtr has no login screen of its own; the cloud API uses a bearer token on `/v1/*`. To restrict access to the hosted page, put HTTP Basic Auth on the proxy. Exclude `/v1/*`, `/health`, `/ready`, and `/sw.js` from Basic Auth so native clients, health checks, and service-worker updates keep working. With Caddy, generate a hash with `caddy hash-password` and use:
 
 ```
 example.com {
-	@ui not path /v1/*
+	@ui not path /v1/* /health /ready /sw.js
 	basic_auth @ui {
 		alice <bcrypt hash>
 	}
-	handle /v1/* {
+	@cloud path /v1/* /health /ready
+	handle @cloud {
 		reverse_proxy mindwtr-cloud:8787
 	}
 	handle {
@@ -192,7 +193,23 @@ example.com {
 }
 ```
 
-With nginx, put `auth_basic` in the `location /` block and leave `location /v1/` without it. Keep `MINDWTR_CLOUD_AUTH_TOKENS` and `MINDWTR_CLOUD_CORS_ORIGIN` set as described above; they are what protects the data, the proxy login only decides who can load the page.
+Keep `/sw.js` publicly accessible and proxy it to `mindwtr-app`; the supported online-only option below needs this URL to return the worker script, not a 404. With nginx, enable `auth_basic` in `location /`, disable it for `location = /sw.js` and proxy that path to the app; keep `/v1/`, `/health`, and `/ready` free of proxy authentication and route them to the cloud server.
+
+Keep `MINDWTR_CLOUD_AUTH_TOKENS` and `MINDWTR_CLOUD_CORS_ORIGIN` configured as above. Proxy authentication controls page downloads; it is not an app lock for task data already downloaded into a browser, including an installed PWA.
+
+### Online-Only Mode Behind Basic Auth
+
+In Firefox, an existing service worker can cause a `401` after a browser restart without showing a Basic Auth prompt. On Docker images that support this option, set the following in the `.env` beside the bundled `compose.yaml`, then recreate `mindwtr-app` with `docker compose up -d`:
+
+```dotenv
+MINDWTR_PWA_ENABLED=false
+```
+
+The default is `true`, which keeps normal PWA behavior. With `false`, the app serves an inert worker at the same `/sw.js` URL. It activates without intercepting requests, forcing a reload, or deleting storage. The browser's task database is retained, but the app shell can no longer load offline; a network connection is required to open the app.
+
+An existing worker should update automatically, but this can take time. To recover immediately, use the browser's developer tools to unregister **only Mindwtr's service worker for this site**, close every Mindwtr tab and installed-PWA window for that site, then reopen it. **Do not clear site data**: that can delete locally stored tasks.
+
+For older images without this option, one reporter tested a Caddy workaround that makes `/sw.js` publicly accessible but returns `404` for it, followed by the same manual unregister/close/reopen steps. This is a reported workaround for those images; with the supported option, serve `/sw.js` from the app instead.
 
 ### Dropbox Sync and the Docker PWA
 

@@ -98,6 +98,8 @@ Die Fokus-Abschnitte erscheinen in dieser Reihenfolge: **Heutiger Fokus → Heut
 
 **Aufgabendaten.** Wähle unter **Filter → Aufgabendaten** **Heute**, **Nächste 7 Tage**, **Nächste 14 Tage**, **Nächste 30 Tage** oder **Alle kommenden**. Eine Aufgabe passt, wenn ihr Start-, Fälligkeits- oder Review-Datum im Zeitraum liegt. Die Zeiträume schließen heute ein und verwenden lokale Kalendertage; Alle kommenden umfasst heute und spätere Daten. **Jederzeit** entfernt die Bedingung. Andere Filter und die normalen Sichtbarkeitsregeln der Ansicht gelten weiterhin. Der Bereich „Demnächst“ in Fokus bleibt unverändert; Kalenderereignisse sind nicht enthalten.
 
+Ab v1.3.8 enthält **Überfällig + nächste 7 Tage** zusätzlich Aufgaben mit überfälligem Fälligkeitsdatum. Start-, Fälligkeits- oder Prüfdatum von heute bis einschließlich der folgenden sechs Tage passen, auch später heute. Ein vergangenes Start- oder Prüfdatum allein macht eine Aufgabe nicht überfällig. Speichern Sie den Filter und wählen Sie ihn im Aufgaben-Widget.
+
 ### 📁 Projekte
 
 Mehrstufige Ergebnisse mit zusammengehörigen Aufgaben.

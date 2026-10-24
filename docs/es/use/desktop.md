@@ -98,6 +98,8 @@ Foco mantiene fuera de sus listas accionables las tareas cuya fecha de inicio es
 
 **Fechas de tareas.** En **Filtros → Fechas de tareas**, elige **Hoy**, **Próximos 7 días**, **Próximos 14 días**, **Próximos 30 días** o **Todas las próximas**. Una tarea coincide si su fecha de inicio, vencimiento o revisión está dentro del intervalo. Los intervalos incluyen hoy y usan días del calendario local; Todas las próximas incluye hoy y las fechas posteriores. **Cualquier fecha** elimina esta condición. Los demás filtros y las reglas de visibilidad de la vista siguen vigentes. Esto no cambia la sección Próximas de Focus ni incluye eventos de calendario.
 
+Desde v1.3.8, **Vencidas + próximos 7 días** también incluye tareas cuyo vencimiento ya pasó. Coinciden las fechas de inicio, vencimiento o revisión desde hoy hasta los seis días siguientes, incluido más tarde hoy. Una fecha de inicio o revisión pasada no convierte por sí sola una tarea en vencida. Guarda el filtro y selecciónalo en el widget Tareas.
+
 ### 📁 Proyectos
 
 Resultados de varios pasos que contienen tareas relacionadas.

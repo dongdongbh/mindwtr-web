@@ -98,6 +98,8 @@ Focus tient les tâches dont la date de début est future et les tâches ultéri
 
 **Dates des tâches.** Dans **Filtres → Dates des tâches**, choisissez **Aujourd’hui**, **7 prochains jours**, **14 prochains jours**, **30 prochains jours** ou **Toutes les dates à venir**. Une tâche correspond si sa date de début, d’échéance ou de revue se trouve dans cette période. Les périodes incluent aujourd’hui et suivent les jours du calendrier local ; toutes les dates à venir comprend aujourd’hui et les dates ultérieures. **À tout moment** retire cette condition. Les autres filtres et les règles de visibilité de la vue restent applicables. La section À venir de Focus ne change pas et les événements de calendrier sont exclus.
 
+À partir de v1.3.8, **En retard + 7 prochains jours** inclut aussi les tâches dont l’échéance est dépassée. Les dates de début, d’échéance ou de révision entre aujourd’hui et les six jours suivants correspondent, y compris plus tard aujourd’hui. Une ancienne date de début ou de révision ne suffit pas à rendre une tâche en retard. Enregistrez ce filtre et sélectionnez-le dans le widget Tâches.
+
 ### 📁 Projets
 
 Résultats en plusieurs étapes contenant des tâches liées.

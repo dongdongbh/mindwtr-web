@@ -100,6 +100,8 @@ Starting with v1.3.4, **Settings → GTD → Include tasks starting today in Tod
 
 **Task dates.** In **Filters → Task dates**, choose **Today**, **Next 7 days**, **Next 14 days**, **Next 30 days**, or **All upcoming**. A task matches if its start, due, or review date falls in the range. Rolling ranges include today and use local calendar days; All upcoming includes today and later dates. Choose **Any time** to remove this condition. Other filters and the view’s normal visibility rules still apply; this does not change Focus’s Upcoming section or include calendar events.
 
+From v1.3.8, **Overdue + next 7 days** also includes tasks with overdue due dates. Start, due or review dates from today through the following six days match, including later today. A past start or review date alone does not make a task overdue. Save this filter and select it in the Tasks widget for a task-only dated list.
+
 ### 📁 Projects
 
 Multi-step outcomes containing related tasks.

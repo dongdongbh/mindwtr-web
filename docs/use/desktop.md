@@ -353,6 +353,8 @@ Saved Searches are shortcuts for reusable search queries:
 
 **To delete a saved search:** Open the saved search, then click the trash icon.
 
+**Sort:** Each saved search has its own **Sort** control and remembers its sort. The first option, **Use global setting**, follows your global task sort. Saved searches that never set a sort keep following it. Sorting changes only the order, not which tasks match.
+
 Saved Searches are separate from **Saved Filters** in Focus. Focus Saved Filters sync as filter criteria and are edited from the Focus filter controls.
 
 ---

@@ -95,6 +95,8 @@ Mindwtr unterstützt natürlichsprachige Schnelleingaben direkt im Aufgabenfeld.
 
 Absolute Daten verwenden unabhängig vom Gebietsschema und Anzeigeformat der Oberfläche das feste ISO-Format `YYYY-MM-DD` (zum Beispiel `/due:2026-03-15`).
 
+**Startdatum und Status:** Eine neue Aufgabe mit Startdatum kommt in **Nächste Aktionen**, wenn Sie keinen Status gewählt haben, genau wie beim Hinzufügen eines Startdatums zu einer Aufgabe im Eingang. Das gilt für Schnell hinzufügen, das Erfassungsfenster, Hinzufügen-Zeilen in Listen, Widgets und Kurzbefehle. Ein von Ihnen gewählter Status wie `/inbox` hat Vorrang, und beim Hinzufügen aus der Liste „Irgendwann/Vielleicht“ oder „Warten“ bleibt dieser Status erhalten. Ein Fälligkeits- oder Überprüfungsdatum allein ändert den Status nicht.
+
 **Maskieren**
 
 - Mit einem umgekehrten Schrägstrich bleiben Symbole einfacher Text: `\\@`, `\\#`, `\\+`, `\\!`, `\\%`, `\\/`

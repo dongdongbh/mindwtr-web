@@ -583,6 +583,8 @@ Use `mindwtr_add_task` + `quickAdd`:
 
 Use this for rapid capture flows where parsing commands is more efficient than setting each field manually.
 
+A task added with a start date and no `status` goes to `next`, as in the app. An explicit status, in `status` or as a token such as `/inbox`, is kept. A due date or review date alone keeps the task in `inbox`.
+
 ---
 
 ## Tool Reference

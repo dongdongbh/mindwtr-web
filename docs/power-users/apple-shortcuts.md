@@ -80,7 +80,7 @@ The **Task** text supports the full [quick-add syntax](/use/mobile#quick-add-syn
 What happens when it runs:
 
 1. The action queues the capture on the device and finishes immediately. Mindwtr stays in the background.
-2. The next time Mindwtr opens (or returns to the foreground), the queued task is created in the Inbox through the normal store and sync path.
+2. The next time Mindwtr opens (or returns to the foreground), the queued task is created in the Inbox through the normal store and sync path. A task with a start date goes to Next instead.
 
 Because the task is created on next open, it does not appear on other synced devices, and no reminder fires, until Mindwtr runs again on that iPhone or iPad. The **Project** parameter never creates new projects, though a `+Project` written in the task text follows quick-add rules and can create one.
 

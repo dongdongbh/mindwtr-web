@@ -95,6 +95,8 @@ Mindwtr admite lenguaje natural al añadir elementos rápidamente. Escribe direc
 
 Las fechas absolutas usan el formato ISO fijo `YYYY-MM-DD` (por ejemplo, `/due:2026-03-15`), independientemente del idioma o el formato de fecha de la interfaz.
 
+**Fecha de inicio y estado:** una tarea nueva con fecha de inicio va a **Próximas acciones** cuando no eliges un estado, igual que al añadir una fecha de inicio a una tarea de la Bandeja de entrada. Funciona en la adición rápida, la ventana de captura, las filas para añadir de las listas, los widgets y Atajos. Un estado que eliges, como `/inbox`, tiene prioridad, y al añadir desde una lista Algún día o En espera se mantiene ese estado. Una fecha de vencimiento o de revisión por sí sola no cambia el estado.
+
 **Caracteres de escape**
 
 - Usa una barra invertida para conservar los símbolos como texto: `\@`, `\#`, `\+`, `\!`, `\%`, `\/`.

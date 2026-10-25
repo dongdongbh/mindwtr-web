@@ -133,6 +133,8 @@ Saved Searches are shortcuts for reusable search queries.
 
 **To delete:** Open the saved search, tap the trash icon in the header.
 
+**Sort:** Each saved search has its own **Sort** control and remembers its sort. The first option, **Use global setting**, follows your global task sort. Saved searches that never set a sort keep following it. Sorting changes only the order, not which tasks match.
+
 Saved Searches are separate from **Saved Filters** in Focus. Focus filters save criteria such as projects, contexts, tags, priority, energy, and time estimates for the Focus view.
 
 ---

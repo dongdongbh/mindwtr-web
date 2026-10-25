@@ -95,6 +95,8 @@ Mindwtr comprend la saisie naturelle dans le champ de tâche. La même syntaxe f
 
 Les dates absolues utilisent toujours le format ISO `YYYY-MM-DD`, par exemple `/due:2026-03-15`, indépendamment de la langue et du format d’affichage de l’interface.
 
+**Date de début et statut :** une nouvelle tâche avec une date de début va dans **Prochaines actions** si vous n’avez pas choisi de statut, comme lorsqu’on ajoute une date de début à une tâche de la Boîte de réception. Cela vaut pour l’ajout rapide, la fenêtre de capture, les lignes d’ajout des listes, les widgets et Raccourcis. Un statut que vous choisissez, comme `/inbox`, l’emporte, et un ajout depuis une liste Un jour/Peut-être ou En attente garde ce statut. Une date d’échéance ou de revue seule ne change pas le statut.
+
 **Échappement**
 
 - Utilisez une barre oblique inverse pour conserver les symboles comme texte brut : `\@`, `\#`, `\+`, `\!`, `\%`, `\/`.

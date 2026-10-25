@@ -123,6 +123,8 @@ Ein vorangestelltes `-` negiert jeden Operator, nicht nur die beiden gezeigten: 
 
 **Löschen:** Gespeicherte Suche öffnen und Papierkorbsymbol antippen.
 
+**Sortieren:** Jede gespeicherte Suche hat ihr eigenes Steuerelement **Sortieren** und merkt sich ihre Sortierung. Die erste Option, **Globale Einstellung verwenden**, folgt Ihrer globalen Aufgabensortierung. Gespeicherte Suchen, für die nie eine Sortierung gewählt wurde, folgen ihr weiterhin. Die Sortierung ändert nur die Reihenfolge, nicht welche Aufgaben passen.
+
 Gespeicherte Suchen unterscheiden sich von **Gespeicherten Filtern** in „Fokus“. Fokusfilter speichern Kriterien wie Projekte, Kontexte, Tags, Priorität, Energie und Zeitschätzungen.
 
 ---

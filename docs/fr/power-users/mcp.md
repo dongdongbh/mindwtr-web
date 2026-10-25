@@ -583,6 +583,8 @@ Utilisez `mindwtr_add_task` + `quickAdd` :
 
 Utilisez cette méthode pour les flux de capture rapide où l’analyse des commandes est plus efficace que la définition manuelle de chaque champ.
 
+Une tâche ajoutée avec une date de début et sans `status` va dans `next`, comme dans l’app. Un statut explicite, dans `status` ou sous forme de jeton comme `/inbox`, est conservé. Une date d’échéance ou de revue seule laisse la tâche dans `inbox`.
+
 ---
 
 ## Référence des outils

@@ -583,6 +583,8 @@ Verwenden Sie `mindwtr_add_task` und `quickAdd`:
 
 Verwenden Sie dies für schnelle Erfassungsabläufe, bei denen Parserbefehle effizienter sind, als jedes Feld einzeln zu setzen.
 
+Eine Aufgabe, die mit Startdatum und ohne `status` hinzugefügt wird, kommt wie in der App in `next`. Ein ausdrücklicher Status, in `status` oder als Token wie `/inbox`, bleibt erhalten. Ein Fälligkeits- oder Überprüfungsdatum allein lässt die Aufgabe in `inbox`.
+
 ---
 
 ## Werkzeugreferenz

@@ -94,6 +94,8 @@ Mindwtr supports natural language quick-add. Type directly in the task input. Th
 
 Absolute dates use fixed ISO format `YYYY-MM-DD` (for example, `/due:2026-03-15`), regardless of your UI locale/date display format.
 
+**Start date and status:** A new task with a start date goes to **Next** when you did not choose a status, the same as adding a start date to an Inbox task. This works in Quick Add, the capture popup, list add rows, widgets and Shortcuts. A status you choose, such as `/inbox`, wins, and adding from a Someday or Waiting list keeps that status. A due date or review date alone does not change the status.
+
 **Escaping**
 - Use a backslash to keep symbols as plain text: `\\@`, `\\#`, `\\+`, `\\!`, `\\%`, `\\/`
 - Example: `Call \\@support /due:tomorrow` → title becomes `Call @support`

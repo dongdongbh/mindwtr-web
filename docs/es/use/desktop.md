@@ -339,6 +339,8 @@ Las Búsquedas guardadas son accesos directos a consultas reutilizables:
 
 **Para eliminar una búsqueda guardada:** abre la búsqueda y haz clic en el icono de la papelera.
 
+**Orden:** cada búsqueda guardada tiene su propio control **Orden** y recuerda su orden. La primera opción, **Usar ajuste global**, sigue el orden global de tareas. Las búsquedas guardadas que nunca eligieron un orden lo siguen usando. Ordenar solo cambia el orden, no qué tareas coinciden.
+
 Las Búsquedas guardadas son distintas de los **Filtros guardados** de Foco. Los Filtros guardados de Foco se sincronizan como criterios de filtrado y se editan desde los controles de filtro de Foco.
 
 ---

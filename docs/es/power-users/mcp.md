@@ -583,6 +583,8 @@ Usa `mindwtr_add_task` + `quickAdd`:
 
 Úsalo para flujos de captura rápida en los que analizar comandos sea más eficiente que establecer cada campo manualmente.
 
+Una tarea añadida con fecha de inicio y sin `status` va a `next`, como en la app. Un estado explícito, en `status` o como token, por ejemplo `/inbox`, se mantiene. Una fecha de vencimiento o de revisión por sí sola deja la tarea en `inbox`.
+
 ---
 
 ## Referencia de herramientas

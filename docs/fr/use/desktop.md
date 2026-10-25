@@ -339,6 +339,8 @@ Les Recherches enregistrées sont des raccourcis vers des requêtes de recherche
 
 **Pour supprimer une recherche enregistrée :** ouvrez-la, puis cliquez sur l’icône de corbeille.
 
+**Trier :** chaque recherche enregistrée a sa propre commande **Trier** et retient son tri. La première option, **Utiliser le réglage global**, suit le tri global des tâches. Les recherches enregistrées qui n’ont jamais choisi de tri continuent de le suivre. Le tri change seulement l’ordre, pas les tâches qui correspondent.
+
 Les Recherches enregistrées sont distinctes des **Filtres enregistrés** de Focus. Les Filtres enregistrés de Focus sont synchronisés sous forme de critères de filtrage et modifiés depuis les commandes de filtrage de Focus.
 
 ---

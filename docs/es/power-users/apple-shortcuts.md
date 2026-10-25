@@ -72,7 +72,7 @@ El texto de **Tarea** admite la [sintaxis de añadido rápido](/es/use/mobile#si
 Al ejecutarse:
 
 1. La acción pone la captura en cola en el dispositivo y termina de inmediato. Mindwtr permanece en segundo plano.
-2. La próxima vez que Mindwtr se abra o vuelva al primer plano, la tarea en cola se crea mediante el almacenamiento y la sincronización normales.
+2. La próxima vez que Mindwtr se abra o vuelva al primer plano, la tarea en cola se crea en la Bandeja de entrada mediante el almacenamiento y la sincronización normales. Una tarea con fecha de inicio va a Próximas acciones.
 
 Como se crea al volver a abrir Mindwtr, no aparecerá en otros dispositivos sincronizados ni se activará ningún recordatorio hasta que la aplicación vuelva a ejecutarse en ese iPhone o iPad. El parámetro **Proyecto** nunca crea proyectos; sin embargo, un `+Project` escrito en el texto de la tarea sigue las reglas del añadido rápido y puede crear uno.
 

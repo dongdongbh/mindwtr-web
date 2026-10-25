@@ -80,7 +80,7 @@ Le texte de **Tâche** prend en charge la [syntaxe d’ajout rapide](/fr/use/mob
 Ce qui se passe lors de l’exécution :
 
 1. L’action place la capture dans la file d’attente de l’appareil et se termine immédiatement. Mindwtr reste en arrière-plan.
-2. À la prochaine ouverture de Mindwtr (ou à son retour au premier plan), la tâche en attente est créée dans la boîte de réception via le magasin et le flux de synchronisation habituels.
+2. À la prochaine ouverture de Mindwtr (ou à son retour au premier plan), la tâche en attente est créée dans la boîte de réception via le magasin et le flux de synchronisation habituels. Une tâche avec une date de début va plutôt dans Prochaines actions.
 
 Comme la tâche est créée à la prochaine ouverture, elle n’apparaît pas sur les autres appareils synchronisés et aucun rappel ne se déclenche tant que Mindwtr n’a pas été relancé sur cet iPhone ou cet iPad. Le paramètre **Projet** ne crée jamais de nouveaux projets ; en revanche, un `+Project` écrit dans le texte de la tâche suit les règles de l’ajout rapide et peut en créer un.
 

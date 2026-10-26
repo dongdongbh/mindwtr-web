@@ -71,6 +71,7 @@ Revisa cada elemento de la bandeja de entrada:
 - La revisión te muestra estos elementos sin necesidad de fechas de revisión
 - Los elementos que aplazaste a propósito no se consideran estancados: una tarea o un proyecto con una fecha de revisión futura (o una tarea con una fecha de inicio futura) se deja en paz hasta que llegue esa fecha
 - Actualiza o completa cada elemento, o déjalo ir (muévelo a Algún día, archívalo o elimínalo)
+- Toca un proyecto estancado para ver sus tareas: edítalas ahí mismo, añade una tarea o abre el proyecto
 - El paso se omite cuando nada se ha quedado estancado
 - Si la revisión con IA está activada, las sugerencias de la IA aparecen en este paso (consulta más abajo)
 
@@ -116,6 +117,7 @@ Revisa cada elemento de la bandeja de entrada:
 - Consulta los proyectos con/sin próximas acciones
 - Añade próximas acciones donde falten. El campo Añadir tarea acepta la [sintaxis de adición rápida](/es/use/desktop#sintaxis-de-adicion-rapida) completa (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …), y **Guardar y editar** crea la tarea y la abre en el editor sin salir de la revisión
 - Marca los proyectos completados como Hechos
+- Abre un proyecto desde su tarjeta para editar el propio proyecto. Si vuelves a abrir la revisión después, continúa en el mismo paso
 
 ### Paso 6: Algún día/Quizá
 

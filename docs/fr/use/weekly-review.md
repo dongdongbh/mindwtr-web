@@ -71,6 +71,7 @@ Examinez chaque élément de la boîte de réception :
 - La revue fait apparaître ces éléments sans nécessiter de dates de revue
 - Les éléments que vous avez volontairement reportés ne sont pas considérés comme obsolètes : une tâche ou un projet ayant une date de revue future (ou une tâche ayant une date de début future) est laissé de côté jusqu’à l’arrivée de cette date
 - Mettez à jour, terminez ou abandonnez chaque élément (déplacez-le vers Un jour, archivez-le ou supprimez-le)
+- Touchez un projet obsolète pour voir ses tâches : modifiez-les sur place, ajoutez une tâche ou ouvrez le projet
 - Cette étape est ignorée si rien n’est devenu obsolète
 - Si la revue par IA est activée, les suggestions de l’IA apparaissent à cette étape (voir ci-dessous)
 
@@ -116,6 +117,7 @@ Examinez chaque élément de la boîte de réception :
 - Affichez les projets avec ou sans prochaines actions
 - Ajoutez les prochaines actions manquantes. L’invite Ajouter une tâche accepte toute la [syntaxe d’ajout rapide](/fr/use/desktop#syntaxe-d-ajout-rapide) (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …), et **Enregistrer et modifier** crée la tâche et l’ouvre dans l’éditeur sans quitter la revue
 - Marquez les projets achevés comme Terminés
+- Ouvrez un projet depuis sa carte pour modifier le projet lui-même. Si vous rouvrez la revue ensuite, elle reprend à la même étape
 
 ### Étape 6 : Un jour/Peut-être
 

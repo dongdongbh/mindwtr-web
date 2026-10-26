@@ -71,6 +71,7 @@ Prüfen Sie jeden Eingangseintrag:
 - Der Rückblick zeigt diese Einträge ohne erforderliche Wiedervorlagedaten an.
 - Absichtlich zurückgestellte Einträge gelten nicht als veraltet: Eine Aufgabe oder ein Projekt mit zukünftigem Wiedervorlagedatum (oder eine Aufgabe mit zukünftigem Startdatum) bleibt bis zu diesem Datum unberührt.
 - Aktualisieren oder erledigen Sie jeden Eintrag oder lassen Sie ihn los (nach „Irgendwann“ verschieben, archivieren oder löschen).
+- Tippen Sie auf ein veraltetes Projekt, um seine Aufgaben zu sehen: Bearbeiten Sie sie direkt, fügen Sie eine Aufgabe hinzu oder öffnen Sie das Projekt
 - Der Schritt wird übersprungen, wenn nichts veraltet ist.
 - Bei aktivierter KI-Durchsicht erscheinen in diesem Schritt KI-Vorschläge (siehe unten).
 
@@ -116,6 +117,7 @@ Prüfen Sie jeden Eingangseintrag:
 - Projekte mit/ohne nächste Aktionen anzeigen
 - Fehlende nächste Aktionen hinzufügen. Die Eingabe „Aufgabe hinzufügen“ akzeptiert die vollständige [Syntax für „Schnell hinzufügen“](/de/use/desktop#quick-add-syntax) (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …). **Speichern & bearbeiten** erstellt die Aufgabe und öffnet sie im Editor, ohne den Rückblick zu verlassen.
 - Abgeschlossene Projekte als erledigt markieren
+- Öffnen Sie ein Projekt über seine Karte, um das Projekt selbst zu bearbeiten. Wenn Sie den Rückblick danach wieder öffnen, geht er beim selben Schritt weiter
 
 ### Schritt 6: Irgendwann/Vielleicht
 

@@ -71,6 +71,7 @@ Review each inbox item:
 - The review surfaces these for you, with no review dates required
 - Items you deferred on purpose don't count as stale: a task or project with a future review date (or a task with a future start date) is left alone until that date arrives
 - Update, complete, or let each one go (move to Someday, archive, or delete)
+- Tap a stale project to see its tasks: edit them in place, add a task, or open the project
 - The step is skipped when nothing has gone stale
 - If AI review is enabled, AI suggestions appear in this step (see below)
 
@@ -116,6 +117,7 @@ Review each inbox item:
 - See projects with/without next actions
 - Add next actions where missing. The Add task prompt accepts the full [quick-add syntax](/use/desktop#quick-add-syntax) (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …), and **Save & edit** creates the task and opens it in the editor without leaving the review
 - Mark completed projects as Done
+- Open a project from its card to edit the project itself. Reopen the review afterwards and it continues at the same step
 
 ### Step 6: Someday/Maybe
 

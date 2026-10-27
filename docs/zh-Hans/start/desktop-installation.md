@@ -373,6 +373,10 @@ sudo pacman -S webkit2gtk-4.1
 sudo apt install libwebkit2gtk-4.1-0
 ```
 
+### 缺少 WebView2（Windows）
+
+Mindwtr 在 Windows 上使用 Microsoft 的 WebView2 运行时绘制窗口。Windows 10 和 11 通常已自带。如果缺少，安装程序会在安装时尝试下载它；没有网络或 Microsoft 下载站点被屏蔽时会失败。请从 [Microsoft 的 WebView2 页面](https://developer.microsoft.com/microsoft-edge/webview2/) 安装 **Evergreen Standalone Installer**（x64），然后重新运行 Mindwtr 安装程序。便携版 ZIP 从不安装 WebView2，因此使用便携版时也请先安装它。
+
 ### 图标缺失
 
 安装完整的图标主题：

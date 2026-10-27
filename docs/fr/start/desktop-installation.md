@@ -373,6 +373,10 @@ sudo pacman -S webkit2gtk-4.1
 sudo apt install libwebkit2gtk-4.1-0
 ```
 
+### WebView2 manquant (Windows)
+
+Sous Windows, Mindwtr affiche sa fenêtre avec le runtime WebView2 de Microsoft. Windows 10 et 11 l’incluent en général. S’il manque, le programme d’installation essaie de le télécharger pendant l’installation, ce qui échoue sans accès à Internet ou lorsque le site de téléchargement de Microsoft est bloqué. Installez l’**Evergreen Standalone Installer** (x64) depuis [la page WebView2 de Microsoft](https://developer.microsoft.com/microsoft-edge/webview2/), puis relancez le programme d’installation de Mindwtr. Le ZIP portable n’installe jamais WebView2 : installez-le d’abord pour la version portable aussi.
+
 ### Icônes manquantes
 
 Installez un thème d’icônes complet :

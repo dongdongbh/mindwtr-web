@@ -953,3 +953,9 @@ Consulta [Datos y sincronización](/es/data-sync/) para configurar la sincroniza
 ## Crear un proyecto a partir de una lista {#checklist-project-conversion}
 
 Puedes elegir convertir una lista en tareas al crear un proyecto. La opción empieza desmarcada. Consulta [conversión de listas en proyectos](./desktop#checklist-project-conversion) para conocer la información transferida, las restricciones y Deshacer.
+
+## Añadir un elemento de la bandeja de entrada a una lista {#inbox-to-checklist}
+
+En el menú **Organizar** de un elemento de la bandeja de entrada (desliza la fila a la izquierda), elige **Añadir a la lista de verificación…** y una tarea. Funciona como en escritorio: el elemento se convierte en una entrada sin marcar, el elemento de la bandeja va a la Papelera y **Deshacer** restaura ambos. Consulta [Añadir un elemento de la bandeja de entrada a una lista](./desktop#inbox-to-checklist) para ver qué elementos cumplen los requisitos.
+
+Los selectores de proyecto muestran primero los proyectos activos y después los de Algún día y En espera bajo el encabezado **Algún día/Tal vez o En espera**.

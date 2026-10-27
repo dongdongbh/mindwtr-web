@@ -891,3 +891,9 @@ Einrichtung: [Daten und Synchronisierung](/de/data-sync/).
 ## Aus einer Checkliste ein Projekt erstellen {#checklist-project-conversion}
 
 Die Projektumwandlung kann eine Checkliste ausdrücklich in Aufgaben aufteilen. Die Option ist standardmäßig aus. Details zu Datenübernahme, Grenzen und Rückgängig stehen unter [Checkliste in Projekt umwandeln](./desktop#checklist-project-conversion).
+
+## Einen Eingangseintrag zu einer Checkliste hinzufügen {#inbox-to-checklist}
+
+Wählen Sie im Menü **Organisieren** eines Eingangseintrags (Zeile nach links wischen) **Zur Checkliste hinzufügen…** und dann eine Aufgabe. Es funktioniert wie am Desktop: Der Eintrag wird zu einem nicht abgehakten Checklistenpunkt, der Eingangseintrag wandert in den Papierkorb, und **Rückgängig** stellt beides wieder her. Welche Einträge infrage kommen, steht unter [Einen Eingangseintrag zu einer Checkliste hinzufügen](./desktop#inbox-to-checklist).
+
+Projektauswahlen zeigen zuerst aktive Projekte, dann Irgendwann- und Warten-Projekte unter der Überschrift **Irgendwann/Warten**.

@@ -968,3 +968,9 @@ See [Data and Sync](/data-sync/) for sync setup.
 ## Create a project from a checklist {#checklist-project-conversion}
 
 Project conversion can optionally expand a checklist into tasks. The choice starts off each time. See [checklist project conversion](./desktop#checklist-project-conversion) for transferred information, restrictions, and Undo.
+
+## Add an Inbox item to a checklist {#inbox-to-checklist}
+
+In an Inbox item's **Organize** menu (swipe left on the row), choose **Add to checklist…** and pick a task. It works as on desktop: the item becomes one unchecked checklist entry, the Inbox item moves to Trash, and **Undo** puts both back. See [Add an Inbox item to a checklist](./desktop#inbox-to-checklist) for which items qualify.
+
+Project pickers list active projects first, then Someday and Waiting projects under a **Someday / Waiting** heading.

@@ -720,3 +720,9 @@ Bei Auswahl entsteht pro Eintrag eine Aufgabe im neuen Projekt, mit gleicher Rei
 Unterstützt werden Eingang, nächste Aktionen und erledigte Aufgaben in aktiven Projekten. Wiederholungen, relative Daten, wiederholte Erinnerungen, Uhrzeiten mit Erinnerungen, zuständige Personen, Orte, Zeitschätzungen und erfasste Zeit müssen zuvor entfernt werden; alternativ bleibt die Checkliste zusammen. Der Dialog erklärt die Einschränkung.
 
 „Rückgängig“ stellt das Original wieder her und entfernt die erzeugten Aufgaben und das Projekt, solange sie unverändert sind. Spätere Bearbeitungen oder hinzugefügte Aufgaben verhindern ein Überschreiben. Nach einem Speicherfehler kann dieselbe Umwandlung ohne Duplikate erneut gespeichert werden. Einzelne Checklistenpunkte lassen sich damit nicht separat herauslösen.
+
+## Einen Eingangseintrag zu einer Checkliste hinzufügen {#inbox-to-checklist}
+
+Klicken Sie mit der rechten Maustaste auf einen Eingangseintrag, wählen Sie **Zur Checkliste hinzufügen…** und dann eine Aufgabe. Der Eintrag wird zu einem nicht abgehakten Punkt in der Checkliste dieser Aufgabe, und der Eingangseintrag wandert in den Papierkorb. **Rückgängig** in der Meldung stellt beides wieder her. Die Aktion erscheint nur für einen Eingangseintrag, der nur aus einem Titel besteht. Hat er Notizen, Anhänge, Daten, Tags, Kontexte, ein Projekt, eine Erinnerung oder andere Angaben, bleibt die Aktion verborgen, damit nichts verloren geht. Ein Bereich, den Mindwtr als Ihren Standardbereich für Erfassungen selbst eingetragen hat, zählt nicht. Aufgaben, die schon eine Checkliste haben, stehen oben.
+
+Projektauswahlen zeigen zuerst aktive Projekte, dann Irgendwann- und Warten-Projekte unter der Überschrift **Irgendwann/Warten**.

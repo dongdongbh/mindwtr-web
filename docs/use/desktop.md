@@ -741,3 +741,9 @@ When selected, each checklist item becomes a task in a new project, preserving o
 Expansion is available for Inbox, Next, and completed tasks, with any parent project active. Recurrence, relative dates, repeating reminders, timed dates with reminders, assignees, locations, time estimates, and recorded time must be cleared first or kept on the original task by leaving expansion off. The dialog explains why expansion is unavailable.
 
 **Undo** restores the original task and removes the generated project/tasks only while they remain unchanged. Later edits or added tasks prevent Undo from overwriting work. A failed save can retry the same conversion without creating duplicates. Individual checklist-item extraction is not included.
+
+## Add an Inbox item to a checklist {#inbox-to-checklist}
+
+Right-click an Inbox item and choose **Add to checklist…**, then pick a task. The item becomes one unchecked entry in that task's checklist, and the Inbox item moves to Trash. **Undo** in the notice puts both back. The action only appears for an Inbox item that is just a title. If it has notes, attachments, dates, tags, contexts, a project, a reminder or other details, the action stays hidden so nothing is lost. An area that Mindwtr filled in as your default capture area does not count. Tasks that already have a checklist are listed first.
+
+Project pickers list active projects first, then Someday and Waiting projects under a **Someday / Waiting** heading.

@@ -725,3 +725,9 @@ Chaque élément devient une tâche, avec le même ordre et le même état coch�
 Cette conversion concerne les tâches de la boîte de réception, les prochaines actions et les tâches terminées dans un projet actif. Il faut d’abord retirer récurrence, dates relatives, rappels répétés, heures avec rappel, responsable, lieu, estimation et temps enregistré, ou laisser l’option décochée. Le dialogue explique les restrictions.
 
 Annuler rétablit l’original et retire le projet et les tâches créés tant qu’ils n’ont pas changé. Toute modification ultérieure ou tâche ajoutée empêche d’écraser le travail. Après un échec d’enregistrement, réessayez la même conversion sans doublons. L’extraction d’éléments individuels n’est pas incluse.
+
+## Ajouter un élément de la boîte de réception à une liste {#inbox-to-checklist}
+
+Faites un clic droit sur un élément de la boîte de réception, choisissez **Ajouter à la liste de contrôle…** puis une tâche. L’élément devient une entrée non cochée de la liste de cette tâche, et l’élément de la boîte de réception part à la corbeille. **Annuler** dans la notification rétablit les deux. L’action n’apparaît que pour un élément qui n’est qu’un titre. S’il a des notes, des pièces jointes, des dates, des tags, des contextes, un projet, un rappel ou d’autres détails, l’action reste masquée pour ne rien perdre. Un domaine que Mindwtr a rempli lui-même comme domaine de capture par défaut ne compte pas. Les tâches qui ont déjà une liste apparaissent en premier.
+
+Les sélecteurs de projet affichent d’abord les projets actifs, puis les projets Un jour et En attente sous l’en-tête **Un jour / En attente**.

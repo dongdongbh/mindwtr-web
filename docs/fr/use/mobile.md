@@ -953,3 +953,9 @@ Consultez [Données et synchronisation](/fr/data-sync/) pour configurer la synch
 ## Créer un projet à partir d’une liste {#checklist-project-conversion}
 
 La création d’un projet peut transformer une liste en tâches sur demande explicite. L’option est décochée par défaut. Voir [conversion d’une liste en projet](./desktop#checklist-project-conversion) pour les données transférées, les restrictions et l’annulation.
+
+## Ajouter un élément de la boîte de réception à une liste {#inbox-to-checklist}
+
+Dans le menu **Organiser** d’un élément de la boîte de réception (balayez la ligne vers la gauche), choisissez **Ajouter à la liste de contrôle…** puis une tâche. Cela fonctionne comme sur ordinateur : l’élément devient une entrée non cochée, l’élément de la boîte de réception part à la corbeille et **Annuler** rétablit les deux. Voir [Ajouter un élément de la boîte de réception à une liste](./desktop#inbox-to-checklist) pour savoir quels éléments sont acceptés.
+
+Les sélecteurs de projet affichent d’abord les projets actifs, puis les projets Un jour et En attente sous l’en-tête **Un jour / En attente**.

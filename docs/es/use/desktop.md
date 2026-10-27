@@ -725,3 +725,9 @@ Al marcarla, cada elemento se convierte en una tarea nueva, respetando el orden 
 Disponible para tareas de Entrada, Próximas y completadas en proyectos activos. Antes hay que eliminar recurrencias, fechas relativas, recordatorios repetidos, horas con recordatorio, responsables, ubicaciones, estimaciones y tiempo registrado; o dejar la opción desmarcada. El diálogo explica las restricciones.
 
 Deshacer restaura el original y elimina el proyecto y las tareas generadas mientras sigan sin cambios. Las modificaciones posteriores o tareas añadidas impiden sobrescribir trabajo. Tras un fallo de guardado puedes reintentar la misma conversión sin duplicados. No incluye extraer elementos individuales.
+
+## Añadir un elemento de la bandeja de entrada a una lista {#inbox-to-checklist}
+
+Haz clic derecho en un elemento de la bandeja de entrada, elige **Añadir a la lista de verificación…** y luego una tarea. El elemento se convierte en una entrada sin marcar de la lista de esa tarea, y el elemento de la bandeja va a la Papelera. **Deshacer** en el aviso restaura ambos. La acción solo aparece para un elemento que es solo un título. Si tiene notas, adjuntos, fechas, etiquetas, contextos, un proyecto, un recordatorio u otros detalles, la acción queda oculta para no perder nada. Un área que Mindwtr puso por sí solo como tu área predeterminada de captura no cuenta. Las tareas que ya tienen una lista aparecen primero.
+
+Los selectores de proyecto muestran primero los proyectos activos y después los de Algún día y En espera bajo el encabezado **Algún día/Tal vez o En espera**.

@@ -253,7 +253,7 @@ flatpak override --user --filesystem="$HOME/Mindwtr" tech.dongdongbh.mindwtr
 
 Mindwtr 现在会在首次 `PUT` 前自动创建缺失的父文件夹，因此你可以将它指向一个新的空文件夹，而无需手动预先创建每一层。
 
-公共 URL 上的 WebDAV 使用 HTTPS。`localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、环回/私有 IPv6 地址、`*.local` 和 `*.home.arpa` 等已识别的本地/私有目标会自动允许普通 HTTP。对于自定义 DNS、VPN 主机名、Tailscale、ZeroTier 以及任何未被识别为本地/私有的名称，请使用 HTTPS，或在同步设置中开启**允许不安全连接（HTTP）**。开启后数据将以未加密方式传输，请仅在可信网络中使用。
+公共 URL 上的 WebDAV 使用 HTTPS。`localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、环回/私有 IPv6 地址、`*.local` 和 `*.home.arpa` 等已识别的本地/私有目标会自动允许普通 HTTP。对于自定义 DNS、VPN 主机名、Tailscale、ZeroTier 以及任何未被识别为本地/私有的名称，请使用 HTTPS，或在同步设置中开启**允许不安全连接（HTTP）**。开启后数据将以未加密方式传输，请仅在可信网络中使用。在 iOS 上，此开关无法解除 Apple 自身的规则：即使开启开关，iOS 也会阻止以明文 HTTP 访问完整域名（例如 Tailscale 的 `*.ts.net` 名称）。在 iPhone 和 iPad 上请对这类名称使用 HTTPS；使用 Tailscale 时，`tailscale serve` 可为服务器提供 HTTPS 地址。
 
 ### 4. Mindwtr Cloud（自托管）
 
@@ -269,7 +269,7 @@ Mindwtr 为高级用户提供了一个可自行托管的简单同步服务器（
 
 - **公共 Mindwtr Cloud URL 必须使用 HTTPS。**`localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、环回/私有 IPv6 地址、`*.local` 和 `*.home.arpa` 等本地/私有目标会自动允许普通 HTTP。
 - 如果你在可信局域网之外公开云端，请将服务器置于 `caddy`、`nginx` 或 `traefik` 等使用 HTTPS 的反向代理之后。
-- 自定义 DNS、VPN 主机名、Tailscale、ZeroTier 以及任何未被识别为本地/私有的名称都应使用 HTTPS，或在同步设置中开启**允许不安全连接（HTTP）**，以便通过明文 HTTP 接受该主机名。开启后数据将以未加密方式传输，请仅在可信网络中使用。
+- 自定义 DNS、VPN 主机名、Tailscale、ZeroTier 以及任何未被识别为本地/私有的名称都应使用 HTTPS，或在同步设置中开启**允许不安全连接（HTTP）**，以便通过明文 HTTP 接受该主机名。开启后数据将以未加密方式传输，请仅在可信网络中使用。在 iOS 上，此开关无法解除 Apple 自身的规则：即使开启开关，iOS 也会阻止以明文 HTTP 访问完整域名（例如 Tailscale 的 `*.ts.net` 名称）。在 iPhone 和 iPad 上请对这类名称使用 HTTPS；使用 Tailscale 时，`tailscale serve` 可为服务器提供 HTTPS 地址。
 
 ### 5. Dropbox OAuth 同步
 

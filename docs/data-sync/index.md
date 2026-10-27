@@ -253,7 +253,7 @@ Sync directly to a WebDAV server:
 
 Mindwtr now creates missing parent folders automatically before the first `PUT`, so you can point it at a new empty folder without manually pre-creating every level.
 
-WebDAV uses HTTPS for public URLs. Plain HTTP is allowed automatically for recognized local/private targets such as `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` through `172.31.x.x`, `192.168.x.x`, loopback/private IPv6 addresses, `*.local`, and `*.home.arpa`. For custom DNS, VPN hostnames, Tailscale, ZeroTier, and any name that is not recognized as local/private, use HTTPS or enable **Allow insecure connections (HTTP)** in the sync settings. Data then travels unencrypted, so only use the override on a network you trust.
+WebDAV uses HTTPS for public URLs. Plain HTTP is allowed automatically for recognized local/private targets such as `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` through `172.31.x.x`, `192.168.x.x`, loopback/private IPv6 addresses, `*.local`, and `*.home.arpa`. For custom DNS, VPN hostnames, Tailscale, ZeroTier, and any name that is not recognized as local/private, use HTTPS or enable **Allow insecure connections (HTTP)** in the sync settings. Data then travels unencrypted, so only use the override on a network you trust. On iOS the switch cannot lift Apple's own rule: iOS blocks plain HTTP to a full domain name, such as a Tailscale `*.ts.net` name, even with the switch on. Use HTTPS for those names on iPhone and iPad; with Tailscale, `tailscale serve` gives the server an HTTPS address.
 
 ### 4. Mindwtr Cloud (Self-Hosted)
 
@@ -269,7 +269,7 @@ Important client note:
 
 - **HTTPS is required for public Mindwtr Cloud URLs.** Plain HTTP is allowed automatically for local/private targets such as `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` through `172.31.x.x`, `192.168.x.x`, loopback/private IPv6 addresses, `*.local`, and `*.home.arpa`.
 - If you are exposing Cloud outside a trusted LAN, put the server behind HTTPS with a reverse proxy such as `caddy`, `nginx`, or `traefik`.
-- Use HTTPS for custom DNS, VPN hostnames, Tailscale, ZeroTier, and any name that is not recognized as local/private, or enable **Allow insecure connections (HTTP)** in the sync settings to accept that hostname over plain HTTP. Data then travels unencrypted, so only use it on a network you trust.
+- Use HTTPS for custom DNS, VPN hostnames, Tailscale, ZeroTier, and any name that is not recognized as local/private, or enable **Allow insecure connections (HTTP)** in the sync settings to accept that hostname over plain HTTP. Data then travels unencrypted, so only use it on a network you trust. On iOS the switch cannot lift Apple's own rule: iOS blocks plain HTTP to a full domain name, such as a Tailscale `*.ts.net` name, even with the switch on. Use HTTPS for those names on iPhone and iPad; with Tailscale, `tailscale serve` gives the server an HTTPS address.
 
 ### 5. Dropbox OAuth Sync
 

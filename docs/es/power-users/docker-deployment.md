@@ -44,7 +44,7 @@ Si prefieres compilar las imágenes desde el código fuente, clona el repositori
 
 Este archivo Compose predeterminado usa únicamente HTTP y está pensado para pruebas locales o privadas. Los clientes de escritorio y móviles de Mindwtr solo aceptan HTTP para destinos locales o privados reconocidos, como `localhost`, `127.0.0.1`, `10.x.x.x`, desde `172.16.x.x` hasta `172.31.x.x`, `192.168.x.x`, direcciones IPv6 de bucle local o privadas, `*.local` y `*.home.arpa`.
 
-Para URL públicas, nombres DNS personalizados, nombres de host de VPN, Tailscale, ZeroTier o cualquier nombre que no se reconozca como local o privado, usa HTTPS, o activa **Permitir conexiones inseguras (HTTP)** en los ajustes de sincronización de la app para aceptar ese nombre de host por HTTP sin cifrar. Los datos viajan entonces sin cifrar, así que úsala solo en una red de confianza.
+Para URL públicas, nombres DNS personalizados, nombres de host de VPN, Tailscale, ZeroTier o cualquier nombre que no se reconozca como local o privado, usa HTTPS, o activa **Permitir conexiones inseguras (HTTP)** en los ajustes de sincronización de la app para aceptar ese nombre de host por HTTP sin cifrar. Los datos viajan entonces sin cifrar, así que úsala solo en una red de confianza. En iOS el interruptor no puede saltarse la regla de Apple: iOS bloquea HTTP sin cifrar hacia un nombre de dominio completo, como un nombre de Tailscale `*.ts.net`, aunque el interruptor esté activado. Usa HTTPS para esos nombres en iPhone y iPad; con Tailscale, `tailscale serve` da al servidor una dirección HTTPS.
 
 ---
 

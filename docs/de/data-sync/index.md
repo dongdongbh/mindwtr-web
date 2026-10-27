@@ -252,7 +252,7 @@ Direkte Synchronisierung mit einem WebDAV-Server:
 
 Mindwtr erstellt fehlende übergeordnete Ordner vor dem ersten `PUT` automatisch. Dadurch kann ein neuer leerer Ordner angegeben werden, ohne jede Ebene vorher manuell anzulegen.
 
-Öffentliche WebDAV-URLs verwenden HTTPS. Reines HTTP ist automatisch für erkannte lokale/private Ziele erlaubt: `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` bis `172.31.x.x`, `192.168.x.x`, private/Loopback-IPv6-Adressen, `*.local`, `*.home.arpa`. Verwenden Sie für eigenes DNS, VPN-Namen, Tailscale, ZeroTier und alle nicht als privat erkannten Namen HTTPS, oder aktivieren Sie **Unsichere Verbindungen (HTTP) erlauben** in den Sync-Einstellungen. Die Daten werden dann unverschlüsselt übertragen; verwenden Sie die Option daher nur in einem Netzwerk, dem Sie vertrauen.
+Öffentliche WebDAV-URLs verwenden HTTPS. Reines HTTP ist automatisch für erkannte lokale/private Ziele erlaubt: `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` bis `172.31.x.x`, `192.168.x.x`, private/Loopback-IPv6-Adressen, `*.local`, `*.home.arpa`. Verwenden Sie für eigenes DNS, VPN-Namen, Tailscale, ZeroTier und alle nicht als privat erkannten Namen HTTPS, oder aktivieren Sie **Unsichere Verbindungen (HTTP) erlauben** in den Sync-Einstellungen. Die Daten werden dann unverschlüsselt übertragen; verwenden Sie die Option daher nur in einem Netzwerk, dem Sie vertrauen. Unter iOS kann der Schalter Apples eigene Regel nicht aufheben: iOS blockiert reines HTTP zu einem vollständigen Domainnamen, etwa einem Tailscale-Namen `*.ts.net`, auch wenn der Schalter an ist. Verwenden Sie für solche Namen auf iPhone und iPad HTTPS; mit Tailscale gibt `tailscale serve` dem Server eine HTTPS-Adresse.
 
 ### 4. Mindwtr Cloud (selbst gehostet)
 
@@ -268,7 +268,7 @@ Wichtiger Hinweis für Clients:
 
 - **Für öffentliche Mindwtr-Cloud-URLs ist HTTPS erforderlich.** Reines HTTP ist automatisch für lokale/private Ziele wie `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` bis `172.31.x.x`, `192.168.x.x`, private/Loopback-IPv6-Adressen, `*.local` und `*.home.arpa` zulässig.
 - Wenn Sie Cloud außerhalb eines vertrauenswürdigen LAN bereitstellen, setzen Sie den Server hinter HTTPS mit einem Reverse-Proxy wie `caddy`, `nginx` oder `traefik`.
-- Verwenden Sie HTTPS für eigenes DNS, VPN-Hostnamen, Tailscale, ZeroTier und alle Namen, die nicht als lokal/privat erkannt werden, oder aktivieren Sie **Unsichere Verbindungen (HTTP) erlauben** in den Sync-Einstellungen, um diesen Hostnamen über unverschlüsseltes HTTP zu akzeptieren. Die Daten werden dann unverschlüsselt übertragen; nutzen Sie die Option daher nur in einem Netzwerk, dem Sie vertrauen.
+- Verwenden Sie HTTPS für eigenes DNS, VPN-Hostnamen, Tailscale, ZeroTier und alle Namen, die nicht als lokal/privat erkannt werden, oder aktivieren Sie **Unsichere Verbindungen (HTTP) erlauben** in den Sync-Einstellungen, um diesen Hostnamen über unverschlüsseltes HTTP zu akzeptieren. Die Daten werden dann unverschlüsselt übertragen; nutzen Sie die Option daher nur in einem Netzwerk, dem Sie vertrauen. Unter iOS kann der Schalter Apples eigene Regel nicht aufheben: iOS blockiert reines HTTP zu einem vollständigen Domainnamen, etwa einem Tailscale-Namen `*.ts.net`, auch wenn der Schalter an ist. Verwenden Sie für solche Namen auf iPhone und iPad HTTPS; mit Tailscale gibt `tailscale serve` dem Server eine HTTPS-Adresse.
 
 ### 5. Dropbox-OAuth-Synchronisierung
 

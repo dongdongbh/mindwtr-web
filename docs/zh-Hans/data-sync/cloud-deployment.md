@@ -12,7 +12,7 @@
 
 - Mindwtr Cloud 客户端要求公共 URL 使用 **HTTPS**。
 - 只有 `localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、环回/私有 IPv6 地址、`*.local` 和 `*.home.arpa` 等本地/私有目标才接受 HTTP。
-- 对于自定义 DNS、VPN、Tailscale、ZeroTier 或其他未被识别为本地/私有的名称，请在反向代理层添加 TLS，或在应用的同步设置中开启**允许不安全连接（HTTP）**，以便通过明文 HTTP 接受该主机名。该开关默认关闭，开启后数据将以未加密方式传输，请仅在可信网络中使用。
+- 对于自定义 DNS、VPN、Tailscale、ZeroTier 或其他未被识别为本地/私有的名称，请在反向代理层添加 TLS，或在应用的同步设置中开启**允许不安全连接（HTTP）**，以便通过明文 HTTP 接受该主机名。该开关默认关闭，开启后数据将以未加密方式传输，请仅在可信网络中使用。在 iOS 上，此开关无法解除 Apple 自身的规则：即使开启开关，iOS 也会阻止以明文 HTTP 访问完整域名（例如 Tailscale 的 `*.ts.net` 名称）。在 iPhone 和 iPad 上请对这类名称使用 HTTPS；使用 Tailscale 时，`tailscale serve` 可为服务器提供 HTTPS 地址。
 
 ## 部署拓扑
 

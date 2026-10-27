@@ -253,7 +253,7 @@ Synchronisez directement avec un serveur WebDAV :
 
 Mindwtr crée désormais automatiquement les dossiers parents manquants avant le premier `PUT`. Vous pouvez donc lui indiquer un nouveau dossier vide sans devoir créer manuellement chaque niveau au préalable.
 
-WebDAV utilise HTTPS pour les URL publiques. HTTP en clair est automatiquement autorisé pour les cibles locales/privées reconnues telles que `localhost`, `127.0.0.1`, `10.x.x.x`, de `172.16.x.x` à `172.31.x.x`, `192.168.x.x`, les adresses IPv6 de bouclage/privées, `*.local` et `*.home.arpa`. Pour un DNS personnalisé, les noms d’hôte de VPN, Tailscale, ZeroTier et tout nom qui n’est pas reconnu comme local/privé, utilisez HTTPS ou activez **Autoriser HTTP non sécurisé (non recommandé)** dans les réglages de synchronisation. Les données circulent alors en clair ; n’utilisez cette option que sur un réseau de confiance.
+WebDAV utilise HTTPS pour les URL publiques. HTTP en clair est automatiquement autorisé pour les cibles locales/privées reconnues telles que `localhost`, `127.0.0.1`, `10.x.x.x`, de `172.16.x.x` à `172.31.x.x`, `192.168.x.x`, les adresses IPv6 de bouclage/privées, `*.local` et `*.home.arpa`. Pour un DNS personnalisé, les noms d’hôte de VPN, Tailscale, ZeroTier et tout nom qui n’est pas reconnu comme local/privé, utilisez HTTPS ou activez **Autoriser HTTP non sécurisé (non recommandé)** dans les réglages de synchronisation. Les données circulent alors en clair ; n’utilisez cette option que sur un réseau de confiance. Sur iOS, l’interrupteur ne peut pas lever la règle d’Apple : iOS bloque le HTTP en clair vers un nom de domaine complet, comme un nom Tailscale `*.ts.net`, même interrupteur activé. Utilisez HTTPS pour ces noms sur iPhone et iPad ; avec Tailscale, `tailscale serve` donne au serveur une adresse HTTPS.
 
 ### 4. Mindwtr Cloud (auto-hébergé)
 
@@ -269,7 +269,7 @@ Remarque importante pour le client :
 
 - **HTTPS est obligatoire pour les URL publiques de Mindwtr Cloud.** HTTP en clair est automatiquement autorisé pour les cibles locales/privées telles que `localhost`, `127.0.0.1`, `10.x.x.x`, de `172.16.x.x` à `172.31.x.x`, `192.168.x.x`, les adresses IPv6 de bouclage/privées, `*.local` et `*.home.arpa`.
 - Si vous exposez Cloud hors d’un réseau local de confiance, placez le serveur derrière HTTPS avec un proxy inverse tel que `caddy`, `nginx` ou `traefik`.
-- Utilisez HTTPS pour un DNS personnalisé, les noms d’hôte de VPN, Tailscale, ZeroTier et tout nom qui n’est pas reconnu comme local/privé, ou activez **Autoriser HTTP non sécurisé (non recommandé)** dans les réglages de synchronisation pour accepter ce nom d’hôte en HTTP non chiffré. Les données circulent alors en clair ; ne l’utilisez que sur un réseau de confiance.
+- Utilisez HTTPS pour un DNS personnalisé, les noms d’hôte de VPN, Tailscale, ZeroTier et tout nom qui n’est pas reconnu comme local/privé, ou activez **Autoriser HTTP non sécurisé (non recommandé)** dans les réglages de synchronisation pour accepter ce nom d’hôte en HTTP non chiffré. Les données circulent alors en clair ; ne l’utilisez que sur un réseau de confiance. Sur iOS, l’interrupteur ne peut pas lever la règle d’Apple : iOS bloque le HTTP en clair vers un nom de domaine complet, comme un nom Tailscale `*.ts.net`, même interrupteur activé. Utilisez HTTPS pour ces noms sur iPhone et iPad ; avec Tailscale, `tailscale serve` donne au serveur une adresse HTTPS.
 
 ### 5. Synchronisation Dropbox OAuth
 

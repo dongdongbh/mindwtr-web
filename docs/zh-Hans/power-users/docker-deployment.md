@@ -44,7 +44,7 @@ Mindwtr 为运行以下服务提供官方 Docker 支持：
 
 这个默认 compose 文件仅使用 HTTP，适用于本地/私有测试。Mindwtr 桌面端和移动端客户端仅会为已识别的本地/私有目标接受 HTTP，例如 `localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、环回/私有 IPv6 地址、`*.local` 和 `*.home.arpa`。
 
-对于公共 URL、自定义 DNS 名称、VPN 主机名、Tailscale、ZeroTier，或任何未被识别为本地/私有的名称，请使用 HTTPS，或在应用的同步设置中开启**允许不安全连接（HTTP）**，以便通过明文 HTTP 接受该主机名。开启后数据将以未加密方式传输，请仅在可信网络中使用。
+对于公共 URL、自定义 DNS 名称、VPN 主机名、Tailscale、ZeroTier，或任何未被识别为本地/私有的名称，请使用 HTTPS，或在应用的同步设置中开启**允许不安全连接（HTTP）**，以便通过明文 HTTP 接受该主机名。开启后数据将以未加密方式传输，请仅在可信网络中使用。在 iOS 上，此开关无法解除 Apple 自身的规则：即使开启开关，iOS 也会阻止以明文 HTTP 访问完整域名（例如 Tailscale 的 `*.ts.net` 名称）。在 iPhone 和 iPad 上请对这类名称使用 HTTPS；使用 Tailscale 时，`tailscale serve` 可为服务器提供 HTTPS 地址。
 
 ---
 

@@ -12,7 +12,7 @@ Hinweis zur Client-Kompatibilität:
 
 - Mindwtr-Cloud-Clients verlangen für öffentliche URLs **HTTPS**.
 - HTTP wird nur für lokale/private Ziele akzeptiert, etwa `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` bis `172.31.x.x`, `192.168.x.x`, private/Loopback-IPv6-Adressen, `*.local` und `*.home.arpa`.
-- Fügen Sie bei eigenem DNS, VPN, Tailscale, ZeroTier oder anderen Namen, die nicht als lokal/privat erkannt werden, TLS auf der Reverse-Proxy-Ebene hinzu, oder aktivieren Sie **Unsichere Verbindungen (HTTP) erlauben** in den Sync-Einstellungen der App, um diesen Hostnamen über unverschlüsseltes HTTP zu akzeptieren. Die Option ist standardmäßig deaktiviert, und die Daten werden dann unverschlüsselt übertragen; nutzen Sie sie daher nur in einem Netzwerk, dem Sie vertrauen.
+- Fügen Sie bei eigenem DNS, VPN, Tailscale, ZeroTier oder anderen Namen, die nicht als lokal/privat erkannt werden, TLS auf der Reverse-Proxy-Ebene hinzu, oder aktivieren Sie **Unsichere Verbindungen (HTTP) erlauben** in den Sync-Einstellungen der App, um diesen Hostnamen über unverschlüsseltes HTTP zu akzeptieren. Die Option ist standardmäßig deaktiviert, und die Daten werden dann unverschlüsselt übertragen; nutzen Sie sie daher nur in einem Netzwerk, dem Sie vertrauen. Unter iOS kann der Schalter Apples eigene Regel nicht aufheben: iOS blockiert reines HTTP zu einem vollständigen Domainnamen, etwa einem Tailscale-Namen `*.ts.net`, auch wenn der Schalter an ist. Verwenden Sie für solche Namen auf iPhone und iPad HTTPS; mit Tailscale gibt `tailscale serve` dem Server eine HTTPS-Adresse.
 
 ## Bereitstellungstopologie
 

@@ -226,7 +226,7 @@ Las Secciones de proyectos son subdivisiones dentro de un único proyecto. Úsal
 
 Ejemplo: **Lanzar el sitio web** puede tener secciones como **Diseño**, **Desarrollo** y **Contenido**. No son proyectos separados ni subtareas. Son encabezados organizativos dentro de un único resultado de proyecto.
 
-El campo **Sección del proyecto** de una tarea asigna esa tarea a una de las secciones de su proyecto. Solo resulta útil después de que la tarea pertenezca a un proyecto que tenga secciones. Para las tareas sin asignar o los proyectos sin secciones, deja el campo vacío.
+El campo **Sección del proyecto** de una tarea asigna esa tarea a una de las secciones de su proyecto. Solo resulta útil después de que la tarea pertenezca a un proyecto que tenga secciones. Para las tareas sin asignar o los proyectos sin secciones, deja el campo vacío. Procesar la bandeja de entrada ofrece la misma opción en cuanto eliges un proyecto que tenga secciones.
 
 Los proyectos secuenciales pueden usar un ámbito para todo el proyecto o un ámbito por sección. Usa el ámbito por sección cuando un proyecto tenga fases o líneas de trabajo independientes: Mindwtr muestra la primera tarea disponible de cada sección en lugar de bloquear todo el proyecto detrás de una única tarea. Con el ámbito por sección, al completar la última próxima acción de una sección, Mindwtr pregunta «¿Cuál es la próxima acción?» para esa sección, igual que tras la última acción del proyecto completo.
 

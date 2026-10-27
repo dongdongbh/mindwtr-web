@@ -226,7 +226,7 @@ Les sections de projet sont des subdivisions d’un même projet. Utilisez-les l
 
 Exemple : **Lancer le site web** peut comporter des sections telles que **Design**, **Développement** et **Contenu**. Il ne s’agit ni de projets distincts ni de sous-tâches. Ce sont des titres d’organisation à l’intérieur d’un seul résultat de projet.
 
-Le champ **Section de projet** d’une tâche l’associe à l’une des sections de son projet. Il n’est utile qu’une fois la tâche rattachée à un projet qui possède des sections. Pour les tâches sans attribution ou les projets sans sections, laissez ce champ vide.
+Le champ **Section de projet** d’une tâche l’associe à l’une des sections de son projet. Il n’est utile qu’une fois la tâche rattachée à un projet qui possède des sections. Pour les tâches sans attribution ou les projets sans sections, laissez ce champ vide. Le traitement de la boîte de réception propose le même choix dès que vous choisissez un projet qui possède des sections.
 
 Les projets séquentiels peuvent utiliser une portée au niveau du projet ou de la section. Utilisez la portée de section lorsqu’un projet comporte des phases ou des flux de travail indépendants : Mindwtr affiche la première tâche disponible de chaque section au lieu de bloquer tout le projet derrière une seule tâche. Avec la portée par section, terminer la dernière action suivante d’une section déclenche la question « Quelle est l’action suivante ? » pour cette section, comme après la dernière action du projet entier.
 

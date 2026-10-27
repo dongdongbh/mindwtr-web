@@ -226,7 +226,7 @@ Project Sections are subdivisions inside a single project. Use them when a proje
 
 Example: **Launch website** can have sections such as **Design**, **Development**, and **Content**. These are not separate projects and not subtasks. They are organizational headings inside one project outcome.
 
-The **Project Section** field on a task assigns that task to one of its project's sections. It is useful only after the task belongs to a project that has sections. For unassigned tasks, or projects without sections, leave the field blank.
+The **Project Section** field on a task assigns that task to one of its project's sections. It is useful only after the task belongs to a project that has sections. For unassigned tasks, or projects without sections, leave the field blank. Process Inbox offers the same choice once you pick a project that has sections.
 
 Sequential projects can use a project-wide scope or a section scope. Use section scope when a project has independent phases or workstreams: Mindwtr shows the first available task in each section instead of blocking the whole project behind one task. With section scope, completing a section's last next action asks "What's the next action?" for that section, just as finishing a project's last action does for the whole project.
 

@@ -226,7 +226,7 @@ Projektabschnitte sind Unterteilungen innerhalb eines einzelnen Projekts. Verwen
 
 Beispiel: **Website veröffentlichen** kann Abschnitte wie **Design**, **Entwicklung** und **Inhalt** enthalten. Das sind weder separate Projekte noch Unteraufgaben, sondern organisatorische Überschriften innerhalb eines Projektergebnisses.
 
-Das Feld **Projektabschnitt** einer Aufgabe weist sie einem Abschnitt ihres Projekts zu. Es ist erst sinnvoll, nachdem die Aufgabe zu einem Projekt mit Abschnitten gehört. Lassen Sie es bei nicht zugewiesenen Aufgaben oder Projekten ohne Abschnitte leer.
+Das Feld **Projektabschnitt** einer Aufgabe weist sie einem Abschnitt ihres Projekts zu. Es ist erst sinnvoll, nachdem die Aufgabe zu einem Projekt mit Abschnitten gehört. Lassen Sie es bei nicht zugewiesenen Aufgaben oder Projekten ohne Abschnitte leer. Beim Verarbeiten des Eingangs erscheint dieselbe Auswahl, sobald Sie ein Projekt mit Abschnitten wählen.
 
 Sequenzielle Projekte können projektweit oder abschnittsweise gelten. Verwenden Sie den Abschnittsumfang, wenn ein Projekt unabhängige Phasen oder Arbeitsstränge besitzt: Mindwtr zeigt dann die erste verfügbare Aufgabe jedes Abschnitts, statt das gesamte Projekt hinter einer Aufgabe zu blockieren. Beim Abschnittsumfang fragt Mindwtr nach Abschluss der letzten nächsten Aktion eines Abschnitts „Was ist die nächste Aktion?“ für diesen Abschnitt, genau wie nach der letzten Aktion des gesamten Projekts.
 

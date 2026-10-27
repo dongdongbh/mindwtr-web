@@ -413,7 +413,7 @@ Lorsqu’il est activé, il utilise votre propre clé API (BYOK). Consultez [Ass
 
 ### Comment fonctionnent les gestes de balayage ?
 
-Sur mobile, balayez une tâche vers la droite pour afficher une action de statut. Touchez-la pour effectuer l’action affichée, ou appuyez longuement dessus pour choisir un autre statut, notamment Terminé. Dans le menu, appuyez longuement sur Terminé pour choisir l’heure d’achèvement. Balayez vers la gauche pour afficher Supprimer.
+Sur mobile, balayez une tâche vers la droite pour afficher **Terminé** et **Priorités du jour**, et vers la gauche pour afficher **Organiser**, **Dates…** et **Supprimer**. Touchez un bouton pour l’utiliser. Organiser ouvre le menu de statut, avec tous les statuts et les options de déplacement. Appuyez longuement sur Terminé pour choisir l’heure d’achèvement.
 
 ### Comment synchroniser avec l’ordinateur ?
 

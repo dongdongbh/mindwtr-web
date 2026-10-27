@@ -413,7 +413,7 @@ When enabled, it uses your own API key (BYOK). See [AI Assistant](/power-users/a
 
 ### How do swipe actions work?
 
-On mobile, swipe right on a task to reveal a status action. Tap it to apply the shown action, or long-press it to choose another status, including Done. In the menu, long-press Done to choose a completion time. Swipe left to reveal Delete.
+On mobile, swipe right on a task to reveal **Done** and **Focus**, and swipe left to reveal **Organize**, **Dates…** and **Delete**. Tap a button to use it. Organize opens the status menu, with every status and the move options. Long-press Done to choose a completion time.
 
 ### How do I sync with desktop?
 

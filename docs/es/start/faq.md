@@ -413,7 +413,7 @@ Cuando se activa, usa tu propia clave de API (BYOK). Consulta [Asistente de IA](
 
 ### ¿Cómo funcionan los gestos de deslizamiento?
 
-En móvil, desliza una tarea hacia la derecha para mostrar una acción de estado. Tócala para aplicar la acción mostrada o mantenla pulsada para elegir otro estado, incluido Terminada. En el menú, mantén pulsado Terminada para elegir la hora de finalización. Desliza hacia la izquierda para mostrar Eliminar.
+En móvil, desliza una tarea hacia la derecha para mostrar **Hecho** y **Enfoque**, y hacia la izquierda para mostrar **Organizar**, **Fechas…** y **Eliminar**. Toca un botón para usarlo. Organizar abre el menú de estado, con todos los estados y las opciones para mover. Mantén pulsado Hecho para elegir la hora de finalización.
 
 ### ¿Cómo sincronizo con el escritorio?
 

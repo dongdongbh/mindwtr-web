@@ -483,7 +483,7 @@ Das Listensymbol neben **Filter** in der Fokus-Kopfzeile schaltet **Details** um
 
 - **Kontextfilter**: Tippen Sie auf einen Kontextchip, um die Liste der Nächsten Aktionen zu filtern.
 - **Gespeicherte Filter** für Projekte, Kontexte, Tags, Priorität, Energie und Zeitschätzungen
-- **Zum Fokus wischen**: nach rechts wischen, um den Fokusstatus umzuschalten und die Aufgabe nach „Heute“ zu verschieben
+- **Zum Fokus wischen**: nach rechts wischen und auf **Fokus** tippen, um den Fokusstatus umzuschalten und die Aufgabe nach „Heute“ zu verschieben
 - **Langes Drücken für ein Startdatum**: Drücken Sie lange auf eine Aufgabe, um ihr Startdatum zu setzen: **Heute**, **Morgen**, **Nächste Woche** oder ein eigenes Datum. **Heute** ordnet die Aufgabe unter Heute ein, ohne sie als Fokus des Tages zu markieren, sofern **Einstellungen → GTD → Include tasks starting today in Today** aktiviert ist (Standard). Ist diese Einstellung aus, bringt das Startdatum allein die Aufgabe nicht nach Heute. Ein späteres Datum nimmt sie bis zu diesem Tag aus den Aktionslisten. Einer Aufgabe mit Fälligkeitsdatum werden nur Startdaten bis zu diesem Datum angeboten, und eine heute fällige oder überfällige Aufgabe hat kein Menü.
 - **Schnellstatus**: Statusplakette antippen
 - **Pomodoro (optional)** unter **Einstellungen → GTD → Funktionen → Pomodoro-Zeitgeber**; **Nur Zeitgeber** oder **Zeitgeber mit Aufgabe verknüpfen**, um die Aufgabenauswahl des Zeitgebers und die Aktion **Aufgabe als erledigt markieren** anzuzeigen. Eingeklappt zeigt eine schmale Zeile Restzeit, Phase und den Status **Läuft** oder **Pausiert**.
@@ -671,10 +671,12 @@ Stellen Sie den **Ablaufmodus** des Projekts auf **Pro Abschnitt**. Öffnen Sie 
 
 ## Wischaktionen
 
-| Ansicht | Nach rechts | Ergebnis |
-| ---------------- | ----------- | ------------------ |
-| **Eingang** | Erledigt | Aufgabe abschließen |
-| **Fokus** | Fokus | Fokusstatus umschalten |
+| Wischen | Schaltflächen |
+| ------- | ------------- |
+| **Nach rechts** | **Erledigt**, **Fokus** (oder **Aus dem Fokus entfernen**) |
+| **Nach links** | **Organisieren** (Status und Ziel), **Termine…** (Start und Fällig), **Löschen** |
+
+Wischen Sie und tippen Sie dann auf eine Schaltfläche. Erledigt schließt die Aufgabe ab, auch im Eingang. Fokus verschiebt eine Eingangsaufgabe in einem Schritt zu Nächste Aktionen und markiert sie, oder lässt sie unverändert, wenn der Fokus voll ist. Eine erledigte Aufgabe zeigt **In den Eingang wiederherstellen** statt Erledigt und Fokus. Screenreader bieten dieselben Aktionen im Aktionsmenü der Zeile an.
 
 Beim Abschluss wird die aktuelle Zeit gespeichert. Wenn Sie früher fertig waren, drücken Sie eine **Erledigt**-Steuerung lange, um die tatsächliche Zeit zu wählen (Wischschaltfläche, Statusmenü, Editor-Chip oder Vorschauplakette). Der Zeitstempel **Abgeschlossen** lässt sich später ebenfalls korrigieren.
 

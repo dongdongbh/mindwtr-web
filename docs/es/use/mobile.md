@@ -514,7 +514,7 @@ El icono de lista junto a **Filtros** en la cabecera de Foco alterna **Detalles*
 
 - **Filtro de contexto**: toca una pastilla de contexto para filtrar la lista Próximas.
 - **Filtros guardados**: guarda criterios de Foco reutilizables, como proyectos, contextos, etiquetas, prioridad, nivel de energía y estimaciones de tiempo.
-- **Deslizar a Foco**: desliza una tarea hacia la derecha para alternar su estado «Foco» (la mueve a Hoy).
+- **Deslizar a Foco**: desliza una tarea hacia la derecha y toca **Enfoque** para alternar su estado «Foco» (la mueve a Hoy).
 - **Pulsación larga para una fecha de inicio**: mantén pulsada una tarea para fijar su fecha de inicio: **Hoy**, **Mañana**, **Próxima semana** o una fecha personalizada. **Hoy** coloca la tarea en Hoy sin marcarla como foco del día, siempre que **Ajustes → GTD → Incluir en Hoy las tareas que empiezan hoy** esté activado (lo está por defecto). Con ese ajuste desactivado, la fecha de inicio por sí sola no pone la tarea en Hoy. Una fecha posterior la saca de las listas de acciones hasta ese día. A una tarea con fecha de vencimiento solo se le ofrecen fechas de inicio hasta ese día, y una tarea que vence hoy o está vencida no tiene menú.
 - **Estado rápido**: toca la insignia de estado para cambiarlo.
 - **Pomodoro (opcional)**: actívalo en **Ajustes → GTD → Funciones → Temporizador Pomodoro** para mostrar un temporizador compacto de concentración/descanso. Déjalo en **Solo temporizador** o activa **Vincular temporizador a tarea** para mostrar el selector de tarea del temporizador y la acción **Marcar tarea como terminada**. Al contraerlo, una fila estrecha mantiene visibles el tiempo restante, la fase y el estado **En curso** o **En pausa**.
@@ -720,10 +720,12 @@ Pon el **Modo de flujo** del proyecto en **Por sección**. Después abre los det
 
 Gestiona tareas rápidamente mediante gestos:
 
-| Vista             | Deslizar a la derecha | Resultado             |
-| ----------------- | --------------------- | --------------------- |
-| **Bandeja de entrada** | Terminada        | Marca la tarea como terminada |
-| **Foco**          | Foco                  | Alterna el estado de Foco |
+| Deslizar | Botones |
+| -------- | ------- |
+| **A la derecha** | **Hecho**, **Enfoque** (o **Quitar de la lista de enfoque**) |
+| **A la izquierda** | **Organizar** (estado y destino), **Fechas…** (inicio y vencimiento), **Eliminar** |
+
+Desliza y luego toca un botón. Hecho completa la tarea, también en la bandeja de entrada. Enfoque en una tarea de la bandeja de entrada la pasa a Siguiente y la marca en un solo paso, o la deja igual si Foco está lleno. Una tarea terminada muestra **Restaurar a la bandeja de entrada** en lugar de Hecho y Enfoque. Los lectores de pantalla ofrecen las mismas acciones en el menú de acciones de la fila.
 
 Completar una tarea registra la hora actual. Si en realidad terminaste antes, mantén pulsado cualquier control **Terminada** para elegir la hora real: el botón Terminada que aparece al deslizar, la opción Terminada del menú de estado, la pastilla Terminada del editor o la insignia de estado de la vista previa. También puedes tocar la marca de tiempo **Completada** de una tarea terminada o archivada para corregirla después.
 

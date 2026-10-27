@@ -514,7 +514,7 @@ L’icône de liste à côté de **Filtres** dans l’en-tête de Focus bascule 
 
 - **Filtre de contexte** : touchez une pastille de contexte pour filtrer la liste Suivantes.
 - **Filtres enregistrés** : enregistrez des critères Focus réutilisables tels que les projets, contextes, étiquettes, priorités, niveaux d’énergie et estimations de temps.
-- **Balayer vers Focus** : balayez une tâche vers la droite pour basculer son état « Focus » (elle est déplacée vers Aujourd’hui).
+- **Balayer vers Focus** : balayez une tâche vers la droite et touchez **Priorités du jour** pour basculer son état « Focus » (elle est déplacée vers Aujourd’hui).
 - **Appui long pour une date de début** : faites un appui long sur une tâche pour définir sa date de début : **Aujourd’hui**, **Demain**, **Semaine prochaine** ou une date personnalisée. **Aujourd’hui** place la tâche sous Aujourd’hui sans la marquer comme focus du jour, tant que **Paramètres → GTD → Include tasks starting today in Today** est activé (par défaut). Si ce réglage est désactivé, la date de début seule ne place pas la tâche dans Aujourd’hui. Une date ultérieure la retire des listes d’actions jusqu’à ce jour. Une tâche avec une échéance ne propose que des dates de début jusqu’à cette échéance, et une tâche due aujourd’hui ou en retard n’a pas de menu.
 - **Statut rapide** : touchez le badge de statut pour modifier le statut.
 - **Pomodoro (facultatif)** : activez-le dans **Paramètres → GTD → Fonctionnalités → Minuteur Pomodoro** pour afficher un minuteur compact de concentration/pause. Laissez-le sur **Minuteur uniquement**, ou activez **Lier le minuteur à la tâche** pour afficher le sélecteur de tâche du Minuteur et l’action **Marquer la tâche comme terminée**. Une fois replié, une ligne étroite garde visibles le temps restant, la phase et l’état **En cours** ou **En pause**.
@@ -720,10 +720,12 @@ Réglez le **Mode de déroulement** du projet sur **Par section**. Ouvrez ensuit
 
 Gérez rapidement les tâches avec des gestes de balayage :
 
-| Vue              | Balayer vers la droite | Résultat                    |
-| ---------------- | ---------------------- | --------------------------- |
-| **Boîte de réception** | Terminée          | Marque la tâche comme terminée |
-| **Focus**        | Focus                  | Bascule l’état Focus        |
+| Balayage | Boutons |
+| -------- | ------- |
+| **Vers la droite** | **Terminé**, **Priorités du jour** (ou **Retirer des priorités du jour**) |
+| **Vers la gauche** | **Organiser** (statut et destination), **Dates…** (début et échéance), **Supprimer** |
+
+Balayez, puis touchez un bouton. Terminé achève la tâche, même dans la boîte de réception. Priorités du jour fait passer une tâche de la boîte de réception en Prochaines actions et l’ajoute au Focus en une seule étape, ou la laisse inchangée si le Focus est plein. Une tâche terminée affiche **Restaurer dans la boîte de réception** à la place de Terminé et Priorités du jour. Les lecteurs d’écran proposent les mêmes actions dans le menu d’actions de la ligne.
 
 Terminer une tâche enregistre l’heure actuelle. Si vous l’avez en réalité terminée plus tôt, appuyez longuement sur n’importe quelle commande **Terminé** pour choisir l’heure réelle d’achèvement : le bouton Terminé révélé par le balayage, l’option Terminé dans le menu de statut, la pastille Terminé dans l’éditeur de tâche ou le badge de statut dans l’aperçu de la tâche. Vous pouvez également toucher l’horodatage **Terminée** d’une tâche terminée ou archivée pour le corriger après coup.
 

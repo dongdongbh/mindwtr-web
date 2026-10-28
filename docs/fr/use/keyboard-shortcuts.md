@@ -18,6 +18,7 @@ Mindwtr sur ordinateur permet une utilisation centrée sur le clavier avec les p
 - Utilisez `Ctrl+Z` ou `Cmd+Z` pour annuler la dernière tâche terminée ou supprimée, quel que soit le préréglage.
 - Utilisez `s` suivi d’une lettre pour définir le statut de la tâche sélectionnée : `si` Boîte de réception, `sn` Prochaine action, `sw` En attente, `ss` Un jour, `sd` Terminé, `sa` Archivé. Une notification confirme la modification et propose de l’annuler.
 - Utilisez `Insert` pour atteindre le champ d’ajout de tâche ; l’ajout rapide s’ouvre dans les vues qui n’en ont pas.
+- Utilisez `Ctrl+Shift+L` / `Cmd+Shift+L` pour verrouiller Mindwtr lorsque le verrouillage de l’app est activé (Windows et macOS, à partir de v1.3.8). Cela fonctionne aussi dans les champs de texte.
 - Appuyez sur `1` à `9` (hors de tout champ de texte) pour choisir un domaine selon son ordre dans la barre latérale, et sur `0` pour supprimer le filtre de domaine ; le raccourci `Shift+A` suivi du chiffre fonctionne toujours aussi. La touche `a` seule ajoute une tâche dans le contexte actuel.
 - Utilisez `Ctrl+Alt+S` pour lancer une synchronisation manuelle sur ordinateur.
 - Dans le menu contextuel ouvert par clic droit ou `Shift+F10` : ↑/↓ parcourent les éléments, → ouvre un sous-menu et ← revient en arrière, Entrée active l’élément (dans un panneau de sous-menu, Entrée enregistre la valeur et ferme le menu), Échap ferme le menu et rend le focus à la tâche.

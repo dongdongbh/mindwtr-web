@@ -713,10 +713,13 @@ For WebDAV, configure:
 
 See [Data and Sync](/data-sync/) for detailed setup.
 
+**Workspaces** (from v1.3.8): keep separate task lists on one computer, for example Personal and Work. Each workspace has its own tasks, attachments, sync server, credentials and settings, so nothing from one reaches the other's server. Add one in **Settings → Data → Workspaces**. With two or more, a workspace switcher appears in the sidebar above the area filter, and the window title shows the open workspace's name. One workspace is open at a time. Switching saves your changes and restarts Mindwtr; it does not wait for a sync. Only the open workspace syncs and sends reminders. Deleting a workspace removes its tasks, attachments and settings from this computer and leaves its sync server unchanged. The MCP server and command line open the default workspace; for another one, pass its `mindwtr.db` (shown as **Data folder** in its row) with `--db`. iCloud sync is available only in the default workspace.
+
 The HTTP sync banner can be dismissed for that destination on this device. A different destination shows the warning again, and Sync settings still indicates HTTP use. Dismissal does not enable insecure connections or encrypt the connection.
 
 ### Advanced
 - **Keyboard and window**: keyboard shortcut preset (Standard, Vim, or Emacs), window decorations, close behaviour, tray icon, and **Launch at Startup**. Click the card to open it.
+- **Privacy** (Windows and macOS, from v1.3.8): **App lock** asks for Windows Hello, or Touch ID or your Mac password, when Mindwtr opens. Turning it on asks once first. **Require unlock** sets how long Mindwtr can be in the background, or open with no keyboard or mouse input, before it locks: **Immediately**, **After 1 minute**, **After 5 minutes** or **After 15 minutes**. Lock it yourself with `Ctrl+Shift+L` (`Cmd+Shift+L` on macOS) or **Lock Mindwtr** in the tray menu. While it is locked, the tray tooltip and reminders show no task titles, Quick Add opens the lock screen instead, and unsaved edits stay as they were. The lock hides the app window only: the macOS widget, the [local API](/power-users/local-api) and the [MCP server](/power-users/mcp) can still read your data. If Windows Hello or Touch ID stops being available on the computer, the lock screen offers **Turn off app lock**. The setting belongs to this computer and covers every workspace. Linux does not have it.
 
 ### About
 - Version info

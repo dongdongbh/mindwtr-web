@@ -139,6 +139,8 @@ chmod +x Mindwtr-*.AppImage
 
 For other distributions, use the AppImage or build from source (see [Developer Guide](/developers/developer-guide)).
 
+**Packaging Mindwtr?** From v1.3.8, a package that ships its own `mindwtr://` desktop entry can set `MINDWTR_SKIP_LINK_REGISTRATION=1` in its launcher. Mindwtr then does not write its own task-link handler to `~/.local/share/applications`. Without the variable, Mindwtr registers that handler at each launch so task links work for AppImage users.
+
 
 ---
 

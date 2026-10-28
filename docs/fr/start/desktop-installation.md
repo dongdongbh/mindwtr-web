@@ -139,6 +139,8 @@ chmod +x Mindwtr-*.AppImage
 
 Pour les autres distributions, utilisez l’AppImage ou compilez depuis les sources (consultez le [Guide du développeur](/fr/developers/developer-guide)).
 
+**Vous empaquetez Mindwtr ?** Depuis la v1.3.8, un paquet qui fournit sa propre entrée de bureau pour `mindwtr://` peut définir `MINDWTR_SKIP_LINK_REGISTRATION=1` dans son lanceur. Mindwtr n'écrit alors pas son propre gestionnaire de liens de tâches dans `~/.local/share/applications`. Sans cette variable, Mindwtr enregistre ce gestionnaire à chaque lancement pour que les liens de tâches fonctionnent avec l'AppImage.
+
 
 ---
 

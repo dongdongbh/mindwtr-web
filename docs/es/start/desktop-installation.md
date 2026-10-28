@@ -139,6 +139,8 @@ chmod +x Mindwtr-*.AppImage
 
 Para otras distribuciones, usa AppImage o compila desde el código fuente (consulta la [Guía para desarrolladores](/es/developers/developer-guide)).
 
+**¿Empaquetas Mindwtr?** Desde v1.3.8, un paquete que incluye su propia entrada de escritorio para `mindwtr://` puede definir `MINDWTR_SKIP_LINK_REGISTRATION=1` en su lanzador. Así Mindwtr no escribe su propio controlador de enlaces de tareas en `~/.local/share/applications`. Sin la variable, Mindwtr registra ese controlador en cada inicio para que los enlaces de tareas funcionen con el AppImage.
+
 
 ---
 

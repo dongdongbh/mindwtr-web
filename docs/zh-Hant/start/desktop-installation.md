@@ -139,6 +139,8 @@ chmod +x Mindwtr-*.AppImage
 
 其他發行版請使用 AppImage，或從原始碼建置（請參閱[開發者指南](/zh-Hant/developers/developer-guide)）。
 
+**要打包 Mindwtr？** 從 v1.3.8 起，自帶 `mindwtr://` 桌面項目的套件可以在啟動器中設定 `MINDWTR_SKIP_LINK_REGISTRATION=1`。這樣 Mindwtr 不會再向 `~/.local/share/applications` 寫入自己的任務連結處理程式。未設定該變數時，Mindwtr 每次啟動都會註冊這個處理程式，讓 AppImage 使用者也能開啟任務連結。
+
 
 ---
 

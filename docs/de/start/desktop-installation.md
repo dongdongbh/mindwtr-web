@@ -139,6 +139,8 @@ chmod +x Mindwtr-*.AppImage
 
 Verwenden Sie für andere Distributionen das AppImage oder bauen Sie Mindwtr aus dem Quellcode (siehe [Entwicklerhandbuch](/de/developers/developer-guide)).
 
+**Mindwtr paketieren?** Ab v1.3.8 kann ein Paket, das einen eigenen Desktop-Eintrag für `mindwtr://` mitliefert, im Starter `MINDWTR_SKIP_LINK_REGISTRATION=1` setzen. Mindwtr schreibt dann keinen eigenen Handler für Aufgabenlinks nach `~/.local/share/applications`. Ohne die Variable registriert Mindwtr diesen Handler bei jedem Start, damit Aufgabenlinks auch mit dem AppImage funktionieren.
+
 
 ---
 

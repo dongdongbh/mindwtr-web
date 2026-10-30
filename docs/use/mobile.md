@@ -85,6 +85,8 @@ Turn on **Include archived projects** in the Reference filters to find material 
 
 In Inbox, projects, Contexts and the other task lists, long-press a task to start selecting, then tap more tasks and pick an action in the bar at the top. Tap **X** or press Android **Back** to stop selecting. Selecting does not reorder tasks: manual order exists inside a project (project menu → **Reorder**) and among starred tasks in Focus (the **Reorder** button). Other lists, and the rest of Focus, follow their **Sort** and **Group** settings.
 
+From v1.3.8, with project Sort set to **Default**, choose **Reorder** in the multi-select action bar to leave selection mode and open the existing reorder view. This clears the selection; it does not change task order until you move a task.
+
 For Start, Due, and Review dates in **Bulk organize**, tap the calendar button or choose **Today** or **Tomorrow**. Dates apply only after **Apply to selected** and do not add a time or reminder. Leaving a date blank (or tapping its selected shortcut again) keeps each task's existing date.
 
 In **Bulk organize**, search for a project or area, or type a new name and choose **Create** without losing your task selection or other form fields. Creation saves and selects the destination; tasks move only after **Apply to selected**. Cancelling the bulk edit leaves your tasks unchanged and keeps any destination you created. If creation fails, your selection and form stay available for retry.

@@ -79,6 +79,8 @@ Activa **Incluir proyectos archivados** en los filtros de Referencia para encont
 
 En la Bandeja de entrada, los proyectos, los Contextos y las demás listas de tareas, mantén pulsada una tarea para empezar a seleccionar; después toca más tareas y elige una acción en la barra de arriba. Toca **X** o pulsa **Atrás** en Android para dejar de seleccionar. Seleccionar no cambia el orden de las tareas: el orden manual existe dentro de un proyecto (menú del proyecto → **Reordenar**) y entre las tareas con estrella en Foco (botón **Reordenar**). Las demás listas, y el resto de Foco, siguen sus ajustes de **Ordenar** y **Agrupar**.
 
+Desde v1.3.8, con el orden del proyecto en **Predeterminado**, elige **Reordenar** en la barra de selección múltiple para salir de la selección y abrir la vista de reordenación existente. Esto borra la selección; el orden de las tareas solo cambia cuando mueves una tarea.
+
 Para las fechas de inicio, vencimiento y revisión en **Organizar en lote**, toca el calendario o elige **Hoy** o **Mañana**. Las fechas se aplican solo al pulsar **Aplicar a las seleccionadas**, sin añadir hora ni recordatorio. Dejar una fecha vacía (o volver a tocar el atajo seleccionado) conserva la fecha actual de cada tarea.
 
 En **Organizar en lote**, busca un proyecto o área, o escribe un nombre nuevo y elige **Crear** sin perder la selección de tareas ni los demás campos. Al crear se guarda y selecciona el destino; las tareas solo se mueven al pulsar **Aplicar a las seleccionadas**. Cancelar la edición no cambia las tareas y conserva los destinos creados. Si la creación falla, se mantienen la selección y el formulario para volver a intentarlo.

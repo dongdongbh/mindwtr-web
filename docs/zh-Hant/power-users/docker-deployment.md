@@ -44,6 +44,8 @@ Mindwtr 正式支援使用 Docker 執行：
 
 此預設 compose 檔案只使用 HTTP，適合本機／私人測試。Mindwtr 桌面版及行動版用戶端只會對已辨識為本機／私人目標的位址接受 HTTP，例如 `localhost`、`127.0.0.1`、`10.x.x.x`、`172.16.x.x` 至 `172.31.x.x`、`192.168.x.x`、loopback／private IPv6 位址、`*.local` 及 `*.home.arpa`。
 
+從 v1.3.8 起，Docker 網頁應用程式的瀏覽器政策允許透過 HTTP 連線到同一主機名稱或 IPv4 位址上的其他連接埠。例如，開啟 `http://192.168.1.20:5173`，將自架 URL 設為 `http://192.168.1.20:8787`，並設定 `MINDWTR_CLOUD_CORS_ORIGIN=http://192.168.1.20:5173`。兩個 URL 必須使用相同位址：即使開啟**允許不安全連接（HTTP）**，瀏覽器政策仍會阻擋其他區域網路 HTTP 主機。雲端位於其他主機時，請使用 HTTPS。
+
 公用 URL、自訂 DNS 名稱、VPN hostname、Tailscale、ZeroTier，或任何未辨識為本機／私人的名稱，都請使用 HTTPS，或在應用程式的同步設定中開啟**允許不安全連接（HTTP）**，以透過明文 HTTP 接受該主機名稱。開啟後資料會以未加密方式傳輸，請只在信任的網路上使用。在 iOS 上，此開關無法解除 Apple 本身的規則：即使開啟開關，iOS 仍會阻擋以明文 HTTP 連到完整網域名稱（例如 Tailscale 的 `*.ts.net` 名稱）。在 iPhone 和 iPad 上請對這類名稱使用 HTTPS；使用 Tailscale 時，`tailscale serve` 可為伺服器提供 HTTPS 位址。
 
 ---

@@ -44,6 +44,8 @@ Pour construire les images depuis les sources, clonez le dépôt et exécutez `d
 
 Ce fichier Compose par défaut utilise uniquement HTTP et est destiné aux tests locaux ou privés. Les clients de bureau et mobiles Mindwtr n’acceptent HTTP que pour les cibles locales ou privées reconnues, comme `localhost`, `127.0.0.1`, `10.x.x.x`, `172.16.x.x` à `172.31.x.x`, `192.168.x.x`, les adresses IPv6 de bouclage ou privées, `*.local` et `*.home.arpa`.
 
+À partir de v1.3.8, la politique du navigateur de l’application web Docker autorise les connexions HTTP au même nom d’hôte ou à la même adresse IPv4 sur un autre port. Par exemple, ouvrez `http://192.168.1.20:5173` et utilisez `http://192.168.1.20:8787` comme URL auto-hébergée, avec `MINDWTR_CLOUD_CORS_ORIGIN=http://192.168.1.20:5173`. Utilisez la même adresse dans les deux URL : la politique du navigateur bloque toujours un autre hôte HTTP du réseau local, même avec **Autoriser HTTP non sécurisé (non recommandé)** activé. Pour un hôte cloud distinct, utilisez HTTPS.
+
 Pour les URL publiques, les noms DNS personnalisés, les noms d’hôte VPN, Tailscale, ZeroTier ou tout nom qui n’est pas reconnu comme local ou privé, utilisez HTTPS, ou activez **Autoriser HTTP non sécurisé (non recommandé)** dans les réglages de synchronisation de l’application pour accepter ce nom d’hôte en HTTP non chiffré. Les données circulent alors en clair ; ne l’utilisez que sur un réseau de confiance. Sur iOS, l’interrupteur ne peut pas lever la règle d’Apple : iOS bloque le HTTP en clair vers un nom de domaine complet, comme un nom Tailscale `*.ts.net`, même interrupteur activé. Utilisez HTTPS pour ces noms sur iPhone et iPad ; avec Tailscale, `tailscale serve` donne au serveur une adresse HTTPS.
 
 ---

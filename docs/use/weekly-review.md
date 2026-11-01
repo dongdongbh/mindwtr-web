@@ -116,7 +116,7 @@ Review each inbox item:
 **In Mindwtr:**
 - See projects with/without next actions
 - Add next actions where missing. The Add task prompt accepts the full [quick-add syntax](/use/desktop#quick-add-syntax) (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …), and **Save & edit** creates the task and opens it in the editor without leaving the review
-- Mark completed projects as Done
+- Complete a project without leaving the review. On mobile, expand its card and choose **Complete**. If unfinished tasks remain, a confirmation explains that they will be completed too.
 - Open a project from its card to edit the project itself. Reopen the review afterwards and it continues at the same step
 
 ### Step 6: Someday/Maybe

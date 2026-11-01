@@ -116,7 +116,7 @@ Prüfen Sie jeden Eingangseintrag:
 **In Mindwtr:**
 - Projekte mit/ohne nächste Aktionen anzeigen
 - Fehlende nächste Aktionen hinzufügen. Die Eingabe „Aufgabe hinzufügen“ akzeptiert die vollständige [Syntax für „Schnell hinzufügen“](/de/use/desktop#quick-add-syntax) (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …). **Speichern & bearbeiten** erstellt die Aufgabe und öffnet sie im Editor, ohne den Rückblick zu verlassen.
-- Abgeschlossene Projekte als erledigt markieren
+- Schließen Sie ein Projekt ab, ohne den Rückblick zu verlassen. Klappen Sie auf dem Mobilgerät die Projektkarte auf und wählen Sie **Abschließen**. Sind noch unerledigte Aufgaben vorhanden, weist die Bestätigung darauf hin, dass diese ebenfalls abgeschlossen werden.
 - Öffnen Sie ein Projekt über seine Karte, um das Projekt selbst zu bearbeiten. Wenn Sie den Rückblick danach wieder öffnen, geht er beim selben Schritt weiter
 
 ### Schritt 6: Irgendwann/Vielleicht

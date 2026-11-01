@@ -116,7 +116,7 @@ Examinez chaque élément de la boîte de réception :
 **Dans Mindwtr :**
 - Affichez les projets avec ou sans prochaines actions
 - Ajoutez les prochaines actions manquantes. L’invite Ajouter une tâche accepte toute la [syntaxe d’ajout rapide](/fr/use/desktop#syntaxe-d-ajout-rapide) (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …), et **Enregistrer et modifier** crée la tâche et l’ouvre dans l’éditeur sans quitter la revue
-- Marquez les projets achevés comme Terminés
+- Terminez un projet sans quitter la revue. Sur mobile, développez sa carte et choisissez **Terminer**. S’il reste des tâches inachevées, une confirmation précise qu’elles seront également terminées.
 - Ouvrez un projet depuis sa carte pour modifier le projet lui-même. Si vous rouvrez la revue ensuite, elle reprend à la même étape
 
 ### Étape 6 : Un jour/Peut-être

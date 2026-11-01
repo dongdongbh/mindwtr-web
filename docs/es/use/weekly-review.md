@@ -116,7 +116,7 @@ Revisa cada elemento de la bandeja de entrada:
 **En Mindwtr:**
 - Consulta los proyectos con/sin próximas acciones
 - Añade próximas acciones donde falten. El campo Añadir tarea acepta la [sintaxis de adición rápida](/es/use/desktop#sintaxis-de-adicion-rapida) completa (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …), y **Guardar y editar** crea la tarea y la abre en el editor sin salir de la revisión
-- Marca los proyectos completados como Hechos
+- Completa un proyecto sin salir de la revisión. En el móvil, expande su tarjeta y elige **Completar**. Si quedan tareas pendientes, la confirmación explica que también se completarán.
 - Abre un proyecto desde su tarjeta para editar el propio proyecto. Si vuelves a abrir la revisión después, continúa en el mismo paso
 
 ### Paso 6: Algún día/Quizá

@@ -94,3 +94,7 @@ You can add an UpNote note link through **Add link**, or use an explicit Markdow
 ```
 
 Mindwtr opens the link only when you click or tap it. UpNote must be installed on that device. If opening fails, Mindwtr offers **Copy link** so you can keep using the original address. Mindwtr stores the link; UpNote manages the note and its synchronization.
+
+## Desktop shortcut
+
+From v1.3.8, hover over a desktop task row or focus its actions with the keyboard to reveal **Copy task link**. The chain icon copies the existing app-opening link without opening or selecting the task. The task menu still offers both the link and the raw ID.

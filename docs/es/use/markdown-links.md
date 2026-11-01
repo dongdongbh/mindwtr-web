@@ -94,3 +94,7 @@ Puedes añadir un enlace a una nota de UpNote mediante **Añadir enlace**, o usa
 ```
 
 Mindwtr solo abre el enlace al hacer clic o tocarlo. UpNote debe estar instalado en ese dispositivo. Si no se puede abrir, Mindwtr ofrece **Copiar enlace** para conservar la dirección original. Mindwtr guarda el enlace; UpNote gestiona la nota y su sincronización.
+
+## Acceso rápido en escritorio
+
+Desde v1.3.8, pasa el puntero sobre una tarea o enfoca sus acciones con el teclado para mostrar **Copiar enlace de tarea**. El icono de cadena copia el enlace existente que abre la aplicación, sin abrir ni seleccionar la tarea. El menú sigue ofreciendo el enlace y el ID.

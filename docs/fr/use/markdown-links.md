@@ -94,3 +94,7 @@ Vous pouvez ajouter un lien vers une note UpNote avec **Ajouter un lien**, ou ut
 ```
 
 Mindwtr ouvre le lien uniquement lorsque vous cliquez ou appuyez dessus. UpNote doit être installé sur cet appareil. En cas d’échec, Mindwtr propose **Copier le lien** pour conserver l’adresse d’origine. Mindwtr enregistre le lien ; UpNote gère la note et sa synchronisation.
+
+## Raccourci sur ordinateur
+
+À partir de v1.3.8, survolez une tâche ou placez le focus clavier sur ses actions pour afficher **Copier le lien de la tâche**. L’icône de chaîne copie le lien existant qui ouvre l’application, sans ouvrir ni sélectionner la tâche. Le menu propose toujours le lien et l’identifiant brut.

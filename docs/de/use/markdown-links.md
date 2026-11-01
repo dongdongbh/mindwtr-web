@@ -94,3 +94,7 @@ Sie können einen UpNote-Notizlink über **Link hinzufügen** speichern oder ein
 ```
 
 Mindwtr öffnet den Link erst beim Anklicken oder Antippen. UpNote muss auf dem Gerät installiert sein. Schlägt das Öffnen fehl, bietet Mindwtr **Link kopieren** an, damit Sie die ursprüngliche Adresse weiterverwenden können. Mindwtr speichert den Link; UpNote verwaltet die Notiz und ihre Synchronisierung.
+
+## Kurzbefehl auf dem Desktop
+
+Ab v1.3.8 erscheint **Aufgabenlink kopieren**, wenn du mit der Maus über eine Aufgabenzeile fährst oder ihre Aktionen per Tastatur fokussierst. Das Kettensymbol kopiert den bestehenden App-Link, ohne die Aufgabe zu öffnen oder auszuwählen. Das Aufgabenmenü bietet weiterhin den Link und die reine ID.

@@ -299,3 +299,9 @@ In Mindwtr, both `@contexts` and `#tags` can filter tasks, but they answer diffe
 - [Areas and People](/use/areas-people)
 - [User Guide Desktop](/use/desktop)
 - [User Guide Mobile](/use/mobile)
+
+## Save a Context filter
+
+From v1.3.8, open **Filters** in Contexts to select unfinished statuses, including **Someday**, and exclude projects. Opening these filters starts with Inbox, Next, Waiting, and Someday selected; adjust the status choices as needed. Project choices cycle through included, excluded, and unselected. Save the selection to reuse it in the app or choose it as a widget list. Area boundaries still apply, and an empty result stays empty.
+
+For example, choose `@person/Emma`, keep Next, Waiting, and Someday, and exclude a shared project. New Context saved filters cover unfinished tasks. Done, Archived, and Reference remain separate. Saving is unavailable for **No Context** or a mixed context/tag selection using **Any**; choose a representable selection before saving.

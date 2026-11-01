@@ -74,3 +74,7 @@ What it keeps: the project's notes, area, tags, colour, and status, plus its who
 - Keep the master version in **Someday/Maybe** or a low-noise project so it does not clutter daily lists.
 - Give template-style tasks obvious names like `Packing List (Template)` if you duplicate them often.
 - If a checklist starts needing due dates or recurring rules on each item, split it into separate tasks instead of overloading one reusable list.
+
+## Reorder a mobile checklist
+
+From v1.3.8, the mobile checklist editor has a drag handle beside each item. Hold and drag the handle to move an item; moving near the edge scrolls a long list. The item actions also offer **Move to top**, **Move to bottom**, and **Add item below**. Text and checkmarks move with the item. Use **Save** to keep your changes or **Discard** to keep the saved version.

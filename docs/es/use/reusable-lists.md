@@ -77,3 +77,7 @@ Lo que se conserva: las notas, el área, las etiquetas, el color y el estado del
 - Conserva la versión maestra en **Algún día/Tal vez** o en un proyecto poco visible para no saturar las listas diarias.
 - Da a las plantillas nombres claros, como `Lista de equipaje (plantilla)`, si las duplicas a menudo.
 - Si cada elemento empieza a necesitar fechas límite o reglas de recurrencia, divídelo en tareas independientes en vez de sobrecargar una sola lista reutilizable.
+
+## Reordenar una lista en el móvil
+
+Desde v1.3.8, el editor móvil de listas tiene un asa junto a cada elemento. Mantén pulsada el asa y arrastra para moverlo; al acercarte al borde, la lista se desplaza. Las acciones del elemento también ofrecen **Mover al principio**, **Mover al final** y **Añadir elemento debajo**. El texto y las marcas se mueven con el elemento. Usa **Guardar** para conservar los cambios o **Descartar** para mantener la versión guardada.

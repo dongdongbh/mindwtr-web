@@ -299,3 +299,9 @@ En Mindwtr, tanto los `@contexts` como las `#tags` pueden filtrar tareas, pero r
 - [Áreas y personas](/es/use/areas-people)
 - [Guía de usuario para escritorio](/es/use/desktop)
 - [Guía de usuario para móvil](/es/use/mobile)
+
+## Guardar un filtro de contextos
+
+Desde v1.3.8, abre **Filtros** en Contextos para elegir estados pendientes, incluido **Algún día**, y excluir proyectos. Al abrir los filtros están seleccionados Bandeja de entrada, Próximas acciones, En espera y Algún día; ajusta la selección según necesites. Las opciones de proyecto alternan entre incluido, excluido y sin seleccionar. Guarda la selección para reutilizarla en la aplicación o elegirla como lista del widget. Se mantienen los límites de las áreas y un resultado vacío permanece vacío.
+
+Por ejemplo, elige `@person/Emma`, conserva Próximas acciones, En espera y Algún día, y excluye un proyecto compartido. Los nuevos filtros de contextos guardados abarcan tareas pendientes. Hecho, Archivado y Referencia permanecen separados. No se puede guardar **Sin contexto** ni una selección mixta de contextos y etiquetas con **Cualquiera**; elige antes una selección compatible.

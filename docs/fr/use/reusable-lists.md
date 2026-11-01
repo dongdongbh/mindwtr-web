@@ -77,3 +77,7 @@ Ce qui est conservé : les notes, le domaine, les étiquettes, la couleur et le 
 - Conservez la version principale dans **Un jour/Peut-être** ou dans un projet discret afin qu’elle n’encombre pas les listes quotidiennes.
 - Donnez aux tâches modèles des noms explicites comme `Liste pour la valise (modèle)` si vous les dupliquez souvent.
 - Si chaque élément d’une liste de contrôle commence à nécessiter ses propres échéances ou règles de récurrence, transformez-les en tâches distinctes au lieu de surcharger une seule liste réutilisable.
+
+## Réorganiser une liste sur mobile
+
+À partir de v1.3.8, chaque élément de la liste dans l’éditeur mobile possède une poignée. Maintenez-la puis faites glisser l’élément ; près du bord, une longue liste défile. Les actions proposent aussi **Déplacer en haut**, **Déplacer en bas** et **Ajouter un élément en dessous**. Le texte et les coches suivent l’élément. **Enregistrer** conserve les changements ; **Abandonner** garde la version enregistrée.

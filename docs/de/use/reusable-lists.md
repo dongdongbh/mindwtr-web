@@ -77,3 +77,7 @@ Erhalten bleiben: Notizen, Bereich, Schlagwörter, Farbe und Status des Projekts
 - Bewahren Sie die Master-Version unter **Irgendwann/Vielleicht** oder in einem unauffälligen Projekt auf, damit sie die täglichen Listen nicht überlädt.
 - Geben Sie häufig duplizierten Vorlagen eindeutige Namen wie `Packliste (Vorlage)`.
 - Wenn einzelne Checklistenpunkte eigene Fälligkeiten oder Wiederholungsregeln benötigen, teilen Sie die Liste in separate Aufgaben auf, statt eine wiederverwendbare Liste zu überfrachten.
+
+## Eine mobile Checkliste neu ordnen
+
+Ab v1.3.8 hat jeder Eintrag im mobilen Checklisten-Editor einen Ziehgriff. Halte den Griff und ziehe den Eintrag an die gewünschte Stelle; am Rand scrollt eine lange Liste weiter. Die Eintragsaktionen bieten außerdem **Ganz nach oben**, **Ganz nach unten** und **Eintrag darunter hinzufügen**. Text und Häkchen bleiben beim Eintrag. **Speichern** übernimmt die Änderungen; **Verwerfen** behält die gespeicherte Fassung.

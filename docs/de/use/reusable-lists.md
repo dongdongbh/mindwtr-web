@@ -16,13 +16,14 @@ Beispiel: **Packliste**
 
 Beim Duplizieren wird Folgendes zurückgesetzt:
 
-- Checklistenpunkte beginnen unabgehakt.
 - Die Erledigung wird zurückgesetzt; die Kopie einer erledigten oder archivierten Aufgabe landet im **Eingang** und wird erneut geklärt.
 - Die Kopie wird nicht in den Heutigen Fokus übernommen.
 - Dateianhänge werden nicht kopiert; Links schon.
 - Die Kopie wird zu einer neuen Aufgabe mit neuen Checklisten- und Anhangs-IDs.
 
 Erhalten bleiben: Titel, Beschreibung, Projekt, Abschnitt, Bereich, Kontexte, Schlagwörter sowie Start-, Fälligkeits- und Wiedervorlagedaten. Eine wiederkehrende Aufgabe behält ihre Regel, startet aber eine eigene, unabhängige Serie — das Erledigen einer Kopie setzt die andere nicht mehr fort.
+
+Ab v1.3.8 bleiben beim Duplizieren einer einzelnen Aufgabe oder Referenz die abgehakten Checklistenpunkte erhalten. Für eine vollständig unabgehakte Liste verwenden Sie **Checkliste zurücksetzen** in der Kopie. Ältere Versionen setzen die Checkliste beim Duplizieren zurück.
 
 ### Checkliste zurücksetzen
 

@@ -16,13 +16,14 @@ Exemple : **Liste pour la valise**
 
 La duplication réinitialise les éléments suivants :
 
-- les éléments de la liste de contrôle sont tous décochés ;
 - l’achèvement est effacé, et la copie d’une tâche terminée ou archivée arrive dans la **Boîte de réception** pour être clarifiée à nouveau ;
 - la copie n’est pas reprise dans le Focus du jour ;
 - les pièces jointes ne sont pas copiées ; les liens le sont ;
 - la copie devient une nouvelle tâche avec de nouveaux identifiants de liste de contrôle et de pièces jointes.
 
 Ce qui est conservé : titre, description, projet, section, domaine, contextes, étiquettes, ainsi que les dates de début, d’échéance et de revue. Une tâche récurrente conserve sa règle mais démarre sa propre série indépendante : terminer une copie ne fait plus avancer l’autre.
+
+À partir de v1.3.8, la duplication d’une tâche ou d’une référence conserve les éléments cochés de sa liste de contrôle. Pour repartir avec tous les éléments décochés, utilisez **Réinitialiser la liste de contrôle** sur la copie. Les versions précédentes réinitialisent la liste lors de la duplication.
 
 ### Réinitialiser la liste de contrôle
 

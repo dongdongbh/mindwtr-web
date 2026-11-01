@@ -16,13 +16,14 @@ Ejemplo: **Lista de equipaje**
 
 Al duplicar se restablece lo siguiente:
 
-- los elementos de la lista empiezan sin marcar;
 - se borra la finalización, y la copia de una tarea completada o archivada llega a la **Bandeja de entrada** para volver a aclararla;
 - la copia queda fuera del Enfoque de hoy;
 - los archivos adjuntos no se copian; los enlaces sí;
 - la copia se convierte en una tarea nueva, con identificadores nuevos para la lista y los adjuntos.
 
 Lo que se conserva: título, descripción, proyecto, sección, área, contextos, etiquetas y las fechas de inicio, vencimiento y revisión. Una tarea recurrente conserva su regla, pero inicia su propia serie independiente, de modo que completar una copia ya no adelanta la otra.
+
+Desde v1.3.8, al duplicar una tarea o referencia individual se conservan los elementos marcados de la lista. Para empezar con todo sin marcar, usa **Restablecer la lista de comprobación** en la copia. Las versiones anteriores restablecen la lista al duplicar.
 
 ### Restablecer la lista de comprobación
 

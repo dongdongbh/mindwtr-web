@@ -15,13 +15,14 @@ Example: **Packing List**
 
 What duplication resets:
 
-- checklist items start unchecked
 - completion is cleared, and a copy of a done or archived task lands in the **Inbox** to be clarified again
 - the copy is dropped from Today's Focus
 - file attachments are left behind; links are copied
 - the copy becomes a fresh task with new checklist and attachment IDs
 
 What it keeps: title, description, project, section, area, contexts, tags, start, due, and review dates. A recurring task keeps its rule but starts its own independent series, so completing one copy no longer advances the other.
+
+From v1.3.8, duplicating an individual task or reference preserves which checklist items are checked. To start with everything unchecked, use **Reset checklist** on the copy. Older versions reset the checklist when duplicating.
 
 ### Reset Checklist
 Use when you want the same list again.

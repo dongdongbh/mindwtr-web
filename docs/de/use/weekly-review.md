@@ -179,7 +179,7 @@ Sie entscheiden immer selbst, welche Vorschläge angewendet werden.
 
 ### Kreativ werden
 
-- [ ] Ziele und Vision prüfen
+- [ ] Ziele und Vision prüfen ([Fragen für Ihre Notiz](/de/start/faq)); bei Bedarf eine eigene wiederkehrende Durchsicht im monatlichen oder längeren Rhythmus einplanen
 - [ ] Neue Ideen oder Vorhaben?
 - [ ] Was würde die nächste Woche großartig machen?
 

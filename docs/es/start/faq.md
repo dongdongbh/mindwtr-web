@@ -181,13 +181,18 @@ Mindwtr modela de forma nativa los horizontes inferiores:
 - **Horizonte 1 (Proyectos):** entidades de proyecto explícitas.
 - **Horizonte 2 (Áreas):** las áreas agrupan proyectos relacionados.
 
-Para los horizontes 3–5 (Metas, Visión, Propósito), todavía no existe una entidad específica. La mayoría de los usuarios los registran mediante:
+Para los horizontes 3–5 (Metas, Visión, Propósito), usa un elemento de **Referencia** o una nota enlazada y revísalo mediante una tarea recurrente. Elige una revisión semanal, mensual o menos frecuente según te convenga; no hay un número obligatorio de metas o Áreas.
 
-- Una lista de **Referencia** (o un área «Metas»)
-- Notas de proyectos y enlaces a esos elementos de referencia
-- La lista de comprobación de la revisión semanal
+Una nota sencilla puede incluir estas preguntas:
 
-Si dependes de objetos explícitos de Meta/Visión, abre una incidencia con el flujo de trabajo y la cadencia de revisión que deseas.
+- **Propósito y principios:** ¿Qué me importa? ¿Qué límites quiero respetar?
+- **Visión:** ¿Cómo sería un futuro con sentido para mí?
+- **Metas:** ¿Qué resultados merecen atención ahora?
+- **Revisión:** ¿Qué debería continuar, cambiar, dejar o empezar?
+
+Durante la revisión, abre ese material y pregúntate si estás descuidando una meta importante o si algún compromiso ya no merece la pena. Ajusta tus proyectos, Áreas y próximas acciones cuando haga falta. No necesitas enlazar cada tarea o proyecto con un registro independiente de Meta o Visión.
+
+Consulta la [discusión #1080](https://github.com/dongdongbh/Mindwtr/discussions/1080) sobre este diseño. Es una práctica de revisión con notas existentes, no un paso adicional obligatorio en la aplicación.
 
 ### ¿Para qué sirve una sección de proyecto?
 

@@ -179,7 +179,7 @@ Vous choisissez toujours les suggestions à appliquer.
 
 ### Être créatif
 
-- [ ] Examiner les objectifs et la vision
+- [ ] Examiner les objectifs et la vision ([questions pour votre note](/fr/start/faq)) ; prévoir une revue récurrente distincte si un rythme mensuel ou moins fréquent vous convient mieux
 - [ ] De nouvelles idées ou initiatives ?
 - [ ] Qu’est-ce qui rendrait la semaine prochaine formidable ?
 

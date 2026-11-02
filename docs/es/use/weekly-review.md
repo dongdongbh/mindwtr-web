@@ -179,7 +179,7 @@ Siempre eliges qué sugerencias aplicar.
 
 ### Ser creativo
 
-- [ ] Revisar los objetivos y la visión
+- [ ] Revisar los objetivos y la visión ([preguntas para tu nota](/es/start/faq)); programar una revisión recurrente aparte si conviene una frecuencia mensual o menor
 - [ ] ¿Hay nuevas ideas o iniciativas?
 - [ ] ¿Qué haría que la próxima semana fuera estupenda?
 

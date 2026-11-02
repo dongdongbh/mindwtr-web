@@ -178,13 +178,18 @@ Mindwtr bildet die unteren Horizonte nativ ab:
 - **Horizont 1 (Projekte):** eigene Projektentitäten
 - **Horizont 2 (Bereiche):** Bereiche gruppieren verwandte Projekte
 
-Für die Horizonte 3–5 (Ziele, Vision, Zweck) gibt es noch keine eigene Entität. Die meisten Benutzer verwalten sie mit:
+Für die Horizonte 3–5 (Ziele, Vision, Zweck) können Sie einen **Referenz**eintrag oder eine verlinkte Notiz verwenden und mit einer wiederkehrenden Aufgabe darauf zurückkommen. Wählen Sie eine wöchentliche, monatliche oder seltenere Durchsicht, die zu Ihnen passt. Es gibt keine vorgeschriebene Anzahl an Zielen oder Bereichen.
 
-- einer **Referenz**liste (oder einem Bereich „Ziele“)
-- Projektnotizen und Links zu diesen Referenzeinträgen
-- der Checkliste des Wochenrückblicks
+Eine einfache Notiz kann diese Fragen enthalten:
 
-Wenn Sie ausdrückliche Ziel-/Visionsobjekte benötigen, eröffnen Sie bitte ein Issue und beschreiben Sie Ihren gewünschten Arbeitsablauf und Durchsichtsrhythmus.
+- **Zweck und Prinzipien:** Was ist mir wichtig? Welche Grenzen möchte ich respektieren?
+- **Vision:** Wie könnte eine sinnvolle Zukunft aussehen?
+- **Ziele:** Welche Ergebnisse verdienen gerade Aufmerksamkeit?
+- **Durchsicht:** Was möchte ich fortsetzen, ändern, beenden oder beginnen?
+
+Öffnen Sie diese Notiz bei der Durchsicht und fragen Sie sich, ob ein wichtiges Ziel zu kurz kommt oder eine Verpflichtung nicht mehr sinnvoll ist. Passen Sie Projekte, Bereiche und nächste Aktionen entsprechend an. Nicht jede Aufgabe und jedes Projekt braucht eine Verknüpfung mit einem eigenen Ziel- oder Visionsdatensatz.
+
+Die [Diskussion #1080](https://github.com/dongdongbh/Mindwtr/discussions/1080) erläutert die Gestaltung. Dies ist eine Durchsicht mit bestehenden Notizen, kein zusätzlicher Pflichtschritt in der App.
 
 ### Wozu dient ein Projektabschnitt?
 

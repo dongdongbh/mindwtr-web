@@ -179,7 +179,7 @@ You always choose which suggestions to apply.
 
 ### Get Creative
 
-- [ ] Review goals and vision
+- [ ] Review goals and vision ([note prompts](/start/faq#how-do-gtd-horizons-map-to-mindwtr)); choose a separate recurring review if a monthly or longer cadence suits you better
 - [ ] Any new ideas or initiatives?
 - [ ] What would make next week great?
 

@@ -181,13 +181,18 @@ Mindwtr natively models the lower horizons:
 - **Horizon 1 (Projects):** Explicit Project entities.
 - **Horizon 2 (Areas):** Areas group related projects.
 
-For Horizons 3–5 (Goals, Vision, Purpose), there isn’t a dedicated entity yet. Most users track them with:
+For Horizons 3–5 (Goals, Vision, Purpose), keep a **Reference** item or a linked note and revisit it with a recurring task. Choose a weekly, monthly, or less frequent review that suits you; there is no required number of goals or Areas.
 
-- A **Reference** list (or a “Goals” area)
-- Project notes and links to those reference items
-- The Weekly Review checklist
+A simple note can use these prompts:
 
-If you rely on explicit Goal/Vision objects, please open an issue with your desired workflow and review cadence.
+- **Purpose and principles:** What matters to me? What boundaries do I want to respect?
+- **Vision:** What would a meaningful future look like?
+- **Goals:** What outcomes currently deserve attention?
+- **Review:** What should I continue, change, stop, or begin?
+
+During review, open that material and ask whether an important goal is being neglected or a current commitment is no longer worth pursuing. Adjust your projects, Areas, and next actions as needed. You do not need to link every task or project to a separate Goal or Vision record.
+
+See [discussion #1080](https://github.com/dongdongbh/Mindwtr/discussions/1080) for the design discussion. This is a review practice using existing notes, not an additional step required by the app.
 
 ### What is Project Section used for?
 

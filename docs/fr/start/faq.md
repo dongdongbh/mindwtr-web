@@ -181,13 +181,18 @@ Mindwtr modélise nativement les horizons inférieurs :
 - **Horizon 1 (Projets) :** entités de projet explicites.
 - **Horizon 2 (Domaines) :** les domaines regroupent les projets liés.
 
-Il n’existe pas encore d’entité dédiée aux horizons 3 à 5 (objectifs, vision, raison d’être). La plupart des utilisateurs les suivent à l’aide de :
+Pour les horizons 3 à 5 (Objectifs, Vision, Raison d’être), utilisez un élément de **Références** ou une note liée et revenez-y grâce à une tâche récurrente. Choisissez une revue hebdomadaire, mensuelle ou moins fréquente selon vos besoins ; aucun nombre d’objectifs ou de Domaines n’est imposé.
 
-- une liste de **Références** (ou un domaine « Objectifs »)
-- notes de projet et liens vers ces éléments de référence
-- la liste de contrôle de la revue hebdomadaire
+Une note simple peut reprendre ces questions :
 
-Si vous avez besoin d’objets explicites pour les objectifs et la vision, veuillez ouvrir une issue en décrivant le flux de travail et la fréquence de révision souhaités.
+- **Raison d’être et principes :** Qu’est-ce qui compte pour moi ? Quelles limites ai-je envie de respecter ?
+- **Vision :** À quoi ressemblerait un avenir qui a du sens pour moi ?
+- **Objectifs :** Quels résultats méritent mon attention en ce moment ?
+- **Revue :** Que devrais-je continuer, changer, arrêter ou commencer ?
+
+Pendant la revue, ouvrez cette note et demandez-vous si vous négligez un objectif important ou si un engagement n’en vaut plus la peine. Ajustez vos projets, Domaines et prochaines actions au besoin. Il n’est pas nécessaire de relier chaque tâche ou projet à un enregistrement distinct d’Objectif ou de Vision.
+
+La [discussion #1080](https://github.com/dongdongbh/Mindwtr/discussions/1080) présente cette orientation. Il s’agit d’une pratique de revue avec vos notes existantes, pas d’une étape obligatoire supplémentaire dans l’application.
 
 ### À quoi sert une section de projet ?
 

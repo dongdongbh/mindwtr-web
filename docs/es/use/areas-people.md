@@ -31,6 +31,8 @@ Usa Ajustes para administrar directamente las áreas guardadas.
 
 Al eliminar un área se conservan sus tareas y proyectos. Mindwtr los deja sin asignar en vez de eliminar el trabajo.
 
+En el móvil también puedes gestionar las áreas desde **Proyectos**. Toca el menú junto al encabezado de un área para cambiar su nombre o color, o moverla arriba o abajo. Usa **Gestionar áreas** para crear áreas; desde este gestor solo se pueden eliminar áreas que no tengan proyectos. Para mover un proyecto sin abrir sus detalles, toca su menú, elige **Área** y selecciona el destino.
+
 ### Filtrar por área
 
 El filtro de áreas reduce Mindwtr a las áreas que quieres mirar. En el escritorio está al final de la barra lateral; en el móvil es el control de la parte superior izquierda del encabezado.

@@ -31,6 +31,8 @@ Verwenden Sie die Einstellungen, wenn Sie gespeicherte Bereiche direkt verwalten
 
 Beim Löschen eines Bereichs bleiben seine Aufgaben und Projekte erhalten. Mindwtr hebt ihre Zuweisung auf, statt die Arbeit zu löschen.
 
+Auf Mobilgeräten können Sie Bereiche auch direkt unter **Projekte** verwalten. Tippen Sie auf das Menü neben einer Bereichsüberschrift, um den Bereich umzubenennen, seine Farbe zu ändern oder ihn nach oben oder unten zu verschieben. Über **Bereiche verwalten** können Sie Bereiche erstellen; Löschen ist hier nur möglich, wenn kein Projekt den Bereich verwendet. Um ein Projekt ohne Öffnen seiner Details zu verschieben, wählen Sie im Projektmenü **Bereich** und anschließend den Zielbereich.
+
 ### Nach Bereich filtern
 
 Der Bereichsfilter schränkt Mindwtr auf die Bereiche ein, die Sie gerade sehen wollen. Auf dem Desktop steht er unten in der Seitenleiste, auf dem Mobilgerät oben links in der Kopfzeile des Bildschirms.

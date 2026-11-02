@@ -31,6 +31,8 @@ Use Settings when you want to manage saved Areas directly.
 
 Deleting an Area keeps its tasks and projects. Mindwtr moves them to unassigned instead of deleting the work.
 
+On mobile, you can also manage Areas directly from **Projects**. Tap the menu beside an Area heading to rename it, change its color, or move it up or down. Use **Manage areas** to create Areas; deleting from this manager is available only when no projects use the Area. To move a project without opening its details, tap its menu and choose **Area**, then select the destination.
+
 ### Filter by Area
 
 The area switcher narrows Mindwtr to the areas you want to look at. On desktop it sits at the bottom of the sidebar; on mobile it is the control at the top left of the screen header.

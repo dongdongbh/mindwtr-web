@@ -31,6 +31,8 @@ Utilisez les Paramètres pour gérer directement les domaines enregistrés.
 
 Supprimer un domaine conserve ses tâches et ses projets. Mindwtr les rend non attribués au lieu de supprimer le travail.
 
+Sur mobile, vous pouvez aussi gérer les domaines depuis **Projets**. Ouvrez le menu à côté du titre d’un domaine pour le renommer, changer sa couleur ou le déplacer vers le haut ou le bas. Utilisez **Gérer les domaines** pour en créer ; ce gestionnaire permet la suppression uniquement si aucun projet n’utilise le domaine. Pour déplacer un projet sans ouvrir ses détails, ouvrez son menu, choisissez **Domaine**, puis la destination.
+
 ### Filtrer par domaine
 
 Le filtre de domaine restreint Mindwtr aux domaines que vous voulez consulter. Sur l’ordinateur, il se trouve en bas de la barre latérale ; sur mobile, c’est le contrôle en haut à gauche de l’en-tête.

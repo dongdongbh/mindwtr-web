@@ -122,6 +122,8 @@ Résultats en plusieurs étapes contenant des tâches liées.
 
 Le champ **Section du projet** de l’éditeur de tâche affecte une tâche à l’une des sections de son projet actuel. Il n’a de valeur utile qu’une fois la tâche rattachée à un projet comportant des sections.
 
+À partir de v1.3.8, faites glisser la poignée de l’en-tête d’une section pour la réordonner dans le même projet, en vue liste ou colonnes. Les actions Monter/Descendre (ou Gauche/Droite) restent disponibles dans le menu. Le glissement modifie le même ordre enregistré que ces actions. Pour créer une tâche directement dans une section, utilisez le bouton **+** de son en-tête ; le projet et la section sont déjà renseignés.
+
 ### 🏷️ Contextes
 
 Filtrez les tâches selon le lieu ou l’outil :
@@ -446,6 +448,8 @@ Mindwtr envoie des notifications sur le bureau pour vous aider à rester sur la 
 - **Rappels d’échéance** : alertes lorsque les tâches arrivent à échéance
 - **Alertes d’heure de début** : vous rappellent quand il est temps de commencer
 - **Rappels de tâches récurrentes** : notifications pour les éléments récurrents
+
+**Avant le début (v1.3.8)** ajoute une alerte facultative 5, 15 ou 30 minutes, ou 1 heure avant une heure de début explicite. Elle est désactivée par défaut. Définissez l’heure de début, puis l’avance dans les contrôles de rappels de l’éditeur. Un début à 15 h avec 30 minutes d’avance déclenche l’alerte à 14 h 30, sans modifier le début réel ni la disponibilité de la tâche. Changer le début reprogramme l’alerte. Retirer l’heure l’arrête mais conserve l’avance choisie. Les dates sans heure ne déclenchent pas d’alerte, et les alertes anticipées déjà passées ne sont pas rattrapées. Les choix Envoyer/Ignorer, les réglages des rappels de début et l’autorisation de notifications restent applicables. Dans le navigateur/PWA, l’application doit toujours fonctionner ; cette option ne permet pas la réception lorsque le navigateur est fermé. Les anciennes versions ne programment pas cette alerte.
 
 **Rappel anticipé (v1.3.8)** ajoute une alerte avant l’échéance. Dans la section Rappels de l’éditeur de tâche, choisissez 5, 15 ou 30 minutes, 1 heure, 1 jour, 2 jours ou 1 semaine avant. Désactivé par défaut, il nécessite une date avec une heure explicite ; le rappel habituel à l’échéance est conservé. Modifier l’échéance déplace aussi le rappel anticipé. Les jours et semaines conservent la même heure locale lors des changements d’heure. Si l’heure anticipée est déjà passée lors du réglage, aucune alerte de rattrapage n’est envoyée.
 

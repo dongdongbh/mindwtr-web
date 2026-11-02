@@ -128,6 +128,8 @@ Conversion requires active projects. Parallel projects can be converted into par
 
 The **Project Section** field in the task editor assigns a task to one of the sections in its current project. It only has a useful value after the task belongs to a project that has sections.
 
+From v1.3.8, drag the grip on a section header to reorder sections within the same project, in either list or columns view. The section menu’s Move up/down (or left/right) actions remain available. Dragging uses the same saved section order as those actions. To create a task directly in a section, use that section header’s **+** button; the project and section are filled in for you.
+
 ### 🏷️ Contexts
 
 Filter tasks by location or tool context:
@@ -460,6 +462,8 @@ Mindwtr sends desktop notifications to keep you on track:
 - **Due date reminders**: Alerts when tasks are due
 - **Start time alerts**: Reminds you when it's time to begin
 - **Recurring task reminders**: Notifications for recurring items
+
+**Before start (v1.3.8)** adds an optional alert 5, 15, or 30 minutes, or 1 hour before an explicit start time. It is Off by default. Set a start time, then choose the lead in the task editor’s Reminders controls. A 15:00 start with a 30-minute lead alerts at 14:30; the task’s actual start and availability stay unchanged. Changing the start reschedules the alert. Removing its time stops the alert but keeps the chosen lead. Date-only starts never send alerts, and past advance times are not caught up. This follows Send/Skip, start-reminder settings, and notification permission. Browser/PWA notifications still require the app to be running; this option does not add closed-browser delivery. Older versions do not schedule this alert.
 
 **Advance reminder (v1.3.8)** adds one alert before a task’s due time. In the task editor’s Reminders section, choose 5, 15, or 30 minutes, 1 hour, 1 day, 2 days, or 1 week before. It is Off by default and requires a due date with an explicit time; the normal due-time alert remains enabled. Moving the deadline moves the advance alert too. Day and week choices keep the same local clock time across daylight-saving changes. If the advance time has already passed when you set it, no catch-up alert is sent.
 

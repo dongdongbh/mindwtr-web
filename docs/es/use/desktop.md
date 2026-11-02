@@ -122,6 +122,8 @@ Resultados de varios pasos que contienen tareas relacionadas.
 
 El campo **Sección del proyecto** del editor asigna una tarea a una de las secciones de su proyecto actual. Solo tiene un valor útil cuando la tarea pertenece a un proyecto que contiene secciones.
 
+Desde v1.3.8, arrastra el asa de la cabecera de una sección para reordenarla dentro del mismo proyecto, en vista de lista o columnas. El menú conserva las acciones de mover arriba/abajo (o izquierda/derecha). Arrastrar cambia el mismo orden guardado que esas acciones. Para crear una tarea directamente en una sección, usa el botón **+** de su cabecera; el proyecto y la sección ya estarán seleccionados.
+
 ### 🏷️ Contextos
 
 Filtra tareas por contexto de ubicación o herramienta:
@@ -446,6 +448,8 @@ Mindwtr envía notificaciones de escritorio para ayudarte a mantener el rumbo:
 - **Recordatorios de fecha de vencimiento**: avisan cuando vencen las tareas
 - **Avisos de hora de inicio**: te recuerdan cuándo debes empezar
 - **Recordatorios de tareas recurrentes**: notificaciones de elementos recurrentes
+
+**Antes del inicio (v1.3.8)** añade un aviso opcional 5, 15 o 30 minutos, o 1 hora antes de una hora de inicio explícita. Está desactivado por defecto. Fija la hora de inicio y elige la antelación en los controles de Recordatorios del editor. Un inicio a las 15:00 con 30 minutos de antelación avisa a las 14:30, sin cambiar el inicio real ni la disponibilidad de la tarea. Cambiar el inicio reprograma el aviso. Quitar la hora lo desactiva, pero conserva la antelación elegida. Las fechas sin hora no generan avisos y no se recuperan avisos anticipados cuya hora ya pasó. Se respetan Enviar/Omitir, los ajustes de avisos de inicio y el permiso de notificaciones. En navegador/PWA, la aplicación debe seguir abierta; esta opción no permite avisos con el navegador cerrado. Las versiones anteriores no programan este aviso.
 
 **Recordatorio anticipado (v1.3.8)** añade un aviso antes del vencimiento. En Recordatorios, dentro del editor de tareas, elige 5, 15 o 30 minutos, 1 hora, 1 día, 2 días o 1 semana antes. Está desactivado por defecto y requiere una fecha con hora explícita; el aviso habitual al vencer se mantiene. Si cambias el vencimiento, el aviso anticipado también se mueve. Los días y semanas mantienen la misma hora local al cambiar el horario de verano. Si la hora anticipada ya pasó al configurarlo, no se envía un aviso atrasado.
 

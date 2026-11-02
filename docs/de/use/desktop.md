@@ -122,6 +122,8 @@ Mehrstufige Ergebnisse mit zusammengehörigen Aufgaben.
 
 Das Feld **Projektabschnitt** im Aufgabeneditor weist eine Aufgabe einem Abschnitt ihres aktuellen Projekts zu. Es ist erst sinnvoll, wenn die Aufgabe zu einem Projekt mit Abschnitten gehört.
 
+Ab v1.3.8 lassen sich Abschnitte über den Griff an ihrer Überschrift innerhalb desselben Projekts neu anordnen, sowohl in der Listen- als auch in der Spaltenansicht. Die Menüaktionen Nach oben/unten (bzw. links/rechts) bleiben verfügbar. Ziehen ändert dieselbe gespeicherte Abschnittsreihenfolge wie diese Aktionen. Über die Schaltfläche **+** an der Abschnittsüberschrift erstellen Sie eine Aufgabe direkt dort; Projekt und Abschnitt sind bereits eingetragen.
+
 ### 🏷️ Kontexte
 
 Aufgaben nach Orts- oder Werkzeugkontext filtern:
@@ -448,6 +450,8 @@ Mindwtr sendet Desktop-Benachrichtigungen:
 - **Fälligkeitserinnerungen**
 - **Startzeitwarnungen**
 - **Erinnerungen an wiederkehrende Aufgaben**
+
+**Vor Beginn (v1.3.8)** ergänzt eine optionale Erinnerung 5, 15 oder 30 Minuten oder 1 Stunde vor einer ausdrücklichen Startzeit. Sie ist standardmäßig aus. Legen Sie eine Startzeit fest und wählen Sie den Vorlauf bei den Erinnerungen im Aufgabeneditor. Bei Start um 15:00 Uhr und 30 Minuten Vorlauf erfolgt die Erinnerung um 14:30 Uhr; Startzeit und Verfügbarkeit der Aufgabe bleiben unverändert. Eine geänderte Startzeit verschiebt die Erinnerung. Ohne Uhrzeit entfällt sie, der Vorlauf bleibt gespeichert. Reine Datumswerte lösen keine Erinnerung aus; vergangene Vorabzeitpunkte werden nicht nachgeholt. Senden/Überspringen, Starterinnerungen und die Benachrichtigungsberechtigung gelten weiterhin. Im Browser/PWA muss die App weiterhin laufen; bei geschlossenem Browser werden keine Erinnerungen zugestellt. Ältere Versionen planen diese Erinnerung nicht.
 
 **Voraberinnerung (v1.3.8)** fügt eine Benachrichtigung vor der Fälligkeit hinzu. Wähle im Abschnitt Erinnerungen des Aufgabeneditors 5, 15 oder 30 Minuten, 1 Stunde, 1 Tag, 2 Tage oder 1 Woche vorher. Standardmäßig ist sie aus und benötigt eine Fälligkeit mit ausdrücklicher Uhrzeit; die normale Fälligkeitserinnerung bleibt bestehen. Eine Änderung der Fälligkeit verschiebt auch die Voraberinnerung. Tage und Wochen behalten bei Sommerzeitwechseln dieselbe Ortszeit bei. Liegt der Vorabzeitpunkt beim Einstellen bereits in der Vergangenheit, wird keine Benachrichtigung nachgeholt.
 

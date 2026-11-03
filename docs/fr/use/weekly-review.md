@@ -75,6 +75,8 @@ Examinez chaque élément de la boîte de réception :
 - Cette étape est ignorée si rien n’est devenu obsolète
 - Si la revue par IA est activée, les suggestions de l’IA apparaissent à cette étape (voir ci-dessous)
 
+À partir de v1.3.8, une action suivante qui attend un pas précédent dans un projet ou une section séquentielle est exclue des alertes ordinaires d’inactivité. Les éléments En attente et les projets stagnants conservent leurs propres contrôles. Le calendrier, les échéances et les dates explicites de révision restent inchangés. L’ancienneté reste calculée depuis la dernière modification : une vieille tâche peut apparaître comme stagnante dès qu’elle arrive en tête de sa séquence.
+
 ### Étape 3 : examiner le calendrier
 
 **Remontez 14 jours en arrière :**
@@ -118,6 +120,8 @@ Examinez chaque élément de la boîte de réception :
 - Ajoutez les prochaines actions manquantes. L’invite Ajouter une tâche accepte toute la [syntaxe d’ajout rapide](/fr/use/desktop#syntaxe-d-ajout-rapide) (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …), et **Enregistrer et modifier** crée la tâche et l’ouvre dans l’éditeur sans quitter la revue
 - Terminez un projet sans quitter la revue. Sur mobile, développez sa carte et choisissez **Terminer**. S’il reste des tâches inachevées, une confirmation précise qu’elles seront également terminées.
 - Ouvrez un projet depuis sa carte pour modifier le projet lui-même. Si vous rouvrez la revue ensuite, elle reprend à la même étape
+
+À partir de v1.3.8, la revue du projet présente d’abord les étapes actuelles et regroupe les actions suivantes bloquées sous **Plus loin dans la séquence**, replié par défaut. Dépliez ce groupe pour consulter ou modifier le plan dans son ordre. Le résumé décrit les étapes actuelles : une première étape En attente indique En attente ; un début futur peut indiquer Planifié. La page principale de Révision propose le même affichage, tandis que la vue des rappels de révision arrivés garde visibles les tâches dont la date explicite de révision est arrivée. Déplier un groupe ne modifie ni le statut, ni l’ordre, ni les dates, ni le projet des tâches.
 
 ### Étape 6 : Un jour/Peut-être
 

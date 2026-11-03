@@ -75,6 +75,8 @@ Revisa cada elemento de la bandeja de entrada:
 - El paso se omite cuando nada se ha quedado estancado
 - Si la revisión con IA está activada, las sugerencias de la IA aparecen en este paso (consulta más abajo)
 
+Desde v1.3.8, una tarea Siguiente que espera detrás de un paso anterior en un proyecto o sección secuencial queda fuera de los avisos habituales de inactividad. Los elementos En espera y los proyectos estancados mantienen sus propias comprobaciones. El calendario, los vencimientos y las fechas explícitas de revisión no cambian. La antigüedad sigue contando desde la última edición: una tarea antigua puede aparecer como estancada en cuanto llegue a la cabeza de su secuencia.
+
 ### Paso 3: Revisar el calendario
 
 **Mira los 14 días anteriores:**
@@ -118,6 +120,8 @@ Revisa cada elemento de la bandeja de entrada:
 - Añade próximas acciones donde falten. El campo Añadir tarea acepta la [sintaxis de adición rápida](/es/use/desktop#sintaxis-de-adicion-rapida) completa (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …), y **Guardar y editar** crea la tarea y la abre en el editor sin salir de la revisión
 - Completa un proyecto sin salir de la revisión. En el móvil, expande su tarjeta y elige **Completar**. Si quedan tareas pendientes, la confirmación explica que también se completarán.
 - Abre un proyecto desde su tarjeta para editar el propio proyecto. Si vuelves a abrir la revisión después, continúa en el mismo paso
+
+Desde v1.3.8, la revisión del proyecto muestra primero los pasos actuales y reúne las tareas Siguiente bloqueadas en un grupo **Más adelante en la secuencia**, contraído por defecto. Ábrelo para consultar o editar el plan en su orden. El resumen describe los pasos actuales: un primer paso En espera muestra En espera; un inicio futuro puede mostrar Programado. La página principal de Revisión ofrece la misma opción, mientras que la vista **Pendientes de revisar** mantiene visibles las tareas cuya fecha explícita de revisión ya llegó. Abrir el grupo no cambia estados, orden, fechas ni pertenencia al proyecto.
 
 ### Paso 6: Algún día/Quizá
 

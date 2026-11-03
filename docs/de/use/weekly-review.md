@@ -75,6 +75,8 @@ Prüfen Sie jeden Eingangseintrag:
 - Der Schritt wird übersprungen, wenn nichts veraltet ist.
 - Bei aktivierter KI-Durchsicht erscheinen in diesem Schritt KI-Vorschläge (siehe unten).
 
+Ab v1.3.8 wird eine nächste Aktion, die in einem sequenziellen Projekt oder Abschnitt auf einen früheren Schritt wartet, nicht als gewöhnlicher Inaktivitätsfall markiert. Warten-auf-Einträge und veraltete Projekte behalten ihre eigenen Prüfungen. Kalender, Fälligkeiten und ausdrückliche Wiedervorlagedaten bleiben unverändert. Veraltet bedeutet weiterhin Zeit seit der letzten Bearbeitung: Eine alte Aufgabe kann sofort als veraltet erscheinen, sobald sie an die Reihe kommt.
+
 ### Schritt 3: Kalender prüfen
 
 **14 Tage zurückblicken:**
@@ -118,6 +120,8 @@ Prüfen Sie jeden Eingangseintrag:
 - Fehlende nächste Aktionen hinzufügen. Die Eingabe „Aufgabe hinzufügen“ akzeptiert die vollständige [Syntax für „Schnell hinzufügen“](/de/use/desktop#quick-add-syntax) (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …). **Speichern & bearbeiten** erstellt die Aufgabe und öffnet sie im Editor, ohne den Rückblick zu verlassen.
 - Schließen Sie ein Projekt ab, ohne den Rückblick zu verlassen. Klappen Sie auf dem Mobilgerät die Projektkarte auf und wählen Sie **Abschließen**. Sind noch unerledigte Aufgaben vorhanden, weist die Bestätigung darauf hin, dass diese ebenfalls abgeschlossen werden.
 - Öffnen Sie ein Projekt über seine Karte, um das Projekt selbst zu bearbeiten. Wenn Sie den Rückblick danach wieder öffnen, geht er beim selben Schritt weiter
+
+Ab v1.3.8 zeigt die Projektdurchsicht zuerst die aktuellen Schritte. Blockierte nächste Aktionen stehen in der zunächst eingeklappten Gruppe **Später in der Sequenz**. Klappen Sie sie auf, um den Plan in seiner Reihenfolge zu prüfen oder zu bearbeiten. Die Projektanzeige beschreibt die aktuellen Schritte: Ein wartender erster Schritt zeigt Warten, ein zukünftiger Start kann Geplant anzeigen. Die Hauptansicht Durchsicht bietet dieselbe Aufklappfunktion; in der Ansicht für fällige Rückblicke bleiben Aufgaben mit erreichtem Wiedervorlagedatum sichtbar. Das Aufklappen ändert weder Status, Reihenfolge, Termine noch Projektzugehörigkeit.
 
 ### Schritt 6: Irgendwann/Vielleicht
 

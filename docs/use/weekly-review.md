@@ -75,6 +75,8 @@ Review each inbox item:
 - The step is skipped when nothing has gone stale
 - If AI review is enabled, AI suggestions appear in this step (see below)
 
+From v1.3.8, a Next task waiting behind an earlier step in a sequential project or section is excluded from ordinary inactivity warnings. Waiting For items and stale projects still have their own checks. Calendar and deadline visibility, and explicit review dates, are unchanged. Staleness still measures time since the last edit: an old task may appear as stale as soon as it reaches the front of its sequence.
+
 ### Step 3: Review Calendar
 
 **Look back 14 days:**
@@ -118,6 +120,8 @@ Review each inbox item:
 - Add next actions where missing. The Add task prompt accepts the full [quick-add syntax](/use/desktop#quick-add-syntax) (`@context`, `#tag`, `%person`, `/waiting`, `/due:` …), and **Save & edit** creates the task and opens it in the editor without leaving the review
 - Complete a project without leaving the review. On mobile, expand its card and choose **Complete**. If unfinished tasks remain, a confirmation explains that they will be completed too.
 - Open a project from its card to edit the project itself. Reopen the review afterwards and it continues at the same step
+
+From v1.3.8, project review shows current steps first and puts blocked Next tasks under a collapsed **Later in sequence** group. Expand it to inspect or edit the plan in sequence order. Project summaries reflect the current steps: a Waiting head shows Waiting; a future-start head can show Scheduled. The main Review page offers the same disclosure, while its **Due for review** view keeps tasks whose explicit review date has arrived visible. Expanding a group changes no task status, order, dates, or project membership.
 
 ### Step 6: Someday/Maybe
 

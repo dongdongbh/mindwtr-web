@@ -6,6 +6,8 @@ Die Mindwtr-Desktop-App basiert auf [Tauri v2](https://tauri.app/) und bietet un
 
 Die Desktop-App besitzt eine Seitenleistennavigation mit allen GTD-Ansichten und einen Hauptinhaltsbereich.
 
+In einem ausreichend hohen Fenster erscheint die Liste der Projekte oder Kontexte unter der Hauptnavigation, sodass Aufgaben mehr Breite erhalten. Ziehe die Trennlinie, um die beiden unabhängig scrollbaren Bereiche anzupassen, oder fokussiere sie und verwende Pfeil hoch/runter, Pos1 oder Ende; ein Doppelklick stellt die Standardaufteilung wieder her. Das Verhältnis wird auf diesem Gerät gespeichert, und jeder Bereich behält eine Mindesthöhe. Bei niedrigen Fenstern, zu wenig Platz durch größere Schrift, eingeklappter Seitenleiste oder im Fokusmodus behält jede Ansicht ihre bisherige Navigation.
+
 ---
 
 ## Interaktionsmuster

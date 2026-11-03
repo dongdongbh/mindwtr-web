@@ -6,6 +6,8 @@ L’application de bureau Mindwtr est conçue avec [Tauri v2](https://tauri.app/
 
 L’application de bureau comporte une barre latérale de navigation avec toutes les vues GTD et une zone de contenu principale.
 
+Dans une fenêtre assez haute, la liste des Projets ou des Contextes apparaît sous la navigation principale, laissant davantage de largeur aux tâches. Faites glisser le séparateur pour redimensionner les deux volets à défilement indépendant, ou sélectionnez-le au clavier et utilisez Haut/Bas, Début ou Fin ; un double clic rétablit la répartition par défaut. La proportion est mémorisée sur cet appareil et chaque volet conserve une hauteur minimale. Si la fenêtre est courte ou le texte agrandi laisse trop peu de place, ou si la barre latérale est réduite ou le mode concentration activé, chaque vue conserve sa navigation habituelle.
+
 ---
 
 ## Modes d’interaction

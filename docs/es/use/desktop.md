@@ -6,6 +6,8 @@ La aplicación de escritorio Mindwtr está creada con [Tauri v2](https://tauri.a
 
 La aplicación de escritorio incluye una barra lateral de navegación con todas las vistas GTD y un área de contenido principal.
 
+Si la ventana es suficientemente alta, la lista de Proyectos o Contextos aparece debajo de la navegación principal, dejando más ancho para las tareas. Arrastra el separador para cambiar el tamaño de los dos paneles con desplazamiento independiente, o dale el foco y usa Arriba/Abajo, Inicio o Fin; un doble clic restaura la división predeterminada. La proporción se guarda en este dispositivo y cada panel conserva una altura mínima. En ventanas bajas, con texto ampliado que deja poco espacio, con la barra lateral contraída o en el modo de concentración, se conserva la navegación habitual de cada vista.
+
 ---
 
 ## Patrones de interacción

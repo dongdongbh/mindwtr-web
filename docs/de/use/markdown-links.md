@@ -98,3 +98,11 @@ Mindwtr öffnet den Link erst beim Anklicken oder Antippen. UpNote muss auf dem 
 ## Kurzbefehl auf dem Desktop
 
 Ab v1.3.8 erscheint **Aufgabenlink kopieren**, wenn du mit der Maus über eine Aufgabenzeile fährst oder ihre Aktionen per Tastatur fokussierst. Das Kettensymbol kopiert den bestehenden App-Link, ohne die Aufgabe zu öffnen oder auszuwählen. Das Aufgabenmenü bietet weiterhin den Link und die reine ID.
+
+## Obsidian-Links
+
+Ab v1.3.8 unterstützen Aufgabenbeschreibungen und Projektnotizen auch explizite Obsidian-Links. Obsidian muss auf dem Gerät installiert sein. Klicke oder tippe auf den Link, um die Notiz zu öffnen.
+
+```markdown
+[Note](obsidian://open?vault=Obsidian%20Vault&file=Folder%2FNote)
+```

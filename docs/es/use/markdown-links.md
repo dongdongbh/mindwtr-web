@@ -98,3 +98,11 @@ Mindwtr solo abre el enlace al hacer clic o tocarlo. UpNote debe estar instalado
 ## Acceso rápido en escritorio
 
 Desde v1.3.8, pasa el puntero sobre una tarea o enfoca sus acciones con el teclado para mostrar **Copiar enlace de tarea**. El icono de cadena copia el enlace existente que abre la aplicación, sin abrir ni seleccionar la tarea. El menú sigue ofreciendo el enlace y el ID.
+
+## Enlaces de Obsidian
+
+Desde v1.3.8, las descripciones de tareas y las notas de proyectos también admiten enlaces explícitos de Obsidian. Obsidian debe estar instalado en el dispositivo; haz clic o toca el enlace para abrir la nota.
+
+```markdown
+[Note](obsidian://open?vault=Obsidian%20Vault&file=Folder%2FNote)
+```

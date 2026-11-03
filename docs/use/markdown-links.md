@@ -98,3 +98,11 @@ Mindwtr opens the link only when you click or tap it. UpNote must be installed o
 ## Desktop shortcut
 
 From v1.3.8, hover over a desktop task row or focus its actions with the keyboard to reveal **Copy task link**. The chain icon copies the existing app-opening link without opening or selecting the task. The task menu still offers both the link and the raw ID.
+
+## Obsidian links
+
+From v1.3.8, task descriptions and project notes also support explicit Obsidian links. Obsidian must be installed on the device; click or tap the link to open the note.
+
+```markdown
+[Note](obsidian://open?vault=Obsidian%20Vault&file=Folder%2FNote)
+```

@@ -98,3 +98,11 @@ Mindwtr 僅在你點擊連結時開啟它。該裝置需要安裝 UpNote。如�
 ## 桌面快捷操作
 
 從 v1.3.8 起，將滑鼠停留在桌面任務列上，或用鍵盤聚焦其操作按鈕，即可找到**複製任務連結**。鏈條圖示會複製現有的應用程式連結，不會開啟或選取任務。任務選單仍提供複製連結和原始 ID 兩項操作。
+
+## Obsidian 連結
+
+從 v1.3.8 起，任務描述和專案筆記也支援明確的 Obsidian 連結。裝置上需要安裝 Obsidian；點選連結即可開啟筆記。
+
+```markdown
+[Note](obsidian://open?vault=Obsidian%20Vault&file=Folder%2FNote)
+```

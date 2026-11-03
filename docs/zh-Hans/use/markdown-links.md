@@ -98,3 +98,11 @@ Mindwtr 仅在你点击链接时打开它。该设备需要安装 UpNote。如�
 ## 桌面快捷操作
 
 从 v1.3.8 起，将鼠标悬停在桌面任务行上，或用键盘聚焦其操作按钮，即可找到**复制任务链接**。链条图标会复制现有的应用链接，不会打开或选中任务。任务菜单仍提供复制链接和原始 ID 两项操作。
+
+## Obsidian 链接
+
+从 v1.3.8 起，任务描述和项目笔记也支持显式的 Obsidian 链接。设备上需要安装 Obsidian；点击链接即可打开笔记。
+
+```markdown
+[Note](obsidian://open?vault=Obsidian%20Vault&file=Folder%2FNote)
+```

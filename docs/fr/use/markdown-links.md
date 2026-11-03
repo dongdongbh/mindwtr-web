@@ -98,3 +98,11 @@ Mindwtr ouvre le lien uniquement lorsque vous cliquez ou appuyez dessus. UpNote 
 ## Raccourci sur ordinateur
 
 À partir de v1.3.8, survolez une tâche ou placez le focus clavier sur ses actions pour afficher **Copier le lien de la tâche**. L’icône de chaîne copie le lien existant qui ouvre l’application, sans ouvrir ni sélectionner la tâche. Le menu propose toujours le lien et l’identifiant brut.
+
+## Liens Obsidian
+
+À partir de v1.3.8, les descriptions de tâches et les notes de projets acceptent aussi les liens explicites vers Obsidian. Obsidian doit être installé sur l’appareil ; cliquez ou touchez le lien pour ouvrir la note.
+
+```markdown
+[Note](obsidian://open?vault=Obsidian%20Vault&file=Folder%2FNote)
+```

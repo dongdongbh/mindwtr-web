@@ -6,7 +6,7 @@ The Mindwtr desktop app is built with [Tauri v2](https://tauri.app/), providing 
 
 The desktop app features a sidebar navigation with all GTD views and a main content area.
 
-In a tall window, the Projects or Contexts list appears below the main sidebar navigation, giving tasks more width. Drag the separator to resize the two scrolling panes, or focus it and use Up/Down, Home, or End; double-click restores the default split. The split is remembered on this device and each pane keeps a minimum height. Short windows, enlarged text that leaves too little room, collapsed navigation, and Focus Mode keep each view’s existing navigation.
+On wide windows, Projects and Contexts have a separate navigation pane beside the main sidebar, so their lists can use the full available height. Collapse the pane when you want more room for tasks, and reopen it to switch projects or contexts. Narrow windows use compact navigation.
 
 ---
 

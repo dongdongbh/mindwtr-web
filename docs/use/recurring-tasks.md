@@ -15,6 +15,8 @@ Recurrence lives in the task editor. If you are using quick capture, create the 
 
 The recurrence controls appear on desktop and mobile in the task edit screen.
 
+A due date is optional. If you leave the start, due, and review dates blank, completing the task gives the next occurrence a start date based on the completion day and repeat rule; it does not add a deadline. For example, completing an undated daily task today creates the next task with a start date of tomorrow. Set a start date to choose when the first occurrence should become available, and a due date only when it has a deadline.
+
 ## Repeat Options
 
 | Option | Use it for |

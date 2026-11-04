@@ -86,6 +86,8 @@ Typed contexts and tags are added to the ones you already picked, never swapped 
 
 On desktop the cursor starts in the title as each item opens, placed at the end of the text, so your first keystroke refines the capture instead of replacing it.
 
+Desktop Inbox processing shows saved links so you can open an article before deciding what to do with it. Use **Add link** to attach another link. New links are saved when you apply your processing decision; closing or skipping the item discards unsaved additions.
+
 While you process an item on desktop or mobile, **Similar tasks** shows up to three existing tasks with matching or closely overlapping titles, including completed and archived tasks. You can check their titles and statuses before deciding what to do with the current item. The hint works offline with AI switched off and leaves your tasks unchanged.
 
 ### The Workflow

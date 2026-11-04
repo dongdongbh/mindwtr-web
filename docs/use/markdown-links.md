@@ -26,7 +26,7 @@ Mindwtr also normalizes those tokens into regular Markdown links during renderin
 
 On mobile, open an existing task from any list, including Focus, and tap **…** in the task details header to find both copy actions. They are also available when viewing a read-only task.
 
-Choose **Copy task link** or **Copy task ID** from the task menu on desktop or mobile. Copying is read-only and does not save pending editor changes. The app-opening link uses this format:
+Choose **Copy Mindwtr link** or **Copy task ID** from the task menu on desktop or mobile. Copying is read-only and does not save pending editor changes. The app-opening link uses this format:
 
 ```text
 mindwtr://open?task=task-id
@@ -97,7 +97,7 @@ Mindwtr opens the link only when you click or tap it. UpNote must be installed o
 
 ## Desktop shortcut
 
-From v1.3.8, hover over a desktop task row or focus its actions with the keyboard to reveal **Copy task link**. The chain icon copies the existing app-opening link without opening or selecting the task. The task menu still offers both the link and the raw ID.
+From v1.3.8, hover over a desktop task row or focus its actions with the keyboard to reveal **Copy Mindwtr link**. The chain icon copies the existing app-opening link without opening or selecting the task. The task menu still offers both the link and the raw ID.
 
 ## Obsidian links
 

@@ -125,6 +125,19 @@ Recommended install-free command for MCP clients:
 
 The package is read-only by default. Add `--write` only when you explicitly want an AI client to add, update, complete, or delete Mindwtr data.
 
+### Safe task writes (v1.3.8)
+
+The built-in desktop MCP server and the standalone helper's **Local API mode** support:
+
+- `mindwtr_get_task` returns a sibling `version` alongside `task`. Task creation and update responses also include it.
+- `mindwtr_update_task` accepts optional `expectedVersion`. Pass the version from the read you used to prepare the edit. A mismatch returns `task_version_conflict`; read again and reconcile rather than retrying with a freshly fetched version automatically.
+- `mindwtr_add_task` accepts optional `idempotencyKey`. Reuse the same key and arguments after a lost response to obtain the original creation result without duplicating the task. Different input with that key returns `idempotency_conflict`.
+- A genuinely unchanged task update leaves its revision and modification time unchanged.
+
+Creation receipts last seven days, are scoped to the workspace and credential, and survive restarts. There is a limit of 10,000 unexpired receipts per workspace. A replay does not undo later edits or restore a deleted task. See [safe task writes](/power-users/local-api#safe-writes) for retention, capacity, and HTTP details.
+
+These arguments are not supported by the helper's direct SQLite or Cloud modes. The helper uses versioned routes for protected Local API writes, so an older desktop version fails without silently performing an unprotected write. Without these optional arguments, writes retain their existing behavior; the helper never automatically retries a write.
+
 ### Desktop Local API mode
 
 > Requires mindwtr-mcp 1.1.11 or later.

@@ -180,6 +180,46 @@ Ici, `query` est une recherche en texte brut : la valeur est mise en minuscules 
 
 L’application de bureau utilise `title` lorsqu’il est présent, sinon `input`, et applique les `props` explicites. L’utilitaire Bun exécute en plus `parseQuickAdd` pour `input`.
 
+### Écritures sûres des tâches sur ordinateur (v1.3.8) {#safe-writes}
+
+L’API locale intégrée à l’application de bureau prend en charge les mises à jour conditionnelles des tâches et les nouvelles tentatives de création sans doublon. Ces garanties s’appliquent à cette API de bureau, pas à l’utilitaire de développement Bun, à la CLI ni à l’API Cloud.
+
+**Mises à jour conditionnelles.** La lecture d’une tâche individuelle renvoie `{ "task": { ... }, "version": "sha256-..." }` avec un en-tête `ETag` contenant la version entre guillemets. Les réponses de création et PATCH renvoient également une version. Traitez-la comme une valeur opaque ; la valeur numérique `rev` d’une tâche ne constitue pas à elle seule le validateur.
+
+Lors d’une mise à jour, envoyez dans `If-Match` la version que vous avez effectivement examinée :
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -H 'If-Match: "<version-from-read>"' \
+  -d '{"description":"Revised description"}'
+```
+
+Si la tâche a changé, le serveur renvoie `412` avec `code: "task_version_conflict"` et n’applique pas le correctif. Relisez-la et conciliez les modifications avant de tenter une nouvelle mise à jour. Omettre `If-Match` conserve le comportement inconditionnel. Une liste d’étiquettes d’entité séparées par des virgules est acceptée ; les étiquettes faibles ne satisfont jamais la comparaison forte. `If-Match: *` vérifie uniquement l’existence et ne protège donc pas contre les modifications d’une tâche existante.
+
+**Nouvelles tentatives de création sans doublon.** Fournissez un `Idempotency-Key` lors de la création d’une tâche :
+
+```bash
+curl -s -X POST 'http://127.0.0.1:3456/v1/tasks' \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -H 'Idempotency-Key: capture-2026-11-04-001' \
+  -d '{"title":"Call Alice","props":{"status":"next"}}'
+```
+
+Utilisez une nouvelle clé pour chaque création voulue. Si la réponse est perdue, réessayez avec la même clé et le même contenu JSON. L’ordre des champs de l’objet n’a pas d’importance ; les valeurs modifiées ou l’ordre des éléments des tableaux en ont. Le serveur renvoie le résultat de création initial sans créer une autre tâche. Réutiliser une clé avec un contenu différent renvoie `409` avec `code: "idempotency_conflict"`.
+
+Les clés doivent contenir de 1 à 128 caractères ASCII visibles. Les reçus sont conservés après les redémarrages de l’application et leur portée est limitée à l’espace de travail et aux identifiants d’accès à l’API. Renouveler le jeton ou changer d’espace de travail définit une portée différente. Les reçus restent valides pendant sept jours, avec au maximum 10 000 reçus non expirés par espace de travail ; lorsque cette limite est atteinte, les nouvelles créations avec clé sont rejetées avec `409` / `idempotency_capacity` au lieu de supprimer des reçus valides. Après expiration, une nouvelle tentative peut créer une nouvelle tâche. Il ne s’agit pas d’une garantie illimitée d’exécution exactement une fois.
+
+Les reçus stockent localement la réponse de création initiale. Ils expirent après sept jours ; les lignes expirées sont supprimées lors de transactions ultérieures de création avec clé qui réussissent. Une répétition renvoie la réponse initiale même si la tâche a depuis été modifiée, supprimée ou purgée. Elle ne restaure jamais l’ancienne tâche et n’écrase pas ces modifications ultérieures ; effectuez une nouvelle lecture pour consulter son état actuel.
+
+Les routes habituelles sous `/tasks` acceptent également ces en-têtes. Les alias `/v1/tasks` pour la création et `/v1/tasks/:id` pour PATCH permettent aux clients d’exiger cette implémentation de bureau plus récente : les anciennes versions de bureau renvoient `404` au lieu d’ignorer silencieusement les en-têtes. Ne vous rabattez pas sur une écriture sans protection après cette réponse.
+
+**Mises à jour sans changement.** Une requête PATCH valide dont l’état final normalisé est inchangé réussit sans réécrire la tâche ni faire progresser `rev`, `revBy` ou `updatedAt`. Une normalisation qui répare ou modifie effectivement un champ reste une modification.
+
+Cette phase n’ajoute ni pagination REST, ni lectures conditionnelles de listes, ni flux incrémental de changements, ni réouverture des tâches, ni prise en charge étendue des récurrences. Les refus existants d’opérations du cycle de vie restent en place.
+
 ### Écriture des projets sur ordinateur
 
 L’API intégrée à l’application de bureau permet de créer, obtenir, modifier, supprimer logiquement et restaurer des projets. La création exige `title` ; `areaId`, `color`, `status`, `isSequential` et `order` sont facultatifs. Les mises à jour acceptent les mêmes champs modifiables. La création, la lecture, la modification et la restauration renvoient le projet enregistré sous la forme `{ "project": { ... } }` ; la suppression renvoie `{ "ok": true }`.

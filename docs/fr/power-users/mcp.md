@@ -125,6 +125,19 @@ Commande recommandée sans installation pour les clients MCP :
 
 Le paquet est en lecture seule par défaut. Ajoutez `--write` uniquement lorsque vous souhaitez explicitement qu’un client d’IA ajoute, mette à jour, termine ou supprime des données Mindwtr.
 
+### Écritures sûres des tâches (v1.3.8)
+
+Le serveur MCP intégré à l’application de bureau et le **mode API locale** de l’utilitaire autonome prennent en charge les fonctionnalités suivantes :
+
+- `mindwtr_get_task` renvoie un champ `version` au même niveau que `task`. Les réponses de création et de mise à jour des tâches l’incluent également.
+- `mindwtr_update_task` accepte l’argument facultatif `expectedVersion`. Transmettez la version issue de la lecture utilisée pour préparer la modification. Une différence renvoie `task_version_conflict` ; relisez la tâche et conciliez les modifications au lieu de réessayer automatiquement avec une version fraîchement récupérée.
+- `mindwtr_add_task` accepte l’argument facultatif `idempotencyKey`. Après la perte d’une réponse, réutilisez la même clé et les mêmes arguments pour obtenir le résultat de création initial sans dupliquer la tâche. Des données différentes avec cette clé renvoient `idempotency_conflict`.
+- Une mise à jour de tâche qui ne change effectivement rien laisse sa révision et sa date de modification inchangées.
+
+Les reçus de création durent sept jours, leur portée est limitée à l’espace de travail et aux identifiants d’accès, et ils sont conservés après les redémarrages. La limite est de 10 000 reçus non expirés par espace de travail. Une répétition n’annule pas les modifications ultérieures et ne restaure pas une tâche supprimée. Consultez les [écritures sûres des tâches](/fr/power-users/local-api#safe-writes) pour les détails sur la conservation, la capacité et HTTP.
+
+Ces arguments ne sont pas pris en charge par les modes SQLite direct ou Cloud de l’utilitaire. L’utilitaire utilise des routes versionnées pour les écritures protégées via l’API locale ; une ancienne version de bureau échoue donc sans effectuer silencieusement une écriture sans protection. Sans ces arguments facultatifs, les écritures conservent leur comportement existant ; l’utilitaire ne réessaie jamais automatiquement une écriture.
+
 ### Mode API locale de l’application de bureau
 
 > Nécessite mindwtr-mcp 1.1.11 ou une version ultérieure.

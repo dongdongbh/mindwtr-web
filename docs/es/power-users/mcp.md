@@ -125,6 +125,19 @@ Comando recomendado sin instalación para clientes MCP:
 
 El paquete es de solo lectura de forma predeterminada. Añade `--write` únicamente cuando quieras explícitamente que un cliente de IA añada, actualice, complete o elimine datos de Mindwtr.
 
+### Escrituras seguras de tareas (v1.3.8)
+
+El servidor MCP integrado de escritorio y el **modo de API local** del asistente independiente admiten lo siguiente:
+
+- `mindwtr_get_task` devuelve un campo `version` al mismo nivel que `task`. Las respuestas de creación y actualización de tareas también lo incluyen.
+- `mindwtr_update_task` acepta el argumento opcional `expectedVersion`. Pasa la versión de la lectura que usaste para preparar la edición. Una discrepancia devuelve `task_version_conflict`; vuelve a leer la tarea y concilia los cambios en vez de reintentar automáticamente con una versión recién obtenida.
+- `mindwtr_add_task` acepta el argumento opcional `idempotencyKey`. Si se pierde una respuesta, reutiliza la misma clave y los mismos argumentos para obtener el resultado de creación original sin duplicar la tarea. Una entrada diferente con esa clave devuelve `idempotency_conflict`.
+- Una actualización de tarea que realmente no cambie nada mantiene intactas su revisión y su fecha de modificación.
+
+Los comprobantes de creación duran siete días, su ámbito se limita al espacio de trabajo y a la credencial, y sobreviven a los reinicios. Hay un límite de 10.000 comprobantes sin caducar por espacio de trabajo. Una repetición no deshace ediciones posteriores ni restaura una tarea eliminada. Consulta [escrituras seguras de tareas](/es/power-users/local-api#safe-writes) para conocer los detalles sobre retención, capacidad y HTTP.
+
+Estos argumentos no se admiten en los modos SQLite directo ni Cloud del asistente. El asistente usa rutas versionadas para las escrituras protegidas de la API local, de modo que una versión antigua de escritorio falla sin realizar silenciosamente una escritura sin protección. Sin estos argumentos opcionales, las escrituras mantienen su comportamiento actual; el asistente nunca reintenta una escritura automáticamente.
+
 ### Modo de API local de escritorio
 
 > Requiere mindwtr-mcp 1.1.11 o posterior.

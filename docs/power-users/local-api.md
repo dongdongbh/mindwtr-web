@@ -180,6 +180,46 @@ The desktop Local API accepts `isFocusedToday=true`/`1` and `isFocusedToday=fals
 
 Desktop uses `title` when present, otherwise `input`, and applies explicit `props`. The Bun helper additionally runs `parseQuickAdd` for `input`.
 
+### Safe task writes on desktop (v1.3.8) {#safe-writes}
+
+The built-in desktop Local API supports conditional task updates and retry-safe creation. These guarantees apply to this desktop API, not the Bun development helper, CLI, or Cloud API.
+
+**Conditional updates.** A single-task read returns `{ "task": { ... }, "version": "sha256-..." }` with an `ETag` header containing the quoted version. Create and PATCH responses also return a version. Treat it as opaque; a task's numeric `rev` alone is not the validator.
+
+Send the version you actually inspected in `If-Match` when updating:
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -H 'If-Match: "<version-from-read>"' \
+  -d '{"description":"Revised description"}'
+```
+
+If the task has changed, the server returns `412` with `code: "task_version_conflict"` and does not apply the patch. Read it again and reconcile the changes before trying another update. Omitting `If-Match` retains unconditional behavior. A comma-separated list of entity tags is accepted; weak tags never satisfy the strong comparison. `If-Match: *` checks existence only, so it does not protect against edits to an existing task.
+
+**Retry-safe creation.** Supply an `Idempotency-Key` when creating a task:
+
+```bash
+curl -s -X POST 'http://127.0.0.1:3456/v1/tasks' \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -H 'Idempotency-Key: capture-2026-11-04-001' \
+  -d '{"title":"Call Alice","props":{"status":"next"}}'
+```
+
+Use a new key for each intended creation. If the response is lost, retry with the same key and the same JSON payload. Object field order does not matter; changed values or array order do. The server returns the original creation result without creating another task. Reusing a key with a different payload returns `409` with `code: "idempotency_conflict"`.
+
+Keys must contain 1–128 visible ASCII characters. Receipts survive application restarts and are scoped to the workspace and API credential. Rotating the token or switching workspaces starts a different scope. Receipts remain valid for seven days, with at most 10,000 unexpired receipts per workspace; reaching that limit rejects new keyed creates with `409` / `idempotency_capacity` rather than discarding valid receipts. After expiry, a retry can create a new task. This is not an unlimited exactly-once guarantee.
+
+Receipts store the original creation response locally. They expire after seven days; expired rows are removed during later successful keyed-create transactions. A replay returns the original response even if the task has since been edited, deleted, or purged. It never restores the old task or overwrites those later changes; use a fresh read to inspect its current state.
+
+The regular `/tasks` routes also accept these headers. The `/v1/tasks` create and `/v1/tasks/:id` PATCH aliases let clients require this newer desktop implementation: older desktop versions return `404` instead of silently ignoring the headers. Do not fall back to an unprotected write after that response.
+
+**Unchanged updates.** A valid PATCH whose normalized final state is unchanged succeeds without rewriting the task or advancing `rev`, `revBy`, or `updatedAt`. Normalization that actually repairs or changes a field is still an edit.
+
+This phase does not add REST pagination, conditional list reads, an incremental change feed, task reopening, or expanded recurrence support. Existing lifecycle refusals remain in place.
+
 ### Desktop project writes
 
 The built-in desktop API supports creating, reading, updating, soft-deleting, and restoring projects. Project creation requires `title`; `areaId`, `color`, `status`, `isSequential`, and `order` are optional. Updates accept the same editable fields. Create, read, update, and restore responses contain the saved project as `{ "project": { ... } }`; delete returns `{ "ok": true }`.

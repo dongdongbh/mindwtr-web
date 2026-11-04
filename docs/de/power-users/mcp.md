@@ -125,6 +125,19 @@ Empfohlener installationsfreier Befehl für MCP-Clients:
 
 Das Paket ist standardmäßig schreibgeschützt. Fügen Sie `--write` nur hinzu, wenn ein KI-Client ausdrücklich Mindwtr-Daten hinzufügen, aktualisieren, erledigen oder löschen können soll.
 
+### Sichere Schreibzugriffe auf Aufgaben (v1.3.8)
+
+Der integrierte MCP-Server der Desktop-App und der **Local-API-Modus** des eigenständigen Hilfsprogramms unterstützen Folgendes:
+
+- `mindwtr_get_task` gibt neben `task` ein gleichrangiges Feld `version` zurück. Antworten auf das Erstellen und Aktualisieren von Aufgaben enthalten es ebenfalls.
+- `mindwtr_update_task` akzeptiert das optionale Argument `expectedVersion`. Übergeben Sie die Version aus dem Lesevorgang, auf dessen Grundlage Sie die Bearbeitung vorbereitet haben. Eine Abweichung gibt `task_version_conflict` zurück; lesen Sie die Aufgabe erneut und gleichen Sie die Änderungen ab, statt automatisch mit einer frisch abgerufenen Version erneut zu versuchen.
+- `mindwtr_add_task` akzeptiert das optionale Argument `idempotencyKey`. Verwenden Sie nach einer verlorenen Antwort denselben Schlüssel und dieselben Argumente erneut, um das ursprüngliche Erstellungsergebnis zu erhalten, ohne die Aufgabe zu duplizieren. Andere Eingaben mit diesem Schlüssel geben `idempotency_conflict` zurück.
+- Eine tatsächlich unveränderte Aufgabenaktualisierung lässt Revision und Änderungszeit unverändert.
+
+Erstellungsbelege gelten sieben Tage, sind auf den Arbeitsbereich und die Zugangsdaten beschränkt und bleiben nach Neustarts erhalten. Pro Arbeitsbereich gilt ein Limit von 10.000 noch nicht abgelaufenen Belegen. Eine Wiederholung macht spätere Bearbeitungen nicht rückgängig und stellt eine gelöschte Aufgabe nicht wieder her. Einzelheiten zu Aufbewahrung, Kapazität und HTTP finden Sie unter [sichere Schreibzugriffe auf Aufgaben](/de/power-users/local-api#safe-writes).
+
+Diese Argumente werden im direkten SQLite-Modus und im Cloud-Modus des Hilfsprogramms nicht unterstützt. Das Hilfsprogramm verwendet versionierte Routen für geschützte Schreibzugriffe über die Local API, sodass eine ältere Desktop-Version fehlschlägt, ohne stillschweigend einen ungeschützten Schreibzugriff auszuführen. Ohne diese optionalen Argumente bleibt das bisherige Verhalten der Schreibzugriffe erhalten; das Hilfsprogramm wiederholt einen Schreibzugriff niemals automatisch.
+
 ### Local-API-Modus der Desktop-App
 
 > Erfordert mindwtr-mcp 1.1.11 oder neuer.

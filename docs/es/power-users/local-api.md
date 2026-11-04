@@ -180,6 +180,46 @@ Aquí `query` es una búsqueda de texto plano: el valor se pasa a minúsculas y 
 
 En escritorio se usa `title` cuando está presente; de lo contrario, se usa `input`, y se aplican las `props` explícitas. El asistente de Bun ejecuta además `parseQuickAdd` para `input`.
 
+### Escrituras seguras de tareas en escritorio (v1.3.8) {#safe-writes}
+
+La API local integrada de escritorio admite actualizaciones condicionales de tareas y reintentos seguros de creación. Estas garantías se aplican a esta API de escritorio, no al asistente de desarrollo de Bun, la CLI ni la API de Cloud.
+
+**Actualizaciones condicionales.** La lectura de una tarea individual devuelve `{ "task": { ... }, "version": "sha256-..." }` con una cabecera `ETag` que contiene la versión entre comillas. Las respuestas de creación y PATCH también devuelven una versión. Trátala como un valor opaco; el valor numérico `rev` de una tarea por sí solo no es el validador.
+
+Al actualizar, envía en `If-Match` la versión que realmente has revisado:
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -H 'If-Match: "<version-from-read>"' \
+  -d '{"description":"Revised description"}'
+```
+
+Si la tarea ha cambiado, el servidor devuelve `412` con `code: "task_version_conflict"` y no aplica el parche. Vuelve a leerla y concilia los cambios antes de intentar otra actualización. Omitir `If-Match` mantiene el comportamiento incondicional. Se acepta una lista de etiquetas de entidad separadas por comas; las etiquetas débiles nunca satisfacen la comparación fuerte. `If-Match: *` solo comprueba la existencia, por lo que no protege frente a ediciones de una tarea existente.
+
+**Reintentos seguros de creación.** Incluye un `Idempotency-Key` al crear una tarea:
+
+```bash
+curl -s -X POST 'http://127.0.0.1:3456/v1/tasks' \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -H 'Idempotency-Key: capture-2026-11-04-001' \
+  -d '{"title":"Call Alice","props":{"status":"next"}}'
+```
+
+Usa una clave nueva para cada creación que quieras realizar. Si se pierde la respuesta, reintenta con la misma clave y el mismo contenido JSON. El orden de los campos del objeto no importa; los valores modificados o el orden de los elementos de los arrays sí. El servidor devuelve el resultado de creación original sin crear otra tarea. Reutilizar una clave con un contenido diferente devuelve `409` con `code: "idempotency_conflict"`.
+
+Las claves deben contener entre 1 y 128 caracteres ASCII visibles. Los comprobantes sobreviven a los reinicios de la aplicación y su ámbito se limita al espacio de trabajo y a la credencial de la API. Rotar el token o cambiar de espacio de trabajo inicia un ámbito diferente. Los comprobantes siguen siendo válidos durante siete días, con un máximo de 10.000 comprobantes sin caducar por espacio de trabajo; al alcanzar ese límite, se rechazan las nuevas creaciones con clave con `409` / `idempotency_capacity` en vez de descartar comprobantes válidos. Una vez caducado el comprobante, un reintento puede crear una tarea nueva. Esto no es una garantía ilimitada de ejecución exactamente una vez.
+
+Los comprobantes almacenan localmente la respuesta de creación original. Caducan a los siete días; las filas caducadas se eliminan durante transacciones posteriores de creación con clave que finalicen correctamente. Una repetición devuelve la respuesta original aunque la tarea se haya editado, eliminado o purgado desde entonces. Nunca restaura la tarea antigua ni sobrescribe esos cambios posteriores; vuelve a leerla para consultar su estado actual.
+
+Las rutas habituales de `/tasks` también aceptan estas cabeceras. Los alias `/v1/tasks` para crear y `/v1/tasks/:id` para PATCH permiten a los clientes exigir esta implementación de escritorio más reciente: las versiones antiguas de escritorio devuelven `404` en vez de ignorar las cabeceras de forma silenciosa. No recurras a una escritura sin protección tras esa respuesta.
+
+**Actualizaciones sin cambios.** Un PATCH válido cuyo estado final normalizado no haya cambiado se completa correctamente sin reescribir la tarea ni incrementar `rev`, `revBy` o `updatedAt`. Una normalización que realmente repare o cambie un campo sigue siendo una edición.
+
+Esta fase no añade paginación REST, lecturas condicionales de listas, un flujo incremental de cambios, reapertura de tareas ni compatibilidad ampliada con recurrencias. Se mantienen los rechazos existentes de operaciones del ciclo de vida.
+
 ### Escritura de proyectos en escritorio
 
 La API integrada de escritorio permite crear, obtener, actualizar, eliminar de forma lógica y restaurar proyectos. Para crear un proyecto, `title` es obligatorio; `areaId`, `color`, `status`, `isSequential` y `order` son opcionales. Las actualizaciones aceptan los mismos campos editables. Crear, obtener, actualizar y restaurar devuelven el proyecto guardado como `{ "project": { ... } }`; eliminar devuelve `{ "ok": true }`.

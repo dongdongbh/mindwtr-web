@@ -180,6 +180,46 @@ Die lokale Desktop-API akzeptiert `isFocusedToday=true`/`1` und `isFocusedToday=
 
 Desktop verwendet `title`, wenn vorhanden, andernfalls `input`, und wendet ausdrückliche `props` an. Das Bun-Hilfsprogramm führt zusätzlich `parseQuickAdd` für `input` aus.
 
+### Sichere Schreibzugriffe auf Aufgaben auf dem Desktop (v1.3.8) {#safe-writes}
+
+Die integrierte Local API der Desktop-App unterstützt bedingte Aufgabenaktualisierungen und das sichere Wiederholen von Erstellungsanfragen. Diese Garantien gelten für diese Desktop-API, nicht für das Bun-Hilfsprogramm für die Entwicklung, die CLI oder die Cloud-API.
+
+**Bedingte Aktualisierungen.** Beim Lesen einer einzelnen Aufgabe wird `{ "task": { ... }, "version": "sha256-..." }` mit einem `ETag`-Header zurückgegeben, der die Version in Anführungszeichen enthält. Antworten auf Erstellungsanfragen und PATCH-Anfragen enthalten ebenfalls eine Version. Behandeln Sie diesen Wert als undurchsichtig; der numerische Wert `rev` einer Aufgabe allein ist nicht der Validator.
+
+Senden Sie bei einer Aktualisierung in `If-Match` die Version, die Sie tatsächlich geprüft haben:
+
+```bash
+curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -H 'If-Match: "<version-from-read>"' \
+  -d '{"description":"Revised description"}'
+```
+
+Wenn sich die Aufgabe geändert hat, gibt der Server `412` mit `code: "task_version_conflict"` zurück und wendet den Patch nicht an. Lesen Sie die Aufgabe erneut und gleichen Sie die Änderungen ab, bevor Sie eine weitere Aktualisierung versuchen. Ohne `If-Match` bleibt das Verhalten ohne Bedingung erhalten. Eine durch Kommas getrennte Liste von Entity-Tags wird akzeptiert; schwache Tags erfüllen den starken Vergleich nie. `If-Match: *` prüft nur die Existenz und schützt daher nicht vor Änderungen an einer bestehenden Aufgabe.
+
+**Sicheres Wiederholen von Erstellungsanfragen.** Geben Sie beim Erstellen einer Aufgabe einen `Idempotency-Key` an:
+
+```bash
+curl -s -X POST 'http://127.0.0.1:3456/v1/tasks' \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+  -H 'Idempotency-Key: capture-2026-11-04-001' \
+  -d '{"title":"Call Alice","props":{"status":"next"}}'
+```
+
+Verwenden Sie für jede beabsichtigte Erstellung einen neuen Schlüssel. Geht die Antwort verloren, wiederholen Sie die Anfrage mit demselben Schlüssel und denselben JSON-Nutzdaten. Die Reihenfolge der Objektfelder spielt keine Rolle; geänderte Werte oder eine andere Reihenfolge in Arrays schon. Der Server gibt das ursprüngliche Erstellungsergebnis zurück, ohne eine weitere Aufgabe zu erstellen. Wird ein Schlüssel mit anderen Nutzdaten erneut verwendet, wird `409` mit `code: "idempotency_conflict"` zurückgegeben.
+
+Schlüssel müssen 1–128 sichtbare ASCII-Zeichen enthalten. Belege bleiben nach einem Neustart der Anwendung erhalten und gelten nur für den jeweiligen Arbeitsbereich und die API-Zugangsdaten. Das Rotieren des Tokens oder der Wechsel des Arbeitsbereichs beginnt einen anderen Geltungsbereich. Belege bleiben sieben Tage gültig, mit höchstens 10.000 noch nicht abgelaufenen Belegen pro Arbeitsbereich; ist dieses Limit erreicht, werden neue Erstellungsanfragen mit Schlüssel mit `409` / `idempotency_capacity` abgelehnt, statt gültige Belege zu verwerfen. Nach Ablauf kann ein erneuter Versuch eine neue Aufgabe erstellen. Dies ist keine unbegrenzte Garantie für eine genau einmalige Ausführung.
+
+Belege speichern die ursprüngliche Erstellungsantwort lokal. Sie laufen nach sieben Tagen ab; abgelaufene Zeilen werden bei späteren erfolgreichen Erstellungstransaktionen mit Schlüssel entfernt. Eine Wiederholung gibt die ursprüngliche Antwort zurück, selbst wenn die Aufgabe inzwischen bearbeitet, gelöscht oder endgültig entfernt wurde. Sie stellt die alte Aufgabe niemals wieder her und überschreibt auch diese späteren Änderungen nicht; lesen Sie die Aufgabe erneut, um ihren aktuellen Zustand zu prüfen.
+
+Auch die regulären Routen unter `/tasks` akzeptieren diese Header. Über die Aliase `/v1/tasks` zum Erstellen und `/v1/tasks/:id` für PATCH können Clients diese neuere Desktop-Implementierung voraussetzen: Ältere Desktop-Versionen geben `404` zurück, statt die Header stillschweigend zu ignorieren. Führen Sie nach dieser Antwort keinen ungeschützten Schreibzugriff als Ersatz aus.
+
+**Aktualisierungen ohne Änderung.** Eine gültige PATCH-Anfrage, deren normalisierter Endzustand unverändert ist, ist erfolgreich, ohne die Aufgabe neu zu schreiben oder `rev`, `revBy` oder `updatedAt` fortzuschreiben. Eine Normalisierung, die ein Feld tatsächlich repariert oder ändert, gilt weiterhin als Bearbeitung.
+
+Diese Phase ergänzt weder REST-Paginierung noch bedingte Listenabfragen, einen inkrementellen Änderungsfeed, das Wiederöffnen von Aufgaben oder erweiterte Unterstützung für Wiederholungen. Bestehende Ablehnungen von Lebenszyklusoperationen bleiben erhalten.
+
 ### Projekte über die Desktop-API schreiben
 
 Die integrierte Desktop-API unterstützt das Erstellen, Abrufen, Aktualisieren, vorläufige Löschen und Wiederherstellen von Projekten. Zum Erstellen ist `title` erforderlich; `areaId`, `color`, `status`, `isSequential` und `order` sind optional. Aktualisierungen akzeptieren dieselben bearbeitbaren Felder. Erstellen, Abrufen, Aktualisieren und Wiederherstellen liefern das gespeicherte Projekt als `{ "project": { ... } }`; Löschen liefert `{ "ok": true }`.

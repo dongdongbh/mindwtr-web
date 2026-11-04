@@ -125,6 +125,19 @@ npm install -g --allow-scripts=better-sqlite3 mindwtr-mcp
 
 该包默认为只读。只有在你明确希望 AI 客户端添加、更新、完成或删除 Mindwtr 数据时，才添加 `--write`。
 
+### 安全任务写入（v1.3.8）
+
+桌面端内置的 MCP 服务器和独立辅助程序的 **Local API 模式**支持：
+
+- `mindwtr_get_task` 返回的 `version` 与 `task` 同级。任务创建和更新响应也包含此值。
+- `mindwtr_update_task` 接受可选的 `expectedVersion`。请传入你准备编辑时所依据的读取结果中的版本。不匹配时会返回 `task_version_conflict`；请重新读取并协调变化，不要自动使用刚获取的版本重试。
+- `mindwtr_add_task` 接受可选的 `idempotencyKey`。响应丢失后，重复使用相同的键和参数，即可获得原始创建结果，而不会重复创建任务。将该键用于不同输入会返回 `idempotency_conflict`。
+- 真正未发生变化的任务更新会保持其修订版本和修改时间不变。
+
+创建回执的有效期为七天，按工作区和凭据划定作用域，并在重启后保留。每个工作区最多可有 10,000 条未过期回执。重放不会撤销后续编辑或恢复已删除的任务。有关保留期限、容量和 HTTP 详情，请参阅[安全任务写入](/zh-Hans/power-users/local-api#safe-writes)。
+
+辅助程序的直接 SQLite 模式和 Cloud 模式不支持这些参数。辅助程序对受保护的 Local API 写入使用带版本的路由，因此较旧的桌面版本会报错，而不会静默执行不受保护的写入。不使用这些可选参数时，写入会保留现有行为；辅助程序从不自动重试写入。
+
 ### 桌面端 Local API 模式
 
 > 需要 mindwtr-mcp 1.1.11 或更新版本。

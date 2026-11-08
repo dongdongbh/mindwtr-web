@@ -106,7 +106,7 @@ From v1.3.8, a Next task waiting behind an earlier step in a sequential project 
 - View all waiting tasks
 - Follow up on stale items
 - Move completed items to Done
-- Items with a future review date sit in a collapsed "Not due yet" group. Set a review date on a long wait (bookings that open in the fall, a reply due next quarter) and it stays out of the way until then; if everything is deferred, the step is skipped
+- Waiting For follows the task's review date; if none is valid, it uses the task's start date. A future date keeps it in the collapsed "Not due yet" group until that date arrives. An explicit review date that has arrived allows follow-up even before the task starts. Tasks with neither date remain available for follow-up; if everything is deferred, the step is skipped
 
 ### Step 5: Review Projects
 
@@ -134,7 +134,7 @@ From v1.3.8, project review shows current steps first and puts blocked Next task
 - Browse Someday/Maybe list
 - Promote items to Next Actions
 - Archive or delete stale items
-- Like Waiting For, items with a future review date wait in a collapsed "Not due yet" group until their date arrives
+- Items with a future review date wait in a collapsed "Not due yet" group until their date arrives
 
 ### Complete
 

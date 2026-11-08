@@ -14,7 +14,7 @@ The default order is:
 4. Today's Focus, when enabled
 5. Complete
 
-The inbox and Waiting For steps are intentionally before focus: new captures are clarified first, and items you were waiting on can be switched to Next when they unblock, so they are available as candidates when you choose today's focus. Empty steps are skipped.
+The inbox and Waiting For steps are intentionally before focus: new captures are clarified first, and items you were waiting on can be switched to Next when they unblock, so they are available as candidates when you choose today's focus. Waiting For follows the task's review date; if none is valid, it uses the task's start date. A future date defers the prompt, while an explicit review date that has arrived allows follow-up even before the task starts. Tasks with neither date remain available for follow-up. Empty steps are skipped.
 
 With a connected calendar, the Today step lists every event for today and tomorrow; scroll to see the rest on busy days.
 

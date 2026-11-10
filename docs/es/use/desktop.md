@@ -13,6 +13,7 @@ Si la ventana es suficientemente alta, la lista de Proyectos o Contextos aparece
 ## Patrones de interacción
 
 - usa **Copiar título** en el menú **Otras opciones** de una tarea, o pulsa `Ctrl+C` / `Cmd+C` con una tarea resaltada. Si hay varias tareas seleccionadas, el atajo copia sus títulos, uno por línea. Un aviso confirma la copia; copiar texto seleccionado o texto dentro de un editor sigue funcionando como siempre.
+- Elige **Copiar detalles de la tarea** en el mismo menú para copiar el título, el proyecto, las fechas de inicio y vencimiento, la descripción y la lista de verificación como texto sin formato. Los campos vacíos se omiten y se indica qué elementos de la lista están completados.
 - Un **solo clic** alterna los detalles de la tarea.
 - `Ctrl+click` (Windows/Linux) o `Cmd+click` (macOS) en el título de una tarea o en una zona vacía de su fila la selecciona o deselecciona sin pulsar antes **Seleccionar**. Después de seleccionar una tarea, `Shift+click` selecciona el intervalo hasta otra tarea. Un clic normal sigue alternando los detalles.
 - Un **doble clic** en una tarea abre el modo de edición completo. Para cambiar solo el título en el mismo lugar, elige **Cambiar nombre de la tarea** en el menú `⋯` de la tarea (Enter guarda y Esc cancela).

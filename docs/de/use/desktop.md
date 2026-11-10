@@ -13,6 +13,7 @@ In einem ausreichend hohen Fenster erscheint die Liste der Projekte oder Kontext
 ## Interaktionsmuster
 
 - Verwende **Titel kopieren** im Menü **Weitere Optionen** einer Aufgabe oder drücke `Ctrl+C` / `Cmd+C`, wenn eine Aufgabe hervorgehoben ist. Sind mehrere Aufgaben ausgewählt, kopiert das Tastenkürzel ihre Titel zeilenweise. Eine Meldung bestätigt das Kopieren; ausgewählter Text und Text im Editor lassen sich weiterhin wie gewohnt kopieren.
+- Wähle im selben Menü **Aufgabendetails kopieren**, um Titel, Projekt, Start- und Fälligkeitsdatum, Beschreibung und Checkliste als Klartext zu kopieren. Leere Felder werden ausgelassen; abgeschlossene und offene Checklistenpunkte sind entsprechend markiert.
 - **Einfachklick** schaltet Aufgabendetails um.
 - Mit `Ctrl+click` (Windows/Linux) oder `Cmd+click` (macOS) auf den Aufgabentitel oder eine freie Stelle der Zeile wählen Sie eine Aufgabe aus oder ab, ohne zuerst **Auswählen** zu drücken. Nach der ersten Auswahl markiert `Shift+click` den Bereich bis zu einer anderen Aufgabe. Ein einfacher Klick schaltet weiterhin die Details um.
 - **Doppelklick** auf eine Aufgabe öffnet den vollständigen Bearbeitungsmodus. Um nur den Titel direkt umzubenennen, wählen Sie **Aufgabe umbenennen** im `⋯`-Menü der Aufgabe (`Enter` speichert, `Esc` bricht ab).

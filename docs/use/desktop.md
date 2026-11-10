@@ -13,6 +13,7 @@ On wide windows, Projects and Contexts have a separate navigation pane beside th
 ## Interaction Patterns
 
 - Use **Copy Title** in a task’s **Other Options** menu, or press `Ctrl+C` / `Cmd+C` with a task highlighted. When multiple tasks are selected, the shortcut copies their titles one per line. A toast confirms the copy; copying selected text or text in an editor still works normally.
+- Choose **Copy task details** in the same menu to copy the title, project, start and due dates, description, and checklist as plain text. Empty fields are omitted and checklist completion marks are included.
 - **Single click** toggles task details.
 - `Ctrl+click` (Windows/Linux) or `Cmd+click` (macOS) on a task title or empty row space selects or deselects it without pressing **Select** first. After selecting a task, `Shift+click` selects the range to another task. Plain clicks still toggle details.
 - **Double click** on a task opens full edit mode. To rename just the title in place, pick **Rename task** from the task's `⋯` menu (Enter saves, Esc cancels).

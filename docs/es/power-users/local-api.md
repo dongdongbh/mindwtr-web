@@ -77,7 +77,7 @@ El asistente de Bun también requiere un token: sale de inmediato si no se estab
 
 ---
 
-## Endpoints
+## Endpoints {#endpoints}
 
 | Método   | Endpoint              | Descripción                   |
 | -------- | --------------------- | ----------------------------- |
@@ -95,6 +95,7 @@ El asistente de Bun también requiere un token: sale de inmediato si no se estab
 | `POST`   | `/tasks/:id/complete` | Marca como completada                  |
 | `POST`   | `/tasks/:id/archive`  | Marca como archivada              |
 | `POST`   | `/tasks/:id/restore`  | Restaura una tarea eliminada de forma lógica   |
+| `POST` | `/tasks/:id/reopen` | Escritorio: reabrir una tarea terminada ordinaria (próxima versión) |
 | `GET`    | `/projects`           | Enumera los proyectos                 |
 | `POST` | `/projects` | Escritorio: crear proyecto |
 | `GET` | `/projects/:id` | Escritorio: obtener un proyecto |
@@ -102,6 +103,7 @@ El asistente de Bun también requiere un token: sale de inmediato si no se estab
 | `DELETE` | `/projects/:id` | Escritorio: eliminar proyecto de forma lógica |
 | `POST` | `/projects/:id/restore` | Escritorio: restaurar proyecto |
 | `GET`    | `/areas`              | Enumera las áreas                    |
+| `POST` | `/areas` | Escritorio: buscar, crear o restaurar un área (próxima versión) |
 | `GET` | `/areas/:id` | Escritorio: obtener un área |
 | `PATCH` | `/areas/:id` | Escritorio: actualizar un área |
 | `GET`    | `/v1/areas`           | Alias de compatibilidad para las áreas |
@@ -113,7 +115,11 @@ El asistente de Bun también requiere un token: sale de inmediato si no se estab
 | `DELETE` | `/sections/:id`       | Asistente: elimina una sección        |
 | `GET`    | `/search?query=...`   | Busca tareas y proyectos       |
 
-La API local de escritorio devuelve `409` (`recurrence_requires_app`) si completar una tarea de calendario fijo con fecha de inicio y sin fecha de vencimiento requiere saltar ocurrencias pasadas. La tarea no cambia; complétala en la aplicación. Las tareas con solo fecha de inicio siguen siendo compatibles si la siguiente ocurrencia aún es vigente o futura.
+**Completar tareas recurrentes en escritorio.** La API de escritorio reconoce las reglas base `daily`, `weekly`, `monthly` y `yearly`, con la estrategia `strict` (calendario fijo) o `fluid` (tras completar). Al completar una tarea activa con una de estas reglas, devuelve `409` / `recurrence_requires_app` si `relativeStartOffset` no es null, `byDay` o `byMonthDay` no están vacíos, o existe una cadena `rrule` no vacía, incluida `FREQ=DAILY`. Alcanzar el límite de repeticiones no evita estas restricciones.
+
+Una tarea `strict` con `startTime` y sin `dueDate` también requiere la aplicación cuando su siguiente inicio exige recuperar ocurrencias pasadas o no puede calcularse con seguridad. Se permite un siguiente inicio sin hora en el día local actual; si incluye hora, debe ser posterior al momento de completar. El rechazo deja la tarea y sus sucesoras sin cambios; completa esa ocurrencia en la aplicación.
+
+Una finalización aceptada no crea sucesora si count o until pone fin a la serie. Completar una tarea que ya está completada no cambia nada; completar una tarea archivada es una corrección sin sucesora. Archivar nunca crea una sucesora. Las reglas de recurrencia almacenadas que no se reconocen no generan sucesora.
 
 Las filas marcadas con **Escritorio** solo existen en la API local de la aplicación de escritorio. Las filas marcadas con **Asistente** solo existen en el asistente de Bun, que además las responde con el prefijo `/v1/` (`/v1/sections`).
 
@@ -207,7 +213,7 @@ A partir de la próxima versión de escritorio, `GET /tasks` también devuelve u
 
 Para exigir esta protección cuando se desconoce la versión de escritorio, use `POST /v2/tasks/:id/complete` o `/v2/tasks/:id/archive`; estas rutas requieren un `If-Match` válido. Las versiones antiguas devuelven `404`. Nunca recurra después a la acción sin protección. El alias existente `/v1/tasks/:id/complete` no basta: la versión 1.3.8 lo acepta sin comprobar `If-Match`.
 
-**Detección de capacidades.** En la próxima versión de escritorio, `GET /health` autenticado informa de `apiVersion: 2` y `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`. Esto describe el contrato de la API de escritorio, no la versión de la aplicación. Los servidores antiguos pueden devolver solo `{ "ok": true }`; esa respuesta no implica protección.
+**Detección de capacidades.** En la próxima versión de escritorio, `GET /health` autenticado informa de `apiVersion: 2` y `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }`. Esto describe el contrato de la API de escritorio, no la versión de la aplicación. Los servidores antiguos pueden devolver solo `{ "ok": true }`; esa respuesta no implica protección.
 
 **Reintentos seguros de creación.** Incluye un `Idempotency-Key` al crear una tarea:
 
@@ -235,7 +241,15 @@ La etiqueta cubre los filtros efectivos y toda la instantánea devuelta, incluid
 
 **Listas de referencias (próxima versión de escritorio).** `GET /sections` devuelve `{ "sections": [ ... ] }`, con un filtro opcional por `projectId` exacto; `GET /people` devuelve `{ "people": [ ... ] }`. Ambas excluyen registros eliminados salvo con `deleted=1`, aceptan alias `/v1/` y funcionan con las escrituras desactivadas. Los registros conservan sus campos; no se filtran por el estado del proyecto padre.
 
-Reabrir tareas y ampliar las recurrencias no forma parte de estos endpoints de lectura.
+**Reabrir tareas (próxima versión de escritorio).** `POST /tasks/:id/reopen` acepta el cuerpo opcional `{ "status": "next" }`. El estado de destino predeterminado es `next`; también admite `inbox`, `waiting` y `someday`. Reabre una tarea ordinaria en estado `done` o `archived`, incluida una tarea cancelada, conservando su identidad y contenido. Borra sus marcas de finalización, cancelación y archivo y restablece su orden en el tablero como un cambio de estado normal. No restaura elementos de la Papelera ni contenedores inexistentes o eliminados.
+
+Si es necesario, reabrir reactiva el proyecto padre archivado y restaura las secciones elegibles eliminadas por ese archivo, en una sola transacción. Las demás tareas terminadas siguen terminadas; se retiran sus marcas de pertenencia al archivado del proyecto. No se restauran las secciones eliminadas de forma independiente ni las modificadas después del archivo. Una tarea en estado final con metadatos de recurrencia devuelve `409` / `recurrence_requires_app` sin tocar su sucesora; este endpoint no deshace una serie recurrente.
+
+Usa `If-Match` opcionalmente para protegerte frente a ediciones simultáneas. Una respuesta correcta devuelve `{ "task": { ... }, "version": "sha256-..." }` y un ETag. Repetir el estado activo solicitado no cambia nada, pero otro estado activo provoca un conflicto; usa PATCH para la clasificación normal. Una versión obsoleta sigue devolviendo `412`, incluso al reintentar el mismo estado. Los servidores antiguos devuelven `404`; nunca recurras a PATCH para reabrir.
+
+**Crear áreas (próxima versión de escritorio).** `POST /areas` acepta `{ "name": "Work", "props": { "color": "#3b82f6", "icon": "Briefcase" } }`; `props` es opcional. Una respuesta correcta devuelve `200` con `{ "area": { ... } }`. Se quitan los espacios al principio y al final de los nombres y se comparan sin distinguir mayúsculas de minúsculas. Si coincide un área no eliminada, se devuelve sin cambios con `existing: true` solo en la respuesta, ignorando el color y el icono enviados. Si no, se restaura una coincidencia eliminada con el mismo ID o se crea un área nueva.
+
+La restauración sigue las reglas existentes de la aplicación: solo se restauran los elementos secundarios eliminados por la misma cascada antigua; los eliminados de forma independiente siguen eliminados, y las tareas o proyectos desvinculados no se reasignan. Los cambios de metadatos solicitados respetan los colores personalizados de los proyectos. Todas las filas afectadas se guardan juntas.
 
 ### Escritura de proyectos en escritorio
 

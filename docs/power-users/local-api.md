@@ -95,6 +95,7 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 | `POST`   | `/tasks/:id/complete` | Mark as done                  |
 | `POST`   | `/tasks/:id/archive`  | Mark as archived              |
 | `POST`   | `/tasks/:id/restore`  | Restore a soft-deleted task   |
+| `POST` | `/tasks/:id/reopen` | Desktop: reopen an ordinary finished task (next release) |
 | `GET`    | `/projects`           | List projects                 |
 | `POST` | `/projects` | Desktop: create project |
 | `GET` | `/projects/:id` | Desktop: get one project |
@@ -102,6 +103,7 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 | `DELETE` | `/projects/:id` | Desktop: soft-delete project |
 | `POST` | `/projects/:id/restore` | Desktop: restore project |
 | `GET`    | `/areas`              | List areas                    |
+| `POST` | `/areas` | Desktop: find, create or restore an area (next release) |
 | `GET` | `/areas/:id` | Desktop: get one Area |
 | `PATCH` | `/areas/:id` | Desktop: update an Area |
 | `GET`    | `/v1/areas`           | Compatibility alias for areas |
@@ -113,7 +115,11 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 | `DELETE` | `/sections/:id`       | Helper: delete section        |
 | `GET`    | `/search?query=...`   | Search tasks + projects       |
 
-The desktop Local API returns `409` (`recurrence_requires_app`) when completing a fixed-schedule task with a start date and no due date would require skipping missed occurrences. The task stays unchanged; complete it in the app. Start-only tasks whose next occurrence is still current or in the future remain supported.
+**Desktop recurring completion.** The desktop API recognizes `daily`, `weekly`, `monthly`, and `yearly` base rules, with `strict` (fixed schedule) or `fluid` (after completion) strategy. Completing an active task with one of these rules returns `409` / `recurrence_requires_app` for a non-null `relativeStartOffset`, nonempty `byDay` or `byMonthDay`, or a nonempty `rrule` string, including `FREQ=DAILY`. Count exhaustion does not bypass these restrictions.
+
+A strict task with `startTime` and no `dueDate` also requires the app when its next start needs missed-occurrence catch-up or cannot be safely computed. A date-only next start on the current local day is allowed; a timed next start must be later than completion. Refusal leaves the task and successors unchanged; complete that occurrence in the app.
+
+An accepted completion creates no successor when count or until ends the series. Completing an already-done task is a no-op; completing an archived task is a correction without a successor. Archiving never creates a successor. Unrecognized stored recurrence rules do not generate a successor.
 
 Rows marked **Desktop** exist only in the desktop app's Local API. Rows marked **Helper** exist only in the Bun helper, which also answers them under a `/v1/` prefix (`/v1/sections`).
 
@@ -207,7 +213,7 @@ From the next desktop release, `GET /tasks` also returns a sibling `versions` ma
 
 To require this protection when the desktop version is unknown, use `POST /v2/tasks/:id/complete` or `/v2/tasks/:id/archive`; these routes require a valid `If-Match`. Older desktop versions return `404`. Never fall back to the unprotected action after that response. The existing `/v1/tasks/:id/complete` alias is not sufficient: desktop 1.3.8 accepts it without checking `If-Match`.
 
-**Capability detection.** Authenticated `GET /health` reports `apiVersion: 2` and `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }` in the next desktop release. This describes the desktop API contract, not the app's release version. Older servers can return only `{ "ok": true }`; do not infer protection from that response.
+**Capability detection.** Authenticated `GET /health` reports `apiVersion: 2` and `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }` in the next desktop release. This describes the desktop API contract, not the app's release version. Older servers can return only `{ "ok": true }`; do not infer protection from that response.
 
 **Retry-safe creation.** Supply an `Idempotency-Key` when creating a task:
 
@@ -235,7 +241,15 @@ The tag covers the effective filters and the full returned snapshot, including t
 
 **Reference lists (next desktop release).** `GET /sections` returns `{ "sections": [ ... ] }`, optionally filtered by an exact `projectId`; `GET /people` returns `{ "people": [ ... ] }`. Both exclude deleted records unless `deleted=1` is supplied, accept `/v1/` aliases, and work with writes disabled. Records retain their fields; these endpoints do not filter by parent-project status.
 
-Task reopening and expanded recurrence support are not part of these read endpoints.
+**Reopening tasks (next desktop release).** `POST /tasks/:id/reopen` accepts an optional body `{ "status": "next" }`. The target defaults to `next`; `inbox`, `waiting`, and `someday` are also supported. It reopens an ordinary `done` or `archived` task, including a cancelled task, keeping its identity and content. It clears the task’s completion/cancellation/archive markers and resets its board ordering as an ordinary status change does. It does not restore Trash or missing/deleted containers.
+
+If needed, reopening reactivates an archived parent project and restores eligible sections deleted by that archive, in one transaction. Other finished tasks stay finished; their archive bookkeeping is retired. Sections independently deleted or changed after the archive are not restored. A terminal task with recurrence metadata returns `409` / `recurrence_requires_app` without touching its successor; this endpoint is not an undo operation for a recurring series.
+
+Use optional `If-Match` for protection against concurrent edits. Success returns `{ "task": { ... }, "version": "sha256-..." }` and an ETag. Repeating the requested active status is a no-op, but a different active status conflicts; use PATCH for ordinary triage. A stale version still returns `412`, even on a same-status retry. Older servers return `404`; never fall back to PATCH to reopen.
+
+**Creating areas (next desktop release).** `POST /areas` accepts `{ "name": "Work", "props": { "color": "#3b82f6", "icon": "Briefcase" } }`; `props` is optional. Success returns `200` with `{ "area": { ... } }`. Names are trimmed and compared case-insensitively. A live match is returned unchanged with response-only `existing: true`, ignoring supplied color/icon. Otherwise, a deleted match is restored with the same ID, or a new area is created.
+
+Restoration follows the app’s existing rules: only children deleted by the same legacy cascade are restored; independently deleted children stay deleted, and detached tasks/projects are not reassigned. Requested metadata changes respect project color overrides. All affected rows commit together.
 
 ### Desktop project writes
 

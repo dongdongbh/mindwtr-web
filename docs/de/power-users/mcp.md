@@ -174,14 +174,15 @@ Schreibzugriffe bleiben deaktiviert, solange sie nicht ausdrücklich mit `--writ
 | Aufgaben auflisten/abrufen | Unterstützt, einschließlich erweiterter Suchoperatoren, Datumsfilter, Sortierung und Paginierung |
 | Aufgaben erstellen | Expliziter Titel und Felder; `quickAdd` ist nicht verfügbar |
 | Aufgaben aktualisieren/erledigen/löschen/wiederherstellen | Über die entsprechenden API-Endpunkte unterstützt; Änderungen zu einem endgültigen Status können nicht als gewöhnliche Bearbeitungen übermittelt werden |
+| Gewöhnliche beendete Aufgaben wieder öffnen | `mindwtr_reopen_task` ab der nächsten Desktop-Version; wiederkehrende Aufgaben im Endstatus erfordern die App |
 | Projekte auflisten/abrufen/erstellen/aktualisieren/löschen | Für die grundlegenden Projektfelder der API unterstützt: Titel, Farbe, Status, Bereich und sequenzielles Verhalten |
-| Bereiche auflisten | Unterstützt |
+| Bereiche auflisten/erstellen | Unterstützt; `mindwtr_add_area` akzeptiert `name` sowie optional `color` und `icon` (Erstellen ab der nächsten Desktop-Version) |
 | Projektabschnitte und verwaltete Personen auflisten | Ab der nächsten Desktop-Version unterstützt: `mindwtr_list_sections` akzeptiert `projectId` und `includeDeleted`; `mindwtr_list_people` akzeptiert `includeDeleted` |
-| Einzelabruf und Änderungen von Abschnitten/Personen, Schreibzugriffe auf Bereiche | Nicht verfügbar; diese Werkzeuge bleiben im API-Modus ausgeblendet |
+| Einzelabruf und Änderungen von Abschnitten/Personen, Bereiche aktualisieren/löschen | Nicht verfügbar; diese Werkzeuge bleiben im API-Modus ausgeblendet |
 | GTD-Verfügbarkeit `view` | In diesem Backend nicht verfügbar |
 | Anhangslinks ersetzen | Nicht verfügbar, da die API keine bedingten Anhangsaktualisierungen bereitstellt |
 
-Andere nicht unterstützte Felder werden vor einem Schreibzugriff abgelehnt. Auch die Einschränkungen der Desktop-API bei Wiederholungen gelten; einige wiederkehrende Aufgaben müssen in der App erledigt werden. Dieses Backend verspricht keine vollständige Gleichwertigkeit mit den SQLite-/Cloud-Werkzeugen.
+Andere nicht unterstützte Felder werden vor einem Schreibzugriff abgelehnt. Im Desktop-Local-API-Modus gelten die [Einschränkungen beim Abschließen wiederkehrender Aufgaben](/de/power-users/local-api#endpoints): Relative Startabstände, Wochentags-/Monatstagspläne, gespeicherte RRULE-Zeichenfolgen und das Aufholen verpasster Starts bei Aufgaben nur mit Startdatum können die App erfordern. Dieses Backend verspricht keine vollständige Gleichwertigkeit mit den SQLite-/Cloud-Werkzeugen.
 
 `--api-url` wählt die **Datenquelle** des Hilfsprogramms aus. `--http` legt dagegen fest, wie sich ein MCP-Client **mit dem Hilfsprogramm** verbindet; es kann mit jedem Backend verwendet werden und hat ein separates Authentifizierungstoken.
 
@@ -465,6 +466,7 @@ Für den Schreibzugriff wird ausschließlich `--write` unterstützt (keine alter
 | `mindwtr_add_task`       | Aufgabe erstellen        | Ja                  |
 | `mindwtr_update_task`    | Aufgabe aktualisieren    | Ja                  |
 | `mindwtr_complete_task`  | Als erledigt markieren   | Ja                  |
+| `mindwtr_reopen_task` | Gewöhnliche Aufgabe wieder öffnen (Local-API-Modus) | Ja |
 | `mindwtr_delete_task`    | Aufgabe vorläufig löschen | Ja                 |
 | `mindwtr_restore_task`   | Aufgabe wiederherstellen | Ja                  |
 | `mindwtr_add_project`    | Projekt erstellen        | Ja                  |
@@ -872,6 +874,10 @@ Die Werkzeuge zum Erstellen und Aktualisieren von Aufgaben und Projekten akzepti
 **Eingabefelder**
 
 - `id`: string (task UUID)
+
+### `mindwtr_reopen_task` (write)
+
+Ab der nächsten Desktop-Version im integrierten Desktop-MCP und im eigenständigen Local-API-Modus verfügbar. Eingabe: `id` (erforderlich), `status` (optional: `inbox`, `next`, `waiting`, `someday`; Standard `next`) und `expectedVersion` (optional). Öffnet gewöhnliche erledigte oder archivierte Aufgaben wieder; Wiederholungsmetadaten bei Aufgaben im Endstatus werden abgelehnt. Ein archiviertes übergeordnetes Projekt und geeignete, durch dessen Archivierung gelöschte Abschnitte werden atomar reaktiviert; andere beendete Aufgaben bleiben beendet. Der Papierkorb wird nicht wiederhergestellt. Ältere Server schlagen fehl, ohne auf PATCH auszuweichen. Siehe [Lebenszyklusregeln der Local API](/de/power-users/local-api#safe-writes).
 
 ### `mindwtr_delete_task` (write)
 

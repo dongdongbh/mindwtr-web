@@ -77,7 +77,7 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 
 ---
 
-## Endpunkte
+## Endpunkte {#endpoints}
 
 | Methode  | Endpunkt              | Beschreibung                         |
 | -------- | --------------------- | ------------------------------------ |
@@ -95,6 +95,7 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 | `POST`   | `/tasks/:id/complete` | Als erledigt markieren               |
 | `POST`   | `/tasks/:id/archive`  | Als archiviert markieren             |
 | `POST`   | `/tasks/:id/restore`  | Vorläufig gelöschte Aufgabe wiederherstellen |
+| `POST` | `/tasks/:id/reopen` | Desktop: gewöhnliche beendete Aufgabe wieder öffnen (nächste Version) |
 | `GET`    | `/projects`           | Projekte auflisten                   |
 | `POST` | `/projects` | Desktop: Projekt erstellen |
 | `GET` | `/projects/:id` | Desktop: Einzelnes Projekt abrufen |
@@ -102,6 +103,7 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 | `DELETE` | `/projects/:id` | Desktop: Projekt vorläufig löschen |
 | `POST` | `/projects/:id/restore` | Desktop: Projekt wiederherstellen |
 | `GET`    | `/areas`              | Bereiche auflisten                   |
+| `POST` | `/areas` | Desktop: Bereich finden, erstellen oder wiederherstellen (nächste Version) |
 | `GET` | `/areas/:id` | Desktop: einzelnen Bereich lesen |
 | `PATCH` | `/areas/:id` | Desktop: Bereich bearbeiten |
 | `GET`    | `/v1/areas`           | Kompatibilitätsalias für Bereiche    |
@@ -113,7 +115,11 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 | `DELETE` | `/sections/:id`       | Hilfsprogramm: Abschnitt löschen     |
 | `GET`    | `/search?query=...`   | Aufgaben und Projekte suchen         |
 
-Die Desktop-Local-API liefert `409` (`recurrence_requires_app`), wenn beim Abschließen einer Aufgabe mit festem Zeitplan, Startdatum und ohne Fälligkeitsdatum verpasste Wiederholungen übersprungen werden müssten. Die Aufgabe bleibt unverändert; schließe sie in der App ab. Aufgaben nur mit Startdatum werden weiterhin unterstützt, wenn ihre nächste Wiederholung noch aktuell ist oder in der Zukunft liegt.
+**Wiederkehrende Aufgaben über die Desktop-API abschließen.** Die Desktop-API erkennt die Grundregeln `daily`, `weekly`, `monthly` und `yearly` mit der Strategie `strict` (fester Zeitplan) oder `fluid` (nach Abschluss). Beim Abschließen einer aktiven Aufgabe mit einer dieser Regeln liefert sie `409` / `recurrence_requires_app`, wenn `relativeStartOffset` nicht null ist, `byDay` oder `byMonthDay` nicht leer ist oder eine nicht leere Zeichenfolge `rrule` vorliegt, einschließlich `FREQ=DAILY`. Ein ausgeschöpftes Wiederholungslimit hebt diese Einschränkungen nicht auf.
+
+Eine Aufgabe mit `strict`, `startTime` und ohne `dueDate` muss ebenfalls in der App abgeschlossen werden, wenn beim nächsten Start verpasste Wiederholungen aufgeholt werden müssten oder der Start nicht sicher berechnet werden kann. Ein nächster Start ohne Uhrzeit am aktuellen lokalen Tag ist zulässig; ein Start mit Uhrzeit muss nach dem Abschlusszeitpunkt liegen. Bei Ablehnung bleiben Aufgabe und Folgeaufgaben unverändert; schließe diese Wiederholung in der App ab.
+
+Ein akzeptierter Abschluss erzeugt keine Folgeaufgabe, wenn count oder until die Serie beendet. Das erneute Abschließen einer bereits erledigten Aufgabe ändert nichts; das Abschließen einer archivierten Aufgabe ist eine Korrektur ohne Folgeaufgabe. Archivieren erzeugt nie eine Folgeaufgabe. Nicht erkannte gespeicherte Wiederholungsregeln erzeugen keine Folgeaufgabe.
 
 Zeilen mit **Desktop** gibt es nur in der lokalen API der Desktop-App. Zeilen mit **Hilfsprogramm** gibt es nur im Bun-Hilfsprogramm, das sie auch unter dem Präfix `/v1/` beantwortet (`/v1/sections`).
 
@@ -207,7 +213,7 @@ Ab der nächsten Desktop-Version gibt `GET /tasks` außerdem ein gleichrangiges 
 
 Um diesen Schutz auch bei unbekannter Desktop-Version zu verlangen, verwenden Sie `POST /v2/tasks/:id/complete` oder `/v2/tasks/:id/archive`; diese Routen erfordern ein gültiges `If-Match`. Ältere Desktop-Versionen geben `404` zurück. Wechseln Sie danach niemals zur ungeschützten Aktion. Der vorhandene Alias `/v1/tasks/:id/complete` reicht nicht aus: Desktop 1.3.8 akzeptiert ihn, ohne `If-Match` zu prüfen.
 
-**Funktionen erkennen.** Ein authentifizierter Aufruf von `GET /health` meldet in der nächsten Desktop-Version `apiVersion: 2` und `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`. Das beschreibt den Vertrag der Desktop-API, nicht die Versionsnummer der App. Ältere Server können nur `{ "ok": true }` zurückgeben; daraus lässt sich kein Schutz ableiten.
+**Funktionen erkennen.** Ein authentifizierter Aufruf von `GET /health` meldet in der nächsten Desktop-Version `apiVersion: 2` und `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }`. Das beschreibt den Vertrag der Desktop-API, nicht die Versionsnummer der App. Ältere Server können nur `{ "ok": true }` zurückgeben; daraus lässt sich kein Schutz ableiten.
 
 **Sicheres Wiederholen von Erstellungsanfragen.** Geben Sie beim Erstellen einer Aufgabe einen `Idempotency-Key` an:
 
@@ -235,7 +241,15 @@ Der Tag umfasst die wirksamen Filter und den gesamten zurückgegebenen Snapshot 
 
 **Referenzlisten (nächste Desktop-Version).** `GET /sections` liefert `{ "sections": [ ... ] }`, optional nach einer exakten `projectId` gefiltert; `GET /people` liefert `{ "people": [ ... ] }`. Beide schließen gelöschte Einträge aus, sofern nicht `deleted=1` angegeben wird, akzeptieren `/v1/`-Aliase und funktionieren bei deaktivierten Schreibzugriffen. Die Felder bleiben erhalten; der Status des übergeordneten Projekts filtert die Einträge nicht.
 
-Das Wiederöffnen von Aufgaben und erweiterte Wiederholungsregeln gehören nicht zu diesen Lese-Endpunkten.
+**Aufgaben wieder öffnen (nächste Desktop-Version).** `POST /tasks/:id/reopen` akzeptiert optional den Anfragekörper `{ "status": "next" }`. Der Zielstatus ist standardmäßig `next`; auch `inbox`, `waiting` und `someday` werden unterstützt. Der Endpunkt öffnet eine gewöhnliche Aufgabe mit Status `done` oder `archived` wieder, auch eine abgebrochene Aufgabe, und behält Identität und Inhalt bei. Er entfernt die Abschluss-, Abbruch- und Archivierungsmarkierungen der Aufgabe und setzt ihre Board-Sortierung wie bei einem gewöhnlichen Statuswechsel zurück. Er stellt weder den Papierkorbinhalt noch fehlende oder gelöschte Container wieder her.
+
+Bei Bedarf reaktiviert das Wiederöffnen ein archiviertes übergeordnetes Projekt und stellt Abschnitte wieder her, die durch diese Archivierung gelöscht wurden und noch dafür infrage kommen. Alles geschieht in einer Transaktion. Andere beendete Aufgaben bleiben beendet; ihre Zuordnung zur Projektarchivierung wird aufgehoben. Unabhängig gelöschte oder nach der Archivierung geänderte Abschnitte werden nicht wiederhergestellt. Eine Aufgabe im Endstatus mit Wiederholungsmetadaten liefert `409` / `recurrence_requires_app`, ohne ihre Folgeaufgabe anzutasten; dieser Endpunkt macht keine Wiederholungsserie rückgängig.
+
+Mit optionalem `If-Match` schützt du dich vor gleichzeitigen Bearbeitungen. Erfolg liefert `{ "task": { ... }, "version": "sha256-..." }` und einen ETag. Den angeforderten aktiven Status erneut zu senden ändert nichts; ein anderer aktiver Status führt jedoch zu einem Konflikt. Verwende PATCH zum gewöhnlichen Einordnen. Eine veraltete Version liefert auch bei einer Wiederholung desselben Status `412`. Ältere Server liefern `404`; weiche zum Wiederöffnen niemals auf PATCH aus.
+
+**Bereiche erstellen (nächste Desktop-Version).** `POST /areas` akzeptiert `{ "name": "Work", "props": { "color": "#3b82f6", "icon": "Briefcase" } }`; `props` ist optional. Erfolg liefert `200` mit `{ "area": { ... } }`. Führende und nachfolgende Leerzeichen werden aus Namen entfernt; der Vergleich ignoriert Groß- und Kleinschreibung. Ein vorhandener nicht gelöschter Bereich mit passendem Namen wird unverändert zurückgegeben, ergänzt um das nur in der Antwort enthaltene `existing: true`; übergebene Farbe und Symbol werden dabei ignoriert. Andernfalls wird ein gelöschter Treffer mit derselben ID wiederhergestellt oder ein neuer Bereich erstellt.
+
+Die Wiederherstellung folgt den bestehenden App-Regeln: Nur untergeordnete Einträge, die durch dieselbe ältere Kaskade gelöscht wurden, werden wiederhergestellt. Unabhängig gelöschte Einträge bleiben gelöscht; getrennte Aufgaben und Projekte werden nicht neu zugeordnet. Angeforderte Metadatenänderungen berücksichtigen die ausdrücklich festgelegten Projektfarben. Alle betroffenen Zeilen werden gemeinsam übernommen.
 
 ### Projekte über die Desktop-API schreiben
 

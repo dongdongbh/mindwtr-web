@@ -77,7 +77,7 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 
 ---
 
-## 端點
+## 端點 {#endpoints}
 
 | 方法     | 端點                  | 說明                         |
 | -------- | --------------------- | ---------------------------- |
@@ -95,6 +95,7 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 | `POST`   | `/tasks/:id/complete` | 標記為已完成                 |
 | `POST`   | `/tasks/:id/archive`  | 標記為已封存                 |
 | `POST`   | `/tasks/:id/restore`  | 還原已軟刪除的任務           |
+| `POST` | `/tasks/:id/reopen` | 桌面版：重新開啟一般已結束任務（下一個版本） |
 | `GET`    | `/projects`           | 列出專案                     |
 | `POST` | `/projects` | 桌面版：建立專案 |
 | `GET` | `/projects/:id` | 桌面版：取得單一專案 |
@@ -102,6 +103,7 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 | `DELETE` | `/projects/:id` | 桌面版：軟刪除專案 |
 | `POST` | `/projects/:id/restore` | 桌面版：還原專案 |
 | `GET`    | `/areas`              | 列出領域                     |
+| `POST` | `/areas` | 桌面版：尋找、建立或還原領域（下一個版本） |
 | `GET` | `/areas/:id` | 桌面端：取得單一領域 |
 | `PATCH` | `/areas/:id` | 桌面端：更新領域 |
 | `GET`    | `/v1/areas`           | 領域的相容性別名             |
@@ -113,7 +115,11 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 | `DELETE` | `/sections/:id`       | 輔助工具：刪除分區           |
 | `GET`    | `/search?query=...`   | 搜尋任務及專案               |
 
-如果完成一個有開始日期、無截止日期的固定週期任務需要跳過已錯過的重複日期，桌面本機 API 會傳回 `409`（`recurrence_requires_app`）。任務保持不變，請在應用程式中完成它。如果下一次重複仍在目前日期或未來，只有開始日期的任務仍受支援。
+**桌面版重複任務的完成操作。** 桌面 API 識別 `daily`、`weekly`、`monthly` 和 `yearly` 基本規則，以及 `strict`（固定排程）或 `fluid`（完成後計算）策略。完成使用這些規則的使用中任務時，如果 `relativeStartOffset` 非 null、`byDay` 或 `byMonthDay` 非空，或存在非空的 `rrule` 字串（包括 `FREQ=DAILY`），便會傳回 `409` / `recurrence_requires_app`。達到重複次數上限也不會繞過這些限制。
+
+對於包含 `startTime`、沒有 `dueDate` 的 `strict` 任務，如果下一次開始需要補算錯過的重複日期，或無法安全計算，也必須在應用程式中完成。下一次開始若只有日期，可以是目前的本機日期；若包含時間，則必須晚於本次完成時間。拒絕操作時，任務及其後續任務均保持不變；請在應用程式中完成該次任務。
+
+操作獲准後，如果 count 或 until 已使系列結束，便不會建立後續任務。再次完成已經完成的任務不會產生變化；將已封存任務改為已完成屬於更正，不會建立後續任務。封存操作從不建立後續任務。無法識別的已儲存重複規則不會產生後續任務。
 
 標示**桌面版**的列只存在於桌面應用程式的本機 API。標示**輔助工具**的列只存在於 Bun 輔助工具，它同時也在 `/v1/` 前綴下回應這些請求（`/v1/sections`）。
 
@@ -207,7 +213,7 @@ curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
 
 當桌面版本未知時，要確保此保護生效，請使用 `POST /v2/tasks/:id/complete` 或 `/v2/tasks/:id/archive`；這些路由要求提供有效的 `If-Match`。舊桌面版本會傳回 `404`。收到該回應後，絕不要退回無保護的操作。現有的 `/v1/tasks/:id/complete` 別名並不足夠：桌面版 1.3.8 接受該路由，但不檢查 `If-Match`。
 
-**能力偵測。** 下一個桌面版本中，經過驗證的 `GET /health` 會傳回 `apiVersion: 2` 和 `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`。這描述桌面 API 的介面約定，而不是應用程式的發佈版本。舊伺服器可能只傳回 `{ "ok": true }`；不要據此推斷寫入保護可用。
+**能力偵測。** 下一個桌面版本中，經過驗證的 `GET /health` 會傳回 `apiVersion: 2` 和 `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }`。這描述桌面 API 的介面約定，而不是應用程式的發佈版本。舊伺服器可能只傳回 `{ "ok": true }`；不要據此推斷寫入保護可用。
 
 **可安全重試的建立。** 建立任務時提供 `Idempotency-Key`：
 
@@ -235,7 +241,15 @@ curl -s -X POST 'http://127.0.0.1:3456/v1/tasks' \
 
 **參照清單（下一個桌面版本）。** `GET /sections` 傳回 `{ "sections": [ ... ] }`，可按精確的 `projectId` 篩選；`GET /people` 傳回 `{ "people": [ ... ] }`。兩者預設排除已刪除記錄，傳入 `deleted=1` 可包含它們；支援 `/v1/` 別名，在停用寫入時仍可使用。記錄保留原有欄位，不按父專案狀態篩選。
 
-這些讀取端點不包含重新開啟任務或擴充重複規則支援。
+**重新開啟任務（下一個桌面版本）。** `POST /tasks/:id/reopen` 接受選填的請求本文 `{ "status": "next" }`。目標狀態預設為 `next`，也支援 `inbox`、`waiting` 和 `someday`。它會重新開啟處於 `done` 或 `archived` 狀態的一般任務，包括已取消任務，並保留任務的識別與內容。它會清除該任務的完成、取消與封存標記，並像一般狀態變更一樣重設看板排序。它不會還原垃圾桶內容，也不會還原遺失或已刪除的容器。
+
+如有需要，重新開啟任務會在同一筆交易中重新啟用已封存的父專案，並還原由該次封存刪除且符合還原條件的分區。其他已結束任務仍保持結束狀態；它們與專案封存相關的標記會被移除。獨立刪除的分區或封存後又被修改的分區不會還原。處於終態且帶有重複中繼資料的任務會傳回 `409` / `recurrence_requires_app`，不會修改其後續任務；此端點不是重複系列的復原操作。
+
+可使用 `If-Match` 防止並行編輯覆寫。成功時傳回 `{ "task": { ... }, "version": "sha256-..." }` 和 ETag。重複請求相同的使用中狀態不會產生變化，但請求其他使用中狀態會發生衝突；一般分類調整請使用 PATCH。即使重試的是相同狀態，版本過期仍會傳回 `412`。舊伺服器傳回 `404`；切勿改用 PATCH 來重新開啟任務。
+
+**建立領域（下一個桌面版本）。** `POST /areas` 接受 `{ "name": "Work", "props": { "color": "#3b82f6", "icon": "Briefcase" } }`，其中 `props` 可省略。成功時傳回 `200` 和 `{ "area": { ... } }`。名稱會移除前後空白，比較時不區分大小寫。若比對到未刪除的領域，會原樣傳回，並僅在回應中附加 `existing: true`，忽略傳入的顏色與圖示。否則，會使用原 ID 還原相符的已刪除領域，或建立新領域。
+
+還原操作遵循應用程式現有規則：僅還原由同一次舊版串聯刪除的子項；獨立刪除的子項仍保持刪除狀態，已解除關聯的任務與專案不會被重新指派。請求的中繼資料變更會保留專案的自訂顏色設定。所有受影響的列會一併提交。
 
 ### 桌面版專案寫入
 

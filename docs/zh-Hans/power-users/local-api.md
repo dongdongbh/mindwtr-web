@@ -77,7 +77,7 @@ Bun 辅助程序同样要求令牌：未设置 `MINDWTR_API_TOKEN` 时会立即�
 
 ---
 
-## 端点
+## 端点 {#endpoints}
 
 | 方法     | 端点                  | 说明                          |
 | -------- | --------------------- | ----------------------------- |
@@ -95,6 +95,7 @@ Bun 辅助程序同样要求令牌：未设置 `MINDWTR_API_TOKEN` 时会立即�
 | `POST`   | `/tasks/:id/complete` | 标记为已完成                  |
 | `POST`   | `/tasks/:id/archive`  | 标记为已归档                  |
 | `POST`   | `/tasks/:id/restore`  | 恢复软删除任务                |
+| `POST` | `/tasks/:id/reopen` | 桌面端：重新打开普通的已结束任务（下一个版本） |
 | `GET`    | `/projects`           | 列出项目                      |
 | `POST` | `/projects` | 桌面端：创建项目 |
 | `GET` | `/projects/:id` | 桌面端：获取单个项目 |
@@ -102,6 +103,7 @@ Bun 辅助程序同样要求令牌：未设置 `MINDWTR_API_TOKEN` 时会立即�
 | `DELETE` | `/projects/:id` | 桌面端：软删除项目 |
 | `POST` | `/projects/:id/restore` | 桌面端：恢复项目 |
 | `GET`    | `/areas`              | 列出领域                      |
+| `POST` | `/areas` | 桌面端：查找、创建或恢复领域（下一个版本） |
 | `GET` | `/areas/:id` | 桌面端：获取单个领域 |
 | `PATCH` | `/areas/:id` | 桌面端：更新领域 |
 | `GET`    | `/v1/areas`           | 领域端点的兼容别名            |
@@ -113,7 +115,11 @@ Bun 辅助程序同样要求令牌：未设置 `MINDWTR_API_TOKEN` 时会立即�
 | `DELETE` | `/sections/:id`       | 辅助程序：删除分区            |
 | `GET`    | `/search?query=...`   | 搜索任务和项目                |
 
-如果完成一个有开始日期、无截止日期的固定周期任务需要跳过已错过的重复日期，桌面本地 API 会返回 `409`（`recurrence_requires_app`）。任务保持不变，请在应用中完成它。如果下一次重复仍在当前日期或未来，只有开始日期的任务仍受支持。
+**桌面端重复任务的完成操作。** 桌面 API 识别 `daily`、`weekly`、`monthly` 和 `yearly` 基础规则，以及 `strict`（固定计划）或 `fluid`（完成后计算）策略。完成使用这些规则的活动任务时，如果 `relativeStartOffset` 非 null、`byDay` 或 `byMonthDay` 非空，或存在非空的 `rrule` 字符串（包括 `FREQ=DAILY`），则返回 `409` / `recurrence_requires_app`。达到重复次数上限也不会绕过这些限制。
+
+对于包含 `startTime`、没有 `dueDate` 的 `strict` 任务，如果下一次开始需要补算错过的重复日期，或无法安全计算，也必须在应用中完成。下一次开始若仅有日期，可以是当前本地日期；若包含时间，则必须晚于本次完成时间。拒绝操作时，任务及其后续任务均保持不变；请在应用中完成该次任务。
+
+操作获准后，如果 count 或 until 已使系列结束，则不会创建后续任务。再次完成已经完成的任务不会产生变化；将已归档任务改为已完成属于更正，不会创建后续任务。归档操作从不创建后续任务。无法识别的已存储重复规则不会生成后续任务。
 
 标注**桌面端**的行只存在于桌面应用的本地 API。标注**辅助程序**的行只存在于 Bun 辅助程序，它同时也在 `/v1/` 前缀下响应这些请求（`/v1/sections`）。
 
@@ -207,7 +213,7 @@ curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
 
 当桌面版本未知时，要确保此保护生效，请使用 `POST /v2/tasks/:id/complete` 或 `/v2/tasks/:id/archive`；这些路由要求提供有效的 `If-Match`。旧桌面版本会返回 `404`。收到该响应后，绝不要回退到无保护的操作。现有的 `/v1/tasks/:id/complete` 别名并不足够：桌面版 1.3.8 接受该路由，但不检查 `If-Match`。
 
-**能力检测。** 下一个桌面版本中，经过身份验证的 `GET /health` 会返回 `apiVersion: 2` 和 `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`。这描述桌面 API 的接口约定，而不是应用的发布版本。旧服务器可能只返回 `{ "ok": true }`；不要据此推断写入保护可用。
+**能力检测。** 下一个桌面版本中，经过身份验证的 `GET /health` 会返回 `apiVersion: 2` 和 `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }`。这描述桌面 API 的接口约定，而不是应用的发布版本。旧服务器可能只返回 `{ "ok": true }`；不要据此推断写入保护可用。
 
 **可安全重试的创建。** 创建任务时提供 `Idempotency-Key`：
 
@@ -235,7 +241,15 @@ curl -s -X POST 'http://127.0.0.1:3456/v1/tasks' \
 
 **引用列表（下一个桌面版本）。** `GET /sections` 返回 `{ "sections": [ ... ] }`，可按精确的 `projectId` 筛选；`GET /people` 返回 `{ "people": [ ... ] }`。两者默认排除已删除记录，传入 `deleted=1` 可包含它们；支持 `/v1/` 别名，在禁用写入时仍可使用。记录保留原有字段，不按父项目状态筛选。
 
-这些读取端点不包含重新打开任务或扩展重复规则支持。
+**重新打开任务（下一个桌面版本）。** `POST /tasks/:id/reopen` 接受可选请求体 `{ "status": "next" }`。目标状态默认为 `next`，也支持 `inbox`、`waiting` 和 `someday`。它会重新打开处于 `done` 或 `archived` 状态的普通任务，包括已取消任务，并保留任务的标识和内容。它会清除该任务的完成、取消和归档标记，并像普通状态变更一样重置看板排序。它不会恢复回收站内容，也不会恢复缺失或已删除的容器。
+
+如有需要，重新打开任务会在同一事务中重新激活已归档的父项目，并恢复由该次归档删除且符合恢复条件的分区。其他已结束任务仍保持结束状态；它们与项目归档相关的标记会被移除。独立删除的分区或归档后又被修改的分区不会恢复。处于终态且带有重复元数据的任务会返回 `409` / `recurrence_requires_app`，不会修改其后续任务；此端点不是重复系列的撤销操作。
+
+可使用 `If-Match` 防止并发编辑覆盖。成功时返回 `{ "task": { ... }, "version": "sha256-..." }` 和 ETag。重复请求同一个活动状态不会产生变化，但请求其他活动状态会发生冲突；普通分类调整请使用 PATCH。即使重试的是同一状态，版本过期仍会返回 `412`。旧服务器返回 `404`；切勿改用 PATCH 来重新打开任务。
+
+**创建领域（下一个桌面版本）。** `POST /areas` 接受 `{ "name": "Work", "props": { "color": "#3b82f6", "icon": "Briefcase" } }`，其中 `props` 可省略。成功时返回 `200` 和 `{ "area": { ... } }`。名称会去除首尾空白，比较时不区分大小写。如果匹配到未删除的领域，会原样返回，并仅在响应中附加 `existing: true`，忽略传入的颜色和图标。否则，会使用原 ID 恢复匹配的已删除领域，或创建新领域。
+
+恢复操作遵循应用现有规则：仅恢复由同一次旧版级联删除的子项；独立删除的子项仍保持删除状态，已解除关联的任务和项目不会被重新分配。请求的元数据更改会保留项目的自定义颜色设置。所有受影响的行会一并提交。
 
 ### 桌面端项目写入
 

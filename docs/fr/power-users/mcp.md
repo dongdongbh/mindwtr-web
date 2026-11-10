@@ -174,14 +174,15 @@ Les écritures restent désactivées tant qu’elles ne sont pas explicitement a
 | Lister/obtenir des tâches | Pris en charge, y compris les opérateurs de recherche avancés, les filtres de date, le tri et la pagination |
 | Créer des tâches | Titre et champs explicites ; `quickAdd` n’est pas disponible |
 | Mettre à jour/terminer/supprimer/restaurer des tâches | Pris en charge via les points de terminaison correspondants de l’API ; les changements vers un état final ne peuvent pas être soumis comme de simples modifications |
+| Rouvrir des tâches ordinaires terminées | `mindwtr_reopen_task` dès la prochaine version de bureau ; les tâches récurrentes dans un état final nécessitent l’application |
 | Lister/obtenir/créer/mettre à jour/supprimer des projets | Pris en charge pour les champs de projet de base de l’API : titre, couleur, état, domaine et comportement séquentiel |
-| Lister les domaines | Pris en charge |
+| Lister/créer des domaines | Pris en charge ; `mindwtr_add_area` accepte `name` et, facultativement, `color` et `icon` (création dès la prochaine version de bureau) |
 | Lister les sections de projet et les personnes gérées | Pris en charge dès la prochaine version de bureau : `mindwtr_list_sections` accepte `projectId` et `includeDeleted` ; `mindwtr_list_people` accepte `includeDeleted` |
-| Lectures individuelles et écritures des sections/personnes, écritures sur les domaines | Indisponibles ; ces outils restent masqués en mode API |
+| Lectures individuelles et écritures des sections/personnes, modification/suppression des domaines | Indisponibles ; ces outils restent masqués en mode API |
 | Disponibilité GTD `view` | Indisponible dans ce backend |
 | Remplacer les liens de pièces jointes | Indisponible car l’API ne fournit pas de mises à jour conditionnelles des pièces jointes |
 
-Les autres champs non pris en charge sont rejetés avant toute écriture. Les limites de récurrence de l’API de bureau s’appliquent également ; certaines tâches récurrentes doivent être terminées dans l’application. Ce backend ne garantit pas une parité complète avec les outils SQLite/Cloud.
+Les autres champs non pris en charge sont rejetés avant toute écriture. Le mode API locale de bureau applique les [limites d’achèvement des tâches récurrentes](/fr/power-users/local-api#endpoints) : les décalages de début relatifs, les calendriers par jour de semaine ou du mois, les chaînes RRULE enregistrées et le rattrapage des tâches avec seulement une date de début peuvent nécessiter l’application. Ce backend ne garantit pas une parité complète avec les outils SQLite/Cloud.
 
 `--api-url` sélectionne la **source de données** de l’utilitaire. `--http` sélectionne plutôt la façon dont un client MCP se connecte **à l’utilitaire** ; il peut être utilisé avec n’importe quel backend et dispose d’un jeton d’authentification distinct.
 
@@ -465,6 +466,7 @@ Seul `--write` permet l’accès en écriture (aucun autre alias).
 | `mindwtr_add_task`      | Créer une tâche               | Oui             |
 | `mindwtr_update_task`   | Mettre à jour une tâche       | Oui             |
 | `mindwtr_complete_task` | Marquer comme terminée        | Oui             |
+| `mindwtr_reopen_task` | Rouvrir une tâche ordinaire (mode API locale) | Oui |
 | `mindwtr_delete_task`   | Supprimer logiquement une tâche | Oui           |
 | `mindwtr_restore_task`  | Restaurer une tâche           | Oui             |
 | `mindwtr_add_project`   | Créer un projet               | Oui             |
@@ -872,6 +874,10 @@ Les outils de création et de mise à jour des tâches et projets acceptent `vie
 **Champs d’entrée**
 
 - `id` : chaîne (UUID de la tâche)
+
+### `mindwtr_reopen_task` (écriture)
+
+Disponible dans le MCP intégré de bureau et en mode API locale autonome dès la prochaine version de bureau. Entrée : `id` (obligatoire), `status` (facultatif : `inbox`, `next`, `waiting`, `someday` ; valeur par défaut `next`) et `expectedVersion` (facultatif). Rouvre les tâches ordinaires terminées ou archivées ; refuse les métadonnées de récurrence pour les tâches dans un état final. Le projet parent archivé et les sections éligibles supprimées par son archivage sont réactivés de manière atomique, tandis que les autres tâches terminées le restent. Ne restaure pas la Corbeille. Les anciens serveurs échouent sans repli vers PATCH. Consultez les [règles de cycle de vie de l’API locale](/fr/power-users/local-api#safe-writes).
 
 ### `mindwtr_delete_task` (écriture)
 

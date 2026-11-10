@@ -174,14 +174,15 @@ Las escrituras permanecen desactivadas salvo que se activen explícitamente con 
 | Listar/obtener tareas | Compatible, incluidos operadores de búsqueda avanzados, filtros de fecha, ordenación y paginación |
 | Crear tareas | Título y campos explícitos; `quickAdd` no está disponible |
 | Actualizar/completar/eliminar/restaurar tareas | Compatible mediante los endpoints correspondientes de la API; los cambios a estados finales no pueden enviarse como ediciones ordinarias |
+| Reabrir tareas terminadas ordinarias | `mindwtr_reopen_task` desde la próxima versión de escritorio; las tareas recurrentes en estado final requieren la aplicación |
 | Listar/obtener/crear/actualizar/eliminar proyectos | Compatible con los campos básicos de proyecto de la API: título, color, estado, área y comportamiento secuencial |
-| Listar áreas | Compatible |
+| Listar/crear áreas | Compatible; `mindwtr_add_area` acepta `name` y, opcionalmente, `color` e `icon` (creación desde la próxima versión de escritorio) |
 | Listar secciones de proyectos y personas gestionadas | Compatible desde la próxima versión de escritorio: `mindwtr_list_sections` acepta `projectId` e `includeDeleted`; `mindwtr_list_people` acepta `includeDeleted` |
-| Lecturas individuales y escrituras de secciones/personas, escrituras de áreas | No disponibles; estas herramientas siguen ocultas en el modo API |
+| Lecturas individuales y escrituras de secciones/personas, actualización/eliminación de áreas | No disponibles; estas herramientas siguen ocultas en el modo API |
 | Disponibilidad GTD `view` | No disponible en este backend |
 | Sustituir enlaces de adjuntos | No disponible porque la API no proporciona actualizaciones condicionales de adjuntos |
 
-Los demás campos no compatibles se rechazan antes de escribir. También se aplican las limitaciones de recurrencia de la API de escritorio; algunas tareas recurrentes deben completarse en la aplicación. Este backend no garantiza una equivalencia total con las herramientas SQLite/Cloud.
+Los demás campos no compatibles se rechazan antes de escribir. El modo API local de escritorio aplica los [límites para completar tareas recurrentes](/es/power-users/local-api#endpoints): los desplazamientos relativos de inicio, las programaciones por día de la semana o del mes, las cadenas RRULE almacenadas y la recuperación de ocurrencias con solo fecha de inicio pueden requerir la aplicación. Este backend no garantiza una equivalencia total con las herramientas SQLite/Cloud.
 
 `--api-url` selecciona la **fuente de datos** del asistente. En cambio, `--http` selecciona cómo se conecta un cliente MCP **al asistente**; puede usarse con cualquier backend y tiene un token de autenticación independiente.
 
@@ -465,6 +466,7 @@ Solo se admite `--write` para el acceso de escritura (no hay alias alternativos)
 | `mindwtr_add_task`      | Crear una tarea          | Sí                |
 | `mindwtr_update_task`   | Actualizar una tarea          | Sí                |
 | `mindwtr_complete_task` | Marcar como completada            | Sí                |
+| `mindwtr_reopen_task` | Reabrir tarea ordinaria (modo API local) | Sí |
 | `mindwtr_delete_task`   | Eliminar una tarea de forma lógica     | Sí                |
 | `mindwtr_restore_task`  | Restaurar una tarea         | Sí                |
 | `mindwtr_add_project`   | Crear un proyecto       | Sí                |
@@ -872,6 +874,10 @@ Las herramientas para crear y actualizar tareas y proyectos aceptan `viewSection
 **Campos de entrada**
 
 - `id`: string (UUID de la tarea)
+
+### `mindwtr_reopen_task` (escritura)
+
+Disponible en el MCP integrado de escritorio y en el modo API local independiente desde la próxima versión de escritorio. Entrada: `id` (obligatorio), `status` (opcional: `inbox`, `next`, `waiting`, `someday`; predeterminado `next`) y `expectedVersion` (opcional). Reabre tareas ordinarias completadas o archivadas; rechaza los metadatos de recurrencia en tareas con estado final. El proyecto padre archivado y las secciones elegibles eliminadas por su archivo se reactivan de forma atómica, mientras las demás tareas terminadas siguen terminadas. No restaura la Papelera. Los servidores antiguos fallan sin recurrir a PATCH. Consulta las [reglas de ciclo de vida de la API local](/es/power-users/local-api#safe-writes).
 
 ### `mindwtr_delete_task` (escritura)
 

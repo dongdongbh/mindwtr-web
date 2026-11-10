@@ -77,7 +77,7 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 
 ---
 
-## Points de terminaison
+## Points de terminaison {#endpoints}
 
 | Méthode  | Point de terminaison   | Description                              |
 | -------- | ---------------------- | ---------------------------------------- |
@@ -95,6 +95,7 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 | `POST`   | `/tasks/:id/complete`  | Marquer comme terminée                   |
 | `POST`   | `/tasks/:id/archive`   | Marquer comme archivée                   |
 | `POST`   | `/tasks/:id/restore`   | Restaurer une tâche supprimée logiquement |
+| `POST` | `/tasks/:id/reopen` | Bureau : rouvrir une tâche ordinaire terminée (prochaine version) |
 | `GET`    | `/projects`            | Répertorier les projets                  |
 | `POST` | `/projects` | Ordinateur : créer un projet |
 | `GET` | `/projects/:id` | Ordinateur : obtenir un projet |
@@ -102,6 +103,7 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 | `DELETE` | `/projects/:id` | Ordinateur : supprimer logiquement un projet |
 | `POST` | `/projects/:id/restore` | Ordinateur : restaurer un projet |
 | `GET`    | `/areas`               | Répertorier les domaines                 |
+| `POST` | `/areas` | Bureau : trouver, créer ou restaurer un domaine (prochaine version) |
 | `GET` | `/areas/:id` | Bureau : lire un domaine |
 | `PATCH` | `/areas/:id` | Bureau : modifier un domaine |
 | `GET`    | `/v1/areas`            | Alias de compatibilité pour les domaines |
@@ -113,7 +115,11 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 | `DELETE` | `/sections/:id`        | Utilitaire : supprimer une section       |
 | `GET`    | `/search?query=...`    | Rechercher des tâches et des projets     |
 
-L’API locale de bureau renvoie `409` (`recurrence_requires_app`) lorsque terminer une tâche à échéancier fixe, avec une date de début mais sans date d’échéance, nécessite de sauter des occurrences passées. La tâche reste inchangée ; terminez-la dans l’application. Les tâches avec seulement une date de début restent prises en charge si la prochaine occurrence est encore actuelle ou future.
+**Terminer des tâches récurrentes sur ordinateur.** L’API de bureau reconnaît les règles de base `daily`, `weekly`, `monthly` et `yearly`, avec la stratégie `strict` (calendrier fixe) ou `fluid` (après achèvement). Terminer une tâche active utilisant l’une de ces règles renvoie `409` / `recurrence_requires_app` si `relativeStartOffset` n’est pas null, si `byDay` ou `byMonthDay` n’est pas vide, ou si la chaîne `rrule` n’est pas vide, y compris `FREQ=DAILY`. Atteindre le nombre limite d’occurrences ne contourne pas ces restrictions.
+
+Une tâche `strict` avec `startTime` et sans `dueDate` nécessite aussi l’application lorsque son prochain début exige un rattrapage des occurrences manquées ou ne peut pas être calculé de manière sûre. Un prochain début sans heure est autorisé le jour local actuel ; s’il comporte une heure, il doit être postérieur à l’achèvement. En cas de refus, la tâche et ses occurrences suivantes restent inchangées ; terminez cette occurrence dans l’application.
+
+Un achèvement accepté ne crée aucune tâche suivante lorsque count ou until met fin à la série. Terminer une tâche déjà terminée ne change rien ; terminer une tâche archivée est une correction sans tâche suivante. L’archivage ne crée jamais de tâche suivante. Les règles de récurrence enregistrées mais non reconnues ne génèrent pas de tâche suivante.
 
 Les lignes marquées **Bureau** n’existent que dans l’API locale de l’application de bureau. Les lignes marquées **Utilitaire** n’existent que dans l’utilitaire Bun, qui y répond aussi sous le préfixe `/v1/` (`/v1/sections`).
 
@@ -207,7 +213,7 @@ Si la tâche a changé, le serveur renvoie `412` avec `code: "task_version_confl
 
 Pour exiger cette protection quand la version de bureau est inconnue, utilisez `POST /v2/tasks/:id/complete` ou `/v2/tasks/:id/archive` ; ces routes exigent un `If-Match` valide. Les anciennes versions renvoient `404`. Ne réessayez jamais ensuite avec l’action non protégée. L’alias existant `/v1/tasks/:id/complete` ne suffit pas : la version de bureau 1.3.8 l’accepte sans vérifier `If-Match`.
 
-**Détection des capacités.** Dans la prochaine version de bureau, un appel authentifié à `GET /health` indique `apiVersion: 2` et `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`. Cela décrit le contrat de l’API de bureau, pas la version de l’application. Les anciens serveurs peuvent renvoyer uniquement `{ "ok": true }` ; cette réponse ne garantit aucune protection.
+**Détection des capacités.** Dans la prochaine version de bureau, un appel authentifié à `GET /health` indique `apiVersion: 2` et `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }`. Cela décrit le contrat de l’API de bureau, pas la version de l’application. Les anciens serveurs peuvent renvoyer uniquement `{ "ok": true }` ; cette réponse ne garantit aucune protection.
 
 **Nouvelles tentatives de création sans doublon.** Fournissez un `Idempotency-Key` lors de la création d’une tâche :
 
@@ -235,7 +241,15 @@ L’étiquette couvre les filtres effectifs et tout l’instantané renvoyé, y 
 
 **Listes de références (prochaine version de bureau).** `GET /sections` renvoie `{ "sections": [ ... ] }`, avec un filtre facultatif par `projectId` exact ; `GET /people` renvoie `{ "people": [ ... ] }`. Les deux excluent les enregistrements supprimés sauf avec `deleted=1`, acceptent les alias `/v1/` et fonctionnent lorsque les écritures sont désactivées. Les champs sont conservés ; le statut du projet parent ne filtre pas les enregistrements.
 
-La réouverture des tâches et l’extension des récurrences ne font pas partie de ces endpoints de lecture.
+**Rouvrir des tâches (prochaine version de bureau).** `POST /tasks/:id/reopen` accepte le corps facultatif `{ "status": "next" }`. Le statut cible est `next` par défaut ; `inbox`, `waiting` et `someday` sont aussi pris en charge. Ce point de terminaison rouvre une tâche ordinaire `done` ou `archived`, y compris une tâche annulée, en conservant son identité et son contenu. Il efface les marqueurs d’achèvement, d’annulation et d’archivage de cette tâche et réinitialise son ordre dans le tableau comme un changement de statut ordinaire. Il ne restaure ni la Corbeille ni les conteneurs absents ou supprimés.
+
+Si nécessaire, la réouverture réactive le projet parent archivé et restaure les sections éligibles supprimées par cet archivage, en une seule transaction. Les autres tâches terminées le restent ; leurs marqueurs liés à l’archivage du projet sont retirés. Les sections supprimées indépendamment ou modifiées après l’archivage ne sont pas restaurées. Une tâche dans un état final avec des métadonnées de récurrence renvoie `409` / `recurrence_requires_app` sans toucher à sa tâche suivante ; ce point de terminaison n’annule pas une série récurrente.
+
+Utilisez éventuellement `If-Match` pour vous protéger des modifications concurrentes. En cas de succès, la réponse contient `{ "task": { ... }, "version": "sha256-..." }` et un ETag. Répéter le statut actif demandé ne change rien, mais demander un autre statut actif provoque un conflit ; utilisez PATCH pour le classement ordinaire. Une version périmée renvoie toujours `412`, même lors d’une nouvelle tentative avec le même statut. Les anciens serveurs renvoient `404` ; ne vous rabattez jamais sur PATCH pour rouvrir une tâche.
+
+**Créer des domaines (prochaine version de bureau).** `POST /areas` accepte `{ "name": "Work", "props": { "color": "#3b82f6", "icon": "Briefcase" } }` ; `props` est facultatif. En cas de succès, la réponse est `200` avec `{ "area": { ... } }`. Les espaces en début et en fin de nom sont supprimés et la comparaison ignore la casse. Un domaine non supprimé dont le nom correspond est renvoyé sans modification, avec `existing: true` uniquement dans la réponse ; la couleur et l’icône fournies sont ignorées. Sinon, un domaine supprimé correspondant est restauré avec le même ID, ou un nouveau domaine est créé.
+
+La restauration suit les règles existantes de l’application : seuls les éléments enfants supprimés par la même ancienne suppression en cascade sont restaurés ; les éléments supprimés indépendamment le restent, et les tâches ou projets détachés ne sont pas réaffectés. Les modifications de métadonnées demandées respectent les couleurs explicitement définies pour les projets. Toutes les lignes concernées sont validées ensemble.
 
 ### Écriture des projets sur ordinateur
 

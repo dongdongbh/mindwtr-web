@@ -174,14 +174,15 @@ npm install -g --omit=optional mindwtr-mcp
 | 列出／取得任務 | 支援，包括豐富的搜尋運算子、日期篩選、排序與分頁 |
 | 建立任務 | 明確指定標題與欄位；不支援 `quickAdd` |
 | 更新／完成／刪除／還原任務 | 透過 API 的相應端點支援；終態變更不能當作一般編輯提交 |
+| 重新開啟一般已結束任務 | 下一個桌面版本起提供 `mindwtr_reopen_task`；處於終態的重複任務仍需在應用程式中處理 |
 | 列出／取得／建立／更新／刪除專案 | 支援 API 的基本專案欄位：標題、顏色、狀態、領域與循序執行行為 |
-| 列出領域 | 支援 |
+| 列出／建立領域 | 支援；`mindwtr_add_area` 接受 `name` 以及選填的 `color` 和 `icon`（下一個桌面版本起支援建立） |
 | 列出專案分區和受管理的人員 | 下一個桌面版本起支援：`mindwtr_list_sections` 接受 `projectId` 和 `includeDeleted`；`mindwtr_list_people` 接受 `includeDeleted` |
-| 分區/人員的單筆讀取和寫入、領域寫入 | 不支援；這些工具在 API 模式下仍隱藏 |
+| 分區／人員的單筆讀取和寫入、領域更新／刪除 | 不支援；這些工具在 API 模式下仍隱藏 |
 | GTD 可執行性 `view` | 此後端不支援 |
 | 取代附件連結 | 不支援，因為 API 不提供附帶條件的附件更新 |
 
-其他不支援的欄位會在寫入之前被拒絕。桌面版 API 的重複任務限制同樣適用；某些重複任務必須在應用程式中完成。此後端不保證與 SQLite／Cloud 工具完全一致。
+其他不支援的欄位會在寫入之前被拒絕。桌面版 Local API 模式採用[重複任務完成操作的限制](/zh-Hant/power-users/local-api#endpoints)：相對開始偏移、依星期或月中日期安排、已儲存的 RRULE 字串，以及只有開始日期時的補算，都可能需要在應用程式中處理。此後端不保證與 SQLite／Cloud 工具完全一致。
 
 `--api-url` 選擇輔助工具的**資料來源**。`--http` 則選擇 MCP 用戶端如何**連接至輔助工具**；它可用於任何後端，並使用獨立的驗證權杖。
 
@@ -465,6 +466,7 @@ node apps/mcp-server/dist/cli.js --db "/path/to/mindwtr.db"
 | `mindwtr_add_task`       | 建立任務           | 是             |
 | `mindwtr_update_task`    | 更新任務           | 是             |
 | `mindwtr_complete_task`  | 標記為已完成       | 是             |
+| `mindwtr_reopen_task` | 重新開啟一般任務（Local API 模式） | 是 |
 | `mindwtr_delete_task`    | 軟刪除任務         | 是             |
 | `mindwtr_restore_task`   | 還原任務           | 是             |
 | `mindwtr_add_project`    | 建立專案           | 是             |
@@ -872,6 +874,10 @@ MCP 1.1.13 尚不支援此功能；請使用包含 [#1439 修正](https://github
 **輸入欄位**
 
 - `id`：string（task UUID）
+
+### `mindwtr_reopen_task`（寫入）
+
+下一個桌面版本起，在內建桌面 MCP 和獨立程式的 Local API 模式中可用。輸入：`id`（必填）、`status`（選填：`inbox`、`next`、`waiting`、`someday`；預設 `next`）以及 `expectedVersion`（選填）。重新開啟一般已完成或已封存任務；拒絕處理帶有重複中繼資料的終態任務。已封存父專案及由該次封存刪除且符合條件的分區會在同一筆交易中重新啟用，其他已結束任務仍保持結束狀態。它不會還原垃圾桶內容。舊伺服器會直接失敗，不會改用 PATCH。參閱 [Local API 生命週期規則](/zh-Hant/power-users/local-api#safe-writes)。
 
 ### `mindwtr_delete_task`（寫入）
 

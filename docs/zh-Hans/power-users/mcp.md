@@ -174,14 +174,15 @@ npm install -g --omit=optional mindwtr-mcp
 | 列出/获取任务 | 支持，包括丰富的搜索运算符、日期筛选、排序和分页 |
 | 创建任务 | 明确指定标题和字段；不支持 `quickAdd` |
 | 更新/完成/删除/恢复任务 | 通过 API 的相应端点支持；终态变更不能作为普通编辑提交 |
+| 重新打开普通的已结束任务 | 下一个桌面版本起提供 `mindwtr_reopen_task`；处于终态的重复任务仍需在应用中处理 |
 | 列出/获取/创建/更新/删除项目 | 支持 API 的基本项目字段：标题、颜色、状态、领域和顺序执行行为 |
-| 列出领域 | 支持 |
+| 列出/创建领域 | 支持；`mindwtr_add_area` 接受 `name` 以及可选的 `color` 和 `icon`（下一个桌面版本起支持创建） |
 | 列出项目分区和受管理的人员 | 下一个桌面版本起支持：`mindwtr_list_sections` 接受 `projectId` 和 `includeDeleted`；`mindwtr_list_people` 接受 `includeDeleted` |
-| 分区/人员的单条读取和写入、领域写入 | 不支持；这些工具在 API 模式下仍隐藏 |
+| 分区/人员的单条读取和写入、领域更新/删除 | 不支持；这些工具在 API 模式下仍隐藏 |
 | GTD 可执行性 `view` | 此后端不支持 |
 | 替换附件链接 | 不支持，因为 API 不提供带条件的附件更新 |
 
-其他不支持的字段会在写入之前被拒绝。桌面端 API 的重复任务限制同样适用；某些重复任务必须在应用中完成。此后端不保证与 SQLite/Cloud 工具完全一致。
+其他不支持的字段会在写入之前被拒绝。桌面端 Local API 模式采用[重复任务完成操作的限制](/zh-Hans/power-users/local-api#endpoints)：相对开始偏移、按星期或月中日期安排、已存储的 RRULE 字符串，以及仅有开始日期时的补算，都可能需要在应用中处理。此后端不保证与 SQLite/Cloud 工具完全一致。
 
 `--api-url` 选择辅助程序的**数据源**。`--http` 则选择 MCP 客户端如何**连接到辅助程序**；它可用于任何后端，并使用单独的身份验证令牌。
 
@@ -465,6 +466,7 @@ node apps/mcp-server/dist/cli.js --db "/path/to/mindwtr.db"
 | `mindwtr_add_task`      | 创建任务           | 是             |
 | `mindwtr_update_task`   | 更新任务           | 是             |
 | `mindwtr_complete_task` | 标记为已完成       | 是             |
+| `mindwtr_reopen_task` | 重新打开普通任务（Local API 模式） | 是 |
 | `mindwtr_delete_task`   | 软删除任务         | 是             |
 | `mindwtr_restore_task`  | 恢复任务           | 是             |
 | `mindwtr_add_project`   | 创建项目           | 是             |
@@ -872,6 +874,10 @@ MCP 1.1.13 尚不支持此功能；请使用包含 [#1439 修复](https://github
 **输入字段**
 
 - `id`：string（任务 UUID）
+
+### `mindwtr_reopen_task`（写入）
+
+下一个桌面版本起，在内置桌面 MCP 和独立程序的 Local API 模式中可用。输入：`id`（必填）、`status`（可选：`inbox`、`next`、`waiting`、`someday`；默认 `next`）以及 `expectedVersion`（可选）。重新打开普通的已完成或已归档任务；拒绝处理带有重复元数据的终态任务。已归档父项目及由该次归档删除且符合条件的分区会在同一事务中重新激活，其他已结束任务仍保持结束状态。它不会恢复回收站内容。旧服务器会直接失败，不会回退到 PATCH。参见 [Local API 生命周期规则](/zh-Hans/power-users/local-api#safe-writes)。
 
 ### `mindwtr_delete_task`（写入）
 

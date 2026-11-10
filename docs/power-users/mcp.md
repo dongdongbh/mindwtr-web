@@ -174,14 +174,15 @@ Writes remain disabled unless explicitly enabled with `--write`. If the app is c
 | List/get tasks | Supported, including rich search operators, date filters, sorting and pagination |
 | Create tasks | Explicit title and fields; `quickAdd` is unavailable |
 | Update/complete/delete/restore tasks | Supported through the API's corresponding endpoints; terminal status changes cannot be submitted as ordinary edits |
+| Reopen ordinary finished tasks | `mindwtr_reopen_task` from the next desktop release; recurring terminal tasks require the app |
 | List/get/create/update/delete projects | Supported for the API's basic project fields: title, color, status, Area and sequential behavior |
-| List areas | Supported |
+| List/create areas | Supported; `mindwtr_add_area` takes `name`, optional `color` and `icon` (creation from the next desktop release) |
 | List project sections and managed people | Supported from the next desktop release: `mindwtr_list_sections` accepts `projectId` and `includeDeleted`; `mindwtr_list_people` accepts `includeDeleted` |
-| Section/person single reads and writes, Area writes | Unavailable; these tools remain hidden in API mode |
+| Section/person single reads and writes, Area update/delete | Unavailable; these tools remain hidden in API mode |
 | GTD availability `view` | Unavailable in this backend |
 | Replacing attachment links | Unavailable because the API does not provide conditional attachment updates |
 
-Other unsupported fields are rejected before a write. The desktop API's recurrence limitations also apply; some recurring completions must be performed in the app. This backend does not promise full SQLite/Cloud tool parity.
+Other unsupported fields are rejected before a write. Desktop Local API mode uses the [recurring-completion limits](/power-users/local-api#endpoints): relative start offsets, weekday/month-day schedules, stored RRULE strings, and start-only catch-up can require the app. This backend does not promise full SQLite/Cloud tool parity.
 
 `--api-url` selects the helper's **data source**. `--http` instead selects how an MCP client connects **to the helper**; it can be used with any backend and has a separate authentication token.
 
@@ -465,6 +466,7 @@ Only `--write` is supported for write access (no alternate aliases).
 | `mindwtr_add_task`      | Create task          | Yes                |
 | `mindwtr_update_task`   | Update task          | Yes                |
 | `mindwtr_complete_task` | Mark done            | Yes                |
+| `mindwtr_reopen_task` | Reopen ordinary task (Local API mode) | Yes |
 | `mindwtr_delete_task`   | Soft-delete task     | Yes                |
 | `mindwtr_restore_task`  | Restore task         | Yes                |
 | `mindwtr_add_project`   | Create project       | Yes                |
@@ -872,6 +874,10 @@ Task and project create/update tools accept `viewSectionIds`, for example `{"som
 **Input fields**
 
 - `id`: string (task UUID)
+
+### `mindwtr_reopen_task` (write)
+
+Available in built-in desktop MCP and standalone Local API mode from the next desktop release. Input: `id` (required), `status` (optional: `inbox`, `next`, `waiting`, `someday`; default `next`), and `expectedVersion` (optional). Reopens ordinary done/archived tasks; it refuses terminal recurrence metadata. An archived parent and eligible archive-owned sections reactivate atomically, while other finished tasks stay finished. It does not restore Trash. Old servers fail without a PATCH fallback. See [Local API lifecycle rules](/power-users/local-api#safe-writes).
 
 ### `mindwtr_delete_task` (write)
 

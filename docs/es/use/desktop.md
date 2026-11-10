@@ -52,6 +52,7 @@ Usa el modo Foco para ocultar la barra lateral y mantener la lista centrada (anc
 
 Mindwtr se ejecuta en segundo plano para gestionar la sincronización automática.
 
+- En macOS, el icono de la barra de menús es monocromo y se adapta automáticamente a la apariencia del sistema.
 - **Cerrar la ventana** minimiza la aplicación a la bandeja del sistema en vez de salir.
 - **Haz clic en el icono de la bandeja** para mostrar u ocultar la ventana.
 - **Pasa el puntero sobre el icono de la bandeja** para ver el recuento del Foco de hoy y tantos títulos de tareas como quepan en los sistemas compatibles.

@@ -52,6 +52,7 @@ Utilisez le mode Focus pour masquer la barre latérale et garder la liste centr�
 
 Mindwtr fonctionne en arrière-plan pour gérer la synchronisation automatique.
 
+- Sur macOS, l’icône de la barre des menus est monochrome et suit automatiquement l’apparence du système.
 - **Fermer la fenêtre** réduit l’application dans la zone de notification système au lieu de la quitter.
 - **Cliquez sur l’icône de la zone de notification** pour afficher ou masquer la fenêtre.
 - **Survolez l’icône de la zone de notification** pour afficher le nombre de Priorités du jour et autant de titres de tâches que possible sur les systèmes compatibles.

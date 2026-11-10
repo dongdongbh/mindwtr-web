@@ -52,6 +52,7 @@ Der Fokusmodus blendet die Seitenleiste aus und hält die Liste zentriert (maxim
 
 Mindwtr läuft für die automatische Synchronisierung im Hintergrund.
 
+- Unter macOS ist das Menüleistensymbol einfarbig und passt sich automatisch dem Erscheinungsbild des Systems an.
 - Beim **Schließen des Fensters** wird die App in die Taskleiste minimiert, statt beendet.
 - Ein **Klick auf das Taskleistensymbol** zeigt oder verbirgt das Fenster.
 - Beim **Überfahren des Taskleistensymbols** sehen Sie auf unterstützten Systemen die Anzahl im heutigen Fokus und so viele Aufgabentitel wie hineinpassen.

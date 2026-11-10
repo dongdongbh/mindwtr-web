@@ -52,6 +52,7 @@ Use Focus Mode to hide the sidebar and keep the list centered (800px max width).
 
 Mindwtr runs in the background to handle auto-sync.
 
+- On macOS, the menu bar icon is monochrome and follows the system appearance automatically.
 - **Closing the window** minimizes the app to the system tray instead of quitting.
 - **Click the tray icon** to show/hide the window.
 - **Hover the tray icon** to see the Today's Focus count and as many task titles as fit on supported systems.

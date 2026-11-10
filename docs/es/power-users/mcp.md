@@ -141,6 +141,8 @@ Estos argumentos no se admiten en los modos SQLite directo ni Cloud del asistent
 
 ### Modo de API local de escritorio
 
+En modo Local API, el asistente API Bun actualizado también proporciona escrituras protegidas y versiones en listas. Conserva los tokens con su servidor y espacio de trabajo originales; los recibos son registros locales separados, con siete días de retención y un máximo de 10.000 vigentes. Consulta las capacidades del servidor conectado.
+
 > Requiere mindwtr-mcp 1.1.11 o posterior.
 
 Activa la **API local** de la aplicación de escritorio en Ajustes y copia su token de portador. Mantén la aplicación y la API en ejecución. Este backend usa los endpoints REST de la aplicación y nunca abre una base de datos ni recurre a SQLite.

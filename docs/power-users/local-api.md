@@ -183,7 +183,9 @@ Desktop uses `title` when present, otherwise `input`, and applies explicit `prop
 
 ### Safe task writes on desktop (v1.3.8) {#safe-writes}
 
-The built-in desktop Local API supports conditional task updates and retry-safe creation. These guarantees apply to this desktop API, not the Bun development helper, CLI, or Cloud API.
+The built-in desktop API supports the safe-write controls below. The updated Bun helper also supports task-list versions, conditional PATCH/complete/archive, retry-safe creation, and unchanged-PATCH detection. These guarantees do not extend to the CLI or Cloud API.
+
+**Bun helper.** Fetch each opaque version from the server and workspace that will receive the write; desktop and helper tokens are not interchangeable. The helper uses the same response shapes, protected `/v1/tasks` create/PATCH routes and `/v2/tasks/:id/complete` or `/archive` routes, conflict codes, and seven-day/10,000-live-receipt limits described here. Its receipts are separate local SQLite records, excluded from the JSON mirror and device sync. Authenticated health adds `implementation: "bun-helper"`, `apiVersion: 2`, and the four write/version capabilities; it does not advertise `conditionalTaskListGet` or `referenceLists`. Older servers may return only `{ "ok": true }`; that does not establish support.
 
 **Conditional updates.** A single-task read returns `{ "task": { ... }, "version": "sha256-..." }` with an `ETag` header containing the quoted version. Create and PATCH responses also return a version. Treat it as opaque; a task's numeric `rev` alone is not the validator.
 
@@ -205,7 +207,7 @@ From the next desktop release, `GET /tasks` also returns a sibling `versions` ma
 
 To require this protection when the desktop version is unknown, use `POST /v2/tasks/:id/complete` or `/v2/tasks/:id/archive`; these routes require a valid `If-Match`. Older desktop versions return `404`. Never fall back to the unprotected action after that response. The existing `/v1/tasks/:id/complete` alias is not sufficient: desktop 1.3.8 accepts it without checking `If-Match`.
 
-**Capability detection.** Authenticated `GET /health` reports `apiVersion: 2` and `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }` in the next desktop release. This describes the desktop API contract, not the app's release version. Older desktops and the Bun helper can return only `{ "ok": true }`; do not infer protection from that response.
+**Capability detection.** Authenticated `GET /health` reports `apiVersion: 2` and `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }` in the next desktop release. This describes the desktop API contract, not the app's release version. Older servers can return only `{ "ok": true }`; do not infer protection from that response.
 
 **Retry-safe creation.** Supply an `Idempotency-Key` when creating a task:
 

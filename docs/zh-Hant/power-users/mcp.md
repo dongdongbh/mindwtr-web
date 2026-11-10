@@ -141,6 +141,8 @@ npm install -g --allow-scripts=better-sqlite3 mindwtr-mcp
 
 ### 桌面版 Local API 模式
 
+在 Local API 模式下，更新後的 Bun API 輔助工具也提供受保護的任務寫入和清單版本。標記應與原伺服器和工作區保持關聯；回執為獨立本機記錄，保留七天，最多 10,000 筆有效記錄。請檢查所連接伺服器的能力。
+
 > 需要 mindwtr-mcp 1.1.11 或更新版本。
 
 在設定中啟用桌面版應用程式的 **Local API**，並複製其 bearer token。保持應用程式與 API 執行。此後端使用應用程式的 REST 端點，絕不會開啟資料庫或退回使用 SQLite。

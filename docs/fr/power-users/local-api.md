@@ -183,7 +183,9 @@ L’application de bureau utilise `title` lorsqu’il est présent, sinon `input
 
 ### Écritures sûres des tâches sur ordinateur (v1.3.8) {#safe-writes}
 
-L’API locale intégrée à l’application de bureau prend en charge les mises à jour conditionnelles des tâches et les nouvelles tentatives de création sans doublon. Ces garanties s’appliquent à cette API de bureau, pas à l’utilitaire de développement Bun, à la CLI ni à l’API Cloud.
+L’API intégrée de bureau prend en charge les protections ci-dessous. L’utilitaire Bun mis à jour prend aussi en charge les versions des listes de tâches, PATCH/complete/archive conditionnels, les créations sans doublon lors des nouvelles tentatives et la détection des PATCH inchangés. Ces garanties ne s’étendent pas à la CLI ni à l’API Cloud.
+
+**Utilitaire Bun.** Obtenez chaque version opaque auprès du serveur et de l’espace de travail qui recevra l’écriture ; les jetons du bureau et de l’utilitaire ne sont pas interchangeables. L’utilitaire utilise les mêmes réponses, routes protégées `/v1/tasks` pour créer/PATCH et `/v2/tasks/:id/complete` ou `/archive`, codes de conflit et limites de sept jours/10 000 reçus valides décrits ici. Ses reçus sont des enregistrements SQLite locaux distincts, exclus du miroir JSON et de la synchronisation entre appareils. L’état authentifié ajoute `implementation: "bun-helper"`, `apiVersion: 2` et les quatre capacités d’écriture/version ; il n’annonce ni `conditionalTaskListGet` ni `referenceLists`. Les anciens serveurs peuvent renvoyer uniquement `{ "ok": true }` ; cela ne prouve pas la prise en charge.
 
 **Mises à jour conditionnelles.** La lecture d’une tâche individuelle renvoie `{ "task": { ... }, "version": "sha256-..." }` avec un en-tête `ETag` contenant la version entre guillemets. Les réponses de création et PATCH renvoient également une version. Traitez-la comme une valeur opaque ; la valeur numérique `rev` d’une tâche ne constitue pas à elle seule le validateur.
 
@@ -205,7 +207,7 @@ Si la tâche a changé, le serveur renvoie `412` avec `code: "task_version_confl
 
 Pour exiger cette protection quand la version de bureau est inconnue, utilisez `POST /v2/tasks/:id/complete` ou `/v2/tasks/:id/archive` ; ces routes exigent un `If-Match` valide. Les anciennes versions renvoient `404`. Ne réessayez jamais ensuite avec l’action non protégée. L’alias existant `/v1/tasks/:id/complete` ne suffit pas : la version de bureau 1.3.8 l’accepte sans vérifier `If-Match`.
 
-**Détection des capacités.** Dans la prochaine version de bureau, un appel authentifié à `GET /health` indique `apiVersion: 2` et `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`. Cela décrit le contrat de l’API de bureau, pas la version de l’application. Les anciennes versions et l’utilitaire Bun peuvent renvoyer uniquement `{ "ok": true }` ; cette réponse ne garantit aucune protection.
+**Détection des capacités.** Dans la prochaine version de bureau, un appel authentifié à `GET /health` indique `apiVersion: 2` et `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`. Cela décrit le contrat de l’API de bureau, pas la version de l’application. Les anciens serveurs peuvent renvoyer uniquement `{ "ok": true }` ; cette réponse ne garantit aucune protection.
 
 **Nouvelles tentatives de création sans doublon.** Fournissez un `Idempotency-Key` lors de la création d’une tâche :
 

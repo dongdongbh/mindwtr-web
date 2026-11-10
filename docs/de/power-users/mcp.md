@@ -141,6 +141,8 @@ Diese Argumente werden im direkten SQLite-Modus und im Cloud-Modus des Hilfsprog
 
 ### Local-API-Modus der Desktop-App
 
+Im Local-API-Modus bietet auch das aktualisierte Bun-API-Hilfsprogramm geschützte Aufgabenänderungen und Listenversionen. Behalte Tokens bei ihrem ursprünglichen Server und Arbeitsbereich; Belege sind separate lokale Datensätze mit sieben Tagen Aufbewahrung und höchstens 10.000 gültigen Einträgen. Prüfe die Fähigkeiten des verbundenen Servers.
+
 > Erfordert mindwtr-mcp 1.1.11 oder neuer.
 
 Aktivieren Sie die **Local API** der Desktop-App in den Einstellungen und kopieren Sie ihr Bearer-Token. Lassen Sie die App und die API laufen. Dieses Backend verwendet die REST-Endpunkte der App und öffnet niemals eine Datenbank oder greift auf SQLite zurück.

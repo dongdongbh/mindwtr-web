@@ -183,7 +183,9 @@ Desktop verwendet `title`, wenn vorhanden, andernfalls `input`, und wendet ausdr
 
 ### Sichere Schreibzugriffe auf Aufgaben auf dem Desktop (v1.3.8) {#safe-writes}
 
-Die integrierte Local API der Desktop-App unterstützt bedingte Aufgabenaktualisierungen und das sichere Wiederholen von Erstellungsanfragen. Diese Garantien gelten für diese Desktop-API, nicht für das Bun-Hilfsprogramm für die Entwicklung, die CLI oder die Cloud-API.
+Die integrierte Desktop-API unterstützt die unten beschriebenen Schreibschutzmechanismen. Das aktualisierte Bun-Hilfsprogramm unterstützt ebenfalls Versionen in Aufgabenlisten, bedingte PATCH-/complete-/archive-Aufrufe, sichere Erstellungswiederholungen und die Erkennung unveränderter PATCHes. Diese Garantien gelten nicht für CLI oder Cloud-API.
+
+**Bun-Hilfsprogramm.** Hole jede undurchsichtige Version von dem Server und Arbeitsbereich, der die Änderung erhalten soll; Desktop- und Hilfsprogramm-Tokens sind nicht austauschbar. Das Hilfsprogramm verwendet dieselben Antwortformen, geschützten `/v1/tasks`-Routen für Erstellen/PATCH und `/v2/tasks/:id/complete` oder `/archive`, Konfliktcodes sowie die hier beschriebenen Grenzen von sieben Tagen und 10.000 gültigen Belegen. Seine Belege sind separate lokale SQLite-Datensätze und weder im JSON-Spiegel noch in der Gerätesynchronisation enthalten. Die authentifizierte Statusabfrage ergänzt `implementation: "bun-helper"`, `apiVersion: 2` und die vier Schreib-/Versionsfunktionen; sie meldet weder `conditionalTaskListGet` noch `referenceLists`. Ältere Server liefern möglicherweise nur `{ "ok": true }`; das belegt keine Unterstützung.
 
 **Bedingte Aktualisierungen.** Beim Lesen einer einzelnen Aufgabe wird `{ "task": { ... }, "version": "sha256-..." }` mit einem `ETag`-Header zurückgegeben, der die Version in Anführungszeichen enthält. Antworten auf Erstellungsanfragen und PATCH-Anfragen enthalten ebenfalls eine Version. Behandeln Sie diesen Wert als undurchsichtig; der numerische Wert `rev` einer Aufgabe allein ist nicht der Validator.
 
@@ -205,7 +207,7 @@ Ab der nächsten Desktop-Version gibt `GET /tasks` außerdem ein gleichrangiges 
 
 Um diesen Schutz auch bei unbekannter Desktop-Version zu verlangen, verwenden Sie `POST /v2/tasks/:id/complete` oder `/v2/tasks/:id/archive`; diese Routen erfordern ein gültiges `If-Match`. Ältere Desktop-Versionen geben `404` zurück. Wechseln Sie danach niemals zur ungeschützten Aktion. Der vorhandene Alias `/v1/tasks/:id/complete` reicht nicht aus: Desktop 1.3.8 akzeptiert ihn, ohne `If-Match` zu prüfen.
 
-**Funktionen erkennen.** Ein authentifizierter Aufruf von `GET /health` meldet in der nächsten Desktop-Version `apiVersion: 2` und `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`. Das beschreibt den Vertrag der Desktop-API, nicht die Versionsnummer der App. Ältere Desktop-Versionen und das Bun-Hilfsprogramm können nur `{ "ok": true }` zurückgeben; daraus lässt sich kein Schutz ableiten.
+**Funktionen erkennen.** Ein authentifizierter Aufruf von `GET /health` meldet in der nächsten Desktop-Version `apiVersion: 2` und `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`. Das beschreibt den Vertrag der Desktop-API, nicht die Versionsnummer der App. Ältere Server können nur `{ "ok": true }` zurückgeben; daraus lässt sich kein Schutz ableiten.
 
 **Sicheres Wiederholen von Erstellungsanfragen.** Geben Sie beim Erstellen einer Aufgabe einen `Idempotency-Key` an:
 

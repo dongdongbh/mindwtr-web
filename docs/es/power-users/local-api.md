@@ -183,7 +183,9 @@ En escritorio se usa `title` cuando está presente; de lo contrario, se usa `inp
 
 ### Escrituras seguras de tareas en escritorio (v1.3.8) {#safe-writes}
 
-La API local integrada de escritorio admite actualizaciones condicionales de tareas y reintentos seguros de creación. Estas garantías se aplican a esta API de escritorio, no al asistente de desarrollo de Bun, la CLI ni la API de Cloud.
+La API integrada de escritorio admite los controles de escritura segura siguientes. El asistente Bun actualizado también admite versiones en listas de tareas, PATCH/complete/archive condicionales, reintentos seguros de creación y detección de PATCH sin cambios. Estas garantías no se extienden a la CLI ni a la API de Cloud.
+
+**Asistente Bun.** Obtén cada versión opaca del servidor y espacio de trabajo que recibirá la escritura; los tokens de escritorio y del asistente no son intercambiables. El asistente usa las mismas respuestas, rutas protegidas `/v1/tasks` para crear/PATCH y `/v2/tasks/:id/complete` o `/archive`, códigos de conflicto y límites de siete días/10.000 recibos vigentes descritos aquí. Sus recibos son registros SQLite locales separados, excluidos del espejo JSON y de la sincronización entre dispositivos. El estado autenticado añade `implementation: "bun-helper"`, `apiVersion: 2` y las cuatro capacidades de escritura/versiones; no anuncia `conditionalTaskListGet` ni `referenceLists`. Los servidores antiguos pueden devolver solo `{ "ok": true }`; eso no demuestra compatibilidad.
 
 **Actualizaciones condicionales.** La lectura de una tarea individual devuelve `{ "task": { ... }, "version": "sha256-..." }` con una cabecera `ETag` que contiene la versión entre comillas. Las respuestas de creación y PATCH también devuelven una versión. Trátala como un valor opaco; el valor numérico `rev` de una tarea por sí solo no es el validador.
 
@@ -205,7 +207,7 @@ A partir de la próxima versión de escritorio, `GET /tasks` también devuelve u
 
 Para exigir esta protección cuando se desconoce la versión de escritorio, use `POST /v2/tasks/:id/complete` o `/v2/tasks/:id/archive`; estas rutas requieren un `If-Match` válido. Las versiones antiguas devuelven `404`. Nunca recurra después a la acción sin protección. El alias existente `/v1/tasks/:id/complete` no basta: la versión 1.3.8 lo acepta sin comprobar `If-Match`.
 
-**Detección de capacidades.** En la próxima versión de escritorio, `GET /health` autenticado informa de `apiVersion: 2` y `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`. Esto describe el contrato de la API de escritorio, no la versión de la aplicación. Las versiones antiguas y el asistente Bun pueden devolver solo `{ "ok": true }`; esa respuesta no implica protección.
+**Detección de capacidades.** En la próxima versión de escritorio, `GET /health` autenticado informa de `apiVersion: 2` y `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`. Esto describe el contrato de la API de escritorio, no la versión de la aplicación. Los servidores antiguos pueden devolver solo `{ "ok": true }`; esa respuesta no implica protección.
 
 **Reintentos seguros de creación.** Incluye un `Idempotency-Key` al crear una tarea:
 

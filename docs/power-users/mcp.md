@@ -141,6 +141,8 @@ These arguments are not supported by the helper's direct SQLite or Cloud modes. 
 
 ### Desktop Local API mode
 
+In Local API mode, the updated Bun API helper also supplies protected task writes and list versions. Keep tokens with their originating server and workspace; receipts are separate local records with the same seven-day retention and 10,000-live limit. Check the connected server’s capabilities.
+
 > Requires mindwtr-mcp 1.1.11 or later.
 
 Enable the desktop app's **Local API** in Settings and copy its bearer token. Keep the app and API running. This backend uses the app's REST endpoints and never opens a database or falls back to SQLite.

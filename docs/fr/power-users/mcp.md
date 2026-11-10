@@ -141,6 +141,8 @@ Ces arguments ne sont pas pris en charge par les modes SQLite direct ou Cloud de
 
 ### Mode API locale de l’application de bureau
 
+En mode Local API, l’utilitaire API Bun mis à jour fournit aussi des écritures protégées et des versions dans les listes. Conservez les jetons avec leur serveur et espace de travail d’origine ; les reçus sont des enregistrements locaux distincts, conservés sept jours avec une limite de 10 000 reçus valides. Consultez les capacités du serveur connecté.
+
 > Nécessite mindwtr-mcp 1.1.11 ou une version ultérieure.
 
 Activez l’**API locale** de l’application de bureau dans les Réglages et copiez son jeton porteur. Laissez l’application et l’API en cours d’exécution. Ce backend utilise les points de terminaison REST de l’application et n’ouvre jamais de base de données ni ne se rabat sur SQLite.

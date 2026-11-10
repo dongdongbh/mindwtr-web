@@ -183,7 +183,9 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 
 ### 桌面版安全任務寫入（v1.3.8） {#safe-writes}
 
-桌面版內建的 Local API 支援條件式任務更新與可安全重試的任務建立。這些保證適用於此桌面版 API，不適用於 Bun 開發輔助工具、CLI 或 Cloud API。
+桌面版內建 API 支援下述安全寫入控制。更新後的 Bun 輔助工具也支援任務清單版本、條件式 PATCH/complete/archive、可安全重試的建立以及未變更 PATCH 偵測。這些保證不延伸至 CLI 或 Cloud API。
+
+**Bun 輔助工具。** 每個不透明版本標記都必須從接收寫入的同一伺服器和工作區取得；桌面版與輔助工具的標記不能互換。輔助工具採用此處相同的回應結構、受保護的 `/v1/tasks` 建立/PATCH 路由和 `/v2/tasks/:id/complete` 或 `/archive` 路由、衝突代碼，以及七天/10,000 筆有效回執限制。回執是獨立的本機 SQLite 記錄，不進入 JSON 鏡像或裝置同步。經過驗證的健康檢查增加 `implementation: "bun-helper"`、`apiVersion: 2` 和四項寫入/版本能力；不宣告 `conditionalTaskListGet` 或 `referenceLists`。舊伺服器可能僅傳回 `{ "ok": true }`，這不能證明支援上述能力。
 
 **條件式更新。** 讀取單一任務會傳回 `{ "task": { ... }, "version": "sha256-..." }`，其中 `ETag` 回應標頭包含帶引號的版本值。建立與 PATCH 回應也會傳回版本。請將其視為不透明值；僅憑任務的數字 `rev` 不能用作驗證標記。
 
@@ -205,7 +207,7 @@ curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
 
 當桌面版本未知時，要確保此保護生效，請使用 `POST /v2/tasks/:id/complete` 或 `/v2/tasks/:id/archive`；這些路由要求提供有效的 `If-Match`。舊桌面版本會傳回 `404`。收到該回應後，絕不要退回無保護的操作。現有的 `/v1/tasks/:id/complete` 別名並不足夠：桌面版 1.3.8 接受該路由，但不檢查 `If-Match`。
 
-**能力偵測。** 下一個桌面版本中，經過驗證的 `GET /health` 會傳回 `apiVersion: 2` 和 `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`。這描述桌面 API 的介面約定，而不是應用程式的發佈版本。舊桌面版本和 Bun 輔助程式可能只傳回 `{ "ok": true }`；不要據此推斷寫入保護可用。
+**能力偵測。** 下一個桌面版本中，經過驗證的 `GET /health` 會傳回 `apiVersion: 2` 和 `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`。這描述桌面 API 的介面約定，而不是應用程式的發佈版本。舊伺服器可能只傳回 `{ "ok": true }`；不要據此推斷寫入保護可用。
 
 **可安全重試的建立。** 建立任務時提供 `Idempotency-Key`：
 

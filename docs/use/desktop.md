@@ -40,6 +40,8 @@ Turn on **Include archived projects** in the Reference filters to find material 
 
 ## Focus Mode
 
+Choose **Select** in Focus to organize several tasks without leaving the view. Bulk controls appear only during selection. **Select all** includes the tasks in expanded sections and groups that match your filters, including rows outside the viewport. Collapsed sections and project-review cards are excluded. Reordering is unavailable during selection.
+
 Use Focus Mode to hide the sidebar and keep the list centered (800px max width).
 
 - Toggle with **Ctrl+\\** (Windows/Linux) or **Cmd+\\** (macOS)

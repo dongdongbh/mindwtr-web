@@ -40,6 +40,8 @@ Activa **Incluir proyectos archivados** en los filtros de Referencia para encont
 
 ## Modo Foco
 
+Elige **Seleccionar** en Foco para organizar varias tareas sin salir de la vista. Los controles en bloque aparecen solo durante la selección. **Seleccionar todo** incluye las tareas de secciones y grupos expandidos que coincidan con los filtros, incluso fuera de la pantalla. Se excluyen las secciones contraídas y las tarjetas de revisión de proyectos. No se puede reordenar durante la selección.
+
 Usa el modo Foco para ocultar la barra lateral y mantener la lista centrada (anchura máxima de 800 px).
 
 - Actívalo con **Ctrl+\\** (Windows/Linux) o **Cmd+\\** (macOS)

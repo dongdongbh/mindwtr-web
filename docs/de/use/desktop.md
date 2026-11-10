@@ -40,6 +40,8 @@ Aktivieren Sie **Archivierte Projekte einbeziehen** in den Referenzfiltern, um M
 
 ## Fokusmodus
 
+Wähle im Fokus **Auswählen**, um mehrere Aufgaben zu organisieren, ohne die Ansicht zu verlassen. Die Sammelaktionen erscheinen nur im Auswahlmodus. **Alle auswählen** umfasst passende Aufgaben in aufgeklappten Abschnitten und Gruppen, auch außerhalb des sichtbaren Bereichs. Zugeklappte Abschnitte und Projektprüfungskarten sind ausgeschlossen. Während der Auswahl ist das Umordnen deaktiviert.
+
 Der Fokusmodus blendet die Seitenleiste aus und hält die Liste zentriert (maximal 800 px breit).
 
 - Umschalten mit **Ctrl+\\** (Windows/Linux) oder **Cmd+\\** (macOS)

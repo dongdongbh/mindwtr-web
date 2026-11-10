@@ -40,6 +40,8 @@ Activez **Inclure les projets archivés** dans les filtres de Référence pour r
 
 ## Mode Focus
 
+Choisissez **Sélectionner** dans Focus pour organiser plusieurs tâches sans quitter la vue. Les commandes groupées apparaissent seulement pendant la sélection. **Tout sélectionner** inclut les tâches des sections et groupes dépliés correspondant aux filtres, même hors de l’écran. Les sections repliées et les cartes de revue des projets sont exclues. Le réordonnancement est désactivé pendant la sélection.
+
 Utilisez le mode Focus pour masquer la barre latérale et garder la liste centrée (largeur maximale de 800px).
 
 - Activez ou désactivez-le avec **Ctrl+\\** (Windows/Linux) ou **Cmd+\\** (macOS)

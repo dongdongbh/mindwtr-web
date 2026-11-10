@@ -498,6 +498,8 @@ Tap **Process Inbox** to start the clarify workflow:
 
 ## Focus
 
+In Focus task rows, an arrow marks Start and a calendar marks Due. Dates show **Today**, **Tomorrow**, or the full weekday for dates two to six local calendar days ahead, meaning that weekday’s next occurrence. Past dates and dates at least seven days away stay exact. Explicit times remain visible. This display applies automatically in Focus.
+
 In mobile Focus, tap a subgroup heading under Next Actions or Later today to fold its rows. The name and count remain visible, and this device remembers folds separately for each grouping choice.
 
 Starting with v1.3.4, **Settings → GTD → Include tasks starting today in Today** controls whether a start date alone puts a task in Today. It is on by default and syncs across devices. Turn it off to let available next actions stay in Next Actions unless another rule puts them in Today or Review Due. Start dates and times still control availability; due dates, Upcoming previews, and manually starred Today's Focus tasks keep their usual behavior.

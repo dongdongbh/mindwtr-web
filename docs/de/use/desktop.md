@@ -80,6 +80,8 @@ Ihre Erfassungszone. Alle neuen Aufgaben landen vor der Verarbeitung hier.
 
 ### 🎯 Fokus
 
+In den Aufgabenzeilen von Fokus kennzeichnet ein Pfeil das Anfangsdatum und ein Kalender das Fälligkeitsdatum. Datumsangaben erscheinen als **Heute**, **Morgen** oder als ausgeschriebener Wochentag für das nächste Vorkommen in zwei bis sechs lokalen Kalendertagen. Vergangene Termine und Termine ab sieben Tagen Entfernung behalten das genaue Datum. Angegebene Uhrzeiten bleiben sichtbar. Diese Darstellung gilt automatisch in Fokus. Wenn Sie auf ein Datum zeigen, sehen Sie das genaue Datum und eine gegebenenfalls angegebene Uhrzeit.
+
 Ihr gemeinsames Dashboard für das tägliche Erledigen. „Fokus“ ist kein vollständiger Bestand aller Aufgaben mit Status `next`, sondern beschränkt die Liste auf jetzt verfügbare Arbeit.
 
 Die Fokus-Abschnitte erscheinen in dieser Reihenfolge: **Heutiger Fokus → Heute → Nächste Aktionen → Durchsicht fällig → Anstehend**.

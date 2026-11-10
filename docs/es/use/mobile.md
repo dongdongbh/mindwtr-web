@@ -492,6 +492,8 @@ Toca **Procesar Bandeja de entrada** para iniciar el flujo de aclaración:
 
 ## Foco
 
+En las filas de tareas de Foco, una flecha indica la fecha de inicio y un calendario la fecha de vencimiento. Las fechas muestran **Hoy**, **Mañana** o el nombre completo del día de la semana para su próxima aparición dentro de dos a seis días del calendario local. Las fechas pasadas y las que están a siete días o más conservan la fecha exacta. Las horas indicadas siguen visibles. Esta presentación se aplica automáticamente en Foco.
+
 En Focus móvil, toca un encabezado de grupo bajo Próximas acciones o Más tarde hoy para plegar sus filas. El nombre y el recuento siguen visibles. El dispositivo recuerda los grupos plegados por tipo de agrupación.
 
 Tu panel principal para hacer. Foco es un panel de actividad, no un inventario completo de todas las tareas con estado `next`.

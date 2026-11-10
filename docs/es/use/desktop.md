@@ -80,6 +80,8 @@ Tu zona de captura. Todas las tareas nuevas llegan aquí antes de procesarlas.
 
 ### 🎯 Foco
 
+En las filas de tareas de Foco, una flecha indica la fecha de inicio y un calendario la fecha de vencimiento. Las fechas muestran **Hoy**, **Mañana** o el nombre completo del día de la semana para su próxima aparición dentro de dos a seis días del calendario local. Las fechas pasadas y las que están a siete días o más conservan la fecha exacta. Las horas indicadas siguen visibles. Esta presentación se aplica automáticamente en Foco. Pasa el puntero sobre una fecha para ver la fecha exacta y la hora, si se ha indicado.
+
 Tu panel unificado para la actividad diaria. Foco no es un inventario completo de todas las tareas con estado `next`; limita la lista al trabajo disponible ahora.
 
 Las secciones de Foco aparecen en este orden: **Foco de hoy → Hoy → Próximas acciones → Revisión pendiente → Próximas**.

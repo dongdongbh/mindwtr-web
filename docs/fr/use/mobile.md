@@ -492,6 +492,8 @@ Touchez **Traiter la Boîte de réception** pour lancer le processus de clarific
 
 ## Focus
 
+Dans les lignes de tâches de Focus, une flèche indique la date de début et un calendrier la date d’échéance. Les dates affichent **Aujourd’hui**, **Demain** ou le nom complet du jour de la semaine pour sa prochaine occurrence dans deux à six jours du calendrier local. Les dates passées et celles situées à au moins sept jours conservent la date exacte. Les heures renseignées restent visibles. Cet affichage s’applique automatiquement dans Focus.
+
 Dans Focus mobile, touchez un titre de groupe sous Prochaines actions ou Plus tard aujourd’hui pour replier ses lignes. Le nom et le nombre restent visibles. Cet appareil mémorise les groupes repliés par mode de regroupement.
 
 Votre tableau de bord principal pour agir. Focus est un tableau de bord d’engagement, pas un inventaire complet de toutes les tâches ayant le statut `next`.

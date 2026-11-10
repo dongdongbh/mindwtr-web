@@ -461,6 +461,8 @@ Ihre Erfassungszone. Verwenden Sie **Gedankensammlung** für geführte Fragen zu
 
 ## Fokus
 
+In den Aufgabenzeilen von Fokus kennzeichnet ein Pfeil das Anfangsdatum und ein Kalender das Fälligkeitsdatum. Datumsangaben erscheinen als **Heute**, **Morgen** oder als ausgeschriebener Wochentag für das nächste Vorkommen in zwei bis sechs lokalen Kalendertagen. Vergangene Termine und Termine ab sieben Tagen Entfernung behalten das genaue Datum. Angegebene Uhrzeiten bleiben sichtbar. Diese Darstellung gilt automatisch in Fokus.
+
 Im mobilen Fokus klappt ein Tippen auf eine Gruppenüberschrift unter Nächste Aktionen oder Später heute die Zeilen ein. Name und Anzahl bleiben sichtbar. Das Gerät merkt sich die Gruppen getrennt nach Gruppierungsart.
 
 Das zentrale Dashboard zum Erledigen, kein vollständiger Bestand aller `next`-Aufgaben.

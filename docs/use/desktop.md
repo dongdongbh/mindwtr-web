@@ -80,6 +80,8 @@ Your capture zone. All new tasks land here before processing.
 
 ### 🎯 Focus
 
+In Focus task rows, an arrow marks Start and a calendar marks Due. Dates show **Today**, **Tomorrow**, or the full weekday for dates two to six local calendar days ahead, meaning that weekday’s next occurrence. Past dates and dates at least seven days away stay exact. Explicit times remain visible. This display applies automatically in Focus. Hover over a date to see its exact date and any specified time.
+
 Your unified dashboard for daily engagement. Focus is not a full inventory of every task with status `next`; it narrows the list to work that is available now.
 
 Focus sections appear in this order: **Today's Focus → Today → Next Actions → Review Due → Upcoming**.

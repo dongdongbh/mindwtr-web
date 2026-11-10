@@ -80,6 +80,8 @@ Votre zone de collecte. Toutes les nouvelles tâches y arrivent avant d’être 
 
 ### 🎯 Focus
 
+Dans les lignes de tâches de Focus, une flèche indique la date de début et un calendrier la date d’échéance. Les dates affichent **Aujourd’hui**, **Demain** ou le nom complet du jour de la semaine pour sa prochaine occurrence dans deux à six jours du calendrier local. Les dates passées et celles situées à au moins sept jours conservent la date exacte. Les heures renseignées restent visibles. Cet affichage s’applique automatiquement dans Focus. Survolez une date pour voir la date exacte et l’heure, si elle est renseignée.
+
 Votre tableau de bord unifié pour l’engagement quotidien. Focus ne constitue pas un inventaire complet de toutes les tâches ayant le statut `next` ; il restreint la liste au travail disponible maintenant.
 
 Les sections Focus apparaissent dans cet ordre : **Focus du jour → Aujourd’hui → Prochaines actions → À revoir → À venir**.

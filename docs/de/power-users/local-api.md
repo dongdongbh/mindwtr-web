@@ -198,6 +198,14 @@ curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
 
 Wenn sich die Aufgabe geändert hat, gibt der Server `412` mit `code: "task_version_conflict"` zurück und wendet den Patch nicht an. Lesen Sie die Aufgabe erneut und gleichen Sie die Änderungen ab, bevor Sie eine weitere Aktualisierung versuchen. Ohne `If-Match` bleibt das Verhalten ohne Bedingung erhalten. Eine durch Kommas getrennte Liste von Entity-Tags wird akzeptiert; schwache Tags erfüllen den starken Vergleich nie. `If-Match: *` prüft nur die Existenz und schützt daher nicht vor Änderungen an einer bestehenden Aufgabe.
 
+Ab der nächsten Desktop-Version gibt `GET /tasks` außerdem ein gleichrangiges Feld `versions` zurück, dessen Schlüssel die Aufgaben-IDs sind: `{ "tasks": [ ... ], "versions": { "task-id": "sha256-..." } }`. Jedes Token entspricht dem Token derselben Aufgabe beim Einzelabruf; die Aufgabenobjekte bleiben unverändert. Verwenden Sie vor dem Bearbeiten das Token aus der geprüften Listenaufnahme.
+
+**Bedingtes Erledigen und Archivieren.** Die nächste Desktop-Version akzeptiert `If-Match` bei `POST /tasks/:id/complete` und `/archive`. Eine veraltete Anfrage gibt `412` / `task_version_conflict` zurück, ohne die Aufgabe zu ändern oder eine Folgeaufgabe zu erstellen. Erfolgreiche Antworten enthalten ein gleichrangiges Feld `version` und ein starkes `ETag`. Die bisherigen Einschränkungen für Wiederholungen gelten weiterhin.
+
+Um diesen Schutz auch bei unbekannter Desktop-Version zu verlangen, verwenden Sie `POST /v2/tasks/:id/complete` oder `/v2/tasks/:id/archive`; diese Routen erfordern ein gültiges `If-Match`. Ältere Desktop-Versionen geben `404` zurück. Wechseln Sie danach niemals zur ungeschützten Aktion. Der vorhandene Alias `/v1/tasks/:id/complete` reicht nicht aus: Desktop 1.3.8 akzeptiert ihn, ohne `If-Match` zu prüfen.
+
+**Funktionen erkennen.** Ein authentifizierter Aufruf von `GET /health` meldet in der nächsten Desktop-Version `apiVersion: 2` und `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true }`. Das beschreibt den Vertrag der Desktop-API, nicht die Versionsnummer der App. Ältere Desktop-Versionen und das Bun-Hilfsprogramm können nur `{ "ok": true }` zurückgeben; daraus lässt sich kein Schutz ableiten.
+
 **Sicheres Wiederholen von Erstellungsanfragen.** Geben Sie beim Erstellen einer Aufgabe einen `Idempotency-Key` an:
 
 ```bash

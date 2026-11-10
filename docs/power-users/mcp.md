@@ -131,6 +131,7 @@ The built-in desktop MCP server and the standalone helper's **Local API mode** s
 
 - `mindwtr_get_task` returns a sibling `version` alongside `task`. Task creation and update responses also include it.
 - `mindwtr_update_task` accepts optional `expectedVersion`. Pass the version from the read you used to prepare the edit. A mismatch returns `task_version_conflict`; read again and reconcile rather than retrying with a freshly fetched version automatically.
+- From the next desktop release, `mindwtr_list_tasks` returns sibling `versions` keyed by task ID, with unchanged task objects. `mindwtr_complete_task` accepts optional `expectedVersion` in both desktop MCP and standalone Local API mode; the built-in desktop `mindwtr_archive_task` also accepts it. A mismatch leaves the task and recurring successors unchanged. Protected standalone completion uses a new `/v2` route and never falls back on older desktops.
 - `mindwtr_add_task` accepts optional `idempotencyKey`. Reuse the same key and arguments after a lost response to obtain the original creation result without duplicating the task. Different input with that key returns `idempotency_conflict`.
 - A genuinely unchanged task update leaves its revision and modification time unchanged.
 

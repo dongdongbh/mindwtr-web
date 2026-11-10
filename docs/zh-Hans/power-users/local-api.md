@@ -198,6 +198,14 @@ curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
 
 如果任务已发生变化，服务器会返回 `412` 和 `code: "task_version_conflict"`，且不会应用补丁。请重新读取任务并协调这些变化，然后再尝试更新。省略 `If-Match` 会保留无条件写入行为。此头支持以逗号分隔的实体标签列表；弱标签永远无法满足强比较。`If-Match: *` 只检查任务是否存在，因此无法防止覆盖对现有任务的编辑。
 
+从下一个桌面版本开始，`GET /tasks` 还会返回与任务列表同级的 `versions` 映射，以任务 ID 为键：`{ "tasks": [ ... ], "versions": { "task-id": "sha256-..." } }`。每个令牌与单独读取同一任务时的令牌一致，任务对象本身不变。准备编辑时，请使用你已查看的列表快照中的令牌。
+
+**有条件地完成和归档。** 下一个桌面版本在 `POST /tasks/:id/complete` 和 `/archive` 上接受 `If-Match`。过期请求会返回 `412` / `task_version_conflict`，不会修改任务或生成下一次重复任务。成功响应包含同级的 `version` 和强 `ETag`。现有的重复规则限制仍然适用。
+
+当桌面版本未知时，要确保此保护生效，请使用 `POST /v2/tasks/:id/complete` 或 `/v2/tasks/:id/archive`；这些路由要求提供有效的 `If-Match`。旧桌面版本会返回 `404`。收到该响应后，绝不要回退到无保护的操作。现有的 `/v1/tasks/:id/complete` 别名并不足够：桌面版 1.3.8 接受该路由，但不检查 `If-Match`。
+
+**能力检测。** 下一个桌面版本中，经过身份验证的 `GET /health` 会返回 `apiVersion: 2` 和 `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true }`。这描述桌面 API 的接口约定，而不是应用的发布版本。旧桌面版本和 Bun 辅助程序可能只返回 `{ "ok": true }`；不要据此推断写入保护可用。
+
 **可安全重试的创建。** 创建任务时提供 `Idempotency-Key`：
 
 ```bash

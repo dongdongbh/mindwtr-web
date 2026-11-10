@@ -198,6 +198,14 @@ curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
 
 If the task has changed, the server returns `412` with `code: "task_version_conflict"` and does not apply the patch. Read it again and reconcile the changes before trying another update. Omitting `If-Match` retains unconditional behavior. A comma-separated list of entity tags is accepted; weak tags never satisfy the strong comparison. `If-Match: *` checks existence only, so it does not protect against edits to an existing task.
 
+From the next desktop release, `GET /tasks` also returns a sibling `versions` map keyed by task ID: `{ "tasks": [ ... ], "versions": { "task-id": "sha256-..." } }`. Each token matches the same task's single-read token; the task objects themselves are unchanged. Use the token from the list snapshot you inspected before preparing an edit.
+
+**Conditional completion and archive.** The next desktop release accepts `If-Match` on `POST /tasks/:id/complete` and `/archive`. A stale request returns `412` / `task_version_conflict` without changing the task or creating a recurring successor. Successful responses include sibling `version` and a strong `ETag`. Existing recurrence restrictions still apply.
+
+To require this protection when the desktop version is unknown, use `POST /v2/tasks/:id/complete` or `/v2/tasks/:id/archive`; these routes require a valid `If-Match`. Older desktop versions return `404`. Never fall back to the unprotected action after that response. The existing `/v1/tasks/:id/complete` alias is not sufficient: desktop 1.3.8 accepts it without checking `If-Match`.
+
+**Capability detection.** Authenticated `GET /health` reports `apiVersion: 2` and `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true }` in the next desktop release. This describes the desktop API contract, not the app's release version. Older desktops and the Bun helper can return only `{ "ok": true }`; do not infer protection from that response.
+
 **Retry-safe creation.** Supply an `Idempotency-Key` when creating a task:
 
 ```bash

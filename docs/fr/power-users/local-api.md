@@ -198,6 +198,14 @@ curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
 
 Si la tâche a changé, le serveur renvoie `412` avec `code: "task_version_conflict"` et n’applique pas le correctif. Relisez-la et conciliez les modifications avant de tenter une nouvelle mise à jour. Omettre `If-Match` conserve le comportement inconditionnel. Une liste d’étiquettes d’entité séparées par des virgules est acceptée ; les étiquettes faibles ne satisfont jamais la comparaison forte. `If-Match: *` vérifie uniquement l’existence et ne protège donc pas contre les modifications d’une tâche existante.
 
+À partir de la prochaine version de bureau, `GET /tasks` renvoie aussi une table `versions` au même niveau, indexée par identifiant de tâche : `{ "tasks": [ ... ], "versions": { "task-id": "sha256-..." } }`. Chaque jeton correspond à celui de la même tâche lue individuellement ; les objets de tâche restent inchangés. Utilisez le jeton de l’instantané de liste que vous avez consulté avant de préparer une modification.
+
+**Terminer et archiver sous condition.** La prochaine version de bureau accepte `If-Match` sur `POST /tasks/:id/complete` et `/archive`. Une requête obsolète renvoie `412` / `task_version_conflict` sans modifier la tâche ni créer l’occurrence récurrente suivante. Les réponses réussies incluent un champ `version` au même niveau et un `ETag` fort. Les restrictions de récurrence existantes restent applicables.
+
+Pour exiger cette protection quand la version de bureau est inconnue, utilisez `POST /v2/tasks/:id/complete` ou `/v2/tasks/:id/archive` ; ces routes exigent un `If-Match` valide. Les anciennes versions renvoient `404`. Ne réessayez jamais ensuite avec l’action non protégée. L’alias existant `/v1/tasks/:id/complete` ne suffit pas : la version de bureau 1.3.8 l’accepte sans vérifier `If-Match`.
+
+**Détection des capacités.** Dans la prochaine version de bureau, un appel authentifié à `GET /health` indique `apiVersion: 2` et `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true }`. Cela décrit le contrat de l’API de bureau, pas la version de l’application. Les anciennes versions et l’utilitaire Bun peuvent renvoyer uniquement `{ "ok": true }` ; cette réponse ne garantit aucune protection.
+
 **Nouvelles tentatives de création sans doublon.** Fournissez un `Idempotency-Key` lors de la création d’une tâche :
 
 ```bash

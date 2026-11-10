@@ -131,6 +131,7 @@ npm install -g --allow-scripts=better-sqlite3 mindwtr-mcp
 
 - `mindwtr_get_task` 返回的 `version` 与 `task` 同级。任务创建和更新响应也包含此值。
 - `mindwtr_update_task` 接受可选的 `expectedVersion`。请传入你准备编辑时所依据的读取结果中的版本。不匹配时会返回 `task_version_conflict`；请重新读取并协调变化，不要自动使用刚获取的版本重试。
+- 从下一个桌面版本开始，`mindwtr_list_tasks` 返回以任务 ID 为键的同级 `versions`，任务对象保持不变。桌面 MCP 和独立辅助程序的 Local API 模式中的 `mindwtr_complete_task` 均接受可选的 `expectedVersion`；桌面内置的 `mindwtr_archive_task` 也接受此参数。版本不匹配时，任务及其后续重复任务均保持不变。独立辅助程序的受保护完成操作使用新的 `/v2` 路由，在旧桌面版本上绝不回退为无保护操作。
 - `mindwtr_add_task` 接受可选的 `idempotencyKey`。响应丢失后，重复使用相同的键和参数，即可获得原始创建结果，而不会重复创建任务。将该键用于不同输入会返回 `idempotency_conflict`。
 - 真正未发生变化的任务更新会保持其修订版本和修改时间不变。
 

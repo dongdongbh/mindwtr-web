@@ -198,6 +198,14 @@ curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
 
 Si la tarea ha cambiado, el servidor devuelve `412` con `code: "task_version_conflict"` y no aplica el parche. Vuelve a leerla y concilia los cambios antes de intentar otra actualización. Omitir `If-Match` mantiene el comportamiento incondicional. Se acepta una lista de etiquetas de entidad separadas por comas; las etiquetas débiles nunca satisfacen la comparación fuerte. `If-Match: *` solo comprueba la existencia, por lo que no protege frente a ediciones de una tarea existente.
 
+A partir de la próxima versión de escritorio, `GET /tasks` también devuelve un mapa `versions` al mismo nivel, cuyas claves son los ID de las tareas: `{ "tasks": [ ... ], "versions": { "task-id": "sha256-..." } }`. Cada token coincide con el de la misma tarea al leerla individualmente; los objetos de tarea no cambian. Antes de preparar una edición, use el token de la instantánea de la lista que revisó.
+
+**Completar y archivar con condición.** La próxima versión de escritorio acepta `If-Match` en `POST /tasks/:id/complete` y `/archive`. Una solicitud obsoleta devuelve `412` / `task_version_conflict` sin modificar la tarea ni crear la siguiente instancia recurrente. Las respuestas correctas incluyen `version` al mismo nivel y un `ETag` fuerte. Se mantienen las restricciones de recurrencia existentes.
+
+Para exigir esta protección cuando se desconoce la versión de escritorio, use `POST /v2/tasks/:id/complete` o `/v2/tasks/:id/archive`; estas rutas requieren un `If-Match` válido. Las versiones antiguas devuelven `404`. Nunca recurra después a la acción sin protección. El alias existente `/v1/tasks/:id/complete` no basta: la versión 1.3.8 lo acepta sin comprobar `If-Match`.
+
+**Detección de capacidades.** En la próxima versión de escritorio, `GET /health` autenticado informa de `apiVersion: 2` y `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true }`. Esto describe el contrato de la API de escritorio, no la versión de la aplicación. Las versiones antiguas y el asistente Bun pueden devolver solo `{ "ok": true }`; esa respuesta no implica protección.
+
 **Reintentos seguros de creación.** Incluye un `Idempotency-Key` al crear una tarea:
 
 ```bash

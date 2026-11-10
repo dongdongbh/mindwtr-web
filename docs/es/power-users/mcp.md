@@ -131,6 +131,7 @@ El servidor MCP integrado de escritorio y el **modo de API local** del asistente
 
 - `mindwtr_get_task` devuelve un campo `version` al mismo nivel que `task`. Las respuestas de creación y actualización de tareas también lo incluyen.
 - `mindwtr_update_task` acepta el argumento opcional `expectedVersion`. Pasa la versión de la lectura que usaste para preparar la edición. Una discrepancia devuelve `task_version_conflict`; vuelve a leer la tarea y concilia los cambios en vez de reintentar automáticamente con una versión recién obtenida.
+- A partir de la próxima versión de escritorio, `mindwtr_list_tasks` devuelve `versions` al mismo nivel, con los ID de tarea como claves, sin modificar los objetos de tarea. `mindwtr_complete_task` acepta el argumento opcional `expectedVersion` tanto en MCP de escritorio como en el modo Local API independiente; también lo acepta `mindwtr_archive_task` del servidor integrado. Si no coincide, la tarea y sus siguientes instancias recurrentes no cambian. La finalización protegida del asistente usa una nueva ruta `/v2` y nunca recurre a una acción sin protección en versiones antiguas.
 - `mindwtr_add_task` acepta el argumento opcional `idempotencyKey`. Si se pierde una respuesta, reutiliza la misma clave y los mismos argumentos para obtener el resultado de creación original sin duplicar la tarea. Una entrada diferente con esa clave devuelve `idempotency_conflict`.
 - Una actualización de tarea que realmente no cambie nada mantiene intactas su revisión y su fecha de modificación.
 

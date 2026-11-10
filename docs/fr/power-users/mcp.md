@@ -131,6 +131,7 @@ Le serveur MCP intégré à l’application de bureau et le **mode API locale** 
 
 - `mindwtr_get_task` renvoie un champ `version` au même niveau que `task`. Les réponses de création et de mise à jour des tâches l’incluent également.
 - `mindwtr_update_task` accepte l’argument facultatif `expectedVersion`. Transmettez la version issue de la lecture utilisée pour préparer la modification. Une différence renvoie `task_version_conflict` ; relisez la tâche et conciliez les modifications au lieu de réessayer automatiquement avec une version fraîchement récupérée.
+- À partir de la prochaine version de bureau, `mindwtr_list_tasks` renvoie un champ `versions` au même niveau, indexé par identifiant de tâche, sans modifier les objets de tâche. `mindwtr_complete_task` accepte l’argument facultatif `expectedVersion` dans le MCP de bureau comme dans le mode Local API autonome ; l’outil intégré `mindwtr_archive_task` l’accepte également. Une différence laisse la tâche et les occurrences récurrentes suivantes inchangées. La complétion protégée de l’utilitaire utilise une nouvelle route `/v2` et ne se rabat jamais sur une action non protégée avec les anciens bureaux.
 - `mindwtr_add_task` accepte l’argument facultatif `idempotencyKey`. Après la perte d’une réponse, réutilisez la même clé et les mêmes arguments pour obtenir le résultat de création initial sans dupliquer la tâche. Des données différentes avec cette clé renvoient `idempotency_conflict`.
 - Une mise à jour de tâche qui ne change effectivement rien laisse sa révision et sa date de modification inchangées.
 

@@ -267,13 +267,15 @@ Las listas de los widgets Tareas y Compacto de Android permiten desplazarse más
 
 ### Widget de la pantalla de inicio de iOS
 
-Los widgets Tareas y Compacto muestran los contextos de cada tarea debajo del título. Las listas largas de contextos se limitan a una línea y pueden aparecer recortadas; las tareas sin contextos conservan su diseño habitual.
+El widget normal mediano da prioridad a los títulos y los controles para completar tareas. Usa un encabezado compacto y muestra las fechas junto a las tareas; VoiceOver conserva los detalles del proyecto y los contextos. Omite automáticamente el subtítulo con la fecha del día y los encabezados de sección redundantes. El número de filas depende de la altura disponible y del tamaño del texto: con texto grande se muestran menos tareas en vez de reducir los controles. Los otros tamaños y Compacto conservan su diseño de detalles.
 
 Elige **Tareas** para el widget normal, disponible en tamaños pequeño, mediano y grande (también extragrande en iPads compatibles), o **Compacto** para texto más pequeño y una lista plana de Enfoque. Compacto no tiene selector de lista ni anillos para completar; los tamaños mediano y superiores permiten abrir tareas y la captura rápida.
 
-Tareas y Compacto muestran primero el enfoque de hoy y Hoy, incluidas las tareas vencidas. Si esa lista está vacía, muestran Próximas acciones; el título corto Hoy o Próximas identifica la lista. No mezclan próximas acciones con una lista Hoy que tenga tareas. Las filas se adaptan al tamaño del widget y del texto. Tareas conserva la fecha, los anillos de prioridad, el proyecto o área y los filtros, tema y orden de la app.
+Tareas y Compacto muestran primero el enfoque de hoy y Hoy, incluidas las tareas vencidas. Si esa lista está vacía, muestran Próximas acciones; el título corto Hoy o Próximas identifica la lista. No mezclan próximas acciones con una lista Hoy que tenga tareas. Las filas se adaptan al tamaño del widget y del texto. Se siguen aplicando los filtros, el tema y el orden de la app.
 
 En iOS 17 o posterior, mantén pulsado el widget y elige **Editar widget** para seleccionar Enfoque, Bandeja de entrada, Próximas acciones, En espera, Algún día/Tal vez o un filtro guardado. Varios widgets pueden mostrar listas distintas; una lista elegida distinta de Enfoque nunca cambia automáticamente a otra. Toca un anillo para dejar pendiente la finalización y vuelve a tocarlo en tres segundos para deshacer. Después, la fila se oculta y otra tarea guardada en caché puede ocupar su lugar. WidgetKit puede retrasar la actualización visible. La finalización queda guardada en la cola hasta que Mindwtr se ejecute y la guarde; la finalización y la sincronización se realizan desde la app.
+
+Para mostrar un solo proyecto, guarda un filtro para ese proyecto en Mindwtr y selecciónalo en **Editar widget**. El selector de listas pertenece al widget normal **Mindwtr**, también en los tamaños pequeño y mediano; Compacto sigue mostrando Enfoque.
 
 Toca el título, el estado vacío o el widget pequeño para abrir la lista mostrada. En los widgets medianos y grandes, tocar una tarea la abre en Mindwtr y **+** abre la captura rápida; los anillos del widget pequeño funcionan desde iOS 17. Las versiones anteriores usan el comportamiento predeterminado Hoy/Próximas sin completar tareas ni configurar la lista desde el widget. WidgetKit controla cuándo se actualiza. Los widgets de la pantalla bloqueada no cambian.
 

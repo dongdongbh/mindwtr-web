@@ -256,13 +256,15 @@ lassen sich die Listen der Android-Widgets Aufgaben und Kompakt über 20 Aufgabe
 
 ### iOS-Widget auf dem Home-Bildschirm
 
-Die Widgets Aufgaben und Kompakt zeigen die Kontexte einer Aufgabe unter ihrem Titel. Lange Kontextlisten passen in eine Zeile und können gekürzt werden; Aufgaben ohne Kontexte behalten ihr gewohntes Layout.
+Das normale mittelgroße Widget stellt Aufgabentitel und Abschlussringe in den Vordergrund. Es verwendet eine kompakte Listenüberschrift und zeigt Datumsangaben neben den Aufgaben; Projekt- und Kontextdetails bleiben über VoiceOver verfügbar. Der Datumsuntertitel und überflüssige Abschnittsüberschriften entfallen automatisch. Die Zeilenzahl richtet sich nach Höhe und Schriftgröße: Größere Schrift zeigt weniger Aufgaben, statt die Bedienelemente zu verkleinern. Andere Größen und Kompakt behalten ihre bisherige Detailansicht.
 
 Wählen Sie **Aufgaben** für das reguläre Widget in klein, mittel oder groß (zusätzlich extragroß auf unterstützten iPads), oder **Kompakt** für kleinere Schrift und eine flache Fokusliste. Kompakt hat weder Listenauswahl noch Abschlussringe; mittlere und größere Varianten öffnen weiterhin Aufgaben und die Schnellerfassung.
 
-Aufgaben und Kompakt zeigen zuerst Heutiger Fokus und Heute einschließlich überfälliger Aufgaben. Ist diese Liste leer, erscheinen stattdessen Nächste Aktionen; die kurze Überschrift Heute oder Nächste zeigt die aktuelle Liste an. Eine nicht leere Heute-Liste wird nicht mit nächsten Aktionen gemischt. Die Zeilenzahl passt sich an Widget- und Schriftgröße an. Das Aufgaben-Widget behält Datum, Prioritätsringe, Projekt oder Bereich sowie Filter, Design und Sortierung der App bei.
+Aufgaben und Kompakt zeigen zuerst Heutiger Fokus und Heute einschließlich überfälliger Aufgaben. Ist diese Liste leer, erscheinen stattdessen Nächste Aktionen; die kurze Überschrift Heute oder Nächste zeigt die aktuelle Liste an. Eine nicht leere Heute-Liste wird nicht mit nächsten Aktionen gemischt. Die Zeilenzahl passt sich an Widget- und Schriftgröße an. Filter, Design und Sortierung der App gelten weiterhin.
 
 Ab iOS 17 wählen Sie durch langes Drücken auf das Aufgaben-Widget und **Widget bearbeiten** zwischen Fokus, Eingang, Nächste Aktionen, Warten auf, Irgendwann/Vielleicht und einem gespeicherten Filter. Mehrere Widgets können unterschiedliche Listen zeigen; eine ausdrücklich gewählte Liste außer Fokus wechselt nie automatisch zu einer anderen Liste. Ein Tippen auf einen Ring merkt den Abschluss vor; erneutes Tippen innerhalb von drei Sekunden macht ihn rückgängig. Danach wird die Zeile ausgeblendet und eine weitere zwischengespeicherte Aufgabe kann nachrücken. WidgetKit kann die sichtbare Aktualisierung verzögern. Der Abschluss bleibt sicher vorgemerkt, bis Mindwtr läuft und ihn speichert; Abschluss und Synchronisierung erfolgen über die App.
+
+Für ein einzelnes Projekt speichern Sie in Mindwtr einen passenden Filter und wählen ihn unter **Widget bearbeiten**. Die Listenauswahl gehört zum normalen **Mindwtr**-Widget, auch in kleiner und mittlerer Größe; Kompakt bleibt eine Fokusansicht.
 
 Die Überschrift, die Leeransicht und das kleine Widget öffnen beim Tippen die angezeigte Liste. Mittlere und größere Widgets öffnen einzelne Aufgaben in Mindwtr; **+** öffnet die Schnellerfassung. Die Ringe des kleinen Widgets sind ab iOS 17 bedienbar. Ältere iOS-Versionen verwenden das standardmäßige Heute/Nächste-Verhalten ohne direktes Abhaken oder Listenauswahl. WidgetKit bestimmt den Aktualisierungszeitpunkt. Sperrbildschirm-Widgets bleiben unverändert.
 

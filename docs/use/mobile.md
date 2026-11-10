@@ -273,13 +273,15 @@ Android Tasks and Compact lists scroll beyond 20 tasks. For a very large list, *
 
 ### iOS Home Screen Widget
 
-Tasks and Compact widgets show each task’s contexts beneath its title. Long context lists fit on one line and may be shortened; tasks without contexts keep their usual layout.
+The normal medium widget prioritizes task titles and completion controls. It uses a compact list heading, keeps date labels beside tasks, and leaves project/context details to VoiceOver. The calendar-date subtitle and redundant section heading are omitted automatically. Row count adapts to the available height and text size; larger text may show fewer tasks rather than shrinking the controls. Other sizes and Compact keep their existing detail layout.
 
 Choose **Tasks** for the regular widget, available in small, medium and large sizes (plus extra-large on supported iPads), or **Compact** for smaller text and a flat Focus list. Compact has no list picker or check-off rings; medium and larger sizes still link to tasks and quick capture.
 
-Tasks and Compact show Today's Focus and Today first, including overdue tasks. When that list is empty, they show Next Actions instead, with a short Today or Next heading to identify the list. They do not mix Next Actions into a nonempty Today list. Rows adapt to the widget's size and text size. The Tasks widget keeps the date, priority rings, project or area labels, and the app's filters, theme and sort order.
+Tasks and Compact show Today's Focus and Today first, including overdue tasks. When that list is empty, they show Next Actions instead, with a short Today or Next heading to identify the list. They do not mix Next Actions into a nonempty Today list. Rows adapt to the widget's size and text size. The app's filters, theme and sort order still apply.
 
 On iOS 17 and later, long-press a Tasks widget and choose **Edit Widget** to select Focus, Inbox, Next Actions, Waiting For, Someday/Maybe, or a saved filter. Multiple widgets can show different lists; an explicitly selected list other than Focus never falls back to another list. Tap a ring to queue completion and tap again within three seconds to undo. After that window, the row hides and another cached task can fill the space. WidgetKit may delay the visible refresh. The completion stays safely queued until Mindwtr runs and saves it; completion and sync happen through the app, not directly from the widget.
+
+To show one project, save a filter for that project in Mindwtr, then select it in **Edit Widget**. The list picker belongs to the regular **Mindwtr** widget, including its small and medium sizes; Compact remains a Focus widget.
 
 Tap the heading, empty state, or small widget to open the displayed list. Medium and larger widgets link task rows to their task in Mindwtr and **+** to quick capture (iOS widgets cannot show a capture window; for one-tap capture without opening the app, see the [Shortcuts recipe](/power-users/apple-shortcuts)); small-widget rings remain interactive on iOS 17+. Older iOS versions use the default Today/Next behavior without inline check-off or list configuration. WidgetKit controls refresh timing. Lock screen widgets are unchanged.
 

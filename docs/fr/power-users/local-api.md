@@ -105,7 +105,8 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 | `GET` | `/areas/:id` | Bureau : lire un domaine |
 | `PATCH` | `/areas/:id` | Bureau : modifier un domaine |
 | `GET`    | `/v1/areas`            | Alias de compatibilité pour les domaines |
-| `GET`    | `/sections`            | Utilitaire : répertorier les sections, éventuellement `?projectId=` |
+| `GET` | `/sections` | Lister les sections, avec `?projectId=` facultatif ; bureau dès la prochaine version |
+| `GET` | `/people` | Bureau : lister les personnes gérées (prochaine version) |
 | `POST`   | `/sections`            | Utilitaire : créer une section           |
 | `GET`    | `/sections/:id`        | Utilitaire : obtenir une section         |
 | `PATCH`  | `/sections/:id`        | Utilitaire : mettre à jour une section   |
@@ -204,7 +205,7 @@ Si la tâche a changé, le serveur renvoie `412` avec `code: "task_version_confl
 
 Pour exiger cette protection quand la version de bureau est inconnue, utilisez `POST /v2/tasks/:id/complete` ou `/v2/tasks/:id/archive` ; ces routes exigent un `If-Match` valide. Les anciennes versions renvoient `404`. Ne réessayez jamais ensuite avec l’action non protégée. L’alias existant `/v1/tasks/:id/complete` ne suffit pas : la version de bureau 1.3.8 l’accepte sans vérifier `If-Match`.
 
-**Détection des capacités.** Dans la prochaine version de bureau, un appel authentifié à `GET /health` indique `apiVersion: 2` et `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true }`. Cela décrit le contrat de l’API de bureau, pas la version de l’application. Les anciennes versions et l’utilitaire Bun peuvent renvoyer uniquement `{ "ok": true }` ; cette réponse ne garantit aucune protection.
+**Détection des capacités.** Dans la prochaine version de bureau, un appel authentifié à `GET /health` indique `apiVersion: 2` et `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`. Cela décrit le contrat de l’API de bureau, pas la version de l’application. Les anciennes versions et l’utilitaire Bun peuvent renvoyer uniquement `{ "ok": true }` ; cette réponse ne garantit aucune protection.
 
 **Nouvelles tentatives de création sans doublon.** Fournissez un `Idempotency-Key` lors de la création d’une tâche :
 
@@ -226,7 +227,13 @@ Les routes habituelles sous `/tasks` acceptent également ces en-têtes. Les ali
 
 **Mises à jour sans changement.** Une requête PATCH valide dont l’état final normalisé est inchangé réussit sans réécrire la tâche ni faire progresser `rev`, `revBy` ou `updatedAt`. Une normalisation qui répare ou modifie effectivement un champ reste une modification.
 
-Cette phase n’ajoute ni pagination REST, ni lectures conditionnelles de listes, ni flux incrémental de changements, ni réouverture des tâches, ni prise en charge étendue des récurrences. Les refus existants d’opérations du cycle de vie restent en place.
+**Listes de tâches conditionnelles (prochaine version de bureau).** `GET /tasks` et `/v1/tasks` renvoient un `ETag` fort préfixé par `task-list-sha256-` et `Cache-Control: private, no-cache`. Envoyez cette étiquette entre guillemets dans `If-None-Match` pour la même requête. Sans changement, la réponse est `304` sans corps ; sinon, le serveur renvoie la liste complète et une nouvelle étiquette. Les étiquettes faibles, les listes d’étiquettes et `*` sont acceptées. L’authentification reste obligatoire ; les en-têtes ou filtres invalides renvoient `400`.
+
+L’étiquette couvre les filtres effectifs et tout l’instantané renvoyé, y compris les versions des tâches. Utilisez `?all=1&deleted=1` pour inclure les marqueurs de suppression conservés. Cela économise le transfert, mais lit et calcule toujours le hash de l’instantané en O(n) ; ce n’est ni un flux incrémental de changements ni une pagination REST. Les étiquettes de collection ne servent pas de versions pour modifier une tâche.
+
+**Listes de références (prochaine version de bureau).** `GET /sections` renvoie `{ "sections": [ ... ] }`, avec un filtre facultatif par `projectId` exact ; `GET /people` renvoie `{ "people": [ ... ] }`. Les deux excluent les enregistrements supprimés sauf avec `deleted=1`, acceptent les alias `/v1/` et fonctionnent lorsque les écritures sont désactivées. Les champs sont conservés ; le statut du projet parent ne filtre pas les enregistrements.
+
+La réouverture des tâches et l’extension des récurrences ne font pas partie de ces endpoints de lecture.
 
 ### Écriture des projets sur ordinateur
 

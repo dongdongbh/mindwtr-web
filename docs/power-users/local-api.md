@@ -105,7 +105,8 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 | `GET` | `/areas/:id` | Desktop: get one Area |
 | `PATCH` | `/areas/:id` | Desktop: update an Area |
 | `GET`    | `/v1/areas`           | Compatibility alias for areas |
-| `GET`    | `/sections`           | Helper: list sections, optionally `?projectId=` |
+| `GET` | `/sections` | List sections, optionally `?projectId=`; desktop support from the next release |
+| `GET` | `/people` | Desktop: list managed people (next release) |
 | `POST`   | `/sections`           | Helper: create section        |
 | `GET`    | `/sections/:id`       | Helper: get single section    |
 | `PATCH`  | `/sections/:id`       | Helper: update section        |
@@ -204,7 +205,7 @@ From the next desktop release, `GET /tasks` also returns a sibling `versions` ma
 
 To require this protection when the desktop version is unknown, use `POST /v2/tasks/:id/complete` or `/v2/tasks/:id/archive`; these routes require a valid `If-Match`. Older desktop versions return `404`. Never fall back to the unprotected action after that response. The existing `/v1/tasks/:id/complete` alias is not sufficient: desktop 1.3.8 accepts it without checking `If-Match`.
 
-**Capability detection.** Authenticated `GET /health` reports `apiVersion: 2` and `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true }` in the next desktop release. This describes the desktop API contract, not the app's release version. Older desktops and the Bun helper can return only `{ "ok": true }`; do not infer protection from that response.
+**Capability detection.** Authenticated `GET /health` reports `apiVersion: 2` and `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }` in the next desktop release. This describes the desktop API contract, not the app's release version. Older desktops and the Bun helper can return only `{ "ok": true }`; do not infer protection from that response.
 
 **Retry-safe creation.** Supply an `Idempotency-Key` when creating a task:
 
@@ -226,7 +227,13 @@ The regular `/tasks` routes also accept these headers. The `/v1/tasks` create an
 
 **Unchanged updates.** A valid PATCH whose normalized final state is unchanged succeeds without rewriting the task or advancing `rev`, `revBy`, or `updatedAt`. Normalization that actually repairs or changes a field is still an edit.
 
-This phase does not add REST pagination, conditional list reads, an incremental change feed, task reopening, or expanded recurrence support. Existing lifecycle refusals remain in place.
+**Conditional task lists (next desktop release).** `GET /tasks` and `/v1/tasks` return a strong `ETag` beginning with `task-list-sha256-` and `Cache-Control: private, no-cache`. Send that quoted tag in `If-None-Match` on the same query. An unchanged response is `304` with no body; otherwise the server returns the complete list and a new tag. Weak tags, lists of tags, and `*` are accepted. Authentication is still required; invalid headers or filters return `400`.
+
+The tag covers the effective filters and the full returned snapshot, including task versions. Use `?all=1&deleted=1` to include retained tombstones. This saves transfer, but still reads and hashes the snapshot in O(n); it is not an incremental change feed or REST pagination. Collection tags cannot be used as task write versions.
+
+**Reference lists (next desktop release).** `GET /sections` returns `{ "sections": [ ... ] }`, optionally filtered by an exact `projectId`; `GET /people` returns `{ "people": [ ... ] }`. Both exclude deleted records unless `deleted=1` is supplied, accept `/v1/` aliases, and work with writes disabled. Records retain their fields; these endpoints do not filter by parent-project status.
+
+Task reopening and expanded recurrence support are not part of these read endpoints.
 
 ### Desktop project writes
 

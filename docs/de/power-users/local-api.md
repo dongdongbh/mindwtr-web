@@ -105,7 +105,8 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 | `GET` | `/areas/:id` | Desktop: einzelnen Bereich lesen |
 | `PATCH` | `/areas/:id` | Desktop: Bereich bearbeiten |
 | `GET`    | `/v1/areas`           | Kompatibilitätsalias für Bereiche    |
-| `GET`    | `/sections`           | Hilfsprogramm: Abschnitte auflisten, optional `?projectId=` |
+| `GET` | `/sections` | Abschnitte auflisten, optional `?projectId=`; Desktop ab der nächsten Version |
+| `GET` | `/people` | Desktop: verwaltete Personen auflisten (nächste Version) |
 | `POST`   | `/sections`           | Hilfsprogramm: Abschnitt erstellen   |
 | `GET`    | `/sections/:id`       | Hilfsprogramm: Einzelnen Abschnitt abrufen |
 | `PATCH`  | `/sections/:id`       | Hilfsprogramm: Abschnitt aktualisieren |
@@ -204,7 +205,7 @@ Ab der nächsten Desktop-Version gibt `GET /tasks` außerdem ein gleichrangiges 
 
 Um diesen Schutz auch bei unbekannter Desktop-Version zu verlangen, verwenden Sie `POST /v2/tasks/:id/complete` oder `/v2/tasks/:id/archive`; diese Routen erfordern ein gültiges `If-Match`. Ältere Desktop-Versionen geben `404` zurück. Wechseln Sie danach niemals zur ungeschützten Aktion. Der vorhandene Alias `/v1/tasks/:id/complete` reicht nicht aus: Desktop 1.3.8 akzeptiert ihn, ohne `If-Match` zu prüfen.
 
-**Funktionen erkennen.** Ein authentifizierter Aufruf von `GET /health` meldet in der nächsten Desktop-Version `apiVersion: 2` und `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true }`. Das beschreibt den Vertrag der Desktop-API, nicht die Versionsnummer der App. Ältere Desktop-Versionen und das Bun-Hilfsprogramm können nur `{ "ok": true }` zurückgeben; daraus lässt sich kein Schutz ableiten.
+**Funktionen erkennen.** Ein authentifizierter Aufruf von `GET /health` meldet in der nächsten Desktop-Version `apiVersion: 2` und `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`. Das beschreibt den Vertrag der Desktop-API, nicht die Versionsnummer der App. Ältere Desktop-Versionen und das Bun-Hilfsprogramm können nur `{ "ok": true }` zurückgeben; daraus lässt sich kein Schutz ableiten.
 
 **Sicheres Wiederholen von Erstellungsanfragen.** Geben Sie beim Erstellen einer Aufgabe einen `Idempotency-Key` an:
 
@@ -226,7 +227,13 @@ Auch die regulären Routen unter `/tasks` akzeptieren diese Header. Über die Al
 
 **Aktualisierungen ohne Änderung.** Eine gültige PATCH-Anfrage, deren normalisierter Endzustand unverändert ist, ist erfolgreich, ohne die Aufgabe neu zu schreiben oder `rev`, `revBy` oder `updatedAt` fortzuschreiben. Eine Normalisierung, die ein Feld tatsächlich repariert oder ändert, gilt weiterhin als Bearbeitung.
 
-Diese Phase ergänzt weder REST-Paginierung noch bedingte Listenabfragen, einen inkrementellen Änderungsfeed, das Wiederöffnen von Aufgaben oder erweiterte Unterstützung für Wiederholungen. Bestehende Ablehnungen von Lebenszyklusoperationen bleiben erhalten.
+**Bedingte Aufgabenlisten (nächste Desktop-Version).** `GET /tasks` und `/v1/tasks` liefern einen starken `ETag` mit Präfix `task-list-sha256-` und `Cache-Control: private, no-cache`. Sende diesen Tag mit Anführungszeichen in `If-None-Match` für dieselbe Abfrage. Unveränderte Ergebnisse liefern `304` ohne Antwortkörper; andernfalls kommen die vollständige Liste und ein neuer Tag. Schwache Tags, Tag-Listen und `*` werden akzeptiert. Authentifizierung bleibt erforderlich; ungültige Header oder Filter liefern `400`.
+
+Der Tag umfasst die wirksamen Filter und den gesamten zurückgegebenen Snapshot einschließlich Aufgabenversionen. Mit `?all=1&deleted=1` werden gespeicherte Löschmarkierungen einbezogen. Das spart Übertragung, liest und hasht aber weiterhin den Snapshot in O(n); es ist weder ein inkrementeller Änderungsfeed noch REST-Paginierung. Listen-Tags eignen sich nicht als Versionen für Aufgabenänderungen.
+
+**Referenzlisten (nächste Desktop-Version).** `GET /sections` liefert `{ "sections": [ ... ] }`, optional nach einer exakten `projectId` gefiltert; `GET /people` liefert `{ "people": [ ... ] }`. Beide schließen gelöschte Einträge aus, sofern nicht `deleted=1` angegeben wird, akzeptieren `/v1/`-Aliase und funktionieren bei deaktivierten Schreibzugriffen. Die Felder bleiben erhalten; der Status des übergeordneten Projekts filtert die Einträge nicht.
+
+Das Wiederöffnen von Aufgaben und erweiterte Wiederholungsregeln gehören nicht zu diesen Lese-Endpunkten.
 
 ### Projekte über die Desktop-API schreiben
 

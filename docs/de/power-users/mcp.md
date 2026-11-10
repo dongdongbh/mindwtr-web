@@ -174,8 +174,9 @@ Schreibzugriffe bleiben deaktiviert, solange sie nicht ausdrücklich mit `--writ
 | Aufgaben aktualisieren/erledigen/löschen/wiederherstellen | Über die entsprechenden API-Endpunkte unterstützt; Änderungen zu einem endgültigen Status können nicht als gewöhnliche Bearbeitungen übermittelt werden |
 | Projekte auflisten/abrufen/erstellen/aktualisieren/löschen | Für die grundlegenden Projektfelder der API unterstützt: Titel, Farbe, Status, Bereich und sequenzielles Verhalten |
 | Bereiche auflisten | Unterstützt |
-| Abschnitte, verwaltete Personen, Schreibzugriffe auf Bereiche | Nicht verfügbar; diese Werkzeuge werden im API-Modus ausgeblendet |
-| GTD-Verfügbarkeit `view` | Nicht verfügbar, da die API den erforderlichen Abschnitts-Snapshot nicht bereitstellt |
+| Projektabschnitte und verwaltete Personen auflisten | Ab der nächsten Desktop-Version unterstützt: `mindwtr_list_sections` akzeptiert `projectId` und `includeDeleted`; `mindwtr_list_people` akzeptiert `includeDeleted` |
+| Einzelabruf und Änderungen von Abschnitten/Personen, Schreibzugriffe auf Bereiche | Nicht verfügbar; diese Werkzeuge bleiben im API-Modus ausgeblendet |
+| GTD-Verfügbarkeit `view` | In diesem Backend nicht verfügbar |
 | Anhangslinks ersetzen | Nicht verfügbar, da die API keine bedingten Anhangsaktualisierungen bereitstellt |
 
 Andere nicht unterstützte Felder werden vor einem Schreibzugriff abgelehnt. Auch die Einschränkungen der Desktop-API bei Wiederholungen gelten; einige wiederkehrende Aufgaben müssen in der App erledigt werden. Dieses Backend verspricht keine vollständige Gleichwertigkeit mit den SQLite-/Cloud-Werkzeugen.

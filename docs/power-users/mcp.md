@@ -174,8 +174,9 @@ Writes remain disabled unless explicitly enabled with `--write`. If the app is c
 | Update/complete/delete/restore tasks | Supported through the API's corresponding endpoints; terminal status changes cannot be submitted as ordinary edits |
 | List/get/create/update/delete projects | Supported for the API's basic project fields: title, color, status, Area and sequential behavior |
 | List areas | Supported |
-| Sections, managed people, Area writes | Unavailable; these tools are hidden in API mode |
-| GTD availability `view` | Unavailable because the API does not expose the required section snapshot |
+| List project sections and managed people | Supported from the next desktop release: `mindwtr_list_sections` accepts `projectId` and `includeDeleted`; `mindwtr_list_people` accepts `includeDeleted` |
+| Section/person single reads and writes, Area writes | Unavailable; these tools remain hidden in API mode |
+| GTD availability `view` | Unavailable in this backend |
 | Replacing attachment links | Unavailable because the API does not provide conditional attachment updates |
 
 Other unsupported fields are rejected before a write. The desktop API's recurrence limitations also apply; some recurring completions must be performed in the app. This backend does not promise full SQLite/Cloud tool parity.

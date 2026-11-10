@@ -174,8 +174,9 @@ Las escrituras permanecen desactivadas salvo que se activen explícitamente con 
 | Actualizar/completar/eliminar/restaurar tareas | Compatible mediante los endpoints correspondientes de la API; los cambios a estados finales no pueden enviarse como ediciones ordinarias |
 | Listar/obtener/crear/actualizar/eliminar proyectos | Compatible con los campos básicos de proyecto de la API: título, color, estado, área y comportamiento secuencial |
 | Listar áreas | Compatible |
-| Secciones, personas gestionadas, escrituras de áreas | No disponibles; estas herramientas se ocultan en el modo API |
-| Disponibilidad GTD `view` | No disponible porque la API no expone la instantánea de secciones necesaria |
+| Listar secciones de proyectos y personas gestionadas | Compatible desde la próxima versión de escritorio: `mindwtr_list_sections` acepta `projectId` e `includeDeleted`; `mindwtr_list_people` acepta `includeDeleted` |
+| Lecturas individuales y escrituras de secciones/personas, escrituras de áreas | No disponibles; estas herramientas siguen ocultas en el modo API |
+| Disponibilidad GTD `view` | No disponible en este backend |
 | Sustituir enlaces de adjuntos | No disponible porque la API no proporciona actualizaciones condicionales de adjuntos |
 
 Los demás campos no compatibles se rechazan antes de escribir. También se aplican las limitaciones de recurrencia de la API de escritorio; algunas tareas recurrentes deben completarse en la aplicación. Este backend no garantiza una equivalencia total con las herramientas SQLite/Cloud.

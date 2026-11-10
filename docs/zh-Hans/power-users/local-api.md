@@ -105,7 +105,8 @@ Bun 辅助程序同样要求令牌：未设置 `MINDWTR_API_TOKEN` 时会立即�
 | `GET` | `/areas/:id` | 桌面端：获取单个领域 |
 | `PATCH` | `/areas/:id` | 桌面端：更新领域 |
 | `GET`    | `/v1/areas`           | 领域端点的兼容别名            |
-| `GET`    | `/sections`           | 辅助程序：列出分区，可加 `?projectId=` |
+| `GET` | `/sections` | 列出分区，可加 `?projectId=`；下一个桌面版本起支持 |
+| `GET` | `/people` | 桌面端：列出受管理的人员（下一个版本） |
 | `POST`   | `/sections`           | 辅助程序：创建分区            |
 | `GET`    | `/sections/:id`       | 辅助程序：获取单个分区        |
 | `PATCH`  | `/sections/:id`       | 辅助程序：更新分区            |
@@ -204,7 +205,7 @@ curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
 
 当桌面版本未知时，要确保此保护生效，请使用 `POST /v2/tasks/:id/complete` 或 `/v2/tasks/:id/archive`；这些路由要求提供有效的 `If-Match`。旧桌面版本会返回 `404`。收到该响应后，绝不要回退到无保护的操作。现有的 `/v1/tasks/:id/complete` 别名并不足够：桌面版 1.3.8 接受该路由，但不检查 `If-Match`。
 
-**能力检测。** 下一个桌面版本中，经过身份验证的 `GET /health` 会返回 `apiVersion: 2` 和 `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true }`。这描述桌面 API 的接口约定，而不是应用的发布版本。旧桌面版本和 Bun 辅助程序可能只返回 `{ "ok": true }`；不要据此推断写入保护可用。
+**能力检测。** 下一个桌面版本中，经过身份验证的 `GET /health` 会返回 `apiVersion: 2` 和 `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`。这描述桌面 API 的接口约定，而不是应用的发布版本。旧桌面版本和 Bun 辅助程序可能只返回 `{ "ok": true }`；不要据此推断写入保护可用。
 
 **可安全重试的创建。** 创建任务时提供 `Idempotency-Key`：
 
@@ -226,7 +227,13 @@ curl -s -X POST 'http://127.0.0.1:3456/v1/tasks' \
 
 **未发生变化的更新。** 如果有效 PATCH 经规范化后的最终状态未发生变化，则会成功返回，而不会重写任务或递增 `rev`、`revBy` 或 `updatedAt`。如果规范化确实修复或更改了字段，仍会视为一次编辑。
 
-本阶段不新增 REST 分页、条件式列表读取、增量变更流、重新打开任务或扩展的重复任务支持。现有的生命周期操作拒绝规则保持不变。
+**条件式任务列表（下一个桌面版本）。** `GET /tasks` 和 `/v1/tasks` 返回以 `task-list-sha256-` 开头的强 `ETag`，以及 `Cache-Control: private, no-cache`。对相同查询，将带引号的标记放入 `If-None-Match`。结果未变时返回无响应体的 `304`；否则返回完整列表和新标记。支持弱标记、标记列表和 `*`。仍需身份验证；无效请求头或筛选条件返回 `400`。
+
+标记涵盖实际筛选条件和完整响应快照，包括任务版本。使用 `?all=1&deleted=1` 可包含仍保留的删除标记。这减少传输量，但仍以 O(n) 读取快照并计算哈希；它不是增量变更流或 REST 分页。集合标记不能用作任务写入版本。
+
+**引用列表（下一个桌面版本）。** `GET /sections` 返回 `{ "sections": [ ... ] }`，可按精确的 `projectId` 筛选；`GET /people` 返回 `{ "people": [ ... ] }`。两者默认排除已删除记录，传入 `deleted=1` 可包含它们；支持 `/v1/` 别名，在禁用写入时仍可使用。记录保留原有字段，不按父项目状态筛选。
+
+这些读取端点不包含重新打开任务或扩展重复规则支持。
 
 ### 桌面端项目写入
 

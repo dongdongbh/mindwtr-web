@@ -105,7 +105,8 @@ El asistente de Bun también requiere un token: sale de inmediato si no se estab
 | `GET` | `/areas/:id` | Escritorio: obtener un área |
 | `PATCH` | `/areas/:id` | Escritorio: actualizar un área |
 | `GET`    | `/v1/areas`           | Alias de compatibilidad para las áreas |
-| `GET`    | `/sections`           | Asistente: enumera las secciones, opcionalmente con `?projectId=` |
+| `GET` | `/sections` | Listar secciones, opcionalmente `?projectId=`; escritorio desde la próxima versión |
+| `GET` | `/people` | Escritorio: listar personas gestionadas (próxima versión) |
 | `POST`   | `/sections`           | Asistente: crea una sección           |
 | `GET`    | `/sections/:id`       | Asistente: obtiene una sección        |
 | `PATCH`  | `/sections/:id`       | Asistente: actualiza una sección      |
@@ -204,7 +205,7 @@ A partir de la próxima versión de escritorio, `GET /tasks` también devuelve u
 
 Para exigir esta protección cuando se desconoce la versión de escritorio, use `POST /v2/tasks/:id/complete` o `/v2/tasks/:id/archive`; estas rutas requieren un `If-Match` válido. Las versiones antiguas devuelven `404`. Nunca recurra después a la acción sin protección. El alias existente `/v1/tasks/:id/complete` no basta: la versión 1.3.8 lo acepta sin comprobar `If-Match`.
 
-**Detección de capacidades.** En la próxima versión de escritorio, `GET /health` autenticado informa de `apiVersion: 2` y `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true }`. Esto describe el contrato de la API de escritorio, no la versión de la aplicación. Las versiones antiguas y el asistente Bun pueden devolver solo `{ "ok": true }`; esa respuesta no implica protección.
+**Detección de capacidades.** En la próxima versión de escritorio, `GET /health` autenticado informa de `apiVersion: 2` y `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true }`. Esto describe el contrato de la API de escritorio, no la versión de la aplicación. Las versiones antiguas y el asistente Bun pueden devolver solo `{ "ok": true }`; esa respuesta no implica protección.
 
 **Reintentos seguros de creación.** Incluye un `Idempotency-Key` al crear una tarea:
 
@@ -226,7 +227,13 @@ Las rutas habituales de `/tasks` también aceptan estas cabeceras. Los alias `/v
 
 **Actualizaciones sin cambios.** Un PATCH válido cuyo estado final normalizado no haya cambiado se completa correctamente sin reescribir la tarea ni incrementar `rev`, `revBy` o `updatedAt`. Una normalización que realmente repare o cambie un campo sigue siendo una edición.
 
-Esta fase no añade paginación REST, lecturas condicionales de listas, un flujo incremental de cambios, reapertura de tareas ni compatibilidad ampliada con recurrencias. Se mantienen los rechazos existentes de operaciones del ciclo de vida.
+**Listas de tareas condicionales (próxima versión de escritorio).** `GET /tasks` y `/v1/tasks` devuelven un `ETag` fuerte con el prefijo `task-list-sha256-` y `Cache-Control: private, no-cache`. Envía esa etiqueta entre comillas en `If-None-Match` para la misma consulta. Si no hay cambios, la respuesta es `304` sin cuerpo; de lo contrario, devuelve la lista completa y una etiqueta nueva. Se aceptan etiquetas débiles, listas de etiquetas y `*`. La autenticación sigue siendo obligatoria; las cabeceras o filtros inválidos devuelven `400`.
+
+La etiqueta cubre los filtros efectivos y toda la instantánea devuelta, incluidas las versiones de las tareas. Usa `?all=1&deleted=1` para incluir los registros de eliminación conservados. Esto ahorra transferencia, pero sigue leyendo y calculando el hash de la instantánea en O(n); no es un flujo incremental de cambios ni paginación REST. Las etiquetas de colección no sirven como versiones para escribir tareas.
+
+**Listas de referencias (próxima versión de escritorio).** `GET /sections` devuelve `{ "sections": [ ... ] }`, con un filtro opcional por `projectId` exacto; `GET /people` devuelve `{ "people": [ ... ] }`. Ambas excluyen registros eliminados salvo con `deleted=1`, aceptan alias `/v1/` y funcionan con las escrituras desactivadas. Los registros conservan sus campos; no se filtran por el estado del proyecto padre.
+
+Reabrir tareas y ampliar las recurrencias no forma parte de estos endpoints de lectura.
 
 ### Escritura de proyectos en escritorio
 

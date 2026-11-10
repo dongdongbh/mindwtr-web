@@ -174,8 +174,9 @@ Les écritures restent désactivées tant qu’elles ne sont pas explicitement a
 | Mettre à jour/terminer/supprimer/restaurer des tâches | Pris en charge via les points de terminaison correspondants de l’API ; les changements vers un état final ne peuvent pas être soumis comme de simples modifications |
 | Lister/obtenir/créer/mettre à jour/supprimer des projets | Pris en charge pour les champs de projet de base de l’API : titre, couleur, état, domaine et comportement séquentiel |
 | Lister les domaines | Pris en charge |
-| Sections, personnes gérées, écritures sur les domaines | Indisponibles ; ces outils sont masqués en mode API |
-| Disponibilité GTD `view` | Indisponible car l’API n’expose pas l’instantané des sections requis |
+| Lister les sections de projet et les personnes gérées | Pris en charge dès la prochaine version de bureau : `mindwtr_list_sections` accepte `projectId` et `includeDeleted` ; `mindwtr_list_people` accepte `includeDeleted` |
+| Lectures individuelles et écritures des sections/personnes, écritures sur les domaines | Indisponibles ; ces outils restent masqués en mode API |
+| Disponibilité GTD `view` | Indisponible dans ce backend |
 | Remplacer les liens de pièces jointes | Indisponible car l’API ne fournit pas de mises à jour conditionnelles des pièces jointes |
 
 Les autres champs non pris en charge sont rejetés avant toute écriture. Les limites de récurrence de l’API de bureau s’appliquent également ; certaines tâches récurrentes doivent être terminées dans l’application. Ce backend ne garantit pas une parité complète avec les outils SQLite/Cloud.

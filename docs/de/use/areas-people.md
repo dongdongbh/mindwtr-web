@@ -45,6 +45,8 @@ Ein Klick auf einen Bereich schaltet ihn durch drei Zustände:
 
 Wählen Sie mehrere Bereiche aus, um sie gemeinsam zu sehen, oder schließen Sie einen aus, um alles außer diesem zu sehen. **Keine Bereiche** steht ebenfalls in der Liste, sodass Sie Arbeit ohne Bereich einschließen oder ausschließen können. Die Auswahl gilt in allen Ansichten: Fokus, Nächste Aktionen, Projekte, Kalender, Suche, Rückblick, Board und Kontexte folgen ihr, bis Sie sie zurücksetzen.
 
+Auf dem Desktop bleibt die Auswahl geöffnet, während du mehrere Bereiche änderst. Die Zusammenfassung zeigt den ersten Bereich und die Anzahl der weiteren; beim Darüberfahren siehst du die vollständige Auswahl. Mit dem danebenstehenden Zurücksetzen **Alle Bereiche** (×) löschst du eingeschlossene und ausgeschlossene Bereiche aus dem Filter.
+
 **Der Eingang bleibt auf Desktop und Mobilgeräten bereichsübergreifend.** Seine Liste, Anzahl und die Warteschlange von **Eingang verarbeiten** umfassen unabhängig vom Bereichsfilter Einträge aus allen Bereichen, auch solche ohne Bereich. Dasselbe gilt für die Eingangsanzahl und den Verarbeitungsschritt im Rückblick. Der Eingang zeigt **Alle Bereiche** an; beim Öffnen bleiben Ihre Filterauswahl für andere Ansichten und bereits zugewiesene Aufgabenbereiche erhalten.
 
 Die Bereichsauswahl filtert auch **Heutiger Fokus**. Ausgeblendete Aufgaben behalten ihren Stern und zählen weiterhin zum globalen Fokuslimit. Die Kopfzeile zeigt die gesamte Auswahl und die Anzahl der durch den Bereichsfilter ausgeblendeten Aufgaben. Lösche die Bereichsauswahl, um sie wieder anzuzeigen. Der Filter ändert weder den Aufgabenstatus noch die Fokuszuordnung.

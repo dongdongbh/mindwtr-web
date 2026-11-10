@@ -45,6 +45,8 @@ Un clic sur un domaine le fait passer par trois états :
 
 Sélectionnez plusieurs domaines pour les voir ensemble, ou excluez-en un pour voir tout le reste. **Aucun domaine** figure aussi dans la liste, ce qui permet d’inclure ou d’exclure le travail sans domaine. Le choix s’applique à toutes les vues : Focus, Prochaines actions, Projets, Calendrier, Recherche, Revue, Tableau et Contextes le suivent tant que vous ne l’effacez pas.
 
+Sur ordinateur, le sélecteur reste ouvert pendant que vous modifiez plusieurs domaines. Le résumé affiche le premier domaine et le nombre des autres ; survolez-le pour voir la sélection complète. Le bouton voisin **Tous les domaines** (×) efface les domaines inclus et exclus du filtre.
+
 **La Boîte de réception reste unifiée sur ordinateur et mobile.** Sa liste, son compteur et la file de **Traiter la boîte de réception** incluent les éléments de tous les domaines, y compris ceux sans domaine, quel que soit le filtre. Le compteur et l’étape de traitement de la boîte de réception dans la Revue suivent la même règle. La boîte affiche **Tous les domaines** ; son ouverture conserve le filtre des autres vues et les domaines déjà attribués aux tâches.
 
 La sélection des domaines filtre aussi **Le focus du jour**. Les tâches masquées conservent leur étoile et comptent toujours dans la limite globale du Focus. L’en-tête indique la sélection totale et le nombre de tâches masquées par le filtre des domaines ; effacez cette sélection pour les revoir. Le filtre ne change ni le statut des tâches ni leur présence dans le Focus.

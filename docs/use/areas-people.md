@@ -45,6 +45,8 @@ Clicking an area cycles it through three states:
 
 Select several areas to see them together, or exclude one to see everything except it. **No area** appears in the list too, so you can include or exclude work that has no Area. The choice applies across views: Focus, Next actions, Projects, Calendar, Search, Review, Board, and Contexts all follow it until you clear it.
 
+On desktop, the selector stays open while you change several areas. The summary shows the first area and a count of the others; hover over it for the full selection. Click the adjacent **All areas** reset (×) to clear both included and excluded areas.
+
 **Inbox stays unified on desktop and mobile.** Its list, count, and **Process Inbox** queue include items from every area, including **No area**, regardless of the area filter. The Inbox count and processing step in Review follow the same rule. Inbox shows **All areas**; opening it keeps your filter selection for other views and preserves any areas already assigned to tasks.
 
 Area selection also filters **Today's Focus**. Hidden tasks stay starred and still occupy the global Focus limit. The Focus header shows the total selection and how many tasks are hidden by the Area filter; clearing the Area selection reveals them again. Filtering does not change task status or Focus membership.

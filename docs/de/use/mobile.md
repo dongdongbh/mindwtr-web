@@ -83,6 +83,8 @@ kannst du bei der Projektsortierung **Standard** in der Mehrfachauswahl **Neu an
 
 Tippe in **Sammel-Organisation** bei Start-, Fälligkeits- und Überprüfungsdatum auf das Kalendersymbol oder wähle **Heute** oder **Morgen**. Die Daten werden erst mit **Auf Auswahl anwenden** übernommen, ohne Uhrzeit oder Erinnerung hinzuzufügen. Ein leeres Datumsfeld (auch nach erneutem Antippen des ausgewählten Kürzels) behält das bisherige Datum jeder Aufgabe bei.
 
+Wähle in **Sammel-Organisation** den Status **Eingang**, um ausgewählte Aufgaben erneut zu verarbeiten. Projekt, Notizen, Tags und Termine bleiben erhalten, sofern du diese Felder nicht ebenfalls änderst.
+
 Suche unter **Sammel-Organisation** nach einem Projekt oder Bereich oder gib einen neuen Namen ein und wähle **Erstellen**, ohne die Aufgabenauswahl oder andere Formularfelder zu verlieren. Das Erstellen speichert und wählt das Ziel; erst **Auf Auswahl anwenden** verschiebt die Aufgaben. Beim Abbrechen bleiben die Aufgaben unverändert und erstellte Ziele erhalten. Schlägt das Erstellen fehl, bleiben Auswahl und Formular für einen erneuten Versuch erhalten.
 
 ---

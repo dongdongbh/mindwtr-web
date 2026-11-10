@@ -89,6 +89,8 @@ with project Sort set to **Default**, choose **Reorder** in the multi-select act
 
 For Start, Due, and Review dates in **Bulk organize**, tap the calendar button or choose **Today** or **Tomorrow**. Dates apply only after **Apply to selected** and do not add a time or reminder. Leaving a date blank (or tapping its selected shortcut again) keeps each task's existing date.
 
+Choose **Inbox** as the status in **Bulk organize** to return selected tasks for processing. Their project, notes, tags, and dates stay unchanged unless you also edit those fields.
+
 In **Bulk organize**, search for a project or area, or type a new name and choose **Create** without losing your task selection or other form fields. Creation saves and selects the destination; tasks move only after **Apply to selected**. Cancelling the bulk edit leaves your tasks unchanged and keeps any destination you created. If creation fails, your selection and form stay available for retry.
 
 ---

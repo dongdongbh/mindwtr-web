@@ -555,6 +555,8 @@ Stellen Sie **Nach Abschluss wiederholen**, Enddatum oder Anzahl im Wiederholung
 
 ## Stapelaktionen
 
+Wähle in **Sammel-Organisation** den Status **Eingang**, um ausgewählte Aufgaben erneut zu verarbeiten. Projekt, Notizen, Tags und Termine bleiben erhalten, sofern du diese Felder nicht ebenfalls änderst.
+
 Suche unter **Sammel-Organisation** nach einem Projekt oder Bereich oder gib einen neuen Namen ein und wähle **Erstellen**, ohne die Aufgabenauswahl oder andere Formularfelder zu verlieren. Das Erstellen speichert und wählt das Ziel; erst **Auf Auswahl anwenden** verschiebt die Aufgaben. Beim Abbrechen bleiben die Aufgaben unverändert und erstellte Ziele erhalten. Schlägt das Erstellen fehl, bleiben Auswahl und Formular für einen erneuten Versuch erhalten.
 
 Mehrere Aufgaben gemeinsam bearbeiten:

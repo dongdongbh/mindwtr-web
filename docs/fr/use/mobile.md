@@ -548,7 +548,7 @@ Passez vos tâches en revue et mettez leur statut à jour.
 L’éditeur de tâche possède deux modes :
 
 - **Tâche** : modifier les champs, listes de contrôle, dates, étiquettes et contextes
-- **Vue** : résumé épuré en lecture seule avec liste de contrôle interactive
+- **Vue** : résumé de la tâche avec liste de contrôle interactive
 
 Balayez vers la gauche ou la droite pour basculer entre **Tâche** et **Vue**.
 
@@ -559,6 +559,8 @@ Balayez vers la gauche ou la droite pour basculer entre **Tâche** et **Vue**.
 - **Modification** : accéder directement aux champs. Le clavier reste fermé jusqu’à ce que vous touchiez un champ.
 
 Le comportement est identique sur Android et iOS. Une action explicite de modification ouvre toujours l’éditeur ; les tâches en lecture seule restent en Aperçu. Changer d’onglet pour une tâche ne modifie pas cette préférence.
+
+Dans Aperçu, touchez **Marquer terminé** dans la carte d’état pour enregistrer vos modifications et terminer la tâche, y compris les modifications en attente de la liste de contrôle. L’éditeur se ferme après un enregistrement réussi ; en cas d’échec, il conserve le brouillon pour réessayer. Cette action n’est pas disponible pour les références ni pour les tâches terminées ou en lecture seule.
 
 L’éditeur s’ouvre sous une forme minimale. Touchez **Plus d’options** pour afficher les champs avancés ; tout champ qui contient déjà une valeur reste visible.
 

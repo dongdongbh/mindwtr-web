@@ -557,7 +557,7 @@ Review your tasks and update their status.
 The task editor has two modes:
 
 - **Task**: edit fields, checklists, dates, tags, contexts
-- **View**: clean read-only summary with tappable checklist
+- **View**: task summary with tappable checklist
 
 Swipe left/right to switch between **Task** and **View**.
 
@@ -568,6 +568,8 @@ Swipe left/right to switch between **Task** and **View**.
 - **Edit**: go straight to the fields. The keyboard stays closed until you tap a field.
 
 This works the same on Android and iOS. Explicit Edit actions still open Edit, and read-only tasks stay in Preview. Switching tabs for one task does not change this preference.
+
+In Preview, tap **Mark Done** in the status card to save your current edits and complete the task. This includes pending checklist changes. The editor closes after saving succeeds; if saving fails, it keeps the draft so you can retry. The action is unavailable for Reference, finished, or read-only tasks.
 
 The editor starts minimal. Tap **More options** to reveal advanced fields; any field with existing content stays visible.
 
@@ -744,7 +746,7 @@ Quickly manage tasks with swipe gestures:
 
 Swipe, then tap a button. Done completes the task, even in the Inbox. Focus on an Inbox task moves it to Next and stars it in one step, or leaves it untouched when Focus is full. A completed task shows **Restore to Inbox** instead of Done and Focus. Screen readers offer the same actions in the row's actions menu.
 
-Completing a task stamps the current time. If you actually finished earlier, long-press any **Done** control to pick the real completion time instead: the swipe-revealed Done button, the Done option in the status menu, the Done chip in the task editor, or the status badge in the task preview. You can also tap the **Completed** timestamp on a done or archived task to correct it afterwards.
+Completing a task stamps the current time. If you actually finished earlier, long-press one of these **Done** controls to pick the real completion time instead: the swipe-revealed Done button, the Done option in the status menu, the Done chip in the task editor, or the status badge in the task preview. You can also tap the **Completed** timestamp on a done or archived task to correct it afterwards.
 
 ---
 

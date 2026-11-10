@@ -517,7 +517,7 @@ Aufgaben prüfen und Status aktualisieren:
 Zwei Modi:
 
 - **Aufgabe**: Felder, Checklisten, Daten, Tags und Kontexte bearbeiten
-- **Ansicht**: aufgeräumte schreibgeschützte Zusammenfassung mit antippbarer Checkliste
+- **Ansicht**: Aufgabenübersicht mit antippbarer Checkliste
 
 Wischen Sie links/rechts zum Wechsel.
 
@@ -528,6 +528,8 @@ Unter **Einstellungen → GTD → Aufgabeneditor → Aufgaben öffnen in** wähl
 - **Bearbeiten**: direkt die Felder anzeigen. Die Tastatur öffnet sich erst beim Antippen eines Feldes.
 
 Android und iOS verhalten sich gleich. Ausdrückliche Bearbeiten-Aktionen öffnen weiterhin den Editor; schreibgeschützte Aufgaben bleiben in der Vorschau. Ein Tabwechsel bei einer Aufgabe ändert diese Einstellung nicht.
+
+Tippen Sie in der Vorschau in der Statuskarte auf **Als Erledigt markieren**, um die aktuellen Änderungen zu speichern und die Aufgabe abzuschließen. Noch offene Checklistenänderungen werden mitgespeichert. Der Editor schließt erst nach erfolgreichem Speichern; bei einem Fehler bleibt der Entwurf für einen erneuten Versuch erhalten. Für Referenzmaterial, abgeschlossene und schreibgeschützte Aufgaben ist die Aktion nicht verfügbar.
 
 Der Editor beginnt minimalistisch; **Weitere Optionen** zeigt erweiterte Felder. Felder mit Inhalt bleiben sichtbar.
 

@@ -548,7 +548,7 @@ Revisa tus tareas y actualiza su estado.
 El editor de tareas tiene dos modos:
 
 - **Tarea**: edita campos, listas de comprobación, fechas, etiquetas y contextos
-- **Vista**: resumen limpio de solo lectura con una lista que se puede tocar
+- **Vista**: resumen de la tarea con una lista que se puede tocar
 
 Desliza a izquierda o derecha para cambiar entre **Tarea** y **Vista**.
 
@@ -559,6 +559,8 @@ Desliza a izquierda o derecha para cambiar entre **Tarea** y **Vista**.
 - **Editar**: acceder directamente a los campos. El teclado permanece cerrado hasta tocar un campo.
 
 Android e iOS funcionan igual. Las acciones explícitas de edición siguen abriendo Editar; las tareas de solo lectura permanecen en Vista previa. Cambiar de pestaña en una tarea no modifica esta preferencia.
+
+En Vista previa, toca **Marcar como completada** en la tarjeta de estado para guardar los cambios actuales y completar la tarea, incluidos los cambios pendientes en la lista de comprobación. El editor se cierra cuando se ha guardado correctamente; si falla, conserva el borrador para que puedas reintentarlo. La acción no está disponible para material de referencia ni para tareas terminadas o de solo lectura.
 
 El editor empieza mostrando lo mínimo. Toca **Más opciones** para revelar campos avanzados; cualquier campo que ya tenga contenido permanece visible.
 

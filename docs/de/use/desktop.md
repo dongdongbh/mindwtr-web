@@ -410,11 +410,15 @@ Mindwtr wertet beim Hinzufügen natürliche Sprache aus:
 | `%Person` | `Ask %Jim for budget` | „Zugewiesen an“ festlegen (die Person, die die Aufgabe betrifft; der Status bleibt unverändert); `%"Full Name"` für neue mehrteilige Namen |
 | `/area:<name>` | `/area:Personal` | Bereich zuweisen (ohne Leerzeichen) |
 | `/due:date` | `/due:friday` | Fälligkeitsdatum festlegen |
+| `/remind-due:<duration>` | `/remind-due:1d` | Vorlauf der Fälligkeitserinnerung |
+| `/remind-start:<duration>` | `/remind-start:30m` | Vorlauf der Starterinnerung |
 | `/energy:<level>` | `/energy:medium` | Energiestufe (`low`, `medium`, `high`) |
 | `/priority:<level>` | `/priority:high` | Priorität (`low`, `medium`, `high`, `urgent`) |
 | `/estimate:<duration>` | `/estimate:45m` | Setzt den Zeitbedarf |
 | `/note:text` | `/note:call back` | Beschreibung hinzufügen |
 | `/status` | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Status festlegen |
+
+Ab der nächsten Version kannst du beim Erfassen eine Voraberinnerung setzen: `Call dentist /due:tomorrow 3pm /remind-due:1d` oder `Meeting /start:tomorrow 10am /remind-start:30m`. Das zugehörige `/due:` oder `/start:` muss eine Uhrzeit enthalten. Verwende eine ganze Zahl mit `m`, `h`, `d` oder `w`; Fälligkeitserinnerungen unterstützen bis zu 7 Tage, Starterinnerungen 5, 15, 30 oder 60 Minuten. Mit `0m` schaltest du eine Voraberinnerung aus. Ungültige Werte bleiben sichtbar und müssen vor dem Speichern korrigiert werden. Die Befehle verwenden die vorhandenen Erinnerungseinstellungen und aktivieren keine ausgeschalteten Benachrichtigungen. Mehrere unabhängige Erinnerungszeitpunkte werden nicht unterstützt.
 
 `/estimate:5m`, `/estimate:45m` und `/estimate:1h30m` setzen den geschätzten Zeitbedarf; `/duration:` ist ein Alias. Eigene Werte behalten ihre genaue Minutenzahl. Gültige Befehle werden aus dem Titel entfernt; ungültige oder unvollständige bleiben sichtbar. Normaler Text wie „Einen 30-minütigen Vortrag ansehen“ setzt keinen Zeitbedarf. Eine ausdrücklich im Erfassungsformular gewählte Schätzung hat Vorrang; die Kalendererfassung behält ihre gewählte Dauer. Ist **Zeitabschätzungen** in den Einstellungen ausgeschaltet, werden `/estimate:` und `/duration:` nicht ausgewertet und bleiben im Titel; die Syntaxhilfe führt sie dann nicht auf.
 

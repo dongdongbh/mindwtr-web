@@ -408,11 +408,15 @@ Mindwtr analiza lenguaje natural al añadir tareas:
 | `%Person`     | `Ask %Jim for budget` | Establece Asignada a (la persona que involucra la tarea; el estado no cambia); `%"Full Name"` para nombres nuevos de varias palabras |
 | `/area:<name>` | `/area:Personal` | Asigna a un área (sin espacios) |
 | `/due:date`  | `/due:friday`     | Establece la fecha de vencimiento |
+| `/remind-due:<duration>` | `/remind-due:1d` | Antelación del recordatorio de vencimiento |
+| `/remind-start:<duration>` | `/remind-start:30m` | Antelación del recordatorio de inicio |
 | `/energy:<level>` | `/energy:medium` | Establece el nivel de energía (`low`, `medium`, `high`) |
 | `/priority:<level>` | `/priority:high` | Establece la prioridad (`low`, `medium`, `high`, `urgent`) |
 | `/estimate:<duration>` | `/estimate:45m` | Establece el tiempo estimado |
 | `/note:text` | `/note:call back` | Añade una descripción    |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Establece el estado |
+
+A partir de la próxima versión, añade un recordatorio anticipado al capturar una tarea: `Call dentist /due:tomorrow 3pm /remind-due:1d` o `Meeting /start:tomorrow 10am /remind-start:30m`. El `/due:` o `/start:` correspondiente debe incluir una hora. Usa un número entero seguido de `m`, `h`, `d` o `w`; los recordatorios de vencimiento admiten hasta 7 días y los de inicio, 5, 15, 30 o 60 minutos. Usa `0m` para desactivar un recordatorio anticipado. Los valores no válidos siguen visibles y deben corregirse antes de guardar. Estos comandos respetan los ajustes existentes y no activan las notificaciones desactivadas. No se admiten varias fechas de recordatorio independientes.
 
 `/estimate:5m`, `/estimate:45m` y `/estimate:1h30m` establecen el esfuerzo estimado; `/duration:` es un alias. Los valores personalizados conservan sus minutos exactos. Los comandos válidos se quitan del título; los inválidos o incompletos siguen visibles. El texto normal, como «Ver una charla de 30 minutos», no establece una estimación. Una estimación elegida explícitamente en el formulario de captura tiene prioridad; el editor del calendario conserva la duración seleccionada. Si **Estimaciones de tiempo** está desactivado en Ajustes, `/estimate:` y `/duration:` no se interpretan y se quedan en el título, y la ayuda de sintaxis no los muestra.
 

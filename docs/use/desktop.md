@@ -422,11 +422,15 @@ Mindwtr parses natural language when adding tasks:
 | `%Person`     | `Ask %Jim for budget` | Sets Assigned to (the person the task involves; status is unchanged); `%"Full Name"` for new multi-word names |
 | `/area:<name>` | `/area:Personal` | Assigns to area (no spaces) |
 | `/due:date`  | `/due:friday`     | Sets due date       |
+| `/remind-due:<duration>` | `/remind-due:1d` | Due reminder lead time |
+| `/remind-start:<duration>` | `/remind-start:30m` | Start reminder lead time |
 | `/energy:<level>` | `/energy:medium` | Sets energy level (`low`, `medium`, `high`) |
 | `/priority:<level>` | `/priority:high` | Sets priority (`low`, `medium`, `high`, `urgent`) |
 | `/estimate:<duration>` | `/estimate:45m` | Sets the time estimate |
 | `/note:text` | `/note:call back` | Adds description    |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Sets status |
+
+From the next release, add an advance reminder while capturing a task: `Call dentist /due:tomorrow 3pm /remind-due:1d` or `Meeting /start:tomorrow 10am /remind-start:30m`. The matching `/due:` or `/start:` must include a time. Use a whole number followed by `m`, `h`, `d`, or `w`; due reminders support up to 7 days, while start reminders support 5, 15, 30, or 60 minutes. Use `0m` to turn an advance reminder off. Invalid values stay visible and must be corrected before saving. These commands use the existing reminder settings and do not enable notifications that are turned off. Multiple independent reminder dates are not supported.
 
 `/estimate:5m`, `/estimate:45m`, and `/estimate:1h30m` set estimated effort; `/duration:` is an alias. Custom values keep their exact minutes. Successfully parsed commands are removed from the title; invalid or incomplete commands stay visible. Ordinary prose such as “Watch a 30-minute lecture” does not set an estimate. An estimate selected explicitly in a capture form takes precedence; the calendar composer keeps its selected duration. When **Time estimates** is turned off in Settings, `/estimate:` and `/duration:` are not parsed and stay in the title, and the syntax help does not list them.
 

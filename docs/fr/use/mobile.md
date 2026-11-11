@@ -416,11 +416,15 @@ Mindwtr analyse le langage naturel lors de l’ajout de tâches :
 | `%Person`     | `Ask %Jim for budget` | Définit la personne assignée (la personne que la tâche implique ; le statut ne change pas) ; `%"Full Name"` pour les nouveaux noms composés de plusieurs mots |
 | `/area:<name>` | `/area:Personal` | Attribue à un domaine (sans espaces) |
 | `/due:date`  | `/due:friday`     | Définit l’échéance                  |
+| `/remind-due:<duration>` | `/remind-due:1d` | Délai du rappel avant échéance |
+| `/remind-start:<duration>` | `/remind-start:30m` | Délai du rappel avant début |
 | `/energy:<level>` | `/energy:medium` | Définit le niveau d’énergie (`low`, `medium`, `high`) |
 | `/priority:<level>` | `/priority:high` | Définit la priorité (`low`, `medium`, `high`, `urgent`) |
 | `/estimate:<duration>` | `/estimate:45m` | Définit le temps estimé |
 | `/note:text` | `/note:call back` | Ajoute une description              |
 | `/status`    | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Définit le statut |
+
+À partir de la prochaine version, ajoutez un rappel anticipé pendant la capture : `Call dentist /due:tomorrow 3pm /remind-due:1d` ou `Meeting /start:tomorrow 10am /remind-start:30m`. Le `/due:` ou `/start:` correspondant doit inclure une heure. Utilisez un entier suivi de `m`, `h`, `d` ou `w` ; les rappels avant échéance acceptent jusqu’à 7 jours, et ceux avant début 5, 15, 30 ou 60 minutes. Utilisez `0m` pour désactiver un rappel anticipé. Les valeurs invalides restent visibles et doivent être corrigées avant l’enregistrement. Ces commandes respectent les réglages existants et n’activent pas les notifications désactivées. Plusieurs dates de rappel indépendantes ne sont pas prises en charge.
 
 `/estimate:5m`, `/estimate:45m` et `/estimate:1h30m` définissent l’effort estimé ; `/duration:` est un alias. Les valeurs personnalisées conservent leur nombre exact de minutes. Les commandes valides sont retirées du titre ; celles qui sont invalides ou incomplètes restent visibles. Un texte ordinaire comme « Regarder une conférence de 30 minutes » ne définit pas d’estimation. Une estimation choisie explicitement dans le formulaire de capture est prioritaire ; le formulaire du calendrier conserve la durée sélectionnée. Lorsque **Estimations de temps** est désactivé dans les paramètres, `/estimate:` et `/duration:` ne sont pas interprétés et restent dans le titre, et l’aide de syntaxe ne les mentionne pas.
 

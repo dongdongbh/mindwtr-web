@@ -408,11 +408,15 @@ Mindwtr 会在添加任务时解析自然语言：
 | `%Person`        | `Ask %Jim for budget`        | 设置“分配给”（任务涉及的人；状态不变）；新建多词名称时使用 `%"Full Name"` |
 | `/area:<name>`   | `/area:Personal`             | 分配到领域（不能有空格）                                     |
 | `/due:date`      | `/due:friday`                | 设置截止日期                                                 |
+| `/remind-due:<duration>` | `/remind-due:1d` | 截止前提醒的提前量 |
+| `/remind-start:<duration>` | `/remind-start:30m` | 开始前提醒的提前量 |
 | `/energy:<level>` | `/energy:medium`            | 设置精力水平（`low`、`medium`、`high`）                       |
 | `/priority:<level>` | `/priority:high` | 设置优先级（`low`、`medium`、`high`、`urgent`） |
 | `/estimate:<duration>` | `/estimate:45m` | 设置时间估算 |
 | `/note:text`     | `/note:call back`            | 添加描述                                                     |
 | `/status`        | `/next`、`/waiting`、`/someday`、`/reference`、`/done`、`/archived`、`/inbox` | 设置状态 |
+
+从下一版本起，可在捕获任务时设置提前提醒：`Call dentist /due:tomorrow 3pm /remind-due:1d` 或 `Meeting /start:tomorrow 10am /remind-start:30m`。对应的 `/due:` 或 `/start:` 必须包含明确时间。使用整数加 `m`、`h`、`d` 或 `w`；截止前提醒最多提前 7 天，开始前提醒支持提前 5、15、30 或 60 分钟。使用 `0m` 关闭提前提醒。无效值会保留显示，必须修正后才能保存。这些命令遵循现有提醒设置，不会开启已关闭的通知。不支持多个独立的提醒日期。
 
 `/estimate:5m`、`/estimate:45m` 和 `/estimate:1h30m` 可设置预计投入时间；`/duration:` 是别名。自定义值保留准确的分钟数。有效命令会从标题中移除，无效或不完整的命令仍然可见。“看一场 30 分钟的讲座”这样的普通文字不会设置估算。在收集表单中明确选择的估算优先；日历创建表单保留已选时长。在设置中关闭**时间估算**后，`/estimate:` 和 `/duration:` 不会被解析，会保留在标题中，语法帮助也不再列出它们。
 

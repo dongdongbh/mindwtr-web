@@ -304,4 +304,8 @@ In Mindwtr, both `@contexts` and `#tags` can filter tasks, but they answer diffe
 
 From v1.3.8, open **Filters** in Contexts to select unfinished statuses, including **Someday**, and exclude projects. Opening these filters starts with Inbox, Next, Waiting, and Someday selected; adjust the status choices as needed. Project choices cycle through included, excluded, and unselected. Save the selection to reuse it in the app or choose it as a widget list. Area boundaries still apply, and an empty result stays empty.
 
-For example, choose `@person/Emma`, keep Next, Waiting, and Someday, and exclude a shared project. New Context saved filters cover unfinished tasks. Done, Archived, and Reference remain separate. Saving is unavailable for **No Context** or a mixed context/tag selection using **Any**; choose a representable selection before saving.
+For example, choose `@person/Emma`, keep Next, Waiting, and Someday, and exclude a shared project. In v1.3.8, Context saved filters cover unfinished tasks; Done, Archived, and Reference remain separate. Saving is unavailable for **No Context** or a mixed context/tag selection using **Any**; choose a representable selection before saving.
+
+Starting with v1.3.9, **Reference** is also available in Context filters. Opening a new filter includes Reference alongside Inbox, Next, Waiting, and Someday; previously saved status selections stay unchanged. Done and Archived remain outside saved Context filters. Widgets include Reference only when selected in the saved filter, and Reference rows open without a completion action.
+
+Tapping the header of a widget using a saved Context filter opens the Contexts interface with that filter selected, so you can inspect and adjust its criteria. Other widget lists keep their existing destinations.

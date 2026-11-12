@@ -141,7 +141,9 @@ Set the speech provider to OpenAI, then fill in the base URL: your server's root
 
 - Leave the API key empty if your server does not use one.
 - The model picker lists whatever your server reports at `/v1/models` when it answers; otherwise it falls back to suggestions. You can always type any model name — the list is not a fixed set.
-- Transcription is all a speech server does. **Smart Parse** needs a language model, so without an AI assistant configured a capture becomes a task titled with the transcript, and dates, projects and priorities are not pulled out of it. Configure the assistant separately if you want those.
+- **Smart Parse** also needs a language model on the speech server. The next release uses the speech base URL for parsing and retries, with the model selected under the OpenAI AI assistant. A transcription-only server should use **Transcribe Only**.
+
+In v1.3.8, Smart Parse incorrectly sends parsing requests to OpenAI even with a custom speech URL; those requests can include the transcript and the custom server’s API credential. Until you update to a release containing the fix, use **Transcribe Only** for custom servers.
 
 ## Notes
 

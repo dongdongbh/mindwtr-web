@@ -141,7 +141,9 @@ Setzen Sie den Sprachanbieter auf OpenAI und tragen Sie dann die Basis-URL ein: 
 
 - Lassen Sie den API-Schlüssel leer, wenn Ihr Server keinen benötigt.
 - Die Modellauswahl zeigt, was Ihr Server unter `/v1/models` meldet, sofern er antwortet; andernfalls werden Vorschläge angezeigt. Sie können jederzeit einen beliebigen Modellnamen eingeben — die Liste ist keine feste Auswahl.
-- Ein Sprachserver übernimmt nur die Transkription. **Intelligent auswerten** benötigt ein Sprachmodell; ist kein KI-Assistent konfiguriert, wird eine Aufnahme zu einer Aufgabe mit dem Transkript als Titel, ohne dass Fälligkeitsdaten, Projekte oder Prioritäten daraus extrahiert werden. Konfigurieren Sie den Assistenten separat, wenn Sie das möchten.
+- **Intelligent auswerten** benötigt auch ein Sprachmodell auf dem Sprachserver. Die nächste Version verwendet die Sprach-Basis-URL für die Auswertung und Wiederholungen sowie das im OpenAI-KI-Assistenten gewählte Modell. Für reine Transkriptionsserver verwenden Sie **Nur transkribieren**.
+
+In v1.3.8 sendet die intelligente Auswertung Anfragen trotz eigener Sprach-URL fälschlich an OpenAI; diese können das Transkript und den API-Schlüssel des eigenen Servers enthalten. Verwenden Sie für eigene Server **Nur transkribieren**, bis Sie eine Version mit der Korrektur installiert haben.
 
 ## Hinweise
 

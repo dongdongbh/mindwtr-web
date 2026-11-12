@@ -148,7 +148,9 @@ Définissez le fournisseur vocal sur OpenAI, puis renseignez l’URL de base : l
 
 - Laissez la clé d’API vide si votre serveur n’en utilise pas.
 - Le sélecteur de modèles affiche ce que votre serveur annonce sur `/v1/models` lorsqu'il répond ; sinon, il retombe sur des suggestions. Vous pouvez toujours saisir n'importe quel nom de modèle — la liste n'est pas un ensemble fixe.
-- Un serveur vocal ne fait que transcrire. **Analyse intelligente** nécessite un modèle de langage : sans assistant IA configuré, une capture devient donc une tâche dont le titre est la transcription, sans en extraire d’échéances, projets ni priorités. Configurez l’assistant séparément si vous souhaitez ces informations.
+- **Analyse intelligente** nécessite aussi un modèle de langage sur le serveur vocal. La prochaine version utilise l’URL de base vocale pour l’analyse et les nouvelles tentatives, avec le modèle choisi dans l’assistant IA OpenAI. Pour un serveur de transcription seule, utilisez **Transcription seule**.
+
+Dans v1.3.8, l’analyse intelligente envoie par erreur les demandes à OpenAI même avec une URL vocale personnalisée ; elles peuvent contenir la transcription et la clé d’API du serveur personnalisé. Utilisez **Transcription seule** pour ces serveurs jusqu’à installer une version corrigée.
 
 ## Remarques
 

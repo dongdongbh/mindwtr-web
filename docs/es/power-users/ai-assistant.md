@@ -148,7 +148,9 @@ Configura el proveedor de voz en OpenAI y luego completa la URL base: la raíz d
 
 - Deja la clave de API vacía si tu servidor no la usa.
 - El selector de modelos muestra lo que tu servidor informa en `/v1/models` cuando responde; si no, recurre a sugerencias. Siempre puedes escribir cualquier nombre de modelo — la lista no es un conjunto fijo.
-- Un servidor de voz solo transcribe. **Análisis inteligente** necesita un modelo de lenguaje, así que sin un asistente de IA configurado, una captura se convierte en una tarea titulada con la transcripción, sin extraer de ella fechas, proyectos ni prioridades. Configura el asistente por separado si quieres eso.
+- **Análisis inteligente** también necesita un modelo de lenguaje en el servidor de voz. La próxima versión usa la URL base de voz para el análisis y los reintentos, con el modelo seleccionado en el asistente de IA de OpenAI. Para un servidor que solo transcribe, usa **Solo transcripción**.
+
+En v1.3.8, el análisis inteligente envía por error solicitudes a OpenAI incluso con una URL de voz personalizada; pueden incluir la transcripción y la credencial de API del servidor personalizado. Usa **Solo transcripción** con servidores personalizados hasta instalar una versión con la corrección.
 
 ## Notas
 

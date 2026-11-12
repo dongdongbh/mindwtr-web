@@ -828,7 +828,7 @@ Mindwtr sends notifications to keep you on track.
 
 **Before start** adds an optional alert 5, 15, or 30 minutes, or 1 hour before an explicit start time. It is Off by default. Set a start time, then choose the lead in the task editor’s Reminders controls. A 15:00 start with a 30-minute lead alerts at 14:30; the task’s actual start and availability stay unchanged. Changing the start reschedules the alert. Removing its time stops the alert but keeps the chosen lead. Date-only starts never send alerts, and past advance times are not caught up. This follows Send/Skip, start-reminder settings, and notification permission. Browser/PWA notifications still require the app to be running; this option does not add closed-browser delivery. Older versions do not schedule this alert.
 
-**Advance reminder** adds one alert before a task’s due time. In the task editor’s Reminders section, choose 5, 15, or 30 minutes, 1 hour, 1 day, 2 days, or 1 week before. It is Off by default and requires a due date with an explicit time; the normal due-time alert remains enabled. Moving the deadline moves the advance alert too. Day and week choices keep the same local clock time across daylight-saving changes. If the advance time has already passed when you set it, no catch-up alert is sent.
+**Advance reminder** adds one alert before a task’s due time. In the task editor’s Reminders section, choose 5, 15, or 30 minutes, 1 hour, 1 day, 2 days, or 1 week before (the next release also offers 120 minutes). It is Off by default and requires a due date with an explicit time; the normal due-time alert remains enabled. Moving the deadline moves the advance alert too. Day and week choices keep the same local clock time across daylight-saving changes. If the advance time has already passed when you set it, no catch-up alert is sent.
 
 Advance alerts follow the task’s Send/Skip choice, due-reminder settings, and notification permission. Clearing the due time stops scheduling them without erasing the chosen lead time. Update all devices to use this option; older versions do not schedule advance alerts.
 
@@ -837,6 +837,11 @@ Advance alerts follow the task’s Send/Skip choice, due-reminder settings, and 
 **Snooze** postpones the current alert. **Dismiss** closes the current notification; it does not cancel future reminders in the repeat sequence. To stop a task’s start/due reminders and their repeats without changing its dates, set **Start/due reminders → Skip** in the task editor.
 
 **Settings → Notifications → Default task reminders** chooses **Send** or **Skip** for new tasks. Each task has **Start/due reminders**: **Use default** (showing its current effect), **Send**, or **Skip**. Existing tasks keep their previous send/skip behavior until you deliberately choose **Use default**. The initial default is Send.
+
+From the next release, choose **Start only** or **Due only** for one reminder tied to that date. With an advance time selected, the earlier reminder replaces the alert at the date's time; repeat reminders are inactive. For example, keep Monday 4pm as the start and Tuesday 8am as the due time, choose **Due only**, then **120 min before** to get one alert at Tuesday 6am. Completing the task beforehand cancels it. The selected date must include a time, and device notification permissions and start/due notification switches still apply. Review reminders remain separate.
+
+**Send** keeps the existing behavior, including additional advance and repeat reminders. Switching modes preserves those choices. Update all synced devices before using selective reminders: older clients skip them and may discard the selection when editing the task.
+
 
 Skip withdraws pending start/due reminders and their repeats without erasing the repeat interval. Review reminders, daily digests, and Pomodoro alerts are separate. Send still requires an explicit start/due time, enabled task/start/due notifications, and device permission; it does not enable those switches for you.
 

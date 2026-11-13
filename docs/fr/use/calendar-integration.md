@@ -262,5 +262,11 @@ Ce lien agit comme un mot de passe : seules les applications qui le possèdent p
 - Les calendriers externes sont en **lecture seule** dans Mindwtr. Créer une tâche à partir d’un événement ne modifie pas l’événement d’origine.
 - Les événements ICS récurrents prennent en charge `FREQ=DAILY`, `WEEKLY`, `MONTHLY` et `YEARLY`, y compris `INTERVAL`, `COUNT`, `UNTIL`, `BYDAY`, `BYMONTH` et `BYMONTHDAY` pour les modèles que Mindwtr peut développer dans la plage visible.
 - Les événements annuels sur toute la journée et les règles annuelles comme `FREQ=YEARLY;COUNT=...` ou `FREQ=YEARLY;BYMONTH=1;BYDAY=3MO` sont développés dans la fenêtre de calendrier visible.
-- Les dates d’exception et les substitutions de récurrence comme `EXDATE`, `RDATE` et `RECURRENCE-ID` ne sont pas développées actuellement.
+- La prochaine version prend en charge les exclusions `EXDATE` et les substitutions `RECURRENCE-ID`, y compris les occurrences déplacées. Les dates supplémentaires définies par `RDATE` ne sont pas développées.
 - Les événements récurrents comportant `RRULE:...;COUNT=...` s’arrêtent une fois leur décompte d’origine atteint. Si vous voyiez auparavant de très anciens événements récurrents, réimportez-les après la mise à jour vers v0.4.9+.
+
+## Référence de calendrier dans un projet (prochaine version)
+
+Dans un projet, choisissez **Lier un événement du calendrier** pour désigner un événement ICS existant comme prochain engagement prévu. Le sélecteur affiche les 90 prochains jours. Le lien ne crée ni tâche ni nouvel événement ; le calendrier reste propriétaire. Vous pouvez remplacer ou retirer la référence.
+
+Le lien suit l’identité de la réunion lorsqu’elle est déplacée, y compris une occurrence récurrente reprogrammée. Si le calendrier est indisponible, désactivé ou hors de la période chargée, le projet conserve des détails explicitement indiqués comme les derniers connus. Des données absentes ne prouvent pas une annulation. La revue présente cet engagement comme contexte connu, sans le qualifier de prochaine action. Après l’événement, examinez vous-même le résultat : le projet reste ouvert et aucune tâche n’est débloquée. Cette première version ne propose pas les événements du système sans identité ICS stable.

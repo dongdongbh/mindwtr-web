@@ -262,5 +262,11 @@ That link acts like a password: only apps with the link can see events, while th
 - External calendars are **read-only** inside Mindwtr. Creating a task from an event does not modify the original event.
 - ICS recurring events support `FREQ=DAILY`, `WEEKLY`, `MONTHLY`, and `YEARLY`, including `INTERVAL`, `COUNT`, `UNTIL`, `BYDAY`, `BYMONTH`, and `BYMONTHDAY` for the patterns Mindwtr can expand into the visible range.
 - Yearly all-day events and yearly rules such as `FREQ=YEARLY;COUNT=...` or `FREQ=YEARLY;BYMONTH=1;BYDAY=3MO` are expanded in the visible calendar window.
-- Exception dates and recurrence overrides such as `EXDATE`, `RDATE`, and `RECURRENCE-ID` are not expanded today.
+- In the next release, `EXDATE` exclusions and `RECURRENCE-ID` overrides are supported, including moved instances. Additional dates supplied through `RDATE` are not expanded.
 - Recurring events with `RRULE:...;COUNT=...` stop after their original count. If you previously saw very old recurring events, re-import after updating to v0.4.9+.
+
+## Project calendar reference (next release)
+
+In a project, choose **Link calendar event** to identify one existing ICS event as its next scheduled commitment. The picker shows upcoming events within the next 90 days. Linking creates neither a task nor another event; the calendar keeps ownership. You can replace or unlink the reference.
+
+The link follows a meeting’s identity when it moves, including a rescheduled recurring instance. If its calendar is unavailable, disabled, or outside the loaded range, the project keeps explicitly labelled last-known details. Missing data is not proof of cancellation. Review shows the named commitment as last-known context, rather than claiming it is a task Next Action. When the event ends, review its outcome yourself: the project stays open and no tasks are unlocked. Device calendar events without a stable ICS identity are not offered in this first version.

@@ -262,5 +262,11 @@ Ese enlace funciona como una contraseña: solo las aplicaciones que tengan el en
 - Los calendarios externos son de **solo lectura** dentro de Mindwtr. Crear una tarea a partir de un evento no modifica el evento original.
 - Los eventos ICS recurrentes admiten `FREQ=DAILY`, `WEEKLY`, `MONTHLY` y `YEARLY`, incluidos `INTERVAL`, `COUNT`, `UNTIL`, `BYDAY`, `BYMONTH` y `BYMONTHDAY` para los patrones que Mindwtr puede expandir en el intervalo visible.
 - Los eventos anuales de día completo y las reglas anuales como `FREQ=YEARLY;COUNT=...` o `FREQ=YEARLY;BYMONTH=1;BYDAY=3MO` se expanden en la ventana visible del calendario.
-- Actualmente no se expanden las fechas de excepción ni las anulaciones de recurrencia como `EXDATE`, `RDATE` y `RECURRENCE-ID`.
+- En la próxima versión se admiten las exclusiones `EXDATE` y las modificaciones `RECURRENCE-ID`, incluidas las instancias reprogramadas. No se expanden fechas adicionales indicadas mediante `RDATE`.
 - Los eventos recurrentes con `RRULE:...;COUNT=...` se detienen después de su recuento original. Si antes veías eventos recurrentes muy antiguos, vuelve a importarlos después de actualizar a v0.4.9+.
+
+## Referencia de calendario en proyectos (próxima versión)
+
+En un proyecto, elige **Vincular evento del calendario** para identificar un evento ICS existente como su próximo compromiso programado. El selector muestra los próximos 90 días. Vincular no crea una tarea ni otro evento; el calendario conserva su control. Puedes sustituir o quitar la referencia.
+
+El vínculo sigue la identidad del evento cuando cambia de fecha, incluida una instancia recurrente reprogramada. Si el calendario no está disponible, está desactivado o queda fuera del intervalo cargado, se conservan los últimos detalles conocidos con una etiqueta explícita. La ausencia de datos no demuestra una cancelación. La revisión muestra ese compromiso como contexto conocido, sin afirmar que es una Próxima acción. Cuando termine el evento, revisa tú el resultado: el proyecto sigue abierto y no se desbloquean tareas. Esta primera versión no ofrece eventos del dispositivo sin identidad ICS estable.

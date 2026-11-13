@@ -262,5 +262,11 @@ Dieser Link verhält sich wie ein Passwort: Nur Apps mit dem Link können Termin
 - Externe Kalender sind innerhalb von Mindwtr **schreibgeschützt**. Das Erstellen einer Aufgabe aus einem Termin verändert den ursprünglichen Termin nicht.
 - Wiederkehrende ICS-Termine unterstützen `FREQ=DAILY`, `WEEKLY`, `MONTHLY` und `YEARLY`, einschließlich `INTERVAL`, `COUNT`, `UNTIL`, `BYDAY`, `BYMONTH` und `BYMONTHDAY` für Muster, die Mindwtr im sichtbaren Bereich ausweiten kann.
 - Jährliche ganztägige Termine und jährliche Regeln wie `FREQ=YEARLY;COUNT=...` oder `FREQ=YEARLY;BYMONTH=1;BYDAY=3MO` werden im sichtbaren Kalenderfenster ausgeweitet.
-- Ausnahmedaten und Wiederholungsüberschreibungen wie `EXDATE`, `RDATE` und `RECURRENCE-ID` werden derzeit nicht ausgeweitet.
+- Im nächsten Release werden `EXDATE`-Ausnahmen und `RECURRENCE-ID`-Überschreibungen unterstützt, auch für verschobene Termine. Zusätzliche Termine über `RDATE` werden nicht ausgeweitet.
 - Wiederkehrende Termine mit `RRULE:...;COUNT=...` enden nach ihrer ursprünglichen Anzahl. Wenn Ihnen zuvor sehr alte wiederkehrende Termine angezeigt wurden, importieren Sie sie nach der Aktualisierung auf v0.4.9+ erneut.
+
+## Kalenderverweis im Projekt (nächste Version)
+
+Wählen Sie in einem Projekt **Kalendertermin verknüpfen**, um einen bestehenden ICS-Termin als nächste geplante Verpflichtung festzuhalten. Die Auswahl zeigt Termine der nächsten 90 Tage. Es wird weder eine Aufgabe noch ein weiterer Termin erstellt; der Kalender bleibt zuständig. Sie können den Verweis ersetzen oder entfernen.
+
+Der Verweis folgt der Identität eines verschobenen Termins, auch einer verschobenen Serieninstanz. Ist der Kalender nicht verfügbar, deaktiviert oder außerhalb des geladenen Zeitraums, bleiben klar gekennzeichnete zuletzt bekannte Details erhalten. Fehlende Daten beweisen keine Absage. Der Review zeigt diese Verpflichtung als zuletzt bekannten Kontext, nicht als nächste Aufgabe. Nach dem Termin prüfen Sie das Ergebnis selbst: Das Projekt bleibt offen und es werden keine Aufgaben freigeschaltet. Gerätekalendertermine ohne stabile ICS-Identität werden in dieser ersten Version nicht angeboten.

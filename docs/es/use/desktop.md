@@ -752,3 +752,9 @@ Deshacer restaura el original y elimina el proyecto y las tareas generadas mient
 Haz clic derecho en un elemento de la bandeja de entrada, elige **Añadir a la lista de verificación…** y luego una tarea. El elemento se convierte en una entrada sin marcar de la lista de esa tarea, y el elemento de la bandeja va a la Papelera. **Deshacer** en el aviso restaura ambos. La acción solo aparece para un elemento que es solo un título. Si tiene notas, adjuntos, fechas, etiquetas, contextos, un proyecto, un recordatorio u otros detalles, la acción queda oculta para no perder nada. Un área que Mindwtr puso por sí solo como tu área predeterminada de captura no cuenta. Las tareas que ya tienen una lista aparecen primero.
 
 Los selectores de proyecto muestran primero los proyectos activos y después los de Algún día y En espera bajo el encabezado **Algún día/Tal vez o En espera**.
+
+## Resumen de la sesión de Inbox (próxima versión)
+
+Tras completar tareas desde Inbox en escritorio, despliega **Completadas en esta sesión** debajo de las restantes. El grupo comienza cerrado y solo muestra tareas completadas correctamente desde Inbox en el espacio de trabajo actual, no otras finalizaciones.
+
+Las tareas siguen completadas: no cuentan para Inbox ni vuelven al procesamiento. Deshacer, reabrir o eliminar una tarea la quita del resumen. Es temporal, se borra al recargar o cambiar de espacio de trabajo y no es un historial sincronizado.

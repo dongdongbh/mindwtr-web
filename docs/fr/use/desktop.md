@@ -752,3 +752,9 @@ Annuler rétablit l’original et retire le projet et les tâches créés tant q
 Faites un clic droit sur un élément de la boîte de réception, choisissez **Ajouter à la liste de contrôle…** puis une tâche. L’élément devient une entrée non cochée de la liste de cette tâche, et l’élément de la boîte de réception part à la corbeille. **Annuler** dans la notification rétablit les deux. L’action n’apparaît que pour un élément qui n’est qu’un titre. S’il a des notes, des pièces jointes, des dates, des tags, des contextes, un projet, un rappel ou d’autres détails, l’action reste masquée pour ne rien perdre. Un domaine que Mindwtr a rempli lui-même comme domaine de capture par défaut ne compte pas. Les tâches qui ont déjà une liste apparaissent en premier.
 
 Les sélecteurs de projet affichent d’abord les projets actifs, puis les projets Un jour et En attente sous l’en-tête **Un jour / En attente**.
+
+## Récapitulatif de session Inbox (prochaine version)
+
+Après avoir terminé des tâches depuis Inbox sur ordinateur, dépliez **Terminées pendant cette session** sous les éléments restants. Le groupe est replié au départ et ne contient que les tâches terminées avec succès depuis Inbox dans l’espace de travail actuel.
+
+Ces tâches restent terminées : elles ne comptent plus dans Inbox et ne reviennent pas dans le traitement. Annuler leur achèvement, les rouvrir ou les supprimer les retire du récapitulatif. Celui-ci est temporaire, disparaît au rechargement ou au changement d’espace de travail et ne constitue pas un historique synchronisé.

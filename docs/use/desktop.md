@@ -773,3 +773,9 @@ Expansion is available for Inbox, Next, and completed tasks, with any parent pro
 Right-click an Inbox item and choose **Add to checklist…**, then pick a task. The item becomes one unchecked entry in that task's checklist, and the Inbox item moves to Trash. **Undo** in the notice puts both back. The action only appears for an Inbox item that is just a title. If it has notes, attachments, dates, tags, contexts, a project, a reminder or other details, the action stays hidden so nothing is lost. An area that Mindwtr filled in as your default capture area does not count. Tasks that already have a checklist are listed first.
 
 Project pickers list active projects first, then Someday and Waiting projects under a **Someday / Waiting** heading.
+
+## Inbox session recap (next release)
+
+After completing tasks from the desktop Inbox, expand **Completed in this session** below the remaining items to see what you just handled. The group starts collapsed. It shows only successful completions made through Inbox in the current workspace; unrelated completions do not appear.
+
+These tasks remain Done and do not count toward Inbox or enter processing again. Undoing completion, reopening, or deleting a task removes it from the recap. The recap is temporary: it clears on reload or workspace change and is not synced history.

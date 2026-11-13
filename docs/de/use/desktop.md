@@ -747,3 +747,9 @@ Unterstützt werden Eingang, nächste Aktionen und erledigte Aufgaben in aktiven
 Klicken Sie mit der rechten Maustaste auf einen Eingangseintrag, wählen Sie **Zur Checkliste hinzufügen…** und dann eine Aufgabe. Der Eintrag wird zu einem nicht abgehakten Punkt in der Checkliste dieser Aufgabe, und der Eingangseintrag wandert in den Papierkorb. **Rückgängig** in der Meldung stellt beides wieder her. Die Aktion erscheint nur für einen Eingangseintrag, der nur aus einem Titel besteht. Hat er Notizen, Anhänge, Daten, Tags, Kontexte, ein Projekt, eine Erinnerung oder andere Angaben, bleibt die Aktion verborgen, damit nichts verloren geht. Ein Bereich, den Mindwtr als Ihren Standardbereich für Erfassungen selbst eingetragen hat, zählt nicht. Aufgaben, die schon eine Checkliste haben, stehen oben.
 
 Projektauswahlen zeigen zuerst aktive Projekte, dann Irgendwann- und Warten-Projekte unter der Überschrift **Irgendwann/Warten**.
+
+## Inbox-Sitzungsrückblick (nächste Version)
+
+Nachdem Sie Aufgaben im Desktop-Inbox erledigt haben, können Sie unter den verbleibenden Einträgen **In dieser Sitzung erledigt** aufklappen. Die Gruppe ist zunächst eingeklappt. Sie zeigt nur erfolgreiche Erledigungen über den Inbox im aktuellen Arbeitsbereich, keine anderen erledigten Aufgaben.
+
+Diese Aufgaben bleiben erledigt und zählen weder zum Inbox noch werden sie erneut verarbeitet. Rückgängigmachen, Wiederöffnen oder Löschen entfernt sie aus dem Rückblick. Er ist vorübergehend, wird beim Neuladen oder Arbeitsbereichwechsel gelöscht und ist kein synchronisierter Verlauf.

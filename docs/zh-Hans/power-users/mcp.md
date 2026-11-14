@@ -404,6 +404,47 @@ MCP 端点为 `POST /mcp`，每个请求都必须携带 `Authorization: Bearer <
 
 ---
 
+## 容器（Docker / Podman）
+
+镜像 `ghcr.io/dongdongbh/mindwtr-mcp:1.1.14` 使用 MCP 软件包版本号，与应用版本独立。它仅支持 API/Cloud 后端，不包含 SQLite 原生插件。无需数据卷；不要挂载桌面数据库。在容器网络中，请使用可访问的自托管 Cloud 端点。
+
+在启动 MCP 客户端的环境中设置 `MINDWTR_MCP_CLOUD_TOKEN`，然后配置客户端启动以下命令。也可以将 `docker` 替换为 `podman`：
+
+```bash
+export MINDWTR_MCP_CLOUD_URL="https://mindwtr.example.com"
+
+docker run --rm -i --read-only --cap-drop=ALL \
+  --security-opt=no-new-privileges \
+  -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14
+```
+
+默认使用 stdio：保留 `-i`，不要使用 `-t`，也不要发布端口。默认只读；只有需要启用修改时，才在镜像名后添加 `--write`。Cloud URL 请使用 HTTPS。对于可信的内部 HTTP 端点，添加 `--cloud-allow-insecure-http=true`。
+
+### 可选的 HTTP 传输
+
+对于通过 URL 连接的客户端，使用现有的 HTTP 模式，并设置独立的入站令牌：
+
+```bash
+export MINDWTR_MCP_HTTP_TOKEN="$(openssl rand -hex 32)"
+
+docker run --rm --read-only --cap-drop=ALL \
+  --security-opt=no-new-privileges \
+  -p 127.0.0.1:8722:8722 \
+  -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
+  -e MINDWTR_MCP_HTTP_TOKEN \
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14 \
+  --http --http-host 0.0.0.0 --http-port 8722
+```
+
+连接 `http://127.0.0.1:8722/mcp`，并使用 `Authorization: Bearer <MINDWTR_MCP_HTTP_TOKEN>`。Cloud 令牌用于向数据后端发出的请求；HTTP 令牌用于验证入站 MCP 客户端。进程监听容器的所有接口，但发布到主机的端口仅绑定回环地址。远程访问请使用 HTTPS 反向代理。
+
+### Kubernetes 上的 ToolHive
+
+已有 [ToolHive operator](https://github.com/stacklok/toolhive/blob/main/cmd/thv-operator/README.md) 时，可调整 [Mindwtr MCPServer 示例](https://github.com/dongdongbh/Mindwtr/blob/main/docker/mcp/toolhive.yaml)。示例使用 `transport: stdio`、包含 `name`/`value` 的 `env` 条目，以及包含 `name`/`key`/`targetEnvName` 的 `secrets` 条目。通过 Kubernetes Secret 提供 Cloud 令牌。Mindwtr 无需额外的 operator 或 Helm chart。
+
+---
+
 ## 手动运行
 
 通常无需手动运行（MCP 客户端会代劳），但这对测试很有用。

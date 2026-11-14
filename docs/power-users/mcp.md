@@ -404,6 +404,47 @@ There is no built-in TLS or rate limiting for authenticated requests. To expose 
 
 ---
 
+## Containers (Docker / Podman)
+
+The image `ghcr.io/dongdongbh/mindwtr-mcp:1.1.14` uses the MCP package version, independently of the app version. It supports API/Cloud backends only and contains no native SQLite addon. No data volume is needed; do not mount the desktop database. For the container network, use a reachable self-hosted Cloud endpoint.
+
+Set `MINDWTR_MCP_CLOUD_TOKEN` in the environment that launches your MCP client, then configure the client to launch this command. Replace `docker` with `podman` if preferred:
+
+```bash
+export MINDWTR_MCP_CLOUD_URL="https://mindwtr.example.com"
+
+docker run --rm -i --read-only --cap-drop=ALL \
+  --security-opt=no-new-privileges \
+  -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14
+```
+
+Stdio is the default: keep `-i`, omit `-t`, and publish no port. Reads are enabled by default; append `--write` after the image only to enable changes. Use HTTPS for the Cloud URL. For a trusted internal HTTP endpoint, append `--cloud-allow-insecure-http=true`.
+
+### Optional HTTP transport
+
+For clients that connect by URL, use the existing HTTP mode with a separate incoming token:
+
+```bash
+export MINDWTR_MCP_HTTP_TOKEN="$(openssl rand -hex 32)"
+
+docker run --rm --read-only --cap-drop=ALL \
+  --security-opt=no-new-privileges \
+  -p 127.0.0.1:8722:8722 \
+  -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
+  -e MINDWTR_MCP_HTTP_TOKEN \
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14 \
+  --http --http-host 0.0.0.0 --http-port 8722
+```
+
+Connect to `http://127.0.0.1:8722/mcp` with `Authorization: Bearer <MINDWTR_MCP_HTTP_TOKEN>`. The Cloud token authenticates outbound requests to your data backend; the HTTP token authenticates incoming MCP clients. The process binds all container interfaces, while the published host port stays on loopback. Use an HTTPS reverse proxy for remote access.
+
+### ToolHive on Kubernetes
+
+With an existing [ToolHive operator](https://github.com/stacklok/toolhive/blob/main/cmd/thv-operator/README.md), adapt the [Mindwtr MCPServer example](https://github.com/dongdongbh/Mindwtr/blob/main/docker/mcp/toolhive.yaml). It uses `transport: stdio`, `env` entries with `name`/`value`, and `secrets` entries with `name`/`key`/`targetEnvName`. Supply your Cloud token through a Kubernetes Secret. Mindwtr needs no separate operator or Helm chart.
+
+---
+
 ## Running Manually
 
 You usually don't need to run this manually (the MCP client does it), but it's useful for testing.

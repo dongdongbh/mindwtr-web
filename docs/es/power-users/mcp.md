@@ -404,6 +404,47 @@ No hay TLS ni limitación de velocidad integrados para las peticiones autenticad
 
 ---
 
+## Contenedores (Docker / Podman)
+
+La imagen `ghcr.io/dongdongbh/mindwtr-mcp:1.1.14` usa la versión del paquete MCP, independiente de la versión de la aplicación. Solo admite backends API/Cloud y no incluye el complemento nativo de SQLite. No necesita un volumen de datos; no montes la base de datos de escritorio. En la red del contenedor, usa un punto de acceso Cloud autoalojado accesible.
+
+Establece `MINDWTR_MCP_CLOUD_TOKEN` en el entorno que inicia el cliente MCP y configura el cliente para ejecutar este comando. Puedes sustituir `docker` por `podman`:
+
+```bash
+export MINDWTR_MCP_CLOUD_URL="https://mindwtr.example.com"
+
+docker run --rm -i --read-only --cap-drop=ALL \
+  --security-opt=no-new-privileges \
+  -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14
+```
+
+Stdio es el modo predeterminado: conserva `-i`, omite `-t` y no publiques ningún puerto. El acceso es de solo lectura; añade `--write` después de la imagen únicamente para permitir cambios. Usa HTTPS en la URL de Cloud. Para un punto de acceso HTTP interno de confianza, añade `--cloud-allow-insecure-http=true`.
+
+### Transporte HTTP opcional
+
+Para clientes que se conectan por URL, usa el modo HTTP existente con un token de entrada independiente:
+
+```bash
+export MINDWTR_MCP_HTTP_TOKEN="$(openssl rand -hex 32)"
+
+docker run --rm --read-only --cap-drop=ALL \
+  --security-opt=no-new-privileges \
+  -p 127.0.0.1:8722:8722 \
+  -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
+  -e MINDWTR_MCP_HTTP_TOKEN \
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14 \
+  --http --http-host 0.0.0.0 --http-port 8722
+```
+
+Conecta a `http://127.0.0.1:8722/mcp` con `Authorization: Bearer <MINDWTR_MCP_HTTP_TOKEN>`. El token de Cloud autentica las peticiones salientes al backend de datos; el token HTTP autentica los clientes MCP entrantes. El proceso escucha en todas las interfaces del contenedor, pero el puerto publicado del host permanece en la interfaz de bucle local. Usa un proxy inverso HTTPS para el acceso remoto.
+
+### ToolHive en Kubernetes
+
+Con un [operador ToolHive](https://github.com/stacklok/toolhive/blob/main/cmd/thv-operator/README.md) existente, adapta el [ejemplo MCPServer de Mindwtr](https://github.com/dongdongbh/Mindwtr/blob/main/docker/mcp/toolhive.yaml). Usa `transport: stdio`, entradas `env` con `name`/`value` y entradas `secrets` con `name`/`key`/`targetEnvName`. Proporciona el token de Cloud mediante un Secret de Kubernetes. Mindwtr no necesita otro operador ni un chart de Helm.
+
+---
+
 ## Ejecución manual
 
 Normalmente no necesitas ejecutarlo de forma manual (el cliente MCP se encarga), pero resulta útil para hacer pruebas.

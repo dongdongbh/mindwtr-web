@@ -357,6 +357,11 @@ Gespeicherte Suchen unterscheiden sich von **Gespeicherten Filtern** in „Fokus
 
 ## Schnellerfassung
 
+Die Schnellerfassung zeigt vor dem Speichern ein bearbeitbares **Ziel**: das passende Projekt oder den Abschnitt, deinen Standardbereich oder kein Ziel. Du kannst weiterhin nur einen Titel eingeben und speichern. Die Auswahl eines Bereichs ändert den Aufgabenstatus nicht. **Keines** entfernt das Ziel ausdrücklich; der Standardbereich wird danach nicht erneut eingesetzt. Eine ausdrückliche Auswahl im Zielmenü hat Vorrang vor der Zielsyntax im Titel.
+
+Das beim Speichern angezeigte Ziel bleibt bei Text- und Audioerfassungen erhalten, auch wenn Android sie erst später verarbeitet. Spätere Änderungen des Standardbereichs oder die Transkription leiten sie nicht um. Ist das gewählte Ziel nicht mehr verfügbar, bleibt die Erfassung erhalten, statt unbemerkt woanders zu landen.
+
+
 ### Globales Tastenkürzel
 
 Erfassen Sie Aufgaben von überall auf dem Desktop, ohne das Fenster zu wechseln:

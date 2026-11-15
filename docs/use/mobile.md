@@ -146,6 +146,15 @@ Saved Searches are separate from **Saved Filters** in Focus. Focus filters save 
 
 ## Quick Capture
 
+Quick Capture shows an editable **Destination** before you save: the applicable project or section, your default Area, or no destination. You can still save after typing only a title. Selecting an Area does not change the task's status. Choose **None** to clear the destination explicitly; it will not be replaced by your default Area. An explicit picker selection takes precedence over destination syntax in the title.
+
+In Android’s standalone capture window, mixed syntax that cannot be resolved reliably asks you to choose a destination before saving. Select a project from autocomplete or use the Destination picker; your draft stays intact.
+
+The destination shown when you save stays with text and audio captures, including Android captures waiting to be processed. Later default changes or transcription do not redirect them. If the chosen destination becomes unavailable, the capture is retained rather than silently moved elsewhere.
+
+Type `@`, `+`, or `#` in the title to select an existing context, project, or tag. Suggestions work at the cursor, including inside a token in the middle of the title. Project selection uses the existing project; it does not create another one with a similar name. The pickers remain available if you prefer not to use syntax.
+
+
 Mindwtr offers multiple ways to capture tasks quickly on mobile.
 
 The capture screen is input-first. The syntax help is tucked behind a small “?” toggle to keep the interface clean.

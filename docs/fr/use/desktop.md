@@ -357,6 +357,11 @@ Les Recherches enregistrées sont distinctes des **Filtres enregistrés** de Foc
 
 ## Capture rapide
 
+La capture rapide affiche une **Destination** modifiable avant l’enregistrement : le projet ou la section concernés, votre domaine par défaut ou aucune destination. Vous pouvez toujours saisir uniquement un titre puis enregistrer. Choisir un domaine ne change pas le statut de la tâche. **Aucune** efface explicitement la destination ; le domaine par défaut ne sera pas réappliqué. Un choix explicite dans le sélecteur a priorité sur la syntaxe de destination du titre.
+
+La destination affichée lors de l’enregistrement reste associée aux captures textuelles et audio, y compris celles qu’Android traite plus tard. Une modification ultérieure du domaine par défaut ou la transcription ne les redirige pas. Si la destination devient indisponible, la capture est conservée au lieu d’être déplacée silencieusement ailleurs.
+
+
 ### Raccourci global
 
 Collectez des tâches depuis n’importe quel endroit de votre bureau sans changer de fenêtre :

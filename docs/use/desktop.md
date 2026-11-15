@@ -371,6 +371,11 @@ Saved Searches are separate from **Saved Filters** in Focus. Focus Saved Filters
 
 ## Quick Capture
 
+Quick Capture shows an editable **Destination** before you save: the applicable project or section, your default Area, or no destination. You can still save after typing only a title. Selecting an Area does not change the task's status. Choose **None** to clear the destination explicitly; it will not be replaced by your default Area. An explicit picker selection takes precedence over destination syntax in the title.
+
+The destination shown when you save stays with text and audio captures, including Android captures waiting to be processed. Later default changes or transcription do not redirect them. If the chosen destination becomes unavailable, the capture is retained rather than silently moved elsewhere.
+
+
 ### Global Hotkey
 
 Capture tasks from anywhere on your desktop without switching windows:

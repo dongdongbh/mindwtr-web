@@ -140,6 +140,15 @@ Las Búsquedas guardadas son distintas de los **Filtros guardados** de Foco. Los
 
 ## Captura rápida
 
+La captura rápida muestra un **Destino** editable antes de guardar: el proyecto o la sección correspondiente, tu área predeterminada o ningún destino. Puedes seguir escribiendo solo un título y guardarlo. Elegir un área no cambia el estado de la tarea. **Ninguno** elimina el destino explícitamente; no se volverá a aplicar el área predeterminada. Una elección explícita en el selector tiene prioridad sobre la sintaxis de destino del título.
+
+Si la ventana independiente de captura de Android no puede resolver una combinación de sintaxis con fiabilidad, te pide elegir un destino antes de guardar. Usa el autocompletado de proyectos o el selector de destino; el borrador se conserva.
+
+El destino mostrado al guardar se conserva en las capturas de texto y audio, incluidas las que Android procesa más tarde. Los cambios posteriores del área predeterminada o la transcripción no las redirigen. Si el destino deja de estar disponible, la captura se conserva en lugar de trasladarse silenciosamente a otro lugar.
+
+Escribe `@`, `+` o `#` en el título para elegir un contexto, proyecto o etiqueta existente. Las sugerencias funcionan en la posición del cursor, incluso dentro de un token en medio del título. Elegir un proyecto usa el existente y no crea otro con un nombre parecido. Los selectores siguen disponibles si prefieres no usar la sintaxis.
+
+
 Mindwtr ofrece varias formas de capturar tareas rápidamente en el móvil.
 
 La pantalla de captura da prioridad al campo de entrada. La ayuda de sintaxis se oculta tras un pequeño control «?» para mantener limpia la interfaz.

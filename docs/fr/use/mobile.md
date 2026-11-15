@@ -140,6 +140,15 @@ Les Recherches enregistrées sont distinctes des **Filtres enregistrés** de Foc
 
 ## Capture rapide
 
+La capture rapide affiche une **Destination** modifiable avant l’enregistrement : le projet ou la section concernés, votre domaine par défaut ou aucune destination. Vous pouvez toujours saisir uniquement un titre puis enregistrer. Choisir un domaine ne change pas le statut de la tâche. **Aucune** efface explicitement la destination ; le domaine par défaut ne sera pas réappliqué. Un choix explicite dans le sélecteur a priorité sur la syntaxe de destination du titre.
+
+Si la fenêtre de capture autonome Android ne peut pas interpréter une combinaison de syntaxes avec certitude, elle demande une destination avant d’enregistrer. Utilisez une suggestion de projet ou le sélecteur de destination ; le brouillon est conservé.
+
+La destination affichée lors de l’enregistrement reste associée aux captures textuelles et audio, y compris celles qu’Android traite plus tard. Une modification ultérieure du domaine par défaut ou la transcription ne les redirige pas. Si la destination devient indisponible, la capture est conservée au lieu d’être déplacée silencieusement ailleurs.
+
+Saisissez `@`, `+` ou `#` dans le titre pour choisir un contexte, un projet ou une étiquette existants. Les suggestions suivent la position du curseur, même à l’intérieur d’un élément de syntaxe au milieu du titre. Le projet choisi reste le projet existant ; aucun autre projet au nom similaire n’est créé. Les sélecteurs restent disponibles si vous préférez ne pas utiliser la syntaxe.
+
+
 Mindwtr offre plusieurs moyens de collecter rapidement des tâches sur mobile.
 
 L’écran de capture donne la priorité à la saisie. L’aide sur la syntaxe est rangée derrière un petit bouton « ? » afin de conserver une interface épurée.

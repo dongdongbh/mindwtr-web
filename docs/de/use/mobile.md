@@ -135,6 +135,15 @@ Gespeicherte Suchen unterscheiden sich von **Gespeicherten Filtern** in „Fokus
 
 ## Schnellerfassung
 
+Die Schnellerfassung zeigt vor dem Speichern ein bearbeitbares **Ziel**: das passende Projekt oder den Abschnitt, deinen Standardbereich oder kein Ziel. Du kannst weiterhin nur einen Titel eingeben und speichern. Die Auswahl eines Bereichs ändert den Aufgabenstatus nicht. **Keines** entfernt das Ziel ausdrücklich; der Standardbereich wird danach nicht erneut eingesetzt. Eine ausdrückliche Auswahl im Zielmenü hat Vorrang vor der Zielsyntax im Titel.
+
+Bei gemischter Syntax, die das eigenständige Android-Erfassungsfenster nicht zuverlässig auflösen kann, wählst du vor dem Speichern ein Ziel. Nutze die Projektvorschläge oder die Zielauswahl; der Entwurf bleibt erhalten.
+
+Das beim Speichern angezeigte Ziel bleibt bei Text- und Audioerfassungen erhalten, auch wenn Android sie erst später verarbeitet. Spätere Änderungen des Standardbereichs oder die Transkription leiten sie nicht um. Ist das gewählte Ziel nicht mehr verfügbar, bleibt die Erfassung erhalten, statt unbemerkt woanders zu landen.
+
+Gib im Titel `@`, `+` oder `#` ein, um einen vorhandenen Kontext, ein Projekt oder ein Tag auszuwählen. Vorschläge funktionieren an der Cursorposition, auch innerhalb eines Tokens mitten im Titel. Die Projektauswahl verwendet das vorhandene Projekt und erstellt kein ähnlich benanntes neues. Die Auswahlmenüs bleiben als Alternative zur Syntax verfügbar.
+
+
 Mindwtr bietet mehrere mobile Erfassungswege. Die Erfassungsansicht beginnt mit der Eingabe; die Syntaxhilfe liegt für eine aufgeräumte Oberfläche hinter einem kleinen „?“-Schalter.
 
 Aktivieren Sie für mehrere Erfassungen **Weitere hinzufügen**: Jedes `Enter` speichert und lässt die Ansicht mit geöffneter Tastatur für die nächste Aufgabe offen. Der Schalter bleibt bis zur Deaktivierung eingeschaltet.

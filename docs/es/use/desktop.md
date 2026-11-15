@@ -357,6 +357,11 @@ Las Búsquedas guardadas son distintas de los **Filtros guardados** de Foco. Los
 
 ## Captura rápida
 
+La captura rápida muestra un **Destino** editable antes de guardar: el proyecto o la sección correspondiente, tu área predeterminada o ningún destino. Puedes seguir escribiendo solo un título y guardarlo. Elegir un área no cambia el estado de la tarea. **Ninguno** elimina el destino explícitamente; no se volverá a aplicar el área predeterminada. Una elección explícita en el selector tiene prioridad sobre la sintaxis de destino del título.
+
+El destino mostrado al guardar se conserva en las capturas de texto y audio, incluidas las que Android procesa más tarde. Los cambios posteriores del área predeterminada o la transcripción no las redirigen. Si el destino deja de estar disponible, la captura se conserva en lugar de trasladarse silenciosamente a otro lugar.
+
+
 ### Atajo global
 
 Captura tareas desde cualquier lugar del escritorio sin cambiar de ventana:

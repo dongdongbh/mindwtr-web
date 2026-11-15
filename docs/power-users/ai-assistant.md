@@ -2,6 +2,33 @@
 
 Mindwtr includes an optional AI assistant to help clarify tasks, break them down, and review stale items. It is **off by default** and uses a **bring-your-own-key (BYOK)** model.
 
+## Getting started with AI and GTD
+
+Choose the workflow first:
+
+- **Help inside Mindwtr:** Use the built-in assistant for Clarify, Breakdown, or Review Analysis. Configure a provider and API key below; MCP is not required.
+- **A conversation about your tasks:** Connect an AI client to the [MCP server](./mcp). MCP is the bridge to your data and tools, not an AI model. The client supplies its own model and account, separately from Mindwtr's AI settings. Claude Desktop is one conversational option; you do not need an IDE or coding agent. Follow the Claude Desktop setup on the MCP page and omit `--write` to start read-only.
+
+There is no single best model for every GTD workflow. Start with a provider you already use and trust, then compare its suggestions on a few ordinary tasks before changing providers or hosting anything.
+
+### Try one small workflow
+
+For the built-in assistant, try **Clarify** on a few Inbox items and edit the suggestions before applying them. For an MCP conversation, keep write access disabled and try one of these prompts:
+
+> Read up to five Inbox items. For each, ask a clarification question and suggest one concrete next action. Do not change anything.
+
+> Review my Waiting tasks. Suggest which ones may need a follow-up and explain why. Do not change anything.
+
+Treat the output as review material. Check names, dates, and commitments yourself. Keep due dates for real deadlines; do not let the model turn every suggested next action into a dated commitment. Enable writes only when you want the client to apply changes, and ask it to show the proposed edits first.
+
+### Does a computer need to stay on?
+
+The built-in assistant with a hosted provider needs no separate always-on PC. A local model server must be running when you request its help.
+
+For local MCP, the computer hosting the connection must be awake while you use it. The built-in desktop MCP server also needs Mindwtr running. [Claude Desktop's local connection](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop) is separate from [its remote connectors](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp); it does not make your local server available to Claude on the web or phone.
+
+A Proxmox VM is optional. If you later need server access, see the MCP guide's self-hosted Cloud mode and container setup. Local MCP does not make cloud inference private: task data returned to a cloud AI client can still be sent to its provider. Review that provider's data policy before connecting sensitive tasks.
+
 ## Privacy Model
 
 - **Local-first storage**: Your task database is stored on your device. Using an optional AI provider sends the task content needed for that request to the provider you selected.

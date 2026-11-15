@@ -2,6 +2,33 @@
 
 Mindwtr intègre un assistant IA facultatif pour clarifier les tâches, les décomposer et examiner les éléments obsolètes. Il est **désactivé par défaut** et fonctionne selon le principe **bring your own key (BYOK)** : vous fournissez votre propre clé.
 
+## Premiers pas avec l’IA et GTD
+
+Choisissez d’abord votre usage :
+
+- **De l’aide dans Mindwtr :** utilisez l’assistant intégré pour clarifier, décomposer ou analyser votre revue. Configurez un fournisseur et une clé API ci-dessous ; MCP n’est pas nécessaire.
+- **Une conversation sur vos tâches :** connectez un client IA au [serveur MCP](./mcp). MCP relie le client à vos données et outils ; ce n’est pas un modèle d’IA. Le client utilise son propre modèle et son propre compte, indépendamment des réglages IA de Mindwtr. Claude Desktop est une option pour converser ; aucun IDE ni agent de programmation n’est nécessaire. Suivez sa configuration sur la page MCP et omettez `--write` pour commencer en lecture seule.
+
+Il n’existe pas de meilleur modèle pour tous les usages GTD. Commencez avec un fournisseur que vous utilisez déjà et auquel vous faites confiance, puis comparez ses suggestions sur quelques tâches courantes avant de changer de fournisseur ou d’héberger un service.
+
+### Essayez un petit usage
+
+Avec l’assistant intégré, essayez **Clarifier** sur quelques éléments de la boîte de réception et modifiez les suggestions avant de les appliquer. Pour une conversation MCP, laissez l’écriture désactivée et essayez l’une de ces consignes :
+
+> Lis jusqu’à cinq éléments de ma boîte de réception. Pour chacun, pose une question de clarification et propose une prochaine action concrète. Ne modifie rien.
+
+> Examine mes tâches En attente. Indique lesquelles pourraient nécessiter une relance et explique pourquoi. Ne modifie rien.
+
+Utilisez la réponse comme support de revue. Vérifiez vous-même les noms, dates et engagements. Réservez les dates d’échéance aux véritables délais ; ne laissez pas le modèle attribuer une date à chaque prochaine action proposée. Activez l’écriture lorsque vous souhaitez que le client applique des changements et demandez-lui de présenter les modifications proposées au préalable.
+
+### Un ordinateur doit-il rester allumé ?
+
+Avec un fournisseur hébergé, l’assistant intégré ne nécessite pas de PC supplémentaire allumé en permanence. Un serveur de modèles local doit fonctionner au moment où vous sollicitez son aide.
+
+Avec MCP local, l’ordinateur qui héberge la connexion doit rester éveillé pendant son utilisation. Le serveur MCP intégré à l’application de bureau nécessite aussi que Mindwtr soit ouvert. [La connexion locale de Claude Desktop](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop) est distincte de [ses connecteurs distants](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp) ; elle ne rend pas votre serveur local accessible à Claude sur le Web ou sur téléphone.
+
+Une machine virtuelle Proxmox est facultative. Si vous avez ensuite besoin d’un accès par serveur, consultez le mode Cloud auto-hébergé et la configuration des conteneurs dans le guide MCP. MCP local ne rend pas l’inférence cloud privée : les données de tâches reçues par un client IA cloud peuvent être envoyées à son fournisseur. Consultez sa politique de données avant de connecter des tâches sensibles.
+
 ## Modèle de confidentialité
 
 - **Stockage local :** votre base de tâches est stockée sur votre appareil. L’utilisation d’un fournisseur d’IA facultatif transmet le contenu nécessaire à la demande au fournisseur choisi.

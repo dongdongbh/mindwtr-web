@@ -2,6 +2,33 @@
 
 Mindwtr incluye un asistente de IA opcional que ayuda a aclarar y dividir tareas y a revisar elementos antiguos. Está **desactivado de forma predeterminada** y usa un modelo de **clave propia (BYOK)**.
 
+## Primeros pasos con IA y GTD
+
+Elige primero el flujo de trabajo:
+
+- **Ayuda dentro de Mindwtr:** usa el asistente integrado para Aclarar, Desglosar o el análisis de revisión. Configura un proveedor y una clave de API más abajo; no necesitas MCP.
+- **Una conversación sobre tus tareas:** conecta un cliente de IA al [servidor MCP](./mcp). MCP conecta tus datos y herramientas; no es un modelo de IA. El cliente utiliza su propio modelo y cuenta, independientemente de los ajustes de IA de Mindwtr. Claude Desktop es una opción para conversar; no necesitas un IDE ni un agente de programación. Sigue la configuración de Claude Desktop en la página de MCP y omite `--write` para empezar en modo de solo lectura.
+
+No hay un único modelo ideal para todos los flujos de GTD. Empieza con un proveedor que ya uses y en el que confíes, y compara sus sugerencias para unas pocas tareas habituales antes de cambiar de proveedor o alojar servicios.
+
+### Prueba un flujo pequeño
+
+Con el asistente integrado, prueba **Aclarar** con algunos elementos de la bandeja de entrada y edita las sugerencias antes de aplicarlas. En una conversación por MCP, mantén desactivada la escritura y prueba una de estas instrucciones:
+
+> Lee hasta cinco elementos de la bandeja de entrada. Para cada uno, haz una pregunta aclaratoria y sugiere una siguiente acción concreta. No cambies nada.
+
+> Revisa mis tareas En espera. Sugiere cuáles podrían necesitar un seguimiento y explica por qué. No cambies nada.
+
+Usa la respuesta como material de revisión. Comprueba los nombres, las fechas y los compromisos. Reserva las fechas de vencimiento para plazos reales; no dejes que el modelo convierta cada siguiente acción sugerida en un compromiso con fecha. Activa la escritura solo cuando quieras que el cliente aplique cambios y pídele que muestre antes las modificaciones propuestas.
+
+### ¿Debe permanecer encendido un ordenador?
+
+El asistente integrado con un proveedor alojado no necesita un PC adicional siempre encendido. Un servidor de modelos local debe estar en ejecución cuando solicites su ayuda.
+
+Con MCP local, el ordenador que aloja la conexión debe estar activo mientras lo usas. El servidor MCP integrado de escritorio también necesita que Mindwtr esté abierto. [La conexión local de Claude Desktop](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop) es independiente de [sus conectores remotos](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp); no hace que tu servidor local esté disponible para Claude en la web o el móvil.
+
+Una máquina virtual de Proxmox es opcional. Si más adelante necesitas acceso mediante servidor, consulta el modo Cloud autoalojado y la configuración de contenedores en la guía de MCP. MCP local no hace privada la inferencia en la nube: los datos que recibe un cliente de IA en la nube pueden enviarse a su proveedor. Revisa su política de datos antes de conectar tareas sensibles.
+
 ## Modelo de privacidad
 
 - **Almacenamiento local:** tu base de datos de tareas se guarda en tu dispositivo. Al utilizar un proveedor de IA opcional, el contenido necesario para la solicitud se envía al proveedor que elegiste.

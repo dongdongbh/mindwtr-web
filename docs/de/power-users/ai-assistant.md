@@ -2,6 +2,33 @@
 
 Mindwtr enthält einen optionalen KI-Assistenten, der dabei hilft, Aufgaben zu klären, aufzuteilen und veraltete Einträge zu überprüfen. Er ist **standardmäßig deaktiviert** und verwendet das Modell **Bring Your Own Key (BYOK)**, also Ihren eigenen API-Schlüssel.
 
+## Einstieg mit KI und GTD
+
+Wählen Sie zuerst den Arbeitsablauf:
+
+- **Hilfe in Mindwtr:** Nutzen Sie den integrierten Assistenten zum Klären, Aufteilen oder für die Review-Analyse. Konfigurieren Sie unten einen Anbieter und API-Schlüssel; MCP ist nicht erforderlich.
+- **Ein Gespräch über Ihre Aufgaben:** Verbinden Sie einen KI-Client mit dem [MCP-Server](./mcp). MCP verbindet den Client mit Ihren Daten und Werkzeugen; es ist kein KI-Modell. Modell und Konto kommen vom Client, unabhängig von Mindwtrs KI-Einstellungen. Claude Desktop ist eine Möglichkeit für solche Gespräche; eine IDE oder ein Programmieragent ist nicht nötig. Folgen Sie der Claude-Desktop-Anleitung auf der MCP-Seite und lassen Sie `--write` weg, um mit reinem Lesezugriff zu beginnen.
+
+Es gibt kein einzelnes bestes Modell für jeden GTD-Ablauf. Beginnen Sie mit einem Anbieter, den Sie bereits nutzen und dem Sie vertrauen. Vergleichen Sie seine Vorschläge für einige gewöhnliche Aufgaben, bevor Sie Anbieter wechseln oder etwas selbst hosten.
+
+### Einen kleinen Ablauf ausprobieren
+
+Probieren Sie im integrierten Assistenten **Klären** für einige Eingangseinträge aus und bearbeiten Sie die Vorschläge vor dem Übernehmen. Lassen Sie bei einem MCP-Gespräch den Schreibzugriff deaktiviert und versuchen Sie eine dieser Anfragen:
+
+> Lies bis zu fünf Eingangseinträge. Stelle zu jedem eine klärende Frage und schlage eine konkrete nächste Aktion vor. Ändere nichts.
+
+> Prüfe meine wartenden Aufgaben. Schlage vor, bei welchen ich nachfassen sollte, und begründe es. Ändere nichts.
+
+Nutzen Sie die Ausgabe als Grundlage für Ihre Überprüfung. Prüfen Sie Namen, Termine und Zusagen selbst. Verwenden Sie Fälligkeitsdaten für echte Fristen; lassen Sie das Modell nicht jede vorgeschlagene nächste Aktion zu einer datierten Verpflichtung machen. Aktivieren Sie Schreibzugriff erst, wenn der Client Änderungen übernehmen soll, und lassen Sie sich diese vorher zeigen.
+
+### Muss ein Computer eingeschaltet bleiben?
+
+Der integrierte Assistent braucht mit einem gehosteten Anbieter keinen separaten dauerhaft laufenden PC. Ein lokaler Modellserver muss laufen, wenn Sie seine Hilfe anfordern.
+
+Bei lokalem MCP muss der Computer, der die Verbindung bereitstellt, während der Nutzung wach bleiben. Der integrierte Desktop-MCP-Server benötigt außerdem eine laufende Mindwtr-App. [Die lokale Verbindung von Claude Desktop](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop) ist von [dessen Remote-Konnektoren](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp) getrennt; sie macht Ihren lokalen Server nicht für Claude im Web oder auf dem Smartphone verfügbar.
+
+Eine Proxmox-VM ist optional. Wenn Sie später Serverzugriff benötigen, finden Sie im MCP-Leitfaden den selbst gehosteten Cloud-Modus und die Container-Einrichtung. Lokales MCP macht Cloud-Inferenz nicht privat: Aufgabendaten, die ein Cloud-KI-Client erhält, können weiterhin an dessen Anbieter gesendet werden. Prüfen Sie dessen Datenrichtlinien, bevor Sie sensible Aufgaben verbinden.
+
 ## Datenschutzmodell
 
 - **Lokale Speicherung**: Ihre Aufgabendatenbank wird auf Ihrem Gerät gespeichert. Wenn Sie einen optionalen KI-Anbieter verwenden, werden die für die Anfrage benötigten Aufgabeninhalte an den gewählten Anbieter gesendet.

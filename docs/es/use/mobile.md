@@ -69,6 +69,8 @@ Abre **Papelera** y toca **Seleccionar** para gestionar varias tareas y proyecto
 
 ## Referencia
 
+Los elementos de Referencia pueden conservar contextos. Puedes verlos o editarlos sin convertir el elemento de nuevo en una tarea.
+
 Referencia guarda notas y material de consulta. Las filas y el editor destacan el título, la descripción, el proyecto o área, las personas, las etiquetas, los adjuntos y los enlaces. Los controles de planificación y finalización quedan fuera de la vista. Usa **Estado** en el editor para cambiar entre Referencia y los estados de tarea. Puedes añadir elementos aunque la referencia aún no tenga una lista. Las referencias no tienen estrella de Focus. La lista de una referencia tiene casillas: marca una entrada para registrarla, por ejemplo una película que ya has visto. Si marcas todas las entradas, el elemento permanece en Referencia; nunca se marca como hecho ni entra en Focus. Las marcas se conservan si conviertes la referencia en una acción.
 
 La búsqueda dentro de Referencia encuentra todos los términos separados por espacios en cualquier parte del título o la descripción, sin distinguir mayúsculas y minúsculas. Por ejemplo, `ke 1 2` encuentra `key1 key2 key3`. Los términos son texto literal; este campo no interpreta la sintaxis de captura rápida ni de búsqueda avanzada.
@@ -236,6 +238,8 @@ Cada captura aceptada se guarda por separado, incluso si repite el mismo texto. 
 Consulta la [guía de intents de Tasker](https://tasker.joaoapps.com/userguide/en/intents.html) para conocer sus campos.
 
 ### Widget de inicio
+
+Tocar el encabezado de un widget con un filtro de Enfoque guardado abre Enfoque con ese filtro seleccionado y sus controles disponibles. Los widgets con filtros de Contextos guardados abren Contextos del mismo modo.
 
 El espacio vacío del widget Tareas de Android abre la lista seleccionada; Compacto e iOS siguen abriendo Focus.
 

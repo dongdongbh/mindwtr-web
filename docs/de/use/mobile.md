@@ -69,6 +69,8 @@ Unter **Erledigt** zeigt die Sortierung nach **Abschlussdatum** die neuesten Abs
 
 ## Referenz
 
+Referenzeinträge können Kontexte behalten. Sie können diese anzeigen oder bearbeiten, ohne den Eintrag wieder in eine Aufgabe umzuwandeln.
+
 Referenzen sind Notizen und Materialien zum Aufbewahren. Zeilen und Editor stellen Titel, Beschreibung, Projekt oder Bereich, Personen, Tags, Anhänge und Links in den Vordergrund. Planungs- und Erledigungsfunktionen treten zurück. Über **Status** im Editor wechseln Sie zwischen Referenz und Aufgabenstatus. Sie können Checklisten-Einträge auch dann hinzufügen, wenn die Referenz noch keine Checkliste hat. Referenzen haben keinen Fokus-Stern. Die Liste einer Referenz hat Kontrollkästchen: Mit einem Haken wird ein Eintrag festgehalten, zum Beispiel ein Film, der schon gesehen wurde. Sind alle Einträge abgehakt, bleibt das Element in Referenz; es wird nie als erledigt markiert und gelangt nie in den Fokus. Die Haken bleiben erhalten, wenn die Referenz in eine Aktion umgewandelt wird.
 
 Die Suche in Referenz findet alle durch Leerzeichen getrennten Begriffe an beliebiger Stelle im Titel oder in der Beschreibung, unabhängig von Groß- und Kleinschreibung. Zum Beispiel findet `ke 1 2` den Text `key1 key2 key3`. Begriffe gelten als wörtlicher Text; Schnellerfassungs- und erweiterte Suchsyntax werden hier nicht ausgewertet.
@@ -227,6 +229,8 @@ Jede angenommene Erfassung wird separat vorgemerkt, auch bei gleichem Text. Beim
 Weitere Angaben zu den Feldern finden Sie in [Taskers Intent-Anleitung](https://tasker.joaoapps.com/userguide/en/intents.html).
 
 ### Startbildschirm-Widget
+
+Ein Tippen auf die Überschrift eines Widgets mit gespeichertem Fokus-Filter öffnet Fokus mit dem ausgewählten Filter und seinen Bedienelementen. Widgets mit gespeicherten Kontextfiltern öffnen entsprechend die Kontextansicht.
 
 Im Android-Aufgaben-Widget öffnet die freie Fläche nun die gewählte Liste; Kompakt und iOS öffnen weiterhin Fokus.
 

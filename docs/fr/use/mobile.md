@@ -69,6 +69,8 @@ Ouvrez la **Corbeille** et touchez **Sélectionner** pour gérer plusieurs tâch
 
 ## Référence
 
+Les éléments de Référence peuvent conserver des contextes. Vous pouvez les consulter ou les modifier sans reconvertir l’élément en tâche.
+
 Référence conserve les notes et les documents à consulter. Les lignes et l’éditeur mettent en avant le titre, la description, le projet ou domaine, les personnes, les étiquettes, les pièces jointes et les liens. Les commandes de planification et d’achèvement restent masquées. Utilisez **Statut** dans l’éditeur pour passer de Référence à un statut de tâche, et inversement. Vous pouvez ajouter des éléments même si la référence n’a pas encore de liste. Les références n’ont pas d’étoile Focus. La liste d’une référence comporte des cases à cocher : cochez une entrée pour l’enregistrer, par exemple un film que vous avez vu. Si vous cochez toutes les entrées, l’élément reste dans Référence ; il n’est jamais marqué comme terminé et n’entre jamais dans Focus. Les coches sont conservées si vous convertissez la référence en action.
 
 La recherche dans Référence retrouve chaque terme séparé par des espaces, n’importe où dans le titre ou la description, sans distinguer les majuscules et les minuscules. Par exemple, `ke 1 2` retrouve `key1 key2 key3`. Les termes sont du texte littéral ; ce champ n’interprète pas la syntaxe de capture rapide ou de recherche avancée.
@@ -236,6 +238,8 @@ Chaque capture acceptée est conservée séparément, même si le texte est iden
 Consultez le [guide des intents de Tasker](https://tasker.joaoapps.com/userguide/en/intents.html) pour ses champs.
 
 ### Widget de l’écran d’accueil
+
+Toucher l’en-tête d’un widget utilisant un filtre Focus enregistré ouvre Focus avec ce filtre sélectionné et ses commandes disponibles. Les widgets utilisant des filtres Contextes enregistrés ouvrent Contextes de la même manière.
 
 L’espace vide du widget Tâches Android ouvre la liste choisie ; Compact et iOS ouvrent toujours Focus.
 

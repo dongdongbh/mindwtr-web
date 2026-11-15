@@ -75,6 +75,8 @@ Open **Trash** and tap **Select** to manage several deleted tasks and projects. 
 
 ## Reference
 
+Reference items can keep contexts. View or edit those contexts without changing the item back into a task.
+
 Reference is for notes and material you want to keep. Its rows and editor emphasize the title, description, project or area, people, tags, attachments, and links. Task scheduling and completion controls stay out of the way. Use **Status** in the editor to switch between Reference and task statuses. You can add checklist items even when the reference has no checklist yet. References have no Focus star. A reference's list has checkboxes: tick an entry to record it, for example a movie you have watched. Ticking every entry leaves the item in Reference; it is never marked done and never enters Focus. The ticks stay if you convert the reference to an action.
 
 Search within Reference matches every space-separated term anywhere in the title or description, ignoring case. For example, `ke 1 2` matches `key1 key2 key3`. Terms are literal text; this field does not interpret quick-add or advanced search syntax.
@@ -242,6 +244,8 @@ Each accepted capture is queued separately, including repeated text. Open Mindwt
 See [Tasker’s intent guide](https://tasker.joaoapps.com/userguide/en/intents.html) for its Send Intent fields.
 
 ### Home Widget
+
+Tapping the header of a saved Focus-filter widget opens Focus with that filter selected and its controls available. Saved Contexts-filter widgets open Contexts in the same way.
 
 Android Tasks blank-space taps now open the selected list; Compact and iOS still open Focus.
 

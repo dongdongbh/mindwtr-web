@@ -491,6 +491,12 @@ Use **Mind Sweep** when you want guided capture prompts for work, home, people, 
 
 ### Processing Inbox
 
+**Process Inbox** includes Inbox items plus Someday/Maybe items whose review date has arrived. Its count can therefore be higher than the Inbox badge, which counts Inbox items only. Other tasks with a review date that has arrived do not automatically enter this queue.
+
+A valid Next Action is a clear, concrete action. Contexts, a project, and dates are optional; add them when they help you decide where, when, or as part of which outcome to act.
+
+**Browse projects** changes which projects are listed, without changing the task’s destination. Choose **All areas**, **No area**, or a named Area; **No area** lists only projects without an Area.
+
 Tap **Process Inbox** to start the clarify workflow:
 
 1. **Is this actionable?**
@@ -502,10 +508,10 @@ Tap **Process Inbox** to start the clarify workflow:
    - No → Continue
 
 3. **Who should do it?**
-   - I'll do it → Add context, move to Next Actions
+   - I'll do it → Move to Next Actions
    - Delegate → Move to Waiting For
 
-4. **Where will you do this?**
+4. **Where will you do this?** (Optional)
    - Select contexts (@home, @work, etc.)
    - Add custom contexts
 

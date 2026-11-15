@@ -485,6 +485,12 @@ Utilisez le **Balayage mental** lorsque vous souhaitez des invites de collecte g
 
 ### Traiter la Boîte de réception
 
+**Traiter la Boîte de réception** inclut les éléments de la Boîte de réception et ceux d’Un jour/Peut-être dont la date de revue est arrivée. Son compteur peut donc dépasser le badge de la Boîte de réception, qui ne compte que les éléments de cette boîte. Les autres tâches dont la date de revue est arrivée ne rejoignent pas automatiquement cette file.
+
+Une Action suivante valide est une action claire et concrète. Les contextes, le projet et les dates sont facultatifs ; ajoutez-les lorsqu’ils vous aident à décider où, quand ou dans le cadre de quel résultat agir.
+
+**Parcourir les projets** change les projets affichés sans modifier la destination de la tâche. Choisissez **Tous les domaines**, **Aucun domaine** ou un domaine précis ; **Aucun domaine** affiche uniquement les projets sans domaine.
+
 Touchez **Traiter la Boîte de réception** pour lancer le processus de clarification :
 
 1. **Est-ce une action ?**
@@ -496,10 +502,10 @@ Touchez **Traiter la Boîte de réception** pour lancer le processus de clarific
    - Non → Continuer
 
 3. **Qui doit s’en charger ?**
-   - Je m’en charge → Ajouter un contexte, déplacer vers Actions suivantes
+   - Je m’en charge → Déplacer vers Actions suivantes
    - Déléguer → Déplacer vers En attente
 
-4. **Où allez-vous effectuer cette action ?**
+4. **Où allez-vous effectuer cette action ?** (Facultatif)
    - Sélectionner des contextes (@home, @work, etc.)
    - Ajouter des contextes personnalisés
 

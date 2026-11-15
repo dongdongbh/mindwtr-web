@@ -458,6 +458,12 @@ Ihre Erfassungszone. Verwenden Sie **Gedankensammlung** für geführte Fragen zu
 
 ### Eingang verarbeiten
 
+**Eingang verarbeiten** umfasst Eingangseinträge sowie Einträge aus Irgendwann/Vielleicht, deren Überprüfungsdatum erreicht ist. Die Anzahl kann daher höher sein als die Eingangsanzeige, die nur Eingangseinträge zählt. Andere Aufgaben mit erreichtem Überprüfungsdatum gelangen nicht automatisch in diese Warteschlange.
+
+Eine gültige nächste Aktion ist eine klare, konkrete Handlung. Kontexte, ein Projekt und Termine sind optional. Ergänzen Sie sie, wenn sie bei der Entscheidung helfen, wo, wann oder für welches Ergebnis Sie handeln.
+
+**Projekte durchsuchen** ändert die angezeigten Projekte, ohne das Ziel der Aufgabe zu ändern. Wähle **Alle Bereiche**, **Kein Bereich** oder einen bestimmten Bereich; **Kein Bereich** zeigt nur Projekte ohne Bereich.
+
 **Eingang verarbeiten** startet den Klärungsablauf:
 
 1. **Ist eine Handlung erforderlich?**
@@ -467,9 +473,9 @@ Ihre Erfassungszone. Verwenden Sie **Gedankensammlung** für geführte Fragen zu
    - Ja → sofort erledigen
    - Nein → weiter
 3. **Wer sollte es erledigen?**
-   - Ich → Kontext hinzufügen, Nächste Aktionen
+   - Ich → Nächste Aktionen
    - Delegieren → Warten
-4. **Wo?**
+4. **Wo?** (optional)
    - Kontexte auswählen (`@home`, `@work` usw.)
    - Eigene Kontexte hinzufügen
 5. **Projekt zuweisen?** (optional)

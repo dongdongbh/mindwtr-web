@@ -485,6 +485,12 @@ Usa **Barrido mental** cuando quieras indicaciones guiadas para trabajo, hogar, 
 
 ### Procesar la Bandeja de entrada
 
+**Procesar Bandeja de entrada** incluye los elementos de la Bandeja de entrada y los de Algún día/Tal vez cuya fecha de revisión ya ha llegado. Por eso, su recuento puede superar el indicador de la Bandeja de entrada, que solo cuenta los elementos de esa bandeja. Las demás tareas cuya fecha de revisión ya ha llegado no entran automáticamente en esta cola.
+
+Una Próxima acción válida es una acción clara y concreta. Los contextos, el proyecto y las fechas son opcionales; añádelos cuando ayuden a decidir dónde, cuándo o como parte de qué resultado actuar.
+
+**Explorar proyectos** cambia los proyectos que se muestran sin modificar el destino de la tarea. Elige **Todas las áreas**, **Sin área** o un área concreta; **Sin área** muestra solo los proyectos que no tienen área.
+
 Toca **Procesar Bandeja de entrada** para iniciar el flujo de aclaración:
 
 1. **¿Requiere acción?**
@@ -496,10 +502,10 @@ Toca **Procesar Bandeja de entrada** para iniciar el flujo de aclaración:
    - No → Continúa
 
 3. **¿Quién debe hacerla?**
-   - Yo → Añade un contexto y muévela a Próximas acciones
+   - Yo → Muévela a Próximas acciones
    - Delegar → Muévela a En espera
 
-4. **¿Dónde la harás?**
+4. **¿Dónde la harás?** (Opcional)
    - Selecciona contextos (@home, @work, etc.)
    - Añade contextos personalizados
 

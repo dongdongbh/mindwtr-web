@@ -53,7 +53,9 @@ Les tâches proposent une valeur facultative **Temps passé** à côté de l’E
 
 Le Temps passé est facultatif et désactivé par défaut : ses éléments n’apparaissent que si **Minuteur Pomodoro** et **Lier le minuteur à une tâche** sont tous deux activés. Cela concerne le champ de l’éditeur et le badge des lignes de tâches sur ordinateur et mobile, la boîte de dialogue d’achèvement sur ordinateur et mobile, et le bouton de démarrage rapide sur ordinateur. Désactivez-les et aucune information temporelle n’apparaît ; les valeurs enregistrées sont conservées et réapparaissent à la réactivation. Masquer l’Estimation du temps dans la disposition de l’éditeur masque également le Temps passé.
 
-- Chaque session de concentration terminée et liée à une tâche ajoute ses minutes au total de cette tâche.
+- Le travail actif lié à une tâche est enregistré lors d’une pause, de la fin ou du changement de tâche, de la réinitialisation du minuteur, du changement de préréglage ou du passage au repos.
+- Le temps en pause et les périodes de repos ne comptent pas. Terminer une tâche met son minuteur de travail en pause ; annuler cette action conserve le temps enregistré. Le compteur de Pomodoros augmente uniquement après un bloc de concentration complet.
+- Le temps passé s’affiche en minutes entières. Les intervalles courts s’accumulent par tâche entre les pauses et les redémarrages : trois intervalles de 20 secondes ajoutent une minute, sans compter deux fois le même intervalle.
 - Vous pouvez aussi définir ou corriger le total dans l’éditeur.
 - Les tâches ayant du temps enregistré affichent un petit badge dans les listes sur ordinateur et mobile ; le total se synchronise comme les autres champs.
 

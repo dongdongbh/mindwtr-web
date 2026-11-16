@@ -55,7 +55,9 @@ Las tareas tienen un valor opcional **Tiempo empleado** junto a Tiempo estimado 
 
 Tiempo empleado es opcional y está oculto de forma predeterminada. Sus superficies solo aparecen cuando están activados tanto **Temporizador Pomodoro** como **Vincular temporizador a tarea**: el campo del editor y el distintivo de la fila en escritorio y móvil, el diálogo de finalización en escritorio y móvil, y el botón de inicio rápido en escritorio. Al desactivarlos no se muestra nada relacionado con el tiempo; los valores registrados se conservan y reaparecen si vuelves a activar la función. Ocultar Tiempo estimado en el diseño del editor también oculta Tiempo empleado.
 
-- Cada sesión de concentración completada con una tarea vinculada añade sus minutos al total de esa tarea.
+- El trabajo activo con una tarea vinculada se registra al pausar, completar o cambiar de tarea, reiniciar el temporizador, cambiar su ajuste predefinido o pasar a un descanso.
+- Las pausas y los descansos no cuentan. Completar la tarea pausa su temporizador de trabajo; deshacer la finalización conserva el tiempo registrado. El contador de Pomodoros solo aumenta al terminar un bloque completo de concentración.
+- El tiempo empleado se muestra en minutos enteros. Los intervalos cortos se acumulan por tarea entre pausas y reinicios: tres intervalos de 20 segundos suman un minuto, sin contar ninguno dos veces.
 - También puedes establecer o corregir el total manualmente en el editor.
 - Las tareas con tiempo registrado muestran un pequeño distintivo en las listas de escritorio y móvil, y el total se sincroniza entre dispositivos como cualquier otro campo.
 

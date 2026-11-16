@@ -52,7 +52,9 @@ Tasks have an optional **Time Spent** value next to the Time Estimate in the tas
 
 Time Spent is opt-in and off by default: its surfaces only appear while both the **Pomodoro timer** feature and **Link timer to task** are enabled: the editor field and task-row badge on desktop and mobile, the completion-time dialog on desktop and mobile, and the quick-start button on desktop. Turn them off and nothing time-related shows anywhere (recorded values are kept and reappear if you re-enable it). Hiding the Time Estimate field in the task editor layout hides Time Spent with it.
 
-- Every completed focus session with a linked Timer task adds the session's focus minutes to that task's total.
+- Active work with a linked Timer task is recorded when you pause, complete the task, switch tasks, reset the timer, change its preset, or switch to a break.
+- Paused time and breaks do not count. Completing a task pauses its work timer; undoing completion keeps the recorded effort. The completed-Pomodoro count increases only when a full focus block ends.
+- Time Spent displays whole minutes. Short intervals accumulate per task across pauses and restarts: three 20-second intervals add one minute, without counting any interval twice.
 - You can also set or correct the total by hand in the editor.
 - Tasks with recorded time show a small badge in task lists on desktop and mobile, and the total syncs across your devices like any other task field.
 

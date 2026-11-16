@@ -52,7 +52,9 @@ Aufgaben besitzen im Aufgabeneditor neben der Zeitschätzung optional den Wert *
 
 „Aufgewendete Zeit“ ist freiwillig und standardmäßig deaktiviert: Die zugehörigen Oberflächen erscheinen nur, wenn sowohl die Funktion **Pomodoro-Zeitgeber** als auch **Zeitgeber mit Aufgabe verknüpfen** aktiviert sind – das Editorfeld und die Aufgabenplakette auf Desktop und Mobilgeräten, der Abschlussdialog auf Desktop und Mobilgeräten sowie die Schnellstartschaltfläche auf dem Desktop. Wenn Sie die Funktionen deaktivieren, werden nirgendwo zeitbezogene Angaben angezeigt (aufgezeichnete Werte bleiben erhalten und erscheinen nach erneuter Aktivierung wieder). Wenn Sie das Feld „Zeitschätzung“ im Layout des Aufgabeneditors ausblenden, wird auch „Aufgewendete Zeit“ ausgeblendet.
 
-- Jede abgeschlossene Fokusphase mit verknüpfter Zeitgeberaufgabe addiert die Fokusminuten dieser Phase zur Gesamtsumme der Aufgabe.
+- Aktive Arbeit mit einer verknüpften Aufgabe wird beim Anhalten, Erledigen oder Wechseln der Aufgabe, Zurücksetzen des Zeitgebers, Ändern der Voreinstellung und Wechseln zur Pause erfasst.
+- Angehaltene Zeit und Pausen zählen nicht. Das Erledigen einer Aufgabe hält ihren Arbeitszeitgeber an; beim Rückgängigmachen bleibt die erfasste Zeit erhalten. Der Pomodoro-Zähler steigt nur nach einer vollständigen Fokusphase.
+- Die aufgewendete Zeit wird in ganzen Minuten angezeigt. Kurze Abschnitte werden je Aufgabe über Pausen und Neustarts hinweg gesammelt: Dreimal 20 Sekunden ergeben eine Minute, ohne doppelte Erfassung.
 - Sie können die Gesamtsumme im Editor auch von Hand festlegen oder korrigieren.
 - Aufgaben mit aufgezeichneter Zeit zeigen in Aufgabenlisten auf Desktop und Mobilgeräten eine kleine Plakette. Die Gesamtsumme wird wie jedes andere Aufgabenfeld zwischen Ihren Geräten synchronisiert.
 

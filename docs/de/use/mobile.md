@@ -767,6 +767,8 @@ Ab v1.3.1: Ordnen Sie Aufgaben direkt in dieser Liste in Irgendwann-Abschnitte e
 
 ## Benachrichtigungen und Erinnerungen
 
+Ab der nächsten Version öffnet **Einstellungen → Benachrichtigungen → Ton und Vibration für Erinnerungen** unter Android 8 oder neuer den Kanal **Mindwtr reminders**. Dort kannst du die Vibration für dieses Gerät einschalten. Die Benachrichtigungseinstellungen und der Modus „Nicht stören“ gelten weiterhin.
+
 ### Arten von Benachrichtigungen
 
 - **Fälligkeitserinnerungen**

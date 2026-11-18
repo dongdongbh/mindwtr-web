@@ -824,6 +824,8 @@ Incuba ideas para el futuro.
 
 ## Notificaciones y recordatorios
 
+A partir de la próxima versión, en Android 8 o posterior, abre **Ajustes → Notificaciones → Sonido y vibración de los recordatorios**. Activa la vibración en el canal **Mindwtr reminders**. La opción se aplica a este teléfono y respeta los ajustes de notificaciones y el modo No molestar.
+
 Mindwtr envía notificaciones para ayudarte a mantener el rumbo.
 
 ### Tipos de notificaciones

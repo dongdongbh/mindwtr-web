@@ -837,6 +837,8 @@ Incubate ideas for the future.
 
 ## Notifications & Reminders
 
+Starting with the next release on Android 8 or later, open **Settings → Notifications → Reminder sound and vibration**. In Android’s **Mindwtr reminders** settings, turn on vibration. The choice applies to this phone and follows its notification and Do Not Disturb settings.
+
 Mindwtr sends notifications to keep you on track.
 
 ### Types of Notifications

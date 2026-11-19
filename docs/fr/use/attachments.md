@@ -19,6 +19,8 @@ Les fichiers restent dans le brouillon jusqu’à **Enregistrer**, avec une limi
 
 Synchronisez puis ouvrez la pièce jointe sur un autre appareil à jour. Les déploiements entre origines différentes doivent autoriser les envois authentifiés via CORS, dont PUT et ses en-têtes. Un enregistrement interrompu peut laisser des fichiers inutilisés sur le serveur. Attendez que tous les appareils soient synchronisés avant de nettoyer les fichiers orphelins : le serveur ignore les références enregistrées seulement sur un appareil hors ligne.
 
+À partir de v1.3.9, le navigateur affiche un aperçu des pièces jointes Cloud en PDF, images matricielles, audio, vidéo et texte brut. HTML, SVG, XHTML, XML et les types inconnus sont téléchargés. Les liens des tâches, projets et de la Boîte de réception refusent les protocoles exécutables du navigateur.
+
 ---
 
 ## Ajouter des pièces jointes
@@ -31,6 +33,8 @@ Synchronisez puis ouvrez la pièce jointe sur un autre appareil à jour. Les dé
 - Pour un lien, collez une URL ou le chemin d’un fichier local.
 - Dans les pièces jointes d’une tâche, **Joindre une note Obsidian** n’apparaît qu’après l’activation de l’intégration Obsidian.
 - Collez une image, par exemple une capture d’écran, dans la description d’une tâche. Mindwtr l’enregistre comme pièce jointe et l’affiche dans la description. Sur mobile, l’image apparaît dans les pièces jointes plutôt que dans le texte.
+
+À partir de v1.3.9, l’application de bureau ouvre normalement les documents locaux pris en charge et les dossiers. Pour les exécutables, scripts, raccourcis, paquets d’applications et types inconnus, elle ouvre leur dossier au lieu de les lancer. Les chemins réseau et de périphérique sont refusés ; copiez le fichier localement et joignez-le si nécessaire. La vérification porte sur le fichier réel, pas sur le titre affiché de la pièce jointe.
 
 ### Mobile
 

@@ -735,7 +735,7 @@ Struktur von `data.json`:
 
 Dateisynchronisierung, WebDAV und Dropbox lassen sich mit einer selbst gewählten Passphrase schützen. Alles, was Mindwtr an den Sync-Ort schreibt — die Datendatei, ihre Sicherungen und Wiederherstellungsmomentaufnahmen sowie die Anhänge —, wird vor dem Schreiben oder Hochladen auf Ihrem Gerät verschlüsselt, mit AES-256-GCM und einem Schlüssel, der per Argon2id aus Ihrer Passphrase abgeleitet wird. Verschlüsselte Dateien tragen die Kennung `.enc` im Namen; Anhänge behalten ihre Namen und enthalten verschlüsselte Bytes. Die Zusammenführung und das, was jedes Gerät in der App anzeigt, bleiben unverändert.
 
-Aktiviert wird sie unter **Einstellungen → Synchronisierung → Verschlüsselung**; der Bereich erscheint, solange eines dieser drei Backends ausgewählt ist. An derselben Stelle ändern Sie die Passphrase oder schalten die Verschlüsselung wieder ab. Jeder dieser Vorgänge schreibt alles am Sync-Ort neu und setzt nach einer Unterbrechung dort fort, wo er aufgehört hat. Die Passphrase lässt sich auch schon vor der allerersten Synchronisierung festlegen — der Schlüssel wird auf dem Gerät gespeichert, und die erste Synchronisierung lädt dann alles bereits verschlüsselt hoch.
+Aktiviert wird sie unter **Einstellungen → Synchronisierung → Verschlüsselung**; der Bereich erscheint, solange eines dieser drei Backends ausgewählt ist. An derselben Stelle ändern Sie die Passphrase oder schalten die Verschlüsselung wieder ab. Jeder dieser Vorgänge schreibt die aktiven Sync-Daten neu und setzt nach einer Unterbrechung dort fort, wo er aufgehört hat. Die Passphrase lässt sich auch schon vor der allerersten Synchronisierung festlegen — der Schlüssel wird auf dem Gerät gespeichert, und die erste Synchronisierung lädt dann alles bereits verschlüsselt hoch.
 
 Lesen Sie dies, bevor Sie sie aktivieren:
 
@@ -746,6 +746,14 @@ Lesen Sie dies, bevor Sie sie aktivieren:
 - **Der Anbieter sieht weiterhin die Form des Ordners**: wie viele Dateien er enthält, wie groß sie ungefähr sind und wann sie geändert wurden.
 
 Ein Gerät ohne die Passphrase pausiert die automatische Synchronisierung und fragt einmal danach; lehnen Sie ab, bleibt die Synchronisierung pausiert, bis Sie sie eingeben. Eine falsche Passphrase führt nur zu einer erneuten Abfrage und verändert die gespeicherten Dateien nie; unlesbare Dateien werden nie repariert oder gelöscht.
+
+**Bestehende verschlüsselte Bibliothek aktualisieren (v1.3.9).** Aktualisieren Sie zuerst Mindwtr auf allen Geräten. Wählen Sie unter **Einstellungen → Synchronisierung → Verschlüsselung** die Option **Sync-Verschlüsselung aktualisieren** auf einem Gerät mit einer vollständigen, gespeicherten lokalen Kopie und geben Sie die aktuelle Passphrase ein. Ältere Versionen können die neuen Dateien nicht lesen. Sichern Sie vorher Ihre lokale Bibliothek und Anhänge separat.
+
+Eine unterbrochene Formataktualisierung kann fortgesetzt werden. Ältere unterbrochene Vorgänge zum Aktivieren der Verschlüsselung oder Ändern der Passphrase können jedoch eine unterstützte Wiederherstellung erfordern. Bewahren Sie alle lokalen Kopien und entfernten Dateien auf; entfernen Sie sie nicht, um die Aktualisierung zu erzwingen.
+
+Die Aktualisierung stoppt, wenn lokale und synchronisierte Kopien voneinander abweichen, ein Anhang nicht geprüft werden kann oder der maßgebliche lokale Speicher nicht lesbar ist. Vergleichen Sie Ihre vertrauenswürdigen Kopien und klären Sie Unterschiede vor einem erneuten Versuch; löschen Sie nicht die entfernte Bibliothek, um die Prüfung zu umgehen. Unterbrochene Vorgänge lassen sich erneut versuchen. Neue Geräte ohne geprüfte lokale Kopie müssen warten, bis ein anderes Gerät die Aktualisierung abgeschlossen hat.
+
+Verschlüsselte historische Wiederherstellungsarchive und ein Inventar bleiben erhalten und benötigen zusätzlichen Speicherplatz. **Bewahren Sie die bei der Aktualisierung verwendete Passphrase auf:** spätere Passphrase-Änderungen oder das Abschalten der Verschlüsselung schreiben diese Archive nicht um. Bewahren Sie Archive und Inventar zusammen auf; sie sind keine gewöhnlichen ungenutzten Anhänge.
 
 Nicht abgedeckt von der Sync-Verschlüsselung sind die selbst gehostete Mindwtr Cloud, iCloud/CloudKit und die lokale Datenbank der App auf dem jeweiligen Gerät.
 

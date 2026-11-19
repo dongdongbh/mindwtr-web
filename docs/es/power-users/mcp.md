@@ -191,9 +191,9 @@ Los demás campos no compatibles se rechazan antes de escribir. El modo API loca
 Usa el modo Cloud cuando ejecutes tu propio servidor Mindwtr Cloud y quieras disponer de herramientas MCP sin exponer un archivo SQLite local:
 
 ```bash
-npx -y mindwtr-mcp \
-  --cloud-url "https://mindwtr.example.com" \
-  --cloud-token "$MINDWTR_TOKEN"
+export MINDWTR_MCP_CLOUD_URL="https://mindwtr.example.com"
+export MINDWTR_MCP_CLOUD_TOKEN="$MINDWTR_TOKEN"
+npx -y mindwtr-mcp
 ```
 
 O usa variables de entorno en la configuración de un cliente MCP:
@@ -384,8 +384,11 @@ Sustituye la ruta por la de tu base de datos local (las rutas de Windows necesit
 De forma predeterminada, el servidor habla stdio. Pasa `--http` para servir en su lugar un endpoint MCP de HTTP transmisible, de modo que los clientes MCP remotos puedan conectarse por URL. El modo HTTP funciona con los tres backends (SQLite local, API local de escritorio o Cloud autoalojado).
 
 ```bash
-mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"
+export MINDWTR_MCP_HTTP_TOKEN="$(openssl rand -hex 32)"
+mindwtr-mcp --http --db "/path/to/mindwtr.db"
 ```
+
+Usa variables de entorno para los secretos, de modo que no aparezcan en los argumentos del proceso. Genera un token aleatorio en lugar de elegir un valor fácil de recordar. Los fallos de autenticación pueden recibir `429`, pero los tokens válidos siguen funcionando y se comprueba cada solicitud; esto no bloquea los intentos de adivinar tokens.
 
 Flags (todas tienen variables de entorno `MINDWTR_MCP_HTTP*` equivalentes):
 

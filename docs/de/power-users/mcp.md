@@ -191,9 +191,9 @@ Andere nicht unterstützte Felder werden vor einem Schreibzugriff abgelehnt. Im 
 Verwenden Sie den Cloud-Modus, wenn Sie Ihren eigenen Mindwtr-Cloud-Server betreiben und MCP-Werkzeuge nutzen möchten, ohne eine lokale SQLite-Datei bereitzustellen:
 
 ```bash
-npx -y mindwtr-mcp \
-  --cloud-url "https://mindwtr.example.com" \
-  --cloud-token "$MINDWTR_TOKEN"
+export MINDWTR_MCP_CLOUD_URL="https://mindwtr.example.com"
+export MINDWTR_MCP_CLOUD_TOKEN="$MINDWTR_TOKEN"
+npx -y mindwtr-mcp
 ```
 
 Alternativ verwenden Sie Umgebungsvariablen in der Konfiguration eines MCP-Clients:
@@ -384,8 +384,11 @@ Ersetzen Sie den Pfad durch den lokalen Datenbankpfad Ihrer Plattform (Windows-P
 Standardmäßig spricht der Server stdio. Mit `--http` stellt er stattdessen einen Streamable-HTTP-MCP-Endpunkt bereit, sodass sich entfernte MCP-Clients per URL verbinden können. Der HTTP-Modus funktioniert mit allen drei Backends (lokale SQLite-Datenbank, Local API der Desktop-App oder selbst gehostete Cloud).
 
 ```bash
-mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"
+export MINDWTR_MCP_HTTP_TOKEN="$(openssl rand -hex 32)"
+mindwtr-mcp --http --db "/path/to/mindwtr.db"
 ```
+
+Übergebe Geheimnisse über Umgebungsvariablen, damit sie nicht in Prozessargumenten erscheinen. Erzeuge ein zufälliges Token statt eines leicht merkbaren Werts. Fehlgeschlagene Authentifizierungen können mit `429` beantwortet werden; gültige Tokens funktionieren weiterhin und jede Anfrage wird geprüft. Das ist keine Sperre gegen das Erraten von Tokens.
 
 Flags (alle haben `MINDWTR_MCP_HTTP*`-Umgebungsvariablen als Äquivalent):
 

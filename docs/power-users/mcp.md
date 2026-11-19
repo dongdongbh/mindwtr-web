@@ -191,9 +191,9 @@ Other unsupported fields are rejected before a write. Desktop Local API mode use
 Use Cloud mode when you run your own Mindwtr Cloud server and want MCP tools without exposing a local SQLite file:
 
 ```bash
-npx -y mindwtr-mcp \
-  --cloud-url "https://mindwtr.example.com" \
-  --cloud-token "$MINDWTR_TOKEN"
+export MINDWTR_MCP_CLOUD_URL="https://mindwtr.example.com"
+export MINDWTR_MCP_CLOUD_TOKEN="$MINDWTR_TOKEN"
+npx -y mindwtr-mcp
 ```
 
 Or use environment variables in an MCP client configuration:
@@ -384,8 +384,11 @@ Replace the path with your platform's local database path (Windows paths need do
 By default the server speaks stdio. Pass `--http` to instead serve a streamable-HTTP MCP endpoint, so remote MCP clients can connect by URL. HTTP mode works with all three backends (local SQLite, desktop Local API, or self-hosted Cloud).
 
 ```bash
-mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"
+export MINDWTR_MCP_HTTP_TOKEN="$(openssl rand -hex 32)"
+mindwtr-mcp --http --db "/path/to/mindwtr.db"
 ```
+
+Use the environment variables for secrets so they do not appear in process arguments. Generate a random token rather than choosing a memorable value. Authentication-failure responses can become `429`, but valid tokens still work and every request is checked; this is not a token-guessing lockout.
 
 Flags (all have `MINDWTR_MCP_HTTP*` environment variable equivalents):
 

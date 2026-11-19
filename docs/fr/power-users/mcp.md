@@ -191,9 +191,9 @@ Les autres champs non pris en charge sont rejetés avant toute écriture. Le mod
 Utilisez le mode Cloud lorsque vous exécutez votre propre serveur Mindwtr Cloud et souhaitez disposer des outils MCP sans exposer un fichier SQLite local :
 
 ```bash
-npx -y mindwtr-mcp \
-  --cloud-url "https://mindwtr.example.com" \
-  --cloud-token "$MINDWTR_TOKEN"
+export MINDWTR_MCP_CLOUD_URL="https://mindwtr.example.com"
+export MINDWTR_MCP_CLOUD_TOKEN="$MINDWTR_TOKEN"
+npx -y mindwtr-mcp
 ```
 
 Vous pouvez aussi utiliser des variables d’environnement dans la configuration d’un client MCP :
@@ -384,8 +384,11 @@ Remplacez le chemin par celui de votre base de données locale (les chemins Wind
 Par défaut, le serveur parle stdio. Passez `--http` pour servir à la place un point de terminaison MCP HTTP en streaming, afin que les clients MCP distants puissent se connecter par URL. Le mode HTTP fonctionne avec les trois backends (SQLite local, API locale de l’application de bureau ou Cloud auto-hébergé).
 
 ```bash
-mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"
+export MINDWTR_MCP_HTTP_TOKEN="$(openssl rand -hex 32)"
+mindwtr-mcp --http --db "/path/to/mindwtr.db"
 ```
+
+Utilisez les variables d’environnement pour les secrets afin qu’ils n’apparaissent pas dans les arguments du processus. Générez un jeton aléatoire plutôt que de choisir une valeur mémorisable. Les échecs d’authentification peuvent recevoir `429`, mais les jetons valides restent utilisables et chaque requête est vérifiée ; ce mécanisme ne bloque pas les tentatives de deviner un jeton.
 
 Options (toutes ont des variables d'environnement `MINDWTR_MCP_HTTP*` équivalentes) :
 

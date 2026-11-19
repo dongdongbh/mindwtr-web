@@ -734,7 +734,7 @@ Structure du fichier `data.json` :
 
 La synchronisation de fichiers, WebDAV et Dropbox peuvent être protégés par une phrase secrète de votre choix. Tout ce que Mindwtr écrit dans la destination de synchronisation — le fichier de données, ses sauvegardes et instantanés de récupération ainsi que les pièces jointes — est chiffré sur votre appareil avant d'être écrit ou envoyé, avec AES-256-GCM et une clé dérivée de votre phrase secrète par Argon2id. Les fichiers chiffrés portent la marque `.enc` dans leur nom ; les pièces jointes gardent leur nom et contiennent des octets chiffrés. La fusion et ce que chaque appareil affiche dans l'application restent inchangés.
 
-Activez-le dans **Réglages → Synchronisation → Chiffrement**, une section qui apparaît tant que l'un de ces trois backends est sélectionné. C'est au même endroit que l'on change la phrase secrète ou que l'on désactive le chiffrement. Chacune de ces opérations réécrit tout le contenu de la destination de synchronisation et reprend là où elle s'est arrêtée si elle est interrompue. La phrase secrète peut aussi être définie avant la toute première synchronisation — la clé est stockée sur l'appareil, et la première synchronisation envoie alors tout déjà chiffré.
+Activez-le dans **Réglages → Synchronisation → Chiffrement**, une section qui apparaît tant que l'un de ces trois backends est sélectionné. C'est au même endroit que l'on change la phrase secrète ou que l'on désactive le chiffrement. Chacune de ces opérations réécrit les données actives de synchronisation et reprend là où elle s'est arrêtée si elle est interrompue. La phrase secrète peut aussi être définie avant la toute première synchronisation — la clé est stockée sur l'appareil, et la première synchronisation envoie alors tout déjà chiffré.
 
 À lire avant de l'activer :
 
@@ -745,6 +745,14 @@ Activez-le dans **Réglages → Synchronisation → Chiffrement**, une section q
 - **Le fournisseur voit toujours la forme du dossier** : le nombre de fichiers, leur taille approximative et leur date de modification.
 
 Un appareil qui n'a pas la phrase secrète met la synchronisation automatique en pause et la demande une fois ; si vous refusez, la synchronisation reste en pause jusqu'à ce que vous la saisissiez. Une phrase secrète erronée entraîne simplement une nouvelle demande et ne modifie jamais les fichiers stockés, et les fichiers illisibles ne sont jamais réparés ni supprimés.
+
+**Mettre à niveau une bibliothèque chiffrée existante (v1.3.9).** Mettez d’abord Mindwtr à jour sur tous les appareils. Dans **Réglages → Synchronisation → Chiffrement**, choisissez **Mettre à niveau le chiffrement** sur un appareil disposant d’une copie locale complète et enregistrée, puis saisissez la phrase secrète actuelle. Les anciennes versions ne peuvent pas lire les fichiers mis à niveau. Sauvegardez séparément votre bibliothèque locale et ses pièces jointes avant de continuer.
+
+Une mise à niveau de format interrompue peut reprendre, mais une ancienne opération interrompue d’activation du chiffrement ou de changement de phrase secrète peut nécessiter une récupération assistée. Conservez toutes les copies locales et les fichiers distants ; ne les supprimez pas pour forcer la mise à niveau.
+
+La mise à niveau s’arrête si les copies locale et synchronisée diffèrent, si une pièce jointe ne peut pas être vérifiée ou si le stockage local principal est illisible. Comparez vos copies de confiance et résolvez les différences avant de réessayer ; ne supprimez pas la bibliothèque distante pour contourner la vérification. Une opération interrompue peut être relancée. Les nouveaux appareils sans copie locale vérifiée doivent attendre qu’un autre appareil termine la mise à niveau avant de déverrouiller.
+
+Des archives historiques de récupération chiffrées et un inventaire sont conservés et nécessitent de l’espace supplémentaire. **Conservez la phrase secrète utilisée lors de la mise à niveau :** changer la phrase secrète active ou désactiver le chiffrement ne réécrit pas ces archives. Conservez les archives et l’inventaire ensemble ; ne les traitez pas comme des pièces jointes inutilisées.
 
 Le chiffrement de la synchronisation ne couvre ni le Mindwtr Cloud auto-hébergé, ni iCloud/CloudKit, ni la base de données locale de l'application sur chaque appareil.
 

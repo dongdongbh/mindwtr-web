@@ -738,7 +738,7 @@ The `data.json` file structure:
 
 File Sync, WebDAV, and Dropbox can be protected with a passphrase you choose. Everything Mindwtr writes to the sync location — the data file, its backups and recovery snapshots, and attachments — is encrypted on your device before it is written or uploaded, using AES-256-GCM with a key derived from your passphrase with Argon2id. Encrypted files carry an `.enc` marker in their name; attachments keep their names and hold encrypted bytes. Merging and what each device shows in the app are unchanged.
 
-Turn it on in **Settings → Sync → Encryption**, which appears while one of those three backends is selected. The same place changes the passphrase or turns encryption off again. Each of those rewrites everything in the sync location and picks up where it left off if it is interrupted. You can also set the passphrase before ever running a sync — the key is stored on the device, and the first sync then uploads everything already encrypted.
+Turn it on in **Settings → Sync → Encryption**, which appears while one of those three backends is selected. The same place changes the passphrase or turns encryption off again. Each of those rewrites the active sync data and picks up where it left off if it is interrupted. You can also set the passphrase before ever running a sync — the key is stored on the device, and the first sync then uploads everything already encrypted.
 
 Read these before you enable it:
 
@@ -749,6 +749,14 @@ Read these before you enable it:
 - **The provider still sees the shape of the folder**: how many files it holds, roughly how large they are, and when they changed.
 
 A device that does not have the passphrase pauses automatic sync and asks for it once; declining keeps sync paused until it is entered. A wrong passphrase asks again and never modifies the stored files, and files that cannot be read are never repaired or deleted.
+
+**Upgrade an existing encrypted library (v1.3.9).** Update Mindwtr on every device before upgrading. In **Settings → Sync → Encryption**, choose **Upgrade sync encryption** on a device with a complete, saved local copy and enter the current passphrase. Older versions cannot read the upgraded files. Keep a separate backup of your local library and attachments before proceeding.
+
+An interrupted format upgrade can resume, but an older interrupted encryption-enable or passphrase-change operation may require assisted recovery. Keep all local copies and remote files; do not remove them to force the upgrade.
+
+The upgrade stops if the local and synced copies differ, an attachment cannot be verified, or canonical local storage cannot be read. Compare your trusted copies and resolve the difference before retrying; do not delete the remote library to bypass the check. Interrupted upgrades can be retried. Fresh devices without a verified local copy must wait for another device to complete the upgrade before unlocking.
+
+The upgrade retains encrypted historical recovery archives and a recovery inventory, which need additional storage. **Keep the passphrase used for the upgrade:** changing the active passphrase or turning encryption off does not rewrite these archives. Keep the archive files and inventory together for recovery; do not treat them as ordinary unused attachments.
 
 Sync encryption does not cover self-hosted Mindwtr Cloud, iCloud/CloudKit, or the app's own local database on each device.
 

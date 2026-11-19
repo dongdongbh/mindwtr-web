@@ -191,9 +191,9 @@ npm install -g --omit=optional mindwtr-mcp
 当你运行自己的 Mindwtr Cloud 服务器，并希望在不公开本地 SQLite 文件的情况下使用 MCP 工具时，请使用 Cloud 模式：
 
 ```bash
-npx -y mindwtr-mcp \
-  --cloud-url "https://mindwtr.example.com" \
-  --cloud-token "$MINDWTR_TOKEN"
+export MINDWTR_MCP_CLOUD_URL="https://mindwtr.example.com"
+export MINDWTR_MCP_CLOUD_TOKEN="$MINDWTR_TOKEN"
+npx -y mindwtr-mcp
 ```
 
 也可以在 MCP 客户端配置中使用环境变量：
@@ -384,8 +384,11 @@ Antigravity（Google 的智能体 IDE）从 JSON 配置文件读取本地 MCP �
 服务器默认使用 stdio。传入 `--http` 后改为提供可流式传输的 HTTP MCP 端点，远程 MCP 客户端即可通过 URL 连接。HTTP 模式对三种后端（本地 SQLite、桌面端 Local API 或自托管 Cloud）都适用。
 
 ```bash
-mindwtr-mcp --http --http-token "$(openssl rand -hex 32)" --db "/path/to/mindwtr.db"
+export MINDWTR_MCP_HTTP_TOKEN="$(openssl rand -hex 32)"
+mindwtr-mcp --http --db "/path/to/mindwtr.db"
 ```
+
+通过环境变量提供密钥，避免它们出现在进程参数中。请生成随机令牌，不要选择容易记忆的值。认证失败时可能返回 `429`，但有效令牌仍可使用，且每个请求都会被校验；这不是阻止令牌猜测的锁定机制。
 
 各标志（均有对应的 `MINDWTR_MCP_HTTP*` 环境变量）：
 

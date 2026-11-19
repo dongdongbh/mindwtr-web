@@ -301,7 +301,15 @@ Los reintentos automáticos tras fallos del backend empiezan al cabo de un minut
 
 En Android y iOS se aplican los disparadores anteriores con dos diferencias. Mindwtr sincroniza al salir de la aplicación y otra vez al volver a ella si la última sincronización tiene más de 30 segundos. Para WebDAV, la nube autoalojada, Dropbox e iCloud también registra una tarea programada en segundo plano con un intervalo mínimo de 15 minutos, incluso con la aplicación cerrada; el sistema operativo decide cuándo puede ejecutarse realmente; la sincronización de archivos nunca registra esa tarea y solo sincroniza mientras la aplicación está abierta. Después de cada ciclo automático, la aplicación espera al menos nueve veces la duración de ese ciclo antes de empezar el siguiente (mínimo 5 segundos, máximo 5 minutos), de modo que un volumen de datos grande se sincroniza con menos frecuencia en lugar de continuamente.
 
-El coste de un ciclo crece con el tamaño de tus datos y con la cantidad de cambios. El cifrado de la sincronización no influye en la batería: cifrar o descifrar el documento lleva unos milisegundos por ciclo, y la derivación de clave, deliberadamente lenta, solo se ejecuta cuando defines, cambias o introduces la frase de contraseña.
+El coste de un ciclo crece con el tamaño de tus datos y con la cantidad de cambios. **Actualizar una biblioteca cifrada existente (v1.3.9).** Actualiza primero Mindwtr en todos los dispositivos. En **Ajustes → Sincronización → Cifrado**, elige **Actualizar cifrado de sincronización** en un dispositivo con una copia local completa y guardada e introduce la contraseña actual. Las versiones anteriores no pueden leer los archivos actualizados. Guarda antes una copia de seguridad separada de la biblioteca local y sus adjuntos.
+
+Una actualización de formato interrumpida puede reanudarse, pero una operación antigua interrumpida de activación del cifrado o cambio de contraseña puede requerir recuperación asistida. Conserva todas las copias locales y los archivos remotos; no los elimines para forzar la actualización.
+
+La actualización se detiene si las copias local y sincronizada difieren, no se puede verificar un adjunto o no se puede leer el almacenamiento local principal. Compara tus copias de confianza y resuelve las diferencias antes de reintentar; no borres la biblioteca remota para eludir la comprobación. Puedes reintentar una actualización interrumpida. Los dispositivos nuevos sin una copia local verificada deben esperar a que otro dispositivo termine la actualización antes de desbloquear.
+
+Se conservan archivos históricos de recuperación cifrados y un inventario, que requieren espacio adicional. **Conserva la contraseña usada al actualizar:** cambiar la contraseña activa o desactivar el cifrado no modifica estos archivos. Guarda juntos los archivos y el inventario para recuperarlos; no los trates como adjuntos sin uso.
+
+El cifrado de la sincronización no influye en la batería: cifrar o descifrar el documento lleva unos milisegundos por ciclo, y la derivación de clave, deliberadamente lenta, solo se ejecuta cuando defines, cambias o introduces la frase de contraseña.
 
 Si la sincronización sigue gastando más batería de la que quieres:
 
@@ -734,7 +742,7 @@ La estructura del archivo `data.json`:
 
 La sincronización de archivos, WebDAV y Dropbox se pueden proteger con una frase de contraseña que tú elijas. Todo lo que Mindwtr escribe en el destino de sincronización — el archivo de datos, sus copias de seguridad e instantáneas de recuperación y los archivos adjuntos — se cifra en tu dispositivo antes de escribirlo o subirlo, con AES-256-GCM y una clave derivada de tu frase de contraseña mediante Argon2id. Los archivos cifrados llevan la marca `.enc` en su nombre; los adjuntos conservan sus nombres y contienen bytes cifrados. La fusión y lo que cada dispositivo muestra en la aplicación no cambian.
 
-Se activa en **Ajustes → Sincronización → Cifrado**, apartado que aparece mientras uno de esos tres backends está seleccionado. Desde el mismo sitio se cambia la frase de contraseña o se desactiva el cifrado. Cada una de esas operaciones reescribe todo el destino de sincronización y continúa donde se quedó si se interrumpe. La frase de contraseña también puede definirse antes de la primera sincronización: la clave se guarda en el dispositivo y la primera sincronización sube todo ya cifrado.
+Se activa en **Ajustes → Sincronización → Cifrado**, apartado que aparece mientras uno de esos tres backends está seleccionado. Desde el mismo sitio se cambia la frase de contraseña o se desactiva el cifrado. Cada una de esas operaciones reescribe los datos activos de sincronización y continúa donde se quedó si se interrumpe. La frase de contraseña también puede definirse antes de la primera sincronización: la clave se guarda en el dispositivo y la primera sincronización sube todo ya cifrado.
 
 Léelo antes de activarlo:
 

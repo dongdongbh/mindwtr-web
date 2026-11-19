@@ -19,6 +19,8 @@ Dateien bleiben bis **Speichern** im Entwurf. Das Limit beträgt **50 MiB pro Da
 
 Synchronisiere anschließend und öffne den Anhang auf einem anderen aktualisierten Gerät. Bei unterschiedlichen Ursprüngen muss CORS authentifizierte Uploads einschließlich PUT und seiner Header erlauben. Unterbrochene Speichervorgänge können ungenutzte Serverdateien hinterlassen. Bereinige verwaiste Serverdateien erst, wenn alle Geräte synchronisiert sind: der Server kennt nur lokal gespeicherte Verweise auf einem Offline-Gerät nicht.
 
+Ab v1.3.9 zeigt der Browser Cloud-Anhänge als Vorschau für PDF, Rasterbilder, Audio, Video und reinen Text. HTML, SVG, XHTML, XML und unbekannte Typen werden stattdessen heruntergeladen. Links in Aufgaben, Projekten und im Eingang weisen ausführbare Browser-Protokolle ab.
+
 ---
 
 ## Anhänge hinzufügen
@@ -31,6 +33,8 @@ Synchronisiere anschließend und öffne den Anhang auf einem anderen aktualisier
 - Fügen Sie für Links eine URL oder einen lokalen Dateipfad ein.
 - Bei Aufgabenanhängen erscheint **Obsidian-Notiz anhängen** erst, nachdem Sie die Obsidian-Integration aktiviert haben.
 - Fügen Sie ein Bild, zum Beispiel einen Screenshot, in die Beschreibung einer Aufgabe ein. Mindwtr speichert es als Anhang und zeigt es in der Beschreibung. Auf dem Smartphone erscheint das Bild unter Anhänge statt im Text.
+
+Ab v1.3.9 öffnet die Desktop-App unterstützte lokale Dokumente und Ordner wie gewohnt. Bei ausführbaren Dateien, Skripten, Verknüpfungen, Programmpaketen und unbekannten Dateitypen wird stattdessen der übergeordnete Ordner geöffnet. Netzwerk- und Gerätepfade werden abgewiesen; kopiere die Datei bei Bedarf lokal und hänge sie an. Maßgeblich ist die tatsächliche Datei, nicht der angezeigte Titel des Anhangs.
 
 ### Mobilgeräte
 

@@ -19,6 +19,8 @@ Los archivos permanecen en el borrador hasta **Guardar**, con un límite de **50
 
 Sincroniza y abre el adjunto en otro dispositivo actualizado. Las instalaciones entre orígenes distintos necesitan CORS para cargas autenticadas, incluido PUT y sus cabeceras. Un guardado interrumpido puede dejar archivos sin usar en el servidor. No limpies archivos huérfanos hasta que todos los dispositivos hayan sincronizado: el servidor no conoce las referencias guardadas solo en un dispositivo sin conexión.
 
+Desde v1.3.9, el navegador muestra vistas previas de adjuntos de Cloud en PDF, imágenes rasterizadas, audio, vídeo y texto sin formato. HTML, SVG, XHTML, XML y los tipos desconocidos se descargan. Los enlaces de tareas, proyectos y la Bandeja de entrada rechazan los protocolos ejecutables del navegador.
+
 ---
 
 ## Añadir adjuntos
@@ -31,6 +33,8 @@ Sincroniza y abre el adjunto en otro dispositivo actualizado. Las instalaciones 
 - Para los enlaces, pega una URL o una ruta de archivo local.
 - En los adjuntos de una tarea, **Adjuntar nota de Obsidian** solo aparece después de habilitar la integración con Obsidian.
 - Pega una imagen, como una captura de pantalla, en la descripción de una tarea. Mindwtr la guarda como adjunto y la muestra en la descripción. En el móvil, la imagen aparece en Adjuntos en lugar de dentro del texto.
+
+Desde v1.3.9, la aplicación de escritorio abre normalmente los documentos locales compatibles y las carpetas. Para ejecutables, scripts, accesos directos, paquetes de aplicaciones y tipos desconocidos, abre la carpeta que los contiene. Se rechazan las rutas de red y de dispositivos; si hace falta, copia el archivo localmente y adjúntalo. La comprobación usa el archivo real, no el título mostrado del adjunto.
 
 ### Dispositivos móviles
 

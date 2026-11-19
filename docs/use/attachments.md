@@ -19,6 +19,8 @@ Files are held in the draft until **Save**, with a **50 MiB per-file limit**; yo
 
 After saving, sync and open the attachment on another updated device. Cross-origin deployments must allow authenticated uploads through CORS, including PUT and its request headers. Interrupted saves can leave unused server files; do not run server orphan cleanup until all devices have synced, because it cannot see references saved only on an offline device.
 
+From v1.3.9, opening a cloud attachment in the browser previews PDF, raster images, audio, video and plain text. HTML, SVG, XHTML, XML and unknown types download instead. Task, project and Inbox links refuse executable browser protocols.
+
 ---
 
 ## Add attachments
@@ -31,6 +33,8 @@ After saving, sync and open the attachment on another updated device. Cross-orig
 - For links, paste a URL or local file path.
 - In task attachments, **Attach Obsidian Note** appears only after you enable the Obsidian integration.
 - Paste an image, such as a screenshot, into a task description. Mindwtr saves it as an attachment and shows it in the description. On mobile, the image appears under Attachments instead of inside the text.
+
+From v1.3.9, desktop opens supported local documents and folders normally. Executable files, scripts, shortcuts, application bundles and unknown file types open their containing folder instead of launching. Network and device paths are refused; copy the file locally and attach it if needed. These checks use the actual file, not the attachment’s displayed title.
 
 ### Mobile
 

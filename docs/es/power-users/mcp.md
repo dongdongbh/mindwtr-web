@@ -131,7 +131,7 @@ El servidor MCP integrado de escritorio y el **modo de API local** del asistente
 
 - `mindwtr_get_task` devuelve un campo `version` al mismo nivel que `task`. Las respuestas de creación y actualización de tareas también lo incluyen.
 - `mindwtr_update_task` acepta el argumento opcional `expectedVersion`. Pasa la versión de la lectura que usaste para preparar la edición. Una discrepancia devuelve `task_version_conflict`; vuelve a leer la tarea y concilia los cambios en vez de reintentar automáticamente con una versión recién obtenida.
-- A partir de la próxima versión de escritorio, `mindwtr_list_tasks` devuelve `versions` al mismo nivel, con los ID de tarea como claves, sin modificar los objetos de tarea. `mindwtr_complete_task` acepta el argumento opcional `expectedVersion` tanto en MCP de escritorio como en el modo Local API independiente; también lo acepta `mindwtr_archive_task` del servidor integrado. Si no coincide, la tarea y sus siguientes instancias recurrentes no cambian. La finalización protegida del asistente usa una nueva ruta `/v2` y nunca recurre a una acción sin protección en versiones antiguas.
+- `mindwtr_list_tasks` devuelve `versions` al mismo nivel, con los ID de tarea como claves, sin modificar los objetos de tarea. `mindwtr_complete_task` acepta el argumento opcional `expectedVersion` tanto en MCP de escritorio como en el modo Local API independiente; también lo acepta `mindwtr_archive_task` del servidor integrado. Si no coincide, la tarea y sus siguientes instancias recurrentes no cambian. La finalización protegida del asistente usa una nueva ruta `/v2` y nunca recurre a una acción sin protección en versiones antiguas.
 - `mindwtr_add_task` acepta el argumento opcional `idempotencyKey`. Si se pierde una respuesta, reutiliza la misma clave y los mismos argumentos para obtener el resultado de creación original sin duplicar la tarea. Una entrada diferente con esa clave devuelve `idempotency_conflict`.
 - Una actualización de tarea que realmente no cambie nada mantiene intactas su revisión y su fecha de modificación.
 
@@ -174,10 +174,10 @@ Las escrituras permanecen desactivadas salvo que se activen explícitamente con 
 | Listar/obtener tareas | Compatible, incluidos operadores de búsqueda avanzados, filtros de fecha, ordenación y paginación |
 | Crear tareas | Título y campos explícitos; `quickAdd` no está disponible |
 | Actualizar/completar/eliminar/restaurar tareas | Compatible mediante los endpoints correspondientes de la API; los cambios a estados finales no pueden enviarse como ediciones ordinarias |
-| Reabrir tareas terminadas ordinarias | `mindwtr_reopen_task` desde la próxima versión de escritorio; las tareas recurrentes en estado final requieren la aplicación |
+| Reabrir tareas terminadas ordinarias | `mindwtr_reopen_task` en escritorio; las tareas recurrentes en estado final requieren la aplicación |
 | Listar/obtener/crear/actualizar/eliminar proyectos | Compatible con los campos básicos de proyecto de la API: título, color, estado, área y comportamiento secuencial |
-| Listar/crear áreas | Compatible; `mindwtr_add_area` acepta `name` y, opcionalmente, `color` e `icon` (creación desde la próxima versión de escritorio) |
-| Listar secciones de proyectos y personas gestionadas | Compatible desde la próxima versión de escritorio: `mindwtr_list_sections` acepta `projectId` e `includeDeleted`; `mindwtr_list_people` acepta `includeDeleted` |
+| Listar/crear áreas | Compatible; `mindwtr_add_area` acepta `name` y, opcionalmente, `color` e `icon` (creación en escritorio) |
+| Listar secciones de proyectos y personas gestionadas | Compatible en escritorio: `mindwtr_list_sections` acepta `projectId` e `includeDeleted`; `mindwtr_list_people` acepta `includeDeleted` |
 | Lecturas individuales y escrituras de secciones/personas, actualización/eliminación de áreas | No disponibles; estas herramientas siguen ocultas en el modo API |
 | Disponibilidad GTD `view` | No disponible en este backend |
 | Sustituir enlaces de adjuntos | No disponible porque la API no proporciona actualizaciones condicionales de adjuntos |
@@ -409,7 +409,7 @@ No hay TLS ni limitación de velocidad integrados para las peticiones autenticad
 
 ## Contenedores (Docker / Podman)
 
-La imagen `ghcr.io/dongdongbh/mindwtr-mcp:1.1.14` usa la versión del paquete MCP, independiente de la versión de la aplicación. Solo admite backends API/Cloud y no incluye el complemento nativo de SQLite. No necesita un volumen de datos; no montes la base de datos de escritorio. En la red del contenedor, usa un punto de acceso Cloud autoalojado accesible.
+La imagen `ghcr.io/dongdongbh/mindwtr-mcp:1.1.15` usa la versión del paquete MCP, independiente de la versión de la aplicación. Solo admite backends API/Cloud y no incluye el complemento nativo de SQLite. No necesita un volumen de datos; no montes la base de datos de escritorio. En la red del contenedor, usa un punto de acceso Cloud autoalojado accesible.
 
 Establece `MINDWTR_MCP_CLOUD_TOKEN` en el entorno que inicia el cliente MCP y configura el cliente para ejecutar este comando. Puedes sustituir `docker` por `podman`:
 
@@ -419,7 +419,7 @@ export MINDWTR_MCP_CLOUD_URL="https://mindwtr.example.com"
 docker run --rm -i --read-only --cap-drop=ALL \
   --security-opt=no-new-privileges \
   -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
-  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.15
 ```
 
 Stdio es el modo predeterminado: conserva `-i`, omite `-t` y no publiques ningún puerto. El acceso es de solo lectura; añade `--write` después de la imagen únicamente para permitir cambios. Usa HTTPS en la URL de Cloud. Para un punto de acceso HTTP interno de confianza, añade `--cloud-allow-insecure-http=true`.
@@ -436,7 +436,7 @@ docker run --rm --read-only --cap-drop=ALL \
   -p 127.0.0.1:8722:8722 \
   -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
   -e MINDWTR_MCP_HTTP_TOKEN \
-  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14 \
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.15 \
   --http --http-host 0.0.0.0 --http-port 8722
 ```
 
@@ -921,7 +921,7 @@ Las herramientas para crear y actualizar tareas y proyectos aceptan `viewSection
 
 ### `mindwtr_reopen_task` (escritura)
 
-Disponible en el MCP integrado de escritorio y en el modo API local independiente desde la próxima versión de escritorio. Entrada: `id` (obligatorio), `status` (opcional: `inbox`, `next`, `waiting`, `someday`; predeterminado `next`) y `expectedVersion` (opcional). Reabre tareas ordinarias completadas o archivadas; rechaza los metadatos de recurrencia en tareas con estado final. El proyecto padre archivado y las secciones elegibles eliminadas por su archivo se reactivan de forma atómica, mientras las demás tareas terminadas siguen terminadas. No restaura la Papelera. Los servidores antiguos fallan sin recurrir a PATCH. Consulta las [reglas de ciclo de vida de la API local](/es/power-users/local-api#safe-writes).
+Disponible en el MCP integrado de escritorio y en el modo API local independiente en escritorio. Entrada: `id` (obligatorio), `status` (opcional: `inbox`, `next`, `waiting`, `someday`; predeterminado `next`) y `expectedVersion` (opcional). Reabre tareas ordinarias completadas o archivadas; rechaza los metadatos de recurrencia en tareas con estado final. El proyecto padre archivado y las secciones elegibles eliminadas por su archivo se reactivan de forma atómica, mientras las demás tareas terminadas siguen terminadas. No restaura la Papelera. Los servidores antiguos fallan sin recurrir a PATCH. Consulta las [reglas de ciclo de vida de la API local](/es/power-users/local-api#safe-writes).
 
 ### `mindwtr_delete_task` (escritura)
 

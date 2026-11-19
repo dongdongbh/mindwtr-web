@@ -107,7 +107,7 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 | `GET` | `/areas/:id` | Desktop: einzelnen Bereich lesen |
 | `PATCH` | `/areas/:id` | Desktop: Bereich bearbeiten |
 | `GET`    | `/v1/areas`           | Kompatibilitätsalias für Bereiche    |
-| `GET` | `/sections` | Abschnitte auflisten, optional `?projectId=`; Desktop ab der nächsten Version |
+| `GET` | `/sections` | Abschnitte auflisten, optional `?projectId=`; Desktop unterstützt |
 | `GET` | `/people` | Desktop: verwaltete Personen auflisten (nächste Version) |
 | `POST`   | `/sections`           | Hilfsprogramm: Abschnitt erstellen   |
 | `GET`    | `/sections/:id`       | Hilfsprogramm: Einzelnen Abschnitt abrufen |

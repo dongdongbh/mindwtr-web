@@ -95,7 +95,7 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 | `POST`   | `/tasks/:id/complete`  | Marquer comme terminée                   |
 | `POST`   | `/tasks/:id/archive`   | Marquer comme archivée                   |
 | `POST`   | `/tasks/:id/restore`   | Restaurer une tâche supprimée logiquement |
-| `POST` | `/tasks/:id/reopen` | Bureau : rouvrir une tâche ordinaire terminée (prochaine version) |
+| `POST` | `/tasks/:id/reopen` | Bureau : rouvrir une tâche ordinaire terminée |
 | `GET`    | `/projects`            | Répertorier les projets                  |
 | `POST` | `/projects` | Ordinateur : créer un projet |
 | `GET` | `/projects/:id` | Ordinateur : obtenir un projet |
@@ -103,12 +103,12 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 | `DELETE` | `/projects/:id` | Ordinateur : supprimer logiquement un projet |
 | `POST` | `/projects/:id/restore` | Ordinateur : restaurer un projet |
 | `GET`    | `/areas`               | Répertorier les domaines                 |
-| `POST` | `/areas` | Bureau : trouver, créer ou restaurer un domaine (prochaine version) |
+| `POST` | `/areas` | Bureau : trouver, créer ou restaurer un domaine |
 | `GET` | `/areas/:id` | Bureau : lire un domaine |
 | `PATCH` | `/areas/:id` | Bureau : modifier un domaine |
 | `GET`    | `/v1/areas`            | Alias de compatibilité pour les domaines |
-| `GET` | `/sections` | Lister les sections, avec `?projectId=` facultatif ; bureau dès la prochaine version |
-| `GET` | `/people` | Bureau : lister les personnes gérées (prochaine version) |
+| `GET` | `/sections` | Lister les sections, avec `?projectId=` facultatif ; compatible sur le bureau |
+| `GET` | `/people` | Bureau : lister les personnes gérées |
 | `POST`   | `/sections`            | Utilitaire : créer une section           |
 | `GET`    | `/sections/:id`        | Utilitaire : obtenir une section         |
 | `PATCH`  | `/sections/:id`        | Utilitaire : mettre à jour une section   |
@@ -207,13 +207,13 @@ curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
 
 Si la tâche a changé, le serveur renvoie `412` avec `code: "task_version_conflict"` et n’applique pas le correctif. Relisez-la et conciliez les modifications avant de tenter une nouvelle mise à jour. Omettre `If-Match` conserve le comportement inconditionnel. Une liste d’étiquettes d’entité séparées par des virgules est acceptée ; les étiquettes faibles ne satisfont jamais la comparaison forte. `If-Match: *` vérifie uniquement l’existence et ne protège donc pas contre les modifications d’une tâche existante.
 
-À partir de la prochaine version de bureau, `GET /tasks` renvoie aussi une table `versions` au même niveau, indexée par identifiant de tâche : `{ "tasks": [ ... ], "versions": { "task-id": "sha256-..." } }`. Chaque jeton correspond à celui de la même tâche lue individuellement ; les objets de tâche restent inchangés. Utilisez le jeton de l’instantané de liste que vous avez consulté avant de préparer une modification.
+`GET /tasks` renvoie aussi une table `versions` au même niveau, indexée par identifiant de tâche : `{ "tasks": [ ... ], "versions": { "task-id": "sha256-..." } }`. Chaque jeton correspond à celui de la même tâche lue individuellement ; les objets de tâche restent inchangés. Utilisez le jeton de l’instantané de liste que vous avez consulté avant de préparer une modification.
 
-**Terminer et archiver sous condition.** La prochaine version de bureau accepte `If-Match` sur `POST /tasks/:id/complete` et `/archive`. Une requête obsolète renvoie `412` / `task_version_conflict` sans modifier la tâche ni créer l’occurrence récurrente suivante. Les réponses réussies incluent un champ `version` au même niveau et un `ETag` fort. Les restrictions de récurrence existantes restent applicables.
+**Terminer et archiver sous condition.** L’API de bureau accepte `If-Match` sur `POST /tasks/:id/complete` et `/archive`. Une requête obsolète renvoie `412` / `task_version_conflict` sans modifier la tâche ni créer l’occurrence récurrente suivante. Les réponses réussies incluent un champ `version` au même niveau et un `ETag` fort. Les restrictions de récurrence existantes restent applicables.
 
 Pour exiger cette protection quand la version de bureau est inconnue, utilisez `POST /v2/tasks/:id/complete` ou `/v2/tasks/:id/archive` ; ces routes exigent un `If-Match` valide. Les anciennes versions renvoient `404`. Ne réessayez jamais ensuite avec l’action non protégée. L’alias existant `/v1/tasks/:id/complete` ne suffit pas : la version de bureau 1.3.8 l’accepte sans vérifier `If-Match`.
 
-**Détection des capacités.** Dans la prochaine version de bureau, un appel authentifié à `GET /health` indique `apiVersion: 2` et `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }`. Cela décrit le contrat de l’API de bureau, pas la version de l’application. Les anciens serveurs peuvent renvoyer uniquement `{ "ok": true }` ; cette réponse ne garantit aucune protection.
+**Détection des capacités.** un appel authentifié à `GET /health` indique `apiVersion: 2` et `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }`. Cela décrit le contrat de l’API de bureau, pas la version de l’application. Les anciens serveurs peuvent renvoyer uniquement `{ "ok": true }` ; cette réponse ne garantit aucune protection.
 
 **Nouvelles tentatives de création sans doublon.** Fournissez un `Idempotency-Key` lors de la création d’une tâche :
 
@@ -235,19 +235,19 @@ Les routes habituelles sous `/tasks` acceptent également ces en-têtes. Les ali
 
 **Mises à jour sans changement.** Une requête PATCH valide dont l’état final normalisé est inchangé réussit sans réécrire la tâche ni faire progresser `rev`, `revBy` ou `updatedAt`. Une normalisation qui répare ou modifie effectivement un champ reste une modification.
 
-**Listes de tâches conditionnelles (prochaine version de bureau).** `GET /tasks` et `/v1/tasks` renvoient un `ETag` fort préfixé par `task-list-sha256-` et `Cache-Control: private, no-cache`. Envoyez cette étiquette entre guillemets dans `If-None-Match` pour la même requête. Sans changement, la réponse est `304` sans corps ; sinon, le serveur renvoie la liste complète et une nouvelle étiquette. Les étiquettes faibles, les listes d’étiquettes et `*` sont acceptées. L’authentification reste obligatoire ; les en-têtes ou filtres invalides renvoient `400`.
+**Listes de tâches conditionnelles.** `GET /tasks` et `/v1/tasks` renvoient un `ETag` fort préfixé par `task-list-sha256-` et `Cache-Control: private, no-cache`. Envoyez cette étiquette entre guillemets dans `If-None-Match` pour la même requête. Sans changement, la réponse est `304` sans corps ; sinon, le serveur renvoie la liste complète et une nouvelle étiquette. Les étiquettes faibles, les listes d’étiquettes et `*` sont acceptées. L’authentification reste obligatoire ; les en-têtes ou filtres invalides renvoient `400`.
 
 L’étiquette couvre les filtres effectifs et tout l’instantané renvoyé, y compris les versions des tâches. Utilisez `?all=1&deleted=1` pour inclure les marqueurs de suppression conservés. Cela économise le transfert, mais lit et calcule toujours le hash de l’instantané en O(n) ; ce n’est ni un flux incrémental de changements ni une pagination REST. Les étiquettes de collection ne servent pas de versions pour modifier une tâche.
 
-**Listes de références (prochaine version de bureau).** `GET /sections` renvoie `{ "sections": [ ... ] }`, avec un filtre facultatif par `projectId` exact ; `GET /people` renvoie `{ "people": [ ... ] }`. Les deux excluent les enregistrements supprimés sauf avec `deleted=1`, acceptent les alias `/v1/` et fonctionnent lorsque les écritures sont désactivées. Les champs sont conservés ; le statut du projet parent ne filtre pas les enregistrements.
+**Listes de références.** `GET /sections` renvoie `{ "sections": [ ... ] }`, avec un filtre facultatif par `projectId` exact ; `GET /people` renvoie `{ "people": [ ... ] }`. Les deux excluent les enregistrements supprimés sauf avec `deleted=1`, acceptent les alias `/v1/` et fonctionnent lorsque les écritures sont désactivées. Les champs sont conservés ; le statut du projet parent ne filtre pas les enregistrements.
 
-**Rouvrir des tâches (prochaine version de bureau).** `POST /tasks/:id/reopen` accepte le corps facultatif `{ "status": "next" }`. Le statut cible est `next` par défaut ; `inbox`, `waiting` et `someday` sont aussi pris en charge. Ce point de terminaison rouvre une tâche ordinaire `done` ou `archived`, y compris une tâche annulée, en conservant son identité et son contenu. Il efface les marqueurs d’achèvement, d’annulation et d’archivage de cette tâche et réinitialise son ordre dans le tableau comme un changement de statut ordinaire. Il ne restaure ni la Corbeille ni les conteneurs absents ou supprimés.
+**Rouvrir des tâches.** `POST /tasks/:id/reopen` accepte le corps facultatif `{ "status": "next" }`. Le statut cible est `next` par défaut ; `inbox`, `waiting` et `someday` sont aussi pris en charge. Ce point de terminaison rouvre une tâche ordinaire `done` ou `archived`, y compris une tâche annulée, en conservant son identité et son contenu. Il efface les marqueurs d’achèvement, d’annulation et d’archivage de cette tâche et réinitialise son ordre dans le tableau comme un changement de statut ordinaire. Il ne restaure ni la Corbeille ni les conteneurs absents ou supprimés.
 
 Si nécessaire, la réouverture réactive le projet parent archivé et restaure les sections éligibles supprimées par cet archivage, en une seule transaction. Les autres tâches terminées le restent ; leurs marqueurs liés à l’archivage du projet sont retirés. Les sections supprimées indépendamment ou modifiées après l’archivage ne sont pas restaurées. Une tâche dans un état final avec des métadonnées de récurrence renvoie `409` / `recurrence_requires_app` sans toucher à sa tâche suivante ; ce point de terminaison n’annule pas une série récurrente.
 
 Utilisez éventuellement `If-Match` pour vous protéger des modifications concurrentes. En cas de succès, la réponse contient `{ "task": { ... }, "version": "sha256-..." }` et un ETag. Répéter le statut actif demandé ne change rien, mais demander un autre statut actif provoque un conflit ; utilisez PATCH pour le classement ordinaire. Une version périmée renvoie toujours `412`, même lors d’une nouvelle tentative avec le même statut. Les anciens serveurs renvoient `404` ; ne vous rabattez jamais sur PATCH pour rouvrir une tâche.
 
-**Créer des domaines (prochaine version de bureau).** `POST /areas` accepte `{ "name": "Work", "props": { "color": "#3b82f6", "icon": "Briefcase" } }` ; `props` est facultatif. En cas de succès, la réponse est `200` avec `{ "area": { ... } }`. Les espaces en début et en fin de nom sont supprimés et la comparaison ignore la casse. Un domaine non supprimé dont le nom correspond est renvoyé sans modification, avec `existing: true` uniquement dans la réponse ; la couleur et l’icône fournies sont ignorées. Sinon, un domaine supprimé correspondant est restauré avec le même ID, ou un nouveau domaine est créé.
+**Créer des domaines.** `POST /areas` accepte `{ "name": "Work", "props": { "color": "#3b82f6", "icon": "Briefcase" } }` ; `props` est facultatif. En cas de succès, la réponse est `200` avec `{ "area": { ... } }`. Les espaces en début et en fin de nom sont supprimés et la comparaison ignore la casse. Un domaine non supprimé dont le nom correspond est renvoyé sans modification, avec `existing: true` uniquement dans la réponse ; la couleur et l’icône fournies sont ignorées. Sinon, un domaine supprimé correspondant est restauré avec le même ID, ou un nouveau domaine est créé.
 
 La restauration suit les règles existantes de l’application : seuls les éléments enfants supprimés par la même ancienne suppression en cascade sont restaurés ; les éléments supprimés indépendamment le restent, et les tâches ou projets détachés ne sont pas réaffectés. Les modifications de métadonnées demandées respectent les couleurs explicitement définies pour les projets. Toutes les lignes concernées sont validées ensemble.
 

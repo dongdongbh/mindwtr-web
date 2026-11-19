@@ -95,7 +95,7 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 | `POST`   | `/tasks/:id/complete` | Mark as done                  |
 | `POST`   | `/tasks/:id/archive`  | Mark as archived              |
 | `POST`   | `/tasks/:id/restore`  | Restore a soft-deleted task   |
-| `POST` | `/tasks/:id/reopen` | Desktop: reopen an ordinary finished task (next release) |
+| `POST` | `/tasks/:id/reopen` | Desktop: reopen an ordinary finished task |
 | `GET`    | `/projects`           | List projects                 |
 | `POST` | `/projects` | Desktop: create project |
 | `GET` | `/projects/:id` | Desktop: get one project |
@@ -103,12 +103,12 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 | `DELETE` | `/projects/:id` | Desktop: soft-delete project |
 | `POST` | `/projects/:id/restore` | Desktop: restore project |
 | `GET`    | `/areas`              | List areas                    |
-| `POST` | `/areas` | Desktop: find, create or restore an area (next release) |
+| `POST` | `/areas` | Desktop: find, create or restore an area |
 | `GET` | `/areas/:id` | Desktop: get one Area |
 | `PATCH` | `/areas/:id` | Desktop: update an Area |
 | `GET`    | `/v1/areas`           | Compatibility alias for areas |
-| `GET` | `/sections` | List sections, optionally `?projectId=`; desktop support from the next release |
-| `GET` | `/people` | Desktop: list managed people (next release) |
+| `GET` | `/sections` | List sections, optionally `?projectId=`; supported on desktop |
+| `GET` | `/people` | Desktop: list managed people |
 | `POST`   | `/sections`           | Helper: create section        |
 | `GET`    | `/sections/:id`       | Helper: get single section    |
 | `PATCH`  | `/sections/:id`       | Helper: update section        |
@@ -207,9 +207,9 @@ curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
 
 If the task has changed, the server returns `412` with `code: "task_version_conflict"` and does not apply the patch. Read it again and reconcile the changes before trying another update. Omitting `If-Match` retains unconditional behavior. A comma-separated list of entity tags is accepted; weak tags never satisfy the strong comparison. `If-Match: *` checks existence only, so it does not protect against edits to an existing task.
 
-From the next desktop release, `GET /tasks` also returns a sibling `versions` map keyed by task ID: `{ "tasks": [ ... ], "versions": { "task-id": "sha256-..." } }`. Each token matches the same task's single-read token; the task objects themselves are unchanged. Use the token from the list snapshot you inspected before preparing an edit.
+`GET /tasks` also returns a sibling `versions` map keyed by task ID: `{ "tasks": [ ... ], "versions": { "task-id": "sha256-..." } }`. Each token matches the same task's single-read token; the task objects themselves are unchanged. Use the token from the list snapshot you inspected before preparing an edit.
 
-**Conditional completion and archive.** The next desktop release accepts `If-Match` on `POST /tasks/:id/complete` and `/archive`. A stale request returns `412` / `task_version_conflict` without changing the task or creating a recurring successor. Successful responses include sibling `version` and a strong `ETag`. Existing recurrence restrictions still apply.
+**Conditional completion and archive.** Desktop accepts `If-Match` on `POST /tasks/:id/complete` and `/archive`. A stale request returns `412` / `task_version_conflict` without changing the task or creating a recurring successor. Successful responses include sibling `version` and a strong `ETag`. Existing recurrence restrictions still apply.
 
 To require this protection when the desktop version is unknown, use `POST /v2/tasks/:id/complete` or `/v2/tasks/:id/archive`; these routes require a valid `If-Match`. Older desktop versions return `404`. Never fall back to the unprotected action after that response. The existing `/v1/tasks/:id/complete` alias is not sufficient: desktop 1.3.8 accepts it without checking `If-Match`.
 
@@ -235,19 +235,19 @@ The regular `/tasks` routes also accept these headers. The `/v1/tasks` create an
 
 **Unchanged updates.** A valid PATCH whose normalized final state is unchanged succeeds without rewriting the task or advancing `rev`, `revBy`, or `updatedAt`. Normalization that actually repairs or changes a field is still an edit.
 
-**Conditional task lists (next desktop release).** `GET /tasks` and `/v1/tasks` return a strong `ETag` beginning with `task-list-sha256-` and `Cache-Control: private, no-cache`. Send that quoted tag in `If-None-Match` on the same query. An unchanged response is `304` with no body; otherwise the server returns the complete list and a new tag. Weak tags, lists of tags, and `*` are accepted. Authentication is still required; invalid headers or filters return `400`.
+**Conditional task lists.** `GET /tasks` and `/v1/tasks` return a strong `ETag` beginning with `task-list-sha256-` and `Cache-Control: private, no-cache`. Send that quoted tag in `If-None-Match` on the same query. An unchanged response is `304` with no body; otherwise the server returns the complete list and a new tag. Weak tags, lists of tags, and `*` are accepted. Authentication is still required; invalid headers or filters return `400`.
 
 The tag covers the effective filters and the full returned snapshot, including task versions. Use `?all=1&deleted=1` to include retained tombstones. This saves transfer, but still reads and hashes the snapshot in O(n); it is not an incremental change feed or REST pagination. Collection tags cannot be used as task write versions.
 
-**Reference lists (next desktop release).** `GET /sections` returns `{ "sections": [ ... ] }`, optionally filtered by an exact `projectId`; `GET /people` returns `{ "people": [ ... ] }`. Both exclude deleted records unless `deleted=1` is supplied, accept `/v1/` aliases, and work with writes disabled. Records retain their fields; these endpoints do not filter by parent-project status.
+**Reference lists.** `GET /sections` returns `{ "sections": [ ... ] }`, optionally filtered by an exact `projectId`; `GET /people` returns `{ "people": [ ... ] }`. Both exclude deleted records unless `deleted=1` is supplied, accept `/v1/` aliases, and work with writes disabled. Records retain their fields; these endpoints do not filter by parent-project status.
 
-**Reopening tasks (next desktop release).** `POST /tasks/:id/reopen` accepts an optional body `{ "status": "next" }`. The target defaults to `next`; `inbox`, `waiting`, and `someday` are also supported. It reopens an ordinary `done` or `archived` task, including a cancelled task, keeping its identity and content. It clears the task’s completion/cancellation/archive markers and resets its board ordering as an ordinary status change does. It does not restore Trash or missing/deleted containers.
+**Reopening tasks.** `POST /tasks/:id/reopen` accepts an optional body `{ "status": "next" }`. The target defaults to `next`; `inbox`, `waiting`, and `someday` are also supported. It reopens an ordinary `done` or `archived` task, including a cancelled task, keeping its identity and content. It clears the task’s completion/cancellation/archive markers and resets its board ordering as an ordinary status change does. It does not restore Trash or missing/deleted containers.
 
 If needed, reopening reactivates an archived parent project and restores eligible sections deleted by that archive, in one transaction. Other finished tasks stay finished; their archive bookkeeping is retired. Sections independently deleted or changed after the archive are not restored. A terminal task with recurrence metadata returns `409` / `recurrence_requires_app` without touching its successor; this endpoint is not an undo operation for a recurring series.
 
 Use optional `If-Match` for protection against concurrent edits. Success returns `{ "task": { ... }, "version": "sha256-..." }` and an ETag. Repeating the requested active status is a no-op, but a different active status conflicts; use PATCH for ordinary triage. A stale version still returns `412`, even on a same-status retry. Older servers return `404`; never fall back to PATCH to reopen.
 
-**Creating areas (next desktop release).** `POST /areas` accepts `{ "name": "Work", "props": { "color": "#3b82f6", "icon": "Briefcase" } }`; `props` is optional. Success returns `200` with `{ "area": { ... } }`. Names are trimmed and compared case-insensitively. A live match is returned unchanged with response-only `existing: true`, ignoring supplied color/icon. Otherwise, a deleted match is restored with the same ID, or a new area is created.
+**Creating areas.** `POST /areas` accepts `{ "name": "Work", "props": { "color": "#3b82f6", "icon": "Briefcase" } }`; `props` is optional. Success returns `200` with `{ "area": { ... } }`. Names are trimmed and compared case-insensitively. A live match is returned unchanged with response-only `existing: true`, ignoring supplied color/icon. Otherwise, a deleted match is restored with the same ID, or a new area is created.
 
 Restoration follows the app’s existing rules: only children deleted by the same legacy cascade are restored; independently deleted children stay deleted, and detached tasks/projects are not reassigned. Requested metadata changes respect project color overrides. All affected rows commit together.
 

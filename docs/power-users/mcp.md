@@ -131,7 +131,7 @@ The built-in desktop MCP server and the standalone helper's **Local API mode** s
 
 - `mindwtr_get_task` returns a sibling `version` alongside `task`. Task creation and update responses also include it.
 - `mindwtr_update_task` accepts optional `expectedVersion`. Pass the version from the read you used to prepare the edit. A mismatch returns `task_version_conflict`; read again and reconcile rather than retrying with a freshly fetched version automatically.
-- From the next desktop release, `mindwtr_list_tasks` returns sibling `versions` keyed by task ID, with unchanged task objects. `mindwtr_complete_task` accepts optional `expectedVersion` in both desktop MCP and standalone Local API mode; the built-in desktop `mindwtr_archive_task` also accepts it. A mismatch leaves the task and recurring successors unchanged. Protected standalone completion uses a new `/v2` route and never falls back on older desktops.
+- `mindwtr_list_tasks` returns sibling `versions` keyed by task ID, with unchanged task objects. `mindwtr_complete_task` accepts optional `expectedVersion` in both desktop MCP and standalone Local API mode; the built-in desktop `mindwtr_archive_task` also accepts it. A mismatch leaves the task and recurring successors unchanged. Protected standalone completion uses a new `/v2` route and never falls back on older desktops.
 - `mindwtr_add_task` accepts optional `idempotencyKey`. Reuse the same key and arguments after a lost response to obtain the original creation result without duplicating the task. Different input with that key returns `idempotency_conflict`.
 - A genuinely unchanged task update leaves its revision and modification time unchanged.
 
@@ -174,10 +174,10 @@ Writes remain disabled unless explicitly enabled with `--write`. If the app is c
 | List/get tasks | Supported, including rich search operators, date filters, sorting and pagination |
 | Create tasks | Explicit title and fields; `quickAdd` is unavailable |
 | Update/complete/delete/restore tasks | Supported through the API's corresponding endpoints; terminal status changes cannot be submitted as ordinary edits |
-| Reopen ordinary finished tasks | `mindwtr_reopen_task` from the next desktop release; recurring terminal tasks require the app |
+| Reopen ordinary finished tasks | `mindwtr_reopen_task`; recurring terminal tasks require the app |
 | List/get/create/update/delete projects | Supported for the API's basic project fields: title, color, status, Area and sequential behavior |
-| List/create areas | Supported; `mindwtr_add_area` takes `name`, optional `color` and `icon` (creation from the next desktop release) |
-| List project sections and managed people | Supported from the next desktop release: `mindwtr_list_sections` accepts `projectId` and `includeDeleted`; `mindwtr_list_people` accepts `includeDeleted` |
+| List/create areas | Supported; `mindwtr_add_area` takes `name`, optional `color` and `icon` |
+| List project sections and managed people | Supported: `mindwtr_list_sections` accepts `projectId` and `includeDeleted`; `mindwtr_list_people` accepts `includeDeleted` |
 | Section/person single reads and writes, Area update/delete | Unavailable; these tools remain hidden in API mode |
 | GTD availability `view` | Unavailable in this backend |
 | Replacing attachment links | Unavailable because the API does not provide conditional attachment updates |
@@ -409,7 +409,7 @@ There is no built-in TLS or rate limiting for authenticated requests. To expose 
 
 ## Containers (Docker / Podman)
 
-The image `ghcr.io/dongdongbh/mindwtr-mcp:1.1.14` uses the MCP package version, independently of the app version. It supports API/Cloud backends only and contains no native SQLite addon. No data volume is needed; do not mount the desktop database. For the container network, use a reachable self-hosted Cloud endpoint.
+The image `ghcr.io/dongdongbh/mindwtr-mcp:1.1.15` uses the MCP package version, independently of the app version. It supports API/Cloud backends only and contains no native SQLite addon. No data volume is needed; do not mount the desktop database. For the container network, use a reachable self-hosted Cloud endpoint.
 
 Set `MINDWTR_MCP_CLOUD_TOKEN` in the environment that launches your MCP client, then configure the client to launch this command. Replace `docker` with `podman` if preferred:
 
@@ -419,7 +419,7 @@ export MINDWTR_MCP_CLOUD_URL="https://mindwtr.example.com"
 docker run --rm -i --read-only --cap-drop=ALL \
   --security-opt=no-new-privileges \
   -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
-  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.15
 ```
 
 Stdio is the default: keep `-i`, omit `-t`, and publish no port. Reads are enabled by default; append `--write` after the image only to enable changes. Use HTTPS for the Cloud URL. For a trusted internal HTTP endpoint, append `--cloud-allow-insecure-http=true`.
@@ -436,7 +436,7 @@ docker run --rm --read-only --cap-drop=ALL \
   -p 127.0.0.1:8722:8722 \
   -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
   -e MINDWTR_MCP_HTTP_TOKEN \
-  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14 \
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.15 \
   --http --http-host 0.0.0.0 --http-port 8722
 ```
 
@@ -921,7 +921,7 @@ Task and project create/update tools accept `viewSectionIds`, for example `{"som
 
 ### `mindwtr_reopen_task` (write)
 
-Available in built-in desktop MCP and standalone Local API mode from the next desktop release. Input: `id` (required), `status` (optional: `inbox`, `next`, `waiting`, `someday`; default `next`), and `expectedVersion` (optional). Reopens ordinary done/archived tasks; it refuses terminal recurrence metadata. An archived parent and eligible archive-owned sections reactivate atomically, while other finished tasks stay finished. It does not restore Trash. Old servers fail without a PATCH fallback. See [Local API lifecycle rules](/power-users/local-api#safe-writes).
+Available in built-in desktop MCP and standalone Local API mode. Input: `id` (required), `status` (optional: `inbox`, `next`, `waiting`, `someday`; default `next`), and `expectedVersion` (optional). Reopens ordinary done/archived tasks; it refuses terminal recurrence metadata. An archived parent and eligible archive-owned sections reactivate atomically, while other finished tasks stay finished. It does not restore Trash. Old servers fail without a PATCH fallback. See [Local API lifecycle rules](/power-users/local-api#safe-writes).
 
 ### `mindwtr_delete_task` (write)
 

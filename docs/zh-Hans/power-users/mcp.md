@@ -131,7 +131,7 @@ npm install -g --allow-scripts=better-sqlite3 mindwtr-mcp
 
 - `mindwtr_get_task` 返回的 `version` 与 `task` 同级。任务创建和更新响应也包含此值。
 - `mindwtr_update_task` 接受可选的 `expectedVersion`。请传入你准备编辑时所依据的读取结果中的版本。不匹配时会返回 `task_version_conflict`；请重新读取并协调变化，不要自动使用刚获取的版本重试。
-- 从下一个桌面版本开始，`mindwtr_list_tasks` 返回以任务 ID 为键的同级 `versions`，任务对象保持不变。桌面 MCP 和独立辅助程序的 Local API 模式中的 `mindwtr_complete_task` 均接受可选的 `expectedVersion`；桌面内置的 `mindwtr_archive_task` 也接受此参数。版本不匹配时，任务及其后续重复任务均保持不变。独立辅助程序的受保护完成操作使用新的 `/v2` 路由，在旧桌面版本上绝不回退为无保护操作。
+- `mindwtr_list_tasks` 返回以任务 ID 为键的同级 `versions`，任务对象保持不变。桌面 MCP 和独立辅助程序的 Local API 模式中的 `mindwtr_complete_task` 均接受可选的 `expectedVersion`；桌面内置的 `mindwtr_archive_task` 也接受此参数。版本不匹配时，任务及其后续重复任务均保持不变。独立辅助程序的受保护完成操作使用新的 `/v2` 路由，在旧桌面版本上绝不回退为无保护操作。
 - `mindwtr_add_task` 接受可选的 `idempotencyKey`。响应丢失后，重复使用相同的键和参数，即可获得原始创建结果，而不会重复创建任务。将该键用于不同输入会返回 `idempotency_conflict`。
 - 真正未发生变化的任务更新会保持其修订版本和修改时间不变。
 
@@ -174,10 +174,10 @@ npm install -g --omit=optional mindwtr-mcp
 | 列出/获取任务 | 支持，包括丰富的搜索运算符、日期筛选、排序和分页 |
 | 创建任务 | 明确指定标题和字段；不支持 `quickAdd` |
 | 更新/完成/删除/恢复任务 | 通过 API 的相应端点支持；终态变更不能作为普通编辑提交 |
-| 重新打开普通的已结束任务 | 下一个桌面版本起提供 `mindwtr_reopen_task`；处于终态的重复任务仍需在应用中处理 |
+| 重新打开普通的已结束任务 | 桌面版提供 `mindwtr_reopen_task`；处于终态的重复任务仍需在应用中处理 |
 | 列出/获取/创建/更新/删除项目 | 支持 API 的基本项目字段：标题、颜色、状态、领域和顺序执行行为 |
-| 列出/创建领域 | 支持；`mindwtr_add_area` 接受 `name` 以及可选的 `color` 和 `icon`（下一个桌面版本起支持创建） |
-| 列出项目分区和受管理的人员 | 下一个桌面版本起支持：`mindwtr_list_sections` 接受 `projectId` 和 `includeDeleted`；`mindwtr_list_people` 接受 `includeDeleted` |
+| 列出/创建领域 | 支持；`mindwtr_add_area` 接受 `name` 以及可选的 `color` 和 `icon`（桌面版支持创建） |
+| 列出项目分区和受管理的人员 | 桌面版支持：`mindwtr_list_sections` 接受 `projectId` 和 `includeDeleted`；`mindwtr_list_people` 接受 `includeDeleted` |
 | 分区/人员的单条读取和写入、领域更新/删除 | 不支持；这些工具在 API 模式下仍隐藏 |
 | GTD 可执行性 `view` | 此后端不支持 |
 | 替换附件链接 | 不支持，因为 API 不提供带条件的附件更新 |
@@ -409,7 +409,7 @@ MCP 端点为 `POST /mcp`，每个请求都必须携带 `Authorization: Bearer <
 
 ## 容器（Docker / Podman）
 
-镜像 `ghcr.io/dongdongbh/mindwtr-mcp:1.1.14` 使用 MCP 软件包版本号，与应用版本独立。它仅支持 API/Cloud 后端，不包含 SQLite 原生插件。无需数据卷；不要挂载桌面数据库。在容器网络中，请使用可访问的自托管 Cloud 端点。
+镜像 `ghcr.io/dongdongbh/mindwtr-mcp:1.1.15` 使用 MCP 软件包版本号，与应用版本独立。它仅支持 API/Cloud 后端，不包含 SQLite 原生插件。无需数据卷；不要挂载桌面数据库。在容器网络中，请使用可访问的自托管 Cloud 端点。
 
 在启动 MCP 客户端的环境中设置 `MINDWTR_MCP_CLOUD_TOKEN`，然后配置客户端启动以下命令。也可以将 `docker` 替换为 `podman`：
 
@@ -419,7 +419,7 @@ export MINDWTR_MCP_CLOUD_URL="https://mindwtr.example.com"
 docker run --rm -i --read-only --cap-drop=ALL \
   --security-opt=no-new-privileges \
   -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
-  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.15
 ```
 
 默认使用 stdio：保留 `-i`，不要使用 `-t`，也不要发布端口。默认只读；只有需要启用修改时，才在镜像名后添加 `--write`。Cloud URL 请使用 HTTPS。对于可信的内部 HTTP 端点，添加 `--cloud-allow-insecure-http=true`。
@@ -436,7 +436,7 @@ docker run --rm --read-only --cap-drop=ALL \
   -p 127.0.0.1:8722:8722 \
   -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
   -e MINDWTR_MCP_HTTP_TOKEN \
-  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14 \
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.15 \
   --http --http-host 0.0.0.0 --http-port 8722
 ```
 
@@ -921,7 +921,7 @@ MCP 1.1.13 尚不支持此功能；请使用包含 [#1439 修复](https://github
 
 ### `mindwtr_reopen_task`（写入）
 
-下一个桌面版本起，在内置桌面 MCP 和独立程序的 Local API 模式中可用。输入：`id`（必填）、`status`（可选：`inbox`、`next`、`waiting`、`someday`；默认 `next`）以及 `expectedVersion`（可选）。重新打开普通的已完成或已归档任务；拒绝处理带有重复元数据的终态任务。已归档父项目及由该次归档删除且符合条件的分区会在同一事务中重新激活，其他已结束任务仍保持结束状态。它不会恢复回收站内容。旧服务器会直接失败，不会回退到 PATCH。参见 [Local API 生命周期规则](/zh-Hans/power-users/local-api#safe-writes)。
+桌面版，在内置桌面 MCP 和独立程序的 Local API 模式中可用。输入：`id`（必填）、`status`（可选：`inbox`、`next`、`waiting`、`someday`；默认 `next`）以及 `expectedVersion`（可选）。重新打开普通的已完成或已归档任务；拒绝处理带有重复元数据的终态任务。已归档父项目及由该次归档删除且符合条件的分区会在同一事务中重新激活，其他已结束任务仍保持结束状态。它不会恢复回收站内容。旧服务器会直接失败，不会回退到 PATCH。参见 [Local API 生命周期规则](/zh-Hans/power-users/local-api#safe-writes)。
 
 ### `mindwtr_delete_task`（写入）
 

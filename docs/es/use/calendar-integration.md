@@ -262,10 +262,10 @@ Ese enlace funciona como una contraseña: solo las aplicaciones que tengan el en
 - Los calendarios externos son de **solo lectura** dentro de Mindwtr. Crear una tarea a partir de un evento no modifica el evento original.
 - Los eventos ICS recurrentes admiten `FREQ=DAILY`, `WEEKLY`, `MONTHLY` y `YEARLY`, incluidos `INTERVAL`, `COUNT`, `UNTIL`, `BYDAY`, `BYMONTH` y `BYMONTHDAY` para los patrones que Mindwtr puede expandir en el intervalo visible.
 - Los eventos anuales de día completo y las reglas anuales como `FREQ=YEARLY;COUNT=...` o `FREQ=YEARLY;BYMONTH=1;BYDAY=3MO` se expanden en la ventana visible del calendario.
-- En la próxima versión se admiten las exclusiones `EXDATE` y las modificaciones `RECURRENCE-ID`, incluidas las instancias reprogramadas. No se expanden fechas adicionales indicadas mediante `RDATE`.
+- Se admiten las exclusiones `EXDATE` y las modificaciones `RECURRENCE-ID`, incluidas las instancias reprogramadas. No se expanden fechas adicionales indicadas mediante `RDATE`.
 - Los eventos recurrentes con `RRULE:...;COUNT=...` se detienen después de su recuento original. Si antes veías eventos recurrentes muy antiguos, vuelve a importarlos después de actualizar a v0.4.9+.
 
-## Referencia de calendario en proyectos (próxima versión)
+## Referencia de calendario en proyectos
 
 En un proyecto, elige **Vincular evento del calendario** para identificar un evento ICS existente como su próximo compromiso programado. El selector muestra los próximos 90 días. Vincular no crea una tarea ni otro evento; el calendario conserva su control. Puedes sustituir o quitar la referencia.
 

@@ -414,7 +414,7 @@ iOS-Kurzbefehlsbeispiel:
 | `/note:text` | `/note:call back` | Beschreibung |
 | `/status` | `/next`, `/waiting`, `/someday`, `/reference`, `/done`, `/archived`, `/inbox` | Status |
 
-Ab der nächsten Version kannst du beim Erfassen eine Voraberinnerung setzen: `Call dentist /due:tomorrow 3pm /remind-due:1d` oder `Meeting /start:tomorrow 10am /remind-start:30m`. Das zugehörige `/due:` oder `/start:` muss eine Uhrzeit enthalten. Verwende eine ganze Zahl mit `m`, `h`, `d` oder `w`; Fälligkeitserinnerungen unterstützen bis zu 7 Tage, Starterinnerungen 5, 15, 30 oder 60 Minuten. Mit `0m` schaltest du eine Voraberinnerung aus. Ungültige Werte bleiben sichtbar und müssen vor dem Speichern korrigiert werden. Die Befehle verwenden die vorhandenen Erinnerungseinstellungen und aktivieren keine ausgeschalteten Benachrichtigungen. Mehrere unabhängige Erinnerungszeitpunkte werden nicht unterstützt.
+Du kannst beim Erfassen eine Voraberinnerung setzen: `Call dentist /due:tomorrow 3pm /remind-due:1d` oder `Meeting /start:tomorrow 10am /remind-start:30m`. Das zugehörige `/due:` oder `/start:` muss eine Uhrzeit enthalten. Verwende eine ganze Zahl mit `m`, `h`, `d` oder `w`; Fälligkeitserinnerungen unterstützen bis zu 7 Tage, Starterinnerungen 5, 15, 30 oder 60 Minuten. Mit `0m` schaltest du eine Voraberinnerung aus. Ungültige Werte bleiben sichtbar und müssen vor dem Speichern korrigiert werden. Die Befehle verwenden die vorhandenen Erinnerungseinstellungen und aktivieren keine ausgeschalteten Benachrichtigungen. Mehrere unabhängige Erinnerungszeitpunkte werden nicht unterstützt.
 
 `/estimate:5m`, `/estimate:45m` und `/estimate:1h30m` setzen den geschätzten Zeitbedarf; `/duration:` ist ein Alias. Eigene Werte behalten ihre genaue Minutenzahl. Gültige Befehle werden aus dem Titel entfernt; ungültige oder unvollständige bleiben sichtbar. Normaler Text wie „Einen 30-minütigen Vortrag ansehen“ setzt keinen Zeitbedarf. Eine ausdrücklich im Erfassungsformular gewählte Schätzung hat Vorrang; die Kalendererfassung behält ihre gewählte Dauer. Ist **Zeitabschätzungen** in den Einstellungen ausgeschaltet, werden `/estimate:` und `/duration:` nicht ausgewertet und bleiben im Titel; die Syntaxhilfe führt sie dann nicht auf.
 
@@ -767,7 +767,7 @@ Ab v1.3.1: Ordnen Sie Aufgaben direkt in dieser Liste in Irgendwann-Abschnitte e
 
 ## Benachrichtigungen und Erinnerungen
 
-Ab der nächsten Version öffnet **Einstellungen → Benachrichtigungen → Ton und Vibration für Erinnerungen** unter Android 8 oder neuer den Kanal **Mindwtr reminders**. Dort kannst du die Vibration für dieses Gerät einschalten. Die Benachrichtigungseinstellungen und der Modus „Nicht stören“ gelten weiterhin.
+Die Option öffnet **Einstellungen → Benachrichtigungen → Ton und Vibration für Erinnerungen** unter Android 8 oder neuer den Kanal **Mindwtr reminders**. Dort kannst du die Vibration für dieses Gerät einschalten. Die Benachrichtigungseinstellungen und der Modus „Nicht stören“ gelten weiterhin.
 
 ### Arten von Benachrichtigungen
 

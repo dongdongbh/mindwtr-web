@@ -131,7 +131,7 @@ npm install -g --allow-scripts=better-sqlite3 mindwtr-mcp
 
 - `mindwtr_get_task` 傳回的 `version` 與 `task` 同層級。任務建立與更新回應也包含此值。
 - `mindwtr_update_task` 接受選用的 `expectedVersion`。請傳入你準備編輯時所依據的讀取結果中的版本。不相符時會傳回 `task_version_conflict`；請重新讀取並協調變更，不要自動使用剛取得的版本重試。
-- 從下一個桌面版本開始，`mindwtr_list_tasks` 傳回以任務 ID 為索引鍵的同層級 `versions`，任務物件保持不變。桌面 MCP 和獨立輔助程式的 Local API 模式中的 `mindwtr_complete_task` 均接受可選的 `expectedVersion`；桌面內建的 `mindwtr_archive_task` 也接受此參數。版本不符時，任務及其後續重複任務均保持不變。獨立輔助程式的受保護完成操作使用新的 `/v2` 路由，在舊桌面版本上絕不退回無保護操作。
+- `mindwtr_list_tasks` 傳回以任務 ID 為索引鍵的同層級 `versions`，任務物件保持不變。桌面 MCP 和獨立輔助程式的 Local API 模式中的 `mindwtr_complete_task` 均接受可選的 `expectedVersion`；桌面內建的 `mindwtr_archive_task` 也接受此參數。版本不符時，任務及其後續重複任務均保持不變。獨立輔助程式的受保護完成操作使用新的 `/v2` 路由，在舊桌面版本上絕不退回無保護操作。
 - `mindwtr_add_task` 接受選用的 `idempotencyKey`。回應遺失後，重複使用相同的鍵與引數，即可取得原始建立結果，而不會重複建立任務。將該鍵用於不同輸入會傳回 `idempotency_conflict`。
 - 真正未發生變更的任務更新會保持其修訂版本與修改時間不變。
 
@@ -174,10 +174,10 @@ npm install -g --omit=optional mindwtr-mcp
 | 列出／取得任務 | 支援，包括豐富的搜尋運算子、日期篩選、排序與分頁 |
 | 建立任務 | 明確指定標題與欄位；不支援 `quickAdd` |
 | 更新／完成／刪除／還原任務 | 透過 API 的相應端點支援；終態變更不能當作一般編輯提交 |
-| 重新開啟一般已結束任務 | 下一個桌面版本起提供 `mindwtr_reopen_task`；處於終態的重複任務仍需在應用程式中處理 |
+| 重新開啟一般已結束任務 | 桌面版提供 `mindwtr_reopen_task`；處於終態的重複任務仍需在應用程式中處理 |
 | 列出／取得／建立／更新／刪除專案 | 支援 API 的基本專案欄位：標題、顏色、狀態、領域與循序執行行為 |
-| 列出／建立領域 | 支援；`mindwtr_add_area` 接受 `name` 以及選填的 `color` 和 `icon`（下一個桌面版本起支援建立） |
-| 列出專案分區和受管理的人員 | 下一個桌面版本起支援：`mindwtr_list_sections` 接受 `projectId` 和 `includeDeleted`；`mindwtr_list_people` 接受 `includeDeleted` |
+| 列出／建立領域 | 支援；`mindwtr_add_area` 接受 `name` 以及選填的 `color` 和 `icon`（桌面版支援建立） |
+| 列出專案分區和受管理的人員 | 桌面版支援：`mindwtr_list_sections` 接受 `projectId` 和 `includeDeleted`；`mindwtr_list_people` 接受 `includeDeleted` |
 | 分區／人員的單筆讀取和寫入、領域更新／刪除 | 不支援；這些工具在 API 模式下仍隱藏 |
 | GTD 可執行性 `view` | 此後端不支援 |
 | 取代附件連結 | 不支援，因為 API 不提供附帶條件的附件更新 |
@@ -409,7 +409,7 @@ MCP 端點為 `POST /mcp`，每個請求都必須帶 `Authorization: Bearer <tok
 
 ## 容器（Docker / Podman）
 
-映像檔 `ghcr.io/dongdongbh/mindwtr-mcp:1.1.14` 使用 MCP 套件版本號，與應用程式版本獨立。它僅支援 API/Cloud 後端，不包含 SQLite 原生附加元件。不需要資料卷；請勿掛載桌面版資料庫。在容器網路中，請使用可存取的自行託管 Cloud 端點。
+映像檔 `ghcr.io/dongdongbh/mindwtr-mcp:1.1.15` 使用 MCP 套件版本號，與應用程式版本獨立。它僅支援 API/Cloud 後端，不包含 SQLite 原生附加元件。不需要資料卷；請勿掛載桌面版資料庫。在容器網路中，請使用可存取的自行託管 Cloud 端點。
 
 在啟動 MCP 用戶端的環境中設定 `MINDWTR_MCP_CLOUD_TOKEN`，再設定用戶端啟動以下命令。也可以將 `docker` 換成 `podman`：
 
@@ -419,7 +419,7 @@ export MINDWTR_MCP_CLOUD_URL="https://mindwtr.example.com"
 docker run --rm -i --read-only --cap-drop=ALL \
   --security-opt=no-new-privileges \
   -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
-  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.15
 ```
 
 預設使用 stdio：保留 `-i`，不要使用 `-t`，也不要發佈連接埠。預設為唯讀；只有需要啟用修改時，才在映像檔名稱後加入 `--write`。Cloud URL 請使用 HTTPS。對於可信任的內部 HTTP 端點，加入 `--cloud-allow-insecure-http=true`。
@@ -436,7 +436,7 @@ docker run --rm --read-only --cap-drop=ALL \
   -p 127.0.0.1:8722:8722 \
   -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
   -e MINDWTR_MCP_HTTP_TOKEN \
-  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14 \
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.15 \
   --http --http-host 0.0.0.0 --http-port 8722
 ```
 
@@ -921,7 +921,7 @@ MCP 1.1.13 尚不支援此功能；請使用包含 [#1439 修正](https://github
 
 ### `mindwtr_reopen_task`（寫入）
 
-下一個桌面版本起，在內建桌面 MCP 和獨立程式的 Local API 模式中可用。輸入：`id`（必填）、`status`（選填：`inbox`、`next`、`waiting`、`someday`；預設 `next`）以及 `expectedVersion`（選填）。重新開啟一般已完成或已封存任務；拒絕處理帶有重複中繼資料的終態任務。已封存父專案及由該次封存刪除且符合條件的分區會在同一筆交易中重新啟用，其他已結束任務仍保持結束狀態。它不會還原垃圾桶內容。舊伺服器會直接失敗，不會改用 PATCH。參閱 [Local API 生命週期規則](/zh-Hant/power-users/local-api#safe-writes)。
+桌面版，在內建桌面 MCP 和獨立程式的 Local API 模式中可用。輸入：`id`（必填）、`status`（選填：`inbox`、`next`、`waiting`、`someday`；預設 `next`）以及 `expectedVersion`（選填）。重新開啟一般已完成或已封存任務；拒絕處理帶有重複中繼資料的終態任務。已封存父專案及由該次封存刪除且符合條件的分區會在同一筆交易中重新啟用，其他已結束任務仍保持結束狀態。它不會還原垃圾桶內容。舊伺服器會直接失敗，不會改用 PATCH。參閱 [Local API 生命週期規則](/zh-Hant/power-users/local-api#safe-writes)。
 
 ### `mindwtr_delete_task`（寫入）
 

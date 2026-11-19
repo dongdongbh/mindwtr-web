@@ -262,10 +262,10 @@ Mindwtr 預期 URL 會擷取原始 iCalendar 文字。可用的 feed 通常：
 - 外部行事曆在 Mindwtr 中為**唯讀**。從事件建立任務不會修改原始事件。
 - ICS 重複事件支援 `FREQ=DAILY`、`WEEKLY`、`MONTHLY` 與 `YEARLY`，包括 Mindwtr 可展開至可見範圍之模式的 `INTERVAL`、`COUNT`、`UNTIL`、`BYDAY`、`BYMONTH` 與 `BYMONTHDAY`。
 - 每年全天事件及 `FREQ=YEARLY;COUNT=...` 或 `FREQ=YEARLY;BYMONTH=1;BYDAY=3MO` 等年度規則，會在可見行事曆範圍中展開。
-- 下一版本支援 `EXDATE` 排除日期與 `RECURRENCE-ID` 覆寫項，包括改期的重複實例。不會展開透過 `RDATE` 指定的額外日期。
+- 支援 `EXDATE` 排除日期與 `RECURRENCE-ID` 覆寫項，包括改期的重複實例。不會展開透過 `RDATE` 指定的額外日期。
 - 帶有 `RRULE:...;COUNT=...` 的重複事件會在原始次數後停止。如果曾看見非常久以前的重複事件，請更新至 v0.4.9+ 後重新匯入。
 
-## 專案行事曆參照（下個版本）
+## 專案行事曆參照
 
 在專案中選擇**連結行事曆事件**，將一個現有 ICS 事件指定為下一個已安排的承諾。選擇器顯示未來 90 天的事件。連結不會建立任務或重複事件，事件仍由行事曆管理；你可以替換或取消連結。
 

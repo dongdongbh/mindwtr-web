@@ -95,7 +95,7 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 | `POST`   | `/tasks/:id/complete` | 標記為已完成                 |
 | `POST`   | `/tasks/:id/archive`  | 標記為已封存                 |
 | `POST`   | `/tasks/:id/restore`  | 還原已軟刪除的任務           |
-| `POST` | `/tasks/:id/reopen` | 桌面版：重新開啟一般已結束任務（下一個版本） |
+| `POST` | `/tasks/:id/reopen` | 桌面版：重新開啟一般已結束任務 |
 | `GET`    | `/projects`           | 列出專案                     |
 | `POST` | `/projects` | 桌面版：建立專案 |
 | `GET` | `/projects/:id` | 桌面版：取得單一專案 |
@@ -103,12 +103,12 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 | `DELETE` | `/projects/:id` | 桌面版：軟刪除專案 |
 | `POST` | `/projects/:id/restore` | 桌面版：還原專案 |
 | `GET`    | `/areas`              | 列出領域                     |
-| `POST` | `/areas` | 桌面版：尋找、建立或還原領域（下一個版本） |
+| `POST` | `/areas` | 桌面版：尋找、建立或還原領域 |
 | `GET` | `/areas/:id` | 桌面端：取得單一領域 |
 | `PATCH` | `/areas/:id` | 桌面端：更新領域 |
 | `GET`    | `/v1/areas`           | 領域的相容性別名             |
-| `GET` | `/sections` | 列出分區，可加 `?projectId=`；下一個桌面版本起支援 |
-| `GET` | `/people` | 桌面版：列出受管理的人員（下一個版本） |
+| `GET` | `/sections` | 列出分區，可加 `?projectId=`；桌面版支援 |
+| `GET` | `/people` | 桌面版：列出受管理的人員 |
 | `POST`   | `/sections`           | 輔助工具：建立分區           |
 | `GET`    | `/sections/:id`       | 輔助工具：取得單一分區       |
 | `PATCH`  | `/sections/:id`       | 輔助工具：更新分區           |
@@ -207,13 +207,13 @@ curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
 
 如果任務已發生變更，伺服器會傳回 `412` 與 `code: "task_version_conflict"`，且不會套用修補。請重新讀取任務並協調這些變更，然後再嘗試更新。省略 `If-Match` 會保留無條件寫入行為。此標頭支援以逗號分隔的實體標記清單；弱標記永遠無法滿足強比較。`If-Match: *` 只檢查任務是否存在，因此無法防止覆蓋對現有任務的編輯。
 
-從下一個桌面版本開始，`GET /tasks` 還會傳回與任務清單同層級的 `versions` 對應表，以任務 ID 為索引鍵：`{ "tasks": [ ... ], "versions": { "task-id": "sha256-..." } }`。每個權杖與單獨讀取同一任務時的權杖一致，任務物件本身不變。準備編輯時，請使用你已查看的清單快照中的權杖。
+`GET /tasks` 還會傳回與任務清單同層級的 `versions` 對應表，以任務 ID 為索引鍵：`{ "tasks": [ ... ], "versions": { "task-id": "sha256-..." } }`。每個權杖與單獨讀取同一任務時的權杖一致，任務物件本身不變。準備編輯時，請使用你已查看的清單快照中的權杖。
 
-**有條件地完成和封存。** 下一個桌面版本在 `POST /tasks/:id/complete` 和 `/archive` 上接受 `If-Match`。過期請求會傳回 `412` / `task_version_conflict`，不會修改任務或產生下一次重複任務。成功回應包含同層級的 `version` 和強 `ETag`。現有的重複規則限制仍然適用。
+**有條件地完成和封存。** 桌面版在 `POST /tasks/:id/complete` 和 `/archive` 上接受 `If-Match`。過期請求會傳回 `412` / `task_version_conflict`，不會修改任務或產生下一次重複任務。成功回應包含同層級的 `version` 和強 `ETag`。現有的重複規則限制仍然適用。
 
 當桌面版本未知時，要確保此保護生效，請使用 `POST /v2/tasks/:id/complete` 或 `/v2/tasks/:id/archive`；這些路由要求提供有效的 `If-Match`。舊桌面版本會傳回 `404`。收到該回應後，絕不要退回無保護的操作。現有的 `/v1/tasks/:id/complete` 別名並不足夠：桌面版 1.3.8 接受該路由，但不檢查 `If-Match`。
 
-**能力偵測。** 下一個桌面版本中，經過驗證的 `GET /health` 會傳回 `apiVersion: 2` 和 `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }`。這描述桌面 API 的介面約定，而不是應用程式的發佈版本。舊伺服器可能只傳回 `{ "ok": true }`；不要據此推斷寫入保護可用。
+**能力偵測。** 桌面版中，經過驗證的 `GET /health` 會傳回 `apiVersion: 2` 和 `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }`。這描述桌面 API 的介面約定，而不是應用程式的發佈版本。舊伺服器可能只傳回 `{ "ok": true }`；不要據此推斷寫入保護可用。
 
 **可安全重試的建立。** 建立任務時提供 `Idempotency-Key`：
 
@@ -235,19 +235,19 @@ curl -s -X POST 'http://127.0.0.1:3456/v1/tasks' \
 
 **未發生變更的更新。** 如果有效 PATCH 經正規化後的最終狀態未發生變更，則會成功傳回，而不會重寫任務或推進 `rev`、`revBy` 或 `updatedAt`。如果正規化確實修復或變更了欄位，仍會視為一次編輯。
 
-**條件式任務清單（下一個桌面版本）。** `GET /tasks` 和 `/v1/tasks` 傳回以 `task-list-sha256-` 開頭的強 `ETag`，以及 `Cache-Control: private, no-cache`。對相同查詢，將帶引號的標記放入 `If-None-Match`。結果未變時傳回無回應本文的 `304`；否則傳回完整清單和新標記。支援弱標記、標記清單和 `*`。仍需驗證身分；無效標頭或篩選條件傳回 `400`。
+**條件式任務清單。** `GET /tasks` 和 `/v1/tasks` 傳回以 `task-list-sha256-` 開頭的強 `ETag`，以及 `Cache-Control: private, no-cache`。對相同查詢，將帶引號的標記放入 `If-None-Match`。結果未變時傳回無回應本文的 `304`；否則傳回完整清單和新標記。支援弱標記、標記清單和 `*`。仍需驗證身分；無效標頭或篩選條件傳回 `400`。
 
 標記涵蓋實際篩選條件和完整回應快照，包括任務版本。使用 `?all=1&deleted=1` 可包含仍保留的刪除標記。這減少傳輸量，但仍以 O(n) 讀取快照並計算雜湊；它不是增量變更串流或 REST 分頁。集合標記不能用作任務寫入版本。
 
-**參照清單（下一個桌面版本）。** `GET /sections` 傳回 `{ "sections": [ ... ] }`，可按精確的 `projectId` 篩選；`GET /people` 傳回 `{ "people": [ ... ] }`。兩者預設排除已刪除記錄，傳入 `deleted=1` 可包含它們；支援 `/v1/` 別名，在停用寫入時仍可使用。記錄保留原有欄位，不按父專案狀態篩選。
+**參照清單。** `GET /sections` 傳回 `{ "sections": [ ... ] }`，可按精確的 `projectId` 篩選；`GET /people` 傳回 `{ "people": [ ... ] }`。兩者預設排除已刪除記錄，傳入 `deleted=1` 可包含它們；支援 `/v1/` 別名，在停用寫入時仍可使用。記錄保留原有欄位，不按父專案狀態篩選。
 
-**重新開啟任務（下一個桌面版本）。** `POST /tasks/:id/reopen` 接受選填的請求本文 `{ "status": "next" }`。目標狀態預設為 `next`，也支援 `inbox`、`waiting` 和 `someday`。它會重新開啟處於 `done` 或 `archived` 狀態的一般任務，包括已取消任務，並保留任務的識別與內容。它會清除該任務的完成、取消與封存標記，並像一般狀態變更一樣重設看板排序。它不會還原垃圾桶內容，也不會還原遺失或已刪除的容器。
+**重新開啟任務。** `POST /tasks/:id/reopen` 接受選填的請求本文 `{ "status": "next" }`。目標狀態預設為 `next`，也支援 `inbox`、`waiting` 和 `someday`。它會重新開啟處於 `done` 或 `archived` 狀態的一般任務，包括已取消任務，並保留任務的識別與內容。它會清除該任務的完成、取消與封存標記，並像一般狀態變更一樣重設看板排序。它不會還原垃圾桶內容，也不會還原遺失或已刪除的容器。
 
 如有需要，重新開啟任務會在同一筆交易中重新啟用已封存的父專案，並還原由該次封存刪除且符合還原條件的分區。其他已結束任務仍保持結束狀態；它們與專案封存相關的標記會被移除。獨立刪除的分區或封存後又被修改的分區不會還原。處於終態且帶有重複中繼資料的任務會傳回 `409` / `recurrence_requires_app`，不會修改其後續任務；此端點不是重複系列的復原操作。
 
 可使用 `If-Match` 防止並行編輯覆寫。成功時傳回 `{ "task": { ... }, "version": "sha256-..." }` 和 ETag。重複請求相同的使用中狀態不會產生變化，但請求其他使用中狀態會發生衝突；一般分類調整請使用 PATCH。即使重試的是相同狀態，版本過期仍會傳回 `412`。舊伺服器傳回 `404`；切勿改用 PATCH 來重新開啟任務。
 
-**建立領域（下一個桌面版本）。** `POST /areas` 接受 `{ "name": "Work", "props": { "color": "#3b82f6", "icon": "Briefcase" } }`，其中 `props` 可省略。成功時傳回 `200` 和 `{ "area": { ... } }`。名稱會移除前後空白，比較時不區分大小寫。若比對到未刪除的領域，會原樣傳回，並僅在回應中附加 `existing: true`，忽略傳入的顏色與圖示。否則，會使用原 ID 還原相符的已刪除領域，或建立新領域。
+**建立領域。** `POST /areas` 接受 `{ "name": "Work", "props": { "color": "#3b82f6", "icon": "Briefcase" } }`，其中 `props` 可省略。成功時傳回 `200` 和 `{ "area": { ... } }`。名稱會移除前後空白，比較時不區分大小寫。若比對到未刪除的領域，會原樣傳回，並僅在回應中附加 `existing: true`，忽略傳入的顏色與圖示。否則，會使用原 ID 還原相符的已刪除領域，或建立新領域。
 
 還原操作遵循應用程式現有規則：僅還原由同一次舊版串聯刪除的子項；獨立刪除的子項仍保持刪除狀態，已解除關聯的任務與專案不會被重新指派。請求的中繼資料變更會保留專案的自訂顏色設定。所有受影響的列會一併提交。
 

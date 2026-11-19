@@ -44,7 +44,7 @@ url = "http://127.0.0.1:8722/mcp"
 Authorization = "Bearer <token from Mindwtr>"
 ```
 
-Redémarrez ou reconnectez votre client Codex après avoir modifié sa configuration. **Copier les informations de connexion** fournit du JSON aux clients utilisant `mcpServers` ; les clients limités à stdio nécessitent toujours l’utilitaire autonome.
+Redémarrez ou reconnectez votre client Codex après avoir modifié sa configuration. **Copier les informations de connexion** fournit du JSON aux clients utilisant `mcpServers`; les clients limités à stdio nécessitent toujours l’utilitaire autonome.
 
 ### Autorisations et port
 
@@ -130,8 +130,8 @@ Le paquet est en lecture seule par défaut. Ajoutez `--write` uniquement lorsque
 Le serveur MCP intégré à l’application de bureau et le **mode API locale** de l’utilitaire autonome prennent en charge les fonctionnalités suivantes :
 
 - `mindwtr_get_task` renvoie un champ `version` au même niveau que `task`. Les réponses de création et de mise à jour des tâches l’incluent également.
-- `mindwtr_update_task` accepte l’argument facultatif `expectedVersion`. Transmettez la version issue de la lecture utilisée pour préparer la modification. Une différence renvoie `task_version_conflict` ; relisez la tâche et conciliez les modifications au lieu de réessayer automatiquement avec une version fraîchement récupérée.
-- À partir de la prochaine version de bureau, `mindwtr_list_tasks` renvoie un champ `versions` au même niveau, indexé par identifiant de tâche, sans modifier les objets de tâche. `mindwtr_complete_task` accepte l’argument facultatif `expectedVersion` dans le MCP de bureau comme dans le mode Local API autonome ; l’outil intégré `mindwtr_archive_task` l’accepte également. Une différence laisse la tâche et les occurrences récurrentes suivantes inchangées. La complétion protégée de l’utilitaire utilise une nouvelle route `/v2` et ne se rabat jamais sur une action non protégée avec les anciens bureaux.
+- `mindwtr_update_task` accepte l’argument facultatif `expectedVersion`. Transmettez la version issue de la lecture utilisée pour préparer la modification. Une différence renvoie `task_version_conflict`; relisez la tâche et conciliez les modifications au lieu de réessayer automatiquement avec une version fraîchement récupérée.
+- `mindwtr_list_tasks` renvoie un champ `versions` au même niveau, indexé par identifiant de tâche, sans modifier les objets de tâche. `mindwtr_complete_task` accepte l’argument facultatif `expectedVersion` dans le MCP de bureau comme dans le mode Local API autonome ; l’outil intégré `mindwtr_archive_task` l’accepte également. Une différence laisse la tâche et les occurrences récurrentes suivantes inchangées. La complétion protégée de l’utilitaire utilise une nouvelle route `/v2` et ne se rabat jamais sur une action non protégée avec les anciens bureaux.
 - `mindwtr_add_task` accepte l’argument facultatif `idempotencyKey`. Après la perte d’une réponse, réutilisez la même clé et les mêmes arguments pour obtenir le résultat de création initial sans dupliquer la tâche. Des données différentes avec cette clé renvoient `idempotency_conflict`.
 - Une mise à jour de tâche qui ne change effectivement rien laisse sa révision et sa date de modification inchangées.
 
@@ -174,10 +174,10 @@ Les écritures restent désactivées tant qu’elles ne sont pas explicitement a
 | Lister/obtenir des tâches | Pris en charge, y compris les opérateurs de recherche avancés, les filtres de date, le tri et la pagination |
 | Créer des tâches | Titre et champs explicites ; `quickAdd` n’est pas disponible |
 | Mettre à jour/terminer/supprimer/restaurer des tâches | Pris en charge via les points de terminaison correspondants de l’API ; les changements vers un état final ne peuvent pas être soumis comme de simples modifications |
-| Rouvrir des tâches ordinaires terminées | `mindwtr_reopen_task` dès la prochaine version de bureau ; les tâches récurrentes dans un état final nécessitent l’application |
+| Rouvrir des tâches ordinaires terminées | `mindwtr_reopen_task` sur le bureau ; les tâches récurrentes dans un état final nécessitent l’application |
 | Lister/obtenir/créer/mettre à jour/supprimer des projets | Pris en charge pour les champs de projet de base de l’API : titre, couleur, état, domaine et comportement séquentiel |
-| Lister/créer des domaines | Pris en charge ; `mindwtr_add_area` accepte `name` et, facultativement, `color` et `icon` (création dès la prochaine version de bureau) |
-| Lister les sections de projet et les personnes gérées | Pris en charge dès la prochaine version de bureau : `mindwtr_list_sections` accepte `projectId` et `includeDeleted` ; `mindwtr_list_people` accepte `includeDeleted` |
+| Lister/créer des domaines | Pris en charge ; `mindwtr_add_area` accepte `name` et, facultativement, `color` et `icon` (création sur le bureau) |
+| Lister les sections de projet et les personnes gérées | Pris en charge sur le bureau : `mindwtr_list_sections` accepte `projectId` et `includeDeleted`; `mindwtr_list_people` accepte `includeDeleted` |
 | Lectures individuelles et écritures des sections/personnes, modification/suppression des domaines | Indisponibles ; ces outils restent masqués en mode API |
 | Disponibilité GTD `view` | Indisponible dans ce backend |
 | Remplacer les liens de pièces jointes | Indisponible car l’API ne fournit pas de mises à jour conditionnelles des pièces jointes |
@@ -401,7 +401,7 @@ Options (toutes ont des variables d'environnement `MINDWTR_MCP_HTTP*` équivalen
 
 Le serveur MCP intégré de l’application de bureau utilise lui aussi le port `8722`. S’il est activé, indiquez un autre port avec `--http-port`, par exemple `--http-port 8723`.
 
-Le point de terminaison MCP est `POST /mcp` et exige `Authorization: Bearer <token>` à chaque requête. `GET /healthz` renvoie `200 ok` sans authentification pour les contrôles de santé du reverse proxy. Les requêtes sans jeton valide reçoivent `401` ; les échecs répétés d’authentification entraînent une réponse `429` avec un en-tête `Retry-After`. Les corps de plus de 1 MiB reçoivent `413`. En mode HTTP, le serveur reste actif tant qu'il écoute (stdio n'est pas connecté), et le comportement `--write`/lecture seule est inchangé.
+Le point de terminaison MCP est `POST /mcp` et exige `Authorization: Bearer <token>` à chaque requête. `GET /healthz` renvoie `200 ok` sans authentification pour les contrôles de santé du reverse proxy. Les requêtes sans jeton valide reçoivent `401`; les échecs répétés d’authentification entraînent une réponse `429` avec un en-tête `Retry-After`. Les corps de plus de 1 MiB reçoivent `413`. En mode HTTP, le serveur reste actif tant qu'il écoute (stdio n'est pas connecté), et le comportement `--write`/lecture seule est inchangé.
 
 Le serveur n’intègre ni TLS ni limitation de débit pour les requêtes authentifiées. Pour exposer le serveur au-delà de localhost, placez un reverse proxy (Caddy, nginx) devant pour le HTTPS et fournissez l'URL `https://` obtenue avec votre jeton au client MCP distant.
 
@@ -409,7 +409,7 @@ Le serveur n’intègre ni TLS ni limitation de débit pour les requêtes authen
 
 ## Conteneurs (Docker / Podman)
 
-L’image `ghcr.io/dongdongbh/mindwtr-mcp:1.1.14` utilise la version du paquet MCP, indépendante de celle de l’application. Elle prend uniquement en charge les backends API/Cloud et ne contient pas de module SQLite natif. Aucun volume de données n’est nécessaire ; ne montez pas la base de données de bureau. Sur le réseau du conteneur, utilisez un point de terminaison Cloud auto-hébergé accessible.
+L’image `ghcr.io/dongdongbh/mindwtr-mcp:1.1.15` utilise la version du paquet MCP, indépendante de celle de l’application. Elle prend uniquement en charge les backends API/Cloud et ne contient pas de module SQLite natif. Aucun volume de données n’est nécessaire ; ne montez pas la base de données de bureau. Sur le réseau du conteneur, utilisez un point de terminaison Cloud auto-hébergé accessible.
 
 Définissez `MINDWTR_MCP_CLOUD_TOKEN` dans l’environnement qui lance votre client MCP, puis configurez le client pour exécuter cette commande. Vous pouvez remplacer `docker` par `podman` :
 
@@ -419,7 +419,7 @@ export MINDWTR_MCP_CLOUD_URL="https://mindwtr.example.com"
 docker run --rm -i --read-only --cap-drop=ALL \
   --security-opt=no-new-privileges \
   -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
-  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.15
 ```
 
 Stdio est le mode par défaut : conservez `-i`, omettez `-t` et ne publiez aucun port. L’accès est en lecture seule ; ajoutez `--write` après l’image uniquement pour autoriser les modifications. Utilisez HTTPS pour l’URL Cloud. Pour un point de terminaison HTTP interne de confiance, ajoutez `--cloud-allow-insecure-http=true`.
@@ -436,7 +436,7 @@ docker run --rm --read-only --cap-drop=ALL \
   -p 127.0.0.1:8722:8722 \
   -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
   -e MINDWTR_MCP_HTTP_TOKEN \
-  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14 \
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.15 \
   --http --http-host 0.0.0.0 --http-port 8722
 ```
 
@@ -486,7 +486,7 @@ node apps/mcp-server/dist/cli.js --db "/path/to/mindwtr.db"
 
 ## Migration : renommage des outils (`mindwtr.*` → `mindwtr_*`)
 
-Les noms d’outils utilisent désormais la notation avec trait de soulignement, comme `mindwtr_list_tasks` ; les anciens noms avec notation pointée ne sont plus documentés.
+Les noms d’outils utilisent désormais la notation avec trait de soulignement, comme `mindwtr_list_tasks`; les anciens noms avec notation pointée ne sont plus documentés.
 
 ---
 
@@ -901,7 +901,7 @@ Les outils de création et de mise à jour des tâches et projets acceptent `vie
 
 **Remarques**
 
-- Utilisez `null` pour effacer les champs acceptant une valeur nulle. Cela s’applique aux champs de tâche comme `projectId`, `dueDate`, `startTime`, `contexts` et `tags` ; aux champs de projet comme `areaId`, `startDate`, `dueDate`, `reviewAt` et `supportNotes` ; à `description` pour les sections ; à `color` et `icon` pour les domaines ; ainsi qu’à `note` et `referenceLink` pour les personnes.
+- Utilisez `null` pour effacer les champs acceptant une valeur nulle. Cela s’applique aux champs de tâche comme `projectId`, `dueDate`, `startTime`, `contexts` et `tags`; aux champs de projet comme `areaId`, `startDate`, `dueDate`, `reviewAt` et `supportNotes`; à `description` pour les sections ; à `color` et `icon` pour les domaines ; ainsi qu’à `note` et `referenceLink` pour les personnes.
 
 **Exemple**
 
@@ -921,7 +921,7 @@ Les outils de création et de mise à jour des tâches et projets acceptent `vie
 
 ### `mindwtr_reopen_task` (écriture)
 
-Disponible dans le MCP intégré de bureau et en mode API locale autonome dès la prochaine version de bureau. Entrée : `id` (obligatoire), `status` (facultatif : `inbox`, `next`, `waiting`, `someday` ; valeur par défaut `next`) et `expectedVersion` (facultatif). Rouvre les tâches ordinaires terminées ou archivées ; refuse les métadonnées de récurrence pour les tâches dans un état final. Le projet parent archivé et les sections éligibles supprimées par son archivage sont réactivés de manière atomique, tandis que les autres tâches terminées le restent. Ne restaure pas la Corbeille. Les anciens serveurs échouent sans repli vers PATCH. Consultez les [règles de cycle de vie de l’API locale](/fr/power-users/local-api#safe-writes).
+Disponible dans le MCP intégré de bureau et en mode API locale autonome sur le bureau. Entrée : `id` (obligatoire), `status` (facultatif : `inbox`, `next`, `waiting`, `someday`; valeur par défaut `next`) et `expectedVersion` (facultatif). Rouvre les tâches ordinaires terminées ou archivées ; refuse les métadonnées de récurrence pour les tâches dans un état final. Le projet parent archivé et les sections éligibles supprimées par son archivage sont réactivés de manière atomique, tandis que les autres tâches terminées le restent. Ne restaure pas la Corbeille. Les anciens serveurs échouent sans repli vers PATCH. Consultez les [règles de cycle de vie de l’API locale](/fr/power-users/local-api#safe-writes).
 
 ### `mindwtr_delete_task` (écriture)
 
@@ -1062,4 +1062,4 @@ Task et Project acceptent `cancelledAt`, un horodatage ISO facultatif avec fusea
 ## Résolution des problèmes
 
 - **« Command not found »** : utilisez `npx -y mindwtr-mcp` dans les configurations des clients MCP, ou installez le paquet globalement avec `npm install -g mindwtr-mcp`.
-- **Problèmes de connexion du client** : vérifiez que vous n’utilisez PAS `bun run` comme commande dans la configuration de votre client MCP, car il peut produire du texte supplémentaire. Préférez `npx -y mindwtr-mcp` ; pour les copies de travail des sources, exécutez directement `bun` sur le fichier source ou `node` sur le fichier construit.
+- **Problèmes de connexion du client** : vérifiez que vous n’utilisez PAS `bun run` comme commande dans la configuration de votre client MCP, car il peut produire du texte supplémentaire. Préférez `npx -y mindwtr-mcp`; pour les copies de travail des sources, exécutez directement `bun` sur le fichier source ou `node` sur le fichier construit.

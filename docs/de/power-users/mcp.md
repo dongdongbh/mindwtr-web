@@ -409,7 +409,7 @@ Eingebautes TLS oder Rate-Limiting für authentifizierte Anfragen gibt es nicht.
 
 ## Container (Docker / Podman)
 
-Das Image `ghcr.io/dongdongbh/mindwtr-mcp:1.1.14` verwendet die MCP-Paketversion, unabhängig von der App-Version. Es unterstützt nur API-/Cloud-Backends und enthält kein natives SQLite-Addon. Ein Datenvolume ist nicht nötig; hängen Sie die Desktop-Datenbank nicht ein. Verwenden Sie im Container-Netzwerk einen erreichbaren, selbst gehosteten Cloud-Endpunkt.
+Das Image `ghcr.io/dongdongbh/mindwtr-mcp:1.1.15` verwendet die MCP-Paketversion, unabhängig von der App-Version. Es unterstützt nur API-/Cloud-Backends und enthält kein natives SQLite-Addon. Ein Datenvolume ist nicht nötig; hängen Sie die Desktop-Datenbank nicht ein. Verwenden Sie im Container-Netzwerk einen erreichbaren, selbst gehosteten Cloud-Endpunkt.
 
 Setzen Sie `MINDWTR_MCP_CLOUD_TOKEN` in der Umgebung, die Ihren MCP-Client startet, und konfigurieren Sie den Client für diesen Befehl. Sie können `docker` durch `podman` ersetzen:
 
@@ -419,7 +419,7 @@ export MINDWTR_MCP_CLOUD_URL="https://mindwtr.example.com"
 docker run --rm -i --read-only --cap-drop=ALL \
   --security-opt=no-new-privileges \
   -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
-  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.15
 ```
 
 Stdio ist die Vorgabe: Behalten Sie `-i` bei, lassen Sie `-t` weg und veröffentlichen Sie keinen Port. Der Zugriff ist standardmäßig schreibgeschützt; hängen Sie `--write` nur für Änderungen hinter das Image an. Verwenden Sie HTTPS für die Cloud-URL. Für einen vertrauenswürdigen internen HTTP-Endpunkt hängen Sie `--cloud-allow-insecure-http=true` an.
@@ -436,7 +436,7 @@ docker run --rm --read-only --cap-drop=ALL \
   -p 127.0.0.1:8722:8722 \
   -e MINDWTR_MCP_CLOUD_URL -e MINDWTR_MCP_CLOUD_TOKEN \
   -e MINDWTR_MCP_HTTP_TOKEN \
-  ghcr.io/dongdongbh/mindwtr-mcp:1.1.14 \
+  ghcr.io/dongdongbh/mindwtr-mcp:1.1.15 \
   --http --http-host 0.0.0.0 --http-port 8722
 ```
 

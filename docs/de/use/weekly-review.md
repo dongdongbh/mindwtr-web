@@ -136,6 +136,8 @@ Ab v1.3.8 zeigt die Projektdurchsicht zuerst die aktuellen Schritte. Blockierte 
 - veraltete Einträge archivieren oder löschen
 - Wie unter „Warten“ bleiben Einträge mit zukünftigem Wiedervorlagedatum bis zu diesem Datum in einer eingeklappten Gruppe „Noch nicht fällig“.
 
+Klappen Sie einen Abschnitt auf, um seine Aufgaben und Projekte gemeinsam durchzusehen. Auch Projekte ohne Aufgaben erscheinen hier. Beides kann nach der Durchsicht unter Irgendwann/Vielleicht bleiben.
+
 ### Abschluss
 
 **Sie sind bereit für die kommende Woche:**
@@ -144,7 +146,7 @@ Ab v1.3.8 zeigt die Projektdurchsicht zuerst die aktuellen Schritte. Blockierte 
 - Projekte besitzen nächste Aktionen.
 - Listen sind aktuell.
 
-Zuerst erscheint ein kurzer Rückblick auf die vergangene Woche: wie viele Aktionen Sie seit dem eingestellten Wochenbeginn erledigt haben und wie viele Projekte dadurch vorangekommen sind, dass eine ihrer Aufgaben erledigt wurde. Ist das Feld „Zeitschätzung“ aktiv, zählt der Rückblick zusätzlich, wie viele dieser erledigten Aufgaben eine Schätzung hatten, und summiert diese Schätzungen; bei aktiver „Aufgewendeter Zeit“ kommt die auf denselben Aufgaben erfasste Zeit hinzu, also die dort eingetragene Zeit und nicht die im Lauf der Woche aufgewendete. Wurde nichts erledigt, entfällt der Rückblick.
+Der Rückblick reicht vom eingestellten Beginn der aktuellen Woche bis heute. Unter Details sehen Sie die Titel der erledigten Aufgaben und die Anzahl pro Projekt. Wählen Sie Bereich, um dieselben Aufgaben nach Bereich zu gruppieren. Ist das Feld „Zeitschätzung“ aktiv, zählt der Rückblick zusätzlich, wie viele dieser erledigten Aufgaben eine Schätzung hatten, und summiert diese Schätzungen; bei aktiver „Aufgewendeter Zeit“ kommt die auf denselben Aufgaben erfasste Zeit hinzu, also die dort eingetragene Zeit und nicht die im Lauf der Woche aufgewendete. Wurde nichts erledigt, entfällt der Rückblick.
 
 Der Abschlussbildschirm zeigt eine kurze Zusammenfassung des Systemzustands: ob der Eingang leer ist, ob jedes aktive Projekt eine nächste Aktion besitzt und wie viele Einträge unter „Warten“ seit mehr als zwei Wochen unverändert sind. Jede Zeile folgt denselben Regeln wie die Rückblickschritte; Zeilen ohne Meldung bleiben ausgeblendet.
 

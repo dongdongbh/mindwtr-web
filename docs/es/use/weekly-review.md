@@ -136,6 +136,8 @@ Desde v1.3.8, la revisión del proyecto muestra primero los pasos actuales y re�
 - Archiva o elimina los elementos estancados
 - Igual que en En espera, los elementos con una fecha de revisión futura esperan en un grupo contraído «Aún no vence» hasta que llegue su fecha
 
+Despliega una sección para revisar sus tareas y proyectos juntos. También aparecen los proyectos sin tareas. Puedes dejar ambos en Algún día/Quizá al continuar.
+
 ### Completar
 
 **Ya estás preparado para la semana que viene:**
@@ -144,7 +146,7 @@ Desde v1.3.8, la revisión del proyecto muestra primero los pasos actuales y re�
 - Los proyectos tienen próximas acciones
 - Las listas están actualizadas
 
-Primero aparece un repaso breve de la semana que acaba de terminar: cuántas acciones has completado desde el inicio de semana configurado y cuántos proyectos han avanzado porque se completó una de sus tareas. Si el campo Tiempo estimado está activado, también cuenta cuántas de esas tareas completadas tenían una estimación y suma esas estimaciones; con Tiempo empleado activado añade el tiempo registrado en esas mismas tareas, que es el tiempo anotado en ellas y no el que has dedicado durante la semana. Si no has completado nada, el repaso no aparece.
+El resumen abarca desde el inicio configurado de la semana actual hasta hoy. Abre los detalles para ver los títulos de las tareas completadas y el total por proyecto. Elige Área para agrupar esas mismas tareas por área. Si el campo Tiempo estimado está activado, también cuenta cuántas de esas tareas completadas tenían una estimación y suma esas estimaciones; con Tiempo empleado activado añade el tiempo registrado en esas mismas tareas, que es el tiempo anotado en ellas y no el que has dedicado durante la semana. Si no has completado nada, el repaso no aparece.
 
 La pantalla final muestra un resumen breve del estado del sistema: si tu Bandeja de entrada está vacía, si todos los proyectos activos tienen una próxima acción y cuántos elementos En espera llevan más de dos semanas sin tocar. Cada línea refleja las mismas reglas que usan los pasos de la revisión, y las líneas sin nada que comunicar permanecen ocultas.
 

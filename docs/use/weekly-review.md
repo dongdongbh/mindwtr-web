@@ -136,6 +136,8 @@ From v1.3.8, project review shows current steps first and puts blocked Next task
 - Archive or delete stale items
 - Items with a future review date wait in a collapsed "Not due yet" group until their date arrives
 
+Expand a Someday section to review its tasks and projects together. Projects appear even before you add a task. You can leave either in Someday when you move on.
+
 ### Complete
 
 **You're ready for the week ahead:**
@@ -144,7 +146,7 @@ From v1.3.8, project review shows current steps first and puts blocked Next task
 - Projects have next actions
 - Lists are current
 
-First comes a short look-back at the week just finished: how many actions you completed since your configured week start, and how many projects moved forward because one of their tasks was completed. If the Time estimate field is on, it also counts how many of those completed tasks carried an estimate and totals their estimates, and with Time spent on it adds the time tracked on those same tasks, which is time recorded against them rather than time you put in during the week. When nothing was completed, the look-back is left out.
+The recap runs from your configured start of the current week through today. Expand Details to see the titles of completed tasks and the count for each project. Switch to Area to see the same completions grouped by Area. If the Time estimate field is on, it also counts how many of those completed tasks carried an estimate and totals their estimates, and with Time spent on it adds the time tracked on those same tasks, which is time recorded against them rather than time you put in during the week. When nothing was completed, the look-back is left out.
 
 The final screen shows a short summary of where the system stands: whether your Inbox is empty, whether every active project has a next action, and how many Waiting For items have sat untouched for more than two weeks. Each line reflects the same rules the review steps use, and lines with nothing to report stay hidden.
 

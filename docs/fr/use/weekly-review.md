@@ -136,6 +136,8 @@ Examinez chaque élément de la boîte de réception :
 - Archivez ou supprimez les éléments obsolètes
 - Comme dans En attente, les éléments ayant une date de revue future restent dans un groupe replié « Pas encore dû » jusqu’à l’arrivée de cette date
 
+Dépliez une section pour examiner ensemble ses tâches et ses projets, même ceux qui n’ont pas encore de tâches. Vous pouvez les laisser dans Un jour/Peut-être en passant à la suite.
+
 ### Terminer
 
 **Vous êtes prêt pour la semaine à venir :**
@@ -144,7 +146,7 @@ Examinez chaque élément de la boîte de réception :
 - Les projets ont des prochaines actions
 - Les listes sont à jour
 
-Un bref retour sur la semaine qui vient de s’écouler apparaît en premier : combien d’actions vous avez terminées depuis le début de semaine configuré et combien de projets ont avancé parce que l’une de leurs tâches a été terminée. Si le champ Estimation du temps est activé, il indique aussi combien de ces tâches terminées portaient une estimation et en fait le total ; si le Temps passé est également activé, il ajoute le temps enregistré sur ces mêmes tâches, c’est-à-dire le temps noté sur elles et non le temps que vous y avez consacré pendant la semaine. Si rien n’a été terminé, ce retour n’apparaît pas.
+Le bilan couvre la période entre le début de la semaine en cours, selon vos réglages, et aujourd’hui. Ouvrez les détails pour voir les titres des tâches terminées et leur nombre par projet. Choisissez Domaine pour regrouper ces mêmes tâches par domaine. Si le champ Estimation du temps est activé, il indique aussi combien de ces tâches terminées portaient une estimation et en fait le total ; si le Temps passé est également activé, il ajoute le temps enregistré sur ces mêmes tâches, c’est-à-dire le temps noté sur elles et non le temps que vous y avez consacré pendant la semaine. Si rien n’a été terminé, ce retour n’apparaît pas.
 
 L’écran final affiche un bref résumé de l’état du système : si votre Boîte de réception est vide, si chaque projet actif possède une prochaine action et combien d’éléments En attente n’ont pas été modifiés depuis plus de deux semaines. Chaque ligne suit les mêmes règles que les étapes de la revue, et les lignes qui n’ont rien à signaler restent masquées.
 

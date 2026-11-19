@@ -100,6 +100,12 @@ flatpak run tech.dongdongbh.mindwtr
 sudo snap install mindwtr
 ```
 
+如果 `snap connections mindwtr` 列出 `audio-record`，請執行以下指令以允許存取麥克風。
+
+```bash
+sudo snap connect mindwtr:audio-record
+```
+
 [Snap Store 頁面](https://snapcraft.io/mindwtr)
 
 ### Nix / NixOS（社群維護）

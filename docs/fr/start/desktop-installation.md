@@ -100,6 +100,12 @@ Installez Mindwtr depuis le Snap Store :
 sudo snap install mindwtr
 ```
 
+Si `snap connections mindwtr` affiche `audio-record`, exécutez cette commande pour autoriser l’accès au microphone.
+
+```bash
+sudo snap connect mindwtr:audio-record
+```
+
 [Fiche Snap Store](https://snapcraft.io/mindwtr)
 
 ### Nix / NixOS (maintenu par la communauté)

@@ -100,6 +100,12 @@ flatpak run tech.dongdongbh.mindwtr
 sudo snap install mindwtr
 ```
 
+如果 `snap connections mindwtr` 列出了 `audio-record`，请运行以下命令以允许访问麦克风。
+
+```bash
+sudo snap connect mindwtr:audio-record
+```
+
 [Snap Store 页面](https://snapcraft.io/mindwtr)
 
 ### Nix / NixOS（社区维护）

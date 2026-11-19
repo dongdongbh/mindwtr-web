@@ -309,3 +309,9 @@ For example, choose `@person/Emma`, keep Next, Waiting, and Someday, and exclude
 Starting with v1.3.9, **Reference** is also available in Context filters. Opening a new filter includes Reference alongside Inbox, Next, Waiting, and Someday; previously saved status selections stay unchanged. Done and Archived remain outside saved Context filters. Widgets include Reference only when selected in the saved filter, and Reference rows open without a completion action.
 
 Tapping the header of a widget using a saved Context filter opens the Contexts interface with that filter selected, so you can inspect and adjust its criteria. Other widget lists keep their existing destinations.
+
+### Edit time estimates in bulk
+
+In development builds, enable **Time Estimates**, then open **Contexts → Filters → Time estimate → No estimate**. Select the tasks you want to update and open **Bulk organize**. Choose an estimate and apply it. The updated tasks leave the filtered list. You can save this filter for your next review.
+
+Bulk organize keeps each task’s estimate unless you choose a value or explicitly clear it.

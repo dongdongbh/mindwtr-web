@@ -305,3 +305,9 @@ Dans Mindwtr, `@contexts` et `#tags` permettent tous deux de filtrer les tâches
 À partir de v1.3.8, ouvrez **Filtres** dans Contextes pour choisir plusieurs statuts non terminés, dont **Un jour**, et exclure des projets. À l’ouverture, Boîte de réception, Prochaines actions, En attente et Un jour sont sélectionnés ; ajustez-les selon vos besoins. Les options de projet passent successivement par inclus, exclu et non sélectionné. Enregistrez la sélection pour la réutiliser dans l’application ou la choisir comme liste du widget. Les limites des domaines restent appliquées et un résultat vide reste vide.
 
 Par exemple, choisissez `@person/Emma`, gardez Prochaines actions, En attente et Un jour, puis excluez un projet commun. Les nouveaux filtres de contextes enregistrés couvrent les tâches non terminées. Terminé, Archivé et Référence restent séparés. L’enregistrement est indisponible pour **Sans contexte** ou une sélection mixte de contextes et d’étiquettes avec **Au moins un** ; choisissez d’abord une sélection compatible.
+
+### Modifier la durée estimée de plusieurs tâches
+
+Dans les versions de développement, activez les estimations de durée, puis ouvrez **Contextes → Filtres → Durée estimée** pour afficher les tâches sans estimation. Sélectionnez les tâches à modifier, ouvrez la modification groupée et attribuez-leur une durée. Elles disparaissent alors de la liste filtrée. Vous pouvez enregistrer ce filtre pour votre prochaine revue.
+
+Chaque tâche conserve son estimation, sauf si vous choisissez une durée ou demandez explicitement son effacement.

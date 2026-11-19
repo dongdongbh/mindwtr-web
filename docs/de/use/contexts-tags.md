@@ -305,3 +305,9 @@ In Mindwtr können sowohl `@contexts` als auch `#tags` Aufgaben filtern, sie bea
 Ab v1.3.8 kannst du in Kontexte unter **Filter** mehrere unerledigte Status einschließlich **Irgendwann** wählen und Projekte ausschließen. Beim Öffnen sind Eingang, Nächste Schritte, Warten und Irgendwann ausgewählt; passe die Auswahl nach Bedarf an. Projektoptionen wechseln zwischen eingeschlossen, ausgeschlossen und nicht ausgewählt. Speichere die Auswahl für die App oder als Widget-Liste. Bereichsgrenzen gelten weiterhin, und ein leeres Ergebnis bleibt leer.
 
 Wähle etwa `@person/Emma`, behalte Nächste Schritte, Warten und Irgendwann und schließe ein gemeinsames Projekt aus. Neue gespeicherte Kontextfilter umfassen unerledigte Aufgaben. Erledigt, Archiviert und Referenz bleiben getrennt. Für **Kein Kontext** oder gemischte Kontext-/Tag-Auswahlen mit **Beliebig** ist Speichern nicht verfügbar; wähle vorher eine darstellbare Auswahl.
+
+### Zeitaufwand für mehrere Aufgaben ändern
+
+In Entwicklungsversionen kannst du bei aktivierten Zeitschätzungen unter **Kontexte → Filter → Zeitschätzung** nach Aufgaben ohne Schätzung filtern. Wähle die gewünschten Aufgaben aus, öffne die Sammelbearbeitung und weise ihnen eine Schätzung zu. Diese Aufgaben verschwinden aus der gefilterten Liste. Du kannst den Filter für die nächste Durchsicht speichern.
+
+Vorhandene Schätzungen bleiben erhalten, bis du einen Wert auswählst oder sie ausdrücklich löschst.

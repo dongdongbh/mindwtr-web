@@ -398,6 +398,8 @@ On desktop, clear the WebDAV URL and click **Save WebDAV** to remove the saved W
 
 > **Flatpak (v1.3.3):** Credentials use the Secret portal and an encrypted local store. Direct access to the host keyring is not required. Existing plaintext fallback credentials are removed only after a verified encrypted write. If you previously enabled keyring access through Flatseal and saved credentials only in the host keyring, reconnect Dropbox or re-enter the affected passwords once; those host entries are not deleted. If the portal is unavailable or access is declined, Mindwtr retains its local plaintext fallback and shows a warning. This change is not included in v1.3.2.
 
+> **Snap (v1.3.10 and later):** Mindwtr uses the desktop Secret portal to encrypt locally stored credentials. If the portal is unavailable or access is denied, Mindwtr warns when it saves a credential in plaintext.
+
 > **Tip:** For Nextcloud, the URL format is:
 > `https://your-server.com/remote.php/dav/files/USERNAME/path/to/folder`
 >

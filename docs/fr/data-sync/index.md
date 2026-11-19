@@ -394,6 +394,8 @@ Mindwtr vérifie la sécurité des écritures du serveur avant de lancer la sync
 
 > **Flatpak (v1.3.3, à venir) :** Les identifiants utilisent le portail Secret et un stockage local chiffré, sans accès direct au trousseau de l’hôte. Les copies locales en clair ne sont supprimées qu’après vérification de l’écriture chiffrée. Si vous aviez activé l’accès au trousseau dans Flatseal et enregistré les identifiants uniquement dans ce trousseau, reconnectez Dropbox ou saisissez à nouveau les mots de passe concernés une fois. Les anciennes entrées ne sont pas supprimées. Si le portail est indisponible ou si l’accès est refusé, Mindwtr conserve son stockage local en clair et affiche un avertissement. Cette modification n’est pas incluse dans v1.3.2.
 
+> **Snap (à partir de la version 1.3.10) :** Mindwtr utilise le portail Secret du bureau pour chiffrer les identifiants stockés localement. Si le portail est indisponible ou si l’accès est refusé, Mindwtr affiche un avertissement lorsqu’il enregistre un identifiant en clair.
+
 > **Conseil :** pour Nextcloud, le format de l’URL est :
 > `https://your-server.com/remote.php/dav/files/USERNAME/path/to/folder`
 >

@@ -775,6 +775,8 @@ Swipe, then tap a button. Done completes the task, even in the Inbox. Focus on a
 
 Completing a task stamps the current time. If you actually finished earlier, long-press one of these **Done** controls to pick the real completion time instead: the swipe-revealed Done button, the Done option in the status menu, the Done chip in the task editor, or the status badge in the task preview. You can also tap the **Completed** timestamp on a done or archived task to correct it afterwards.
 
+In the next Android release, you can also hold **Mark Done** in the task preview. In the completion dialog, tap the date or time to change it. Any duration you have entered stays in place.
+
 ---
 
 ## Contexts

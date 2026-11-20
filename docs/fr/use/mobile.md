@@ -762,6 +762,8 @@ Balayez, puis touchez un bouton. Terminé achève la tâche, même dans la boît
 
 Terminer une tâche enregistre l’heure actuelle. Si vous l’avez en réalité terminée plus tôt, appuyez longuement sur n’importe quelle commande **Terminé** pour choisir l’heure réelle d’achèvement : le bouton Terminé révélé par le balayage, l’option Terminé dans le menu de statut, la pastille Terminé dans l’éditeur de tâche ou le badge de statut dans l’aperçu de la tâche. Vous pouvez également toucher l’horodatage **Terminée** d’une tâche terminée ou archivée pour le corriger après coup.
 
+À partir de la prochaine version Android, vous pourrez aussi maintenir le bouton **Marquer comme terminée** dans l’aperçu de la tâche. Dans la boîte de dialogue, touchez la date ou l’heure pour la modifier. La durée déjà saisie est conservée.
+
 ---
 
 ## Contextes

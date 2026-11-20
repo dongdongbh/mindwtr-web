@@ -762,6 +762,8 @@ Desliza y luego toca un botón. Hecho completa la tarea, también en la bandeja 
 
 Completar una tarea registra la hora actual. Si en realidad terminaste antes, mantén pulsado cualquier control **Terminada** para elegir la hora real: el botón Terminada que aparece al deslizar, la opción Terminada del menú de estado, la pastilla Terminada del editor o la insignia de estado de la vista previa. También puedes tocar la marca de tiempo **Completada** de una tarea terminada o archivada para corregirla después.
 
+A partir de la próxima versión de Android, también podrás mantener pulsado **Marcar como terminada** en la vista previa de la tarea. En el diálogo de finalización, toca la fecha o la hora para cambiarla. Se conserva la duración que ya hayas introducido.
+
 ---
 
 ## Contextos

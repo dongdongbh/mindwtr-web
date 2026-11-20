@@ -713,6 +713,8 @@ Wischen Sie und tippen Sie dann auf eine Schaltfläche. Erledigt schließt die A
 
 Beim Abschluss wird die aktuelle Zeit gespeichert. Wenn Sie früher fertig waren, drücken Sie eine **Erledigt**-Steuerung lange, um die tatsächliche Zeit zu wählen (Wischschaltfläche, Statusmenü, Editor-Chip oder Vorschauplakette). Der Zeitstempel **Abgeschlossen** lässt sich später ebenfalls korrigieren.
 
+Ab der nächsten Android-Version können Sie auch die Schaltfläche **Als erledigt markieren** in der Aufgabenvorschau gedrückt halten. Tippen Sie im Abschlussdialog auf das Datum oder die Uhrzeit, um es zu ändern. Die eingegebene Dauer bleibt erhalten.
+
 ---
 
 ## Kontexte

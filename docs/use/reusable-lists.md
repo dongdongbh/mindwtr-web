@@ -81,6 +81,6 @@ From v1.3.8, the mobile checklist editor has a drag handle beside each item. Hol
 
 ## Repeat a project after completion (upcoming)
 
-In project details, set the number of months after completion. For a four-month routine, enter **4**. Finish the steps, then choose **Complete project**. Mindwtr keeps the finished run in history and prepares the next one with the same sections, task order and sequence. Its tasks become available on the new start date.
+In project details, choose how long to wait after completion. Enter a number, select **Days**, **Weeks**, **Months**, or **Years**, then save. For a four-month routine, choose **4 months**. Finish the steps, then choose **Complete project**. Mindwtr keeps the finished run in history and prepares the next one with the same sections, task order and sequence. Its tasks become available on the new start date.
 
 Turn off individual task repeats before enabling project repetition. The new run starts with unchecked checklists and fresh dates. Reopening the finished run keeps the next run, including any edits you made to it.

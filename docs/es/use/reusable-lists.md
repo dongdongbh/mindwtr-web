@@ -84,6 +84,6 @@ Desde v1.3.8, el editor móvil de listas tiene un asa junto a cada elemento. Man
 
 ## Repetir un proyecto después de completarlo (próximamente)
 
-En los detalles del proyecto, indica cuántos meses deben pasar tras completarlo. Para un ciclo de cuatro meses, introduce **4**. Cuando termines los pasos, elige **Completar proyecto**. El proyecto terminado queda en el historial. El siguiente conserva las secciones, el orden de las tareas y la secuencia. Las tareas estarán disponibles en la nueva fecha de inicio.
+En los detalles del proyecto, indica cuánto tiempo debe pasar tras completarlo. Introduce un número, elige días, semanas, meses o años y guarda el cambio. Para un ciclo de cuatro meses, elige **4 meses**. Cuando termines los pasos, elige **Completar proyecto**. El proyecto terminado queda en el historial. El siguiente conserva las secciones, el orden de las tareas y la secuencia. Las tareas estarán disponibles en la nueva fecha de inicio.
 
 Desactiva primero la repetición de las tareas individuales. El nuevo ciclo empieza con las casillas sin marcar y las fechas restablecidas. Si reabres el proyecto terminado, el siguiente conserva los cambios que hayas hecho.

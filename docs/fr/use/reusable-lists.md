@@ -84,6 +84,6 @@ Ce qui est conservé : les notes, le domaine, les étiquettes, la couleur et le 
 
 ## Répéter un projet après son achèvement (à venir)
 
-Dans les détails du projet, indiquez le nombre de mois à attendre après son achèvement. Pour un cycle de quatre mois, saisissez **4**. Une fois les étapes terminées, choisissez **Terminer le projet**. Le projet terminé reste dans l’historique. Le suivant conserve les sections, l’ordre des tâches et le fonctionnement séquentiel. Ses tâches deviennent disponibles à la nouvelle date de début.
+Dans les détails du projet, indiquez le délai après son achèvement. Saisissez un nombre, choisissez des jours, semaines, mois ou années et enregistrez. Pour un cycle de quatre mois, choisissez **4 mois**. Une fois les étapes terminées, choisissez **Terminer le projet**. Le projet terminé reste dans l’historique. Le suivant conserve les sections, l’ordre des tâches et le fonctionnement séquentiel. Ses tâches deviennent disponibles à la nouvelle date de début.
 
 Désactivez d’abord la répétition des tâches individuelles. Les cases du nouveau cycle sont décochées et les dates réinitialisées. Rouvrir le projet terminé conserve le cycle suivant et vos modifications.

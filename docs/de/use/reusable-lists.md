@@ -84,6 +84,6 @@ Ab v1.3.8 hat jeder Eintrag im mobilen Checklisten-Editor einen Ziehgriff. Halte
 
 ## Projekt nach Abschluss wiederholen (in Vorbereitung)
 
-Lege in den Projektdetails fest, nach wie vielen Monaten das Projekt wiederholt wird. Gib für einen Viermonatsrhythmus **4** ein. Wähle nach dem letzten Schritt **Projekt abschließen**. Der abgeschlossene Durchlauf bleibt im Verlauf. Abschnitte, Aufgabenreihenfolge und sequenzieller Ablauf werden übernommen. Die Aufgaben werden am neuen Startdatum verfügbar.
+Lege in den Projektdetails fest, wie lange nach Abschluss gewartet wird. Gib eine Zahl ein, wähle Tage, Wochen, Monate oder Jahre und speichere. Wähle für einen Viermonatsrhythmus **4 Monate**. Wähle nach dem letzten Schritt **Projekt abschließen**. Der abgeschlossene Durchlauf bleibt im Verlauf. Abschnitte, Aufgabenreihenfolge und sequenzieller Ablauf werden übernommen. Die Aufgaben werden am neuen Startdatum verfügbar.
 
 Schalte zuvor die Wiederholung einzelner Aufgaben aus. Checklisten und Termine werden zurückgesetzt. Wenn du den abgeschlossenen Durchlauf erneut öffnest, bleibt der nächste einschließlich deiner Änderungen erhalten.

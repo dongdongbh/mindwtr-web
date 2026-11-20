@@ -405,6 +405,23 @@ MCP 端点为 `POST /mcp`，每个请求都必须携带 `Authorization: Bearer <
 
 服务器不内置 TLS，也不限制已通过认证的请求速率。若要在 localhost 之外暴露服务器，请在前面放一个反向代理（Caddy、nginx）处理 HTTPS，并把得到的 `https://` URL 和令牌交给远程 MCP 客户端。
 
+### 在手机上用语音添加任务 {#mobile-voice-capture}
+
+只要自托管的 Mindwtr Cloud 和 MCP 服务都运行在常开的服务器上，你的电脑就可以关机。先让手机上的 Mindwtr 与同一个 Cloud 账户同步。仅使用本地存储、Dropbox 或 WebDAV 的手机不会收到以这种方式创建的任务。
+
+按上文设置 Cloud 地址和令牌。另行生成一次 HTTP 令牌，将其保存在服务的环境变量中，再启动 MCP 服务并启用写入。
+
+```bash
+export MINDWTR_MCP_HTTP_TOKEN="$(openssl rand -hex 32)"
+npx -y mindwtr-mcp --http --write
+```
+
+通过反向代理将公网 HTTPS 端口 443 的请求转发到 `127.0.0.1:8722`。在 Claude 的连接器设置中添加公网地址，例如 `https://mcp.example.com/mcp`。在 **Request headers** 中将 `Authorization` 设为 `Bearer <MCP HTTP 令牌>`。Cloud 令牌只保存在服务器上。 [Claude MCP](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+
+在 Claude 中启用连接器，先用文字、再用语音试试：“把买咖啡加到我的 Mindwtr 收件箱。”如有提示，确认操作，然后同步手机并查看收件箱。Anthropic 的文档说明移动端语音模式支持已连接的工具。这个 Mindwtr 流程尚未经过端到端验证。 [Claude Voice](https://support.claude.com/en/articles/11101966-use-voice-mode)
+
+ChatGPT 的自定义 MCP 连接需要在网页端设置，可用性取决于套餐和工作区权限。 [ChatGPT MCP](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt)
+
 ---
 
 ## 容器（Docker / Podman）

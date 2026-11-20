@@ -405,6 +405,23 @@ MCP 端點為 `POST /mcp`，每個請求都必須帶 `Authorization: Bearer <tok
 
 伺服器未內建 TLS，也不限制已通過驗證的請求速率。若要讓伺服器對 localhost 以外開放，請在前面架一個反向代理（Caddy、nginx）處理 HTTPS，並把取得的 `https://` URL 連同權杖交給遠端 MCP 用戶端。
 
+### 在手機上用語音新增任務 {#mobile-voice-capture}
+
+只要自架的 Mindwtr Cloud 和 MCP 服務都在持續開機的伺服器上執行，你的電腦就可以關機。先讓手機上的 Mindwtr 與同一個 Cloud 帳號同步。只使用本機儲存、Dropbox 或 WebDAV 的手機不會收到透過此方式建立的任務。
+
+依上文設定 Cloud 網址和權杖。另行產生一次 HTTP 權杖，存入服務的環境變數，再啟動 MCP 服務並開啟寫入。
+
+```bash
+export MINDWTR_MCP_HTTP_TOKEN="$(openssl rand -hex 32)"
+npx -y mindwtr-mcp --http --write
+```
+
+用反向代理將公開 HTTPS 連接埠 443 的請求轉送至 `127.0.0.1:8722`。在 Claude 的連接器設定中加入公開網址，例如 `https://mcp.example.com/mcp`。在 **Request headers** 中將 `Authorization` 設為 `Bearer <MCP HTTP 權杖>`。Cloud 權杖只留在伺服器上。 [Claude MCP](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+
+在 Claude 啟用連接器，先用文字，再用語音試試：「把買咖啡加到我的 Mindwtr 收件匣。」若出現提示，請確認操作，再同步手機並查看收件匣。Anthropic 的文件說明行動版語音模式支援已連接的工具。這個 Mindwtr 流程尚未經過端對端驗證。 [Claude Voice](https://support.claude.com/en/articles/11101966-use-voice-mode)
+
+ChatGPT 的自訂 MCP 連線需要在網頁版設定，能否使用取決於方案及工作區權限。 [ChatGPT MCP](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt)
+
 ---
 
 ## 容器（Docker / Podman）

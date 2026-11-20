@@ -405,6 +405,23 @@ Der MCP-Endpunkt ist `POST /mcp` und verlangt bei jeder Anfrage `Authorization: 
 
 Eingebautes TLS oder Rate-Limiting für authentifizierte Anfragen gibt es nicht. Um den Server über localhost hinaus zugänglich zu machen, stellen Sie einen Reverse-Proxy (Caddy, nginx) für HTTPS davor und geben Sie die resultierende `https://`-URL samt Token an den entfernten MCP-Client.
 
+### Auf dem Smartphone per Sprache eine Aufgabe hinzufügen {#mobile-voice-capture}
+
+Dein Computer kann ausgeschaltet bleiben, wenn Mindwtr Cloud und der MCP-Helfer auf einem ständig erreichbaren Server laufen. Synchronisiere Mindwtr auf dem Smartphone mit demselben selbst gehosteten Cloud-Konto. Bei rein lokaler Speicherung, Dropbox oder WebDAV kommen die Aufgaben auf diesem Weg nicht an.
+
+Setze auf dem Server Cloud-URL und Cloud-Token wie oben beschrieben. Erzeuge einmalig ein separates HTTP-Token, speichere es in der Dienstumgebung und starte den Helfer mit Schreibzugriff.
+
+```bash
+export MINDWTR_MCP_HTTP_TOKEN="$(openssl rand -hex 32)"
+npx -y mindwtr-mcp --http --write
+```
+
+Leite öffentliches HTTPS auf Port 443 über einen Reverse-Proxy an `127.0.0.1:8722` weiter. Trage in Claude die öffentliche Connector-URL ein, etwa `https://mcp.example.com/mcp`. Setze unter **Request headers** den Header `Authorization` auf `Bearer <MCP-HTTP-Token>`. Das Cloud-Token bleibt auf dem Server. [Claude MCP](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+
+Aktiviere den Connector in Claude. Probiere zuerst per Text, dann per Sprache: „Lege Kaffee kaufen in meinen Mindwtr-Eingang.“ Bestätige die Aktion bei Bedarf und prüfe nach der Synchronisierung den Eingang. Anthropic dokumentiert verbundene Werkzeuge im mobilen Sprachmodus. Dieser Mindwtr-Ablauf wurde noch nicht durchgängig getestet. [Claude Voice](https://support.claude.com/en/articles/11101966-use-voice-mode)
+
+Die Einrichtung eigener MCP-Verbindungen in ChatGPT erfolgt im Web und hängt vom Tarif und den Arbeitsbereichsberechtigungen ab. [ChatGPT MCP](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt)
+
 ---
 
 ## Container (Docker / Podman)

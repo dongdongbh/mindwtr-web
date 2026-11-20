@@ -405,6 +405,23 @@ The MCP endpoint is `POST /mcp` and requires `Authorization: Bearer <token>` on 
 
 There is no built-in TLS or rate limiting for authenticated requests. To expose the server beyond localhost, put a reverse proxy (Caddy, nginx) in front for HTTPS and give the resulting `https://` URL plus your token to the remote MCP client.
 
+### Add a task by voice on your phone {#mobile-voice-capture}
+
+Your computer can be off if both the standalone MCP helper and Mindwtr Cloud run on an always-on server. First sync Mindwtr on your phone with that same self-hosted Cloud account. A phone using only local storage, Dropbox, or WebDAV will not receive tasks from this setup.
+
+On the server, set the Cloud URL and token as shown above. Generate a separate HTTP token once, keep it in the service environment, and start the helper with writes enabled.
+
+```bash
+export MINDWTR_MCP_HTTP_TOKEN="$(openssl rand -hex 32)"
+npx -y mindwtr-mcp --http --write
+```
+
+Point an HTTPS reverse proxy on port 443 at the helper on `127.0.0.1:8722`. In Claude’s connector settings, add your public URL (for example, `https://mcp.example.com/mcp`). Under **Request headers**, set `Authorization` to `Bearer <your MCP HTTP token>`. Keep the Cloud token on your server. [Claude MCP](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+
+Enable the connector in Claude. Try asking by text first, then by voice: “Add ‘Buy coffee’ to my Mindwtr Inbox.” Approve the action if prompted, sync Mindwtr on your phone, and check Inbox. Anthropic documents connected tools in mobile voice mode. This specific Mindwtr voice workflow has not been tested end to end. [Claude Voice](https://support.claude.com/en/articles/11101966-use-voice-mode)
+
+ChatGPT custom MCP setup is on the web and depends on your plan and workspace permissions. [ChatGPT MCP](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt)
+
 ---
 
 ## Containers (Docker / Podman)

@@ -405,6 +405,23 @@ Le point de terminaison MCP est `POST /mcp` et exige `Authorization: Bearer <tok
 
 Le serveur n’intègre ni TLS ni limitation de débit pour les requêtes authentifiées. Pour exposer le serveur au-delà de localhost, placez un reverse proxy (Caddy, nginx) devant pour le HTTPS et fournissez l'URL `https://` obtenue avec votre jeton au client MCP distant.
 
+### Ajouter une tâche à la voix sur son téléphone {#mobile-voice-capture}
+
+Votre ordinateur peut rester éteint si Mindwtr Cloud et le serveur MCP fonctionnent sur une machine toujours allumée. Synchronisez le téléphone avec le même compte Cloud auto-hébergé. Les tâches créées ainsi ne parviennent pas à un téléphone utilisant uniquement le stockage local, Dropbox ou WebDAV.
+
+Configurez l’URL et le jeton Cloud comme indiqué plus haut. Générez une fois un jeton HTTP distinct, conservez-le dans l’environnement du service et lancez le serveur MCP avec les droits d’écriture.
+
+```bash
+export MINDWTR_MCP_HTTP_TOKEN="$(openssl rand -hex 32)"
+npx -y mindwtr-mcp --http --write
+```
+
+Configurez un proxy inverse pour transmettre les requêtes HTTPS publiques du port 443 à `127.0.0.1:8722`. Dans les connecteurs de Claude, ajoutez votre URL publique, par exemple `https://mcp.example.com/mcp`. Sous **Request headers**, donnez à `Authorization` la valeur `Bearer <jeton HTTP MCP>`. Le jeton Cloud reste sur le serveur. [Claude MCP](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+
+Activez le connecteur dans Claude. Essayez par écrit puis à la voix : « Ajoute Acheter du café à ma boîte de réception Mindwtr. » Confirmez si nécessaire, synchronisez le téléphone et vérifiez la boîte de réception. Anthropic documente les outils connectés en mode vocal mobile. Ce parcours Mindwtr reste à tester de bout en bout. [Claude Voice](https://support.claude.com/en/articles/11101966-use-voice-mode)
+
+Dans ChatGPT, les connexions MCP personnalisées se configurent sur le Web selon votre abonnement et les autorisations de votre espace de travail. [ChatGPT MCP](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt)
+
 ---
 
 ## Conteneurs (Docker / Podman)

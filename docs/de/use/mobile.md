@@ -936,3 +936,7 @@ Die Projektumwandlung kann eine Checkliste ausdrücklich in Aufgaben aufteilen. 
 Wählen Sie im Menü **Organisieren** eines Eingangseintrags (Zeile nach links wischen) **Zur Checkliste hinzufügen…** und dann eine Aufgabe. Es funktioniert wie am Desktop: Der Eintrag wird zu einem nicht abgehakten Checklistenpunkt, der Eingangseintrag wandert in den Papierkorb, und **Rückgängig** stellt beides wieder her. Welche Einträge infrage kommen, steht unter [Einen Eingangseintrag zu einer Checkliste hinzufügen](./desktop#inbox-to-checklist).
 
 Projektauswahlen zeigen zuerst aktive Projekte, dann Irgendwann- und Warten-Projekte unter der Überschrift **Irgendwann/Warten**.
+
+## Siri-Aktionen für Erinnerungen (in Vorbereitung)
+
+Unter iOS 27 öffnet **Create Mindwtr Reminder** die App und speichert eine Aufgabe im Eingang. Ein Titel genügt, ein Fälligkeitsdatum ist optional. Mit **Change Mindwtr Reminder Due Date** kannst du das Fälligkeitsdatum einer gewöhnlichen Aufgabe im Eingang setzen oder entfernen. Hast du die Aufgabe in ein Projekt verschoben, ändere das Datum in Mindwtr. Für beide Aktionen muss die App-Sperre ausgeschaltet sein. Lass Mindwtr beim Ändern eines Datums im Vordergrund geöffnet, damit Siri die Aufgabe finden kann.

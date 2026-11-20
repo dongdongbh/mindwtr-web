@@ -998,3 +998,7 @@ La création d’un projet peut transformer une liste en tâches sur demande exp
 Dans le menu **Organiser** d’un élément de la boîte de réception (balayez la ligne vers la gauche), choisissez **Ajouter à la liste de contrôle…** puis une tâche. Cela fonctionne comme sur ordinateur : l’élément devient une entrée non cochée, l’élément de la boîte de réception part à la corbeille et **Annuler** rétablit les deux. Voir [Ajouter un élément de la boîte de réception à une liste](./desktop#inbox-to-checklist) pour savoir quels éléments sont acceptés.
 
 Les sélecteurs de projet affichent d’abord les projets actifs, puis les projets Un jour et En attente sous l’en-tête **Un jour / En attente**.
+
+## Actions de rappel Siri (à venir)
+
+Sous iOS 27, **Create Mindwtr Reminder** ouvre Mindwtr et enregistre une tâche dans la boîte de réception. Donnez-lui un titre et, si vous le souhaitez, une échéance. **Change Mindwtr Reminder Due Date** permet de définir ou d’effacer l’échéance d’une tâche de la boîte de réception. Si vous l’avez déplacée dans un projet, modifiez la date dans Mindwtr. Le verrouillage de l’application doit être désactivé pour ces deux actions. Pour modifier une échéance, gardez Mindwtr au premier plan afin que Siri puisse trouver la tâche.

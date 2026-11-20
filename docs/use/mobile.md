@@ -1018,3 +1018,7 @@ Project conversion can optionally expand a checklist into tasks. The choice star
 In an Inbox item's **Organize** menu (swipe left on the row), choose **Add to checklist…** and pick a task. It works as on desktop: the item becomes one unchecked checklist entry, the Inbox item moves to Trash, and **Undo** puts both back. See [Add an Inbox item to a checklist](./desktop#inbox-to-checklist) for which items qualify.
 
 Project pickers list active projects first, then Someday and Waiting projects under a **Someday / Waiting** heading.
+
+## Siri reminder actions (upcoming)
+
+On iOS 27, **Create Mindwtr Reminder** opens Mindwtr and saves a task to your Inbox. Give it a title and, if you like, a due date. **Change Mindwtr Reminder Due Date** can set or clear the date on an ordinary Inbox task. If you moved it to a project, change the date in Mindwtr. Both actions require App Lock to be off. Keep Mindwtr open in the foreground when asking Siri to change a date so it can find the task.

@@ -998,3 +998,7 @@ Puedes elegir convertir una lista en tareas al crear un proyecto. La opción emp
 En el menú **Organizar** de un elemento de la bandeja de entrada (desliza la fila a la izquierda), elige **Añadir a la lista de verificación…** y una tarea. Funciona como en escritorio: el elemento se convierte en una entrada sin marcar, el elemento de la bandeja va a la Papelera y **Deshacer** restaura ambos. Consulta [Añadir un elemento de la bandeja de entrada a una lista](./desktop#inbox-to-checklist) para ver qué elementos cumplen los requisitos.
 
 Los selectores de proyecto muestran primero los proyectos activos y después los de Algún día y En espera bajo el encabezado **Algún día/Tal vez o En espera**.
+
+## Acciones de recordatorios de Siri (próximamente)
+
+En iOS 27, **Create Mindwtr Reminder** abre Mindwtr y guarda una tarea en la bandeja de entrada. Indica un título y, si quieres, una fecha de vencimiento. **Change Mindwtr Reminder Due Date** permite asignar o quitar la fecha de una tarea de la bandeja de entrada. Si ya la has movido a un proyecto, cambia la fecha en Mindwtr. Ambas acciones requieren desactivar el bloqueo de la aplicación. Para cambiar una fecha, mantén Mindwtr abierta en primer plano para que Siri pueda encontrar la tarea.

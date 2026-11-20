@@ -81,3 +81,9 @@ Lo que se conserva: las notas, el área, las etiquetas, el color y el estado del
 ## Reordenar una lista en el móvil
 
 Desde v1.3.8, el editor móvil de listas tiene un asa junto a cada elemento. Mantén pulsada el asa y arrastra para moverlo; al acercarte al borde, la lista se desplaza. Las acciones del elemento también ofrecen **Mover al principio**, **Mover al final** y **Añadir elemento debajo**. El texto y las marcas se mueven con el elemento. Usa **Guardar** para conservar los cambios o **Descartar** para mantener la versión guardada.
+
+## Repetir un proyecto después de completarlo (próximamente)
+
+En los detalles del proyecto, indica cuántos meses deben pasar tras completarlo. Para un ciclo de cuatro meses, introduce **4**. Cuando termines los pasos, elige **Completar proyecto**. El proyecto terminado queda en el historial. El siguiente conserva las secciones, el orden de las tareas y la secuencia. Las tareas estarán disponibles en la nueva fecha de inicio.
+
+Desactiva primero la repetición de las tareas individuales. El nuevo ciclo empieza con las casillas sin marcar y las fechas restablecidas. Si reabres el proyecto terminado, el siguiente conserva los cambios que hayas hecho.

@@ -81,3 +81,9 @@ Erhalten bleiben: Notizen, Bereich, Schlagwörter, Farbe und Status des Projekts
 ## Eine mobile Checkliste neu ordnen
 
 Ab v1.3.8 hat jeder Eintrag im mobilen Checklisten-Editor einen Ziehgriff. Halte den Griff und ziehe den Eintrag an die gewünschte Stelle; am Rand scrollt eine lange Liste weiter. Die Eintragsaktionen bieten außerdem **Ganz nach oben**, **Ganz nach unten** und **Eintrag darunter hinzufügen**. Text und Häkchen bleiben beim Eintrag. **Speichern** übernimmt die Änderungen; **Verwerfen** behält die gespeicherte Fassung.
+
+## Projekt nach Abschluss wiederholen (in Vorbereitung)
+
+Lege in den Projektdetails fest, nach wie vielen Monaten das Projekt wiederholt wird. Gib für einen Viermonatsrhythmus **4** ein. Wähle nach dem letzten Schritt **Projekt abschließen**. Der abgeschlossene Durchlauf bleibt im Verlauf. Abschnitte, Aufgabenreihenfolge und sequenzieller Ablauf werden übernommen. Die Aufgaben werden am neuen Startdatum verfügbar.
+
+Schalte zuvor die Wiederholung einzelner Aufgaben aus. Checklisten und Termine werden zurückgesetzt. Wenn du den abgeschlossenen Durchlauf erneut öffnest, bleibt der nächste einschließlich deiner Änderungen erhalten.

@@ -81,3 +81,9 @@ Ce qui est conservé : les notes, le domaine, les étiquettes, la couleur et le 
 ## Réorganiser une liste sur mobile
 
 À partir de v1.3.8, chaque élément de la liste dans l’éditeur mobile possède une poignée. Maintenez-la puis faites glisser l’élément ; près du bord, une longue liste défile. Les actions proposent aussi **Déplacer en haut**, **Déplacer en bas** et **Ajouter un élément en dessous**. Le texte et les coches suivent l’élément. **Enregistrer** conserve les changements ; **Abandonner** garde la version enregistrée.
+
+## Répéter un projet après son achèvement (à venir)
+
+Dans les détails du projet, indiquez le nombre de mois à attendre après son achèvement. Pour un cycle de quatre mois, saisissez **4**. Une fois les étapes terminées, choisissez **Terminer le projet**. Le projet terminé reste dans l’historique. Le suivant conserve les sections, l’ordre des tâches et le fonctionnement séquentiel. Ses tâches deviennent disponibles à la nouvelle date de début.
+
+Désactivez d’abord la répétition des tâches individuelles. Les cases du nouveau cycle sont décochées et les dates réinitialisées. Rouvrir le projet terminé conserve le cycle suivant et vos modifications.

@@ -78,3 +78,9 @@ What it keeps: the project's notes, area, tags, colour, and status, plus its who
 ## Reorder a mobile checklist
 
 From v1.3.8, the mobile checklist editor has a drag handle beside each item. Hold and drag the handle to move an item; moving near the edge scrolls a long list. The item actions also offer **Move to top**, **Move to bottom**, and **Add item below**. Text and checkmarks move with the item. Use **Save** to keep your changes or **Discard** to keep the saved version.
+
+## Repeat a project after completion (upcoming)
+
+In project details, set the number of months after completion. For a four-month routine, enter **4**. Finish the steps, then choose **Complete project**. Mindwtr keeps the finished run in history and prepares the next one with the same sections, task order and sequence. Its tasks become available on the new start date.
+
+Turn off individual task repeats before enabling project repetition. The new run starts with unchecked checklists and fresh dates. Reopening the finished run keeps the next run, including any edits you made to it.

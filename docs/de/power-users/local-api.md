@@ -109,9 +109,9 @@ Auch das Bun-Hilfsprogramm verlangt ein Token: Es beendet sich sofort, wenn `MIN
 | `GET`    | `/v1/areas`           | Kompatibilitätsalias für Bereiche    |
 | `GET` | `/sections` | Abschnitte auflisten, optional `?projectId=`; Desktop unterstützt |
 | `GET` | `/people` | Desktop: verwaltete Personen auflisten (nächste Version) |
-| `POST`   | `/sections`           | Hilfsprogramm: Abschnitt erstellen   |
+| `POST` | `/sections` | Abschnitt erstellen |
 | `GET`    | `/sections/:id`       | Hilfsprogramm: Einzelnen Abschnitt abrufen |
-| `PATCH`  | `/sections/:id`       | Hilfsprogramm: Abschnitt aktualisieren |
+| `PATCH` | `/sections/:id` | Desktop: Abschnitt umbenennen; Hilfsprogramm: Abschnitt aktualisieren |
 | `DELETE` | `/sections/:id`       | Hilfsprogramm: Abschnitt löschen     |
 | `GET`    | `/search?query=...`   | Aufgaben und Projekte suchen         |
 
@@ -240,6 +240,8 @@ Auch die regulären Routen unter `/tasks` akzeptieren diese Header. Über die Al
 Der Tag umfasst die wirksamen Filter und den gesamten zurückgegebenen Snapshot einschließlich Aufgabenversionen. Mit `?all=1&deleted=1` werden gespeicherte Löschmarkierungen einbezogen. Das spart Übertragung, liest und hasht aber weiterhin den Snapshot in O(n); es ist weder ein inkrementeller Änderungsfeed noch REST-Paginierung. Listen-Tags eignen sich nicht als Versionen für Aufgabenänderungen.
 
 **Referenzlisten (nächste Desktop-Version).** `GET /sections` liefert `{ "sections": [ ... ] }`, optional nach einer exakten `projectId` gefiltert; `GET /people` liefert `{ "people": [ ... ] }`. Beide schließen gelöschte Einträge aus, sofern nicht `deleted=1` angegeben wird, akzeptieren `/v1/`-Aliase und funktionieren bei deaktivierten Schreibzugriffen. Die Felder bleiben erhalten; der Status des übergeordneten Projekts filtert die Einträge nicht.
+
+**Abschnitte über die Desktop-API bearbeiten (nächste Version).** Bei aktivierten Schreibzugriffen akzeptiert `POST /sections` etwa `{"projectId":"p1","title":"Planung"}`, und `PATCH /sections/:id` akzeptiert `{"title":"Recherche"}`. Beide liefern `{"section": ...}`. Beim Namensvergleich innerhalb eines Projekts werden äußere Leerzeichen und Groß-/Kleinschreibung ignoriert. Erneutes Anlegen liefert dieselbe ID mit `existing: true`. Ist der neue Name bereits vergeben, antwortet die API mit `409 section_name_conflict`. Die Aufgaben bleiben zugeordnet. Der authentifizierte Endpunkt `/health` meldet `sectionCreate` und `sectionRename`.
 
 **Aufgaben wieder öffnen (nächste Desktop-Version).** `POST /tasks/:id/reopen` akzeptiert optional den Anfragekörper `{ "status": "next" }`. Der Zielstatus ist standardmäßig `next`; auch `inbox`, `waiting` und `someday` werden unterstützt. Der Endpunkt öffnet eine gewöhnliche Aufgabe mit Status `done` oder `archived` wieder, auch eine abgebrochene Aufgabe, und behält Identität und Inhalt bei. Er entfernt die Abschluss-, Abbruch- und Archivierungsmarkierungen der Aufgabe und setzt ihre Board-Sortierung wie bei einem gewöhnlichen Statuswechsel zurück. Er stellt weder den Papierkorbinhalt noch fehlende oder gelöschte Container wieder her.
 

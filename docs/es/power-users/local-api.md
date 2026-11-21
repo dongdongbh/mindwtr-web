@@ -109,9 +109,9 @@ El asistente de Bun también requiere un token: sale de inmediato si no se estab
 | `GET`    | `/v1/areas`           | Alias de compatibilidad para las áreas |
 | `GET` | `/sections` | Listar secciones, opcionalmente `?projectId=`; compatible en escritorio |
 | `GET` | `/people` | Escritorio: listar personas gestionadas |
-| `POST`   | `/sections`           | Asistente: crea una sección           |
+| `POST` | `/sections` | Crear sección |
 | `GET`    | `/sections/:id`       | Asistente: obtiene una sección        |
-| `PATCH`  | `/sections/:id`       | Asistente: actualiza una sección      |
+| `PATCH` | `/sections/:id` | Escritorio: renombrar sección; herramienta Bun: actualizar sección |
 | `DELETE` | `/sections/:id`       | Asistente: elimina una sección        |
 | `GET`    | `/search?query=...`   | Busca tareas y proyectos       |
 
@@ -240,6 +240,8 @@ Las rutas habituales de `/tasks` también aceptan estas cabeceras. Los alias `/v
 La etiqueta cubre los filtros efectivos y toda la instantánea devuelta, incluidas las versiones de las tareas. Usa `?all=1&deleted=1` para incluir los registros de eliminación conservados. Esto ahorra transferencia, pero sigue leyendo y calculando el hash de la instantánea en O(n); no es un flujo incremental de cambios ni paginación REST. Las etiquetas de colección no sirven como versiones para escribir tareas.
 
 **Listas de referencias.** `GET /sections` devuelve `{ "sections": [ ... ] }`, con un filtro opcional por `projectId` exacto; `GET /people` devuelve `{ "people": [ ... ] }`. Ambas excluyen registros eliminados salvo con `deleted=1`, aceptan alias `/v1/` y funcionan con las escrituras desactivadas. Los registros conservan sus campos; no se filtran por el estado del proyecto padre.
+
+**Editar secciones en escritorio (próxima versión).** Con la escritura habilitada, envía `POST /sections` con `{"projectId":"p1","title":"Planificación"}` o `PATCH /sections/:id` con `{"title":"Investigación"}`. Ambos devuelven `{"section": ...}`. La comparación dentro del proyecto ignora mayúsculas y espacios exteriores. Repetir la creación devuelve el mismo ID con `existing: true`. Si otra sección ya usa el nuevo título, la respuesta es `409 section_name_conflict` y las tareas conservan su sección. Consulta `sectionCreate` y `sectionRename` en la respuesta autenticada de `/health`.
 
 **Reabrir tareas.** `POST /tasks/:id/reopen` acepta el cuerpo opcional `{ "status": "next" }`. El estado de destino predeterminado es `next`; también admite `inbox`, `waiting` y `someday`. Reabre una tarea ordinaria en estado `done` o `archived`, incluida una tarea cancelada, conservando su identidad y contenido. Borra sus marcas de finalización, cancelación y archivo y restablece su orden en el tablero como un cambio de estado normal. No restaura elementos de la Papelera ni contenedores inexistentes o eliminados.
 

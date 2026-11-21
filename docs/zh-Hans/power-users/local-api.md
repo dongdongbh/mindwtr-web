@@ -109,9 +109,9 @@ Bun 辅助程序同样要求令牌：未设置 `MINDWTR_API_TOKEN` 时会立即�
 | `GET`    | `/v1/areas`           | 领域端点的兼容别名            |
 | `GET` | `/sections` | 列出分区，可加 `?projectId=`；桌面版支持 |
 | `GET` | `/people` | 桌面端：列出受管理的人员 |
-| `POST`   | `/sections`           | 辅助程序：创建分区            |
+| `POST` | `/sections` | 创建分区 |
 | `GET`    | `/sections/:id`       | 辅助程序：获取单个分区        |
-| `PATCH`  | `/sections/:id`       | 辅助程序：更新分区            |
+| `PATCH` | `/sections/:id` | 桌面端：重命名分区；辅助程序：更新分区 |
 | `DELETE` | `/sections/:id`       | 辅助程序：删除分区            |
 | `GET`    | `/search?query=...`   | 搜索任务和项目                |
 
@@ -240,6 +240,8 @@ curl -s -X POST 'http://127.0.0.1:3456/v1/tasks' \
 标记涵盖实际筛选条件和完整响应快照，包括任务版本。使用 `?all=1&deleted=1` 可包含仍保留的删除标记。这减少传输量，但仍以 O(n) 读取快照并计算哈希；它不是增量变更流或 REST 分页。集合标记不能用作任务写入版本。
 
 **引用列表。** `GET /sections` 返回 `{ "sections": [ ... ] }`，可按精确的 `projectId` 筛选；`GET /people` 返回 `{ "people": [ ... ] }`。两者默认排除已删除记录，传入 `deleted=1` 可包含它们；支持 `/v1/` 别名，在禁用写入时仍可使用。记录保留原有字段，不按父项目状态筛选。
+
+**桌面端分区写入（下一版本）。** 启用写入后，向 `POST /sections` 发送 `{"projectId":"p1","title":"计划"}`，或向 `PATCH /sections/:id` 发送 `{"title":"调研"}`。两者均返回 `{"section": ...}`。同一项目内比较名称时忽略首尾空白及大小写。重复创建会返回相同 ID，并标记 `existing: true`。若另一分区已使用目标名称，则返回 `409 section_name_conflict`，任务归属保持不变。通过已认证的 `/health` 响应查看 `sectionCreate` 和 `sectionRename`。
 
 **重新打开任务。** `POST /tasks/:id/reopen` 接受可选请求体 `{ "status": "next" }`。目标状态默认为 `next`，也支持 `inbox`、`waiting` 和 `someday`。它会重新打开处于 `done` 或 `archived` 状态的普通任务，包括已取消任务，并保留任务的标识和内容。它会清除该任务的完成、取消和归档标记，并像普通状态变更一样重置看板排序。它不会恢复回收站内容，也不会恢复缺失或已删除的容器。
 

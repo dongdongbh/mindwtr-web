@@ -109,9 +109,9 @@ The Bun helper requires a token too: it exits immediately unless `MINDWTR_API_TO
 | `GET`    | `/v1/areas`           | Compatibility alias for areas |
 | `GET` | `/sections` | List sections, optionally `?projectId=`; supported on desktop |
 | `GET` | `/people` | Desktop: list managed people |
-| `POST`   | `/sections`           | Helper: create section        |
+| `POST` | `/sections` | Create a section |
 | `GET`    | `/sections/:id`       | Helper: get single section    |
-| `PATCH`  | `/sections/:id`       | Helper: update section        |
+| `PATCH` | `/sections/:id` | Rename a section on desktop; update a section in the helper |
 | `DELETE` | `/sections/:id`       | Helper: delete section        |
 | `GET`    | `/search?query=...`   | Search tasks + projects       |
 
@@ -240,6 +240,8 @@ The regular `/tasks` routes also accept these headers. The `/v1/tasks` create an
 The tag covers the effective filters and the full returned snapshot, including task versions. Use `?all=1&deleted=1` to include retained tombstones. This saves transfer, but still reads and hashes the snapshot in O(n); it is not an incremental change feed or REST pagination. Collection tags cannot be used as task write versions.
 
 **Reference lists.** `GET /sections` returns `{ "sections": [ ... ] }`, optionally filtered by an exact `projectId`; `GET /people` returns `{ "people": [ ... ] }`. Both exclude deleted records unless `deleted=1` is supplied, accept `/v1/` aliases, and work with writes disabled. Records retain their fields; these endpoints do not filter by parent-project status.
+
+**Desktop section writes (next release).** With edits enabled, send `POST /sections` with `{"projectId":"p1","title":"Planning"}` or `PATCH /sections/:id` with `{"title":"Research"}`. Both return `{"section": ...}`. Titles are trimmed and matched case-insensitively within the project. Repeating creation returns the existing ID with `existing: true`. Renaming to another live section’s title returns `409 section_name_conflict` without moving tasks. Check `sectionCreate` and `sectionRename` in the authenticated `/health` response.
 
 **Reopening tasks.** `POST /tasks/:id/reopen` accepts an optional body `{ "status": "next" }`. The target defaults to `next`; `inbox`, `waiting`, and `someday` are also supported. It reopens an ordinary `done` or `archived` task, including a cancelled task, keeping its identity and content. It clears the task’s completion/cancellation/archive markers and resets its board ordering as an ordinary status change does. It does not restore Trash or missing/deleted containers.
 

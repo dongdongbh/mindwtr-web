@@ -109,9 +109,9 @@ Bun 輔助工具同樣要求 token：未設定 `MINDWTR_API_TOKEN` 時會立即�
 | `GET`    | `/v1/areas`           | 領域的相容性別名             |
 | `GET` | `/sections` | 列出分區，可加 `?projectId=`；桌面版支援 |
 | `GET` | `/people` | 桌面版：列出受管理的人員 |
-| `POST`   | `/sections`           | 輔助工具：建立分區           |
+| `POST` | `/sections` | 建立分區 |
 | `GET`    | `/sections/:id`       | 輔助工具：取得單一分區       |
-| `PATCH`  | `/sections/:id`       | 輔助工具：更新分區           |
+| `PATCH` | `/sections/:id` | 桌面版：重新命名分區；輔助程式：更新分區 |
 | `DELETE` | `/sections/:id`       | 輔助工具：刪除分區           |
 | `GET`    | `/search?query=...`   | 搜尋任務及專案               |
 
@@ -240,6 +240,8 @@ curl -s -X POST 'http://127.0.0.1:3456/v1/tasks' \
 標記涵蓋實際篩選條件和完整回應快照，包括任務版本。使用 `?all=1&deleted=1` 可包含仍保留的刪除標記。這減少傳輸量，但仍以 O(n) 讀取快照並計算雜湊；它不是增量變更串流或 REST 分頁。集合標記不能用作任務寫入版本。
 
 **參照清單。** `GET /sections` 傳回 `{ "sections": [ ... ] }`，可按精確的 `projectId` 篩選；`GET /people` 傳回 `{ "people": [ ... ] }`。兩者預設排除已刪除記錄，傳入 `deleted=1` 可包含它們；支援 `/v1/` 別名，在停用寫入時仍可使用。記錄保留原有欄位，不按父專案狀態篩選。
+
+**桌面版分區寫入（下一版本）。** 啟用寫入後，向 `POST /sections` 傳送 `{"projectId":"p1","title":"規劃"}`，或向 `PATCH /sections/:id` 傳送 `{"title":"研究"}`。兩者皆回傳 `{"section": ...}`。在同一專案內比對名稱時會忽略前後空白及大小寫。重複建立會回傳相同 ID 並標記 `existing: true`。若其他分區已使用目標名稱，則回傳 `409 section_name_conflict`，工作仍留在原分區。可在經驗證的 `/health` 回應中查看 `sectionCreate` 與 `sectionRename`。
 
 **重新開啟任務。** `POST /tasks/:id/reopen` 接受選填的請求本文 `{ "status": "next" }`。目標狀態預設為 `next`，也支援 `inbox`、`waiting` 和 `someday`。它會重新開啟處於 `done` 或 `archived` 狀態的一般任務，包括已取消任務，並保留任務的識別與內容。它會清除該任務的完成、取消與封存標記，並像一般狀態變更一樣重設看板排序。它不會還原垃圾桶內容，也不會還原遺失或已刪除的容器。
 

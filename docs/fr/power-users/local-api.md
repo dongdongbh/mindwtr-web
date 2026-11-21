@@ -109,9 +109,9 @@ L’utilitaire Bun exige lui aussi un jeton : il s’arrête immédiatement si `
 | `GET`    | `/v1/areas`            | Alias de compatibilité pour les domaines |
 | `GET` | `/sections` | Lister les sections, avec `?projectId=` facultatif ; compatible sur le bureau |
 | `GET` | `/people` | Bureau : lister les personnes gérées |
-| `POST`   | `/sections`            | Utilitaire : créer une section           |
+| `POST` | `/sections` | Créer une section |
 | `GET`    | `/sections/:id`        | Utilitaire : obtenir une section         |
-| `PATCH`  | `/sections/:id`        | Utilitaire : mettre à jour une section   |
+| `PATCH` | `/sections/:id` | Bureau : renommer une section ; utilitaire : modifier une section |
 | `DELETE` | `/sections/:id`        | Utilitaire : supprimer une section       |
 | `GET`    | `/search?query=...`    | Rechercher des tâches et des projets     |
 
@@ -240,6 +240,8 @@ Les routes habituelles sous `/tasks` acceptent également ces en-têtes. Les ali
 L’étiquette couvre les filtres effectifs et tout l’instantané renvoyé, y compris les versions des tâches. Utilisez `?all=1&deleted=1` pour inclure les marqueurs de suppression conservés. Cela économise le transfert, mais lit et calcule toujours le hash de l’instantané en O(n) ; ce n’est ni un flux incrémental de changements ni une pagination REST. Les étiquettes de collection ne servent pas de versions pour modifier une tâche.
 
 **Listes de références.** `GET /sections` renvoie `{ "sections": [ ... ] }`, avec un filtre facultatif par `projectId` exact ; `GET /people` renvoie `{ "people": [ ... ] }`. Les deux excluent les enregistrements supprimés sauf avec `deleted=1`, acceptent les alias `/v1/` et fonctionnent lorsque les écritures sont désactivées. Les champs sont conservés ; le statut du projet parent ne filtre pas les enregistrements.
+
+**Écriture des sections sur ordinateur (prochaine version).** Lorsque les écritures sont activées, envoyez `POST /sections` avec `{"projectId":"p1","title":"Préparation"}` ou `PATCH /sections/:id` avec `{"title":"Recherche"}`. Les deux renvoient `{"section": ...}`. La comparaison des titres au sein du projet ignore la casse et les espaces en début et fin de chaîne. Répéter la création renvoie le même identifiant avec `existing: true`. Si une autre section porte déjà le titre demandé, la réponse est `409 section_name_conflict` et les tâches restent en place. La réponse authentifiée de `/health` indique `sectionCreate` et `sectionRename`.
 
 **Rouvrir des tâches.** `POST /tasks/:id/reopen` accepte le corps facultatif `{ "status": "next" }`. Le statut cible est `next` par défaut ; `inbox`, `waiting` et `someday` sont aussi pris en charge. Ce point de terminaison rouvre une tâche ordinaire `done` ou `archived`, y compris une tâche annulée, en conservant son identité et son contenu. Il efface les marqueurs d’achèvement, d’annulation et d’archivage de cette tâche et réinitialise son ordre dans le tableau comme un changement de statut ordinaire. Il ne restaure ni la Corbeille ni les conteneurs absents ou supprimés.
 

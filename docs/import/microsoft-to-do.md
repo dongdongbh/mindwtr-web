@@ -28,4 +28,6 @@ Check a few tasks against the original after importing. If the result is wrong, 
 
 Mindwtr imports task titles, notes, categories as tags, priorities, status, and start, due, and completion dates when Outlook includes them. Check the preview for dates Mindwtr could not interpret. Keep the original lists for recurring schedules, reminders, attachments, and list organization.
 
+For a completed task with a missing or unreadable completion date, Mindwtr records the import time as its completion time. To preserve the original dates and avoid mixing up the month and day, format the dates in the CSV as `YYYY-MM-DD` before importing.
+
 Each CSV goes into a project named after the file. The import creates a one-time copy. If you import again with the same filename, Mindwtr skips unchanged tasks it already imported. A new filename or changed task details can create duplicates.

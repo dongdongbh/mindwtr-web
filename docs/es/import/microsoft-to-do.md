@@ -28,4 +28,6 @@ Después de importar, compara algunas tareas con las originales. Si el resultado
 
 Mindwtr importa los títulos, las notas, las categorías como etiquetas, las prioridades, el estado y las fechas de inicio, vencimiento y finalización cuando Outlook incluye esos datos. Revisa la vista previa para detectar fechas que Mindwtr no pudo interpretar. Conserva las listas originales para consultar las repeticiones, los recordatorios, los adjuntos y la organización de las listas.
 
+Si a una tarea completada le falta la fecha de finalización o Mindwtr no puede leerla, se registra el momento de la importación como momento de finalización. Antes de importar, usa el formato `YYYY-MM-DD` en el CSV para conservar las fechas originales y evitar confundir el mes con el día.
+
 Cada CSV se importa en un proyecto con el nombre del archivo. La importación crea una copia puntual. Si vuelves a importar con el mismo nombre de archivo, Mindwtr omite las tareas ya importadas que sigan iguales. Un nombre nuevo o cambios en una tarea pueden generar duplicados.

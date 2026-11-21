@@ -28,4 +28,6 @@ Vergleichen Sie nach dem Import einige Aufgaben mit dem Original. Wenn das Ergeb
 
 Mindwtr übernimmt Aufgabentitel, Notizen, Kategorien als Tags, Prioritäten, Status sowie Start-, Fälligkeits- und Abschlussdaten, sofern Outlook sie exportiert. Prüfen Sie die Vorschau auf Datumswerte, die Mindwtr nicht lesen konnte. Bewahren Sie die ursprünglichen Listen für Wiederholungen, Erinnerungen, Anhänge und die Listenstruktur auf.
 
+Bei einer erledigten Aufgabe ohne lesbares Abschlussdatum verwendet Mindwtr den Zeitpunkt des Imports als Abschlusszeitpunkt. Verwenden Sie in der CSV-Datei vor dem Import das Datumsformat `YYYY-MM-DD`, um die ursprünglichen Daten zu erhalten und Tag und Monat eindeutig anzugeben.
+
 Jede CSV-Datei wird in ein Projekt mit dem Namen der Datei importiert. Der Import erstellt eine einmalige Kopie. Bei einem erneuten Import mit demselben Dateinamen überspringt Mindwtr unveränderte Aufgaben, die bereits importiert wurden. Ein neuer Dateiname oder geänderte Aufgabendaten können zu Duplikaten führen.

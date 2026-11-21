@@ -28,4 +28,6 @@ Après l’importation, comparez quelques tâches aux originales. Si le résulta
 
 Mindwtr importe les titres, les notes, les catégories sous forme d’étiquettes, les priorités, l’état, et les dates de début, d’échéance et d’achèvement qu’Outlook a exportés. Vérifiez dans l’aperçu les dates que Mindwtr n’a pas pu interpréter. Conservez les listes d’origine pour retrouver les récurrences, les rappels, les pièces jointes et l’organisation des listes.
 
+Pour une tâche terminée dont la date d’achèvement est absente ou illisible, Mindwtr enregistre le moment de l’importation comme moment d’achèvement. Avant l’importation, utilisez le format `YYYY-MM-DD` dans le CSV pour conserver les dates d’origine et éviter toute confusion entre le jour et le mois.
+
 Chaque CSV est importé dans un projet qui porte le nom du fichier. L’importation crée une copie ponctuelle. Si vous réimportez un fichier sous le même nom, Mindwtr ignore les tâches déjà importées qui sont restées identiques. Un nouveau nom de fichier ou la modification des tâches peut créer des doublons.

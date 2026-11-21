@@ -13,6 +13,7 @@ Dans une fenêtre assez haute, la liste des Projets ou des Contextes apparaît s
 ## Modes d’interaction
 
 - utilisez **Copier le titre** dans le menu **Autres options** d’une tâche, ou appuyez sur `Ctrl+C` / `Cmd+C` lorsqu’une tâche est surlignée. Si plusieurs tâches sont sélectionnées, le raccourci copie leurs titres, un par ligne. Un message confirme la copie ; la copie du texte sélectionné ou du texte dans un éditeur fonctionne toujours normalement.
+- Choisissez **Copier la description** pour copier uniquement la description de la tâche, avec son Markdown et ses sauts de ligne.
 - Choisissez **Copier les détails de la tâche** dans le même menu pour copier le titre, le projet, les dates de début et d’échéance, la description et la checklist en texte brut. Les champs vides sont omis et l’état d’achèvement des éléments de la checklist est indiqué.
 - Un **simple clic** affiche ou masque les détails d’une tâche.
 - `Ctrl+click` (Windows/Linux) ou `Cmd+click` (macOS) sur le titre d’une tâche ou un espace vide de sa ligne la sélectionne ou la désélectionne sans appuyer d’abord sur **Sélectionner**. Après avoir sélectionné une tâche, `Shift+click` sélectionne la plage jusqu’à une autre tâche. Un clic simple continue d’afficher ou masquer les détails.

@@ -16,16 +16,17 @@ Mindwtr 可以匯入受支援應用程式的完整匯出檔，但經過篩選、
 - [匯入 Todoist](/zh-Hant/import/todoist) - CSV 匯出檔或 ZIP 備份
 - [匯入 DGT GTD](/zh-Hant/import/dgt-gtd) - JSON 匯出檔或 ZIP 備份
 - [匯入 OmniFocus](/zh-Hant/import/omnifocus) - CSV、JSON 或 ZIP 匯出檔
+- [從 Microsoft To Do 匯入](/zh-Hant/import/microsoft-to-do)，使用 Windows 傳統版 Outlook 匯出的工作 CSV
 - [匯入 Apple 提醒事項](/zh-Hant/data-sync/#apple-提醒事項匯入-ios) - 僅限 iOS，可從所選的「提醒事項」清單匯入未完成的提醒事項，可手動匯入或在每次開啟 App 時自動匯入
 - [匯入 Mindwtr CSV](/zh-Hant/import/mindwtr-csv) - 一套有文件說明的 CSV 欄位格式，適用於所有沒有專屬匯入工具的應用程式
 
-開啟**設定 → 資料**，選擇相應的匯入動作：Todoist、TickTick、DGT GTD、OmniFocus，或通用的 Mindwtr CSV。Mindwtr 會在新增任何內容前顯示預覽。
+開啟**設置 → 數據**，選擇適合該檔案的匯入動作。Mindwtr 會在新增檔案中的資料前顯示預覽。
 
 若清單中有你原本使用的應用程式，原生匯入工具就是最佳選擇。它們能比純文字保留更多結構，也能處理來源匯出檔所提供的應用程式特有資訊，例如資料夾、清單、標籤、日期、檢查清單與重複規則。
 
 ## 匯入保真度概覽
 
-以下範圍於 2026 年 8 月 9 日依據 Mindwtr 提交 [e787c2e](https://github.com/dongdongbh/Mindwtr/commit/e787c2e8cbe1ac93330a55d89fe5edc677f0eefe) 的匯入程式碼核對。匯入測試資料涵蓋 Todoist CSV 與 ZIP、TickTick 7.1 CSV 與 ZIP、DGT 第 3 版結構的 JSON 與 ZIP、OmniFocus CSV、UTF-16 CSV、JSON 與 ZIP，以及單獨檔案與壓縮檔內的 Mindwtr CSV。匯出格式可能改變，請在確認前查看預覽和對應的應用程式指南。
+先前的匯入工具已於 2026 年 8 月 9 日依據 Mindwtr 提交 [e787c2e](https://github.com/dongdongbh/Mindwtr/commit/e787c2e8cbe1ac93330a55d89fe5edc677f0eefe) 的匯入程式碼核對。匯入測試資料涵蓋 Todoist CSV 與 ZIP、TickTick 7.1 CSV 與 ZIP、DGT 第 3 版結構的 JSON 與 ZIP、OmniFocus CSV、UTF-16 CSV、JSON 與 ZIP，以及單獨檔案與壓縮檔內的 Mindwtr CSV。匯出格式可能改變，請在確認前查看預覽和對應的應用程式指南。
 
 | 來源 | 最佳輸入 | Mindwtr 會保留 | 匯入後檢查 |
 | --- | --- | --- | --- |
@@ -33,6 +34,7 @@ Mindwtr 可以匯入受支援應用程式的完整匯出檔，但經過篩選、
 | [Todoist](/zh-Hant/import/todoist) | CSV 或 ZIP 備份 | 專案、分段、進行中的任務、描述和留言、優先順序、截止日期、標籤，以及轉為檢查項目的子任務 | 重複規則會連同原文只匯入一次；還應檢查略過或損壞的列 |
 | [DGT GTD](/zh-Hant/import/dgt-gtd) | JSON 或 ZIP 備份 | 資料夾轉為領域，以及專案、情境、標籤、檢查清單、優先順序、截止日期、完成狀態和受支援的重複規則 | 不受支援的重複規則和略過的壓縮檔項目 |
 | [OmniFocus](/zh-Hant/import/omnifocus) | Omni Automation JSON 或 ZIP 保真度最佳；亦支援 CSV | 資料夾轉為領域，以及專案、標籤、情境、筆記、日期、完成狀態、簡單巢狀結構和受支援的重複規則 | 深層巢狀結構、計畫日期和時長文字、原樣保留為備註的重複規則，以及 CSV 特有的損失 |
+| [Microsoft To Do](/zh-Hant/import/microsoft-to-do) | Windows 傳統版 Outlook 的工作 CSV | 以檔名命名的專案中的任務、備註、轉為標籤的類別、優先順序、狀態和日期 | 略過的日期和匯出資料夾以外的清單中的任務 |
 | [Apple 提醒事項](/zh-Hant/data-sync/#apple-提醒事項匯入-ios) | iOS 上選定的清單 | 未完成提醒事項的標題和備註 | 日期和其他欄位、略過的項目，以及是否刪除來源的選項 |
 | [Mindwtr CSV](/zh-Hant/import/mindwtr-csv) | 採用文件所列欄位名稱的 CSV 檔案，或內含多個 CSV 的 ZIP | 領域、專案、分區、狀態、情境、標籤、負責人、優先順序、精力、開始日期、截止日期、複查日期、完成時間、檢查清單、地點、手動排序與受支援的重複規則 | Mindwtr 無法表達並連同所在列提示的重複規則、無法解析的日期、重複的 ID，以及因缺少標題而略過的列 |
 

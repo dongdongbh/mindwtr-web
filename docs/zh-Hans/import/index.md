@@ -16,16 +16,17 @@ Mindwtr 可以从受支持的应用导入完整导出，但相比把所有旧任
 - [从 Todoist 导入](/zh-Hans/import/todoist) - CSV 导出或 ZIP 备份
 - [从 DGT GTD 导入](/zh-Hans/import/dgt-gtd) - JSON 导出或 ZIP 备份
 - [从 OmniFocus 导入](/zh-Hans/import/omnifocus) - CSV、JSON 或 ZIP 导出
+- [从 Microsoft To Do 导入](/zh-Hans/import/microsoft-to-do)，使用 Windows 经典 Outlook 导出的任务 CSV
 - [从 Apple 提醒事项导入](/zh-Hans/data-sync/#apple-提醒事项导入-ios) - 仅限 iOS，从所选提醒事项列表导入未完成事项，可手动导入或在每次打开应用时自动导入
 - [从 Mindwtr CSV 导入](/zh-Hans/import/mindwtr-csv) - 一套有文档说明的 CSV 列格式，适用于所有没有专属导入器的应用
 
-打开**设置 -> 数据**并选择相应的导入操作：Todoist、TickTick、DGT GTD、OmniFocus，或通用的 Mindwtr CSV。Mindwtr 会在添加任何内容前显示预览。
+打开**设置 → 数据**，选择适合该文件的导入操作。Mindwtr 会在添加文件中的数据前显示预览。
 
 如果旧应用在列表中，原生导入器是最佳路径。相比纯文本，它们能保留更多结构，并处理文件夹、清单、标签、日期、检查清单和重复规则等应用专属细节（前提是源导出提供这些内容）。
 
 ## 导入保真度概览
 
-以下范围于 2026 年 8 月 9 日根据 Mindwtr 提交 [e787c2e](https://github.com/dongdongbh/Mindwtr/commit/e787c2e8cbe1ac93330a55d89fe5edc677f0eefe) 的导入代码核对。导入测试数据涵盖 Todoist CSV 和 ZIP、TickTick 7.1 CSV 和 ZIP、DGT 第 3 版模式的 JSON 和 ZIP、OmniFocus CSV、UTF-16 CSV、JSON 和 ZIP，以及作为单个文件和压缩包内文件的 Mindwtr CSV。导出格式可能变化，请在确认前查看预览和对应应用指南。
+此前的导入器已于 2026 年 8 月 9 日根据 Mindwtr 提交 [e787c2e](https://github.com/dongdongbh/Mindwtr/commit/e787c2e8cbe1ac93330a55d89fe5edc677f0eefe) 的导入代码核对。导入测试数据涵盖 Todoist CSV 和 ZIP、TickTick 7.1 CSV 和 ZIP、DGT 第 3 版模式的 JSON 和 ZIP、OmniFocus CSV、UTF-16 CSV、JSON 和 ZIP，以及作为单个文件和压缩包内文件的 Mindwtr CSV。导出格式可能变化，请在确认前查看预览和对应应用指南。
 
 | 来源 | 最佳输入 | Mindwtr 会保留 | 导入后检查 |
 | --- | --- | --- | --- |
@@ -33,6 +34,7 @@ Mindwtr 可以从受支持的应用导入完整导出，但相比把所有旧任
 | [Todoist](/zh-Hans/import/todoist) | CSV 或 ZIP 备份 | 项目、分区、活跃任务、描述和评论、优先级、截止日期、标签，以及转为检查项的子任务 | 重复规则会连同原文只导入一次；还应检查跳过或损坏的行 |
 | [DGT GTD](/zh-Hans/import/dgt-gtd) | JSON 或 ZIP 备份 | 文件夹转为领域，以及项目、情境、标签、检查清单、优先级、截止日期、完成状态和受支持的重复规则 | 不受支持的重复规则和被跳过的压缩包条目 |
 | [OmniFocus](/zh-Hans/import/omnifocus) | Omni Automation JSON 或 ZIP 保真度最佳；也支持 CSV | 文件夹转为领域，以及项目、标签、情境、笔记、日期、完成状态、简单嵌套和受支持的重复规则 | 深层嵌套、计划日期和时长文本、原样保留为备注的重复规则，以及 CSV 特有的损失 |
+| [Microsoft To Do](/zh-Hans/import/microsoft-to-do) | Windows 经典 Outlook 的任务 CSV | 以文件名命名的项目中的任务、备注、转为标签的类别、优先级、状态和日期 | 跳过的日期和导出文件夹之外的列表中的任务 |
 | [Apple 提醒事项](/zh-Hans/data-sync/#apple-提醒事项导入-ios) | iOS 上选定的列表 | 未完成提醒事项的标题和备注 | 日期和其他字段、跳过的条目，以及是否删除来源的选项 |
 | [Mindwtr CSV](/zh-Hans/import/mindwtr-csv) | 使用文档所列列名的 CSV 文件，或包含多个 CSV 的 ZIP | 领域、项目、分区、状态、情境、标签、负责人、优先级、精力、开始日期、截止日期、复查日期、完成时间、检查清单、地点、手动排序和受支持的重复规则 | Mindwtr 无法表达并连同所在行提示的重复规则、无法解析的日期、重复的 ID，以及因没有标题而跳过的行 |
 

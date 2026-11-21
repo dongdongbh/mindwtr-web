@@ -16,16 +16,17 @@ Mindwtr has first-class importers for a small set of apps where the export forma
 - [Todoist Import](/import/todoist) - CSV exports or ZIP backups
 - [DGT GTD Import](/import/dgt-gtd) - JSON exports or ZIP backups
 - [OmniFocus Import](/import/omnifocus) - CSV, JSON, or ZIP exports
+- [Microsoft To Do import](/import/microsoft-to-do) for a Tasks CSV from classic Outlook for Windows
 - [Apple Reminders Import](/data-sync/#apple-reminders-import-ios) - iOS-only import for incomplete reminders from a selected Reminders list, manually or automatically each time the app opens
 - [Mindwtr CSV Import](/import/mindwtr-csv) - a documented CSV layout for every app that has no importer of its own
 
-Open **Settings -> Data** and choose the matching import action: Todoist, TickTick, DGT GTD, OmniFocus, or the generic Mindwtr CSV. Mindwtr shows a preview before it adds anything.
+Open **Settings → Data** and choose the import action for your file. File importers show a preview before adding anything.
 
 Native importers are the best path when your old app is listed. They preserve more structure than plain text, and they handle app-specific details such as folders, lists, tags, dates, checklists, and recurrence when the source export exposes them.
 
 ## Import Fidelity at a Glance
 
-This coverage was reviewed on August 9, 2026 against the importer code at Mindwtr commit [e787c2e](https://github.com/dongdongbh/Mindwtr/commit/e787c2e8cbe1ac93330a55d89fe5edc677f0eefe). The importer fixtures cover Todoist CSV and ZIP, TickTick 7.1 CSV and ZIP, DGT schema version 3 JSON and ZIP, OmniFocus CSV, UTF-16 CSV, JSON, and ZIP, and Mindwtr CSV as a single file and inside a ZIP. Export formats can change, so use the preview and the app-specific guide before confirming.
+The earlier importers were reviewed on August 9, 2026 against the importer code at Mindwtr commit [e787c2e](https://github.com/dongdongbh/Mindwtr/commit/e787c2e8cbe1ac93330a55d89fe5edc677f0eefe). The importer fixtures cover Todoist CSV and ZIP, TickTick 7.1 CSV and ZIP, DGT schema version 3 JSON and ZIP, OmniFocus CSV, UTF-16 CSV, JSON, and ZIP, and Mindwtr CSV as a single file and inside a ZIP. Export formats can change, so use the preview and the app-specific guide before confirming.
 
 | Source | Best input | Mindwtr preserves | Check after import |
 | --- | --- | --- | --- |
@@ -33,6 +34,7 @@ This coverage was reviewed on August 9, 2026 against the importer code at Mindwt
 | [Todoist](/import/todoist) | CSV or ZIP backup | Projects, sections, active tasks, descriptions and comments, priorities, due dates, labels, and subtasks as checklist items | Recurrence, which imports once with its original text; skipped or malformed rows |
 | [DGT GTD](/import/dgt-gtd) | JSON or ZIP backup | Folders as areas, projects, contexts, tags, checklists, priorities, due dates, completion state, and supported recurrence | Unsupported recurrence and skipped archive entries |
 | [OmniFocus](/import/omnifocus) | Omni Automation JSON or ZIP for best fidelity; CSV is supported | Folders as areas, projects, tags, contexts, notes, dates, completion state, simple nesting, and supported recurrence | Deep nesting, planned dates and duration text, repeat rules kept verbatim as a note, and CSV-specific loss |
+| [Microsoft To Do](/import/microsoft-to-do) | Classic Outlook for Windows Tasks CSV | Tasks in a project named after the file, notes, categories as tags, priorities, status, and dates | Skipped dates and any tasks from lists outside the exported folder |
 | [Apple Reminders](/data-sync/#apple-reminders-import-ios) | A selected list on iOS | Titles and notes from incomplete reminders | Dates and other fields, skipped items, and the optional source-deletion choice |
 | [Mindwtr CSV](/import/mindwtr-csv) | A CSV file, or a ZIP of CSV files, using the documented column names | Areas, projects, sections, statuses, contexts, tags, assignees, priority, energy, start, due, review and completion dates, checklists, location, manual order, and supported recurrence | Repeat rules Mindwtr cannot express, which are reported with their row; unparsed dates; duplicate IDs; and rows skipped for having no title |
 

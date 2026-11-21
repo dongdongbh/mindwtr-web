@@ -583,6 +583,10 @@ Einzelheiten und unterstützte Zuordnungen beschreibt der [OmniFocus-Import](/de
 
 <a id="apple-reminders-import-ios"></a>
 
+### CSV-Import aus Microsoft To Do
+
+Importieren Sie in Mindwtr Desktop eine Aufgaben-CSV aus dem klassischen Outlook für Windows. Der Leitfaden beschreibt die Export-Schritte und die unterstützten Felder. [Aus Microsoft To Do importieren](/de/import/microsoft-to-do)
+
 ### Import aus Apple Erinnerungen (iOS)
 
 Auf iPhone und iPad kann Mindwtr unerledigte Apple-Erinnerungen unter **Einstellungen → Daten → Aus Apple Erinnerungen importieren** importieren.

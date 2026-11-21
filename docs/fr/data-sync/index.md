@@ -582,6 +582,10 @@ Si la fidélité de la récurrence ou de la hiérarchie est importante, préfér
 
 Consultez [Importation depuis OmniFocus](/fr/import/omnifocus) pour obtenir les détails et les correspondances prises en charge.
 
+### Importation CSV depuis Microsoft To Do
+
+Dans Mindwtr pour ordinateur, importez un CSV de tâches exporté à partir d’Outlook classique pour Windows. Le guide décrit les étapes d’exportation et les champs pris en charge. [Importer depuis Microsoft To Do](/fr/import/microsoft-to-do)
+
 ### Importation depuis Rappels Apple (iOS)
 
 Sur iPhone et iPad, Mindwtr peut importer les rappels Apple non terminés depuis **Réglages → Données → Importer depuis Rappels Apple**.

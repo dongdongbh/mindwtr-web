@@ -16,16 +16,17 @@ Mindwtr bietet vollwertige Importer für einige Apps, deren Exportformat struktu
 - [Todoist-Import](/de/import/todoist) – CSV-Exporte oder ZIP-Sicherungen
 - [DGT-GTD-Import](/de/import/dgt-gtd) – JSON-Exporte oder ZIP-Sicherungen
 - [OmniFocus-Import](/de/import/omnifocus) – CSV-, JSON- oder ZIP-Exporte
+- [Microsoft-To-Do-Import](/de/import/microsoft-to-do) für eine Aufgaben-CSV aus dem klassischen Outlook für Windows
 - [Import aus Apple Erinnerungen](/de/data-sync/#apple-reminders-import-ios) – nur unter iOS verfügbarer Import unerledigter Erinnerungen aus einer ausgewählten Erinnerungsliste, manuell oder automatisch bei jedem Öffnen der App
 - [Mindwtr-CSV-Import](/de/import/mindwtr-csv) – ein dokumentiertes CSV-Layout für alle Apps ohne eigenen Importer
 
-Öffnen Sie **Einstellungen → Daten** und wählen Sie die passende Importaktion: Todoist, TickTick, DGT GTD, OmniFocus oder die generische Mindwtr-CSV. Mindwtr zeigt eine Vorschau an, bevor Daten hinzugefügt werden.
+Öffnen Sie **Einstellungen → Daten** und wählen Sie die Importaktion für Ihre Datei. Beim Dateiimport zeigt Mindwtr vor dem Hinzufügen eine Vorschau an.
 
 Native Importer sind die beste Wahl, wenn Ihre bisherige App aufgeführt ist. Sie erhalten mehr Struktur als einfacher Text und berücksichtigen app-spezifische Details wie Ordner, Listen, Tags, Daten, Checklisten und Wiederholungen, sofern der Quellexport diese enthält.
 
 ## Importtreue im Überblick
 
-Diese Übersicht wurde am 9. August 2026 mit dem Importcode aus Mindwtr-Commit [e787c2e](https://github.com/dongdongbh/Mindwtr/commit/e787c2e8cbe1ac93330a55d89fe5edc677f0eefe) abgeglichen. Die Import-Fixtures decken Todoist CSV und ZIP, TickTick 7.1 CSV und ZIP, DGT-Schema Version 3 als JSON und ZIP, OmniFocus CSV, UTF-16-CSV, JSON und ZIP sowie Mindwtr-CSV als Einzeldatei und im ZIP ab. Exportformate können sich ändern. Prüfen Sie daher die Vorschau und den jeweiligen App-Leitfaden, bevor Sie den Import bestätigen.
+Die bisherigen Importer wurden am 9. August 2026 mit dem Importcode aus Mindwtr-Commit [e787c2e](https://github.com/dongdongbh/Mindwtr/commit/e787c2e8cbe1ac93330a55d89fe5edc677f0eefe) abgeglichen. Die Import-Fixtures decken Todoist CSV und ZIP, TickTick 7.1 CSV und ZIP, DGT-Schema Version 3 als JSON und ZIP, OmniFocus CSV, UTF-16-CSV, JSON und ZIP sowie Mindwtr-CSV als Einzeldatei und im ZIP ab. Exportformate können sich ändern. Prüfen Sie daher die Vorschau und den jeweiligen App-Leitfaden, bevor Sie den Import bestätigen.
 
 | Quelle | Beste Eingabe | Mindwtr erhält | Nach dem Import prüfen |
 | --- | --- | --- | --- |
@@ -33,6 +34,7 @@ Diese Übersicht wurde am 9. August 2026 mit dem Importcode aus Mindwtr-Commit [
 | [Todoist](/de/import/todoist) | CSV- oder ZIP-Sicherung | Projekte, Abschnitte, aktive Aufgaben, Beschreibungen und Kommentare, Prioritäten, Fälligkeitsdaten, Labels und Unteraufgaben als Checklistenpunkte | Wiederholungen, die einmalig mit dem Originaltext importiert werden; übersprungene oder fehlerhafte Zeilen |
 | [DGT GTD](/de/import/dgt-gtd) | JSON- oder ZIP-Sicherung | Ordner als Bereiche, Projekte, Kontexte, Tags, Checklisten, Prioritäten, Fälligkeitsdaten, Abschlussstatus und unterstützte Wiederholungen | Nicht unterstützte Wiederholungen und übersprungene Archiveinträge |
 | [OmniFocus](/de/import/omnifocus) | Omni-Automation-JSON oder ZIP für die beste Übernahme; CSV wird unterstützt | Ordner als Bereiche, Projekte, Tags, Kontexte, Notizen, Daten, Abschlussstatus, einfache Verschachtelung und unterstützte Wiederholungen | Tiefe Verschachtelung, geplante Daten und Dauertext, wortgetreu als Notiz übernommene Wiederholungsregeln sowie CSV-bedingte Verluste |
+| [Microsoft To Do](/de/import/microsoft-to-do) | Aufgaben-CSV aus dem klassischen Outlook für Windows | Aufgaben in einem Projekt mit dem Namen der Datei, Notizen, Kategorien als Tags, Prioritäten, Status und Datumswerte | Übersprungene Datumswerte und Aufgaben aus Listen außerhalb des exportierten Ordners |
 | [Apple Erinnerungen](/de/data-sync/#apple-reminders-import-ios) | Eine ausgewählte Liste unter iOS | Titel und Notizen unerledigter Erinnerungen | Daten und andere Felder, übersprungene Einträge und die optionale Löschung aus der Quelle |
 | [Mindwtr CSV](/de/import/mindwtr-csv) | Eine CSV-Datei oder ein ZIP mit CSV-Dateien, das die dokumentierten Spaltennamen verwendet | Bereiche, Projekte, Abschnitte, Status, Kontexte, Tags, Zuständige, Priorität, Energie, Start-, Fälligkeits-, Wiedervorlage- und Abschlussdaten, Checklisten, Ort, manuelle Reihenfolge und unterstützte Wiederholungen | Wiederholungsregeln, die Mindwtr nicht ausdrücken kann und die samt Zeile gemeldet werden, nicht lesbare Daten, doppelte IDs und Zeilen, die mangels Titel übersprungen wurden |
 

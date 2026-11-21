@@ -590,6 +590,10 @@ Si la fidelidad de la recurrencia o la jerarquía es importante, usa la ruta JSO
 
 Consulta [Importación de OmniFocus](/es/import/omnifocus) para obtener detalles y las asignaciones compatibles.
 
+### Importación de CSV desde Microsoft To Do
+
+En Mindwtr para escritorio, importa un CSV de tareas exportado desde Outlook clásico para Windows. La guía explica cómo exportar el archivo y qué datos se conservan. [Importar desde Microsoft To Do](/es/import/microsoft-to-do)
+
 ### Importación de Recordatorios de Apple (iOS)
 
 En iPhone y iPad, Mindwtr puede importar recordatorios incompletos de Apple desde **Ajustes → Datos → Importar desde Recordatorios de Apple**.

@@ -511,6 +511,10 @@ Si la récurrence est importante, utilisez l’exportation JSON / ZIP d’Omni A
 
 Consultez [Importation depuis OmniFocus](/fr/import/omnifocus).
 
+### Puis-je importer depuis Microsoft To Do ?
+
+Oui, dans l’application pour ordinateur. Exportez un CSV de tâches à partir d’Outlook classique pour Windows et vérifiez l’aperçu dans Mindwtr avant d’importer. [Importer depuis Microsoft To Do](/fr/import/microsoft-to-do)
+
 ### Puis-je importer mes données depuis Apple Reminders ?
 
 Oui, sur iPhone et iPad. Mindwtr peut importer les rappels Apple Reminders incomplets depuis **Paramètres → Données → Importer depuis Apple Reminders**.

@@ -64,6 +64,7 @@ export const SIDEBAR_SECTIONS = [
       ["todoist", "/import/todoist"],
       ["dgtGtd", "/import/dgt-gtd"],
       ["omnifocus", "/import/omnifocus"],
+      ["microsoftToDo", "/import/microsoft-to-do"],
       ["mindwtrCsv", "/import/mindwtr-csv"]
     ]
   },

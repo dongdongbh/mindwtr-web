@@ -582,6 +582,10 @@ Mindwtr 可從**設定 → 資料 → 從 OmniFocus 匯入**匯入 OmniFocus 匯
 
 詳細資訊與支援的對應方式，請參閱 [OmniFocus 匯入](/zh-Hant/import/omnifocus)。
 
+### Microsoft To Do CSV 匯入
+
+在 Mindwtr 桌面版中可以匯入 Windows 傳統版 Outlook 匯出的工作 CSV。指南說明匯出步驟和支援的欄位。 [從 Microsoft To Do 匯入](/zh-Hant/import/microsoft-to-do)
+
 ### Apple 提醒事項匯入（iOS）
 
 在 iPhone 與 iPad 上，Mindwtr 可從**設定 → 資料 → 從 Apple 提醒事項匯入**，匯入尚未完成的 Apple 提醒事項。

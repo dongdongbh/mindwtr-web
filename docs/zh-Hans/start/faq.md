@@ -511,6 +511,10 @@ Mindwtr 遵循各平台的惯例：
 
 请参阅 [OmniFocus 导入](/zh-Hans/import/omnifocus)。
 
+### 可以从 Microsoft To Do 导入吗？
+
+可以，在桌面版中操作。先用 Windows 经典 Outlook 导出任务 CSV，再在 Mindwtr 中查看预览并导入。 [从 Microsoft To Do 导入](/zh-Hans/import/microsoft-to-do)
+
 ### 可以从 Apple 提醒事项导入吗？
 
 可以，在 iPhone 和 iPad 上。Mindwtr 可以从**设置 → 数据 → 从 Apple 提醒事项导入**中导入未完成的 Apple 提醒事项。

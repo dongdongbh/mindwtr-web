@@ -503,6 +503,10 @@ Wenn Wiederholungen wichtig sind, verwenden Sie den Omni-Automation-JSON-/ZIP-Ex
 
 Siehe [OmniFocus-Import](/de/import/omnifocus).
 
+### Kann ich aus Microsoft To Do importieren?
+
+Ja, in der Desktop-App. Exportieren Sie Aufgaben aus dem klassischen Outlook für Windows als CSV-Datei. Prüfen Sie vor dem Import die Vorschau in Mindwtr. [Aus Microsoft To Do importieren](/de/import/microsoft-to-do)
+
 ### Kann ich aus Apple Erinnerungen importieren?
 
 Ja, auf iPhone und iPad. Mindwtr importiert unerledigte Apple-Erinnerungen unter **Einstellungen → Daten → Aus Apple Erinnerungen importieren**.

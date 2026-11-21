@@ -586,6 +586,10 @@ If recurrence or hierarchy fidelity matters, prefer the Omni Automation JSON / Z
 
 See [OmniFocus Import](/import/omnifocus) for details and supported mappings.
 
+### Microsoft To Do CSV import
+
+In Mindwtr Desktop, import a Tasks CSV exported from classic Outlook for Windows. Review the supported fields and the export steps. [Import from Microsoft To Do](/import/microsoft-to-do)
+
 ### Apple Reminders Import (iOS)
 
 On iPhone and iPad, Mindwtr can import incomplete Apple Reminders from **Settings → Data → Import from Apple Reminders**.

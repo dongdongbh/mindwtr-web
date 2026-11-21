@@ -16,16 +16,17 @@ Mindwtr propose des outils dédiés pour quelques applications dont le format d�
 - [Import Todoist](/fr/import/todoist) — exports CSV ou sauvegardes ZIP
 - [Import DGT GTD](/fr/import/dgt-gtd) — exports JSON ou sauvegardes ZIP
 - [Import OmniFocus](/fr/import/omnifocus) — exports CSV, JSON ou ZIP
+- [Importation depuis Microsoft To Do](/fr/import/microsoft-to-do) à partir d’un CSV de tâches d’Outlook classique pour Windows
 - [Import depuis Rappels Apple](/fr/data-sync/#importation-depuis-rappels-apple-ios) — import réservé à iOS des rappels non terminés d’une liste Rappels sélectionnée, manuellement ou automatiquement à chaque ouverture de l’app
 - [Import Mindwtr CSV](/fr/import/mindwtr-csv) — une disposition de colonnes documentée pour toutes les applications sans outil dédié
 
-Ouvrez **Paramètres -> Données**, puis choisissez l’action d’import correspondante : Todoist, TickTick, DGT GTD, OmniFocus ou le CSV Mindwtr générique. Mindwtr affiche un aperçu avant d’ajouter quoi que ce soit.
+Ouvrez **Paramètres → Données** et choisissez l’action d’importation adaptée à votre fichier. Mindwtr affiche un aperçu avant d’ajouter les données d’un fichier.
 
 Les outils natifs sont la meilleure solution lorsque votre ancienne application figure dans la liste. Ils préservent davantage de structure que le texte brut et prennent en charge les particularités de chaque application : dossiers, listes, tags, dates, listes de contrôle et récurrence, lorsque l’export source les fournit.
 
 ## Fidélité de l’import en bref
 
-Cette couverture a été vérifiée le 9 août 2026 avec le code d’import du commit Mindwtr [e787c2e](https://github.com/dongdongbh/Mindwtr/commit/e787c2e8cbe1ac93330a55d89fe5edc677f0eefe). Les jeux d’essai couvrent les formats CSV et ZIP de Todoist, CSV et ZIP de TickTick 7.1, JSON et ZIP du schéma DGT version 3, CSV, CSV UTF-16, JSON et ZIP d’OmniFocus, ainsi que le CSV Mindwtr en fichier isolé et dans une archive ZIP. Les formats d’export peuvent changer. Examinez l’aperçu et le guide propre à l’application avant de confirmer.
+Les outils d’import précédents ont été vérifiés le 9 août 2026 avec le code d’import du commit Mindwtr [e787c2e](https://github.com/dongdongbh/Mindwtr/commit/e787c2e8cbe1ac93330a55d89fe5edc677f0eefe). Les jeux d’essai couvrent les formats CSV et ZIP de Todoist, CSV et ZIP de TickTick 7.1, JSON et ZIP du schéma DGT version 3, CSV, CSV UTF-16, JSON et ZIP d’OmniFocus, ainsi que le CSV Mindwtr en fichier isolé et dans une archive ZIP. Les formats d’export peuvent changer. Examinez l’aperçu et le guide propre à l’application avant de confirmer.
 
 | Source | Meilleure entrée | Mindwtr préserve | À vérifier après l’import |
 | --- | --- | --- | --- |
@@ -33,6 +34,7 @@ Cette couverture a été vérifiée le 9 août 2026 avec le code d’import du c
 | [Todoist](/fr/import/todoist) | Sauvegarde CSV ou ZIP | Projets, sections, tâches actives, descriptions et commentaires, priorités, échéances, libellés et sous-tâches sous forme d’éléments de contrôle | Récurrences, importées une seule fois avec leur texte d’origine ; lignes ignorées ou incorrectes |
 | [DGT GTD](/fr/import/dgt-gtd) | Sauvegarde JSON ou ZIP | Dossiers sous forme de domaines, projets, contextes, tags, listes de contrôle, priorités, échéances, état d’achèvement et récurrences prises en charge | Récurrences non prises en charge et entrées d’archive ignorées |
 | [OmniFocus](/fr/import/omnifocus) | JSON ou ZIP Omni Automation pour une meilleure fidélité ; CSV pris en charge | Dossiers sous forme de domaines, projets, tags, contextes, notes, dates, état d’achèvement, imbrication simple et récurrences prises en charge | Imbrication profonde, dates planifiées et durée en texte, règles de répétition conservées telles quelles en note, et pertes propres au CSV |
+| [Microsoft To Do](/fr/import/microsoft-to-do) | CSV de tâches d’Outlook classique pour Windows | Tâches dans un projet qui porte le nom du fichier, notes, catégories sous forme de tags, priorités, état et dates | Dates ignorées et tâches des listes hors du dossier exporté |
 | [Rappels Apple](/fr/data-sync/#importation-depuis-rappels-apple-ios) | Une liste choisie sur iOS | Titres et notes des rappels non terminés | Dates et autres champs, éléments ignorés et choix de suppression dans la source |
 | [Mindwtr CSV](/fr/import/mindwtr-csv) | Un fichier CSV, ou un ZIP de fichiers CSV, employant les noms de colonnes documentés | Domaines, projets, sections, statuts, contextes, tags, personnes assignées, priorité, énergie, dates de début, d’échéance, de revue et d’achèvement, listes de contrôle, lieu, ordre manuel et récurrences prises en charge | Les règles de répétition que Mindwtr ne sait pas exprimer, signalées avec leur ligne ; les dates illisibles ; les identifiants en double ; et les lignes ignorées faute de titre |
 

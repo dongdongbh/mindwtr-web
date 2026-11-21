@@ -69,6 +69,7 @@ export default {
       todoist: "Todoist",
       dgtGtd: "DGT GTD",
       omnifocus: "OmniFocus",
+      microsoftToDo: "Microsoft To Do",
       mindwtrCsv: "Mindwtr CSV"
     },
     powerUsers: {

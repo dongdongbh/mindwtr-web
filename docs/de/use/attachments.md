@@ -2,6 +2,12 @@
 
 Mit Mindwtr können Sie Dateien und Links an **Aufgaben** und **Projekte** anhängen. Anhänge sind optional und werden bei aktivierter Synchronisierung geräteübergreifend synchronisiert.
 
+## Automatische Seitentitel
+
+Ab der nächsten Version kannst du eine einzelne Webadresse in der Schnellerfassung speichern. Der Link bleibt erhalten und Mindwtr lädt den Seitentitel im Hintergrund. Auf Mobilgeräten hat der von der teilenden App mitgelieferte Titel Vorrang. Beim Hinzufügen einer URL als Aufgabenanhang ändert sich nur die Linkbeschriftung. Eigene Namen bleiben erhalten.
+
+Mindwtr kontaktiert die verlinkte Website direkt. Auf dem Desktop unter Einstellungen › GTD und auf Mobilgeräten unter Einstellungen › Allgemein kannst du **Seitentitel abrufen** auf diesem Gerät ausschalten. Die Erfassung funktioniert auch offline. Im Browser muss die Website ursprungsübergreifende Anfragen zulassen.
+
 ---
 
 ## Mögliche Anhänge

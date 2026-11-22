@@ -2,6 +2,12 @@
 
 Mindwtr permet de joindre des fichiers et des liens aux **tâches** et aux **projets**. Les pièces jointes sont facultatives et se synchronisent entre les appareils lorsque la synchronisation est activée.
 
+## Titres de pages automatiques
+
+Dès la prochaine version, enregistrez une adresse web seule dans la saisie rapide pour conserver le lien et récupérer le titre de la page en arrière-plan. Sur mobile, le titre fourni par l’application de partage est prioritaire. Si vous ajoutez une URL aux pièces jointes d’une tâche, seul le libellé du lien change. Les noms que vous saisissez sont conservés.
+
+La recherche contacte directement le site. Vous pouvez désactiver **Récupérer les titres des pages** dans Réglages › GTD sur ordinateur ou Réglages › Général sur mobile. La saisie fonctionne hors ligne. Dans le navigateur, le site doit autoriser les requêtes entre origines.
+
 ---
 
 ## Types de pièces jointes

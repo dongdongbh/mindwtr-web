@@ -2,6 +2,12 @@
 
 Mindwtr permite adjuntar archivos y enlaces a **tareas** y **proyectos**. Los adjuntos son opcionales y se sincronizan entre dispositivos cuando la sincronización está activada.
 
+## Títulos de página automáticos
+
+A partir de la próxima versión, al guardar una dirección web en la captura rápida se conserva el enlace original y se busca su título en segundo plano. En el móvil tiene prioridad el título que envíe la aplicación de origen. Si añades una URL como adjunto a una tarea, solo cambia la etiqueta del enlace. Se respetan los nombres que escribas.
+
+La consulta se hace directamente al sitio web. Puedes desactivar **Obtener títulos de páginas** en Ajustes › GTD en el escritorio o en Ajustes › General en el móvil. La captura funciona sin conexión. En el navegador, el sitio debe permitir las solicitudes de origen cruzado.
+
 ---
 
 ## Qué puedes adjuntar

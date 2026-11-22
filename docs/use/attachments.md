@@ -2,6 +2,12 @@
 
 Mindwtr lets you attach files and links to **tasks** and **projects**. Attachments are optional and sync across devices when sync is enabled.
 
+## Automatic page titles
+
+Starting with the next release, save a single web address in Quick Add to keep the original link and look up its page title in the background. On mobile, a title supplied by the sharing app takes precedence. When you add a bare URL to a task’s attachments, only the link label changes. You can rename either yourself.
+
+Lookups contact the linked website directly. Turn off **Look up page titles** under Settings › GTD on desktop or Settings › General on mobile on devices where you prefer to keep links private. Offline capture still works. In the browser, the website must allow cross-origin requests for its title to appear.
+
 ---
 
 ## What you can attach

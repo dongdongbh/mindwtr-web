@@ -132,6 +132,8 @@ Le paramètre imbriqué suit la [documentation du serveur llama.cpp](https://git
 
 Transforme une tâche vague en prochaine action concrète et suggère des contextes ou tags.
 
+Dans les versions de développement, Clarifier et les suggestions de l’éditeur peuvent proposer un domaine existant pour une tâche sans affectation. Sélectionnez le domaine pour l’ajouter au brouillon. Votre fournisseur reçoit les noms et identifiants des domaines proposés comme candidats. Le domaine ou le projet que vous choisissez reste prioritaire.
+
 ### Décomposer
 
 Génère une courte liste de prochaines étapes pour une tâche importante. Vous choisissez ce que vous appliquez.

@@ -130,6 +130,8 @@ Der verschachtelte Parameter folgt der [llama.cpp-Serverdokumentation](https://g
 ### Klären
 Wandelt eine vage Aufgabe in eine konkrete nächste Aktion mit vorgeschlagenen Kontexten/Tags um.
 
+In Entwicklungsversionen können „Klären“ und die Vorschläge im Aufgabeneditor für eine nicht zugeordnete Aufgabe einen vorhandenen Bereich vorschlagen. Wählen Sie den Bereich aus, um ihn in den Entwurf zu übernehmen. Der Anbieter erhält die Namen und IDs der infrage kommenden Bereiche. Eine eigene Bereichs- oder Projektauswahl hat Vorrang.
+
 ### Aufteilen
 Erzeugt eine kurze Checkliste mit nächsten Schritten für umfangreiche Aufgaben. Sie entscheiden, welche Vorschläge übernommen werden.
 

@@ -130,6 +130,8 @@ The nested thinking parameter follows the [llama.cpp server documentation](https
 ### Clarify
 Turn a vague task into a concrete next action with suggested contexts/tags.
 
+In development builds, Clarify and inline task-editor suggestions can offer one existing Area for an unassigned task. Select the Area by name to add it to your draft. Your provider receives candidate Area names and IDs. Choosing a project or Area yourself takes precedence.
+
 ### Breakdown
 Generate a short checklist of next steps for large tasks. You choose what to apply.
 

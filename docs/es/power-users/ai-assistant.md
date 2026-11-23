@@ -132,6 +132,8 @@ El parámetro anidado sigue la [documentación del servidor llama.cpp](https://g
 
 Convierte una tarea imprecisa en una próxima acción concreta y sugiere contextos o etiquetas.
 
+En las versiones de desarrollo, Aclarar y las sugerencias del editor pueden proponer un ámbito existente para una tarea sin asignar. Selecciona el ámbito para añadirlo al borrador. El proveedor recibe los nombres e identificadores de los ámbitos disponibles. Si eliges un proyecto o un ámbito, se respeta tu elección.
+
 ### Dividir
 
 Genera una breve lista de próximos pasos para tareas grandes. Tú eliges cuáles aplicar.

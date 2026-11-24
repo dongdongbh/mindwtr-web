@@ -732,6 +732,7 @@ Open Projects from **Menu → Projects**.
 - See the project's reference material in a **References** section below the task list — references whose tags match the project's tags appear there too
 - Add new tasks
 - Group tasks with **Sections** inside the project. Sections are headings inside one project, not subtasks or separate projects.
+- Coming in the next Android release: tap a section heading to collapse or expand it. Tap **+** beside the heading to add a task directly to that section, even when it is empty.
 - Tap a task to assign a **Section** in the task editor
 - Edit project settings (name, color, notes)
 - Assign **Area of Focus** (e.g., Work, Personal)

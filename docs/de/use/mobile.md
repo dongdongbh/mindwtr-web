@@ -676,6 +676,7 @@ Unter **Menü → Projekte**.
 - Referenzmaterial des Projekts in einem **Referenz**-Abschnitt unter der Aufgabenliste sehen — auch Referenzen, deren Tags mit den Projekt-Tags übereinstimmen
 - Neue Aufgaben hinzufügen
 - Mit **Abschnitten** gruppieren (Überschriften, keine Unteraufgaben/Projekte)
+- Ab der nächsten Android-Version: Tippe auf eine Abschnittsüberschrift, um die Aufgaben ein- oder auszuklappen. Mit **+** neben der Überschrift fügst du dem Abschnitt direkt eine Aufgabe hinzu, auch wenn er noch leer ist.
 - Aufgabe antippen, um **Abschnitt** zuzuweisen
 - Name, Farbe, Notizen bearbeiten
 - **Fokusbereich** zuweisen

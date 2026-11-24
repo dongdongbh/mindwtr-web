@@ -723,6 +723,7 @@ Abre Proyectos desde **Menú → Proyectos**.
 - Mira el material de referencia del proyecto en una sección de **Referencia** debajo de la lista de tareas; también aparecen las referencias cuyas etiquetas coinciden con las del proyecto
 - Añade tareas nuevas
 - Agrupa tareas con **Secciones** dentro del proyecto. Las secciones son encabezados dentro de un proyecto, no subtareas ni proyectos independientes.
+- A partir de la próxima versión de Android, toca el nombre de una sección para contraerla o expandirla. Toca **+** junto al nombre para añadir una tarea directamente a esa sección, aunque esté vacía.
 - Toca una tarea para asignarle una **Sección** en el editor
 - Edita los ajustes del proyecto (nombre, color y notas)
 - Asigna un **Área de enfoque** (p. ej., Trabajo o Personal)

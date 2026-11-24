@@ -230,6 +230,8 @@ Weitere Angaben zu den Feldern finden Sie in [Taskers Intent-Anleitung](https://
 
 ### Startbildschirm-Widget
 
+Ab dem nächsten Update lässt sich die Gruppierung der aktuellen Liste über den Pfeil im Android-Aufgabenwidget ändern. In einem gespeicherten Fokusfilter werden nur die nächsten Aktionen gruppiert. Heute, fällige Durchsichten und anstehende Aufgaben behalten ihre eigenen Überschriften. In der Schnellerfassung auf dem Android-Startbildschirm suchst du mit `#` oder `@` nach gespeicherten Tags oder Kontexten. Mit `!` wählst du einen Bereich.
+
 Ein Tippen auf die Überschrift eines Widgets mit gespeichertem Fokus-Filter öffnet Fokus mit dem ausgewählten Filter und seinen Bedienelementen. Widgets mit gespeicherten Kontextfiltern öffnen entsprechend die Kontextansicht.
 
 Im Android-Aufgaben-Widget öffnet die freie Fläche nun die gewählte Liste; Kompakt und iOS öffnen weiterhin Fokus.

@@ -74,6 +74,7 @@ Unter macOS 14 oder neuer bringt die Desktop-App ein eigenes Widget mit.
 
 Ihre Erfassungszone. Alle neuen Aufgaben landen vor der Verarbeitung hier.
 
+- Ab der nächsten Version kannst du über die **Suche** unter der Überschrift im Eingang nach Aufgabentiteln filtern. Datums- und Kontextfilter lassen sich damit kombinieren. **Eingang verarbeiten** umfasst weiterhin alle Aufgaben im Eingang.
 - **Aufgaben hinzufügen** über das untere Eingabefeld
 - **Syntax für „Schnell hinzufügen“** wird unterstützt (siehe [Erste Schritte](/de/start/getting-started))
 - Verwenden Sie den Stern neben dem Eingabefeld, wenn eine neue Aufgabe direkt in **Heutiger Fokus** landen soll. Derselbe Stern befindet sich in der Kopfzeile des Aufgabeneditors. Das Markieren gilt als Klärung: Eine markierte Erfassung wird als **Nächste Aktion** statt als Eingangseintrag erstellt. Wird eine markierte Aufgabe zurück in den Eingang verschoben, verliert sie den Stern.

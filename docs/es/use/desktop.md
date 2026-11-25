@@ -74,6 +74,7 @@ En macOS 14 y versiones posteriores, la aplicación de escritorio trae su propio
 
 Tu zona de captura. Todas las tareas nuevas llegan aquí antes de procesarlas.
 
+- A partir de la próxima versión, usa **Buscar** bajo el encabezado de la bandeja de entrada para filtrar las tareas por título. Puedes combinar la búsqueda con los filtros de fecha y contexto. Al procesar la bandeja de entrada se incluyen todas sus tareas.
 - **Añade tareas** con el campo de entrada de la parte inferior
 - Se admite la **sintaxis de adición rápida** (consulta [Primeros pasos](/es/start/getting-started))
 - Usa la estrella junto al campo de Adición rápida cuando una tarea nueva deba ir directamente al **Foco de hoy**. La misma estrella también aparece en el encabezado del editor de tareas. Marcar con estrella cuenta como aclarar: una captura marcada se crea como **Próxima acción** en vez de como elemento de la Bandeja de entrada, y devolver una tarea marcada a la Bandeja de entrada elimina su estrella.

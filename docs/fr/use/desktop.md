@@ -74,6 +74,7 @@ Sur macOS 14 et versions ultérieures, l’application de bureau apporte son pro
 
 Votre zone de collecte. Toutes les nouvelles tâches y arrivent avant d’être traitées.
 
+- Dans la prochaine version, le champ **Rechercher** sous le titre de la boîte de réception permettra de filtrer les tâches par titre, en combinaison avec les filtres de date et de contexte. Le traitement de la boîte de réception portera toujours sur toutes les tâches.
 - **Ajoutez des tâches** à l’aide du champ de saisie en bas
 - La **syntaxe d’ajout rapide** est prise en charge (voir [Bien démarrer](/fr/start/getting-started))
 - Utilisez l’étoile à côté du champ Ajout rapide lorsqu’une nouvelle tâche doit être placée directement dans le **Focus du jour**. La même étoile se trouve aussi dans l’en-tête de l’éditeur de tâche. Ajouter une étoile compte comme une clarification : une capture étoilée est créée comme **Action suivante** plutôt que comme élément de la Boîte de réception, et replacer une tâche étoilée dans la Boîte de réception retire son étoile.

@@ -74,6 +74,7 @@ On macOS 14 and later, the desktop app brings a widget of its own.
 
 Your capture zone. All new tasks land here before processing.
 
+- In the next release, use **Search** below the Inbox header to filter tasks by title. It works with date and context filters. **Process Inbox** still covers the full queue.
 - **Add tasks** using the input field at the bottom
 - **Quick-add syntax** is supported (see [Getting Started](/start/getting-started))
 - Use the star beside the Quick Add input when a new task should go straight into **Today's Focus**. The same star also sits in the task editor's header. Starring counts as clarifying: a starred capture is created as a **Next Action** rather than an Inbox item, and moving a starred task back to Inbox removes its star.

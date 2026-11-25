@@ -213,7 +213,7 @@ Ab der nächsten Desktop-Version gibt `GET /tasks` außerdem ein gleichrangiges 
 
 Um diesen Schutz auch bei unbekannter Desktop-Version zu verlangen, verwenden Sie `POST /v2/tasks/:id/complete` oder `/v2/tasks/:id/archive`; diese Routen erfordern ein gültiges `If-Match`. Ältere Desktop-Versionen geben `404` zurück. Wechseln Sie danach niemals zur ungeschützten Aktion. Der vorhandene Alias `/v1/tasks/:id/complete` reicht nicht aus: Desktop 1.3.8 akzeptiert ihn, ohne `If-Match` zu prüfen.
 
-**Funktionen erkennen.** Ein authentifizierter Aufruf von `GET /health` meldet in der nächsten Desktop-Version `apiVersion: 2` und `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }`. Das beschreibt den Vertrag der Desktop-API, nicht die Versionsnummer der App. Ältere Server können nur `{ "ok": true }` zurückgeben; daraus lässt sich kein Schutz ableiten.
+**Funktionen erkennen.** Ein authentifizierter Aufruf von `GET /health` meldet in der nächsten Desktop-Version `apiVersion: 2` und `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "sectionCreate": true, "sectionRename": true, "areaCreate": true }`. Das beschreibt den Vertrag der Desktop-API, nicht die Versionsnummer der App. Ältere Server können nur `{ "ok": true }` zurückgeben; daraus lässt sich kein Schutz ableiten.
 
 **Sicheres Wiederholen von Erstellungsanfragen.** Geben Sie beim Erstellen einer Aufgabe einen `Idempotency-Key` an:
 

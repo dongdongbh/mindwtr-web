@@ -213,7 +213,7 @@ Si la tâche a changé, le serveur renvoie `412` avec `code: "task_version_confl
 
 Pour exiger cette protection quand la version de bureau est inconnue, utilisez `POST /v2/tasks/:id/complete` ou `/v2/tasks/:id/archive` ; ces routes exigent un `If-Match` valide. Les anciennes versions renvoient `404`. Ne réessayez jamais ensuite avec l’action non protégée. L’alias existant `/v1/tasks/:id/complete` ne suffit pas : la version de bureau 1.3.8 l’accepte sans vérifier `If-Match`.
 
-**Détection des capacités.** un appel authentifié à `GET /health` indique `apiVersion: 2` et `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }`. Cela décrit le contrat de l’API de bureau, pas la version de l’application. Les anciens serveurs peuvent renvoyer uniquement `{ "ok": true }` ; cette réponse ne garantit aucune protection.
+**Détection des capacités.** un appel authentifié à `GET /health` indique `apiVersion: 2` et `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "sectionCreate": true, "sectionRename": true, "areaCreate": true }`. Cela décrit le contrat de l’API de bureau, pas la version de l’application. Les anciens serveurs peuvent renvoyer uniquement `{ "ok": true }` ; cette réponse ne garantit aucune protection.
 
 **Nouvelles tentatives de création sans doublon.** Fournissez un `Idempotency-Key` lors de la création d’une tâche :
 

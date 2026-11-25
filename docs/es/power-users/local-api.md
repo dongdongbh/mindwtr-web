@@ -213,7 +213,7 @@ Si la tarea ha cambiado, el servidor devuelve `412` con `code: "task_version_con
 
 Para exigir esta protección cuando se desconoce la versión de escritorio, use `POST /v2/tasks/:id/complete` o `/v2/tasks/:id/archive`; estas rutas requieren un `If-Match` válido. Las versiones antiguas devuelven `404`. Nunca recurra después a la acción sin protección. El alias existente `/v1/tasks/:id/complete` no basta: la versión 1.3.8 lo acepta sin comprobar `If-Match`.
 
-**Detección de capacidades.** `GET /health` autenticado informa de `apiVersion: 2` y `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }`. Esto describe el contrato de la API de escritorio, no la versión de la aplicación. Los servidores antiguos pueden devolver solo `{ "ok": true }`; esa respuesta no implica protección.
+**Detección de capacidades.** `GET /health` autenticado informa de `apiVersion: 2` y `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "sectionCreate": true, "sectionRename": true, "areaCreate": true }`. Esto describe el contrato de la API de escritorio, no la versión de la aplicación. Los servidores antiguos pueden devolver solo `{ "ok": true }`; esa respuesta no implica protección.
 
 **Reintentos seguros de creación.** Incluye un `Idempotency-Key` al crear una tarea:
 

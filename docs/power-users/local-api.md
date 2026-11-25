@@ -213,7 +213,7 @@ If the task has changed, the server returns `412` with `code: "task_version_conf
 
 To require this protection when the desktop version is unknown, use `POST /v2/tasks/:id/complete` or `/v2/tasks/:id/archive`; these routes require a valid `If-Match`. Older desktop versions return `404`. Never fall back to the unprotected action after that response. The existing `/v1/tasks/:id/complete` alias is not sufficient: desktop 1.3.8 accepts it without checking `If-Match`.
 
-**Capability detection.** Authenticated `GET /health` reports `apiVersion: 2` and `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }` in the next desktop release. This describes the desktop API contract, not the app's release version. Older servers can return only `{ "ok": true }`; do not infer protection from that response.
+**Capability detection.** Authenticated `GET /health` reports `apiVersion: 2` and `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "sectionCreate": true, "sectionRename": true, "areaCreate": true }` in the next desktop release. This describes the desktop API contract, not the app's release version. Older servers can return only `{ "ok": true }`; do not infer protection from that response.
 
 **Retry-safe creation.** Supply an `Idempotency-Key` when creating a task:
 

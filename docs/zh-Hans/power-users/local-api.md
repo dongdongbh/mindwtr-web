@@ -213,7 +213,7 @@ curl -s -X PATCH "http://127.0.0.1:3456/v1/tasks/$TASK_ID" \
 
 当桌面版本未知时，要确保此保护生效，请使用 `POST /v2/tasks/:id/complete` 或 `/v2/tasks/:id/archive`；这些路由要求提供有效的 `If-Match`。旧桌面版本会返回 `404`。收到该响应后，绝不要回退到无保护的操作。现有的 `/v1/tasks/:id/complete` 别名并不足够：桌面版 1.3.8 接受该路由，但不检查 `If-Match`。
 
-**能力检测。** 桌面版中，经过身份验证的 `GET /health` 会返回 `apiVersion: 2` 和 `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "areaCreate": true }`。这描述桌面 API 的接口约定，而不是应用的发布版本。旧服务器可能只返回 `{ "ok": true }`；不要据此推断写入保护可用。
+**能力检测。** 桌面版中，经过身份验证的 `GET /health` 会返回 `apiVersion: 2` 和 `capabilities: { "taskListVersions": true, "conditionalTaskPatch": true, "idempotentTaskCreate": true, "conditionalTaskActions": true, "conditionalTaskListGet": true, "referenceLists": true, "ordinaryTaskReopen": true, "sectionCreate": true, "sectionRename": true, "areaCreate": true }`。这描述桌面 API 的接口约定，而不是应用的发布版本。旧服务器可能只返回 `{ "ok": true }`；不要据此推断写入保护可用。
 
 **可安全重试的创建。** 创建任务时提供 `Idempotency-Key`：
 

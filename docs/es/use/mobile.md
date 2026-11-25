@@ -239,7 +239,7 @@ Consulta la [guía de intents de Tasker](https://tasker.joaoapps.com/userguide/e
 
 ### Widget de inicio
 
-En la próxima actualización, toca la flecha del widget de tareas de Android para cambiar la agrupación de la lista actual. En un filtro de Enfoque guardado, solo se agrupan las próximas acciones. Hoy, las revisiones pendientes y las tareas próximas conservan sus propios encabezados. En la captura rápida de la pantalla de inicio de Android, escribe `#` o `@` para buscar etiquetas o contextos guardados, o `!` para elegir un área.
+En la próxima actualización, toca la flecha del widget de tareas de Android para cambiar la agrupación de la lista actual. En un filtro de Enfoque guardado, solo se agrupan las próximas acciones. Hoy, las revisiones pendientes y las tareas próximas conservan sus propios encabezados. En la captura rápida de la pantalla de inicio de Android, escribe `#` o `@` para buscar etiquetas o contextos guardados, o `!` para elegir un área. Si eliges un contexto directamente, toca el título del widget para abrir la vista de contextos con ese contexto seleccionado.
 
 Tocar el encabezado de un widget con un filtro de Enfoque guardado abre Enfoque con ese filtro seleccionado y sus controles disponibles. Los widgets con filtros de Contextos guardados abren Contextos del mismo modo.
 

@@ -245,7 +245,7 @@ See [Tasker’s intent guide](https://tasker.joaoapps.com/userguide/en/intents.h
 
 ### Home Widget
 
-In the next update, tap the arrow on an Android Tasks widget to change how its current list is grouped. In a saved Focus filter, grouping applies to Next Actions. Today, Review Due and Upcoming keep their own headings. In Android home-screen Quick Capture, type `#` or `@` to search saved tags or contexts, or `!` to choose an Area.
+In the next update, tap the arrow on an Android Tasks widget to change how its current list is grouped. In a saved Focus filter, grouping applies to Next Actions. Today, Review Due and Upcoming keep their own headings. In Android home-screen Quick Capture, type `#` or `@` to search saved tags or contexts, or `!` to choose an Area. After choosing a context directly, tap the widget title to open Contexts with that context selected.
 
 Tapping the header of a saved Focus-filter widget opens Focus with that filter selected and its controls available. Saved Contexts-filter widgets open Contexts in the same way.
 

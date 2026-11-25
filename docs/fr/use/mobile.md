@@ -239,7 +239,7 @@ Consultez le [guide des intents de Tasker](https://tasker.joaoapps.com/userguide
 
 ### Widget de l’écran d’accueil
 
-Dans la prochaine mise à jour, la flèche du widget Tâches sur Android permettra de modifier le regroupement de la liste affichée. Dans un filtre Focus enregistré, seules les prochaines actions seront regroupées. Les tâches du jour, les révisions à faire et les tâches à venir garderont leurs propres rubriques. Dans la capture rapide de l’écran d’accueil Android, saisissez `#` ou `@` pour rechercher une étiquette ou un contexte enregistré, ou `!` pour choisir un domaine.
+Dans la prochaine mise à jour, la flèche du widget Tâches sur Android permettra de modifier le regroupement de la liste affichée. Dans un filtre Focus enregistré, seules les prochaines actions seront regroupées. Les tâches du jour, les révisions à faire et les tâches à venir garderont leurs propres rubriques. Dans la capture rapide de l’écran d’accueil Android, saisissez `#` ou `@` pour rechercher une étiquette ou un contexte enregistré, ou `!` pour choisir un domaine. Si vous choisissez directement un contexte, touchez le titre du widget pour ouvrir la vue des contextes avec ce contexte sélectionné.
 
 Toucher l’en-tête d’un widget utilisant un filtre Focus enregistré ouvre Focus avec ce filtre sélectionné et ses commandes disponibles. Les widgets utilisant des filtres Contextes enregistrés ouvrent Contextes de la même manière.
 

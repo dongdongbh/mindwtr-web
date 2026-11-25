@@ -79,6 +79,8 @@ Activez **Inclure les projets archivés** dans les filtres de Référence pour r
 
 ## Actions groupées
 
+Dans la version de développement, les actions groupées permettent de définir ou d’effacer séparément la personne et la priorité. L’option de conservation garde la valeur propre à chaque tâche. Pour changer aussi le statut, choisissez-le séparément. La priorité apparaît si les priorités sont activées.
+
 Dans la Boîte de réception, les projets, les Contextes et les autres listes de tâches, faites un appui long sur une tâche pour commencer la sélection, puis touchez d’autres tâches et choisissez une action dans la barre en haut. Touchez **X** ou appuyez sur **Retour** sous Android pour arrêter la sélection. La sélection ne change pas l’ordre des tâches : l’ordre manuel existe dans un projet (menu du projet → **Réorganiser les tâches**) et parmi les tâches étoilées dans Focus (bouton **Réorganiser les tâches**). Les autres listes, et le reste de Focus, suivent leurs réglages **Trier** et **Regrouper**.
 
 lorsque le tri du projet est **Par défaut**, choisissez **Réorganiser les tâches** dans la barre de sélection multiple pour quitter la sélection et ouvrir la vue de réorganisation existante. La sélection est effacée ; l’ordre des tâches ne change que lorsque vous déplacez une tâche.

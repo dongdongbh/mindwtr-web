@@ -94,6 +94,8 @@ Your productivity varies throughout the day:
 
 ## Using Contexts in Mindwtr
 
+In the development version, open the list beside Contexts or Tags when editing a task or processing the Inbox. Leave the search empty to browse saved and in-use values, then select or deselect as many as you need.
+
 ### Adding Contexts
 
 **Quick-add syntax:**

@@ -94,6 +94,8 @@ Votre productivité varie au fil de la journée :
 
 ## Utiliser les contextes dans Mindwtr
 
+Dans la version de développement, ouvrez la liste à côté des contextes ou des tags dans l’éditeur de tâche ou pendant le traitement de la boîte de réception. Laissez la recherche vide pour parcourir les valeurs enregistrées et celles déjà utilisées. Vous pouvez en cocher ou en décocher plusieurs.
+
 ### Ajouter des contextes
 
 **Syntaxe d’ajout rapide :**

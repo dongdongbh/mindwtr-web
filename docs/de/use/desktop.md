@@ -574,6 +574,8 @@ Stellen Sie **Nach Abschluss wiederholen**, Enddatum oder Anzahl im Wiederholung
 
 ## Stapelaktionen
 
+In der Entwicklungsversion lassen sich Person und Priorität bei der Stapelbearbeitung unabhängig voneinander setzen oder entfernen. Mit „Beibehalten“ behält jede Aufgabe ihren bisherigen Wert. Den Status kannst du separat ändern. Die Priorität erscheint, wenn Prioritäten aktiviert sind.
+
 Wähle in **Sammel-Organisation** den Status **Eingang**, um ausgewählte Aufgaben erneut zu verarbeiten. Projekt, Notizen, Tags und Termine bleiben erhalten, sofern du diese Felder nicht ebenfalls änderst.
 
 Suche unter **Sammel-Organisation** nach einem Projekt oder Bereich oder gib einen neuen Namen ein und wähle **Erstellen**, ohne die Aufgabenauswahl oder andere Formularfelder zu verlieren. Das Erstellen speichert und wählt das Ziel; erst **Auf Auswahl anwenden** verschiebt die Aufgaben. Beim Abbrechen bleiben die Aufgaben unverändert und erstellte Ziele erhalten. Schlägt das Erstellen fehl, bleiben Auswahl und Formular für einen erneuten Versuch erhalten.

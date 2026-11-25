@@ -79,6 +79,8 @@ Aktivieren Sie **Archivierte Projekte einbeziehen** in den Referenzfiltern, um M
 
 ## Stapelaktionen
 
+In der Entwicklungsversion lassen sich Person und Priorität bei der Stapelbearbeitung unabhängig voneinander setzen oder entfernen. Mit „Beibehalten“ behält jede Aufgabe ihren bisherigen Wert. Den Status kannst du separat ändern. Die Priorität erscheint, wenn Prioritäten aktiviert sind.
+
 Halte im Eingang, in Projekten, in Kontexten und in den anderen Aufgabenlisten eine Aufgabe gedrückt, um die Auswahl zu starten. Tippe dann weitere Aufgaben an und wähle eine Aktion in der Leiste oben. Tippe auf **X** oder drücke unter Android **Zurück**, um die Auswahl zu beenden. Die Auswahl ändert die Reihenfolge der Aufgaben nicht: Eine manuelle Reihenfolge gibt es innerhalb eines Projekts (Projektmenü → **Neu anordnen**) und unter den mit Stern markierten Aufgaben im Fokus (Schaltfläche **Neu anordnen**). Andere Listen und der Rest des Fokus folgen ihren Einstellungen für **Sortieren** und **Gruppieren**.
 
 kannst du bei der Projektsortierung **Standard** in der Mehrfachauswahl **Neu anordnen** wählen. Dadurch wird die Auswahl aufgehoben und die vorhandene Ansicht zum Neuordnen geöffnet. Die Aufgabenreihenfolge ändert sich erst, wenn du eine Aufgabe verschiebst.

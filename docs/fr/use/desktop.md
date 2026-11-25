@@ -577,6 +577,8 @@ Utilisez la même feuille de récurrence pour définir une date de fin ou un nom
 
 ## Actions groupées
 
+Dans la version de développement, les actions groupées permettent de définir ou d’effacer séparément la personne et la priorité. L’option de conservation garde la valeur propre à chaque tâche. Pour changer aussi le statut, choisissez-le séparément. La priorité apparaît si les priorités sont activées.
+
 Choisissez **Boîte de réception** comme statut dans **Bulk organize** pour traiter à nouveau les tâches sélectionnées. Le projet, les notes, les étiquettes et les dates sont conservés, sauf si vous modifiez aussi ces champs.
 
 Dans **Bulk organize**, recherchez un projet ou un domaine, ou saisissez un nouveau nom et choisissez **Créer** sans perdre les tâches sélectionnées ni les autres champs. La création enregistre et sélectionne la destination ; les tâches ne sont déplacées qu’après **Apply to selected**. Annuler la modification laisse les tâches inchangées et conserve les destinations créées. En cas d’échec de création, la sélection et le formulaire restent disponibles pour réessayer.

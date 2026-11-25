@@ -79,6 +79,8 @@ Activa **Incluir proyectos archivados** en los filtros de Referencia para encont
 
 ## Acciones en bloque
 
+En la versión de desarrollo, al organizar en bloque puedes asignar o quitar la persona y la prioridad por separado. La opción de conservar mantiene el valor propio de cada tarea. Si también quieres cambiar el estado, elígelo aparte. La prioridad aparece cuando están habilitadas las prioridades.
+
 En la Bandeja de entrada, los proyectos, los Contextos y las demás listas de tareas, mantén pulsada una tarea para empezar a seleccionar; después toca más tareas y elige una acción en la barra de arriba. Toca **X** o pulsa **Atrás** en Android para dejar de seleccionar. Seleccionar no cambia el orden de las tareas: el orden manual existe dentro de un proyecto (menú del proyecto → **Reordenar**) y entre las tareas con estrella en Foco (botón **Reordenar**). Las demás listas, y el resto de Foco, siguen sus ajustes de **Ordenar** y **Agrupar**.
 
 con el orden del proyecto en **Predeterminado**, elige **Reordenar** en la barra de selección múltiple para salir de la selección y abrir la vista de reordenación existente. Esto borra la selección; el orden de las tareas solo cambia cuando mueves una tarea.

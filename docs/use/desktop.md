@@ -596,6 +596,8 @@ Use the same recurrence sheet to set an end date or an occurrence count when you
 
 ## Bulk Actions
 
+In the development version, Bulk organize lets you set or clear the person and priority independently. Keep existing preserves the value on each selected task. To change task status too, choose it separately. Priority appears when priorities are enabled.
+
 In **Bulk organize**, start typing in **Contexts** or **Tags** to choose an existing value from autocomplete. Separate multiple values with commas; you can still type a new context or tag. These values are added when you choose **Apply to selected**.
 
 Choose **Inbox** as the status in **Bulk organize** to return selected tasks for processing. Their project, notes, tags, and dates stay unchanged unless you also edit those fields.

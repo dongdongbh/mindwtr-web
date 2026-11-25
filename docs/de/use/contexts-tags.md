@@ -94,6 +94,8 @@ Ihre Leistungsfähigkeit ändert sich im Tagesverlauf:
 
 ## Kontexte in Mindwtr verwenden
 
+In der Entwicklungsversion kannst du beim Bearbeiten einer Aufgabe oder beim Durcharbeiten des Eingangs die Liste neben Kontexten oder Tags öffnen. Lass das Suchfeld leer, um alle gespeicherten und verwendeten Werte zu sehen. Du kannst mehrere Werte auswählen oder abwählen.
+
 ### Kontexte hinzufügen
 
 **Syntax für „Schnell hinzufügen“:**

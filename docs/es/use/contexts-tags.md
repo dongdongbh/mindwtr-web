@@ -94,6 +94,8 @@ Tu productividad varía a lo largo del día:
 
 ## Usar contextos en Mindwtr
 
+En la versión de desarrollo, abre la lista junto a Contextos o Etiquetas al editar una tarea o procesar la bandeja de entrada. Deja la búsqueda vacía para ver los valores guardados y en uso. Puedes marcar o desmarcar varios.
+
 ### Añadir contextos
 
 **Sintaxis de adición rápida:**

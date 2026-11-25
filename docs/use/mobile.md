@@ -85,6 +85,8 @@ Turn on **Include archived projects** in the Reference filters to find material 
 
 ## Bulk Actions
 
+In the development version, Bulk organize lets you set or clear the person and priority independently. Keep existing preserves the value on each selected task. To change task status too, choose it separately. Priority appears when priorities are enabled.
+
 In Inbox, projects, Contexts and the other task lists, long-press a task to start selecting, then tap more tasks and pick an action in the bar at the top. Tap **X** or press Android **Back** to stop selecting. Selecting does not reorder tasks: manual order exists inside a project (project menu → **Reorder**) and among starred tasks in Focus (the **Reorder** button). Other lists, and the rest of Focus, follow their **Sort** and **Group** settings.
 
 with project Sort set to **Default**, choose **Reorder** in the multi-select action bar to leave selection mode and open the existing reorder view. This clears the selection; it does not change task order until you move a task.

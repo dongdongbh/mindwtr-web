@@ -4,6 +4,7 @@ Mindwtr unterstützt auf dem Desktop eine tastaturorientierte Bedienung mit den 
 
 ## Schnellstart
 
+- In der Entwicklungsversion wechselst du im aktiven Mindwtr-Fenster mit `Alt+←` zurück und mit `Alt+→` vorwärts. Die Zurück- und Vorwärtstasten der Maus verwenden denselben Verlauf.
 - Verwende **Titel kopieren** im Menü **Weitere Optionen** einer Aufgabe oder drücke `Ctrl+C` / `Cmd+C`, wenn eine Aufgabe hervorgehoben ist. Sind mehrere Aufgaben ausgewählt, kopiert das Tastenkürzel ihre Titel zeilenweise. Eine Meldung bestätigt das Kopieren; ausgewählter Text und Text im Editor lassen sich weiterhin wie gewohnt kopieren.
 - Wählen Sie Ihre Voreinstellung unter **Einstellungen → Erweitert → Tastatur und Fenster → Tastaturkürzel**.
 - Drücken Sie in der App `?`, um die aktuelle Übersicht für Ihre Voreinstellung zu öffnen. Am Ende der Übersicht steht eine Tabelle zur Syntax von „Schnell hinzufügen“, die alle Tokens aufführt (`/start:`, `/note:`, `@context`, `+Project`, …).

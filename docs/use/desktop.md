@@ -692,7 +692,7 @@ Access Settings from the sidebar.
 - **Font**: Pick any font installed on this computer, or keep the app default. Click the field to browse the list or start typing to narrow it. The list comes from the operating system, and a chosen font that is later uninstalled falls back to the default.
 - **Density**: Comfortable, Compact, or Condensed list rows
 - **Language**: English, Chinese (Simplified), Chinese (Traditional), Hindi, Spanish, Arabic, French, Portuguese (Brazil), Russian, German, Japanese, Persian, Vietnamese, Turkish, Korean, Italian, Polish, Dutch, Czech, Swedish, Danish, Hungarian, Ukrainian
-- **Sidebar views**: Hide sidebar entries you don't use, such as Someday/Maybe, Calendar, or Board. Inbox and Projects always stay visible. The choice applies to this device only, and hidden views keep their data and are still reachable from search.
+- **Sidebar views**: Hide sidebar entries you don't use, such as Someday/Maybe, Calendar, or Board. Inbox and Projects always stay visible. The choice applies to this device only, and hidden views keep their data and are still reachable from search. In the upcoming desktop update, an ordinary launch opens Inbox if the view Mindwtr would otherwise open is hidden. An explicit view link still opens its destination.
 
 ### Notifications
 

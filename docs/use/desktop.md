@@ -328,7 +328,7 @@ Powerful search with operators to find anything instantly.
 
 **Open:** Press `/` or `Ctrl/Cmd + K` or click the search icon.
 
-Search text is optional. Open **Filters** to list matching items by status, scope, area, due date, location, context, or tag; choose **Done** and **Archived** (or **Include Done and Archived tasks**) when you want completed items.
+Search hides Done and Archived items by default. When hidden items match your query, a "N more in Done and Archived" button appears above the results; click it to include them. Search text is optional: open **Filters** to narrow results by status, scope, area, due date, location, context, or tag.
 
 #### Search Operators
 

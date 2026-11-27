@@ -12,6 +12,7 @@ In einem ausreichend hohen Fenster erscheint die Liste der Projekte oder Kontext
 
 ## Interaktionsmuster
 
+- Unter macOS öffnest du die Einstellungen über **Mindwtr → Settings…** oder mit **⌘,**, wenn Mindwtr aktiv ist.
 - Verwende **Titel kopieren** im Menü **Weitere Optionen** einer Aufgabe oder drücke `Ctrl+C` / `Cmd+C`, wenn eine Aufgabe hervorgehoben ist. Sind mehrere Aufgaben ausgewählt, kopiert das Tastenkürzel ihre Titel zeilenweise. Eine Meldung bestätigt das Kopieren; ausgewählter Text und Text im Editor lassen sich weiterhin wie gewohnt kopieren.
 - Mit **Beschreibung kopieren** kopierst du nur die Aufgabenbeschreibung mit Markdown und Zeilenumbrüchen.
 - Wähle im selben Menü **Aufgabendetails kopieren**, um Titel, Projekt, Start- und Fälligkeitsdatum, Beschreibung und Checkliste als Klartext zu kopieren. Leere Felder werden ausgelassen; abgeschlossene und offene Checklistenpunkte sind entsprechend markiert.

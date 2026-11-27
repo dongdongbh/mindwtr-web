@@ -12,6 +12,7 @@ On wide windows, Projects and Contexts have a separate navigation pane beside th
 
 ## Interaction Patterns
 
+- On macOS, open **Mindwtr → Settings…** or press **⌘,** while Mindwtr is active.
 - Use **Copy Title** in a task’s **Other Options** menu, or press `Ctrl+C` / `Cmd+C` with a task highlighted. When multiple tasks are selected, the shortcut copies their titles one per line. A toast confirms the copy; copying selected text or text in an editor still works normally.
 - Choose **Copy description** to copy just the task description, including its Markdown and line breaks.
 - Choose **Copy task details** in the same menu to copy the title, project, start and due dates, description, and checklist as plain text. Empty fields are omitted and checklist completion marks are included.

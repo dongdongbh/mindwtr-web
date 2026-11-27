@@ -12,6 +12,7 @@ Si la ventana es suficientemente alta, la lista de Proyectos o Contextos aparece
 
 ## Patrones de interacción
 
+- En macOS, abre **Mindwtr → Settings…** o pulsa **⌘,** con Mindwtr activo.
 - usa **Copiar título** en el menú **Otras opciones** de una tarea, o pulsa `Ctrl+C` / `Cmd+C` con una tarea resaltada. Si hay varias tareas seleccionadas, el atajo copia sus títulos, uno por línea. Un aviso confirma la copia; copiar texto seleccionado o texto dentro de un editor sigue funcionando como siempre.
 - Elige **Copiar descripción** para copiar solo la descripción, con su Markdown y sus saltos de línea.
 - Elige **Copiar detalles de la tarea** en el mismo menú para copiar el título, el proyecto, las fechas de inicio y vencimiento, la descripción y la lista de verificación como texto sin formato. Los campos vacíos se omiten y se indica qué elementos de la lista están completados.

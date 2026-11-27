@@ -12,6 +12,7 @@ Dans une fenêtre assez haute, la liste des Projets ou des Contextes apparaît s
 
 ## Modes d’interaction
 
+- Sur macOS, ouvrez **Mindwtr → Settings…** ou appuyez sur **⌘,** lorsque Mindwtr est au premier plan.
 - utilisez **Copier le titre** dans le menu **Autres options** d’une tâche, ou appuyez sur `Ctrl+C` / `Cmd+C` lorsqu’une tâche est surlignée. Si plusieurs tâches sont sélectionnées, le raccourci copie leurs titres, un par ligne. Un message confirme la copie ; la copie du texte sélectionné ou du texte dans un éditeur fonctionne toujours normalement.
 - Choisissez **Copier la description** pour copier uniquement la description de la tâche, avec son Markdown et ses sauts de ligne.
 - Choisissez **Copier les détails de la tâche** dans le même menu pour copier le titre, le projet, les dates de début et d’échéance, la description et la checklist en texte brut. Les champs vides sont omis et l’état d’achèvement des éléments de la checklist est indiqué.
